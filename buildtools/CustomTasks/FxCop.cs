@@ -55,11 +55,11 @@ namespace CustomTasks
 
             foreach (var assembly in allAssemblies)
             {
-                var assemblyName = Path.GetFileName(assembly);
+                var assemblyName = Path.GetFileName(assembly).ToLower();
                 var isCore = string.Equals(CoreAssemblyName, assemblyName, StringComparison.OrdinalIgnoreCase);
 
                 var newTarget = AddChildNode(targetsNode, "Target");
-                AddAttribute(newTarget, "Name", assembly);
+                AddAttribute(newTarget, "Name", MakeRelativePath(assembly));
                 AddAttribute(newTarget, "Analyze", "True");
 
                 if (isCore)
@@ -69,7 +69,7 @@ namespace CustomTasks
                 else
                 {
                     /*
-                    <Target Name="$(ProjectDir)/Deployment/sdk/assemblies/net35/AWSSDK.AutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
+                    <Target Name="$(ProjectDir)/Deployment/assemblies/net35/AWSSDK.AutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
                     */
                     AddAttribute(newTarget, "AnalyzeAllChildren", "True");
                 }
@@ -81,10 +81,10 @@ namespace CustomTasks
         {
             AddAttribute(newTarget, "AnalyzeAllChildren", "False");
 
-            var assemblyName = Path.GetFileName(coreAssemblyPath);
+            var assemblyName = Path.GetFileName(coreAssemblyPath).ToLower();
             var coreAssembly = Assembly.LoadFrom(coreAssemblyPath);
             /*
-  <Target Name="$(ProjectDir)/Deployment/sdk/assemblies/net35/AWSSDK.Core.dll" Analyze="True" AnalyzeAllChildren="False">
+  <Target Name="$(ProjectDir)/Deployment/assemblies/net35/AWSSDK.Core.dll" Analyze="True" AnalyzeAllChildren="False">
    <Modules AnalyzeAllChildren="False">
     <Module Name="awssdk.core.dll" Analyze="True" AnalyzeAllChildren="False">
      <Namespaces AnalyzeAllChildren="False">
@@ -110,6 +110,8 @@ namespace CustomTasks
                 AddAttribute(namespaceNode, "Analyze", "True");
                 AddAttribute(namespaceNode, "AnalyzeAllChildren", "True");
             }
+            var resourcesNode = AddChildNode(moduleNode, "Resources");
+            AddAttribute(resourcesNode, "AnalyzeAllChildren", "True");
         }
 
 
@@ -123,6 +125,9 @@ namespace CustomTasks
         public const string TargetsXpath = "FxCopProject/Targets";
         public const string TargetXpath = "FxCopProject/Targets/Target";
         public const string CoreAssemblyName = "AWSSDK.Core.dll";
+
+        public const string DeploymentPath = @"Deployment\assemblies";
+        public const string ProjectDirRelative = @"$(ProjectDir)\..\";
 
         public static IEnumerable<string> GetNamespacesToExamine(Assembly assembly)
         {
@@ -150,6 +155,15 @@ namespace CustomTasks
                 if (ns.StartsWith(toSkip, StringComparison.Ordinal))
                     return true;
             return false;
+        }
+        private static string MakeRelativePath(string assemblyPath)
+        {
+            var fullPath = Path.GetFullPath(assemblyPath);
+            var deploymentIndex = fullPath.IndexOf(DeploymentPath, StringComparison.OrdinalIgnoreCase);
+            var partialPath = fullPath.Substring(deploymentIndex);
+
+            var relativePath = string.Concat(ProjectDirRelative, partialPath);
+            return relativePath;
         }
 
         private static void AddAttribute(XmlNode node, string name, string value)

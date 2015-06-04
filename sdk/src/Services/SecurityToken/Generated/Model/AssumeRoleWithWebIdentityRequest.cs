@@ -30,10 +30,26 @@ namespace Amazon.SecurityToken.Model
     /// <summary>
     /// Container for the parameters to the AssumeRoleWithWebIdentity operation.
     /// Returns a set of temporary security credentials for users who have been authenticated
-    /// in a mobile or web application with a web identity provider, such as Login with Amazon,
-    /// Amazon Cognito, Facebook, or Google. 
+    /// in a mobile or web application with a web identity provider, such as Amazon Cognito,
+    /// Login with Amazon, Facebook, Google, or any OpenID Connect-compatible identity provider.
     /// 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// For mobile applications, we recommend that you use Amazon Cognito. You can use Amazon
+    /// Cognito with the <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and
+    /// the <a href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android</a> to uniquely
+    /// identify a user and supply the user with a consistent identity throughout the lifetime
+    /// of an application.
+    /// </para>
     ///  
+    /// <para>
+    /// To learn more about Amazon Cognito, see <a href="http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840">Amazon
+    /// Cognito Overview</a> in the <i>AWS SDK for Android Developer Guide</i> guide and <a
+    /// href="http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664">Amazon
+    /// Cognito Overview</a> in the <i>AWS SDK for iOS Developer Guide</i>.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Calling <code>AssumeRoleWithWebIdentity</code> does not require the use of AWS security
     /// credentials. Therefore, you can distribute an application (for example, on mobile
@@ -75,29 +91,24 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about how to use web identity federation and the <code>AssumeRoleWithWebIdentity</code>,
-    /// see the following resources: 
+    /// For more information about how to use web identity federation and the <code>AssumeRoleWithWebIdentity</code>
+    /// API, see the following resources: 
     /// </para>
-    ///  <ul> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html#MobileApplication-KnownProvider"
-    /// target="_blank"> Creating a Mobile Application with Third-Party Sign-In</a> and <a
-    /// href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html" target="_blank">
+    ///  <ul> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html#MobileApplication-KnownProvider">
+    /// Creating a Mobile Application with Third-Party Sign-In</a> and <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html">
     /// Creating Temporary Security Credentials for Mobile Apps Using Third-Party Identity
-    /// Providers</a> in <i>Using Temporary Security Credentials</i>. </li> <li> <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html"
-    /// target="_blank"> Web Identity Federation Playground</a>. This interactive website
-    /// lets you walk through the process of authenticating via Login with Amazon, Facebook,
-    /// or Google, getting temporary security credentials, and then using those credentials
-    /// to make a request to AWS. </li> <li> <a href="http://aws.amazon.com/sdkforios/">AWS
-    /// SDK for iOS</a> and <a href="http://aws.amazon.com/sdkforandroid/" target="_blank">AWS
-    /// SDK for Android</a>. These toolkits contain sample apps that show how to invoke the
-    /// identity providers, and then how to use the information from these providers to get
-    /// and use temporary security credentials. </li> <li> <a href="http://aws.amazon.com/articles/4617974389850313"
-    /// target="_blank">Web Identity Federation with Mobile Applications</a>. This article
-    /// discusses web identity federation and shows an example of how to use web identity
-    /// federation to get access to content in Amazon S3. </li> </ul> <member name="RoleArn"
-    /// target="arnType"></member> <member name="RoleSessionName" target="userNameType"></member>
-    /// <member name="WebIdentityToken" target="clientTokenType"></member> <member name="ProviderId"
-    /// target="urlType"></member> <member name="Policy" target="sessionPolicyDocumentType"></member>
-    /// <member name="DurationSeconds" target="roleDurationSecondsType"></member>
+    /// Providers</a> in <i>Using Temporary Security Credentials</i>. </li> <li> <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
+    /// Web Identity Federation Playground</a>. This interactive website lets you walk through
+    /// the process of authenticating via Login with Amazon, Facebook, or Google, getting
+    /// temporary security credentials, and then using those credentials to make a request
+    /// to AWS. </li> <li> <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a>
+    /// and <a href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android</a>. These
+    /// toolkits contain sample apps that show how to invoke the identity providers, and then
+    /// how to use the information from these providers to get and use temporary security
+    /// credentials. </li> <li> <a href="http://aws.amazon.com/articles/4617974389850313">Web
+    /// Identity Federation with Mobile Applications</a>. This article discusses web identity
+    /// federation and shows an example of how to use web identity federation to get access
+    /// to content in Amazon S3. </li> </ul>
     /// </summary>
     public partial class AssumeRoleWithWebIdentityRequest : AmazonSecurityTokenServiceRequest
     {
@@ -161,11 +172,17 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property ProviderId. 
         /// <para>
-        /// The fully-qualified host component of the domain name of the identity provider. Specify
-        /// this value only for OAuth access tokens. Do not specify this value for OpenID Connect
-        /// ID tokens, such as <code>accounts.google.com</code>. Do not include URL schemes and
-        /// port numbers. Currently, <code>www.amazon.com</code> and <code>graph.facebook.com</code>
-        /// are supported. 
+        /// The fully qualified host component of the domain name of the identity provider.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify this value only for OAuth 2.0 access tokens. Currently <code>www.amazon.com</code>
+        /// and <code>graph.facebook.com</code> are the only supported identity providers for
+        /// OAuth 2.0 access tokens. Do not include URL schemes and port numbers.
+        /// </para>
+        ///  
+        /// <para>
+        /// Do not specify this value for OpenID Connect ID tokens. 
         /// </para>
         /// </summary>
         public string ProviderId

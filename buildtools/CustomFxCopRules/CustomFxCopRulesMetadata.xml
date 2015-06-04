@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Rules FriendlyName="AWS .NET SDK Custom FxCop Rules">
+  <Rule TypeName="PreventMD5UseRule" Category="AwsSdkRules" CheckId="CR1000">
+    <Name>Do not use MD5</Name>
+    <Description>Checks code for MD5 uses.</Description>
+    <Resolution>Type {0} of member {1} is a subclass of MD5. MD5 should not be used within the SDK, as it is not FIPS compliant.</Resolution>
+    <MessageLevel Certainty="100">CriticalError</MessageLevel>
+    <FixCategories>NonBreaking</FixCategories>
+    <Url />
+    <Owner />
+    <Email />
+  </Rule>
+  <Rule TypeName="PreventHashAlgorithmCreateRule" Category="AwsSdkRules" CheckId="CR1001">
+    <Name>Do not use HashAlgorithm.Create</Name>
+    <Description>Checks code for HashAlgorithm.Create uses.</Description>
+    <Resolution>Method {0} of member {1} invokes {2}. This method should not be used within the SDK, as it may lead to MD5 use, which is not FIPS compliant.</Resolution>
+    <MessageLevel Certainty="100">CriticalError</MessageLevel>
+    <FixCategories>NonBreaking</FixCategories>
+    <Url />
+    <Owner />
+    <Email />
+  </Rule>
+  <Rule TypeName="PreventStaticLoggersRule" Category="AwsSdkRules" CheckId="CR1002">
+    <Name>Do not store ILogger instances in static members.</Name>
+    <Description>Checks code for static ILogger variables.</Description>
+    <Resolution>Static member {0} of type {1} implements {2}. Instances of {2} should not be stored in static variables. Logger configuration can change during SDK use, but static references are not impacted by this.</Resolution>
+    <MessageLevel Certainty="100">CriticalError</MessageLevel>
+    <FixCategories>NonBreaking</FixCategories>
+    <Url />
+    <Owner />
+    <Email />
+  </Rule>
+</Rules>

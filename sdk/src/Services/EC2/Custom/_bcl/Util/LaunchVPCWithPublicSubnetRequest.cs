@@ -36,6 +36,9 @@ namespace Amazon.EC2.Util
         string publicSubnetCiderBlock = "10.0.0.0/24";
         string publicSubnetAvailabilityZone;
 
+        bool? enableDnsHostnames;
+        bool? enableDnsSupport;
+
         /// <summary>
         /// Gets and sets a name that will be assigned the VPC's Name tag.  This is an optional field.
         /// </summary>
@@ -98,6 +101,40 @@ namespace Amazon.EC2.Util
         {
             get;
             set;
+        }
+
+        /// <summary>
+        /// Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is true, instances in the VPC get DNS hostnames; 
+        /// otherwise, they do not. If you want your instances to get DNS hostnames, you must also set the enableDnsSupport attribute to true. 
+        /// </summary>
+        public bool EnableDnsHostnames
+        {
+            get { return enableDnsHostnames.GetValueOrDefault(); }
+            set { enableDnsHostnames = value; }
+        }
+
+        // Check to see if EnableDnsHostnames property is set
+        internal bool IsSetEnableDnsHostnames()
+        {
+            return enableDnsHostnames.HasValue;
+        }
+
+        /// <summary>
+        /// Indicates whether the DNS resolution is supported for the VPC. If this attribute is false, the Amazon provided DNS service in the VPC that 
+        /// resolves public DNS hostnames to IP addresses is not enabled. If this attribute is true, queries to the Amazon provided DNS server at the 
+        /// 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range "plus two" will succeed. For more information, 
+        /// see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html#AmazonDNS">Amazon DNS Server</a>.
+        /// </summary>
+        public bool EnableDnsSupport
+        {
+            get { return enableDnsSupport.GetValueOrDefault(); }
+            set { enableDnsSupport = value; }
+        }
+
+        // Check to see if EnableDnsSupport property is set
+        internal bool IsSetEnableDnsSupport()
+        {
+            return enableDnsSupport.HasValue;
         }
     }
 }

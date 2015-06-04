@@ -71,8 +71,7 @@ namespace Amazon.CloudFormation.Model
         /// or update certain stacks. Some stack templates might include resources that can affect
         /// permissions in your AWS account. For those stacks, you must explicitly acknowledge
         /// their capabilities by specifying this parameter. Currently, the only valid value is
-        /// <code>CAPABILITY_IAM</code>, which is required for the following resources: <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html">
-        /// AWS::CloudFormation::Stack</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+        /// <code>CAPABILITY_IAM</code>, which is required for the following resources: <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
         /// AWS::IAM::AccessKey</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
         /// AWS::IAM::Group</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
         /// AWS::IAM::InstanceProfile</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
@@ -118,7 +117,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Parameters. 
         /// <para>
         /// A list of <code>Parameter</code> structures that specify input parameters for the
-        /// stack.
+        /// stack. For more information, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+        /// data type.
         /// </para>
         /// </summary>
         public List<Parameter> Parameters
@@ -136,10 +136,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name or stack ID of the stack to update.
+        /// The name or unique stack ID of the stack to update.
         /// </para>
-        ///  <note> Must contain only alphanumeric characters (case sensitive) and start with
-        /// an alpha character. Maximum length of the name is 255 characters. </note>
         /// </summary>
         public string StackName
         {

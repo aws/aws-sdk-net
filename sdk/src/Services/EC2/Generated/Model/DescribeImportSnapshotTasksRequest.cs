@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeImportSnapshotTasks operation.
-    /// Displays details about an import snapshot tasks that is already created.
+    /// Describes your import snapshot tasks.
     /// </summary>
     public partial class DescribeImportSnapshotTasksRequest : AmazonEC2Request
     {
@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filters to be applied on a describe request.
+        /// One or more filters.
         /// </para>
         /// </summary>
         public List<Filter> Filters
@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImportTaskIds. 
         /// <para>
-        /// A list of IDs of the ImportSnapshot tasks to describe.
+        /// A list of import snapshot task IDs.
         /// </para>
         /// </summary>
         public List<string> ImportTaskIds
@@ -77,7 +77,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results in a page.
+        /// The maximum number of results to return in a single request.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -95,7 +95,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to get to the next page of paginated describe requests.
+        /// A token that indicates the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

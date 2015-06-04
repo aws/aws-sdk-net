@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Describes an import instance task.
     /// </summary>
     public partial class ImportInstanceTaskDetails
     {
@@ -38,7 +38,10 @@ namespace Amazon.EC2.Model
         private List<ImportInstanceVolumeDetailItem> _volumes = new List<ImportInstanceVolumeDetailItem>();
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the task.
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -53,7 +56,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceId.
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The ID of the instance.
+        /// </para>
         /// </summary>
         public string InstanceId
         {
@@ -86,7 +92,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Volumes.
+        /// Gets and sets the property Volumes. 
+        /// <para>
+        /// One or more volumes.
+        /// </para>
         /// </summary>
         public List<ImportInstanceVolumeDetailItem> Volumes
         {

@@ -268,7 +268,7 @@ namespace ServiceClientGenerator
             GeneratorDriver.WriteFile(Options.SdkRootFolder, null, "AWSSDK.sln", content, true, false);
         }
 
-        private void GeneratePlatformSpecificSolution(ProjectFileConfiguration projectConfig)
+        private void GeneratePlatformSpecificSolution(ProjectFileConfiguration projectConfig, bool includeTests, string solutionFileName = null)
         {
             var projectType = projectConfig.Name;
             Console.WriteLine("...generating platform-specific solution file AWSSDK.{0}.sln", projectType);
@@ -307,28 +307,31 @@ namespace ServiceClientGenerator
             }
 
             var testProjects = new List<Project>();
-            var sdkTestsFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
-            foreach (var testFoldername in new[] { GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
+            if (includeTests)
             {
-                var testFolder = Path.Combine(sdkTestsFolder, testFoldername);
-                foreach (var projectFile in Directory.GetFiles(testFolder, projectTypeWildCard, SearchOption.TopDirectoryOnly))
+                var sdkTestsFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
+                foreach (var testFoldername in new[] { GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
                 {
-                    testProjects.Add(TestProjectFromFile(testFoldername, projectFile));
+                    var testFolder = Path.Combine(sdkTestsFolder, testFoldername);
+                    foreach (var projectFile in Directory.GetFiles(testFolder, projectTypeWildCard, SearchOption.TopDirectoryOnly))
+                    {
+                        testProjects.Add(TestProjectFromFile(testFoldername, projectFile));
 
-                    var projectKey = Path.GetFileNameWithoutExtension(projectFile);
-                    solutionProjects.Add(projectKey, _allProjects[projectKey]);
-                    SelectBuildConfigurationsForProject(projectKey, buildConfigurations);
+                        var projectKey = Path.GetFileNameWithoutExtension(projectFile);
+                        solutionProjects.Add(projectKey, _allProjects[projectKey]);
+                        SelectBuildConfigurationsForProject(projectKey, buildConfigurations);
+                    }
                 }
-            }
 
-            if (projectType.Equals(ProjectTypes.Net35, StringComparison.Ordinal) || projectType.Equals(ProjectTypes.Net45, StringComparison.Ordinal))
-            {
-                solutionProjects.Add(GeneratorLibProjectName, GeneratorLibProjectConfig);
-                testProjects.Add(GeneratorLibProject);
-                SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
-            }
+                if (projectType.Equals(ProjectTypes.Net35, StringComparison.Ordinal) || projectType.Equals(ProjectTypes.Net45, StringComparison.Ordinal))
+                {
+                    solutionProjects.Add(GeneratorLibProjectName, GeneratorLibProjectConfig);
+                    testProjects.Add(GeneratorLibProject);
+                    SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
+                }
 
-            AddExtraTestProjects(projectConfig, solutionProjects, testProjects);
+                AddExtraTestProjects(projectConfig, solutionProjects, testProjects);
+            }
 
             var configurationsList = buildConfigurations.ToList();
             configurationsList.Sort();
@@ -341,8 +344,9 @@ namespace ServiceClientGenerator
 
             var generator = new SolutionFileGenerator { Session = session };
             var content = generator.TransformText();
-            var solutionName = string.Format("AWSSDK.{0}.sln", projectType);
-            GeneratorDriver.WriteFile(Options.SdkRootFolder, null, solutionName, content, true, false);
+            if (string.IsNullOrEmpty(solutionFileName))
+                solutionFileName = string.Format("AWSSDK.{0}.sln", projectType);
+            GeneratorDriver.WriteFile(Options.SdkRootFolder, null, solutionFileName, content, true, false);
         }
 
         private void AddExtraTestProjects(ProjectFileConfiguration projectConfig, Dictionary<string, ProjectFileCreator.ProjectConfigurationData> solutionProjects, List<Project> testProjects)

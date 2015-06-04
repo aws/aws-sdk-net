@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.DynamoDBv2</id>
     <title>AWSSDK - Amazon DynamoDB</title>
-    <version>3.0.0.0-preview</version> 
+    <version>3.0.0.3-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.</description> 
     <language>en-US</language>
@@ -23,10 +23,10 @@
       </group>
       <group targetFramework="portable-wpa+netcore45">
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.0-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
       </group>
       <group>
-      <dependency id="AWSSDK.Core" version="[3.0.0.0-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 

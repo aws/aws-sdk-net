@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,7 +35,10 @@ namespace Amazon.EC2.Model
         private List<ConversionTask> _conversionTasks = new List<ConversionTask>();
 
         /// <summary>
-        /// Gets and sets the property ConversionTasks.
+        /// Gets and sets the property ConversionTasks. 
+        /// <para>
+        /// Information about the conversion tasks.
+        /// </para>
         /// </summary>
         public List<ConversionTask> ConversionTasks
         {

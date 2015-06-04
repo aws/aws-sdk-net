@@ -64,6 +64,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AudioPackingMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioPackingMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BitRate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

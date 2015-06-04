@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The disk container object for an ImportImage task.
+    /// Describes the disk container object for an import image task.
     /// </summary>
     public partial class ImageDiskContainer
     {
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the disk image (optional).
+        /// The description of the disk image.
         /// </para>
         /// </summary>
         public string Description
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeviceName. 
         /// <para>
-        /// The Amazon EBS block device mapping for the disk (optional).
+        /// The block device mapping for the disk.
         /// </para>
         /// </summary>
         public string DeviceName
@@ -78,7 +78,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// The format of the disk image being imported (optional).
+        /// The format of the disk image being imported.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
         /// </para>
         /// </summary>
         public string Format
@@ -96,7 +100,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SnapshotId. 
         /// <para>
-        /// The Amazon EBS snapshot ID to be used for importing the snapshot.
+        /// The ID of the EBS snapshot to be used for importing the snapshot.
         /// </para>
         /// </summary>
         public string SnapshotId
@@ -131,7 +135,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserBucket.
+        /// Gets and sets the property UserBucket. 
+        /// <para>
+        /// The S3 bucket for the disk image.
+        /// </para>
         /// </summary>
         public UserBucket UserBucket
         {

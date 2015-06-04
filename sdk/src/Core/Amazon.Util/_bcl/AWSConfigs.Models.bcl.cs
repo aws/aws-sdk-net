@@ -57,6 +57,7 @@ namespace Amazon.Util
             {
                 LogTo = section.LogTo;
                 LogResponses = section.LogResponses;
+                LogResponsesSizeLimit = section.LogResponsesSizeLimit ?? LoggingConfig.DefaultLogResponsesSizeLimit;
                 LogMetrics = section.LogMetrics.GetValueOrDefault(false);
                 LogMetricsFormat = section.LogMetricsFormat;
                 if (section.LogMetricsCustomFormatter != null

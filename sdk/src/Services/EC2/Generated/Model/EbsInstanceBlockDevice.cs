@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a parameter used to set up an Amazon EBS volume in a block device mapping.
+    /// Describes a parameter used to set up an EBS volume in a block device mapping.
     /// </summary>
     public partial class EbsInstanceBlockDevice
     {
@@ -94,7 +94,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeId. 
         /// <para>
-        /// The ID of the Amazon EBS volume.
+        /// The ID of the EBS volume.
         /// </para>
         /// </summary>
         public string VolumeId

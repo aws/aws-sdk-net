@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSnapshot operation.
-    /// Creates a snapshot of an Amazon EBS volume and stores it in Amazon S3. You can use
-    /// snapshots for backups, to make copies of Amazon EBS volumes, and to save data before
-    /// shutting down an instance.
+    /// Creates a snapshot of an EBS volume and stores it in Amazon S3. You can use snapshots
+    /// for backups, to make copies of EBS volumes, and to save data before shutting down
+    /// an instance.
     /// 
     ///  
     /// <para>
@@ -41,19 +41,18 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// You can take a snapshot of an attached volume that is in use. However, snapshots only
-    /// capture data that has been written to your Amazon EBS volume at the time the snapshot
-    /// command is issued; this may exclude any data that has been cached by any applications
-    /// or the operating system. If you can pause any file systems on the volume long enough
-    /// to take a snapshot, your snapshot should be complete. However, if you cannot pause
-    /// all file writes to the volume, you should unmount the volume from within the instance,
-    /// issue the snapshot command, and then remount the volume to ensure a consistent and
-    /// complete snapshot. You may remount and use your volume while the snapshot status is
-    /// <code>pending</code>.
+    /// capture data that has been written to your EBS volume at the time the snapshot command
+    /// is issued; this may exclude any data that has been cached by any applications or the
+    /// operating system. If you can pause any file systems on the volume long enough to take
+    /// a snapshot, your snapshot should be complete. However, if you cannot pause all file
+    /// writes to the volume, you should unmount the volume from within the instance, issue
+    /// the snapshot command, and then remount the volume to ensure a consistent and complete
+    /// snapshot. You may remount and use your volume while the snapshot status is <code>pending</code>.
     /// </para>
     ///  
     /// <para>
-    /// To create a snapshot for Amazon EBS volumes that serve as root devices, you should
-    /// stop the instance before taking the snapshot.
+    /// To create a snapshot for EBS volumes that serve as root devices, you should stop the
+    /// instance before taking the snapshot.
     /// </para>
     ///  
     /// <para>
@@ -81,7 +80,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateSnapshotRequest with the parameterized properties
         /// </summary>
-        /// <param name="volumeId">The ID of the Amazon EBS volume.</param>
+        /// <param name="volumeId">The ID of the EBS volume.</param>
         /// <param name="description">A description for the snapshot.</param>
         public CreateSnapshotRequest(string volumeId, string description)
         {
@@ -110,7 +109,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeId. 
         /// <para>
-        /// The ID of the Amazon EBS volume.
+        /// The ID of the EBS volume.
         /// </para>
         /// </summary>
         public string VolumeId

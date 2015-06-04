@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -38,8 +38,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// By default, Amazon EC2 deletes all Amazon EBS volumes that were attached when the
-    /// instance launched. Volumes attached after instance launch continue running.
+    /// By default, Amazon EC2 deletes all EBS volumes that were attached when the instance
+    /// launched. Volumes attached after instance launch continue running.
     /// </para>
     ///  
     /// <para>

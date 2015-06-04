@@ -341,9 +341,9 @@ namespace Amazon.Kinesis
         /// in time.</li> <li>Create more shards than are authorized for your account.</li> </ul>
         /// 
         /// <para>
-        /// The default limit for an AWS account is 10 shards per stream. If you need to create
-        /// a stream with more than 10 shards, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
-        /// AWS Support</a> to increase the limit on your account.
+        /// For the default shard limit for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+        /// Kinesis Limits</a>. If you need to increase this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+        /// AWS Support</a>
         /// </para>
         ///  
         /// <para>
@@ -352,7 +352,7 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// <code>CreateStream</code> has a limit of 5 transactions per second per account.
+        /// <a>CreateStream</a> has a limit of 5 transactions per second per account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStream service method.</param>
@@ -443,7 +443,7 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// <code>DeleteStream</code> has a limit of 5 transactions per second per account.
+        /// <a>DeleteStream</a> has a limit of 5 transactions per second per account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStream service method.</param>
@@ -530,7 +530,7 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// <code>DescribeStream</code> has a limit of 10 transactions per second per account.
+        /// <a>DescribeStream</a> has a limit of 10 transactions per second per account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStream service method.</param>
@@ -596,52 +596,48 @@ namespace Amazon.Kinesis
         /// Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard
         /// iterator specifies the position in the shard from which you want to start reading
         /// data records sequentially. If there are no records available in the portion of the
-        /// shard that the iterator points to, <code>GetRecords</code> returns an empty list.
-        /// Note that it might take multiple calls to get to a portion of the shard that contains
-        /// records.
+        /// shard that the iterator points to, <a>GetRecords</a> returns an empty list. Note that
+        /// it might take multiple calls to get to a portion of the shard that contains records.
         /// </para>
         ///  
         /// <para>
         /// You can scale by provisioning multiple shards. Your application should have one thread
         /// per shard, each reading continuously from its stream. To read from a stream continually,
-        /// call <code>GetRecords</code> in a loop. Use <a>GetShardIterator</a> to get the shard
-        /// iterator to specify in the first <code>GetRecords</code> call. <code>GetRecords</code>
-        /// returns a new shard iterator in <code>NextShardIterator</code>. Specify the shard
-        /// iterator returned in <code>NextShardIterator</code> in subsequent calls to <code>GetRecords</code>.
-        /// Note that if the shard has been closed, the shard iterator can't return more data
-        /// and <code>GetRecords</code> returns <code>null</code> in <code>NextShardIterator</code>.
-        /// You can terminate the loop when the shard is closed, or when the shard iterator reaches
-        /// the record with the sequence number or other attribute that marks it as the last record
-        /// to process.
+        /// call <a>GetRecords</a> in a loop. Use <a>GetShardIterator</a> to get the shard iterator
+        /// to specify in the first <a>GetRecords</a> call. <a>GetRecords</a> returns a new shard
+        /// iterator in <code>NextShardIterator</code>. Specify the shard iterator returned in
+        /// <code>NextShardIterator</code> in subsequent calls to <a>GetRecords</a>. Note that
+        /// if the shard has been closed, the shard iterator can't return more data and <a>GetRecords</a>
+        /// returns <code>null</code> in <code>NextShardIterator</code>. You can terminate the
+        /// loop when the shard is closed, or when the shard iterator reaches the record with
+        /// the sequence number or other attribute that marks it as the last record to process.
         /// </para>
         ///  
         /// <para>
         /// Each data record can be up to 50 KB in size, and each shard can read up to 2 MB per
         /// second. You can ensure that your calls don't exceed the maximum supported size or
         /// throughput by using the <code>Limit</code> parameter to specify the maximum number
-        /// of records that <code>GetRecords</code> can return. Consider your average record size
-        /// when determining this limit. For example, if your average record size is 40 KB, you
-        /// can limit the data returned to about 1 MB per call by specifying 25 as the limit.
+        /// of records that <a>GetRecords</a> can return. Consider your average record size when
+        /// determining this limit. For example, if your average record size is 40 KB, you can
+        /// limit the data returned to about 1 MB per call by specifying 25 as the limit.
         /// </para>
         ///  
         /// <para>
-        /// The size of the data returned by <code>GetRecords</code> will vary depending on the
-        /// utilization of the shard. The maximum size of data that <code>GetRecords</code> can
-        /// return is 10 MB. If a call returns 10 MB of data, subsequent calls made within the
-        /// next 5 seconds throw <code>ProvisionedThroughputExceededException</code>. If there
-        /// is insufficient provisioned throughput on the shard, subsequent calls made within
-        /// the next 1 second throw <code>ProvisionedThroughputExceededException</code>. Note
-        /// that <code>GetRecords</code> won't return any data when it throws an exception. For
-        /// this reason, we recommend that you wait one second between calls to <code>GetRecords</code>;
-        /// however, it's possible that the application will get exceptions for longer than 1
-        /// second.
+        /// The size of the data returned by <a>GetRecords</a> will vary depending on the utilization
+        /// of the shard. The maximum size of data that <a>GetRecords</a> can return is 10 MB.
+        /// If a call returns this amount of data, subsequent calls made within the next 5 seconds
+        /// throw <code>ProvisionedThroughputExceededException</code>. If there is insufficient
+        /// provisioned throughput on the shard, subsequent calls made within the next 1 second
+        /// throw <code>ProvisionedThroughputExceededException</code>. Note that <a>GetRecords</a>
+        /// won't return any data when it throws an exception. For this reason, we recommend that
+        /// you wait one second between calls to <a>GetRecords</a>; however, it's possible that
+        /// the application will get exceptions for longer than 1 second.
         /// </para>
         ///  
         /// <para>
-        /// To detect whether the application is falling behind in processing, add a timestamp
-        /// to your records and note how long it takes to process them. You can also monitor how
-        /// much data is in a stream using the CloudWatch metrics for write operations (<code>PutRecord</code>
-        /// and <code>PutRecords</code>). For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring_with_cloudwatch.html">Monitoring
+        /// To detect whether the application is falling behind in processing, you can use the
+        /// <code>MillisBehindLatest</code> response attribute. You can also monitor the amount
+        /// of data in a stream using the CloudWatch metrics. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring_with_cloudwatch.html">Monitoring
         /// Amazon Kinesis with Amazon CloudWatch</a> in the <i>Amazon Kinesis Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -738,28 +734,27 @@ namespace Amazon.Kinesis
         ///  
         /// <para>
         /// When you repeatedly read from an Amazon Kinesis stream use a <a>GetShardIterator</a>
-        /// request to get the first shard iterator to to use in your first <code>GetRecords</code>
-        /// request and then use the shard iterator returned by the <code>GetRecords</code> request
-        /// in <code>NextShardIterator</code> for subsequent reads. A new shard iterator is returned
-        /// by every <code>GetRecords</code> request in <code>NextShardIterator</code>, which
-        /// you use in the <code>ShardIterator</code> parameter of the next <code>GetRecords</code>
-        /// request. 
+        /// request to get the first shard iterator for use in your first <a>GetRecords</a> request
+        /// and then use the shard iterator returned by the <a>GetRecords</a> request in <code>NextShardIterator</code>
+        /// for subsequent reads. A new shard iterator is returned by every <a>GetRecords</a>
+        /// request in <code>NextShardIterator</code>, which you use in the <code>ShardIterator</code>
+        /// parameter of the next <a>GetRecords</a> request. 
         /// </para>
         ///  
         /// <para>
-        /// If a <code>GetShardIterator</code> request is made too often, you receive a <code>ProvisionedThroughputExceededException</code>.
+        /// If a <a>GetShardIterator</a> request is made too often, you receive a <code>ProvisionedThroughputExceededException</code>.
         /// For more information about throughput limits, see <a>GetRecords</a>.
         /// </para>
         ///  
         /// <para>
-        /// If the shard is closed, the iterator can't return more data, and <code>GetShardIterator</code>
+        /// If the shard is closed, the iterator can't return more data, and <a>GetShardIterator</a>
         /// returns <code>null</code> for its <code>ShardIterator</code>. A shard can be closed
         /// using <a>SplitShard</a> or <a>MergeShards</a>.
         /// </para>
         ///  
         /// <para>
-        /// <code>GetShardIterator</code> has a limit of 5 transactions per second per account
-        /// per open shard.
+        /// <a>GetShardIterator</a> has a limit of 5 transactions per second per account per open
+        /// shard.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetShardIterator service method.</param>
@@ -845,7 +840,7 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// <code>ListStreams</code> has a limit of 5 transactions per second per account.
+        /// <a>ListStreams</a> has a limit of 5 transactions per second per account.
         /// </para>
         /// </summary>
         /// 
@@ -881,7 +876,7 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// <code>ListStreams</code> has a limit of 5 transactions per second per account.
+        /// <a>ListStreams</a> has a limit of 5 transactions per second per account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStreams service method.</param>
@@ -1012,7 +1007,7 @@ namespace Amazon.Kinesis
         /// <code>MergeShards</code> is called when there is a need to reduce the overall capacity
         /// of a stream because of excess capacity that is not being used. You must specify the
         /// shard to be merged and the adjacent shard for a stream. For more information about
-        /// merging shards, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-java-resharding-merge">Merge
+        /// merging shards, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-merge.html">Merge
         /// Two Shards</a> in the <i>Amazon Kinesis Developer Guide</i>.
         /// </para>
         ///  
@@ -1141,12 +1136,13 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// Partition keys are Unicode strings, with a maximum length limit of 256 bytes. An MD5
-        /// hash function is used to map partition keys to 128-bit integer values and to map associated
-        /// data records to shards using the hash key ranges of the shards. You can override hashing
-        /// the partition key to determine the shard by explicitly specifying a hash value using
-        /// the <code>ExplicitHashKey</code> parameter. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-defn-partition-key">Partition
-        /// Key</a> in the <i>Amazon Kinesis Developer Guide</i>.
+        /// Partition keys are Unicode strings, with a maximum length limit of 256 characters
+        /// for each key. An MD5 hash function is used to map partition keys to 128-bit integer
+        /// values and to map associated data records to shards using the hash key ranges of the
+        /// shards. You can override hashing the partition key to determine the shard by explicitly
+        /// specifying a hash value using the <code>ExplicitHashKey</code> parameter. For more
+        /// information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html">Adding
+        /// Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1157,8 +1153,8 @@ namespace Amazon.Kinesis
         /// <para>
         /// Sequence numbers generally increase over time. To guarantee strictly increasing ordering,
         /// use the <code>SequenceNumberForOrdering</code> parameter. For more information, see
-        /// <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-defn-sequence-number">Sequence
-        /// Number</a> in the <i>Amazon Kinesis Developer Guide</i>.
+        /// <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html">Adding
+        /// Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1257,15 +1253,15 @@ namespace Amazon.Kinesis
         /// the partition key and associated data to a specific shard. An MD5 hash function is
         /// used to map partition keys to 128-bit integer values and to map associated data records
         /// to shards. As a result of this hashing mechanism, all data records with the same partition
-        /// key map to the same shard within the stream. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-defn-partition-key">Partition
-        /// Key</a> in the <i>Amazon Kinesis Developer Guide</i>.
+        /// key map to the same shard within the stream. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html">Adding
+        /// Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// Each record in the <code>Records</code> array may include an optional parameter, <code>ExplicitHashKey</code>,
         /// which overrides the partition key to shard mapping. This parameter allows a data producer
         /// to determine explicitly the shard where the record is stored. For more information,
-        /// see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-putrecords">Adding
+        /// see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
         /// Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Developer Guide</i>.
         /// </para>
         ///  
@@ -1296,7 +1292,8 @@ namespace Amazon.Kinesis
         /// values: <code>ProvisionedThroughputExceededException</code> or <code>InternalFailure</code>.
         /// <code>ErrorMessage</code> provides more detailed information about the <code>ProvisionedThroughputExceededException</code>
         /// exception including the account ID, stream name, and shard ID of the record that was
-        /// throttled.
+        /// throttled. For more information about partially successful responses, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
+        /// Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1457,7 +1454,7 @@ namespace Amazon.Kinesis
         /// in the shard where the shard gets split in two. In many cases, the new hash key might
         /// simply be the average of the beginning and ending hash key, but it can be any hash
         /// key value in the range being mapped into the shard. For more information about splitting
-        /// shards, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-java-resharding-split">Split
+        /// shards, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-split.html">Split
         /// a Shard</a> in the <i>Amazon Kinesis Developer Guide</i>.
         /// </para>
         ///  
@@ -1490,9 +1487,9 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// The default limit for an AWS account is 10 shards per stream. If you need to create
-        /// a stream with more than 10 shards, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
-        /// AWS Support</a> to increase the limit on your account.
+        /// For the default shard limit for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+        /// Kinesis Limits</a>. If you need to increase this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+        /// AWS Support</a>
         /// </para>
         ///  
         /// <para>

@@ -38,8 +38,13 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CiphertextBlob. 
         /// <para>
-        /// Ciphertext that contains the wrapped key. You must store the blob and encryption context
-        /// so that the key can be used in a future operation. 
+        /// Ciphertext that contains the wrapped data key. You must store the blob and encryption
+        /// context so that the key can be used in a future decrypt operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+        /// 
         /// </para>
         /// </summary>
         public MemoryStream CiphertextBlob
@@ -57,7 +62,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// System generated unique identifier for the key.
+        /// System generated unique identifier of the key to be used to decrypt the encrypted
+        /// copy of the data key.
         /// </para>
         /// </summary>
         public string KeyId

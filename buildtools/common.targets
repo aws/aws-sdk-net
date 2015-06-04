@@ -9,11 +9,12 @@
 		<vstest2013>&quot;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe&quot;</vstest2013>
 		<fxcopcmd>&quot;C:\Program Files (x86)\Microsoft Fxcop 10.0\FxCopCmd.exe&quot;</fxcopcmd>
 		<Deployment>..\Deployment</Deployment>
+		<DocDeployment>..\DocDeployment</DocDeployment>
 	</PropertyGroup>
 
 	<!-- COMMON TARGETS -->
 	
-	<Target Name="prep" DependsOnTargets="build-custom-tasks">
+	<Target Name="clean" DependsOnTargets="build-custom-tasks">
 		<RemoveDir Directories="TestResults" />
 		<RemoveDir Directories="..\TestResults" />
 
@@ -21,16 +22,13 @@
 		<MakeDir Directories="$(Deployment)" />
 	</Target>
 	
-	<Target Name="consolidate-artifacts">
-		<ItemGroup>
-			<FilesToZip Include="$(Deployment)\**" />
+	<Target Name="consolidate-docartifacts">
+        <ItemGroup>
+			<FilesToZip Include="$(DocDeployment)\docs\**" />
 		</ItemGroup>
 		<Zip
-			InputDirectory="$(Deployment)"
-			OutputFileName="deployment.zip" />
-		<Move
-			SourceFiles="deployment.zip"
-			DestinationFolder="$(Deployment)" />
+			InputDirectory="$(DocDeployment)\docs"
+			OutputFileName="$(DocDeployment)\help.zip" />
 	</Target>
 
 	<!-- COMMON CUSTOM TASKS -->

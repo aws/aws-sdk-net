@@ -1,0 +1,94 @@
+{
+	"runtimePipelineOverride":{
+		"overrides":[
+			{"operation":"addBefore", "newType":"Amazon.ElasticFileSystem.Internal.IdempotencyHandler", "targetType":"Amazon.Runtime.Internal.Marshaller"}
+		]
+	},
+    "noArgOverloads": [
+    ],
+    "simpleConstructors" : {
+        "constructors" : {
+            "CreateFileSystemRequest" : {
+                "constructorForms" : [
+                    [
+                        "CreationToken"
+                    ]
+                ]
+            },
+            "DeleteFileSystemRequest" : {
+                "constructorForms" : [
+                    [
+                        "FileSystemId"
+                    ]
+                ]
+            },
+            "DeleteMountTargetRequest" : {
+                "constructorForms" : [
+                    [
+                        "MountTargetId"
+                    ]
+                ]
+            },
+            "DescribeMountTargetsRequest" : {
+                "constructorForms" : [
+                    [
+                        "FileSystemId"
+                    ]
+                ]
+            },
+            "DescribeTagsRequest" : {
+                "constructorForms" : [
+                    [
+                        "FileSystemId"
+                    ]
+                ]
+            }
+        }
+    },
+    "simpleMethods" : {
+        "operations" : {
+            "CreateFileSystem" : {
+                "methodForms" : [
+                    [
+                        "CreationToken"
+                    ]
+                ]
+            },
+            "DeleteFileSystem" : {
+                "methodForms" : [
+                    [
+                        "FileSystemId"
+                    ]
+                ]
+            },
+            "DeleteMountTarget" : {
+                "methodForms" : [
+                    [
+                        "MountTargetId"
+                    ]
+                ]
+            },
+            "DescribeMountTargetSecurityGroups" : {
+                "methodForms" : [
+                    [
+                        "MountTargetId"
+                    ]
+                ]
+            },
+            "DescribeMountTargets" : {
+                "methodForms" : [
+                    [
+                        "FileSystemId"
+                    ]
+                ]
+            },
+            "DescribeTags" : {
+                "methodForms" : [
+                    [
+                        "FileSystemId"
+                    ]
+                ]
+            }
+        }
+    }
+}

@@ -57,28 +57,27 @@ namespace Amazon.Kinesis.Model
     ///  
     /// <para>
     /// When you repeatedly read from an Amazon Kinesis stream use a <a>GetShardIterator</a>
-    /// request to get the first shard iterator to to use in your first <code>GetRecords</code>
-    /// request and then use the shard iterator returned by the <code>GetRecords</code> request
-    /// in <code>NextShardIterator</code> for subsequent reads. A new shard iterator is returned
-    /// by every <code>GetRecords</code> request in <code>NextShardIterator</code>, which
-    /// you use in the <code>ShardIterator</code> parameter of the next <code>GetRecords</code>
-    /// request. 
+    /// request to get the first shard iterator for use in your first <a>GetRecords</a> request
+    /// and then use the shard iterator returned by the <a>GetRecords</a> request in <code>NextShardIterator</code>
+    /// for subsequent reads. A new shard iterator is returned by every <a>GetRecords</a>
+    /// request in <code>NextShardIterator</code>, which you use in the <code>ShardIterator</code>
+    /// parameter of the next <a>GetRecords</a> request. 
     /// </para>
     ///  
     /// <para>
-    /// If a <code>GetShardIterator</code> request is made too often, you receive a <code>ProvisionedThroughputExceededException</code>.
+    /// If a <a>GetShardIterator</a> request is made too often, you receive a <code>ProvisionedThroughputExceededException</code>.
     /// For more information about throughput limits, see <a>GetRecords</a>.
     /// </para>
     ///  
     /// <para>
-    /// If the shard is closed, the iterator can't return more data, and <code>GetShardIterator</code>
+    /// If the shard is closed, the iterator can't return more data, and <a>GetShardIterator</a>
     /// returns <code>null</code> for its <code>ShardIterator</code>. A shard can be closed
     /// using <a>SplitShard</a> or <a>MergeShards</a>.
     /// </para>
     ///  
     /// <para>
-    /// <code>GetShardIterator</code> has a limit of 5 transactions per second per account
-    /// per open shard.
+    /// <a>GetShardIterator</a> has a limit of 5 transactions per second per account per open
+    /// shard.
     /// </para>
     /// </summary>
     public partial class GetShardIteratorRequest : AmazonKinesisRequest

@@ -65,7 +65,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The stack name or ID that includes the resource that you want to signal.
+        /// The stack name or unique stack ID that includes the resource that you want to signal.
         /// </para>
         /// </summary>
         public string StackName

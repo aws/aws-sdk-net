@@ -41,8 +41,6 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "1.0.0.0";
-
         internal const int DefaultMaxRetry = 3;
         private const int DefaultConnectionLimit = 50;
         private const int DefaultMaxIdleTime = 50 * 1000; // 50 seconds
@@ -142,61 +140,7 @@ namespace Amazon.Util
 
         #endregion
 
-        #region UserAgent
-
-        static string _versionNumber;
-        static string _sdkUserAgent;
-        static string _customData;
         
-        /// <summary>
-        /// The AWS SDK User Agent
-        /// </summary>        
-        public static string SDKUserAgent
-        {
-            get
-            {
-                return _sdkUserAgent;
-            }
-        }
-
-        static AWSSDKUtils()
-        {
-            BuildUserAgentString();
-        }
-
-        public static void SetUserAgent(string productName, string versionNumber)
-        {
-            SetUserAgent(productName, versionNumber, null);
-        }
-
-        public static void SetUserAgent(string productName, string versionNumber, string customData)
-        {
-            _userAgentBaseName = productName;
-            _versionNumber = versionNumber;
-            _customData = customData;
-            
-            BuildUserAgentString();
-        }
-        
-        static void BuildUserAgentString()
-        {
-            if (_versionNumber == null)
-            {
-                _versionNumber = SDKVersionNumber;
-            }
-
-            _sdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} .NET Runtime/{2} .NET Framework/{3} OS/{4} {5}",
-                _userAgentBaseName,
-                _versionNumber,
-                DetermineRuntime(),
-                DetermineFramework(),
-                DetermineOSVersion(),
-                _customData).Trim();
-        }
-
-
-
-        #endregion
 
         #region Internal Methods
 
@@ -576,8 +520,18 @@ namespace Amazon.Util
         /// </summary>
         /// <param name="source"></param>
         /// <param name="destination"></param>
+        public static void CopyStream(Stream source, Stream destination)
+        {
+            CopyStream(source, destination, DefaultBufferSize);
+        }
+
+        /// <summary>
+        /// Utility method for copy the contents of the source stream to the destination stream.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="destination"></param>
         /// <param name="bufferSize"></param>
-        public static void CopyStream(Stream source, Stream destination, int bufferSize = 8192)
+        public static void CopyStream(Stream source, Stream destination, int bufferSize)
         {
             if (source == null)
                 throw new ArgumentNullException("source");

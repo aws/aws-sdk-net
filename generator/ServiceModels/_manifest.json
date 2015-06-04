@@ -228,6 +228,16 @@
         {
             "active": true,
 
+            "model": "ds",
+            "base-name": "DirectoryService",
+            "region-lookup-name": "ds",
+            "authentication-service-name": "ds",
+            "service-url": "https://ds.us-east-1.amazonaws.com",
+            "synopsis": "AWS Directory Service is a managed service that allows you to connect your AWS resources with an existing on-premises Microsoft Active Directory or to set up a new, stand-alone directory in the AWS Cloud."
+        },        
+		{
+            "active": true,
+
             "model": "dynamodb",
             "namespace": "Amazon.DynamoDBv2",
             "base-name": "DynamoDB",
@@ -256,6 +266,16 @@
             "authentication-service-name": "ecs",
             "service-url": "https://ecs.us-east-1.amazonaws.com",
             "synopsis": "Amazon EC2 Container Service is a highly scalable, high performance container management service that supports Docker containers and allows you to easily run distributed applications on a managed cluster of Amazon EC2 instances."
+        },
+        {
+            "active": true,
+
+            "model": "efs",
+            "base-name": "ElasticFileSystem",
+            "region-lookup-name": "elasticfilesystem",
+            "authentication-service-name": "elasticfilesystem",
+            "service-url": "https://elasticfilesystem.us-west-2.amazonaws.com",
+            "mobile-platforms": [ "WinRT" ]
         },
         {
             "active": true,
@@ -432,6 +452,7 @@
             "base-name": "S3",
             "region-lookup-name": "s3",
             "service-url": "https://s3.amazonaws.com/",
+			"authentication-service-name": "s3",
             "synopsis": "Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage."
         },
         {

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -368,8 +368,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RootDeviceType. 
         /// <para>
-        /// The type of root device used by the AMI. The AMI can use an Amazon EBS volume or an
-        /// instance store volume.
+        /// The type of root device used by the AMI. The AMI can use an EBS volume or an instance
+        /// store volume.
         /// </para>
         /// </summary>
         public DeviceType RootDeviceType

@@ -19,5 +19,6 @@ sdk/packages/**
 sdk/test/PCLTests/AndroidTests/packages/**
 
 Deployment/**
+DocDeployment/**
 
 **/*.userprefs

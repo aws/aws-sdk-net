@@ -82,7 +82,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates DeleteArchiveRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
+        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID.</param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="archiveId">The ID of the archive to delete.</param>
         public DeleteArchiveRequest(string accountId, string vaultName, string archiveId)
@@ -95,10 +95,11 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account
-        /// ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated
-        /// with the credentials used to sign the request. If you specify your Account ID, do
-        /// not include hyphens in it. 
+        /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
+        /// vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos
+        /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
+        /// credentials used to sign the request. If you use an account ID, do not include any
+        /// hyphens (apos-apos) in the ID.
         /// </para>
         /// </summary>
         public string AccountId

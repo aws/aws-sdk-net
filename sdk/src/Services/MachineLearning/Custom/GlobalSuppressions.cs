@@ -32,3 +32,5 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.MachineLearning.Model.GetDataSourceResponse.#LogUri")]
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.MachineLearning.Model.GetEvaluationResponse.#LogUri")]
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.MachineLearning.Model.GetMLModelResponse.#LogUri")]
+// Suppress method should be property
+[module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.MachineLearning.Util.RealtimePredictor.#GetEndpointAsync()")]

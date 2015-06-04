@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private int? _fromPort;
         private string _ipProtocol;
         private List<string> _ipRanges = new List<string>();
+        private List<PrefixListId> _prefixListIds = new List<PrefixListId>();
         private int? _toPort;
         private List<UserIdGroupPair> _userIdGroupPairs = new List<UserIdGroupPair>();
 
@@ -99,6 +100,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpRanges()
         {
             return this._ipRanges != null && this._ipRanges.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrefixListIds. 
+        /// <para>
+        /// (Valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
+        /// <a>DescribeSecurityGroups</a> only) One or more prefix list IDs for an AWS service.
+        /// In an <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you
+        /// want to access through a VPC endpoint from instances associated with the security
+        /// group.
+        /// </para>
+        /// </summary>
+        public List<PrefixListId> PrefixListIds
+        {
+            get { return this._prefixListIds; }
+            set { this._prefixListIds = value; }
+        }
+
+        // Check to see if PrefixListIds property is set
+        internal bool IsSetPrefixListIds()
+        {
+            return this._prefixListIds != null && this._prefixListIds.Count > 0; 
         }
 
         /// <summary>

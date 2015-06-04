@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 
 using System;
@@ -209,6 +209,67 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type BatchState.
+    /// </summary>
+    public class BatchState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for BatchState
+        /// </summary>
+        public static readonly BatchState Active = new BatchState("active");
+        /// <summary>
+        /// Constant Cancelled for BatchState
+        /// </summary>
+        public static readonly BatchState Cancelled = new BatchState("cancelled");
+        /// <summary>
+        /// Constant Cancelled_running for BatchState
+        /// </summary>
+        public static readonly BatchState Cancelled_running = new BatchState("cancelled_running");
+        /// <summary>
+        /// Constant Cancelled_terminating for BatchState
+        /// </summary>
+        public static readonly BatchState Cancelled_terminating = new BatchState("cancelled_terminating");
+        /// <summary>
+        /// Constant Failed for BatchState
+        /// </summary>
+        public static readonly BatchState Failed = new BatchState("failed");
+        /// <summary>
+        /// Constant Submitted for BatchState
+        /// </summary>
+        public static readonly BatchState Submitted = new BatchState("submitted");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public BatchState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchState FindValue(string value)
+        {
+            return FindValue<BatchState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BundleTaskState.
     /// </summary>
     public class BundleTaskState : ConstantClass
@@ -267,6 +328,59 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BundleTaskState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CancelBatchErrorCode.
+    /// </summary>
+    public class CancelBatchErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FleetRequestIdDoesNotExist for CancelBatchErrorCode
+        /// </summary>
+        public static readonly CancelBatchErrorCode FleetRequestIdDoesNotExist = new CancelBatchErrorCode("fleetRequestIdDoesNotExist");
+        /// <summary>
+        /// Constant FleetRequestIdMalformed for CancelBatchErrorCode
+        /// </summary>
+        public static readonly CancelBatchErrorCode FleetRequestIdMalformed = new CancelBatchErrorCode("fleetRequestIdMalformed");
+        /// <summary>
+        /// Constant FleetRequestNotInCancellableState for CancelBatchErrorCode
+        /// </summary>
+        public static readonly CancelBatchErrorCode FleetRequestNotInCancellableState = new CancelBatchErrorCode("fleetRequestNotInCancellableState");
+        /// <summary>
+        /// Constant UnexpectedError for CancelBatchErrorCode
+        /// </summary>
+        public static readonly CancelBatchErrorCode UnexpectedError = new CancelBatchErrorCode("unexpectedError");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public CancelBatchErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CancelBatchErrorCode FindValue(string value)
+        {
+            return FindValue<CancelBatchErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CancelBatchErrorCode(string value)
         {
             return FindValue(value);
         }
@@ -707,6 +821,55 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type EventType.
+    /// </summary>
+    public class EventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Error for EventType
+        /// </summary>
+        public static readonly EventType Error = new EventType("error");
+        /// <summary>
+        /// Constant FleetRequestChange for EventType
+        /// </summary>
+        public static readonly EventType FleetRequestChange = new EventType("fleetRequestChange");
+        /// <summary>
+        /// Constant InstanceChange for EventType
+        /// </summary>
+        public static readonly EventType InstanceChange = new EventType("instanceChange");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public EventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventType FindValue(string value)
+        {
+            return FindValue<EventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExportEnvironment.
     /// </summary>
     public class ExportEnvironment : ConstantClass
@@ -973,6 +1136,26 @@ namespace Amazon.EC2
         /// Constant Deregistered for ImageState
         /// </summary>
         public static readonly ImageState Deregistered = new ImageState("deregistered");
+        /// <summary>
+        /// Constant Error for ImageState
+        /// </summary>
+        public static readonly ImageState Error = new ImageState("error");
+        /// <summary>
+        /// Constant Failed for ImageState
+        /// </summary>
+        public static readonly ImageState Failed = new ImageState("failed");
+        /// <summary>
+        /// Constant Invalid for ImageState
+        /// </summary>
+        public static readonly ImageState Invalid = new ImageState("invalid");
+        /// <summary>
+        /// Constant Pending for ImageState
+        /// </summary>
+        public static readonly ImageState Pending = new ImageState("pending");
+        /// <summary>
+        /// Constant Transient for ImageState
+        /// </summary>
+        public static readonly ImageState Transient = new ImageState("transient");
 
         /// <summary>
         /// Default Constructor
@@ -1622,6 +1805,51 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MonitoringState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MoveStatus.
+    /// </summary>
+    public class MoveStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MovingToVpc for MoveStatus
+        /// </summary>
+        public static readonly MoveStatus MovingToVpc = new MoveStatus("movingToVpc");
+        /// <summary>
+        /// Constant RestoringToClassic for MoveStatus
+        /// </summary>
+        public static readonly MoveStatus RestoringToClassic = new MoveStatus("restoringToClassic");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public MoveStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MoveStatus FindValue(string value)
+        {
+            return FindValue<MoveStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MoveStatus(string value)
         {
             return FindValue(value);
         }
@@ -2801,6 +3029,108 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SpotInstanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type State.
+    /// </summary>
+    public class State : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for State
+        /// </summary>
+        public static readonly State Available = new State("Available");
+        /// <summary>
+        /// Constant Deleted for State
+        /// </summary>
+        public static readonly State Deleted = new State("Deleted");
+        /// <summary>
+        /// Constant Deleting for State
+        /// </summary>
+        public static readonly State Deleting = new State("Deleting");
+        /// <summary>
+        /// Constant Pending for State
+        /// </summary>
+        public static readonly State Pending = new State("Pending");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public State(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static State FindValue(string value)
+        {
+            return FindValue<State>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator State(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Status.
+    /// </summary>
+    public class Status : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InClassic for Status
+        /// </summary>
+        public static readonly Status InClassic = new Status("InClassic");
+        /// <summary>
+        /// Constant InVpc for Status
+        /// </summary>
+        public static readonly Status InVpc = new Status("InVpc");
+        /// <summary>
+        /// Constant MoveInProgress for Status
+        /// </summary>
+        public static readonly Status MoveInProgress = new Status("MoveInProgress");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public Status(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Status FindValue(string value)
+        {
+            return FindValue<Status>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Status(string value)
         {
             return FindValue(value);
         }

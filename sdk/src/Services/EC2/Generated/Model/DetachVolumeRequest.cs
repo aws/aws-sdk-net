@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachVolume operation.
-    /// Detaches an Amazon EBS volume from an instance. Make sure to unmount any file systems
-    /// on the device within your operating system before detaching the volume. Failure to
-    /// do so results in the volume being stuck in a busy state while detaching.
+    /// Detaches an EBS volume from an instance. Make sure to unmount any file systems on
+    /// the device within your operating system before detaching the volume. Failure to do
+    /// so results in the volume being stuck in a busy state while detaching.
     /// 
     ///  
     /// <para>

@@ -45,13 +45,18 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// This parameter depends on the repository type. 
+        /// When included in a request, the parameter depends on the repository type. 
         /// </para>
         ///  <ul> <li>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM
         /// secret access key.</li> <li>For HTTP bundles and Subversion repositories, set <code>Password</code>
         /// to the password.</li> </ul> 
         /// <para>
         /// For more information on how to safely handle IAM credentials, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"></a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// In responses, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the
+        /// actual value.
         /// </para>
         /// </summary>
         public string Password
@@ -89,7 +94,12 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property SshKey. 
         /// <para>
-        /// The repository's SSH key.
+        /// In requests, the repository's SSH key.
+        /// </para>
+        ///  
+        /// <para>
+        /// In responses, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the
+        /// actual value.
         /// </para>
         /// </summary>
         public string SshKey
