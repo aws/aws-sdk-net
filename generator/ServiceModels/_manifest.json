@@ -54,9 +54,6 @@
             "template": "PCLProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile" ],
             "extraTestProjects": [
-                "test/CredentialsVendor/CredentialsVendor.csproj",
-                "test/PCLTests/CommonTests/CommonTests.csproj",
-                "test/PCLTests/AndroidTests/AndroidTests.csproj"
             ]
         }
     ],

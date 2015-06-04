@@ -87,8 +87,12 @@ namespace ServiceClientGenerator
             // emit per-platform solutions that are easier to handle
             foreach (var projectConfig in ProjectFileConfigurations)
             {
-                GeneratePlatformSpecificSolution(projectConfig);
+                GeneratePlatformSpecificSolution(projectConfig, true);
             }
+
+            // Include solutions that Travis CI can build
+            GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net35), false, "AWSSDK.Net35.Travis.sln");
+            GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net45), false, "AWSSDK.Net45.Travis.sln");
         }
 
         // adds any necessary projects to the collection prior to generating the solution file(s)
@@ -129,6 +133,13 @@ namespace ServiceClientGenerator
                     _allProjects.Add(projectName, projectConfig);
                 }
             }
+        }
+
+        private ProjectFileConfiguration GetProjectConfig(string configType)
+        {
+            var config = ProjectFileConfigurations
+                .Single(pfc => string.Equals(pfc.Name, configType, StringComparison.Ordinal));
+            return config;
         }
 
         private static string GetProjectGuid(string projectFile)

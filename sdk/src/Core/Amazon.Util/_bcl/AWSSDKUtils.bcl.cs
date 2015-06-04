@@ -31,41 +31,6 @@ namespace Amazon.Util
 {
     public static partial class AWSSDKUtils
     {
-#if BCL45
-        static string _userAgentBaseName = "aws-sdk-dotnet-45";
-#else
-        static string _userAgentBaseName = "aws-sdk-dotnet-35";
-#endif
-        static string DetermineRuntime()
-        {
-            return string.Format(CultureInfo.InvariantCulture, "{0}.{1}", Environment.Version.Major, Environment.Version.MajorRevision);
-        }
-
-        static string DetermineFramework()
-        {
-            try
-            {
-                if (Environment.Version.Major >= 4 && Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\Net Framework Setup\\NDP\\v4") != null)
-                    return "4.0";
-                if (Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\Net Framework Setup\\NDP\\v3.5") != null)
-                    return "3.5";
-                if (Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\Net Framework Setup\\NDP\\v3.0") != null)
-                    return "3.0";
-                if (Registry.LocalMachine.OpenSubKey(@"Software\\Microsoft\\Net Framework Setup\\NDP\\v2.0.50727") != null)
-                    return "2.0";
-            }
-            catch
-            {
-            }
-
-            return "Unknown";
-        }
-
-        static string DetermineOSVersion()
-        {
-            return Environment.OSVersion.Version.ToString();
-        }
-
         public static void ForceCanonicalPathAndQuery(Uri uri)
         {
             try
