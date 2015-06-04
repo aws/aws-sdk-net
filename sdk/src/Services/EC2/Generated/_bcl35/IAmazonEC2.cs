@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 
 
@@ -470,21 +470,20 @@ namespace Amazon.EC2
         #region  AttachVolume
 
         /// <summary>
-        /// Attaches an Amazon EBS volume to a running or stopped instance and exposes it to the
-        /// instance with the specified device name.
+        /// Attaches an EBS volume to a running or stopped instance and exposes it to the instance
+        /// with the specified device name.
         /// 
         ///  
         /// <para>
-        /// Encrypted Amazon EBS volumes may only be attached to instances that support Amazon
-        /// EBS encryption. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+        /// Encrypted EBS volumes may only be attached to instances that support Amazon EBS encryption.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
         /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For a list of supported device names, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
-        /// an Amazon EBS Volume to an Instance</a>. Any device names that aren't reserved for
-        /// instance store volumes can be used for Amazon EBS volumes. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
+        /// an EBS Volume to an Instance</a>. Any device names that aren't reserved for instance
+        /// store volumes can be used for EBS volumes. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
         /// EC2 Instance Store</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
@@ -502,7 +501,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about Amazon EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
+        /// For more information about EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
         /// Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -951,6 +950,42 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CancelSpotFleetRequests
+
+        /// <summary>
+        /// Cancels the specified Spot fleet requests.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelSpotFleetRequests service method.</param>
+        /// 
+        /// <returns>The response from the CancelSpotFleetRequests service method, as returned by EC2.</returns>
+        CancelSpotFleetRequestsResponse CancelSpotFleetRequests(CancelSpotFleetRequestsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelSpotFleetRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelSpotFleetRequests operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelSpotFleetRequests
+        ///         operation.</returns>
+        IAsyncResult BeginCancelSpotFleetRequests(CancelSpotFleetRequestsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelSpotFleetRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelSpotFleetRequests.</param>
+        /// 
+        /// <returns>Returns a  CancelSpotFleetRequestsResult from EC2.</returns>
+        CancelSpotFleetRequestsResponse EndCancelSpotFleetRequests(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CancelSpotInstanceRequests
 
         /// <summary>
@@ -1041,7 +1076,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Initiates the copy of an AMI from the specified source region to the current region.
         /// You specify the destination region by using its endpoint when making the request.
-        /// AMIs that use encrypted Amazon EBS snapshots cannot be copied with this method.
+        /// AMIs that use encrypted EBS snapshots cannot be copied with this method.
         /// 
         ///  
         /// <para>
@@ -1083,14 +1118,14 @@ namespace Amazon.EC2
         #region  CopySnapshot
 
         /// <summary>
-        /// Copies a point-in-time snapshot of an Amazon EBS volume and stores it in Amazon S3.
-        /// You can copy the snapshot within the same region or from one region to another. You
-        /// can use the snapshot to create Amazon EBS volumes or Amazon Machine Images (AMIs).
-        /// The snapshot is copied to the regional endpoint that you send the HTTP request to.
+        /// Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can
+        /// copy the snapshot within the same region or from one region to another. You can use
+        /// the snapshot to create EBS volumes or Amazon Machine Images (AMIs). The snapshot is
+        /// copied to the regional endpoint that you send the HTTP request to.
         /// 
         ///  
         /// <para>
-        /// Copies of encrypted Amazon EBS snapshots remain encrypted. Copies of unencrypted snapshots
+        /// Copies of encrypted EBS snapshots remain encrypted. Copies of unencrypted snapshots
         /// remain unencrypted.
         /// </para>
         ///  <note> 
@@ -1324,7 +1359,7 @@ namespace Amazon.EC2
         #region  CreateInstanceExportTask
 
         /// <summary>
-        /// Exports a running or stopped instance to an Amazon S3 bucket.
+        /// Exports a running or stopped instance to an S3 bucket.
         /// 
         ///  
         /// <para>
@@ -1908,9 +1943,9 @@ namespace Amazon.EC2
         #region  CreateSnapshot
 
         /// <summary>
-        /// Creates a snapshot of an Amazon EBS volume and stores it in Amazon S3. You can use
-        /// snapshots for backups, to make copies of Amazon EBS volumes, and to save data before
-        /// shutting down an instance.
+        /// Creates a snapshot of an EBS volume and stores it in Amazon S3. You can use snapshots
+        /// for backups, to make copies of EBS volumes, and to save data before shutting down
+        /// an instance.
         /// 
         ///  
         /// <para>
@@ -1920,19 +1955,18 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You can take a snapshot of an attached volume that is in use. However, snapshots only
-        /// capture data that has been written to your Amazon EBS volume at the time the snapshot
-        /// command is issued; this may exclude any data that has been cached by any applications
-        /// or the operating system. If you can pause any file systems on the volume long enough
-        /// to take a snapshot, your snapshot should be complete. However, if you cannot pause
-        /// all file writes to the volume, you should unmount the volume from within the instance,
-        /// issue the snapshot command, and then remount the volume to ensure a consistent and
-        /// complete snapshot. You may remount and use your volume while the snapshot status is
-        /// <code>pending</code>.
+        /// capture data that has been written to your EBS volume at the time the snapshot command
+        /// is issued; this may exclude any data that has been cached by any applications or the
+        /// operating system. If you can pause any file systems on the volume long enough to take
+        /// a snapshot, your snapshot should be complete. However, if you cannot pause all file
+        /// writes to the volume, you should unmount the volume from within the instance, issue
+        /// the snapshot command, and then remount the volume to ensure a consistent and complete
+        /// snapshot. You may remount and use your volume while the snapshot status is <code>pending</code>.
         /// </para>
         ///  
         /// <para>
-        /// To create a snapshot for Amazon EBS volumes that serve as root devices, you should
-        /// stop the instance before taking the snapshot.
+        /// To create a snapshot for EBS volumes that serve as root devices, you should stop the
+        /// instance before taking the snapshot.
         /// </para>
         ///  
         /// <para>
@@ -2133,15 +2167,15 @@ namespace Amazon.EC2
         #region  CreateVolume
 
         /// <summary>
-        /// Creates an Amazon EBS volume that can be attached to an instance in the same Availability
+        /// Creates an EBS volume that can be attached to an instance in the same Availability
         /// Zone. The volume is created in the regional endpoint that you send the HTTP request
         /// to. For more information see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
         /// and Endpoints</a>.
         /// 
         ///  
         /// <para>
-        /// You can create a new empty volume or restore a volume from an Amazon EBS snapshot.
-        /// Any AWS Marketplace product codes from the snapshot are propagated to the volume.
+        /// You can create a new empty volume or restore a volume from an EBS snapshot. Any AWS
+        /// Marketplace product codes from the snapshot are propagated to the volume.
         /// </para>
         ///  
         /// <para>
@@ -2237,6 +2271,51 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  CreateVpcResult from EC2.</returns>
         CreateVpcResponse EndCreateVpc(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateVpcEndpoint
+
+        /// <summary>
+        /// Creates a VPC endpoint for a specified AWS service. An endpoint enables you to create
+        /// a private connection between your VPC and another AWS service in your account. You
+        /// can specify an endpoint policy to attach to the endpoint that will control access
+        /// to the service from your VPC. You can also specify the VPC route tables that use the
+        /// endpoint.
+        /// 
+        ///  
+        /// <para>
+        /// Currently, only endpoints to Amazon S3 are supported.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcEndpoint service method, as returned by EC2.</returns>
+        CreateVpcEndpointResponse CreateVpcEndpoint(CreateVpcEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcEndpoint
+        ///         operation.</returns>
+        IAsyncResult BeginCreateVpcEndpoint(CreateVpcEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcEndpoint.</param>
+        /// 
+        /// <returns>Returns a  CreateVpcEndpointResult from EC2.</returns>
+        CreateVpcEndpointResponse EndCreateVpcEndpoint(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2868,8 +2947,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You cannot delete a snapshot of the root device of an Amazon EBS volume used by a
-        /// registered AMI. You must first de-register the AMI before you can delete the snapshot.
+        /// You cannot delete a snapshot of the root device of an EBS volume used by a registered
+        /// AMI. You must first de-register the AMI before you can delete the snapshot.
         /// </para>
         ///  
         /// <para>
@@ -3036,7 +3115,7 @@ namespace Amazon.EC2
         #region  DeleteVolume
 
         /// <summary>
-        /// Deletes the specified Amazon EBS volume. The volume must be in the <code>available</code>
+        /// Deletes the specified EBS volume. The volume must be in the <code>available</code>
         /// state (not attached to an instance).
         /// 
         ///  <note> 
@@ -3117,6 +3196,43 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  DeleteVpcResult from EC2.</returns>
         DeleteVpcResponse EndDeleteVpc(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteVpcEndpoints
+
+        /// <summary>
+        /// Deletes one or more specified VPC endpoints. Deleting the endpoint also deletes the
+        /// endpoint routes in the route tables that were associated with the endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcEndpoints service method, as returned by EC2.</returns>
+        DeleteVpcEndpointsResponse DeleteVpcEndpoints(DeleteVpcEndpointsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoints operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcEndpoints
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteVpcEndpoints(DeleteVpcEndpointsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVpcEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcEndpoints.</param>
+        /// 
+        /// <returns>Returns a  DeleteVpcEndpointsResult from EC2.</returns>
+        DeleteVpcEndpointsResponse EndDeleteVpcEndpoints(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3989,7 +4105,7 @@ namespace Amazon.EC2
         #region  DescribeImportSnapshotTasks
 
         /// <summary>
-        /// Displays details about an import snapshot tasks that is already created.
+        /// Describes your import snapshot tasks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeImportSnapshotTasks service method.</param>
         /// 
@@ -4137,164 +4253,68 @@ namespace Amazon.EC2
         #region  DescribeInstanceStatus
 
         /// <summary>
-        /// Describes the status of one or more instances, including any scheduled events.
+        /// Describes the status of one or more instances.
         /// 
         ///  
         /// <para>
-        /// Instance status has two main components:
+        /// Instance status includes the following components:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// System Status reports impaired functionality that stems from issues related to the
-        /// systems that support an instance, such as such as hardware failures and network connectivity
-        /// problems. This call reports such problems as impaired reachability.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Instance Status reports impaired functionality that arises from problems internal
-        /// to the instance. This call reports such problems as impaired reachability.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Instance status provides information about four types of scheduled events for an instance
-        /// that may require your attention:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Scheduled Reboot: When Amazon EC2 determines that an instance must be rebooted, the
-        /// instances status returns one of two event codes: <code>system-reboot</code> or <code>instance-reboot</code>.
-        /// System reboot commonly occurs if certain maintenance or upgrade operations require
-        /// a reboot of the underlying host that supports an instance. Instance reboot commonly
-        /// occurs if the instance must be rebooted, rather than the underlying host. Rebooting
-        /// events include a scheduled start and end time.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// System Maintenance: When Amazon EC2 determines that an instance requires maintenance
-        /// that requires power or network impact, the instance status is the event code <code>system-maintenance</code>.
-        /// System maintenance is either power maintenance or network maintenance. For power maintenance,
-        /// your instance will be unavailable for a brief period of time and then rebooted. For
-        /// network maintenance, your instance will experience a brief loss of network connectivity.
-        /// System maintenance events include a scheduled start and end time. You will also be
-        /// notified by email if one of your instances is set for system maintenance. The email
-        /// message indicates when your instance is scheduled for maintenance.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Scheduled Retirement: When Amazon EC2 determines that an instance must be shut down,
-        /// the instance status is the event code <code>instance-retirement</code>. Retirement
-        /// commonly occurs when the underlying host is degraded and must be replaced. Retirement
-        /// events include a scheduled start and end time. You will also be notified by email
-        /// if one of your instances is set to retiring. The email message indicates when your
-        /// instance will be permanently retired.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Scheduled Stop: When Amazon EC2 determines that an instance must be shut down, the
-        /// instances status returns an event code called <code>instance-stop</code>. Stop events
-        /// include a scheduled start and end time. You will also be notified by email if one
-        /// of your instances is set to stop. The email message indicates when your instance will
-        /// be stopped.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When your instance is retired, it will either be terminated (if its root device type
-        /// is the instance-store) or stopped (if its root device type is an EBS volume). Instances
-        /// stopped due to retirement will not be restarted, but you can do so manually. You can
-        /// also avoid retirement of EBS-backed instances by manually restarting your instance
-        /// when its event code is <code>instance-retirement</code>. This ensures that your instance
-        /// is started on a different underlying host.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about failed status checks, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
+        /// <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
+        /// to identify hardware and software issues. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
+        /// Checks for Your Instances</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>. For more information about working with scheduled events, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions">Working
-        /// with an Instance That Has a Scheduled Event</a> in the <i>Amazon Elastic Compute Cloud
-        /// User Guide</i>.
+        /// Guide</i>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
+        /// terminate) for your instances related to hardware issues, software updates, or system
+        /// maintenance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
+        /// Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <b>Instance state</b> - You can manage your instances from the moment you launch them
+        /// through their termination. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+        /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeInstanceStatus service method, as returned by EC2.</returns>
         DescribeInstanceStatusResponse DescribeInstanceStatus();
 
         /// <summary>
-        /// Describes the status of one or more instances, including any scheduled events.
+        /// Describes the status of one or more instances.
         /// 
         ///  
         /// <para>
-        /// Instance status has two main components:
+        /// Instance status includes the following components:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// System Status reports impaired functionality that stems from issues related to the
-        /// systems that support an instance, such as such as hardware failures and network connectivity
-        /// problems. This call reports such problems as impaired reachability.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Instance Status reports impaired functionality that arises from problems internal
-        /// to the instance. This call reports such problems as impaired reachability.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Instance status provides information about four types of scheduled events for an instance
-        /// that may require your attention:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Scheduled Reboot: When Amazon EC2 determines that an instance must be rebooted, the
-        /// instances status returns one of two event codes: <code>system-reboot</code> or <code>instance-reboot</code>.
-        /// System reboot commonly occurs if certain maintenance or upgrade operations require
-        /// a reboot of the underlying host that supports an instance. Instance reboot commonly
-        /// occurs if the instance must be rebooted, rather than the underlying host. Rebooting
-        /// events include a scheduled start and end time.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// System Maintenance: When Amazon EC2 determines that an instance requires maintenance
-        /// that requires power or network impact, the instance status is the event code <code>system-maintenance</code>.
-        /// System maintenance is either power maintenance or network maintenance. For power maintenance,
-        /// your instance will be unavailable for a brief period of time and then rebooted. For
-        /// network maintenance, your instance will experience a brief loss of network connectivity.
-        /// System maintenance events include a scheduled start and end time. You will also be
-        /// notified by email if one of your instances is set for system maintenance. The email
-        /// message indicates when your instance is scheduled for maintenance.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Scheduled Retirement: When Amazon EC2 determines that an instance must be shut down,
-        /// the instance status is the event code <code>instance-retirement</code>. Retirement
-        /// commonly occurs when the underlying host is degraded and must be replaced. Retirement
-        /// events include a scheduled start and end time. You will also be notified by email
-        /// if one of your instances is set to retiring. The email message indicates when your
-        /// instance will be permanently retired.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Scheduled Stop: When Amazon EC2 determines that an instance must be shut down, the
-        /// instances status returns an event code called <code>instance-stop</code>. Stop events
-        /// include a scheduled start and end time. You will also be notified by email if one
-        /// of your instances is set to stop. The email message indicates when your instance will
-        /// be stopped.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When your instance is retired, it will either be terminated (if its root device type
-        /// is the instance-store) or stopped (if its root device type is an EBS volume). Instances
-        /// stopped due to retirement will not be restarted, but you can do so manually. You can
-        /// also avoid retirement of EBS-backed instances by manually restarting your instance
-        /// when its event code is <code>instance-retirement</code>. This ensures that your instance
-        /// is started on a different underlying host.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about failed status checks, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
+        /// <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
+        /// to identify hardware and software issues. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
+        /// Checks for Your Instances</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>. For more information about working with scheduled events, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions">Working
-        /// with an Instance That Has a Scheduled Event</a> in the <i>Amazon Elastic Compute Cloud
-        /// User Guide</i>.
+        /// Guide</i>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
+        /// terminate) for your instances related to hardware issues, software updates, or system
+        /// maintenance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
+        /// Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <b>Instance state</b> - You can manage your instances from the moment you launch them
+        /// through their termination. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+        /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceStatus service method.</param>
         /// 
@@ -4422,6 +4442,44 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  DescribeKeyPairsResult from EC2.</returns>
         DescribeKeyPairsResponse EndDescribeKeyPairs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeMovingAddresses
+
+        /// <summary>
+        /// Describes your Elastic IP addresses that are being moved to the EC2-VPC platform,
+        /// or that are being restored to the EC2-Classic platform. This request does not return
+        /// information about any other Elastic IP addresses in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMovingAddresses service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMovingAddresses service method, as returned by EC2.</returns>
+        DescribeMovingAddressesResponse DescribeMovingAddresses(DescribeMovingAddressesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMovingAddresses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMovingAddresses operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMovingAddresses
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeMovingAddresses(DescribeMovingAddressesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMovingAddresses operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMovingAddresses.</param>
+        /// 
+        /// <returns>Returns a  DescribeMovingAddressesResult from EC2.</returns>
+        DescribeMovingAddressesResponse EndDescribeMovingAddresses(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4603,6 +4661,45 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  DescribePlacementGroupsResult from EC2.</returns>
         DescribePlacementGroupsResponse EndDescribePlacementGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribePrefixLists
+
+        /// <summary>
+        /// Describes available AWS services in a prefix list format, which includes the prefix
+        /// list name and prefix list ID of the service and the IP address range for the service.
+        /// A prefix list ID is required for creating an outbound security group rule that allows
+        /// traffic from a VPC to access an AWS service through a VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrefixLists service method.</param>
+        /// 
+        /// <returns>The response from the DescribePrefixLists service method, as returned by EC2.</returns>
+        DescribePrefixListsResponse DescribePrefixLists(DescribePrefixListsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePrefixLists operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrefixLists operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePrefixLists
+        ///         operation.</returns>
+        IAsyncResult BeginDescribePrefixLists(DescribePrefixListsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePrefixLists operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePrefixLists.</param>
+        /// 
+        /// <returns>Returns a  DescribePrefixListsResult from EC2.</returns>
+        DescribePrefixListsResponse EndDescribePrefixLists(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5059,7 +5156,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about Amazon EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+        /// For more information about EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
         /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5097,10 +5194,10 @@ namespace Amazon.EC2
         #region  DescribeSnapshots
 
         /// <summary>
-        /// Describes one or more of the Amazon EBS snapshots available to you. Available snapshots
-        /// include public snapshots available for any AWS account to launch, private snapshots
-        /// that you own, and private snapshots owned by another AWS account but for which you've
-        /// been given explicit create volume permissions.
+        /// Describes one or more of the EBS snapshots available to you. Available snapshots include
+        /// public snapshots available for any AWS account to launch, private snapshots that you
+        /// own, and private snapshots owned by another AWS account but for which you've been
+        /// given explicit create volume permissions.
         /// 
         ///  
         /// <para>
@@ -5149,7 +5246,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about Amazon EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+        /// For more information about EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
         /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5158,10 +5255,10 @@ namespace Amazon.EC2
         DescribeSnapshotsResponse DescribeSnapshots();
 
         /// <summary>
-        /// Describes one or more of the Amazon EBS snapshots available to you. Available snapshots
-        /// include public snapshots available for any AWS account to launch, private snapshots
-        /// that you own, and private snapshots owned by another AWS account but for which you've
-        /// been given explicit create volume permissions.
+        /// Describes one or more of the EBS snapshots available to you. Available snapshots include
+        /// public snapshots available for any AWS account to launch, private snapshots that you
+        /// own, and private snapshots owned by another AWS account but for which you've been
+        /// given explicit create volume permissions.
         /// 
         ///  
         /// <para>
@@ -5210,7 +5307,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about Amazon EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+        /// For more information about EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
         /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5287,6 +5384,120 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  DescribeSpotDatafeedSubscriptionResult from EC2.</returns>
         DescribeSpotDatafeedSubscriptionResponse EndDescribeSpotDatafeedSubscription(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeSpotFleetInstances
+
+        /// <summary>
+        /// Describes the running instances for the specified Spot fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetInstances service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSpotFleetInstances service method, as returned by EC2.</returns>
+        DescribeSpotFleetInstancesResponse DescribeSpotFleetInstances(DescribeSpotFleetInstancesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSpotFleetInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetInstances operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSpotFleetInstances
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeSpotFleetInstances(DescribeSpotFleetInstancesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSpotFleetInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSpotFleetInstances.</param>
+        /// 
+        /// <returns>Returns a  DescribeSpotFleetInstancesResult from EC2.</returns>
+        DescribeSpotFleetInstancesResponse EndDescribeSpotFleetInstances(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeSpotFleetRequestHistory
+
+        /// <summary>
+        /// Describes the events for the specified Spot fleet request during the specified time.
+        /// 
+        ///  
+        /// <para>
+        /// Spot fleet events are delayed by up to 30 seconds before they can be described. This
+        /// ensures that you can query by the last evaluated time and not miss a recorded event.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequestHistory service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSpotFleetRequestHistory service method, as returned by EC2.</returns>
+        DescribeSpotFleetRequestHistoryResponse DescribeSpotFleetRequestHistory(DescribeSpotFleetRequestHistoryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSpotFleetRequestHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequestHistory operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSpotFleetRequestHistory
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeSpotFleetRequestHistory(DescribeSpotFleetRequestHistoryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSpotFleetRequestHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSpotFleetRequestHistory.</param>
+        /// 
+        /// <returns>Returns a  DescribeSpotFleetRequestHistoryResult from EC2.</returns>
+        DescribeSpotFleetRequestHistoryResponse EndDescribeSpotFleetRequestHistory(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeSpotFleetRequests
+
+        /// <summary>
+        /// Describes your Spot fleet requests.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequests service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSpotFleetRequests service method, as returned by EC2.</returns>
+        DescribeSpotFleetRequestsResponse DescribeSpotFleetRequests(DescribeSpotFleetRequestsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSpotFleetRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequests operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSpotFleetRequests
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeSpotFleetRequests(DescribeSpotFleetRequestsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSpotFleetRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSpotFleetRequests.</param>
+        /// 
+        /// <returns>Returns a  DescribeSpotFleetRequestsResult from EC2.</returns>
+        DescribeSpotFleetRequestsResponse EndDescribeSpotFleetRequests(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5544,7 +5755,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about Amazon EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+        /// For more information about EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
         /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5582,7 +5793,7 @@ namespace Amazon.EC2
         #region  DescribeVolumes
 
         /// <summary>
-        /// Describes the specified Amazon EBS volumes.
+        /// Describes the specified EBS volumes.
         /// 
         ///  
         /// <para>
@@ -5595,7 +5806,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about Amazon EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+        /// For more information about EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
         /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5604,7 +5815,7 @@ namespace Amazon.EC2
         DescribeVolumesResponse DescribeVolumes();
 
         /// <summary>
-        /// Describes the specified Amazon EBS volumes.
+        /// Describes the specified EBS volumes.
         /// 
         ///  
         /// <para>
@@ -5617,7 +5828,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about Amazon EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+        /// For more information about EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
         /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5855,6 +6066,78 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  DescribeVpcClassicLinkResult from EC2.</returns>
         DescribeVpcClassicLinkResponse EndDescribeVpcClassicLink(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeVpcEndpoints
+
+        /// <summary>
+        /// Describes one or more of your VPC endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcEndpoints service method, as returned by EC2.</returns>
+        DescribeVpcEndpointsResponse DescribeVpcEndpoints(DescribeVpcEndpointsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpoints operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcEndpoints
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeVpcEndpoints(DescribeVpcEndpointsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVpcEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcEndpoints.</param>
+        /// 
+        /// <returns>Returns a  DescribeVpcEndpointsResult from EC2.</returns>
+        DescribeVpcEndpointsResponse EndDescribeVpcEndpoints(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeVpcEndpointServices
+
+        /// <summary>
+        /// Describes all supported AWS services that can be specified when creating a VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServices service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcEndpointServices service method, as returned by EC2.</returns>
+        DescribeVpcEndpointServicesResponse DescribeVpcEndpointServices(DescribeVpcEndpointServicesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcEndpointServices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServices operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcEndpointServices
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeVpcEndpointServices(DescribeVpcEndpointServicesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVpcEndpointServices operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcEndpointServices.</param>
+        /// 
+        /// <returns>Returns a  DescribeVpcEndpointServicesResult from EC2.</returns>
+        DescribeVpcEndpointServicesResponse EndDescribeVpcEndpointServices(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6172,9 +6455,9 @@ namespace Amazon.EC2
         #region  DetachVolume
 
         /// <summary>
-        /// Detaches an Amazon EBS volume from an instance. Make sure to unmount any file systems
-        /// on the device within your operating system before detaching the volume. Failure to
-        /// do so results in the volume being stuck in a busy state while detaching.
+        /// Detaches an EBS volume from an instance. Make sure to unmount any file systems on
+        /// the device within your operating system before detaching the volume. Failure to do
+        /// so results in the volume being stuck in a busy state while detaching.
         /// 
         ///  
         /// <para>
@@ -6672,7 +6955,7 @@ namespace Amazon.EC2
         #region  ImportImage
 
         /// <summary>
-        /// Import single or multi-volume disk images or Amazon EBS snapshots into an Amazon Machine
+        /// Import single or multi-volume disk images or EBS snapshots into an Amazon Machine
         /// Image (AMI).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportImage service method.</param>
@@ -6709,7 +6992,7 @@ namespace Amazon.EC2
         #region  ImportInstance
 
         /// <summary>
-        /// Creates an import instance task using metadata from the specified disk image. ImportInstance
+        /// Creates an import instance task using metadata from the specified disk image. <code>ImportInstance</code>
         /// only supports single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a>.
         /// After importing the image, you then upload it using the <code>ec2-import-volume</code>
         /// command in the EC2 command line tools. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
@@ -6796,7 +7079,7 @@ namespace Amazon.EC2
         #region  ImportSnapshot
 
         /// <summary>
-        /// Import a disk into an Amazon Elastic Block Store (Amazon EBS) snapshot.
+        /// Imports a disk into an EBS snapshot.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportSnapshot service method.</param>
         /// 
@@ -7211,6 +7494,43 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyVpcEndpoint
+
+        /// <summary>
+        /// Modifies attributes of a specified VPC endpoint. You can modify the policy associated
+        /// with the endpoint, and you can add and remove route tables associated with the endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpcEndpoint service method, as returned by EC2.</returns>
+        ModifyVpcEndpointResponse ModifyVpcEndpoint(ModifyVpcEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpoint operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVpcEndpoint
+        ///         operation.</returns>
+        IAsyncResult BeginModifyVpcEndpoint(ModifyVpcEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVpcEndpoint.</param>
+        /// 
+        /// <returns>Returns a  ModifyVpcEndpointResult from EC2.</returns>
+        ModifyVpcEndpointResponse EndModifyVpcEndpoint(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  MonitorInstances
 
         /// <summary>
@@ -7246,6 +7566,47 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  MonitorInstancesResult from EC2.</returns>
         MonitorInstancesResponse EndMonitorInstances(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  MoveAddressToVpc
+
+        /// <summary>
+        /// Moves an Elastic IP address from the EC2-Classic platform to the EC2-VPC platform.
+        /// The Elastic IP address must be allocated to your account, and it must not be associated
+        /// with an instance. After the Elastic IP address is moved, it is no longer available
+        /// for use in the EC2-Classic platform, unless you move it back using the <a>RestoreAddressToClassic</a>
+        /// request. You cannot move an Elastic IP address that's allocated for use in the EC2-VPC
+        /// platform to the EC2-Classic platform.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MoveAddressToVpc service method.</param>
+        /// 
+        /// <returns>The response from the MoveAddressToVpc service method, as returned by EC2.</returns>
+        MoveAddressToVpcResponse MoveAddressToVpc(MoveAddressToVpcRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the MoveAddressToVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the MoveAddressToVpc operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndMoveAddressToVpc
+        ///         operation.</returns>
+        IAsyncResult BeginMoveAddressToVpc(MoveAddressToVpcRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  MoveAddressToVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginMoveAddressToVpc.</param>
+        /// 
+        /// <returns>Returns a  MoveAddressToVpcResult from EC2.</returns>
+        MoveAddressToVpcResponse EndMoveAddressToVpc(IAsyncResult asyncResult);
 
         #endregion
         
@@ -7723,6 +8084,48 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  RequestSpotFleet
+
+        /// <summary>
+        /// Creates a Spot fleet request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html">Spot
+        /// Fleets</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RequestSpotFleet service method.</param>
+        /// 
+        /// <returns>The response from the RequestSpotFleet service method, as returned by EC2.</returns>
+        RequestSpotFleetResponse RequestSpotFleet(RequestSpotFleetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RequestSpotFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RequestSpotFleet operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRequestSpotFleet
+        ///         operation.</returns>
+        IAsyncResult BeginRequestSpotFleet(RequestSpotFleetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RequestSpotFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRequestSpotFleet.</param>
+        /// 
+        /// <returns>Returns a  RequestSpotFleetResult from EC2.</returns>
+        RequestSpotFleetResponse EndRequestSpotFleet(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RequestSpotInstances
 
         /// <summary>
@@ -7927,6 +8330,45 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  ResetSnapshotAttributeResult from EC2.</returns>
         ResetSnapshotAttributeResponse EndResetSnapshotAttribute(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RestoreAddressToClassic
+
+        /// <summary>
+        /// Restores an Elastic IP address that was previously moved to the EC2-VPC platform back
+        /// to the EC2-Classic platform. You cannot move an Elastic IP address that was originally
+        /// allocated for use in EC2-VPC. The Elastic IP address must not be associated with an
+        /// instance or network interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreAddressToClassic service method.</param>
+        /// 
+        /// <returns>The response from the RestoreAddressToClassic service method, as returned by EC2.</returns>
+        RestoreAddressToClassicResponse RestoreAddressToClassic(RestoreAddressToClassicRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreAddressToClassic operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreAddressToClassic operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreAddressToClassic
+        ///         operation.</returns>
+        IAsyncResult BeginRestoreAddressToClassic(RestoreAddressToClassicRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RestoreAddressToClassic operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreAddressToClassic.</param>
+        /// 
+        /// <returns>Returns a  RestoreAddressToClassicResult from EC2.</returns>
+        RestoreAddressToClassicResponse EndRestoreAddressToClassic(IAsyncResult asyncResult);
 
         #endregion
         
@@ -8259,8 +8701,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// By default, Amazon EC2 deletes all Amazon EBS volumes that were attached when the
-        /// instance launched. Volumes attached after instance launch continue running.
+        /// By default, Amazon EC2 deletes all EBS volumes that were attached when the instance
+        /// launched. Volumes attached after instance launch continue running.
         /// </para>
         ///  
         /// <para>

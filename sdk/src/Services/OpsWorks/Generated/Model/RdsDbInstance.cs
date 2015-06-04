@@ -81,7 +81,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property DbPassword. 
         /// <para>
-        /// The database password.
+        /// AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value.
         /// </para>
         /// </summary>
         public string DbPassword

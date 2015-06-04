@@ -72,6 +72,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.NoEcho = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ParameterConstraints", targetDepth))
+                    {
+                        var unmarshaller = ParameterConstraintsUnmarshaller.Instance;
+                        unmarshalledObject.ParameterConstraints = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ParameterKey", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

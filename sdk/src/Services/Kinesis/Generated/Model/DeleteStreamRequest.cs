@@ -57,7 +57,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// <code>DeleteStream</code> has a limit of 5 transactions per second per account.
+    /// <a>DeleteStream</a> has a limit of 5 transactions per second per account.
     /// </para>
     /// </summary>
     public partial class DeleteStreamRequest : AmazonKinesisRequest

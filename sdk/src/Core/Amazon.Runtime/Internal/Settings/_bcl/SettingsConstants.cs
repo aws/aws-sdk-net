@@ -23,7 +23,7 @@ using System.Text;
 
 namespace Amazon.Runtime.Internal.Settings
 {
-    public class SettingsConstants
+    public static class SettingsConstants
     {
         public const string UserPreferences = "UserPreferences";
 

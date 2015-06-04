@@ -240,6 +240,14 @@
       <Project>{63422F3B-8FAC-4E5F-A27C-07FB8742E8BD}</Project>
       <Name>AWSSDK.WorkSpaces.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\DirectoryService\AWSSDK.DirectoryService.Net35.csproj">
+      <Project>{F419E887-8A8D-441C-88FB-51EE57C85A97}</Project>
+      <Name>AWSSDK.DirectoryService.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ElasticFileSystem\AWSSDK.ElasticFileSystem.Net35.csproj">
+      <Project>{C5294C97-CB6C-4188-B36F-54C13B186980}</Project>
+      <Name>AWSSDK.ElasticFileSystem.Net35</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">

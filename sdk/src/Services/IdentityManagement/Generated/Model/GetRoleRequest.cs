@@ -33,14 +33,7 @@ namespace Amazon.IdentityManagement.Model
     /// and the policy granting permission to assume the role. For more information about
     /// ARNs, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a>.
     /// For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-    /// with Roles</a>. 
-    /// 
-    ///  
-    /// <para>
-    /// The returned policy is URL-encoded according to RFC 3986. For more information about
-    /// RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
-    /// 
-    /// </para>
+    /// with Roles</a>.
     /// </summary>
     public partial class GetRoleRequest : AmazonIdentityManagementServiceRequest
     {

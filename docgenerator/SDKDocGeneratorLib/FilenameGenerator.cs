@@ -23,7 +23,10 @@ namespace SDKDocGenerator
 
         private static string Fixup(string name)
         {
-            var fixedUpName = name.Replace('.', '_').Replace('<', '_').Replace('>', '_');
+            var fixedUpName = name.Replace('.', '_');
+            // don't use encoded <> in filename, as browsers re-encode it in links to %3C
+            // and the link fails
+            fixedUpName = fixedUpName.Replace("&lt;", "!").Replace("&gt;", "!");
             fixedUpName = fixedUpName.Replace("Amazon", "");
             fixedUpName = fixedUpName.Replace("__", "");
             fixedUpName = fixedUpName.Replace("_Model_", "");

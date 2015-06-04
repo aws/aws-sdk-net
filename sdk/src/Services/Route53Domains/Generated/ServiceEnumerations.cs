@@ -1053,6 +1053,10 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly DomainAvailability AVAILABLE_RESERVED = new DomainAvailability("AVAILABLE_RESERVED");
         /// <summary>
+        /// Constant DONT_KNOW for DomainAvailability
+        /// </summary>
+        public static readonly DomainAvailability DONT_KNOW = new DomainAvailability("DONT_KNOW");
+        /// <summary>
         /// Constant RESERVED for DomainAvailability
         /// </summary>
         public static readonly DomainAvailability RESERVED = new DomainAvailability("RESERVED");

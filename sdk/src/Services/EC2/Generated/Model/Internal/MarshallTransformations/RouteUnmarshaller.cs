@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -58,6 +58,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.DestinationCidrBlock = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("destinationPrefixListId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DestinationPrefixListId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("gatewayId", targetDepth))

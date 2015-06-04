@@ -1,0 +1,232 @@
+<Project ToolsVersion="4.0" 
+	DefaultTargets="full-build-nodocs"
+	xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	
+    <PropertyGroup>
+        <InternalBuildTools Condition="'$(InternalBuildTools)'==''">..\..\AWSDotNetBuildTools</InternalBuildTools>
+    </PropertyGroup>
+    
+	<Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
+	<Import Project="common.targets" />
+
+    <!-- properties used in documentation generation -->
+    <PropertyGroup>
+        <!-- the relative location (to the project file) of the generator executable -->
+        <DocGeneratorPath>$(MSBuildProjectDirectory)\..\docgenerator\SDKDocGenerator\bin\Release</DocGeneratorPath>
+        <DocGenerator>SDKDocGenerator.exe</DocGenerator>
+        
+        <!-- default expected location of SDK assemblies root if not specified -->
+        <SDKAssembliesRoot Condition="'$(SDKAssembliesRoot)'==''">$(MSBuildProjectDirectory)\$(Deployment)\assemblies</SDKAssembliesRoot>
+        
+        <!-- default output path to ..\DocDeployment\docs if not specified -->
+        <DocOutputRoot Condition="'$(DocOutputRoot)'==''">$(MSBuildProjectDirectory)\$(DocDeployment)\docs</DocOutputRoot>
+        
+		<!-- default location of the documentation samples. This should be the folder ABOVE AWSSDKDocSamples -->
+		
+		<DocSamplesFolder>$(MSBuildProjectDirectory)\..\docgenerator</DocSamplesFolder>
+		
+        <!-- use net45 platform as the primary determinant of assemblies to inspect, and generate 
+             for all services 
+        -->
+        <SDKPlatform Condition="'$(SDKPlatform)'==''">net45</SDKPlatform>
+        <SDKServices Condition="'$(SDKServices)'==''">*</SDKServices>
+        
+    </PropertyGroup>
+    
+	<Target Name="build-custom-tasks">
+		<Exec Command="$(devenv2013) /Rebuild Release .\CustomTasks\CustomTasks.sln"/>
+	</Target>
+	
+	<UsingTask TaskName="CustomTasks.UpdateFxCopProject" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
+	
+	<Target Name="init" DependsOnTargets="clean;build-custom-tasks"/>
+
+	<Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;doc-build;consolidate-docartifacts;save-build"/>
+
+	<Target Name="full-build-nodocs" DependsOnTargets="test-sdk;copy-assemblies;save-build"/>
+	
+	<Target Name="run-generator">
+		<Message Text="Build and run code generator"/>
+		<Exec Command="$(devenv2013) /Rebuild Release ..\generator\AWSSDKGenerator.sln"/>
+		<Exec Command="ServiceClientGenerator.exe" 
+			WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
+	</Target>
+
+	<Target Name="restore-nuget" DependsOnTargets="run-generator">
+		<Message Text="Restore nuget packages"/>
+		<Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.sln"/>
+	</Target>
+	
+	<Target Name="build-sdk" DependsOnTargets="restore-nuget;run-generator">
+		<Message Text="Compile the SDK"/>
+		<SetEnvironmentVariable VariableName="AWSKeyFile" VariableValue="$(CustomSnkFileLocation)" />
+		<Exec Command="$(devenv2013) /Rebuild Release ..\sdk\AWSSDK.sln"/>
+		<SetEnvironmentVariable VariableName="AWSKeyFile" VariableValue="" />
+		
+		<Copy
+			SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
+			DestinationFolder="$(Deployment)" />
+	</Target>
+ 
+	<Target Name="test-sdk" DependsOnTargets="init;build-sdk;fxcop;run-unit-tests;run-integ-tests" />
+	<Target Name="run-unit-tests" DependsOnTargets="init;build-sdk">
+		<MSBuild
+			Projects="$(MSBuildProjectFile)"
+			Targets="run-tests"
+			Properties="TestContainer=..\sdk\test\UnitTests\bin\Release\net35\AWSSDK.UnitTests.Net35.dll" />
+		<MSBuild
+			Projects="$(MSBuildProjectFile)"
+			Targets="run-tests"
+			Properties="TestContainer=..\sdk\test\UnitTests\bin\Release\net45\AWSSDK.UnitTests.Net45.dll" />
+	</Target>
+	<Target Name="run-integ-tests" DependsOnTargets="init;build-sdk" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'">
+ 		<MSBuild
+			Projects="$(MSBuildProjectFile)"
+			Targets="run-tests"
+			Properties="TestContainer=..\sdk\test\IntegrationTests\bin\Release\net45\AWSSDK.IntegrationTests.Net45.dll" />
+	</Target>
+	
+	<Target Name="nuget-pack" DependsOnTargets="build-sdk">
+		<Exec ContinueOnError="ErrorAndStop" 
+              Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1" />		
+	</Target>
+
+	<Target Name="copy-assemblies" DependsOnTargets="nuget-pack">
+        <Message Text="Collating assemblies for downstream doc generation" />
+		<PropertyGroup>
+			<CustomSnkPublicKeyToken Condition="'$(CustomSnkPublicKeyToken)' == '' ">71c852f8be1c371d</CustomSnkPublicKeyToken>
+		</PropertyGroup>
+		<Exec ContinueOnError="ErrorAndStop" 
+              Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File copy-sdkassemblies.ps1 -PublicKeyTokenToCheck $(CustomSnkPublicKeyToken)" />		
+	</Target>
+	
+	<!-- TEST TARGETS/TASKS -->
+
+	<Target Name="fxcop" DependsOnTargets="init;copy-assemblies" Condition="Exists('$(fxcopcmd)')">
+		<!-- Update FxCop project files -->
+		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net35" FxCopProject="..\sdk\SDK-3.5.FxCop" />
+		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net45" FxCopProject="..\sdk\SDK-4.5.FxCop" />
+
+		<!-- Compile custom FxCop rules -->
+		<Exec Command="$(devenv2013) /Rebuild Release ..\buildtools\CustomFxCopRules\CustomFxCopRules.sln"/>
+		
+		<!-- Run FxCop -->
+		<Exec Command="$(fxcopcmd) /p:..\sdk\SDK-3.5.FxCop /o:..\fxcop-report-3.5.xml /s"/>
+		<Exec Command="$(fxcopcmd) /p:..\sdk\SDK-4.5.FxCop /o:..\fxcop-report-4.5.xml /s"/>
+
+		<Error Condition="Exists('..\fxcop-report-3.5.xml') or Exists('..\fxcop-report-4.5.xml')" Text="There are FxCop violations!" />
+	</Target>
+	
+	<Target Name="run-tests">
+		<Message Text="TestContainer = $(TestContainer)" Condition="$(TestContainer.Length) > 0"/>
+		<Message Text="TestCategory = $(TestCategory)" Condition="$(TestCategory.Length) > 0"/>
+		<Message Text="TestSettingsFile = $(TestSettingsFile)" Condition="$(TestSettingsFile.Length) > 0"/>
+
+		<PropertyGroup >
+			<Container>/testcontainer:$([System.IO.Path]::GetFullPath($(TestContainer)))</Container>
+			<Category></Category>
+			<SettingsFile></SettingsFile>
+		</PropertyGroup>
+		<PropertyGroup Condition="$(TestCategory.Length) > 0">
+			<Category>/category:$(TestCategory)</Category>
+		</PropertyGroup>
+		<PropertyGroup Condition="$(TestSettingsFile.Length) > 0">
+			<SettingsFile>/testsettings:$([System.IO.Path]::GetFullPath($(TestSettingsFile)))</SettingsFile>
+		</PropertyGroup>
+
+		<Exec Command="$(mstest2013) &quot;$(Container)&quot; &quot;$(Category)&quot; &quot;$(SettingsFile)&quot;"/>
+		
+		<!-- Clear our properties -->
+		<PropertyGroup >
+			<TestContainer></TestContainer>
+			<TestCategory></TestCategory>
+			<TestSettingsFile></TestSettingsFile>
+		</PropertyGroup>
+		<CallTarget Targets="deploy-test-results" />
+		<OnError ExecuteTargets="deploy-test-results" />
+	</Target>
+
+	<UsingTask TaskName="PrepareTestResults" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+		<ParameterGroup>
+			<ResultFile ParameterType="System.String" Required="true" />
+		</ParameterGroup>
+		<Task>
+			<Code Type="Fragment" Language="cs">
+				<![CDATA[
+					Log.LogMessage("ResultFile = [{0}], formatting", ResultFile);
+					string content = File.ReadAllText(ResultFile);
+					content = content.Replace("<?xml version=\"1.0\" encoding=\"UTF-8\"?>","<?xml version=\"1.0\" encoding=\"UTF-8\"?><?xml-stylesheet type=\"text/xsl\" href=\"trx-transform.xsl\"?>");
+					File.WriteAllText(ResultFile + ".xml", content);
+				]]>
+			</Code>
+		</Task>
+	</UsingTask>
+	
+	<UsingTask TaskName="SetEnvironmentVariable" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+		<ParameterGroup>
+			<VariableName ParameterType="System.String" Required="true" />
+			<VariableValue ParameterType="System.String" Required="false" />
+		</ParameterGroup>
+		<Task>
+			<Code Type="Fragment" Language="cs">
+				<![CDATA[
+					Log.LogMessage("Setting variable {0} = {1}", VariableName, VariableValue);
+					System.Environment.SetEnvironmentVariable(VariableName, VariableValue);
+				]]>
+			</Code>
+		</Task>
+	</UsingTask>
+
+	<Target Name="deploy-test-results" >	
+		<ItemGroup>
+			<TestResult Include="TestResults\*.trx" />
+		</ItemGroup>
+		<PrepareTestResults ResultFile="%(TestResult.FullPath)" />
+		
+		<ItemGroup>
+			<FormattedTestResult Include="TestResults\*.trx.xml" />
+		</ItemGroup>
+		<Copy
+			SourceFiles="@(FormattedTestResult)"
+			DestinationFolder="$(Deployment)" />
+
+		<Copy
+			SourceFiles="trx-transform.xsl"
+			DestinationFolder="$(Deployment)" />
+	</Target>
+	
+	<Target Name="save-build" Condition="Exists('$(InternalBuildTools)\references.targets')" DependsOnTargets="build-tools">		
+		<SaveBuildArtifactTask
+			RepositoryRoot="$(MSBuildProjectDirectory)\.."
+			BuildArtifactType="sdk"
+			LocalArchiveRootFolder="$(LocalArchiveRootFolder)"
+			/>
+	</Target>	
+    
+    <!-- DOCUMENTATION BUILD TARGETS -->
+    
+	<Target Name="doc-build" DependsOnTargets="build-docgenerator">
+		<Message Text="Build documentation for all platforms, all assemblies"/>
+		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(SDKAssembliesRoot) -o $(DocOutputRoot) -sf $(DocSamplesFolder)" />
+	</Target>
+
+    <Target Name="build-docgenerator">
+		<Message Text="Building documentation generator"/>
+		<Exec Command="$(devenv2013) /Rebuild Release ..\docgenerator\AWSSDKDocGenerator.sln"/>
+    </Target>
+    
+	<Target Name="doc-platform-build" DependsOnTargets="build-docgenerator">
+		<Message Text="Build documentation for selected platform, all services"/>
+		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(SDKAssembliesRoot) -o $(DocOutputRoot) -p $(SDKPlatform)" />
+	</Target>
+
+	<Target Name="doc-platform-service-build" DependsOnTargets="build-docgenerator">
+		<Message Text="Build documentation for selected service(s) in platform"/>
+		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(SDKAssembliesRoot) -o $(DocOutputRoot) -p $(SDKPlatform) -svc $(SDKServices)" />
+	</Target>
+    
+	<Target Name="test-doc-build" DependsOnTargets="build-docgenerator">
+		<Message Text="Build documentation in test mode (net45 platform, selected services)"/>
+		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -t  -sdk $(SDKAssembliesRoot) -sf $(DocSamplesFolder) -o $(DocOutputRoot) -v" />
+	</Target>    
+</Project>

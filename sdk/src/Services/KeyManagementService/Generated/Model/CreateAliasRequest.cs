@@ -34,7 +34,16 @@ namespace Amazon.KeyManagementService.Model
     /// alias and a key. An alias name can contain only alphanumeric characters, forward slashes
     /// (/), underscores (_), and dashes (-). An alias must start with the word "alias" followed
     /// by a forward slash (alias/). An alias that begins with "aws" after the forward slash
-    /// (alias/aws...) is reserved by Amazon Web Services (AWS).
+    /// (alias/aws...) is reserved by Amazon Web Services (AWS). 
+    /// 
+    ///  
+    /// <para>
+    /// To associate an alias with a different key, call <a>UpdateAlias</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Note that you cannot create or update an alias that represents a key in another account.
+    /// </para>
     /// </summary>
     public partial class CreateAliasRequest : AmazonKeyManagementServiceRequest
     {
@@ -44,7 +53,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property AliasName. 
         /// <para>
-        /// String that contains the display name. Aliases that begin with AWS are reserved.
+        /// String that contains the display name. The name must start with the word "alias" followed
+        /// by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved. 
         /// </para>
         /// </summary>
         public string AliasName
@@ -63,7 +73,10 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property TargetKeyId. 
         /// <para>
         /// An identifier of the key for which you are creating the alias. This value cannot be
-        /// another alias.
+        /// another alias but can be a globally unique identifier or a fully specified ARN to
+        /// a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+        /// <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul>
+        /// 
         /// </para>
         /// </summary>
         public string TargetKeyId

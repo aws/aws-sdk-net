@@ -104,7 +104,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AutoScalingType. 
         /// <para>
-        /// For load-based or time-based instances, the type.
+        /// For load-based or time-based instances, the type. Windows stacks can use only time-based
+        /// instances.
         /// </para>
         /// </summary>
         public AutoScalingType AutoScalingType
@@ -266,6 +267,14 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Os. 
         /// <para>
         /// The instance's operating system, which must be set to one of the following.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Windows stacks: Microsoft Windows Server 2012 R2.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Linux stacks:
         /// </para>
         ///  <ul> <li>Standard operating systems: an Amazon Linux version such as <code>Amazon
         /// Linux 2014.09</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>

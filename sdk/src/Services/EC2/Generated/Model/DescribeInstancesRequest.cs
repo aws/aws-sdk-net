@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -67,27 +67,27 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>block-device-mapping.attach-time</code> - The attach time for an Amazon EBS
-        /// volume mapped to the instance, for example, <code>2010-09-15T17:15:20.000Z</code>.
+        /// <code>block-device-mapping.attach-time</code> - The attach time for an EBS volume
+        /// mapped to the instance, for example, <code>2010-09-15T17:15:20.000Z</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// <code>block-device-mapping.delete-on-termination</code> - A Boolean that indicates
-        /// whether the Amazon EBS volume is deleted on instance termination.
+        /// whether the EBS volume is deleted on instance termination.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>block-device-mapping.device-name</code> - The device name for the Amazon EBS
-        /// volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+        /// <code>block-device-mapping.device-name</code> - The device name for the EBS volume
+        /// (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>block-device-mapping.status</code> - The status for the Amazon EBS volume (<code>attaching</code>
+        /// <code>block-device-mapping.status</code> - The status for the EBS volume (<code>attaching</code>
         /// | <code>attached</code> | <code>detaching</code> | <code>detached</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>block-device-mapping.volume-id</code> - The volume ID of the Amazon EBS volume.
+        /// <code>block-device-mapping.volume-id</code> - The volume ID of the EBS volume.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DiskImageSize. 
         /// <para>
-        /// The size of the disk in the snapshot.
+        /// The size of the disk in the snapshot, in GiB.
         /// </para>
         /// </summary>
         public double DiskImageSize
@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Progress. 
         /// <para>
-        /// The percentage of completion for the ImportSnapshot task.
+        /// The percentage of completion for the import snapshot task.
         /// </para>
         /// </summary>
         public string Progress
@@ -135,7 +135,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// A brief status for the ImportSnapshot task.
+        /// A brief status for the import snapshot task.
         /// </para>
         /// </summary>
         public string Status
@@ -153,7 +153,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// A detailed status message for the ImportSnapshot task.
+        /// A detailed status message for the import snapshot task.
         /// </para>
         /// </summary>
         public string StatusMessage
@@ -187,7 +187,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserBucket.
+        /// Gets and sets the property UserBucket. 
+        /// <para>
+        /// The S3 bucket for the disk image.
+        /// </para>
         /// </summary>
         public UserBucketDetails UserBucket
         {

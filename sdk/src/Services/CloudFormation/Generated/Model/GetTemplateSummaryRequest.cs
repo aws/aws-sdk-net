@@ -54,9 +54,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name or the unique identifier associated with the stack, which are not always
-        /// interchangeable. For running stacks, you can specify either the stack's name or its
-        /// unique stack ID. For deleted stack, you must specify the unique stack ID.
+        /// The name or the stack ID that is associated with the stack, which are not always interchangeable.
+        /// For running stacks, you can specify either the stack's name or its unique stack ID.
+        /// For deleted stack, you must specify the unique stack ID.
         /// </para>
         ///  
         /// <para>
@@ -105,7 +105,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TemplateURL. 
         /// <para>
         /// Location of file containing the template body. The URL must point to a template (max
-        /// size: 307,200 bytes) located in an Amazon S3 bucket. For more information about templates,
+        /// size: 460,800 bytes) located in an Amazon S3 bucket. For more information about templates,
         /// see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
         /// Anatomy</a> in the AWS CloudFormation User Guide.
         /// </para>

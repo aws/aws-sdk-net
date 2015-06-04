@@ -35,6 +35,7 @@ namespace Amazon.CloudFormation.Model
         private string _defaultValue;
         private string _description;
         private bool? _noEcho;
+        private ParameterConstraints _parameterConstraints;
         private string _parameterKey;
         private string _parameterType;
 
@@ -91,6 +92,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetNoEcho()
         {
             return this._noEcho.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParameterConstraints. 
+        /// <para>
+        /// The criteria that AWS CloudFormation uses to validate parameter values.
+        /// </para>
+        /// </summary>
+        public ParameterConstraints ParameterConstraints
+        {
+            get { return this._parameterConstraints; }
+            set { this._parameterConstraints = value; }
+        }
+
+        // Check to see if ParameterConstraints property is set
+        internal bool IsSetParameterConstraints()
+        {
+            return this._parameterConstraints != null;
         }
 
         /// <summary>

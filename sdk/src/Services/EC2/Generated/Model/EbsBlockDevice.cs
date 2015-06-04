@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes an Amazon EBS block device.
+    /// Describes a block device for an EBS volume.
     /// </summary>
     public partial class EbsBlockDevice
     {
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeleteOnTermination. 
         /// <para>
-        /// Indicates whether the Amazon EBS volume is deleted on instance termination.
+        /// Indicates whether the EBS volume is deleted on instance termination.
         /// </para>
         /// </summary>
         public bool DeleteOnTermination
@@ -60,8 +60,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon EBS volumes
-        /// may only be attached to instances that support Amazon EBS encryption.
+        /// Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only
+        /// be attached to instances that support Amazon EBS encryption.
         /// </para>
         /// </summary>
         public bool Encrypted

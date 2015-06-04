@@ -27,13 +27,12 @@ namespace AndroidApp
             // Get our button from the layout resource,
             // and attach an event to it
             Button button = FindViewById<Button>(Resource.Id.MyButton);
-
             //button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
             button.Click += OnClick;
+			var txtBox = FindViewById<TextView>(Resource.Id.TestOutput);
 
             var stream = Assets.Open(CredentialsAsset);
-            runner = new AndroidRunner(stream);
-            
+			runner = new AndroidRunner(stream, txtBox, RunOnUiThread );
         }
 
         async void OnClick(object sender, EventArgs e)
@@ -41,6 +40,7 @@ namespace AndroidApp
             Button button = FindViewById<Button>(Resource.Id.MyButton);
             button.Text = string.Format("{0} clicks!", count++);
             await runner.ExecuteAllTestsAsync();
+            
         }
     }
 }

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVolume operation.
-    /// Deletes the specified Amazon EBS volume. The volume must be in the <code>available</code>
+    /// Deletes the specified EBS volume. The volume must be in the <code>available</code>
     /// state (not attached to an instance).
     /// 
     ///  <note> 

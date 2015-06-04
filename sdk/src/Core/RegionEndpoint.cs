@@ -150,13 +150,13 @@ namespace Amazon
         JsonData GetEndpointRule(string serviceName)
         {
             JsonData rule = null;
-            if (_documentEndpoints.TryGetValue(string.Format("{0}/{1}", this.SystemName, serviceName), out rule))
+            if (_documentEndpoints.TryGetValue(string.Format(CultureInfo.InvariantCulture, "{0}/{1}", this.SystemName, serviceName), out rule))
                 return rule;
 
-            if (_documentEndpoints.TryGetValue(string.Format("{0}/*", this.SystemName), out rule))
+            if (_documentEndpoints.TryGetValue(string.Format(CultureInfo.InvariantCulture, "{0}/*", this.SystemName), out rule))
                 return rule;
 
-            if (_documentEndpoints.TryGetValue(string.Format("*/{0}", serviceName), out rule))
+            if (_documentEndpoints.TryGetValue(string.Format(CultureInfo.InvariantCulture, "*/{0}", serviceName), out rule))
                 return rule;
 
             return _documentEndpoints[DEFAULT_RULE];
@@ -209,6 +209,9 @@ namespace Amazon
         {
             lock (LOCK_OBJECT)
             {
+                if (RegionEndpoint.loaded)
+                    return;
+
                 _documentEndpoints = new Dictionary<string, JsonData>();
 
                 var endpointsPath = AWSConfigs.EndpointDefinition;
@@ -217,6 +220,7 @@ namespace Amazon
 #if BCL
                     if (TryLoadEndpointDefinitionsFromAssemblyDir())
                     {
+                        RegionEndpoint.loaded = true;
                         return;
                     }
 #endif
@@ -232,6 +236,7 @@ namespace Amazon
                     LoadEndpointDefinitionFromFilePath(endpointsPath);
                 }
 #endif
+                RegionEndpoint.loaded = true;
             }
         }
 

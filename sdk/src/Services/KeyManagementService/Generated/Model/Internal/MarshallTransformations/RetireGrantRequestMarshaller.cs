@@ -67,10 +67,22 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetGrantId())
+                {
+                    context.Writer.WritePropertyName("GrantId");
+                    context.Writer.Write(publicRequest.GrantId);
+                }
+
                 if(publicRequest.IsSetGrantToken())
                 {
                     context.Writer.WritePropertyName("GrantToken");
                     context.Writer.Write(publicRequest.GrantToken);
+                }
+
+                if(publicRequest.IsSetKeyId())
+                {
+                    context.Writer.WritePropertyName("KeyId");
+                    context.Writer.Write(publicRequest.KeyId);
                 }
 
         

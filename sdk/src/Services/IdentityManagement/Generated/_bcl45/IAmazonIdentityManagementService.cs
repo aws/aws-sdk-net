@@ -842,18 +842,16 @@ namespace Amazon.IdentityManagement
         #region  CreateRole
 
         /// <summary>
-        /// Creates a new role for your AWS account. For more information about roles, go to
-        /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+        /// Creates a new role for your AWS account. For more information about roles, go to <a
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
         /// with Roles</a>. For information about limitations on role names and the number of
         /// roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
         /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
         /// 
         ///  
         /// <para>
-        ///  The example policy grants permission to an EC2 instance to assume the role. The policy
-        /// is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a
-        /// href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
-        /// 
+        /// The policy in the following example grants permission to an EC2 instance to assume
+        /// the role.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRole service method.</param>
@@ -2162,9 +2160,9 @@ namespace Amazon.IdentityManagement
         #region  GetAccountAuthorizationDetails
 
         /// <summary>
-        /// Retrieves information about all IAM users, groups, and roles in your account, including
-        /// their relationships to one another and their policies. Use this API to obtain a snapshot
-        /// of the configuration of IAM permissions (users, groups, roles, and policies) in your
+        /// Retrieves information about all IAM users, groups, roles, and policies in your account,
+        /// including their relationships to one another. Use this API to obtain a snapshot of
+        /// the configuration of IAM permissions (users, groups, roles, and policies) in your
         /// account.
         /// 
         ///  
@@ -2639,14 +2637,7 @@ namespace Amazon.IdentityManagement
         /// and the policy granting permission to assume the role. For more information about
         /// ARNs, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a>.
         /// For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with Roles</a>. 
-        /// 
-        ///  
-        /// <para>
-        /// The returned policy is URL-encoded according to RFC 3986. For more information about
-        /// RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
-        /// 
-        /// </para>
+        /// with Roles</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRole service method.</param>
         /// 
@@ -3698,12 +3689,6 @@ namespace Amazon.IdentityManagement
         /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters. 
         /// </para>
-        ///  
-        /// <para>
-        /// The returned policy is URL-encoded according to RFC 3986. For more information about
-        /// RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
-        /// 
-        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the ListRoles service method, as returned by IdentityManagementService.</returns>
@@ -3721,12 +3706,6 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters. 
-        /// </para>
-        ///  
-        /// <para>
-        /// The returned policy is URL-encoded according to RFC 3986. For more information about
-        /// RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
-        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRoles service method.</param>

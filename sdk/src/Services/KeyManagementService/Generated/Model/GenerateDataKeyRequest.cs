@@ -29,8 +29,42 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the GenerateDataKey operation.
-    /// Generates a secure data key. Data keys are used to encrypt and decrypt data. They
-    /// are wrapped by customer master keys.
+    /// Generates a data key that you can use in your application to locally encrypt data.
+    /// This call returns a plaintext version of the key in the <code>Plaintext</code> field
+    /// of the response object and an encrypted copy of the key in the <code>CiphertextBlob</code>
+    /// field. The key is encrypted by using the master key specified by the <code>KeyId</code>
+    /// field. To decrypt the encrypted key, pass it to the <code>Decrypt</code> API. 
+    /// 
+    ///  
+    /// <para>
+    /// We recommend that you use the following pattern to locally encrypt data: call the
+    /// <code>GenerateDataKey</code> API, use the key returned in the <code>Plaintext</code>
+    /// response field to locally encrypt data, and then erase the plaintext data key from
+    /// memory. Store the encrypted data key (contained in the <code>CiphertextBlob</code>
+    /// field) alongside of the locally encrypted data. 
+    /// </para>
+    ///  <note>You should not call the <code>Encrypt</code> function to re-encrypt your data
+    /// keys within a region. <code>GenerateDataKey</code> always returns the data key encrypted
+    /// and tied to the customer master key that will be used to decrypt it. There is no need
+    /// to decrypt it twice. </note> 
+    /// <para>
+    /// If you decide to use the optional <code>EncryptionContext</code> parameter, you must
+    /// also store the context in full or at least store enough information along with the
+    /// encrypted data to be able to reconstruct the context when submitting the ciphertext
+    /// to the <code>Decrypt</code> API. It is a good practice to choose a context that you
+    /// can reconstruct on the fly to better secure the ciphertext. For more information about
+    /// how this parameter is used, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+    /// Context</a>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// To decrypt data, pass the encrypted data key to the <code>Decrypt</code> API. <code>Decrypt</code>
+    /// uses the associated master key to decrypt the encrypted data key and returns it as
+    /// plaintext. Use the plaintext data key to locally decrypt your data and then erase
+    /// the key from memory. You must specify the encryption context, if any, that you specified
+    /// when you generated the key. The encryption context is logged by CloudTrail, and you
+    /// can use this log to help track the use of particular data. 
+    /// </para>
     /// </summary>
     public partial class GenerateDataKeyRequest : AmazonKeyManagementServiceRequest
     {
@@ -63,8 +97,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property GrantTokens. 
         /// <para>
-        /// A list of grant tokens that represent grants which can be used to provide long term
-        /// permissions to generate a key.
+        /// For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+        /// Tokens</a>. 
         /// </para>
         /// </summary>
         public List<string> GrantTokens
@@ -82,7 +116,12 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Unique identifier of the key. This can be an ARN, an alias, or a globally unique identifier.
+        /// A unique identifier for the customer master key. This value can be a globally unique
+        /// identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed
+        /// by "alias/". <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+        /// <li>Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
+        /// <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> <li>Alias
+        /// Name Example - alias/MyAliasName</li> </ul> 
         /// </para>
         /// </summary>
         public string KeyId
@@ -120,7 +159,8 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property NumberOfBytes. 
         /// <para>
         /// Integer that contains the number of bytes to generate. Common values are 128, 256,
-        /// 512, 1024 and so on. 1024 is the current limit. 
+        /// 512, and 1024. 1024 is the current limit. We recommend that you use the <code>KeySpec</code>
+        /// parameter instead. 
         /// </para>
         /// </summary>
         public int NumberOfBytes

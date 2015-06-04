@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property EndTime. 
         /// <para>
         /// The date and time, up to the current date, from which to stop retrieving the price
-        /// history data.
+        /// history data, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -117,8 +117,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>timestamp</code> - The timestamp of the Spot Price history (for example, 2010-08-16T05:06:11.000Z).
-        /// You can use wildcards (* and ?). Greater than or less than comparison is not supported.
+        /// <code>timestamp</code> - The timestamp of the Spot Price history, in UTC format (for
+        /// example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can
+        /// use wildcards (* and ?). Greater than or less than comparison is not supported.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -155,10 +156,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return for the request in a single page. The remaining
-        /// results of the initial request can be seen by sending another request with the returned
-        /// <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code>
-        /// is given a value larger than 1000, only 1000 results are returned.
+        /// The maximum number of results to return in a single call. Specify a value between
+        /// 1 and 1000. The default value is 1000. To retrieve the remaining results, make another
+        /// call with the returned <code>NextToken</code> value.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -176,7 +176,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to retrieve the next page of results.
+        /// The token for the next set of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -213,7 +213,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The date and time, up to the past 90 days, from which to start retrieving the price
-        /// history data.
+        /// history data, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
         /// </para>
         /// </summary>
         public DateTime StartTime

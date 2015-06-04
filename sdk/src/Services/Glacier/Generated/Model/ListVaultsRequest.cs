@@ -72,7 +72,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates ListVaultsRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
+        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include any hyphens (apos-apos) in the ID.</param>
         public ListVaultsRequest(string accountId)
         {
             _accountId = accountId;
@@ -81,7 +81,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates ListVaultsRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include hyphens in it. </param>
+        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your Account ID, do not include any hyphens (apos-apos) in the ID.</param>
         /// <param name="marker">A string used for pagination. The marker specifies the vault ARN after which the listing of vaults should begin.</param>
         /// <param name="limit">The maximum number of items returned in the response. If you don't specify a value, the List Vaults operation returns up to 1,000 items.</param>
         public ListVaultsRequest(string accountId, string marker, int limit)
@@ -94,10 +94,12 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The <code>AccountId</code> is the AWS Account ID. You can specify either the AWS Account
-        /// ID or optionally a '-', in which case Amazon Glacier uses the AWS Account ID associated
-        /// with the credentials used to sign the request. If you specify your Account ID, do
-        /// not include hyphens in it. 
+        /// The <code>AccountId</code> value is the AWS account ID. This value must match the
+        /// AWS account ID associated with the credentials used to sign the request. You can either
+        /// specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen),
+        /// in which case Amazon Glacier uses the AWS account ID associated with the credentials
+        /// used to sign the request. If you specify your Account ID, do not include any hyphens
+        /// (apos-apos) in the ID.
         /// </para>
         /// </summary>
         public string AccountId

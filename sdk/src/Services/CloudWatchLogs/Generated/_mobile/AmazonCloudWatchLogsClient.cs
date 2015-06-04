@@ -476,6 +476,36 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  FilterLogEvents
+
+        internal FilterLogEventsResponse FilterLogEvents(FilterLogEventsRequest request)
+        {
+            var marshaller = new FilterLogEventsRequestMarshaller();
+            var unmarshaller = FilterLogEventsResponseUnmarshaller.Instance;
+
+            return Invoke<FilterLogEventsRequest,FilterLogEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the FilterLogEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the FilterLogEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<FilterLogEventsResponse> FilterLogEventsAsync(FilterLogEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new FilterLogEventsRequestMarshaller();
+            var unmarshaller = FilterLogEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<FilterLogEventsRequest,FilterLogEventsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetLogEvents
 
         internal GetLogEventsResponse GetLogEvents(GetLogEventsRequest request)

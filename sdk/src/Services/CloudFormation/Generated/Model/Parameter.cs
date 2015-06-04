@@ -39,7 +39,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ParameterKey. 
         /// <para>
-        /// The key associated with the parameter.
+        /// The key associated with the parameter. If you don't specify a key and value for a
+        /// particular parameter, AWS CloudFormation uses the default value that is specified
+        /// in your template.
         /// </para>
         /// </summary>
         public string ParameterKey
@@ -75,8 +77,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property UsePreviousValue. 
         /// <para>
-        /// During a stack update, use the existing parameter value that is being used for the
-        /// stack.
+        /// During a stack update, use the existing parameter value that the stack is using for
+        /// a given parameter key. If you specify <code>true</code>, do not specify a parameter
+        /// value.
         /// </para>
         /// </summary>
         public bool UsePreviousValue

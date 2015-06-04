@@ -41,9 +41,10 @@ namespace Amazon.SecurityToken.Model
     /// security credentials to sign calls to AWS services. The credentials are valid for
     /// the duration that you specified when calling <code>AssumeRoleWithSAML</code>, which
     /// can be up to 3600 seconds (1 hour) or until the time specified in the SAML authentication
-    /// response's <code>NotOnOrAfter</code> value, whichever is shorter.
+    /// response's <code>SessionNotOnOrAfter</code> value, whichever is shorter.
     /// </para>
-    ///  
+    ///  <note>The maximum duration for a session is 1 hour, and the minimum duration is 15
+    /// minutes, even if values outside this range are specified. </note> 
     /// <para>
     /// Optionally, you can pass an IAM access policy to this operation. If you choose not
     /// to pass a policy, the temporary security credentials that are returned by the operation
@@ -98,9 +99,11 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// The duration, in seconds, of the role session. The value can range from 900 seconds
         /// (15 minutes) to 3600 seconds (1 hour). By default, the value is set to 3600 seconds.
-        /// An expiration can also be specified in the SAML authentication response's <code>NotOnOrAfter</code>
+        /// An expiration can also be specified in the SAML authentication response's <code>SessionNotOnOrAfter</code>
         /// value. The actual expiration time is whichever value is shorter. 
         /// </para>
+        ///  <note>The maximum duration for a session is 1 hour, and the minimum duration is 15
+        /// minutes, even if values outside this range are specified. </note>
         /// </summary>
         public int DurationSeconds
         {
@@ -130,6 +133,8 @@ namespace Amazon.SecurityToken.Model
         /// assumed. For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
         /// for AssumeRoleWithSAML</a> in <i>Using Temporary Security Credentials</i>. 
         /// </para>
+        ///  <note>The policy must be 2048 bytes or shorter, and its packed size must be less
+        /// than 450 bytes.</note>
         /// </summary>
         public string Policy
         {

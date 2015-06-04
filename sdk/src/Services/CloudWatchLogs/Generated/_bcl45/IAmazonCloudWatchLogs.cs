@@ -454,6 +454,54 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  FilterLogEvents
+
+        /// <summary>
+        /// Retrieves log events, optionally filtered by a filter pattern from the specified
+        /// log group. You can provide an optional time range to filter the results on the event
+        /// <code class="code">timestamp</code>. You can limit the streams searched to an explicit
+        /// list of <code class="code">logStreamNames</code>. 
+        /// 
+        ///  
+        /// <para>
+        ///  By default, this operation returns as much matching log events as can fit in a response
+        /// size of 1MB, up to 10,000 log events, or all the events found within a time-bounded
+        /// scan window. If the response includes a <code class="code">nextToken</code>, then
+        /// there is more data to search, and the search can be resumed with a new request providing
+        /// the nextToken. The response will contain a list of <code class="code">searchedLogStreams</code>
+        /// that contains information about which streams were searched in the request and whether
+        /// they have been searched completely or require further pagination. The <code class="code">limit</code>
+        /// parameter in the request. can be used to specify the maximum number of events to return
+        /// in a page. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FilterLogEvents service method.</param>
+        /// 
+        /// <returns>The response from the FilterLogEvents service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// Returned if the specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        FilterLogEventsResponse FilterLogEvents(FilterLogEventsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the FilterLogEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the FilterLogEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<FilterLogEventsResponse> FilterLogEventsAsync(FilterLogEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetLogEvents
 
         /// <summary>

@@ -38,8 +38,10 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Unique identifier of the customer master key for which rotation is to be disabled.
-        /// This can be an ARN, an alias, or a globally unique identifier. 
+        /// A unique identifier for the customer master key. This value can be a globally unique
+        /// identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+        /// <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul>
+        /// 
         /// </para>
         /// </summary>
         public string KeyId

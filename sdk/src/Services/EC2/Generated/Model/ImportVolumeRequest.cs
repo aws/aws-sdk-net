@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone for the resulting Amazon EBS volume.
+        /// The Availability Zone for the resulting EBS volume.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// An optional description for the volume being imported.
+        /// A description of the volume.
         /// </para>
         /// </summary>
         public string Description
@@ -80,7 +80,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Image.
+        /// Gets and sets the property Image. 
+        /// <para>
+        /// The disk image.
+        /// </para>
         /// </summary>
         public DiskImageDetail Image
         {
@@ -95,7 +98,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Volume.
+        /// Gets and sets the property Volume. 
+        /// <para>
+        /// The volume size.
+        /// </para>
         /// </summary>
         public VolumeDetail Volume
         {

@@ -41,7 +41,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name or the unique identifier associated with the stack.
+        /// The name or the unique stack ID that is associated with the stack.
         /// </para>
         /// </summary>
         public string StackName

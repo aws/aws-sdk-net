@@ -69,7 +69,7 @@ namespace Amazon.Runtime.Internal.Transform
         {
             if (maintainResponseBody)
             {
-                this.WrappingStream = new CachingWrapperStream(responseStream);
+                this.WrappingStream = new CachingWrapperStream(responseStream, AWSConfigs.LoggingConfig.LogResponsesSizeLimit);
                 responseStream = this.WrappingStream;
             }
             

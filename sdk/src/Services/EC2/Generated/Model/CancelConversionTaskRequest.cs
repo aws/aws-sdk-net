@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-03-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -65,7 +65,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReasonMessage.
+        /// Gets and sets the property ReasonMessage. 
+        /// <para>
+        /// The reason for canceling the conversion task.
+        /// </para>
         /// </summary>
         public string ReasonMessage
         {

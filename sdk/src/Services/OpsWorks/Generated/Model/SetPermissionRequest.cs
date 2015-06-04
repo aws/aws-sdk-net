@@ -108,8 +108,8 @@ namespace Amazon.OpsWorks.Model
         /// The user's permission level, which must be set to one of the following strings. You
         /// cannot set your own permissions level.
         /// </para>
-        ///  <ul> <li><code>deny</code></li> <li><code>show</code></li> <li><code>deploy</code></li>
-        /// <li><code>manage</code></li> <li><code>iam_only</code></li> </ul> 
+        ///  <ul> <li> <code>deny</code> </li> <li> <code>show</code> </li> <li> <code>deploy</code>
+        /// </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> 
         /// <para>
         /// For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>

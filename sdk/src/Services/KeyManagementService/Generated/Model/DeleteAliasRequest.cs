@@ -29,7 +29,7 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAlias operation.
-    /// Deletes the specified alias.
+    /// Deletes the specified alias. To associate an alias with a different key, call <a>UpdateAlias</a>.
     /// </summary>
     public partial class DeleteAliasRequest : AmazonKeyManagementServiceRequest
     {
@@ -38,7 +38,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property AliasName. 
         /// <para>
-        /// The alias to be deleted.
+        /// The alias to be deleted. The name must start with the word "alias" followed by a forward
+        /// slash (alias/). Aliases that begin with "alias/AWS" are reserved.
         /// </para>
         /// </summary>
         public string AliasName
