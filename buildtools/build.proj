@@ -2,7 +2,11 @@
 	DefaultTargets="full-build-nodocs"
 	xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	
-	<Import Project="..\..\AWSDotNetBuildTools\references.targets" Condition="Exists('..\..\AWSDotNetBuildTools\references.targets')" />
+    <PropertyGroup>
+        <InternalBuildTools Condition="'$(InternalBuildTools)'==''">..\..\AWSDotNetBuildTools</InternalBuildTools>
+    </PropertyGroup>
+    
+	<Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
 	<Import Project="common.targets" />
 
     <!-- properties used in documentation generation -->
@@ -37,9 +41,9 @@
 	
 	<Target Name="init" DependsOnTargets="clean;build-custom-tasks"/>
 
-	<Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;doc-build;consolidate-docartifacts"/>
+	<Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;doc-build;consolidate-docartifacts;save-build"/>
 
-	<Target Name="full-build-nodocs" DependsOnTargets="test-sdk;copy-assemblies"/>
+	<Target Name="full-build-nodocs" DependsOnTargets="test-sdk;copy-assemblies;save-build"/>
 	
 	<Target Name="run-generator">
 		<Message Text="Build and run code generator"/>
