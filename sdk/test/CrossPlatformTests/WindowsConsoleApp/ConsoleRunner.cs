@@ -25,7 +25,7 @@ namespace WindowsConsoleApp
         //    }
         //}
 
-        public override void WriteLine(string message)
+        protected override void WriteLine(string message)
         {
             Console.WriteLine(message);
         }
