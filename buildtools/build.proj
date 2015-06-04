@@ -195,7 +195,7 @@
 			DestinationFolder="$(Deployment)" />
 	</Target>
 	
-	<Target Name="save-build" DependsOnTargets="build-tools">		
+	<Target Name="save-build" Condition="Exists('$(InternalBuildTools)\references.targets')" DependsOnTargets="build-tools">		
 		<SaveBuildArtifactTask
 			RepositoryRoot="$(MSBuildProjectDirectory)\.."
 			BuildArtifactType="sdk"
