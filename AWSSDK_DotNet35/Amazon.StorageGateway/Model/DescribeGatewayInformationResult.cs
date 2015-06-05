@@ -38,6 +38,7 @@ namespace Amazon.StorageGateway.Model
         private string _gatewayState;
         private string _gatewayTimezone;
         private string _gatewayType;
+        private string _lastSoftwareUpdate;
         private string _nextUpdateAvailabilityDate;
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayType. 
         /// <para>
-        /// TBD
+        /// The type of the gateway.
         /// </para>
         /// </summary>
         public string GatewayType
@@ -147,9 +148,28 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastSoftwareUpdate. 
+        /// <para>
+        /// The date on which the last software update was applied to the gateway. If the gateway
+        /// has never been updated, this field does not return a value in the response.
+        /// </para>
+        /// </summary>
+        public string LastSoftwareUpdate
+        {
+            get { return this._lastSoftwareUpdate; }
+            set { this._lastSoftwareUpdate = value; }
+        }
+
+        // Check to see if LastSoftwareUpdate property is set
+        internal bool IsSetLastSoftwareUpdate()
+        {
+            return this._lastSoftwareUpdate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NextUpdateAvailabilityDate. 
         /// <para>
-        /// The date at which an update to the gateway is available. This date is in the time
+        /// The date on which an update to the gateway is available. This date is in the time
         /// zone of the gateway. If the gateway is not available for an update this field is not
         /// returned in the response.
         /// </para>

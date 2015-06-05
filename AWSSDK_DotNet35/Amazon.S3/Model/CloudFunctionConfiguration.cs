@@ -24,6 +24,8 @@ namespace Amazon.S3.Model
     /// This class contains the configuration Amazon S3 uses to figure out what events you want to listen 
     /// and send the event to an Amazon Lambda cloud function.
     /// </summary>
+    [Obsolete("CloudFunctionConfiguration is obsolete and will be removed in the upcoming version 3 of the SDK. " +
+        "LambdaFunctionConfiguration should be used instead, along with using IAmazonLambda.AddPermission for setting up permissions.")]
     public class CloudFunctionConfiguration
     {
         /// <summary>

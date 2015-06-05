@@ -48,8 +48,8 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (e.g. Windows
-        /// client) must provide to participate in mutual CHAP with the target.
+        /// <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example,
+        /// the Windows client) must provide to participate in mutual CHAP with the target.
         /// </para>
         ///  </li> <li> 
         /// <para>

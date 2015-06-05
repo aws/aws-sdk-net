@@ -91,6 +91,21 @@ namespace Amazon.CognitoIdentity
 
         #endregion
                 
+        #region  DeleteIdentities
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIdentities operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdentities operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteIdentitiesResponse> DeleteIdentitiesAsync(DeleteIdentitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteIdentityPool
 
         /// <summary>

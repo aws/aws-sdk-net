@@ -21,6 +21,8 @@ using System.IO;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable 0618
+
 namespace Amazon.S3.Model
 {
     /// <summary>
@@ -64,6 +66,8 @@ namespace Amazon.S3.Model
         /// Gets and sets the CloudFunctionConfigurations property. CloudFunctionConfigurations are configuration for 
         /// Amazon S3 events to be sent to an Amazon Lambda cloud function.
         /// </summary>
+        [Obsolete("CloudFunctionConfiguration is obsolete and will be removed in the upcoming version 3 of the SDK. " +
+            "LambdaFunctionConfiguration should be used instead, along with using IAmazonLambda.AddPermission for setting up permissions.")]
         public List<CloudFunctionConfiguration> CloudFunctionConfigurations { get; set; }
 
         internal bool IsSetCloudFunctionConfigurations()

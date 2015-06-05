@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// A JSON object containing the of the deleted gateway.
+    /// A JSON object containing the id of the deleted gateway.
     /// </summary>
     public partial class DeleteGatewayResult : AmazonWebServiceResponse
     {

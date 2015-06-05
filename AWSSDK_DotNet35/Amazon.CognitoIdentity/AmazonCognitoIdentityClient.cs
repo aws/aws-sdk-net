@@ -262,6 +262,7 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Creates a new identity pool. The identity pool is a store of user identity information
         /// that is specific to your AWS account. The limit on identity pools is 60 per account.
+        /// You must use AWS Developer credentials to call this API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIdentityPool service method.</param>
         /// 
@@ -326,11 +327,81 @@ namespace Amazon.CognitoIdentity
 
         #endregion
         
+        #region  DeleteIdentities
+
+        /// <summary>
+        /// Deletes identities from an identity pool. You can specify a list of 1-60 identities
+        /// that you want to delete.
+        /// 
+        ///  
+        /// <para>
+        /// You must use AWS Developer credentials to call this API.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdentities service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIdentities service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        public DeleteIdentitiesResponse DeleteIdentities(DeleteIdentitiesRequest request)
+        {
+            var marshaller = new DeleteIdentitiesRequestMarshaller();
+            var unmarshaller = DeleteIdentitiesResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIdentitiesRequest,DeleteIdentitiesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIdentities operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdentities operation on AmazonCognitoIdentityClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIdentities
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteIdentities(DeleteIdentitiesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteIdentitiesRequestMarshaller();
+            var unmarshaller = DeleteIdentitiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteIdentitiesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIdentities operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIdentities.</param>
+        /// 
+        /// <returns>Returns a  DeleteIdentitiesResult from CognitoIdentity.</returns>
+        public  DeleteIdentitiesResponse EndDeleteIdentities(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteIdentitiesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteIdentityPool
 
         /// <summary>
         /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
         /// with the pool.
+        /// 
+        ///  
+        /// <para>
+        /// You must use AWS Developer credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
         /// 
@@ -360,6 +431,11 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
         /// with the pool.
+        /// 
+        ///  
+        /// <para>
+        /// You must use AWS Developer credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityPool service method.</param>
         /// 
@@ -426,6 +502,11 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Returns metadata related to the given identity, including when the identity was created
         /// and any associated linked logins.
+        /// 
+        ///  
+        /// <para>
+        /// You must use AWS Developer credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="identityId">A unique identifier in the format REGION:GUID.</param>
         /// 
@@ -455,6 +536,11 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Returns metadata related to the given identity, including when the identity was created
         /// and any associated linked logins.
+        /// 
+        ///  
+        /// <para>
+        /// You must use AWS Developer credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentity service method.</param>
         /// 
@@ -521,6 +607,11 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Gets details about a particular identity pool, including the pool name, ID description,
         /// creation date, and current number of users.
+        /// 
+        ///  
+        /// <para>
+        /// You must use AWS Developer credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
         /// 
@@ -550,6 +641,11 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Gets details about a particular identity pool, including the pool name, ID description,
         /// creation date, and current number of users.
+        /// 
+        ///  
+        /// <para>
+        /// You must use AWS Developer credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityPool service method.</param>
         /// 
@@ -618,10 +714,18 @@ namespace Amazon.CognitoIdentity
         /// validated against supported login providers. If the token is for cognito-identity.amazonaws.com,
         /// it will be passed through to AWS Security Token Service with the appropriate role
         /// for the token.
+        /// 
+        ///  
+        /// <para>
+        /// This is a public API. You do not need any credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="identityId">A unique identifier in the format REGION:GUID.</param>
         /// 
         /// <returns>The response from the GetCredentialsForIdentity service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ExternalServiceException">
+        /// An exception thrown when a dependent service such as Facebook or Twitter is not responding
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
@@ -656,11 +760,19 @@ namespace Amazon.CognitoIdentity
         /// validated against supported login providers. If the token is for cognito-identity.amazonaws.com,
         /// it will be passed through to AWS Security Token Service with the appropriate role
         /// for the token.
+        /// 
+        ///  
+        /// <para>
+        /// This is a public API. You do not need any credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="identityId">A unique identifier in the format REGION:GUID.</param>
         /// <param name="logins">A set of optional name-value pairs that map provider names to provider tokens.</param>
         /// 
         /// <returns>The response from the GetCredentialsForIdentity service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ExternalServiceException">
+        /// An exception thrown when a dependent service such as Facebook or Twitter is not responding
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
@@ -696,10 +808,18 @@ namespace Amazon.CognitoIdentity
         /// validated against supported login providers. If the token is for cognito-identity.amazonaws.com,
         /// it will be passed through to AWS Security Token Service with the appropriate role
         /// for the token.
+        /// 
+        ///  
+        /// <para>
+        /// This is a public API. You do not need any credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCredentialsForIdentity service method.</param>
         /// 
         /// <returns>The response from the GetCredentialsForIdentity service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ExternalServiceException">
+        /// An exception thrown when a dependent service such as Facebook or Twitter is not responding
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
@@ -769,10 +889,22 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit
         /// linked account.
+        /// 
+        ///  
+        /// <para>
+        /// token+";"+tokenSecret.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is a public API. You do not need any credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetId service method.</param>
         /// 
         /// <returns>The response from the GetId service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ExternalServiceException">
+        /// An exception thrown when a dependent service such as Facebook or Twitter is not responding
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
@@ -840,6 +972,11 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Gets the roles for an identity pool.
+        /// 
+        ///  
+        /// <para>
+        /// You must use AWS Developer credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
         /// 
@@ -871,6 +1008,11 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Gets the roles for an identity pool.
+        /// 
+        ///  
+        /// <para>
+        /// You must use AWS Developer credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityPoolRoles service method.</param>
         /// 
@@ -946,10 +1088,17 @@ namespace Amazon.CognitoIdentity
         /// <para>
         /// The OpenId token is valid for 15 minutes.
         /// </para>
+        ///  
+        /// <para>
+        /// This is a public API. You do not need any credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="identityId">A unique identifier in the format REGION:GUID.</param>
         /// 
         /// <returns>The response from the GetOpenIdToken service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ExternalServiceException">
+        /// An exception thrown when a dependent service such as Facebook or Twitter is not responding
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
@@ -984,10 +1133,17 @@ namespace Amazon.CognitoIdentity
         /// <para>
         /// The OpenId token is valid for 15 minutes.
         /// </para>
+        ///  
+        /// <para>
+        /// This is a public API. You do not need any credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOpenIdToken service method.</param>
         /// 
         /// <returns>The response from the GetOpenIdToken service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ExternalServiceException">
+        /// An exception thrown when a dependent service such as Facebook or Twitter is not responding
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
@@ -1066,6 +1222,10 @@ namespace Amazon.CognitoIdentity
         /// identity, you can do so by providing the existing <code>IdentityId</code>. This API
         /// will create the identity in the specified <code>IdentityPoolId</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// You must use AWS Developer credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOpenIdTokenForDeveloperIdentity service method.</param>
         /// 
@@ -1138,6 +1298,11 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Lists the identities in a pool.
+        /// 
+        ///  
+        /// <para>
+        /// You must use AWS Developer credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIdentities service method.</param>
         /// 
@@ -1203,6 +1368,11 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Lists all of the Cognito identity pools registered for your account.
+        /// 
+        ///  
+        /// <para>
+        /// This is a public API. You do not need any credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityPools service method.</param>
         /// 
@@ -1273,6 +1443,11 @@ namespace Amazon.CognitoIdentity
         /// If the values are verified against the database, the response returns both values
         /// and is the same as the request. Otherwise a <code>ResourceConflictException</code>
         /// is thrown.
+        /// 
+        ///  
+        /// <para>
+        /// You must use AWS Developer credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the LookupDeveloperIdentity service method.</param>
         /// 
@@ -1347,6 +1522,11 @@ namespace Amazon.CognitoIdentity
         /// the <code>IdentityId</code> of the <code>DestinationUserIdentifier</code>. Only developer-authenticated
         /// users can be merged. If the users to be merged are associated with the same public
         /// provider, but as two different users, an exception will be thrown.
+        /// 
+        ///  
+        /// <para>
+        /// You must use AWS Developer credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MergeDeveloperIdentities service method.</param>
         /// 
@@ -1416,9 +1596,14 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code>
         /// action.
+        /// 
+        ///  
+        /// <para>
+        /// You must use AWS Developer credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
-        /// <param name="roles">The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</param>
+        /// <param name="roles">The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</param>
         /// 
         /// <returns>The response from the SetIdentityPoolRoles service method, as returned by CognitoIdentity.</returns>
         /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
@@ -1450,6 +1635,11 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code>
         /// action.
+        /// 
+        ///  
+        /// <para>
+        /// You must use AWS Developer credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityPoolRoles service method.</param>
         /// 
@@ -1521,6 +1711,11 @@ namespace Amazon.CognitoIdentity
         /// developer users will be considered new identities next time they are seen. If, for
         /// a given Cognito identity, you remove all federated identities as well as the developer
         /// user identifier, the Cognito identity becomes inaccessible.
+        /// 
+        ///  
+        /// <para>
+        /// This is a public API. You do not need any credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnlinkDeveloperIdentity service method.</param>
         /// 
@@ -1591,10 +1786,18 @@ namespace Amazon.CognitoIdentity
         /// Unlinks a federated identity from an existing account. Unlinked logins will be considered
         /// new identities next time they are seen. Removing the last linked login will make this
         /// identity inaccessible.
+        /// 
+        ///  
+        /// <para>
+        /// This is a public API. You do not need any credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnlinkIdentity service method.</param>
         /// 
         /// <returns>The response from the UnlinkIdentity service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ExternalServiceException">
+        /// An exception thrown when a dependent service such as Facebook or Twitter is not responding
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
@@ -1659,6 +1862,11 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Updates a user pool.
+        /// 
+        ///  
+        /// <para>
+        /// You must use AWS Developer credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityPool service method.</param>
         /// 

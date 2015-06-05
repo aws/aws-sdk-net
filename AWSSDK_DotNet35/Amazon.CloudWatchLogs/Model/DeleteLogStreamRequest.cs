@@ -45,8 +45,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates DeleteLogStreamRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">Sets the DeleteLogStreamRequest LogGroupName property</param>
-        /// <param name="logStreamName">Sets the DeleteLogStreamRequest LogStreamName property</param>
+        /// <param name="logGroupName">The name of the log group under which the log stream to delete belongs.</param>
+        /// <param name="logStreamName">The name of the log stream to delete.</param>
         public DeleteLogStreamRequest(string logGroupName, string logStreamName)
         {
             _logGroupName = logGroupName;
@@ -54,7 +54,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogGroupName.
+        /// Gets and sets the property LogGroupName. 
+        /// <para>
+        /// The name of the log group under which the log stream to delete belongs.
+        /// </para>
         /// </summary>
         public string LogGroupName
         {
@@ -69,7 +72,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogStreamName.
+        /// Gets and sets the property LogStreamName. 
+        /// <para>
+        /// The name of the log stream to delete.
+        /// </para>
         /// </summary>
         public string LogStreamName
         {

@@ -23,4 +23,44 @@ using Amazon.Runtime;
 
 namespace Amazon.CognitoIdentity
 {
+
+    /// <summary>
+    /// Constants used for properties of type ErrorCode.
+    /// </summary>
+    public class ErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessDenied for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode AccessDenied = new ErrorCode("AccessDenied");
+        /// <summary>
+        /// Constant InternalServerError for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode InternalServerError = new ErrorCode("InternalServerError");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public ErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ErrorCode FindValue(string value)
+        {
+            return FindValue<ErrorCode>(value);
+        }
+
+        public static implicit operator ErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

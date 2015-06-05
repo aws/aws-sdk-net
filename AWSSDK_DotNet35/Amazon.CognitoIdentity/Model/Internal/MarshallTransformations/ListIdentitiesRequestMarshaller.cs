@@ -57,6 +57,12 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetHideDisabled())
+                {
+                    context.Writer.WritePropertyName("HideDisabled");
+                    context.Writer.Write(publicRequest.HideDisabled);
+                }
+
                 if(publicRequest.IsSetIdentityPoolId())
                 {
                     context.Writer.WritePropertyName("IdentityPoolId");
