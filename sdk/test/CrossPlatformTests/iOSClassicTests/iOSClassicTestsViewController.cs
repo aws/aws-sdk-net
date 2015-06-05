@@ -31,7 +31,7 @@ namespace iOSClassicTests
             try
             {
                 mainTextView.Text = string.Empty;
-                var runner = new iOSClassicRunner(mainTextView, action => InvokeOnMainThread(() => action()));
+                var runner = new iOSClassicRunner(mainLabel, mainTextView, action => InvokeOnMainThread(() => action()));
                 await runner.ExecuteAllTestsAsync();
             }
             catch (Exception e)
