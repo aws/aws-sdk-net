@@ -42,11 +42,15 @@
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
-    <Reference Include="PCLCrypto, Version=0.5.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c, processorArchitecture=MSIL">
+    <Reference Include="nunit.framework, Version=3.0.5610.33197, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.0.0-beta-2\lib\portable-net45+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PCLCrypto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c, processorArchitecture=MSIL">
       <HintPath>..\packages\PCLCrypto.1.0.2.15130\lib\monoandroid\PCLCrypto.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PCLCrypto.Abstractions, Version=0.5.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c, processorArchitecture=MSIL">
+    <Reference Include="PCLCrypto.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c, processorArchitecture=MSIL">
       <HintPath>..\packages\PCLCrypto.1.0.2.15130\lib\monoandroid\PCLCrypto.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
@@ -72,7 +76,7 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
     <Reference Include="Validation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Validation.2.0.5.14286\lib\portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch\Validation.dll</HintPath>
+      <HintPath>..\packages\Validation.2.0.6.15003\lib\portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\Validation.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

@@ -22,7 +22,7 @@ namespace iOSTests
             _uiRunner = uiRunner;
         }
 
-        public override void WriteLine(string message)
+        protected override void WriteLine(string message)
         {
             _uiRunner(() => _textView.Text += Environment.NewLine+ message);
         }

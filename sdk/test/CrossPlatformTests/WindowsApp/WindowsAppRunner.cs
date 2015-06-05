@@ -25,7 +25,7 @@ namespace WindowsApp
             _output = textBlock;
         }
 
-        public override void WriteLine(string message)
+        protected override void WriteLine(string message)
         {
             _dispatcher.RunAsync(CoreDispatcherPriority.Normal,
                 () => { _output.Text = _output.Text + "\n" + message; }).AsTask().Wait();
