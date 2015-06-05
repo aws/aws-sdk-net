@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Amazon.MobileAnalytics.Custom
 {
-    internal class ClientContextConfig
+    public class ClientContextConfig
     {
         private string _clientId = "";
         private string _appTitle = "";
