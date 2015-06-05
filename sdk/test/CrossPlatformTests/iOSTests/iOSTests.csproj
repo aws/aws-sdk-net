@@ -89,6 +89,7 @@
     <Compile Include="iOSRunner.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <None Include="app.config" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,6 +106,10 @@
     <BundleResource Include="Resources\Default-568h%402x.png" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.0.5610.33197, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NUnit.3.0.0-beta-2\lib\portable-net45+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PCLCrypto">
       <HintPath>..\packages\PCLCrypto.1.0.2.15130\lib\Xamarin.iOS\PCLCrypto.dll</HintPath>
     </Reference>
