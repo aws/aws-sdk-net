@@ -64,6 +64,30 @@
     <Compile Include="Custom\*.cs">
       <SubType>Code</SubType>
     </Compile>
+	<Compile Include="Custom\SyncManager\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+	<Compile Include="Custom\SyncManager\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+	<Compile Include="Custom\SyncManager\_bcl45\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+	<Compile Include="Custom\SyncManager\Exceptions\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+	<Compile Include="Custom\SyncManager\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+	<Compile Include="Custom\SyncManager\Storage\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+	<Compile Include="Custom\SyncManager\Storage\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+	<Compile Include="Custom\SyncManager\Util\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>
