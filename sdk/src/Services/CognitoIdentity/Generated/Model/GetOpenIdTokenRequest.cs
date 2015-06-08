@@ -37,6 +37,10 @@ namespace Amazon.CognitoIdentity.Model
     /// <para>
     /// The OpenId token is valid for 15 minutes.
     /// </para>
+    ///  
+    /// <para>
+    /// This is a public API. You do not need any credentials to call this API.
+    /// </para>
     /// </summary>
     public partial class GetOpenIdTokenRequest : AmazonCognitoIdentityRequest
     {
@@ -60,7 +64,9 @@ namespace Amazon.CognitoIdentity.Model
 
         /// <summary>
         /// Gets and sets the property Logins. A set of optional name-value pairs that map provider
-        /// names to provider tokens.
+        /// names to provider tokens. When using graph.facebook.com and www.amazon.com, supply
+        /// the access_token returned from the provider's authflow. For accounts.google.com or
+        /// any other OpenId Connect provider, always include the id_token.
         /// </summary>
         public Dictionary<string, string> Logins
         {

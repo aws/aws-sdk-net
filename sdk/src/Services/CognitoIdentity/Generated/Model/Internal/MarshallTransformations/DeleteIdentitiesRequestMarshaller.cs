@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListIdentities Request Marshaller
+    /// DeleteIdentities Request Marshaller
     /// </summary>       
-    public class ListIdentitiesRequestMarshaller : IMarshaller<IRequest, ListIdentitiesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteIdentitiesRequestMarshaller : IMarshaller<IRequest, DeleteIdentitiesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListIdentitiesRequest)input);
+            return this.Marshall((DeleteIdentitiesRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListIdentitiesRequest publicRequest)
+        public IRequest Marshall(DeleteIdentitiesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CognitoIdentity");
-            string target = "AWSCognitoIdentityService.ListIdentities";
+            string target = "AWSCognitoIdentityService.DeleteIdentities";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,28 +67,15 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHideDisabled())
+                if(publicRequest.IsSetIdentityIdsToDelete())
                 {
-                    context.Writer.WritePropertyName("HideDisabled");
-                    context.Writer.Write(publicRequest.HideDisabled);
-                }
-
-                if(publicRequest.IsSetIdentityPoolId())
-                {
-                    context.Writer.WritePropertyName("IdentityPoolId");
-                    context.Writer.Write(publicRequest.IdentityPoolId);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
+                    context.Writer.WritePropertyName("IdentityIdsToDelete");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestIdentityIdsToDeleteListValue in publicRequest.IdentityIdsToDelete)
+                    {
+                            context.Writer.Write(publicRequestIdentityIdsToDeleteListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         

@@ -235,6 +235,36 @@ namespace Amazon.CognitoIdentity
 
         #endregion
         
+        #region  DeleteIdentities
+
+        internal DeleteIdentitiesResponse DeleteIdentities(DeleteIdentitiesRequest request)
+        {
+            var marshaller = new DeleteIdentitiesRequestMarshaller();
+            var unmarshaller = DeleteIdentitiesResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIdentitiesRequest,DeleteIdentitiesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIdentities operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdentities operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteIdentitiesResponse> DeleteIdentitiesAsync(DeleteIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteIdentitiesRequestMarshaller();
+            var unmarshaller = DeleteIdentitiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIdentitiesRequest,DeleteIdentitiesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteIdentityPool
 
         internal DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request)

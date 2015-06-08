@@ -38,6 +38,11 @@ namespace Amazon.CognitoIdentity.Model
     /// If the values are verified against the database, the response returns both values
     /// and is the same as the request. Otherwise a <code>ResourceConflictException</code>
     /// is thrown.
+    /// 
+    ///  
+    /// <para>
+    /// You must use AWS Developer credentials to call this API.
+    /// </para>
     /// </summary>
     public partial class LookupDeveloperIdentityRequest : AmazonCognitoIdentityRequest
     {

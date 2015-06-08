@@ -33,6 +33,11 @@ namespace Amazon.CognitoIdentity.Model
     /// developer users will be considered new identities next time they are seen. If, for
     /// a given Cognito identity, you remove all federated identities as well as the developer
     /// user identifier, the Cognito identity becomes inaccessible.
+    /// 
+    ///  
+    /// <para>
+    /// This is a public API. You do not need any credentials to call this API.
+    /// </para>
     /// </summary>
     public partial class UnlinkDeveloperIdentityRequest : AmazonCognitoIdentityRequest
     {

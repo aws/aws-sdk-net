@@ -31,6 +31,15 @@ namespace Amazon.CognitoIdentity.Model
     /// Container for the parameters to the GetId operation.
     /// Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit
     /// linked account.
+    /// 
+    ///  
+    /// <para>
+    /// token+";"+tokenSecret.
+    /// </para>
+    ///  
+    /// <para>
+    /// This is a public API. You do not need any credentials to call this API.
+    /// </para>
     /// </summary>
     public partial class GetIdRequest : AmazonCognitoIdentityRequest
     {
@@ -77,7 +86,8 @@ namespace Amazon.CognitoIdentity.Model
         /// <para>
         /// The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook:
         /// <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code>
-        /// </li> <li>Amazon: <code>www.amazon.com</code> </li> </ul> 
+        /// </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>www.twitter.com</code>
+        /// </li> <li>Digits: <code>www.digits.com</code> </li> </ul> 
         /// </para>
         /// </summary>
         public Dictionary<string, string> Logins
