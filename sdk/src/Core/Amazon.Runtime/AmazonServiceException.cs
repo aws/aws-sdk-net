@@ -60,7 +60,8 @@ namespace Amazon.Runtime
         }
 
         public AmazonServiceException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
-            : base(message)
+            : base(message ??
+                BuildGenericErrorMessage(errorCode, statusCode))
         {
             this.errorCode = errorCode;
             this.errorType = errorType;
@@ -69,12 +70,19 @@ namespace Amazon.Runtime
         }
 
         public AmazonServiceException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
-            : base(message, innerException)
+            : base(message ??
+                BuildGenericErrorMessage(errorCode, statusCode), 
+                innerException)
         {
             this.errorCode = errorCode;
             this.errorType = errorType;
             this.requestId = requestId;
             this.statusCode = statusCode;
+        }
+
+        static string BuildGenericErrorMessage(string errorCode, HttpStatusCode statusCode)
+        {
+            return string.Format("Error making request with Error Code {0} and Http Status Code {1}. No further error information was returned by the service.", errorCode, statusCode);
         }
 
         /// <summary>
