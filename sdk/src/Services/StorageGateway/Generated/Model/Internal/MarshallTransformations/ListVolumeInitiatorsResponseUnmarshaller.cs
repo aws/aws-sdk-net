@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeGatewayInformation operation
+    /// Response Unmarshaller for ListVolumeInitiators operation
     /// </summary>  
-    public class DescribeGatewayInformationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListVolumeInitiatorsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,58 +45,16 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeGatewayInformationResponse response = new DescribeGatewayInformationResponse();
+            ListVolumeInitiatorsResponse response = new ListVolumeInitiatorsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("GatewayARN", targetDepth))
+                if (context.TestExpression("Initiators", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.GatewayARN = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("GatewayId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.GatewayId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("GatewayNetworkInterfaces", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<NetworkInterface, NetworkInterfaceUnmarshaller>(NetworkInterfaceUnmarshaller.Instance);
-                    response.GatewayNetworkInterfaces = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("GatewayState", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.GatewayState = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("GatewayTimezone", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.GatewayTimezone = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("GatewayType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.GatewayType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastSoftwareUpdate", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.LastSoftwareUpdate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextUpdateAvailabilityDate", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextUpdateAvailabilityDate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.Initiators = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -125,9 +83,9 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             return new AmazonStorageGatewayException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeGatewayInformationResponseUnmarshaller _instance = new DescribeGatewayInformationResponseUnmarshaller();        
+        private static ListVolumeInitiatorsResponseUnmarshaller _instance = new ListVolumeInitiatorsResponseUnmarshaller();        
 
-        internal static DescribeGatewayInformationResponseUnmarshaller GetInstance()
+        internal static ListVolumeInitiatorsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -135,7 +93,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeGatewayInformationResponseUnmarshaller Instance
+        public static ListVolumeInitiatorsResponseUnmarshaller Instance
         {
             get
             {

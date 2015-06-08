@@ -28,25 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// A JSON object containing the id of the deleted gateway.
+    /// Container for the parameters to the ListVolumeInitiators operation.
+    /// This operation lists iSCSI initiators that are connected to a volume. You can use
+    /// this operation to determine whether a volume is being used or not.
     /// </summary>
-    public partial class DeleteGatewayResponse : AmazonWebServiceResponse
+    public partial class ListVolumeInitiatorsRequest : AmazonStorageGatewayRequest
     {
-        private string _gatewayARN;
+        private string _volumeARN;
 
         /// <summary>
-        /// Gets and sets the property GatewayARN.
+        /// Gets and sets the property VolumeARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation
+        /// to return a list of gateway volumes for the gateway.
+        /// </para>
         /// </summary>
-        public string GatewayARN
+        public string VolumeARN
         {
-            get { return this._gatewayARN; }
-            set { this._gatewayARN = value; }
+            get { return this._volumeARN; }
+            set { this._volumeARN = value; }
         }
 
-        // Check to see if GatewayARN property is set
-        internal bool IsSetGatewayARN()
+        // Check to see if VolumeARN property is set
+        internal bool IsSetVolumeARN()
         {
-            return this._gatewayARN != null;
+            return this._volumeARN != null;
         }
 
     }
