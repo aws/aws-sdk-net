@@ -27,17 +27,22 @@ using Amazon.CognitoSync.SyncManager.Internal;
 using System.Text;
 
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 
 namespace Amazon.CognitoSync.SyncManager.Internal
 {
     public partial class SQLiteLocalStorage : ILocalStorage
     {
+        private Logger _logger;
+
+        internal readonly string dataPath;
+
         private static object sqlite_lock = new object();
+
+        #region table datastructure
 
         internal static readonly string TABLE_DATASETS = "datasets";
         internal static readonly string TABLE_RECORDS = "records";
-        internal readonly string dataPath;
-        private Logger _logger;
 
         static class DatasetColumns
         {
@@ -197,6 +202,19 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
         }
 
+        #endregion
+
+        #region helper class
+        public class Statement
+        {
+            public string Query { get; set; }
+            public object[] Parameters { get; set; }
+        }
+
+        #endregion
+
+        #region helper methods
+
         public static byte[] ToUtf8(string sText)
         {
             byte[] byteArray;
@@ -207,25 +225,28 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             return byteArray;
         }
 
+        #endregion
+
+        #region public api's
+
         public void CreateDataset(string identityId, string datasetName)
         {
             lock (sqlite_lock)
             {
-                DatasetMetadata metadata = this.GetMetadataInternal(identityId, datasetName);
+                DatasetMetadata metadata = GetMetadataHelper(identityId, datasetName);
 
                 if (metadata == null)
                 {
-
-
                     string query = DatasetColumns.BuildInsert(
-                    new string[] {
-                        DatasetColumns.IDENTITY_ID,
-                        DatasetColumns.DATASET_NAME,
-                        DatasetColumns.CREATION_TIMESTAMP,
-                        DatasetColumns.LAST_MODIFIED_TIMESTAMP
-                       });
+                        new string[] 
+                        {
+                            DatasetColumns.IDENTITY_ID,
+                            DatasetColumns.DATASET_NAME,
+                            DatasetColumns.CREATION_TIMESTAMP,
+                            DatasetColumns.LAST_MODIFIED_TIMESTAMP
+                        });
 
-                    CreateDatasetHelper(query);
+                    CreateDatasetHelper(query, identityId, datasetName, DateTime.Now, DateTime.Now);
 
                 }
             }
@@ -235,7 +256,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         {
             lock (sqlite_lock)
             {
-                Record record = this.GetRecord(identityId, datasetName, key);
+                Record record = GetRecord(identityId, datasetName, key);
 
                 if (record == null)
                 {
@@ -252,7 +273,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         {
             lock (sqlite_lock)
             {
-                bool result = this.PutValueInternal(identityId, datasetName, key, value);
+                bool result = PutValueHelper(identityId, datasetName, key, value);
 
                 if (!result)
                 {
@@ -260,7 +281,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                 }
                 else
                 {
-                    this.UpdateLastModifiedTimestamp(identityId, datasetName);
+                    UpdateLastModifiedTimestamp(identityId, datasetName);
                 }
             }
         }
@@ -270,7 +291,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             lock (sqlite_lock)
             {
                 Dictionary<string, string> values = new Dictionary<string, string>();
-                List<Record> records = this.GetRecords(identityId, datasetName);
+                List<Record> records = GetRecords(identityId, datasetName);
 
                 foreach (Record record in records)
                 {
@@ -290,9 +311,9 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             {
                 foreach (KeyValuePair<string, string> entry in values)
                 {
-                    this.PutValueInternal(identityId, datasetName, entry.Key, entry.Value);
+                    PutValueHelper(identityId, datasetName, entry.Key, entry.Value);
                 }
-                this.UpdateLastModifiedTimestamp(identityId, datasetName);
+                UpdateLastModifiedTimestamp(identityId, datasetName);
             }
         }
 
@@ -301,28 +322,12 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             lock (sqlite_lock)
             {
                 List<DatasetMetadata> datasets = new List<DatasetMetadata>();
-                SQLiteStatement stmt = null;
-                try
-                {
 
+                string query = DatasetColumns.BuildQuery(
+                DatasetColumns.IDENTITY_ID + " = @whereIdentityId"
+                );
 
-                    stmt = db.Prepare(DatasetColumns.BuildQuery(
-                    DatasetColumns.IDENTITY_ID + " = @whereIdentityId"
-                    ));
-
-                    stmt.BindText(1, identityId);
-
-                    while (stmt.Read())
-                    {
-                        datasets.Add(this.SqliteStmtToDatasetMetadata(stmt));
-                    }
-
-                }
-                finally
-                {
-                    stmt.FinalizeStm();
-                }
-                return datasets;
+                return GetDatasetMetadataHelper(query, identityId);
             }
         }
 
@@ -330,7 +335,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         {
             lock (sqlite_lock)
             {
-                return this.GetMetadataInternal(identityId, datasetName);
+                return GetMetadataHelper(identityId, datasetName);
             }
         }
 
@@ -338,32 +343,14 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         {
             lock (sqlite_lock)
             {
-
                 Record record = null;
-                SQLiteStatement stmt = null;
-                try
-                {
 
-
-                    stmt = db.Prepare(RecordColumns.BuildQuery(
-                    RecordColumns.IDENTITY_ID + " = @identityId AND " +
-                        RecordColumns.DATASET_NAME + " = @datasetName AND " +
-                        RecordColumns.KEY + " = @key"
-                    ));
-
-                    stmt.BindText(1, identityId);
-                    stmt.BindText(2, datasetName);
-                    stmt.BindText(3, key);
-
-                    if (stmt.Read())
-                    {
-                        record = this.SqliteStmtToRecord(stmt);
-                    }
-                }
-                finally
-                {
-                    stmt.FinalizeStm();
-                }
+                string query = RecordColumns.BuildQuery(
+                RecordColumns.IDENTITY_ID + " = @identityId AND " +
+                    RecordColumns.DATASET_NAME + " = @datasetName AND " +
+                    RecordColumns.KEY + " = @key"
+                );
+                record = GetRecordHelper(query, identityId, datasetName, key);
                 return record;
             }
         }
@@ -372,89 +359,66 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         {
             lock (sqlite_lock)
             {
-
                 List<Record> records = new List<Record>();
 
-                SQLiteStatement stmt = null;
-                try
-                {
+                string query =
+                RecordColumns.BuildQuery(
+                    RecordColumns.IDENTITY_ID + " = @whereIdentityId AND " +
+                    RecordColumns.DATASET_NAME + " = @whereDatasetName"
+                );
 
-                    stmt = db.Prepare(
-                    RecordColumns.BuildQuery(
-                        RecordColumns.IDENTITY_ID + " = @whereIdentityId AND " +
-                        RecordColumns.DATASET_NAME + " = @whereDatasetName"
-                    ));
-
-                    stmt.BindText(1, identityId);
-                    stmt.BindText(2, datasetName);
-
-                    while (stmt.Read())
-                    {
-                        records.Add(this.SqliteStmtToRecord(stmt));
-                    }
-                }
-                finally
-                {
-                    stmt.FinalizeStm();
-                }
-                return records;
+                return GetRecordsHelper(query, identityId, datasetName);
             }
         }
 
         public void PutRecords(string identityId, string datasetName, List<Record> records)
         {
-            lock (sqlite_lock)
+            foreach (Record record in records)
             {
-                foreach (Record record in records)
-                {
-                    this.UpdateAndClearRecord(identityId, datasetName, record);
-                }
+                UpdateAndClearRecord(identityId, datasetName, record);
             }
         }
 
-        public void DeleteDataset(string identityId, string datasetName)
+        public void DeleteDataset(string identityId, string datasetName, List<Statement> additionalStatements = null)
         {
             lock (sqlite_lock)
             {
-                SQLiteStatement stmt = null;
-                try
+                string deleteRecordsQuery =
+                RecordColumns.BuildDelete(
+                    RecordColumns.IDENTITY_ID + " = @whereIdentityId AND " +
+                    RecordColumns.DATASET_NAME + " = @whereDatasetName"
+                );
+
+                Statement s1 = new Statement
                 {
+                    Query = deleteRecordsQuery,
+                    Parameters = new string[] { identityId, datasetName }
+                };
 
-                    stmt = db.Prepare(
-                    RecordColumns.BuildDelete(
-                        RecordColumns.IDENTITY_ID + " = @whereIdentityId AND " +
-                        RecordColumns.DATASET_NAME + " = @whereDatasetName"
-                    ));
+                string deleteDatasetQuery =
+                DatasetColumns.BuildUpdate(
+                    new string[] {
+                        DatasetColumns.LAST_MODIFIED_TIMESTAMP,
+                        DatasetColumns.LAST_SYNC_COUNT
+                        },
+                    DatasetColumns.IDENTITY_ID + " = @whereIdentityId AND " +
+                    DatasetColumns.DATASET_NAME + " = @whereDatasetName"
+                );
 
-                    stmt.BindText(1, identityId);
-                    stmt.BindText(2, datasetName);
-                    stmt.Step();
-
-                    stmt.FinalizeStm();
-
-
-                    stmt = db.Prepare(
-                    DatasetColumns.BuildUpdate(
-                        new string[] {
-                    DatasetColumns.LAST_MODIFIED_TIMESTAMP,
-                    DatasetColumns.LAST_SYNC_COUNT
-                },
-                        DatasetColumns.IDENTITY_ID + " = @whereIdentityId AND " +
-                        DatasetColumns.DATASET_NAME + " = @whereDatasetName"
-                    ));
-                    stmt.BindDateTime(1, DateTime.Now);
-                    stmt.BindInt(2, -1);
-                    stmt.BindText(3, identityId);
-                    stmt.BindText(4, datasetName);
-
-                    stmt.Step();
-
-                }
-                finally
+                Statement s2 = new Statement
                 {
-                    stmt.FinalizeStm();
+                    Query = deleteDatasetQuery,
+                    Parameters = new object[] { DateTime.Now, -1, identityId, datasetName }
+                };
+
+                List<Statement> statementsToExecute = new List<Statement>() { s1, s2 };
+
+                if (additionalStatements != null)
+                {
+                    statementsToExecute.AddRange(additionalStatements);
                 }
 
+                ExecuteMultipleHelper(statementsToExecute);
             }
         }
 
@@ -462,62 +426,31 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         {
             lock (sqlite_lock)
             {
-                this.DeleteDataset(identityId, datasetName);
-                SQLiteStatement stmt = null;
-                try
+                string query = DatasetColumns.BuildDelete(
+                    DatasetColumns.IDENTITY_ID + " = @whereIdentityId AND " +
+                    DatasetColumns.DATASET_NAME + " = @whereDatasetName"
+                );
+
+                Statement s1 = new Statement
                 {
+                    Query = query,
+                    Parameters = new string[] { identityId, datasetName }
+                };
 
-                    stmt = db.Prepare(
-                    DatasetColumns.BuildDelete(
-                        DatasetColumns.IDENTITY_ID + " = @whereIdentityId AND " +
-                        DatasetColumns.DATASET_NAME + " = @whereDatasetName"
-                    ));
-
-                    stmt.BindText(1, identityId);
-                    stmt.BindText(2, datasetName);
-
-
-                    stmt.Step();
-
-                }
-                finally
-                {
-                    stmt.FinalizeStm();
-                }
+                DeleteDataset(identityId, datasetName, new List<Statement>() { s1 });
             }
         }
 
         public long GetLastSyncCount(string identityId, string datasetName)
         {
-            long lastSyncCount = 0;
             lock (sqlite_lock)
             {
-                SQLiteStatement stmt = null;
-                try
-                {
-
-                    stmt = db.Prepare(
-                DatasetColumns.BuildQuery(
+                string query = DatasetColumns.BuildQuery(
                     DatasetColumns.IDENTITY_ID + " = @whereIdentityId AND " +
-                        DatasetColumns.DATASET_NAME + " = @whereDatasetName"
-                    ));
+                    DatasetColumns.DATASET_NAME + " = @whereDatasetName"
+                );
 
-                    stmt.BindText(1, identityId);
-                    stmt.BindText(2, datasetName);
-
-
-
-                    if (stmt.Read())
-                    {
-                        lastSyncCount = stmt.Fields[DatasetColumns.LAST_SYNC_COUNT].INTEGER;
-                    }
-
-                }
-                finally
-                {
-                    stmt.FinalizeStm();
-                }
-                return lastSyncCount;
+                return GetLastSyncCountHelper(query, identityId, datasetName);
             }
         }
 
@@ -525,35 +458,13 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         {
             lock (sqlite_lock)
             {
-
-                List<Record> records = new List<Record>();
-
-                SQLiteStatement stmt = null;
-                try
-                {
-                    stmt = db.Prepare(
-                        RecordColumns.BuildQuery(
-                            RecordColumns.IDENTITY_ID + " = @whereIdentityId AND " +
-                            RecordColumns.DATASET_NAME + " = @whereDatasetName AND " +
-                            RecordColumns.MODIFIED + " = @whereModified"
-                    ));
-
-                    stmt.BindText(1, identityId);
-                    stmt.BindText(2, datasetName);
-                    stmt.BindInt(3, 1);
-
-
-                    while (stmt.Read())
-                    {
-                        records.Add(this.SqliteStmtToRecord(stmt));
-                    }
-
-                }
-                finally
-                {
-                    stmt.FinalizeStm();
-                }
-                return records;
+                string query =
+                    RecordColumns.BuildQuery(
+                        RecordColumns.IDENTITY_ID + " = @whereIdentityId AND " +
+                        RecordColumns.DATASET_NAME + " = @whereDatasetName AND " +
+                        RecordColumns.MODIFIED + " = @whereModified"
+                );
+                return GetModifiedRecordsHelper(query, identityId, datasetName, 1); ;
             }
         }
 
@@ -561,32 +472,15 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         {
             lock (sqlite_lock)
             {
-
-                SQLiteStatement stmt = null;
-                try
-                {
-
-                    stmt = db.Prepare(
-                DatasetColumns.BuildUpdate(
+                string query = DatasetColumns.BuildUpdate(
                     new string[] {
-                    DatasetColumns.LAST_SYNC_COUNT,
-                    DatasetColumns.LAST_SYNC_TIMESTAMP
-                },
+                        DatasetColumns.LAST_SYNC_COUNT,
+                        DatasetColumns.LAST_SYNC_TIMESTAMP
+                    },
                     RecordColumns.IDENTITY_ID + " = @whereIdentityId AND " +
-                        RecordColumns.DATASET_NAME + " = @whereDatasetName"
-                    ));
-
-                    stmt.BindInt(1, lastSyncCount);
-                    stmt.BindDateTime(2, DateTime.Now);
-                    stmt.BindText(3, identityId);
-                    stmt.BindText(4, datasetName);
-
-                    stmt.Step();
-                }
-                finally
-                {
-                    stmt.FinalizeStm();
-                }
+                    RecordColumns.DATASET_NAME + " = @whereDatasetName"
+                );
+                UpdateLastSyncCountHelper(query, lastSyncCount, DateTime.Now, identityId, datasetName);
             }
         }
 
@@ -594,8 +488,10 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         {
             lock (sqlite_lock)
             {
-                db.Exec(DatasetColumns.BuildDelete(null));
-                db.Exec(RecordColumns.BuildDelete(null));
+                string query1 = DatasetColumns.BuildDelete(null);
+                string query2 = RecordColumns.BuildDelete(null);
+
+                ExecuteMultipleHelper(new List<Statement>() { new Statement { Query = query1 }, new Statement { Query = query2 } });
             }
         }
 
@@ -622,176 +518,174 @@ namespace Amazon.CognitoSync.SyncManager.Internal
 
         public void ChangeIdentityId(string oldIdentityId, string newIdentityId)
         {
-            Debug.Log("Reparenting datasets from " + oldIdentityId + " to " + newIdentityId);
+            _logger.DebugFormat("Reparenting datasets from {0} to {1}", oldIdentityId, newIdentityId);
+
             GetCommonDatasetNames(oldIdentityId, newIdentityId);
+
             lock (sqlite_lock)
             {
-                SQLiteStatement stmt = null;
-                try
+
+                List<Statement> statements = new List<Statement>();
+                // if oldIdentityId is unknown, aka the dataset is created prior to
+                // having a cognito id, just reparent datasets from unknown to
+                // newIdentityId
+                if (DatasetUtils.UNKNOWN_IDENTITY_ID == oldIdentityId)
                 {
-                    // if oldIdentityId is unknown, aka the dataset is created prior to
-                    // having a cognito id, just reparent datasets from unknown to
-                    // newIdentityId
-                    if (DatasetUtils.UNKNOWN_IDENTITY_ID == oldIdentityId)
+
+                    HashSet<string> commonDatasetNames = GetCommonDatasetNames(oldIdentityId, newIdentityId);
+
+                    // append UNKNOWN to the name of all non unique datasets
+                    foreach (String oldDatasetName in commonDatasetNames)
                     {
 
-                        HashSet<string> commonDatasetNames = GetCommonDatasetNames(oldIdentityId, newIdentityId);
 
-                        // append UNKNOWN to the name of all non unique datasets
-                        foreach (String oldDatasetName in commonDatasetNames)
+                        string updateDatasetQuery = "UPDATE " + TABLE_DATASETS
+                              + " SET " + DatasetColumns.DATASET_NAME + " = ?"
+                              + " WHERE " + DatasetColumns.IDENTITY_ID + " = ?"
+                              + " AND " + DatasetColumns.DATASET_NAME + " = ?";
+
+                        string timestamp = AWSSDKUtils.ConvertToUnixEpochMilliSeconds(DateTime.UtcNow).ToString();
+
+                        Statement updateDatasetStatement = new Statement()
                         {
+                            Query = updateDatasetQuery,
+                            Parameters = new string[] { oldDatasetName + "." + oldIdentityId + "-" + timestamp, oldIdentityId, oldDatasetName }
+                        };
 
-                            stmt = db.Prepare("UPDATE " + TABLE_DATASETS
-                                  + " SET " + DatasetColumns.DATASET_NAME + " = ?"
-                                  + " WHERE " + DatasetColumns.IDENTITY_ID + " = ?"
-                                  + " AND " + DatasetColumns.DATASET_NAME + " = ?"
-                            );
+                        statements.Add(updateDatasetStatement);
 
-                            DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-                            string timestamp = ((DateTime.UtcNow - epoch).TotalSeconds).ToString();
+                        string updateRecordsQuery = "UPDATE " + TABLE_RECORDS
+                            + " SET " + RecordColumns.DATASET_NAME + " = ?"
+                            + " WHERE " + RecordColumns.IDENTITY_ID + " = ?"
+                            + " AND " + RecordColumns.DATASET_NAME + " = ?";
 
-                            stmt.BindText(1, oldDatasetName + "." + oldIdentityId + "-" + timestamp);
-                            stmt.BindText(2, oldIdentityId);
-                            stmt.BindText(3, oldDatasetName);
-
-                            stmt.Step();
-
-                            stmt.FinalizeStm();
-
-                            stmt = db.Prepare("UPDATE " + TABLE_RECORDS
-                                + " SET " + RecordColumns.DATASET_NAME + " = ?"
-                                + " WHERE " + RecordColumns.IDENTITY_ID + " = ?"
-                                + " AND " + RecordColumns.DATASET_NAME + " = ?"
-                            );
-
-                            stmt.BindText(1, oldDatasetName + "." + oldIdentityId + "-" + timestamp);
-                            stmt.BindText(2, oldIdentityId);
-                            stmt.BindText(3, oldDatasetName);
-
-                            stmt.Step();
-
-                            stmt.FinalizeStm();
-                        }
-
-                        stmt = db.Prepare(
-                            DatasetColumns.BuildUpdate(
-                                new string[] { DatasetColumns.IDENTITY_ID },
-                                DatasetColumns.IDENTITY_ID + " = ?"
-                            )
-                        );
-
-                        stmt.BindText(1, newIdentityId);
-                        stmt.BindText(2, oldIdentityId);
-
-                        stmt.Step();
-
-                        stmt.FinalizeStm();
-
-
-                        stmt = db.Prepare(
-                            RecordColumns.BuildUpdate(
-                                new string[] { RecordColumns.IDENTITY_ID },
-                                RecordColumns.IDENTITY_ID + " = ?"
-                            )
-                        );
-
-
-                        stmt.BindText(1, newIdentityId);
-                        stmt.BindText(2, oldIdentityId);
-
-                        stmt.Step();
+                        Statement updateRecordsStatement = new Statement()
+                        {
+                            Query = updateRecordsQuery,
+                            Parameters = new string[] { oldDatasetName + "." + oldIdentityId + "-" + timestamp, oldIdentityId, oldDatasetName }
+                        };
+                        statements.Add(updateRecordsStatement);
 
                     }
-                    else
+
+                    string updateIdentityDatasetQuery = DatasetColumns.BuildUpdate(
+                            new string[] { DatasetColumns.IDENTITY_ID },
+                            DatasetColumns.IDENTITY_ID + " = ?"
+                        );
+
+                    Statement UpdateIdentityDatasetStatement = new Statement()
                     {
-                        // 1. copy oldIdentityId/dataset to newIdentityId/dataset
-                        // datasets table
-                        stmt = db.Prepare("INSERT INTO " + TABLE_DATASETS + "("
-                            + DatasetColumns.IDENTITY_ID + ","
-                            + DatasetColumns.DATASET_NAME + ","
-                            + DatasetColumns.CREATION_TIMESTAMP + ","
-                            + DatasetColumns.STORAGE_SIZE_BYTES + ","
-                            + DatasetColumns.RECORD_COUNT
-                            // last sync count is reset to default 0
-                            + ")"
-                            + " SELECT "
-                            + "'" + newIdentityId + "'," // assign new owner
-                            + DatasetColumns.DATASET_NAME + ","
-                            + DatasetColumns.CREATION_TIMESTAMP + ","
-                            + DatasetColumns.STORAGE_SIZE_BYTES + ","
-                            + DatasetColumns.RECORD_COUNT
-                            + " FROM " + TABLE_DATASETS
-                            + " WHERE " + DatasetColumns.IDENTITY_ID + " = ?"
+                        Query = updateIdentityDatasetQuery,
+                        Parameters = new string[] { newIdentityId, oldIdentityId }
+                    };
+
+                    statements.Add(UpdateIdentityDatasetStatement);
+
+                    string updateRecordsIdentityQuery = RecordColumns.BuildUpdate(
+                            new string[] { RecordColumns.IDENTITY_ID },
+                            RecordColumns.IDENTITY_ID + " = ?"
                         );
 
-                        stmt.BindText(1, oldIdentityId);
+                    Statement UpdateIdentityRecordsStatement = new Statement()
+                    {
+                        Query = updateRecordsIdentityQuery,
+                        Parameters = new string[] { newIdentityId, oldIdentityId }
+                    };
 
-                        stmt.Step();
-                        stmt.FinalizeStm();
+                    statements.Add(UpdateIdentityRecordsStatement);
 
-                        // records table
-                        stmt = db.Prepare("INSERT INTO " + TABLE_RECORDS + "("
-                            + RecordColumns.IDENTITY_ID + ","
-                            + RecordColumns.DATASET_NAME + ","
-                            + RecordColumns.KEY + ","
-                            + RecordColumns.VALUE + ","
-                            // sync count is resset to default 0
-                            + RecordColumns.LAST_MODIFIED_TIMESTAMP + ","
-                            + RecordColumns.LAST_MODIFIED_BY + ","
-                            + RecordColumns.DEVICE_LAST_MODIFIED_TIMESTAMP
-                            // modified is reset to default 1 (dirty)
-                            + ")"
-                            + " SELECT "
-                            + "'" + newIdentityId + "'," // assign new owner
-                            + RecordColumns.DATASET_NAME + ","
-                            + RecordColumns.KEY + ","
-                            + RecordColumns.VALUE + ","
-                            + RecordColumns.LAST_MODIFIED_TIMESTAMP + ","
-                            + RecordColumns.LAST_MODIFIED_BY + ","
-                            + RecordColumns.DEVICE_LAST_MODIFIED_TIMESTAMP
-                            + " FROM " + TABLE_RECORDS
-                            + " WHERE " + RecordColumns.IDENTITY_ID + " = ?"
-                        );
-
-                        stmt.BindText(1, oldIdentityId);
-
-                        stmt.Step();
-                        stmt.FinalizeStm();
-
-                        // 2. rename oldIdentityId/dataset to
-                        // newIdentityId/dataset.oldIdentityId
-                        // datasets table
-                        stmt = db.Prepare("UPDATE " + TABLE_DATASETS
-                            + " SET "
-                            + DatasetColumns.IDENTITY_ID + " = '" + newIdentityId + "', "
-                            + DatasetColumns.DATASET_NAME + " = "
-                            + DatasetColumns.DATASET_NAME + " || '." + oldIdentityId + "'"
-                            + " WHERE " + DatasetColumns.IDENTITY_ID + " = ?"
-                        );
-
-                        stmt.BindText(1, oldIdentityId);
-
-                        stmt.Step();
-                        stmt.FinalizeStm();
-
-                        // records table
-                        stmt = db.Prepare("UPDATE " + TABLE_RECORDS
-                            + " SET "
-                            + RecordColumns.IDENTITY_ID + " = '" + newIdentityId + "', "
-                            + RecordColumns.DATASET_NAME + " = "
-                            + RecordColumns.DATASET_NAME + " || '." + oldIdentityId + "'"
-                            + " WHERE " + RecordColumns.IDENTITY_ID + " = ?"
-                        );
-
-                        stmt.BindText(1, oldIdentityId);
-
-                        stmt.Step();
-                    }
                 }
-                finally
+                else
                 {
-                    stmt.FinalizeStm();
+                    // 1. copy oldIdentityId/dataset to newIdentityId/dataset
+                    // datasets table
+                    string copyDatasetToNewIdentity = "INSERT INTO " + TABLE_DATASETS + "("
+                        + DatasetColumns.IDENTITY_ID + ","
+                        + DatasetColumns.DATASET_NAME + ","
+                        + DatasetColumns.CREATION_TIMESTAMP + ","
+                        + DatasetColumns.STORAGE_SIZE_BYTES + ","
+                        + DatasetColumns.RECORD_COUNT
+                        // last sync count is reset to default 0
+                        + ")"
+                        + " SELECT "
+                        + "'" + newIdentityId + "'," // assign new owner
+                        + DatasetColumns.DATASET_NAME + ","
+                        + DatasetColumns.CREATION_TIMESTAMP + ","
+                        + DatasetColumns.STORAGE_SIZE_BYTES + ","
+                        + DatasetColumns.RECORD_COUNT
+                        + " FROM " + TABLE_DATASETS
+                        + " WHERE " + DatasetColumns.IDENTITY_ID + " = ?";
+
+                    statements.Add(new Statement
+                    {
+                        Query = copyDatasetToNewIdentity,
+                        Parameters = new string[] { oldIdentityId }
+                    });
+
+                    // records table
+                    string copyRecordsToNewIdentity = "INSERT INTO " + TABLE_RECORDS + "("
+                        + RecordColumns.IDENTITY_ID + ","
+                        + RecordColumns.DATASET_NAME + ","
+                        + RecordColumns.KEY + ","
+                        + RecordColumns.VALUE + ","
+                        // sync count is resset to default 0
+                        + RecordColumns.LAST_MODIFIED_TIMESTAMP + ","
+                        + RecordColumns.LAST_MODIFIED_BY + ","
+                        + RecordColumns.DEVICE_LAST_MODIFIED_TIMESTAMP
+                        // modified is reset to default 1 (dirty)
+                        + ")"
+                        + " SELECT "
+                        + "'" + newIdentityId + "'," // assign new owner
+                        + RecordColumns.DATASET_NAME + ","
+                        + RecordColumns.KEY + ","
+                        + RecordColumns.VALUE + ","
+                        + RecordColumns.LAST_MODIFIED_TIMESTAMP + ","
+                        + RecordColumns.LAST_MODIFIED_BY + ","
+                        + RecordColumns.DEVICE_LAST_MODIFIED_TIMESTAMP
+                        + " FROM " + TABLE_RECORDS
+                        + " WHERE " + RecordColumns.IDENTITY_ID + " = ?";
+
+                    statements.Add(new Statement
+                    {
+                        Query = copyRecordsToNewIdentity,
+                        Parameters = new string[] { oldIdentityId }
+                    });
+
+
+                    // 2. rename oldIdentityId/dataset to
+                    // newIdentityId/dataset.oldIdentityId
+                    // datasets table
+                    string updateDatasetToNewIdentityQuery = "UPDATE " + TABLE_DATASETS
+                        + " SET "
+                        + DatasetColumns.IDENTITY_ID + " = '" + newIdentityId + "', "
+                        + DatasetColumns.DATASET_NAME + " = "
+                        + DatasetColumns.DATASET_NAME + " || '." + oldIdentityId + "'"
+                        + " WHERE " + DatasetColumns.IDENTITY_ID + " = ?";
+
+                    statements.Add(new Statement
+                    {
+                        Query = updateDatasetToNewIdentityQuery,
+                        Parameters = new string[] { oldIdentityId }
+                    });
+
+                    // records table
+                    string updateRecordsToNewIdentityQuery = "UPDATE " + TABLE_RECORDS
+                        + " SET "
+                        + RecordColumns.IDENTITY_ID + " = '" + newIdentityId + "', "
+                        + RecordColumns.DATASET_NAME + " = "
+                        + RecordColumns.DATASET_NAME + " || '." + oldIdentityId + "'"
+                        + " WHERE " + RecordColumns.IDENTITY_ID + " = ?";
+
+                    statements.Add(new Statement
+                    {
+                        Query = updateRecordsToNewIdentityQuery,
+                        Parameters = new string[] { oldIdentityId }
+                    });
                 }
+
+                //execute all of them
+                ExecuteMultipleHelper(statements);
+
             }
 
         }
@@ -802,7 +696,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             {
                 foreach (DatasetMetadata metadata in datasetMetadata)
                 {
-                    if (!this.UpdateDatasetMetadataInternal(identityId, metadata))
+                    if (!UpdateDatasetMetadataInternal(identityId, metadata))
                     {
                         // TODO: Log error while updating metadata
                     }
@@ -814,57 +708,40 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         {
             lock (sqlite_lock)
             {
-                SQLiteStatement stmt = null;
-                try
-                {
-                    stmt = db.Prepare(
-                        DatasetColumns.BuildUpdate(
-                        new string[] { DatasetColumns.LAST_MODIFIED_TIMESTAMP },
-                        DatasetColumns.IDENTITY_ID + " = @whereIdentityId AND " +
-                        DatasetColumns.DATASET_NAME + " = @whereDatasetName"
-                    ));
-
-                    stmt.BindDateTime(1, DateTime.Now);
-                    stmt.BindText(2, identityId);
-                    stmt.BindText(3, datasetName);
-                    stmt.Step();
-                }
-                finally
-                {
-                    stmt.FinalizeStm();
-                }
-
+                string query =
+                    DatasetColumns.BuildUpdate(
+                    new string[] { DatasetColumns.LAST_MODIFIED_TIMESTAMP },
+                    DatasetColumns.IDENTITY_ID + " = @whereIdentityId AND " +
+                    DatasetColumns.DATASET_NAME + " = @whereDatasetName"
+                );
+                UpdateLastModifiedTimestampHelper(query, DateTime.Now, identityId, datasetName);
             }
         }
+
+        #endregion
+
+        #region private methods
 
         private bool UpdateDatasetMetadataInternal(string identityId, DatasetMetadata metadata)
         {
             lock (sqlite_lock)
             {
-                DatasetMetadata local = this.GetMetadataInternal(identityId, metadata.DatasetName);
-                SQLiteStatement stmt = null;
-                try
-                {
+                DatasetMetadata local = GetMetadataHelper(identityId, metadata.DatasetName);
 
-                    if (local == null)
-                    {
-                        stmt = db.Prepare(DatasetColumns.BuildInsert());
-                        stmt.BindText(1, identityId);
-                        stmt.BindText(2, metadata.DatasetName);
-                        stmt.BindDateTime(3, metadata.CreationDate);
-                        stmt.BindDateTime(4, metadata.LastModifiedDate);
-                        stmt.BindInt(5, metadata.RecordCount);
-                        stmt.BindInt(6, metadata.StorageSizeBytes);
-                        stmt.BindInt(7, 0);
-                        stmt.BindInt(8, 0);
-                        stmt.BindText(9, null);
-                        stmt.Step();
-                    }
-                    else
-                    {
-                        stmt = db.Prepare(
-                        DatasetColumns.BuildUpdate(
-                            new string[] {
+                if (local == null)
+                {
+                    string updateDatasetMetadataQuery = DatasetColumns.BuildInsert();
+                    ExecuteMultipleHelper(new List<Statement>(){
+                            new Statement{
+                                Query = updateDatasetMetadataQuery,
+                                Parameters = new object[]{identityId,metadata.DatasetName,metadata.CreationDate,metadata.LastModifiedDate,metadata.RecordCount,metadata.StorageSizeBytes,0,0,null}
+                            }
+                        });
+                }
+                else
+                {
+                    string updateDatasetMetadataQuery = DatasetColumns.BuildUpdate(
+                        new string[] {
                                 DatasetColumns.DATASET_NAME,
                                 DatasetColumns.CREATION_TIMESTAMP,
                                 DatasetColumns.LAST_MODIFIED_TIMESTAMP,
@@ -872,170 +749,63 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                                 DatasetColumns.RECORD_COUNT,
                                 DatasetColumns.STORAGE_SIZE_BYTES
                             },
-                            DatasetColumns.IDENTITY_ID + " = @whereIdentityId AND " +
-                            DatasetColumns.DATASET_NAME + " = @whereDatasetName"
-                        ));
-
-                        stmt.BindText(1, metadata.DatasetName);
-                        stmt.BindDateTime(2, metadata.CreationDate);
-                        stmt.BindDateTime(3, metadata.LastModifiedDate);
-                        stmt.BindText(4, metadata.LastModifiedBy);
-
-                        stmt.BindInt(5, metadata.RecordCount);
-                        stmt.BindInt(6, metadata.StorageSizeBytes);
-
-                        stmt.BindText(7, identityId);
-                        stmt.BindText(8, metadata.DatasetName);
-                        stmt.Step();
-                    }
-                    return true;
+                        DatasetColumns.IDENTITY_ID + " = @whereIdentityId AND " +
+                        DatasetColumns.DATASET_NAME + " = @whereDatasetName"
+                    );
+                    ExecuteMultipleHelper(new List<Statement>(){
+                            new Statement{
+                                Query = updateDatasetMetadataQuery,
+                                Parameters = new object[]{metadata.DatasetName,metadata.CreationDate,metadata.LastModifiedDate,metadata.LastModifiedBy,metadata.RecordCount,metadata.StorageSizeBytes,identityId,metadata.DatasetName}
+                            }
+                        });
                 }
-                finally
-                {
-                    stmt.FinalizeStm();
-                }
+                return true;
+
             }
         }
 
-        private void UpdateAndClearRecord(string identityId, string datasetName, Record record)
+        private bool PutValueHelper(string identityId, string datasetName, string key, string value)
         {
             lock (sqlite_lock)
             {
-                SQLiteStatement stmt = null;
-                try
-                {
-                    stmt = db.Prepare(
-                    RecordColumns.BuildQuery(
-                        RecordColumns.IDENTITY_ID + " = @whereIdentityId AND " +
-                        RecordColumns.DATASET_NAME + " = @whereDatasetName AND " +
-                        RecordColumns.KEY + " = @whereKey "
-                    ));
-
-                    stmt.BindText(1, identityId);
-                    stmt.BindText(2, datasetName);
-                    stmt.BindText(3, record.Key);
-                    bool recordsFound = false;
-
-                    while (stmt.Read())
-                    {
-                        recordsFound = true;
-                    }
-                    stmt.FinalizeStm();
-
-                    if (recordsFound)
-                    {
-                        stmt = db.Prepare(
-                        RecordColumns.BuildUpdate(
-                            new string[] {
-                            RecordColumns.VALUE,
-                            RecordColumns.SYNC_COUNT,
-                            RecordColumns.MODIFIED
-                        },
-                        RecordColumns.IDENTITY_ID + " = @whereIdentityId AND " +
-                            RecordColumns.DATASET_NAME + " = @whereDatasetName AND " +
-                            RecordColumns.KEY + " = @whereKey "
-                        ));
-                        stmt.BindText(1, record.Value);
-                        stmt.BindInt(2, record.SyncCount);
-                        stmt.BindInt(3, record.IsModified ? 1 : 0);
-                        stmt.BindText(4, identityId);
-                        stmt.BindText(5, datasetName);
-                        stmt.BindText(6, record.Key);
-                        stmt.Step();
-                    }
-                    else
-                    {
-                        stmt = db.Prepare(RecordColumns.BuildInsert());
-                        stmt.BindText(1, identityId);
-                        stmt.BindText(2, datasetName);
-                        stmt.BindText(3, record.Key);
-                        stmt.BindText(4, record.Value);
-                        stmt.BindInt(5, record.SyncCount);
-                        stmt.BindDateTime(6, record.LastModifiedDate);
-                        stmt.BindText(7, record.LastModifiedBy);
-                        stmt.BindDateTime(8, record.DeviceLastModifiedDate);
-                        stmt.BindInt(9, record.IsModified ? 1 : 0);
-                        stmt.Step();
-                    }
-                }
-                finally
-                {
-                    stmt.FinalizeStm();
-                }
-            }
-        }
-
-        private Record SqliteStmtToRecord(SQLiteStatement stmt)
-        {
-            return new Record(stmt.Fields[RecordColumns.KEY].TEXT, stmt.Fields[RecordColumns.VALUE].TEXT,
-                               stmt.Fields[RecordColumns.SYNC_COUNT].INTEGER, stmt.Fields[RecordColumns.LAST_MODIFIED_TIMESTAMP].DATETIME,
-                               stmt.Fields[RecordColumns.LAST_MODIFIED_BY].TEXT, stmt.Fields[RecordColumns.DEVICE_LAST_MODIFIED_TIMESTAMP].DATETIME,
-                               (stmt.Fields[RecordColumns.MODIFIED].INTEGER == 1));
-        }
-
-        private bool PutValueInternal(string identityId, string datasetName, string key, string value)
-        {
-            lock (sqlite_lock)
-            {
-                Record record = this.GetRecord(identityId, datasetName, key);
+                Record record = GetRecord(identityId, datasetName, key);
 
                 if (record != null && string.Equals(record.Value, value))
                 {
                     return true;
                 }
-                SQLiteStatement stmt = null;
-                try
+
+                if (record == null)
                 {
-                    if (record == null)
-                    {
-                        stmt = db.Prepare(RecordColumns.BuildInsert());
-                        stmt.BindText(1, identityId);
-                        stmt.BindText(2, datasetName);
-                        stmt.BindText(3, key);
-                        stmt.BindText(4, value);
-                        stmt.BindInt(5, 0);
-                        stmt.BindDateTime(6, DateTime.Now);
-                        stmt.BindText(7, "");
-                        stmt.BindInt(8, 0);
-                        stmt.BindInt(9, 1);
-                        stmt.Step();
-                        return true;
-                    }
-                    else
-                    {
-                        stmt = db.Prepare(
-                        RecordColumns.BuildUpdate(
-                            new string[] { 
+                    string insertRecord = RecordColumns.BuildInsert();
+                    ExecuteMultipleHelper(new List<Statement>{new Statement{
+                    Query = insertRecord,
+                    Parameters = new object[]{identityId,datasetName,key,value,0,DateTime.Now,string.Empty,0,1}
+                    }});
+                    return true;
+                }
+                else
+                {
+                    string insertRecord =
+                    RecordColumns.BuildUpdate(
+                        new string[] { 
                                 RecordColumns.IDENTITY_ID, RecordColumns.DATASET_NAME, RecordColumns.KEY, 
                                 RecordColumns.VALUE, RecordColumns.MODIFIED, RecordColumns.SYNC_COUNT, 
                                 RecordColumns.DEVICE_LAST_MODIFIED_TIMESTAMP 
                             },
-                            RecordColumns.IDENTITY_ID + " = @whereIdentityId AND " +
-                            RecordColumns.DATASET_NAME + " = @whereDatasetName AND " +
-                            RecordColumns.KEY + " = @whereKey "
-                        ));
-
-                        stmt.BindText(1, identityId);
-                        stmt.BindText(2, datasetName);
-                        stmt.BindText(3, key);
-                        stmt.BindText(4, value);
-                        stmt.BindInt(5, 1);
-                        stmt.BindInt(6, record.SyncCount);
-                        stmt.BindDateTime(7, DateTime.Now);
-                        stmt.BindText(8, identityId);
-                        stmt.BindText(9, datasetName);
-                        stmt.BindText(10, key);
-                        stmt.Step();
-                        return true;
-                    }
-                }
-                finally
-                {
-                    stmt.FinalizeStm();
+                        RecordColumns.IDENTITY_ID + " = @whereIdentityId AND " +
+                        RecordColumns.DATASET_NAME + " = @whereDatasetName AND " +
+                        RecordColumns.KEY + " = @whereKey "
+                    );
+                    ExecuteMultipleHelper(new List<Statement>{new Statement{
+                    Query = insertRecord,
+                    Parameters = new object[]{identityId,datasetName,key,value,1,record.SyncCount,DateTime.Now,identityId,datasetName,key}
+                    }});
+                    return true;
                 }
             }
         }
-
+        #endregion
     }
 }
 
