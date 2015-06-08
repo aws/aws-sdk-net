@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// A log stream is sequence of log events that share the same emitter.
+    /// A log stream is sequence of log events from a single emitter of logs.
     /// </summary>
     public partial class LogStream
     {

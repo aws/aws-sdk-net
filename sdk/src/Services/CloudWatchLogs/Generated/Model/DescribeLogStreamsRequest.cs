@@ -59,7 +59,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates DescribeLogStreamsRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">Sets the DescribeLogStreamsRequest LogGroupName property</param>
+        /// <param name="logGroupName">The log group name for which log streams are to be listed.</param>
         public DescribeLogStreamsRequest(string logGroupName)
         {
             _logGroupName = logGroupName;
@@ -104,7 +104,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogGroupName.
+        /// Gets and sets the property LogGroupName. 
+        /// <para>
+        /// The log group name for which log streams are to be listed.
+        /// </para>
         /// </summary>
         public string LogGroupName
         {
