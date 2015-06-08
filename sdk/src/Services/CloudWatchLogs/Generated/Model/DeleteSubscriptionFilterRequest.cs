@@ -28,32 +28,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteLogGroup operation.
-    /// Deletes the log group with the specified name and permanently deletes all the archived
-    /// log events associated with it.
+    /// Container for the parameters to the DeleteSubscriptionFilter operation.
+    /// Deletes a subscription filter associated with the specified log group.
     /// </summary>
-    public partial class DeleteLogGroupRequest : AmazonCloudWatchLogsRequest
+    public partial class DeleteSubscriptionFilterRequest : AmazonCloudWatchLogsRequest
     {
+        private string _filterName;
         private string _logGroupName;
 
         /// <summary>
-        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// Gets and sets the property FilterName. 
+        /// <para>
+        /// The name of the subscription filter to delete.
+        /// </para>
         /// </summary>
-        public DeleteLogGroupRequest() { }
-
-        /// <summary>
-        /// Instantiates DeleteLogGroupRequest with the parameterized properties
-        /// </summary>
-        /// <param name="logGroupName">The name of the log group to delete.</param>
-        public DeleteLogGroupRequest(string logGroupName)
+        public string FilterName
         {
-            _logGroupName = logGroupName;
+            get { return this._filterName; }
+            set { this._filterName = value; }
+        }
+
+        // Check to see if FilterName property is set
+        internal bool IsSetFilterName()
+        {
+            return this._filterName != null;
         }
 
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The name of the log group to delete.
+        /// The name of the log group that is associated with the subscription filter to delete.
         /// </para>
         /// </summary>
         public string LogGroupName

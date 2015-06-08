@@ -28,48 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutMetricFilter operation.
-    /// Creates or updates a metric filter and associates it with the specified log group.
-    /// Metric filters allow you to configure rules to extract metric data from log events
-    /// ingested through <code class="code">PutLogEvents</code> requests. 
+    /// Container for the parameters to the PutSubscriptionFilter operation.
+    /// Creates or updates a subscription filter and associates it with the specified log
+    /// group. Subscription filters allow you to subscribe to a real-time stream of log events
+    /// ingested through <code class="code">PutLogEvents</code> requests and have them delivered
+    /// to a specific destination. Currently the only supported destination is an Amazon Kinesis
+    /// stream belonging to the same account as the subscription filter. 
     /// 
     ///  
     /// <para>
-    ///  The maximum number of metric filters that can be associated with a log group is 100.
+    ///  Currently there can only be one subscription filter associated with a log group.
     /// 
     /// </para>
     /// </summary>
-    public partial class PutMetricFilterRequest : AmazonCloudWatchLogsRequest
+    public partial class PutSubscriptionFilterRequest : AmazonCloudWatchLogsRequest
     {
+        private string _destinationArn;
         private string _filterName;
         private string _filterPattern;
         private string _logGroupName;
-        private List<MetricTransformation> _metricTransformations = new List<MetricTransformation>();
+        private string _roleArn;
 
         /// <summary>
-        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// Gets and sets the property DestinationArn. 
+        /// <para>
+        /// The ARN of an Amazon Kinesis stream to deliver matching log events to.
+        /// </para>
         /// </summary>
-        public PutMetricFilterRequest() { }
-
-        /// <summary>
-        /// Instantiates PutMetricFilterRequest with the parameterized properties
-        /// </summary>
-        /// <param name="logGroupName">The name of the log group to associate the metric filter with.</param>
-        /// <param name="filterName">A name for the metric filter.</param>
-        /// <param name="filterPattern">A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.</param>
-        /// <param name="metricTransformations">A collection of information needed to define how metric data gets emitted.</param>
-        public PutMetricFilterRequest(string logGroupName, string filterName, string filterPattern, List<MetricTransformation> metricTransformations)
+        public string DestinationArn
         {
-            _logGroupName = logGroupName;
-            _filterName = filterName;
-            _filterPattern = filterPattern;
-            _metricTransformations = metricTransformations;
+            get { return this._destinationArn; }
+            set { this._destinationArn = value; }
+        }
+
+        // Check to see if DestinationArn property is set
+        internal bool IsSetDestinationArn()
+        {
+            return this._destinationArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property FilterName. 
         /// <para>
-        /// A name for the metric filter.
+        /// A name for the subscription filter.
         /// </para>
         /// </summary>
         public string FilterName
@@ -87,8 +88,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property FilterPattern. 
         /// <para>
-        /// A valid CloudWatch Logs filter pattern for extracting metric data out of ingested
-        /// log events.
+        /// A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log
+        /// events.
         /// </para>
         /// </summary>
         public string FilterPattern
@@ -106,7 +107,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The name of the log group to associate the metric filter with.
+        /// The name of the log group to associate the subscription filter with.
         /// </para>
         /// </summary>
         public string LogGroupName
@@ -122,21 +123,22 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MetricTransformations. 
+        /// Gets and sets the property RoleArn. 
         /// <para>
-        /// A collection of information needed to define how metric data gets emitted.
+        /// The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to do Amazon
+        /// Kinesis PutRecord requests on the desitnation stream.
         /// </para>
         /// </summary>
-        public List<MetricTransformation> MetricTransformations
+        public string RoleArn
         {
-            get { return this._metricTransformations; }
-            set { this._metricTransformations = value; }
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
         }
 
-        // Check to see if MetricTransformations property is set
-        internal bool IsSetMetricTransformations()
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
         {
-            return this._metricTransformations != null && this._metricTransformations.Count > 0; 
+            return this._roleArn != null;
         }
 
     }

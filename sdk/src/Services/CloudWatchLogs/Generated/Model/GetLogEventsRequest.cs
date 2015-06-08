@@ -61,8 +61,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates GetLogEventsRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">Sets the GetLogEventsRequest LogGroupName property</param>
-        /// <param name="logStreamName">Sets the GetLogEventsRequest LogStreamName property</param>
+        /// <param name="logGroupName">The name of the log group to query.</param>
+        /// <param name="logStreamName">The name of the log stream to query.</param>
         public GetLogEventsRequest(string logGroupName, string logStreamName)
         {
             _logGroupName = logGroupName;
@@ -105,7 +105,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogGroupName.
+        /// Gets and sets the property LogGroupName. 
+        /// <para>
+        /// The name of the log group to query.
+        /// </para>
         /// </summary>
         public string LogGroupName
         {
@@ -120,7 +123,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogStreamName.
+        /// Gets and sets the property LogStreamName. 
+        /// <para>
+        /// The name of the log stream to query.
+        /// </para>
         /// </summary>
         public string LogStreamName
         {
@@ -156,9 +162,11 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartFromHead. If set to true, the earliest log events
-        /// would be returned first. The default is false (the latest log events are returned
-        /// first).
+        /// Gets and sets the property StartFromHead. 
+        /// <para>
+        /// If set to true, the earliest log events would be returned first. The default is false
+        /// (the latest log events are returned first).
+        /// </para>
         /// </summary>
         public bool StartFromHead
         {

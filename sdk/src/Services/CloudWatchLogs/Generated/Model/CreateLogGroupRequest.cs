@@ -53,14 +53,17 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates CreateLogGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">Sets the CreateLogGroupRequest LogGroupName property</param>
+        /// <param name="logGroupName">The name of the log group to create.</param>
         public CreateLogGroupRequest(string logGroupName)
         {
             _logGroupName = logGroupName;
         }
 
         /// <summary>
-        /// Gets and sets the property LogGroupName.
+        /// Gets and sets the property LogGroupName. 
+        /// <para>
+        /// The name of the log group to create.
+        /// </para>
         /// </summary>
         public string LogGroupName
         {

@@ -63,8 +63,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates PutLogEventsRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">Sets the PutLogEventsRequest LogGroupName property</param>
-        /// <param name="logStreamName">Sets the PutLogEventsRequest LogStreamName property</param>
+        /// <param name="logGroupName">The name of the log group to put log events to.</param>
+        /// <param name="logStreamName">The name of the log stream to put log events to.</param>
         /// <param name="logEvents">Sets the PutLogEventsRequest LogEvents property</param>
         public PutLogEventsRequest(string logGroupName, string logStreamName, List<InputLogEvent> logEvents)
         {
@@ -89,7 +89,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogGroupName.
+        /// Gets and sets the property LogGroupName. 
+        /// <para>
+        /// The name of the log group to put log events to.
+        /// </para>
         /// </summary>
         public string LogGroupName
         {
@@ -104,7 +107,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogStreamName.
+        /// Gets and sets the property LogStreamName. 
+        /// <para>
+        /// The name of the log stream to put log events to.
+        /// </para>
         /// </summary>
         public string LogStreamName
         {
