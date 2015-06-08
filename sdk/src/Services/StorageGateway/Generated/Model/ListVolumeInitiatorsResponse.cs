@@ -28,25 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// A JSON object containing the id of the deleted gateway.
+    /// ListVolumeInitiatorsOutput
     /// </summary>
-    public partial class DeleteGatewayResponse : AmazonWebServiceResponse
+    public partial class ListVolumeInitiatorsResponse : AmazonWebServiceResponse
     {
-        private string _gatewayARN;
+        private List<string> _initiators = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property GatewayARN.
+        /// Gets and sets the property Initiators. 
+        /// <para>
+        /// The host names and port numbers of all iSCSI initiators that are connected to the
+        /// gateway.
+        /// </para>
         /// </summary>
-        public string GatewayARN
+        public List<string> Initiators
         {
-            get { return this._gatewayARN; }
-            set { this._gatewayARN = value; }
+            get { return this._initiators; }
+            set { this._initiators = value; }
         }
 
-        // Check to see if GatewayARN property is set
-        internal bool IsSetGatewayARN()
+        // Check to see if Initiators property is set
+        internal bool IsSetInitiators()
         {
-            return this._gatewayARN != null;
+            return this._initiators != null && this._initiators.Count > 0; 
         }
 
     }
