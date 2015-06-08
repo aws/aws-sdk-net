@@ -28,18 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeIdentity operation.
-    /// Returns metadata related to the given identity, including when the identity was created
-    /// and any associated linked logins.
-    /// 
-    ///  
-    /// <para>
-    /// You must use AWS Developer credentials to call this API.
-    /// </para>
+    /// An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and
+    /// IdentityId.
     /// </summary>
-    public partial class DescribeIdentityRequest : AmazonCognitoIdentityRequest
+    public partial class UnprocessedIdentityId
     {
+        private ErrorCode _errorCode;
         private string _identityId;
+
+        /// <summary>
+        /// Gets and sets the property ErrorCode. 
+        /// <para>
+        /// The error code indicating the type of error that occurred.
+        /// </para>
+        /// </summary>
+        public ErrorCode ErrorCode
+        {
+            get { return this._errorCode; }
+            set { this._errorCode = value; }
+        }
+
+        // Check to see if ErrorCode property is set
+        internal bool IsSetErrorCode()
+        {
+            return this._errorCode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IdentityId. 

@@ -33,6 +33,11 @@ namespace Amazon.CognitoIdentity.Model
     /// validated against supported login providers. If the token is for cognito-identity.amazonaws.com,
     /// it will be passed through to AWS Security Token Service with the appropriate role
     /// for the token.
+    /// 
+    ///  
+    /// <para>
+    /// This is a public API. You do not need any credentials to call this API.
+    /// </para>
     /// </summary>
     public partial class GetCredentialsForIdentityRequest : AmazonCognitoIdentityRequest
     {

@@ -28,35 +28,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeIdentity operation.
-    /// Returns metadata related to the given identity, including when the identity was created
-    /// and any associated linked logins.
+    /// Container for the parameters to the DeleteIdentities operation.
+    /// Deletes identities from an identity pool. You can specify a list of 1-60 identities
+    /// that you want to delete.
     /// 
     ///  
     /// <para>
     /// You must use AWS Developer credentials to call this API.
     /// </para>
     /// </summary>
-    public partial class DescribeIdentityRequest : AmazonCognitoIdentityRequest
+    public partial class DeleteIdentitiesRequest : AmazonCognitoIdentityRequest
     {
-        private string _identityId;
+        private List<string> _identityIdsToDelete = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property IdentityId. 
+        /// Gets and sets the property IdentityIdsToDelete. 
         /// <para>
-        /// A unique identifier in the format REGION:GUID.
+        /// A list of 1-60 identities that you want to delete.
         /// </para>
         /// </summary>
-        public string IdentityId
+        public List<string> IdentityIdsToDelete
         {
-            get { return this._identityId; }
-            set { this._identityId = value; }
+            get { return this._identityIdsToDelete; }
+            set { this._identityIdsToDelete = value; }
         }
 
-        // Check to see if IdentityId property is set
-        internal bool IsSetIdentityId()
+        // Check to see if IdentityIdsToDelete property is set
+        internal bool IsSetIdentityIdsToDelete()
         {
-            return this._identityId != null;
+            return this._identityIdsToDelete != null && this._identityIdsToDelete.Count > 0; 
         }
 
     }

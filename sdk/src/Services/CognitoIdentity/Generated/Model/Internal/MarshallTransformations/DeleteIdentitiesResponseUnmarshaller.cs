@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UnlinkIdentity operation
+    /// Response Unmarshaller for DeleteIdentities operation
     /// </summary>  
-    public class UnlinkIdentityResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteIdentitiesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,19 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UnlinkIdentityResponse response = new UnlinkIdentityResponse();
+            DeleteIdentitiesResponse response = new DeleteIdentitiesResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("UnprocessedIdentityIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<UnprocessedIdentityId, UnprocessedIdentityIdUnmarshaller>(UnprocessedIdentityIdUnmarshaller.Instance);
+                    response.UnprocessedIdentityIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -61,10 +72,6 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ExternalServiceException"))
-            {
-                return new ExternalServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalErrorException"))
             {
                 return new InternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -73,18 +80,6 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             {
                 return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NotAuthorizedException"))
-            {
-                return new NotAuthorizedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceConflictException"))
-            {
-                return new ResourceConflictException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-            {
-                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
             {
                 return new TooManyRequestsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -92,9 +87,9 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             return new AmazonCognitoIdentityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UnlinkIdentityResponseUnmarshaller _instance = new UnlinkIdentityResponseUnmarshaller();        
+        private static DeleteIdentitiesResponseUnmarshaller _instance = new DeleteIdentitiesResponseUnmarshaller();        
 
-        internal static UnlinkIdentityResponseUnmarshaller GetInstance()
+        internal static DeleteIdentitiesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -102,7 +97,7 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UnlinkIdentityResponseUnmarshaller Instance
+        public static DeleteIdentitiesResponseUnmarshaller Instance
         {
             get
             {

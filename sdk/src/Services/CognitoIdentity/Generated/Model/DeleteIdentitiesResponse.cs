@@ -28,35 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeIdentity operation.
-    /// Returns metadata related to the given identity, including when the identity was created
-    /// and any associated linked logins.
-    /// 
-    ///  
-    /// <para>
-    /// You must use AWS Developer credentials to call this API.
-    /// </para>
+    /// Returned in response to a successful <code>DeleteIdentities</code> operation.
     /// </summary>
-    public partial class DescribeIdentityRequest : AmazonCognitoIdentityRequest
+    public partial class DeleteIdentitiesResponse : AmazonWebServiceResponse
     {
-        private string _identityId;
+        private List<UnprocessedIdentityId> _unprocessedIdentityIds = new List<UnprocessedIdentityId>();
 
         /// <summary>
-        /// Gets and sets the property IdentityId. 
+        /// Gets and sets the property UnprocessedIdentityIds. 
         /// <para>
-        /// A unique identifier in the format REGION:GUID.
+        /// An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and
+        /// IdentityId.
         /// </para>
         /// </summary>
-        public string IdentityId
+        public List<UnprocessedIdentityId> UnprocessedIdentityIds
         {
-            get { return this._identityId; }
-            set { this._identityId = value; }
+            get { return this._unprocessedIdentityIds; }
+            set { this._unprocessedIdentityIds = value; }
         }
 
-        // Check to see if IdentityId property is set
-        internal bool IsSetIdentityId()
+        // Check to see if UnprocessedIdentityIds property is set
+        internal bool IsSetUnprocessedIdentityIds()
         {
-            return this._identityId != null;
+            return this._unprocessedIdentityIds != null && this._unprocessedIdentityIds.Count > 0; 
         }
 
     }

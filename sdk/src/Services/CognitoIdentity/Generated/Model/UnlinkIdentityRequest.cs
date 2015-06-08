@@ -32,6 +32,11 @@ namespace Amazon.CognitoIdentity.Model
     /// Unlinks a federated identity from an existing account. Unlinked logins will be considered
     /// new identities next time they are seen. Removing the last linked login will make this
     /// identity inaccessible.
+    /// 
+    ///  
+    /// <para>
+    /// This is a public API. You do not need any credentials to call this API.
+    /// </para>
     /// </summary>
     public partial class UnlinkIdentityRequest : AmazonCognitoIdentityRequest
     {
