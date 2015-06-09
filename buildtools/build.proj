@@ -102,7 +102,7 @@
 	
 	<!-- TEST TARGETS/TASKS -->
 
-	<Target Name="fxcop" DependsOnTargets="init;copy-assemblies" Condition="Exists('$(fxcopcmd)')">
+	<Target Name="fxcop" DependsOnTargets="init;copy-assemblies" Condition="Exists('$(fxcopcmdexe)')">
 		<!-- Update FxCop project files -->
 		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net35" FxCopProject="..\sdk\SDK-3.5.FxCop" />
 		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net45" FxCopProject="..\sdk\SDK-4.5.FxCop" />
@@ -111,8 +111,8 @@
 		<Exec Command="$(devenv2013) /Rebuild Release ..\buildtools\CustomFxCopRules\CustomFxCopRules.sln"/>
 		
 		<!-- Run FxCop -->
-		<Exec Command="&quot;$(fxcopcmd)&quot; /p:..\sdk\SDK-3.5.FxCop /o:..\fxcop-report-3.5.xml /s"/>
-		<Exec Command="&quot;$(fxcopcmd)&quot; /p:..\sdk\SDK-4.5.FxCop /o:..\fxcop-report-4.5.xml /s"/>
+		<Exec Command="$(fxcopcmd) /p:..\sdk\SDK-3.5.FxCop /o:..\fxcop-report-3.5.xml /s"/>
+		<Exec Command="$(fxcopcmd) /p:..\sdk\SDK-4.5.FxCop /o:..\fxcop-report-4.5.xml /s"/>
 
 		<Error Condition="Exists('..\fxcop-report-3.5.xml') or Exists('..\fxcop-report-4.5.xml')" Text="There are FxCop violations!" />
 	</Target>

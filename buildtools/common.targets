@@ -3,11 +3,27 @@
 	<!-- COMMON PROPERTIES -->
 	
 	<PropertyGroup>
-		<devenv2013>&quot;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.com&quot;</devenv2013>
-		<powershell>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</powershell>
-		<mstest2013>&quot;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\mstest.exe&quot;</mstest2013>
-		<vstest2013>&quot;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe&quot;</vstest2013>
-		<fxcopcmd>C:\Program Files (x86)\Microsoft Fxcop 10.0\FxCopCmd.exe</fxcopcmd>
+    
+        <!-- set up unquoted and quoted properties for build tools. Use the unquoted 'exe' versions with Exists() 
+             otherwise it yields 'false'. Use the quoted versions with the Exec task so that paths containing spaces
+             are handled correctly.
+        -->
+
+		<devenv2013exe>C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.com</devenv2013exe>
+		<devenv2013>&quot;$(devenv2013exe)&quot;</devenv2013>
+		
+        <powershellexe>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</powershellexe>
+        <powershell>&quot;$(powershellexe)&quot;</powershell>
+		
+        <mstest2013exe>C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\mstest.exe</mstest2013exe>
+        <mstest2013>&quot;$(mstest2013exe)&quot;</mstest2013>
+		
+        <vstest2013exe>C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe</vstest2013exe>
+        <vstest2013>&quot;$(vstest2013exe)&quot;</vstest2013>
+		
+        <fxcopcmdexe>C:\Program Files (x86)\Microsoft Fxcop 10.0\FxCopCmd.exe</fxcopcmdexe>
+        <fxcopcmd>&quot;$(fxcopcmdexe)&quot;</fxcopcmd>
+        
 		<Deployment>..\Deployment</Deployment>
 		<DocDeployment>..\DocDeployment</DocDeployment>
 	</PropertyGroup>
