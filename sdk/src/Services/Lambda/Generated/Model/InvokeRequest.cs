@@ -33,7 +33,7 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permission for the <code>lambda:Invoke</code> action.
+    /// This operation requires permission for the <code>lambda:InvokeFunction</code> action.
     /// </para>
     /// </summary>
     public partial class InvokeRequest : AmazonLambdaRequest
