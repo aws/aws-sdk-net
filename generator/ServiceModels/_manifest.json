@@ -19,33 +19,6 @@
             "platformCodeFolders": [ "_bcl", "_bcl45", "_async" ]
         },
         {
-            "name": "WinRT",
-            "configurations": [ "Debug|Any CPU", "Debug|ARM", "Debug|x64", "Debug|x86", "Release|Any CPU", "Release|ARM", "Release|x64", "Release|x86" ],
-            "targetFramework": "v4.5",
-            "defineConstants": ";NETFX_CORE;WIN_RT;AWS_ASYNC_API;STORAGE_FILE",
-            "binSubFolder": "winrt",
-            "template": "RtProjectFile",
-            "platformCodeFolders": [ "_mobile", "_async", "_storagefile", "_winstorage" ]
-        },
-        {
-            "name": "WP8",
-            "configurations": [ "Debug|Any CPU", "Debug|ARM", "Debug|x64", "Debug|x86", "Release|Any CPU", "Release|ARM", "Release|x64", "Release|x86" ],
-            "targetFramework": "v4.5",
-            "defineConstants": ";SILVERLIGHT;WINDOWS_PHONE;AWS_ASYNC_API;STORAGE_FILE",
-            "binSubFolder": "wp8",
-            "template": "PhoneProjectFile",
-            "platformCodeFolders": [ "_mobile", "_async", "_storagefile", "_winstorage" ]
-        },
-        {
-            "name": "Portable",
-            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
-            "targetFramework": "v4.5",
-            "defineConstants": ";WIN_RT;WINDOWS_PHONE;AWS_ASYNC_API;STORAGE_FILE",
-            "binSubFolder": "portable",
-            "template": "PortableProjectFile",
-            "platformCodeFolders": [ "_mobile", "_async", "_storagefile", "_winstorage" ]
-        },
-        {
             "name": "PCL",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
@@ -272,7 +245,7 @@
             "region-lookup-name": "elasticfilesystem",
             "authentication-service-name": "elasticfilesystem",
             "service-url": "https://elasticfilesystem.us-west-2.amazonaws.com",
-            "mobile-platforms": [ "WinRT" ]
+            "mobile-platforms": [ "PCL" ]
         },
         {
             "active": true,

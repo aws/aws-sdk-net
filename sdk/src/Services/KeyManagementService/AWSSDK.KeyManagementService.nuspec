@@ -41,9 +41,6 @@
     <file src=".\bin\Release\net45\AWSSDK.KeyManagementService.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.KeyManagementService.xml" target="lib\net45" />
 
-    <file src=".\bin\Release\portable\AWSSDK.KeyManagementService.dll" target="lib\portable-wpa+netcore45" />
-    <file src=".\bin\Release\portable\AWSSDK.KeyManagementService.xml" target="lib\portable-wpa+netcore45" />
-
     <file src=".\bin\Release\pcl\AWSSDK.KeyManagementService.dll" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\AWSSDK.KeyManagementService.xml" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10" />
   </files>

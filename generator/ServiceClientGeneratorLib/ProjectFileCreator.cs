@@ -136,24 +136,6 @@ namespace ServiceClientGenerator
                         generatedContent = generator.TransformText();
                     }
                     break;
-                case "PhoneProjectFile":
-                    {
-                        var generator = new PhoneProjectFile { Session = session };
-                        generatedContent = generator.TransformText();
-                    }
-                    break;
-                case "RtProjectFile":
-                    {
-                        var generator = new RtProjectFile { Session = session };
-                        generatedContent = generator.TransformText();
-                    }
-                    break;
-                case "PortableProjectFile":
-                    {
-                        var generator = new PortableProjectFile { Session = session };
-                        generatedContent = generator.TransformText();
-                    }
-                    break;
                 case "PCLProjectFile":
                     {
                         var generator = new PCLProjectFile { Session = session };

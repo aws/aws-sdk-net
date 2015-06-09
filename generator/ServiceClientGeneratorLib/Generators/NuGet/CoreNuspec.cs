@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\code\dotnet\v3\xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+    #line 1 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class CoreNuspec : CoreNuspecBase
     {
@@ -31,7 +31,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write("\r\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<package> \r\n  <metadata> \r\n    <id>AWSS" +
                     "DK.Core</id>\r\n    <title>AWSSDK - Core Runtime</title>\r\n    <version>");
             
-            #line 12 "C:\code\dotnet\v3\xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 12 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default
@@ -43,19 +43,22 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "/projectUrl>\r\n    <tags>AWS Amazon cloud</tags>\r\n    <iconUrl>http://media.amazo" +
                     "nwebservices.com/aws_singlebox_01.png</iconUrl>\r\n    <dependencies>\r\n      <grou" +
                     "p targetFramework=\"portable-wpa+netcore45\">\r\n        <dependency id=\"Microsoft.N" +
-                    "et.Http\" version=\"2.2.29\" />\r\n      </group>\r\n      <group>\r\n      </group>\r\n   " +
-                    " </dependencies>\r\n  </metadata> \r\n  <files>\r\n\r\n    <file src=\"..\\..\\nuget-conten" +
-                    "t\\account-management.ps1\" target=\"tools\" />\r\n\r\n    <file src=\".\\bin\\Release\\net3" +
-                    "5\\AWSSDK.Core.dll\" target=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\AWS" +
-                    "SDK.Core.xml\" target=\"lib\\net35\" />\r\n\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK" +
-                    ".Core.dll\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core" +
-                    ".xml\" target=\"lib\\net45\" />\r\n\t\r\n\t<file src=\".\\bin\\Release\\portable\\AWSSDK.Core.d" +
-                    "ll\" target=\"lib\\portable-wpa+netcore45\" />\r\n\t<file src=\".\\bin\\Release\\portable\\A" +
-                    "WSSDK.Core.xml\" target=\"lib\\portable-wpa+netcore45\" />\r\n\r\n    <file src=\".\\bin\\R" +
-                    "elease\\pcl\\AWSSDK.Core.dll\" target=\"lib\\portable-net45+win+wp80+MonoAndroid10+xa" +
-                    "marinios10+MonoTouch10\" />\r\n    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Core.xml\" ta" +
-                    "rget=\"lib\\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\" />\r\n  " +
-                    "</files>\r\n</package>");
+                    "et.Http\" version=\"2.2.29\" />\r\n      </group>\r\n      <group targetFramework=\"port" +
+                    "able-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\">\r\n        <dependenc" +
+                    "y id=\"Microsoft.Net.Http\" version=\"2.2.28\" />\r\n        <dependency id=\"Microsoft" +
+                    ".Bcl\" version=\"1.1.9\" />\r\n        <dependency id=\"Microsoft.Bcl.Build\" version=\"" +
+                    "1.0.21\" />\r\n        <dependency id=\"PCLStorage\" version=\"1.0.2\" />\r\n        <dep" +
+                    "endency id=\"PCLCrypto\" version=\"1.0.2.15130\" />\r\n        <dependency id=\"Validat" +
+                    "ion\" version=\"2.0.5.14286\" />\r\n      </group>\r\n    </dependencies>\r\n  </metadata" +
+                    "> \r\n  <files>\r\n\r\n    <file src=\"..\\..\\nuget-content\\account-management.ps1\" targ" +
+                    "et=\"tools\" />\r\n\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.dll\" target=\"lib" +
+                    "\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.xml\" target=\"lib\\net3" +
+                    "5\" />\r\n\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.dll\" target=\"lib\\net45\" " +
+                    "/>\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.xml\" target=\"lib\\net45\" />\r\n\r" +
+                    "\n    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Core.dll\" target=\"lib\\portable-net45+wi" +
+                    "n+wp80+MonoAndroid10+xamarinios10+MonoTouch10\" />\r\n    <file src=\".\\bin\\Release\\" +
+                    "pcl\\AWSSDK.Core.xml\" target=\"lib\\portable-net45+win+wp80+MonoAndroid10+xamarinio" +
+                    "s10+MonoTouch10\" />\r\n  </files>\r\n</package>");
             return this.GenerationEnvironment.ToString();
         }
     }

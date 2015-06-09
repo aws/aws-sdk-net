@@ -67,9 +67,6 @@
     <file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.xml" target="lib\net45" />
 
-    <file src=".\bin\Release\portable\\<#=this.Session["AssemblyName"]#>.dll" target="lib\portable-wpa+netcore45" />
-    <file src=".\bin\Release\portable\\<#=this.Session["AssemblyName"]#>.xml" target="lib\portable-wpa+netcore45" />
-
     <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10" />
   </files>

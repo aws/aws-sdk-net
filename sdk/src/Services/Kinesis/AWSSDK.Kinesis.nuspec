@@ -41,9 +41,6 @@
     <file src=".\bin\Release\net45\AWSSDK.Kinesis.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.Kinesis.xml" target="lib\net45" />
 
-    <file src=".\bin\Release\portable\AWSSDK.Kinesis.dll" target="lib\portable-wpa+netcore45" />
-    <file src=".\bin\Release\portable\AWSSDK.Kinesis.xml" target="lib\portable-wpa+netcore45" />
-
     <file src=".\bin\Release\pcl\AWSSDK.Kinesis.dll" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\AWSSDK.Kinesis.xml" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10" />
   </files>
