@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Net;
 using System.Text;
 
@@ -82,7 +83,8 @@ namespace Amazon.Runtime
 
         static string BuildGenericErrorMessage(string errorCode, HttpStatusCode statusCode)
         {
-            return string.Format("Error making request with Error Code {0} and Http Status Code {1}. No further error information was returned by the service.", errorCode, statusCode);
+            return string.Format(CultureInfo.InvariantCulture,  
+                "Error making request with Error Code {0} and Http Status Code {1}. No further error information was returned by the service.", errorCode, statusCode);
         }
 
         /// <summary>
