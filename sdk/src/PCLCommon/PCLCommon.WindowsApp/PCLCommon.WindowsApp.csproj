@@ -102,7 +102,9 @@
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementations\ApplicationInfo.cs" />
     <Compile Include="Implementations\ApplicationSettings.cs" />
+    <Compile Include="Implementations\EnvironmentInfo.cs" />
     <Compile Include="Implementations\NetworkReachability.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

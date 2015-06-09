@@ -33,11 +33,23 @@ namespace Amazon.CognitoSync.SyncManager.Internal
 {
     public partial class SQLiteLocalStorage : ILocalStorage
     {
-        private Logger _logger;
-
-        internal readonly string dataPath;
+        internal Logger _logger;
 
         private static object sqlite_lock = new object();
+
+        internal const string DB_FILE_NAME = "aws_cognito_sync.db";
+
+        #region constructor
+        public SQLiteLocalStorage()
+        {
+            _logger = Logger.GetLogger(this.GetType());
+        }
+
+        static SQLiteLocalStorage()
+        {
+            SetupDatabase();
+        }
+        #endregion
 
         #region table datastructure
 

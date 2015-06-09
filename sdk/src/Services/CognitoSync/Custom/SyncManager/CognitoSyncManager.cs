@@ -67,10 +67,8 @@ namespace Amazon.CognitoSync.SyncManager
             this.cognitoCredentials = cognitoCredentials;
 #if AWSSDK_UNITY
             Local = new SQLiteLocalStorage(System.IO.Path.Combine(UnityEngine.Application.persistentDataPath, DATABASE_NAME));
-#elif BCL35 || BCL45
-            Local = new InMemoryStorage();
 #else
-
+            Local = new SQLiteLocalStorage();
 #endif
             remote = new CognitoSyncStorage(cognitoCredentials, config);
             cognitoCredentials.IdentityChangedEvent += this.IdentityChanged;

@@ -15,12 +15,65 @@
 // limitations under the License.
 //
 
+using Amazon.Runtime.Internal.Util;
 using System.Collections.Generic;
 
 namespace Amazon.CognitoSync.SyncManager.Internal
 {
     public class SQLiteLocalStorage : ILocalStorage
     {
+
+        #region helper methods
+
+        private static void SetupDatabase()
+        {
+
+            string dbPath = "";
+
+            //check if table exists
+            string tableExistsQuery = "SELECT count(*) as count FROM sqlite_master WHERE type='table' AND name='" + TABLE_DATASETS + "'";
+            bool tableExists = false;
+
+            if (!tableExists)
+            {
+                string createDatasetTable = "CREATE TABLE " + TABLE_DATASETS + "("
+                            + DatasetColumns.IDENTITY_ID + " TEXT NOT NULL,"
+                            + DatasetColumns.DATASET_NAME + " TEXT NOT NULL,"
+                            + DatasetColumns.CREATION_TIMESTAMP + " TEXT DEFAULT '0',"
+                            + DatasetColumns.LAST_MODIFIED_TIMESTAMP + " TEXT DEFAULT '0',"
+                            + DatasetColumns.LAST_MODIFIED_BY + " TEXT,"
+                            + DatasetColumns.STORAGE_SIZE_BYTES + " INTEGER DEFAULT 0,"
+                            + DatasetColumns.RECORD_COUNT + " INTEGER DEFAULT 0,"
+                            + DatasetColumns.LAST_SYNC_COUNT + " INTEGER NOT NULL DEFAULT 0,"
+                            + DatasetColumns.LAST_SYNC_TIMESTAMP + " INTEGER DEFAULT '0',"
+                            + DatasetColumns.LAST_SYNC_RESULT + " TEXT,"
+                            + "UNIQUE (" + DatasetColumns.IDENTITY_ID + ", "
+                            + DatasetColumns.DATASET_NAME + ")"
+                            + ")";
+            }
+
+            tableExists = false;
+            tableExistsQuery = "SELECT count(*) as count FROM sqlite_master WHERE type='table' AND name='" + TABLE_RECORDS + "'";
+
+            if (!tableExists)
+            {
+                string createRecordsTable = "CREATE TABLE " + TABLE_RECORDS + "("
+                            + RecordColumns.IDENTITY_ID + " TEXT NOT NULL,"
+                            + RecordColumns.DATASET_NAME + " TEXT NOT NULL,"
+                            + RecordColumns.KEY + " TEXT NOT NULL,"
+                            + RecordColumns.VALUE + " TEXT,"
+                            + RecordColumns.SYNC_COUNT + " INTEGER NOT NULL DEFAULT 0,"
+                            + RecordColumns.LAST_MODIFIED_TIMESTAMP + " TEXT DEFAULT '0',"
+                            + RecordColumns.LAST_MODIFIED_BY + " TEXT,"
+                            + RecordColumns.DEVICE_LAST_MODIFIED_TIMESTAMP + " TEXT DEFAULT '0',"
+                            + RecordColumns.MODIFIED + " INTEGER NOT NULL DEFAULT 1,"
+                            + "UNIQUE (" + RecordColumns.IDENTITY_ID + ", " + RecordColumns.DATASET_NAME
+                            + ", " + RecordColumns.KEY + ")"
+                            + ")";
+            }
+        }
+
+
         internal void CreateDatasetHelper(string query, params object[] parameters)
         {
 
@@ -61,7 +114,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             //use sql transactions
         }
 
-        internal void UpdateLastSyncCountHelper(string query , params object[] parameters)
+        internal void UpdateLastSyncCountHelper(string query, params object[] parameters)
         {
 
         }
@@ -147,6 +200,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                                (stmt.Fields[RecordColumns.MODIFIED].INTEGER == 1));
         }
 
+        #endregion
 
     }
 }

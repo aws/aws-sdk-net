@@ -34,7 +34,9 @@
     <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Implementations\ApplicationInfo.cs" />
     <Compile Include="Implementations\ApplicationSettings.cs" />
+    <Compile Include="Implementations\EnvironmentInfo.cs" />
     <Compile Include="Implementations\NetworkReachability.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
