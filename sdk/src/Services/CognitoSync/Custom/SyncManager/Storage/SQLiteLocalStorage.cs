@@ -31,7 +31,7 @@ using Amazon.Util;
 
 namespace Amazon.CognitoSync.SyncManager.Internal
 {
-    public partial class SQLiteLocalStorage : ILocalStorage
+    public partial class SQLiteLocalStorage : ILocalStorage,IDisposable
     {
         internal Logger _logger;
 
@@ -50,6 +50,18 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             SetupDatabase();
         }
         #endregion
+
+        #region dispose methods
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+
+        #endregion
+
 
         #region table datastructure
 
