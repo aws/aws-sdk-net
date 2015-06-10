@@ -172,7 +172,6 @@ namespace ServiceClientGenerator
 
             // Test that simple customizations were generated correctly
             GenerateCustomizationTests();
-
             ExecuteProjectFileGenerators();
         }
 
@@ -496,6 +495,19 @@ namespace ServiceClientGenerator
                         //throw new Exception();
                     }
                 }
+            }
+        }
+
+        public static void GenerateCoreProjects(GenerationManifest generationManifest,
+            GeneratorOptions options)
+        {
+            Console.WriteLine("Updating Core project files.");
+            string coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "core");
+            var creator = new ProjectFileCreator();
+            creator.ExecuteCore(coreFilesRoot, generationManifest.ProjectFileConfigurations);
+            foreach (var newProjectKey in creator.CreatedProjectFiles.Keys)
+            {
+                NewlyCreatedProjectFiles.Add(newProjectKey, creator.CreatedProjectFiles[newProjectKey]);
             }
         }
 

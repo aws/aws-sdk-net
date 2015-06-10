@@ -33,7 +33,14 @@
     <DefineConstants>DEBUG;TRACE;<#=this.Session["DefineConstants"]#></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <NoWarn>419,1591,1573</NoWarn>
+<#
+    if(this.Session.ContainsKey("SupressWarnings"))
+    {
+#>
+	<NoWarn><#=this.Session["SupressWarnings"]#></NoWarn>
+<#
+    }
+#>
     <DocumentationFile>bin\Debug\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -43,7 +50,14 @@
     <DefineConstants>TRACE;<#=this.Session["DefineConstants"]#></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <NoWarn>419,1591,1573</NoWarn>
+<#
+    if(this.Session.ContainsKey("SupressWarnings"))
+    {
+#>
+	<NoWarn><#=this.Session["SupressWarnings"]#></NoWarn>
+<#
+    }
+#>
     <DocumentationFile>bin\Release\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
@@ -52,7 +66,20 @@
   <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
+<#
+    if(this.Session.ContainsKey("KeyFilePath"))
+    {
+#>
+		<AssemblyOriginatorKeyFile><#=this.Session["KeyFilePath"]#></AssemblyOriginatorKeyFile>
+<#
+    }
+	else
+    {
+#>
         <AssemblyOriginatorKeyFile>..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+<#
+    }
+#>
       </PropertyGroup>
     </When>
     <Otherwise>
