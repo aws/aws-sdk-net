@@ -134,22 +134,22 @@ namespace Amazon.MobileAnalytics
                 // env
                 _env.Add(ENV_PLATFORM_KEY, "iPhoneOS");
 
-                if (!_envPlatformVersion.Equals(""))
+                if (!string.IsNullOrEmpty(_envPlatformVersion))
                 {
                     _env.Add(ENV_PLATFORM_VERSION_KEY, _envPlatformVersion);
                 }
 
-                if (!_envLocale.Equals(""))
+                if (!string.IsNullOrEmpty(_envLocale))
                 {
                     _env.Add(ENV_LOCALE_KEY, _envLocale);
                 }
 
-                if (!_envMake.Equals(""))
+                if (!string.IsNullOrEmpty(_envMake))
                 {
                     _env.Add(ENV_MAKE_KEY, _envMake);
                 }
 
-                if (!_envModel.Equals(""))
+                if (!string.IsNullOrEmpty(_envModel))
                 {
                     _env.Add(ENV_MODEL_KEY, _envModel);
                 }
@@ -174,42 +174,25 @@ namespace Amazon.MobileAnalytics
         /// Gets or sets the environment Locale. This is an optional field for any event call.
         /// </summary>
         /// <value>The environment Locale.</value>
-        public string EnvLocale
-        {
-            get { return _envLocale; }
-            set { _envLocale = value; }
-        }
+        public string EnvLocale { get; set; }
 
         /// <summary>
         /// Gets or sets the environment Make. This is an optional field for any event call.
         /// </summary>
         /// <value>The environment Make.</value>
-        public string EnvMake
-        {
-            get { return _envMake; }
-            set { _envMake = value; }
-
-        }
+        public string EnvMake { get; set; }
 
         /// <summary>
         /// Gets or sets the environment Model. This is an optional field for any event call.
         /// </summary>
         /// <value>The environment Model.</value>
-        public string EnvModel
-        {
-            get { return _envModel; }
-            set { _envModel = value; }
-        }
+        public string EnvModel { get; set; }
 
         /// <summary>
         /// Gets or sets the environment Platform Version. This is an optional field for any event call.
         /// </summary>
         /// <value>The environment Version.</value>
-        public string EnvPlatformVersion
-        {
-            get { return _envPlatformVersion; }
-            set { _envPlatformVersion = value; }
-        }
+        public string EnvPlatformVersion { get; set; }
 
     }
 }
