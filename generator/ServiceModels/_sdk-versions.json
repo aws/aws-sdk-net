@@ -1,6 +1,6 @@
 
 {
-    "CoreVersion" : "3.0.0.3",
+    "CoreVersion" : "3.0.0.4",
     "ServiceVersions" : {
         "CloudHSM" : {
             "Version" : "3.0.0.2",
@@ -45,7 +45,7 @@
             }
         },
         "CloudTrail"        : {
-            "Version" : "3.0.0.2",
+            "Version" : "3.0.1.0",
             "Dependencies" : {
                 "Core" : "3.0.0.2"
             }
