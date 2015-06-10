@@ -8,7 +8,7 @@ using ThirdParty.Json.LitJson;
 using Amazon.Util;
 using Amazon.Util.Internal;
 
-namespace Amazon.MobileAnalytics.Custom
+namespace Amazon.MobileAnalytics
 {
     public class ClientContext
     {
@@ -42,6 +42,12 @@ namespace Amazon.MobileAnalytics.Custom
         private IDictionary<string, IDictionary> _services;
 
         private IDictionary _clientContext;
+
+        //env and platform related values
+        private string _envPlatformVersion = "";
+        private string _envLocale = "";
+        private string _envMake = "";
+        private string _envModel = "";
 
         /*
          * TODO: Verify what this is used for
@@ -108,17 +114,17 @@ namespace Amazon.MobileAnalytics.Custom
                 // client
                 _client.Add(CLIENT_ID_KEY, Config.ClientId);
                 _client.Add(CLIENT_APP_TITLE_KEY, Config.AppTitle);
-                
+
                 if (!string.IsNullOrEmpty(Config.AppVersionName))
                 {
                     _client.Add(CLIENT_APP_VERSION_NAME_KEY, Config.AppVersionName);
                 }
-                
+
                 if (!string.IsNullOrEmpty(Config.AppVersionCode))
                 {
                     _client.Add(CLIENT_APP_VERSION_CODE_KEY, Config.AppVersionCode);
                 }
-                
+
                 if (!string.IsNullOrEmpty(Config.AppPackageName))
                 {
                     _client.Add(CLIENT_APP_PACKAGE_NAME_KEY, Config.AppPackageName);
@@ -127,14 +133,26 @@ namespace Amazon.MobileAnalytics.Custom
 
                 // env
                 _env.Add(ENV_PLATFORM_KEY, "iPhoneOS");
-                /*
-                 * All of the fields below are optional and will appear as null in the S3 bucket.
-                 * I'm keeping them null rather than filling in arbitary and pointless values.
-                 */
-                //_env.Add(ENV_PLATFORM_VERSION_KEY, "4.0.4");
-                //_env.Add(ENV_LOCALE_KEY, "en_US");
-                //_env.Add(ENV_MAKE_KEY, "Apple");
-                //_env.Add(ENV_MODEL_KEY, "iPhone9++");
+
+                if (!_envPlatformVersion.Equals(""))
+                {
+                    _env.Add(ENV_PLATFORM_VERSION_KEY, _envPlatformVersion);
+                }
+
+                if (!_envLocale.Equals(""))
+                {
+                    _env.Add(ENV_LOCALE_KEY, _envLocale);
+                }
+
+                if (!_envMake.Equals(""))
+                {
+                    _env.Add(ENV_MAKE_KEY, _envMake);
+                }
+
+                if (!_envModel.Equals(""))
+                {
+                    _env.Add(ENV_MODEL_KEY, _envModel);
+                }
 
                 // services
                 IDictionary mobileAnalyticsService = new Dictionary<string, string>();
@@ -149,8 +167,48 @@ namespace Amazon.MobileAnalytics.Custom
                 _clientContext.Add(SERVICES_KEY, _services);
 
                 return JsonMapper.ToJson(_clientContext);
-
             }
+        }
+
+        /// <summary>
+        /// Gets or sets the environment Locale. This is an optional field for any event call.
+        /// </summary>
+        /// <value>The environment Locale.</value>
+        public string EnvLocale
+        {
+            get { return _envLocale; }
+            set { _envLocale = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the environment Make. This is an optional field for any event call.
+        /// </summary>
+        /// <value>The environment Make.</value>
+        public string EnvMake
+        {
+            get { return _envMake; }
+            set { _envMake = value; }
+
+        }
+
+        /// <summary>
+        /// Gets or sets the environment Model. This is an optional field for any event call.
+        /// </summary>
+        /// <value>The environment Model.</value>
+        public string EnvModel
+        {
+            get { return _envModel; }
+            set { _envModel = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the environment Platform Version. This is an optional field for any event call.
+        /// </summary>
+        /// <value>The environment Version.</value>
+        public string EnvPlatformVersion
+        {
+            get { return _envPlatformVersion; }
+            set { _envPlatformVersion = value; }
         }
 
     }

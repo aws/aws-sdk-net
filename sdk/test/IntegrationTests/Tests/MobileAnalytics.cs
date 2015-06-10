@@ -21,7 +21,16 @@ namespace AWSSDK_DotNet45.IntegrationTests.Tests
          */
         private static string appID = "111111111111111111111111";
         private static AmazonMobileAnalyticsClient mobileAnalyticsClient;
-        private static string clientContext = "{\"client\": {\"client_id\":\"1\",\"app_title\":\"analytics-test-app\"},\"env\":{\"platform\":\"iPhoneOS\"},\"services\": {\"mobile_analytics\": {\"app_id\":\"" + appID + "\"}}}";
+        private static ClientContextConfig clientConfiguration;
+        private static ClientContext clientContext;
+        //private static string clientContext = "{\"client\": {\"client_id\":\"1\",\"app_title\":\"analytics-test-app\"},\"env\":{\"platform\":\"iPhoneOS\"},\"services\": {\"mobile_analytics\": {\"app_id\":\"" + appID + "\"}}}";
+
+        private static string STOP_SESSION = "_session.stop";
+        private static string START_SESSION = "_session.start";
+        private static string PAUSE_SESSION = "_session.pause";
+        private static string RESUME_SESSION = "_session.resume";
+
+        private static string SESSION_ID = "analytics_test_session";
 
         [ClassCleanup]
         public static void Cleanup()
@@ -30,7 +39,14 @@ namespace AWSSDK_DotNet45.IntegrationTests.Tests
         }
 
         [ClassInitialize]
-        public static void initializeClientsAndConstants(TestContext context)
+        public static void initializeClientContext(TestContext context)
+        {
+            clientConfiguration = new ClientContextConfig("1", "aws_dot_net_sdk_tooling", appID);
+            clientContext = new ClientContext(clientConfiguration);
+        }
+
+        [TestInitialize]
+        public void initializeClient()
         {
             mobileAnalyticsClient = new AmazonMobileAnalyticsClient(RegionEndpoint.USEast1);
         }
@@ -39,51 +55,54 @@ namespace AWSSDK_DotNet45.IntegrationTests.Tests
         [TestCategory("MobileAnalytics")]
         public void TestPutEvents()
         {
-            //create the putEventRequest and get the clientContext
-            PutEventsRequest putEventRequest = new PutEventsRequest();
-            putEventRequest.ClientContext = clientContext;
+            using (mobileAnalyticsClient)
+            {
+                //create the putEventRequest and get the clientContext
+                PutEventsRequest putEventRequest = new PutEventsRequest();
+                putEventRequest.ClientContext = clientContext.ToJsonString();
 
-            //start the session
-            Session eventStartSession = startSession();
+                //start the session
+                Session eventStartSession = StartSession();
 
-            //grab some arbitary event
-            Event myEvent = new Event();
-            myEvent.Session = eventStartSession;
-            createCustomEvent(myEvent);
+                //populate a custom event
+                Event myEvent = new Event();
+                myEvent.Session = eventStartSession;
+                PopulateCustomEvent(myEvent);
 
-            //put the event in the putEventRequest list
-            putEventRequest.Events.Add(myEvent);
+                //put the event in the putEventRequest list
+                putEventRequest.Events.Add(myEvent);
 
-            //push the event list to mobile analytics service
-            PutEventsResponse response = mobileAnalyticsClient.PutEvents(putEventRequest);
-            Assert.AreEqual("accepted", response.HttpStatusCode.ToString(), true);
+                //push the event list to mobile analytics service
+                PutEventsResponse response = mobileAnalyticsClient.PutEvents(putEventRequest);
+                Assert.AreEqual("accepted", response.HttpStatusCode.ToString(), true);
 
-            //pause the session
-            pauseSession(eventStartSession);
+                //pause the session
+                PauseSession(eventStartSession);
 
-            //resume the session
-            resumeSession(eventStartSession);
+                //resume the session
+                ResumeSession(eventStartSession);
 
-            //end the session
-            stopSession(eventStartSession);
-
-            //dispose the client
-            mobileAnalyticsClient.Dispose();
+                //end the session
+                StopSession(eventStartSession);
+            }
         }
 
-        [TestMethod]
-        public Session startSession()
+        public Session StartSession()
         {
             PutEventsRequest putEventRequest = new PutEventsRequest();
-            putEventRequest.ClientContext = clientContext;
+            putEventRequest.ClientContext = clientContext.ToJsonString();
 
-            Event startSession = new Event();
             DateTime currentTime = DateTime.Now;
-            startSession.Timestamp = currentTime;
-            startSession.EventType = "_session.start";
-            startSession.Session = new Session();
-            startSession.Session.StartTimestamp = currentTime;
-            startSession.Session.Id = "analytics_testSession";
+            Event startSession = new Event
+            {
+                Timestamp = currentTime,
+                EventType = START_SESSION,
+                Session = new Session
+                {
+                    StartTimestamp = currentTime,
+                    Id = SESSION_ID
+                }
+            };
 
             putEventRequest.Events.Add(startSession);
             PutEventsResponse r = mobileAnalyticsClient.PutEvents(putEventRequest);
@@ -92,8 +111,7 @@ namespace AWSSDK_DotNet45.IntegrationTests.Tests
             return startSession.Session;
         }
 
-        [TestMethod]
-        private void createCustomEvent(Event myEvent)
+        private void PopulateCustomEvent(Event myEvent)
         {
             myEvent.EventType = "LevelComplete";
             myEvent.Version = "v2.0";
@@ -107,57 +125,59 @@ namespace AWSSDK_DotNet45.IntegrationTests.Tests
             myEvent.Metrics.Add("TimeInLevel", 64);
         }
 
-        [TestMethod]
-        private void pauseSession(Session startSession)
+        private void PauseSession(Session startSession)
         {
             PutEventsRequest putEventRequest = new PutEventsRequest();
-            putEventRequest.ClientContext = clientContext;
+            putEventRequest.ClientContext = clientContext.ToJsonString();
 
-            Event endSession = new Event();
             DateTime currentTime = DateTime.Now;
-            endSession.Timestamp = currentTime;
-            endSession.EventType = "_session.pause";
-            endSession.Session = startSession;
-            endSession.Session.Id = "analytics_testSession";
+            Event pauseSession = new Event
+            {
+                Timestamp = currentTime,
+                EventType = PAUSE_SESSION,
+                Session = startSession,
+            };
+            pauseSession.Session.Id = SESSION_ID;
 
-            putEventRequest.Events.Add(endSession);
+            putEventRequest.Events.Add(pauseSession);
             PutEventsResponse r = mobileAnalyticsClient.PutEvents(putEventRequest);
             Assert.AreEqual("accepted", r.HttpStatusCode.ToString(), true);
         }
 
-        [TestMethod]
-        private void resumeSession(Session startSession)
+        private void ResumeSession(Session startSession)
         {
             PutEventsRequest putEventRequest = new PutEventsRequest();
-            putEventRequest.ClientContext = clientContext;
+            putEventRequest.ClientContext = clientContext.ToJsonString();
 
-            Event endSession = new Event();
             DateTime currentTime = DateTime.Now;
-            endSession.Timestamp = currentTime;
-            endSession.EventType = "_session.resume";
-            endSession.Session = startSession;
-            endSession.Session.Id = "analytics_testSession";
+            Event resumeSession = new Event
+            {
+                Timestamp = currentTime,
+                EventType = RESUME_SESSION,
+                Session = startSession
+            };
+            resumeSession.Session.Id = SESSION_ID;
 
-            putEventRequest.Events.Add(endSession);
+            putEventRequest.Events.Add(resumeSession);
             PutEventsResponse r = mobileAnalyticsClient.PutEvents(putEventRequest);
             Assert.AreEqual("accepted", r.HttpStatusCode.ToString(), true);
         }
 
-        [TestMethod]
-        private void stopSession(Session startSession)
+        private void StopSession(Session startSession)
         {
             PutEventsRequest putEventRequest = new PutEventsRequest();
-            putEventRequest.ClientContext = clientContext;
+            putEventRequest.ClientContext = clientContext.ToJsonString();
 
-            Event endSession = new Event();
             DateTime currentTime = DateTime.Now;
-            endSession.Timestamp = currentTime;
-            endSession.EventType = "_session.stop";
-            endSession.Session = startSession;
-            endSession.Session.StopTimestamp = currentTime;
-            endSession.Session.Id = "analytics_testSession";
+            Event stopSession = new Event
+            {
+                Timestamp = currentTime,
+                EventType = STOP_SESSION,
+                Session = startSession
+            };
+            stopSession.Session.Id = STOP_SESSION;
 
-            putEventRequest.Events.Add(endSession);
+            putEventRequest.Events.Add(stopSession);
             PutEventsResponse r = mobileAnalyticsClient.PutEvents(putEventRequest);
             Assert.AreEqual("accepted", r.HttpStatusCode.ToString(), true);
         }

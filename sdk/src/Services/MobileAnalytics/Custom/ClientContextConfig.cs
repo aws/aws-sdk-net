@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Amazon.MobileAnalytics.Custom
+namespace Amazon.MobileAnalytics
 {
     public class ClientContextConfig
     {
@@ -61,27 +61,27 @@ namespace Amazon.MobileAnalytics.Custom
                 throw new ArgumentNullException("clientId");
             }
 
-            if(string.IsNullOrEmpty(appTitle))
+            if (string.IsNullOrEmpty(appTitle))
             {
                 throw new ArgumentNullException("appTitle");
             }
-            
-            if(string.IsNullOrEmpty(appVersionName))
+
+            if (string.IsNullOrEmpty(appVersionName))
             {
                 throw new ArgumentNullException("appVersionName");
             }
-            
-            if(string.IsNullOrEmpty(appId))
+
+            if (string.IsNullOrEmpty(appId))
             {
                 throw new ArgumentNullException("appId");
             }
-            
-            if(string.IsNullOrEmpty(appPackageName))
+
+            if (string.IsNullOrEmpty(appPackageName))
             {
                 throw new ArgumentNullException("appPackageName");
             }
-            
-            if(string.IsNullOrEmpty(appVersionCode))
+
+            if (string.IsNullOrEmpty(appVersionCode))
             {
                 throw new ArgumentNullException("appVersionCode");
             }
