@@ -48,6 +48,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CoreNuspec.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generators\ProjectFiles\AndroidProjectFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AndroidProjectFile.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\ProjectFiles\IOSProjectFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IOSProjectFile.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generators\ProjectFiles\PCLProjectFile.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -295,6 +305,14 @@
     <None Include="Generators\NuGet\CoreNuspec.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>CoreNuspec.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\ProjectFiles\AndroidProjectFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AndroidProjectFile.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\ProjectFiles\IOSProjectFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>IOSProjectFile.cs</LastGenOutput>
     </None>
     <None Include="Generators\ProjectFiles\PCLProjectFile.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

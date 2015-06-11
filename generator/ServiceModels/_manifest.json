@@ -25,7 +25,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
             "binSubFolder": "pcl",
             "template": "PCLProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference" ],
 			
             "extraTestProjects": [
 				"test\\CrossPlatformTests\\CommonTests\\CommonTests.csproj",
@@ -34,6 +34,26 @@
 				"test\\CrossPlatformTests\\WindowsApp\\WindowsApp.csproj",
 				"test\\CrossPlatformTests\\WindowsConsoleApp\\WindowsConsoleApp.csproj"
             ]
+        },
+		{
+            "name": "Android",
+            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
+            "targetFramework": "v4.5",
+            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
+            "binSubFolder": "android",
+            "template": "AndroidProjectFile",
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_android" ],
+			"parentProfile" : "PCL"            
+        },
+		{
+            "name": "iOS",
+            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
+            "targetFramework": "v4.5",
+            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
+            "binSubFolder": "ios",
+            "template": "IOSProjectFile",
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_ios" ],
+			"parentProfile" : "PCL"            
         }
     ],
     "models": [

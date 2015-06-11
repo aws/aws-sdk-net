@@ -23,8 +23,11 @@ namespace ServiceClientGenerator
             public const string Net45 = "Net45";
             public const string WinRt = "WinRT";
             public const string WinPhone8 = "WP8";
-            public const string Portable = "Portable";
+            //public const string Portable = "Portable";
             public const string PCL = "PCL";
+            public const string Android = "Android";
+            public const string IOS = "iOS";
+
         }
 
         // build configuration platforms used for net 3.5, 4.5 and portable project types
@@ -191,10 +194,12 @@ namespace ServiceClientGenerator
                 case ProjectTypes.WinPhone8:
                     return PhoneRtPlatformConfigurations;
 
-                case ProjectTypes.Portable:
+                //case ProjectTypes.Portable:
                 case ProjectTypes.Net35:
                 case ProjectTypes.Net45:
                 case ProjectTypes.PCL:
+                case ProjectTypes.Android:
+                case ProjectTypes.IOS:
                     return StandardPlatformConfigurations;
             }
 
