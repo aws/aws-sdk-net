@@ -34,7 +34,7 @@ namespace iOSTests
             try
             {
                 mainTextView.Text = string.Empty;
-                var runner = new iOSRunner(mainTextView, InvokeOnMainThread);
+                var runner = new iOSRunner(mainLabel, mainTextView, InvokeOnMainThread);
                 await runner.ExecuteAllTestsAsync();
             }
             catch (Exception e)

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{75252F5A-D3F2-4A4E-ADDC-560E1E3C2066}</ProjectGuid>
+    <ProjectGuid>{A6BEC7B9-074F-491C-87F8-8505EDAF9F68}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.CognitoSync</RootNamespace>
@@ -64,31 +64,31 @@
     <Compile Include="Custom\*.cs">
       <SubType>Code</SubType>
     </Compile>
-	<Compile Include="Custom\SyncManager\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-	<Compile Include="Custom\SyncManager\_bcl\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-	<Compile Include="Custom\SyncManager\_bcl45\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-	<Compile Include="Custom\SyncManager\Exceptions\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-	<Compile Include="Custom\SyncManager\Model\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-	<Compile Include="Custom\SyncManager\Storage\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-	<Compile Include="Custom\SyncManager\Storage\_bcl\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-	<Compile Include="Custom\SyncManager\Util\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Custom\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\Exceptions\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\Storage\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\Storage\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\Util\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\_bcl45\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Generated\*.cs">
@@ -117,7 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AWSSDK.Core.Net45.csproj">
-        <Project>{25ED6BD4-A32A-4EAA-ACBF-AB4FCD343E8E}</Project>
+        <Project>{3CF71052-3FC5-47B2-AFB9-2BB56AE46E69}</Project>
         <Name>AWSSDK.Core.Net45</Name>
     </ProjectReference>
   </ItemGroup>

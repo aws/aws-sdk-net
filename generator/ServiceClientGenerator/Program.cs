@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace ServiceClientGenerator
@@ -33,6 +34,7 @@ namespace ServiceClientGenerator
                     CustomizationCompiler.CompileServiceCustomizations(options.ModelsFolder);
 
                 var generationManifest = GenerationManifest.Load(options.Manifest, options.Versions, options.ModelsFolder);
+                GeneratorDriver.GenerateCoreProjects(generationManifest, options);
                 foreach (var serviceConfig in generationManifest.ServiceConfigurations)
                 {
                     if (modelsToProcess.Any() && !modelsToProcess.Contains(serviceConfig.ModelName))

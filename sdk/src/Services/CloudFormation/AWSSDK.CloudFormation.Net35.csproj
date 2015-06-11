@@ -96,7 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AWSSDK.Core.Net35.csproj">
-        <Project>{FCDD969A-7DB7-4FFB-B3C1-F637F475C093}</Project>
+        <Project>{5E6C4B89-91B8-43E0-BF66-11050CA74F8B}</Project>
         <Name>AWSSDK.Core.Net35</Name>
     </ProjectReference>
   </ItemGroup>

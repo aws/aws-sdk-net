@@ -44,9 +44,6 @@
     <file src=".\bin\Release\net45\AWSSDK.CognitoIdentity.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.CognitoIdentity.xml" target="lib\net45" />
 
-    <file src=".\bin\Release\portable\AWSSDK.CognitoIdentity.dll" target="lib\portable-wpa+netcore45" />
-    <file src=".\bin\Release\portable\AWSSDK.CognitoIdentity.xml" target="lib\portable-wpa+netcore45" />
-
     <file src=".\bin\Release\pcl\AWSSDK.CognitoIdentity.dll" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\AWSSDK.CognitoIdentity.xml" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10" />
   </files>

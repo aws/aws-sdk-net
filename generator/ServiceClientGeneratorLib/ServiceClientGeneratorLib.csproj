@@ -253,23 +253,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Generators\ProjectFiles\PhoneProjectFile.cs">
-      <DependentUpon>PhoneProjectFile.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Generators\ProjectFiles\PortableProjectFile.cs">
-      <DependentUpon>PortableProjectFile.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Generators\ProjectFiles\BclProjectFile.cs">
       <DependentUpon>BclProjectFile.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Generators\ProjectFiles\RtProjectFile.cs">
-      <DependentUpon>RtProjectFile.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -467,21 +452,9 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>WrappingResultGenerator.cs</LastGenOutput>
     </None>
-    <None Include="Generators\ProjectFiles\PhoneProjectFile.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>PhoneProjectFile.cs</LastGenOutput>
-    </None>
-    <None Include="Generators\ProjectFiles\PortableProjectFile.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>PortableProjectFile.cs</LastGenOutput>
-    </None>
     <None Include="Generators\ProjectFiles\BclProjectFile.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>BclProjectFile.cs</LastGenOutput>
-    </None>
-    <None Include="Generators\ProjectFiles\RtProjectFile.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>RtProjectFile.cs</LastGenOutput>
     </None>
     <None Include="Generators\ProjectFiles\SolutionFileGenerator.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

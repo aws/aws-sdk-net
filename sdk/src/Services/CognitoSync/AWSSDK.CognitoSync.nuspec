@@ -44,9 +44,6 @@
     <file src=".\bin\Release\net45\AWSSDK.CognitoSync.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.CognitoSync.xml" target="lib\net45" />
 
-    <file src=".\bin\Release\portable\AWSSDK.CognitoSync.dll" target="lib\portable-wpa+netcore45" />
-    <file src=".\bin\Release\portable\AWSSDK.CognitoSync.xml" target="lib\portable-wpa+netcore45" />
-
     <file src=".\bin\Release\pcl\AWSSDK.CognitoSync.dll" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\AWSSDK.CognitoSync.xml" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10" />
   </files>
