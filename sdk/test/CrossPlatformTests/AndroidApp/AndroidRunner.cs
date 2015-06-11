@@ -26,7 +26,7 @@ namespace AndroidApp
             _uiRunner = uiRunner;
         }
 
-        public override void WriteLine(string message)
+        protected override void WriteLine(string message)
         {
             _uiRunner(() => _textView.Append("\n"+message));
         }

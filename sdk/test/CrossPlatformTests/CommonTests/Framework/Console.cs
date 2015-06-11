@@ -11,12 +11,17 @@ namespace CommonTests.Framework
     {
         public static void WriteLine(string format, params object[] args)
         {
-            TestRunner.Instance.WriteToOutput(format, args);
+            TestRunner.Instance.WriteVerbose(format, LogLevel.Verbose, args);
         }
 
         public static void WriteLine(object format, params object[] args)
         {
-            TestRunner.Instance.WriteToOutput(format.ToString(), args);
+            TestRunner.Instance.WriteVerbose(format.ToString(), args);
+        }
+
+        public static void WriteError(object format, params object[] args)
+        {
+            TestRunner.Instance.WriteError(format.ToString(), args);
         }
     }
 }
