@@ -447,12 +447,7 @@ namespace ServiceClientGenerator
 
         ServiceSolutionFolder ServiceSolutionFolderFromPath(string folderName)
         {
-            return new ServiceSolutionFolder
-            {
-                Name = folderName.Replace("Amazon.", ""),
-                ProjectGuid = ProjectFileCreator.NewProjectGuid,
-                Projects = new List<Project>()
-            };
+            return new ServiceSolutionFolder(folderName.Replace("Amazon.", ""));
         }
 
         public class Project
@@ -464,9 +459,27 @@ namespace ServiceClientGenerator
 
         public class ServiceSolutionFolder
         {
-            public string Name { get; set; }
-            public List<Project> Projects { get; set; }
-            public string ProjectGuid { get; set; }
+            public string Name { get; private set; }
+            public List<Project> Projects { get; private set; }
+            public string ProjectGuid { get; private set; }
+
+            public ServiceSolutionFolder(string folderName)
+            {
+                Name = folderName;
+                Projects = new List<Project>();
+                ProjectGuid = GetFolderGuid(folderName);
+            }
+
+            private static string GetFolderGuid(string folderName)
+            {
+                var hash = folderName.GetHashCode();
+                var random = new Random(hash);
+                var bytes = new byte[16];
+                random.NextBytes(bytes);
+                var guid = new Guid(bytes);
+                var text = guid.ToString("B").ToUpper();
+                return text;
+            }
         }
     }
 }
