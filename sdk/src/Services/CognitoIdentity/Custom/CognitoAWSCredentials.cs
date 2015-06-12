@@ -205,7 +205,7 @@ namespace Amazon.CognitoIdentity
                     Logins = Logins
                 };
 
-                var getIdResult = await cib.GetIdAsync(getIdRequest);
+                var getIdResult = await cib.GetIdAsync(getIdRequest).ConfigureAwait(false);
 
                 UpdateIdentity(getIdResult.IdentityId, true);
             }
@@ -225,7 +225,7 @@ namespace Amazon.CognitoIdentity
                 var cachedIdentityId = this.GetCachedIdentityId();
                 if (string.IsNullOrEmpty(cachedIdentityId))
                 {
-                    var newIdentityId = await GetIdentityIdAsync();
+                    var newIdentityId = await GetIdentityIdAsync().ConfigureAwait(false);
                     return new GetIdentityIdStatus(newIdentityId, fromCache: false);
                 }
                 else
@@ -373,9 +373,9 @@ namespace Amazon.CognitoIdentity
 
             // Get credentials from determined role or from identity pool
             if (roleSpecified)
-                credentialsState = await GetCredentialsForRoleAsync(roleArn);
+                credentialsState = await GetCredentialsForRoleAsync(roleArn).ConfigureAwait(false);
             else
-                credentialsState = await GetPoolCredentialsAsync();
+                credentialsState = await GetPoolCredentialsAsync().ConfigureAwait(false);
 
             return credentialsState;
         }
@@ -407,7 +407,7 @@ namespace Amazon.CognitoIdentity
 
             if(retry)
             {
-                return await GetCredentialsForRoleAsync(roleArn);
+                return await GetCredentialsForRoleAsync(roleArn).ConfigureAwait(false);
             }
 
             string token = getTokenResult.Token;
@@ -457,7 +457,7 @@ namespace Amazon.CognitoIdentity
 
             if (retry)
             {
-                return await GetPoolCredentialsAsync();
+                return await GetPoolCredentialsAsync().ConfigureAwait(false);
             }
 
 

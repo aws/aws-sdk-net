@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Threading;
-#if WIN_RT || WINDOWS_PHONE
-using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
-#else
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-#endif
 
 using Amazon.Runtime;
 using Amazon.SecurityToken;

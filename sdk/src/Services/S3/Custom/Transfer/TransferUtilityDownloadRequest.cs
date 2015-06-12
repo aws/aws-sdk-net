@@ -35,7 +35,6 @@ namespace Amazon.S3.Transfer
     /// </summary>
     public partial class TransferUtilityDownloadRequest : BaseDownloadRequest
     {
-#if BCL
         /// <summary>
         /// 	Get or sets the file path location of where the
         /// 	downloaded Amazon S3 object will be written to.
@@ -53,7 +52,7 @@ namespace Amazon.S3.Transfer
         {
             return !System.String.IsNullOrEmpty(this.FilePath);
         }
-#endif
+
         /// <summary>
         /// The event for WriteObjectProgressEvent notifications. All
         /// subscribers will be notified when a new progress

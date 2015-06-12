@@ -42,8 +42,7 @@
     <Compile Include="Framework\TestRunner.cs" />
     <Compile Include="Framework\UtilityMethods.cs" />
     <Compile Include="Framework\VendedCredentials.cs" />
-    <Compile Include="IntegrationTests\S3\PutObjectTests.cs" />
-    <Compile Include="IntegrationTests\SampleTests.cs" />
+    <Compile Include="IntegrationTests\*\*.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +72,10 @@
       <Project>{029cf5b7-1ef7-4d02-b417-bb83bcc30d9a}</Project>
       <Name>AWSSDK.Core.PCL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.PCL.csproj">
+      <Project>{ff9a7cda-940c-4a29-a8f6-da4392e11def}</Project>
+      <Name>AWSSDK.DynamoDBv2.PCL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.PCL.csproj">
       <Project>{17adb7d7-59f4-4eae-86b3-15a949bed449}</Project>
       <Name>AWSSDK.S3.PCL</Name>
@@ -82,6 +85,7 @@
       <Name>AWSSDK.SecurityToken.PCL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

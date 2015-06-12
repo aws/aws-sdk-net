@@ -23,7 +23,7 @@ using System.Globalization;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 
-#if (WIN_RT || WINDOWS_PHONE || PCL)
+#if PCL
 using Amazon.MissingTypes;
 #endif
 

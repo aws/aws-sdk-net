@@ -17,10 +17,6 @@ using System;
 using System.Diagnostics;
 using System.Text;
 
-#if WIN_RT
-using Amazon.MissingTypes;
-#endif
-
 namespace Amazon.Runtime.Internal.Util
 {
     public static partial class Extensions

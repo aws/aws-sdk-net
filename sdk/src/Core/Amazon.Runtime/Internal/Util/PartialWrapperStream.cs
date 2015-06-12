@@ -54,7 +54,7 @@ namespace Amazon.Runtime.Internal.Util
 
                 this.partSize = partSize;
 
-#if !WIN_RT && !WINDOWS_PHONE && !PCL
+#if !PCL
 
                 var encryptionStream = BaseStream as AESEncryptionUploadPartStream;
                 if (encryptionStream != null && (partSize % 16) != 0)
@@ -154,7 +154,7 @@ namespace Amazon.Runtime.Internal.Util
             throw new NotSupportedException();
         }
 
-#if !WIN_RT && !PCL
+#if !PCL
         public override IAsyncResult BeginRead(byte[] buffer, int offset, int count, AsyncCallback callback, Object state)
         {
             throw new NotSupportedException();

@@ -25,10 +25,6 @@ using Amazon.S3.Util;
 using Amazon.Runtime.Internal;
 using Amazon.Util;
 
-#if WIN_RT || WINDOWS_PHONE
-using System.Threading.Tasks;
-#endif
-
 #pragma warning disable 1591
 
 namespace Amazon.S3.Internal
@@ -106,10 +102,6 @@ namespace Amazon.S3.Internal
                     string ext = null;
                     if (!string.IsNullOrEmpty(putObjectRequest.FilePath))
                         ext = AWSSDKUtils.GetExtension(putObjectRequest.FilePath);
-#if WIN_RT || WINDOWS_PHONE
-                    if(putObjectRequest.StorageFile != null)
-                        ext = AWSSDKUtils.GetExtension(putObjectRequest.StorageFile.Path);
-#endif
                     if (String.IsNullOrEmpty(ext) && putObjectRequest.IsSetKey())
                     {
                         ext = AWSSDKUtils.GetExtension(putObjectRequest.Key);
@@ -133,18 +125,6 @@ namespace Amazon.S3.Internal
                 {
                     putObjectRequest.SetupForFilePath();
                 }
-#if WIN_RT || WINDOWS_PHONE
-                else if(putObjectRequest.StorageFile != null)
-                {
-                    putObjectRequest.InputStream = Task.Run(() =>
-                        putObjectRequest.StorageFile.OpenAsync(Windows.Storage.FileAccessMode.Read).AsTask())
-                        .Result.AsStreamForRead();
-                    if (string.IsNullOrEmpty(putObjectRequest.Key))
-                    {
-                        putObjectRequest.Key = Path.GetFileName(putObjectRequest.StorageFile.Name);
-                    }
-                }
-#endif
                 else if (null == putObjectRequest.InputStream)
                 {
                     if (string.IsNullOrEmpty(putObjectRequest.Headers.ContentType))
@@ -200,15 +180,6 @@ namespace Amazon.S3.Internal
                 {
                     uploadPartRequest.SetupForFilePath();
                 }
-#if WIN_RT || WINDOWS_PHONE
-                else if(uploadPartRequest.StorageFile != null)
-                {
-                    uploadPartRequest.InputStream = Task.Run(() =>
-                        uploadPartRequest.StorageFile.OpenAsync(Windows.Storage.FileAccessMode.Read).AsTask())
-                        .Result.AsStreamForRead();
-                    uploadPartRequest.InputStream.Position = uploadPartRequest.FilePosition;
-                }
-#endif
             }
 
             var initMultipartRequest = request as InitiateMultipartUploadRequest;

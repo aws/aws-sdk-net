@@ -46,8 +46,8 @@ namespace Amazon.S3.Transfer.Internal
             List<S3Object> objs = new List<S3Object>();
             do
             {
-                ListObjectsResponse listResponse = await this._s3Client.ListObjectsAsync(listRequest, cancellationToken).
-                    ConfigureAwait(continueOnCapturedContext: false);
+                ListObjectsResponse listResponse = await this._s3Client.ListObjectsAsync(listRequest, cancellationToken)
+                    .ConfigureAwait(continueOnCapturedContext: false);
                 foreach (S3Object s3o in listResponse.S3Objects)
                 {
                     if (this._request.IsSetModifiedSinceDate() && s3o.LastModified <= this._request.ModifiedSinceDate)
@@ -78,8 +78,8 @@ namespace Amazon.S3.Transfer.Internal
                     if (s3o.Key.EndsWith("/", StringComparison.Ordinal))
                         continue;
 
-                    await asyncThrottler.WaitAsync(cancellationToken).
-                            ConfigureAwait(continueOnCapturedContext: false);
+                    await asyncThrottler.WaitAsync(cancellationToken)
+                        .ConfigureAwait(continueOnCapturedContext: false);
 
                     cancellationToken.ThrowIfCancellationRequested();
                     if (internalCts.IsCancellationRequested)

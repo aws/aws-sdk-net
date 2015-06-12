@@ -325,7 +325,7 @@ namespace Amazon.S3.Transfer
             {
                 return new SimpleUploadCommand(this._s3Client, this._config, request);
             }
-            }
+        }
 
         bool IsMultipartUpload(TransferUtilityUploadRequest request)
         {
@@ -343,57 +343,38 @@ namespace Amazon.S3.Transfer
             {
                 throw new InvalidOperationException("Please specify BucketName to PUT an object into Amazon S3.");
             }
-#if BCL
             if (!request.IsSetFilePath() &&
                 !request.IsSetInputStream())
             {
                 throw new InvalidOperationException(
                     "Please specify either a Filename or provide a Stream to PUT an object into Amazon S3.");
             }
-#elif WIN_RT || WINDOWS_PHONE
-            if (!request.IsSetFilePath() &&
-                !request.IsSetStorageFile() &&
-                !request.IsSetInputStream())
-            {
-                throw new InvalidOperationException(
-                    "Please specify either a StorageFile, FilePath or provide a Stream to PUT an object into Amazon S3.");
-            }
-#endif
             if (!request.IsSetKey())
             {
                 if (request.IsSetFilePath())
                 {
                     request.Key = Path.GetFileName(request.FilePath);
                 }
-#if WIN_RT || WINDOWS_PHONE
-                else if (request.IsSetStorageFile())
-                {
-                    request.Key = request.StorageFile.Name;
-                }
-#endif
                 else
                 {
                     throw new ArgumentException(
                         "The Key property must be specified when using a Stream to upload into Amazon S3.");
                 }
             }
-#if BCL
-            if (request.IsSetFilePath() && !File.Exists(request.FilePath))
-                throw new ArgumentException("The file indicated by the FilePath property does not exist!");
-#elif WIN_RT || WINDOWS_PHONE
-            if (request.IsSetFilePath() && !request.IsSetStorageFile())
-        {
-                try
+            if (request.IsSetFilePath())
             {
-                    request.StorageFile = System.Threading.Tasks.Task.Run(() =>
-                        Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(new Uri(request.FilePath)).AsTask()).Result;
-        }
-                catch (Exception exception)
-        {
-                    throw new ArgumentException("An error occured while loading the file indicated by the FilePath property.", exception);
-        }
-        }
+                bool fileExists;
+#if BCL
+                fileExists = File.Exists(request.FilePath);
+#elif PCL
+                var iFile = PCLStorage.FileSystem.Current.GetFileFromPathAsync(request.FilePath).Result;
+                fileExists = iFile != null;
 #endif
+                if (!fileExists)
+                {
+                    throw new ArgumentException("The file indicated by the FilePath property does not exist!");
+                }
+            }
         }
 
     }

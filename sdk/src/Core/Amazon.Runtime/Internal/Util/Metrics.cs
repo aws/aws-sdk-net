@@ -23,10 +23,6 @@ using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
-#if (WIN_RT || WINDOWS_PHONE)
-using Amazon.MissingTypes;
-#endif
-
 namespace Amazon.Runtime.Internal.Util
 {
     public class RequestMetrics : IRequestMetrics

@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 this.linker.s3.bucket, this.linker.s3.key, sourcePath, null, cancellationToken);
         }
 
-#if (WIN_RT || WINDOWS_PHONE)
+#if !PCL
         /// <summary>
         /// Uploads the specified file and stores it in the specified bucket with the provided key from construction.
         /// </summary>

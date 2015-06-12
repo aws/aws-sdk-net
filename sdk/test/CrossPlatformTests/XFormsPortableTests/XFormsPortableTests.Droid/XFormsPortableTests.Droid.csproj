@@ -19,7 +19,7 @@
     <MandroidI18n />
     <JavaMaximumHeapSize>
     </JavaMaximumHeapSize>
-    <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <NuGetPackageImportStamp>c4624fc8</NuGetPackageImportStamp>
@@ -115,9 +115,17 @@
       <Project>{BFC96F19-CADF-41EB-804C-10DBEF3F9126}</Project>
       <Name>AWSSDK.Core.PCL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.PCL.csproj">
+      <Project>{ff9a7cda-940c-4a29-a8f6-da4392e11def}</Project>
+      <Name>AWSSDK.DynamoDBv2.PCL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\src\Services\S3\AWSSDK.S3.PCL.csproj">
       <Project>{17ADB7D7-59F4-4EAE-86B3-15A949BED449}</Project>
       <Name>AWSSDK.S3.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CommonTests\CommonTests.csproj">
+      <Project>{569d0c97-4009-47a9-bab9-8a2b9fb6d913}</Project>
+      <Name>CommonTests</Name>
     </ProjectReference>
     <ProjectReference Include="..\XFormsPortableTests\XFormsPortableTests.csproj">
       <Name>XFormsPortableTests</Name>

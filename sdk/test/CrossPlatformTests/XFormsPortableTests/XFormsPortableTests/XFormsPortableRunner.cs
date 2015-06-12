@@ -29,7 +29,7 @@ namespace XFormsPortableTests
 
         protected override void TestCompleted(string testMethodName, bool succeeded)
         {
-            Write("{0}: {1}", testMethodName, succeeded ? "PASSED" : "FAILED");
+            //Write("{0}: {1}", testMethodName, succeeded ? "PASSED" : "FAILED");
             if (!succeeded)
                 _uiRunner(() => _mainLabel.Text = "FAILED");
         }
