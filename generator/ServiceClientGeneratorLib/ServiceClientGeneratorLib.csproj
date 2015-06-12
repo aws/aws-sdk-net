@@ -63,6 +63,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PCLProjectFile.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generators\ProjectFiles\WinPhoneProjectFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WinPhoneProjectFile.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\ProjectFiles\WinRTProjectFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WinRTProjectFile.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generators\SourceFiles\CoreAssemblyInfo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -317,6 +327,14 @@
     <None Include="Generators\ProjectFiles\PCLProjectFile.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>PCLProjectFile.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\ProjectFiles\WinPhoneProjectFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WinPhoneProjectFile.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\ProjectFiles\WinRTProjectFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WinRTProjectFile.cs</LastGenOutput>
     </None>
     <None Include="Generators\SourceFiles\AssemblyInfo.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
