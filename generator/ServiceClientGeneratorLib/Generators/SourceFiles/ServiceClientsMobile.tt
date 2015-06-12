@@ -140,6 +140,9 @@ namespace <#=this.Config.Namespace#>
 
         #region Overrides
 
+		/// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new <#=GeneratorHelpers.DetermineSigner(this.Config.ServiceModel.SignatureVersion, this.Config.BaseName)#>();
@@ -150,6 +153,10 @@ namespace <#=this.Config.Namespace#>
         if(this.Config.ServiceModel.Customizations.PipelineOverride != null)
         {
 #>
+		/// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
 <#
@@ -179,6 +186,9 @@ namespace <#=this.Config.Namespace#>
 
         #region Dispose
 
+		/// <summary>
+        /// Disposes the service client.
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);

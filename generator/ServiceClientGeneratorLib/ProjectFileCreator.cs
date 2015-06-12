@@ -89,6 +89,12 @@ namespace ServiceClientGenerator
 
             foreach (var projectFileConfiguration in projectFileConfigurations)
             {
+                if (projectFileConfiguration.IsSubProfile)
+                {
+                    // Skip sub profiles for service projects.
+                    continue;
+                }
+
                 var projectType = projectFileConfiguration.Name;
 
                 var assemblyName = "AWSSDK." + serviceConfiguration.Namespace.Split('.')[1];
@@ -181,29 +187,21 @@ namespace ServiceClientGenerator
                                          string projectFilename)
         {
             var projectName = Path.GetFileNameWithoutExtension(projectFilename);
-
-            // have not found a reasonable way to be able to activate from a string typename and
-            // cast back to actual generator type instance :-(. Was hoping to make this completely
-            // generic.
-            string generatedContent;
-            switch (projectFileConfiguration.Template)
+            string generatedContent = null;
+            try
             {
-                case "BclProjectFile":
-                    {
-                        var generator = new BclProjectFile { Session = session };
-                        generatedContent = generator.TransformText();
-                    }
-                    break;
-                case "PCLProjectFile":
-                    {
-                        var generator = new PCLProjectFile { Session = session };
-                        generatedContent = generator.TransformText();
-                    }
-                    break;
-                default:
-                    throw new ArgumentException("Project template name " + projectFileConfiguration.Template + " is not recognized");
+                var projectTemplateType = Type.GetType(
+                    "ServiceClientGenerator.Generators.ProjectFiles." +
+                    projectFileConfiguration.Template);
+                dynamic generator = Activator.CreateInstance(projectTemplateType);
+                generator.Session = session;
+                generatedContent = generator.TransformText();
             }
-
+            catch (Exception)
+            {
+                throw new ArgumentException("Project template name " 
+                    + projectFileConfiguration.Template + " is not recognized");
+            }            
 
             GeneratorDriver.WriteFile(serviceFilesRoot, string.Empty, projectFilename, generatedContent);
             projectConfiguration.ConfigurationPlatforms = projectFileConfiguration.Configurations;

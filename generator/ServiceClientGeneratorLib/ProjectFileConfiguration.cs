@@ -56,6 +56,23 @@ namespace ServiceClientGenerator
         public IEnumerable<string> PlatformCodeFolders { get; set; }
 
         /// <summary>
+        /// The parent profile for the current profile. This property is 
+        /// valid only for bait-and-switch PCL sub profiles.
+        /// </summary>
+        public ProjectFileConfiguration ParentProfile { get; set; }
+
+        /// <summary>
+        /// Returns true if this profile has a parent profile.
+        /// </summary>
+        public bool IsSubProfile
+        {
+            get
+            {
+                return this.ParentProfile != null;
+            }
+        }
+
+        /// <summary>
         /// The set of projects that should be included in the solution test folder.
         /// </summary>
         public IEnumerable<string> ExtraTestProjects { get; set; }
