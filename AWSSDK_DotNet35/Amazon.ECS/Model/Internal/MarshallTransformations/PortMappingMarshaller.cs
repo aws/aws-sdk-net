@@ -51,6 +51,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.HostPort);
             }
 
+            if(requestObject.IsSetProtocol())
+            {
+                context.Writer.WritePropertyName("protocol");
+                context.Writer.Write(requestObject.Protocol);
+            }
+
         }
 
         public readonly static PortMappingMarshaller Instance = new PortMappingMarshaller();

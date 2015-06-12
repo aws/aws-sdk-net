@@ -37,7 +37,11 @@ namespace Amazon.ECS.Model
         private string _dockerVersion;
 
         /// <summary>
-        /// Gets and sets the property AgentHash.
+        /// Gets and sets the property AgentHash. 
+        /// <para>
+        /// The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent
+        /// </a> GitHub repository.
+        /// </para>
         /// </summary>
         public string AgentHash
         {
@@ -52,7 +56,10 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentVersion.
+        /// Gets and sets the property AgentVersion. 
+        /// <para>
+        /// The version number of the Amazon ECS container agent.
+        /// </para>
         /// </summary>
         public string AgentVersion
         {
@@ -67,7 +74,10 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DockerVersion.
+        /// Gets and sets the property DockerVersion. 
+        /// <para>
+        /// The Docker version running on the container instance.
+        /// </para>
         /// </summary>
         public string DockerVersion
         {

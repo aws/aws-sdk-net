@@ -633,6 +633,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void CreateFlowLogsMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateFlowLogs");
+
+            var request = InstantiateClassGenerator.Execute<CreateFlowLogsRequest>();
+            var marshaller = new CreateFlowLogsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateFlowLogsResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateFlowLogsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void CreateImageMarshallTest()
         {
             var operation = service_model.FindOperation("CreateImage");
@@ -1195,6 +1219,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DeleteFlowLogsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteFlowLogs");
+
+            var request = InstantiateClassGenerator.Execute<DeleteFlowLogsRequest>();
+            var marshaller = new DeleteFlowLogsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteFlowLogsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteFlowLogsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -1819,6 +1867,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DescribeExportTasksResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeExportTasksResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeFlowLogsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeFlowLogs");
+
+            var request = InstantiateClassGenerator.Execute<DescribeFlowLogsRequest>();
+            var marshaller = new DescribeFlowLogsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeFlowLogsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeFlowLogsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

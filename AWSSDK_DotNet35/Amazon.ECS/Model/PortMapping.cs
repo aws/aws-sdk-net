@@ -35,6 +35,7 @@ namespace Amazon.ECS.Model
     {
         private int? _containerPort;
         private int? _hostPort;
+        private TransportProtocol _protocol;
 
         /// <summary>
         /// Gets and sets the property ContainerPort. 
@@ -61,10 +62,10 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The port number on the container instance to reserve for your container. You can specify
         /// a non-reserved host port for your container port mapping, or you can omit the <code>hostPort</code>
-        /// while specifying a <code>containerPort</code> and your container will automatically
-        /// receive a port in the 49153 to 65535 port range. You should not attempt to specify
-        /// a host port in the 49153 to 65535 port range, since these are reserved for automatic
-        /// assignment.
+        /// (or set it to <code>0</code>) while specifying a <code>containerPort</code> and your
+        /// container will automatically receive a port in the 49153 to 65535 port range. You
+        /// should not attempt to specify a host port in the 49153 to 65535 port range, since
+        /// these are reserved for automatic assignment.
         /// </para>
         ///  
         /// <para>
@@ -87,6 +88,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetHostPort()
         {
             return this._hostPort.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Protocol. 
+        /// <para>
+        /// The protocol used for the port mapping. The default is <code>tcp</code>.
+        /// </para>
+        /// </summary>
+        public TransportProtocol Protocol
+        {
+            get { return this._protocol; }
+            set { this._protocol = value; }
+        }
+
+        // Check to see if Protocol property is set
+        internal bool IsSetProtocol()
+        {
+            return this._protocol != null;
         }
 
     }

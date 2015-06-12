@@ -1500,6 +1500,53 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateFlowLogs
+
+        /// <summary>
+        /// Creates one or more flow logs to capture IP traffic for a specific network interface,
+        /// subnet, or VPC. Flow logs are delivered to a specified log group in Amazon CloudWatch
+        /// Logs. If you specify a VPC or subnet in the request, a log stream is created in CloudWatch
+        /// Logs for each network interface in the subnet or VPC. Log streams can include information
+        /// about accepted and rejected traffic to a network interface. You can view the data
+        /// in your log streams using Amazon CloudWatch Logs. 
+        /// 
+        ///  
+        /// <para>
+        /// In your request, you must also specify an IAM role that has permission to publish
+        /// logs to CloudWatch Logs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFlowLogs service method.</param>
+        /// 
+        /// <returns>The response from the CreateFlowLogs service method, as returned by EC2.</returns>
+        public CreateFlowLogsResponse CreateFlowLogs(CreateFlowLogsRequest request)
+        {
+            var marshaller = new CreateFlowLogsRequestMarshaller();
+            var unmarshaller = CreateFlowLogsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFlowLogsRequest,CreateFlowLogsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFlowLogs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFlowLogs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateFlowLogsResponse> CreateFlowLogsAsync(CreateFlowLogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateFlowLogsRequestMarshaller();
+            var unmarshaller = CreateFlowLogsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFlowLogsRequest,CreateFlowLogsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateImage
 
         /// <summary>
@@ -1910,7 +1957,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// To sell your Reserved Instances, you must first register as a Seller in the Reserved
+        /// To sell your Reserved Instances, you must first register as a seller in the Reserved
         /// Instance Marketplace. After completing the registration process, you can create a
         /// Reserved Instance Marketplace listing of some or all of your Reserved Instances, and
         /// specify the upfront price to receive for them. Your Reserved Instance listings then
@@ -2786,6 +2833,42 @@ namespace Amazon.EC2
             var unmarshaller = DeleteDhcpOptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDhcpOptionsRequest,DeleteDhcpOptionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFlowLogs
+
+        /// <summary>
+        /// Deletes one or more flow logs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFlowLogs service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFlowLogs service method, as returned by EC2.</returns>
+        public DeleteFlowLogsResponse DeleteFlowLogs(DeleteFlowLogsRequest request)
+        {
+            var marshaller = new DeleteFlowLogsRequestMarshaller();
+            var unmarshaller = DeleteFlowLogsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFlowLogsRequest,DeleteFlowLogsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFlowLogs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFlowLogs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteFlowLogsResponse> DeleteFlowLogsAsync(DeleteFlowLogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteFlowLogsRequestMarshaller();
+            var unmarshaller = DeleteFlowLogsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFlowLogsRequest,DeleteFlowLogsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4186,6 +4269,44 @@ namespace Amazon.EC2
             var unmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeExportTasksRequest,DescribeExportTasksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFlowLogs
+
+        /// <summary>
+        /// Describes one or more flow logs. To view the information in your flow logs (the log
+        /// streams for the network interfaces), you must use the CloudWatch Logs console or the
+        /// CloudWatch Logs API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFlowLogs service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFlowLogs service method, as returned by EC2.</returns>
+        public DescribeFlowLogsResponse DescribeFlowLogs(DescribeFlowLogsRequest request)
+        {
+            var marshaller = new DescribeFlowLogsRequestMarshaller();
+            var unmarshaller = DescribeFlowLogsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFlowLogsRequest,DescribeFlowLogsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFlowLogs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFlowLogs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeFlowLogsResponse> DescribeFlowLogsAsync(DescribeFlowLogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeFlowLogsRequestMarshaller();
+            var unmarshaller = DescribeFlowLogsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFlowLogsRequest,DescribeFlowLogsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -7920,8 +8041,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Purchases a Reserved Instance for use with your account. With Amazon EC2 Reserved
         /// Instances, you obtain a capacity reservation for a certain instance configuration
-        /// over a specified period of time. You pay a lower usage rate than with On-Demand instances
-        /// for the time that you actually use the capacity reservation.
+        /// over a specified period of time and pay a lower hourly rate compared to on-Demand
+        /// Instance pricing.
         /// 
         ///  
         /// <para>

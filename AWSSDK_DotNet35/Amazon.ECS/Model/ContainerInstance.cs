@@ -34,6 +34,7 @@ namespace Amazon.ECS.Model
     public partial class ContainerInstance
     {
         private bool? _agentConnected;
+        private AgentUpdateStatus _agentUpdateStatus;
         private string _containerInstanceArn;
         private string _ec2InstanceId;
         private int? _pendingTasksCount;
@@ -41,6 +42,7 @@ namespace Amazon.ECS.Model
         private List<Resource> _remainingResources = new List<Resource>();
         private int? _runningTasksCount;
         private string _status;
+        private VersionInfo _versionInfo;
 
         /// <summary>
         /// Gets and sets the property AgentConnected. 
@@ -61,6 +63,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetAgentConnected()
         {
             return this._agentConnected.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AgentUpdateStatus. 
+        /// <para>
+        /// The status of the most recent agent update. If an update has never been requested,
+        /// this value is <code>NULL</code>.
+        /// </para>
+        /// </summary>
+        public AgentUpdateStatus AgentUpdateStatus
+        {
+            get { return this._agentUpdateStatus; }
+            set { this._agentUpdateStatus = value; }
+        }
+
+        // Check to see if AgentUpdateStatus property is set
+        internal bool IsSetAgentUpdateStatus()
+        {
+            return this._agentUpdateStatus != null;
         }
 
         /// <summary>
@@ -194,6 +215,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionInfo. 
+        /// <para>
+        /// The version information for the Amazon ECS container agent and Docker daemon running
+        /// on the container instance.
+        /// </para>
+        /// </summary>
+        public VersionInfo VersionInfo
+        {
+            get { return this._versionInfo; }
+            set { this._versionInfo = value; }
+        }
+
+        // Check to see if VersionInfo property is set
+        internal bool IsSetVersionInfo()
+        {
+            return this._versionInfo != null;
         }
 
     }

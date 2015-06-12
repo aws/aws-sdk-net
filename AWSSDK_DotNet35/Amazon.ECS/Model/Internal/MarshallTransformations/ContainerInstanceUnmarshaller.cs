@@ -60,6 +60,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.AgentConnected = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("agentUpdateStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AgentUpdateStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("containerInstanceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -100,6 +106,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("versionInfo", targetDepth))
+                {
+                    var unmarshaller = VersionInfoUnmarshaller.Instance;
+                    unmarshalledObject.VersionInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

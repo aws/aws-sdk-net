@@ -877,6 +877,50 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type FlowLogsResourceType.
+    /// </summary>
+    public class FlowLogsResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NetworkInterface for FlowLogsResourceType
+        /// </summary>
+        public static readonly FlowLogsResourceType NetworkInterface = new FlowLogsResourceType("NetworkInterface");
+        /// <summary>
+        /// Constant Subnet for FlowLogsResourceType
+        /// </summary>
+        public static readonly FlowLogsResourceType Subnet = new FlowLogsResourceType("Subnet");
+        /// <summary>
+        /// Constant VPC for FlowLogsResourceType
+        /// </summary>
+        public static readonly FlowLogsResourceType VPC = new FlowLogsResourceType("VPC");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public FlowLogsResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowLogsResourceType FindValue(string value)
+        {
+            return FindValue<FlowLogsResourceType>(value);
+        }
+
+        public static implicit operator FlowLogsResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GatewayType.
     /// </summary>
     public class GatewayType : ConstantClass
@@ -1450,6 +1494,26 @@ namespace Amazon.EC2
         /// Constant M3Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M3Xlarge = new InstanceType("m3.xlarge");
+        /// <summary>
+        /// Constant M410xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M410xlarge = new InstanceType("m4.10xlarge");
+        /// <summary>
+        /// Constant M42xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M42xlarge = new InstanceType("m4.2xlarge");
+        /// <summary>
+        /// Constant M44xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M44xlarge = new InstanceType("m4.4xlarge");
+        /// <summary>
+        /// Constant M4Large for InstanceType
+        /// </summary>
+        public static readonly InstanceType M4Large = new InstanceType("m4.large");
+        /// <summary>
+        /// Constant M4Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M4Xlarge = new InstanceType("m4.xlarge");
         /// <summary>
         /// Constant R32xlarge for InstanceType
         /// </summary>
@@ -2899,6 +2963,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly StatusType Failed = new StatusType("failed");
         /// <summary>
+        /// Constant Initializing for StatusType
+        /// </summary>
+        public static readonly StatusType Initializing = new StatusType("initializing");
+        /// <summary>
         /// Constant InsufficientData for StatusType
         /// </summary>
         public static readonly StatusType InsufficientData = new StatusType("insufficient-data");
@@ -2982,6 +3050,10 @@ namespace Amazon.EC2
         /// Constant Impaired for SummaryStatus
         /// </summary>
         public static readonly SummaryStatus Impaired = new SummaryStatus("impaired");
+        /// <summary>
+        /// Constant Initializing for SummaryStatus
+        /// </summary>
+        public static readonly SummaryStatus Initializing = new SummaryStatus("initializing");
         /// <summary>
         /// Constant InsufficientData for SummaryStatus
         /// </summary>
@@ -3094,6 +3166,50 @@ namespace Amazon.EC2
         }
 
         public static implicit operator Tenancy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrafficType.
+    /// </summary>
+    public class TrafficType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCEPT for TrafficType
+        /// </summary>
+        public static readonly TrafficType ACCEPT = new TrafficType("ACCEPT");
+        /// <summary>
+        /// Constant ALL for TrafficType
+        /// </summary>
+        public static readonly TrafficType ALL = new TrafficType("ALL");
+        /// <summary>
+        /// Constant REJECT for TrafficType
+        /// </summary>
+        public static readonly TrafficType REJECT = new TrafficType("REJECT");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public TrafficType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrafficType FindValue(string value)
+        {
+            return FindValue<TrafficType>(value);
+        }
+
+        public static implicit operator TrafficType(string value)
         {
             return FindValue(value);
         }

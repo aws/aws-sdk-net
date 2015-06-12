@@ -69,7 +69,26 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cpu. 
         /// <para>
         /// The number of <code>cpu</code> units reserved for the container. A container instance
-        /// has 1,024 <code>cpu</code> units for every CPU core.
+        /// has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies the
+        /// minimum amount of CPU to reserve for a container, and containers share unallocated
+        /// CPU units with other containers on the instance with the same ratio as their allocated
+        /// amount.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you run a single-container task on a single-core instance type with
+        /// 512 CPU units specified for that container, and that is the only task running on the
+        /// container instance, that container could use the full 1,024 CPU unit share at any
+        /// given time. However, if you launched another copy of the same task on that container
+        /// instance, each task would be guaranteed a minimum of 512 CPU units when needed, and
+        /// each container could float to higher CPU usage if the other container was not using
+        /// it, but if both tasks were 100% active all of the time, they would be limited to 512
+        /// CPU units.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this parameter is omitted, 0 CPU units are reserved for the container, and it will
+        /// only receive CPU time when other containers are not using it.
         /// </para>
         /// </summary>
         public int Cpu
@@ -133,8 +152,14 @@ namespace Amazon.ECS.Model
         /// If the <code>essential</code> parameter of a container is marked as <code>true</code>,
         /// the failure of that container will stop the task. If the <code>essential</code> parameter
         /// of a container is marked as <code>false</code>, then its failure will not affect the
-        /// rest of the containers in a task.
+        /// rest of the containers in a task. If this parameter is omitted, a container is assumed
+        /// to be essential.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// All tasks must have at least one essential container.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool Essential
         {
@@ -172,9 +197,17 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Links. 
         /// <para>
         /// The <code>link</code> parameter allows containers to communicate with each other without
-        /// the need for port mappings, using the <code>name</code> parameter. For more information
+        /// the need for port mappings, using the <code>name</code> parameter. The <code>name:internalName</code>
+        /// construct is analogous to <code>name:alias</code> in Docker links. For more information
         /// on linking Docker containers, see <a href="https://docs.docker.com/userguide/dockerlinks/">https://docs.docker.com/userguide/dockerlinks/</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Containers that are collocated on a single container instance may be able to communicate
+        /// with each other without requiring links or host port mappings. Network isolation is
+        /// achieved on the container instance using security groups and VPC settings.
+        /// </para>
+        ///  </important>
         /// </summary>
         public List<string> Links
         {
@@ -191,8 +224,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// The number of MiB of memory reserved for the container. Docker will allocate a minimum
-        /// of 4 MiB of memory to a container.
+        /// The number of MiB of memory reserved for the container. If your container attempts
+        /// to exceed the memory allocated here, the container is killed.
         /// </para>
         /// </summary>
         public int Memory

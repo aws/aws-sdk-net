@@ -151,7 +151,12 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartedBy.
+        /// Gets and sets the property StartedBy. 
+        /// <para>
+        /// The tag specified when a task is started. If the task is started by an Amazon ECS
+        /// service, then the <code>startedBy</code> parameter contains the deployment ID of the
+        /// service that starts it.
+        /// </para>
         /// </summary>
         public string StartedBy
         {
