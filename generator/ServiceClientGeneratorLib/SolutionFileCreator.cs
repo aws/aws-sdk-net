@@ -21,9 +21,8 @@ namespace ServiceClientGenerator
         {
             public const string Net35 = "Net35";
             public const string Net45 = "Net45";
-            public const string WinRt = "WinRT";
-            public const string WinPhone8 = "WP8";
-            //public const string Portable = "Portable";
+            public const string Win8 = "Win8";
+            public const string WinPhone81 = "WinPhone81";
             public const string PCL = "PCL";
             public const string Android = "Android";
             public const string IOS = "iOS";
@@ -190,8 +189,8 @@ namespace ServiceClientGenerator
 
             switch (projectType)
             {
-                case ProjectTypes.WinRt:
-                case ProjectTypes.WinPhone8:
+                case ProjectTypes.Win8:
+                case ProjectTypes.WinPhone81:
                     return PhoneRtPlatformConfigurations;
 
                 //case ProjectTypes.Portable:

@@ -142,6 +142,7 @@
 #>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+	<None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -160,13 +161,13 @@
       <HintPath><#=this.Session["NugetPackagesLocation"]#>PCLStorage.1.0.2\lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
-      <HintPath><#=this.Session["NugetPackagesLocation"]#>Microsoft.Net.Http.2.2.28\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.dll</HintPath>
+      <HintPath><#=this.Session["NugetPackagesLocation"]#>Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.Extensions">
-      <HintPath><#=this.Session["NugetPackagesLocation"]#>Microsoft.Net.Http.2.2.28\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Extensions.dll</HintPath>
+      <HintPath><#=this.Session["NugetPackagesLocation"]#>Microsoft.Net.Http.2.2.29\lib\monoandroid\System.Net.Http.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.Primitives">
-      <HintPath><#=this.Session["NugetPackagesLocation"]#>Microsoft.Net.Http.2.2.28\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Primitives.dll</HintPath>
+      <HintPath><#=this.Session["NugetPackagesLocation"]#>Microsoft.Net.Http.2.2.29\lib\monoandroid\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

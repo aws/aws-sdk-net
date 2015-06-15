@@ -54,6 +54,26 @@
             "template": "IOSProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_ios" ],
 			"parentProfile" : "PCL"            
+        },
+		{
+            "name": "Win8",
+            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
+            "targetFramework": "v4.5",
+            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
+            "binSubFolder": "win8",
+            "template": "Win8ProjectFile",
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8" ],
+			"parentProfile" : "PCL"            
+        },
+		{
+            "name": "WinPhone81",
+            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
+            "targetFramework": "v4.5",
+            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
+            "binSubFolder": "winPhone81",
+            "template": "WinPhone81ProjectFile",
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhone81" ],
+			"parentProfile" : "PCL"            
         }
     ],
     "models": [

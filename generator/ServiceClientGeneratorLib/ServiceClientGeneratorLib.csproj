@@ -63,15 +63,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PCLProjectFile.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generators\ProjectFiles\WinPhoneProjectFile.cs">
-      <AutoGen>True</AutoGen>
+    <Compile Include="Generators\ProjectFiles\Win8ProjectFile.cs">
+      <DependentUpon>Win8ProjectFile.tt</DependentUpon>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WinPhoneProjectFile.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="Generators\ProjectFiles\WinRTProjectFile.cs">
+    <Compile Include="Generators\ProjectFiles\WinPhone81ProjectFile.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WinRTProjectFile.tt</DependentUpon>
+      <DependentUpon>WinPhone81ProjectFile.tt</DependentUpon>
     </Compile>
     <Compile Include="Generators\SourceFiles\CoreAssemblyInfo.cs">
       <AutoGen>True</AutoGen>
@@ -328,13 +328,13 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>PCLProjectFile.cs</LastGenOutput>
     </None>
-    <None Include="Generators\ProjectFiles\WinPhoneProjectFile.tt">
+    <None Include="Generators\ProjectFiles\Win8ProjectFile.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>WinPhoneProjectFile.cs</LastGenOutput>
+      <LastGenOutput>Win8ProjectFile.cs</LastGenOutput>
     </None>
-    <None Include="Generators\ProjectFiles\WinRTProjectFile.tt">
+    <None Include="Generators\ProjectFiles\WinPhone81ProjectFile.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>WinRTProjectFile.cs</LastGenOutput>
+      <LastGenOutput>WinPhone81ProjectFile.cs</LastGenOutput>
     </None>
     <None Include="Generators\SourceFiles\AssemblyInfo.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
