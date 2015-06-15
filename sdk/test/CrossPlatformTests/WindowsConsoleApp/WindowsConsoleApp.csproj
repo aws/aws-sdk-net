@@ -75,9 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Assets\credentials.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="Assets\credentials.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +112,10 @@
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>mkdir $(TargetDir)Assets
+copy $(ProjectDir)Assets\*.* $(TargetDir)Assets\*.*</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
