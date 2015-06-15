@@ -15,7 +15,7 @@
     <ProjectTypeGuids>{76F1466A-8B6D-4E39-A767-685A06062A39};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <BaseIntermediateOutputPath>obj\winPhone81</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>obj\wpa81</BaseIntermediateOutputPath>
     <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
   </PropertyGroup>
@@ -23,22 +23,22 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\winPhone81</OutputPath>
+    <OutputPath>bin\Debug\wpa81</OutputPath>
     <DefineConstants>DEBUG;TRACE;;PCL;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>419,1570,1591</NoWarn>
-    <DocumentationFile>bin\Debug\winPhone81\AWSSDK.Core.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\wpa81\AWSSDK.Core.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\winPhone81</OutputPath>
+    <OutputPath>bin\Release\wpa81</OutputPath>
     <DefineConstants>TRACE;;PCL;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>419,1570,1591</NoWarn>
-    <DocumentationFile>bin\Release\winPhone81\AWSSDK.Core.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\wpa81\AWSSDK.Core.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>

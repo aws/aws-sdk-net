@@ -16,28 +16,28 @@
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <BaseIntermediateOutputPath>obj\win8</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>obj\windows8</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\win8</OutputPath>
+    <OutputPath>bin\Debug\windows8</OutputPath>
     <DefineConstants>DEBUG;TRACE;;PCL;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>419,1570,1591</NoWarn>
-    <DocumentationFile>bin\Debug\win8\AWSSDK.Core.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\windows8\AWSSDK.Core.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\win8</OutputPath>
+    <OutputPath>bin\Release\windows8</OutputPath>
     <DefineConstants>TRACE;;PCL;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>419,1570,1591</NoWarn>
-    <DocumentationFile>bin\Release\win8\AWSSDK.Core.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\windows8\AWSSDK.Core.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>

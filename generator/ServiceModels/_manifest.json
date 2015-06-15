@@ -39,7 +39,7 @@
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
-            "binSubFolder": "android",
+            "binSubFolder": "monoandroid",
             "template": "AndroidProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_android" ],
 			"parentProfile" : "PCL"            
@@ -49,7 +49,7 @@
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
-            "binSubFolder": "ios",
+            "binSubFolder": "Xamarin.iOS10",
             "template": "IOSProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_ios" ],
 			"parentProfile" : "PCL"            
@@ -59,7 +59,7 @@
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
-            "binSubFolder": "win8",
+            "binSubFolder": "windows8",
             "template": "Win8ProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8" ],
 			"parentProfile" : "PCL"            
@@ -69,7 +69,7 @@
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
-            "binSubFolder": "winPhone81",
+            "binSubFolder": "wpa81",
             "template": "WinPhone81ProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhone81" ],
 			"parentProfile" : "PCL"            

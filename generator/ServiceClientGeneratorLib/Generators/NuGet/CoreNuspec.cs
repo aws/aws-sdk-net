@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+    #line 1 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class CoreNuspec : CoreNuspecBase
     {
@@ -31,7 +31,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write("\r\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<package> \r\n  <metadata> \r\n    <id>AWSS" +
                     "DK.Core</id>\r\n    <title>AWSSDK - Core Runtime</title>\r\n    <version>");
             
-            #line 12 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 12 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default
@@ -55,10 +55,20 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.xml\" target=\"lib\\net3" +
                     "5\" />\r\n\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.dll\" target=\"lib\\net45\" " +
                     "/>\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.xml\" target=\"lib\\net45\" />\r\n\r" +
-                    "\n    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Core.dll\" target=\"lib\\portable-net45+wi" +
-                    "n+wp80+MonoAndroid10+xamarinios10+MonoTouch10\" />\r\n    <file src=\".\\bin\\Release\\" +
-                    "pcl\\AWSSDK.Core.xml\" target=\"lib\\portable-net45+win+wp80+MonoAndroid10+xamarinio" +
-                    "s10+MonoTouch10\" />\r\n  </files>\r\n</package>");
+                    "\n\t<file src=\".\\bin\\Release\\pcl\\AWSSDK.Core.dll\" target=\"lib\\portable-net45+win+w" +
+                    "pa81+MonoAndroid10+xamarinios10\" />\r\n    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Cor" +
+                    "e.xml\" target=\"lib\\portable-net45+win+wpa81+MonoAndroid10+xamarinios10\" />\r\n\t\r\n\t" +
+                    "<file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.dll\" target=\"lib\\Xamarin.iOS1" +
+                    "0\" />\r\n    <file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.xml\" target=\"lib\\X" +
+                    "amarin.iOS10\" />\r\n\t\r\n\t<file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.dll\" ta" +
+                    "rget=\"lib\\Xamarin.Mac20\" />\r\n    <file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.C" +
+                    "ore.xml\" target=\"lib\\Xamarin.Mac20\" />\r\n\t\r\n\t<file src=\".\\bin\\Release\\monoandroid" +
+                    "\\AWSSDK.Core.dll\" target=\"lib\\monoandroid\" />\r\n    <file src=\".\\bin\\Release\\mono" +
+                    "android\\AWSSDK.Core.xml\" target=\"lib\\monoandroid\" />\r\n\t\r\n\t<file src=\".\\bin\\Relea" +
+                    "se\\windows8\\AWSSDK.Core.dll\" target=\"lib\\windows8\" />\r\n    <file src=\".\\bin\\Rele" +
+                    "ase\\windows8\\AWSSDK.Core.xml\" target=\"lib\\windows8\" />\r\n\t\r\n\t<file src=\".\\bin\\Rel" +
+                    "ease\\wpa81\\AWSSDK.Core.dll\" target=\"lib\\wpa81\" />\r\n    <file src=\".\\bin\\Release\\" +
+                    "wpa81\\AWSSDK.Core.xml\" target=\"lib\\wpa81\" />\r\n  </files>\r\n</package>");
             return this.GenerationEnvironment.ToString();
         }
     }
