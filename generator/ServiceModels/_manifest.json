@@ -31,7 +31,6 @@
 				"test\\CrossPlatformTests\\CommonTests\\CommonTests.csproj",
 				"test\\CrossPlatformTests\\AndroidApp\\AndroidApp.csproj",
 				"test\\CrossPlatformTests\\iOSTests\\iOSTests.csproj",
-				"test\\CrossPlatformTests\\WindowsApp\\WindowsApp.csproj",
 				"test\\CrossPlatformTests\\WindowsConsoleApp\\WindowsConsoleApp.csproj"
             ]
         },
