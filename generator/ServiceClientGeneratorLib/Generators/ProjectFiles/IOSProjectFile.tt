@@ -16,7 +16,8 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Amazon</RootNamespace>
     <AssemblyName>AWSSDK.Core</AssemblyName>
-	<IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>        
+	<IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+	<BaseIntermediateOutputPath>obj\\<#=this.Session["BinSubfolder"]#></BaseIntermediateOutputPath> 
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

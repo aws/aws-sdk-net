@@ -10,7 +10,8 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Amazon</RootNamespace>
     <AssemblyName>AWSSDK.Core</AssemblyName>
-    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>        
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <BaseIntermediateOutputPath>obj\Xamarin.iOS10</BaseIntermediateOutputPath> 
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
