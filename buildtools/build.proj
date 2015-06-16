@@ -94,7 +94,7 @@
 	</Target>
 	
 	<Target Name="nuget-pack" DependsOnTargets="build-sdk">
-		<Exec ContinueOnError="ErrorAndStop" 
+		<Exec LogStandardErrorAsError="true"
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1" />		
 	</Target>
 
@@ -103,7 +103,7 @@
 		<PropertyGroup>
 			<CustomSnkPublicKeyToken Condition="'$(CustomSnkPublicKeyToken)' == '' ">71c852f8be1c371d</CustomSnkPublicKeyToken>
 		</PropertyGroup>
-		<Exec ContinueOnError="ErrorAndStop" 
+		<Exec LogStandardErrorAsError="true"
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File copy-sdkassemblies.ps1 -PublicKeyTokenToCheck $(CustomSnkPublicKeyToken)" />		
 	</Target>
 	

@@ -84,7 +84,7 @@ Function Copy-SDKAssemblies
             }
                         
             $filter = "bin\$BuildType\$p\AWSSDK.$servicename.*"
-            $files = gci -Path $dir.FullName -Filter $filter
+            $files = gci -Path $dir.FullName -Filter $filter -ErrorAction Stop
 
             foreach ($a in $files)
             {
@@ -109,6 +109,7 @@ Function Copy-SDKAssemblies
 }
 
 #Script code
+#$ErrorActionPreference = "Stop"
 
 Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -Platforms @("net35","net45","pcl","monoandroid","Xamarin.iOS10","windows8","wpa81")
 
