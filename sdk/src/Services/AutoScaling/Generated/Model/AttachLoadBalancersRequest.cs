@@ -28,19 +28,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Container for the parameters to the AttachInstances operation.
-    /// Attaches one or more EC2 instances to the specified Auto Scaling group.
+    /// Container for the parameters to the AttachLoadBalancers operation.
+    /// Attaches one or more load balancers to the specified Auto Scaling group.
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach
-    /// EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.
+    /// To describe the load balancers for an Auto Scaling group, use <a>DescribeLoadBalancers</a>.
+    /// To detach the load balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach
+    /// a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.
     /// </para>
     /// </summary>
-    public partial class AttachInstancesRequest : AmazonAutoScalingRequest
+    public partial class AttachLoadBalancersRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
-        private List<string> _instanceIds = new List<string>();
+        private List<string> _loadBalancerNames = new List<string>();
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -61,21 +66,21 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceIds. 
+        /// Gets and sets the property LoadBalancerNames. 
         /// <para>
-        /// One or more EC2 instance IDs.
+        /// One or more load balancer names.
         /// </para>
         /// </summary>
-        public List<string> InstanceIds
+        public List<string> LoadBalancerNames
         {
-            get { return this._instanceIds; }
-            set { this._instanceIds = value; }
+            get { return this._loadBalancerNames; }
+            set { this._loadBalancerNames = value; }
         }
 
-        // Check to see if InstanceIds property is set
-        internal bool IsSetInstanceIds()
+        // Check to see if LoadBalancerNames property is set
+        internal bool IsSetLoadBalancerNames()
         {
-            return this._instanceIds != null && this._instanceIds.Count > 0; 
+            return this._loadBalancerNames != null && this._loadBalancerNames.Count > 0; 
         }
 
     }

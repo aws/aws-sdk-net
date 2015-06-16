@@ -55,6 +55,21 @@ namespace Amazon.AutoScaling
 
         #endregion
                 
+        #region  AttachLoadBalancers
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachLoadBalancers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AttachLoadBalancersResponse> AttachLoadBalancersAsync(AttachLoadBalancersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CompleteLifecycleAction
 
         /// <summary>
@@ -340,6 +355,21 @@ namespace Amazon.AutoScaling
 
         #endregion
                 
+        #region  DescribeLoadBalancers
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLoadBalancers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeLoadBalancersResponse> DescribeLoadBalancersAsync(DescribeLoadBalancersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeMetricCollectionTypes
 
         /// <summary>
@@ -472,6 +502,21 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DetachInstancesResponse> DetachInstancesAsync(DetachInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DetachLoadBalancers
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachLoadBalancers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachLoadBalancers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DetachLoadBalancersResponse> DetachLoadBalancersAsync(DetachLoadBalancersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
