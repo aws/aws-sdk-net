@@ -55,7 +55,7 @@ Function Copy-SDKAssemblies
         # The platforms to copy. Defaults to all if not specified.
         [Parameter()]
         [string[]]
-        $Platforms = @("net35","net45","portable","winrt","wp8","pcl"),
+        $Platforms = @("net35","net45","pcl"),
         
         # The public key token that all assemblies should have. Optional.
         [Parameter()]
@@ -110,7 +110,7 @@ Function Copy-SDKAssemblies
 
 #Script code
 
-Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck
+Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -Platforms @("net35","net45","pcl","monoandroid","Xamarin.iOS10","windows8","wpa81")
 
 $services = gci ..\sdk\src\services
 foreach ($s in $services)

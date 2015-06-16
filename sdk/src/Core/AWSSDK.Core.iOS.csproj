@@ -26,6 +26,7 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <NoWarn>419,1570,1591</NoWarn>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <DocumentationFile>bin\Debug\Xamarin.iOS10\AWSSDK.Core.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -38,6 +39,7 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <NoWarn>419,1570,1591</NoWarn>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <DocumentationFile>bin\Release\Xamarin.iOS10\AWSSDK.Core.XML</DocumentationFile>
   </PropertyGroup>
     <PropertyGroup>
     <SignAssembly>true</SignAssembly>

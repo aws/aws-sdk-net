@@ -28,6 +28,7 @@
     <WarningLevel>4</WarningLevel>
     <NoWarn>419,1570,1591</NoWarn>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <DocumentationFile>bin\Debug\monoandroid\AWSSDK.Core.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,6 +39,7 @@
     <WarningLevel>4</WarningLevel>
     <NoWarn>419,1570,1591</NoWarn>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <DocumentationFile>bin\Release\monoandroid\AWSSDK.Core.XML</DocumentationFile>
   </PropertyGroup>
     <PropertyGroup>
     <SignAssembly>true</SignAssembly>

@@ -108,14 +108,26 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             
             #line default
             #line hidden
-            this.Write(@"    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-  </PropertyGroup>
-  <PropertyGroup Condition="" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' "">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\");
+            this.Write("    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModule" +
+                    "SuppressionsFile>\r\n\t<DocumentationFile>bin\\Debug\\");
             
-            #line 48 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 44 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
+            
+            #line default
+            #line hidden
+            this.Write("\\");
+            
+            #line 44 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
+            
+            #line default
+            #line hidden
+            this.Write(".XML</DocumentationFile>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" \'$(Con" +
+                    "figuration)|$(Platform)\' == \'Release|AnyCPU\' \">\r\n    <DebugType>pdbonly</DebugTy" +
+                    "pe>\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\Release\\");
+            
+            #line 49 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
@@ -124,7 +136,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "nstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLev" +
                     "el>\r\n");
             
-            #line 52 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 53 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     if(this.Session.ContainsKey("SupressWarnings"))
     {
@@ -134,31 +146,40 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("\t<NoWarn>");
             
-            #line 56 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 57 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["SupressWarnings"]));
             
             #line default
             #line hidden
             this.Write("</NoWarn>\r\n");
             
-            #line 57 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 58 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     }
 
             
             #line default
             #line hidden
-            this.Write(@"    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-  </PropertyGroup>
-    <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <Choose>
-    <When Condition="" '$(AWSKeyFile)' == '' "">
-      <PropertyGroup>
-");
+            this.Write("    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModule" +
+                    "SuppressionsFile>\r\n\t<DocumentationFile>bin\\Release\\");
             
-            #line 68 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 62 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
+            
+            #line default
+            #line hidden
+            this.Write("\\");
+            
+            #line 62 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
+            
+            #line default
+            #line hidden
+            this.Write(".XML</DocumentationFile>\r\n  </PropertyGroup>\r\n    <PropertyGroup>\r\n    <SignAssem" +
+                    "bly>true</SignAssembly>\r\n  </PropertyGroup>\r\n  <Choose>\r\n    <When Condition=\" \'" +
+                    "$(AWSKeyFile)\' == \'\' \">\r\n      <PropertyGroup>\r\n");
+            
+            #line 70 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     if(this.Session.ContainsKey("KeyFilePath"))
     {
@@ -168,14 +189,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("\t\t<AssemblyOriginatorKeyFile>");
             
-            #line 72 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 74 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["KeyFilePath"]));
             
             #line default
             #line hidden
             this.Write("</AssemblyOriginatorKeyFile>\r\n");
             
-            #line 73 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 75 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     }
 	else
@@ -187,7 +208,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("        <AssemblyOriginatorKeyFile>..\\..\\..\\awssdk.dll.snk</AssemblyOriginatorKey" +
                     "File>\r\n");
             
-            #line 79 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 81 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     }
 
@@ -198,7 +219,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "    <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>\r\n      " +
                     "</PropertyGroup>\r\n    </Otherwise>\r\n  </Choose>\r\n  <ItemGroup>\r\n");
             
-            #line 91 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 93 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     foreach(string subDirectory in ((IList<string>)this.Session["SourceDirectories"]))
     {
@@ -208,14 +229,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 95 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 97 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(subDirectory));
             
             #line default
             #line hidden
             this.Write("\\*.cs\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
             
-            #line 98 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 100 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     }
 
@@ -224,7 +245,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n  <ItemGroup>\r\n");
             
-            #line 103 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 105 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     if(this.Session.ContainsKey("IndividualFileIncludes"))
     {
@@ -238,14 +259,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 111 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 113 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(file));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
             
-            #line 114 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 116 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
             }
             else
@@ -256,14 +277,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <EmbeddedResource Include=\"");
             
-            #line 119 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 121 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(file));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <SubType>Designer</SubType>\r\n    </EmbeddedResource>\r\n");
             
-            #line 122 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 124 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
             }
         }
@@ -274,7 +295,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n");
             
-            #line 128 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 130 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     if(this.Session.ContainsKey("ProjectReferences"))
     {
@@ -286,28 +307,28 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n    <ProjectReference Include=\"");
             
-            #line 135 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 137 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.IncludePath));
             
             #line default
             #line hidden
             this.Write("\">\r\n        <Project>");
             
-            #line 136 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 138 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("</Project>\r\n        <Name>");
             
-            #line 137 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 139 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.Name));
             
             #line default
             #line hidden
             this.Write("</Name>\r\n    </ProjectReference>\r\n  </ItemGroup>\r\n");
             
-            #line 140 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 142 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
         }
     }
@@ -329,7 +350,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Reference Include=""PCLCrypto"">
       <HintPath>");
             
-            #line 156 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 158 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -338,7 +359,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "nios10+MonoTouch10\\PCLCrypto.dll</HintPath>\r\n    </Reference>\r\n    <Reference In" +
                     "clude=\"PCLStorage\">\r\n      <HintPath>");
             
-            #line 159 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 161 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -347,7 +368,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "iOS+Xamarin.Mac\\PCLStorage.dll</HintPath>\r\n    </Reference>\r\n    <Reference Incl" +
                     "ude=\"PCLStorage.Abstractions\">\r\n      <HintPath>");
             
-            #line 162 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 164 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -356,7 +377,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "iOS+Xamarin.Mac\\PCLStorage.Abstractions.dll</HintPath>\r\n    </Reference>\r\n    <R" +
                     "eference Include=\"System.Net.Http\">\r\n      <HintPath>");
             
-            #line 165 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 167 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -365,7 +386,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "dll</HintPath>\r\n    </Reference>\r\n    <Reference Include=\"System.Net.Http.Extens" +
                     "ions\">\r\n      <HintPath>");
             
-            #line 168 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 170 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -374,7 +395,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "h>\r\n    </Reference>\r\n    <Reference Include=\"System.Net.Http.Primitives\">\r\n    " +
                     "  <HintPath>");
             
-            #line 171 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 173 "C:\dev\net\v3\XamarinClean\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default

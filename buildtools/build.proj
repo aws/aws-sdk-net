@@ -33,8 +33,10 @@
         
     </PropertyGroup>
     
-	<Target Name="build-custom-tasks">
-		<Exec Command="$(devenv2013) /Rebuild Release .\CustomTasks\CustomTasks.sln"/>
+	<Target Name="build-custom-tasks">		
+		<MSBuild Projects=".\CustomTasks\CustomTasks.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release" />
 	</Target>
 	
 	<UsingTask TaskName="CustomTasks.UpdateFxCopProject" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
@@ -46,8 +48,10 @@
 	<Target Name="full-build-nodocs" DependsOnTargets="test-sdk;copy-assemblies;save-build"/>
 	
 	<Target Name="run-generator">
-		<Message Text="Build and run code generator"/>
-		<Exec Command="$(devenv2013) /Rebuild Release ..\generator\AWSSDKGenerator.sln"/>
+		<Message Text="Build and run code generator"/>		
+		<MSBuild Projects="..\generator\AWSSDKGenerator.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release" />
 		<Exec Command="ServiceClientGenerator.exe" 
 			WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
 	</Target>
@@ -60,7 +64,10 @@
 	<Target Name="build-sdk" DependsOnTargets="restore-nuget;run-generator">
 		<Message Text="Compile the SDK"/>
 		<SetEnvironmentVariable VariableName="AWSKeyFile" VariableValue="$(CustomSnkFileLocation)" />
-		<Exec Command="$(devenv2013) /Rebuild Release ..\sdk\AWSSDK.sln"/>
+		<MSBuild Projects="..\sdk\AWSSDK.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release" />
+		
 		<SetEnvironmentVariable VariableName="AWSKeyFile" VariableValue="" />
 		
 		<Copy
@@ -108,7 +115,9 @@
 		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net45" FxCopProject="..\sdk\SDK-4.5.FxCop" />
 
 		<!-- Compile custom FxCop rules -->
-		<Exec Command="$(devenv2013) /Rebuild Release ..\buildtools\CustomFxCopRules\CustomFxCopRules.sln"/>
+		<MSBuild Projects="..\buildtools\CustomFxCopRules\CustomFxCopRules.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release" />
 		
 		<!-- Run FxCop -->
 		<Exec Command="$(fxcopcmd) /p:..\sdk\SDK-3.5.FxCop /o:..\fxcop-report-3.5.xml /s"/>
@@ -212,7 +221,9 @@
 
     <Target Name="build-docgenerator">
 		<Message Text="Building documentation generator"/>
-		<Exec Command="$(devenv2013) /Rebuild Release ..\docgenerator\AWSSDKDocGenerator.sln"/>
+		<MSBuild Projects=".\CustomTasks\..\docgenerator\AWSSDKDocGenerator.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release" />
     </Target>
     
 	<Target Name="doc-platform-build" DependsOnTargets="build-docgenerator">
