@@ -16,7 +16,8 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Amazon</RootNamespace>
     <AssemblyName>AWSSDK.Core</AssemblyName>
-	<IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>        
+	<IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+	<BaseIntermediateOutputPath>obj\\<#=this.Session["BinSubfolder"]#></BaseIntermediateOutputPath> 
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,6 +39,7 @@
     }
 #>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+	<DocumentationFile>bin\Debug\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -57,6 +59,7 @@
     }
 #>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+	<DocumentationFile>bin\Release\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
   </PropertyGroup>
     <PropertyGroup>
     <SignAssembly>true</SignAssembly>

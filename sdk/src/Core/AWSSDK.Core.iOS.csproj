@@ -10,7 +10,8 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Amazon</RootNamespace>
     <AssemblyName>AWSSDK.Core</AssemblyName>
-    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>        
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <BaseIntermediateOutputPath>obj\Xamarin.iOS10</BaseIntermediateOutputPath> 
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,6 +26,7 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <NoWarn>419,1570,1591</NoWarn>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <DocumentationFile>bin\Debug\Xamarin.iOS10\AWSSDK.Core.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -37,6 +39,7 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <NoWarn>419,1570,1591</NoWarn>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <DocumentationFile>bin\Release\Xamarin.iOS10\AWSSDK.Core.XML</DocumentationFile>
   </PropertyGroup>
     <PropertyGroup>
     <SignAssembly>true</SignAssembly>
