@@ -64,7 +64,7 @@ namespace Amazon.CognitoIdentity
         }
 
         [Flags]
-        protected enum RefreshIdentityOptions
+        private enum RefreshIdentityOptions
         {
             /// <summary>
             /// Dont refresh identity. 
@@ -201,7 +201,7 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Clears current credentials state. This will reset the IdentityId.
-        /// Use <see cref="ClearCredentials"/> instead if you just want to trigger a credentials refresh.
+        /// Use <see cref="Amazon.Runtime.RefreshingAWSCredentials.ClearCredentials()"/> instead if you just want to trigger a credentials refresh.
         /// </summary>
         public void Clear()
         {
@@ -314,7 +314,7 @@ namespace Amazon.CognitoIdentity
             return await GetIdentityIdAsync(RefreshIdentityOptions.None);
         }
 
-        public async System.Threading.Tasks.Task<string> GetIdentityIdAsync(RefreshIdentityOptions options)
+        private async System.Threading.Tasks.Task<string> GetIdentityIdAsync(RefreshIdentityOptions options)
         {
             if (!IsIdentitySet || options == RefreshIdentityOptions.Refresh)
             {

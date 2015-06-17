@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,43 +9,43 @@ namespace Amazon.Util.Internal.PlatformServices
 {
     public class EnvironmentInfo
     {
-        public static string Platform
+        public string Platform
         {
             get
             {
-                throw new NotImplementedException();
+                return "";
             }
         }
 
-        public static string Model
+        public string Model
         {
             get
             {
-                throw new NotImplementedException();
+                return "";
             }
         }
 
-        public static string Make
+        public string Make
         {
             get
             {
-                throw new NotImplementedException();
+                return "";
             }
         }
 
-        public static string PlatformVersion
+        public string PlatformVersion
         {
             get
             {
-                throw new NotImplementedException();
+                return "";
             }
         }
 
-        public static string Locale
+        public string Locale
         {
             get
             {
-                throw new NotImplementedException();
+                return CultureInfo.CurrentCulture.DisplayName;
             }
         }
     }

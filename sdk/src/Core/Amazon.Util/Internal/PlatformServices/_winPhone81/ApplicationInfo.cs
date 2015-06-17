@@ -1,18 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Amazon.Util.Internal.PlatformServices
 {
     public class ApplicationInfo : IApplicationInfo
     {
+
+        IDictionary<string, string> properties;
+
+        public ApplicationInfo()
+        {
+            properties = new Dictionary<string, string>();
+            var appManifest = XDocument.Load("WMAppManifest.xml");
+            using (var rdr = appManifest.CreateReader(ReaderOptions.None))
+            {
+                rdr.ReadToDescendant("App");
+                if (!rdr.IsStartElement())
+                {
+                    throw new System.FormatException(
+                       "App tag not found in WMAppManifest.xml ");
+                }
+                rdr.MoveToFirstAttribute();
+                while (rdr.MoveToNextAttribute())
+                {
+                    properties.Add(rdr.Name, rdr.Value);
+                }
+            }
+        }
+
         public string AppTitle
         {
             get
             {
-                throw new NotImplementedException();
+                return properties["Title"];
             }
         }
 
@@ -20,7 +41,7 @@ namespace Amazon.Util.Internal.PlatformServices
         {
             get
             {
-                throw new NotImplementedException();
+                return properties["Version"];
             }
         }
 

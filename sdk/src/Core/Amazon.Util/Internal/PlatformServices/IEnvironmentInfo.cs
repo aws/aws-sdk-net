@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Amazon.Util.Internal.PlatformServices
 {
     public interface IEnvironmentInfo
@@ -12,6 +7,6 @@ namespace Amazon.Util.Internal.PlatformServices
         string Model { get; }
         string Make { get; }
         string PlatformVersion { get; }
-        public string Locale { get; }
+        string Locale { get; }
     }
 }
