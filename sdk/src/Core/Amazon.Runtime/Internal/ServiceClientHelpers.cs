@@ -89,7 +89,7 @@ namespace Amazon.Runtime.Internal
 
         private static ITypeInfo LoadServiceClientType(string assemblyName, string serviceClientClassName)
         {
-#if WIN_RT || WINDOWS_PHONE || PCL
+#if PCL
             var assembly = Assembly.Load(new AssemblyName(assemblyName));
 #else
             var assembly = Assembly.LoadFrom(assemblyName);
@@ -105,7 +105,7 @@ namespace Amazon.Runtime.Internal
 
         private static ClientConfig CreateServiceConfig(string assemblyName, string serviceClientClassName)
         {
-#if WIN_RT || WINDOWS_PHONE || PCL
+#if PCL
             var assembly = Assembly.Load(new AssemblyName(assemblyName));
 #else
             var assembly = Assembly.LoadFrom(assemblyName);

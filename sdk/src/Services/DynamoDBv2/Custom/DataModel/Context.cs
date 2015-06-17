@@ -49,7 +49,7 @@ namespace Amazon.DynamoDBv2.DataModel
         
         #region Constructors
 
-#if !(WIN_RT || WINDOWS_PHONE || PCL)
+#if !PCL
 
         /// <summary>
         /// Constructs a DynamoDBContext object with a default AmazonDynamoDBClient

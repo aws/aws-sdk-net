@@ -17,10 +17,6 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 
-#if (WIN_RT || WINDOWS_PHONE)
-using Amazon.MissingTypes;
-#endif
-
 namespace Json.LitJson
 {
     public class JsonData : IJsonWrapper, IEquatable<JsonData>

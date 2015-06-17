@@ -21,7 +21,7 @@ using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Util.Internal;
 
-#if (WIN_RT || WINDOWS_PHONE || PCL)
+#if PCL
 using Amazon.MissingTypes;
 using Amazon.Runtime.Internal.Util;
 #endif

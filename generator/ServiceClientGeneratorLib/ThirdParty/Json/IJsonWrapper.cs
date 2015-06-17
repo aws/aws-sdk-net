@@ -15,10 +15,6 @@
 using System.Collections;
 using System.Collections.Specialized;
 
-#if (WIN_RT || WINDOWS_PHONE)
-using Amazon.MissingTypes;
-#endif
-
 namespace Json.LitJson
 {
     public enum JsonType

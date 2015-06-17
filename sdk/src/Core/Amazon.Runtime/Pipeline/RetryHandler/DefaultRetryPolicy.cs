@@ -34,7 +34,7 @@ namespace Amazon.Runtime.Internal
         {
             WebExceptionStatus.ConnectFailure,
 
-#if (!WIN_RT && !PCL) // These statuses are not available on WinRT
+#if !PCL // These statuses are not available on WinRT
             WebExceptionStatus.ConnectionClosed,
             WebExceptionStatus.KeepAliveFailure,
             WebExceptionStatus.NameResolutionFailure,
@@ -114,7 +114,7 @@ namespace Amazon.Runtime.Internal
             if (exception is IOException)
             {
 
-#if (!WIN_RT && !PCL)   // ThreadAbortException is not available on WIN RT
+#if !PCL   // ThreadAbortException is not available on WIN RT
 
                 // Don't retry IOExceptions that are caused by a ThreadAbortException
                 if (IsInnerException<ThreadAbortException>(exception))

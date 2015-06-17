@@ -16,7 +16,7 @@ namespace XFormsPortableTests
             var mainLabel = new Label
             {
                 XAlign = TextAlignment.Center,
-                Text = "PASSED"
+                Text = "Starting test run..."
             };
             var testsLabel = new Label
             {

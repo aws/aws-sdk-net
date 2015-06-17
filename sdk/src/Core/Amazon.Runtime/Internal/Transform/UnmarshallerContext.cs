@@ -500,7 +500,7 @@ namespace Amazon.Runtime.Internal.Transform
                     }
                     if (_xmlReader != null)
                     {
-#if WIN_RT || PCL
+#if PCL
                         _xmlReader.Dispose();
 #else
                         _xmlReader.Close();

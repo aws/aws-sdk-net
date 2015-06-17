@@ -31,8 +31,8 @@ namespace Amazon.S3.Transfer.Internal
         public override async Task ExecuteAsync(CancellationToken cancellationToken)
         {
             var initRequest = ConstructInitiateMultipartUploadRequest();
-            var initResponse = await _s3Client.InitiateMultipartUploadAsync(initRequest, cancellationToken).
-                ConfigureAwait(continueOnCapturedContext: false);
+            var initResponse = await _s3Client.InitiateMultipartUploadAsync(initRequest, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
             Logger.DebugFormat("Initiated upload: {0}", initResponse.UploadId);
 
             var pendingUploadPartTasks = new List<Task<UploadPartResponse>>();
@@ -69,8 +69,8 @@ namespace Amazon.S3.Transfer.Internal
 
                 foreach (var uploadRequest in _partsToUpload)
                 {
-                    await localThrottler.WaitAsync(cancellationToken).
-                        ConfigureAwait(continueOnCapturedContext: false);
+                    await localThrottler.WaitAsync(cancellationToken)
+                        .ConfigureAwait(continueOnCapturedContext: false);
 
                     cancellationToken.ThrowIfCancellationRequested();
                     if (internalCts.IsCancellationRequested)
@@ -87,13 +87,13 @@ namespace Amazon.S3.Transfer.Internal
                 }
 
                 Logger.DebugFormat("Waiting for upload part requests to complete. ({0})", initResponse.UploadId);
-                _uploadResponses = await WhenAllOrFirstExceptionAsync(pendingUploadPartTasks, cancellationToken).
-                    ConfigureAwait(continueOnCapturedContext: false);
+                _uploadResponses = await WhenAllOrFirstExceptionAsync(pendingUploadPartTasks, cancellationToken)
+                    .ConfigureAwait(continueOnCapturedContext: false);
 
                 Logger.DebugFormat("Beginning completing multipart. ({0})", initResponse.UploadId);
                 var compRequest = ConstructCompleteMultipartUploadRequest(initResponse);
-                await this._s3Client.CompleteMultipartUploadAsync(compRequest, cancellationToken).
-                    ConfigureAwait(continueOnCapturedContext: false);
+                await this._s3Client.CompleteMultipartUploadAsync(compRequest, cancellationToken)
+                    .ConfigureAwait(continueOnCapturedContext: false);
                 Logger.DebugFormat("Done completing multipart. ({0})", initResponse.UploadId);
 
             }
@@ -127,8 +127,8 @@ namespace Amazon.S3.Transfer.Internal
         {
             try
             {
-                return await _s3Client.UploadPartAsync(uploadRequest, internalCts.Token).
-                    ConfigureAwait(continueOnCapturedContext: false);
+                return await _s3Client.UploadPartAsync(uploadRequest, internalCts.Token)
+                    .ConfigureAwait(continueOnCapturedContext: false);
             }
             catch (Exception exception)
             {

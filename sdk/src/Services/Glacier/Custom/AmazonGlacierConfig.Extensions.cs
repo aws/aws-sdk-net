@@ -35,7 +35,7 @@ namespace Amazon.Glacier
             // timeouts are not supported.
             this.Timeout = ClientConfig.MaxTimeout;
             this.ReadWriteTimeout = ClientConfig.MaxTimeout;
-#elif (WIN_RT || WINDOWS_PHONE)
+#elif PCL
             // Only Timeout property is supported for WinRT and Windows Phone.
             // Set Timeout for Glacier client to max timeout as per-request
             // timeouts are not supported.

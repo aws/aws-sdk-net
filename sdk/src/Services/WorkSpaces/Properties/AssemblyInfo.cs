@@ -11,12 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon WorkSpaces. Amazon WorkSpaces is a managed desktop computing service in the cloud.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon WorkSpaces. Amazon WorkSpaces is a managed desktop computing service in the cloud.")]
-#elif (WIN_RT && WINDOWS_PHONE)
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Portable)- Amazon WorkSpaces. Amazon WorkSpaces is a managed desktop computing service in the cloud.")]
-#elif WIN_RT
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows RT) - Amazon WorkSpaces. Amazon WorkSpaces is a managed desktop computing service in the cloud.")]
-#elif WINDOWS_PHONE
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows Phone 8)- Amazon WorkSpaces. Amazon WorkSpaces is a managed desktop computing service in the cloud.")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Core Runtime")]
 #else

@@ -147,7 +147,7 @@ namespace Amazon.Runtime.Internal.Util
             return result;
         }
 
-#if !WIN_RT && !PCL
+#if !PCL
         /// <summary>
         /// Closes the underlying stream and finishes calculating the hash.
         /// If an ExpectedHash is specified and is not equal to the calculated hash,

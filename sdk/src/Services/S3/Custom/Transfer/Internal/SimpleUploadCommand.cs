@@ -77,14 +77,7 @@ namespace Amazon.S3.Transfer.Internal
             if (!string.IsNullOrEmpty(this._fileTransporterRequest.ContentType))
                 putRequest.ContentType = this._fileTransporterRequest.ContentType;
 
-#if BCL
             putRequest.FilePath = this._fileTransporterRequest.FilePath;
-#elif WIN_RT || WINDOWS_PHONE
-            if (this._fileTransporterRequest.IsSetStorageFile())
-            {
-                putRequest.StorageFile = this._fileTransporterRequest.StorageFile;
-            }
-#endif
             var progressHandler = new ProgressHandler(this.PutObjectProgressEventCallback);
             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)putRequest).StreamUploadProgressCallback += progressHandler.OnTransferProgress;
             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)putRequest).AddBeforeRequestHandler(this.RequestEventHandler);

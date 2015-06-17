@@ -278,19 +278,19 @@ namespace Amazon.S3.Transfer
 
         internal BaseCommand GetUploadCommand(TransferUtilityUploadRequest request, SemaphoreSlim asyncThrottler)
         {
-            validate(request);            
+            validate(request);
             if (IsMultipartUpload(request))
             {
                 var command = new MultipartUploadCommand(this._s3Client, this._config, request);
                 command.AsyncThrottler = asyncThrottler;
                 return command;
-        }
+            }
             else
-                {
+            {
                 var command = new SimpleUploadCommand(this._s3Client, this._config, request);
                 command.AsyncThrottler = asyncThrottler;
                 return command;
-                }
+            }
         }
     }
 }

@@ -40,16 +40,16 @@ namespace Amazon.S3.Transfer.Internal
             {
                 cancellationToken.ThrowIfCancellationRequested();
 
-                var completedTask = await Task.WhenAny(pendingTasks).
-                    ConfigureAwait(continueOnCapturedContext: false);
+                var completedTask = await Task.WhenAny(pendingTasks)
+                    .ConfigureAwait(continueOnCapturedContext: false);
                 if (completedTask.Status == TaskStatus.RanToCompletion ||
                     completedTask.Status == TaskStatus.Faulted)
                 {
                     // Only process results from completed or faulted tasks.                    
                     // so that we can capture the result of the operation or the exception,
                     // and ignore OperationCancelledException from cancelled tasks.
-                    var response = await completedTask.
-                        ConfigureAwait(continueOnCapturedContext: false);
+                    var response = await completedTask
+                        .ConfigureAwait(continueOnCapturedContext: false);
                     responses.Add(response);
                 }
                 pendingTasks.Remove(completedTask);
@@ -69,13 +69,13 @@ namespace Amazon.S3.Transfer.Internal
             {
                 cancellationToken.ThrowIfCancellationRequested();
 
-                var completedTask = await Task.WhenAny(pendingTasks).
-                    ConfigureAwait(continueOnCapturedContext: false);                
+                var completedTask = await Task.WhenAny(pendingTasks)
+                    .ConfigureAwait(continueOnCapturedContext: false);                
                 if (completedTask.Status == TaskStatus.Faulted)
                 {
                     // Only process results from faulted tasks so that the exception is thrown.                    
-                    await completedTask.
-                        ConfigureAwait(continueOnCapturedContext: false);                    
+                    await completedTask
+                        .ConfigureAwait(continueOnCapturedContext: false);                    
                 }
                 pendingTasks.Remove(completedTask);
                 processed++;
