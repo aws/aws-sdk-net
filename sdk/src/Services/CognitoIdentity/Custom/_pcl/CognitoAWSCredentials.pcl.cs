@@ -61,7 +61,19 @@ namespace Amazon.CognitoIdentity
         {
             var serviceFactory = ServiceFactory.Instance;
             var appSettings = serviceFactory.GetService<IApplicationSettings>();
-            return appSettings.GetValue(IDENTITY_ID_CACHE_KEY, ApplicationSettingsMode.Local);
+            string cachedIdentity = appSettings.GetValue(GetNamespacedKey(IDENTITY_ID_CACHE_KEY), ApplicationSettingsMode.Local);
+            
+            //this check if for backward compatibility for windows phone 8 and win rt
+            if(string.IsNullOrEmpty(cachedIdentity))
+            {
+                cachedIdentity = appSettings.GetValue(IDENTITY_ID_CACHE_KEY, ApplicationSettingsMode.Local);
+                if(!string.IsNullOrEmpty(cachedIdentity))
+                {
+                    CacheIdentityId(cachedIdentity);
+                }
+            }
+
+            return cachedIdentity;
         }
 
         /// <summary>
@@ -82,7 +94,7 @@ namespace Amazon.CognitoIdentity
         {
             var serviceFactory = ServiceFactory.Instance;
             var appSettings = serviceFactory.GetService<IApplicationSettings>();
-            appSettings.SetValue(IDENTITY_ID_CACHE_KEY, identityId, ApplicationSettingsMode.Local);
+            appSettings.SetValue(GetNamespacedKey(IDENTITY_ID_CACHE_KEY), identityId, ApplicationSettingsMode.Local);
         }
 
         /// <summary>
@@ -96,7 +108,7 @@ namespace Amazon.CognitoIdentity
         {
             var serviceFactory = ServiceFactory.Instance;
             var appSettings = serviceFactory.GetService<IApplicationSettings>();
-            appSettings.RemoveValue(IDENTITY_ID_CACHE_KEY, ApplicationSettingsMode.Local);
+            appSettings.RemoveValue(GetNamespacedKey(IDENTITY_ID_CACHE_KEY), ApplicationSettingsMode.Local);
         }
 
         /// <summary>

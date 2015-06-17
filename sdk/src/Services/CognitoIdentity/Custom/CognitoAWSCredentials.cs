@@ -49,10 +49,34 @@ namespace Amazon.CognitoIdentity
             }
         }
 
+        #endregion
+
+        #region protected methods and enum
+
+        /// <summary>
+        /// Gives a namespaced key for supporting multiple identity pool id's
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
         protected string GetNamespacedKey(string key)
         {
             return key + ":" + IdentityPoolId;
         }
+
+        [Flags]
+        protected enum RefreshIdentityOptions
+        {
+            /// <summary>
+            /// Dont refresh identity. 
+            /// </summary>
+            None =0,
+
+            /// <summary>
+            /// Refresh if Id not set or If Identity Provider is BYOI
+            /// </summary>
+            Refresh=1
+        }
+
 
         #endregion
 
@@ -235,12 +259,12 @@ namespace Amazon.CognitoIdentity
         /// </summary>
         public string GetIdentityId()
         {
-            return GetIdentityId(false);
+            return GetIdentityId(RefreshIdentityOptions.None);
         }
 
-        private string GetIdentityId(bool forceRefresh)
+        private string GetIdentityId(RefreshIdentityOptions options)
         {
-            if (!IsIdentitySet || forceRefresh)
+            if (!IsIdentitySet || options == RefreshIdentityOptions.Refresh)
             {
                 _identityState = RefreshIdentity();
                 if (!string.IsNullOrEmpty(_identityState.LoginProvider))
@@ -287,12 +311,12 @@ namespace Amazon.CognitoIdentity
         /// </summary>
         public async System.Threading.Tasks.Task<string> GetIdentityIdAsync()
         {
-            return await GetIdentityIdAsync(false);
+            return await GetIdentityIdAsync(RefreshIdentityOptions.None);
         }
 
-        public async System.Threading.Tasks.Task<string> GetIdentityIdAsync(bool forceRefresh)
+        public async System.Threading.Tasks.Task<string> GetIdentityIdAsync(RefreshIdentityOptions options)
         {
-            if (!IsIdentitySet || forceRefresh)
+            if (!IsIdentitySet || options == RefreshIdentityOptions.Refresh)
             {
                 IdentityState state = await RefreshIdentityAsync().ConfigureAwait(false);
                 if (!string.IsNullOrEmpty(_identityState.LoginProvider))
@@ -474,7 +498,7 @@ namespace Amazon.CognitoIdentity
             CredentialsRefreshState credentialsState;
             // Retrieve Open Id Token
             // (Reuses existing IdentityId or creates a new one)
-            var identity = await GetIdentityIdAsync(true).ConfigureAwait(false);
+            var identity = await GetIdentityIdAsync(RefreshIdentityOptions.Refresh).ConfigureAwait(false);
             var getTokenRequest = new GetOpenIdTokenRequest { IdentityId = identity };
             // If logins are set, pass them to the GetOpenId call
             if (Logins.Count > 0)
@@ -523,7 +547,7 @@ namespace Amazon.CognitoIdentity
         private async System.Threading.Tasks.Task<CredentialsRefreshState> GetPoolCredentialsAsync()
         {
             CredentialsRefreshState credentialsState;
-            var identity = await GetIdentityIdAsync(true).ConfigureAwait(false);
+            var identity = await GetIdentityIdAsync(RefreshIdentityOptions.Refresh).ConfigureAwait(false);
             var getCredentialsRequest = new GetCredentialsForIdentityRequest { IdentityId = identity };
             if (Logins.Count > 0)
                 getCredentialsRequest.Logins = Logins;
@@ -592,7 +616,7 @@ namespace Amazon.CognitoIdentity
         private CredentialsRefreshState GetPoolCredentials()
         {
             CredentialsRefreshState credentialsState;
-            var identity = this.GetIdentityId(true);
+            var identity = this.GetIdentityId(RefreshIdentityOptions.Refresh);
             var getCredentialsRequest = new GetCredentialsForIdentityRequest { IdentityId = identity };
 
             if (Logins.Count > 0)
@@ -638,7 +662,7 @@ namespace Amazon.CognitoIdentity
             CredentialsRefreshState credentialsState;
             // Retrieve Open Id Token
             // (Reuses existing IdentityId or creates a new one)
-            var identity = this.GetIdentityId(true);
+            var identity = this.GetIdentityId(RefreshIdentityOptions.Refresh);
             var getTokenRequest = new GetOpenIdTokenRequest { IdentityId = identity };
             // If logins are set, pass them to the GetOpenId call
             if (Logins.Count > 0)
