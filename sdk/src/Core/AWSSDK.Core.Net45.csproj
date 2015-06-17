@@ -144,6 +144,12 @@
     <Compile Include="Amazon.Util\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Util\Internal\PlatformServices\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Util\Internal\PlatformServices\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Util\Internal\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
