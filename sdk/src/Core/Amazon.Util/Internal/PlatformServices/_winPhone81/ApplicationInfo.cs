@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
+using Windows.Storage;
 
 namespace Amazon.Util.Internal.PlatformServices
 {
@@ -58,6 +59,16 @@ namespace Amazon.Util.Internal.PlatformServices
             get
             {
                 throw new NotImplementedException();
+            }
+        }
+
+
+        
+        public string SpecialFolder
+        {
+            get
+            {
+                return ApplicationData.Current.LocalFolder.Path;
             }
         }
 

@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using Windows.Storage;
 
 namespace Amazon.Util.Internal.PlatformServices
 {
     public class ApplicationInfo : IApplicationInfo
     {
-
-       
 
         public string AppTitle
         {
@@ -41,6 +40,14 @@ namespace Amazon.Util.Internal.PlatformServices
             get
             {
                 throw new NotImplementedException();
+            }
+        }
+
+        public string SpecialFolder
+        {
+            get
+            {
+                return ApplicationData.Current.LocalFolder.Path;
             }
         }
 

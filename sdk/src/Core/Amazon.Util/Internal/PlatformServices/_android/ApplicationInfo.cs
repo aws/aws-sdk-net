@@ -42,5 +42,14 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
+
+        public string SpecialFolder
+        {
+            get
+            {
+                return Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            }
+        }
+
     }
 }

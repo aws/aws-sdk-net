@@ -131,7 +131,7 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Clears currently-stored credentials, forcing the next GetCredentials call to generate new credentials.
         /// </summary>
-        public virtual override void ClearCredentials()
+        public virtual void ClearCredentials()
         {
             base.ClearCredentials();
             //TODO: Add support for caching
