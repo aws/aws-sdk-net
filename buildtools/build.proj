@@ -199,7 +199,7 @@
 		<SaveBuildArtifactTask
 			RepositoryRoot="$(MSBuildProjectDirectory)\.."
 			BuildArtifactType="sdk"
-			GitBranch="$(GitBranch)"
+			GitBranch="$(SaveReferenceGitBranch)"
 			LocalArchiveRootFolder="$(LocalArchiveRootFolder)"
 			/>
 	</Target>	
