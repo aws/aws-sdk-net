@@ -8,7 +8,7 @@ using UIKit;
 
 namespace Amazon.Util.Internal.PlatformServices
 {
-    public class EnvironmentInfo
+    public class EnvironmentInfo:IEnvironmentInfo
     {
         public static string Platform
         {

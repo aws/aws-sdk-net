@@ -16,21 +16,25 @@ namespace Amazon.Util.Internal.PlatformServices
         private static readonly object _lock = new object();
         private static bool _factoryInitialized = false;
 
-        private static IDictionary<Type, Type> _mappings = 
+        private static IDictionary<Type, Type> _mappings =
             new Dictionary<Type, Type>()
             {
                 {typeof(IApplicationSettings),typeof(ApplicationSettings)},
-                {typeof(INetworkReachability),typeof(NetworkReachability)}
+                {typeof(INetworkReachability),typeof(NetworkReachability)},
+                {typeof(IApplicationInfo),typeof(ApplicationInfo)},
+                {typeof(IEnvironmentInfo),typeof(EnvironmentInfo)}
             };
 
-        private IDictionary<Type, InstantiationModel> _instantationMappings = 
+        private IDictionary<Type, InstantiationModel> _instantationMappings =
             new Dictionary<Type, InstantiationModel>()
             {
                 {typeof(IApplicationSettings), InstantiationModel.InstancePerCall},
-                {typeof(INetworkReachability), InstantiationModel.Singleton}
+                {typeof(INetworkReachability), InstantiationModel.Singleton},
+                {typeof(IApplicationInfo),InstantiationModel.Singleton},
+                {typeof(IEnvironmentInfo),InstantiationModel.Singleton}
             };
 
-        private IDictionary<Type, object> _singletonServices = 
+        private IDictionary<Type, object> _singletonServices =
             new Dictionary<Type, object>();
 
         private ServiceFactory()

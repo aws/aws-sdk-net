@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Amazon.Util.Internal.PlatformServices
 {
-    public class ApplicationInfo
+    public class ApplicationInfo : IApplicationInfo
     {
-        public static string AppTitle
+        public string AppTitle
         {
             get
             {
@@ -16,7 +16,7 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
-        public static string AppVersionName
+        public string AppVersionName
         {
             get
             {
@@ -25,7 +25,7 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
-        public static string AppVersionCode
+        public string AppVersionCode
         {
             get
             {
@@ -33,7 +33,7 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
-        public static string PackageName
+        public string PackageName
         {
             get
             {

@@ -177,12 +177,14 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Clears current credentials state. This will reset the IdentityId.
+        /// Use <see cref="ClearCredentials"/> instead if you just want to trigger a credentials refresh.
         /// </summary>
         public void Clear()
         {
             identityId = null;
             ClearCredentials();
             ClearIdentityCache();
+            Logins.Clear();
         }
 
         /// <summary>
@@ -200,7 +202,7 @@ namespace Amazon.CognitoIdentity
         public void RemoveLogin(string providerName)
         {
             this.Logins.Remove(providerName);
-            this.Clear();
+            this.ClearCredentials();
         }
 
         /// <summary>
@@ -211,7 +213,7 @@ namespace Amazon.CognitoIdentity
         public void AddLogin(string providerName, string token)
         {
             Logins[providerName] = token;
-            this.Clear();
+            this.ClearCredentials();
         }
 
         /// <summary>
@@ -266,7 +268,7 @@ namespace Amazon.CognitoIdentity
                     IdentityPoolId = IdentityPoolId,
                     Logins = Logins
                 };
-#if BCL || AWSSDK_UNITY
+#if BCL
                 var response = cib.GetId(getIdRequest);
 #else
                 var response = Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<GetIdResponse>(() => cib.GetIdAsync(getIdRequest));

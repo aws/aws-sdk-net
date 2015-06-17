@@ -74,7 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AWSSDK.Core.PCL.csproj">
-        <Project>{029CF5B7-1EF7-4D02-B417-BB83BCC30D9A}</Project>
+        <Project>{BFC96F19-CADF-41EB-804C-10DBEF3F9126}</Project>
         <Name>AWSSDK.Core.PCL</Name>
     </ProjectReference>
   </ItemGroup>

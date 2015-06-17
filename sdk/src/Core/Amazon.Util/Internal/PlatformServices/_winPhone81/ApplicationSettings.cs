@@ -31,5 +31,19 @@ namespace Amazon.Util.Internal.PlatformServices
                     return null;
             }
         }
+
+
+        public void RemoveValue(string key, ApplicationSettingsMode mode)
+        {
+            switch (mode)
+            {
+                case ApplicationSettingsMode.Local:
+                    Windows.Storage.ApplicationData.Current.LocalSettings.Values.Remove(key);
+                    break;
+                case ApplicationSettingsMode.Roaming:
+                    Windows.Storage.ApplicationData.Current.RoamingSettings.Values.Remove(key);
+                    break;
+            }
+        }
     }
 }

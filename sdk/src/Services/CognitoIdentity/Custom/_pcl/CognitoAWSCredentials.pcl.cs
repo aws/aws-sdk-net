@@ -8,6 +8,7 @@ using Amazon.SecurityToken;
 using Amazon.SecurityToken.Model;
 
 using Amazon.CognitoIdentity.Model;
+using Amazon.Util.Internal.PlatformServices;
 
 namespace Amazon.CognitoIdentity
 {
@@ -18,6 +19,11 @@ namespace Amazon.CognitoIdentity
     /// </summary>
     public partial class CognitoAWSCredentials : RefreshingAWSCredentials
     {
+        /// <summary>
+        /// Key for storing the identity id
+        /// </summary>
+        private static readonly String IDENTITY_ID_CACHE_KEY = "CognitoIdentity:IdentityId";
+
         private Amazon.SecurityToken.Model.Credentials GetStsCredentials(AssumeRoleWithWebIdentityRequest assumeRequest)
         {
             var assumeResult = Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<AssumeRoleWithWebIdentityResponse>(() => sts.AssumeRoleWithWebIdentityAsync(assumeRequest));
@@ -53,8 +59,9 @@ namespace Amazon.CognitoIdentity
         /// <returns>The previously cached identity id</returns>
         public virtual string GetCachedIdentityId()
         {
-            // override this method to support caching
-            return null;
+            var serviceFactory = ServiceFactory.Instance;
+            var appSettings = serviceFactory.GetService<IApplicationSettings>();
+            return appSettings.GetValue(IDENTITY_ID_CACHE_KEY, ApplicationSettingsMode.Local);
         }
 
         /// <summary>
@@ -73,7 +80,9 @@ namespace Amazon.CognitoIdentity
         /// <param name="identityId">The Cognito identity id to cache</param>
         public virtual void CacheIdentityId(string identityId)
         {
-            // override this method to support caching
+            var serviceFactory = ServiceFactory.Instance;
+            var appSettings = serviceFactory.GetService<IApplicationSettings>();
+            appSettings.SetValue(IDENTITY_ID_CACHE_KEY, identityId, ApplicationSettingsMode.Local);
         }
 
         /// <summary>
@@ -85,7 +94,9 @@ namespace Amazon.CognitoIdentity
         /// </summary>
         public virtual void ClearIdentityCache()
         {
-            // override this method to support caching
+            var serviceFactory = ServiceFactory.Instance;
+            var appSettings = serviceFactory.GetService<IApplicationSettings>();
+            appSettings.RemoveValue(IDENTITY_ID_CACHE_KEY, ApplicationSettingsMode.Local);
         }
 
         /// <summary>
@@ -114,13 +125,5 @@ namespace Amazon.CognitoIdentity
             //TODO: Add support for caching
         }
 
-        /// <summary>
-        /// Flag indicating if the caching is enabled for cognito identity or not
-        /// </summary>
-        /// <returns>true if cognito identity caching is enabled, else false</returns>
-        public virtual bool IsIdentityCachingEnabled()
-        {
-            return true;
-        }
     }
 }

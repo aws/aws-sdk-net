@@ -105,15 +105,5 @@ namespace Amazon.CognitoIdentity
             //TODO: add support for caching
         }
 
-        /// <summary>
-        /// Flag indicating if the caching is enabled for cognito identity or not
-        /// </summary>
-        /// <returns>true if cognito identity caching is enabled, else false</returns>
-        public virtual bool IsIdentityCachingEnabled()
-        {
-            return false;
-        }
-
-
     }
 }

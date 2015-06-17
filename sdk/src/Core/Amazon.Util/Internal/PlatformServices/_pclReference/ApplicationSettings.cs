@@ -17,5 +17,10 @@ namespace Amazon.Util.Internal.PlatformServices
         {
             throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
         }
+
+        public void RemoveValue(string key, ApplicationSettingsMode mode)
+        {
+            throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
+        }
     }
 }

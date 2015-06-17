@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{39825610-39BF-4C58-A130-29FAAC5F8883}</ProjectGuid>
+    <ProjectGuid>{E0C5CDAF-6D20-4832-8D24-2A7A50711F0D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.CognitoSync</RootNamespace>
@@ -93,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AWSSDK.Core.Net35.csproj">
-        <Project>{5E6C4B89-91B8-43E0-BF66-11050CA74F8B}</Project>
+        <Project>{FCDD969A-7DB7-4FFB-B3C1-F637F475C093}</Project>
         <Name>AWSSDK.Core.Net35</Name>
     </ProjectReference>
   </ItemGroup>

@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Amazon.Util.Internal.PlatformServices
 {
-    public class EnvironmentInfo
+    public class EnvironmentInfo : IEnvironmentInfo
     {
-        public static string Platform
+        public string Platform
         {
             get
             {
@@ -15,7 +15,7 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
-        public static string Model
+        public string Model
         {
             get
             {
@@ -23,7 +23,7 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
-        public static string Make
+        public string Make
         {
             get
             {
@@ -31,7 +31,7 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
-        public static string PlatformVersion
+        public string PlatformVersion
         {
             get
             {
@@ -39,7 +39,7 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
-        public static string Locale
+        public string Locale
         {
             get
             {

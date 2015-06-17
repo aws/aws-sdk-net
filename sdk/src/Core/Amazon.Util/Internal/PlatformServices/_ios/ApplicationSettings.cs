@@ -54,5 +54,21 @@ namespace Amazon.Util.Internal.PlatformServices
                 return NSString.FromData(match.ValueData, NSStringEncoding.UTF8);
             }
         }
+
+        public void RemoveValue(string key, ApplicationSettingsMode mode)
+        {
+            var rec = new SecRecord(SecKind.GenericPassword)
+            {
+                Generic = NSData.FromString(key)
+            };
+
+            SecStatusCode res;
+            var match = SecKeyChain.QueryAsRecord(rec, out res);
+            if (res == SecStatusCode.Success)
+            {
+                SecKeyChain.Remove(match);
+            }
+        }
+
     }
 }
