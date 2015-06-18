@@ -63,13 +63,10 @@
 	
 	<Target Name="build-sdk" DependsOnTargets="restore-nuget;run-generator">
 		<Message Text="Compile the SDK"/>
-		<SetEnvironmentVariable VariableName="AWSKeyFile" VariableValue="$(CustomSnkFileLocation)" />
 		<MSBuild Projects="..\sdk\AWSSDK.sln"
 			Targets="Clean;Build"
-			Properties="Configuration=Release" />
-		
-		<SetEnvironmentVariable VariableName="AWSKeyFile" VariableValue="" />
-		
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation)" />
+
 		<Copy
 			SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
 			DestinationFolder="$(Deployment)" />
@@ -166,21 +163,6 @@
 					string content = File.ReadAllText(ResultFile);
 					content = content.Replace("<?xml version=\"1.0\" encoding=\"UTF-8\"?>","<?xml version=\"1.0\" encoding=\"UTF-8\"?><?xml-stylesheet type=\"text/xsl\" href=\"trx-transform.xsl\"?>");
 					File.WriteAllText(ResultFile + ".xml", content);
-				]]>
-			</Code>
-		</Task>
-	</UsingTask>
-	
-	<UsingTask TaskName="SetEnvironmentVariable" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
-		<ParameterGroup>
-			<VariableName ParameterType="System.String" Required="true" />
-			<VariableValue ParameterType="System.String" Required="false" />
-		</ParameterGroup>
-		<Task>
-			<Code Type="Fragment" Language="cs">
-				<![CDATA[
-					Log.LogMessage("Setting variable {0} = {1}", VariableName, VariableValue);
-					System.Environment.SetEnvironmentVariable(VariableName, VariableValue);
 				]]>
 			</Code>
 		</Task>
