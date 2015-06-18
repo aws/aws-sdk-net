@@ -109,7 +109,7 @@
 	
 	<!-- TEST TARGETS/TASKS -->
 
-	<Target Name="fxcop" DependsOnTargets="init;copy-assemblies" Condition="Exists('$(fxcopcmd)')">
+	<Target Name="fxcop" DependsOnTargets="init;copy-assemblies" Condition="Exists('$(fxcopcmdexe)')">
 		<!-- Update FxCop project files -->
 		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net35" FxCopProject="..\sdk\SDK-3.5.FxCop" />
 		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net45" FxCopProject="..\sdk\SDK-4.5.FxCop" />
@@ -208,6 +208,7 @@
 		<SaveBuildArtifactTask
 			RepositoryRoot="$(MSBuildProjectDirectory)\.."
 			BuildArtifactType="sdk"
+			GitBranch="$(SaveReferenceGitBranch)"
 			LocalArchiveRootFolder="$(LocalArchiveRootFolder)"
 			/>
 	</Target>	
@@ -217,8 +218,19 @@
 	<Target Name="doc-build" DependsOnTargets="build-docgenerator">
 		<Message Text="Build documentation for all platforms, all assemblies"/>
 		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(SDKAssembliesRoot) -o $(DocOutputRoot) -sf $(DocSamplesFolder)" />
-	</Target>
+    </Target>
 
+    <Target Name="create-sitemap" 
+            AfterTargets="doc-build" 
+            Condition="Exists('$(InternalBuildTools)\references.targets')">
+        <CreateSitemapTask
+            SourceFolder="$(DocOutputRoot)"
+            BaseUrl="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/"
+            OutputFile="$(DocOutputRoot)\sitemap.xml"
+            WaitForDebugger="false"
+            />
+	</Target>
+    
     <Target Name="build-docgenerator">
 		<Message Text="Building documentation generator"/>
 		<MSBuild Projects=".\CustomTasks\..\docgenerator\AWSSDKDocGenerator.sln"

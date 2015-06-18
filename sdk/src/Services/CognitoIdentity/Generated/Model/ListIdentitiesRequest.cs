@@ -30,12 +30,37 @@ namespace Amazon.CognitoIdentity.Model
     /// <summary>
     /// Container for the parameters to the ListIdentities operation.
     /// Lists the identities in a pool.
+    /// 
+    ///  
+    /// <para>
+    /// You must use AWS Developer credentials to call this API.
+    /// </para>
     /// </summary>
     public partial class ListIdentitiesRequest : AmazonCognitoIdentityRequest
     {
+        private bool? _hideDisabled;
         private string _identityPoolId;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property HideDisabled. 
+        /// <para>
+        /// An optional boolean parameter that allows you to hide disabled identities. If omitted,
+        /// the ListIdentities API will include disabled identities in the response.
+        /// </para>
+        /// </summary>
+        public bool HideDisabled
+        {
+            get { return this._hideDisabled.GetValueOrDefault(); }
+            set { this._hideDisabled = value; }
+        }
+
+        // Check to see if HideDisabled property is set
+        internal bool IsSetHideDisabled()
+        {
+            return this._hideDisabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property IdentityPoolId. An identity pool ID in the format REGION:GUID.

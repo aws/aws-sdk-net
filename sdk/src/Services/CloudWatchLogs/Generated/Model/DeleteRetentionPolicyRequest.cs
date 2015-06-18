@@ -44,14 +44,17 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates DeleteRetentionPolicyRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">Sets the DeleteRetentionPolicyRequest LogGroupName property</param>
+        /// <param name="logGroupName">The name of the log group that is associated with the retention policy to delete.</param>
         public DeleteRetentionPolicyRequest(string logGroupName)
         {
             _logGroupName = logGroupName;
         }
 
         /// <summary>
-        /// Gets and sets the property LogGroupName.
+        /// Gets and sets the property LogGroupName. 
+        /// <para>
+        /// The name of the log group that is associated with the retention policy to delete.
+        /// </para>
         /// </summary>
         public string LogGroupName
         {

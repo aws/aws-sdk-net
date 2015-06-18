@@ -30,6 +30,11 @@ namespace Amazon.CognitoIdentity.Model
     /// <summary>
     /// Container for the parameters to the ListIdentityPools operation.
     /// Lists all of the Cognito identity pools registered for your account.
+    /// 
+    ///  
+    /// <para>
+    /// This is a public API. You do not need any credentials to call this API.
+    /// </para>
     /// </summary>
     public partial class ListIdentityPoolsRequest : AmazonCognitoIdentityRequest
     {

@@ -87,6 +87,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     response.GatewayType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastSoftwareUpdate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LastSoftwareUpdate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NextUpdateAvailabilityDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

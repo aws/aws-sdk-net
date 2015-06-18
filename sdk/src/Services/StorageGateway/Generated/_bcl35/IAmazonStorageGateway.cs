@@ -445,7 +445,8 @@ namespace Amazon.StorageGateway
         /// you want to create a volume from a snapshot.
         /// </para>
         ///  <note>To list or delete a snapshot, you must use the Amazon EC2 API. For more information,
-        /// .</note>
+        /// see DescribeSnapshots or DeleteSnapshot in the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
+        /// API reference</a>.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
         /// 
@@ -1369,7 +1370,7 @@ namespace Amazon.StorageGateway
         #region  DescribeStorediSCSIVolumes
 
         /// <summary>
-        /// This operation returns description of the gateway volumes specified in the request.
+        /// This operation returns the description of the gateway volumes specified in the request.
         /// The list of gateway volumes in the request must be from one gateway. In the response
         /// Amazon Storage Gateway returns volume information sorted by volume ARNs.
         /// </summary>
@@ -1893,7 +1894,7 @@ namespace Amazon.StorageGateway
         /// The request returns a list of all disks, specifying which are configured as working
         /// storage, cache storage, or stored volume or not configured at all. The response includes
         /// a <code>DiskStatus</code> field. This field can have a value of present (the disk
-        /// is availble to use), missing (the disk is no longer connected to the gateway), or
+        /// is available to use), missing (the disk is no longer connected to the gateway), or
         /// mismatch (the disk node is occupied by a disk that has incorrect metadata or the disk
         /// content is corrupted). 
         /// </para>
@@ -1934,6 +1935,51 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>Returns a  ListLocalDisksResult from StorageGateway.</returns>
         ListLocalDisksResponse EndListLocalDisks(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListVolumeInitiators
+
+        /// <summary>
+        /// This operation lists iSCSI initiators that are connected to a volume. You can use
+        /// this operation to determine whether a volume is being used or not.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVolumeInitiators service method.</param>
+        /// 
+        /// <returns>The response from the ListVolumeInitiators service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. See the error and message
+        /// fields for more information.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// See the error and message fields for more information.
+        /// </exception>
+        ListVolumeInitiatorsResponse ListVolumeInitiators(ListVolumeInitiatorsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVolumeInitiators operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVolumeInitiators operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVolumeInitiators
+        ///         operation.</returns>
+        IAsyncResult BeginListVolumeInitiators(ListVolumeInitiatorsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVolumeInitiators operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVolumeInitiators.</param>
+        /// 
+        /// <returns>Returns a  ListVolumeInitiatorsResult from StorageGateway.</returns>
+        ListVolumeInitiatorsResponse EndListVolumeInitiators(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2048,9 +2094,21 @@ namespace Amazon.StorageGateway
         #region  ResetCache
 
         /// <summary>
-        /// This operation resets all cache disks and makes the disks available for reconfiguration
-        /// as cache storage. When a cache is reset, the gateway loses its cache storage. At this
-        /// point you can reconfigure the disks as cache disks.
+        /// This operation resets all cache disks that have encountered a error and makes the
+        /// disks available for reconfiguration as cache storage. If your cache disk encounters
+        /// a error, the gateway prevents read and write operations on virtual tapes in the gateway.
+        /// For example, an error can occur when a disk is corrupted or removed from the gateway.
+        /// When a cache is reset, the gateway loses its cache storage. At this point you can
+        /// reconfigure the disks as cache disks. 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If the cache disk you are resetting contains data that has not been uploaded to Amazon
+        /// S3 yet, that data can be lost. After you reset cache disks, there will be no configured
+        /// cache disks left in the gateway, so you must configure at least one new cache disk
+        /// for your gateway to function properly.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="gatewayARN">A property of ResetCacheRequest used to execute the ResetCache service method.</param>
         /// 
@@ -2066,9 +2124,21 @@ namespace Amazon.StorageGateway
         ResetCacheResponse ResetCache(string gatewayARN);
 
         /// <summary>
-        /// This operation resets all cache disks and makes the disks available for reconfiguration
-        /// as cache storage. When a cache is reset, the gateway loses its cache storage. At this
-        /// point you can reconfigure the disks as cache disks.
+        /// This operation resets all cache disks that have encountered a error and makes the
+        /// disks available for reconfiguration as cache storage. If your cache disk encounters
+        /// a error, the gateway prevents read and write operations on virtual tapes in the gateway.
+        /// For example, an error can occur when a disk is corrupted or removed from the gateway.
+        /// When a cache is reset, the gateway loses its cache storage. At this point you can
+        /// reconfigure the disks as cache disks. 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If the cache disk you are resetting contains data that has not been uploaded to Amazon
+        /// S3 yet, that data can be lost. After you reset cache disks, there will be no configured
+        /// cache disks left in the gateway, so you must configure at least one new cache disk
+        /// for your gateway to function properly.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetCache service method.</param>
         /// 

@@ -388,6 +388,36 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  DeleteSubscriptionFilter
+
+        internal DeleteSubscriptionFilterResponse DeleteSubscriptionFilter(DeleteSubscriptionFilterRequest request)
+        {
+            var marshaller = new DeleteSubscriptionFilterRequestMarshaller();
+            var unmarshaller = DeleteSubscriptionFilterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSubscriptionFilterRequest,DeleteSubscriptionFilterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSubscriptionFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSubscriptionFilter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteSubscriptionFilterResponse> DeleteSubscriptionFilterAsync(DeleteSubscriptionFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteSubscriptionFilterRequestMarshaller();
+            var unmarshaller = DeleteSubscriptionFilterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSubscriptionFilterRequest,DeleteSubscriptionFilterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeLogGroups
 
         internal DescribeLogGroupsResponse DescribeLogGroups()
@@ -477,6 +507,36 @@ namespace Amazon.CloudWatchLogs
             var unmarshaller = DescribeMetricFiltersResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeMetricFiltersRequest,DescribeMetricFiltersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeSubscriptionFilters
+
+        internal DescribeSubscriptionFiltersResponse DescribeSubscriptionFilters(DescribeSubscriptionFiltersRequest request)
+        {
+            var marshaller = new DescribeSubscriptionFiltersRequestMarshaller();
+            var unmarshaller = DescribeSubscriptionFiltersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSubscriptionFiltersRequest,DescribeSubscriptionFiltersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSubscriptionFilters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSubscriptionFilters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeSubscriptionFiltersResponse> DescribeSubscriptionFiltersAsync(DescribeSubscriptionFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeSubscriptionFiltersRequestMarshaller();
+            var unmarshaller = DescribeSubscriptionFiltersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSubscriptionFiltersRequest,DescribeSubscriptionFiltersResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -627,6 +687,36 @@ namespace Amazon.CloudWatchLogs
             var unmarshaller = PutRetentionPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutRetentionPolicyRequest,PutRetentionPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutSubscriptionFilter
+
+        internal PutSubscriptionFilterResponse PutSubscriptionFilter(PutSubscriptionFilterRequest request)
+        {
+            var marshaller = new PutSubscriptionFilterRequestMarshaller();
+            var unmarshaller = PutSubscriptionFilterResponseUnmarshaller.Instance;
+
+            return Invoke<PutSubscriptionFilterRequest,PutSubscriptionFilterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutSubscriptionFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutSubscriptionFilter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutSubscriptionFilterResponse> PutSubscriptionFilterAsync(PutSubscriptionFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutSubscriptionFilterRequestMarshaller();
+            var unmarshaller = PutSubscriptionFilterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutSubscriptionFilterRequest,PutSubscriptionFilterResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -36,7 +36,7 @@ namespace Amazon.Lambda
     /// <summary>
     /// Implementation for accessing Lambda
     ///
-    /// AWS LambdaS 
+    /// AWS Lambda 
     /// <para>
     /// <b>Overview</b>
     /// </para>
@@ -45,7 +45,7 @@ namespace Amazon.Lambda
     /// This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides
     /// additional information. For the service overview, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
     /// is AWS Lambda</a>, and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-    /// LambdaL How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
+    /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class AmazonLambdaClient : AmazonServiceClient, IAmazonLambda

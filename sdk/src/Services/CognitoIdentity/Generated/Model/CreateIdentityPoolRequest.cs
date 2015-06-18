@@ -31,6 +31,7 @@ namespace Amazon.CognitoIdentity.Model
     /// Container for the parameters to the CreateIdentityPool operation.
     /// Creates a new identity pool. The identity pool is a store of user identity information
     /// that is specific to your AWS account. The limit on identity pools is 60 per account.
+    /// You must use AWS Developer credentials to call this API.
     /// </summary>
     public partial class CreateIdentityPoolRequest : AmazonCognitoIdentityRequest
     {
