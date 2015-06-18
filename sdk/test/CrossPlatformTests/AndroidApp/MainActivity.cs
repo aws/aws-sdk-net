@@ -6,6 +6,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using CommonTests;
+using CommonTests.Framework;
 
 namespace AndroidApp
 {
@@ -29,10 +30,12 @@ namespace AndroidApp
             Button button = FindViewById<Button>(Resource.Id.MyButton);
             //button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
             button.Click += OnClick;
-			var txtBox = FindViewById<TextView>(Resource.Id.TestOutput);
+            var txtBox = FindViewById<TextView>(Resource.Id.TestOutput);
 
             var stream = Assets.Open(CredentialsAsset);
-			runner = new AndroidRunner(stream, txtBox, RunOnUiThread );
+            txtBox.Text = "Executing tests...";
+            runner = new AndroidRunner(stream, txtBox, RunOnUiThread);
+            runner.ExecuteAllTestsAsync();
         }
 
         async void OnClick(object sender, EventArgs e)

@@ -13,7 +13,7 @@ using NUnit.Framework.Internal;
 using System.Threading;
 using System.Diagnostics;
 
-namespace CommonTests
+namespace CommonTests.Framework
 {
     [Flags]
     public enum LogLevel
@@ -29,7 +29,7 @@ namespace CommonTests
               
 
         internal static AWSCredentials Credentials { get; set; }
-        internal static RegionEndpoint RegionEndpoint { get { return RegionEndpoint.USWest2; } }
+        internal static RegionEndpoint RegionEndpoint { get; set; }
         public static TestRunner Instance { get; private set; }
 
         public virtual ITestListener Listener { get; private set; }
@@ -42,15 +42,10 @@ namespace CommonTests
             set { _logMode = value; }
         }
     
-        public TestRunner(string credentialsResourcePartialName = "credentials.json")
+        public TestRunner()
         {
-            var credentialsStream = GetCredentialsStream(credentialsResourcePartialName);
-            TestRunner.Credentials = new VendedCredentials(credentialsStream);
-            Instance = this;
-        }
-		public TestRunner(Stream credentials)
-        {
-            TestRunner.Credentials = new VendedCredentials(credentials);
+            TestRunner.Credentials = Settings.Credentials;
+            TestRunner.RegionEndpoint = Settings.RegionEndpoint;
             Instance = this;
         }
 
@@ -113,15 +108,6 @@ namespace CommonTests
         }
 
         protected abstract void WriteLine(string message);
-
-        private Stream GetCredentialsStream(string credentialsResourcePartialName)
-        {
-            var assembly = this.GetType().GetTypeInfo().Assembly;
-            var resources = assembly.GetManifestResourceNames();
-            var credentialsResourceName = resources.First(r => r.IndexOf(credentialsResourcePartialName, StringComparison.OrdinalIgnoreCase) >= 0);
-            var credsStream = assembly.GetManifestResourceStream(credentialsResourceName);
-            return credsStream;
-        }
 
         protected virtual void TestCompleted(TestMethod test)
         {

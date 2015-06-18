@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Net;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime;
 
 namespace CommonTests.Framework
 {
@@ -224,6 +225,19 @@ namespace CommonTests.Framework
         public static async Task SleepAsync(TimeSpan ts)
         {
             await Task.Delay(ts);
+        }
+
+        public static void RunAsSync(Func<Task> asyncFunc)
+        {
+            Task.Run(asyncFunc).Wait();
+        }
+
+        public static T CreateClient<T>()
+            where T : AmazonServiceClient
+        {
+            var client = (T)Activator.CreateInstance(typeof(T),
+                new object[] { TestRunner.Credentials, TestRunner.RegionEndpoint });
+            return client;
         }
     }
 }

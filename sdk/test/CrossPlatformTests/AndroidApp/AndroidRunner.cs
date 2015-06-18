@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using CommonTests;
 using System.IO;
+using CommonTests.Framework;
 
 namespace AndroidApp
 {
@@ -20,7 +21,7 @@ namespace AndroidApp
         private Action<Action> _uiRunner = null;
 
         public AndroidRunner(Stream credentials, TextView txtView, Action<Action> uiRunner)
-            : base(credentials)
+            : base()
         {
             _textView = txtView;
             _uiRunner = uiRunner;

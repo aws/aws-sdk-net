@@ -19,6 +19,8 @@ namespace WindowsConsoleApp
             {
                 Console.WriteLine(ex.Message);
             }
+
+            Console.WriteLine("Test run complete!");
         }
     }
 }
