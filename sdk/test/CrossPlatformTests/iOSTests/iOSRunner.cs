@@ -7,6 +7,7 @@ using Foundation;
 using UIKit;
 using CommonTests;
 using System.IO;
+using CommonTests.Framework;
 
 namespace iOSTests
 {

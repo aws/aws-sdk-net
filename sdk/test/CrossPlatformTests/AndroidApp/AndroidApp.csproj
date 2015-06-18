@@ -59,7 +59,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Core" />  
+    <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
     <Reference Include="Validation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7, processorArchitecture=MSIL">
@@ -74,7 +74,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\credentials.json" />
     <None Include="app.config" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config">
@@ -93,13 +92,20 @@
     <AndroidResource Include="Resources\drawable\Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\CREDENTIALS.txt" />
     <Content Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.PCL.csproj">
       <Project>{bfc96f19-cadf-41eb-804c-10dbef3f9126}</Project>
       <Name>AWSSDK.Core.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CloudSearch\AWSSDK.CloudSearch.PCL.csproj">
+      <Project>{7a011f04-319c-4825-9197-c2716df46da1}</Project>
+      <Name>AWSSDK.CloudSearch.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.PCL.csproj">
+      <Project>{e0cf8866-9af9-4375-8116-6bddb505e773}</Project>
+      <Name>AWSSDK.ElasticTranscoder.PCL</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.PCL.csproj">
       <Project>{17adb7d7-59f4-4eae-86b3-15a949bed449}</Project>
@@ -108,6 +114,10 @@
     <ProjectReference Include="..\..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.PCL.csproj">
       <Project>{1bc2b016-b393-4016-ab85-649e1071067b}</Project>
       <Name>AWSSDK.SecurityToken.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\SimpleWorkflow\AWSSDK.SimpleWorkflow.PCL.csproj">
+      <Project>{5fbcbad4-c22d-428c-ba56-7abd134c0f8a}</Project>
+      <Name>AWSSDK.SimpleWorkflow.PCL</Name>
     </ProjectReference>
     <ProjectReference Include="..\CommonTests\CommonTests.csproj">
       <Project>{569D0C97-4009-47A9-BAB9-8A2B9FB6D913}</Project>
@@ -125,7 +135,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-  </Target>  
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

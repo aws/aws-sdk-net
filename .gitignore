@@ -22,3 +22,4 @@ Deployment/**
 DocDeployment/**
 
 **/*.userprefs
+/sdk/test/CrossPlatformTests/CommonTests/Resources/settings.json

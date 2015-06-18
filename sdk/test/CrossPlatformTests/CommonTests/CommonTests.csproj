@@ -37,12 +37,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Framework\AssertExtensions.cs" />
     <Compile Include="Framework\Console.cs" />
+    <Compile Include="Framework\Settings.cs" />
     <Compile Include="Framework\TestBase.cs" />
     <Compile Include="Framework\TestRunner.cs" />
     <Compile Include="Framework\UtilityMethods.cs" />
-    <Compile Include="Framework\VendedCredentials.cs" />
     <Compile Include="IntegrationTests\*\*.cs" />
+    <Compile Include="IntegrationTests\ProtocolTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -72,9 +74,17 @@
       <Project>{029cf5b7-1ef7-4d02-b417-bb83bcc30d9a}</Project>
       <Name>AWSSDK.Core.PCL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CloudSearch\AWSSDK.CloudSearch.PCL.csproj">
+      <Project>{7a011f04-319c-4825-9197-c2716df46da1}</Project>
+      <Name>AWSSDK.CloudSearch.PCL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.PCL.csproj">
       <Project>{ff9a7cda-940c-4a29-a8f6-da4392e11def}</Project>
       <Name>AWSSDK.DynamoDBv2.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.PCL.csproj">
+      <Project>{e0cf8866-9af9-4375-8116-6bddb505e773}</Project>
+      <Name>AWSSDK.ElasticTranscoder.PCL</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.PCL.csproj">
       <Project>{17adb7d7-59f4-4eae-86b3-15a949bed449}</Project>
@@ -84,8 +94,15 @@
       <Project>{1bc2b016-b393-4016-ab85-649e1071067b}</Project>
       <Name>AWSSDK.SecurityToken.PCL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\SimpleWorkflow\AWSSDK.SimpleWorkflow.PCL.csproj">
+      <Project>{5fbcbad4-c22d-428c-ba56-7abd134c0f8a}</Project>
+      <Name>AWSSDK.SimpleWorkflow.PCL</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\*" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

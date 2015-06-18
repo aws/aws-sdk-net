@@ -1,4 +1,5 @@
 ﻿using CommonTests;
+using CommonTests.Framework;
 using NUnit.Framework.Interfaces;
 using NUnit.Framework.Internal;
 using System;
@@ -13,7 +14,7 @@ namespace WindowsConsoleApp
     public class ConsoleRunner : TestRunner
     {
         public ConsoleRunner()
-            : base(File.OpenRead(@".\Assets\credentials.json"))
+            : base()
         {
         }
 
@@ -27,9 +28,7 @@ namespace WindowsConsoleApp
 
         protected override void WriteLine(string message)
         {
-            Console.WriteLine(message);
+            System.Console.WriteLine(message);
         }
     }
-
-    
 }
