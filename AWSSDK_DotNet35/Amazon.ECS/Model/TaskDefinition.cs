@@ -35,6 +35,7 @@ namespace Amazon.ECS.Model
         private List<ContainerDefinition> _containerDefinitions = new List<ContainerDefinition>();
         private string _family;
         private int? _revision;
+        private TaskDefinitionStatus _status;
         private string _taskDefinitionArn;
         private List<Volume> _volumes = new List<Volume>();
 
@@ -83,8 +84,9 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The revision of the task in a particular family. You can think of the revision as
         /// a version number of a task definition in a family. When you register a task definition
-        /// for the first time, the revision is <code>1</code>, and each time you register a task
-        /// definition in the same family, the revision value increases by one.
+        /// for the first time, the revision is <code>1</code>, and each time you register a new
+        /// revision of a task definition in the same family, the revision value always increases
+        /// by one (even if you have deregistered previous revisions in this family).
         /// </para>
         /// </summary>
         public int Revision
@@ -97,6 +99,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetRevision()
         {
             return this._revision.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the task definition.
+        /// </para>
+        /// </summary>
+        public TaskDefinitionStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>

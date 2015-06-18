@@ -30,13 +30,16 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Container for the parameters to the ListTaskDefinitions operation.
     /// Returns a list of task definitions that are registered to your account. You can filter
-    /// the results by family name with the <code>familyPrefix</code> parameter.
+    /// the results by family name with the <code>familyPrefix</code> parameter or by status
+    /// with the <code>status</code> parameter.
     /// </summary>
     public partial class ListTaskDefinitionsRequest : AmazonECSRequest
     {
         private string _familyPrefix;
         private int? _maxResults;
         private string _nextToken;
+        private SortOrder _sort;
+        private TaskDefinitionStatus _status;
 
         /// <summary>
         /// Gets and sets the property FamilyPrefix. 
@@ -102,6 +105,52 @@ namespace Amazon.ECS.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sort. 
+        /// <para>
+        /// The order in which to sort the results. Valid values are <code>ASC</code> and <code>DESC</code>.
+        /// By default (<code>ASC</code>), task definitions are listed lexicographically by family
+        /// name and in ascending numerical order by revision so that the newest task definitions
+        /// in a family are listed last. Setting this parameter to <code>DESC</code> reverses
+        /// the sort order on family name and revision so that the newest task definitions in
+        /// a family are listed first.
+        /// </para>
+        /// </summary>
+        public SortOrder Sort
+        {
+            get { return this._sort; }
+            set { this._sort = value; }
+        }
+
+        // Check to see if Sort property is set
+        internal bool IsSetSort()
+        {
+            return this._sort != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The task definition status that you want to filter the <code>ListTaskDefinitions</code>
+        /// results with. By default, only <code>ACTIVE</code> task definitions are listed. By
+        /// setting this parameter to <code>INACTIVE</code>, you can view task definitions that
+        /// are <code>INACTIVE</code> as long as an active task or service still references them.
+        /// If you paginate the resulting output, be sure to keep the <code>status</code> value
+        /// constant in each subsequent request.
+        /// </para>
+        /// </summary>
+        public TaskDefinitionStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

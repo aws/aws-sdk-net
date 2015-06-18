@@ -29,12 +29,18 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterTaskDefinition operation.
-    /// NOT YET IMPLEMENTED.
+    /// Deregisters the specified task definition by family and revision. Upon deregistration,
+    /// the task definition is marked as <code>INACTIVE</code>. Existing tasks and services
+    /// that reference an <code>INACTIVE</code> task definition continue to run without disruption.
+    /// Existing services that reference an <code>INACTIVE</code> task definition can still
+    /// scale up or down by modifying the service's desired count.
     /// 
     ///  
     /// <para>
-    /// Deregisters the specified task definition. You will no longer be able to run tasks
-    /// from this definition after deregistration.
+    /// You cannot use an <code>INACTIVE</code> task definition to run new tasks or create
+    /// new services, and you cannot update an existing service to reference an <code>INACTIVE</code>
+    /// task definition (although there may be up to a 10 minute window following deregistration
+    /// where these restrictions have not yet taken effect).
     /// </para>
     /// </summary>
     public partial class DeregisterTaskDefinitionRequest : AmazonECSRequest
@@ -46,6 +52,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
         /// full Amazon Resource Name (ARN) of the task definition that you want to deregister.
+        /// You must specify a <code>revision</code>.
         /// </para>
         /// </summary>
         public string TaskDefinition

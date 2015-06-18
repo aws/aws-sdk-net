@@ -164,7 +164,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
         /// full Amazon Resource Name (ARN) of the task definition that you want to run in your
-        /// service.
+        /// service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+        /// revision is used.
         /// </para>
         /// </summary>
         public string TaskDefinition

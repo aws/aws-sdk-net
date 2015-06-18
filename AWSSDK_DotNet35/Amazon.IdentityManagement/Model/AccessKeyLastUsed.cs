@@ -45,8 +45,22 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property LastUsedDate. 
         /// <para>
         /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
-        /// format</a>, when the access key was most recently used.
+        /// format</a>, when the access key was most recently used. This field is null when:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The user does not have an access key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An access key exists but has never been used, at least not since IAM started tracking
+        /// this information on April 22nd, 2015.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There is no sign-in data associated with the user
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public DateTime LastUsedDate
         {
@@ -63,9 +77,22 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS region where this access key was most recently used.
+        /// The AWS region where this access key was most recently used. This field is null when:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// The user does not have an access key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An access key exists but has never been used, at least not since IAM started tracking
+        /// this information on April 22nd, 2015.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There is no sign-in data associated with the user
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For more information about AWS regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
         /// and Endpoints</a> in the Amazon Web Services General Reference.
@@ -86,8 +113,23 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the AWS service with which this access key was most recently used.
+        /// The name of the AWS service with which this access key was most recently used. This
+        /// field is null when:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The user does not have an access key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An access key exists but has never been used, at least not since IAM started tracking
+        /// this information on April 22nd, 2015.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There is no sign-in data associated with the user
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ServiceName
         {

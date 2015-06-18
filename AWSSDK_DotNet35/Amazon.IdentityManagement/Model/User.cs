@@ -125,12 +125,23 @@ namespace Amazon.IdentityManagement.Model
         /// format</a>, when the user's password was last used to sign in to an AWS website. For
         /// a list of AWS websites that capture a user's last sign-in time, see the <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
         /// Reports</a> topic in the <i>Using IAM</i> guide. If a password is used more than once
-        /// in a five-minute span, only the first use is returned in this field. When the user
-        /// does not have a password, this field is null (not present). When a user's password
-        /// exists but has never been used, or when there is no sign-in data associated with the
-        /// user, this field is null (not present). 
+        /// in a five-minute span, only the first use is returned in this field. This field is
+        /// null (not present) when:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// The user does not have a password
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The password exists but has never been used (at least not since IAM started tracking
+        /// this information on October 20th, 2014
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// there is no sign-in data associated with the user
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions. 
         /// </para>

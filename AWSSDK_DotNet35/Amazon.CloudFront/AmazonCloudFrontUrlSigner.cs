@@ -82,9 +82,32 @@ namespace Amazon.CloudFront
                                                 DateTime expiresOn)
         {
             string url = GenerateResourcePath(protocol, distributionDomain, resourcePath);
-            string signedUrlCanned = SignUrlCanned(url, keyPairId, privateKey, expiresOn);
+            return GetCannedSignedURL(url, privateKey, keyPairId, expiresOn);
+        }
 
-            return signedUrlCanned;
+        /// <summary>
+        /// Returns a signed URL that grants universal access to private content until a given date.
+        /// </summary>
+        /// <param name="resourceUrlOrPath">
+        /// The URL or path that uniquely identifies a resource within a
+        /// distribution. For standard distributions the resource URL will
+        /// be <tt>"http://" + distributionName + "/" + path</tt>
+        /// (may also include URL parameters. For distributions with the
+        /// HTTPS required protocol, the resource URL must start with
+        /// <tt>"https://"</tt>. RTMP resources do not take the form of a
+        /// URL, and instead the resource path is nothing but the stream's
+        /// name.
+        /// </param>
+        /// <param name="privateKey">The private key file. RSA private key (.pem) are supported.</param>
+        /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
+        /// <param name="expiresOn">The expiration date of the signed URL</param>
+        /// <returns>The signed URL.</returns>
+        public static string GetCannedSignedURL(string resourceUrlOrPath,
+                                                TextReader privateKey,
+                                                string keyPairId,
+                                                DateTime expiresOn)
+        {
+            return SignUrlCanned(resourceUrlOrPath, keyPairId, privateKey, expiresOn);
         }
 
         /// <summary>
@@ -136,9 +159,7 @@ namespace Amazon.CloudFront
                                                 string ipRange)
         {
             string path = GenerateResourcePath(protocol, distributionDomain, resourcePath);
-            string policy = BuildPolicyForSignedUrl(path, expiresOn, ipRange, activeFrom);
-
-            return SignUrl(path, keyPairId, privateKey, policy);
+            return GetCustomSignedURL(path, privateKey, keyPairId, expiresOn, activeFrom, ipRange);
         }
 
         /// <summary>
@@ -164,6 +185,36 @@ namespace Amazon.CloudFront
             string policy = BuildPolicyForSignedUrl(path, expiresOn, ipRange);
 
             return SignUrl(path, keyPairId, privateKey, policy);
+        }
+
+        /// <summary>
+        /// Returns a signed URL that provides tailored access to private content based on an access time window and an ip range.
+        /// </summary>
+        /// <param name="resourceUrlOrPath">
+        /// The URL or path that uniquely identifies a resource within a
+        /// distribution. For standard distributions the resource URL will
+        /// be <tt>"http://" + distributionName + "/" + path</tt>
+        /// (may also include URL parameters. For distributions with the
+        /// HTTPS required protocol, the resource URL must start with
+        /// <tt>"https://"</tt>. RTMP resources do not take the form of a
+        /// URL, and instead the resource path is nothing but the stream's
+        /// name.
+        /// </param>
+        /// <param name="privateKey">Your private key file. RSA private key (.pem) are supported.</param>
+        /// <param name="keyPairId">The key pair id corresponding to the private key file given</param>
+        /// <param name="expiresOn">The expiration date of the signed URL</param>        
+        /// <param name="activeFrom">The beginning valid date of the signed URL</param>
+        /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
+        /// <returns>The signed URL.</returns>
+        public static string GetCustomSignedURL(string resourceUrlOrPath,
+                                                TextReader privateKey,
+                                                string keyPairId,
+                                                DateTime expiresOn,
+                                                DateTime activeFrom,
+                                                string ipRange)
+        {
+            string policy = BuildPolicyForSignedUrl(resourceUrlOrPath, expiresOn, ipRange, activeFrom);
+            return SignUrl(resourceUrlOrPath, keyPairId, privateKey, policy);
         }
 
         /// <summary>

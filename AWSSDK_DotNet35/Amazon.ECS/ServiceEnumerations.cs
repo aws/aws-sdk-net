@@ -125,6 +125,86 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASC for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASC = new SortOrder("ASC");
+        /// <summary>
+        /// Constant DESC for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESC = new SortOrder("DESC");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TaskDefinitionStatus.
+    /// </summary>
+    public class TaskDefinitionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for TaskDefinitionStatus
+        /// </summary>
+        public static readonly TaskDefinitionStatus ACTIVE = new TaskDefinitionStatus("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for TaskDefinitionStatus
+        /// </summary>
+        public static readonly TaskDefinitionStatus INACTIVE = new TaskDefinitionStatus("INACTIVE");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public TaskDefinitionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TaskDefinitionStatus FindValue(string value)
+        {
+            return FindValue<TaskDefinitionStatus>(value);
+        }
+
+        public static implicit operator TaskDefinitionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TransportProtocol.
     /// </summary>
     public class TransportProtocol : ConstantClass

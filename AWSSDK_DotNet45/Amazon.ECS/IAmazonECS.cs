@@ -260,12 +260,18 @@ namespace Amazon.ECS
         #region  DeregisterTaskDefinition
 
         /// <summary>
-        /// NOT YET IMPLEMENTED.
+        /// Deregisters the specified task definition by family and revision. Upon deregistration,
+        /// the task definition is marked as <code>INACTIVE</code>. Existing tasks and services
+        /// that reference an <code>INACTIVE</code> task definition continue to run without disruption.
+        /// Existing services that reference an <code>INACTIVE</code> task definition can still
+        /// scale up or down by modifying the service's desired count.
         /// 
         ///  
         /// <para>
-        /// Deregisters the specified task definition. You will no longer be able to run tasks
-        /// from this definition after deregistration.
+        /// You cannot use an <code>INACTIVE</code> task definition to run new tasks or create
+        /// new services, and you cannot update an existing service to reference an <code>INACTIVE</code>
+        /// task definition (although there may be up to a 10 minute window following deregistration
+        /// where these restrictions have not yet taken effect).
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterTaskDefinition service method.</param>
@@ -413,7 +419,14 @@ namespace Amazon.ECS
         /// <summary>
         /// Describes a task definition. You can specify a <code>family</code> and <code>revision</code>
         /// to find information on a specific task definition, or you can simply specify the family
-        /// to find the latest revision in that family.
+        /// to find the latest <code>ACTIVE</code> revision in that family.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can only describe <code>INACTIVE</code> task definitions while an active task
+        /// or service references them.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTaskDefinition service method.</param>
         /// 
@@ -595,8 +608,9 @@ namespace Amazon.ECS
         #region  ListTaskDefinitionFamilies
 
         /// <summary>
-        /// Returns a list of task definition families that are registered to your account. You
-        /// can filter the results with the <code>familyPrefix</code> parameter.
+        /// Returns a list of task definition families that are registered to your account (which
+        /// may include task definition families that no longer have any <code>ACTIVE</code> task
+        /// definitions). You can filter the results with the <code>familyPrefix</code> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTaskDefinitionFamilies service method.</param>
         /// 
@@ -631,7 +645,8 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Returns a list of task definitions that are registered to your account. You can filter
-        /// the results by family name with the <code>familyPrefix</code> parameter.
+        /// the results by family name with the <code>familyPrefix</code> parameter or by status
+        /// with the <code>status</code> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTaskDefinitions service method.</param>
         /// 
