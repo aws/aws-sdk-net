@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using System.Diagnostics.CodeAnalysis;
+
 namespace Amazon.Util.Internal.PlatformServices
 {
     public class ServiceFactory
@@ -52,6 +54,7 @@ namespace Amazon.Util.Internal.PlatformServices
             _factoryInitialized = true;
         }
 
+        [SuppressMessage("Microsoft.Usage", "CA2211:NonConstantFieldsShouldNotBeVisible")]
         public static ServiceFactory Instance = new ServiceFactory();
 
         public static void RegisterService<T>(Type serviceType)
@@ -80,7 +83,7 @@ namespace Amazon.Util.Internal.PlatformServices
             return (T)Activator.CreateInstance(concreteType);
         }
 
-        private Type GetServiceType<T>()
+        private static Type GetServiceType<T>()
         {
             lock (_lock)
             {
