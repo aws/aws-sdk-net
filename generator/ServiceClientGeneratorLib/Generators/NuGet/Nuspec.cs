@@ -69,12 +69,13 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write(@"</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework=""portable-net45+netcore45+wpa81+MonoAndroid10+xamarinios10+MonoTouch10"">
+      <group targetFramework=""portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10"">
+        <dependency id=""Microsoft.Net.Http"" version=""2.2.29"" />
         <dependency id=""PCLStorage"" version=""1.0.2"" />
         <dependency id=""PCLCrypto"" version=""1.0.2.15130"" />
 ");
             
-            #line 23 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 24 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
     foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
     {
@@ -84,21 +85,21 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("      <dependency id=\"");
             
-            #line 27 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 28 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(awsDependencyKVP.Key));
             
             #line default
             #line hidden
             this.Write("\" version=\"");
             
-            #line 27 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 28 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(awsDependencyKVP.Value));
             
             #line default
             #line hidden
             this.Write("\" />\r\n");
             
-            #line 28 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 29 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
     }
 
@@ -107,7 +108,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("      </group>\r\n      <group>\r\n");
             
-            #line 33 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 34 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
     foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
     {
@@ -117,21 +118,21 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("\t\t<dependency id=\"");
             
-            #line 37 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 38 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(awsDependencyKVP.Key));
             
             #line default
             #line hidden
             this.Write("\" version=\"");
             
-            #line 37 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 38 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(awsDependencyKVP.Value));
             
             #line default
             #line hidden
             this.Write("\" />\r\n");
             
-            #line 38 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 39 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
     }
 
@@ -143,49 +144,71 @@ namespace ServiceClientGenerator.Generators.NuGet
                     ".\\..\\nuget-content\\install.ps1\" target=\"tools\\net45\" />\r\n\r\n    <file src=\".\\bin\\" +
                     "Release\\net35\\");
             
-            #line 49 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 50 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".dll\" target=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\");
             
-            #line 50 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 51 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(".xml\" target=\"lib\\net35\" />\r\n\r\n    <file src=\".\\bin\\Release\\net45\\");
+            this.Write(".xml\" target=\"lib\\net35\" />\r\n\t<file src=\".\\bin\\Release\\net35\\");
             
             #line 52 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(".dll\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\");
+            this.Write(".pdb\" target=\"lib\\net35\" />\r\n\r\n    <file src=\".\\bin\\Release\\net45\\");
             
-            #line 53 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 54 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(".xml\" target=\"lib\\net45\" />\r\n\r\n    <file src=\".\\bin\\Release\\pcl\\");
+            this.Write(".dll\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\");
             
             #line 55 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(".dll\" target=\"lib\\portable-net45+netcore45+wpa81+MonoAndroid10+xamarinios10+MonoT" +
-                    "ouch10\" />\r\n    <file src=\".\\bin\\Release\\pcl\\");
+            this.Write(".xml\" target=\"lib\\net45\" />\r\n\t<file src=\".\\bin\\Release\\net45\\");
             
             #line 56 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(".xml\" target=\"lib\\portable-net45+netcore45+wpa81+MonoAndroid10+xamarinios10+MonoT" +
-                    "ouch10\" />\r\n  </files>\r\n</package>");
+            this.Write(".pdb\" target=\"lib\\net45\" />\r\n\r\n    <file src=\".\\bin\\Release\\pcl\\");
+            
+            #line 58 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
+            
+            #line default
+            #line hidden
+            this.Write(".dll\" target=\"lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+M" +
+                    "onoTouch10\" />\r\n    <file src=\".\\bin\\Release\\pcl\\");
+            
+            #line 59 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
+            
+            #line default
+            #line hidden
+            this.Write(".xml\" target=\"lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+M" +
+                    "onoTouch10\" />\r\n\t<file src=\".\\bin\\Release\\pcl\\");
+            
+            #line 60 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
+            
+            #line default
+            #line hidden
+            this.Write(".pdb\" target=\"lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+M" +
+                    "onoTouch10\" />\r\n  </files>\r\n</package>");
             return this.GenerationEnvironment.ToString();
         }
     }
