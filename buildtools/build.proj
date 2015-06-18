@@ -215,7 +215,7 @@
     
     <Target Name="build-docgenerator">
 		<Message Text="Building documentation generator"/>
-		<MSBuild Projects=".\CustomTasks\..\docgenerator\AWSSDKDocGenerator.sln"
+		<MSBuild Projects="..\docgenerator\AWSSDKDocGenerator.sln"
 			Targets="Clean;Build"
 			Properties="Configuration=Release" />
     </Target>
