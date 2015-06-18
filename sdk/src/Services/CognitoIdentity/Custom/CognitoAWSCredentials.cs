@@ -318,7 +318,7 @@ namespace Amazon.CognitoIdentity
         {
             if (!IsIdentitySet || options == RefreshIdentityOptions.Refresh)
             {
-                IdentityState state = await RefreshIdentityAsync().ConfigureAwait(false);
+                _identityState = await RefreshIdentityAsync().ConfigureAwait(false);
                 if (!string.IsNullOrEmpty(_identityState.LoginProvider))
                 {
                     Logins[_identityState.LoginProvider] = _identityState.LoginToken;
