@@ -100,6 +100,7 @@
     <ProjectReference Include="..\..\Core\AWSSDK.Core.PCL.csproj">
       <Project>{BFC96F19-CADF-41EB-804C-10DBEF3F9126}</Project>
       <Name>AWSSDK.Core.PCL</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
