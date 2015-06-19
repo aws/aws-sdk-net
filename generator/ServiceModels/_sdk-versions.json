@@ -1,7 +1,7 @@
 
 {
-	"ProductVersion" : "3.0.3.0",
-    "CoreVersion" : "3.0.0.3",
+    "ProductVersion" : "3.0.4.0",
+    "CoreVersion"    : "3.0.0.3",
     "ServiceVersions" : {
         "CloudHSM" : {
             "Version" : "3.0.0.2",
@@ -10,7 +10,7 @@
             }
         },
         "AutoScaling" : {
-            "Version" : "3.0.0.2",
+            "Version" : "3.0.1.0",
             "Dependencies" : {
                 "Core" : "3.0.0.2"
             }
@@ -108,13 +108,13 @@
             }
         },
         "EC2"               : {
-            "Version" : "3.0.3.0",
+            "Version" : "3.0.4.0",
             "Dependencies" : {
                 "Core" : "3.0.0.2"
             }
         },
         "ECS"               : {
-            "Version" : "3.0.0.2",
+            "Version" : "3.0.1.0",
             "Dependencies" : {
                 "Core" : "3.0.0.2"
             }
