@@ -121,29 +121,23 @@
 	<Target Name="run-tests">
 		<Message Text="TestContainer = $(TestContainer)" Condition="$(TestContainer.Length) > 0"/>
 		<Message Text="TestCategory = $(TestCategory)" Condition="$(TestCategory.Length) > 0"/>
-		<Message Text="TestSettingsFile = $(TestSettingsFile)" Condition="$(TestSettingsFile.Length) > 0"/>
 		
 		<Exec Command="$(devenv2013) /Rebuild Debug .\MSTestWrapper\MSTestWrapper.sln"/>
 
 		<PropertyGroup >
 			<Container>/testcontainer:$([System.IO.Path]::GetFullPath($(TestContainer)))</Container>
 			<Category></Category>
-			<SettingsFile></SettingsFile>
 		</PropertyGroup>
 		<PropertyGroup Condition="$(TestCategory.Length) > 0">
 			<Category>/category:$(TestCategory)</Category>
 		</PropertyGroup>
-		<PropertyGroup Condition="$(TestSettingsFile.Length) > 0">
-			<SettingsFile>/testsettings:$([System.IO.Path]::GetFullPath($(TestSettingsFile)))</SettingsFile>
-		</PropertyGroup>
 
-		<Exec Command=".\MSTestWrapper\MSTestWrapper\bin\Debug\MSTestWrapper.exe  $(mstest2013) &quot;$(Container)&quot; &quot;$(Category)&quot; &quot;$(SettingsFile)&quot;"/>
+		<Exec Command=".\MSTestWrapper\MSTestWrapper\bin\Debug\MSTestWrapper.exe  $(mstest2013) &quot;$(Container)&quot; &quot;$(Category)&quot;"/>
 		
 		<!-- Clear our properties -->
 		<PropertyGroup >
 			<TestContainer></TestContainer>
 			<TestCategory></TestCategory>
-			<TestSettingsFile></TestSettingsFile>
 		</PropertyGroup>
 		<CallTarget Targets="deploy-test-results" />
 		<OnError ExecuteTargets="deploy-test-results" />
