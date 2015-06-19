@@ -73,6 +73,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WinPhone81ProjectFile.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generators\ProjectFiles\WinPhoneSilverlight8ProjectFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WinPhoneSilverlight8ProjectFile.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generators\SourceFiles\CoreAssemblyInfo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -335,6 +340,10 @@
     <None Include="Generators\ProjectFiles\WinPhone81ProjectFile.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>WinPhone81ProjectFile.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\ProjectFiles\WinPhoneSilverlight8ProjectFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WinPhoneSilverlight8ProjectFile.cs</LastGenOutput>
     </None>
     <None Include="Generators\SourceFiles\AssemblyInfo.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

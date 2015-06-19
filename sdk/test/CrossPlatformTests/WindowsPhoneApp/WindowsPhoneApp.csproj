@@ -112,12 +112,6 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.PCL.csproj">
-      <Project>{17adb7d7-59f4-4eae-86b3-15a949bed449}</Project>
-      <Name>AWSSDK.S3.PCL</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>

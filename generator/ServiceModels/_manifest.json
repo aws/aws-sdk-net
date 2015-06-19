@@ -68,9 +68,9 @@
             "binSubFolder": "windows8",
             "template": "Win8ProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8" ],
-			"parentProfile" : "PCL"            
+            "parentProfile" : "PCL"            
         },
-		{
+        {
             "name": "WinPhone81",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
@@ -78,7 +78,17 @@
             "binSubFolder": "wpa81",
             "template": "WinPhone81ProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhone81" ],
-			"parentProfile" : "PCL"            
+            "parentProfile": "PCL"
+        },
+        {
+            "name": "WinPhoneSilverlight8",
+            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
+            "targetFramework": "v4.5",
+            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
+            "binSubFolder": "wp8",
+            "template": "WinPhoneSilverlight8ProjectFile",
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhoneSilverlight8" ],
+            "parentProfile" : "PCL"            
         }
     ],
     "models": [

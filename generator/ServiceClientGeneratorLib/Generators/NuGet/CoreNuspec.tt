@@ -74,5 +74,9 @@
     <file src=".\bin\Release\wpa81\AWSSDK.Core.dll" target="lib\wpa81" />
     <file src=".\bin\Release\wpa81\AWSSDK.Core.xml" target="lib\wpa81" />
 	<file src=".\bin\Release\wpa81\AWSSDK.Core.pdb" target="lib\wpa81" />
+
+	<file src=".\bin\Release\wp8\AWSSDK.Core.dll" target="lib\wp8" />
+    <file src=".\bin\Release\wp8\AWSSDK.Core.xml" target="lib\wp8" />
+	<file src=".\bin\Release\wp8\AWSSDK.Core.pdb" target="lib\wp8" />
   </files>
 </package>

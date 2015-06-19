@@ -7,7 +7,9 @@ namespace Amazon.Util.Internal.PlatformServices
 {
     public class ServiceFactory
     {
-        internal const string NotImplementedErrorMessage = "";
+        internal const string NotImplementedErrorMessage =
+            "This functionality is not implemented in the portable version of this assembly. "+
+            "You should reference the AWSSDK.Core NuGet package from your main application project in order to reference the platform-specific implementation.";
 
         enum InstantiationModel
         {

@@ -81,7 +81,10 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "target=\"lib\\windows8\" />\r\n    \r\n    <file src=\".\\bin\\Release\\wpa81\\AWSSDK.Core.d" +
                     "ll\" target=\"lib\\wpa81\" />\r\n    <file src=\".\\bin\\Release\\wpa81\\AWSSDK.Core.xml\" t" +
                     "arget=\"lib\\wpa81\" />\r\n\t<file src=\".\\bin\\Release\\wpa81\\AWSSDK.Core.pdb\" target=\"l" +
-                    "ib\\wpa81\" />\r\n  </files>\r\n</package>");
+                    "ib\\wpa81\" />\r\n\r\n\t<file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.dll\" target=\"lib\\wp8\" " +
+                    "/>\r\n    <file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.xml\" target=\"lib\\wp8\" />\r\n\t<fil" +
+                    "e src=\".\\bin\\Release\\wp8\\AWSSDK.Core.pdb\" target=\"lib\\wp8\" />\r\n  </files>\r\n</pac" +
+                    "kage>");
             return this.GenerationEnvironment.ToString();
         }
     }
