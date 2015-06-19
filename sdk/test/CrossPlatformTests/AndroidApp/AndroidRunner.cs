@@ -20,7 +20,7 @@ namespace AndroidApp
         private TextView _textView = null;
         private Action<Action> _uiRunner = null;
 
-        public AndroidRunner(Stream credentials, TextView txtView, Action<Action> uiRunner)
+        public AndroidRunner(TextView txtView, Action<Action> uiRunner)
             : base()
         {
             _textView = txtView;

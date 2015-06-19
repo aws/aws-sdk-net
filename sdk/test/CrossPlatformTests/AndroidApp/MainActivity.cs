@@ -5,7 +5,6 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using CommonTests;
 using CommonTests.Framework;
 
 namespace AndroidApp
@@ -32,10 +31,16 @@ namespace AndroidApp
             button.Click += OnClick;
             var txtBox = FindViewById<TextView>(Resource.Id.TestOutput);
 
-            var stream = Assets.Open(CredentialsAsset);
             txtBox.Text = "Executing tests...";
-            runner = new AndroidRunner(stream, txtBox, RunOnUiThread);
-            runner.ExecuteAllTestsAsync();
+            try
+            {
+                runner = new AndroidRunner(txtBox, RunOnUiThread);
+                runner.ExecuteAllTestsAsync();
+            }
+            catch(Exception e)
+            {
+                txtBox.Text = e.ToString();
+            }
         }
 
         async void OnClick(object sender, EventArgs e)

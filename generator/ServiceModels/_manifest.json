@@ -32,7 +32,12 @@
 				"test\\CrossPlatformTests\\AndroidApp\\AndroidApp.csproj",
 				"test\\CrossPlatformTests\\iOSTests\\iOSTests.csproj",
                 "test\\CrossPlatformTests\\WindowsConsoleApp\\WindowsConsoleApp.csproj",
-                "test\\CrossPlatformTests\\WindowsPhoneApp\\WindowsPhoneApp.csproj"
+                "test\\CrossPlatformTests\\WindowsPhoneApp\\WindowsPhoneApp.csproj",
+
+				"test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests\\XFormsPortableTests.csproj",
+				"test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests.Droid\\XFormsPortableTests.Droid.csproj",
+				"test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests.iOS\\XFormsPortableTests.iOS.csproj",
+                "test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests.WinPhone\\XFormsPortableTests.WinPhone.csproj"
             ]
         },
 		{

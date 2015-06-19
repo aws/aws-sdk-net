@@ -36,9 +36,15 @@ namespace XFormsPortableTests
                 }
             };
 
-			runner = new XFormsPortableRunner(mainLabel, testsLabel, Xamarin.Forms.Device.BeginInvokeOnMainThread);
+            try
+            {
+                runner = new XFormsPortableRunner(mainLabel, testsLabel, Xamarin.Forms.Device.BeginInvokeOnMainThread);
+            }
+            catch(Exception e)
+            {
+                testsLabel.Text += e.ToString();
+            }
             TestSdk(testsLabel);
-            //TestSdkDirectly(label);
         }
 
         private async Task TestSdk(Label label)
