@@ -242,6 +242,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the AttachInstances service method.</param>
         /// 
         /// <returns>The response from the AttachInstances service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public AttachInstancesResponse AttachInstances(AttachInstancesRequest request)
         {
             var marshaller = new AttachInstancesRequestMarshaller();
@@ -284,6 +288,71 @@ namespace Amazon.AutoScaling
 
         #endregion
         
+        #region  AttachLoadBalancers
+
+        /// <summary>
+        /// Attaches one or more load balancers to the specified Auto Scaling group.
+        /// 
+        ///  
+        /// <para>
+        /// To describe the load balancers for an Auto Scaling group, use <a>DescribeLoadBalancers</a>.
+        /// To detach the load balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach
+        /// a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancers service method.</param>
+        /// 
+        /// <returns>The response from the AttachLoadBalancers service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        public AttachLoadBalancersResponse AttachLoadBalancers(AttachLoadBalancersRequest request)
+        {
+            var marshaller = new AttachLoadBalancersRequestMarshaller();
+            var unmarshaller = AttachLoadBalancersResponseUnmarshaller.Instance;
+
+            return Invoke<AttachLoadBalancersRequest,AttachLoadBalancersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachLoadBalancers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancers operation on AmazonAutoScalingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachLoadBalancers
+        ///         operation.</returns>
+        public IAsyncResult BeginAttachLoadBalancers(AttachLoadBalancersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new AttachLoadBalancersRequestMarshaller();
+            var unmarshaller = AttachLoadBalancersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AttachLoadBalancersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AttachLoadBalancers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachLoadBalancers.</param>
+        /// 
+        /// <returns>Returns a  AttachLoadBalancersResult from AutoScaling.</returns>
+        public  AttachLoadBalancersResponse EndAttachLoadBalancers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AttachLoadBalancersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CompleteLifecycleAction
 
         /// <summary>
@@ -311,6 +380,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the CompleteLifecycleAction service method.</param>
         /// 
         /// <returns>The response from the CompleteLifecycleAction service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public CompleteLifecycleActionResponse CompleteLifecycleAction(CompleteLifecycleActionRequest request)
         {
             var marshaller = new CompleteLifecycleActionRequestMarshaller();
@@ -364,6 +437,11 @@ namespace Amazon.AutoScaling
         /// region, the call fails. For information about viewing and updating these limits, see
         /// <a>DescribeAccountLimits</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroup.html">Auto
+        /// Scaling Groups</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAutoScalingGroup service method.</param>
         /// 
@@ -374,6 +452,10 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Auto Scaling resources (for example, groups,
         /// launch configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
         /// </exception>
         public CreateAutoScalingGroupResponse CreateAutoScalingGroup(CreateAutoScalingGroupRequest request)
         {
@@ -428,6 +510,11 @@ namespace Amazon.AutoScaling
         /// per region, the call fails. For information about viewing and updating these limits,
         /// see <a>DescribeAccountLimits</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/LaunchConfiguration.html">Launch
+        /// Configurations</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchConfiguration service method.</param>
         /// 
@@ -438,6 +525,10 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Auto Scaling resources (for example, groups,
         /// launch configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
         /// </exception>
         public CreateLaunchConfigurationResponse CreateLaunchConfiguration(CreateLaunchConfigurationRequest request)
         {
@@ -515,6 +606,10 @@ namespace Amazon.AutoScaling
         /// You have already reached a limit for your Auto Scaling resources (for example, groups,
         /// launch configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
         /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public CreateOrUpdateTagsResponse CreateOrUpdateTags(CreateOrUpdateTagsRequest request)
         {
             var marshaller = new CreateOrUpdateTagsRequestMarshaller();
@@ -575,6 +670,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DeleteAutoScalingGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteAutoScalingGroup service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceInUseException">
         /// The Auto Scaling group or launch configuration can't be deleted because it is in use.
         /// </exception>
@@ -637,6 +736,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DeleteLaunchConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteLaunchConfiguration service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceInUseException">
         /// The Auto Scaling group or launch configuration can't be deleted because it is in use.
         /// </exception>
@@ -696,6 +799,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleHook service method.</param>
         /// 
         /// <returns>The response from the DeleteLifecycleHook service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DeleteLifecycleHookResponse DeleteLifecycleHook(DeleteLifecycleHookRequest request)
         {
             var marshaller = new DeleteLifecycleHookRequestMarshaller();
@@ -746,6 +853,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DeleteNotificationConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteNotificationConfiguration service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DeleteNotificationConfigurationResponse DeleteNotificationConfiguration(DeleteNotificationConfigurationRequest request)
         {
             var marshaller = new DeleteNotificationConfigurationRequestMarshaller();
@@ -796,6 +907,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
         /// 
         /// <returns>The response from the DeletePolicy service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
         {
             var marshaller = new DeletePolicyRequestMarshaller();
@@ -846,6 +961,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledAction service method.</param>
         /// 
         /// <returns>The response from the DeleteScheduledAction service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request)
         {
             var marshaller = new DeleteScheduledActionRequestMarshaller();
@@ -896,6 +1015,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
         /// 
         /// <returns>The response from the DeleteTags service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
             var marshaller = new DeleteTagsRequestMarshaller();
@@ -951,6 +1074,10 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAccountLimits service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeAccountLimitsResponse DescribeAccountLimits()
         {
             return DescribeAccountLimits(new DescribeAccountLimitsRequest());
@@ -968,6 +1095,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
         /// 
         /// <returns>The response from the DescribeAccountLimits service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request)
         {
             var marshaller = new DescribeAccountLimitsRequestMarshaller();
@@ -1017,6 +1148,10 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAdjustmentTypes service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeAdjustmentTypesResponse DescribeAdjustmentTypes()
         {
             return DescribeAdjustmentTypes(new DescribeAdjustmentTypesRequest());
@@ -1028,6 +1163,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeAdjustmentTypes service method.</param>
         /// 
         /// <returns>The response from the DescribeAdjustmentTypes service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeAdjustmentTypesResponse DescribeAdjustmentTypes(DescribeAdjustmentTypesRequest request)
         {
             var marshaller = new DescribeAdjustmentTypesRequestMarshaller();
@@ -1081,6 +1220,10 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is not valid.
         /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups()
         {
             return DescribeAutoScalingGroups(new DescribeAutoScalingGroupsRequest());
@@ -1095,6 +1238,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DescribeAutoScalingGroups service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
         /// </exception>
         public DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request)
         {
@@ -1149,6 +1296,10 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is not valid.
         /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances()
         {
             return DescribeAutoScalingInstances(new DescribeAutoScalingInstancesRequest());
@@ -1163,6 +1314,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DescribeAutoScalingInstances service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
         /// </exception>
         public DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest request)
         {
@@ -1213,6 +1368,10 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAutoScalingNotificationTypes service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeAutoScalingNotificationTypesResponse DescribeAutoScalingNotificationTypes()
         {
             return DescribeAutoScalingNotificationTypes(new DescribeAutoScalingNotificationTypesRequest());
@@ -1224,6 +1383,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeAutoScalingNotificationTypes service method.</param>
         /// 
         /// <returns>The response from the DescribeAutoScalingNotificationTypes service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeAutoScalingNotificationTypesResponse DescribeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest request)
         {
             var marshaller = new DescribeAutoScalingNotificationTypesRequestMarshaller();
@@ -1277,6 +1440,10 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is not valid.
         /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations()
         {
             return DescribeLaunchConfigurations(new DescribeLaunchConfigurationsRequest());
@@ -1291,6 +1458,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DescribeLaunchConfigurations service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
         /// </exception>
         public DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request)
         {
@@ -1342,6 +1513,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeLifecycleHooks service method.</param>
         /// 
         /// <returns>The response from the DescribeLifecycleHooks service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeLifecycleHooksResponse DescribeLifecycleHooks(DescribeLifecycleHooksRequest request)
         {
             var marshaller = new DescribeLifecycleHooksRequestMarshaller();
@@ -1392,6 +1567,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeLifecycleHookTypes service method.</param>
         /// 
         /// <returns>The response from the DescribeLifecycleHookTypes service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeLifecycleHookTypesResponse DescribeLifecycleHookTypes(DescribeLifecycleHookTypesRequest request)
         {
             var marshaller = new DescribeLifecycleHookTypesRequestMarshaller();
@@ -1434,6 +1613,60 @@ namespace Amazon.AutoScaling
 
         #endregion
         
+        #region  DescribeLoadBalancers
+
+        /// <summary>
+        /// Describes the load balancers for the specified Auto Scaling group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLoadBalancers service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        public DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request)
+        {
+            var marshaller = new DescribeLoadBalancersRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLoadBalancersRequest,DescribeLoadBalancersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLoadBalancers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers operation on AmazonAutoScalingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLoadBalancers
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeLoadBalancers(DescribeLoadBalancersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeLoadBalancersRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeLoadBalancersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLoadBalancers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoadBalancers.</param>
+        /// 
+        /// <returns>Returns a  DescribeLoadBalancersResult from AutoScaling.</returns>
+        public  DescribeLoadBalancersResponse EndDescribeLoadBalancers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeLoadBalancersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeMetricCollectionTypes
 
         /// <summary>
@@ -1447,6 +1680,10 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// 
         /// <returns>The response from the DescribeMetricCollectionTypes service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes()
         {
             return DescribeMetricCollectionTypes(new DescribeMetricCollectionTypesRequest());
@@ -1464,6 +1701,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeMetricCollectionTypes service method.</param>
         /// 
         /// <returns>The response from the DescribeMetricCollectionTypes service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes(DescribeMetricCollectionTypesRequest request)
         {
             var marshaller = new DescribeMetricCollectionTypesRequestMarshaller();
@@ -1516,6 +1757,10 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is not valid.
         /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations()
         {
             return DescribeNotificationConfigurations(new DescribeNotificationConfigurationsRequest());
@@ -1529,6 +1774,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DescribeNotificationConfigurations service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
         /// </exception>
         public DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations(DescribeNotificationConfigurationsRequest request)
         {
@@ -1582,6 +1831,10 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is not valid.
         /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribePoliciesResponse DescribePolicies()
         {
             return DescribePolicies(new DescribePoliciesRequest());
@@ -1595,6 +1848,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DescribePolicies service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
         /// </exception>
         public DescribePoliciesResponse DescribePolicies(DescribePoliciesRequest request)
         {
@@ -1651,6 +1908,10 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is not valid.
         /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeScalingActivitiesResponse DescribeScalingActivities()
         {
             return DescribeScalingActivities(new DescribeScalingActivitiesRequest());
@@ -1667,6 +1928,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DescribeScalingActivities service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
         /// </exception>
         public DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest request)
         {
@@ -1717,6 +1982,10 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// 
         /// <returns>The response from the DescribeScalingProcessTypes service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeScalingProcessTypesResponse DescribeScalingProcessTypes()
         {
             return DescribeScalingProcessTypes(new DescribeScalingProcessTypesRequest());
@@ -1728,6 +1997,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingProcessTypes service method.</param>
         /// 
         /// <returns>The response from the DescribeScalingProcessTypes service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeScalingProcessTypesResponse DescribeScalingProcessTypes(DescribeScalingProcessTypesRequest request)
         {
             var marshaller = new DescribeScalingProcessTypesRequestMarshaller();
@@ -1781,6 +2054,10 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is not valid.
         /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeScheduledActionsResponse DescribeScheduledActions()
         {
             return DescribeScheduledActions(new DescribeScheduledActionsRequest());
@@ -1795,6 +2072,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DescribeScheduledActions service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
         /// </exception>
         public DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest request)
         {
@@ -1861,6 +2142,10 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is not valid.
         /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeTagsResponse DescribeTags()
         {
             return DescribeTags(new DescribeTagsRequest());
@@ -1887,6 +2172,10 @@ namespace Amazon.AutoScaling
         /// <returns>The response from the DescribeTags service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
         /// </exception>
         public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
@@ -1937,6 +2226,10 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// 
         /// <returns>The response from the DescribeTerminationPolicyTypes service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes()
         {
             return DescribeTerminationPolicyTypes(new DescribeTerminationPolicyTypesRequest());
@@ -1948,6 +2241,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeTerminationPolicyTypes service method.</param>
         /// 
         /// <returns>The response from the DescribeTerminationPolicyTypes service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest request)
         {
             var marshaller = new DescribeTerminationPolicyTypesRequestMarshaller();
@@ -2006,6 +2303,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DetachInstances service method.</param>
         /// 
         /// <returns>The response from the DetachInstances service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DetachInstancesResponse DetachInstances(DetachInstancesRequest request)
         {
             var marshaller = new DetachInstancesRequestMarshaller();
@@ -2048,6 +2349,68 @@ namespace Amazon.AutoScaling
 
         #endregion
         
+        #region  DetachLoadBalancers
+
+        /// <summary>
+        /// Removes one or more load balancers from the specified Auto Scaling group.
+        /// 
+        ///  
+        /// <para>
+        /// When you detach a load balancer, it enters the <code>Removing</code> state while deregistering
+        /// the instances in the group. When all instances are deregistered, then you can no longer
+        /// describe the load balancer using <a>DescribeLoadBalancers</a>. Note that the instances
+        /// remain running.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachLoadBalancers service method.</param>
+        /// 
+        /// <returns>The response from the DetachLoadBalancers service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        public DetachLoadBalancersResponse DetachLoadBalancers(DetachLoadBalancersRequest request)
+        {
+            var marshaller = new DetachLoadBalancersRequestMarshaller();
+            var unmarshaller = DetachLoadBalancersResponseUnmarshaller.Instance;
+
+            return Invoke<DetachLoadBalancersRequest,DetachLoadBalancersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachLoadBalancers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachLoadBalancers operation on AmazonAutoScalingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachLoadBalancers
+        ///         operation.</returns>
+        public IAsyncResult BeginDetachLoadBalancers(DetachLoadBalancersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DetachLoadBalancersRequestMarshaller();
+            var unmarshaller = DetachLoadBalancersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DetachLoadBalancersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetachLoadBalancers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachLoadBalancers.</param>
+        /// 
+        /// <returns>Returns a  DetachLoadBalancersResult from AutoScaling.</returns>
+        public  DetachLoadBalancersResponse EndDetachLoadBalancers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DetachLoadBalancersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisableMetricsCollection
 
         /// <summary>
@@ -2056,6 +2419,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DisableMetricsCollection service method.</param>
         /// 
         /// <returns>The response from the DisableMetricsCollection service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public DisableMetricsCollectionResponse DisableMetricsCollection(DisableMetricsCollectionRequest request)
         {
             var marshaller = new DisableMetricsCollectionRequestMarshaller();
@@ -2112,6 +2479,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the EnableMetricsCollection service method.</param>
         /// 
         /// <returns>The response from the EnableMetricsCollection service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public EnableMetricsCollectionResponse EnableMetricsCollection(EnableMetricsCollectionRequest request)
         {
             var marshaller = new EnableMetricsCollectionRequestMarshaller();
@@ -2168,6 +2539,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the EnterStandby service method.</param>
         /// 
         /// <returns>The response from the EnterStandby service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public EnterStandbyResponse EnterStandby(EnterStandbyRequest request)
         {
             var marshaller = new EnterStandbyRequestMarshaller();
@@ -2218,6 +2593,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the ExecutePolicy service method.</param>
         /// 
         /// <returns>The response from the ExecutePolicy service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// The Auto Scaling group can't be deleted because there are scaling activities in progress.
         /// </exception>
@@ -2277,6 +2656,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the ExitStandby service method.</param>
         /// 
         /// <returns>The response from the ExitStandby service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public ExitStandbyResponse ExitStandby(ExitStandbyRequest request)
         {
             var marshaller = new ExitStandbyRequestMarshaller();
@@ -2355,6 +2738,10 @@ namespace Amazon.AutoScaling
         /// You have already reached a limit for your Auto Scaling resources (for example, groups,
         /// launch configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
         /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public PutLifecycleHookResponse PutLifecycleHook(PutLifecycleHookRequest request)
         {
             var marshaller = new PutLifecycleHookRequestMarshaller();
@@ -2422,6 +2809,10 @@ namespace Amazon.AutoScaling
         /// You have already reached a limit for your Auto Scaling resources (for example, groups,
         /// launch configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
         /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public PutNotificationConfigurationResponse PutNotificationConfiguration(PutNotificationConfigurationRequest request)
         {
             var marshaller = new PutNotificationConfigurationRequestMarshaller();
@@ -2478,6 +2869,10 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Auto Scaling resources (for example, groups,
         /// launch configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
         /// </exception>
         public PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request)
         {
@@ -2543,6 +2938,10 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Auto Scaling resources (for example, groups,
         /// launch configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
         /// </exception>
         public PutScheduledUpdateGroupActionResponse PutScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest request)
         {
@@ -2614,6 +3013,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the RecordLifecycleActionHeartbeat service method.</param>
         /// 
         /// <returns>The response from the RecordLifecycleActionHeartbeat service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public RecordLifecycleActionHeartbeatResponse RecordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest request)
         {
             var marshaller = new RecordLifecycleActionHeartbeatRequestMarshaller();
@@ -2668,6 +3071,13 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the ResumeProcesses service method.</param>
         /// 
         /// <returns>The response from the ResumeProcesses service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceInUseException">
+        /// The Auto Scaling group or launch configuration can't be deleted because it is in use.
+        /// </exception>
         public ResumeProcessesResponse ResumeProcesses(ResumeProcessesRequest request)
         {
             var marshaller = new ResumeProcessesRequestMarshaller();
@@ -2714,10 +3124,20 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Sets the size of the specified Auto Scaling group.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about desired capacity, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/WhatIsAutoScaling.html">What
+        /// Is Auto Scaling?</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetDesiredCapacity service method.</param>
         /// 
         /// <returns>The response from the SetDesiredCapacity service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// The Auto Scaling group can't be deleted because there are scaling activities in progress.
         /// </exception>
@@ -2777,6 +3197,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the SetInstanceHealth service method.</param>
         /// 
         /// <returns>The response from the SetInstanceHealth service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         public SetInstanceHealthResponse SetInstanceHealth(SetInstanceHealthRequest request)
         {
             var marshaller = new SetInstanceHealthRequestMarshaller();
@@ -2844,6 +3268,13 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the SuspendProcesses service method.</param>
         /// 
         /// <returns>The response from the SuspendProcesses service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceInUseException">
+        /// The Auto Scaling group or launch configuration can't be deleted because it is in use.
+        /// </exception>
         public SuspendProcessesResponse SuspendProcesses(SuspendProcessesRequest request)
         {
             var marshaller = new SuspendProcessesRequestMarshaller();
@@ -2899,6 +3330,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the TerminateInstanceInAutoScalingGroup service method.</param>
         /// 
         /// <returns>The response from the TerminateInstanceInAutoScalingGroup service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// The Auto Scaling group can't be deleted because there are scaling activities in progress.
         /// </exception>
@@ -2989,6 +3424,10 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the UpdateAutoScalingGroup service method.</param>
         /// 
         /// <returns>The response from the UpdateAutoScalingGroup service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// The Auto Scaling group can't be deleted because there are scaling activities in progress.
         /// </exception>

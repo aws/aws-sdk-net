@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeTerminationPolicyTypes operation
+    /// Response Unmarshaller for DetachLoadBalancers operation
     /// </summary>  
-    public class DescribeTerminationPolicyTypesResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DetachLoadBalancersResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            DescribeTerminationPolicyTypesResponse response = new DescribeTerminationPolicyTypesResponse();
+            DetachLoadBalancersResponse response = new DetachLoadBalancersResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("DescribeTerminationPolicyTypesResult", 2))
+                    if(context.TestExpression("DetachLoadBalancersResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeTerminationPolicyTypesResponse response)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DetachLoadBalancersResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,13 +82,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("TerminationPolicyTypes/member", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        response.TerminationPolicyTypes.Add(item);
-                        continue;
-                    }
                 } 
            }
 
@@ -111,9 +105,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             }
             return new AmazonAutoScalingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static DescribeTerminationPolicyTypesResponseUnmarshaller _instance = new DescribeTerminationPolicyTypesResponseUnmarshaller();        
+        private static DetachLoadBalancersResponseUnmarshaller _instance = new DetachLoadBalancersResponseUnmarshaller();        
 
-        internal static DescribeTerminationPolicyTypesResponseUnmarshaller GetInstance()
+        internal static DetachLoadBalancersResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -121,7 +115,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeTerminationPolicyTypesResponseUnmarshaller Instance
+        public static DetachLoadBalancersResponseUnmarshaller Instance
         {
             get
             {

@@ -63,6 +63,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("AutoScaling")]
+        public void AttachLoadBalancersMarshallTest()
+        {
+            var operation = service_model.FindOperation("AttachLoadBalancers");
+
+            var request = InstantiateClassGenerator.Execute<AttachLoadBalancersRequest>();
+            var marshaller = new AttachLoadBalancersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = AttachLoadBalancersResponseUnmarshaller.Instance.Unmarshall(context)
+                as AttachLoadBalancersResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
         public void CompleteLifecycleActionMarshallTest()
         {
             var operation = service_model.FindOperation("CompleteLifecycleAction");
@@ -474,6 +498,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("AutoScaling")]
+        public void DescribeLoadBalancersMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeLoadBalancers");
+
+            var request = InstantiateClassGenerator.Execute<DescribeLoadBalancersRequest>();
+            var marshaller = new DescribeLoadBalancersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeLoadBalancersResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeLoadBalancersResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
         public void DescribeMetricCollectionTypesMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeMetricCollectionTypes");
@@ -681,6 +729,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DetachInstancesResponseUnmarshaller.Instance.Unmarshall(context)
                 as DetachInstancesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
+        public void DetachLoadBalancersMarshallTest()
+        {
+            var operation = service_model.FindOperation("DetachLoadBalancers");
+
+            var request = InstantiateClassGenerator.Execute<DetachLoadBalancersRequest>();
+            var marshaller = new DetachLoadBalancersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DetachLoadBalancersResponseUnmarshaller.Instance.Unmarshall(context)
+                as DetachLoadBalancersResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

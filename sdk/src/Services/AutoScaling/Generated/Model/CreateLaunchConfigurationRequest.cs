@@ -37,6 +37,11 @@ namespace Amazon.AutoScaling.Model
     /// per region, the call fails. For information about viewing and updating these limits,
     /// see <a>DescribeAccountLimits</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/LaunchConfiguration.html">Launch
+    /// Configurations</a> in the <i>Auto Scaling Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateLaunchConfigurationRequest : AmazonAutoScalingRequest
     {

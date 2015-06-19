@@ -28,19 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Container for the parameters to the AttachInstances operation.
-    /// Attaches one or more EC2 instances to the specified Auto Scaling group.
-    /// 
-    ///  
-    /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach
-    /// EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.
-    /// </para>
+    /// Container for the parameters to the DescribeLoadBalancers operation.
+    /// Describes the load balancers for the specified Auto Scaling group.
     /// </summary>
-    public partial class AttachInstancesRequest : AmazonAutoScalingRequest
+    public partial class DescribeLoadBalancersRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
-        private List<string> _instanceIds = new List<string>();
+        private int? _maxRecords;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -61,21 +56,40 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceIds. 
+        /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// One or more EC2 instance IDs.
+        /// The maximum number of items to return with this call.
         /// </para>
         /// </summary>
-        public List<string> InstanceIds
+        public int MaxRecords
         {
-            get { return this._instanceIds; }
-            set { this._instanceIds = value; }
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
         }
 
-        // Check to see if InstanceIds property is set
-        internal bool IsSetInstanceIds()
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
         {
-            return this._instanceIds != null && this._instanceIds.Count > 0; 
+            return this._maxRecords.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }
