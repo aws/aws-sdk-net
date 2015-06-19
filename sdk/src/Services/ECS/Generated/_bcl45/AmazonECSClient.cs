@@ -254,6 +254,9 @@ namespace Amazon.ECS
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
@@ -299,6 +302,13 @@ namespace Amazon.ECS
         /// These errors are usually caused by something the client did, such as use an action
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -346,6 +356,23 @@ namespace Amazon.ECS
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterContainsContainerInstancesException">
+        /// You cannot delete a cluster that has registered container instances. You must first
+        /// deregister the container instances before you can delete the cluster. For more information,
+        /// see <a>DeregisterContainerInstance</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterContainsServicesException">
+        /// You cannot delete a cluster that contains services. You must first update the service
+        /// to reduce its desired task count to 0 and then delete the service. For more information,
+        /// see <a>UpdateService</a> and <a>DeleteService</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
@@ -390,8 +417,19 @@ namespace Amazon.ECS
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service could not be found. You can view your available services with
+        /// <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.
         /// </exception>
         public DeleteServiceResponse DeleteService(DeleteServiceRequest request)
         {
@@ -434,6 +472,13 @@ namespace Amazon.ECS
         /// These errors are usually caused by something the client did, such as use an action
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -485,6 +530,9 @@ namespace Amazon.ECS
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
@@ -528,6 +576,9 @@ namespace Amazon.ECS
         /// These errors are usually caused by something the client did, such as use an action
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -574,6 +625,13 @@ namespace Amazon.ECS
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
@@ -617,6 +675,13 @@ namespace Amazon.ECS
         /// These errors are usually caused by something the client did, such as use an action
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -664,6 +729,9 @@ namespace Amazon.ECS
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
@@ -707,6 +775,13 @@ namespace Amazon.ECS
         /// These errors are usually caused by something the client did, such as use an action
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -752,6 +827,9 @@ namespace Amazon.ECS
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
@@ -796,6 +874,13 @@ namespace Amazon.ECS
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
@@ -839,6 +924,13 @@ namespace Amazon.ECS
         /// These errors are usually caused by something the client did, such as use an action
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -885,6 +977,9 @@ namespace Amazon.ECS
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
@@ -930,6 +1025,9 @@ namespace Amazon.ECS
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
@@ -965,7 +1063,8 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Returns a list of tasks for a specified cluster. You can filter the results by family
-        /// name or by a particular container instance with the <code>family</code> and <code>containerInstance</code>
+        /// name, by a particular container instance, or by the desired status of the task with
+        /// the <code>family</code>, <code>containerInstance</code>, and <code>desiredStatus</code>
         /// parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTasks service method.</param>
@@ -975,6 +1074,13 @@ namespace Amazon.ECS
         /// These errors are usually caused by something the client did, such as use an action
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1023,6 +1129,9 @@ namespace Amazon.ECS
         /// These errors are usually caused by something the client did, such as use an action
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
@@ -1076,6 +1185,13 @@ namespace Amazon.ECS
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
@@ -1128,6 +1244,13 @@ namespace Amazon.ECS
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
@@ -1172,6 +1295,13 @@ namespace Amazon.ECS
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
@@ -1198,6 +1328,75 @@ namespace Amazon.ECS
             var unmarshaller = StopTaskResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopTaskRequest,StopTaskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateContainerAgent
+
+        /// <summary>
+        /// Updates the Amazon ECS container agent on a specified container instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContainerAgent service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContainerAgent service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by something the client did, such as use an action
+        /// or resource on behalf of a user that doesn't have permission to use the action or
+        /// resource, or specify an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.MissingVersionException">
+        /// Amazon ECS is unable to determine the current version of the Amazon ECS container
+        /// agent on the container instance and does not have enough information to proceed with
+        /// an update. This could be because the agent running on the container instance is an
+        /// older or custom version that does not use our version information.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.NoUpdateAvailableException">
+        /// There is no update available for this Amazon ECS container agent. This could be because
+        /// the agent is already running the latest version, or it is so old that there is no
+        /// update path to the current version.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
+        /// There is already a current Amazon ECS container agent update in progress on the specified
+        /// container instance. If the container agent becomes disconnected while it is in a transitional
+        /// stage, such as <code>PENDING</code> or <code>STAGING</code>, the update process can
+        /// get stuck in that state. However, when the agent reconnects, it will resume where
+        /// it stopped previously.
+        /// </exception>
+        public UpdateContainerAgentResponse UpdateContainerAgent(UpdateContainerAgentRequest request)
+        {
+            var marshaller = new UpdateContainerAgentRequestMarshaller();
+            var unmarshaller = UpdateContainerAgentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContainerAgentRequest,UpdateContainerAgentResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContainerAgent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContainerAgent operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateContainerAgentResponse> UpdateContainerAgentAsync(UpdateContainerAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateContainerAgentRequestMarshaller();
+            var unmarshaller = UpdateContainerAgentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateContainerAgentRequest,UpdateContainerAgentResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1235,8 +1434,23 @@ namespace Amazon.ECS
         /// or resource on behalf of a user that doesn't have permission to use the action or
         /// resource, or specify an identifier that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
+        /// The specified service is not active. You cannot update a service that is not active.
+        /// If you have previously deleted a service, you can recreate it with <a>CreateService</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service could not be found. You can view your available services with
+        /// <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.
         /// </exception>
         public UpdateServiceResponse UpdateService(UpdateServiceRequest request)
         {

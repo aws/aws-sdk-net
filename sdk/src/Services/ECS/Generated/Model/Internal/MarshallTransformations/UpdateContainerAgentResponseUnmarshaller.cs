@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeContainerInstances operation
+    /// Response Unmarshaller for UpdateContainerAgent operation
     /// </summary>  
-    public class DescribeContainerInstancesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateContainerAgentResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,16 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeContainerInstancesResponse response = new DescribeContainerInstancesResponse();
+            UpdateContainerAgentResponse response = new UpdateContainerAgentResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("containerInstances", targetDepth))
+                if (context.TestExpression("containerInstance", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ContainerInstance, ContainerInstanceUnmarshaller>(ContainerInstanceUnmarshaller.Instance);
-                    response.ContainerInstances = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("failures", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Failure, FailureUnmarshaller>(FailureUnmarshaller.Instance);
-                    response.Failures = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ContainerInstanceUnmarshaller.Instance;
+                    response.ContainerInstance = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -90,16 +84,28 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             {
                 return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("MissingVersionException"))
+            {
+                return new MissingVersionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoUpdateAvailableException"))
+            {
+                return new NoUpdateAvailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServerException"))
             {
                 return new ServerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UpdateInProgressException"))
+            {
+                return new UpdateInProgressException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonECSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeContainerInstancesResponseUnmarshaller _instance = new DescribeContainerInstancesResponseUnmarshaller();        
+        private static UpdateContainerAgentResponseUnmarshaller _instance = new UpdateContainerAgentResponseUnmarshaller();        
 
-        internal static DescribeContainerInstancesResponseUnmarshaller GetInstance()
+        internal static UpdateContainerAgentResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -107,7 +113,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeContainerInstancesResponseUnmarshaller Instance
+        public static UpdateContainerAgentResponseUnmarshaller Instance
         {
             get
             {

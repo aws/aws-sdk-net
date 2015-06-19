@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListTasks Request Marshaller
+    /// UpdateContainerAgent Request Marshaller
     /// </summary>       
-    public class ListTasksRequestMarshaller : IMarshaller<IRequest, ListTasksRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateContainerAgentRequestMarshaller : IMarshaller<IRequest, UpdateContainerAgentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListTasksRequest)input);
+            return this.Marshall((UpdateContainerAgentRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListTasksRequest publicRequest)
+        public IRequest Marshall(UpdateContainerAgentRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECS");
-            string target = "AmazonEC2ContainerServiceV20141113.ListTasks";
+            string target = "AmazonEC2ContainerServiceV20141113.UpdateContainerAgent";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -77,42 +77,6 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("containerInstance");
                     context.Writer.Write(publicRequest.ContainerInstance);
-                }
-
-                if(publicRequest.IsSetDesiredStatus())
-                {
-                    context.Writer.WritePropertyName("desiredStatus");
-                    context.Writer.Write(publicRequest.DesiredStatus);
-                }
-
-                if(publicRequest.IsSetFamily())
-                {
-                    context.Writer.WritePropertyName("family");
-                    context.Writer.Write(publicRequest.Family);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetServiceName())
-                {
-                    context.Writer.WritePropertyName("serviceName");
-                    context.Writer.Write(publicRequest.ServiceName);
-                }
-
-                if(publicRequest.IsSetStartedBy())
-                {
-                    context.Writer.WritePropertyName("startedBy");
-                    context.Writer.Write(publicRequest.StartedBy);
                 }
 
         

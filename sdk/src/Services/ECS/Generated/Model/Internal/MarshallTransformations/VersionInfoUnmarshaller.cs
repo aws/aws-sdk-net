@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NetworkBinding Object
+    /// Response Unmarshaller for VersionInfo Object
     /// </summary>  
-    public class NetworkBindingUnmarshaller : IUnmarshaller<NetworkBinding, XmlUnmarshallerContext>, IUnmarshaller<NetworkBinding, JsonUnmarshallerContext>
+    public class VersionInfoUnmarshaller : IUnmarshaller<VersionInfo, XmlUnmarshallerContext>, IUnmarshaller<VersionInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        NetworkBinding IUnmarshaller<NetworkBinding, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VersionInfo IUnmarshaller<VersionInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NetworkBinding Unmarshall(JsonUnmarshallerContext context)
+        public VersionInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            NetworkBinding unmarshalledObject = new NetworkBinding();
+            VersionInfo unmarshalledObject = new VersionInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("bindIP", targetDepth))
+                if (context.TestExpression("agentHash", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BindIP = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AgentHash = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("containerPort", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ContainerPort = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("hostPort", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.HostPort = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("protocol", targetDepth))
+                if (context.TestExpression("agentVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AgentVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dockerVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DockerVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static NetworkBindingUnmarshaller _instance = new NetworkBindingUnmarshaller();        
+        private static VersionInfoUnmarshaller _instance = new VersionInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NetworkBindingUnmarshaller Instance
+        public static VersionInfoUnmarshaller Instance
         {
             get
             {
