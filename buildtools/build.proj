@@ -30,6 +30,9 @@
         -->
         <SDKPlatform Condition="'$(SDKPlatform)'==''">net45</SDKPlatform>
         <SDKServices Condition="'$(SDKServices)'==''">*</SDKServices>
+		
+		<!-- resources folder where test settings should be placed -->
+		<TestSettingsLocation>..\sdk\test\CrossPlatformTests\CommonTests\Resources</TestSettingsLocation>
         
     </PropertyGroup>
     
@@ -193,7 +196,14 @@
 			GitBranch="$(SaveReferenceGitBranch)"
 			LocalArchiveRootFolder="$(LocalArchiveRootFolder)"
 			/>
-	</Target>	
+	</Target>
+	
+	<Target Name="prepare-tests" Condition="'$(TestSettingsFile)' != ''">
+		<Copy
+			SourceFiles="$(TestSettingsFile)"
+			DestinationFolder="$(TestSettingsLocation)" />
+	</Target>
+
     
     <!-- DOCUMENTATION BUILD TARGETS -->
     
