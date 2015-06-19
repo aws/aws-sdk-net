@@ -69,7 +69,7 @@ namespace MSTestWrapper
             var reader = new StringReader(output);
             while((line = reader.ReadLine()) != null)
             {
-                if(line.StartsWith("Summary"))
+                if (line.StartsWith("Summary") || line.StartsWith("Final Test Results"))
                 {
                     foundSummary = true;
                     break;
