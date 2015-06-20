@@ -87,9 +87,18 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If this parameter is omitted, 0 CPU units are reserved for the container, and it will
-        /// only receive CPU time when other containers are not using it.
+        /// The Docker daemon on the container instance uses the CPU value to calculate the relative
+        /// CPU share ratios for running containers. For more information, see <a href="https://docs.docker.com/reference/run/#cpu-share-constraint">CPU
+        /// share constraint</a> in the Docker documentation. The minimum valid CPU share value
+        /// that the Linux kernel will allow is 2; however, the CPU parameter is not required,
+        /// and you can use CPU values below 2 in your container definitions. For CPU values below
+        /// 2 (including null), the behavior varies based on your Amazon ECS container agent version:
         /// </para>
+        ///  <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values
+        /// are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values
+        /// of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li>
+        /// <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values
+        /// of 1 are passed to Docker as 2.</li> </ul>
         /// </summary>
         public int Cpu
         {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// 
+    /// A key and value pair object.
     /// </summary>
     public partial class KeyValuePair
     {
@@ -38,7 +38,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the key value pair.
+        /// The name of the key value pair. For environment variables, this is the name of the
+        /// environment variable.
         /// </para>
         /// </summary>
         public string Name
@@ -56,7 +57,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the key value pair.
+        /// The value of the key value pair. For environment variables, this is the value of the
+        /// environment variable.
         /// </para>
         /// </summary>
         public string Value
