@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.0.4.0",
+    "ProductVersion" : "3.0.5.0",
     "CoreVersion"    : "3.0.0.3",
     "ServiceVersions" : {
         "CloudHSM" : {
@@ -114,7 +114,7 @@
             }
         },
         "ECS"               : {
-            "Version" : "3.0.1.0",
+            "Version" : "3.0.2.0",
             "Dependencies" : {
                 "Core" : "3.0.0.2"
             }
