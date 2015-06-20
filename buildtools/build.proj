@@ -209,6 +209,7 @@
     </Target>
 
     <Target Name="create-sitemap" 
+			DependsOnTargets="build-tools"
             AfterTargets="doc-build" 
             Condition="Exists('$(InternalBuildTools)\references.targets')">
         <CreateSitemapTask
