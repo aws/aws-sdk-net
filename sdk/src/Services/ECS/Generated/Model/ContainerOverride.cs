@@ -34,6 +34,7 @@ namespace Amazon.ECS.Model
     public partial class ContainerOverride
     {
         private List<string> _command = new List<string>();
+        private List<KeyValuePair> _environment = new List<KeyValuePair>();
         private string _name;
 
         /// <summary>
@@ -53,6 +54,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetCommand()
         {
             return this._command != null && this._command.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Environment. 
+        /// <para>
+        /// The environment variables to send to the container. You can add new environment variables,
+        /// which are added to the container at launch, or you can override the existing environment
+        /// variables from the Docker image or the task definition.
+        /// </para>
+        /// </summary>
+        public List<KeyValuePair> Environment
+        {
+            get { return this._environment; }
+            set { this._environment = value; }
+        }
+
+        // Check to see if Environment property is set
+        internal bool IsSetEnvironment()
+        {
+            return this._environment != null && this._environment.Count > 0; 
         }
 
         /// <summary>

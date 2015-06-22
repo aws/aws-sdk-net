@@ -205,6 +205,36 @@ namespace Amazon.AutoScaling
 
         #endregion
         
+        #region  AttachLoadBalancers
+
+        internal AttachLoadBalancersResponse AttachLoadBalancers(AttachLoadBalancersRequest request)
+        {
+            var marshaller = new AttachLoadBalancersRequestMarshaller();
+            var unmarshaller = AttachLoadBalancersResponseUnmarshaller.Instance;
+
+            return Invoke<AttachLoadBalancersRequest,AttachLoadBalancersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachLoadBalancers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AttachLoadBalancersResponse> AttachLoadBalancersAsync(AttachLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AttachLoadBalancersRequestMarshaller();
+            var unmarshaller = AttachLoadBalancersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AttachLoadBalancersRequest,AttachLoadBalancersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CompleteLifecycleAction
 
         internal CompleteLifecycleActionResponse CompleteLifecycleAction(CompleteLifecycleActionRequest request)
@@ -799,6 +829,36 @@ namespace Amazon.AutoScaling
 
         #endregion
         
+        #region  DescribeLoadBalancers
+
+        internal DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request)
+        {
+            var marshaller = new DescribeLoadBalancersRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLoadBalancersRequest,DescribeLoadBalancersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLoadBalancers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeLoadBalancersResponse> DescribeLoadBalancersAsync(DescribeLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeLoadBalancersRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLoadBalancersRequest,DescribeLoadBalancersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeMetricCollectionTypes
 
         internal DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes()
@@ -1096,6 +1156,36 @@ namespace Amazon.AutoScaling
             var unmarshaller = DetachInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetachInstancesRequest,DetachInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetachLoadBalancers
+
+        internal DetachLoadBalancersResponse DetachLoadBalancers(DetachLoadBalancersRequest request)
+        {
+            var marshaller = new DetachLoadBalancersRequestMarshaller();
+            var unmarshaller = DetachLoadBalancersResponseUnmarshaller.Instance;
+
+            return Invoke<DetachLoadBalancersRequest,DetachLoadBalancersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachLoadBalancers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachLoadBalancers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DetachLoadBalancersResponse> DetachLoadBalancersAsync(DetachLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DetachLoadBalancersRequestMarshaller();
+            var unmarshaller = DetachLoadBalancersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetachLoadBalancersRequest,DetachLoadBalancersResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
