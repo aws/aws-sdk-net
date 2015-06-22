@@ -130,6 +130,12 @@
     <Content Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.iOS.csproj">
+      <Project>{17cd6458-5668-46c1-a00b-d82eef813b5d}</Project>
+      <Name>AWSSDK.Core.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
     <ProjectReference Include="..\CommonTests\CommonTests.csproj">
       <Project>{569d0c97-4009-47a9-bab9-8a2b9fb6d913}</Project>
       <Name>CommonTests</Name>

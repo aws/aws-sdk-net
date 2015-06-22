@@ -103,9 +103,9 @@
     <Content Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.PCL.csproj">
-      <Project>{bfc96f19-cadf-41eb-804c-10dbef3f9126}</Project>
-      <Name>AWSSDK.Core.PCL</Name>
+    <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.Android.csproj">
+      <Project>{4f108bdf-a287-43b2-9f40-5fc3bcd7cfbf}</Project>
+      <Name>AWSSDK.Core.Android</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\src\Services\CloudSearch\AWSSDK.CloudSearch.PCL.csproj">
       <Project>{7a011f04-319c-4825-9197-c2716df46da1}</Project>
