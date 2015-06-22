@@ -1252,6 +1252,36 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  ListVolumeInitiators
+
+        internal ListVolumeInitiatorsResponse ListVolumeInitiators(ListVolumeInitiatorsRequest request)
+        {
+            var marshaller = new ListVolumeInitiatorsRequestMarshaller();
+            var unmarshaller = ListVolumeInitiatorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListVolumeInitiatorsRequest,ListVolumeInitiatorsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVolumeInitiators operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVolumeInitiators operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListVolumeInitiatorsResponse> ListVolumeInitiatorsAsync(ListVolumeInitiatorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListVolumeInitiatorsRequestMarshaller();
+            var unmarshaller = ListVolumeInitiatorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListVolumeInitiatorsRequest,ListVolumeInitiatorsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListVolumeRecoveryPoints
 
         internal ListVolumeRecoveryPointsResponse ListVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest request)

@@ -658,6 +658,68 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  DeleteSubscriptionFilter
+
+        /// <summary>
+        /// Deletes a subscription filter associated with the specified log group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSubscriptionFilter service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSubscriptionFilter service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Returned if multiple requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// Returned if the specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        public DeleteSubscriptionFilterResponse DeleteSubscriptionFilter(DeleteSubscriptionFilterRequest request)
+        {
+            var marshaller = new DeleteSubscriptionFilterRequestMarshaller();
+            var unmarshaller = DeleteSubscriptionFilterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSubscriptionFilterRequest,DeleteSubscriptionFilterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSubscriptionFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSubscriptionFilter operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSubscriptionFilter
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteSubscriptionFilter(DeleteSubscriptionFilterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteSubscriptionFilterRequestMarshaller();
+            var unmarshaller = DeleteSubscriptionFilterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteSubscriptionFilterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSubscriptionFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSubscriptionFilter.</param>
+        /// 
+        /// <returns>Returns a  DeleteSubscriptionFilterResult from CloudWatchLogs.</returns>
+        public  DeleteSubscriptionFilterResponse EndDeleteSubscriptionFilter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSubscriptionFilterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeLogGroups
 
         /// <summary>
@@ -883,6 +945,75 @@ namespace Amazon.CloudWatchLogs
         public  DescribeMetricFiltersResponse EndDescribeMetricFilters(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeMetricFiltersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeSubscriptionFilters
+
+        /// <summary>
+        /// Returns all the subscription filters associated with the specified log group. The
+        /// list returned in the response is ASCII-sorted by filter name. 
+        /// 
+        ///  
+        /// <para>
+        ///  By default, this operation returns up to 50 subscription filters. If there are more
+        /// subscription filters to list, the response would contain a <code class="code">nextToken</code>
+        /// value in the response body. You can also limit the number of subscription filters
+        /// returned in the response by specifying the <code class="code">limit</code> parameter
+        /// in the request. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSubscriptionFilters service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSubscriptionFilters service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// Returned if the specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        public DescribeSubscriptionFiltersResponse DescribeSubscriptionFilters(DescribeSubscriptionFiltersRequest request)
+        {
+            var marshaller = new DescribeSubscriptionFiltersRequestMarshaller();
+            var unmarshaller = DescribeSubscriptionFiltersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSubscriptionFiltersRequest,DescribeSubscriptionFiltersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSubscriptionFilters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSubscriptionFilters operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSubscriptionFilters
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeSubscriptionFilters(DescribeSubscriptionFiltersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeSubscriptionFiltersRequestMarshaller();
+            var unmarshaller = DescribeSubscriptionFiltersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeSubscriptionFiltersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSubscriptionFilters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSubscriptionFilters.</param>
+        /// 
+        /// <returns>Returns a  DescribeSubscriptionFiltersResult from CloudWatchLogs.</returns>
+        public  DescribeSubscriptionFiltersResponse EndDescribeSubscriptionFilters(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeSubscriptionFiltersResponse>(asyncResult);
         }
 
         #endregion
@@ -1123,7 +1254,13 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Creates or updates a metric filter and associates it with the specified log group.
         /// Metric filters allow you to configure rules to extract metric data from log events
-        /// ingested through <code class="code">PutLogEvents</code> requests.
+        /// ingested through <code class="code">PutLogEvents</code> requests. 
+        /// 
+        ///  
+        /// <para>
+        ///  The maximum number of metric filters that can be associated with a log group is 100.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMetricFilter service method.</param>
         /// 
@@ -1244,6 +1381,81 @@ namespace Amazon.CloudWatchLogs
         public  PutRetentionPolicyResponse EndPutRetentionPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutRetentionPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutSubscriptionFilter
+
+        /// <summary>
+        /// Creates or updates a subscription filter and associates it with the specified log
+        /// group. Subscription filters allow you to subscribe to a real-time stream of log events
+        /// ingested through <code class="code">PutLogEvents</code> requests and have them delivered
+        /// to a specific destination. Currently the only supported destination is an Amazon Kinesis
+        /// stream belonging to the same account as the subscription filter. 
+        /// 
+        ///  
+        /// <para>
+        ///  Currently there can only be one subscription filter associated with a log group.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSubscriptionFilter service method.</param>
+        /// 
+        /// <returns>The response from the PutSubscriptionFilter service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
+        /// Returned if you have reached the maximum number of resources that can be created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Returned if multiple requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// Returned if the specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        public PutSubscriptionFilterResponse PutSubscriptionFilter(PutSubscriptionFilterRequest request)
+        {
+            var marshaller = new PutSubscriptionFilterRequestMarshaller();
+            var unmarshaller = PutSubscriptionFilterResponseUnmarshaller.Instance;
+
+            return Invoke<PutSubscriptionFilterRequest,PutSubscriptionFilterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutSubscriptionFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutSubscriptionFilter operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutSubscriptionFilter
+        ///         operation.</returns>
+        public IAsyncResult BeginPutSubscriptionFilter(PutSubscriptionFilterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new PutSubscriptionFilterRequestMarshaller();
+            var unmarshaller = PutSubscriptionFilterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutSubscriptionFilterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutSubscriptionFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutSubscriptionFilter.</param>
+        /// 
+        /// <returns>Returns a  PutSubscriptionFilterResult from CloudWatchLogs.</returns>
+        public  PutSubscriptionFilterResponse EndPutSubscriptionFilter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutSubscriptionFilterResponse>(asyncResult);
         }
 
         #endregion

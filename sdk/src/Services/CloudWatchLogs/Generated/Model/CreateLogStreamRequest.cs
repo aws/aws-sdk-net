@@ -53,8 +53,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates CreateLogStreamRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">Sets the CreateLogStreamRequest LogGroupName property</param>
-        /// <param name="logStreamName">Sets the CreateLogStreamRequest LogStreamName property</param>
+        /// <param name="logGroupName">The name of the log group under which the log stream is to be created.</param>
+        /// <param name="logStreamName">The name of the log stream to create.</param>
         public CreateLogStreamRequest(string logGroupName, string logStreamName)
         {
             _logGroupName = logGroupName;
@@ -62,7 +62,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogGroupName.
+        /// Gets and sets the property LogGroupName. 
+        /// <para>
+        /// The name of the log group under which the log stream is to be created.
+        /// </para>
         /// </summary>
         public string LogGroupName
         {
@@ -77,7 +80,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogStreamName.
+        /// Gets and sets the property LogStreamName. 
+        /// <para>
+        /// The name of the log stream to create.
+        /// </para>
         /// </summary>
         public string LogStreamName
         {

@@ -59,8 +59,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property SecretToAuthenticateInitiator. 
         /// <para>
-        /// The secret key that the initiator (e.g. Windows client) must provide to participate
-        /// in mutual CHAP with the target.
+        /// The secret key that the initiator (for example, the Windows client) must provide to
+        /// participate in mutual CHAP with the target.
         /// </para>
         /// </summary>
         public string SecretToAuthenticateInitiator

@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using System.Diagnostics.CodeAnalysis;
+
 namespace Amazon.Util.Internal.PlatformServices
 {
     public class EnvironmentInfo : IEnvironmentInfo
     {
+        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
         public string Platform
         {
             get
@@ -15,6 +18,7 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
         public string Model
         {
             get
@@ -23,6 +27,7 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
         public string Make
         {
             get
@@ -31,6 +36,7 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
         public string PlatformVersion
         {
             get
@@ -39,6 +45,7 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
         public string Locale
         {
             get

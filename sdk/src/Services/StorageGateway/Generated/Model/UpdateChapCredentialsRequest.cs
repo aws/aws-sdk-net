@@ -68,9 +68,10 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property SecretToAuthenticateInitiator. 
         /// <para>
-        /// The secret key that the initiator (e.g. Windows client) must provide to participate
-        /// in mutual CHAP with the target.
+        /// The secret key that the initiator (for example, the Windows client) must provide to
+        /// participate in mutual CHAP with the target.
         /// </para>
+        ///  <note>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</note>
         /// </summary>
         public string SecretToAuthenticateInitiator
         {
@@ -90,6 +91,11 @@ namespace Amazon.StorageGateway.Model
         /// The secret key that the target must provide to participate in mutual CHAP with the
         /// initiator (e.g. Windows client).
         /// </para>
+        ///  
+        /// <para>
+        /// Byte constraints: Minimum bytes of 12. Maximum bytes of 16.
+        /// </para>
+        ///  <note>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</note>
         /// </summary>
         public string SecretToAuthenticateTarget
         {
@@ -107,7 +113,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property TargetARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a>
-        /// operation to return to retrieve the TargetARN for specified VolumeARN.
+        /// operation to return the TargetARN for specified VolumeARN.
         /// </para>
         /// </summary>
         public string TargetARN

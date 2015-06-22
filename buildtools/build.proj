@@ -30,6 +30,9 @@
         -->
         <SDKPlatform Condition="'$(SDKPlatform)'==''">net45</SDKPlatform>
         <SDKServices Condition="'$(SDKServices)'==''">*</SDKServices>
+		
+		<!-- resources folder where test settings should be placed -->
+		<TestSettingsLocation>..\sdk\test\CrossPlatformTests\CommonTests\Resources</TestSettingsLocation>
         
     </PropertyGroup>
     
@@ -63,13 +66,10 @@
 	
 	<Target Name="build-sdk" DependsOnTargets="restore-nuget;run-generator">
 		<Message Text="Compile the SDK"/>
-		<SetEnvironmentVariable VariableName="AWSKeyFile" VariableValue="$(CustomSnkFileLocation)" />
 		<MSBuild Projects="..\sdk\AWSSDK.sln"
 			Targets="Clean;Build"
-			Properties="Configuration=Release" />
-		
-		<SetEnvironmentVariable VariableName="AWSKeyFile" VariableValue="" />
-		
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation)" />
+
 		<Copy
 			SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
 			DestinationFolder="$(Deployment)" />
@@ -109,7 +109,7 @@
 	
 	<!-- TEST TARGETS/TASKS -->
 
-	<Target Name="fxcop" DependsOnTargets="init;copy-assemblies" Condition="Exists('$(fxcopcmd)')">
+	<Target Name="fxcop" DependsOnTargets="init;copy-assemblies" Condition="Exists('$(fxcopcmdexe)')">
 		<!-- Update FxCop project files -->
 		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net35" FxCopProject="..\sdk\SDK-3.5.FxCop" />
 		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net45" FxCopProject="..\sdk\SDK-4.5.FxCop" />
@@ -170,21 +170,6 @@
 			</Code>
 		</Task>
 	</UsingTask>
-	
-	<UsingTask TaskName="SetEnvironmentVariable" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
-		<ParameterGroup>
-			<VariableName ParameterType="System.String" Required="true" />
-			<VariableValue ParameterType="System.String" Required="false" />
-		</ParameterGroup>
-		<Task>
-			<Code Type="Fragment" Language="cs">
-				<![CDATA[
-					Log.LogMessage("Setting variable {0} = {1}", VariableName, VariableValue);
-					System.Environment.SetEnvironmentVariable(VariableName, VariableValue);
-				]]>
-			</Code>
-		</Task>
-	</UsingTask>
 
 	<Target Name="deploy-test-results" >	
 		<ItemGroup>
@@ -208,20 +193,39 @@
 		<SaveBuildArtifactTask
 			RepositoryRoot="$(MSBuildProjectDirectory)\.."
 			BuildArtifactType="sdk"
+			GitBranch="$(SaveReferenceGitBranch)"
 			LocalArchiveRootFolder="$(LocalArchiveRootFolder)"
 			/>
-	</Target>	
+	</Target>
+	
+	<Target Name="prepare-tests" Condition="'$(TestSettingsFile)' != ''">
+		<Copy
+			SourceFiles="$(TestSettingsFile)"
+			DestinationFolder="$(TestSettingsLocation)" />
+	</Target>
+
     
     <!-- DOCUMENTATION BUILD TARGETS -->
     
 	<Target Name="doc-build" DependsOnTargets="build-docgenerator">
 		<Message Text="Build documentation for all platforms, all assemblies"/>
 		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(SDKAssembliesRoot) -o $(DocOutputRoot) -sf $(DocSamplesFolder)" />
-	</Target>
+    </Target>
 
+    <Target Name="create-sitemap" 
+            AfterTargets="doc-build" 
+            Condition="Exists('$(InternalBuildTools)\references.targets')">
+        <CreateSitemapTask
+            SourceFolder="$(DocOutputRoot)"
+            BaseUrl="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/"
+            OutputFile="$(DocOutputRoot)\sitemap.xml"
+            WaitForDebugger="false"
+            />
+	</Target>
+    
     <Target Name="build-docgenerator">
 		<Message Text="Building documentation generator"/>
-		<MSBuild Projects=".\CustomTasks\..\docgenerator\AWSSDKDocGenerator.sln"
+		<MSBuild Projects="..\docgenerator\AWSSDKDocGenerator.sln"
 			Targets="Clean;Build"
 			Properties="Configuration=Release" />
     </Target>

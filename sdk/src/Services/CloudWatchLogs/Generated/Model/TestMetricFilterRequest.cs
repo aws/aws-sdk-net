@@ -53,7 +53,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogEventMessages.
+        /// Gets and sets the property LogEventMessages. 
+        /// <para>
+        /// A list of log event messages to test.
+        /// </para>
         /// </summary>
         public List<string> LogEventMessages
         {

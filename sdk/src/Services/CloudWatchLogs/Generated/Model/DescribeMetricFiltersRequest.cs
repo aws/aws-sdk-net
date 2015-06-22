@@ -56,14 +56,18 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates DescribeMetricFiltersRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">Sets the DescribeMetricFiltersRequest LogGroupName property</param>
+        /// <param name="logGroupName">The log group name for which metric filters are to be listed.</param>
         public DescribeMetricFiltersRequest(string logGroupName)
         {
             _logGroupName = logGroupName;
         }
 
         /// <summary>
-        /// Gets and sets the property FilterNamePrefix.
+        /// Gets and sets the property FilterNamePrefix. 
+        /// <para>
+        /// Will only return metric filters that match the provided filterNamePrefix. If you don't
+        /// specify a value, no prefix filter is applied.
+        /// </para>
         /// </summary>
         public string FilterNamePrefix
         {
@@ -97,7 +101,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogGroupName.
+        /// Gets and sets the property LogGroupName. 
+        /// <para>
+        /// The log group name for which metric filters are to be listed.
+        /// </para>
         /// </summary>
         public string LogGroupName
         {

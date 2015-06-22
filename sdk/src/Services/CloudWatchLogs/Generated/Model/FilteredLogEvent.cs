@@ -39,7 +39,10 @@ namespace Amazon.CloudWatchLogs.Model
         private long? _timestamp;
 
         /// <summary>
-        /// Gets and sets the property EventId. A unique identifier for this event.
+        /// Gets and sets the property EventId. 
+        /// <para>
+        /// A unique identifier for this event.
+        /// </para>
         /// </summary>
         public string EventId
         {
@@ -69,8 +72,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogStreamName. The name of the log stream this event belongs
-        /// to.
+        /// Gets and sets the property LogStreamName. 
+        /// <para>
+        /// The name of the log stream this event belongs to.
+        /// </para>
         /// </summary>
         public string LogStreamName
         {
@@ -85,7 +90,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Message.
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The data contained in the log event.
+        /// </para>
         /// </summary>
         public string Message
         {

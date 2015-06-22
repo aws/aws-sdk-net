@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using System.Diagnostics.CodeAnalysis;
+
 namespace Amazon.Util.Internal.PlatformServices
 {
     public class ApplicationInfo : IApplicationInfo
     {
+        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
         public string AppTitle
         {
             get
@@ -15,6 +18,7 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
         public string AppVersionName
         {
             get
@@ -23,6 +27,7 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
         public string AppVersionCode
         {
             get
@@ -31,6 +36,7 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
         public string PackageName
         {
             get
@@ -39,6 +45,7 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
         public string SpecialFolder
         {
             get

@@ -1,0 +1,206 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="ServiceClientGenerator" #>
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid><#=this.Session["ProjectGuid"]#></ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace><#=this.Session["RootNamespace"]#></RootNamespace>
+    <AssemblyName><#=this.Session["AssemblyName"]#></AssemblyName>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <BaseIntermediateOutputPath>obj\\<#=this.Session["BinSubfolder"]#></BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\\<#=this.Session["BinSubfolder"]#></OutputPath>
+    <DefineConstants>DEBUG;TRACE;<#=this.Session["DefineConstants"]#></DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+<#
+    if(this.Session.ContainsKey("SupressWarnings"))
+    {
+#>
+	<NoWarn><#=this.Session["SupressWarnings"]#></NoWarn>
+<#
+    }
+#>
+    <DocumentationFile>bin\Debug\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\\<#=this.Session["BinSubfolder"]#></OutputPath>
+    <DefineConstants>TRACE;<#=this.Session["DefineConstants"]#></DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+<#
+    if(this.Session.ContainsKey("SupressWarnings"))
+    {
+#>
+	<NoWarn><#=this.Session["SupressWarnings"]#></NoWarn>
+<#
+    }
+#>
+    <DocumentationFile>bin\Release\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <Choose>
+    <When Condition=" '$(AWSKeyFile)' == '' ">
+      <PropertyGroup>
+<#
+    if(this.Session.ContainsKey("KeyFilePath"))
+    {
+#>
+		<AssemblyOriginatorKeyFile><#=this.Session["KeyFilePath"]#></AssemblyOriginatorKeyFile>
+<#
+    }
+	else
+    {
+#>
+        <AssemblyOriginatorKeyFile>..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+<#
+    }
+#>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+<#
+    foreach(string subDirectory in ((IList<string>)this.Session["SourceDirectories"]))
+    {
+#>
+    <Compile Include="<#=subDirectory#>\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+<#
+    }
+#>
+  </ItemGroup>
+  <ItemGroup>
+<#
+    if(this.Session.ContainsKey("IndividualFileIncludes"))
+    {
+        foreach(string file in ((IList<string>)this.Session["IndividualFileIncludes"]))
+        {
+            if(file.EndsWith(".cs"))
+            {
+#>
+    <Compile Include="<#=file#>">
+      <SubType>Code</SubType>
+    </Compile>
+<#
+            }
+            else
+            {
+#>
+    <EmbeddedResource Include="<#=file#>">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+<#
+            }
+        }
+    }
+#>
+  </ItemGroup>
+<#
+    if(this.Session.ContainsKey("ProjectReferences"))
+    {
+        foreach(var projectReferences in (List<ProjectFileCreator.ProjectReference>)this.Session["ProjectReferences"])
+        {
+#>
+  <ItemGroup>
+    <ProjectReference Include="<#=projectReferences.IncludePath#>">
+        <Project><#=projectReferences.ProjectGuid#></Project>
+        <Name><#=projectReferences.Name#></Name>
+    </ProjectReference>
+  </ItemGroup>
+<#
+        }
+    }
+#>
+  <ItemGroup>
+	<None Include="packages.config" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Net.Http">
+      <HintPath><#=this.Session["NugetPackagesLocation"]#>Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath><#=this.Session["NugetPackagesLocation"]#>Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath><#=this.Session["NugetPackagesLocation"]#>Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLCrypto">
+      <HintPath><#=this.Session["NugetPackagesLocation"]#>PCLCrypto.1.0.2.15130\lib\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage">
+      <HintPath><#=this.Session["NugetPackagesLocation"]#>PCLStorage.1.0.2\lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage.Abstractions">
+      <HintPath><#=this.Session["NugetPackagesLocation"]#>PCLStorage.1.0.2\lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <Import Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets')" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Import Project="<#=this.Session["NugetPackagesLocation"]#>Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('<#=this.Session["NugetPackagesLocation"]#>Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('<#=this.Session["NugetPackagesLocation"]#>Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('<#=this.Session["NugetPackagesLocation"]#>Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

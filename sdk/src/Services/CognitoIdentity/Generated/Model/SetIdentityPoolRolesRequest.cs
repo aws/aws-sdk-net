@@ -31,6 +31,11 @@ namespace Amazon.CognitoIdentity.Model
     /// Container for the parameters to the SetIdentityPoolRoles operation.
     /// Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code>
     /// action.
+    /// 
+    ///  
+    /// <para>
+    /// You must use AWS Developer credentials to call this API.
+    /// </para>
     /// </summary>
     public partial class SetIdentityPoolRolesRequest : AmazonCognitoIdentityRequest
     {
@@ -58,8 +63,8 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property Roles. 
         /// <para>
-        /// The map of roles associated with this pool. Currently only authenticated and unauthenticated
-        /// roles are supported.
+        /// The map of roles associated with this pool. For a given role, the key will be either
+        /// "authenticated" or "unauthenticated" and the value will be the Role ARN.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Roles

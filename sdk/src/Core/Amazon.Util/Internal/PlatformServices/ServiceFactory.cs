@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using System.Diagnostics.CodeAnalysis;
+
 namespace Amazon.Util.Internal.PlatformServices
 {
     public class ServiceFactory
     {
-        internal const string NotImplementedErrorMessage = "";
+        internal const string NotImplementedErrorMessage =
+            "This functionality is not implemented in the portable version of this assembly. "+
+            "You should reference the AWSSDK.Core NuGet package from your main application project in order to reference the platform-specific implementation.";
 
         enum InstantiationModel
         {
@@ -52,6 +56,7 @@ namespace Amazon.Util.Internal.PlatformServices
             _factoryInitialized = true;
         }
 
+        [SuppressMessage("Microsoft.Usage", "CA2211:NonConstantFieldsShouldNotBeVisible")]
         public static ServiceFactory Instance = new ServiceFactory();
 
         public static void RegisterService<T>(Type serviceType)
@@ -80,7 +85,7 @@ namespace Amazon.Util.Internal.PlatformServices
             return (T)Activator.CreateInstance(concreteType);
         }
 
-        private Type GetServiceType<T>()
+        private static Type GetServiceType<T>()
         {
             lock (_lock)
             {

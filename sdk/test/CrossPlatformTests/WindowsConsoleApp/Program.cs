@@ -8,19 +8,22 @@ namespace WindowsConsoleApp
 {
     class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
+            bool allPassed;
             try
             {
                 var runner = new ConsoleRunner();
-                runner.ExecuteAllTests();
+                allPassed = runner.ExecuteAllTests();
             }
             catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                allPassed = false;
             }
 
             Console.WriteLine("Test run complete!");
+            return (allPassed ? 0 : 1);
         }
     }
 }

@@ -28,9 +28,9 @@ namespace Amazon.SimpleSystemsManagement
     /// <summary>
     /// Interface for accessing SimpleSystemsManagement
     ///
-    /// AWS Simple Systems Management enables you to configure and manage your EC2 instances.
-    /// You can create a configuration document and then associate it with one or more running
-    /// instances.
+    /// Amazon EC2 Simple Systems Manager (SSM) enables you to configure and manage your EC2
+    /// instances. You can create a configuration document and then associate it with one
+    /// or more running instances.
     /// 
     ///  
     /// <para>
@@ -39,15 +39,15 @@ namespace Amazon.SimpleSystemsManagement
     /// </para>
     ///  <ul> <li>
     /// <para>
+    /// Join an AWS Directory
+    /// </para>
+    /// </li> <li>
+    /// <para>
     /// Install, repair, or uninstall software using an MSI package
     /// </para>
     /// </li> <li>
     /// <para>
     /// Run PowerShell scripts
-    /// </para>
-    /// </li> <li>
-    /// <para>
-    /// Join an AWS Directory
     /// </para>
     /// </li> <li>
     /// <para>

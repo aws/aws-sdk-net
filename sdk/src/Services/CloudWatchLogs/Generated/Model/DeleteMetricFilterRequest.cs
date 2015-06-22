@@ -44,8 +44,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates DeleteMetricFilterRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">Sets the DeleteMetricFilterRequest LogGroupName property</param>
-        /// <param name="filterName">Sets the DeleteMetricFilterRequest FilterName property</param>
+        /// <param name="logGroupName">The name of the log group that is associated with the metric filter to delete.</param>
+        /// <param name="filterName">The name of the metric filter to delete.</param>
         public DeleteMetricFilterRequest(string logGroupName, string filterName)
         {
             _logGroupName = logGroupName;
@@ -53,7 +53,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FilterName.
+        /// Gets and sets the property FilterName. 
+        /// <para>
+        /// The name of the metric filter to delete.
+        /// </para>
         /// </summary>
         public string FilterName
         {
@@ -68,7 +71,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogGroupName.
+        /// Gets and sets the property LogGroupName. 
+        /// <para>
+        /// The name of the log group that is associated with the metric filter to delete.
+        /// </para>
         /// </summary>
         public string LogGroupName
         {

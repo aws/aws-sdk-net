@@ -44,14 +44,17 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates DeleteLogGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">Sets the DeleteLogGroupRequest LogGroupName property</param>
+        /// <param name="logGroupName">The name of the log group to delete.</param>
         public DeleteLogGroupRequest(string logGroupName)
         {
             _logGroupName = logGroupName;
         }
 
         /// <summary>
-        /// Gets and sets the property LogGroupName.
+        /// Gets and sets the property LogGroupName. 
+        /// <para>
+        /// The name of the log group to delete.
+        /// </para>
         /// </summary>
         public string LogGroupName
         {
