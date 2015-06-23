@@ -18,9 +18,9 @@
 
 	<Target Name="run-generator">
 		<Message Text="Build and run code generator"/>
-		<Exec Command="$(devenv2013) /Rebuild Release ..\generator\AWSSDKGenerator.sln"/>
+		<Exec Command="$(devenv2013) /Rebuild Debug ..\generator\AWSSDKGenerator.sln"/>
 		<Exec Command="ServiceClientGenerator.exe -self.modelpath $(ModelPath) -self.basename $(BaseName) -self.endpoint-prefix $(EndpointPrefix) -self.sig-v4-service-name $(SigV4ServiceName)" 
-			WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
+			WorkingDirectory="..\generator\ServiceClientGenerator\bin\Debug"/>
 	</Target>
 
 	
@@ -28,62 +28,62 @@
 	
 		<!-- 
 		<Message Text="Compile the .NET 3.5"/>
-		<Exec Command="$(devenv2013) /Rebuild Release ..\sdk\AWSSDK.Net35.sln"/>
+		<Exec Command="$(devenv2013) /Rebuild Debug ..\sdk\AWSSDK.Net35.sln"/>
 		<Message Text="Compile the .NET 4.5"/>
-		<Exec Command="$(devenv2013) /Rebuild Release ..\sdk\AWSSDK.Net45.sln"/>		
+		<Exec Command="$(devenv2013) /Rebuild Debug ..\sdk\AWSSDK.Net45.sln"/>		
 		-->
 	
 		
 		<Message Text="Compile the core runtime"/>
-		<Exec Command="$(devenv2013) /Rebuild Release ..\sdk\src\Core\AWSSDK.Core.Net35.csproj"/>
-		<Exec Command="$(devenv2013) /Rebuild Release ..\sdk\src\Core\AWSSDK.Core.Net45.csproj"/>		
+		<Exec Command="$(devenv2013) /Rebuild Debug ..\sdk\src\Core\AWSSDK.Core.Net35.csproj"/>
+		<Exec Command="$(devenv2013) /Rebuild Debug ..\sdk\src\Core\AWSSDK.Core.Net45.csproj"/>		
 		
 		<Message Text="Compile the service $(BaseName)"/>
-		<Exec Command="$(devenv2013) /Rebuild Release ..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net35.csproj"/>
-		<Exec Command="$(devenv2013) /Rebuild Release ..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net45.csproj"/>
+		<Exec Command="$(devenv2013) /Rebuild Debug ..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net35.csproj"/>
+		<Exec Command="$(devenv2013) /Rebuild Debug ..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net45.csproj"/>
 	</Target>	
 	
 	<Target Name="consolidate-build" DependsOnTargets="build-sdk">
 	
 		<Copy
-			SourceFiles="..\sdk\src\Core\bin\Release\Net35\AWSSDK.Core.dll"
+			SourceFiles="..\sdk\src\Core\bin\Debug\Net35\AWSSDK.Core.dll"
 			DestinationFolder="$(Deployment)\Net35" />
 		<Copy
-			SourceFiles="..\sdk\src\Core\bin\Release\Net35\AWSSDK.Core.pdb"
+			SourceFiles="..\sdk\src\Core\bin\Debug\Net35\AWSSDK.Core.pdb"
 			DestinationFolder="$(Deployment)\Net35" />
 		<Copy
-			SourceFiles="..\sdk\src\Core\bin\Release\Net35\AWSSDK.Core.xml"
-			DestinationFolder="$(Deployment)\Net35" />
-
-		<Copy
-			SourceFiles="..\sdk\src\Core\bin\Release\Net45\AWSSDK.Core.dll"
-			DestinationFolder="$(Deployment)\Net45" />
-		<Copy
-			SourceFiles="..\sdk\src\Core\bin\Release\Net45\AWSSDK.Core.pdb"
-			DestinationFolder="$(Deployment)\Net45" />
-		<Copy
-			SourceFiles="..\sdk\src\Core\bin\Release\Net45\AWSSDK.Core.xml"
-			DestinationFolder="$(Deployment)\Net45" />
-
-
-		<Copy
-			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Release\Net35\AWSSDK.$(BaseName).dll"
-			DestinationFolder="$(Deployment)\Net35" />
-		<Copy
-			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Release\Net35\AWSSDK.$(BaseName).pdb"
-			DestinationFolder="$(Deployment)\Net35" />
-		<Copy
-			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Release\Net35\AWSSDK.$(BaseName).xml"
+			SourceFiles="..\sdk\src\Core\bin\Debug\Net35\AWSSDK.Core.xml"
 			DestinationFolder="$(Deployment)\Net35" />
 
 		<Copy
-			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Release\Net45\AWSSDK.$(BaseName).dll"
+			SourceFiles="..\sdk\src\Core\bin\Debug\Net45\AWSSDK.Core.dll"
 			DestinationFolder="$(Deployment)\Net45" />
 		<Copy
-			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Release\Net45\AWSSDK.$(BaseName).pdb"
+			SourceFiles="..\sdk\src\Core\bin\Debug\Net45\AWSSDK.Core.pdb"
 			DestinationFolder="$(Deployment)\Net45" />
 		<Copy
-			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Release\Net45\AWSSDK.$(BaseName).xml"
+			SourceFiles="..\sdk\src\Core\bin\Debug\Net45\AWSSDK.Core.xml"
+			DestinationFolder="$(Deployment)\Net45" />
+
+
+		<Copy
+			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Debug\Net35\AWSSDK.$(BaseName).dll"
+			DestinationFolder="$(Deployment)\Net35" />
+		<Copy
+			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Debug\Net35\AWSSDK.$(BaseName).pdb"
+			DestinationFolder="$(Deployment)\Net35" />
+		<Copy
+			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Debug\Net35\AWSSDK.$(BaseName).xml"
+			DestinationFolder="$(Deployment)\Net35" />
+
+		<Copy
+			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Debug\Net45\AWSSDK.$(BaseName).dll"
+			DestinationFolder="$(Deployment)\Net45" />
+		<Copy
+			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Debug\Net45\AWSSDK.$(BaseName).pdb"
+			DestinationFolder="$(Deployment)\Net45" />
+		<Copy
+			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Debug\Net45\AWSSDK.$(BaseName).xml"
 			DestinationFolder="$(Deployment)\Net45" />
 			
 	</Target>
