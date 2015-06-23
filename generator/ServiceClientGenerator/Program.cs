@@ -67,6 +67,15 @@ namespace ServiceClientGenerator
                     serviceConfig.ServiceDependencies = new Dictionary<string, string> { {"Core", "3.0.0.0"} };
                     serviceConfig.GenerateConstructors = true;
 
+
+                    var relativePathToCustomizations = Path.Combine("customizations", string.Format("{0}.customizations.json", options.SelfServiceBaseName.ToLowerInvariant()));
+                    if (File.Exists(relativePathToCustomizations))
+                    {
+                        serviceConfig.CustomizationsPath = Path.GetFullPath(relativePathToCustomizations);
+                        Console.WriteLine("Using customization file: {0}", serviceConfig.CustomizationsPath);
+                    }
+                    
+
                     Console.WriteLine("Processing self service {0} with model {1}.", options.SelfServiceBaseName, options.SelfServiceModel);
                     var driver = new GeneratorDriver(serviceConfig, generationManifest, options);
                     driver.Execute();
