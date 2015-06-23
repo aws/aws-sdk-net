@@ -211,6 +211,34 @@ namespace ServiceClientGenerator
                 Parse = (arguments, argValue) => arguments.ParsedOptions.Clean = true, 
                 HelpText = "Deletes all content in the 'Generated' subfolder for services prior to generation.\n"
                             + "The default behavior is to keep existing generated content."
+            },
+            new ArgDeclaration
+            {
+                OptionName = "self.modelpath", 
+                Parse = (arguments, argValue) => arguments.ParsedOptions.SelfServiceModel = argValue, 
+                HasValue = true,
+                HelpText = "Path to service model for self service."
+            },
+            new ArgDeclaration
+            {
+                OptionName = "self.basename", 
+                Parse = (arguments, argValue) => arguments.ParsedOptions.SelfServiceBaseName = argValue, 
+                HasValue = true,
+                HelpText = "Self Service base name used for namespace and client name."
+            },
+            new ArgDeclaration
+            {
+                OptionName = "self.endpoint-prefix", 
+                Parse = (arguments, argValue) => arguments.ParsedOptions.SelfServiceEndpointPrefix = argValue, 
+                HasValue = true,
+                HelpText = "Endpoint prefix for self service."
+            },
+            new ArgDeclaration
+            {
+                OptionName = "self.sig-v4-service-name", 
+                Parse = (arguments, argValue) => arguments.ParsedOptions.SelfServiceSigV4Name = argValue, 
+                HasValue = true,
+                HelpText = "Sig V4 service signing name."
             }
         };
 
