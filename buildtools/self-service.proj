@@ -43,7 +43,7 @@
 		<Exec Command="$(devenv2013) /Rebuild Release ..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net45.csproj"/>
 	</Target>	
 	
-	<Target Name="consolidate-build">
+	<Target Name="consolidate-build" DependsOnTargets="build-sdk">
 	
 		<Copy
 			SourceFiles="..\sdk\src\Core\bin\Release\Net35\AWSSDK.Core.dll"
