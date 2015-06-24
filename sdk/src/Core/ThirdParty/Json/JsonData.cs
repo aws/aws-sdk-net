@@ -439,20 +439,24 @@ namespace ThirdParty.Json.LitJson
 
         public static explicit operator Int32 (JsonData data)
         {
-            if (data.type != JsonType.Int)
+            if (data.type != JsonType.Int && data.type != JsonType.Long)
+            {
                 throw new InvalidCastException (
                     "Instance of JsonData doesn't hold an int");
-
-            return data.inst_int;
+            }
+            
+            return data.type == JsonType.Int?data.inst_int:(int)data.inst_long;
         }
 
         public static explicit operator Int64 (JsonData data)
         {
-            if (data.type != JsonType.Long)
+            if (data.type != JsonType.Long && data.type != JsonType.Int)
+            {
                 throw new InvalidCastException (
-                    "Instance of JsonData doesn't hold an int");
-
-            return data.inst_long;
+                    "Instance of JsonData doesn't hold an long");
+            }
+            
+            return data.type == JsonType.Long? data.inst_long:data.inst_int;
         }
 
         public static explicit operator String (JsonData data)
@@ -550,20 +554,20 @@ namespace ThirdParty.Json.LitJson
 
         int IJsonWrapper.GetInt ()
         {
-            if (type != JsonType.Int)
+            if (type != JsonType.Int && type!=JsonType.Long)
                 throw new InvalidOperationException (
                     "JsonData instance doesn't hold an int");
 
-            return inst_int;
+            return type == JsonType.Int ? inst_int : (int) inst_long;
         }
 
         long IJsonWrapper.GetLong ()
         {
-            if (type != JsonType.Long)
+            if (type != JsonType.Long && type!=JsonType.Int)
                 throw new InvalidOperationException (
                     "JsonData instance doesn't hold a long");
 
-            return inst_long;
+            return type == JsonType.Long?inst_long:inst_int;
         }
 
         string IJsonWrapper.GetString ()
@@ -835,7 +839,13 @@ namespace ThirdParty.Json.LitJson
                 return false;
 
             if (x.type != this.type)
-                return false;
+            {
+               //check between int and long
+               if ((x.type != JsonType.Int && x.type != JsonType.Long)||(this.type != JsonType.Int && this.type != JsonType.Long)) 
+               {
+                    return false;
+               }
+            }
 
             switch (this.type) {
             case JsonType.None:
@@ -850,12 +860,22 @@ namespace ThirdParty.Json.LitJson
             case JsonType.String:
                 return this.inst_string.Equals (x.inst_string);
 
-            case JsonType.Int:
+            case JsonType.Int:{
+                if(x.IsLong){
+                    if(x.inst_long <  Int32.MinValue || x.inst_long > Int32.MaxValue)
+                        return false;
+                    return this.inst_int.Equals((int)x.inst_long);
+                }
                 return this.inst_int.Equals (x.inst_int);
-
-            case JsonType.Long:
+            }
+            case JsonType.Long:{
+                if(x.IsInt){
+                    if(this.inst_long < Int32.MinValue || this.inst_long > Int32.MaxValue)
+                        return false;
+                    return x.inst_int.Equals((int)this.inst_long);
+                }
                 return this.inst_long.Equals (x.inst_long);
-
+            }
             case JsonType.Double:
                 return this.inst_double.Equals (x.inst_double);
 

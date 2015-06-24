@@ -182,10 +182,6 @@
       <Project>{39BC41FA-A4ED-4C24-AEA1-A3CD3556F21A}</Project>
       <Name>AWSSDK.MachineLearning.Net45</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.Net45.csproj">
-      <Project>{0701a0d6-df61-47d7-b89d-73fb88a5fab7}</Project>
-      <Name>AWSSDK.MobileAnalytics.Net45</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\OpsWorks\AWSSDK.OpsWorks.Net45.csproj">
       <Project>{9123E499-47D5-4B7C-BAB4-155A96CA5E9C}</Project>
       <Name>AWSSDK.OpsWorks.Net45</Name>
@@ -254,15 +250,13 @@
       <Project>{F484C85E-09E4-41BA-AF6E-2F77B26853F3}</Project>
       <Name>AWSSDK.ElasticFileSystem.Net45</Name>
     </ProjectReference>
-<<<<<<< HEAD
-    <ProjectReference Include="..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.Net45.csproj">
-      <Project>{0701A0D6-DF61-47D7-B89D-73FB88A5FAB7}</Project>
-      <Name>AWSSDK.MobileAnalytics.Net45</Name>
-=======
     <ProjectReference Include="..\..\src\Services\CognitoSync\AWSSDK.CognitoSync.Net45.csproj">
       <Project>{A6BEC7B9-074F-491C-87F8-8505EDAF9F68}</Project>
       <Name>AWSSDK.CognitoSync.Net45</Name>
->>>>>>> xamarin
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.Net45.csproj">
+      <Project>{0701A0D6-DF61-47D7-B89D-73FB88A5FAB7}</Project>
+      <Name>AWSSDK.MobileAnalytics.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

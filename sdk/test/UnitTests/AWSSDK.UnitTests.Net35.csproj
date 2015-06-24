@@ -248,15 +248,13 @@
       <Project>{C5294C97-CB6C-4188-B36F-54C13B186980}</Project>
       <Name>AWSSDK.ElasticFileSystem.Net35</Name>
     </ProjectReference>
-<<<<<<< HEAD
-    <ProjectReference Include="..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.Net35.csproj">
-      <Project>{014DC5E2-2920-4DF5-9E2D-22B659B30772}</Project>
-      <Name>AWSSDK.MobileAnalytics.Net35</Name>
-=======
     <ProjectReference Include="..\..\src\Services\CognitoSync\AWSSDK.CognitoSync.Net35.csproj">
       <Project>{39825610-39BF-4C58-A130-29FAAC5F8883}</Project>
       <Name>AWSSDK.CognitoSync.Net35</Name>
->>>>>>> xamarin
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.Net35.csproj">
+      <Project>{014DC5E2-2920-4DF5-9E2D-22B659B30772}</Project>
+      <Name>AWSSDK.MobileAnalytics.Net35</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
