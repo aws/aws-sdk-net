@@ -35,6 +35,7 @@ namespace Amazon.Redshift.Model
     {
         private string _destinationRegion;
         private long? _retentionPeriod;
+        private string _snapshotCopyGrantName;
 
         /// <summary>
         /// Gets and sets the property DestinationRegion. 
@@ -72,6 +73,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetRetentionPeriod()
         {
             return this._retentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotCopyGrantName. 
+        /// <para>
+        /// The name of the snapshot copy grant.
+        /// </para>
+        /// </summary>
+        public string SnapshotCopyGrantName
+        {
+            get { return this._snapshotCopyGrantName; }
+            set { this._snapshotCopyGrantName = value; }
+        }
+
+        // Check to see if SnapshotCopyGrantName property is set
+        internal bool IsSetSnapshotCopyGrantName()
+        {
+            return this._snapshotCopyGrantName != null;
         }
 
     }

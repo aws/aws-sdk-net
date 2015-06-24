@@ -132,7 +132,7 @@ namespace Amazon.Redshift.Model
         ///  The type of resource with which you want to view tags. Valid resource types are:
         /// <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li> <li>Snapshot</li>
         /// <li>Cluster security group</li> <li>Subnet group</li> <li>HSM connection</li> <li>HSM
-        /// certificate</li> <li>Parameter group</li> </ul> 
+        /// certificate</li> <li>Parameter group</li> <li>Snapshot copy grant</li> </ul> 
         /// </para>
         ///  
         /// <para>

@@ -53,6 +53,10 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             {
                 return new InvalidConfigurationRecorderNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRecordingGroupException"))
+            {
+                return new InvalidRecordingGroupException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRoleException"))
             {
                 return new InvalidRoleException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Describes a reserved node.
+    /// Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a>
+    /// API to obtain the available reserved node offerings.
     /// </summary>
     public partial class PurchaseReservedNodeOfferingResult : AmazonWebServiceResponse
     {

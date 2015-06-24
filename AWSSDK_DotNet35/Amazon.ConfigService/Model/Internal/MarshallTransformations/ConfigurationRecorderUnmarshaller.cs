@@ -60,6 +60,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("recordingGroup", targetDepth))
+                {
+                    var unmarshaller = RecordingGroupUnmarshaller.Instance;
+                    unmarshalledObject.RecordingGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

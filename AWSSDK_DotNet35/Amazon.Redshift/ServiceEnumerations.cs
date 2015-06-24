@@ -25,6 +25,46 @@ namespace Amazon.Redshift
 {
 
     /// <summary>
+    /// Constants used for properties of type ParameterApplyType.
+    /// </summary>
+    public class ParameterApplyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dynamic for ParameterApplyType
+        /// </summary>
+        public static readonly ParameterApplyType Dynamic = new ParameterApplyType("dynamic");
+        /// <summary>
+        /// Constant Static for ParameterApplyType
+        /// </summary>
+        public static readonly ParameterApplyType Static = new ParameterApplyType("static");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public ParameterApplyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParameterApplyType FindValue(string value)
+        {
+            return FindValue<ParameterApplyType>(value);
+        }
+
+        public static implicit operator ParameterApplyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SourceType.
     /// </summary>
     public class SourceType : ConstantClass

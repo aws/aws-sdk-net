@@ -32,6 +32,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class Stack
     {
+        private string _agentVersion;
         private string _arn;
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private ChefConfiguration _chefConfiguration;
@@ -53,6 +54,25 @@ namespace Amazon.OpsWorks.Model
         private bool? _useCustomCookbooks;
         private bool? _useOpsworksSecurityGroups;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property AgentVersion. 
+        /// <para>
+        /// The agent version. This parameter is set to <code>LATEST</code> for auto-update. or
+        /// a version number for a fixed agent version.
+        /// </para>
+        /// </summary>
+        public string AgentVersion
+        {
+            get { return this._agentVersion; }
+            set { this._agentVersion = value; }
+        }
+
+        // Check to see if AgentVersion property is set
+        internal bool IsSetAgentVersion()
+        {
+            return this._agentVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -131,7 +151,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Date when the stack was created.
+        /// The date when the stack was created.
         /// </para>
         /// </summary>
         public string CreatedAt
@@ -164,9 +184,10 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property CustomJson. 
         /// <para>
-        /// A string that contains user-defined, custom JSON. It can be used to override the corresponding
-        /// default stack configuration JSON values or to pass data to recipes. The string should
-        /// be in the following format and must escape characters such as '"'.:
+        /// A JSON object that contains user-defined attributes to be added to the stack configuration
+        /// and deployment attributes. You can use custom JSON to override the corresponding default
+        /// stack configuration attribute values or to pass data to recipes. The string should
+        /// be in the following format and must escape characters such as '"':
         /// </para>
         ///  
         /// <para>
@@ -290,7 +311,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property DefaultSubnetId. 
         /// <para>
-        /// The default subnet ID, if the stack is running in a VPC.
+        /// The default subnet ID; applicable only if the stack is running in a VPC.
         /// </para>
         /// </summary>
         public string DefaultSubnetId
@@ -437,7 +458,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The VPC ID, if the stack is running in a VPC.
+        /// The VPC ID; applicable only if the stack is running in a VPC.
         /// </para>
         /// </summary>
         public string VpcId

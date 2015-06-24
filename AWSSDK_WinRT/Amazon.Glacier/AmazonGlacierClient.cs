@@ -241,6 +241,36 @@ namespace Amazon.Glacier
 
         #endregion
         
+        #region  AddTagsToVault
+
+        internal AddTagsToVaultResponse AddTagsToVault(AddTagsToVaultRequest request)
+        {
+            var marshaller = new AddTagsToVaultRequestMarshaller();
+            var unmarshaller = AddTagsToVaultResponseUnmarshaller.Instance;
+
+            return Invoke<AddTagsToVaultRequest,AddTagsToVaultResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTagsToVault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToVault operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AddTagsToVaultResponse> AddTagsToVaultAsync(AddTagsToVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AddTagsToVaultRequestMarshaller();
+            var unmarshaller = AddTagsToVaultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddTagsToVaultRequest,AddTagsToVaultResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CompleteMultipartUpload
 
         internal CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
@@ -751,6 +781,36 @@ namespace Amazon.Glacier
 
         #endregion
         
+        #region  ListTagsForVault
+
+        internal ListTagsForVaultResponse ListTagsForVault(ListTagsForVaultRequest request)
+        {
+            var marshaller = new ListTagsForVaultRequestMarshaller();
+            var unmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForVaultRequest,ListTagsForVaultResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForVault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForVault operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListTagsForVaultResponse> ListTagsForVaultAsync(ListTagsForVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTagsForVaultRequestMarshaller();
+            var unmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForVaultRequest,ListTagsForVaultResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListVaults
 
         internal ListVaultsResponse ListVaults()
@@ -780,6 +840,36 @@ namespace Amazon.Glacier
             var unmarshaller = ListVaultsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListVaultsRequest,ListVaultsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveTagsFromVault
+
+        internal RemoveTagsFromVaultResponse RemoveTagsFromVault(RemoveTagsFromVaultRequest request)
+        {
+            var marshaller = new RemoveTagsFromVaultRequestMarshaller();
+            var unmarshaller = RemoveTagsFromVaultResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveTagsFromVaultRequest,RemoveTagsFromVaultResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTagsFromVault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromVault operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RemoveTagsFromVaultResponse> RemoveTagsFromVaultAsync(RemoveTagsFromVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemoveTagsFromVaultRequestMarshaller();
+            var unmarshaller = RemoveTagsFromVaultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveTagsFromVaultRequest,RemoveTagsFromVaultResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

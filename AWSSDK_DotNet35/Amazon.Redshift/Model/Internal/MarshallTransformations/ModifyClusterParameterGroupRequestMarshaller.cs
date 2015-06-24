@@ -61,6 +61,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AllowedValues", StringUtils.FromString(publicRequestlistValue.AllowedValues));
                         }
+                        if(publicRequestlistValue.IsSetApplyType())
+                        {
+                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ApplyType", StringUtils.FromString(publicRequestlistValue.ApplyType));
+                        }
                         if(publicRequestlistValue.IsSetDataType())
                         {
                             request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "DataType", StringUtils.FromString(publicRequestlistValue.DataType));

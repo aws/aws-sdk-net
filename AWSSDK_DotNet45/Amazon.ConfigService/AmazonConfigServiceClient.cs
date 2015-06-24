@@ -44,7 +44,7 @@ namespace Amazon.ConfigService
     /// between the resources. An AWS resource can be an Amazon Compute Cloud (Amazon EC2)
     /// instance, an Elastic Block Store (EBS) volume, an Elastic network Interface (ENI),
     /// or a security group. For a complete list of resources currently supported by AWS Config,
-    /// see <a href="http://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html">Supported
+    /// see <a href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
     /// AWS Resources</a>.
     /// </para>
     ///  
@@ -736,17 +736,23 @@ namespace Amazon.ConfigService
         #region  PutConfigurationRecorder
 
         /// <summary>
-        /// Creates a new configuration recorder to record the resource configurations. 
+        /// Creates a new configuration recorder to record the selected resource configurations.
+        /// 
         /// 
         ///  
         /// <para>
-        /// You can use this action to change the role (<code>roleARN</code>) of an existing recorder.
-        /// To change the role, call the action on the existing configuration recorder and specify
-        /// a role.
+        /// You can use this action to change the role <code>roleARN</code> and/or the <code>recordingGroup</code>
+        /// of an existing recorder. To change the role, call the action on the existing configuration
+        /// recorder and specify a role.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per account. 
+        /// Currently, you can specify only one configuration recorder per account.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b> parameter
+        /// specified, the default is to record all supported resource types.
         /// </para>
         ///  </note>
         /// </summary>
@@ -755,6 +761,10 @@ namespace Amazon.ConfigService
         /// <returns>The response from the PutConfigurationRecorder service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidConfigurationRecorderNameException">
         /// You have provided a configuration recorder name that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidRecordingGroupException">
+        /// AWS Config throws an exception if the recording group does not contain a valid list
+        /// of resource types. Invalid values could also be incorrectly formatted.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidRoleException">
         /// You have provided a null or empty role ARN.
@@ -866,7 +876,8 @@ namespace Amazon.ConfigService
         #region  StartConfigurationRecorder
 
         /// <summary>
-        /// Starts recording configurations of all the resources associated with the account.
+        /// Starts recording configurations of the AWS resources you have selected to record in
+        /// your AWS account.
         /// 
         ///  
         /// <para>
@@ -891,7 +902,8 @@ namespace Amazon.ConfigService
         }
 
         /// <summary>
-        /// Starts recording configurations of all the resources associated with the account.
+        /// Starts recording configurations of the AWS resources you have selected to record in
+        /// your AWS account.
         /// 
         ///  
         /// <para>
@@ -939,7 +951,8 @@ namespace Amazon.ConfigService
         #region  StopConfigurationRecorder
 
         /// <summary>
-        /// Stops recording configurations of all the resources associated with the account.
+        /// Stops recording configurations of the AWS resources you have selected to record in
+        /// your AWS account.
         /// </summary>
         /// <param name="configurationRecorderName">The name of the recorder object that records each configuration change made to the resources.</param>
         /// 
@@ -955,7 +968,8 @@ namespace Amazon.ConfigService
         }
 
         /// <summary>
-        /// Stops recording configurations of all the resources associated with the account.
+        /// Stops recording configurations of the AWS resources you have selected to record in
+        /// your AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopConfigurationRecorder service method.</param>
         /// 

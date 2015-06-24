@@ -524,6 +524,36 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  CreateSnapshotCopyGrant
+
+        internal CreateSnapshotCopyGrantResponse CreateSnapshotCopyGrant(CreateSnapshotCopyGrantRequest request)
+        {
+            var marshaller = new CreateSnapshotCopyGrantRequestMarshaller();
+            var unmarshaller = CreateSnapshotCopyGrantResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSnapshotCopyGrantRequest,CreateSnapshotCopyGrantResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSnapshotCopyGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshotCopyGrant operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateSnapshotCopyGrantResponse> CreateSnapshotCopyGrantAsync(CreateSnapshotCopyGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateSnapshotCopyGrantRequestMarshaller();
+            var unmarshaller = CreateSnapshotCopyGrantResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSnapshotCopyGrantRequest,CreateSnapshotCopyGrantResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTags
 
         internal CreateTagsResponse CreateTags(CreateTagsRequest request)
@@ -789,6 +819,36 @@ namespace Amazon.Redshift
             var unmarshaller = DeleteHsmConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteHsmConfigurationRequest,DeleteHsmConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteSnapshotCopyGrant
+
+        internal DeleteSnapshotCopyGrantResponse DeleteSnapshotCopyGrant(DeleteSnapshotCopyGrantRequest request)
+        {
+            var marshaller = new DeleteSnapshotCopyGrantRequestMarshaller();
+            var unmarshaller = DeleteSnapshotCopyGrantResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSnapshotCopyGrantRequest,DeleteSnapshotCopyGrantResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSnapshotCopyGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshotCopyGrant operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteSnapshotCopyGrantResponse> DeleteSnapshotCopyGrantAsync(DeleteSnapshotCopyGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteSnapshotCopyGrantRequestMarshaller();
+            var unmarshaller = DeleteSnapshotCopyGrantResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSnapshotCopyGrantRequest,DeleteSnapshotCopyGrantResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1415,6 +1475,36 @@ namespace Amazon.Redshift
             var unmarshaller = DescribeResizeResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeResizeRequest,DescribeResizeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeSnapshotCopyGrants
+
+        internal DescribeSnapshotCopyGrantsResponse DescribeSnapshotCopyGrants(DescribeSnapshotCopyGrantsRequest request)
+        {
+            var marshaller = new DescribeSnapshotCopyGrantsRequestMarshaller();
+            var unmarshaller = DescribeSnapshotCopyGrantsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSnapshotCopyGrantsRequest,DescribeSnapshotCopyGrantsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSnapshotCopyGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotCopyGrants operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeSnapshotCopyGrantsResponse> DescribeSnapshotCopyGrantsAsync(DescribeSnapshotCopyGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeSnapshotCopyGrantsRequestMarshaller();
+            var unmarshaller = DescribeSnapshotCopyGrantsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSnapshotCopyGrantsRequest,DescribeSnapshotCopyGrantsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -93,6 +93,21 @@ namespace Amazon.Glacier
 
         #endregion
                 
+        #region  AddTagsToVault
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTagsToVault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToVault operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AddTagsToVaultResponse> AddTagsToVaultAsync(AddTagsToVaultRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CompleteMultipartUpload
 
         /// <summary>
@@ -348,6 +363,21 @@ namespace Amazon.Glacier
 
         #endregion
                 
+        #region  ListTagsForVault
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForVault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForVault operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListTagsForVaultResponse> ListTagsForVaultAsync(ListTagsForVaultRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListVaults
 
         /// <summary>
@@ -360,6 +390,21 @@ namespace Amazon.Glacier
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ListVaultsResponse> ListVaultsAsync(ListVaultsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RemoveTagsFromVault
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTagsFromVault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromVault operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RemoveTagsFromVaultResponse> RemoveTagsFromVaultAsync(RemoveTagsFromVaultRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

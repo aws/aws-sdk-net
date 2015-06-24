@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Contains the Amazon Glacier response to your request.
+    /// The Amazon Glacier response to your request.
     /// </summary>
     public partial class InitiateMultipartUploadResult : AmazonWebServiceResponse
     {

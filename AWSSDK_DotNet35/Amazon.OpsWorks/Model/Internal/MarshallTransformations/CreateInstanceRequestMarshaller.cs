@@ -57,6 +57,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAgentVersion())
+                {
+                    context.Writer.WritePropertyName("AgentVersion");
+                    context.Writer.Write(publicRequest.AgentVersion);
+                }
+
                 if(publicRequest.IsSetAmiId())
                 {
                     context.Writer.WritePropertyName("AmiId");

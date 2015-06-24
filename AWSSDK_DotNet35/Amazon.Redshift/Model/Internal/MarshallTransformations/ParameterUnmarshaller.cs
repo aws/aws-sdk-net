@@ -55,6 +55,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.AllowedValues = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ApplyType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ApplyType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DataType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -390,6 +390,21 @@ namespace Amazon.OpsWorks
 
         #endregion
                 
+        #region  DescribeAgentVersions
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAgentVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAgentVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeAgentVersionsResponse> DescribeAgentVersionsAsync(DescribeAgentVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeApps
 
         /// <summary>

@@ -311,7 +311,7 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Creates a clone of a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone
-        /// a Stack</a>.
+        /// a Stack</a>. By default, all parameters are set to the values used by the parent stack.
         /// 
         ///  
         /// <para>
@@ -1129,6 +1129,50 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a  DeregisterVolumeResult from OpsWorks.</returns>
         DeregisterVolumeResponse EndDeregisterVolume(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeAgentVersions
+
+        /// <summary>
+        /// Describes the available AWS OpsWorks agent versions. You must specify a stack ID or
+        /// a configuration manager. <code>DescribeAgentVersions</code> returns a list of available
+        /// agent versions for the specified stack or configuration manager.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAgentVersions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAgentVersions service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        DescribeAgentVersionsResponse DescribeAgentVersions(DescribeAgentVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAgentVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAgentVersions operation on AmazonOpsWorksClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAgentVersions
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeAgentVersions(DescribeAgentVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAgentVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAgentVersions.</param>
+        /// 
+        /// <returns>Returns a  DescribeAgentVersionsResult from OpsWorks.</returns>
+        DescribeAgentVersionsResponse EndDescribeAgentVersions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2378,7 +2422,7 @@ namespace Amazon.OpsWorks
         #region  GrantAccess
 
         /// <summary>
-        /// <note>This API can be used only with Windows stacks.</note> 
+        /// <note>This action can be used only with Windows stacks.</note> 
         /// <para>
         /// Grants RDP access to a Windows instance for a specified time period.
         /// </para>
@@ -2534,7 +2578,8 @@ namespace Amazon.OpsWorks
         /// operation has two primary steps, installing the AWS OpsWorks agent on the instance
         /// and registering the instance with the stack. <code>RegisterInstance</code> handles
         /// only the second step. You should instead use the AWS CLI <code>register</code> command,
-        /// which performs the entire registration operation.</note> 
+        /// which performs the entire registration operation. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">
+        /// Registering an Instance with an AWS OpsWorks Stack</a>.</note> 
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack or an attached policy that explicitly grants permissions. For

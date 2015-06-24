@@ -211,6 +211,10 @@ namespace Amazon.OpsWorks
     {
 
         /// <summary>
+        /// Constant Configure for DeploymentCommandName
+        /// </summary>
+        public static readonly DeploymentCommandName Configure = new DeploymentCommandName("configure");
+        /// <summary>
         /// Constant Deploy for DeploymentCommandName
         /// </summary>
         public static readonly DeploymentCommandName Deploy = new DeploymentCommandName("deploy");
@@ -230,6 +234,10 @@ namespace Amazon.OpsWorks
         /// Constant Rollback for DeploymentCommandName
         /// </summary>
         public static readonly DeploymentCommandName Rollback = new DeploymentCommandName("rollback");
+        /// <summary>
+        /// Constant Setup for DeploymentCommandName
+        /// </summary>
+        public static readonly DeploymentCommandName Setup = new DeploymentCommandName("setup");
         /// <summary>
         /// Constant Start for DeploymentCommandName
         /// </summary>

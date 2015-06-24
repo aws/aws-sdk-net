@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2014-11-06.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2015-04-17.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,10 +56,22 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.AllowedMethods = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DefaultTTL", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.DefaultTTL = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ForwardedValues", targetDepth))
                     {
                         var unmarshaller = ForwardedValuesUnmarshaller.Instance;
                         unmarshalledObject.ForwardedValues = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MaxTTL", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.MaxTTL = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinTTL", targetDepth))

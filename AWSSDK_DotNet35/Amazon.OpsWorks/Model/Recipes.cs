@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// AWS OpsWorks supports five lifecycle events, <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
+    /// AWS OpsWorks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
     /// <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard
     /// recipes for each event. In addition, you can provide custom recipes for any or all
     /// layers and events. AWS OpsWorks runs custom event recipes after the standard recipes.

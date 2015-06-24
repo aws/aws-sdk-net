@@ -97,6 +97,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
+                if(publicRequest.IsSetNodeType())
+                {
+                    request.Parameters.Add("NodeType", StringUtils.FromString(publicRequest.NodeType));
+                }
                 if(publicRequest.IsSetOwnerAccount())
                 {
                     request.Parameters.Add("OwnerAccount", StringUtils.FromString(publicRequest.OwnerAccount));

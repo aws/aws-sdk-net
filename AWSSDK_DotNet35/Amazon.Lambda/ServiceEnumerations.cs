@@ -155,6 +155,10 @@ namespace Amazon.Lambda
     {
 
         /// <summary>
+        /// Constant Java8 for Runtime
+        /// </summary>
+        public static readonly Runtime Java8 = new Runtime("java8");
+        /// <summary>
         /// Constant Nodejs for Runtime
         /// </summary>
         public static readonly Runtime Nodejs = new Runtime("nodejs");

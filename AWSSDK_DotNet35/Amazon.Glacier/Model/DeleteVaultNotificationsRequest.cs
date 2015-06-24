@@ -30,7 +30,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Container for the parameters to the DeleteVaultNotifications operation.
     /// This operation deletes the notification configuration set for a vault. The operation
-    /// is eventually consistent;that is, it might take some time for Amazon Glacier to completely
+    /// is eventually consistent; that is, it might take some time for Amazon Glacier to completely
     /// disable the notifications and you might still receive some notifications for a short
     /// time after you send the delete request. 
     /// 
