@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Net;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime;
 
 namespace CommonTests.Framework
 {
@@ -162,6 +163,81 @@ namespace CommonTests.Framework
 
             //// Signal that the operation is completed.
             //asyncCancelableResult.SignalWaitHandleOnCompleted();
+        }
+
+
+
+        public static T WaitUntilSuccess<T>(Func<T> loadFunction, int sleepSeconds = 5, int maxWaitSeconds = 300)
+        {
+            T result = default(T);
+            WaitUntil(() =>
+            {
+                try
+                {
+                    result = loadFunction();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }, sleepSeconds, maxWaitSeconds);
+            return result;
+        }
+        public static void WaitUntilSuccess(Action action, int sleepSeconds = 5, int maxWaitSeconds = 300)
+        {
+            WaitUntil(() =>
+            {
+                try
+                {
+                    action();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }, sleepSeconds, maxWaitSeconds);
+        }
+        public static void WaitUntil(Func<bool> matchFunction, int sleepSeconds = 5, int maxWaitSeconds = 300)
+        {
+            if (sleepSeconds < 0) throw new ArgumentOutOfRangeException("sleepSeconds");
+            if (maxWaitSeconds < 0) throw new ArgumentOutOfRangeException("maxWaitSeconds");
+
+            var sleepTime = TimeSpan.FromSeconds(sleepSeconds);
+            var maxTime = TimeSpan.FromSeconds(maxWaitSeconds);
+            var endTime = DateTime.Now + maxTime;
+
+            while (DateTime.Now < endTime)
+            {
+                if (matchFunction())
+                    return;
+                Sleep(sleepTime);
+            }
+
+            throw new TimeoutException(string.Format("Wait condition was not satisfied for {0} seconds", maxWaitSeconds));
+        }
+
+        public static void Sleep(TimeSpan ts)
+        {
+            Task.Delay(ts).Wait();
+        }
+        public static async Task SleepAsync(TimeSpan ts)
+        {
+            await Task.Delay(ts);
+        }
+
+        public static void RunAsSync(Func<Task> asyncFunc)
+        {
+            Task.Run(asyncFunc).Wait();
+        }
+
+        public static T CreateClient<T>()
+            where T : AmazonServiceClient
+        {
+            var client = (T)Activator.CreateInstance(typeof(T),
+                new object[] { TestRunner.Credentials, TestRunner.RegionEndpoint });
+            return client;
         }
     }
 }

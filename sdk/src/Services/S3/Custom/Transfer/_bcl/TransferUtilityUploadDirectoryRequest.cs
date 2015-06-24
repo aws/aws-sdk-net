@@ -247,7 +247,7 @@ namespace Amazon.S3.Transfer
         /// The number of concurrent web requests used is controlled 
         /// by the TransferUtilityConfig.ConcurrencyLevel property.
         /// </summary>
-#if BCL45 || WIN_RT || WINDOWS_PHONE
+#if BCL45
         public
 #else
         internal 
@@ -410,7 +410,7 @@ namespace Amazon.S3.Transfer
         /// <value>The bytes transferred across all files being uploaded.</value>
         public long TransferredBytes { get; set; }
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE
+#if BCL45
         /// <summary>
         /// Gets or sets the current file.
         /// </summary>
@@ -429,7 +429,7 @@ namespace Amazon.S3.Transfer
         public string CurrentFile { get; set; }
 
         
-#if BCL45 || WIN_RT || WINDOWS_PHONE
+#if BCL45
         /// <summary>
         /// Gets or sets the transferred bytes for current file.
         /// </summary>
@@ -447,7 +447,7 @@ namespace Amazon.S3.Transfer
 #endif
         public long TransferredBytesForCurrentFile { get; set; }
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE
+#if BCL45
         /// <summary>
         /// Gets or sets the total number of bytes for current file.
         /// </summary>

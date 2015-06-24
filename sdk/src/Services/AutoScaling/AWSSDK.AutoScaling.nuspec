@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.AutoScaling</id>
     <title>AWSSDK - Auto Scaling</title>
-    <version>3.0.0.2-preview</version> 
+    <version>3.0.1.0-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.</description> 
     <language>en-US</language>
@@ -12,21 +12,14 @@
     <tags>AWS Amazon cloud AutoScaling</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10">
-        <dependency id="Microsoft.Net.Http" version="2.2.28" />
-        <dependency id="Microsoft.Bcl" version="1.1.9" />
-        <dependency id="Microsoft.Bcl.Build" version="1.0.21" />
+      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
+        <dependency id="Microsoft.Net.Http" version="2.2.29" />
         <dependency id="PCLStorage" version="1.0.2" />
         <dependency id="PCLCrypto" version="1.0.2.15130" />
-        <dependency id="Validation" version="2.0.5.14286" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
-      </group>
-      <group targetFramework="portable-wpa+netcore45">
-        <dependency id="Microsoft.Net.Http" version="2.2.29" />
       <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
       </group>
       <group>
-      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 
@@ -37,14 +30,14 @@
 
     <file src=".\bin\Release\net35\AWSSDK.AutoScaling.dll" target="lib\net35" />
     <file src=".\bin\Release\net35\AWSSDK.AutoScaling.xml" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.AutoScaling.pdb" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.AutoScaling.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.AutoScaling.xml" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.AutoScaling.pdb" target="lib\net45" />
 
-    <file src=".\bin\Release\portable\AWSSDK.AutoScaling.dll" target="lib\portable-wpa+netcore45" />
-    <file src=".\bin\Release\portable\AWSSDK.AutoScaling.xml" target="lib\portable-wpa+netcore45" />
-
-    <file src=".\bin\Release\pcl\AWSSDK.AutoScaling.dll" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.AutoScaling.xml" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.AutoScaling.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.AutoScaling.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.AutoScaling.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
   </files>
 </package>

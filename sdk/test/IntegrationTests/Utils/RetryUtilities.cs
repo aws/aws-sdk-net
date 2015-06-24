@@ -155,8 +155,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                     throw new WebException("Newp!", null, WebExceptionStatus.ConnectionClosed, null);
             }
 
-#if BCL45 || WIN_RT || WINDOWS_PHONE
-
+#if BCL45
             public override System.Threading.Tasks.Task<IWebResponseData> GetResponseAsync(System.Threading.CancellationToken cancellationToken)
             {
                 if (IsRetry || !IsRewindable)

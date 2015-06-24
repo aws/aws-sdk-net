@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>end</code> - The time when the Reserved Instance expires (for example, 2014-08-07T11:54:42.000Z).
+        /// <code>end</code> - The time when the Reserved Instance expires (for example, 2015-08-07T11:54:42.000Z).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -74,9 +74,15 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>product-description</code> - The product description of the Reserved Instance
-        /// (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>Windows</code>
-        /// | <code>Windows (Amazon VPC)</code>).
+        /// <code>product-description</code> - The Reserved Instance product platform description.
+        /// Instances that include <code>(Amazon VPC)</code> in the product platform description
+        /// will only be displayed to EC2-Classic account holders and are for use with Amazon
+        /// VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE
+        /// Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code>
+        /// | <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Windows</code> | <code>Windows
+        /// (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows
+        /// with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code>
+        /// | <code>Windows with SQL Server Web (Amazon VPC)</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

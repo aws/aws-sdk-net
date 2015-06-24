@@ -11,12 +11,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Support. The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Support. The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center.")]
-#elif (WIN_RT && WINDOWS_PHONE)
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Portable)- AWS Support. The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center.")]
-#elif WIN_RT
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows RT) - AWS Support. The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center.")]
-#elif WINDOWS_PHONE
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows Phone 8)- AWS Support. The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center.")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Core Runtime")]
 #else

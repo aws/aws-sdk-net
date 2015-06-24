@@ -42,7 +42,8 @@ namespace Amazon.S3.Transfer.Internal
         {
             WebExceptionStatus.ConnectFailure,
 
-#if (!WIN_RT && !PCL) // These statuses are not available on WinRT
+#if !PCL
+            // These statuses are not available on WinRT
             WebExceptionStatus.ConnectionClosed,
             WebExceptionStatus.KeepAliveFailure,
             WebExceptionStatus.NameResolutionFailure,            
@@ -77,11 +78,6 @@ namespace Amazon.S3.Transfer.Internal
             {
                 throw new InvalidOperationException("The filepath specified is null or empty!");
             }
-#elif WIN_RT || WINDOWS_PHONE
-            if (!this._request.IsSetStorageFile())
-            {
-                throw new InvalidOperationException("The StorageFile specified is null or empty!");
-            }
 #endif
             if (!this._request.IsSetKey())
             {
@@ -99,7 +95,7 @@ namespace Amazon.S3.Transfer.Internal
             var canRetry = true;
             if (exception is IOException)
             {
-#if (!WIN_RT && !PCL)
+#if !PCL
                 while (exception.InnerException != null)
                 {
                     if (exception.InnerException is ThreadAbortException)

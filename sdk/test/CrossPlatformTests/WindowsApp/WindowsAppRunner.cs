@@ -1,4 +1,4 @@
-﻿using CommonTests;
+﻿using CommonTests.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,7 +17,6 @@ namespace WindowsApp
         private Windows.UI.Core.CoreDispatcher _dispatcher;
 
         public WindowsAppRunner(Stream stream, CoreDispatcher dispatcher, TextBlock textBlock)
-            : base(stream)
         {
             // TODO: Complete member initialization
             this.stream = stream;

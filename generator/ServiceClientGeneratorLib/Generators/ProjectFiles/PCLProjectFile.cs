@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+    #line 1 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class PCLProjectFile : PCLProjectFileBase
     {
@@ -33,12 +33,12 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
 <Project ToolsVersion=""12.0"" DefaultTargets=""Build"" xmlns=""http://schemas.microsoft.com/developer/msbuild/2003"">
   <Import Project=""$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"" Condition=""Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"" />
   <PropertyGroup>
-    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition="" '$(Configuration)' == '' "">Debug</Configuration>
     <Platform Condition="" '$(Platform)' == '' "">AnyCPU</Platform>
     <ProjectGuid>");
             
-            #line 14 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 14 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["ProjectGuid"]));
             
             #line default
@@ -46,14 +46,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("</ProjectGuid>\r\n    <OutputType>Library</OutputType>\r\n    <AppDesignerFolder>Prop" +
                     "erties</AppDesignerFolder>\r\n    <RootNamespace>");
             
-            #line 17 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 17 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["RootNamespace"]));
             
             #line default
             #line hidden
             this.Write("</RootNamespace>\r\n    <AssemblyName>");
             
-            #line 18 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 18 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -62,13 +62,13 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <SolutionDir Condition=""$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'"">.\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <BaseIntermediateOutputPath>obj\");
             
-            #line 26 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 26 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
@@ -81,30 +81,55 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\");
             
-            #line 32 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 32 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 33 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 33 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
             #line hidden
             this.Write("</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</W" +
-                    "arningLevel>\r\n    <NoWarn>419,1591,1573</NoWarn>\r\n    <DocumentationFile>bin\\Deb" +
-                    "ug\\");
+                    "arningLevel>\r\n");
             
-            #line 37 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 36 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+
+    if(this.Session.ContainsKey("SupressWarnings"))
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t<NoWarn>");
+            
+            #line 40 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["SupressWarnings"]));
+            
+            #line default
+            #line hidden
+            this.Write("</NoWarn>\r\n");
+            
+            #line 41 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("    <DocumentationFile>bin\\Debug\\");
+            
+            #line 44 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 37 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 44 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -113,55 +138,104 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "figuration)|$(Platform)\' == \'Release|AnyCPU\' \">\r\n    <DebugType>pdbonly</DebugTy" +
                     "pe>\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\Release\\");
             
-            #line 42 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 49 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>TRACE;");
             
-            #line 43 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 50 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
             #line hidden
             this.Write("</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</W" +
-                    "arningLevel>\r\n    <NoWarn>419,1591,1573</NoWarn>\r\n    <DocumentationFile>bin\\Rel" +
-                    "ease\\");
+                    "arningLevel>\r\n");
             
-            #line 47 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 53 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+
+    if(this.Session.ContainsKey("SupressWarnings"))
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t<NoWarn>");
+            
+            #line 57 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["SupressWarnings"]));
+            
+            #line default
+            #line hidden
+            this.Write("</NoWarn>\r\n");
+            
+            #line 58 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("    <DocumentationFile>bin\\Release\\");
+            
+            #line 61 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 47 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 61 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(@".XML</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <Choose>
-    <When Condition="" '$(AWSKeyFile)' == '' "">
-      <PropertyGroup>
-        <AssemblyOriginatorKeyFile>..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
-      </PropertyGroup>
-    </When>
-    <Otherwise>
-      <PropertyGroup>
-        <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
-      </PropertyGroup>
-    </Otherwise>
-  </Choose>
-  <ItemGroup>
-");
+            this.Write(".XML</DocumentationFile>\r\n  </PropertyGroup>\r\n  <PropertyGroup>\r\n    <SignAssembl" +
+                    "y>true</SignAssembly>\r\n  </PropertyGroup>\r\n  <Choose>\r\n    <When Condition=\" \'$(" +
+                    "AWSKeyFile)\' == \'\' \">\r\n      <PropertyGroup>\r\n");
             
-            #line 65 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 69 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+
+    if(this.Session.ContainsKey("KeyFilePath"))
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t<AssemblyOriginatorKeyFile>");
+            
+            #line 73 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["KeyFilePath"]));
+            
+            #line default
+            #line hidden
+            this.Write("</AssemblyOriginatorKeyFile>\r\n");
+            
+            #line 74 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+
+    }
+	else
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("        <AssemblyOriginatorKeyFile>..\\..\\..\\awssdk.dll.snk</AssemblyOriginatorKey" +
+                    "File>\r\n");
+            
+            #line 80 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("      </PropertyGroup>\r\n    </When>\r\n    <Otherwise>\r\n      <PropertyGroup>\r\n    " +
+                    "    <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>\r\n      " +
+                    "</PropertyGroup>\r\n    </Otherwise>\r\n  </Choose>\r\n  <ItemGroup>\r\n");
+            
+            #line 92 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
 
     foreach(string subDirectory in ((IList<string>)this.Session["SourceDirectories"]))
     {
@@ -171,14 +245,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 69 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 96 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(subDirectory));
             
             #line default
             #line hidden
             this.Write("\\*.cs\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
             
-            #line 72 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 99 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
 
     }
 
@@ -187,7 +261,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n  <ItemGroup>\r\n");
             
-            #line 77 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 104 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
 
     if(this.Session.ContainsKey("IndividualFileIncludes"))
     {
@@ -201,14 +275,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 85 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 112 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(file));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
             
-            #line 88 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 115 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
 
             }
             else
@@ -219,14 +293,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <EmbeddedResource Include=\"");
             
-            #line 93 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 120 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(file));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <SubType>Designer</SubType>\r\n    </EmbeddedResource>\r\n");
             
-            #line 96 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 123 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
 
             }
         }
@@ -237,7 +311,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n");
             
-            #line 102 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 129 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
 
     if(this.Session.ContainsKey("ProjectReferences"))
     {
@@ -249,28 +323,28 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n    <ProjectReference Include=\"");
             
-            #line 109 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 136 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.IncludePath));
             
             #line default
             #line hidden
             this.Write("\">\r\n        <Project>");
             
-            #line 110 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 137 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("</Project>\r\n        <Name>");
             
-            #line 111 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 138 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.Name));
             
             #line default
             #line hidden
             this.Write("</Name>\r\n    </ProjectReference>\r\n  </ItemGroup>\r\n");
             
-            #line 114 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 141 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
 
         }
     }
@@ -279,6 +353,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line default
             #line hidden
             this.Write(@"  <ItemGroup>
+	<None Include=""packages.config"" />
     <Compile Include=""Properties\AssemblyInfo.cs"" />
   </ItemGroup>
   <ItemGroup>
@@ -289,28 +364,46 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Reference Include=""System.Core"" />
     <Reference Include=""System.Xml.Linq"" />
     <Reference Include=""System.Xml"" />
-    <Reference Include=""PCLCrypto"">
+    <Reference Include=""System.Net.Http"">
       <HintPath>");
             
-            #line 130 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 158 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
             #line hidden
-            this.Write("PCLCrypto.1.0.2.15130\\lib\\portable-net40+sl50+win+wpa81+wp80\\PCLCrypto.dll</HintP" +
-                    "ath>\r\n    </Reference>\r\n    <Reference Include=\"PCLCrypto.Abstractions\">\r\n      " +
-                    "<HintPath>");
+            this.Write("Microsoft.Net.Http.2.2.29\\lib\\portable-net40+sl4+win8+wp71+wpa81\\System.Net.Http." +
+                    "dll</HintPath>\r\n    </Reference>\r\n    <Reference Include=\"System.Net.Http.Extens" +
+                    "ions\">\r\n      <HintPath>");
             
-            #line 133 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 161 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
             #line hidden
-            this.Write("PCLCrypto.1.0.2.15130\\lib\\portable-net40+sl50+win+wpa81+wp80\\PCLCrypto.Abstractio" +
-                    "ns.dll</HintPath>\r\n    </Reference>\r\n    <Reference Include=\"PCLStorage\">\r\n     " +
-                    " <HintPath>");
+            this.Write("Microsoft.Net.Http.2.2.29\\lib\\portable-net40+sl4+win8+wp71+wpa81\\System.Net.Http." +
+                    "Extensions.dll</HintPath>\r\n    </Reference>\r\n    <Reference Include=\"System.Net." +
+                    "Http.Primitives\">\r\n      <HintPath>");
             
-            #line 136 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 164 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
+            
+            #line default
+            #line hidden
+            this.Write("Microsoft.Net.Http.2.2.29\\lib\\portable-net40+sl4+win8+wp71+wpa81\\System.Net.Http." +
+                    "Primitives.dll</HintPath>\r\n    </Reference>\r\n    <Reference Include=\"PCLCrypto\">" +
+                    "\r\n      <HintPath>");
+            
+            #line 167 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
+            
+            #line default
+            #line hidden
+            this.Write("PCLCrypto.1.0.2.15130\\lib\\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamari" +
+                    "nios10+MonoTouch10\\PCLCrypto.dll</HintPath>\r\n    </Reference>\r\n    <Reference In" +
+                    "clude=\"PCLStorage\">\r\n      <HintPath>");
+            
+            #line 170 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -319,46 +412,26 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "iOS+Xamarin.Mac\\PCLStorage.dll</HintPath>\r\n    </Reference>\r\n    <Reference Incl" +
                     "ude=\"PCLStorage.Abstractions\">\r\n      <HintPath>");
             
-            #line 139 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 173 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
             #line hidden
-            this.Write("PCLStorage.1.0.2\\lib\\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin." +
-                    "iOS+Xamarin.Mac\\PCLStorage.Abstractions.dll</HintPath>\r\n    </Reference>\r\n    <R" +
-                    "eference Include=\"System.Net.Http\">\r\n      <HintPath>");
-            
-            #line 142 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
-            
-            #line default
-            #line hidden
-            this.Write("Microsoft.Net.Http.2.2.28\\lib\\portable-net40+sl4+win8+wp71+wpa81\\System.Net.Http." +
-                    "dll</HintPath>\r\n    </Reference>\r\n    <Reference Include=\"System.Net.Http.Extens" +
-                    "ions\">\r\n      <HintPath>");
-            
-            #line 145 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
-            
-            #line default
-            #line hidden
-            this.Write("Microsoft.Net.Http.2.2.28\\lib\\portable-net40+sl4+win8+wp71+wpa81\\System.Net.Http." +
-                    "Extensions.dll</HintPath>\r\n    </Reference>\r\n    <Reference Include=\"System.Net." +
-                    "Http.Primitives\">\r\n      <HintPath>");
-            
-            #line 148 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
-            
-            #line default
-            #line hidden
-            this.Write(@"Microsoft.Net.Http.2.2.28\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Primitives.dll</HintPath>
+            this.Write(@"PCLStorage.1.0.2\lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project=""$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets"" />
   <Import Condition=""Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets')"" Project=""$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets"" />
+  <Import Project=""$(SolutionDir)\.nuget\NuGet.targets"" Condition=""Exists('$(SolutionDir)\.nuget\NuGet.targets')"" />
+  <Target Name=""EnsureNuGetPackageBuildImports"" BeforeTargets=""PrepareForBuild"">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition=""!Exists('$(SolutionDir)\.nuget\NuGet.targets')"" Text=""$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))"" />
+  </Target>
   <Import Project=""");
             
-            #line 153 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 185 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -366,7 +439,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("Microsoft.Bcl.Build.1.0.14\\tools\\Microsoft.Bcl.Build.targets\" Condition=\"Exists(\'" +
                     "");
             
-            #line 153 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 185 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -375,7 +448,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "e=\"EnsureBclBuildImported\" BeforeTargets=\"BeforeBuild\" Condition=\"\'$(BclBuildImp" +
                     "orted)\' == \'\'\">\r\n    <Error Condition=\"!Exists(\'");
             
-            #line 155 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 187 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -383,19 +456,12 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write(@"Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')"" Text=""This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567."" HelpKeyword=""BCLBUILD2001"" />
     <Error Condition=""Exists('");
             
-            #line 156 "C:\code\dotnet\v3\xamarin-latest-CLEAN\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
+            #line 188 "C:\dev\net\v3\Xamarin\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\PCLProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
             #line hidden
             this.Write(@"Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')"" Text=""The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568."" HelpKeyword=""BCLBUILD2002"" />
-  </Target>
-  <Import Project=""$(SolutionDir)\.nuget\NuGet.targets"" Condition=""Exists('$(SolutionDir)\.nuget\NuGet.targets')"" />
-  <Target Name=""EnsureNuGetPackageBuildImports"" BeforeTargets=""PrepareForBuild"">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition=""!Exists('$(SolutionDir)\.nuget\NuGet.targets')"" Text=""$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))"" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

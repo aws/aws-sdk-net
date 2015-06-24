@@ -151,11 +151,18 @@ namespace Amazon.EC2
 
         #region Overrides
 
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.EC2.Internal.AmazonEC2PreMarshallHandler(this.Credentials));
@@ -167,6 +174,9 @@ namespace Amazon.EC2
 
         #region Dispose
 
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -959,6 +969,36 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateFlowLogs
+
+        internal CreateFlowLogsResponse CreateFlowLogs(CreateFlowLogsRequest request)
+        {
+            var marshaller = new CreateFlowLogsRequestMarshaller();
+            var unmarshaller = CreateFlowLogsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFlowLogsRequest,CreateFlowLogsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFlowLogs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFlowLogs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateFlowLogsResponse> CreateFlowLogsAsync(CreateFlowLogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateFlowLogsRequestMarshaller();
+            var unmarshaller = CreateFlowLogsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFlowLogsRequest,CreateFlowLogsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateImage
 
         internal CreateImageResponse CreateImage(CreateImageRequest request)
@@ -1708,6 +1748,36 @@ namespace Amazon.EC2
             var unmarshaller = DeleteDhcpOptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDhcpOptionsRequest,DeleteDhcpOptionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFlowLogs
+
+        internal DeleteFlowLogsResponse DeleteFlowLogs(DeleteFlowLogsRequest request)
+        {
+            var marshaller = new DeleteFlowLogsRequestMarshaller();
+            var unmarshaller = DeleteFlowLogsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFlowLogsRequest,DeleteFlowLogsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFlowLogs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFlowLogs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteFlowLogsResponse> DeleteFlowLogsAsync(DeleteFlowLogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteFlowLogsRequestMarshaller();
+            var unmarshaller = DeleteFlowLogsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFlowLogsRequest,DeleteFlowLogsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2644,6 +2714,36 @@ namespace Amazon.EC2
             var unmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeExportTasksRequest,DescribeExportTasksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFlowLogs
+
+        internal DescribeFlowLogsResponse DescribeFlowLogs(DescribeFlowLogsRequest request)
+        {
+            var marshaller = new DescribeFlowLogsRequestMarshaller();
+            var unmarshaller = DescribeFlowLogsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFlowLogsRequest,DescribeFlowLogsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFlowLogs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFlowLogs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeFlowLogsResponse> DescribeFlowLogsAsync(DescribeFlowLogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeFlowLogsRequestMarshaller();
+            var unmarshaller = DescribeFlowLogsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFlowLogsRequest,DescribeFlowLogsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -215,7 +215,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ProductDescription. 
         /// <para>
-        /// The Reserved Instance description.
+        /// The Reserved Instance product platform description.
         /// </para>
         /// </summary>
         public RIProductDescription ProductDescription

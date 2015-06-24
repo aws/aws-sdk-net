@@ -30,13 +30,15 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Container for the parameters to the ListTasks operation.
     /// Returns a list of tasks for a specified cluster. You can filter the results by family
-    /// name or by a particular container instance with the <code>family</code> and <code>containerInstance</code>
+    /// name, by a particular container instance, or by the desired status of the task with
+    /// the <code>family</code>, <code>containerInstance</code>, and <code>desiredStatus</code>
     /// parameters.
     /// </summary>
     public partial class ListTasksRequest : AmazonECSRequest
     {
         private string _cluster;
         private string _containerInstance;
+        private DesiredStatus _desiredStatus;
         private string _family;
         private int? _maxResults;
         private string _nextToken;
@@ -80,6 +82,28 @@ namespace Amazon.ECS.Model
         internal bool IsSetContainerInstance()
         {
             return this._containerInstance != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DesiredStatus. 
+        /// <para>
+        /// The task status that you want to filter the <code>ListTasks</code> results with. Specifying
+        /// a <code>desiredStatus</code> of <code>STOPPED</code> will limit the results to tasks
+        /// that are in the <code>STOPPED</code> status, which can be useful for debugging tasks
+        /// that are not starting properly or have died or finished. The default status filter
+        /// is <code>RUNNING</code>.
+        /// </para>
+        /// </summary>
+        public DesiredStatus DesiredStatus
+        {
+            get { return this._desiredStatus; }
+            set { this._desiredStatus = value; }
+        }
+
+        // Check to see if DesiredStatus property is set
+        internal bool IsSetDesiredStatus()
+        {
+            return this._desiredStatus != null;
         }
 
         /// <summary>
@@ -169,7 +193,12 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartedBy.
+        /// Gets and sets the property StartedBy. 
+        /// <para>
+        /// The <code>startedBy</code> value that you want to filter the task results with. Specifying
+        /// a <code>startedBy</code> value will limit the results to tasks that were started with
+        /// that value.
+        /// </para>
         /// </summary>
         public string StartedBy
         {

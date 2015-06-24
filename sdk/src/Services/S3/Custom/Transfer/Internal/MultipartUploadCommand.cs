@@ -200,19 +200,11 @@ namespace Amazon.S3.Transfer.Internal
             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadRequest).StreamUploadProgressCallback += progressHandler.OnTransferProgress;
             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadRequest).AddBeforeRequestHandler(this.RequestEventHandler);
 
-#if BCL || PCL
             if (this._fileTransporterRequest.IsSetFilePath())
             {
                 uploadRequest.FilePosition = filePosition;
                 uploadRequest.FilePath = this._fileTransporterRequest.FilePath;
             }
-#elif WIN_RT || WINDOWS_PHONE
-            if (this._fileTransporterRequest.IsSetStorageFile())
-            {
-                uploadRequest.FilePosition = filePosition;
-                uploadRequest.StorageFile = this._fileTransporterRequest.StorageFile;
-            }
-#endif
             else
             {
                 uploadRequest.InputStream = this._fileTransporterRequest.InputStream;

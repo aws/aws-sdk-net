@@ -25,6 +25,7 @@ namespace CommonTests.IntegrationTests.S3
         private Random random = new Random();
         private static string bucketName;
         private const string testContent = "This is the content body!";
+        private string filePath = string.Empty;
 
         [OneTimeSetUp]
         public void Initialize()
@@ -35,6 +36,7 @@ namespace CommonTests.IntegrationTests.S3
                     ("PutObjectFile.txt", CreationCollisionOption.ReplaceExisting);
                 await file.WriteAllTextAsync("This is some sample text.!!");
                 bucketName = await UtilityMethods.CreateBucketAsync(Client);
+                filePath = file.Path;
             });
         }
 
@@ -91,6 +93,25 @@ namespace CommonTests.IntegrationTests.S3
                 Assert.IsTrue(response.ETag.Length > 0);
             });
         }
+
+        [Test(TestOf = typeof(AmazonS3Client))]
+        public void SimplePathPutObjectTest()
+        {
+            RunAsSync(async () =>
+            {
+                PutObjectRequest request = new PutObjectRequest()
+                {
+                    BucketName = bucketName,
+                    FilePath = filePath,
+                    CannedACL = S3CannedACL.AuthenticatedRead
+                };
+                PutObjectResponse response = await Client.PutObjectAsync(request);
+
+                Console.WriteLine("S3 generated ETag: {0}", response.ETag);
+                Assert.IsTrue(response.ETag.Length > 0);
+            });
+        }
+
 
         //[Test(TestOf = typeof(AmazonS3Client))]
         //public void PutObjectCancellationTest()

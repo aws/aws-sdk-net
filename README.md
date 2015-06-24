@@ -8,6 +8,10 @@ The **AWS SDK for .NET** enables .NET developers to easily work with [Amazon Web
 * [Forum][sdk-forum]
 * [GitHub Issues][sdk-issues]
 
+## SDK Change Log
+
+The change log for the SDK can be found in the [SDK.CHANGELOG.md](https://github.com/aws/aws-sdk-net/blob/master/SDK.CHANGELOG.md) file.
+
 ## Looking for Version 2?
 
 In anticipation of the GA release for version 3 we have merged it to master. We did this before GA to signify that version 3 is ready for production use and to help us with some of the final release and build automation tasks we are working on.

@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+    #line 1 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class BclProjectFile : BclProjectFileBase
     {
@@ -37,7 +37,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Platform Condition="" '$(Platform)' == '' "">AnyCPU</Platform>
     <ProjectGuid>");
             
-            #line 13 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 13 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["ProjectGuid"]));
             
             #line default
@@ -45,21 +45,21 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("</ProjectGuid>\r\n    <OutputType>Library</OutputType>\r\n    <AppDesignerFolder>Prop" +
                     "erties</AppDesignerFolder>\r\n    <RootNamespace>");
             
-            #line 16 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 16 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["RootNamespace"]));
             
             #line default
             #line hidden
             this.Write("</RootNamespace>\r\n    <AssemblyName>");
             
-            #line 17 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 17 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write("</AssemblyName>\r\n    <TargetFrameworkVersion>");
             
-            #line 18 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 18 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["TargetFrameworkVersion"]));
             
             #line default
@@ -67,7 +67,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("</TargetFrameworkVersion>\r\n    <FileAlignment>512</FileAlignment>\r\n    <BaseInter" +
                     "mediateOutputPath>obj\\");
             
-            #line 20 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 20 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
@@ -82,14 +82,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\");
             
-            #line 28 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 28 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 29 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 29 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -97,34 +97,59 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</W" +
                     "arningLevel>\r\n    <DocumentationFile>bin\\Debug\\");
             
-            #line 32 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 32 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 32 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 32 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(@".XML</DocumentationFile>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+            this.Write(".XML</DocumentationFile>\r\n");
+            
+            #line 33 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+
+    if(this.Session.ContainsKey("SupressWarnings"))
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t<NoWarn>");
+            
+            #line 37 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["SupressWarnings"]));
+            
+            #line default
+            #line hidden
+            this.Write("</NoWarn>\r\n");
+            
+            #line 38 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write(@"    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
   </PropertyGroup>
   <PropertyGroup Condition="" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' "">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\");
             
-            #line 38 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 46 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>TRACE;");
             
-            #line 39 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 47 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -132,20 +157,45 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</W" +
                     "arningLevel>\r\n    <DocumentationFile>bin\\Release\\");
             
-            #line 42 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 50 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 42 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 50 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write(@".XML</DocumentationFile>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+            this.Write(".XML</DocumentationFile>\r\n");
+            
+            #line 51 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+
+    if(this.Session.ContainsKey("SupressWarnings"))
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t<NoWarn>");
+            
+            #line 55 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["SupressWarnings"]));
+            
+            #line default
+            #line hidden
+            this.Write("</NoWarn>\r\n");
+            
+            #line 56 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write(@"    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -153,8 +203,45 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
   <Choose>
     <When Condition="" '$(AWSKeyFile)' == '' "">
       <PropertyGroup>
-        <AssemblyOriginatorKeyFile>..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
-      </PropertyGroup>
+");
+            
+            #line 67 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+
+    if(this.Session.ContainsKey("KeyFilePath"))
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t<AssemblyOriginatorKeyFile>");
+            
+            #line 71 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["KeyFilePath"]));
+            
+            #line default
+            #line hidden
+            this.Write("</AssemblyOriginatorKeyFile>\r\n");
+            
+            #line 72 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+
+    }
+	else
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("        <AssemblyOriginatorKeyFile>..\\..\\..\\awssdk.dll.snk</AssemblyOriginatorKey" +
+                    "File>\r\n");
+            
+            #line 78 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write(@"      </PropertyGroup>
     </When>
     <Otherwise>
       <PropertyGroup>
@@ -172,7 +259,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Reference Include=""System.Xml"" />
 ");
             
-            #line 68 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 97 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
 
     object systemReferences;
     if(this.Session.TryGetValue("SystemReferences", out systemReferences) && systemReferences is IList<string>)
@@ -185,14 +272,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Reference Include=\"");
             
-            #line 75 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 104 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference));
             
             #line default
             #line hidden
             this.Write("\" />\r\n");
             
-            #line 76 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 105 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
 
         }
     }
@@ -202,7 +289,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n  <ItemGroup>\r\n");
             
-            #line 82 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 111 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
 
     foreach(string subDirectory in ((IList<string>)this.Session["SourceDirectories"]))
     {
@@ -212,14 +299,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 86 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 115 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(subDirectory));
             
             #line default
             #line hidden
             this.Write("\\*.cs\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
             
-            #line 89 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 118 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
 
     }
 
@@ -228,7 +315,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n  <ItemGroup>\r\n");
             
-            #line 94 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 123 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
 
     if(this.Session.ContainsKey("IndividualFileIncludes"))
     {
@@ -242,14 +329,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 102 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 131 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(file));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
             
-            #line 105 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 134 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
 
             }
             else
@@ -260,14 +347,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <EmbeddedResource Include=\"");
             
-            #line 110 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 139 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(file));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <SubType>Designer</SubType>\r\n    </EmbeddedResource>\r\n");
             
-            #line 113 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 142 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
 
             }
         }
@@ -278,7 +365,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n");
             
-            #line 119 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 148 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
 
     if(this.Session.ContainsKey("ProjectReferences"))
     {
@@ -290,28 +377,28 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n    <ProjectReference Include=\"");
             
-            #line 126 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 155 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.IncludePath));
             
             #line default
             #line hidden
             this.Write("\">\r\n        <Project>");
             
-            #line 127 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 156 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("</Project>\r\n        <Name>");
             
-            #line 128 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 157 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.Name));
             
             #line default
             #line hidden
             this.Write("</Name>\r\n    </ProjectReference>\r\n  </ItemGroup>\r\n");
             
-            #line 131 "C:\code\dotnet\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
+            #line 160 "C:\dev\net\v3\XamarinSdk\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
 
         }
     }

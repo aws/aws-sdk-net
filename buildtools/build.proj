@@ -30,11 +30,16 @@
         -->
         <SDKPlatform Condition="'$(SDKPlatform)'==''">net45</SDKPlatform>
         <SDKServices Condition="'$(SDKServices)'==''">*</SDKServices>
+		
+		<!-- resources folder where test settings should be placed -->
+		<TestSettingsLocation>..\sdk\test\CrossPlatformTests\CommonTests\Resources</TestSettingsLocation>
         
     </PropertyGroup>
     
-	<Target Name="build-custom-tasks">
-		<Exec Command="$(devenv2013) /Rebuild Release .\CustomTasks\CustomTasks.sln"/>
+	<Target Name="build-custom-tasks">		
+		<MSBuild Projects=".\CustomTasks\CustomTasks.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release" />
 	</Target>
 	
 	<UsingTask TaskName="CustomTasks.UpdateFxCopProject" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
@@ -46,8 +51,10 @@
 	<Target Name="full-build-nodocs" DependsOnTargets="test-sdk;copy-assemblies;save-build"/>
 	
 	<Target Name="run-generator">
-		<Message Text="Build and run code generator"/>
-		<Exec Command="$(devenv2013) /Rebuild Release ..\generator\AWSSDKGenerator.sln"/>
+		<Message Text="Build and run code generator"/>		
+		<MSBuild Projects="..\generator\AWSSDKGenerator.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release" />
 		<Exec Command="ServiceClientGenerator.exe" 
 			WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
 	</Target>
@@ -59,10 +66,10 @@
 	
 	<Target Name="build-sdk" DependsOnTargets="restore-nuget;run-generator">
 		<Message Text="Compile the SDK"/>
-		<SetEnvironmentVariable VariableName="AWSKeyFile" VariableValue="$(CustomSnkFileLocation)" />
-		<Exec Command="$(devenv2013) /Rebuild Release ..\sdk\AWSSDK.sln"/>
-		<SetEnvironmentVariable VariableName="AWSKeyFile" VariableValue="" />
-		
+		<MSBuild Projects="..\sdk\AWSSDK.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation)" />
+
 		<Copy
 			SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
 			DestinationFolder="$(Deployment)" />
@@ -80,14 +87,15 @@
 			Properties="TestContainer=..\sdk\test\UnitTests\bin\Release\net45\AWSSDK.UnitTests.Net45.dll" />
 	</Target>
 	<Target Name="run-integ-tests" DependsOnTargets="init;build-sdk" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'">
- 		<MSBuild
+
+		<MSBuild
 			Projects="$(MSBuildProjectFile)"
 			Targets="run-tests"
 			Properties="TestContainer=..\sdk\test\IntegrationTests\bin\Release\net45\AWSSDK.IntegrationTests.Net45.dll" />
 	</Target>
 	
 	<Target Name="nuget-pack" DependsOnTargets="build-sdk">
-		<Exec ContinueOnError="ErrorAndStop" 
+		<Exec LogStandardErrorAsError="true"
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1" />		
 	</Target>
 
@@ -96,19 +104,21 @@
 		<PropertyGroup>
 			<CustomSnkPublicKeyToken Condition="'$(CustomSnkPublicKeyToken)' == '' ">71c852f8be1c371d</CustomSnkPublicKeyToken>
 		</PropertyGroup>
-		<Exec ContinueOnError="ErrorAndStop" 
+		<Exec LogStandardErrorAsError="true"
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File copy-sdkassemblies.ps1 -PublicKeyTokenToCheck $(CustomSnkPublicKeyToken)" />		
 	</Target>
 	
 	<!-- TEST TARGETS/TASKS -->
 
-	<Target Name="fxcop" DependsOnTargets="init;copy-assemblies" Condition="Exists('$(fxcopcmd)')">
+	<Target Name="fxcop" DependsOnTargets="init;copy-assemblies" Condition="Exists('$(fxcopcmdexe)')">
 		<!-- Update FxCop project files -->
 		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net35" FxCopProject="..\sdk\SDK-3.5.FxCop" />
 		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net45" FxCopProject="..\sdk\SDK-4.5.FxCop" />
 
 		<!-- Compile custom FxCop rules -->
-		<Exec Command="$(devenv2013) /Rebuild Release ..\buildtools\CustomFxCopRules\CustomFxCopRules.sln"/>
+		<MSBuild Projects="..\buildtools\CustomFxCopRules\CustomFxCopRules.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release" />
 		
 		<!-- Run FxCop -->
 		<Exec Command="$(fxcopcmd) /p:..\sdk\SDK-3.5.FxCop /o:..\fxcop-report-3.5.xml /s"/>
@@ -120,27 +130,23 @@
 	<Target Name="run-tests">
 		<Message Text="TestContainer = $(TestContainer)" Condition="$(TestContainer.Length) > 0"/>
 		<Message Text="TestCategory = $(TestCategory)" Condition="$(TestCategory.Length) > 0"/>
-		<Message Text="TestSettingsFile = $(TestSettingsFile)" Condition="$(TestSettingsFile.Length) > 0"/>
+		
+		<Exec Command="$(devenv2013) /Rebuild Debug .\MSTestWrapper\MSTestWrapper.sln"/>
 
 		<PropertyGroup >
 			<Container>/testcontainer:$([System.IO.Path]::GetFullPath($(TestContainer)))</Container>
 			<Category></Category>
-			<SettingsFile></SettingsFile>
 		</PropertyGroup>
 		<PropertyGroup Condition="$(TestCategory.Length) > 0">
 			<Category>/category:$(TestCategory)</Category>
 		</PropertyGroup>
-		<PropertyGroup Condition="$(TestSettingsFile.Length) > 0">
-			<SettingsFile>/testsettings:$([System.IO.Path]::GetFullPath($(TestSettingsFile)))</SettingsFile>
-		</PropertyGroup>
 
-		<Exec Command="$(mstest2013) &quot;$(Container)&quot; &quot;$(Category)&quot; &quot;$(SettingsFile)&quot;"/>
+		<Exec Command=".\MSTestWrapper\MSTestWrapper\bin\Debug\MSTestWrapper.exe  $(mstest2013) &quot;$(Container)&quot; &quot;$(Category)&quot;"/>
 		
 		<!-- Clear our properties -->
 		<PropertyGroup >
 			<TestContainer></TestContainer>
 			<TestCategory></TestCategory>
-			<TestSettingsFile></TestSettingsFile>
 		</PropertyGroup>
 		<CallTarget Targets="deploy-test-results" />
 		<OnError ExecuteTargets="deploy-test-results" />
@@ -157,21 +163,6 @@
 					string content = File.ReadAllText(ResultFile);
 					content = content.Replace("<?xml version=\"1.0\" encoding=\"UTF-8\"?>","<?xml version=\"1.0\" encoding=\"UTF-8\"?><?xml-stylesheet type=\"text/xsl\" href=\"trx-transform.xsl\"?>");
 					File.WriteAllText(ResultFile + ".xml", content);
-				]]>
-			</Code>
-		</Task>
-	</UsingTask>
-	
-	<UsingTask TaskName="SetEnvironmentVariable" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
-		<ParameterGroup>
-			<VariableName ParameterType="System.String" Required="true" />
-			<VariableValue ParameterType="System.String" Required="false" />
-		</ParameterGroup>
-		<Task>
-			<Code Type="Fragment" Language="cs">
-				<![CDATA[
-					Log.LogMessage("Setting variable {0} = {1}", VariableName, VariableValue);
-					System.Environment.SetEnvironmentVariable(VariableName, VariableValue);
 				]]>
 			</Code>
 		</Task>
@@ -199,20 +190,42 @@
 		<SaveBuildArtifactTask
 			RepositoryRoot="$(MSBuildProjectDirectory)\.."
 			BuildArtifactType="sdk"
+			GitBranch="$(SaveReferenceGitBranch)"
 			LocalArchiveRootFolder="$(LocalArchiveRootFolder)"
 			/>
-	</Target>	
+	</Target>
+	
+	<Target Name="prepare-tests" Condition="'$(TestSettingsFile)' != ''">
+		<Copy
+			SourceFiles="$(TestSettingsFile)"
+			DestinationFolder="$(TestSettingsLocation)" />
+	</Target>
+
     
     <!-- DOCUMENTATION BUILD TARGETS -->
     
 	<Target Name="doc-build" DependsOnTargets="build-docgenerator">
 		<Message Text="Build documentation for all platforms, all assemblies"/>
 		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(SDKAssembliesRoot) -o $(DocOutputRoot) -sf $(DocSamplesFolder)" />
-	</Target>
+    </Target>
 
+    <Target Name="create-sitemap" 
+			DependsOnTargets="build-tools"
+            AfterTargets="doc-build" 
+            Condition="Exists('$(InternalBuildTools)\references.targets')">
+        <CreateSitemapTask
+            SourceFolder="$(DocOutputRoot)"
+            BaseUrl="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/"
+            OutputFile="$(DocOutputRoot)\sitemap.xml"
+            WaitForDebugger="false"
+            />
+	</Target>
+    
     <Target Name="build-docgenerator">
 		<Message Text="Building documentation generator"/>
-		<Exec Command="$(devenv2013) /Rebuild Release ..\docgenerator\AWSSDKDocGenerator.sln"/>
+		<MSBuild Projects="..\docgenerator\AWSSDKDocGenerator.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release" />
     </Target>
     
 	<Target Name="doc-platform-build" DependsOnTargets="build-docgenerator">

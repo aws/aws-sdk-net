@@ -31,7 +31,7 @@ namespace Amazon.Runtime.Internal
 
         public static Task<T> Run<T>(Func<T> action, CancellationToken cancellationToken)
         {
-#if (WIN_RT || WINDOWS_PHONE || PCL)
+#if PCL
             Task<T> task = Task.Run<T>(action);
             return task;
 #else

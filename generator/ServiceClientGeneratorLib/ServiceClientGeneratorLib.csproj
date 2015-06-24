@@ -48,10 +48,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CoreNuspec.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generators\ProjectFiles\AndroidProjectFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AndroidProjectFile.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\ProjectFiles\IOSProjectFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IOSProjectFile.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generators\ProjectFiles\PCLProjectFile.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PCLProjectFile.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\ProjectFiles\Win8ProjectFile.cs">
+      <DependentUpon>Win8ProjectFile.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Generators\ProjectFiles\WinPhone81ProjectFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WinPhone81ProjectFile.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\ProjectFiles\WinPhoneSilverlight8ProjectFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WinPhoneSilverlight8ProjectFile.tt</DependentUpon>
     </Compile>
     <Compile Include="Generators\SourceFiles\CoreAssemblyInfo.cs">
       <AutoGen>True</AutoGen>
@@ -253,23 +278,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Generators\ProjectFiles\PhoneProjectFile.cs">
-      <DependentUpon>PhoneProjectFile.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Generators\ProjectFiles\PortableProjectFile.cs">
-      <DependentUpon>PortableProjectFile.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Generators\ProjectFiles\BclProjectFile.cs">
       <DependentUpon>BclProjectFile.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Generators\ProjectFiles\RtProjectFile.cs">
-      <DependentUpon>RtProjectFile.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -311,9 +321,29 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>CoreNuspec.cs</LastGenOutput>
     </None>
+    <None Include="Generators\ProjectFiles\AndroidProjectFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AndroidProjectFile.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\ProjectFiles\IOSProjectFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>IOSProjectFile.cs</LastGenOutput>
+    </None>
     <None Include="Generators\ProjectFiles\PCLProjectFile.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>PCLProjectFile.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\ProjectFiles\Win8ProjectFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Win8ProjectFile.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\ProjectFiles\WinPhone81ProjectFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WinPhone81ProjectFile.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\ProjectFiles\WinPhoneSilverlight8ProjectFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WinPhoneSilverlight8ProjectFile.cs</LastGenOutput>
     </None>
     <None Include="Generators\SourceFiles\AssemblyInfo.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -467,21 +497,9 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>WrappingResultGenerator.cs</LastGenOutput>
     </None>
-    <None Include="Generators\ProjectFiles\PhoneProjectFile.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>PhoneProjectFile.cs</LastGenOutput>
-    </None>
-    <None Include="Generators\ProjectFiles\PortableProjectFile.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>PortableProjectFile.cs</LastGenOutput>
-    </None>
     <None Include="Generators\ProjectFiles\BclProjectFile.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>BclProjectFile.cs</LastGenOutput>
-    </None>
-    <None Include="Generators\ProjectFiles\RtProjectFile.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>RtProjectFile.cs</LastGenOutput>
     </None>
     <None Include="Generators\ProjectFiles\SolutionFileGenerator.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

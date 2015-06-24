@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using CommonTests;
 using System.IO;
+using CommonTests.Framework;
 
 namespace AndroidApp
 {
@@ -19,8 +20,8 @@ namespace AndroidApp
         private TextView _textView = null;
         private Action<Action> _uiRunner = null;
 
-        public AndroidRunner(Stream credentials, TextView txtView, Action<Action> uiRunner)
-            : base(credentials)
+        public AndroidRunner(TextView txtView, Action<Action> uiRunner)
+            : base()
         {
             _textView = txtView;
             _uiRunner = uiRunner;
@@ -29,6 +30,11 @@ namespace AndroidApp
         protected override void WriteLine(string message)
         {
             _uiRunner(() => _textView.Append("\n"+message));
+        }
+
+        protected override string TestTypeNamePrefix
+        {
+            get { return "Android"; }
         }
     }
 }

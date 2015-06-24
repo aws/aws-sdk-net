@@ -66,7 +66,11 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogGroupNamePrefix.
+        /// Gets and sets the property LogGroupNamePrefix. 
+        /// <para>
+        /// Will only return log groups that match the provided logGroupNamePrefix. If you don't
+        /// specify a value, no prefix filter is applied.
+        /// </para>
         /// </summary>
         public string LogGroupNamePrefix
         {

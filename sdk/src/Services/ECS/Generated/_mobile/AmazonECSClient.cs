@@ -160,6 +160,9 @@ namespace Amazon.ECS
 
         #region Overrides
 
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new AWS4Signer();
@@ -170,6 +173,9 @@ namespace Amazon.ECS
 
         #region Dispose
 
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -803,6 +809,36 @@ namespace Amazon.ECS
             var unmarshaller = StopTaskResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopTaskRequest,StopTaskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateContainerAgent
+
+        internal UpdateContainerAgentResponse UpdateContainerAgent(UpdateContainerAgentRequest request)
+        {
+            var marshaller = new UpdateContainerAgentRequestMarshaller();
+            var unmarshaller = UpdateContainerAgentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContainerAgentRequest,UpdateContainerAgentResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContainerAgent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContainerAgent operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateContainerAgentResponse> UpdateContainerAgentAsync(UpdateContainerAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateContainerAgentRequestMarshaller();
+            var unmarshaller = UpdateContainerAgentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateContainerAgentRequest,UpdateContainerAgentResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

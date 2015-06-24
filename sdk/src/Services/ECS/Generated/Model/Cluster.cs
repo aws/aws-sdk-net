@@ -32,21 +32,35 @@ namespace Amazon.ECS.Model
     /// Each account receives a default cluster the first time you use the Amazon ECS service,
     /// but you may also create other clusters. Clusters may contain more than one instance
     /// type simultaneously.
-    /// 
-    ///  <important> 
-    /// <para>
-    /// During the preview, each account is limited to two clusters.
-    /// </para>
-    ///  </important>
     /// </summary>
     public partial class Cluster
     {
+        private int? _activeServicesCount;
         private string _clusterArn;
         private string _clusterName;
         private int? _pendingTasksCount;
         private int? _registeredContainerInstancesCount;
         private int? _runningTasksCount;
         private string _status;
+
+        /// <summary>
+        /// Gets and sets the property ActiveServicesCount. 
+        /// <para>
+        /// The number of services that are running on the cluster in an <code>ACTIVE</code> state.
+        /// You can view these services with <a>ListServices</a>.
+        /// </para>
+        /// </summary>
+        public int ActiveServicesCount
+        {
+            get { return this._activeServicesCount.GetValueOrDefault(); }
+            set { this._activeServicesCount = value; }
+        }
+
+        // Check to see if ActiveServicesCount property is set
+        internal bool IsSetActiveServicesCount()
+        {
+            return this._activeServicesCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterArn. 

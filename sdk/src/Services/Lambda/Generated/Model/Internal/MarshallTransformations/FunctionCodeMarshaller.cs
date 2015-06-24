@@ -45,6 +45,24 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FunctionCode requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetS3Bucket())
+            {
+                context.Writer.WritePropertyName("S3Bucket");
+                context.Writer.Write(requestObject.S3Bucket);
+            }
+
+            if(requestObject.IsSetS3Key())
+            {
+                context.Writer.WritePropertyName("S3Key");
+                context.Writer.Write(requestObject.S3Key);
+            }
+
+            if(requestObject.IsSetS3ObjectVersion())
+            {
+                context.Writer.WritePropertyName("S3ObjectVersion");
+                context.Writer.Write(requestObject.S3ObjectVersion);
+            }
+
             if(requestObject.IsSetZipFile())
             {
                 context.Writer.WritePropertyName("ZipFile");

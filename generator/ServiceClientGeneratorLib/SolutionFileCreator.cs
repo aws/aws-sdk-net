@@ -21,10 +21,13 @@ namespace ServiceClientGenerator
         {
             public const string Net35 = "Net35";
             public const string Net45 = "Net45";
-            public const string WinRt = "WinRT";
-            public const string WinPhone8 = "WP8";
-            public const string Portable = "Portable";
+            public const string Win8 = "Win8";
+            public const string WinPhone81 = "WinPhone81";
+            public const string WinPhoneSilverlight8 = "WinPhoneSilverlight8";
             public const string PCL = "PCL";
+            public const string Android = "Android";
+            public const string IOS = "iOS";
+
         }
 
         // build configuration platforms used for net 3.5, 4.5 and portable project types
@@ -187,14 +190,16 @@ namespace ServiceClientGenerator
 
             switch (projectType)
             {
-                case ProjectTypes.WinRt:
-                case ProjectTypes.WinPhone8:
+                case ProjectTypes.Win8:
+                case ProjectTypes.WinPhone81:
+                case ProjectTypes.WinPhoneSilverlight8:
                     return PhoneRtPlatformConfigurations;
 
-                case ProjectTypes.Portable:
                 case ProjectTypes.Net35:
                 case ProjectTypes.Net45:
                 case ProjectTypes.PCL:
+                case ProjectTypes.Android:
+                case ProjectTypes.IOS:
                     return StandardPlatformConfigurations;
             }
 
@@ -447,12 +452,7 @@ namespace ServiceClientGenerator
 
         ServiceSolutionFolder ServiceSolutionFolderFromPath(string folderName)
         {
-            return new ServiceSolutionFolder
-            {
-                Name = folderName.Replace("Amazon.", ""),
-                ProjectGuid = ProjectFileCreator.NewProjectGuid,
-                Projects = new List<Project>()
-            };
+            return new ServiceSolutionFolder(folderName.Replace("Amazon.", ""));
         }
 
         public class Project
@@ -464,9 +464,27 @@ namespace ServiceClientGenerator
 
         public class ServiceSolutionFolder
         {
-            public string Name { get; set; }
-            public List<Project> Projects { get; set; }
-            public string ProjectGuid { get; set; }
+            public string Name { get; private set; }
+            public List<Project> Projects { get; private set; }
+            public string ProjectGuid { get; private set; }
+
+            public ServiceSolutionFolder(string folderName)
+            {
+                Name = folderName;
+                Projects = new List<Project>();
+                ProjectGuid = GetFolderGuid(folderName);
+            }
+
+            private static string GetFolderGuid(string folderName)
+            {
+                var hash = folderName.GetHashCode();
+                var random = new Random(hash);
+                var bytes = new byte[16];
+                random.NextBytes(bytes);
+                var guid = new Guid(bytes);
+                var text = guid.ToString("B").ToUpper();
+                return text;
+            }
         }
     }
 }

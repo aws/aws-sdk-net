@@ -31,6 +31,11 @@ namespace Amazon.CognitoIdentity.Model
     /// Container for the parameters to the DescribeIdentityPool operation.
     /// Gets details about a particular identity pool, including the pool name, ID description,
     /// creation date, and current number of users.
+    /// 
+    ///  
+    /// <para>
+    /// You must use AWS Developer credentials to call this API.
+    /// </para>
     /// </summary>
     public partial class DescribeIdentityPoolRequest : AmazonCognitoIdentityRequest
     {

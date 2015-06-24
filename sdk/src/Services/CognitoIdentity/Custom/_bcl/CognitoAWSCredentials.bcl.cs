@@ -87,5 +87,23 @@ namespace Amazon.CognitoIdentity
         {
             // override this method to support caching
         }
+
+        /// <summary>
+        /// Caches the credentials to player pref's
+        /// </summary>
+        public virtual void CacheCredentials(CredentialsRefreshState credentialsState)
+        {
+            //TODO: add support for caching
+        }
+
+        /// <summary>
+        /// Gets the cached credentials state
+        /// </summary>
+        public virtual CredentialsRefreshState GetCachedCredentials()
+        {
+            return null;
+            //TODO: add support for caching
+        }
+
     }
 }

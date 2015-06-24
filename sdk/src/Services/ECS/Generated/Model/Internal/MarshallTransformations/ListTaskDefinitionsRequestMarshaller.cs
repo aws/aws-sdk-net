@@ -85,6 +85,18 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetSort())
+                {
+                    context.Writer.WritePropertyName("sort");
+                    context.Writer.Write(publicRequest.Sort);
+                }
+
+                if(publicRequest.IsSetStatus())
+                {
+                    context.Writer.WritePropertyName("status");
+                    context.Writer.Write(publicRequest.Status);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

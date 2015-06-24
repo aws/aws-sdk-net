@@ -318,7 +318,9 @@ namespace Amazon.S3.Model
             return ReplicationStatus != null;
         }
 
+
 #if BCL
+
         /// <summary>
         /// Writes the content of the ResponseStream a file indicated by the filePath argument.
         /// </summary>
@@ -328,7 +330,6 @@ namespace Amazon.S3.Model
             WriteResponseStreamToFile(filePath, false);
         }
 
-
         /// <summary>
         /// Writes the content of the ResponseStream a file indicated by the filePath argument.
         /// </summary>
@@ -336,26 +337,18 @@ namespace Amazon.S3.Model
         /// <param name="append">Whether or not to append to the file if it exists</param>
         public void WriteResponseStreamToFile(string filePath, bool append)
         {
-            // Make sure the directory exists to write too.
-            FileInfo fi = new FileInfo(filePath);
-            Directory.CreateDirectory(fi.DirectoryName);
+            CreateDirectory(filePath);
+            Stream downloadStream = CreateDownloadStream(filePath, append);
 
-            Stream downloadStream;
-            if (append && File.Exists(filePath))
-                downloadStream = new FileStream(filePath, FileMode.Append, FileAccess.Write, FileShare.Read, S3Constants.DefaultBufferSize);
-            else
-                downloadStream = new FileStream(filePath, FileMode.Create, FileAccess.ReadWrite, FileShare.Read, S3Constants.DefaultBufferSize);
-
-            try
+            using (downloadStream)
             {
                 long current = 0;
-                BufferedStream bufferedStream = new BufferedStream(this.ResponseStream);
-                
+
                 byte[] buffer = new byte[S3Constants.DefaultBufferSize];
                 int bytesRead = 0;
 
                 long totalIncrementTransferred = 0;
-                while ((bytesRead = bufferedStream.Read(buffer, 0, buffer.Length)) > 0)
+                while ((bytesRead = this.ResponseStream.Read(buffer, 0, buffer.Length)) > 0)
                 {
                     downloadStream.Write(buffer, 0, bytesRead);
                     current += bytesRead;
@@ -371,11 +364,25 @@ namespace Amazon.S3.Model
 
                 ValidateWrittenStreamSize(current);
             }
-            finally
-            {
-                downloadStream.Close();
-            }
         }
+
+        private static Stream CreateDownloadStream(string filePath, bool append)
+        {
+            Stream downloadStream;
+            if (append && File.Exists(filePath))
+                downloadStream = new FileStream(filePath, FileMode.Append, FileAccess.Write, FileShare.Read, S3Constants.DefaultBufferSize);
+            else
+                downloadStream = new FileStream(filePath, FileMode.Create, FileAccess.ReadWrite, FileShare.Read, S3Constants.DefaultBufferSize);
+            return downloadStream;
+        }
+
+        private static void CreateDirectory(string filePath)
+        {
+            // Make sure the directory exists to write too.
+            FileInfo fi = new FileInfo(filePath);
+            Directory.CreateDirectory(fi.DirectoryName);
+        }
+
 #endif
 
         #region Progress Event
@@ -437,7 +444,7 @@ namespace Amazon.S3.Model
 
         private void ValidateWrittenStreamSize(long bytesWritten)
         {
-#if !(WIN_RT || WINDOWS_PHONE || PCL)
+#if !PCL
             // Check if response stream or it's base stream is a AESDecryptionStream
             var stream = Runtime.Internal.Util.WrapperStream.SearchWrappedStream(this.ResponseStream,
                 (s => s is Runtime.Internal.Util.DecryptStream));

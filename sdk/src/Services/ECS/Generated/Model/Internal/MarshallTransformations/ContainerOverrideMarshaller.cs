@@ -56,6 +56,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetEnvironment())
+            {
+                context.Writer.WritePropertyName("environment");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEnvironmentListValue in requestObject.Environment)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KeyValuePairMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEnvironmentListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

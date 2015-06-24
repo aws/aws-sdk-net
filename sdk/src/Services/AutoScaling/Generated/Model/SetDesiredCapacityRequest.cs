@@ -30,6 +30,12 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the SetDesiredCapacity operation.
     /// Sets the size of the specified Auto Scaling group.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about desired capacity, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/WhatIsAutoScaling.html">What
+    /// Is Auto Scaling?</a> in the <i>Auto Scaling Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class SetDesiredCapacityRequest : AmazonAutoScalingRequest
     {

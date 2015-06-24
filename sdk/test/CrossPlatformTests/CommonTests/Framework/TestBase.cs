@@ -1,6 +1,7 @@
 ﻿using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
+using CommonTests.Framework;
 using PCLStorage;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommonTests
+namespace CommonTests.Framework
 {
     public abstract class TestBase
     {        
@@ -32,7 +33,7 @@ namespace CommonTests
         static TestBase()
         {
             Client = (T)Activator.CreateInstance(typeof(T),
-                    new object[] { TestRunner.Credentials, TestRunner.RegionEndpoint });   
+                    new object[] { TestRunner.Credentials, TestRunner.RegionEndpoint });
         }
 
         public TestBase()
@@ -50,7 +51,7 @@ namespace CommonTests
         
         protected static void RunAsSync(Func<Task> asyncFunc)
         {
-            Task.Run(asyncFunc).Wait();
+            UtilityMethods.RunAsSync(asyncFunc);
         }
 
         public void Dispose()

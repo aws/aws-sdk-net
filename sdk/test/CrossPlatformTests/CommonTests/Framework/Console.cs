@@ -9,19 +9,22 @@ namespace CommonTests.Framework
 {
     public class Console
     {
+        public static void WriteLine()
+        {
+            TestRunner.Instance.WriteVerbose(Environment.NewLine);
+        }
+        public static void WriteLine(object value)
+        {
+            TestRunner.Instance.WriteVerbose("{0}", value);
+        }
         public static void WriteLine(string format, params object[] args)
         {
-            TestRunner.Instance.WriteVerbose(format, LogLevel.Verbose, args);
+            TestRunner.Instance.WriteVerbose(format, args);
         }
 
-        public static void WriteLine(object format, params object[] args)
+        public static void WriteError(string format, params object[] args)
         {
-            TestRunner.Instance.WriteVerbose(format.ToString(), args);
-        }
-
-        public static void WriteError(object format, params object[] args)
-        {
-            TestRunner.Instance.WriteError(format.ToString(), args);
+            TestRunner.Instance.WriteError(format, args);
         }
     }
 }

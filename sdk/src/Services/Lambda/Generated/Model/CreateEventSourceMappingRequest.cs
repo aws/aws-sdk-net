@@ -107,10 +107,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property EventSourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the event source.
-        /// Any record added to this stream could cause AWS Lambda to invoke your Lambda function,
-        /// it depends on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event,
-        /// containing records, to your Lambda function as JSON.
+        /// The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB stream
+        /// that is the event source. Any record added to this stream could cause AWS Lambda to
+        /// invoke your Lambda function, it depends on the <code>BatchSize</code>. AWS Lambda
+        /// POSTs the Amazon Kinesis event, containing records, to your Lambda function as JSON.
         /// </para>
         /// </summary>
         public string EventSourceArn

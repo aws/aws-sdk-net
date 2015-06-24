@@ -163,6 +163,21 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
                 
+        #region  DeleteSubscriptionFilter
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSubscriptionFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSubscriptionFilter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteSubscriptionFilterResponse> DeleteSubscriptionFilterAsync(DeleteSubscriptionFilterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeLogGroups
 
         /// <summary>
@@ -205,6 +220,21 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeMetricFiltersResponse> DescribeMetricFiltersAsync(DescribeMetricFiltersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeSubscriptionFilters
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSubscriptionFilters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSubscriptionFilters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeSubscriptionFiltersResponse> DescribeSubscriptionFiltersAsync(DescribeSubscriptionFiltersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -280,6 +310,21 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PutRetentionPolicyResponse> PutRetentionPolicyAsync(PutRetentionPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutSubscriptionFilter
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutSubscriptionFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutSubscriptionFilter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutSubscriptionFilterResponse> PutSubscriptionFilterAsync(PutSubscriptionFilterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

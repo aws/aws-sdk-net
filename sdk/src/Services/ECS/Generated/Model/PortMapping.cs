@@ -35,13 +35,15 @@ namespace Amazon.ECS.Model
     {
         private int? _containerPort;
         private int? _hostPort;
+        private TransportProtocol _protocol;
 
         /// <summary>
         /// Gets and sets the property ContainerPort. 
         /// <para>
         /// The port number on the container that is bound to the user-specified or automatically
         /// assigned host port. If you specify a container port and not a host port, your container
-        /// will automatically receive a host port in the 49153 to 65535 port range.
+        /// will automatically receive a host port in the ephemeral port range (for more information,
+        /// see <code>hostPort</code>).
         /// </para>
         /// </summary>
         public int ContainerPort
@@ -61,10 +63,19 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The port number on the container instance to reserve for your container. You can specify
         /// a non-reserved host port for your container port mapping, or you can omit the <code>hostPort</code>
-        /// while specifying a <code>containerPort</code> and your container will automatically
-        /// receive a port in the 49153 to 65535 port range. You should not attempt to specify
-        /// a host port in the 49153 to 65535 port range, since these are reserved for automatic
-        /// assignment.
+        /// (or set it to <code>0</code>) while specifying a <code>containerPort</code> and your
+        /// container will automatically receive a port in the ephemeral port range for your container
+        /// instance operating system and Docker version.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default ephemeral port range is 49153 to 65535, and this range is used for Docker
+        /// versions prior to 1.6.0. For Docker version 1.6.0 and later, the Docker daemon tries
+        /// to read the ephemeral port range from <code>/proc/sys/net/ipv4/ip_local_port_range</code>;
+        /// if this kernel parameter is unavailable, the default ephemeral port range is used.
+        /// You should not attempt to specify a host port in the ephemeral port range, since these
+        /// are reserved for automatic assignment. In general, ports below 32768 are outside of
+        /// the ephemeral port range.
         /// </para>
         ///  
         /// <para>
@@ -87,6 +98,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetHostPort()
         {
             return this._hostPort.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Protocol. 
+        /// <para>
+        /// The protocol used for the port mapping. Valid values are <code>tcp</code> and <code>udp</code>.
+        /// The default is <code>tcp</code>.
+        /// </para>
+        /// </summary>
+        public TransportProtocol Protocol
+        {
+            get { return this._protocol; }
+            set { this._protocol = value; }
+        }
+
+        // Check to see if Protocol property is set
+        internal bool IsSetProtocol()
+        {
+            return this._protocol != null;
         }
 
     }

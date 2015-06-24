@@ -37,7 +37,10 @@ namespace Amazon.CloudWatchLogs.Model
         private bool? _searchedCompletely;
 
         /// <summary>
-        /// Gets and sets the property LogStreamName. The name of the log stream.
+        /// Gets and sets the property LogStreamName. 
+        /// <para>
+        /// The name of the log stream.
+        /// </para>
         /// </summary>
         public string LogStreamName
         {
@@ -52,8 +55,11 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SearchedCompletely. Indicates whether all the events in
-        /// this log stream were searched or more data exists to search by paginating further.
+        /// Gets and sets the property SearchedCompletely. 
+        /// <para>
+        /// Indicates whether all the events in this log stream were searched or more data exists
+        /// to search by paginating further.
+        /// </para>
         /// </summary>
         public bool SearchedCompletely
         {

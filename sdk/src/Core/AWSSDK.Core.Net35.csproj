@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseIntermediateOutputPath>obj\net35</BaseIntermediateOutputPath>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -20,24 +20,22 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\net35</OutputPath>
-    <DefineConstants>DEBUG;TRACE;;BCL;BCL35;AWS_APM_API;LOCAL_FILE;CODE_ANALYSIS</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;;BCL;BCL35;AWS_APM_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\net35\AWSSDK.Core.XML</DocumentationFile>
     <NoWarn>419,1570,1591</NoWarn>
-    <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\net35</OutputPath>
-    <DefineConstants>TRACE;;BCL;BCL35;AWS_APM_API;LOCAL_FILE;CODE_ANALYSIS</DefineConstants>
+    <DefineConstants>TRACE;;BCL;BCL35;AWS_APM_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\net35\AWSSDK.Core.XML</DocumentationFile>
     <NoWarn>419,1570,1591</NoWarn>
-    <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
   </PropertyGroup>
   <PropertyGroup>
@@ -65,6 +63,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include=".\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Auth\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -75,6 +76,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Auth\AccessControlPolicy\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.MissingTypes\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\*.cs">
@@ -137,32 +141,19 @@
     <Compile Include="Amazon.Util\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Util\Internal\PlatformServices\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Util\Internal\PlatformServices\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Util\Internal\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Util\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="ThirdParty\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ThirdParty\BouncyCastle\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ThirdParty\BouncyCastle\Asn1\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ThirdParty\BouncyCastle\Asn1\Utilities\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ThirdParty\BouncyCastle\Math\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ThirdParty\BouncyCastle\OpenSsl\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ThirdParty\BouncyCastle\OpenSsl\pem\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ThirdParty\Ionic.Zlib\*.cs">
@@ -171,7 +162,31 @@
     <Compile Include="ThirdParty\Json\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ThirdParty\MD5\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ThirdParty\MD5\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\_bcl\BouncyCastle\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\_bcl\BouncyCastle\Asn1\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\_bcl\BouncyCastle\Asn1\Utilities\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\_bcl\BouncyCastle\Math\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\_bcl\BouncyCastle\OpenSsl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\_bcl\BouncyCastle\OpenSsl\pem\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="_bcl\*.cs">
@@ -179,18 +194,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AWSConfigs.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <EmbeddedResource Include="endpoints.json">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="endpoints.customizations.json">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="RegionEndpoint.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

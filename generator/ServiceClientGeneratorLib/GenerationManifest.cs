@@ -47,6 +47,7 @@ namespace ServiceClientGenerator
             public const string TemplateKey = "template";
             public const string PlatformCodeFoldersKey = "platformCodeFolders";
             public const string ExtraTestProjects = "extraTestProjects";
+            public const string ParentProfile = "parentProfile";
         }
 
         /// <summary>
@@ -225,9 +226,27 @@ namespace ServiceClientGenerator
                                                 select etp.ToString()).ToList();
                 }
 
+                // This code assumes that the parent profile (project configuration) is defined in the manifest
+                // before it's being referred by a sub profile.
+                if (projectNode.PropertyNames.Contains(ProjectsSectionKeys.ParentProfile))
+                {
+                    var parentProfileName = projectNode[ProjectsSectionKeys.ParentProfile].ToString();
+                    if (!string.IsNullOrEmpty(parentProfileName))
+                    {
+                        var parentProfile = projectConfigurations.SingleOrDefault(
+                            p => p.Name.Equals(parentProfileName, StringComparison.InvariantCulture));
+                        if (parentProfile == null)
+                        {
+                            throw new KeyNotFoundException(string.Format("Parent profile {0} referred by current profile {1} does not exist.",
+                                parentProfile, config.Name));
+                        }
+                        config.ParentProfile = parentProfile;
+                    }
+                }
+
                 projectConfigurations.Add(config);
             }
-
+            
             ProjectFileConfigurations = projectConfigurations;
         }
 

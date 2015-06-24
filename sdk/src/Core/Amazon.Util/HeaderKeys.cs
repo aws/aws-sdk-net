@@ -20,7 +20,6 @@
  *
  */
 
-using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 
 namespace Amazon.Util

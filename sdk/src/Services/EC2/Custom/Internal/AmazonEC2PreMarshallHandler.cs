@@ -20,9 +20,6 @@ using Amazon.Runtime;
 using Amazon.EC2.Model;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
-#if WIN_RT || WINDOWS_PHONE
-using System.Threading.Tasks;
-#endif
 using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.EC2.Internal
