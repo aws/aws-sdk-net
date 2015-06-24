@@ -31,5 +31,10 @@ namespace AndroidApp
         {
             _uiRunner(() => _textView.Append("\n"+message));
         }
+
+        protected override string TestTypeNamePrefix
+        {
+            get { return "Android"; }
+        }
     }
 }

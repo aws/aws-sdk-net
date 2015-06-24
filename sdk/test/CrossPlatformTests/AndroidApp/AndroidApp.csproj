@@ -123,6 +123,10 @@
       <Project>{1bc2b016-b393-4016-ab85-649e1071067b}</Project>
       <Name>AWSSDK.SecurityToken.PCL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.PCL.csproj">
+      <Project>{ae784d21-b10c-42bf-a4b4-116127ae2219}</Project>
+      <Name>AWSSDK.SimpleNotificationService.PCL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\src\Services\SimpleWorkflow\AWSSDK.SimpleWorkflow.PCL.csproj">
       <Project>{5fbcbad4-c22d-428c-ba56-7abd134c0f8a}</Project>
       <Name>AWSSDK.SimpleWorkflow.PCL</Name>

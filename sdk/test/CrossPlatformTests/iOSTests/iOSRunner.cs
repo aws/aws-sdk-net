@@ -37,6 +37,11 @@ namespace iOSTests
                 _uiRunner(() => _label.Text = "FAILED");
         }
 
+        protected override string TestTypeNamePrefix
+        {
+            get { return "iOSTests"; }
+        }
+
         private void Write(string message, params object[] args)
         {
             var text = string.Format(message, args);
