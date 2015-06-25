@@ -57,7 +57,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerPort. 
         /// <para>
-        /// The port on the container to associate with the load balancer.
+        /// The port on the container to associate with the load balancer. This port must correspond
+        /// to a <code>containerPort</code> in the service's task definition. Your container instances
+        /// must allow ingress traffic on the <code>hostPort</code> of the port mapping.
         /// </para>
         /// </summary>
         public int ContainerPort

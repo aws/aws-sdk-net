@@ -63,7 +63,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// One or more EC2 instance IDs. You must specify at least one ID.
+        /// One or more EC2 instance IDs.
         /// </para>
         /// </summary>
         public List<string> InstanceIds

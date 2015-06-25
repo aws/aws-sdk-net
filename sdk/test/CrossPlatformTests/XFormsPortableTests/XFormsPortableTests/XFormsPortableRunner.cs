@@ -39,5 +39,13 @@ namespace XFormsPortableTests
             var text = string.Format(message, args);
             _uiRunner(() => _testsLabel.Text += Environment.NewLine + text);
         }
+
+        protected override string TestTypeNamePrefix
+        {
+            get
+            {
+                return "XForms";
+            }
+        }
     }
 }

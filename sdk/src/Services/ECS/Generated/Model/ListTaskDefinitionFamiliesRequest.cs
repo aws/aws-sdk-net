@@ -29,8 +29,9 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTaskDefinitionFamilies operation.
-    /// Returns a list of task definition families that are registered to your account. You
-    /// can filter the results with the <code>familyPrefix</code> parameter.
+    /// Returns a list of task definition families that are registered to your account (which
+    /// may include task definition families that no longer have any <code>ACTIVE</code> task
+    /// definitions). You can filter the results with the <code>familyPrefix</code> parameter.
     /// </summary>
     public partial class ListTaskDefinitionFamiliesRequest : AmazonECSRequest
     {

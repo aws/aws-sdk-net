@@ -111,25 +111,9 @@
     <Content Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.PCL.csproj">
-      <Project>{bfc96f19-cadf-41eb-804c-10dbef3f9126}</Project>
-      <Name>AWSSDK.Core.PCL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.PCL.csproj">
-      <Project>{ff9a7cda-940c-4a29-a8f6-da4392e11def}</Project>
-      <Name>AWSSDK.DynamoDBv2.PCL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.PCL.csproj">
-      <Project>{e0cf8866-9af9-4375-8116-6bddb505e773}</Project>
-      <Name>AWSSDK.ElasticTranscoder.PCL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\src\Services\S3\AWSSDK.S3.PCL.csproj">
-      <Project>{17adb7d7-59f4-4eae-86b3-15a949bed449}</Project>
-      <Name>AWSSDK.S3.PCL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\src\Services\SimpleWorkflow\AWSSDK.SimpleWorkflow.PCL.csproj">
-      <Project>{5fbcbad4-c22d-428c-ba56-7abd134c0f8a}</Project>
-      <Name>AWSSDK.SimpleWorkflow.PCL</Name>
+    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Android.csproj">
+      <Project>{4f108bdf-a287-43b2-9f40-5fc3bcd7cfbf}</Project>
+      <Name>AWSSDK.Core.Android</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\CommonTests\CommonTests.csproj">
       <Project>{569d0c97-4009-47a9-bab9-8a2b9fb6d913}</Project>

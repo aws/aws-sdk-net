@@ -35,6 +35,7 @@ namespace Amazon.ECS.Model
         private string _bindip;
         private int? _containerPort;
         private int? _hostPort;
+        private TransportProtocol _protocol;
 
         /// <summary>
         /// Gets and sets the property BindIP. 
@@ -88,6 +89,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetHostPort()
         {
             return this._hostPort.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Protocol. 
+        /// <para>
+        /// The protocol used for the network binding.
+        /// </para>
+        /// </summary>
+        public TransportProtocol Protocol
+        {
+            get { return this._protocol; }
+            set { this._protocol = value; }
+        }
+
+        // Check to see if Protocol property is set
+        internal bool IsSetProtocol()
+        {
+            return this._protocol != null;
         }
 
     }

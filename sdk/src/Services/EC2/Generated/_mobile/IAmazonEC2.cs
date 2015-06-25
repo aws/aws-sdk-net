@@ -430,6 +430,21 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CreateFlowLogs
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFlowLogs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFlowLogs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateFlowLogsResponse> CreateFlowLogsAsync(CreateFlowLogsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateImage
 
         /// <summary>
@@ -802,6 +817,21 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteDhcpOptionsResponse> DeleteDhcpOptionsAsync(DeleteDhcpOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteFlowLogs
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFlowLogs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFlowLogs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteFlowLogsResponse> DeleteFlowLogsAsync(DeleteFlowLogsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1252,6 +1282,21 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeFlowLogs
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFlowLogs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFlowLogs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeFlowLogsResponse> DescribeFlowLogsAsync(DescribeFlowLogsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

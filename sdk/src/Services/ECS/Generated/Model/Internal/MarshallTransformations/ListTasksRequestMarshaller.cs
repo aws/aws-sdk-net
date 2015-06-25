@@ -79,6 +79,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ContainerInstance);
                 }
 
+                if(publicRequest.IsSetDesiredStatus())
+                {
+                    context.Writer.WritePropertyName("desiredStatus");
+                    context.Writer.Write(publicRequest.DesiredStatus);
+                }
+
                 if(publicRequest.IsSetFamily())
                 {
                     context.Writer.WritePropertyName("family");

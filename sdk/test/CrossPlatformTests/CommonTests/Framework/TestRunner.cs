@@ -12,6 +12,8 @@ using NUnit.Framework.Interfaces;
 using NUnit.Framework.Internal;
 using System.Threading;
 using System.Diagnostics;
+using Amazon.S3.Model;
+using Amazon.SimpleNotificationService.Model;
 
 namespace CommonTests.Framework
 {
@@ -25,13 +27,21 @@ namespace CommonTests.Framework
     } 
 
     public abstract class TestRunner : ITestListener
-    {        
-              
+    {
+        private const string timestampFormat = "yyyy-MM-dd-HH-mm-ss";
+        private const string s3KeyFormat = "{1}-{0}.txt"; // 0 - prefix, 1 - timestamp
+        private const string snsSubjectFormat = "{2} - {0}-{1}"; // 0 - prefix, 1 - timestamp, 2 - PASSED or FAILED
+        private const int snsMaxMessageSizeKb = 256; // http://docs.aws.amazon.com/sns/latest/api/API_Publish.html
+        private const int kb = 1024;
+        private static int snsMaxMessageSize = snsMaxMessageSizeKb * kb;
+        private static string logTooLongMessage = "The test log was longer than {0} KB. Truncated log follows." + Environment.NewLine; // 0 - snsMaxMessageSizeKb
+        private const string truncationSuffix = "...";
 
         internal static AWSCredentials Credentials { get; set; }
         internal static RegionEndpoint RegionEndpoint { get; set; }
         public static TestRunner Instance { get; private set; }
 
+        private TextWriter LogWriter { get; set; }
         public virtual ITestListener Listener { get; private set; }
         public virtual ITestFilter Filter { get { return TestFilter.Empty; } }
 
@@ -47,6 +57,7 @@ namespace CommonTests.Framework
             TestRunner.Credentials = Settings.Credentials;
             TestRunner.RegionEndpoint = Settings.RegionEndpoint;
             Instance = this;
+            LogWriter = new StringWriter();
         }
 
         public bool ExecuteAllTests()
@@ -74,6 +85,11 @@ namespace CommonTests.Framework
                 result.FailCount == 0 &&
                 result.InconclusiveCount == 0 &&
                 result.SkipCount == 0;
+
+            WriteInfo("All tests executed");
+
+            PushLog(success);
+
             return success;
         }
 
@@ -96,6 +112,7 @@ namespace CommonTests.Framework
         {
             var message = string.Format(format, args);
             Debug.WriteLine("TestRunner >> {0}", message);
+            LogWriter.WriteLine("TestRunner >> {0}", message);
 
             if (this.LogMode == LogLevel.Verbose)
             {
@@ -117,6 +134,95 @@ namespace CommonTests.Framework
         protected virtual void TestCompleted(string testMethodName, bool succeeded)
         {
 
+        }
+
+        protected abstract string TestTypeNamePrefix
+        {
+            get;
+        }
+
+        private void PushLog(bool allPassed)
+        {
+            if (string.IsNullOrEmpty(Settings.ResultsBucket) &&
+                string.IsNullOrEmpty(Settings.ResultsTopic))
+                return;
+
+            WriteInfo("Preparing to push logs");
+
+            try
+            {
+                var timestamp = DateTime.Now.ToString(timestampFormat);
+                var key = string.Format(s3KeyFormat, TestTypeNamePrefix, timestamp);
+                var snsSubject = string.Format(snsSubjectFormat, TestTypeNamePrefix, timestamp, allPassed ? "PASSED" : "FAILED");
+
+                // if SNS fails, we may see the reason in the S3 push, so keep this order and use LogWriter.ToString()
+                PushLogToSNS(snsSubject, LogWriter.ToString());
+
+                PushLogToS3(key, LogWriter.ToString());
+            }
+            catch(Exception e)
+            {
+                WriteError("Error pushing logs: {0}", e);
+            }
+        }
+
+        private void PushLogToSNS(string snsSubject, string log)
+        {
+            if (string.IsNullOrEmpty(Settings.ResultsTopic))
+                return;
+
+            try
+            {
+                if (log.Length > snsMaxMessageSize)
+                {
+                    WriteInfo("Log too long for SNS, truncating...");
+                    var tooLongPrefix = string.Format(logTooLongMessage, snsMaxMessageSizeKb);
+                    var maxCharacters = snsMaxMessageSize - (tooLongPrefix.Length + truncationSuffix.Length);
+                    log =
+                        tooLongPrefix +
+                        log.Substring(0, maxCharacters) +
+                        truncationSuffix;
+                }
+
+                WriteInfo("Pushing log to SNS...");
+                using (var sns = new Amazon.SimpleNotificationService.AmazonSimpleNotificationServiceClient(Credentials, RegionEndpoint))
+                {
+                    sns.PublishAsync(new PublishRequest
+                    {
+                        TopicArn = Settings.ResultsTopic,
+                        Subject = snsSubject,
+                        Message = log
+                    }).Wait();
+                }
+            }
+            catch(Exception e)
+            {
+                WriteError("Error pushing logs to SNS: {0}", e);
+            }
+        }
+
+        private void PushLogToS3(string key, string log)
+        {
+            if (string.IsNullOrEmpty(Settings.ResultsBucket))
+                return;
+
+            try
+            {
+                WriteInfo("Pushing log to S3...");
+                using (var s3 = new Amazon.S3.AmazonS3Client(Credentials, RegionEndpoint))
+                {
+                    s3.PutObjectAsync(new PutObjectRequest
+                    {
+                        BucketName = Settings.ResultsBucket,
+                        Key = key,
+                        ContentBody = log
+                    }).Wait();
+                }
+            }
+            catch(Exception e)
+            {
+                WriteError("Error pushing logs to S3: {0}", e);
+            }
         }
 
         #region ITestListener

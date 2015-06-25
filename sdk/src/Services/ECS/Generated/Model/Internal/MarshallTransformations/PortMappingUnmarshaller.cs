@@ -76,6 +76,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.HostPort = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("protocol", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -30,5 +30,10 @@ namespace WindowsConsoleApp
         {
             System.Console.WriteLine(message);
         }
+
+        protected override string TestTypeNamePrefix
+        {
+            get { return "WindowsConsoleApp"; }
+        }
     }
 }

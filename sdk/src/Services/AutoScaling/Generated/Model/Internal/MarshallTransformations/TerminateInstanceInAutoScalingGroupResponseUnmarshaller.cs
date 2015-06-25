@@ -104,6 +104,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceContention"))
+            {
+                return new ResourceContentionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ScalingActivityInProgress"))
             {
                 return new ScalingActivityInProgressException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
