@@ -32,8 +32,7 @@ namespace WindowsApp
 
         public MainPage()
         {
-            this.InitializeComponent();
-            
+            this.InitializeComponent();            
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

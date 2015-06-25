@@ -30,7 +30,7 @@ namespace WindowsApp
 
         protected override string TestTypeNamePrefix
         {
-            get { return "Windows 8.1 App"; }
+            get { return "Windows Store 8.1"; }
         }
     }
 }
