@@ -36,23 +36,11 @@ namespace WindowsApp
             
         }
 
-        protected async override void OnNavigatedTo(NavigationEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            
-            var credentialsFile = @"Assets\credentials.json";
-            StorageFolder InstallationFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
-            StorageFile file = await InstallationFolder.GetFileAsync(credentialsFile);
-            var stream = await file.OpenStreamForReadAsync();
-            this.TestRunner = new WindowsAppRunner(stream, dispatcher, this.textBox);
+            this.TestRunner = new WindowsAppRunner(dispatcher, this.textBox);
         }
-
-        //protected async override void OnGotFocus(RoutedEventArgs e)
-        //{
-            
-
-            
-        //}
-
+        
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             await TestRunner.ExecuteAllTestsAsync();

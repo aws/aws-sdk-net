@@ -13,13 +13,10 @@ namespace WindowsApp
     public class WindowsAppRunner : TestRunner
     {        
         private TextBlock _output;
-        private Stream stream;
         private Windows.UI.Core.CoreDispatcher _dispatcher;
 
-        public WindowsAppRunner(Stream stream, CoreDispatcher dispatcher, TextBlock textBlock)
+        public WindowsAppRunner(CoreDispatcher dispatcher, TextBlock textBlock)
         {
-            // TODO: Complete member initialization
-            this.stream = stream;
             _dispatcher = dispatcher;
             _output = textBlock;
         }
@@ -29,6 +26,11 @@ namespace WindowsApp
             _dispatcher.RunAsync(CoreDispatcherPriority.Normal,
                 () => { _output.Text = _output.Text + "\n" + message; }).AsTask().Wait();
             
+        }
+
+        protected override string TestTypeNamePrefix
+        {
+            get { return "Windows 8.1 App"; }
         }
     }
 }

@@ -104,17 +104,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.Win8.csproj">
-      <Project>{13551596-b16f-4e66-ab07-5bba500fd349}</Project>
-      <Name>AWSSDK.Core.Win8</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CommonTests\CommonTests.csproj">
-      <Project>{569d0c97-4009-47a9-bab9-8a2b9fb6d913}</Project>
-      <Name>CommonTests</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -128,7 +117,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="Assets\credentials.json" />
     <None Include="packages.config" />
     <None Include="WindowsApp_TemporaryKey.pfx" />
   </ItemGroup>
@@ -150,6 +138,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="CommonTests, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CommonTests\bin\Debug\CommonTests.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.0.5610.33197, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\NUnit.3.0.0-beta-2\lib\portable-net45+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\nunit.framework.dll</HintPath>
       <Private>True</Private>
@@ -170,6 +162,12 @@
       <HintPath>..\..\..\packages\Validation.2.0.6.15003\lib\portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\Validation.dll</HintPath>
       <Private>True</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.Win8.csproj">
+      <Project>{13551596-b16f-4e66-ab07-5bba500fd349}</Project>
+      <Name>AWSSDK.Core.Win8</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
