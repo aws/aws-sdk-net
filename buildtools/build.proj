@@ -61,12 +61,12 @@
 
 	<Target Name="restore-nuget" DependsOnTargets="run-generator">
 		<Message Text="Restore nuget packages"/>
-		<Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.sln"/>
+		<Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.All.sln"/>
 	</Target>
 	
 	<Target Name="build-sdk" DependsOnTargets="restore-nuget;run-generator">
 		<Message Text="Compile the SDK"/>
-		<MSBuild Projects="..\sdk\AWSSDK.sln"
+		<MSBuild Projects="..\sdk\AWSSDK.All.sln"
 			Targets="Clean;Build"
 			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation)" />
 
