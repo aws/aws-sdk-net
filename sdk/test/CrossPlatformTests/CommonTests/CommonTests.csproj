@@ -43,8 +43,8 @@
     <Compile Include="Framework\TestBase.cs" />
     <Compile Include="Framework\TestRunner.cs" />
     <Compile Include="Framework\UtilityMethods.cs" />
-    <Compile Include="IntegrationTests\*\*.cs" />
     <Compile Include="IntegrationTests\ProtocolTests.cs" />
+    <Compile Include="IntegrationTests\S3\PutObjectTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
