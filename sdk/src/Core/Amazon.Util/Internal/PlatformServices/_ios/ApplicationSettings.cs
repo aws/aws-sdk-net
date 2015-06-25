@@ -20,6 +20,8 @@ namespace Amazon.Util.Internal.PlatformServices
                 Label = key,
                 Account = key,
                 Service = ServiceName,
+                Accessible = SecAccessible.Always,
+                Synchronizable = false,
                 ValueData = NSData.FromString(value, NSStringEncoding.UTF8)
             };
 
@@ -35,9 +37,9 @@ namespace Amazon.Util.Internal.PlatformServices
         {
             var rec = new SecRecord(SecKind.GenericPassword)
             {
-                Account = key,
                 Label = key,
-                Service = ServiceName
+                Service = ServiceName,
+                Account = key
             };
 
             SecStatusCode res;
@@ -56,17 +58,12 @@ namespace Amazon.Util.Internal.PlatformServices
         {
             var rec = new SecRecord(SecKind.GenericPassword)
             {
-                Account = key,
                 Label = key,
-                Service = ServiceName
+                Service = ServiceName,
+                Account = key
             };
 
-            SecStatusCode res;
-            var match = SecKeyChain.QueryAsRecord(rec, out res);
-            if (res == SecStatusCode.Success)
-            {
-                SecKeyChain.Remove(match);
-            }
+            var res = SecKeyChain.Remove(rec);
         }
 
         
