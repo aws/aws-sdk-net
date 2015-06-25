@@ -7,24 +7,19 @@ namespace Amazon.Util.Internal.PlatformServices
 {
     public class ApplicationSettings : IApplicationSettings
     {
+
+        private const string ServiceName = @"AWS";
+
         public void SetValue(string key, string value, ApplicationSettingsMode mode)
         {
+            if (RecordExists(key))
+                RemoveValue(key, mode);
+
             var rec = new SecRecord(SecKind.GenericPassword)
             {
-                Generic = NSData.FromString(key)
-            };
-
-            //if the record already existings we will delete them, so that we dont get duplicate error, alternatively you can use the update api as well.
-            SecStatusCode res;
-            var match = SecKeyChain.QueryAsRecord(rec, out res);
-            if (res == SecStatusCode.Success)
-            {
-                SecKeyChain.Remove(match);
-            }
-
-            rec = new SecRecord(SecKind.GenericPassword)
-            {
-                Generic = NSData.FromString(key, NSStringEncoding.UTF8),
+                Label = key,
+                Account = key,
+                Service = ServiceName,
                 ValueData = NSData.FromString(value, NSStringEncoding.UTF8)
             };
 
@@ -40,7 +35,9 @@ namespace Amazon.Util.Internal.PlatformServices
         {
             var rec = new SecRecord(SecKind.GenericPassword)
             {
-                Generic = NSData.FromString(key)
+                Account = key,
+                Label = key,
+                Service = ServiceName
             };
 
             SecStatusCode res;
@@ -59,7 +56,9 @@ namespace Amazon.Util.Internal.PlatformServices
         {
             var rec = new SecRecord(SecKind.GenericPassword)
             {
-                Generic = NSData.FromString(key)
+                Account = key,
+                Label = key,
+                Service = ServiceName
             };
 
             SecStatusCode res;
@@ -70,5 +69,26 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
+        
+        private bool RecordExists(string key)
+        {
+            var rec = new SecRecord(SecKind.GenericPassword)
+            {
+                Service = ServiceName,
+                Label = key,
+                Account = key
+            };
+
+            SecStatusCode res;
+            var match = SecKeyChain.QueryAsRecord(rec, out res);
+            if (res == SecStatusCode.Success)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        
     }
 }
