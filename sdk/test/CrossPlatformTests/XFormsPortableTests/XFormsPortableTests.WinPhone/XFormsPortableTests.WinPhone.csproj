@@ -178,6 +178,12 @@
     <Reference Include="PCLCrypto">
       <HintPath>..\..\..\..\packages\PCLCrypto.1.0.2.15130\lib\wp8\PCLCrypto.dll</HintPath>
     </Reference>
+    <Reference Include="PCLStorage">
+      <HintPath>..\..\..\..\packages\PCLStorage.1.0.2\lib\wp8\PCLStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage.Abstractions">
+      <HintPath>..\..\..\..\packages\PCLStorage.1.0.2\lib\wp8\PCLStorage.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Validation">
       <HintPath>..\..\..\..\packages\Validation.2.0.6.15003\lib\portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\Validation.dll</HintPath>
     </Reference>

@@ -47,13 +47,9 @@ namespace WindowsPhoneApp
             // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
             // If you are using the NavigationHelper provided by some templates,
             // this event is handled for you.
-        }
 
-        protected override async void OnGotFocus(RoutedEventArgs e)
-        {
-            base.OnGotFocus(e);
             _runner = new WindowsPhoneRunner(dispatcher, textBlock);
-            await _runner.ExecuteAllTestsAsync();
+            _runner.ExecuteAllTestsAsync();
         }
     }
 }

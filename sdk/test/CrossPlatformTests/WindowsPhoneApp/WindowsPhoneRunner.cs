@@ -26,6 +26,17 @@ namespace WindowsPhoneApp
 
         protected override void WriteLine(string message)
         {
+            Output(message);
+        }
+
+        protected override void TestCompleted(string testMethodName, bool succeeded)
+        {
+            Output("{0} : {1}", testMethodName, succeeded ? "PASSED" : "FAILED");
+        }
+
+        private void Output(string format, params object[] args)
+        {
+            var message = string.Format(format, args);
             _dispatcher.RunAsync(CoreDispatcherPriority.Normal,
                 () => { _output.Text = _output.Text + "\n" + message; }).AsTask().Wait();
         }
