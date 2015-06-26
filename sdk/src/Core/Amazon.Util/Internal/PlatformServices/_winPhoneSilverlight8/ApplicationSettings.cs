@@ -10,17 +10,43 @@ namespace Amazon.Util.Internal.PlatformServices
     {
         public void SetValue(string key, string value, ApplicationSettingsMode mode)
         {
-            throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
+            switch (mode)
+            {
+                case ApplicationSettingsMode.Local:
+                    Windows.Storage.ApplicationData.Current.LocalSettings.Values[key] = value;
+                    break;
+                case ApplicationSettingsMode.Roaming:
+                    Windows.Storage.ApplicationData.Current.RoamingSettings.Values[key] = value;
+                    break;
+            }
         }
 
         public string GetValue(string key, ApplicationSettingsMode mode)
         {
-            throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
+            switch (mode)
+            {
+                case ApplicationSettingsMode.Local:
+                    return Windows.Storage.ApplicationData.Current.LocalSettings.Values[key] as string;
+
+                case ApplicationSettingsMode.Roaming:
+                    return Windows.Storage.ApplicationData.Current.RoamingSettings.Values[key] as string;
+
+                default:
+                    return null;
+            }
         }
 
         public void RemoveValue(string key, ApplicationSettingsMode mode)
         {
-            throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
+            switch (mode)
+            {
+                case ApplicationSettingsMode.Local:
+                    Windows.Storage.ApplicationData.Current.LocalSettings.Values.Remove(key);
+                    break;
+                case ApplicationSettingsMode.Roaming:
+                    Windows.Storage.ApplicationData.Current.RoamingSettings.Values.Remove(key);
+                    break;
+            }
         }
     }
 }
