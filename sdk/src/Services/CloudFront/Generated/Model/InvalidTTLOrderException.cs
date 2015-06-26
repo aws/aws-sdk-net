@@ -25,35 +25,35 @@ namespace Amazon.CloudFront.Model
     ///<summary>
     /// CloudFront exception
     /// </summary>
-    public class NoSuchOriginException : AmazonCloudFrontException 
+    public class InvalidTTLOrderException : AmazonCloudFrontException 
     {
         /// <summary>
-        /// Constructs a new NoSuchOriginException with the specified error
+        /// Constructs a new InvalidTTLOrderException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public NoSuchOriginException(string message) 
+        public InvalidTTLOrderException(string message) 
             : base(message) {}
           
         /// <summary>
-        /// Construct instance of NoSuchOriginException
+        /// Construct instance of InvalidTTLOrderException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public NoSuchOriginException(string message, Exception innerException) 
+        public InvalidTTLOrderException(string message, Exception innerException) 
             : base(message, innerException) {}
             
         /// <summary>
-        /// Construct instance of NoSuchOriginException
+        /// Construct instance of InvalidTTLOrderException
         /// </summary>
         /// <param name="innerException"></param>
-        public NoSuchOriginException(Exception innerException) 
+        public InvalidTTLOrderException(Exception innerException) 
             : base(innerException) {}
             
         /// <summary>
-        /// Construct instance of NoSuchOriginException
+        /// Construct instance of InvalidTTLOrderException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -61,18 +61,18 @@ namespace Amazon.CloudFront.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public NoSuchOriginException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public InvalidTTLOrderException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of NoSuchOriginException
+        /// Construct instance of InvalidTTLOrderException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public NoSuchOriginException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public InvalidTTLOrderException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
     }
