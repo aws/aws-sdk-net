@@ -364,6 +364,77 @@ namespace Amazon.Glacier
 
         #endregion
         
+        #region  AddTagsToVault
+
+        /// <summary>
+        /// This operation adds the specified tags to a vault. Each tag is composed of a key and
+        /// a value. Each vault can have up to 10 tags. If your request would cause the tag limit
+        /// for the vault to be exceeded, the operation throws the <code>LimitExceededException</code>
+        /// error. If a tag already exists on the vault under a specified key, the existing key
+        /// value will be overwritten. For more information about tags, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
+        /// Amazon Glacier Resources</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToVault service method.</param>
+        /// 
+        /// <returns>The response from the AddTagsToVault service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.LimitExceededException">
+        /// Returned if the request results in a vault or account limit being exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
+        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        public AddTagsToVaultResponse AddTagsToVault(AddTagsToVaultRequest request)
+        {
+            var marshaller = new AddTagsToVaultRequestMarshaller();
+            var unmarshaller = AddTagsToVaultResponseUnmarshaller.Instance;
+
+            return Invoke<AddTagsToVaultRequest,AddTagsToVaultResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTagsToVault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToVault operation on AmazonGlacierClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToVault
+        ///         operation.</returns>
+        public IAsyncResult BeginAddTagsToVault(AddTagsToVaultRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new AddTagsToVaultRequestMarshaller();
+            var unmarshaller = AddTagsToVaultResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddTagsToVaultRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddTagsToVault operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTagsToVault.</param>
+        /// 
+        /// <returns>Returns a  AddTagsToVaultResult from Glacier.</returns>
+        public  AddTagsToVaultResponse EndAddTagsToVault(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AddTagsToVaultResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CompleteMultipartUpload
 
         /// <summary>
@@ -759,7 +830,7 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// This operation deletes the access policy associated with the specified vault. The
-        /// operation is eventually consistent—that is, it might take some time for Amazon Glacier
+        /// operation is eventually consistent; that is, it might take some time for Amazon Glacier
         /// to completely remove the access policy, and you might still see the effect of the
         /// policy for a short time after you send the delete request.
         /// 
@@ -833,7 +904,7 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// This operation deletes the notification configuration set for a vault. The operation
-        /// is eventually consistent;that is, it might take some time for Amazon Glacier to completely
+        /// is eventually consistent; that is, it might take some time for Amazon Glacier to completely
         /// disable the notifications and you might still receive some notifications for a short
         /// time after you send the delete request. 
         /// 
@@ -1274,8 +1345,8 @@ namespace Amazon.Glacier
         #region  GetVaultAccessPolicy
 
         /// <summary>
-        /// This operation retrieves the <code>access-policy</code> subresource set on the vault—for
-        /// more information on setting this subresource, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html">Set
+        /// This operation retrieves the <code>access-policy</code> subresource set on the vault;
+        /// for more information on setting this subresource, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html">Set
         /// Vault Access Policy (PUT access-policy)</a>. If there is no access policy set on the
         /// vault, the operation returns a <code>404 Not found</code> error. For more information
         /// about vault access policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
@@ -2069,6 +2140,71 @@ namespace Amazon.Glacier
 
         #endregion
         
+        #region  ListTagsForVault
+
+        /// <summary>
+        /// This operation lists all the tags attached to a vault. The operation returns an empty
+        /// map if there are no tags. For more information about tags, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
+        /// Amazon Glacier Resources</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForVault service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForVault service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
+        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        public ListTagsForVaultResponse ListTagsForVault(ListTagsForVaultRequest request)
+        {
+            var marshaller = new ListTagsForVaultRequestMarshaller();
+            var unmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForVaultRequest,ListTagsForVaultResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForVault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForVault operation on AmazonGlacierClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForVault
+        ///         operation.</returns>
+        public IAsyncResult BeginListTagsForVault(ListTagsForVaultRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListTagsForVaultRequestMarshaller();
+            var unmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListTagsForVaultRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForVault operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForVault.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForVaultResult from Glacier.</returns>
+        public  ListTagsForVaultResponse EndListTagsForVault(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForVaultResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListVaults
 
         /// <summary>
@@ -2205,6 +2341,72 @@ namespace Amazon.Glacier
         public  ListVaultsResponse EndListVaults(IAsyncResult asyncResult)
         {
             return EndInvoke<ListVaultsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RemoveTagsFromVault
+
+        /// <summary>
+        /// This operation removes one or more tags from the set of tags attached to a vault.
+        /// For more information about tags, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
+        /// Amazon Glacier Resources</a>. This operation is idempotent. The operation will be
+        /// successful, even if there are no tags attached to the vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromVault service method.</param>
+        /// 
+        /// <returns>The response from the RemoveTagsFromVault service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
+        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        public RemoveTagsFromVaultResponse RemoveTagsFromVault(RemoveTagsFromVaultRequest request)
+        {
+            var marshaller = new RemoveTagsFromVaultRequestMarshaller();
+            var unmarshaller = RemoveTagsFromVaultResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveTagsFromVaultRequest,RemoveTagsFromVaultResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTagsFromVault operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromVault operation on AmazonGlacierClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromVault
+        ///         operation.</returns>
+        public IAsyncResult BeginRemoveTagsFromVault(RemoveTagsFromVaultRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new RemoveTagsFromVaultRequestMarshaller();
+            var unmarshaller = RemoveTagsFromVaultResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RemoveTagsFromVaultRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveTagsFromVault operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTagsFromVault.</param>
+        /// 
+        /// <returns>Returns a  RemoveTagsFromVaultResult from Glacier.</returns>
+        public  RemoveTagsFromVaultResponse EndRemoveTagsFromVault(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RemoveTagsFromVaultResponse>(asyncResult);
         }
 
         #endregion

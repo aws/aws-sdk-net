@@ -28,23 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteVaultAccessPolicy operation.
-    /// This operation deletes the access policy associated with the specified vault. The
-    /// operation is eventually consistent; that is, it might take some time for Amazon Glacier
-    /// to completely remove the access policy, and you might still see the effect of the
-    /// policy for a short time after you send the delete request.
-    /// 
-    ///  
-    /// <para>
-    /// This operation is idempotent. You can invoke delete multiple times, even if there
-    /// is no policy associated with the vault. For more information about vault access policies,
-    /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
-    /// Glacier Access Control with Vault Access Policies</a>. 
-    /// </para>
+    /// Container for the parameters to the RemoveTagsFromVault operation.
+    /// This operation removes one or more tags from the set of tags attached to a vault.
+    /// For more information about tags, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
+    /// Amazon Glacier Resources</a>. This operation is idempotent. The operation will be
+    /// successful, even if there are no tags attached to the vault.
     /// </summary>
-    public partial class DeleteVaultAccessPolicyRequest : AmazonGlacierRequest
+    public partial class RemoveTagsFromVaultRequest : AmazonGlacierRequest
     {
         private string _accountId;
+        private List<string> _tagKeys = new List<string>();
         private string _vaultName;
 
         /// <summary>
@@ -54,7 +47,7 @@ namespace Amazon.Glacier.Model
         /// vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos
         /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens (apos-apos) in the ID. 
+        /// hyphens (apos-apos) in the ID.
         /// </para>
         /// </summary>
         public string AccountId
@@ -67,6 +60,24 @@ namespace Amazon.Glacier.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// A list of tag keys. Each corresponding tag is removed from the vault.
+        /// </para>
+        /// </summary>
+        public List<string> TagKeys
+        {
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
+        }
+
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
+        {
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
         /// <summary>

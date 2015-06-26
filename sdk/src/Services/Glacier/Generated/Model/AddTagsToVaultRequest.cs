@@ -28,23 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteVaultAccessPolicy operation.
-    /// This operation deletes the access policy associated with the specified vault. The
-    /// operation is eventually consistent; that is, it might take some time for Amazon Glacier
-    /// to completely remove the access policy, and you might still see the effect of the
-    /// policy for a short time after you send the delete request.
-    /// 
-    ///  
-    /// <para>
-    /// This operation is idempotent. You can invoke delete multiple times, even if there
-    /// is no policy associated with the vault. For more information about vault access policies,
-    /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
-    /// Glacier Access Control with Vault Access Policies</a>. 
-    /// </para>
+    /// Container for the parameters to the AddTagsToVault operation.
+    /// This operation adds the specified tags to a vault. Each tag is composed of a key and
+    /// a value. Each vault can have up to 10 tags. If your request would cause the tag limit
+    /// for the vault to be exceeded, the operation throws the <code>LimitExceededException</code>
+    /// error. If a tag already exists on the vault under a specified key, the existing key
+    /// value will be overwritten. For more information about tags, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
+    /// Amazon Glacier Resources</a>.
     /// </summary>
-    public partial class DeleteVaultAccessPolicyRequest : AmazonGlacierRequest
+    public partial class AddTagsToVaultRequest : AmazonGlacierRequest
     {
         private string _accountId;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _vaultName;
 
         /// <summary>
@@ -54,7 +49,7 @@ namespace Amazon.Glacier.Model
         /// vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos
         /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens (apos-apos) in the ID. 
+        /// hyphens (apos-apos) in the ID.
         /// </para>
         /// </summary>
         public string AccountId
@@ -67,6 +62,25 @@ namespace Amazon.Glacier.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to add to the vault. Each tag is composed of a key and a value. The value
+        /// can be an empty string.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
