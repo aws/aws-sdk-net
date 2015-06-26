@@ -35,7 +35,8 @@ namespace Amazon.OpsWorks.Model
     /// operation has two primary steps, installing the AWS OpsWorks agent on the instance
     /// and registering the instance with the stack. <code>RegisterInstance</code> handles
     /// only the second step. You should instead use the AWS CLI <code>register</code> command,
-    /// which performs the entire registration operation.</note> 
+    /// which performs the entire registration operation. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">
+    /// Registering an Instance with an AWS OpsWorks Stack</a>.</note> 
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
     /// level for the stack or an attached policy that explicitly grants permissions. For

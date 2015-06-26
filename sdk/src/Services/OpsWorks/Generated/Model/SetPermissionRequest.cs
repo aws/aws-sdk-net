@@ -112,7 +112,7 @@ namespace Amazon.OpsWorks.Model
         /// </li> <li> <code>manage</code> </li> <li> <code>iam_only</code> </li> </ul> 
         /// <para>
         /// For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-        /// User Permissions</a>
+        /// User Permissions</a>.
         /// </para>
         /// </summary>
         public string Level

@@ -64,6 +64,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AgentVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AgentVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AmiId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -170,6 +176,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Os = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Platform", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PrivateDns", targetDepth))
