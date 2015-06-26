@@ -69,10 +69,10 @@ namespace Amazon.Util.Internal
                 return _customSdkUserAgent;
             }
 
-            return string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2} .NET Runtime/{3} .NET Framework/{4} OS/{5} {6}",
+            return string.Format(CultureInfo.InvariantCulture, "{0}/{1} aws-sdk-dotnet-core/{2} .NET Runtime/{3} .NET Framework/{4} OS/{5} {6}",
                 _userAgentBaseName,
-                CoreVersionNumber,
                 serviceSdkVersion,
+                CoreVersionNumber,
                 DetermineRuntime(),
                 DetermineFramework(),
                 DetermineOSVersion(),
