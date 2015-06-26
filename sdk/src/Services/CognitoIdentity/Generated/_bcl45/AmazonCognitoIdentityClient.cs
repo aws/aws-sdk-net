@@ -1419,6 +1419,9 @@ namespace Amazon.CognitoIdentity
         /// <param name="roles">The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</param>
         /// 
         /// <returns>The response from the SetIdentityPoolRoles service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ConcurrentModificationException">
+        /// Thrown if there are parallel requests to modify a resource.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
@@ -1457,6 +1460,9 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityPoolRoles service method.</param>
         /// 
         /// <returns>The response from the SetIdentityPoolRoles service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ConcurrentModificationException">
+        /// Thrown if there are parallel requests to modify a resource.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
@@ -1642,6 +1648,9 @@ namespace Amazon.CognitoIdentity
         /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityPool service method.</param>
         /// 
         /// <returns>The response from the UpdateIdentityPool service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ConcurrentModificationException">
+        /// Thrown if there are parallel requests to modify a resource.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>

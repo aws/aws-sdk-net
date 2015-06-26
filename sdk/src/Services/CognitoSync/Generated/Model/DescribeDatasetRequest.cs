@@ -35,9 +35,9 @@ namespace Amazon.CognitoSync.Model
     /// 
     ///  
     /// <para>
-    /// DescribeDataset can be called with temporary user credentials provided by Cognito
-    /// Identity or with developer credentials. You should use Cognito Identity credentials
-    /// to make this API call.
+    /// This API can be called with temporary user credentials provided by Cognito Identity
+    /// or with developer credentials. You should use Cognito Identity credentials to make
+    /// this API call.
     /// </para>
     /// </summary>
     public partial class DescribeDatasetRequest : AmazonCognitoSyncRequest
