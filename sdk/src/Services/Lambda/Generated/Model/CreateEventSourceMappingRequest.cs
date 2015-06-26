@@ -89,7 +89,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Indicates whether AWS Lambda should begin polling the event source. 
+        /// Indicates whether AWS Lambda should begin polling the event source, the default is
+        /// not enabled. 
         /// </para>
         /// </summary>
         public bool Enabled
