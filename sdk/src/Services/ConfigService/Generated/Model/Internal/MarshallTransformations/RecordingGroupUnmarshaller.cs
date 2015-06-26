@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConfigurationRecorder Object
+    /// Response Unmarshaller for RecordingGroup Object
     /// </summary>  
-    public class ConfigurationRecorderUnmarshaller : IUnmarshaller<ConfigurationRecorder, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationRecorder, JsonUnmarshallerContext>
+    public class RecordingGroupUnmarshaller : IUnmarshaller<RecordingGroup, XmlUnmarshallerContext>, IUnmarshaller<RecordingGroup, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ConfigurationRecorder IUnmarshaller<ConfigurationRecorder, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RecordingGroup IUnmarshaller<RecordingGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ConfigurationRecorder Unmarshall(JsonUnmarshallerContext context)
+        public RecordingGroup Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ConfigurationRecorder unmarshalledObject = new ConfigurationRecorder();
+            RecordingGroup unmarshalledObject = new RecordingGroup();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("allSupported", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AllSupported = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("recordingGroup", targetDepth))
+                if (context.TestExpression("resourceTypes", targetDepth))
                 {
-                    var unmarshaller = RecordingGroupUnmarshaller.Instance;
-                    unmarshalledObject.RecordingGroup = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("roleARN", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ResourceTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         }
 
 
-        private static ConfigurationRecorderUnmarshaller _instance = new ConfigurationRecorderUnmarshaller();        
+        private static RecordingGroupUnmarshaller _instance = new RecordingGroupUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConfigurationRecorderUnmarshaller Instance
+        public static RecordingGroupUnmarshaller Instance
         {
             get
             {
