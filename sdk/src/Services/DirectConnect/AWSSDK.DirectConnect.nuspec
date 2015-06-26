@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.DirectConnect</id>
     <title>AWSSDK - AWS Direct Connect</title>
-    <version>3.0.0.2-preview</version> 
+    <version>3.0.0.3-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>AWS Direct Connect makes it easy to establish a dedicated network connection from your premises to AWS. Using AWS Direct Connect, you can establish private connectivity between AWS and your datacenter, office, or colocation environment, which in many cases can reduce your network costs, increase bandwidth throughput, and provide a more consistent network experience than Internet-based connections.</description> 
     <language>en-US</language>
@@ -16,10 +16,10 @@
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
         <dependency id="PCLStorage" version="1.0.2" />
         <dependency id="PCLCrypto" version="1.0.2.15130" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 
