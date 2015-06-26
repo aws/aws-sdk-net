@@ -308,6 +308,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void CreateSnapshotCopyGrantMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateSnapshotCopyGrant");
+
+            var request = InstantiateClassGenerator.Execute<CreateSnapshotCopyGrantRequest>();
+            var marshaller = new CreateSnapshotCopyGrantRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateSnapshotCopyGrantResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateSnapshotCopyGrantResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void CreateTagsMarshallTest()
         {
             var operation = service_model.FindOperation("CreateTags");
@@ -476,6 +500,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var request = InstantiateClassGenerator.Execute<DeleteHsmConfigurationRequest>();
             var marshaller = new DeleteHsmConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DeleteSnapshotCopyGrantMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteSnapshotCopyGrant");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSnapshotCopyGrantRequest>();
+            var marshaller = new DeleteSnapshotCopyGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();
@@ -931,6 +974,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DescribeResizeResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeResizeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DescribeSnapshotCopyGrantsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeSnapshotCopyGrants");
+
+            var request = InstantiateClassGenerator.Execute<DescribeSnapshotCopyGrantsRequest>();
+            var marshaller = new DescribeSnapshotCopyGrantsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeSnapshotCopyGrantsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeSnapshotCopyGrantsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

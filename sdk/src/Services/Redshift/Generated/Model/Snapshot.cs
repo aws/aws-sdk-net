@@ -51,6 +51,7 @@ namespace Amazon.Redshift.Model
         private int? _numberOfNodes;
         private string _ownerAccount;
         private int? _port;
+        private List<string> _restorableNodeTypes = new List<string>();
         private DateTime? _snapshotCreateTime;
         private string _snapshotIdentifier;
         private string _snapshotType;
@@ -409,6 +410,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RestorableNodeTypes. 
+        /// <para>
+        /// The list of node types that this cluster snapshot is able to restore into.
+        /// </para>
+        /// </summary>
+        public List<string> RestorableNodeTypes
+        {
+            get { return this._restorableNodeTypes; }
+            set { this._restorableNodeTypes = value; }
+        }
+
+        // Check to see if RestorableNodeTypes property is set
+        internal bool IsSetRestorableNodeTypes()
+        {
+            return this._restorableNodeTypes != null && this._restorableNodeTypes.Count > 0; 
         }
 
         /// <summary>

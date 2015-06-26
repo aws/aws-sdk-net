@@ -29,12 +29,13 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreFromClusterSnapshot operation.
-    /// Creates a new cluster from a snapshot. Amazon Redshift creates the resulting cluster
-    /// with the same configuration as the original cluster from which the snapshot was created,
-    /// except that the new cluster is created with the default cluster security and parameter
-    /// group. After Amazon Redshift creates the cluster you can use the <a>ModifyCluster</a>
+    /// Creates a new cluster from a snapshot. By default, Amazon Redshift creates the resulting
+    /// cluster with the same configuration as the original cluster from which the snapshot
+    /// was created, except that the new cluster is created with the default cluster security
+    /// and parameter groups. After Amazon Redshift creates the cluster, you can use the <a>ModifyCluster</a>
     /// API to associate a different security group and different parameter group with the
-    /// restored cluster. 
+    /// restored cluster. If you are using a DS node type, you can also choose to change to
+    /// another DS node type of the same size during restore.
     /// 
     ///  
     /// <para>
@@ -60,6 +61,7 @@ namespace Amazon.Redshift.Model
         private string _hsmClientCertificateIdentifier;
         private string _hsmConfigurationIdentifier;
         private string _kmsKeyId;
+        private string _nodeType;
         private string _ownerAccount;
         private int? _port;
         private string _preferredMaintenanceWindow;
@@ -327,6 +329,35 @@ namespace Amazon.Redshift.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeType. 
+        /// <para>
+        ///  The node type that the restored cluster will be provisioned with.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: The node type of the cluster from which the snapshot was taken. You can
+        /// modify this if you are using any DS node type. In that case, you can choose to restore
+        /// into another DS node type of the same size. For example, you can restore ds1.8xlarge
+        /// into ds2.8xlarge, or ds2.xlarge into ds1.xlarge. If you have a DC instance type, you
+        /// must restore into that same instance type and size. In other words, you can only restore
+        /// a dc1.large instance type into another dc1.large instance type. For more information
+        /// about node types, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
+        /// About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>
+        /// </para>
+        /// </summary>
+        public string NodeType
+        {
+            get { return this._nodeType; }
+            set { this._nodeType = value; }
+        }
+
+        // Check to see if NodeType property is set
+        internal bool IsSetNodeType()
+        {
+            return this._nodeType != null;
         }
 
         /// <summary>

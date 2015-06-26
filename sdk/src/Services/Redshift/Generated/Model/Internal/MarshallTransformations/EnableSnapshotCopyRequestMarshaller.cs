@@ -70,6 +70,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("RetentionPeriod", StringUtils.FromInt(publicRequest.RetentionPeriod));
                 }
+                if(publicRequest.IsSetSnapshotCopyGrantName())
+                {
+                    request.Parameters.Add("SnapshotCopyGrantName", StringUtils.FromString(publicRequest.SnapshotCopyGrantName));
+                }
             }
             return request;
         }

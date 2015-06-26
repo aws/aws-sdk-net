@@ -66,6 +66,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.RetentionPeriod = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SnapshotCopyGrantName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotCopyGrantName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

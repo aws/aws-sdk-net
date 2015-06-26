@@ -230,6 +230,21 @@ namespace Amazon.Redshift
 
         #endregion
                 
+        #region  CreateSnapshotCopyGrant
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSnapshotCopyGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshotCopyGrant operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateSnapshotCopyGrantResponse> CreateSnapshotCopyGrantAsync(CreateSnapshotCopyGrantRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateTags
 
         /// <summary>
@@ -362,6 +377,21 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteHsmConfigurationResponse> DeleteHsmConfigurationAsync(DeleteHsmConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteSnapshotCopyGrant
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSnapshotCopyGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshotCopyGrant operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteSnapshotCopyGrantResponse> DeleteSnapshotCopyGrantAsync(DeleteSnapshotCopyGrantRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -647,6 +677,21 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeResizeResponse> DescribeResizeAsync(DescribeResizeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeSnapshotCopyGrants
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSnapshotCopyGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotCopyGrants operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeSnapshotCopyGrantsResponse> DescribeSnapshotCopyGrantsAsync(DescribeSnapshotCopyGrantsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

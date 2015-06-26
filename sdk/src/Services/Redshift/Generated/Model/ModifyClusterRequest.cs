@@ -241,8 +241,8 @@ namespace Amazon.Redshift.Model
         ///  For major version upgrades, if a non-default cluster parameter group is currently
         /// in use, a new cluster parameter group in the cluster parameter group family for the
         /// new version must be specified. The new cluster parameter group can be the default
-        /// for that cluster parameter group family. For more information about managing parameter
-        /// groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+        /// for that cluster parameter group family. For more information about parameters and
+        /// parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
         /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// 
         /// </para>
@@ -383,8 +383,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code> dw1.xlarge</code> | <code>dw1.8xlarge</code> | <code>dw2.large</code>
-        /// | <code>dw2.8xlarge</code>.
+        /// Valid Values: <code> ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code> ds2.xlarge</code>
+        /// | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code>.
         /// </para>
         /// </summary>
         public string NodeType

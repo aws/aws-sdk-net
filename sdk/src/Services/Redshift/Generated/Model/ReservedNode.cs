@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Describes a reserved node.
+    /// Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a>
+    /// API to obtain the available reserved node offerings.
     /// </summary>
     public partial class ReservedNode
     {
@@ -84,7 +85,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property FixedPrice. 
         /// <para>
-        ///  The fixed cost Amazon Redshift charged you for this reserved node. 
+        ///  The fixed cost Amazon Redshift charges you for this reserved node. 
         /// </para>
         /// </summary>
         public double FixedPrice
@@ -256,7 +257,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property UsagePrice. 
         /// <para>
-        ///  The hourly rate Amazon Redshift charge you for this reserved node. 
+        ///  The hourly rate Amazon Redshift charges you for this reserved node. 
         /// </para>
         /// </summary>
         public double UsagePrice

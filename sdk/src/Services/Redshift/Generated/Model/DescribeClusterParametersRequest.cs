@@ -42,7 +42,7 @@ namespace Amazon.Redshift.Model
     /// </para>
     ///  
     /// <para>
-    ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+    ///  For more information about parameters and parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
     /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// 
     /// </para>
