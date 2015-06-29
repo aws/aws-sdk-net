@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,6 +23,9 @@ namespace WindowsPhoneApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private CoreDispatcher dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
+        private WindowsPhoneRunner _runner;
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -43,6 +47,9 @@ namespace WindowsPhoneApp
             // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
             // If you are using the NavigationHelper provided by some templates,
             // this event is handled for you.
+
+            _runner = new WindowsPhoneRunner(dispatcher, textBlock);
+            _runner.ExecuteAllTestsAsync();
         }
     }
 }

@@ -32,7 +32,7 @@ namespace Amazon.CloudFormation
     public partial class AmazonCloudFormationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.0.1.1");
+            InternalSDKUtils.BuildUserAgentString("3.0.1.2");
 
         private string _userAgent = UserAgentString;
 

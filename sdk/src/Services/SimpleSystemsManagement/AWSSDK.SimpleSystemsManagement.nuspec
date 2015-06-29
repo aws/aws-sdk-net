@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.SimpleSystemsManagement</id>
     <title>AWSSDK - Amazon Simple Systems Management Service</title>
-    <version>3.0.0.2-preview</version> 
+    <version>3.0.0.3-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.</description> 
     <language>en-US</language>
@@ -16,10 +16,10 @@
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
         <dependency id="PCLStorage" version="1.0.2" />
         <dependency id="PCLCrypto" version="1.0.2.15130" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 

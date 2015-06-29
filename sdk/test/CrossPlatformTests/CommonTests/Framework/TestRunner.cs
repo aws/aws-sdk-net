@@ -29,7 +29,7 @@ namespace CommonTests.Framework
     public abstract class TestRunner : ITestListener
     {
         private const string timestampFormat = "yyyy-MM-dd-HH-mm-ss";
-        private const string s3KeyFormat = "{0}-{1}.txt"; // 0 - prefix, 1 - timestamp
+        private const string s3KeyFormat = "{1}-{0}.txt"; // 0 - prefix, 1 - timestamp
         private const string snsSubjectFormat = "{2} - {0}-{1}"; // 0 - prefix, 1 - timestamp, 2 - PASSED or FAILED
         private const int snsMaxMessageSizeKb = 256; // http://docs.aws.amazon.com/sns/latest/api/API_Publish.html
         private const int kb = 1024;
@@ -86,7 +86,9 @@ namespace CommonTests.Framework
                 result.InconclusiveCount == 0 &&
                 result.SkipCount == 0;
 
-           // PushLog(success);
+            WriteInfo("All tests executed");
+
+            PushLog(success);
 
             return success;
         }
@@ -144,6 +146,8 @@ namespace CommonTests.Framework
             if (string.IsNullOrEmpty(Settings.ResultsBucket) &&
                 string.IsNullOrEmpty(Settings.ResultsTopic))
                 return;
+
+            WriteInfo("Preparing to push logs");
 
             try
             {

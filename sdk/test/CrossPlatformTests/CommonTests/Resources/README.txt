@@ -5,7 +5,7 @@ To provide credentials to the test applications, place a file named "settings.js
     "AccessKeyId"     : "",
     "SecretAccessKey" : "",
     "SessionToken"    : "",
-	"RegionEndpoint"  : "us-west-2"
+	"RegionEndpoint"  : "us-west-2",
 	"ResultsBucket"   : "",
-	"ResultsTopic"    : "",
+	"ResultsTopic"    : ""
 }

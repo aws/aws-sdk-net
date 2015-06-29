@@ -32,6 +32,7 @@
 				"test\\CrossPlatformTests\\AndroidApp\\AndroidApp.csproj",
 				"test\\CrossPlatformTests\\iOSTests\\iOSTests.csproj",
                 "test\\CrossPlatformTests\\WindowsConsoleApp\\WindowsConsoleApp.csproj",
+                "test\\CrossPlatformTests\\WindowsApp\\WindowsApp.csproj",
                 "test\\CrossPlatformTests\\WindowsPhoneApp\\WindowsPhoneApp.csproj",
 
 				"test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests\\XFormsPortableTests.csproj",

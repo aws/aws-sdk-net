@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.ECS</id>
     <title>AWSSDK - Amazon EC2 Container Service</title>
-    <version>3.0.2.0-preview</version> 
+    <version>3.0.2.1-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon EC2 Container Service is a highly scalable, high performance container management service that supports Docker containers and allows you to easily run distributed applications on a managed cluster of Amazon EC2 instances.</description> 
     <language>en-US</language>
@@ -16,10 +16,10 @@
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
         <dependency id="PCLStorage" version="1.0.2" />
         <dependency id="PCLCrypto" version="1.0.2.15130" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 
