@@ -86,7 +86,7 @@ namespace CommonTests.Framework
                 result.InconclusiveCount == 0 &&
                 result.SkipCount == 0;
 
-            PushLog(success);
+           // PushLog(success);
 
             return success;
         }

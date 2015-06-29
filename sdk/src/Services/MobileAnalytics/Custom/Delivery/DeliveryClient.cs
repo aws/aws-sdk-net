@@ -22,8 +22,6 @@ using System.Collections.Generic;
 using System.Net;
 
 using Amazon.Runtime;
-//using Amazon.CognitoIdentity;
-
 using Amazon.MobileAnalytics.MobileAnalyticsManager;
 using Amazon.MobileAnalytics;
 using Amazon.MobileAnalytics.Model;

@@ -95,6 +95,10 @@
       <Project>{e0cf8866-9af9-4375-8116-6bddb505e773}</Project>
       <Name>AWSSDK.ElasticTranscoder.PCL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.PCL.csproj">
+      <Project>{938f4e28-e150-46cf-b36d-be43fe8d8c0b}</Project>
+      <Name>AWSSDK.MobileAnalytics.PCL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.PCL.csproj">
       <Project>{17adb7d7-59f4-4eae-86b3-15a949bed449}</Project>
       <Name>AWSSDK.S3.PCL</Name>

@@ -108,7 +108,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 _deliveryTask = DoWork((int)AWSConfigsMobileAnalytics.BackgroundSubmissionWaitTime*1000);
                 await _deliveryTask;                
             }
+
             
+
             // Start background task if it is not started yet.
             if (0 == Interlocked.CompareExchange(ref _startFlag, 1, 0))
             {

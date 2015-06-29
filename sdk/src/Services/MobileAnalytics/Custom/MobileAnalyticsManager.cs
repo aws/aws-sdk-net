@@ -24,6 +24,7 @@ using Amazon.Runtime;
 using Amazon.Util;
 using Amazon.Runtime.Internal;
 using Amazon.MobileAnalytics.MobileAnalyticsManager.Internal;
+using Amazon.Runtime.Internal.Util;
 
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager
@@ -37,7 +38,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         private string _appId = null;
         private static object _lock = new object();
         private static IDictionary<string,MobileAnalyticsManager> _instanceDictionary = new Dictionary<string, MobileAnalyticsManager>();
-        
+        private static Logger _logger = Logger.GetLogger(typeof(MobileAnalyticsManager));
+
         #region constructor
 
         /// <summary>
@@ -213,7 +215,14 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// </summary>
         public void PauseSession()
         {
-            Session.Pause();
+            try
+            {
+                Session.Pause();   
+            }
+            catch(Exception e)
+            {
+                _logger.Error(e, "An exception occurred when pause session.");
+            }
         }
         
         /// <summary>
@@ -261,7 +270,14 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// </summary>
         public void ResumeSession()
         {
-            Session.Resume();
+            try 
+            {         
+                Session.Resume();
+            }
+            catch(Exception e)
+            {
+                _logger.Error(e, "An exception occurred when resume session.");
+            }
         }    
 		
 		

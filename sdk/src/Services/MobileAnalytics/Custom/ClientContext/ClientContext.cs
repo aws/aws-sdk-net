@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using ThirdParty.Json.LitJson;
 using Amazon.Util;
 using Amazon.Util.Internal;
+using Amazon.Util.Internal.PlatformServices;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 {
@@ -62,11 +63,12 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         private IDictionary<string,IDictionary> _services;
         
         private IDictionary _clientContext;
-        
         private ClientContextConfig _config;
-        
-        
-        private static object _lock = new object(); 
+        private static object _lock = new object();
+        private string _clientID = null;
+        private IApplicationSettings _appSetting = new ApplicationSettings();
+        private IApplicationInfo _appInfo = new ApplicationInfo();
+        private const string APP_ID_KEY = "APP_ID_KEY";
         
         /// <summary>
         /// Initializes a new instance of the
@@ -77,6 +79,21 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         {
             this.Config = config;
             _custom = new Dictionary<string, string>();
+
+#if PCL || __IOS__ || __ANDROID__
+            if (string.IsNullOrEmpty(_clientID))
+            {
+                _clientID = _appSetting.GetValue(APP_ID_KEY, ApplicationSettingsMode.Local);
+                if (string.IsNullOrEmpty(_clientID))
+                {
+                    _clientID = Guid.NewGuid().ToString();
+                    _appSetting.SetValue(APP_ID_KEY, _clientID, ApplicationSettingsMode.Local);
+                }
+            }
+#elif BCL35 || BCL45
+
+#endif
+
         }
         
         /// <summary>
@@ -120,66 +137,42 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 _client = new Dictionary<string, string>();
                 _env = new Dictionary<string, string>();
                 _services = new Dictionary<string, IDictionary>();
- 
-                // TODO: this is platform implmementation
-#if PCL
-                ////// client
-                _client.Add(CLIENT_ID_KEY, "111710ab-5cba-4ae4-bfee-d1f4d59f5111");
-                _client.Add(CLIENT_APP_TITLE_KEY, "YourApp");
-                _client.Add(CLIENT_APP_VERSION_NAME_KEY, "v1.0");
-                _client.Add(CLIENT_APP_VERSION_CODE_KEY, "1.0");
-                _client.Add(CLIENT_APP_PACKAGE_NAME_KEY, "com.yourcompany.yourapp");
+
+#if PCL || __IOS__ || __ANDROID__
+                _client.Add(CLIENT_ID_KEY, _clientID);
+                _client.Add(CLIENT_APP_TITLE_KEY, _appInfo.AppTitle);
+                _client.Add(CLIENT_APP_VERSION_NAME_KEY, _appInfo.AppVersionName);
+                _client.Add(CLIENT_APP_VERSION_CODE_KEY, _appInfo.AppVersionCode);
+                _client.Add(CLIENT_APP_PACKAGE_NAME_KEY, _appInfo.PackageName);
 
                 ////// env
                 _env.Add(ENV_PLATFORM_KEY, "iPhoneOS");
                 _env.Add(ENV_PLATFORM_VERSION_KEY, "8.1.2");
                 _env.Add(ENV_LOCALE_KEY, "en_US");
                 _env.Add(ENV_MAKE_KEY, "Apple");
-                _env.Add(ENV_MODEL_KEY, "iPhone");		
-#elif BCL35
+                _env.Add(ENV_MODEL_KEY, "iPhone");
+
+#elif BCL35 || BCL45
                 ////// client
                 _client.Add(CLIENT_ID_KEY, "111710ab-5cba-4ae4-bfee-d1f4d59f5111");
-                _client.Add(CLIENT_APP_TITLE_KEY, "YourApp");
-                _client.Add(CLIENT_APP_VERSION_NAME_KEY, "v1.0");
-                _client.Add(CLIENT_APP_VERSION_CODE_KEY, "1.0");
-                _client.Add(CLIENT_APP_PACKAGE_NAME_KEY, "com.yourcompany.yourapp");
 
                 ////// env
-                _env.Add(ENV_PLATFORM_KEY, "iPhoneOS");
-                _env.Add(ENV_PLATFORM_VERSION_KEY, "8.1.2");
-                _env.Add(ENV_LOCALE_KEY, "en_US");
-                _env.Add(ENV_MAKE_KEY, "Apple");
-                _env.Add(ENV_MODEL_KEY, "iPhone");		        
-#elif BCL45
-                ////// client
-                _client.Add(CLIENT_ID_KEY, "111710ab-5cba-4ae4-bfee-d1f4d59f5111");
-                _client.Add(CLIENT_APP_TITLE_KEY, "YourApp");
-                _client.Add(CLIENT_APP_VERSION_NAME_KEY, "v1.0");
-                _client.Add(CLIENT_APP_VERSION_CODE_KEY, "1.0");
-                _client.Add(CLIENT_APP_PACKAGE_NAME_KEY, "com.yourcompany.yourapp");
-
-                ////// env
-                _env.Add(ENV_PLATFORM_KEY, "iPhoneOS");
-                _env.Add(ENV_PLATFORM_VERSION_KEY, "8.1.2");
-                _env.Add(ENV_LOCALE_KEY, "en_US");
-                _env.Add(ENV_MAKE_KEY, "Apple");
-                _env.Add(ENV_MODEL_KEY, "iPhone");			
+                _env.Add(ENV_LOCALE_KEY, System.Globalization.CultureInfo.CurrentCulture.Name);
+	        
 #endif
-                
-                
                 // services
-                IDictionary mobileAnalyticsService = new Dictionary<string,string>();
-                mobileAnalyticsService.Add(SERVICE_MOBILE_ANALYTICS_APP_ID_KEY,Config.AppId);
-                _services.Add(SERVICE_MOBILE_ANALYTICS_KEY,mobileAnalyticsService);
-                
-                
+                IDictionary mobileAnalyticsService = new Dictionary<string, string>();
+                mobileAnalyticsService.Add(SERVICE_MOBILE_ANALYTICS_APP_ID_KEY, Config.AppId);
+                _services.Add(SERVICE_MOBILE_ANALYTICS_KEY, mobileAnalyticsService);
+
+
                 _clientContext = new Dictionary<string, IDictionary>();
-                _clientContext.Add(CLIENT_KEY,_client);
-                _clientContext.Add(ENV_KEY,_env);
-                _clientContext.Add(CUSTOM_KEY,_custom);
-                _clientContext.Add(SERVICES_KEY,_services);
-                
-               return JsonMapper.ToJson(_clientContext);
+                _clientContext.Add(CLIENT_KEY, _client);
+                _clientContext.Add(ENV_KEY, _env);
+                _clientContext.Add(CUSTOM_KEY, _custom);
+                _clientContext.Add(SERVICES_KEY, _services);
+
+                return JsonMapper.ToJson(_clientContext); 
             
             }
         }

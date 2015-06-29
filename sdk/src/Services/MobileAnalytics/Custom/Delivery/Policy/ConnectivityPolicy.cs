@@ -18,6 +18,8 @@
 using System;
 using System.Net;
 using Amazon.MobileAnalytics;
+using Amazon.Util.Internal.PlatformServices;
+using Amazon.Runtime.Internal.Util;
 
 
 
@@ -26,13 +28,15 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     public class ConnectivityPolicy : IDeliveryPolicy
     {
         private readonly bool IsDataAllowed;
+        private INetworkReachability networkReachability = new NetworkReachability();
+        private static Logger _logger = Logger.GetLogger(typeof(ConnectivityPolicy));
 
         /// <summary>
         /// Initializes a new instance of the
         /// <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.ConnectivityPolicy"/> class.
         /// </summary>
         /// <param name="IsDataAllowed">If set to <c>true</c> polciy will allow the delivery on data network.</param>
-        public ConnectivityPolicy (bool IsDataAllowed)
+        public ConnectivityPolicy(bool IsDataAllowed)
         {
             this.IsDataAllowed = IsDataAllowed;
         }
@@ -42,35 +46,32 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// </summary>
         /// <returns>true</returns>
         /// <c>false</c>
-        public bool IsAllowed ()
+        public bool IsAllowed()
         {
-            return this.HasNetworkConnectivity ();
+            return this.HasNetworkConnectivity();
         }
-        
+
         /// <summary>
         /// Determines whether this instance has network connectivity.
         /// </summary>
         /// <returns><c>true</c> if this instance has network connectivity; otherwise, <c>false</c>.</returns>
-        private bool HasNetworkConnectivity ()
+        private bool HasNetworkConnectivity()
         {
-            // TODO: add platform specific implementation
-            return true;
-            
-            //NetworkReachability networkReachability = NetworkInfo.GetReachability();
-            //bool networkFlag = false;
-            //switch (networkReachability) {
-            //    case NetworkReachability.NotReachable:
-            //        networkFlag = false;
-            //        break;
-            //    case NetworkReachability.ReachableViaLocalAreaNetwork:
-            //        networkFlag = true;
-            //        break;
-            //    case NetworkReachability.ReachableViaCarrierDataNetwork:
-            //        networkFlag = IsDataAllowed;
-            //        break;
-            //}
-            //return networkFlag;
+            NetworkStatus status = networkReachability.NetworkStatus;
+            bool networkFlag = false;
+            switch (status)
+            {
+                case NetworkStatus.NotReachable:
+                    networkFlag = false;
+                    break;
+                case NetworkStatus.ReachableViaWiFiNetwork:
+                    networkFlag = true;
+                    break;
+                case NetworkStatus.ReachableViaCarrierDataNetwork:
+                    networkFlag = IsDataAllowed;
+                    break;
+            }
+            return networkFlag;
         }
-        
-        }
+    }
 }

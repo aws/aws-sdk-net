@@ -23,8 +23,9 @@ using ThirdParty.Json.LitJson;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 
-#if PCL || BCL45
+#if PCL
 using PCLStorage;
+using System.Threading.Tasks;
 #endif
 
 
@@ -56,7 +57,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         // lock to guard session info
         private Object _lock = new Object();
        
-        private class SessionStorage
+        internal class SessionStorage
         {
             public SessionStorage()
             {
@@ -69,14 +70,16 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             public string _sessionId;
             public long _duration;
         }
-        private SessionStorage _sessionStorage = new SessionStorage();
-   
+        //private SessionStorage _sessionStorage = new SessionStorage();
+        private volatile SessionStorage _sessionStorage = null;
 
         private string _appid;
         
         private string _sessionStorageFileName = "_session_storage.json";
         private string _sessionStorageFileFullPath = null;
-
+        internal static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+        
+        
         #region public
 
 
@@ -86,11 +89,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 throw new ArgumentNullException("appId");
 
             _appid = appId;
-
-            if (!string.IsNullOrEmpty(MobileAnalyticsUtil.AppDataPath))
-                _sessionStorageFileFullPath = MobileAnalyticsUtil.AppDataPath + "/" + _appid + _sessionStorageFileName;
-            else
-                _sessionStorageFileFullPath = "./" + _appid + _sessionStorageFileName;
+            Amazon.Util.Internal.PlatformServices.ApplicationInfo appInfo = new Amazon.Util.Internal.PlatformServices.ApplicationInfo();
+            _sessionStorageFileFullPath = System.IO.Path.Combine(appInfo.SpecialFolder, _appid + _sessionStorageFileName);
+            _sessionStorage = new SessionStorage();
         }
         
         /// <summary>
@@ -99,7 +100,14 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         internal void Start()
         {
             // Read session info from persistent storage, in case app is killed.
-            RetrieveSessionStorage();
+            try
+            {
+                RetrieveSessionStorage();
+            }
+            catch (Exception e)
+            {
+                _logger.Error(e, "Catch exception when read session storage file.");
+            }
             
             // If session storage is valid, restore session and resume session.
             if(_sessionStorage != null && !string.IsNullOrEmpty(_sessionStorage._sessionId))
@@ -124,7 +132,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         public void Pause()
         {
             PauseSession();
+            _logger.InfoFormat("before Save session storage");
+
             SaveSessionStorage();
+            _logger.InfoFormat("after Save session storage");
         }
         
         /// <summary>
@@ -145,8 +156,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             if(_stopTime.Value < currentTime)
             {
 
-                long resumeTimeStamp = Convert.ToInt64((currentTime - AWSSDKUtils.EPOCH_START).TotalSeconds);
-                long stopTimeStamp =  Convert.ToInt64((_stopTime.Value - AWSSDKUtils.EPOCH_START).TotalSeconds);
+                long resumeTimeStamp = Convert.ToInt64((currentTime - EPOCH_START).TotalSeconds);
+                long stopTimeStamp = Convert.ToInt64((_stopTime.Value - EPOCH_START).TotalSeconds);
                 
                 // new session 
                 if (resumeTimeStamp - stopTimeStamp > AWSConfigsMobileAnalytics.SessionTimeout)
@@ -296,17 +307,13 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             }
             MobileAnalyticsManager.GetInstance(_appid).RecordEventAsync(resumeSessionEvent);
         }
-
-
-        // TODO: add platform specific implementation    
-#if BCL35
+   
+#if BCL35 || BCL45
         private void SaveSessionStorage()
-
-#elif PCL || BCL45
+#elif PCL 
         private async void SaveSessionStorage()
 #endif
         {
-
             lock (_lock)
             {
                 _sessionStorage._startTime = _startTime;
@@ -318,7 +325,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
             // store session into file
             _logger.DebugFormat("Mobile Analytics is about to store session info: {0} ", JsonMapper.ToJson(_sessionStorage));
-#if BCL35
+#if BCL35 || BCL45
             if (!File.Exists(_sessionStorageFileFullPath))
             {
                 FileStream fs = File.Create(_sessionStorageFileFullPath);
@@ -331,23 +338,22 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 File.WriteAllText(_sessionStorageFileFullPath, String.Empty);
                 File.WriteAllText(_sessionStorageFileFullPath, JsonMapper.ToJson(_sessionStorage));
             }
-#elif PCL || BCL45
+#elif PCL 
             IFolder rootFolder = FileSystem.Current.LocalStorage;
             IFile file = await rootFolder.CreateFileAsync(_sessionStorageFileFullPath, CreationCollisionOption.ReplaceExisting);
             await file.WriteAllTextAsync(JsonMapper.ToJson(_sessionStorage));
 #endif
         }
 
-#if PCL || BCL45
-        private async void RetrieveSessionStorage()
-#elif BCL35
-        private void RetrieveSessionStorage()
+#if BCL35 || BCL45
+        private bool RetrieveSessionStorage()
+#elif PCL
+        private async Task<bool> RetrieveSessionStorage()        
 #endif
         {
             string sessionString = null;
 
-
-#if BCL35
+#if BCL35 || BCL45
             if (File.Exists(_sessionStorageFileFullPath))
             {
                 System.IO.StreamReader sessionFile = new System.IO.StreamReader(_sessionStorageFileFullPath);
@@ -359,26 +365,43 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             {
                 _logger.DebugFormat("Mobile Analytics session file does not exist.");
             }
-
-#elif PCL || BCL45
+#elif PCL 
             try
             {
                 IFolder rootFolder = FileSystem.Current.LocalStorage;
-                IFile file = await rootFolder.GetFileAsync(_sessionStorageFileFullPath);
-                sessionString = await file.ReadAllTextAsync();
+
+                if(ExistenceCheckResult.FileExists  == await rootFolder.CheckExistsAsync(_sessionStorageFileFullPath))
+                {
+                    IFile file = await rootFolder.GetFileAsync(_sessionStorageFileFullPath);
+                    sessionString = await file.ReadAllTextAsync();
+                }
+
             }
             catch (Exception e)
             {
                 _logger.Error(e, "Catch Exception when reading session storage file.");
+                return false;
             }
 
 #endif
 
             if (!string.IsNullOrEmpty(sessionString))
             {
-                _sessionStorage = JsonMapper.ToObject<SessionStorage>(sessionString);
+                try
+                {
+                    _sessionStorage = JsonMapper.ToObject<SessionStorage>(sessionString);
+                }
+                catch (Exception e)
+                {
+                    _logger.Error(e, "Get exception when convert string to SessionStorage object.");
+                    return false;
+                }
+                return true;
             }
-            
+            else { 
+                return false;
+            }
+                
         }
         #endregion
     }

@@ -126,18 +126,16 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             long duration = 0;
             session.GetSessionInfo(out startTimestamp,out stopTimestamp,out sessionId,out duration);
 
-            if (this.StartTimestamp == null)
-                this.StartTimestamp = startTimestamp;
-            if(string.IsNullOrEmpty(this.SessionId))
-                this.SessionId = sessionId;
+            this.StartTimestamp = startTimestamp;
+            this.SessionId = sessionId;
             
             
             
             // assign session info from manager event to model event
             modelEvent.EventType = this._eventType;
             modelEvent.Session = new Amazon.MobileAnalytics.Model.Session();
-            modelEvent.Session.Id = this.SessionId;
-            modelEvent.Session.StartTimestamp = this.StartTimestamp;
+            modelEvent.Session.Id = sessionId;
+            modelEvent.Session.StartTimestamp = startTimestamp;
             
             if(this._eventType == Session.SESSION_STOP_EVENT_TYPE)
             {
@@ -384,12 +382,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             
             lock(_globalLock)
             {
-                
-                if(!_globalAttributes.ContainsKey(attributeName))
-                {
-                    _globalAttributes.Add(attributeName,attributeValue);
-                }
-                    
+                _globalAttributes[attributeName] = attributeValue;    
             }
         }
         

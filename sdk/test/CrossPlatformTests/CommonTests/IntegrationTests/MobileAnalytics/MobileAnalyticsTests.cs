@@ -2,57 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using NUnit.Framework;
+using CommonTests.Framework;
+
+using Amazon.S3;
+using Amazon.S3.Model;
+using Amazon.MobileAnalytics.MobileAnalyticsManager.Internal;
+using Amazon.MobileAnalytics.MobileAnalyticsManager;
 using Amazon.MobileAnalytics;
-using Amazon.MobileAnalytics.Model;
-using AWSSDK_DotNet.IntegrationTests.Utils;
-using AWSSDK_DotNet.IntegrationTests.Tests;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.IO;
-using System.Net;
 using System.Collections;
 using ThirdParty.Json.LitJson;
-using Amazon.Util;
-using System.Globalization;
-using Amazon.MobileAnalytics.MobileAnalyticsManager;
 using Amazon;
-using Amazon.Runtime;
-using Amazon.MobileAnalytics.MobileAnalyticsManager.Internal;
-using System.Threading;
+using System.Net;
+using Amazon.MobileAnalytics.Model;
 
-#if BCL45
-using System.Threading.Tasks;
-#endif
 
-namespace AWSSDK_DotNet.IntegrationTests.Tests
+
+namespace CommonTests.IntegrationTests
 {
-    [TestClass]
-    public class MobileAnalytics : TestBase<AmazonMobileAnalyticsClient>
+    [TestFixture]
+    public class SampleTests : TestBase<AmazonMobileAnalyticsClient>
     {
-        //private const string APP_ID = "c2a810692c0b49af83d987c843269a18";
-        private Dictionary<string, MobileAnalyticsManager> mobileAnalyticsInstanceDictionary = new Dictionary<string, MobileAnalyticsManager>();
 
-
-
-        [ClassCleanup]
-        public static void ClassCleanup()
-        {
-            BaseClean();
-        }
-
-        [TestInitialize()]
-        public void Initialize()
-        {
-        }
-
-        [TestCleanup()]
-        public void Cleanup()
-        {
-        }
-
-
-        #region Public API Test
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        [Test]
         public void TestSessionTimeout()
         {
             Console.WriteLine("session delta is " + AWSConfigsMobileAnalytics.SessionTimeout);
@@ -72,7 +45,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             // sleep for a while but wake up before session expires
             GetMobileAnalyticsManager(appId).PauseSession();
-            Thread.Sleep(Convert.ToInt32((AWSConfigsMobileAnalytics.SessionTimeout - 1) * 1000));
+            Task.Delay(Convert.ToInt32((AWSConfigsMobileAnalytics.SessionTimeout - 1) * 1000));
+
             GetMobileAnalyticsManager(appId).ResumeSession();
 
             DateTime startTimstamp2;
@@ -90,7 +64,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             // sleep longer until session expires
             GetMobileAnalyticsManager(appId).PauseSession();
-            Thread.Sleep(Convert.ToInt32((AWSConfigsMobileAnalytics.SessionTimeout + 1) * 1000));
+            Convert.ToInt32((AWSConfigsMobileAnalytics.SessionTimeout + 1) * 1000);
             GetMobileAnalyticsManager(appId).ResumeSession();
 
             DateTime startTimstamp3;
@@ -107,8 +81,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
 
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        [Test]
         public void TestManagerAddClientContextCustomAttribute()
         {
             string KEY1 = "key1";
@@ -134,9 +107,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.IsTrue(clientContextString.IndexOf(KEY2) < clientContextString.IndexOf(VALUE2));
         }
 
-
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        [Test]
         public void TestManagerMultipleInstance()
         {
             string APP_ID_1 = "TestManagerMultipleInstance-app-id-1";
@@ -155,13 +126,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.IsTrue(clientContextString2.IndexOf(APP_ID_2) > 0);
             Assert.IsTrue(clientContextString3.IndexOf(APP_ID_3) > 0);
         }
-        #endregion
 
-
-        #region Low Level API Test
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
-        public void TestLowLevelAPI()
+        [Test]
+        public async void TestLowLevelAPI()
         {
             List<Amazon.MobileAnalytics.Model.Event> listEvent = new List<Amazon.MobileAnalytics.Model.Event>();
             listEvent.Add(BuildCustomEvent());
@@ -174,18 +141,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                             System.Text.Encoding.UTF8.GetBytes(clientContext));
             putRequest.ClientContextEncoding = "base64";
 
-            PutEventsResponse PutResponse = Client.PutEvents(putRequest);
+            PutEventsResponse PutResponse = await Client.PutEventsAsync(putRequest);
 
             Assert.AreEqual(HttpStatusCode.Accepted, PutResponse.HttpStatusCode);
 
         }
-        #endregion
 
-
-        # region Session, Event and Client Context Test
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
-        public void TestSession()
+        [Test]
+        public async void TestSession()
         {
             string sessionID = Guid.NewGuid().ToString();
             List<Amazon.MobileAnalytics.Model.Event> listEvent = new List<Amazon.MobileAnalytics.Model.Event>();
@@ -199,37 +162,37 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                             System.Text.Encoding.UTF8.GetBytes(clientContext));
             putRequest.ClientContextEncoding = "base64";
 
-            PutEventsResponse PutResponse = Client.PutEvents(putRequest);
+            PutEventsResponse PutResponse = await Client.PutEventsAsync(putRequest);
 
             Assert.AreEqual(HttpStatusCode.Accepted, PutResponse.HttpStatusCode);
         }
 
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+
+        [Test]
         public void TestCustomEventConcurrency()
         {
             // event type
             const string EVENT_TYPE = "MyEventType";
 
             // attribute config
-            const string ATTR1 = "ATTR1";
-            const string ATTR1_VAL_T0 = "dshjadfhjdfa132`23jj`23jh1k2h3h21hg3h21j2gh";
-            const string ATTR1_VAL_T1 = "gfhfdhgvkfdkgljfdgjfdsj;l34t43jj4erjerb";
-            const string ATTR1_VAL_T2 = "7t32674tgdfjehkjdksjs;akfdshfjdsafkadsfdsljfa";
+            string ATTR1 = "ATTR1";
+            string ATTR1_VAL_T0 = "dshjadfhjdfa132`23jj`23jh1k2h3h21hg3h21j2gh";
+            string ATTR1_VAL_T1 = "gfhfdhgvkfdkgljfdgjfdsj;l34t43jj4erjerb";
+            string ATTR1_VAL_T2 = "7t32674tgdfjehkjdksjs;akfdshfjdsafkadsfdsljfa";
 
-            const string ATTR2 = "ATTR2";
-            const string ATTR2_VAL_T0 = "343hjfdshdfjklsafj0913432jh4";
-            const string ATTR2_VAL_T1 = "378t43y21ggdhsgdahshfdjsfafd";
-            const string ATTR2_VAL_T2 = "48ry42378tfhsfkds;kfl;dsdfk;ldslks";
+            string ATTR2 = "ATTR2";
+            string ATTR2_VAL_T0 = "343hjfdshdfjklsafj0913432jh4";
+            string ATTR2_VAL_T1 = "378t43y21ggdhsgdahshfdjsfafd";
+            string ATTR2_VAL_T2 = "48ry42378tfhsfkds;kfl;dsdfk;ldslks";
 
-            const string ATTR3 = "ATTR3";
-            const string ATTR3_VAL_T0 = "321432g4ghjfjshdggfjhsdgfdskgfjdsjgfsd";
-            const string ATTR3_VAL_T1 = "76432tgrsgerhjkfgshdfdssfgjdssaf";
-            const string ATTR3_VAL_T2 = "87549353hjtkgdk;sfgfdgf;kfl;dshfjdsjkhfjs";
+            string ATTR3 = "ATTR3";
+            string ATTR3_VAL_T0 = "321432g4ghjfjshdggfjhsdgfdskgfjdsjgfsd";
+            string ATTR3_VAL_T1 = "76432tgrsgerhjkfgshdfdssfgjdssaf";
+            string ATTR3_VAL_T2 = "87549353hjtkgdk;sfgfdgf;kfl;dshfjdsjkhfjs";
 
-            const string ATTR_EMPTY1 = "ATTR_EMPTY1";
-            const string ATTR_EMPTY2 = "ATTR_EMPTY2";
-            const string ATTR_EMPTY3 = "ATTR_EMPTY3";
+            string ATTR_EMPTY1 = "ATTR_EMPTY1";
+            string ATTR_EMPTY2 = "ATTR_EMPTY2";
+            string ATTR_EMPTY3 = "ATTR_EMPTY3";
 
             // metric config
             System.Random randObj = new System.Random();
@@ -252,14 +215,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             CustomEvent customEvent = new CustomEvent(EVENT_TYPE);
             const int LOOP_COUNT = 999;
 
-#if BCL35
-            Thread t0 = new Thread(
-            () =>
-            {
-#elif BCL45
             Task task0 = new Task(() =>
             {
-#endif
+
                 for (int i = 0; i < LOOP_COUNT; i++)
                 {
                     customEvent.AddAttribute(ATTR1, ATTR1_VAL_T0);
@@ -278,16 +236,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             });
 
 
-
-
-#if BCL35
-            Thread t1 = new Thread(
-            () =>
-            {
-#elif BCL45
             Task task1 = new Task(() =>
             {
-#endif
 
                 for (int i = 0; i < LOOP_COUNT; i++)
                 {
@@ -302,14 +252,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             });
 
 
-#if BCL35
-            Thread t2 = new Thread(
-            () =>
-            {
-#elif BCL45
             Task task2 = new Task(() =>
             {
-#endif
                 for (int i = 0; i < LOOP_COUNT; i++)
                 {
                     customEvent.AddAttribute(ATTR1, ATTR1_VAL_T1);
@@ -323,23 +267,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             });
 
 
-#if BCL35
-            t0.Start();
-            t1.Start();
-            t2.Start();
-
-            t0.Join();
-            t1.Join();
-            t2.Join();
-#elif BCL45
             task0.Start();
             task1.Start();
             task2.Start();
 
             // wait all task complete 
             Task.WaitAll(new[] { task0, task1, task2 });
-#endif
-
 
             // Get Model event.
             Amazon.MobileAnalytics.Model.Event modelEvent = customEvent.ConvertToMobileAnalyticsModelEvent(GetMobileAnalyticsManager("TestCustomEventConcurrency").Session);
@@ -403,8 +336,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         }
 
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+
+        [Test]
         public void TestMonetizationEventConcurrency()
         {
             // event type
@@ -455,16 +388,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             MonetizationEvent monetizationEvent = new MonetizationEvent();
 
-            const int LOOP_COUNT = 999;
+            const int LOOP_COUNT = 1;
 
-#if BCL35
-            Thread t0 = new Thread(
-            () =>
-            {
-#elif BCL45
+
             Task task0 = new Task(() =>
             {
-#endif
+
                 int i = 0;
                 for (i = 0; i < LOOP_COUNT; i++)
                 {
@@ -482,14 +411,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             });
 
 
-#if BCL35
-            Thread t1 = new Thread(
-            () =>
-            {
-#elif BCL45
+
             Task task1 = new Task(() =>
             {
-#endif
                 int i = 0;
                 for (i = 0; i < LOOP_COUNT; i++)
                 {
@@ -509,14 +433,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 monetizationEvent.Currency = CURRENCY;
             });
 
-#if BCL35
-            Thread t2 = new Thread(
-            () =>
-            {
-#elif BCL45
+
             Task task2 = new Task(() =>
             {
-#endif
                 int i = 0;
                 for (i = 0; i < LOOP_COUNT; i++)
                 {
@@ -531,22 +450,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             });
 
 
-#if BCL35
-            t0.Start();
-            t1.Start();
-            t2.Start();
-
-            t0.Join();
-            t1.Join();
-            t2.Join();
-#elif BCL45
             task0.Start();
             task1.Start();
             task2.Start();
 
             // wait all task complete 
             Task.WaitAll(new[] { task0, task1, task2 });
-#endif
 
             // Get model event.
             Amazon.MobileAnalytics.Model.Event modelEvent = monetizationEvent.ConvertToMobileAnalyticsModelEvent(GetMobileAnalyticsManager("TestMonetizationEventConcurrency").Session);
@@ -630,27 +539,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
-
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
-        public void TestClientContextHeader()
-        {
-
-        }
-        #endregion
-
-        #region Event Storage Test
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        [Test]
         public void TestEventStore()
         {
-
             // Create table
             SQLiteEventStore eventStore = new SQLiteEventStore();
 
             // Insert row
             string eventString = "TestEventStore-dummy-event-string";
-            string appId = "TestEventStore-dummy-app-id-TestEventStore";
+            string appId = Guid.NewGuid().ToString();
 
             const int EVENT_COUNT = 100;
 
@@ -677,7 +574,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 deleteEventsIdList.Add(eventData["id"].ToString());
             }
+            Console.WriteLine("The num of events are {0}", eventStore.NumberOfEvents(appId));
             eventStore.DeleteEvent(deleteEventsIdList);
+            Console.WriteLine("The num of events are {0}", eventStore.NumberOfEvents(appId));
 
             // check row num again
             Assert.AreEqual(EVENT_COUNT / 2, eventStore.NumberOfEvents(appId));
@@ -687,7 +586,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 eventStore.PutEvent(eventString, appId);
             }
+            Console.WriteLine("The num of events are {0}", eventStore.NumberOfEvents(appId));
             Assert.AreEqual(EVENT_COUNT, eventStore.NumberOfEvents(appId));
+            Console.WriteLine("The num of events are {0}", eventStore.NumberOfEvents(appId));
 
             // remove all rows
             allEventList = eventStore.GetEvents(appId, EVENT_COUNT);
@@ -697,9 +598,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 deleteEventsIdList.Add(eventData["id"].ToString());
             }
             eventStore.DeleteEvent(deleteEventsIdList);
+            Console.WriteLine("The num of events are {0}", eventStore.NumberOfEvents(appId));
             Assert.AreEqual(0, eventStore.NumberOfEvents(appId));
         }
-        #endregion
 
 
         private string BuildClientContext()
@@ -841,8 +742,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         private MobileAnalyticsManager GetMobileAnalyticsManager(string appId)
         {
-            return MobileAnalyticsManager.GetOrCreateInstance(new StoredProfileAWSCredentials(), RegionEndpoint.USEast1, appId);
+            return MobileAnalyticsManager.GetOrCreateInstance(CommonTests.Framework.TestRunner.Credentials, RegionEndpoint.USEast1, appId);
         }
-
     }
+
+
+
+
+
 }
+

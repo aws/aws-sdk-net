@@ -98,7 +98,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             
         }
 
-
         internal string AppId
         {
             get

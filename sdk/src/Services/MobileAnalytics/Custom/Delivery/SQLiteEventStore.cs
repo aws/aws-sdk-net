@@ -28,9 +28,9 @@ using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal;
 
-#if BCL35
+#if BCL35 || BCL45
 using System.Data.SQLite;
-#elif PCL || BCL45
+#elif PCL 
 using PCLStorage;
 using SQLitePCL;
 #endif
@@ -63,8 +63,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         static SQLiteEventStore()
         {
             // get platform specific db file full path                    
-            _dbFileFullPath = System.IO.Path.Combine(MobileAnalyticsUtil.AppDataPath, dbFileName);
-
+            Amazon.Util.Internal.PlatformServices.ApplicationInfo appInfo = new Amazon.Util.Internal.PlatformServices.ApplicationInfo();
+             _dbFileFullPath = System.IO.Path.Combine(appInfo.SpecialFolder, dbFileName);
             SetUpDatabase(dbFileName);
         }
 
@@ -74,12 +74,16 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <param name="dbPath">Db path.</param>
         private static void SetUpDatabase(String dbPath)
         {
+#if __IOS__
+            SQLitePCL.CurrentPlatform.Init();
+#endif
+
             string vacuumCommand = "PRAGMA auto_vacuum = 1";
             string sqlCommand = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " ("
                 + EVENT_COLUMN_NAME + " TEXT NOT NULL," + EVENT_ID_COLUMN_NAME + " TEXT NOT NULL UNIQUE,"
                 + MA_APP_ID_COLUMN_NAME + " TEXT NOT NULL,"
                 + EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME + " INTEGER NOT NULL DEFAULT 0)";
-#if BCL35
+#if BCL35 || BCL45
             if (!File.Exists(_dbFileFullPath))
                 SQLiteConnection.CreateFile(_dbFileFullPath);
             SQLiteConnection connection = null;
@@ -106,7 +110,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 if (null != connection)
                     connection.Close();
             }
-#elif PCL || BCL45
+#elif PCL 
             try
             {
                 lock (_lock)
@@ -157,7 +161,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             else
             {
 
-#if BCL35                               
+#if BCL35 || BCL45
                 string sqlCommand = "INSERT INTO " + TABLE_NAME + " (" + EVENT_COLUMN_NAME + "," + EVENT_ID_COLUMN_NAME + "," + MA_APP_ID_COLUMN_NAME + ") values(@event,@id,@appId)";
                 SQLiteConnection connection = null;
                 lock (_lock)
@@ -184,7 +188,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                             connection.Close();
                     }
                 }
-#elif PCL || BCL45
+#elif PCL 
                 string sqlCommand = "INSERT INTO " + TABLE_NAME + " (" + EVENT_COLUMN_NAME + "," + EVENT_ID_COLUMN_NAME + "," + MA_APP_ID_COLUMN_NAME + ") values(?,?,?)";
                 lock (_lock)
                 {
@@ -225,8 +229,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             string ids = "'" + String.Join("', '", rowIds.ToArray()) + "'";
             string sqlCommand = String.Format("DELETE FROM " + TABLE_NAME + " WHERE " + EVENT_ID_COLUMN_NAME + " IN ({0})", ids);
             lock (_lock)
-            {         
-#if BCL35                
+            {
+#if BCL35 || BCL45
                 SQLiteConnection connection = null;
                 try
                 {
@@ -247,7 +251,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                         connection.Close();
                 }
 
-#elif PCL || BCL45            
+#elif PCL           
                 try
                 {
                     using (var connection = new SQLiteConnection(_dbFileFullPath))
@@ -279,8 +283,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             
             List<JsonData> eventList = new List<JsonData>();
             lock (_lock)
-            {        
-#if BCL35
+            {
+#if BCL35 || BCL45
                 string sqlCommand = "SELECT * FROM " + TABLE_NAME + " WHERE " + MA_APP_ID_COLUMN_NAME + " = @appId  ORDER BY " + EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME + ",ROWID LIMIT " + maxAllowed;
                 SQLiteConnection connection = null;
                 try
@@ -309,7 +313,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                     if (null != connection)
                         connection.Close();
                 }
-#elif PCL || BCL45
+#elif PCL 
                 string sqlCommand = "SELECT * FROM " + TABLE_NAME + " WHERE " + MA_APP_ID_COLUMN_NAME + " = ?  ORDER BY " + EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME + ",ROWID LIMIT " + maxAllowed;
                 try
                 {
@@ -350,7 +354,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             long count = 0;
             lock (_lock)
             {
-#if BCL35
+#if BCL35 || BCL45
                 string sqlCommand = "SELECT COUNT(*) C FROM " + TABLE_NAME + " where " + MA_APP_ID_COLUMN_NAME + " = @appId";
                 SQLiteConnection connection = null;
                 try
@@ -374,7 +378,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                     if (null != connection)
                         connection.Close();
                 }                
-#elif PCL || BCL45                
+#elif PCL             
                 string sqlCommand = "SELECT COUNT(*) C FROM " + TABLE_NAME + " where " + MA_APP_ID_COLUMN_NAME + " = ?";
                 try
                 {
@@ -406,16 +410,50 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <returns>The database size.</returns>
         public long GetDatabaseSize()
         {
-#if BCL35
+#if BCL35 || BCL45
             FileInfo fileInfo = new FileInfo(_dbFileFullPath);
             return fileInfo.Length;
-#elif PCL || BCL45
-            // TODO: find a solution to get file size in PCL
-            return 0;
+#elif PCL 
+            string pageCountCommand = "PRAGMA page_count;";
+            string pageSizeCommand = "PRAGMA page_size;";
+
+            long pageCount = 0, pageSize = 0;
+
+            try
+            {
+                using (var connection = new SQLiteConnection(_dbFileFullPath))
+                {
+                    using (var statement = connection.Prepare(pageCountCommand))
+                    {
+                        while (statement.Step() == SQLiteResult.ROW)
+                        {
+                            pageCount = statement.GetInteger(0);
+                        }
+                    }
+
+                    using (var statement = connection.Prepare(pageSizeCommand))
+                    {
+                        while (statement.Step() == SQLiteResult.ROW)
+                        {
+                            pageSize = statement.GetInteger(0);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                _logger.Error(e, "Exception happens when getting number of events.");
+                return 0;
+            }
+
+            return pageCount*pageSize;
 #endif
         }
         
-
+        /// <summary>
+        /// Get the SQLite Event Store's database file full path.
+        /// </summary>
+        /// <returns> The database file full path. </returns>
         public string DBfileFullPath
         {
             get

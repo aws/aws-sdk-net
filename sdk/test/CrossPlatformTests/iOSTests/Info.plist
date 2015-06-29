@@ -5,7 +5,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>iOSTests</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.your-company.iOSTests</string>
+	<string>com.mwj.mwjtest</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
