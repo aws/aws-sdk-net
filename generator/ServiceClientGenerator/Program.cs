@@ -43,6 +43,11 @@ namespace ServiceClientGenerator
                         continue;
                     }
 
+                    // TODO: debug purpose, remove before integration
+                    //if (!serviceConfig.ModelName.Equals("MobileAnalytics", StringComparison.InvariantCultureIgnoreCase)) {
+                    //    continue;
+                    //}
+
                     Console.WriteLine("Processing model: {0} ({1})", serviceConfig.ModelName, serviceConfig.ModelPath);
                     var driver = new GeneratorDriver(serviceConfig, generationManifest, options);
                     driver.Execute();

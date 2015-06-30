@@ -21,6 +21,14 @@
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
         <dependency id="PCLStorage" version="1.0.2" />
         <dependency id="PCLCrypto" version="1.0.2.15130" />
+<#  
+    if(((string)(this.Session["AssemblyName"])).Equals("AWSSDK.MobileAnalytics",StringComparison.CurrentCultureIgnoreCase))
+    {
+#>
+        <dependency id="SQLitePCL" version="3.8.7.2" />
+<#
+    }
+#>
 <#
     foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
     {
@@ -30,6 +38,22 @@
     }
 #>
       </group>
+<#  
+    if(((string)this.Session["AssemblyName"]).Equals("AWSSDK.MobileAnalytics",StringComparison.CurrentCultureIgnoreCase))
+    {
+#>
+     <group targetFramework="xamarinios10">   
+        <dependency id="SQLitePCL" version="3.8.7.2" />
+     </group>
+     <group targetFramework="net35">   
+        <dependency id="System.Data.SQLite" version="1.0.97.0" />
+     </group>
+     <group targetFramework="net45">   
+        <dependency id="System.Data.SQLite" version="1.0.97.0" />
+     </group>
+<#
+    }
+#>
       <group>
 <#
     foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
@@ -58,5 +82,16 @@
     <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
 	<file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+
+<#  
+    if(((string)this.Session["AssemblyName"]).Equals("AWSSDK.MobileAnalytics",StringComparison.CurrentCultureIgnoreCase))
+    {
+#>
+    <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.MobileAnalytics.dll" target="lib\Xamarin.iOS10" />
+    <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.MobileAnalytics.xml" target="lib\Xamarin.iOS10" />
+    <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.MobileAnalytics.pdb" target="lib\Xamarin.iOS10" />
+<#
+    }
+#>
   </files>
 </package>

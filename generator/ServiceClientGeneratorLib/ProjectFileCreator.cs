@@ -89,7 +89,8 @@ namespace ServiceClientGenerator
 
             foreach (var projectFileConfiguration in projectFileConfigurations)
             {
-                if (projectFileConfiguration.IsSubProfile)
+                if (projectFileConfiguration.IsSubProfile &&
+                    !(serviceConfiguration.AssemblyTitle.Equals("AWSSDK.MobileAnalytics", StringComparison.InvariantCultureIgnoreCase) && projectFileConfiguration.Name.Equals("iOS", StringComparison.InvariantCultureIgnoreCase)))
                 {
                     // Skip sub profiles for service projects.
                     continue;
@@ -168,6 +169,9 @@ namespace ServiceClientGenerator
                 {
                     templateSession["SystemReferences"] = new List<string> { "System.Net.Http" };
                 }
+
+                if (serviceConfiguration.SpecificDependencies != null)
+                    templateSession["SpecificDependencies"] = serviceConfiguration.SpecificDependencies;
 
                 GenerateProjectFile(projectFileConfiguration, projectConfigurationData, templateSession, serviceFilesRoot, projectFilename);
             }

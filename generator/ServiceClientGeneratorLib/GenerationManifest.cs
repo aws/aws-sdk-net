@@ -34,6 +34,7 @@ namespace ServiceClientGenerator
             public const string MaxRetriesKey = "max-retries";
             public const string SynopsisKey = "synopsis";
             public const string DependenciesKey = "dependencies";
+            public const string SpecificDependenciesKey = "specific-dependencies";
         }
 
         abstract class ProjectsSectionKeys
@@ -106,7 +107,6 @@ namespace ServiceClientGenerator
         void LoadServiceConfigurations(JsonData manifest, string coreVersion, JsonData versions, string modelsFolder)
         {
             var serviceConfigurations = new List<ServiceConfiguration>();
-            //var serviceVersions = new Dictionary<string, string>();
 
             var modelsNode = manifest[ModelsSectionKeys.ModelsKey];
             foreach (JsonData modelNode in modelsNode)
@@ -114,7 +114,7 @@ namespace ServiceClientGenerator
                 var activeNode = modelNode[ModelsSectionKeys.ActiveKey];
                 if (activeNode != null && activeNode.IsBoolean && !(bool)activeNode) // skip models with active set to false
                     continue;
-
+                
                 // A new config that the api generates from
                 var modelName = modelNode[ModelsSectionKeys.ModelKey].ToString();
                 var config = new ServiceConfiguration
@@ -130,6 +130,16 @@ namespace ServiceClientGenerator
                     DefaultRegion = modelNode[ModelsSectionKeys.DefaultRegionKey] != null ? modelNode[ModelsSectionKeys.DefaultRegionKey].ToString() : null,
                     GenerateConstructors = modelNode[ModelsSectionKeys.GenerateClientConstructorsKey] == null || (bool)modelNode[ModelsSectionKeys.GenerateClientConstructorsKey] // A way to prevent generating basic constructors
                 };
+
+                if (modelNode[ModelsSectionKeys.SpecificDependenciesKey] != null)
+                {
+                    config.SpecificDependencies = new Dictionary<string, List<string>>();
+                    foreach (KeyValuePair<string, JsonData> kvp in modelNode[ModelsSectionKeys.SpecificDependenciesKey])
+                    {
+                        config.SpecificDependencies.Add(kvp.Key, (from object dep in kvp.Value select dep.ToString()).ToList());
+                    }
+                }
+
 
                 // Provides a way to specify a customizations file rather than using a generated one
                 config.CustomizationsPath = modelNode[ModelsSectionKeys.CustomizationFileKey] == null

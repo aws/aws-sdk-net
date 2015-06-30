@@ -630,8 +630,12 @@ namespace ServiceClientGenerator
 
         void GeneratePackagesConfig()
         {
-            // no customization in packages.config at present
-            var pcGenerator = new PackagesConfig();
+            var assemblyName = Configuration.Namespace.Replace("Amazon.", "AWSSDK.");
+            var session = new Dictionary<string, object>
+            {
+                { "AssemblyName", assemblyName },
+            };
+            var pcGenerator = new PackagesConfig() { Session = session };
             var text = pcGenerator.TransformText();
             WriteFile(ServiceFilesRoot, string.Empty, "packages.config", text);
         }

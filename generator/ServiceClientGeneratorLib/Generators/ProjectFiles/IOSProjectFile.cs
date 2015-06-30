@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+    #line 1 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class IOSProjectFile : IOSProjectFileBase
     {
@@ -38,7 +38,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>");
             
-            #line 14 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 14 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["ProjectGuid"]));
             
             #line default
@@ -51,7 +51,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
 	<IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
 	<BaseIntermediateOutputPath>obj\");
             
-            #line 20 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 20 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
@@ -66,14 +66,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\");
             
-            #line 28 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 28 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 29 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 29 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -82,7 +82,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "arningLevel>\r\n    <ConsolePause>false</ConsolePause>\r\n    <MtouchDebug>true</Mto" +
                     "uchDebug>\r\n    <CodesignKey>iPhone Developer</CodesignKey>\r\n");
             
-            #line 35 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 35 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
 
     if(this.Session.ContainsKey("SupressWarnings"))
     {
@@ -92,14 +92,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("\t<NoWarn>");
             
-            #line 39 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 39 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["SupressWarnings"]));
             
             #line default
             #line hidden
             this.Write("</NoWarn>\r\n");
             
-            #line 40 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 40 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
 
     }
 
@@ -109,14 +109,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModule" +
                     "SuppressionsFile>\r\n\t<DocumentationFile>bin\\Debug\\");
             
-            #line 44 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 44 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 44 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 44 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -125,7 +125,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "figuration)|$(Platform)\' == \'Release|AnyCPU\' \">\r\n    <DebugType>none</DebugType>" +
                     "\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\Release\\");
             
-            #line 49 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 49 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
@@ -135,7 +135,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "el>\r\n    <ConsolePause>false</ConsolePause>\r\n    <CodesignKey>iPhone Developer</" +
                     "CodesignKey>\r\n");
             
-            #line 55 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 55 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
 
     if(this.Session.ContainsKey("SupressWarnings"))
     {
@@ -145,14 +145,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("\t<NoWarn>");
             
-            #line 59 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 59 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["SupressWarnings"]));
             
             #line default
             #line hidden
             this.Write("</NoWarn>\r\n");
             
-            #line 60 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 60 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
 
     }
 
@@ -162,14 +162,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModule" +
                     "SuppressionsFile>\r\n\t<DocumentationFile>bin\\Release\\");
             
-            #line 64 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 64 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 64 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 64 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -178,7 +178,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "y>true</SignAssembly>\r\n  </PropertyGroup>\r\n  <Choose>\r\n    <When Condition=\" \'$(" +
                     "AWSKeyFile)\' == \'\' \">\r\n      <PropertyGroup>\r\n");
             
-            #line 72 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 72 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
 
     if(this.Session.ContainsKey("KeyFilePath"))
     {
@@ -188,14 +188,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("\t\t<AssemblyOriginatorKeyFile>");
             
-            #line 76 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 76 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["KeyFilePath"]));
             
             #line default
             #line hidden
             this.Write("</AssemblyOriginatorKeyFile>\r\n");
             
-            #line 77 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 77 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
 
     }
 	else
@@ -207,7 +207,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("        <AssemblyOriginatorKeyFile>..\\..\\..\\awssdk.dll.snk</AssemblyOriginatorKey" +
                     "File>\r\n");
             
-            #line 83 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 83 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
 
     }
 
@@ -218,7 +218,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "    <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>\r\n      " +
                     "</PropertyGroup>\r\n    </Otherwise>\r\n  </Choose>\r\n  <ItemGroup>\r\n");
             
-            #line 95 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 95 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
 
     foreach(string subDirectory in ((IList<string>)this.Session["SourceDirectories"]))
     {
@@ -228,14 +228,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 99 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 99 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(subDirectory));
             
             #line default
             #line hidden
             this.Write("\\*.cs\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
             
-            #line 102 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 102 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
 
     }
 
@@ -244,7 +244,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n  <ItemGroup>\r\n");
             
-            #line 107 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 107 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
 
     if(this.Session.ContainsKey("IndividualFileIncludes"))
     {
@@ -258,14 +258,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 115 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 115 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(file));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
             
-            #line 118 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 118 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
 
             }
             else
@@ -276,14 +276,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <EmbeddedResource Include=\"");
             
-            #line 123 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 123 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(file));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <SubType>Designer</SubType>\r\n    </EmbeddedResource>\r\n");
             
-            #line 126 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 126 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
 
             }
         }
@@ -294,7 +294,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n");
             
-            #line 132 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 132 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
 
     if(this.Session.ContainsKey("ProjectReferences"))
     {
@@ -306,28 +306,28 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n    <ProjectReference Include=\"");
             
-            #line 139 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 139 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.IncludePath));
             
             #line default
             #line hidden
             this.Write("\">\r\n        <Project>");
             
-            #line 140 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 140 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("</Project>\r\n        <Name>");
             
-            #line 141 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 141 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.Name));
             
             #line default
             #line hidden
             this.Write("</Name>\r\n    </ProjectReference>\r\n  </ItemGroup>\r\n");
             
-            #line 144 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 144 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
 
         }
     }
@@ -349,7 +349,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Reference Include=""PCLCrypto"">
       <HintPath>");
             
-            #line 160 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 160 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -358,7 +358,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "nios10+MonoTouch10\\PCLCrypto.dll</HintPath>\r\n    </Reference>\r\n    <Reference In" +
                     "clude=\"PCLStorage\">\r\n      <HintPath>");
             
-            #line 163 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 163 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -367,7 +367,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "iOS+Xamarin.Mac\\PCLStorage.dll</HintPath>\r\n    </Reference>\r\n    <Reference Incl" +
                     "ude=\"PCLStorage.Abstractions\">\r\n      <HintPath>");
             
-            #line 166 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 166 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -378,7 +378,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Reference Include=""System.Net.Http.Extensions"">
       <HintPath>");
             
-            #line 170 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 170 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -387,13 +387,52 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "ath>\r\n    </Reference>\r\n    <Reference Include=\"System.Net.Http.Primitives\">\r\n  " +
                     "    <HintPath>");
             
-            #line 173 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+            #line 173 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
             #line hidden
-            this.Write(@"Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Primitives.dll</HintPath>
+            this.Write("Microsoft.Net.Http.2.2.29\\lib\\Xamarin.iOS10\\System.Net.Http.Primitives.dll</HintP" +
+                    "ath>\r\n    </Reference>\r\n");
+            
+            #line 175 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+
+    if(this.Session.ContainsKey("SpecificDependencies"))
+    {
+        Dictionary<string, List<string>> deps = (Dictionary<string, List<string>>)this.Session["SpecificDependencies"];
+        
+        if(deps.ContainsKey("iOS"))
+        {
+            foreach(string dep in deps["iOS"])
+            {
+                if(dep.Equals("SQLitePCL",StringComparison.InvariantCultureIgnoreCase))
+                {
+
+            
+            #line default
+            #line hidden
+            this.Write(@"    <Reference Include=""SQLitePCL, Version=3.8.7.2, Culture=neutral, PublicKeyToken=bddade01e9c850c5, processorArchitecture=MSIL"">
+      <HintPath>..\..\..\packages\SQLitePCL.3.8.7.2\lib\Xamarin.iOS10\SQLitePCL.dll</HintPath>
+      <Private>True</Private>
     </Reference>
+    <Reference Include=""SQLitePCL.Ext, Version=3.8.7.2, Culture=neutral, PublicKeyToken=bddade01e9c850c5, processorArchitecture=MSIL"">
+      <HintPath>..\..\..\packages\SQLitePCL.3.8.7.2\lib\Xamarin.iOS10\SQLitePCL.Ext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+");
+            
+            #line 195 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
+                
+                }
+            }
+        }
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write(@"
+
   </ItemGroup>
   <Import Project=""$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets"" />
   <Import Project=""$(SolutionDir)\.nuget\NuGet.targets"" Condition=""Exists('$(SolutionDir)\.nuget\NuGet.targets')"" />

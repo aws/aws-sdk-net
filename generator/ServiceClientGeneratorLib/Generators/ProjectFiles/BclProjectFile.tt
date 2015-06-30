@@ -95,6 +95,54 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
 <#
+    if(this.Session.ContainsKey("SpecificDependencies"))
+    {
+        Dictionary<string, List<string>> deps = (Dictionary<string, List<string>>)this.Session["SpecificDependencies"];
+        string name = (string)this.Session["Name"];
+
+        if(deps.ContainsKey("net35") && name.Equals("net35",StringComparison.CurrentCultureIgnoreCase))
+        {
+            foreach(string dep in deps["net35"])
+            {
+                if(dep.Equals("System.Data.SQLite",StringComparison.InvariantCultureIgnoreCase))
+                {
+#>
+    <Reference Include="System.Data.SQLite, Version=1.0.97.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Data.SQLite.Core.1.0.97.0\lib\net20\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.97.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Data.SQLite.Linq.1.0.97.0\lib\net20\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+<#                
+                }
+            }
+        }
+
+        else if(deps.ContainsKey("net45") && name.Equals("net45",StringComparison.CurrentCultureIgnoreCase))
+        {
+            foreach(string dep in deps["net45"])
+            {
+                if(dep.Equals("System.Data.SQLite",StringComparison.InvariantCultureIgnoreCase))
+                {
+#>
+    <Reference Include="System.Data.SQLite, Version=1.0.97.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Data.SQLite.Core.1.0.97.0\lib\net20\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.97.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Data.SQLite.Linq.1.0.97.0\lib\net20\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+<#                
+                }
+            }
+        }
+
+    }
+#>
+<#
     object systemReferences;
     if(this.Session.TryGetValue("SystemReferences", out systemReferences) && systemReferences is IList<string>)
     {

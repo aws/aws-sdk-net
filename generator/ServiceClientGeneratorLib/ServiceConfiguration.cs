@@ -120,6 +120,7 @@ namespace ServiceClientGenerator
         public string LockedApiVersion { get; set; }
         public string Synopsis { get; set; }
         public Dictionary<string, string> ServiceDependencies { get; set; }
+        public Dictionary<string, List<string>> SpecificDependencies;
         public string ServiceVersion
         {
             get

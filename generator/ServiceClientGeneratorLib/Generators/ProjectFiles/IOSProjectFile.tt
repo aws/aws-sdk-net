@@ -172,6 +172,34 @@
     <Reference Include="System.Net.Http.Primitives">
       <HintPath><#=this.Session["NugetPackagesLocation"]#>Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
+<#
+    if(this.Session.ContainsKey("SpecificDependencies"))
+    {
+        Dictionary<string, List<string>> deps = (Dictionary<string, List<string>>)this.Session["SpecificDependencies"];
+        
+        if(deps.ContainsKey("iOS"))
+        {
+            foreach(string dep in deps["iOS"])
+            {
+                if(dep.Equals("SQLitePCL",StringComparison.InvariantCultureIgnoreCase))
+                {
+#>
+    <Reference Include="SQLitePCL, Version=3.8.7.2, Culture=neutral, PublicKeyToken=bddade01e9c850c5, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SQLitePCL.3.8.7.2\lib\Xamarin.iOS10\SQLitePCL.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLitePCL.Ext, Version=3.8.7.2, Culture=neutral, PublicKeyToken=bddade01e9c850c5, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SQLitePCL.3.8.7.2\lib\Xamarin.iOS10\SQLitePCL.Ext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+<#                
+                }
+            }
+        }
+    }
+#>
+
+
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

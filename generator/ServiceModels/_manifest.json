@@ -26,22 +26,22 @@
             "binSubFolder": "pcl",
             "template": "PCLProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference" ],
-			
+
             "extraTestProjects": [
-				"test\\CrossPlatformTests\\CommonTests\\CommonTests.csproj",
-				"test\\CrossPlatformTests\\AndroidApp\\AndroidApp.csproj",
-				"test\\CrossPlatformTests\\iOSTests\\iOSTests.csproj",
+                "test\\CrossPlatformTests\\CommonTests\\CommonTests.csproj",
+                "test\\CrossPlatformTests\\AndroidApp\\AndroidApp.csproj",
+                "test\\CrossPlatformTests\\iOSTests\\iOSTests.csproj",
                 "test\\CrossPlatformTests\\WindowsConsoleApp\\WindowsConsoleApp.csproj",
                 "test\\CrossPlatformTests\\WindowsApp\\WindowsApp.csproj",
                 "test\\CrossPlatformTests\\WindowsPhoneApp\\WindowsPhoneApp.csproj",
 
-				"test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests\\XFormsPortableTests.csproj",
-				"test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests.Droid\\XFormsPortableTests.Droid.csproj",
-				"test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests.iOS\\XFormsPortableTests.iOS.csproj",
+                "test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests\\XFormsPortableTests.csproj",
+                "test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests.Droid\\XFormsPortableTests.Droid.csproj",
+                "test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests.iOS\\XFormsPortableTests.iOS.csproj",
                 "test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests.WinPhone\\XFormsPortableTests.WinPhone.csproj"
             ]
         },
-		{
+        {
             "name": "Android",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
@@ -49,9 +49,9 @@
             "binSubFolder": "monoandroid",
             "template": "AndroidProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_android" ],
-			"parentProfile" : "PCL"            
+            "parentProfile": "PCL"
         },
-		{
+        {
             "name": "iOS",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
@@ -59,9 +59,9 @@
             "binSubFolder": "Xamarin.iOS10",
             "template": "IOSProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_ios" ],
-			"parentProfile" : "PCL"            
+            "parentProfile": "PCL"
         },
-		{
+        {
             "name": "Win8",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
@@ -69,7 +69,7 @@
             "binSubFolder": "windows8",
             "template": "Win8ProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8" ],
-            "parentProfile" : "PCL"            
+            "parentProfile": "PCL"
         },
         {
             "name": "WinPhone81",
@@ -89,7 +89,7 @@
             "binSubFolder": "wp8",
             "template": "WinPhoneSilverlight8ProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhoneSilverlight8" ],
-            "parentProfile" : "PCL"            
+            "parentProfile": "PCL"
         }
     ],
     "models": [
@@ -266,8 +266,8 @@
             "authentication-service-name": "ds",
             "service-url": "https://ds.us-east-1.amazonaws.com",
             "synopsis": "AWS Directory Service is a managed service that allows you to connect your AWS resources with an existing on-premises Microsoft Active Directory or to set up a new, stand-alone directory in the AWS Cloud."
-        },        
-		{
+        },
+        {
             "active": true,
 
             "model": "dynamodb",
@@ -420,25 +420,31 @@
             "authentication-service-name": "kms",
             "synopsis": "AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys."
         },
-		{
+        {
             "active": true,
 
             "model": "machinelearning",
-			"base-name" : "MachineLearning",
-			"region-lookup-name" : "machinelearning",
-			"authentication-service-name" : "machinelearning",
+            "base-name": "MachineLearning",
+            "region-lookup-name": "machinelearning",
+            "authentication-service-name": "machinelearning",
             "synopsis": "Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology."
-		},
-		{
+        },
+        {
             "active": true,
 
-			"model":"mobileanalytics",
-			"base-name":"MobileAnalytics",
-			"service-url":"https://mobileanalytics.us-east-1.amazonaws.com",
-			"authentication-service-name": "mobileanalytics",
-			"region-lookup-name":"mobileanalytics",
-			"synopsis":"Amazon Mobile Analytics is a service that lets you simply and cost effectively collect and analyze your application usage data. In addition to providing usage summary charts that are available for quick reference, Amazon Mobile Analytics enables you to set up automatic export of your data to Amazon S3 for use with other data analytics tools such as Amazon Redshift, Amazon Elastic MapReduce (EMR), Extract, Transform and Load (ETL) software, or your own data warehouse."
-		},
+            "model": "mobileanalytics",
+            "base-name": "MobileAnalytics",
+            "service-url": "https://mobileanalytics.us-east-1.amazonaws.com",
+            "authentication-service-name": "mobileanalytics",
+            "region-lookup-name": "mobileanalytics",
+            "synopsis": "Amazon Mobile Analytics is a service that lets you simply and cost effectively collect and analyze your application usage data. In addition to providing usage summary charts that are available for quick reference, Amazon Mobile Analytics enables you to set up automatic export of your data to Amazon S3 for use with other data analytics tools such as Amazon Redshift, Amazon Elastic MapReduce (EMR), Extract, Transform and Load (ETL) software, or your own data warehouse."
+            "specific-dependencies": {
+                "Net35": [ "System.Data.SQLite"],
+                "Net45": [ "System.Data.SQLite"],
+                "PCL": [ "SQLitePCL"],
+                "iOS": [ "SQLitePCL"]
+            }
+        },
         {
             "active": true,
 
@@ -494,7 +500,7 @@
             "base-name": "S3",
             "region-lookup-name": "s3",
             "service-url": "https://s3.amazonaws.com/",
-			"authentication-service-name": "s3",
+            "authentication-service-name": "s3",
             "synopsis": "Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage."
         },
         {
@@ -573,9 +579,9 @@
             "service-url": "https://storagegateway.us-east-1.amazonaws.com",
             "synopsis": "The AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure."
         },
-		{
-			"active" : true,
-			
+        {
+            "active": true,
+
             "model": "workspaces",
             "base-name": "WorkSpaces",
             "region-lookup-name": "workspaces",
