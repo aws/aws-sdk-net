@@ -31,6 +31,7 @@
         <SDKPlatform Condition="'$(SDKPlatform)'==''">net45</SDKPlatform>
         <SDKServices Condition="'$(SDKServices)'==''">*</SDKServices>
         
+        <RunKeyScan Condition="'$(RunKeyScan)'==''">false</RunKeyScan>
     </PropertyGroup>
     
 	<Target Name="build-custom-tasks">
@@ -192,7 +193,9 @@
 			DestinationFolder="$(Deployment)" />
 	</Target>
 	
-    <Target Name="keyscan" Condition="Exists('$(InternalBuildTools)\references.targets')" DependsOnTargets="build-tools">
+    <Target Name="keyscan" 
+            Condition="Exists('$(InternalBuildTools)\references.targets') And $(RunKeyScan)" 
+            DependsOnTargets="build-tools">
         <ItemGroup>
             <PrivateKeyException Include="generator\ServiceModels\ec2-2014-02-01.normal.json" />
             <PrivateKeyException Include="generator\ServiceModels\iam-2010-05-08.normal.json" />
