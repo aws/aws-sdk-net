@@ -44,14 +44,5 @@ namespace Amazon.Util.Internal.PlatformServices
                 throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
             }
         }
-
-        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
-        public string SpecialFolder
-        {
-            get
-            {
-                throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
-            }
-        }
     }
 }

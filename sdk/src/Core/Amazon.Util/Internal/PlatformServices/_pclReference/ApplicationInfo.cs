@@ -40,14 +40,5 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
-
-        public string SpecialFolder
-        {
-            get 
-            {
-                throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
-            }
-        }
-
     }
 }
