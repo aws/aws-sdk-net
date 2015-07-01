@@ -7,7 +7,8 @@
             "defineConstants": ";BCL;BCL35;AWS_APM_API;CODE_ANALYSIS;LOCAL_FILE",
             "binSubFolder": "net35",
             "template": "BclProjectFile",
-            "platformCodeFolders": [ "_bcl", "_bcl35" ]
+            "platformCodeFolders": [ "_bcl", "_bcl35" ],
+            "nugetTargetPlatform": "net35"
         },
         {
             "name": "Net45",
@@ -16,7 +17,8 @@
             "defineConstants": ";BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE",
             "binSubFolder": "net45",
             "template": "BclProjectFile",
-            "platformCodeFolders": [ "_bcl", "_bcl45", "_async" ]
+            "platformCodeFolders": [ "_bcl", "_bcl45", "_async" ],
+            "nugetTargetPlatform": "net45"
         },
         {
             "name": "PCL",
@@ -26,7 +28,7 @@
             "binSubFolder": "pcl",
             "template": "PCLProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference" ],
-
+            "nugetTargetPlatform": "portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10",
             "extraTestProjects": [
                 "test\\CrossPlatformTests\\CommonTests\\CommonTests.csproj",
                 "test\\CrossPlatformTests\\AndroidApp\\AndroidApp.csproj",
@@ -49,7 +51,8 @@
             "binSubFolder": "monoandroid",
             "template": "AndroidProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_android" ],
-            "parentProfile": "PCL"
+            "parentProfile": "PCL",
+            "nugetTargetPlatform": "MonoAndroid10"
         },
         {
             "name": "iOS",
@@ -59,7 +62,8 @@
             "binSubFolder": "Xamarin.iOS10",
             "template": "IOSProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_ios" ],
-            "parentProfile": "PCL"
+            "parentProfile": "PCL",
+            "nugetTargetPlatform": "xamarinios10"
         },
         {
             "name": "Win8",
@@ -69,7 +73,8 @@
             "binSubFolder": "windows8",
             "template": "Win8ProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8" ],
-            "parentProfile": "PCL"
+            "parentProfile": "PCL",
+            "nugetTargetPlatform": "netcore45"
         },
         {
             "name": "WinPhone81",
@@ -79,7 +84,8 @@
             "binSubFolder": "wpa81",
             "template": "WinPhone81ProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhone81" ],
-            "parentProfile": "PCL"
+            "parentProfile": "PCL",
+            "nugetTargetPlatform": "wpa81"
         },
         {
             "name": "WinPhoneSilverlight8",
@@ -89,7 +95,8 @@
             "binSubFolder": "wp8",
             "template": "WinPhoneSilverlight8ProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhoneSilverlight8" ],
-            "parentProfile": "PCL"
+            "parentProfile": "PCL",
+            "nugetTargetPlatform": "wp8"
         }
     ],
     "models": [
@@ -437,12 +444,20 @@
             "service-url": "https://mobileanalytics.us-east-1.amazonaws.com",
             "authentication-service-name": "mobileanalytics",
             "region-lookup-name": "mobileanalytics",
-            "synopsis": "Amazon Mobile Analytics is a service that lets you simply and cost effectively collect and analyze your application usage data. In addition to providing usage summary charts that are available for quick reference, Amazon Mobile Analytics enables you to set up automatic export of your data to Amazon S3 for use with other data analytics tools such as Amazon Redshift, Amazon Elastic MapReduce (EMR), Extract, Transform and Load (ETL) software, or your own data warehouse."
-            "specific-dependencies": {
-                "Net35": [ "System.Data.SQLite"],
-                "Net45": [ "System.Data.SQLite"],
-                "PCL": [ "SQLitePCL"],
-                "iOS": [ "SQLitePCL"]
+            "synopsis": "Amazon Mobile Analytics is a service that lets you simply and cost effectively collect and analyze your application usage data. In addition to providing usage summary charts that are available for quick reference, Amazon Mobile Analytics enables you to set up automatic export of your data to Amazon S3 for use with other data analytics tools such as Amazon Redshift, Amazon Elastic MapReduce (EMR), Extract, Transform and Load (ETL) software, or your own data warehouse.",
+            "pcl-variants": [ "iOS" ],
+            "platform-dependencies": {
+                "Net35": [
+                    { "name": "System.Data.SQLite", "version": "1.0.97.0", "hint-path": "net20\\System.Data.SQLite.dll" },
+                    { "name": "System.Data.SQLite.Linq", "version": "1.0.97.0", "hint-path": "net20\\System.Data.SQLite.Linq.dll" }
+                ],
+                "Net45": [
+                    { "name": "System.Data.SQLite", "version": "1.0.97.0", "hint-path": "net20\\System.Data.SQLite.dll" },
+                    { "name": "System.Data.SQLite.Linq", "version": "1.0.97.0", "hint-path": "net20\\System.Data.SQLite.Linq.dll" }
+                ],
+                "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2", "hint-path": "portable-net45+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\\SQLitePCL.dll" } ],
+                "iOS": [ { "name": "SQLitePCL", "version": "3.8.7.2", "hint-path": "portable-net45+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\\SQLitePCL.dll" },
+                         { "name": "SQLitePCL.Ext", "version": "3.8.7.2", "hint-path": "portable-net45+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\\SQLitePCL.Ext.dll" }]
             }
         },
         {

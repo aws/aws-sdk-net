@@ -673,8 +673,12 @@ namespace ServiceClientGenerator
                 { "AssemblyDescription", Configuration.AssemblyDescription },
                 { "AssemblyVersion", assemblyVersion },
                 { "AWSDependencies", awsDependencies },
-                { "BaseName", this.Configuration.BaseName }
+                { "BaseName", this.Configuration.BaseName },
+                { "ProjectFileConfigurations", this.ProjectFileConfigurations}
             };
+
+            if (Configuration.PlatformDependencies != null)
+                session.Add("PlatformDependencies", Configuration.PlatformDependencies);
 
             var nuspecGenerator = new Nuspec { Session = session };
             var text = nuspecGenerator.TransformText();

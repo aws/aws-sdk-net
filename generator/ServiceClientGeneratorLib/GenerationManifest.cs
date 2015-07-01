@@ -34,7 +34,11 @@ namespace ServiceClientGenerator
             public const string MaxRetriesKey = "max-retries";
             public const string SynopsisKey = "synopsis";
             public const string DependenciesKey = "dependencies";
-            public const string SpecificDependenciesKey = "specific-dependencies";
+            public const string PlatformDependenciesKey = "platform-dependencies";
+            public const string PclVariantsKey = "pcl-variants";
+            public const string PlatformDependencyNameKey = "name";
+            public const string PlatformDependencyVersionKey = "version";
+            public const string PlatformDependencyHintPathKey = "hint-path";
         }
 
         abstract class ProjectsSectionKeys
@@ -49,6 +53,7 @@ namespace ServiceClientGenerator
             public const string PlatformCodeFoldersKey = "platformCodeFolders";
             public const string ExtraTestProjects = "extraTestProjects";
             public const string ParentProfile = "parentProfile";
+            public const string NuGetTargetFrameworkKey = "nugetTargetPlatform";
         }
 
         /// <summary>
@@ -131,15 +136,32 @@ namespace ServiceClientGenerator
                     GenerateConstructors = modelNode[ModelsSectionKeys.GenerateClientConstructorsKey] == null || (bool)modelNode[ModelsSectionKeys.GenerateClientConstructorsKey] // A way to prevent generating basic constructors
                 };
 
-                if (modelNode[ModelsSectionKeys.SpecificDependenciesKey] != null)
+                if (modelNode[ModelsSectionKeys.PclVariantsKey] != null)
+                {                    
+                    config.PclVariants = (from object pcf in modelNode[ModelsSectionKeys.PclVariantsKey]
+                     select pcf.ToString()).ToList();
+                }
+                
+
+                if (modelNode[ModelsSectionKeys.PlatformDependenciesKey] != null)
                 {
-                    config.SpecificDependencies = new Dictionary<string, List<string>>();
-                    foreach (KeyValuePair<string, JsonData> kvp in modelNode[ModelsSectionKeys.SpecificDependenciesKey])
+                    config.PlatformDependencies = new Dictionary<string, List<Dependency>>();
+                    foreach (KeyValuePair<string, JsonData> kvp in modelNode[ModelsSectionKeys.PlatformDependenciesKey])
                     {
-                        config.SpecificDependencies.Add(kvp.Key, (from object dep in kvp.Value select dep.ToString()).ToList());
+                        var platformDependencies = new List<Dependency>();
+                        foreach (JsonData item in kvp.Value)
+                        {
+                            var platformDependency = new Dependency
+                            {
+                                Name = item[ModelsSectionKeys.PlatformDependencyNameKey].ToString(),
+                                Version = item[ModelsSectionKeys.PlatformDependencyVersionKey].ToString(),
+                                HintPath = item[ModelsSectionKeys.PlatformDependencyHintPathKey].ToString(),
+                            };
+                            platformDependencies.Add(platformDependency);
+                        }
+                        config.PlatformDependencies.Add(kvp.Key, platformDependencies);
                     }
                 }
-
 
                 // Provides a way to specify a customizations file rather than using a generated one
                 config.CustomizationsPath = modelNode[ModelsSectionKeys.CustomizationFileKey] == null
@@ -218,7 +240,8 @@ namespace ServiceClientGenerator
                     TargetFrameworkVersion = projectNode[ProjectsSectionKeys.TargetFrameworkKey].ToString(),
                     CompilationConstants = projectNode[ProjectsSectionKeys.DefineConstantsKey].ToString(),
                     BinSubFolder = projectNode[ProjectsSectionKeys.BinSubFolderKey].ToString(),
-                    Template = projectNode[ProjectsSectionKeys.TemplateKey].ToString()
+                    Template = projectNode[ProjectsSectionKeys.TemplateKey].ToString(),
+                    NuGetTargetPlatform = projectNode[ProjectsSectionKeys.NuGetTargetFrameworkKey].ToString()
                 };
 
                 config.Configurations = (from object bc in projectNode[ProjectsSectionKeys.ConfigurationsKey] 

@@ -60,42 +60,31 @@ namespace Amazon.MobileAnalytics.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/2014-06-05/events";
             request.ResourcePath = uriResourcePath;
-
-
-            try { 
-                using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEvents())
                 {
-                    JsonWriter writer = new JsonWriter(stringWriter);
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEvents())
+                    context.Writer.WritePropertyName("events");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEventsListValue in publicRequest.Events)
                     {
-                        context.Writer.WritePropertyName("events");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEventsListValue in publicRequest.Events)
-                        {
-                            context.Writer.WriteObjectStart();
+                        context.Writer.WriteObjectStart();
 
-                            var marshaller = EventMarshaller.Instance;
-                            marshaller.Marshall(publicRequestEventsListValue, context);
+                        var marshaller = EventMarshaller.Instance;
+                        marshaller.Marshall(publicRequestEventsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WriteObjectEnd();
                     }
-
-        
-                    writer.WriteObjectEnd();
-                    string snippet = stringWriter.ToString();
-                    request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                    context.Writer.WriteArrayEnd();
                 }
 
-            }
-            catch (Exception e)
-            {
-                string m = e.Message;
-
-                m = m + "1";
+        
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
         

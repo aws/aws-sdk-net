@@ -73,6 +73,11 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// The platform name used by NuGet (e.g. wpa81)
+        /// </summary>
+        public string NuGetTargetPlatform { get; set; }
+
+        /// <summary>
         /// The set of projects that should be included in the solution test folder.
         /// </summary>
         public IEnumerable<string> ExtraTestProjects { get; set; }

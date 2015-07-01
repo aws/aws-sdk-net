@@ -14,8 +14,8 @@
     <ProjectGuid><#=this.Session["ProjectGuid"]#></ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>Amazon</RootNamespace>
-    <AssemblyName>AWSSDK.Core</AssemblyName>
+    <RootNamespace><#=this.Session["RootNamespace"]#></RootNamespace>
+    <AssemblyName><#=this.Session["AssemblyName"]#></AssemblyName>
 	<IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
 	<BaseIntermediateOutputPath>obj\\<#=this.Session["BinSubfolder"]#></BaseIntermediateOutputPath>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
@@ -173,33 +173,19 @@
       <HintPath><#=this.Session["NugetPackagesLocation"]#>Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
 <#
-    if(this.Session.ContainsKey("SpecificDependencies"))
+    if(this.Session.ContainsKey("PlatformDependencies"))
     {
-        Dictionary<string, List<string>> deps = (Dictionary<string, List<string>>)this.Session["SpecificDependencies"];
-        
-        if(deps.ContainsKey("iOS"))
-        {
-            foreach(string dep in deps["iOS"])
-            {
-                if(dep.Equals("SQLitePCL",StringComparison.InvariantCultureIgnoreCase))
-                {
+		foreach(var dependency in (List<Dependency>)this.Session["PlatformDependencies"])
+		{
 #>
-    <Reference Include="SQLitePCL, Version=3.8.7.2, Culture=neutral, PublicKeyToken=bddade01e9c850c5, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\SQLitePCL.3.8.7.2\lib\Xamarin.iOS10\SQLitePCL.dll</HintPath>
+    <Reference Include="<#=dependency.Name#>">
+      <HintPath>$(SolutionDir)\packages\\<#=dependency.Name#>.<#=dependency.Version#>\lib\\<#=dependency.HintPath#></HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SQLitePCL.Ext, Version=3.8.7.2, Culture=neutral, PublicKeyToken=bddade01e9c850c5, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\SQLitePCL.3.8.7.2\lib\Xamarin.iOS10\SQLitePCL.Ext.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-<#                
-                }
-            }
-        }
-    }
+<#   
+		}
+	}
 #>
-
-
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
