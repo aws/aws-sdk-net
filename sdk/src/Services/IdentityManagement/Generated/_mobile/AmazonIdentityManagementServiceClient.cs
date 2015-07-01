@@ -241,6 +241,7 @@ namespace Amazon.IdentityManagement
             return Invoke<AddClientIDToOpenIDConnectProviderRequest,AddClientIDToOpenIDConnectProviderResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddClientIDToOpenIDConnectProvider operation.
         /// </summary>
@@ -270,6 +271,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<AddRoleToInstanceProfileRequest,AddRoleToInstanceProfileResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddRoleToInstanceProfile operation.
@@ -301,6 +303,7 @@ namespace Amazon.IdentityManagement
             return Invoke<AddUserToGroupRequest,AddUserToGroupResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddUserToGroup operation.
         /// </summary>
@@ -330,6 +333,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<AttachGroupPolicyRequest,AttachGroupPolicyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachGroupPolicy operation.
@@ -361,6 +365,7 @@ namespace Amazon.IdentityManagement
             return Invoke<AttachRolePolicyRequest,AttachRolePolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AttachRolePolicy operation.
         /// </summary>
@@ -391,6 +396,7 @@ namespace Amazon.IdentityManagement
             return Invoke<AttachUserPolicyRequest,AttachUserPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AttachUserPolicy operation.
         /// </summary>
@@ -420,6 +426,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<ChangePasswordRequest,ChangePasswordResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ChangePassword operation.
@@ -455,6 +462,50 @@ namespace Amazon.IdentityManagement
             return Invoke<CreateAccessKeyRequest,CreateAccessKeyResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Creates a new AWS secret access key and corresponding AWS access key ID for the specified
+        /// user. The default status for new keys is <code>Active</code>. 
+        /// 
+        ///  
+        /// <para>
+        ///  If you do not specify a user name, IAM determines the user name implicitly based
+        /// on the AWS access key ID signing the request. Because this action works for access
+        /// keys under the AWS account, you can use this action to manage root credentials even
+        /// if the AWS account has no associated users. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For information about limits on the number of keys you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        ///  <important> To ensure the security of your AWS account, the secret access key is
+        /// accessible only during key and user creation. You must save the key (for example,
+        /// in a text file) if you want to be able to access it again. If a secret key is lost,
+        /// you can delete the access keys for the associated user and then create new keys. </important>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAccessKey service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<CreateAccessKeyResponse> CreateAccessKeyAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return CreateAccessKeyAsync(new CreateAccessKeyRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAccessKey operation.
         /// </summary>
@@ -484,6 +535,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<CreateAccountAliasRequest,CreateAccountAliasResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAccountAlias operation.
@@ -515,6 +567,7 @@ namespace Amazon.IdentityManagement
             return Invoke<CreateGroupRequest,CreateGroupResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateGroup operation.
         /// </summary>
@@ -544,6 +597,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<CreateInstanceProfileRequest,CreateInstanceProfileResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInstanceProfile operation.
@@ -575,6 +629,7 @@ namespace Amazon.IdentityManagement
             return Invoke<CreateLoginProfileRequest,CreateLoginProfileResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoginProfile operation.
         /// </summary>
@@ -604,6 +659,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<CreateOpenIDConnectProviderRequest,CreateOpenIDConnectProviderResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateOpenIDConnectProvider operation.
@@ -635,6 +691,7 @@ namespace Amazon.IdentityManagement
             return Invoke<CreatePolicyRequest,CreatePolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePolicy operation.
         /// </summary>
@@ -664,6 +721,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<CreatePolicyVersionRequest,CreatePolicyVersionResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePolicyVersion operation.
@@ -695,6 +753,7 @@ namespace Amazon.IdentityManagement
             return Invoke<CreateRoleRequest,CreateRoleResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateRole operation.
         /// </summary>
@@ -724,6 +783,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<CreateSAMLProviderRequest,CreateSAMLProviderResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSAMLProvider operation.
@@ -755,6 +815,7 @@ namespace Amazon.IdentityManagement
             return Invoke<CreateUserRequest,CreateUserResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateUser operation.
         /// </summary>
@@ -784,6 +845,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<CreateVirtualMFADeviceRequest,CreateVirtualMFADeviceResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVirtualMFADevice operation.
@@ -815,6 +877,7 @@ namespace Amazon.IdentityManagement
             return Invoke<DeactivateMFADeviceRequest,DeactivateMFADeviceResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeactivateMFADevice operation.
         /// </summary>
@@ -845,6 +908,7 @@ namespace Amazon.IdentityManagement
             return Invoke<DeleteAccessKeyRequest,DeleteAccessKeyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAccessKey operation.
         /// </summary>
@@ -874,6 +938,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<DeleteAccountAliasRequest,DeleteAccountAliasResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAccountAlias operation.
@@ -909,6 +974,32 @@ namespace Amazon.IdentityManagement
             return Invoke<DeleteAccountPasswordPolicyRequest,DeleteAccountPasswordPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Deletes the password policy for the AWS account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<DeleteAccountPasswordPolicyResponse> DeleteAccountPasswordPolicyAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DeleteAccountPasswordPolicyAsync(new DeleteAccountPasswordPolicyRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAccountPasswordPolicy operation.
         /// </summary>
@@ -938,6 +1029,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<DeleteGroupRequest,DeleteGroupResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteGroup operation.
@@ -969,6 +1061,7 @@ namespace Amazon.IdentityManagement
             return Invoke<DeleteGroupPolicyRequest,DeleteGroupPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteGroupPolicy operation.
         /// </summary>
@@ -998,6 +1091,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<DeleteInstanceProfileRequest,DeleteInstanceProfileResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteInstanceProfile operation.
@@ -1029,6 +1123,7 @@ namespace Amazon.IdentityManagement
             return Invoke<DeleteLoginProfileRequest,DeleteLoginProfileResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoginProfile operation.
         /// </summary>
@@ -1058,6 +1153,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<DeleteOpenIDConnectProviderRequest,DeleteOpenIDConnectProviderResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteOpenIDConnectProvider operation.
@@ -1089,6 +1185,7 @@ namespace Amazon.IdentityManagement
             return Invoke<DeletePolicyRequest,DeletePolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePolicy operation.
         /// </summary>
@@ -1118,6 +1215,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<DeletePolicyVersionRequest,DeletePolicyVersionResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePolicyVersion operation.
@@ -1149,6 +1247,7 @@ namespace Amazon.IdentityManagement
             return Invoke<DeleteRoleRequest,DeleteRoleResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRole operation.
         /// </summary>
@@ -1178,6 +1277,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<DeleteRolePolicyRequest,DeleteRolePolicyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRolePolicy operation.
@@ -1209,6 +1309,7 @@ namespace Amazon.IdentityManagement
             return Invoke<DeleteSAMLProviderRequest,DeleteSAMLProviderResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSAMLProvider operation.
         /// </summary>
@@ -1238,6 +1339,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<DeleteServerCertificateRequest,DeleteServerCertificateResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteServerCertificate operation.
@@ -1269,6 +1371,7 @@ namespace Amazon.IdentityManagement
             return Invoke<DeleteSigningCertificateRequest,DeleteSigningCertificateResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSigningCertificate operation.
         /// </summary>
@@ -1298,6 +1401,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<DeleteUserRequest,DeleteUserResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteUser operation.
@@ -1329,6 +1433,7 @@ namespace Amazon.IdentityManagement
             return Invoke<DeleteUserPolicyRequest,DeleteUserPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteUserPolicy operation.
         /// </summary>
@@ -1358,6 +1463,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<DeleteVirtualMFADeviceRequest,DeleteVirtualMFADeviceResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVirtualMFADevice operation.
@@ -1389,6 +1495,7 @@ namespace Amazon.IdentityManagement
             return Invoke<DetachGroupPolicyRequest,DetachGroupPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DetachGroupPolicy operation.
         /// </summary>
@@ -1418,6 +1525,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<DetachRolePolicyRequest,DetachRolePolicyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachRolePolicy operation.
@@ -1449,6 +1557,7 @@ namespace Amazon.IdentityManagement
             return Invoke<DetachUserPolicyRequest,DetachUserPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DetachUserPolicy operation.
         /// </summary>
@@ -1478,6 +1587,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<EnableMFADeviceRequest,EnableMFADeviceResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableMFADevice operation.
@@ -1513,6 +1623,30 @@ namespace Amazon.IdentityManagement
             return Invoke<GenerateCredentialReportRequest,GenerateCredentialReportResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Generates a credential report for the AWS account. For more information about the
+        /// credential report, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
+        /// Credential Reports</a> in the <i>Using IAM</i> guide.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GenerateCredentialReport service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<GenerateCredentialReportResponse> GenerateCredentialReportAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GenerateCredentialReportAsync(new GenerateCredentialReportRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the GenerateCredentialReport operation.
         /// </summary>
@@ -1543,6 +1677,7 @@ namespace Amazon.IdentityManagement
             return Invoke<GetAccessKeyLastUsedRequest,GetAccessKeyLastUsedResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetAccessKeyLastUsed operation.
         /// </summary>
@@ -1572,6 +1707,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<GetAccountAuthorizationDetailsRequest,GetAccountAuthorizationDetailsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetAccountAuthorizationDetails operation.
@@ -1607,6 +1743,30 @@ namespace Amazon.IdentityManagement
             return Invoke<GetAccountPasswordPolicyRequest,GetAccountPasswordPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Retrieves the password policy for the AWS account. For more information about using
+        /// a password policy, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+        /// an IAM Password Policy</a>.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<GetAccountPasswordPolicyResponse> GetAccountPasswordPolicyAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetAccountPasswordPolicyAsync(new GetAccountPasswordPolicyRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetAccountPasswordPolicy operation.
         /// </summary>
@@ -1640,6 +1800,30 @@ namespace Amazon.IdentityManagement
 
             return Invoke<GetAccountSummaryRequest,GetAccountSummaryResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Retrieves information about IAM entity usage and IAM quotas in the AWS account.
+        /// 
+        ///  
+        /// <para>
+        ///  For information about limitations on IAM entities, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountSummary service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<GetAccountSummaryResponse> GetAccountSummaryAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetAccountSummaryAsync(new GetAccountSummaryRequest(), cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetAccountSummary operation.
@@ -1675,6 +1859,39 @@ namespace Amazon.IdentityManagement
             return Invoke<GetCredentialReportRequest,GetCredentialReportResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Retrieves a credential report for the AWS account. For more information about the
+        /// credential report, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
+        /// Credential Reports</a> in the <i>Using IAM</i> guide.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCredentialReport service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportExpiredException">
+        /// The request was rejected because the most recent credential report has expired. To
+        /// generate a new credential report, use <a>GenerateCredentialReport</a>. For more information
+        /// about credential report expiration, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
+        /// Credential Reports</a> in the <i>Using IAM</i> guide.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotPresentException">
+        /// The request was rejected because the credential report does not exist. To generate
+        /// a credential report, use <a>GenerateCredentialReport</a>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotReadyException">
+        /// The request was rejected because the credential report is still being generated.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<GetCredentialReportResponse> GetCredentialReportAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetCredentialReportAsync(new GetCredentialReportRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetCredentialReport operation.
         /// </summary>
@@ -1704,6 +1921,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<GetGroupRequest,GetGroupResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetGroup operation.
@@ -1735,6 +1953,7 @@ namespace Amazon.IdentityManagement
             return Invoke<GetGroupPolicyRequest,GetGroupPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetGroupPolicy operation.
         /// </summary>
@@ -1764,6 +1983,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<GetInstanceProfileRequest,GetInstanceProfileResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetInstanceProfile operation.
@@ -1795,6 +2015,7 @@ namespace Amazon.IdentityManagement
             return Invoke<GetLoginProfileRequest,GetLoginProfileResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetLoginProfile operation.
         /// </summary>
@@ -1824,6 +2045,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<GetOpenIDConnectProviderRequest,GetOpenIDConnectProviderResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetOpenIDConnectProvider operation.
@@ -1855,6 +2077,7 @@ namespace Amazon.IdentityManagement
             return Invoke<GetPolicyRequest,GetPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetPolicy operation.
         /// </summary>
@@ -1884,6 +2107,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<GetPolicyVersionRequest,GetPolicyVersionResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetPolicyVersion operation.
@@ -1915,6 +2139,7 @@ namespace Amazon.IdentityManagement
             return Invoke<GetRoleRequest,GetRoleResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetRole operation.
         /// </summary>
@@ -1944,6 +2169,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<GetRolePolicyRequest,GetRolePolicyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetRolePolicy operation.
@@ -1975,6 +2201,7 @@ namespace Amazon.IdentityManagement
             return Invoke<GetSAMLProviderRequest,GetSAMLProviderResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetSAMLProvider operation.
         /// </summary>
@@ -2004,6 +2231,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<GetServerCertificateRequest,GetServerCertificateResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetServerCertificate operation.
@@ -2039,6 +2267,35 @@ namespace Amazon.IdentityManagement
             return Invoke<GetUserRequest,GetUserResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Retrieves information about the specified user, including the user's creation date,
+        /// path, unique ID, and ARN. 
+        /// 
+        ///  
+        /// <para>
+        /// If you do not specify a user name, IAM determines the user name implicitly based on
+        /// the AWS access key ID used to sign the request. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetUser service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<GetUserResponse> GetUserAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetUserAsync(new GetUserRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetUser operation.
         /// </summary>
@@ -2068,6 +2325,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<GetUserPolicyRequest,GetUserPolicyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetUserPolicy operation.
@@ -2103,6 +2361,44 @@ namespace Amazon.IdentityManagement
             return Invoke<ListAccessKeysRequest,ListAccessKeysResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns information about the access key IDs associated with the specified user. If
+        /// there are none, the action returns an empty list. 
+        /// 
+        ///  
+        /// <para>
+        /// Although each user is limited to a small number of keys, you can still paginate the
+        /// results using the <code>MaxItems</code> and <code>Marker</code> parameters. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
+        /// based on the AWS access key ID used to sign the request. Because this action works
+        /// for access keys under the AWS account, you can use this action to manage root credentials
+        /// even if the AWS account has no associated users. 
+        /// </para>
+        ///  <note>To ensure the security of your AWS account, the secret access key is accessible
+        /// only during key and user creation. </note>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAccessKeys service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<ListAccessKeysResponse> ListAccessKeysAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListAccessKeysAsync(new ListAccessKeysRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListAccessKeys operation.
         /// </summary>
@@ -2137,6 +2433,32 @@ namespace Amazon.IdentityManagement
             return Invoke<ListAccountAliasesRequest,ListAccountAliasesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists the account aliases associated with the account. For information about using
+        /// an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+        /// an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide. 
+        /// 
+        ///  
+        /// <para>
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAccountAliases service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<ListAccountAliasesResponse> ListAccountAliasesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListAccountAliasesAsync(new ListAccountAliasesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListAccountAliases operation.
         /// </summary>
@@ -2166,6 +2488,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<ListAttachedGroupPoliciesRequest,ListAttachedGroupPoliciesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListAttachedGroupPolicies operation.
@@ -2197,6 +2520,7 @@ namespace Amazon.IdentityManagement
             return Invoke<ListAttachedRolePoliciesRequest,ListAttachedRolePoliciesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListAttachedRolePolicies operation.
         /// </summary>
@@ -2226,6 +2550,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<ListAttachedUserPoliciesRequest,ListAttachedUserPoliciesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListAttachedUserPolicies operation.
@@ -2257,6 +2582,7 @@ namespace Amazon.IdentityManagement
             return Invoke<ListEntitiesForPolicyRequest,ListEntitiesForPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListEntitiesForPolicy operation.
         /// </summary>
@@ -2286,6 +2612,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<ListGroupPoliciesRequest,ListGroupPoliciesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListGroupPolicies operation.
@@ -2321,6 +2648,30 @@ namespace Amazon.IdentityManagement
             return Invoke<ListGroupsRequest,ListGroupsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists the groups that have the specified path prefix.
+        /// 
+        ///  
+        /// <para>
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGroups service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<ListGroupsResponse> ListGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListGroupsAsync(new ListGroupsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListGroups operation.
         /// </summary>
@@ -2350,6 +2701,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<ListGroupsForUserRequest,ListGroupsForUserResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListGroupsForUser operation.
@@ -2385,6 +2737,33 @@ namespace Amazon.IdentityManagement
             return Invoke<ListInstanceProfilesRequest,ListInstanceProfilesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists the instance profiles that have the specified path prefix. If there are none,
+        /// the action returns an empty list. For more information about instance profiles, go
+        /// to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+        /// Instance Profiles</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInstanceProfiles service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<ListInstanceProfilesResponse> ListInstanceProfilesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListInstanceProfilesAsync(new ListInstanceProfilesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListInstanceProfiles operation.
         /// </summary>
@@ -2414,6 +2793,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<ListInstanceProfilesForRoleRequest,ListInstanceProfilesForRoleResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListInstanceProfilesForRole operation.
@@ -2449,6 +2829,37 @@ namespace Amazon.IdentityManagement
             return Invoke<ListMFADevicesRequest,ListMFADevicesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists the MFA devices. If the request includes the user name, then this action lists
+        /// all the MFA devices associated with the specified user name. If you do not specify
+        /// a user name, IAM determines the user name implicitly based on the AWS access key ID
+        /// signing the request. 
+        /// 
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMFADevices service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<ListMFADevicesResponse> ListMFADevicesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListMFADevicesAsync(new ListMFADevicesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListMFADevices operation.
         /// </summary>
@@ -2478,6 +2889,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<ListOpenIDConnectProvidersRequest,ListOpenIDConnectProvidersResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListOpenIDConnectProviders operation.
@@ -2513,6 +2925,43 @@ namespace Amazon.IdentityManagement
             return Invoke<ListPoliciesRequest,ListPoliciesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists all the managed policies that are available to your account, including your
+        /// own customer managed policies and all AWS managed policies. 
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the list of policies that is returned using the optional <code>OnlyAttached</code>,
+        /// <code>Scope</code>, and <code>PathPrefix</code> parameters. For example, to list only
+        /// the customer managed policies in your AWS account, set <code>Scope</code> to <code>Local</code>.
+        /// To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPolicies service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<ListPoliciesResponse> ListPoliciesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListPoliciesAsync(new ListPoliciesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListPolicies operation.
         /// </summary>
@@ -2543,6 +2992,7 @@ namespace Amazon.IdentityManagement
             return Invoke<ListPolicyVersionsRequest,ListPolicyVersionsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListPolicyVersions operation.
         /// </summary>
@@ -2572,6 +3022,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<ListRolePoliciesRequest,ListRolePoliciesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListRolePolicies operation.
@@ -2607,6 +3058,32 @@ namespace Amazon.IdentityManagement
             return Invoke<ListRolesRequest,ListRolesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists the roles that have the specified path prefix. If there are none, the action
+        /// returns an empty list. For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+        /// with Roles</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRoles service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<ListRolesResponse> ListRolesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListRolesAsync(new ListRolesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListRoles operation.
         /// </summary>
@@ -2640,6 +3117,27 @@ namespace Amazon.IdentityManagement
 
             return Invoke<ListSAMLProvidersRequest,ListSAMLProvidersResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Lists the SAML providers in the account.
+        /// 
+        ///  <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4</a>. </note>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSAMLProviders service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<ListSAMLProvidersResponse> ListSAMLProvidersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListSAMLProvidersAsync(new ListSAMLProvidersRequest(), cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListSAMLProviders operation.
@@ -2675,6 +3173,31 @@ namespace Amazon.IdentityManagement
             return Invoke<ListServerCertificatesRequest,ListServerCertificatesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists the server certificates that have the specified path prefix. If none exist,
+        /// the action returns an empty list. 
+        /// 
+        ///  
+        /// <para>
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServerCertificates service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<ListServerCertificatesResponse> ListServerCertificatesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListServerCertificatesAsync(new ListServerCertificatesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListServerCertificates operation.
         /// </summary>
@@ -2709,6 +3232,43 @@ namespace Amazon.IdentityManagement
             return Invoke<ListSigningCertificatesRequest,ListSigningCertificatesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns information about the signing certificates associated with the specified user.
+        /// If there are none, the action returns an empty list. 
+        /// 
+        ///  
+        /// <para>
+        /// Although each user is limited to a small number of signing certificates, you can still
+        /// paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
+        /// based on the AWS access key ID used to sign the request. Because this action works
+        /// for access keys under the AWS account, you can use this action to manage root credentials
+        /// even if the AWS account has no associated users. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSigningCertificates service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<ListSigningCertificatesResponse> ListSigningCertificatesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListSigningCertificatesAsync(new ListSigningCertificatesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListSigningCertificates operation.
         /// </summary>
@@ -2738,6 +3298,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<ListUserPoliciesRequest,ListUserPoliciesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListUserPolicies operation.
@@ -2773,6 +3334,32 @@ namespace Amazon.IdentityManagement
             return Invoke<ListUsersRequest,ListUsersResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists the IAM users that have the specified path prefix. If no path prefix is specified,
+        /// the action returns all users in the AWS account. If there are none, the action returns
+        /// an empty list. 
+        /// 
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListUsers service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<ListUsersResponse> ListUsersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListUsersAsync(new ListUsersRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListUsers operation.
         /// </summary>
@@ -2807,6 +3394,30 @@ namespace Amazon.IdentityManagement
             return Invoke<ListVirtualMFADevicesRequest,ListVirtualMFADevicesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists the virtual MFA devices under the AWS account by assignment status. If you do
+        /// not specify an assignment status, the action returns a list of all virtual MFA devices.
+        /// Assignment status can be <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVirtualMFADevices service method, as returned by IdentityManagementService.</returns>
+        public Task<ListVirtualMFADevicesResponse> ListVirtualMFADevicesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListVirtualMFADevicesAsync(new ListVirtualMFADevicesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListVirtualMFADevices operation.
         /// </summary>
@@ -2836,6 +3447,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<PutGroupPolicyRequest,PutGroupPolicyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutGroupPolicy operation.
@@ -2867,6 +3479,7 @@ namespace Amazon.IdentityManagement
             return Invoke<PutRolePolicyRequest,PutRolePolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutRolePolicy operation.
         /// </summary>
@@ -2896,6 +3509,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<PutUserPolicyRequest,PutUserPolicyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutUserPolicy operation.
@@ -2927,6 +3541,7 @@ namespace Amazon.IdentityManagement
             return Invoke<RemoveClientIDFromOpenIDConnectProviderRequest,RemoveClientIDFromOpenIDConnectProviderResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveClientIDFromOpenIDConnectProvider operation.
         /// </summary>
@@ -2956,6 +3571,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<RemoveRoleFromInstanceProfileRequest,RemoveRoleFromInstanceProfileResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveRoleFromInstanceProfile operation.
@@ -2987,6 +3603,7 @@ namespace Amazon.IdentityManagement
             return Invoke<RemoveUserFromGroupRequest,RemoveUserFromGroupResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveUserFromGroup operation.
         /// </summary>
@@ -3016,6 +3633,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<ResyncMFADeviceRequest,ResyncMFADeviceResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResyncMFADevice operation.
@@ -3047,6 +3665,7 @@ namespace Amazon.IdentityManagement
             return Invoke<SetDefaultPolicyVersionRequest,SetDefaultPolicyVersionResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SetDefaultPolicyVersion operation.
         /// </summary>
@@ -3076,6 +3695,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<UpdateAccessKeyRequest,UpdateAccessKeyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAccessKey operation.
@@ -3111,6 +3731,48 @@ namespace Amazon.IdentityManagement
             return Invoke<UpdateAccountPasswordPolicyRequest,UpdateAccountPasswordPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Updates the password policy settings for the AWS account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action does not support partial updates. No parameters are required, but if you
+        /// do not specify a parameter, that parameter's value reverts to its default value. See
+        /// the <b>Request Parameters</b> section for each parameter's default value. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+        /// an IAM Password Policy</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
+        /// The request was rejected because the policy document was malformed. The error message
+        /// describes the specific error.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        public Task<UpdateAccountPasswordPolicyResponse> UpdateAccountPasswordPolicyAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return UpdateAccountPasswordPolicyAsync(new UpdateAccountPasswordPolicyRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAccountPasswordPolicy operation.
         /// </summary>
@@ -3140,6 +3802,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<UpdateAssumeRolePolicyRequest,UpdateAssumeRolePolicyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAssumeRolePolicy operation.
@@ -3171,6 +3834,7 @@ namespace Amazon.IdentityManagement
             return Invoke<UpdateGroupRequest,UpdateGroupResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateGroup operation.
         /// </summary>
@@ -3200,6 +3864,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<UpdateLoginProfileRequest,UpdateLoginProfileResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateLoginProfile operation.
@@ -3231,6 +3896,7 @@ namespace Amazon.IdentityManagement
             return Invoke<UpdateOpenIDConnectProviderThumbprintRequest,UpdateOpenIDConnectProviderThumbprintResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateOpenIDConnectProviderThumbprint operation.
         /// </summary>
@@ -3260,6 +3926,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<UpdateSAMLProviderRequest,UpdateSAMLProviderResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSAMLProvider operation.
@@ -3291,6 +3958,7 @@ namespace Amazon.IdentityManagement
             return Invoke<UpdateServerCertificateRequest,UpdateServerCertificateResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateServerCertificate operation.
         /// </summary>
@@ -3320,6 +3988,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<UpdateSigningCertificateRequest,UpdateSigningCertificateResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSigningCertificate operation.
@@ -3351,6 +4020,7 @@ namespace Amazon.IdentityManagement
             return Invoke<UpdateUserRequest,UpdateUserResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateUser operation.
         /// </summary>
@@ -3381,6 +4051,7 @@ namespace Amazon.IdentityManagement
             return Invoke<UploadServerCertificateRequest,UploadServerCertificateResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UploadServerCertificate operation.
         /// </summary>
@@ -3410,6 +4081,7 @@ namespace Amazon.IdentityManagement
 
             return Invoke<UploadSigningCertificateRequest,UploadSigningCertificateResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadSigningCertificate operation.

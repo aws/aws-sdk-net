@@ -51,6 +51,7 @@ namespace Amazon.CloudSearch
         
         #region  BuildSuggesters
 
+
         /// <summary>
         /// Indexes the search suggestions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters">Configuring
         /// Suggesters</a> in the <i>Amazon CloudSearch Developer Guide</i>.
@@ -72,6 +73,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         BuildSuggestersResponse BuildSuggesters(BuildSuggestersRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the BuildSuggesters operation.
         /// </summary>
@@ -86,6 +88,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  CreateDomain
+
 
         /// <summary>
         /// Creates a new search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html"
@@ -108,6 +111,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         CreateDomainResponse CreateDomain(CreateDomainRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDomain operation.
         /// </summary>
@@ -122,6 +126,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  DefineAnalysisScheme
+
 
         /// <summary>
         /// Configures an analysis scheme that can be applied to a <code>text</code> or <code>text-array</code>
@@ -153,6 +158,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         DefineAnalysisSchemeResponse DefineAnalysisScheme(DefineAnalysisSchemeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DefineAnalysisScheme operation.
         /// </summary>
@@ -167,6 +173,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  DefineExpression
+
 
         /// <summary>
         /// Configures an <code><a>Expression</a></code> for the search domain. Used to create
@@ -198,6 +205,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         DefineExpressionResponse DefineExpression(DefineExpressionRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DefineExpression operation.
         /// </summary>
@@ -212,6 +220,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  DefineIndexField
+
 
         /// <summary>
         /// Configures an <code><a>IndexField</a></code> for the search domain. Used to create
@@ -247,6 +256,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         DefineIndexFieldResponse DefineIndexField(DefineIndexFieldRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DefineIndexField operation.
         /// </summary>
@@ -261,6 +271,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  DefineSuggester
+
 
         /// <summary>
         /// Configures a suggester for a domain. A suggester enables you to display possible matches
@@ -293,6 +304,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         DefineSuggesterResponse DefineSuggester(DefineSuggesterRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DefineSuggester operation.
         /// </summary>
@@ -307,6 +319,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  DeleteAnalysisScheme
+
 
         /// <summary>
         /// Deletes an analysis scheme. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
@@ -333,6 +346,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         DeleteAnalysisSchemeResponse DeleteAnalysisScheme(DeleteAnalysisSchemeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAnalysisScheme operation.
         /// </summary>
@@ -347,6 +361,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  DeleteDomain
+
 
         /// <summary>
         /// Permanently deletes a search domain and all of its data. Once a domain has been deleted,
@@ -367,6 +382,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         DeleteDomainResponse DeleteDomain(DeleteDomainRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDomain operation.
         /// </summary>
@@ -381,6 +397,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  DeleteExpression
+
 
         /// <summary>
         /// Removes an <code><a>Expression</a></code> from the search domain. For more information,
@@ -408,6 +425,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         DeleteExpressionResponse DeleteExpression(DeleteExpressionRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteExpression operation.
         /// </summary>
@@ -422,6 +440,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  DeleteIndexField
+
 
         /// <summary>
         /// Removes an <code><a>IndexField</a></code> from the search domain. For more information,
@@ -449,6 +468,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         DeleteIndexFieldResponse DeleteIndexField(DeleteIndexFieldRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteIndexField operation.
         /// </summary>
@@ -463,6 +483,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  DeleteSuggester
+
 
         /// <summary>
         /// Deletes a suggester. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
@@ -489,6 +510,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         DeleteSuggesterResponse DeleteSuggester(DeleteSuggesterRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSuggester operation.
         /// </summary>
@@ -503,6 +525,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  DescribeAnalysisSchemes
+
 
         /// <summary>
         /// Gets the analysis schemes configured for a domain. An analysis scheme defines language-specific
@@ -531,6 +554,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         DescribeAnalysisSchemesResponse DescribeAnalysisSchemes(DescribeAnalysisSchemesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAnalysisSchemes operation.
         /// </summary>
@@ -545,6 +569,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  DescribeAvailabilityOptions
+
 
         /// <summary>
         /// Gets the availability options configured for a domain. By default, shows the configuration
@@ -580,6 +605,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         DescribeAvailabilityOptionsResponse DescribeAvailabilityOptions(DescribeAvailabilityOptionsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAvailabilityOptions operation.
         /// </summary>
@@ -594,6 +620,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  DescribeDomains
+
 
         /// <summary>
         /// Gets information about the search domains owned by this account. Can be limited to
@@ -615,6 +642,7 @@ namespace Amazon.CloudSearch
         /// Health Dashboard</a>.
         /// </exception>
         DescribeDomainsResponse DescribeDomains();
+
 
         /// <summary>
         /// Gets information about the search domains owned by this account. Can be limited to
@@ -638,6 +666,32 @@ namespace Amazon.CloudSearch
         /// </exception>
         DescribeDomainsResponse DescribeDomains(DescribeDomainsRequest request);
 
+
+        /// <summary>
+        /// Gets information about the search domains owned by this account. Can be limited to
+        /// specific domains. Shows all domains by default. To get the number of searchable documents
+        /// in a domain, use the console or submit a <code>matchall</code> request to your domain's
+        /// search endpoint: <code>q=matchall&amp;amp;q.parser=structured&amp;amp;size=0</code>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
+        /// target="_blank">Getting Information about a Search Domain</a> in the <i>Amazon CloudSearch
+        /// Developer Guide</i>.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDomains service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        Task<DescribeDomainsResponse> DescribeDomainsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDomains operation.
         /// </summary>
@@ -652,6 +706,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  DescribeExpressions
+
 
         /// <summary>
         /// Gets the expressions configured for the search domain. Can be limited to specific
@@ -679,6 +734,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         DescribeExpressionsResponse DescribeExpressions(DescribeExpressionsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeExpressions operation.
         /// </summary>
@@ -693,6 +749,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  DescribeIndexFields
+
 
         /// <summary>
         /// Gets information about the index fields configured for the search domain. Can be limited
@@ -720,6 +777,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         DescribeIndexFieldsResponse DescribeIndexFields(DescribeIndexFieldsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeIndexFields operation.
         /// </summary>
@@ -734,6 +792,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  DescribeScalingParameters
+
 
         /// <summary>
         /// Gets the scaling parameters configured for a domain. A domain's scaling parameters
@@ -759,6 +818,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         DescribeScalingParametersResponse DescribeScalingParameters(DescribeScalingParametersRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeScalingParameters operation.
         /// </summary>
@@ -773,6 +833,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  DescribeServiceAccessPolicies
+
 
         /// <summary>
         /// Gets information about the access policies that control access to the domain's document
@@ -799,6 +860,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         DescribeServiceAccessPoliciesResponse DescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeServiceAccessPolicies operation.
         /// </summary>
@@ -813,6 +875,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  DescribeSuggesters
+
 
         /// <summary>
         /// Gets the suggesters configured for a domain. A suggester enables you to display possible
@@ -840,6 +903,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         DescribeSuggestersResponse DescribeSuggesters(DescribeSuggestersRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSuggesters operation.
         /// </summary>
@@ -854,6 +918,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  IndexDocuments
+
 
         /// <summary>
         /// Tells the search domain to start indexing its documents using the latest indexing
@@ -877,6 +942,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         IndexDocumentsResponse IndexDocuments(IndexDocumentsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the IndexDocuments operation.
         /// </summary>
@@ -892,6 +958,7 @@ namespace Amazon.CloudSearch
         
         #region  ListDomainNames
 
+
         /// <summary>
         /// Lists all search domains owned by an account.
         /// </summary>
@@ -901,6 +968,7 @@ namespace Amazon.CloudSearch
         /// An error occurred while processing the request.
         /// </exception>
         ListDomainNamesResponse ListDomainNames();
+
 
         /// <summary>
         /// Lists all search domains owned by an account.
@@ -912,6 +980,21 @@ namespace Amazon.CloudSearch
         /// An error occurred while processing the request.
         /// </exception>
         ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request);
+
+
+        /// <summary>
+        /// Lists all search domains owned by an account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDomainNames service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        Task<ListDomainNamesResponse> ListDomainNamesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomainNames operation.
@@ -927,6 +1010,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  UpdateAvailabilityOptions
+
 
         /// <summary>
         /// Configures the availability options for a domain. Enabling the Multi-AZ option expands
@@ -963,6 +1047,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         UpdateAvailabilityOptionsResponse UpdateAvailabilityOptions(UpdateAvailabilityOptionsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAvailabilityOptions operation.
         /// </summary>
@@ -977,6 +1062,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  UpdateScalingParameters
+
 
         /// <summary>
         /// Configures scaling parameters for a domain. A domain's scaling parameters specify
@@ -1011,6 +1097,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         UpdateScalingParametersResponse UpdateScalingParameters(UpdateScalingParametersRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateScalingParameters operation.
         /// </summary>
@@ -1025,6 +1112,7 @@ namespace Amazon.CloudSearch
         #endregion
         
         #region  UpdateServiceAccessPolicies
+
 
         /// <summary>
         /// Configures the access rules that control access to the domain's document and search
@@ -1053,6 +1141,7 @@ namespace Amazon.CloudSearch
         /// exist.
         /// </exception>
         UpdateServiceAccessPoliciesResponse UpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateServiceAccessPolicies operation.

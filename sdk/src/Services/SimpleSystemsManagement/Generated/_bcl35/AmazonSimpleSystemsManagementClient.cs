@@ -296,6 +296,7 @@ namespace Amazon.SimpleSystemsManagement
             return CreateAssociation(request);
         }
 
+
         /// <summary>
         /// Associates the specified configuration document with the specified instance.
         /// 
@@ -488,6 +489,7 @@ namespace Amazon.SimpleSystemsManagement
             return CreateDocument(request);
         }
 
+
         /// <summary>
         /// Creates a configuration document.
         /// 
@@ -597,6 +599,7 @@ namespace Amazon.SimpleSystemsManagement
             return DeleteAssociation(request);
         }
 
+
         /// <summary>
         /// Disassociates the specified configuration document from the specified instance.
         /// 
@@ -699,6 +702,7 @@ namespace Amazon.SimpleSystemsManagement
             return DeleteDocument(request);
         }
 
+
         /// <summary>
         /// Deletes the specified configuration document.
         /// 
@@ -792,6 +796,7 @@ namespace Amazon.SimpleSystemsManagement
             return DescribeAssociation(request);
         }
 
+
         /// <summary>
         /// Describes the associations for the specified configuration document or instance.
         /// </summary>
@@ -873,6 +878,7 @@ namespace Amazon.SimpleSystemsManagement
             return DescribeDocument(request);
         }
 
+
         /// <summary>
         /// Describes the specified configuration document.
         /// </summary>
@@ -947,6 +953,7 @@ namespace Amazon.SimpleSystemsManagement
             request.Name = name;
             return GetDocument(request);
         }
+
 
         /// <summary>
         /// Gets the contents of the specified configuration document.

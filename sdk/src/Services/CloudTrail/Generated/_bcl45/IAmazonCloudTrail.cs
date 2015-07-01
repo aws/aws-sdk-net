@@ -60,6 +60,7 @@ namespace Amazon.CloudTrail
         
         #region  CreateTrail
 
+
         /// <summary>
         /// From the command line, use <code>create-subscription</code>. 
         /// 
@@ -110,6 +111,7 @@ namespace Amazon.CloudTrail
         /// </exception>
         CreateTrailResponse CreateTrail(CreateTrailRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTrail operation.
         /// </summary>
@@ -125,6 +127,7 @@ namespace Amazon.CloudTrail
         
         #region  DeleteTrail
 
+
         /// <summary>
         /// Deletes a trail.
         /// </summary>
@@ -138,6 +141,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
         DeleteTrailResponse DeleteTrail(DeleteTrailRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTrail operation.
@@ -154,12 +158,14 @@ namespace Amazon.CloudTrail
         
         #region  DescribeTrails
 
+
         /// <summary>
         /// Retrieves settings for the trail associated with the current region for your account.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeTrails service method, as returned by CloudTrail.</returns>
         DescribeTrailsResponse DescribeTrails();
+
 
         /// <summary>
         /// Retrieves settings for the trail associated with the current region for your account.
@@ -168,6 +174,18 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the DescribeTrails service method, as returned by CloudTrail.</returns>
         DescribeTrailsResponse DescribeTrails(DescribeTrailsRequest request);
+
+
+        /// <summary>
+        /// Retrieves settings for the trail associated with the current region for your account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTrails service method, as returned by CloudTrail.</returns>
+        Task<DescribeTrailsResponse> DescribeTrailsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrails operation.
@@ -183,6 +201,7 @@ namespace Amazon.CloudTrail
         #endregion
         
         #region  GetTrailStatus
+
 
         /// <summary>
         /// Returns a JSON-formatted list of information about the specified trail. Fields include
@@ -200,6 +219,7 @@ namespace Amazon.CloudTrail
         /// </exception>
         GetTrailStatusResponse GetTrailStatus(GetTrailStatusRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetTrailStatus operation.
         /// </summary>
@@ -214,6 +234,7 @@ namespace Amazon.CloudTrail
         #endregion
         
         #region  LookupEvents
+
 
         /// <summary>
         /// Looks up API activity events captured by CloudTrail that create, update, or delete
@@ -249,6 +270,7 @@ namespace Amazon.CloudTrail
         /// </exception>
         LookupEventsResponse LookupEvents(LookupEventsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the LookupEvents operation.
         /// </summary>
@@ -264,6 +286,7 @@ namespace Amazon.CloudTrail
         
         #region  StartLogging
 
+
         /// <summary>
         /// Starts the recording of AWS API calls and log file delivery for a trail.
         /// </summary>
@@ -277,6 +300,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
         StartLoggingResponse StartLogging(StartLoggingRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the StartLogging operation.
@@ -292,6 +316,7 @@ namespace Amazon.CloudTrail
         #endregion
         
         #region  StopLogging
+
 
         /// <summary>
         /// Suspends the recording of AWS API calls and log file delivery for the specified trail.
@@ -309,6 +334,7 @@ namespace Amazon.CloudTrail
         /// </exception>
         StopLoggingResponse StopLogging(StopLoggingRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the StopLogging operation.
         /// </summary>
@@ -323,6 +349,7 @@ namespace Amazon.CloudTrail
         #endregion
         
         #region  UpdateTrail
+
 
         /// <summary>
         /// From the command line, use <code>update-subscription</code>.
@@ -372,6 +399,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
         UpdateTrailResponse UpdateTrail(UpdateTrailRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateTrail operation.

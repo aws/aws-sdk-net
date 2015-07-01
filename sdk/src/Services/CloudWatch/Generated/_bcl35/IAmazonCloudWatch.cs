@@ -86,6 +86,7 @@ namespace Amazon.CloudWatch
         
         #region  DeleteAlarms
 
+
         /// <summary>
         /// Deletes all specified alarms. In the event of an error, no alarms are deleted.
         /// </summary>
@@ -124,6 +125,7 @@ namespace Amazon.CloudWatch
         #endregion
         
         #region  DescribeAlarmHistory
+
 
         /// <summary>
         /// Retrieves history for the specified alarm. Filter alarms by date range or item type.
@@ -178,6 +180,7 @@ namespace Amazon.CloudWatch
         
         #region  DescribeAlarms
 
+
         /// <summary>
         /// Retrieves alarms with the specified names. If no name is specified, all alarms for
         /// the user are returned. Alarms can be retrieved by using only a prefix for the alarm
@@ -231,6 +234,7 @@ namespace Amazon.CloudWatch
         
         #region  DescribeAlarmsForMetric
 
+
         /// <summary>
         /// Retrieves all alarms for a single metric. Specify a statistic, period, or unit to
         /// filter the set of alarms further.
@@ -267,6 +271,7 @@ namespace Amazon.CloudWatch
         #endregion
         
         #region  DisableAlarmActions
+
 
         /// <summary>
         /// Disables actions for the specified alarms. When an alarm's actions are disabled the
@@ -305,6 +310,7 @@ namespace Amazon.CloudWatch
         
         #region  EnableAlarmActions
 
+
         /// <summary>
         /// Enables actions for the specified alarms.
         /// </summary>
@@ -340,6 +346,7 @@ namespace Amazon.CloudWatch
         #endregion
         
         #region  GetMetricStatistics
+
 
         /// <summary>
         /// Gets statistics for the specified metric. 
@@ -423,6 +430,7 @@ namespace Amazon.CloudWatch
         
         #region  ListMetrics
 
+
         /// <summary>
         /// Returns a list of valid metrics stored for the AWS account owner. Returned metrics
         /// can be used with <a>GetMetricStatistics</a> to obtain statistical data for a given
@@ -484,6 +492,7 @@ namespace Amazon.CloudWatch
         
         #region  PutMetricAlarm
 
+
         /// <summary>
         /// Creates or updates an alarm and associates it with the specified Amazon CloudWatch
         /// metric. Optionally, this operation can associate one or more Amazon Simple Notification
@@ -531,6 +540,7 @@ namespace Amazon.CloudWatch
         #endregion
         
         #region  PutMetricData
+
 
         /// <summary>
         /// Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the
@@ -597,6 +607,7 @@ namespace Amazon.CloudWatch
         #endregion
         
         #region  SetAlarmState
+
 
         /// <summary>
         /// Temporarily sets the state of an alarm. When the updated <code>StateValue</code>

@@ -179,6 +179,7 @@ namespace Amazon.DynamoDBv2
         
         #region  BatchGetItem
 
+
         /// <summary>
         /// The <i>BatchGetItem</i> operation returns the attributes of one or more items from
         /// one or more tables. You identify requested items by primary key.
@@ -466,6 +467,7 @@ namespace Amazon.DynamoDBv2
         
         #region  BatchWriteItem
 
+
         /// <summary>
         /// The <i>BatchWriteItem</i> operation puts or deletes multiple items in one or more
         /// tables. A single call to <i>BatchWriteItem</i> can write up to 16 MB of data, which
@@ -742,6 +744,7 @@ namespace Amazon.DynamoDBv2
         
         #region  CreateTable
 
+
         /// <summary>
         /// The <i>CreateTable</i> operation adds a new table to your account. In an AWS account,
         /// table names must be unique within each region. That is, you can have two tables with
@@ -876,6 +879,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  DeleteItem
+
 
         /// <summary>
         /// Deletes a single item in a table by primary key. You can perform a conditional delete
@@ -1055,6 +1059,7 @@ namespace Amazon.DynamoDBv2
         
         #region  DeleteTable
 
+
         /// <summary>
         /// The <i>DeleteTable</i> operation deletes a table and all of its items. After a <i>DeleteTable</i>
         /// request, the specified table is in the <code>DELETING</code> state until DynamoDB
@@ -1195,6 +1200,7 @@ namespace Amazon.DynamoDBv2
         
         #region  DescribeTable
 
+
         /// <summary>
         /// Returns information about the table, including the current status of the table, when
         /// it was created, the primary key schema, and any indexes on the table.
@@ -1272,6 +1278,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  GetItem
+
 
         /// <summary>
         /// The <i>GetItem</i> operation returns a set of attributes for the item with the given
@@ -1400,6 +1407,7 @@ namespace Amazon.DynamoDBv2
         
         #region  ListTables
 
+
         /// <summary>
         /// Returns an array of table names associated with the current account and endpoint.
         /// The output from <i>ListTables</i> is paginated, with each page returning a maximum
@@ -1492,6 +1500,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  PutItem
+
 
         /// <summary>
         /// Creates a new item, or replaces an old item with a new item. If an item that has the
@@ -1716,6 +1725,7 @@ namespace Amazon.DynamoDBv2
         
         #region  Query
 
+
         /// <summary>
         /// A <i>Query</i> operation uses the primary key of a table or a secondary index to directly
         /// access items from that table or index.
@@ -1799,6 +1809,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  Scan
+
 
         /// <summary>
         /// The <i>Scan</i> operation returns one or more items and item attributes by accessing
@@ -2016,6 +2027,7 @@ namespace Amazon.DynamoDBv2
         
         #region  UpdateItem
 
+
         /// <summary>
         /// Edits an existing item's attributes, or adds a new item to the table if it does not
         /// already exist. You can put, delete, or add attribute values. You can also perform
@@ -2171,6 +2183,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  UpdateTable
+
 
         /// <summary>
         /// Updates the provisioned throughput for the given table, or manages the global secondary

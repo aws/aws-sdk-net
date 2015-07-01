@@ -185,6 +185,7 @@ namespace Amazon.ImportExport
             return Invoke<CancelJobRequest,CancelJobResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CancelJob operation.
         /// </summary>
@@ -214,6 +215,7 @@ namespace Amazon.ImportExport
 
             return Invoke<CreateJobRequest,CreateJobResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateJob operation.
@@ -245,6 +247,7 @@ namespace Amazon.ImportExport
             return Invoke<GetShippingLabelRequest,GetShippingLabelResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetShippingLabel operation.
         /// </summary>
@@ -274,6 +277,7 @@ namespace Amazon.ImportExport
 
             return Invoke<GetStatusRequest,GetStatusResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetStatus operation.
@@ -309,6 +313,35 @@ namespace Amazon.ImportExport
             return Invoke<ListJobsRequest,ListJobsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// This operation returns the jobs associated with the requester. AWS Import/Export lists
+        /// the jobs in reverse chronological order based on the date of creation. For example
+        /// if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation
+        /// would return Test2 followed by Test1.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListJobs service method, as returned by ImportExport.</returns>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAccessKeyIdException">
+        /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
+        /// value. The manifest and the request authentication must use the same AWS Access Key
+        /// ID.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
+        /// The client tool version is invalid.
+        /// </exception>
+        public Task<ListJobsResponse> ListJobsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListJobsAsync(new ListJobsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobs operation.
         /// </summary>
@@ -338,6 +371,7 @@ namespace Amazon.ImportExport
 
             return Invoke<UpdateJobRequest,UpdateJobResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateJob operation.

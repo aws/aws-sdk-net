@@ -321,6 +321,7 @@ namespace Amazon.SQS
             return AddPermission(request);
         }
 
+
         /// <summary>
         /// Adds a permission to a queue for a specific <a href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a>.
         /// This allows for sharing access to the queue.
@@ -456,6 +457,7 @@ namespace Amazon.SQS
             return ChangeMessageVisibility(request);
         }
 
+
         /// <summary>
         /// Changes the visibility timeout of a specified message in a queue to a new value. The
         /// maximum allowed timeout value you can set the value to is 12 hours. This means you
@@ -585,6 +587,7 @@ namespace Amazon.SQS
             request.Entries = entries;
             return ChangeMessageVisibilityBatch(request);
         }
+
 
         /// <summary>
         /// Changes the visibility timeout of multiple messages. This is a batch version of <a>ChangeMessageVisibility</a>.
@@ -721,6 +724,7 @@ namespace Amazon.SQS
             request.QueueName = queueName;
             return CreateQueue(request);
         }
+
 
         /// <summary>
         /// Creates a new queue, or returns the URL of an existing one. When you request <code>CreateQueue</code>,
@@ -861,6 +865,7 @@ namespace Amazon.SQS
             return DeleteMessage(request);
         }
 
+
         /// <summary>
         /// Deletes the specified message from the specified queue. You specify the message by
         /// using the message's <code>receipt handle</code> and not the <code>message ID</code>
@@ -986,6 +991,7 @@ namespace Amazon.SQS
             return DeleteMessageBatch(request);
         }
 
+
         /// <summary>
         /// Deletes up to ten messages from the specified queue. This is a batch version of <a>DeleteMessage</a>.
         /// The result of the delete action on each message is reported individually in the response.
@@ -1100,6 +1106,7 @@ namespace Amazon.SQS
             request.QueueUrl = queueUrl;
             return DeleteQueue(request);
         }
+
 
         /// <summary>
         /// Deletes the queue specified by the <b>queue URL</b>, regardless of whether the queue
@@ -1230,6 +1237,7 @@ namespace Amazon.SQS
             return GetQueueAttributes(request);
         }
 
+
         /// <summary>
         /// Gets attributes for the specified queue. The following attributes are supported: <ul>
         /// <li> <code>All</code> - returns all values.</li> <li> <code>ApproximateNumberOfMessages</code>
@@ -1347,6 +1355,7 @@ namespace Amazon.SQS
             request.QueueName = queueName;
             return GetQueueUrl(request);
         }
+
 
         /// <summary>
         /// Returns the URL of an existing queue. This action provides a simple way to retrieve
@@ -1486,6 +1495,7 @@ namespace Amazon.SQS
             return ListQueues(request);
         }
 
+
         /// <summary>
         /// Returns a list of your queues. The maximum number of queues that can be returned is
         /// 1000. If you specify a value for the optional <code>QueueNamePrefix</code> parameter,
@@ -1567,6 +1577,7 @@ namespace Amazon.SQS
             request.QueueUrl = queueUrl;
             return PurgeQueue(request);
         }
+
 
         /// <summary>
         /// Deletes the messages in a queue specified by the <b>queue URL</b>.
@@ -1718,6 +1729,7 @@ namespace Amazon.SQS
             return ReceiveMessage(request);
         }
 
+
         /// <summary>
         /// Retrieves one or more messages, with a maximum limit of 10 messages, from the specified
         /// queue. Long poll support is enabled by using the <code>WaitTimeSeconds</code> parameter.
@@ -1854,6 +1866,7 @@ namespace Amazon.SQS
             return RemovePermission(request);
         }
 
+
         /// <summary>
         /// Revokes any permissions in the queue policy that matches the specified <code>Label</code>
         /// parameter. Only the owner of the queue can remove permissions.
@@ -1941,6 +1954,7 @@ namespace Amazon.SQS
             request.MessageBody = messageBody;
             return SendMessage(request);
         }
+
 
         /// <summary>
         /// Delivers a message to the specified queue. With Amazon SQS, you now have the ability
@@ -2081,6 +2095,7 @@ namespace Amazon.SQS
             return SendMessageBatch(request);
         }
 
+
         /// <summary>
         /// Delivers up to ten messages to the specified queue. This is a batch version of <a>SendMessage</a>.
         /// The result of the send action on each message is reported individually in the response.
@@ -2207,6 +2222,7 @@ namespace Amazon.SQS
             request.Attributes = attributes;
             return SetQueueAttributes(request);
         }
+
 
         /// <summary>
         /// Sets the value of one or more queue attributes. When you change a queue's attributes,

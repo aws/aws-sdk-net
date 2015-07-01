@@ -784,6 +784,7 @@ namespace Amazon.MachineLearning
             return CreateRealtimeEndpoint(request);
         }
 
+
         /// <summary>
         /// Creates a real-time endpoint for the <code>MLModel</code>. The endpoint contains the
         /// URI of the <code>MLModel</code>; that is, the location to send real-time prediction
@@ -878,6 +879,7 @@ namespace Amazon.MachineLearning
             request.BatchPredictionId = batchPredictionId;
             return DeleteBatchPrediction(request);
         }
+
 
         /// <summary>
         /// Assigns the DELETED status to a <code>BatchPrediction</code>, rendering it unusable.
@@ -983,6 +985,7 @@ namespace Amazon.MachineLearning
             return DeleteDataSource(request);
         }
 
+
         /// <summary>
         /// Assigns the DELETED status to a <code>DataSource</code>, rendering it unusable.
         /// 
@@ -1086,6 +1089,7 @@ namespace Amazon.MachineLearning
             request.EvaluationId = evaluationId;
             return DeleteEvaluation(request);
         }
+
 
         /// <summary>
         /// Assigns the <code>DELETED</code> status to an <code>Evaluation</code>, rendering it
@@ -1191,6 +1195,7 @@ namespace Amazon.MachineLearning
             return DeleteMLModel(request);
         }
 
+
         /// <summary>
         /// Assigns the DELETED status to an <code>MLModel</code>, rendering it unusable.
         /// 
@@ -1282,6 +1287,7 @@ namespace Amazon.MachineLearning
             request.MLModelId = mlModelId;
             return DeleteRealtimeEndpoint(request);
         }
+
 
         /// <summary>
         /// Deletes a real time endpoint of an <code>MLModel</code>.
@@ -1591,6 +1597,7 @@ namespace Amazon.MachineLearning
             return GetBatchPrediction(request);
         }
 
+
         /// <summary>
         /// Returns a <code>BatchPrediction</code> that includes detailed metadata, status, and
         /// data file information for a <code>Batch Prediction</code> request.
@@ -1681,6 +1688,7 @@ namespace Amazon.MachineLearning
             return GetDataSource(request);
         }
 
+
         /// <summary>
         /// Returns a <code>DataSource</code> that includes metadata and data file information,
         /// as well as the current status of the <code>DataSource</code>.
@@ -1712,6 +1720,7 @@ namespace Amazon.MachineLearning
             request.Verbose = verbose;
             return GetDataSource(request);
         }
+
 
         /// <summary>
         /// Returns a <code>DataSource</code> that includes metadata and data file information,
@@ -1803,6 +1812,7 @@ namespace Amazon.MachineLearning
             return GetEvaluation(request);
         }
 
+
         /// <summary>
         /// Returns an <code>Evaluation</code> that includes metadata as well as the current status
         /// of the <code>Evaluation</code>.
@@ -1891,6 +1901,7 @@ namespace Amazon.MachineLearning
             return GetMLModel(request);
         }
 
+
         /// <summary>
         /// Returns an <code>MLModel</code> that includes detailed metadata, and data source information
         /// as well as the current status of the <code>MLModel</code>.
@@ -1920,6 +1931,7 @@ namespace Amazon.MachineLearning
             request.Verbose = verbose;
             return GetMLModel(request);
         }
+
 
         /// <summary>
         /// Returns an <code>MLModel</code> that includes detailed metadata, and data source information
@@ -2026,6 +2038,7 @@ namespace Amazon.MachineLearning
             return Predict(request);
         }
 
+
         /// <summary>
         /// Generates a prediction for the observation using the specified <code>MLModel</code>.
         /// 
@@ -2129,6 +2142,7 @@ namespace Amazon.MachineLearning
             return UpdateBatchPrediction(request);
         }
 
+
         /// <summary>
         /// Updates the <code>BatchPredictionName</code> of a <code>BatchPrediction</code>.
         /// 
@@ -2224,6 +2238,7 @@ namespace Amazon.MachineLearning
             return UpdateDataSource(request);
         }
 
+
         /// <summary>
         /// Updates the <code>DataSourceName</code> of a <code>DataSource</code>.
         /// 
@@ -2318,6 +2333,7 @@ namespace Amazon.MachineLearning
             request.EvaluationName = evaluationName;
             return UpdateEvaluation(request);
         }
+
 
         /// <summary>
         /// Updates the <code>EvaluationName</code> of an <code>Evaluation</code>.
@@ -2415,6 +2431,7 @@ namespace Amazon.MachineLearning
             request.ScoreThreshold = scoreThreshold;
             return UpdateMLModel(request);
         }
+
 
         /// <summary>
         /// Updates the <code>MLModelName</code> and the <code>ScoreThreshold</code> of an <code>MLModel</code>.

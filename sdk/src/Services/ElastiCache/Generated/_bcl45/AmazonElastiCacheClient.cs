@@ -244,6 +244,7 @@ namespace Amazon.ElastiCache
         
         #region  AddTagsToResource
 
+
         /// <summary>
         /// The <i>AddTagsToResource</i> action adds up to 10 cost allocation tags to the named
         /// resource. A <i>cost allocation tag</i> is a key-value pair where the key and value
@@ -307,6 +308,7 @@ namespace Amazon.ElastiCache
         
         #region  AuthorizeCacheSecurityGroupIngress
 
+
         /// <summary>
         /// The <i>AuthorizeCacheSecurityGroupIngress</i> action allows network ingress to a cache
         /// security group. Applications using ElastiCache must be running on Amazon EC2, and
@@ -365,6 +367,7 @@ namespace Amazon.ElastiCache
         
         #region  CopySnapshot
 
+
         /// <summary>
         /// The <i>CopySnapshot</i> action makes a copy of an existing snapshot.
         /// </summary>
@@ -418,6 +421,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  CreateCacheCluster
+
 
         /// <summary>
         /// The <i>CreateCacheCluster</i> action creates a cache cluster. All nodes in the cache
@@ -506,6 +510,7 @@ namespace Amazon.ElastiCache
         
         #region  CreateCacheParameterGroup
 
+
         /// <summary>
         /// The <i>CreateCacheParameterGroup</i> action creates a new cache parameter group. A
         /// cache parameter group is a collection of parameters that you apply to all of the nodes
@@ -560,6 +565,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  CreateCacheSecurityGroup
+
 
         /// <summary>
         /// The <i>CreateCacheSecurityGroup</i> action creates a new cache security group. Use
@@ -618,6 +624,7 @@ namespace Amazon.ElastiCache
         
         #region  CreateCacheSubnetGroup
 
+
         /// <summary>
         /// The <i>CreateCacheSubnetGroup</i> action creates a new cache subnet group.
         /// 
@@ -674,6 +681,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  CreateReplicationGroup
+
 
         /// <summary>
         /// The <i>CreateReplicationGroup</i> action creates a replication group. A replication
@@ -774,6 +782,7 @@ namespace Amazon.ElastiCache
         
         #region  CreateSnapshot
 
+
         /// <summary>
         /// The <i>CreateSnapshot</i> action creates a copy of an entire cache cluster at a specific
         /// moment in time.
@@ -844,6 +853,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  DeleteCacheCluster
+
 
         /// <summary>
         /// The <i>DeleteCacheCluster</i> action deletes a previously provisioned cache cluster.
@@ -925,6 +935,7 @@ namespace Amazon.ElastiCache
         
         #region  DeleteCacheParameterGroup
 
+
         /// <summary>
         /// The <i>DeleteCacheParameterGroup</i> action deletes the specified cache parameter
         /// group. You cannot delete a cache parameter group if it is associated with any cache
@@ -976,6 +987,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  DeleteCacheSecurityGroup
+
 
         /// <summary>
         /// The <i>DeleteCacheSecurityGroup</i> action deletes a cache security group.
@@ -1029,6 +1041,7 @@ namespace Amazon.ElastiCache
         
         #region  DeleteCacheSubnetGroup
 
+
         /// <summary>
         /// The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.
         /// 
@@ -1072,6 +1085,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  DeleteReplicationGroup
+
 
         /// <summary>
         /// The <i>DeleteReplicationGroup</i> action deletes an existing replication group. By
@@ -1152,6 +1166,7 @@ namespace Amazon.ElastiCache
         
         #region  DeleteSnapshot
 
+
         /// <summary>
         /// The <i>DeleteSnapshot</i> action deletes an existing snapshot. When you receive a
         /// successful response from this action, ElastiCache immediately begins deleting the
@@ -1202,6 +1217,7 @@ namespace Amazon.ElastiCache
         
         #region  DescribeCacheClusters
 
+
         /// <summary>
         /// The <i>DescribeCacheClusters</i> action returns information about all provisioned
         /// cache clusters if no cache cluster identifier is specified, or about a specific cache
@@ -1251,6 +1267,7 @@ namespace Amazon.ElastiCache
         {
             return DescribeCacheClusters(new DescribeCacheClustersRequest());
         }
+
 
         /// <summary>
         /// The <i>DescribeCacheClusters</i> action returns information about all provisioned
@@ -1306,6 +1323,59 @@ namespace Amazon.ElastiCache
             return Invoke<DescribeCacheClustersRequest,DescribeCacheClustersResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// The <i>DescribeCacheClusters</i> action returns information about all provisioned
+        /// cache clusters if no cache cluster identifier is specified, or about a specific cache
+        /// cluster if a cache cluster identifier is supplied.
+        /// 
+        ///  
+        /// <para>
+        /// By default, abbreviated information about the cache clusters(s) will be returned.
+        /// You can use the optional <i>ShowDetails</i> flag to retrieve detailed information
+        /// about the cache nodes associated with the cache clusters. These details include the
+        /// DNS address and port for the cache node endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the cluster is in the CREATING state, only cluster level information will be displayed
+        /// until all of the nodes are successfully provisioned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the cluster is in the DELETING state, only cluster level information will be displayed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If cache nodes are currently being added to the cache cluster, node endpoint information
+        /// and creation time for the additional nodes will not be displayed until they are completely
+        /// provisioned. When the cache cluster state is <i>available</i>, the cluster is ready
+        /// for use.
+        /// </para>
+        ///  
+        /// <para>
+        /// If cache nodes are currently being removed from the cache cluster, no endpoint information
+        /// for the removed nodes is displayed.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCacheClusters service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
+        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        public Task<DescribeCacheClustersResponse> DescribeCacheClustersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeCacheClustersAsync(new DescribeCacheClustersRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheClusters operation.
         /// </summary>
@@ -1328,6 +1398,7 @@ namespace Amazon.ElastiCache
         
         #region  DescribeCacheEngineVersions
 
+
         /// <summary>
         /// The <i>DescribeCacheEngineVersions</i> action returns a list of the available cache
         /// engines and their versions.
@@ -1338,6 +1409,7 @@ namespace Amazon.ElastiCache
         {
             return DescribeCacheEngineVersions(new DescribeCacheEngineVersionsRequest());
         }
+
 
         /// <summary>
         /// The <i>DescribeCacheEngineVersions</i> action returns a list of the available cache
@@ -1354,6 +1426,20 @@ namespace Amazon.ElastiCache
             return Invoke<DescribeCacheEngineVersionsRequest,DescribeCacheEngineVersionsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// The <i>DescribeCacheEngineVersions</i> action returns a list of the available cache
+        /// engines and their versions.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCacheEngineVersions service method, as returned by ElastiCache.</returns>
+        public Task<DescribeCacheEngineVersionsResponse> DescribeCacheEngineVersionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeCacheEngineVersionsAsync(new DescribeCacheEngineVersionsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheEngineVersions operation.
         /// </summary>
@@ -1376,6 +1462,7 @@ namespace Amazon.ElastiCache
         
         #region  DescribeCacheParameterGroups
 
+
         /// <summary>
         /// The <i>DescribeCacheParameterGroups</i> action returns a list of cache parameter group
         /// descriptions. If a cache parameter group name is specified, the list will contain
@@ -1397,6 +1484,7 @@ namespace Amazon.ElastiCache
         {
             return DescribeCacheParameterGroups(new DescribeCacheParameterGroupsRequest());
         }
+
 
         /// <summary>
         /// The <i>DescribeCacheParameterGroups</i> action returns a list of cache parameter group
@@ -1424,6 +1512,31 @@ namespace Amazon.ElastiCache
             return Invoke<DescribeCacheParameterGroupsRequest,DescribeCacheParameterGroupsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// The <i>DescribeCacheParameterGroups</i> action returns a list of cache parameter group
+        /// descriptions. If a cache parameter group name is specified, the list will contain
+        /// only the descriptions for that group.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCacheParameterGroups service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.CacheParameterGroupNotFoundException">
+        /// The requested cache parameter group name does not refer to an existing cache parameter
+        /// group.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        public Task<DescribeCacheParameterGroupsResponse> DescribeCacheParameterGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeCacheParameterGroupsAsync(new DescribeCacheParameterGroupsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheParameterGroups operation.
         /// </summary>
@@ -1445,6 +1558,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  DescribeCacheParameters
+
 
         /// <summary>
         /// The <i>DescribeCacheParameters</i> action returns the detailed parameter list for
@@ -1493,6 +1607,7 @@ namespace Amazon.ElastiCache
         
         #region  DescribeCacheSecurityGroups
 
+
         /// <summary>
         /// The <i>DescribeCacheSecurityGroups</i> action returns a list of cache security group
         /// descriptions. If a cache security group name is specified, the list will contain only
@@ -1514,6 +1629,7 @@ namespace Amazon.ElastiCache
         {
             return DescribeCacheSecurityGroups(new DescribeCacheSecurityGroupsRequest());
         }
+
 
         /// <summary>
         /// The <i>DescribeCacheSecurityGroups</i> action returns a list of cache security group
@@ -1541,6 +1657,31 @@ namespace Amazon.ElastiCache
             return Invoke<DescribeCacheSecurityGroupsRequest,DescribeCacheSecurityGroupsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// The <i>DescribeCacheSecurityGroups</i> action returns a list of cache security group
+        /// descriptions. If a cache security group name is specified, the list will contain only
+        /// the description of that group.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCacheSecurityGroups service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSecurityGroupNotFoundException">
+        /// The requested cache security group name does not refer to an existing cache security
+        /// group.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        public Task<DescribeCacheSecurityGroupsResponse> DescribeCacheSecurityGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeCacheSecurityGroupsAsync(new DescribeCacheSecurityGroupsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheSecurityGroups operation.
         /// </summary>
@@ -1563,6 +1704,7 @@ namespace Amazon.ElastiCache
         
         #region  DescribeCacheSubnetGroups
 
+
         /// <summary>
         /// The <i>DescribeCacheSubnetGroups</i> action returns a list of cache subnet group descriptions.
         /// If a subnet group name is specified, the list will contain only the description of
@@ -1577,6 +1719,7 @@ namespace Amazon.ElastiCache
         {
             return DescribeCacheSubnetGroups(new DescribeCacheSubnetGroupsRequest());
         }
+
 
         /// <summary>
         /// The <i>DescribeCacheSubnetGroups</i> action returns a list of cache subnet group descriptions.
@@ -1597,6 +1740,24 @@ namespace Amazon.ElastiCache
             return Invoke<DescribeCacheSubnetGroupsRequest,DescribeCacheSubnetGroupsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// The <i>DescribeCacheSubnetGroups</i> action returns a list of cache subnet group descriptions.
+        /// If a subnet group name is specified, the list will contain only the description of
+        /// that group.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCacheSubnetGroups service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetGroupNotFoundException">
+        /// The requested cache subnet group name does not refer to an existing cache subnet group.
+        /// </exception>
+        public Task<DescribeCacheSubnetGroupsResponse> DescribeCacheSubnetGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeCacheSubnetGroupsAsync(new DescribeCacheSubnetGroupsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheSubnetGroups operation.
         /// </summary>
@@ -1618,6 +1779,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  DescribeEngineDefaultParameters
+
 
         /// <summary>
         /// The <i>DescribeEngineDefaultParameters</i> action returns the default engine and system
@@ -1662,6 +1824,7 @@ namespace Amazon.ElastiCache
         
         #region  DescribeEvents
 
+
         /// <summary>
         /// The <i>DescribeEvents</i> action returns events related to cache clusters, cache security
         /// groups, and cache parameter groups. You can obtain events specific to a particular
@@ -1686,6 +1849,7 @@ namespace Amazon.ElastiCache
         {
             return DescribeEvents(new DescribeEventsRequest());
         }
+
 
         /// <summary>
         /// The <i>DescribeEvents</i> action returns events related to cache clusters, cache security
@@ -1716,6 +1880,34 @@ namespace Amazon.ElastiCache
             return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// The <i>DescribeEvents</i> action returns events related to cache clusters, cache security
+        /// groups, and cache parameter groups. You can obtain events specific to a particular
+        /// cache cluster, cache security group, or cache parameter group by providing the name
+        /// as a parameter.
+        /// 
+        ///  
+        /// <para>
+        /// By default, only the events occurring within the last hour are returned; however,
+        /// you can retrieve up to 14 days' worth of events if necessary.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEvents service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        public Task<DescribeEventsResponse> DescribeEventsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeEventsAsync(new DescribeEventsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
         /// </summary>
@@ -1738,6 +1930,7 @@ namespace Amazon.ElastiCache
         
         #region  DescribeReplicationGroups
 
+
         /// <summary>
         /// The <i>DescribeReplicationGroups</i> action returns information about a particular
         /// replication group. If no identifier is specified, <i>DescribeReplicationGroups</i>
@@ -1758,6 +1951,7 @@ namespace Amazon.ElastiCache
         {
             return DescribeReplicationGroups(new DescribeReplicationGroupsRequest());
         }
+
 
         /// <summary>
         /// The <i>DescribeReplicationGroups</i> action returns information about a particular
@@ -1784,6 +1978,30 @@ namespace Amazon.ElastiCache
             return Invoke<DescribeReplicationGroupsRequest,DescribeReplicationGroupsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// The <i>DescribeReplicationGroups</i> action returns information about a particular
+        /// replication group. If no identifier is specified, <i>DescribeReplicationGroups</i>
+        /// returns information about all replication groups.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReplicationGroups service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        public Task<DescribeReplicationGroupsResponse> DescribeReplicationGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeReplicationGroupsAsync(new DescribeReplicationGroupsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReplicationGroups operation.
         /// </summary>
@@ -1806,6 +2024,7 @@ namespace Amazon.ElastiCache
         
         #region  DescribeReservedCacheNodes
 
+
         /// <summary>
         /// The <i>DescribeReservedCacheNodes</i> action returns information about reserved cache
         /// nodes for this account, or about a specified reserved cache node.
@@ -1825,6 +2044,7 @@ namespace Amazon.ElastiCache
         {
             return DescribeReservedCacheNodes(new DescribeReservedCacheNodesRequest());
         }
+
 
         /// <summary>
         /// The <i>DescribeReservedCacheNodes</i> action returns information about reserved cache
@@ -1850,6 +2070,29 @@ namespace Amazon.ElastiCache
             return Invoke<DescribeReservedCacheNodesRequest,DescribeReservedCacheNodesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// The <i>DescribeReservedCacheNodes</i> action returns information about reserved cache
+        /// nodes for this account, or about a specified reserved cache node.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReservedCacheNodes service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReservedCacheNodeNotFoundException">
+        /// The requested reserved cache node was not found.
+        /// </exception>
+        public Task<DescribeReservedCacheNodesResponse> DescribeReservedCacheNodesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeReservedCacheNodesAsync(new DescribeReservedCacheNodesRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedCacheNodes operation.
         /// </summary>
@@ -1872,6 +2115,7 @@ namespace Amazon.ElastiCache
         
         #region  DescribeReservedCacheNodesOfferings
 
+
         /// <summary>
         /// The <i>DescribeReservedCacheNodesOfferings</i> action lists available reserved cache
         /// node offerings.
@@ -1891,6 +2135,7 @@ namespace Amazon.ElastiCache
         {
             return DescribeReservedCacheNodesOfferings(new DescribeReservedCacheNodesOfferingsRequest());
         }
+
 
         /// <summary>
         /// The <i>DescribeReservedCacheNodesOfferings</i> action lists available reserved cache
@@ -1916,6 +2161,29 @@ namespace Amazon.ElastiCache
             return Invoke<DescribeReservedCacheNodesOfferingsRequest,DescribeReservedCacheNodesOfferingsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// The <i>DescribeReservedCacheNodesOfferings</i> action lists available reserved cache
+        /// node offerings.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReservedCacheNodesOfferings service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReservedCacheNodesOfferingNotFoundException">
+        /// The requested cache node offering does not exist.
+        /// </exception>
+        public Task<DescribeReservedCacheNodesOfferingsResponse> DescribeReservedCacheNodesOfferingsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeReservedCacheNodesOfferingsAsync(new DescribeReservedCacheNodesOfferingsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedCacheNodesOfferings operation.
         /// </summary>
@@ -1937,6 +2205,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  DescribeSnapshots
+
 
         /// <summary>
         /// The <i>DescribeSnapshots</i> action returns information about cache cluster snapshots.
@@ -1962,6 +2231,7 @@ namespace Amazon.ElastiCache
         {
             return DescribeSnapshots(new DescribeSnapshotsRequest());
         }
+
 
         /// <summary>
         /// The <i>DescribeSnapshots</i> action returns information about cache cluster snapshots.
@@ -1992,6 +2262,34 @@ namespace Amazon.ElastiCache
             return Invoke<DescribeSnapshotsRequest,DescribeSnapshotsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// The <i>DescribeSnapshots</i> action returns information about cache cluster snapshots.
+        /// By default, <i>DescribeSnapshots</i> lists all of your snapshots; it can optionally
+        /// describe a single snapshot, or just the snapshots associated with a particular cache
+        /// cluster.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSnapshots service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
+        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.SnapshotNotFoundException">
+        /// The requested snapshot name does not refer to an existing snapshot.
+        /// </exception>
+        public Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeSnapshotsAsync(new DescribeSnapshotsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshots operation.
         /// </summary>
@@ -2013,6 +2311,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  ListTagsForResource
+
 
         /// <summary>
         /// The <i>ListTagsForResource</i> action lists all cost allocation tags currently on
@@ -2068,6 +2367,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  ModifyCacheCluster
+
 
         /// <summary>
         /// The <i>ModifyCacheCluster</i> action modifies the settings for a cache cluster. You
@@ -2144,6 +2444,7 @@ namespace Amazon.ElastiCache
         
         #region  ModifyCacheParameterGroup
 
+
         /// <summary>
         /// The <i>ModifyCacheParameterGroup</i> action modifies the parameters of a cache parameter
         /// group. You can modify up to 20 parameters in a single request by submitting a list
@@ -2196,6 +2497,7 @@ namespace Amazon.ElastiCache
         
         #region  ModifyCacheSubnetGroup
 
+
         /// <summary>
         /// The <i>ModifyCacheSubnetGroup</i> action modifies an existing cache subnet group.
         /// </summary>
@@ -2244,6 +2546,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  ModifyReplicationGroup
+
 
         /// <summary>
         /// The <i>ModifyReplicationGroup</i> action modifies the settings for a replication group.
@@ -2324,6 +2627,7 @@ namespace Amazon.ElastiCache
         
         #region  PurchaseReservedCacheNodesOffering
 
+
         /// <summary>
         /// The <i>PurchaseReservedCacheNodesOffering</i> action allows you to purchase a reserved
         /// cache node offering.
@@ -2375,6 +2679,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  RebootCacheCluster
+
 
         /// <summary>
         /// The <i>RebootCacheCluster</i> action reboots some, or all, of the cache nodes within
@@ -2432,6 +2737,7 @@ namespace Amazon.ElastiCache
         
         #region  RemoveTagsFromResource
 
+
         /// <summary>
         /// The <i>RemoveTagsFromResource</i> action removes the tags identified by the <code>TagKeys</code>
         /// list from the named resource.
@@ -2480,6 +2786,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  ResetCacheParameterGroup
+
 
         /// <summary>
         /// The <i>ResetCacheParameterGroup</i> action modifies the parameters of a cache parameter
@@ -2533,6 +2840,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  RevokeCacheSecurityGroupIngress
+
 
         /// <summary>
         /// The <i>RevokeCacheSecurityGroupIngress</i> action revokes ingress from a cache security

@@ -202,6 +202,7 @@ namespace Amazon.CloudTrail
             return Invoke<CreateTrailRequest,CreateTrailResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTrail operation.
         /// </summary>
@@ -231,6 +232,7 @@ namespace Amazon.CloudTrail
 
             return Invoke<DeleteTrailRequest,DeleteTrailResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTrail operation.
@@ -266,6 +268,21 @@ namespace Amazon.CloudTrail
             return Invoke<DescribeTrailsRequest,DescribeTrailsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Retrieves settings for the trail associated with the current region for your account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTrails service method, as returned by CloudTrail.</returns>
+        public Task<DescribeTrailsResponse> DescribeTrailsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeTrailsAsync(new DescribeTrailsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrails operation.
         /// </summary>
@@ -295,6 +312,7 @@ namespace Amazon.CloudTrail
 
             return Invoke<GetTrailStatusRequest,GetTrailStatusResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetTrailStatus operation.
@@ -326,6 +344,7 @@ namespace Amazon.CloudTrail
             return Invoke<LookupEventsRequest,LookupEventsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the LookupEvents operation.
         /// </summary>
@@ -355,6 +374,7 @@ namespace Amazon.CloudTrail
 
             return Invoke<StartLoggingRequest,StartLoggingResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the StartLogging operation.
@@ -386,6 +406,7 @@ namespace Amazon.CloudTrail
             return Invoke<StopLoggingRequest,StopLoggingResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the StopLogging operation.
         /// </summary>
@@ -415,6 +436,7 @@ namespace Amazon.CloudTrail
 
             return Invoke<UpdateTrailRequest,UpdateTrailResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateTrail operation.

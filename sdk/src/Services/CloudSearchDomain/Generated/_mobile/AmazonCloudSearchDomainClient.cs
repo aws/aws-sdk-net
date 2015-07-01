@@ -103,6 +103,7 @@ namespace Amazon.CloudSearchDomain
             return Invoke<SearchRequest,SearchResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the Search operation.
         /// </summary>
@@ -133,6 +134,7 @@ namespace Amazon.CloudSearchDomain
             return Invoke<SuggestRequest,SuggestResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the Suggest operation.
         /// </summary>
@@ -162,6 +164,7 @@ namespace Amazon.CloudSearchDomain
 
             return Invoke<UploadDocumentsRequest,UploadDocumentsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadDocuments operation.

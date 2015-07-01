@@ -42,6 +42,7 @@ namespace Amazon.ImportExport
                 
         #region  CancelJob
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CancelJob operation.
         /// </summary>
@@ -51,11 +52,12 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateJob
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateJob operation.
@@ -66,11 +68,12 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetShippingLabel
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetShippingLabel operation.
@@ -81,11 +84,12 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetShippingLabelResponse> GetShippingLabelAsync(GetShippingLabelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetShippingLabelResponse> GetShippingLabelAsync(GetShippingLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetStatus
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetStatus operation.
@@ -96,11 +100,37 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetStatusResponse> GetStatusAsync(GetStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetStatusResponse> GetStatusAsync(GetStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListJobs
+
+
+        /// <summary>
+        /// This operation returns the jobs associated with the requester. AWS Import/Export lists
+        /// the jobs in reverse chronological order based on the date of creation. For example
+        /// if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation
+        /// would return Test2 followed by Test1.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListJobs service method, as returned by ImportExport.</returns>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAccessKeyIdException">
+        /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
+        /// value. The manifest and the request authentication must use the same AWS Access Key
+        /// ID.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
+        /// The client tool version is invalid.
+        /// </exception>
+        Task<ListJobsResponse> ListJobsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobs operation.
@@ -111,11 +141,12 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateJob
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateJob operation.
@@ -126,7 +157,7 @@ namespace Amazon.ImportExport
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -61,6 +61,7 @@ namespace Amazon.CloudFormation
         
         #region  CancelUpdateStack
 
+
         /// <summary>
         /// Cancels an update on the specified stack. If the call completes successfully, the
         /// stack will roll back the update and revert to the previous stack configuration.
@@ -99,6 +100,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  CreateStack
+
 
         /// <summary>
         /// Creates a stack as specified in the template. After the call completes successfully,
@@ -148,6 +150,7 @@ namespace Amazon.CloudFormation
         
         #region  DeleteStack
 
+
         /// <summary>
         /// Deletes a specified stack. Once the call completes successfully, stack deletion starts.
         /// Deleted stacks do not show up in the <a>DescribeStacks</a> API if the deletion has
@@ -185,6 +188,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  DescribeStackEvents
+
 
         /// <summary>
         /// Returns all stack related events for a specified stack. For more information about
@@ -227,6 +231,7 @@ namespace Amazon.CloudFormation
         
         #region  DescribeStackResource
 
+
         /// <summary>
         /// Returns a description of the specified resource in the specified stack.
         /// 
@@ -268,6 +273,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  DescribeStackResources
+
 
         /// <summary>
         /// Returns AWS resource descriptions for running and deleted stacks. If <code>StackName</code>
@@ -325,6 +331,7 @@ namespace Amazon.CloudFormation
         
         #region  DescribeStacks
 
+
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
         /// it returns the description for all the stacks created.
@@ -370,6 +377,7 @@ namespace Amazon.CloudFormation
         
         #region  EstimateTemplateCost
 
+
         /// <summary>
         /// Returns the estimated monthly cost of a template. The return value is an AWS Simple
         /// Monthly Calculator URL with a query string that describes the resources required to
@@ -408,6 +416,7 @@ namespace Amazon.CloudFormation
         
         #region  GetStackPolicy
 
+
         /// <summary>
         /// Returns the stack policy for a specified stack. If a stack doesn't have a policy,
         /// a null value is returned.
@@ -444,6 +453,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  GetTemplate
+
 
         /// <summary>
         /// Returns the template body for a specified stack. You can get the template for running
@@ -489,6 +499,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  GetTemplateSummary
+
 
         /// <summary>
         /// Returns information about a new or existing template. The <code>GetTemplateSummary</code>
@@ -540,6 +551,7 @@ namespace Amazon.CloudFormation
         
         #region  ListStackResources
 
+
         /// <summary>
         /// Returns descriptions of all resources of the specified stack.
         /// 
@@ -581,6 +593,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  ListStacks
+
 
         /// <summary>
         /// Returns the summary information for stacks whose status matches the specified StackStatusFilter.
@@ -631,6 +644,7 @@ namespace Amazon.CloudFormation
         
         #region  SetStackPolicy
 
+
         /// <summary>
         /// Sets a stack policy for a specified stack.
         /// </summary>
@@ -666,6 +680,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  SignalResource
+
 
         /// <summary>
         /// Sends a signal to the specified resource with a success or failure status. You can
@@ -707,6 +722,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  UpdateStack
+
 
         /// <summary>
         /// Updates a stack as specified in the template. After the call completes successfully,
@@ -766,6 +782,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  ValidateTemplate
+
 
         /// <summary>
         /// Validates a specified template.

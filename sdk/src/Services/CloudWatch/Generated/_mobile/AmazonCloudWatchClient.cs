@@ -230,6 +230,7 @@ namespace Amazon.CloudWatch
             return Invoke<DeleteAlarmsRequest,DeleteAlarmsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAlarms operation.
         /// </summary>
@@ -263,6 +264,26 @@ namespace Amazon.CloudWatch
 
             return Invoke<DescribeAlarmHistoryRequest,DescribeAlarmHistoryResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Retrieves history for the specified alarm. Filter alarms by date range or item type.
+        /// If an alarm name is not specified, Amazon CloudWatch returns histories for all of
+        /// the owner's alarms.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAlarmHistory service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        public Task<DescribeAlarmHistoryResponse> DescribeAlarmHistoryAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeAlarmHistoryAsync(new DescribeAlarmHistoryRequest(), cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAlarmHistory operation.
@@ -298,6 +319,26 @@ namespace Amazon.CloudWatch
             return Invoke<DescribeAlarmsRequest,DescribeAlarmsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Retrieves alarms with the specified names. If no name is specified, all alarms for
+        /// the user are returned. Alarms can be retrieved by using only a prefix for the alarm
+        /// name, the alarm state, or a prefix for any action.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAlarms service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        public Task<DescribeAlarmsResponse> DescribeAlarmsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeAlarmsAsync(new DescribeAlarmsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAlarms operation.
         /// </summary>
@@ -327,6 +368,7 @@ namespace Amazon.CloudWatch
 
             return Invoke<DescribeAlarmsForMetricRequest,DescribeAlarmsForMetricResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAlarmsForMetric operation.
@@ -358,6 +400,7 @@ namespace Amazon.CloudWatch
             return Invoke<DisableAlarmActionsRequest,DisableAlarmActionsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DisableAlarmActions operation.
         /// </summary>
@@ -388,6 +431,7 @@ namespace Amazon.CloudWatch
             return Invoke<EnableAlarmActionsRequest,EnableAlarmActionsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the EnableAlarmActions operation.
         /// </summary>
@@ -417,6 +461,7 @@ namespace Amazon.CloudWatch
 
             return Invoke<GetMetricStatisticsRequest,GetMetricStatisticsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetMetricStatistics operation.
@@ -452,6 +497,30 @@ namespace Amazon.CloudWatch
             return Invoke<ListMetricsRequest,ListMetricsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns a list of valid metrics stored for the AWS account owner. Returned metrics
+        /// can be used with <a>GetMetricStatistics</a> to obtain statistical data for a given
+        /// metric.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMetrics service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Indicates that the request processing has failed due to some unknown error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// Bad or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        public Task<ListMetricsResponse> ListMetricsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListMetricsAsync(new ListMetricsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListMetrics operation.
         /// </summary>
@@ -481,6 +550,7 @@ namespace Amazon.CloudWatch
 
             return Invoke<PutMetricAlarmRequest,PutMetricAlarmResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutMetricAlarm operation.
@@ -512,6 +582,7 @@ namespace Amazon.CloudWatch
             return Invoke<PutMetricDataRequest,PutMetricDataResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutMetricData operation.
         /// </summary>
@@ -541,6 +612,7 @@ namespace Amazon.CloudWatch
 
             return Invoke<SetAlarmStateRequest,SetAlarmStateResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetAlarmState operation.

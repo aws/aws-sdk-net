@@ -230,6 +230,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  AddInstanceGroups
 
+
         /// <summary>
         /// AddInstanceGroups adds an instance group to a running cluster.
         /// </summary>
@@ -269,6 +270,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
         
         #region  AddJobFlowSteps
+
 
         /// <summary>
         /// AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are
@@ -340,6 +342,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  AddTags
 
+
         /// <summary>
         /// Adds tags to an Amazon EMR resource. Tags make it easier to associate clusters in
         /// various ways, such as grouping clusters to track your Amazon EMR resource allocation
@@ -385,6 +388,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  DescribeCluster
 
+
         /// <summary>
         /// Provides cluster-level details including status, hardware and software configuration,
         /// VPC settings, and so on. For information about the cluster steps, see <a>ListSteps</a>.
@@ -401,6 +405,7 @@ namespace Amazon.ElasticMapReduce
         {
             return DescribeCluster(new DescribeClusterRequest());
         }
+
 
         /// <summary>
         /// Provides cluster-level details including status, hardware and software configuration,
@@ -423,6 +428,26 @@ namespace Amazon.ElasticMapReduce
             return Invoke<DescribeClusterRequest,DescribeClusterResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Provides cluster-level details including status, hardware and software configuration,
+        /// VPC settings, and so on. For information about the cluster steps, see <a>ListSteps</a>.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCluster service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        public Task<DescribeClusterResponse> DescribeClusterAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeClusterAsync(new DescribeClusterRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCluster operation.
         /// </summary>
@@ -444,6 +469,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
         
         #region  DescribeJobFlows
+
 
         /// <summary>
         /// This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>,
@@ -484,6 +510,7 @@ namespace Amazon.ElasticMapReduce
         {
             return DescribeJobFlows(new DescribeJobFlowsRequest());
         }
+
 
         /// <summary>
         /// This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>,
@@ -529,6 +556,49 @@ namespace Amazon.ElasticMapReduce
             return Invoke<DescribeJobFlowsRequest,DescribeJobFlowsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>,
+        /// <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a> and <a>ListBootstrapActions</a>
+        /// instead.
+        /// 
+        ///  
+        /// <para>
+        ///  DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
+        /// The parameters can include a list of job flow IDs, job flow states, and restrictions
+        /// on job flow creation date and time.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Regardless of supplied parameters, only job flows created within the last two months
+        /// are returned.
+        /// </para>
+        ///  
+        /// <para>
+        ///  If no parameters are supplied, then job flows matching either of the following criteria
+        /// are returned:
+        /// </para>
+        ///  <ul> <li>Job flows created and completed in the last two weeks</li> <li> Job flows
+        /// created within the last two months that are in one of the following states: <code>RUNNING</code>,
+        /// <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code> </li> </ul>
+        /// 
+        /// <para>
+        ///  Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeJobFlows service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        public Task<DescribeJobFlowsResponse> DescribeJobFlowsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeJobFlowsAsync(new DescribeJobFlowsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeJobFlows operation.
         /// </summary>
@@ -551,6 +621,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  DescribeStep
 
+
         /// <summary>
         /// Provides more detail about the cluster step.
         /// </summary>
@@ -566,6 +637,7 @@ namespace Amazon.ElasticMapReduce
         {
             return DescribeStep(new DescribeStepRequest());
         }
+
 
         /// <summary>
         /// Provides more detail about the cluster step.
@@ -587,6 +659,25 @@ namespace Amazon.ElasticMapReduce
             return Invoke<DescribeStepRequest,DescribeStepResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Provides more detail about the cluster step.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeStep service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        public Task<DescribeStepResponse> DescribeStepAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeStepAsync(new DescribeStepRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStep operation.
         /// </summary>
@@ -609,6 +700,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  ListBootstrapActions
 
+
         /// <summary>
         /// Provides information about the bootstrap actions associated with a cluster.
         /// </summary>
@@ -624,6 +716,7 @@ namespace Amazon.ElasticMapReduce
         {
             return ListBootstrapActions(new ListBootstrapActionsRequest());
         }
+
 
         /// <summary>
         /// Provides information about the bootstrap actions associated with a cluster.
@@ -645,6 +738,25 @@ namespace Amazon.ElasticMapReduce
             return Invoke<ListBootstrapActionsRequest,ListBootstrapActionsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Provides information about the bootstrap actions associated with a cluster.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBootstrapActions service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        public Task<ListBootstrapActionsResponse> ListBootstrapActionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListBootstrapActionsAsync(new ListBootstrapActionsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the ListBootstrapActions operation.
         /// </summary>
@@ -667,6 +779,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  ListClusters
 
+
         /// <summary>
         /// Provides the status of all clusters visible to this AWS account. Allows you to filter
         /// the list of clusters based on certain criteria; for example, filtering by cluster
@@ -686,6 +799,7 @@ namespace Amazon.ElasticMapReduce
         {
             return ListClusters(new ListClustersRequest());
         }
+
 
         /// <summary>
         /// Provides the status of all clusters visible to this AWS account. Allows you to filter
@@ -711,6 +825,29 @@ namespace Amazon.ElasticMapReduce
             return Invoke<ListClustersRequest,ListClustersResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Provides the status of all clusters visible to this AWS account. Allows you to filter
+        /// the list of clusters based on certain criteria; for example, filtering by cluster
+        /// creation date and time or by status. This call returns a maximum of 50 clusters per
+        /// call, but returns a marker to track the paging of the cluster list across multiple
+        /// ListClusters calls.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListClusters service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        public Task<ListClustersResponse> ListClustersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListClustersAsync(new ListClustersRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the ListClusters operation.
         /// </summary>
@@ -733,6 +870,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  ListInstanceGroups
 
+
         /// <summary>
         /// Provides all available details about the instance groups in a cluster.
         /// </summary>
@@ -748,6 +886,7 @@ namespace Amazon.ElasticMapReduce
         {
             return ListInstanceGroups(new ListInstanceGroupsRequest());
         }
+
 
         /// <summary>
         /// Provides all available details about the instance groups in a cluster.
@@ -769,6 +908,25 @@ namespace Amazon.ElasticMapReduce
             return Invoke<ListInstanceGroupsRequest,ListInstanceGroupsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Provides all available details about the instance groups in a cluster.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInstanceGroups service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        public Task<ListInstanceGroupsResponse> ListInstanceGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListInstanceGroupsAsync(new ListInstanceGroupsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the ListInstanceGroups operation.
         /// </summary>
@@ -791,6 +949,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  ListInstances
 
+
         /// <summary>
         /// Provides information about the cluster instances that Amazon EMR provisions on behalf
         /// of a user when it creates the cluster. For example, this operation indicates when
@@ -809,6 +968,7 @@ namespace Amazon.ElasticMapReduce
         {
             return ListInstances(new ListInstancesRequest());
         }
+
 
         /// <summary>
         /// Provides information about the cluster instances that Amazon EMR provisions on behalf
@@ -833,6 +993,28 @@ namespace Amazon.ElasticMapReduce
             return Invoke<ListInstancesRequest,ListInstancesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Provides information about the cluster instances that Amazon EMR provisions on behalf
+        /// of a user when it creates the cluster. For example, this operation indicates when
+        /// the EC2 instances reach the Ready state, when instances become available to Amazon
+        /// EMR to use for jobs, and the IP addresses for cluster instances, etc.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInstances service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        public Task<ListInstancesResponse> ListInstancesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListInstancesAsync(new ListInstancesRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the ListInstances operation.
         /// </summary>
@@ -855,6 +1037,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  ListSteps
 
+
         /// <summary>
         /// Provides a list of steps for the cluster.
         /// </summary>
@@ -870,6 +1053,7 @@ namespace Amazon.ElasticMapReduce
         {
             return ListSteps(new ListStepsRequest());
         }
+
 
         /// <summary>
         /// Provides a list of steps for the cluster.
@@ -891,6 +1075,25 @@ namespace Amazon.ElasticMapReduce
             return Invoke<ListStepsRequest,ListStepsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Provides a list of steps for the cluster.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSteps service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        public Task<ListStepsResponse> ListStepsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListStepsAsync(new ListStepsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the ListSteps operation.
         /// </summary>
@@ -912,6 +1115,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
         
         #region  ModifyInstanceGroups
+
 
         /// <summary>
         /// ModifyInstanceGroups modifies the number of nodes and configuration settings of an
@@ -954,6 +1158,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
         
         #region  RemoveTags
+
 
         /// <summary>
         /// Removes tags from an Amazon EMR resource. Tags make it easier to associate clusters
@@ -1004,6 +1209,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
         
         #region  RunJobFlow
+
 
         /// <summary>
         /// RunJobFlow creates and starts running a new job flow. The job flow will run the steps
@@ -1075,6 +1281,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  SetTerminationProtection
 
+
         /// <summary>
         /// SetTerminationProtection locks a job flow so the Amazon EC2 instances in the cluster
         /// cannot be terminated by user intervention, an API call, or in the event of a job-flow
@@ -1137,6 +1344,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  SetVisibleToAllUsers
 
+
         /// <summary>
         /// Sets whether all AWS Identity and Access Management (IAM) users under your account
         /// can access the specified job flows. This action works on running job flows. You can
@@ -1180,6 +1388,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
         
         #region  TerminateJobFlows
+
 
         /// <summary>
         /// TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any

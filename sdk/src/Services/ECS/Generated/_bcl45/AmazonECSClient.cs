@@ -241,6 +241,7 @@ namespace Amazon.ECS
         
         #region  CreateCluster
 
+
         /// <summary>
         /// Creates a new Amazon ECS cluster. By default, your account will receive a <code>default</code>
         /// cluster when you launch your first container instance. However, you can create your
@@ -289,6 +290,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  CreateService
+
 
         /// <summary>
         /// Runs and maintains a desired number of tasks from a specified task definition. If
@@ -342,6 +344,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  DeleteCluster
+
 
         /// <summary>
         /// Deletes the specified cluster. You must deregister all container instances from this
@@ -406,6 +409,7 @@ namespace Amazon.ECS
         
         #region  DeleteService
 
+
         /// <summary>
         /// Deletes a specified service within a cluster.
         /// </summary>
@@ -461,6 +465,7 @@ namespace Amazon.ECS
         
         #region  DeregisterContainerInstance
 
+
         /// <summary>
         /// Deregisters an Amazon ECS container instance from the specified cluster. This instance
         /// will no longer be available to run tasks.
@@ -512,6 +517,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  DeregisterTaskDefinition
+
 
         /// <summary>
         /// Deregisters the specified task definition by family and revision. Upon deregistration,
@@ -572,6 +578,7 @@ namespace Amazon.ECS
         
         #region  DescribeClusters
 
+
         /// <summary>
         /// Describes one or more of your clusters.
         /// </summary>
@@ -618,6 +625,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  DescribeContainerInstances
+
 
         /// <summary>
         /// Describes Amazon EC2 Container Service container instances. Returns metadata about
@@ -671,6 +679,7 @@ namespace Amazon.ECS
         
         #region  DescribeServices
 
+
         /// <summary>
         /// Describes the specified services running in your cluster.
         /// </summary>
@@ -721,6 +730,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  DescribeTaskDefinition
+
 
         /// <summary>
         /// Describes a task definition. You can specify a <code>family</code> and <code>revision</code>
@@ -778,6 +788,7 @@ namespace Amazon.ECS
         
         #region  DescribeTasks
 
+
         /// <summary>
         /// Describes a specified task or tasks.
         /// </summary>
@@ -829,6 +840,7 @@ namespace Amazon.ECS
         
         #region  ListClusters
 
+
         /// <summary>
         /// Returns a list of existing clusters.
         /// </summary>
@@ -875,6 +887,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  ListContainerInstances
+
 
         /// <summary>
         /// Returns a list of container instances in a specified cluster.
@@ -927,6 +940,7 @@ namespace Amazon.ECS
         
         #region  ListServices
 
+
         /// <summary>
         /// Lists the services that are running in a specified cluster.
         /// </summary>
@@ -978,6 +992,7 @@ namespace Amazon.ECS
         
         #region  ListTaskDefinitionFamilies
 
+
         /// <summary>
         /// Returns a list of task definition families that are registered to your account (which
         /// may include task definition families that no longer have any <code>ACTIVE</code> task
@@ -1027,6 +1042,7 @@ namespace Amazon.ECS
         
         #region  ListTaskDefinitions
 
+
         /// <summary>
         /// Returns a list of task definitions that are registered to your account. You can filter
         /// the results by family name with the <code>familyPrefix</code> parameter or by status
@@ -1075,6 +1091,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  ListTasks
+
 
         /// <summary>
         /// Returns a list of tasks for a specified cluster. You can filter the results by family
@@ -1130,6 +1147,7 @@ namespace Amazon.ECS
         
         #region  RegisterTaskDefinition
 
+
         /// <summary>
         /// Registers a new task definition from the supplied <code>family</code> and <code>containerDefinitions</code>.
         /// Optionally, you can add data volumes to your containers with the <code>volumes</code>
@@ -1180,6 +1198,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  RunTask
+
 
         /// <summary>
         /// Start a task using random placement and the default Amazon ECS scheduler. If you want
@@ -1240,6 +1259,7 @@ namespace Amazon.ECS
         
         #region  StartTask
 
+
         /// <summary>
         /// Starts a new task from the specified task definition on the specified container instance
         /// or instances. If you want to use the default Amazon ECS scheduler to place your task,
@@ -1299,6 +1319,7 @@ namespace Amazon.ECS
         
         #region  StopTask
 
+
         /// <summary>
         /// Stops a running task.
         /// </summary>
@@ -1349,6 +1370,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  UpdateContainerAgent
+
 
         /// <summary>
         /// Updates the Amazon ECS container agent on a specified container instance.
@@ -1418,6 +1440,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  UpdateService
+
 
         /// <summary>
         /// Modify the desired count or task definition used in a service.

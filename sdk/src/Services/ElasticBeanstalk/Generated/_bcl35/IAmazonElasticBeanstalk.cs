@@ -65,6 +65,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  AbortEnvironmentUpdate
 
+
         /// <summary>
         /// Cancels in-progress environment configuration update or application version deployment.
         /// </summary>
@@ -105,6 +106,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  CheckDNSAvailability
 
+
         /// <summary>
         /// Checks if the specified CNAME is available.
         /// </summary>
@@ -140,6 +142,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  CreateApplication
+
 
         /// <summary>
         /// Creates an application that has one configuration template named <code>default</code>
@@ -181,6 +184,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  CreateApplicationVersion
+
 
         /// <summary>
         /// Creates an application version for the specified application.
@@ -238,6 +242,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  CreateConfigurationTemplate
 
+
         /// <summary>
         /// Creates a configuration template. Templates are associated with a specific application
         /// and are used to deploy different versions of the application with the same configuration
@@ -291,6 +296,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  CreateEnvironment
 
+
         /// <summary>
         /// Launches an environment for the specified application using the specified configuration.
         /// </summary>
@@ -333,6 +339,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  CreateStorageLocation
+
 
         /// <summary>
         /// Creates the Amazon S3 storage location for the account. 
@@ -409,6 +416,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  DeleteApplication
 
+
         /// <summary>
         /// Deletes the specified application along with all associated versions and configurations.
         /// The application versions will not be deleted from your Amazon S3 bucket. 
@@ -451,6 +459,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  DeleteApplicationVersion
+
 
         /// <summary>
         /// Deletes the specified version from the specified application. 
@@ -506,6 +515,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  DeleteConfigurationTemplate
 
+
         /// <summary>
         /// Deletes the specified configuration template.
         /// 
@@ -549,6 +559,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  DeleteEnvironmentConfiguration
+
 
         /// <summary>
         /// Deletes the draft configuration associated with the running environment. 
@@ -596,6 +607,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  DescribeApplications
 
+
         /// <summary>
         /// Returns the descriptions of existing applications.
         /// </summary>
@@ -639,6 +651,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  DescribeApplicationVersions
 
+
         /// <summary>
         /// Returns descriptions for existing application versions.
         /// </summary>
@@ -681,6 +694,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  DescribeConfigurationOptions
+
 
         /// <summary>
         /// Describes the configuration options that are used in a particular configuration template
@@ -730,6 +744,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  DescribeConfigurationSettings
+
 
         /// <summary>
         /// Returns a description of the settings for the specified configuration set, that is,
@@ -782,6 +797,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  DescribeEnvironmentResources
 
+
         /// <summary>
         /// Returns AWS resources for this environment.
         /// </summary>
@@ -821,6 +837,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  DescribeEnvironments
+
 
         /// <summary>
         /// Returns descriptions for existing environments.
@@ -864,6 +881,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  DescribeEvents
+
 
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
@@ -914,6 +932,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  ListAvailableSolutionStacks
 
+
         /// <summary>
         /// Returns a list of the available solution stack names.
         /// </summary>
@@ -957,6 +976,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  RebuildEnvironment
 
+
         /// <summary>
         /// Deletes and recreates all of the AWS resources (for example: the Auto Scaling group,
         /// load balancer, etc.) for a specified environment and forces a restart.
@@ -997,6 +1017,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  RequestEnvironmentInfo
+
 
         /// <summary>
         /// Initiates a request to compile the specified type of information of the deployed
@@ -1057,6 +1078,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  RestartAppServer
 
+
         /// <summary>
         /// Causes the environment to restart the application container server running on each
         /// Amazon EC2 instance.
@@ -1093,6 +1115,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  RetrieveEnvironmentInfo
+
 
         /// <summary>
         /// Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request.
@@ -1137,6 +1160,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  SwapEnvironmentCNAMEs
 
+
         /// <summary>
         /// Swaps the CNAMEs of two environments.
         /// </summary>
@@ -1172,6 +1196,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  TerminateEnvironment
+
 
         /// <summary>
         /// Terminates the specified environment.
@@ -1213,6 +1238,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  UpdateApplication
 
+
         /// <summary>
         /// Updates the specified application to have the specified properties. 
         /// 
@@ -1252,6 +1278,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  UpdateApplicationVersion
 
+
         /// <summary>
         /// Updates the specified application version to have the specified properties. 
         /// 
@@ -1290,6 +1317,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  UpdateConfigurationTemplate
+
 
         /// <summary>
         /// Updates the specified configuration template to have the specified properties or
@@ -1339,6 +1367,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  UpdateEnvironment
+
 
         /// <summary>
         /// Updates the environment description, deploys a new application version, updates the
@@ -1394,6 +1423,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  ValidateConfigurationSettings
+
 
         /// <summary>
         /// Takes a set of configuration settings and either a configuration template or environment,

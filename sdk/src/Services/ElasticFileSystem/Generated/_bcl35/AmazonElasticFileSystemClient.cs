@@ -300,6 +300,7 @@ namespace Amazon.ElasticFileSystem
             return CreateFileSystem(request);
         }
 
+
         /// <summary>
         /// Creates a new, empty file system. The operation requires a creation token in the
         /// request that Amazon EFS uses to ensure idempotent creation (calling the operation
@@ -710,6 +711,7 @@ namespace Amazon.ElasticFileSystem
             return DeleteFileSystem(request);
         }
 
+
         /// <summary>
         /// Deletes a file system, permanently severing access to its contents. Upon return,
         /// the file system no longer exists and you will not be able to access any contents of
@@ -843,6 +845,7 @@ namespace Amazon.ElasticFileSystem
             request.MountTargetId = mountTargetId;
             return DeleteMountTarget(request);
         }
+
 
         /// <summary>
         /// Deletes the specified mount target. 
@@ -1131,6 +1134,7 @@ namespace Amazon.ElasticFileSystem
             return DescribeMountTargets(request);
         }
 
+
         /// <summary>
         /// Returns the descriptions of the current mount targets for a file system. The order
         /// of mount targets returned in the response is unspecified.
@@ -1235,6 +1239,7 @@ namespace Amazon.ElasticFileSystem
             request.MountTargetId = mountTargetId;
             return DescribeMountTargetSecurityGroups(request);
         }
+
 
         /// <summary>
         /// Returns the security groups currently in effect for a mount target. This operation
@@ -1341,6 +1346,7 @@ namespace Amazon.ElasticFileSystem
             request.FileSystemId = fileSystemId;
             return DescribeTags(request);
         }
+
 
         /// <summary>
         /// Returns the tags associated with a file system. The order of tags returned in the

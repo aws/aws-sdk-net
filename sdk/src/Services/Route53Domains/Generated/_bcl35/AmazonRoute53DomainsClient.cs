@@ -317,6 +317,7 @@ namespace Amazon.Route53Domains
             return DeleteTagsForDomain(request);
         }
 
+
         /// <summary>
         /// This operation deletes the specified tags for a domain.
         /// 
@@ -944,6 +945,7 @@ namespace Amazon.Route53Domains
             return ListTagsForDomain(request);
         }
 
+
         /// <summary>
         /// This operation returns all of the tags that are associated with the specified domain.
         /// 
@@ -1520,6 +1522,7 @@ namespace Amazon.Route53Domains
             request.TagsToUpdate = tagsToUpdate;
             return UpdateTagsForDomain(request);
         }
+
 
         /// <summary>
         /// This operation adds or updates tags for a specified domain.

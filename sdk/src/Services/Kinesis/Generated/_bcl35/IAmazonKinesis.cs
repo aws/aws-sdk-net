@@ -40,6 +40,7 @@ namespace Amazon.Kinesis
         
         #region  AddTagsToStream
 
+
         /// <summary>
         /// Adds or updates tags for the specified Amazon Kinesis stream. Each stream can have
         /// up to 10 tags. 
@@ -98,6 +99,7 @@ namespace Amazon.Kinesis
         #endregion
         
         #region  CreateStream
+
 
         /// <summary>
         /// Creates a Amazon Kinesis stream. A stream captures and transports data records that
@@ -197,6 +199,7 @@ namespace Amazon.Kinesis
         
         #region  DeleteStream
 
+
         /// <summary>
         /// Deletes a stream and all its shards and data. You must shut down any applications
         /// that are operating on the stream before you delete the stream. If an application attempts
@@ -270,6 +273,7 @@ namespace Amazon.Kinesis
         
         #region  DescribeStream
 
+
         /// <summary>
         /// Describes the specified stream.
         /// 
@@ -342,6 +346,7 @@ namespace Amazon.Kinesis
         #endregion
         
         #region  GetRecords
+
 
         /// <summary>
         /// Gets data records from a shard.
@@ -446,6 +451,7 @@ namespace Amazon.Kinesis
         
         #region  GetShardIterator
 
+
         /// <summary>
         /// Gets a shard iterator. A shard iterator expires five minutes after it is returned
         /// to the requester.
@@ -545,6 +551,7 @@ namespace Amazon.Kinesis
         
         #region  ListStreams
 
+
         /// <summary>
         /// Lists your streams.
         /// 
@@ -640,6 +647,7 @@ namespace Amazon.Kinesis
         
         #region  ListTagsForStream
 
+
         /// <summary>
         /// Lists the tags for the specified Amazon Kinesis stream.
         /// </summary>
@@ -687,6 +695,7 @@ namespace Amazon.Kinesis
         #endregion
         
         #region  MergeShards
+
 
         /// <summary>
         /// Merges two adjacent shards in a stream and combines them into a single shard to reduce
@@ -792,6 +801,7 @@ namespace Amazon.Kinesis
         
         #region  PutRecord
 
+
         /// <summary>
         /// Puts (writes) a single data record from a producer into an Amazon Kinesis stream.
         /// Call <code>PutRecord</code> to send data from the producer into the Amazon Kinesis
@@ -896,6 +906,7 @@ namespace Amazon.Kinesis
         #endregion
         
         #region  PutRecords
+
 
         /// <summary>
         /// Puts (writes) multiple data records from a producer into an Amazon Kinesis stream
@@ -1016,6 +1027,7 @@ namespace Amazon.Kinesis
         
         #region  RemoveTagsFromStream
 
+
         /// <summary>
         /// Deletes tags from the specified Amazon Kinesis stream.
         /// 
@@ -1072,6 +1084,7 @@ namespace Amazon.Kinesis
         #endregion
         
         #region  SplitShard
+
 
         /// <summary>
         /// Splits a shard into two new shards in the stream, to increase the stream's capacity

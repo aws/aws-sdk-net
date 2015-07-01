@@ -51,6 +51,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  AddTags
 
+
         /// <summary>
         /// Adds the specified tags to the specified load balancer. Each load balancer can have
         /// a maximum of 10 tags.
@@ -109,6 +110,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  ApplySecurityGroupsToLoadBalancer
 
+
         /// <summary>
         /// Associates one or more security groups with your load balancer in a virtual private
         /// cloud (VPC). The specified security groups override the previously associated security
@@ -161,6 +163,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  AttachLoadBalancerToSubnets
+
 
         /// <summary>
         /// Adds one or more subnets to the set of configured subnets for the specified load balancer.
@@ -217,6 +220,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  ConfigureHealthCheck
 
+
         /// <summary>
         /// Specifies the health check settings to use when evaluating the health state of your
         /// back-end instances.
@@ -262,6 +266,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  CreateAppCookieStickinessPolicy
+
 
         /// <summary>
         /// Generates a stickiness policy with sticky session lifetimes that follow that of an
@@ -330,6 +335,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  CreateLBCookieStickinessPolicy
+
 
         /// <summary>
         /// Generates a stickiness policy with sticky session lifetimes controlled by the lifetime
@@ -401,6 +407,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  CreateLoadBalancer
+
 
         /// <summary>
         /// Creates a load balancer.
@@ -500,6 +507,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  CreateLoadBalancerListeners
 
+
         /// <summary>
         /// Creates one or more listeners for the specified load balancer. If a listener with
         /// the specified port does not already exist, it is created; otherwise, the properties
@@ -557,6 +565,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  CreateLoadBalancerPolicy
+
 
         /// <summary>
         /// Creates a policy with the specified attributes for the specified load balancer.
@@ -616,6 +625,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  DeleteLoadBalancer
 
+
         /// <summary>
         /// Deletes the specified load balancer.
         /// 
@@ -665,6 +675,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  DeleteLoadBalancerListeners
 
+
         /// <summary>
         /// Deletes the specified listeners from the specified load balancer.
         /// </summary>
@@ -703,6 +714,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  DeleteLoadBalancerPolicy
+
 
         /// <summary>
         /// Deletes the specified policy from the specified load balancer. This policy must not
@@ -746,6 +758,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  DeregisterInstancesFromLoadBalancer
+
 
         /// <summary>
         /// Deregisters the specified instances from the specified load balancer. After the instance
@@ -801,6 +814,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  DescribeInstanceHealth
 
+
         /// <summary>
         /// Describes the state of the specified instances registered with the specified load
         /// balancer. If no instances are specified, the call describes the state of all instances
@@ -845,6 +859,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  DescribeLoadBalancerAttributes
 
+
         /// <summary>
         /// Describes the attributes for the specified load balancer.
         /// </summary>
@@ -886,6 +901,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  DescribeLoadBalancerPolicies
+
 
         /// <summary>
         /// Describes the specified policies.
@@ -962,6 +978,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  DescribeLoadBalancerPolicyTypes
 
+
         /// <summary>
         /// Describes the specified load balancer policy types.
         /// 
@@ -1023,6 +1040,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  DescribeLoadBalancers
 
+
         /// <summary>
         /// Describes the specified the load balancers. If no load balancers are specified, the
         /// call describes all of your load balancers.
@@ -1074,6 +1092,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  DescribeTags
 
+
         /// <summary>
         /// Describes the tags associated with the specified load balancers.
         /// </summary>
@@ -1112,6 +1131,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  DetachLoadBalancerFromSubnets
+
 
         /// <summary>
         /// Removes the specified subnets from the set of configured subnets for the load balancer.
@@ -1161,6 +1181,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  DisableAvailabilityZonesForLoadBalancer
+
 
         /// <summary>
         /// Removes the specified Availability Zones from the set of Availability Zones for the
@@ -1220,6 +1241,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  EnableAvailabilityZonesForLoadBalancer
 
+
         /// <summary>
         /// Adds the specified Availability Zones to the set of Availability Zones for the specified
         /// load balancer.
@@ -1270,6 +1292,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  ModifyLoadBalancerAttributes
+
 
         /// <summary>
         /// Modifies the attributes of the specified load balancer.
@@ -1333,6 +1356,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  RegisterInstancesWithLoadBalancer
+
 
         /// <summary>
         /// Adds the specified instances to the specified load balancer.
@@ -1412,6 +1436,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  RemoveTags
 
+
         /// <summary>
         /// Removes one or more tags from the specified load balancer.
         /// </summary>
@@ -1450,6 +1475,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  SetLoadBalancerListenerSSLCertificate
+
 
         /// <summary>
         /// Sets the certificate that terminates the specified listener's SSL connections. The
@@ -1508,6 +1534,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  SetLoadBalancerPoliciesForBackendServer
+
 
         /// <summary>
         /// Replaces the set of policies associated with the specified port on which the back-end
@@ -1568,6 +1595,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  SetLoadBalancerPoliciesOfListener
+
 
         /// <summary>
         /// Associates, updates, or disables a policy with a listener for the specified load balancer.

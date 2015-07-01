@@ -57,6 +57,7 @@ namespace Amazon.SimpleWorkflow
         
         #region  CountClosedWorkflowExecutions
 
+
         /// <summary>
         /// Returns the number of closed workflow executions within the given domain that meet
         /// the specified filtering criteria.
@@ -100,6 +101,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         CountClosedWorkflowExecutionsResponse CountClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CountClosedWorkflowExecutions operation.
         /// </summary>
@@ -114,6 +116,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  CountOpenWorkflowExecutions
+
 
         /// <summary>
         /// Returns the number of open workflow executions within the given domain that meet the
@@ -158,6 +161,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         CountOpenWorkflowExecutionsResponse CountOpenWorkflowExecutions(CountOpenWorkflowExecutionsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CountOpenWorkflowExecutions operation.
         /// </summary>
@@ -172,6 +176,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  CountPendingActivityTasks
+
 
         /// <summary>
         /// Returns the estimated number of activity tasks in the specified task list. The count
@@ -213,6 +218,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         CountPendingActivityTasksResponse CountPendingActivityTasks(CountPendingActivityTasksRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CountPendingActivityTasks operation.
         /// </summary>
@@ -227,6 +233,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  CountPendingDecisionTasks
+
 
         /// <summary>
         /// Returns the estimated number of decision tasks in the specified task list. The count
@@ -268,6 +275,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         CountPendingDecisionTasksResponse CountPendingDecisionTasks(CountPendingDecisionTasksRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CountPendingDecisionTasks operation.
         /// </summary>
@@ -282,6 +290,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  DeprecateActivityType
+
 
         /// <summary>
         /// Deprecates the specified <i>activity type</i>. After an activity type has been deprecated,
@@ -329,6 +338,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         DeprecateActivityTypeResponse DeprecateActivityType(DeprecateActivityTypeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeprecateActivityType operation.
         /// </summary>
@@ -343,6 +353,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  DeprecateDomain
+
 
         /// <summary>
         /// Deprecates the specified domain. After a domain has been deprecated it cannot be used
@@ -389,6 +400,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         DeprecateDomainResponse DeprecateDomain(DeprecateDomainRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeprecateDomain operation.
         /// </summary>
@@ -403,6 +415,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  DeprecateWorkflowType
+
 
         /// <summary>
         /// Deprecates the specified <i>workflow type</i>. After a workflow type has been deprecated,
@@ -451,6 +464,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         DeprecateWorkflowTypeResponse DeprecateWorkflowType(DeprecateWorkflowTypeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeprecateWorkflowType operation.
         /// </summary>
@@ -465,6 +479,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  DescribeActivityType
+
 
         /// <summary>
         /// Returns information about the specified activity type. This includes configuration
@@ -508,6 +523,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         DescribeActivityTypeResponse DescribeActivityType(DescribeActivityTypeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeActivityType operation.
         /// </summary>
@@ -522,6 +538,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  DescribeDomain
+
 
         /// <summary>
         /// Returns information about the specified domain, including description and status.
@@ -560,6 +577,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         DescribeDomainResponse DescribeDomain(DescribeDomainRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDomain operation.
         /// </summary>
@@ -574,6 +592,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  DescribeWorkflowExecution
+
 
         /// <summary>
         /// Returns information about the specified workflow execution including its type and
@@ -614,6 +633,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         DescribeWorkflowExecutionResponse DescribeWorkflowExecution(DescribeWorkflowExecutionRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkflowExecution operation.
         /// </summary>
@@ -628,6 +648,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  DescribeWorkflowType
+
 
         /// <summary>
         /// Returns information about the specified <i>workflow type</i>. This includes configuration
@@ -671,6 +692,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         DescribeWorkflowTypeResponse DescribeWorkflowType(DescribeWorkflowTypeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkflowType operation.
         /// </summary>
@@ -685,6 +707,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  GetWorkflowExecutionHistory
+
 
         /// <summary>
         /// Returns the history of the specified workflow execution. The results may be split
@@ -726,6 +749,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         GetWorkflowExecutionHistoryResponse GetWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetWorkflowExecutionHistory operation.
         /// </summary>
@@ -740,6 +764,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  ListActivityTypes
+
 
         /// <summary>
         /// Returns information about all activities registered in the specified domain that match
@@ -782,6 +807,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         ListActivityTypesResponse ListActivityTypes(ListActivityTypesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListActivityTypes operation.
         /// </summary>
@@ -796,6 +822,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  ListClosedWorkflowExecutions
+
 
         /// <summary>
         /// Returns a list of closed workflow executions in the specified domain that meet the
@@ -841,6 +868,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         ListClosedWorkflowExecutionsResponse ListClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListClosedWorkflowExecutions operation.
         /// </summary>
@@ -855,6 +883,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  ListDomains
+
 
         /// <summary>
         /// Returns the list of domains registered in the account. The results may be split into
@@ -892,6 +921,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         ListDomainsResponse ListDomains(ListDomainsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomains operation.
         /// </summary>
@@ -906,6 +936,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  ListOpenWorkflowExecutions
+
 
         /// <summary>
         /// Returns a list of open workflow executions in the specified domain that meet the filtering
@@ -951,6 +982,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         ListOpenWorkflowExecutionsResponse ListOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListOpenWorkflowExecutions operation.
         /// </summary>
@@ -965,6 +997,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  ListWorkflowTypes
+
 
         /// <summary>
         /// Returns information about workflow types in the specified domain. The results may
@@ -1004,6 +1037,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         ListWorkflowTypesResponse ListWorkflowTypes(ListWorkflowTypesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListWorkflowTypes operation.
         /// </summary>
@@ -1018,6 +1052,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  PollForActivityTask
+
 
         /// <summary>
         /// Used by workers to get an <a>ActivityTask</a> from the specified activity <code>taskList</code>.
@@ -1070,6 +1105,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         PollForActivityTaskResponse PollForActivityTask(PollForActivityTaskRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PollForActivityTask operation.
         /// </summary>
@@ -1084,6 +1120,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  PollForDecisionTask
+
 
         /// <summary>
         /// Used by deciders to get a <a>DecisionTask</a> from the specified decision <code>taskList</code>.
@@ -1147,6 +1184,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         PollForDecisionTaskResponse PollForDecisionTask(PollForDecisionTaskRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PollForDecisionTask operation.
         /// </summary>
@@ -1161,6 +1199,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  RecordActivityTaskHeartbeat
+
 
         /// <summary>
         /// Used by activity workers to report to the service that the <a>ActivityTask</a> represented
@@ -1224,6 +1263,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         RecordActivityTaskHeartbeatResponse RecordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RecordActivityTaskHeartbeat operation.
         /// </summary>
@@ -1238,6 +1278,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  RegisterActivityType
+
 
         /// <summary>
         /// Registers a new <i>activity type</i> along with its configuration settings in the
@@ -1292,6 +1333,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         RegisterActivityTypeResponse RegisterActivityType(RegisterActivityTypeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterActivityType operation.
         /// </summary>
@@ -1306,6 +1348,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  RegisterDomain
+
 
         /// <summary>
         /// Registers a new domain.
@@ -1349,6 +1392,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         RegisterDomainResponse RegisterDomain(RegisterDomainRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterDomain operation.
         /// </summary>
@@ -1363,6 +1407,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  RegisterWorkflowType
+
 
         /// <summary>
         /// Registers a new <i>workflow type</i> and its configuration settings in the specified
@@ -1422,6 +1467,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         RegisterWorkflowTypeResponse RegisterWorkflowType(RegisterWorkflowTypeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterWorkflowType operation.
         /// </summary>
@@ -1436,6 +1482,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  RequestCancelWorkflowExecution
+
 
         /// <summary>
         /// Records a <code>WorkflowExecutionCancelRequested</code> event in the currently running
@@ -1481,6 +1528,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         RequestCancelWorkflowExecutionResponse RequestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RequestCancelWorkflowExecution operation.
         /// </summary>
@@ -1495,6 +1543,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  RespondActivityTaskCanceled
+
 
         /// <summary>
         /// Used by workers to tell the service that the <a>ActivityTask</a> identified by the
@@ -1550,6 +1599,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         RespondActivityTaskCanceledResponse RespondActivityTaskCanceled(RespondActivityTaskCanceledRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RespondActivityTaskCanceled operation.
         /// </summary>
@@ -1564,6 +1614,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  RespondActivityTaskCompleted
+
 
         /// <summary>
         /// Used by workers to tell the service that the <a>ActivityTask</a> identified by the
@@ -1616,6 +1667,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         RespondActivityTaskCompletedResponse RespondActivityTaskCompleted(RespondActivityTaskCompletedRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RespondActivityTaskCompleted operation.
         /// </summary>
@@ -1630,6 +1682,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  RespondActivityTaskFailed
+
 
         /// <summary>
         /// Used by workers to tell the service that the <a>ActivityTask</a> identified by the
@@ -1679,6 +1732,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         RespondActivityTaskFailedResponse RespondActivityTaskFailed(RespondActivityTaskFailedRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RespondActivityTaskFailed operation.
         /// </summary>
@@ -1693,6 +1747,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  RespondDecisionTaskCompleted
+
 
         /// <summary>
         /// Used by deciders to tell the service that the <a>DecisionTask</a> identified by the
@@ -1732,6 +1787,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         RespondDecisionTaskCompletedResponse RespondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RespondDecisionTaskCompleted operation.
         /// </summary>
@@ -1746,6 +1802,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  SignalWorkflowExecution
+
 
         /// <summary>
         /// Records a <code>WorkflowExecutionSignaled</code> event in the workflow execution history
@@ -1790,6 +1847,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         SignalWorkflowExecutionResponse SignalWorkflowExecution(SignalWorkflowExecutionRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SignalWorkflowExecution operation.
         /// </summary>
@@ -1804,6 +1862,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  StartWorkflowExecution
+
 
         /// <summary>
         /// Starts an execution of the workflow type in the specified domain using the provided
@@ -1871,6 +1930,7 @@ namespace Amazon.SimpleWorkflow
         /// </exception>
         StartWorkflowExecutionResponse StartWorkflowExecution(StartWorkflowExecutionRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the StartWorkflowExecution operation.
         /// </summary>
@@ -1885,6 +1945,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  TerminateWorkflowExecution
+
 
         /// <summary>
         /// Records a <code>WorkflowExecutionTerminated</code> event and forces closure of the
@@ -1930,6 +1991,7 @@ namespace Amazon.SimpleWorkflow
         /// no longer available for this operation.
         /// </exception>
         TerminateWorkflowExecutionResponse TerminateWorkflowExecution(TerminateWorkflowExecutionRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateWorkflowExecution operation.

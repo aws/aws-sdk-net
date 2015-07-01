@@ -190,6 +190,7 @@ namespace Amazon.Lambda
             return Invoke<AddPermissionRequest,AddPermissionResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddPermission operation.
         /// </summary>
@@ -219,6 +220,7 @@ namespace Amazon.Lambda
 
             return Invoke<CreateEventSourceMappingRequest,CreateEventSourceMappingResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateEventSourceMapping operation.
@@ -250,6 +252,7 @@ namespace Amazon.Lambda
             return Invoke<CreateFunctionRequest,CreateFunctionResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateFunction operation.
         /// </summary>
@@ -279,6 +282,7 @@ namespace Amazon.Lambda
 
             return Invoke<DeleteEventSourceMappingRequest,DeleteEventSourceMappingResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteEventSourceMapping operation.
@@ -310,6 +314,44 @@ namespace Amazon.Lambda
             return Invoke<DeleteFunctionRequest,DeleteFunctionResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Deletes the specified Lambda function code and configuration.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a function the associated access policy is also deleted. You will
+        /// need to delete the event source mappings explicitly.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permission for the <code>lambda:DeleteFunction</code> action.
+        /// </para>
+        /// </summary>
+        /// <param name="functionName">The Lambda function to delete.  You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFunction service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public Task<DeleteFunctionResponse> DeleteFunctionAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DeleteFunctionRequest();
+            request.FunctionName = functionName;
+            return DeleteFunctionAsync(request, cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteFunction operation.
         /// </summary>
@@ -339,6 +381,7 @@ namespace Amazon.Lambda
 
             return Invoke<GetEventSourceMappingRequest,GetEventSourceMappingResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetEventSourceMapping operation.
@@ -370,6 +413,42 @@ namespace Amazon.Lambda
             return Invoke<GetFunctionRequest,GetFunctionResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns the configuration information of the Lambda function and a presigned URL link
+        /// to the .zip file you uploaded with <a>CreateFunction</a> so you can download the .zip
+        /// file. Note that the URL is valid for up to 10 minutes. The configuration information
+        /// is the same information you provided as parameters when uploading the function.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permission for the <code>lambda:GetFunction</code> action.
+        /// </para>
+        /// </summary>
+        /// <param name="functionName">The Lambda function name.   You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public Task<GetFunctionResponse> GetFunctionAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new GetFunctionRequest();
+            request.FunctionName = functionName;
+            return GetFunctionAsync(request, cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetFunction operation.
         /// </summary>
@@ -399,6 +478,41 @@ namespace Amazon.Lambda
 
             return Invoke<GetFunctionConfigurationRequest,GetFunctionConfigurationResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Returns the configuration information of the Lambda function. This the same information
+        /// you provided as parameters when uploading the function by using <a>CreateFunction</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permission for the <code>lambda:GetFunctionConfiguration</code>
+        /// operation.
+        /// </para>
+        /// </summary>
+        /// <param name="functionName">The name of the Lambda function for which you want to retrieve the configuration information.  You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFunctionConfiguration service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public Task<GetFunctionConfigurationResponse> GetFunctionConfigurationAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new GetFunctionConfigurationRequest();
+            request.FunctionName = functionName;
+            return GetFunctionConfigurationAsync(request, cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetFunctionConfiguration operation.
@@ -430,6 +544,7 @@ namespace Amazon.Lambda
             return Invoke<GetPolicyRequest,GetPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetPolicy operation.
         /// </summary>
@@ -459,6 +574,7 @@ namespace Amazon.Lambda
 
             return Invoke<InvokeRequest,InvokeResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the Invoke operation.
@@ -490,6 +606,7 @@ namespace Amazon.Lambda
             return Invoke<InvokeAsyncRequest,InvokeAsyncResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the InvokeAsync operation.
         /// </summary>
@@ -519,6 +636,7 @@ namespace Amazon.Lambda
 
             return Invoke<ListEventSourceMappingsRequest,ListEventSourceMappingsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListEventSourceMappings operation.
@@ -550,6 +668,35 @@ namespace Amazon.Lambda
             return Invoke<ListFunctionsRequest,ListFunctionsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns a list of your Lambda functions. For each function, the response includes
+        /// the function configuration information. You must use <a>GetFunction</a> to retrieve
+        /// the code for your function.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permission for the <code>lambda:ListFunctions</code> action.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFunctions service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public Task<ListFunctionsResponse> ListFunctionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new ListFunctionsRequest();
+            return ListFunctionsAsync(request, cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListFunctions operation.
         /// </summary>
@@ -579,6 +726,7 @@ namespace Amazon.Lambda
 
             return Invoke<RemovePermissionRequest,RemovePermissionResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemovePermission operation.
@@ -610,6 +758,7 @@ namespace Amazon.Lambda
             return Invoke<UpdateEventSourceMappingRequest,UpdateEventSourceMappingResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateEventSourceMapping operation.
         /// </summary>
@@ -640,6 +789,7 @@ namespace Amazon.Lambda
             return Invoke<UpdateFunctionCodeRequest,UpdateFunctionCodeResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateFunctionCode operation.
         /// </summary>
@@ -669,6 +819,7 @@ namespace Amazon.Lambda
 
             return Invoke<UpdateFunctionConfigurationRequest,UpdateFunctionConfigurationResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateFunctionConfiguration operation.

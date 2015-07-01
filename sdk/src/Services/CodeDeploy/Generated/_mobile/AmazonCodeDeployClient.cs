@@ -252,6 +252,7 @@ namespace Amazon.CodeDeploy
             return Invoke<AddTagsToOnPremisesInstancesRequest,AddTagsToOnPremisesInstancesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddTagsToOnPremisesInstances operation.
         /// </summary>
@@ -281,6 +282,7 @@ namespace Amazon.CodeDeploy
 
             return Invoke<BatchGetApplicationsRequest,BatchGetApplicationsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the BatchGetApplications operation.
@@ -312,6 +314,7 @@ namespace Amazon.CodeDeploy
             return Invoke<BatchGetDeploymentsRequest,BatchGetDeploymentsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the BatchGetDeployments operation.
         /// </summary>
@@ -341,6 +344,7 @@ namespace Amazon.CodeDeploy
 
             return Invoke<BatchGetOnPremisesInstancesRequest,BatchGetOnPremisesInstancesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the BatchGetOnPremisesInstances operation.
@@ -372,6 +376,7 @@ namespace Amazon.CodeDeploy
             return Invoke<CreateApplicationRequest,CreateApplicationResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateApplication operation.
         /// </summary>
@@ -401,6 +406,7 @@ namespace Amazon.CodeDeploy
 
             return Invoke<CreateDeploymentRequest,CreateDeploymentResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDeployment operation.
@@ -432,6 +438,7 @@ namespace Amazon.CodeDeploy
             return Invoke<CreateDeploymentConfigRequest,CreateDeploymentConfigResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDeploymentConfig operation.
         /// </summary>
@@ -461,6 +468,7 @@ namespace Amazon.CodeDeploy
 
             return Invoke<CreateDeploymentGroupRequest,CreateDeploymentGroupResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDeploymentGroup operation.
@@ -492,6 +500,7 @@ namespace Amazon.CodeDeploy
             return Invoke<DeleteApplicationRequest,DeleteApplicationResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteApplication operation.
         /// </summary>
@@ -521,6 +530,7 @@ namespace Amazon.CodeDeploy
 
             return Invoke<DeleteDeploymentConfigRequest,DeleteDeploymentConfigResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDeploymentConfig operation.
@@ -552,6 +562,7 @@ namespace Amazon.CodeDeploy
             return Invoke<DeleteDeploymentGroupRequest,DeleteDeploymentGroupResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDeploymentGroup operation.
         /// </summary>
@@ -581,6 +592,7 @@ namespace Amazon.CodeDeploy
 
             return Invoke<DeregisterOnPremisesInstanceRequest,DeregisterOnPremisesInstanceResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterOnPremisesInstance operation.
@@ -612,6 +624,7 @@ namespace Amazon.CodeDeploy
             return Invoke<GetApplicationRequest,GetApplicationResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetApplication operation.
         /// </summary>
@@ -641,6 +654,7 @@ namespace Amazon.CodeDeploy
 
             return Invoke<GetApplicationRevisionRequest,GetApplicationRevisionResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetApplicationRevision operation.
@@ -672,6 +686,7 @@ namespace Amazon.CodeDeploy
             return Invoke<GetDeploymentRequest,GetDeploymentResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetDeployment operation.
         /// </summary>
@@ -701,6 +716,7 @@ namespace Amazon.CodeDeploy
 
             return Invoke<GetDeploymentConfigRequest,GetDeploymentConfigResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDeploymentConfig operation.
@@ -732,6 +748,7 @@ namespace Amazon.CodeDeploy
             return Invoke<GetDeploymentGroupRequest,GetDeploymentGroupResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetDeploymentGroup operation.
         /// </summary>
@@ -761,6 +778,7 @@ namespace Amazon.CodeDeploy
 
             return Invoke<GetDeploymentInstanceRequest,GetDeploymentInstanceResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDeploymentInstance operation.
@@ -792,6 +810,7 @@ namespace Amazon.CodeDeploy
             return Invoke<GetOnPremisesInstanceRequest,GetOnPremisesInstanceResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetOnPremisesInstance operation.
         /// </summary>
@@ -821,6 +840,7 @@ namespace Amazon.CodeDeploy
 
             return Invoke<ListApplicationRevisionsRequest,ListApplicationRevisionsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListApplicationRevisions operation.
@@ -856,6 +876,24 @@ namespace Amazon.CodeDeploy
             return Invoke<ListApplicationsRequest,ListApplicationsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists the applications registered with the applicable IAM user or AWS account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListApplications service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format.
+        /// </exception>
+        public Task<ListApplicationsResponse> ListApplicationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListApplicationsAsync(new ListApplicationsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListApplications operation.
         /// </summary>
@@ -890,6 +928,24 @@ namespace Amazon.CodeDeploy
             return Invoke<ListDeploymentConfigsRequest,ListDeploymentConfigsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists the deployment configurations with the applicable IAM user or AWS account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDeploymentConfigs service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format.
+        /// </exception>
+        public Task<ListDeploymentConfigsResponse> ListDeploymentConfigsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListDeploymentConfigsAsync(new ListDeploymentConfigsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListDeploymentConfigs operation.
         /// </summary>
@@ -919,6 +975,7 @@ namespace Amazon.CodeDeploy
 
             return Invoke<ListDeploymentGroupsRequest,ListDeploymentGroupsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDeploymentGroups operation.
@@ -950,6 +1007,7 @@ namespace Amazon.CodeDeploy
             return Invoke<ListDeploymentInstancesRequest,ListDeploymentInstancesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListDeploymentInstances operation.
         /// </summary>
@@ -979,6 +1037,7 @@ namespace Amazon.CodeDeploy
 
             return Invoke<ListDeploymentsRequest,ListDeploymentsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDeployments operation.
@@ -1010,6 +1069,7 @@ namespace Amazon.CodeDeploy
             return Invoke<ListOnPremisesInstancesRequest,ListOnPremisesInstancesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListOnPremisesInstances operation.
         /// </summary>
@@ -1039,6 +1099,7 @@ namespace Amazon.CodeDeploy
 
             return Invoke<RegisterApplicationRevisionRequest,RegisterApplicationRevisionResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterApplicationRevision operation.
@@ -1070,6 +1131,7 @@ namespace Amazon.CodeDeploy
             return Invoke<RegisterOnPremisesInstanceRequest,RegisterOnPremisesInstanceResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterOnPremisesInstance operation.
         /// </summary>
@@ -1099,6 +1161,7 @@ namespace Amazon.CodeDeploy
 
             return Invoke<RemoveTagsFromOnPremisesInstancesRequest,RemoveTagsFromOnPremisesInstancesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTagsFromOnPremisesInstances operation.
@@ -1130,6 +1193,7 @@ namespace Amazon.CodeDeploy
             return Invoke<StopDeploymentRequest,StopDeploymentResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the StopDeployment operation.
         /// </summary>
@@ -1160,6 +1224,7 @@ namespace Amazon.CodeDeploy
             return Invoke<UpdateApplicationRequest,UpdateApplicationResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateApplication operation.
         /// </summary>
@@ -1189,6 +1254,7 @@ namespace Amazon.CodeDeploy
 
             return Invoke<UpdateDeploymentGroupRequest,UpdateDeploymentGroupResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDeploymentGroup operation.

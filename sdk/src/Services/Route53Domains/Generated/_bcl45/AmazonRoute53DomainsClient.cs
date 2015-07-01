@@ -227,6 +227,7 @@ namespace Amazon.Route53Domains
         
         #region  CheckDomainAvailability
 
+
         /// <summary>
         /// This operation checks the availability of one domain name. You can access this API
         /// without authenticating. Note that if the availability status of a domain is pending,
@@ -273,6 +274,7 @@ namespace Amazon.Route53Domains
         
         #region  DeleteTagsForDomain
 
+
         /// <summary>
         /// This operation deletes the specified tags for a domain.
         /// 
@@ -305,6 +307,7 @@ namespace Amazon.Route53Domains
             return DeleteTagsForDomain(request);
         }
 
+
         /// <summary>
         /// This operation deletes the specified tags for a domain.
         /// 
@@ -336,6 +339,42 @@ namespace Amazon.Route53Domains
             return Invoke<DeleteTagsForDomainRequest,DeleteTagsForDomainResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// This operation deletes the specified tags for a domain.
+        /// 
+        ///  
+        /// <para>
+        /// All tag operations are eventually consistent; subsequent operations may not immediately
+        /// represent all issued operations.
+        /// </para>
+        /// </summary>
+        /// <param name="domainName">The domain for which you want to delete one or more tags. The name of a domain. Type: String Default: None Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when theyaposre surrounded by letters, numbers, or other hyphens. You canapost specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must convert the name to Punycode. Required: Yes</param>
+        /// <param name="tagsToDelete">A list of tag keys to delete. Type: A list that contains the keys of the tags that you want to delete. Default: None Required: No'&gt;</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTagsForDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for an OperationId it may refer
+        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// be a valid domain name or belong to the requester account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
+        /// </exception>
+        public Task<DeleteTagsForDomainResponse> DeleteTagsForDomainAsync(string domainName, List<string> tagsToDelete, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DeleteTagsForDomainRequest();
+            request.DomainName = domainName;
+            request.TagsToDelete = tagsToDelete;
+            return DeleteTagsForDomainAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTagsForDomain operation.
         /// </summary>
@@ -357,6 +396,7 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  DisableDomainAutoRenew
+
 
         /// <summary>
         /// This operation disables automatic renewal of domain registration for the specified
@@ -406,6 +446,7 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  DisableDomainTransferLock
+
 
         /// <summary>
         /// This operation removes the transfer lock on the domain (specifically the <code>clientTransferProhibited</code>
@@ -465,6 +506,7 @@ namespace Amazon.Route53Domains
         
         #region  EnableDomainAutoRenew
 
+
         /// <summary>
         /// This operation configures Amazon Route 53 to automatically renew the specified domain
         /// before the domain registration expires. The cost of renewing your domain registration
@@ -519,6 +561,7 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  EnableDomainTransferLock
+
 
         /// <summary>
         /// This operation sets the transfer lock on the domain (specifically the <code>clientTransferProhibited</code>
@@ -576,6 +619,7 @@ namespace Amazon.Route53Domains
         
         #region  GetDomainDetail
 
+
         /// <summary>
         /// This operation returns detailed information about the domain. The domain's contact
         /// information is also returned as part of the output.
@@ -621,6 +665,7 @@ namespace Amazon.Route53Domains
         
         #region  GetOperationDetail
 
+
         /// <summary>
         /// This operation returns the current status of an operation that is not completed.
         /// </summary>
@@ -662,6 +707,7 @@ namespace Amazon.Route53Domains
         
         #region  ListDomains
 
+
         /// <summary>
         /// This operation returns all the domain names registered with Amazon Route 53 for the
         /// current AWS account.
@@ -677,6 +723,7 @@ namespace Amazon.Route53Domains
         {
             return ListDomains(new ListDomainsRequest());
         }
+
 
         /// <summary>
         /// This operation returns all the domain names registered with Amazon Route 53 for the
@@ -698,6 +745,25 @@ namespace Amazon.Route53Domains
             return Invoke<ListDomainsRequest,ListDomainsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// This operation returns all the domain names registered with Amazon Route 53 for the
+        /// current AWS account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDomains service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for an OperationId it may refer
+        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// be a valid domain name or belong to the requester account.
+        /// </exception>
+        public Task<ListDomainsResponse> ListDomainsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListDomainsAsync(new ListDomainsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomains operation.
         /// </summary>
@@ -720,6 +786,7 @@ namespace Amazon.Route53Domains
         
         #region  ListOperations
 
+
         /// <summary>
         /// This operation returns the operation IDs of operations that are not yet complete.
         /// </summary>
@@ -734,6 +801,7 @@ namespace Amazon.Route53Domains
         {
             return ListOperations(new ListOperationsRequest());
         }
+
 
         /// <summary>
         /// This operation returns the operation IDs of operations that are not yet complete.
@@ -754,6 +822,24 @@ namespace Amazon.Route53Domains
             return Invoke<ListOperationsRequest,ListOperationsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// This operation returns the operation IDs of operations that are not yet complete.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOperations service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for an OperationId it may refer
+        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// be a valid domain name or belong to the requester account.
+        /// </exception>
+        public Task<ListOperationsResponse> ListOperationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListOperationsAsync(new ListOperationsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the ListOperations operation.
         /// </summary>
@@ -775,6 +861,7 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  ListTagsForDomain
+
 
         /// <summary>
         /// This operation returns all of the tags that are associated with the specified domain.
@@ -805,6 +892,7 @@ namespace Amazon.Route53Domains
             request.DomainName = domainName;
             return ListTagsForDomain(request);
         }
+
 
         /// <summary>
         /// This operation returns all of the tags that are associated with the specified domain.
@@ -837,6 +925,40 @@ namespace Amazon.Route53Domains
             return Invoke<ListTagsForDomainRequest,ListTagsForDomainResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// This operation returns all of the tags that are associated with the specified domain.
+        /// 
+        ///  
+        /// <para>
+        /// All tag operations are eventually consistent; subsequent operations may not immediately
+        /// represent all issued operations.
+        /// </para>
+        /// </summary>
+        /// <param name="domainName">The domain for which you want to get a list of tags.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for an OperationId it may refer
+        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// be a valid domain name or belong to the requester account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
+        /// </exception>
+        public Task<ListTagsForDomainResponse> ListTagsForDomainAsync(string domainName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new ListTagsForDomainRequest();
+            request.DomainName = domainName;
+            return ListTagsForDomainAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListTagsForDomain operation.
         /// </summary>
@@ -858,6 +980,7 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  RegisterDomain
+
 
         /// <summary>
         /// This operation registers a domain. Domains are registered by the AWS registrar partner,
@@ -934,6 +1057,7 @@ namespace Amazon.Route53Domains
         
         #region  RetrieveDomainAuthCode
 
+
         /// <summary>
         /// This operation returns the AuthCode for the domain. To transfer a domain to another
         /// registrar, you provide this value to the new registrar.
@@ -978,6 +1102,7 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  TransferDomain
+
 
         /// <summary>
         /// This operation transfers a domain from another registrar to Amazon Route 53. When
@@ -1063,6 +1188,7 @@ namespace Amazon.Route53Domains
         
         #region  UpdateDomainContact
 
+
         /// <summary>
         /// This operation updates the contact information for a particular domain. Information
         /// for at least one contact (registrant, administrator, or technical) must be supplied
@@ -1124,6 +1250,7 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  UpdateDomainContactPrivacy
+
 
         /// <summary>
         /// This operation updates the specified domain contact's privacy setting. When the privacy
@@ -1191,6 +1318,7 @@ namespace Amazon.Route53Domains
         
         #region  UpdateDomainNameservers
 
+
         /// <summary>
         /// This operation replaces the current set of name servers for the domain with the specified
         /// set of name servers. If you use Amazon Route 53 as your DNS service, specify the four
@@ -1253,6 +1381,7 @@ namespace Amazon.Route53Domains
         
         #region  UpdateTagsForDomain
 
+
         /// <summary>
         /// This operation adds or updates tags for a specified domain.
         /// 
@@ -1285,6 +1414,7 @@ namespace Amazon.Route53Domains
             return UpdateTagsForDomain(request);
         }
 
+
         /// <summary>
         /// This operation adds or updates tags for a specified domain.
         /// 
@@ -1314,6 +1444,42 @@ namespace Amazon.Route53Domains
             var unmarshaller = UpdateTagsForDomainResponseUnmarshaller.Instance;
 
             return Invoke<UpdateTagsForDomainRequest,UpdateTagsForDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// This operation adds or updates tags for a specified domain.
+        /// 
+        ///  
+        /// <para>
+        /// All tag operations are eventually consistent; subsequent operations may not immediately
+        /// represent all issued operations.
+        /// </para>
+        /// </summary>
+        /// <param name="domainName">The domain for which you want to add or update tags. The name of a domain. Type: String Default: None Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when theyaposre surrounded by letters, numbers, or other hyphens. You canapost specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must convert the name to Punycode. Required: Yes</param>
+        /// <param name="tagsToUpdate">A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced. Type: A complex type containing a list of tags Default: None Required: No'&gt; Each tag includes the following elements: <ul> <li> Key The key (name) of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@" Constraints: Each key can be 1-128 characters long. Required: Yes </li> <li> Value The value of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@" Constraints: Each value can be 0-256 characters long. Required: Yes </li> </ul></param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTagsForDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for an OperationId it may refer
+        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// be a valid domain name or belong to the requester account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
+        /// </exception>
+        public Task<UpdateTagsForDomainResponse> UpdateTagsForDomainAsync(string domainName, List<Tag> tagsToUpdate, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new UpdateTagsForDomainRequest();
+            request.DomainName = domainName;
+            request.TagsToUpdate = tagsToUpdate;
+            return UpdateTagsForDomainAsync(request, cancellationToken);
         }
 
         /// <summary>

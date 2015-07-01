@@ -249,6 +249,7 @@ namespace Amazon.CloudTrail
         
         #region  CreateTrail
 
+
         /// <summary>
         /// From the command line, use <code>create-subscription</code>. 
         /// 
@@ -327,6 +328,7 @@ namespace Amazon.CloudTrail
         
         #region  DeleteTrail
 
+
         /// <summary>
         /// Deletes a trail.
         /// </summary>
@@ -369,6 +371,7 @@ namespace Amazon.CloudTrail
         
         #region  DescribeTrails
 
+
         /// <summary>
         /// Retrieves settings for the trail associated with the current region for your account.
         /// </summary>
@@ -378,6 +381,7 @@ namespace Amazon.CloudTrail
         {
             return DescribeTrails(new DescribeTrailsRequest());
         }
+
 
         /// <summary>
         /// Retrieves settings for the trail associated with the current region for your account.
@@ -393,6 +397,19 @@ namespace Amazon.CloudTrail
             return Invoke<DescribeTrailsRequest,DescribeTrailsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Retrieves settings for the trail associated with the current region for your account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTrails service method, as returned by CloudTrail.</returns>
+        public Task<DescribeTrailsResponse> DescribeTrailsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeTrailsAsync(new DescribeTrailsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrails operation.
         /// </summary>
@@ -414,6 +431,7 @@ namespace Amazon.CloudTrail
         #endregion
         
         #region  GetTrailStatus
+
 
         /// <summary>
         /// Returns a JSON-formatted list of information about the specified trail. Fields include
@@ -458,6 +476,7 @@ namespace Amazon.CloudTrail
         #endregion
         
         #region  LookupEvents
+
 
         /// <summary>
         /// Looks up API activity events captured by CloudTrail that create, update, or delete
@@ -521,6 +540,7 @@ namespace Amazon.CloudTrail
         
         #region  StartLogging
 
+
         /// <summary>
         /// Starts the recording of AWS API calls and log file delivery for a trail.
         /// </summary>
@@ -562,6 +582,7 @@ namespace Amazon.CloudTrail
         #endregion
         
         #region  StopLogging
+
 
         /// <summary>
         /// Suspends the recording of AWS API calls and log file delivery for the specified trail.
@@ -606,6 +627,7 @@ namespace Amazon.CloudTrail
         #endregion
         
         #region  UpdateTrail
+
 
         /// <summary>
         /// From the command line, use <code>update-subscription</code>.
