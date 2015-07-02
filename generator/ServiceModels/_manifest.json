@@ -448,16 +448,16 @@
             "pcl-variants": [ "iOS" ],
             "platform-dependencies": {
                 "Net35": [
-                    { "name": "System.Data.SQLite", "version": "1.0.97.0", "hint-path": "net20\\System.Data.SQLite.dll" },
-                    { "name": "System.Data.SQLite.Linq", "version": "1.0.97.0", "hint-path": "net20\\System.Data.SQLite.Linq.dll" }
+                    { "name": "System.Data.SQLite.Core", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.Core.1.0.97.0\\lib\\net20\\System.Data.SQLite.dll" },
+                    { "name": "System.Data.SQLite.Linq", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.Linq.1.0.97.0\\lib\\net20\\System.Data.SQLite.Linq.dll" }
                 ],
                 "Net45": [
-                    { "name": "System.Data.SQLite", "version": "1.0.97.0", "hint-path": "net20\\System.Data.SQLite.dll" },
-                    { "name": "System.Data.SQLite.Linq", "version": "1.0.97.0", "hint-path": "net20\\System.Data.SQLite.Linq.dll" }
+                    { "name": "System.Data.SQLite.Core", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.Core.1.0.97.0\\lib\\net45\\System.Data.SQLite.dll" },
+                    { "name": "System.Data.SQLite.EF6", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.EF6.1.0.97.0\\lib\\net45\\System.Data.SQLite.EF6.dll" }
                 ],
-                "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2", "hint-path": "portable-net45+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\\SQLitePCL.dll" } ],
-                "iOS": [ { "name": "SQLitePCL", "version": "3.8.7.2", "hint-path": "portable-net45+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\\SQLitePCL.dll" },
-                         { "name": "SQLitePCL.Ext", "version": "3.8.7.2", "hint-path": "portable-net45+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\\SQLitePCL.Ext.dll" }]
+                "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.dll" } ],
+                "iOS": [ { "name": "SQLitePCL", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.dll" },
+                         { "name": "SQLitePCL.Ext", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.Ext.dll" }]
             }
         },
         {

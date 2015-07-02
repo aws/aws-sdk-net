@@ -44,7 +44,7 @@
 	<DocumentationFile>bin\Debug\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>none</DebugType>
+    <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\\<#=this.Session["BinSubfolder"]#></OutputPath>
     <DefineConstants>TRACE;;PCL;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
@@ -179,7 +179,7 @@
 		{
 #>
     <Reference Include="<#=dependency.Name#>">
-      <HintPath>$(SolutionDir)\packages\\<#=dependency.Name#>.<#=dependency.Version#>\lib\\<#=dependency.HintPath#></HintPath>
+      <HintPath><#=this.Session["NugetPackagesLocation"]#><#=dependency.HintPath#></HintPath>
       <Private>True</Private>
     </Reference>
 <#   

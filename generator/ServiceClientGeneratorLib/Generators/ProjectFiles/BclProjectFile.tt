@@ -101,8 +101,9 @@
 		foreach(var dependency in (List<Dependency>)this.Session["PlatformDependencies"])
 		{
 #>
+    
     <Reference Include="<#=dependency.Name#>">
-      <HintPath>$(SolutionDir)\packages\\<#=dependency.Name#>.<#=dependency.Version#>\lib\\<#=dependency.HintPath#></HintPath>
+      <HintPath><#=this.Session["NugetPackagesLocation"]#><#=dependency.HintPath#></HintPath>
       <Private>True</Private>
     </Reference>
 <#   
