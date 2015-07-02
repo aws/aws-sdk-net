@@ -255,6 +255,7 @@ namespace Amazon.SimpleSystemsManagement
         
         #region  CreateAssociation
 
+
         /// <summary>
         /// Associates the specified configuration document with the specified instance.
         /// 
@@ -298,6 +299,7 @@ namespace Amazon.SimpleSystemsManagement
             return CreateAssociation(request);
         }
 
+
         /// <summary>
         /// Associates the specified configuration document with the specified instance.
         /// 
@@ -340,6 +342,53 @@ namespace Amazon.SimpleSystemsManagement
             return Invoke<CreateAssociationRequest,CreateAssociationResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Associates the specified configuration document with the specified instance.
+        /// 
+        ///  
+        /// <para>
+        /// When you associate a configuration document with an instance, the configuration agent
+        /// on the instance processes the configuration document and configures the instance as
+        /// specified.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you associate a configuration document with an instance that already has an associated
+        /// configuration document, we replace the current configuration document with the new
+        /// configuration document.
+        /// </para>
+        /// </summary>
+        /// <param name="instanceId">The ID of the instance.</param>
+        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAssociation service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationAlreadyExistsException">
+        /// The specified association already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationLimitExceededException">
+        /// You can have at most 2,000 active associations.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The configuration document is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// You must specify the ID of a running instance.
+        /// </exception>
+        public Task<CreateAssociationResponse> CreateAssociationAsync(string instanceId, string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new CreateAssociationRequest();
+            request.InstanceId = instanceId;
+            request.Name = name;
+            return CreateAssociationAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAssociation operation.
         /// </summary>
@@ -361,6 +410,7 @@ namespace Amazon.SimpleSystemsManagement
         #endregion
         
         #region  CreateAssociationBatch
+
 
         /// <summary>
         /// Associates the specified configuration documents with the specified instances.
@@ -426,6 +476,7 @@ namespace Amazon.SimpleSystemsManagement
         
         #region  CreateDocument
 
+
         /// <summary>
         /// Creates a configuration document.
         /// 
@@ -462,6 +513,7 @@ namespace Amazon.SimpleSystemsManagement
             return CreateDocument(request);
         }
 
+
         /// <summary>
         /// Creates a configuration document.
         /// 
@@ -497,6 +549,46 @@ namespace Amazon.SimpleSystemsManagement
             return Invoke<CreateDocumentRequest,CreateDocumentResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Creates a configuration document.
+        /// 
+        ///  
+        /// <para>
+        /// After you create a configuration document, you can use <a>CreateAssociation</a> to
+        /// associate it with one or more running instances.
+        /// </para>
+        /// </summary>
+        /// <param name="content">A valid JSON file. For more information about the contents of this file, see <a href="http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html">Configuration Document</a>.</param>
+        /// <param name="name">A name for the configuration document.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDocument service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentAlreadyExistsException">
+        /// The specified configuration document already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentLimitExceededException">
+        /// You can have at most 100 active configuration documents.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentContentException">
+        /// The content for the configuration document is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
+        /// The size limit of a configuration document is 64 KB.
+        /// </exception>
+        public Task<CreateDocumentResponse> CreateDocumentAsync(string content, string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new CreateDocumentRequest();
+            request.Content = content;
+            request.Name = name;
+            return CreateDocumentAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDocument operation.
         /// </summary>
@@ -518,6 +610,7 @@ namespace Amazon.SimpleSystemsManagement
         #endregion
         
         #region  DeleteAssociation
+
 
         /// <summary>
         /// Disassociates the specified configuration document from the specified instance.
@@ -557,6 +650,7 @@ namespace Amazon.SimpleSystemsManagement
             return DeleteAssociation(request);
         }
 
+
         /// <summary>
         /// Disassociates the specified configuration document from the specified instance.
         /// 
@@ -594,6 +688,48 @@ namespace Amazon.SimpleSystemsManagement
             return Invoke<DeleteAssociationRequest,DeleteAssociationResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Disassociates the specified configuration document from the specified instance.
+        /// 
+        ///  
+        /// <para>
+        /// When you disassociate a configuration document from an instance, it does not change
+        /// the configuration of the instance. To change the configuration state of an instance
+        /// after you disassociate a configuration document, you must create a new configuration
+        /// document with the desired configuration and associate it with the instance.
+        /// </para>
+        /// </summary>
+        /// <param name="instanceId">The ID of the instance.</param>
+        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAssociation service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
+        /// The specified association does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The configuration document is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// You must specify the ID of a running instance.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
+        /// There are concurrent updates for a resource that supports one update at a time.
+        /// </exception>
+        public Task<DeleteAssociationResponse> DeleteAssociationAsync(string instanceId, string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DeleteAssociationRequest();
+            request.InstanceId = instanceId;
+            request.Name = name;
+            return DeleteAssociationAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAssociation operation.
         /// </summary>
@@ -615,6 +751,7 @@ namespace Amazon.SimpleSystemsManagement
         #endregion
         
         #region  DeleteDocument
+
 
         /// <summary>
         /// Deletes the specified configuration document.
@@ -644,6 +781,7 @@ namespace Amazon.SimpleSystemsManagement
             request.Name = name;
             return DeleteDocument(request);
         }
+
 
         /// <summary>
         /// Deletes the specified configuration document.
@@ -675,6 +813,39 @@ namespace Amazon.SimpleSystemsManagement
             return Invoke<DeleteDocumentRequest,DeleteDocumentResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Deletes the specified configuration document.
+        /// 
+        ///  
+        /// <para>
+        /// You must use <a>DeleteAssociation</a> to disassociate all instances that are associated
+        /// with the configuration document before you can delete it.
+        /// </para>
+        /// </summary>
+        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDocument service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociatedInstancesException">
+        /// You must disassociate a configuration document from all instances before you can delete
+        /// it.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The configuration document is not valid.
+        /// </exception>
+        public Task<DeleteDocumentResponse> DeleteDocumentAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DeleteDocumentRequest();
+            request.Name = name;
+            return DeleteDocumentAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDocument operation.
         /// </summary>
@@ -696,6 +867,7 @@ namespace Amazon.SimpleSystemsManagement
         #endregion
         
         #region  DescribeAssociation
+
 
         /// <summary>
         /// Describes the associations for the specified configuration document or instance.
@@ -724,6 +896,7 @@ namespace Amazon.SimpleSystemsManagement
             return DescribeAssociation(request);
         }
 
+
         /// <summary>
         /// Describes the associations for the specified configuration document or instance.
         /// </summary>
@@ -750,6 +923,37 @@ namespace Amazon.SimpleSystemsManagement
             return Invoke<DescribeAssociationRequest,DescribeAssociationResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Describes the associations for the specified configuration document or instance.
+        /// </summary>
+        /// <param name="instanceId">The ID of the instance.</param>
+        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAssociation service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
+        /// The specified association does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The configuration document is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// You must specify the ID of a running instance.
+        /// </exception>
+        public Task<DescribeAssociationResponse> DescribeAssociationAsync(string instanceId, string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DescribeAssociationRequest();
+            request.InstanceId = instanceId;
+            request.Name = name;
+            return DescribeAssociationAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAssociation operation.
         /// </summary>
@@ -772,6 +976,7 @@ namespace Amazon.SimpleSystemsManagement
         
         #region  DescribeDocument
 
+
         /// <summary>
         /// Describes the specified configuration document.
         /// </summary>
@@ -791,6 +996,7 @@ namespace Amazon.SimpleSystemsManagement
             return DescribeDocument(request);
         }
 
+
         /// <summary>
         /// Describes the specified configuration document.
         /// </summary>
@@ -809,6 +1015,29 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = DescribeDocumentResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDocumentRequest,DescribeDocumentResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Describes the specified configuration document.
+        /// </summary>
+        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDocument service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The configuration document is not valid.
+        /// </exception>
+        public Task<DescribeDocumentResponse> DescribeDocumentAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DescribeDocumentRequest();
+            request.Name = name;
+            return DescribeDocumentAsync(request, cancellationToken);
         }
 
         /// <summary>
@@ -833,6 +1062,7 @@ namespace Amazon.SimpleSystemsManagement
         
         #region  GetDocument
 
+
         /// <summary>
         /// Gets the contents of the specified configuration document.
         /// </summary>
@@ -852,6 +1082,7 @@ namespace Amazon.SimpleSystemsManagement
             return GetDocument(request);
         }
 
+
         /// <summary>
         /// Gets the contents of the specified configuration document.
         /// </summary>
@@ -870,6 +1101,29 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = GetDocumentResponseUnmarshaller.Instance;
 
             return Invoke<GetDocumentRequest,GetDocumentResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Gets the contents of the specified configuration document.
+        /// </summary>
+        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDocument service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The configuration document is not valid.
+        /// </exception>
+        public Task<GetDocumentResponse> GetDocumentAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new GetDocumentRequest();
+            request.Name = name;
+            return GetDocumentAsync(request, cancellationToken);
         }
 
         /// <summary>
@@ -893,6 +1147,7 @@ namespace Amazon.SimpleSystemsManagement
         #endregion
         
         #region  ListAssociations
+
 
         /// <summary>
         /// Lists the associations for the specified configuration document or instance.
@@ -936,6 +1191,7 @@ namespace Amazon.SimpleSystemsManagement
         
         #region  ListDocuments
 
+
         /// <summary>
         /// Describes one or more of your configuration documents.
         /// </summary>
@@ -951,6 +1207,7 @@ namespace Amazon.SimpleSystemsManagement
         {
             return ListDocuments(new ListDocumentsRequest());
         }
+
 
         /// <summary>
         /// Describes one or more of your configuration documents.
@@ -972,6 +1229,25 @@ namespace Amazon.SimpleSystemsManagement
             return Invoke<ListDocumentsRequest,ListDocumentsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Describes one or more of your configuration documents.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDocuments service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public Task<ListDocumentsResponse> ListDocumentsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListDocumentsAsync(new ListDocumentsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the ListDocuments operation.
         /// </summary>
@@ -993,6 +1269,7 @@ namespace Amazon.SimpleSystemsManagement
         #endregion
         
         #region  UpdateAssociationStatus
+
 
         /// <summary>
         /// Updates the status of the configuration document associated with the specified instance.

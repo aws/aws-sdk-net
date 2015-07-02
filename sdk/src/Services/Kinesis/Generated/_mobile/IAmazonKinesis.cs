@@ -41,6 +41,7 @@ namespace Amazon.Kinesis
                 
         #region  AddTagsToStream
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddTagsToStream operation.
         /// </summary>
@@ -50,11 +51,12 @@ namespace Amazon.Kinesis
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AddTagsToStreamResponse> AddTagsToStreamAsync(AddTagsToStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AddTagsToStreamResponse> AddTagsToStreamAsync(AddTagsToStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateStream
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStream operation.
@@ -65,11 +67,12 @@ namespace Amazon.Kinesis
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateStreamResponse> CreateStreamAsync(CreateStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateStreamResponse> CreateStreamAsync(CreateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteStream
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStream operation.
@@ -80,11 +83,12 @@ namespace Amazon.Kinesis
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteStreamResponse> DeleteStreamAsync(DeleteStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteStreamResponse> DeleteStreamAsync(DeleteStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeStream
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStream operation.
@@ -95,11 +99,12 @@ namespace Amazon.Kinesis
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeStreamResponse> DescribeStreamAsync(DescribeStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeStreamResponse> DescribeStreamAsync(DescribeStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetRecords
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetRecords operation.
@@ -110,11 +115,12 @@ namespace Amazon.Kinesis
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetRecordsResponse> GetRecordsAsync(GetRecordsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetRecordsResponse> GetRecordsAsync(GetRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetShardIterator
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetShardIterator operation.
@@ -125,11 +131,49 @@ namespace Amazon.Kinesis
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetShardIteratorResponse> GetShardIteratorAsync(GetShardIteratorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetShardIteratorResponse> GetShardIteratorAsync(GetShardIteratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListStreams
+
+
+        /// <summary>
+        /// Lists your streams.
+        /// 
+        ///  
+        /// <para>
+        ///  The number of streams may be too large to return from a single call to <code>ListStreams</code>.
+        /// You can limit the number of returned streams using the <code>Limit</code> parameter.
+        /// If you do not specify a value for the <code>Limit</code> parameter, Amazon Kinesis
+        /// uses the default limit, which is currently 10.
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can detect if there are more streams available to list by using the <code>HasMoreStreams</code>
+        /// flag from the returned output. If there are more streams available, you can request
+        /// more streams by using the name of the last stream returned by the <code>ListStreams</code>
+        /// request in the <code>ExclusiveStartStreamName</code> parameter in a subsequent request
+        /// to <code>ListStreams</code>. The group of stream names returned by the subsequent
+        /// request is then added to the list. You can continue this process until all the stream
+        /// names have been collected in the list. 
+        /// </para>
+        ///  
+        /// <para>
+        /// <a>ListStreams</a> has a limit of 5 transactions per second per account.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStreams service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed (5).
+        /// </exception>
+        Task<ListStreamsResponse> ListStreamsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListStreams operation.
@@ -140,11 +184,12 @@ namespace Amazon.Kinesis
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListStreamsResponse> ListStreamsAsync(ListStreamsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListStreamsResponse> ListStreamsAsync(ListStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListTagsForStream
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListTagsForStream operation.
@@ -155,11 +200,12 @@ namespace Amazon.Kinesis
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListTagsForStreamResponse> ListTagsForStreamAsync(ListTagsForStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListTagsForStreamResponse> ListTagsForStreamAsync(ListTagsForStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  MergeShards
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the MergeShards operation.
@@ -170,11 +216,12 @@ namespace Amazon.Kinesis
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<MergeShardsResponse> MergeShardsAsync(MergeShardsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<MergeShardsResponse> MergeShardsAsync(MergeShardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutRecord
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutRecord operation.
@@ -185,11 +232,12 @@ namespace Amazon.Kinesis
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutRecordResponse> PutRecordAsync(PutRecordRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutRecordResponse> PutRecordAsync(PutRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutRecords
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutRecords operation.
@@ -200,11 +248,12 @@ namespace Amazon.Kinesis
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutRecordsResponse> PutRecordsAsync(PutRecordsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutRecordsResponse> PutRecordsAsync(PutRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  RemoveTagsFromStream
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTagsFromStream operation.
@@ -215,11 +264,12 @@ namespace Amazon.Kinesis
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<RemoveTagsFromStreamResponse> RemoveTagsFromStreamAsync(RemoveTagsFromStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<RemoveTagsFromStreamResponse> RemoveTagsFromStreamAsync(RemoveTagsFromStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  SplitShard
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SplitShard operation.
@@ -230,7 +280,7 @@ namespace Amazon.Kinesis
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<SplitShardResponse> SplitShardAsync(SplitShardRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<SplitShardResponse> SplitShardAsync(SplitShardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

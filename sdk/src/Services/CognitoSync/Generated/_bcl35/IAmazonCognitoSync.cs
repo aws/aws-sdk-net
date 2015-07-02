@@ -60,6 +60,7 @@ namespace Amazon.CognitoSync
         
         #region  BulkPublish
 
+
         /// <summary>
         /// Initiates a bulk publish of all existing datasets for an Identity Pool to the configured
         /// stream. Customers are limited to one successful bulk publish per 24 hours. Bulk publish
@@ -118,6 +119,7 @@ namespace Amazon.CognitoSync
         #endregion
         
         #region  DeleteDataset
+
 
         /// <summary>
         /// Deletes the specific dataset. The dataset will be deleted permanently, and the action
@@ -182,6 +184,7 @@ namespace Amazon.CognitoSync
         
         #region  DescribeDataset
 
+
         /// <summary>
         /// Gets meta data about a dataset by identity and dataset name. With Amazon Cognito Sync,
         /// each identity has access only to its own data. Thus, the credentials used to make
@@ -241,6 +244,7 @@ namespace Amazon.CognitoSync
         #endregion
         
         #region  DescribeIdentityPoolUsage
+
 
         /// <summary>
         /// Gets usage details (for example, data storage) about a particular identity pool.
@@ -328,6 +332,7 @@ namespace Amazon.CognitoSync
         
         #region  DescribeIdentityUsage
 
+
         /// <summary>
         /// Gets usage information for an identity, including number of datasets and data usage.
         /// 
@@ -385,6 +390,7 @@ namespace Amazon.CognitoSync
         
         #region  GetBulkPublishDetails
 
+
         /// <summary>
         /// Get the status of the last BulkPublish operation for an identity pool.
         /// </summary>
@@ -432,6 +438,7 @@ namespace Amazon.CognitoSync
         #endregion
         
         #region  GetCognitoEvents
+
 
         /// <summary>
         /// Gets the events and the corresponding Lambda functions associated with an identity
@@ -484,6 +491,7 @@ namespace Amazon.CognitoSync
         #endregion
         
         #region  GetIdentityPoolConfiguration
+
 
         /// <summary>
         /// Gets the configuration settings of an identity pool.
@@ -559,6 +567,7 @@ namespace Amazon.CognitoSync
         
         #region  ListDatasets
 
+
         /// <summary>
         /// Lists datasets for an identity. With Amazon Cognito Sync, each identity has access
         /// only to its own data. Thus, the credentials used to make this API call need to have
@@ -616,6 +625,7 @@ namespace Amazon.CognitoSync
         
         #region  ListIdentityPoolUsage
 
+
         /// <summary>
         /// Gets a list of identity pools registered with Cognito.
         /// 
@@ -669,6 +679,7 @@ namespace Amazon.CognitoSync
         #endregion
         
         #region  ListRecords
+
 
         /// <summary>
         /// Gets paginated records, optionally changed after a particular sync count for a dataset
@@ -728,6 +739,7 @@ namespace Amazon.CognitoSync
         
         #region  RegisterDevice
 
+
         /// <summary>
         /// Registers a device to receive push sync notifications.
         /// </summary>
@@ -782,6 +794,7 @@ namespace Amazon.CognitoSync
         
         #region  SetCognitoEvents
 
+
         /// <summary>
         /// Sets the AWS Lambda function for a given event type for an identity pool. This request
         /// only updates the key/value pair specified. Other key/values pairs are not updated.
@@ -835,6 +848,7 @@ namespace Amazon.CognitoSync
         
         #region  SetIdentityPoolConfiguration
 
+
         /// <summary>
         /// Sets the necessary configuration for push sync.
         /// </summary>
@@ -885,6 +899,7 @@ namespace Amazon.CognitoSync
         #endregion
         
         #region  SubscribeToDataset
+
 
         /// <summary>
         /// Subscribes to receive notifications when a dataset is modified by another device.
@@ -940,6 +955,7 @@ namespace Amazon.CognitoSync
         
         #region  UnsubscribeFromDataset
 
+
         /// <summary>
         /// Unsubscribes from receiving notifications when a dataset is modified by another device.
         /// </summary>
@@ -993,6 +1009,7 @@ namespace Amazon.CognitoSync
         #endregion
         
         #region  UpdateRecords
+
 
         /// <summary>
         /// Posts updates to records and adds and deletes records for a dataset and user.

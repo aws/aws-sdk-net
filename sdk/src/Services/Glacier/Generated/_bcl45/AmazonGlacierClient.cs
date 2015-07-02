@@ -278,6 +278,7 @@ namespace Amazon.Glacier
         
         #region  AbortMultipartUpload
 
+
         /// <summary>
         /// This operation aborts a multipart upload identified by the upload ID.
         /// 
@@ -353,6 +354,7 @@ namespace Amazon.Glacier
         #endregion
         
         #region  CompleteMultipartUpload
+
 
         /// <summary>
         /// You call this operation to inform Amazon Glacier that all the archive parts have been
@@ -453,6 +455,7 @@ namespace Amazon.Glacier
         
         #region  CreateVault
 
+
         /// <summary>
         /// This operation creates a new vault with the specified name. The name of the vault
         /// must be unique within a region for an AWS account. You can create up to 1,000 vaults
@@ -538,6 +541,7 @@ namespace Amazon.Glacier
         
         #region  DeleteArchive
 
+
         /// <summary>
         /// This operation deletes an archive from a vault. Subsequent requests to initiate a
         /// retrieval of this archive will fail. Archive retrievals that are in progress for this
@@ -612,6 +616,7 @@ namespace Amazon.Glacier
         #endregion
         
         #region  DeleteVault
+
 
         /// <summary>
         /// This operation deletes a vault. Amazon Glacier will delete a vault only if there are
@@ -689,6 +694,7 @@ namespace Amazon.Glacier
         
         #region  DeleteVaultAccessPolicy
 
+
         /// <summary>
         /// This operation deletes the access policy associated with the specified vault. The
         /// operation is eventually consistent—that is, it might take some time for Amazon Glacier
@@ -748,6 +754,7 @@ namespace Amazon.Glacier
         #endregion
         
         #region  DeleteVaultNotifications
+
 
         /// <summary>
         /// This operation deletes the notification configuration set for a vault. The operation
@@ -815,6 +822,7 @@ namespace Amazon.Glacier
         #endregion
         
         #region  DescribeJob
+
 
         /// <summary>
         /// This operation returns information about a job you previously initiated, including
@@ -894,6 +902,7 @@ namespace Amazon.Glacier
         
         #region  DescribeVault
 
+
         /// <summary>
         /// This operation returns information about a vault, including the vault's Amazon Resource
         /// Name (ARN), the date the vault was created, the number of archives it contains, and
@@ -966,6 +975,7 @@ namespace Amazon.Glacier
         
         #region  GetDataRetrievalPolicy
 
+
         /// <summary>
         /// This operation returns the current data retrieval policy for the account and region
         /// specified in the GET request. For more information about data retrieval policies,
@@ -1013,6 +1023,7 @@ namespace Amazon.Glacier
         #endregion
         
         #region  GetJobOutput
+
 
         /// <summary>
         /// This operation downloads the output of the job you initiated using <a>InitiateJob</a>.
@@ -1121,6 +1132,7 @@ namespace Amazon.Glacier
         
         #region  GetVaultAccessPolicy
 
+
         /// <summary>
         /// This operation retrieves the <code>access-policy</code> subresource set on the vault—for
         /// more information on setting this subresource, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html">Set
@@ -1174,6 +1186,7 @@ namespace Amazon.Glacier
         #endregion
         
         #region  GetVaultNotifications
+
 
         /// <summary>
         /// This operation retrieves the <code class="code">notification-configuration</code>
@@ -1248,6 +1261,7 @@ namespace Amazon.Glacier
         #endregion
         
         #region  InitiateJob
+
 
         /// <summary>
         /// This operation initiates a job of the specified type. In this release, you can initiate
@@ -1463,6 +1477,7 @@ namespace Amazon.Glacier
         
         #region  InitiateMultipartUpload
 
+
         /// <summary>
         /// This operation initiates a multipart upload. Amazon Glacier creates a multipart upload
         /// resource and returns its ID in the response. The multipart upload ID is used in subsequent
@@ -1555,6 +1570,7 @@ namespace Amazon.Glacier
         #endregion
         
         #region  ListJobs
+
 
         /// <summary>
         /// This operation lists jobs for a vault, including jobs that are in-progress and jobs
@@ -1657,6 +1673,7 @@ namespace Amazon.Glacier
         
         #region  ListMultipartUploads
 
+
         /// <summary>
         /// This operation lists in-progress multipart uploads for the specified vault. An in-progress
         /// multipart upload is a multipart upload that has been initiated by an <a>InitiateMultipartUpload</a>
@@ -1742,6 +1759,7 @@ namespace Amazon.Glacier
         
         #region  ListParts
 
+
         /// <summary>
         /// This operation lists the parts of an archive that have been uploaded in a specific
         /// multipart upload. You can make this request at any time during an in-progress multipart
@@ -1821,6 +1839,7 @@ namespace Amazon.Glacier
         
         #region  ListVaults
 
+
         /// <summary>
         /// This operation lists all vaults owned by the calling user's account. The list returned
         /// in the response is ASCII-sorted by vault name. 
@@ -1870,6 +1889,7 @@ namespace Amazon.Glacier
         {
             return ListVaults(new ListVaultsRequest());
         }
+
 
         /// <summary>
         /// This operation lists all vaults owned by the calling user's account. The list returned
@@ -1925,6 +1945,59 @@ namespace Amazon.Glacier
             return Invoke<ListVaultsRequest,ListVaultsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// This operation lists all vaults owned by the calling user's account. The list returned
+        /// in the response is ASCII-sorted by vault name. 
+        /// 
+        ///  
+        /// <para>
+        /// By default, this operation returns up to 1,000 items. If there are more vaults to
+        /// list, the response <code class="code">marker</code> field contains the vault Amazon
+        /// Resource Name (ARN) at which to continue the list with a new List Vaults request;
+        /// otherwise, the <code class="code">marker</code> field is <code class="code">null</code>.
+        /// To return a list of vaults that begins at a specific vault, set the <code class="code">marker</code>
+        /// request parameter to the vault ARN you obtained from a previous List Vaults request.
+        /// You can also limit the number of vaults returned in the response by specifying the
+        /// <code class="code">limit</code> parameter in the request. 
+        /// </para>
+        ///  
+        /// <para>
+        /// An AWS account has full permission to perform all operations (actions). However, AWS
+        /// Identity and Access Management (IAM) users don't have any permissions by default.
+        /// You must grant them explicit permission to perform specific actions. For more information,
+        /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
+        /// Control Using AWS Identity and Access Management (IAM)</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
+        /// Vault Metadata in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html">List
+        /// Vaults </a> in the <i>Amazon Glacier Developer Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVaults service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
+        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        public Task<ListVaultsResponse> ListVaultsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListVaultsAsync(new ListVaultsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the ListVaults operation.
         /// </summary>
@@ -1946,6 +2019,7 @@ namespace Amazon.Glacier
         #endregion
         
         #region  SetDataRetrievalPolicy
+
 
         /// <summary>
         /// This operation sets and then enacts a data retrieval policy in the region specified
@@ -2002,6 +2076,7 @@ namespace Amazon.Glacier
         
         #region  SetVaultAccessPolicy
 
+
         /// <summary>
         /// This operation configures an access policy for a vault and will overwrite an existing
         /// policy. To configure a vault access policy, send a PUT request to the <code>access-policy</code>
@@ -2055,6 +2130,7 @@ namespace Amazon.Glacier
         #endregion
         
         #region  SetVaultNotifications
+
 
         /// <summary>
         /// This operation configures notifications that will be sent when specific events happen
@@ -2141,6 +2217,7 @@ namespace Amazon.Glacier
         #endregion
         
         #region  UploadArchive
+
 
         /// <summary>
         /// This operation adds an archive to a vault. This is a synchronous operation, and for
@@ -2241,6 +2318,7 @@ namespace Amazon.Glacier
         #endregion
         
         #region  UploadMultipartPart
+
 
         /// <summary>
         /// This operation uploads a part of an archive. You can upload archive parts in any order.

@@ -255,22 +255,22 @@ namespace <#=this.Config.Namespace#>
         #>
 
         #region  <#=operation.Name#>
-
 <#
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
         {
+        this.FormatOperationDocumentationSync(operation, false);
 #>
-<# this.FormatOperationDocumentation(operation, false); #>
         public <#=operation.Name#>Response <#=operation.Name#>()
         {
             return <#=operation.Name#>(new <#=operation.Name#>Request());
         }
-
 <#
         }
-        AddSimpleClientMethods(operation);
+        AddSimpleClientMethods(operation, true);
 #>
-<# this.FormatOperationDocumentation(operation); #>
+<#
+        this.FormatOperationDocumentationSync(operation, true);
+#>
         <#=operation.IsInternal ? "internal" : "public"#> <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
         {
             var marshaller = new <#=operation.Name#>RequestMarshaller();
@@ -279,7 +279,9 @@ namespace <#=this.Config.Namespace#>
             return Invoke<<#=operation.Name#>Request,<#=operation.Name#>Response>(request, marshaller, unmarshaller);
         }
 
-<#AddBeginAsyncDocumentation(operation.Name);#>
+<#
+        AddBeginAsyncDocumentation(operation.Name);
+#>
         <#=operation.IsInternal ? "internal" : "public"#> IAsyncResult Begin<#=operation.Name#>(<#=operation.Name#>Request request, AsyncCallback callback, object state)
         {
             var marshaller = new <#=operation.Name#>RequestMarshaller();
@@ -289,7 +291,9 @@ namespace <#=this.Config.Namespace#>
                 callback, state);
         }
 
-<#AddEndAsyncDocumentation(operation.Name);#>
+<#
+        AddEndAsyncDocumentation(operation.Name);
+#>
         <#=operation.IsInternal ? "internal" : "public"#>  <#=operation.Name#>Response End<#=operation.Name#>(IAsyncResult asyncResult)
         {
             return EndInvoke<<#=operation.Name#>Response>(asyncResult);

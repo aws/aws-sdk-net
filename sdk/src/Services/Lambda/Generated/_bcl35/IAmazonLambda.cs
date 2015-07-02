@@ -46,6 +46,7 @@ namespace Amazon.Lambda
         
         #region  AddPermission
 
+
         /// <summary>
         /// Adds a permission to the access policy associated with the specified AWS Lambda function.
         /// In a "push event" model, the access policy attached to the Lambda function grants
@@ -113,6 +114,7 @@ namespace Amazon.Lambda
         #endregion
         
         #region  CreateEventSourceMapping
+
 
         /// <summary>
         /// Identifies a stream as an event source for a Lambda function. It can be either an
@@ -191,6 +193,7 @@ namespace Amazon.Lambda
         
         #region  CreateFunction
 
+
         /// <summary>
         /// Creates a new Lambda function. The function metadata is created from the request parameters,
         /// and the code for the function is provided by a .zip file in the request body. If the
@@ -256,6 +259,7 @@ namespace Amazon.Lambda
         
         #region  DeleteEventSourceMapping
 
+
         /// <summary>
         /// Removes an event source mapping. This means AWS Lambda will no longer invoke the function
         /// for events in the associated source.
@@ -313,6 +317,7 @@ namespace Amazon.Lambda
         #endregion
         
         #region  DeleteFunction
+
 
         /// <summary>
         /// Deletes the specified Lambda function code and configuration.
@@ -398,6 +403,7 @@ namespace Amazon.Lambda
         
         #region  GetEventSourceMapping
 
+
         /// <summary>
         /// Returns configuration information for the specified event source mapping (see <a>CreateEventSourceMapping</a>).
         /// 
@@ -454,6 +460,7 @@ namespace Amazon.Lambda
         #endregion
         
         #region  GetFunction
+
 
         /// <summary>
         /// Returns the configuration information of the Lambda function and a presigned URL link
@@ -535,6 +542,7 @@ namespace Amazon.Lambda
         
         #region  GetFunctionConfiguration
 
+
         /// <summary>
         /// Returns the configuration information of the Lambda function. This the same information
         /// you provided as parameters when uploading the function by using <a>CreateFunction</a>.
@@ -613,6 +621,7 @@ namespace Amazon.Lambda
         
         #region  GetPolicy
 
+
         /// <summary>
         /// Returns the access policy, containing a list of permissions granted via the <code>AddPermission</code>
         /// API, associated with the specified bucket.
@@ -664,6 +673,7 @@ namespace Amazon.Lambda
         #endregion
         
         #region  Invoke
+
 
         /// <summary>
         /// Invokes a specified Lambda function. 
@@ -725,6 +735,7 @@ namespace Amazon.Lambda
         
         #region  InvokeAsync
 
+
         /// <summary>
         /// <important>This API is deprecated. We recommend you use <code>Invoke</code> API (see
         /// <a>Invoke</a>).</important> 
@@ -780,6 +791,7 @@ namespace Amazon.Lambda
         #endregion
         
         #region  ListEventSourceMappings
+
 
         /// <summary>
         /// Returns a list of event source mappings you created using the <code>CreateEventSourceMapping</code>
@@ -844,6 +856,7 @@ namespace Amazon.Lambda
         #endregion
         
         #region  ListFunctions
+
 
         /// <summary>
         /// Returns a list of your Lambda functions. For each function, the response includes
@@ -914,6 +927,7 @@ namespace Amazon.Lambda
         
         #region  RemovePermission
 
+
         /// <summary>
         /// You can remove individual permissions from an access policy associated with a Lambda
         /// function by providing a Statement ID. 
@@ -970,6 +984,7 @@ namespace Amazon.Lambda
         #endregion
         
         #region  UpdateEventSourceMapping
+
 
         /// <summary>
         /// You can update an event source mapping. This is useful if you want to change the parameters
@@ -1030,6 +1045,7 @@ namespace Amazon.Lambda
         #endregion
         
         #region  UpdateFunctionCode
+
 
         /// <summary>
         /// Updates the code for the specified Lambda function. This operation must only be used
@@ -1092,6 +1108,7 @@ namespace Amazon.Lambda
         #endregion
         
         #region  UpdateFunctionConfiguration
+
 
         /// <summary>
         /// Updates the configuration parameters for the specified Lambda function by using the

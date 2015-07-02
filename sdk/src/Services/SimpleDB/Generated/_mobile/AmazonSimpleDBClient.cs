@@ -197,6 +197,7 @@ namespace Amazon.SimpleDB
             return Invoke<BatchDeleteAttributesRequest,BatchDeleteAttributesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the BatchDeleteAttributes operation.
         /// </summary>
@@ -226,6 +227,7 @@ namespace Amazon.SimpleDB
 
             return Invoke<BatchPutAttributesRequest,BatchPutAttributesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the BatchPutAttributes operation.
@@ -257,6 +259,7 @@ namespace Amazon.SimpleDB
             return Invoke<CreateDomainRequest,CreateDomainResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDomain operation.
         /// </summary>
@@ -286,6 +289,7 @@ namespace Amazon.SimpleDB
 
             return Invoke<DeleteAttributesRequest,DeleteAttributesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAttributes operation.
@@ -317,6 +321,7 @@ namespace Amazon.SimpleDB
             return Invoke<DeleteDomainRequest,DeleteDomainResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDomain operation.
         /// </summary>
@@ -347,6 +352,7 @@ namespace Amazon.SimpleDB
             return Invoke<DomainMetadataRequest,DomainMetadataResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DomainMetadata operation.
         /// </summary>
@@ -376,6 +382,7 @@ namespace Amazon.SimpleDB
 
             return Invoke<GetAttributesRequest,GetAttributesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetAttributes operation.
@@ -411,6 +418,32 @@ namespace Amazon.SimpleDB
             return Invoke<ListDomainsRequest,ListDomainsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// The <code>ListDomains</code> operation lists all domains associated with the Access
+        /// Key ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>.
+        /// A <a href="#NextToken">NextToken</a> is returned if there are more than <code>MaxNumberOfDomains</code>
+        /// domains. Calling <code>ListDomains</code> successive times with the <code>NextToken</code>
+        /// provided by the operation returns up to <code>MaxNumberOfDomains</code> more domain
+        /// names with each successive operation call.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDomains service method, as returned by SimpleDB.</returns>
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidNextTokenException">
+        /// The specified NextToken is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        public Task<ListDomainsResponse> ListDomainsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListDomainsAsync(new ListDomainsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomains operation.
         /// </summary>
@@ -441,6 +474,7 @@ namespace Amazon.SimpleDB
             return Invoke<PutAttributesRequest,PutAttributesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutAttributes operation.
         /// </summary>
@@ -470,6 +504,7 @@ namespace Amazon.SimpleDB
 
             return Invoke<SelectRequest,SelectResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the Select operation.

@@ -52,6 +52,7 @@ namespace Amazon.CloudSearchDomain
                 
         #region  Search
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the Search operation.
         /// </summary>
@@ -61,11 +62,12 @@ namespace Amazon.CloudSearchDomain
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<SearchResponse> SearchAsync(SearchRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<SearchResponse> SearchAsync(SearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  Suggest
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the Suggest operation.
@@ -76,11 +78,12 @@ namespace Amazon.CloudSearchDomain
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<SuggestResponse> SuggestAsync(SuggestRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<SuggestResponse> SuggestAsync(SuggestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UploadDocuments
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadDocuments operation.
@@ -91,7 +94,7 @@ namespace Amazon.CloudSearchDomain
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UploadDocumentsResponse> UploadDocumentsAsync(UploadDocumentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UploadDocumentsResponse> UploadDocumentsAsync(UploadDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

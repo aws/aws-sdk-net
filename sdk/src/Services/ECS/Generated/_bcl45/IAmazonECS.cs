@@ -52,6 +52,7 @@ namespace Amazon.ECS
         
         #region  CreateCluster
 
+
         /// <summary>
         /// Creates a new Amazon ECS cluster. By default, your account will receive a <code>default</code>
         /// cluster when you launch your first container instance. However, you can create your
@@ -73,6 +74,7 @@ namespace Amazon.ECS
         /// </exception>
         CreateClusterResponse CreateCluster(CreateClusterRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCluster operation.
         /// </summary>
@@ -87,6 +89,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  CreateService
+
 
         /// <summary>
         /// Runs and maintains a desired number of tasks from a specified task definition. If
@@ -113,6 +116,7 @@ namespace Amazon.ECS
         /// </exception>
         CreateServiceResponse CreateService(CreateServiceRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateService operation.
         /// </summary>
@@ -127,6 +131,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  DeleteCluster
+
 
         /// <summary>
         /// Deletes the specified cluster. You must deregister all container instances from this
@@ -163,6 +168,7 @@ namespace Amazon.ECS
         /// </exception>
         DeleteClusterResponse DeleteCluster(DeleteClusterRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCluster operation.
         /// </summary>
@@ -177,6 +183,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  DeleteService
+
 
         /// <summary>
         /// Deletes a specified service within a cluster.
@@ -205,6 +212,7 @@ namespace Amazon.ECS
         /// </exception>
         DeleteServiceResponse DeleteService(DeleteServiceRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteService operation.
         /// </summary>
@@ -219,6 +227,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  DeregisterContainerInstance
+
 
         /// <summary>
         /// Deregisters an Amazon ECS container instance from the specified cluster. This instance
@@ -244,6 +253,7 @@ namespace Amazon.ECS
         /// </exception>
         DeregisterContainerInstanceResponse DeregisterContainerInstance(DeregisterContainerInstanceRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterContainerInstance operation.
         /// </summary>
@@ -258,6 +268,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  DeregisterTaskDefinition
+
 
         /// <summary>
         /// Deregisters the specified task definition by family and revision. Upon deregistration,
@@ -290,6 +301,7 @@ namespace Amazon.ECS
         /// </exception>
         DeregisterTaskDefinitionResponse DeregisterTaskDefinition(DeregisterTaskDefinitionRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterTaskDefinition operation.
         /// </summary>
@@ -304,6 +316,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  DescribeClusters
+
 
         /// <summary>
         /// Describes one or more of your clusters.
@@ -324,6 +337,7 @@ namespace Amazon.ECS
         /// </exception>
         DescribeClustersResponse DescribeClusters(DescribeClustersRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusters operation.
         /// </summary>
@@ -338,6 +352,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  DescribeContainerInstances
+
 
         /// <summary>
         /// Describes Amazon EC2 Container Service container instances. Returns metadata about
@@ -363,6 +378,7 @@ namespace Amazon.ECS
         /// </exception>
         DescribeContainerInstancesResponse DescribeContainerInstances(DescribeContainerInstancesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeContainerInstances operation.
         /// </summary>
@@ -377,6 +393,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  DescribeServices
+
 
         /// <summary>
         /// Describes the specified services running in your cluster.
@@ -401,6 +418,7 @@ namespace Amazon.ECS
         /// </exception>
         DescribeServicesResponse DescribeServices(DescribeServicesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeServices operation.
         /// </summary>
@@ -415,6 +433,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  DescribeTaskDefinition
+
 
         /// <summary>
         /// Describes a task definition. You can specify a <code>family</code> and <code>revision</code>
@@ -444,6 +463,7 @@ namespace Amazon.ECS
         /// </exception>
         DescribeTaskDefinitionResponse DescribeTaskDefinition(DescribeTaskDefinitionRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTaskDefinition operation.
         /// </summary>
@@ -458,6 +478,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  DescribeTasks
+
 
         /// <summary>
         /// Describes a specified task or tasks.
@@ -482,6 +503,7 @@ namespace Amazon.ECS
         /// </exception>
         DescribeTasksResponse DescribeTasks(DescribeTasksRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTasks operation.
         /// </summary>
@@ -496,6 +518,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  ListClusters
+
 
         /// <summary>
         /// Returns a list of existing clusters.
@@ -516,6 +539,7 @@ namespace Amazon.ECS
         /// </exception>
         ListClustersResponse ListClusters(ListClustersRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListClusters operation.
         /// </summary>
@@ -530,6 +554,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  ListContainerInstances
+
 
         /// <summary>
         /// Returns a list of container instances in a specified cluster.
@@ -554,6 +579,7 @@ namespace Amazon.ECS
         /// </exception>
         ListContainerInstancesResponse ListContainerInstances(ListContainerInstancesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListContainerInstances operation.
         /// </summary>
@@ -568,6 +594,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  ListServices
+
 
         /// <summary>
         /// Lists the services that are running in a specified cluster.
@@ -592,6 +619,7 @@ namespace Amazon.ECS
         /// </exception>
         ListServicesResponse ListServices(ListServicesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListServices operation.
         /// </summary>
@@ -606,6 +634,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  ListTaskDefinitionFamilies
+
 
         /// <summary>
         /// Returns a list of task definition families that are registered to your account (which
@@ -628,6 +657,7 @@ namespace Amazon.ECS
         /// </exception>
         ListTaskDefinitionFamiliesResponse ListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListTaskDefinitionFamilies operation.
         /// </summary>
@@ -642,6 +672,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  ListTaskDefinitions
+
 
         /// <summary>
         /// Returns a list of task definitions that are registered to your account. You can filter
@@ -664,6 +695,7 @@ namespace Amazon.ECS
         /// </exception>
         ListTaskDefinitionsResponse ListTaskDefinitions(ListTaskDefinitionsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListTaskDefinitions operation.
         /// </summary>
@@ -678,6 +710,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  ListTasks
+
 
         /// <summary>
         /// Returns a list of tasks for a specified cluster. You can filter the results by family
@@ -705,6 +738,7 @@ namespace Amazon.ECS
         /// </exception>
         ListTasksResponse ListTasks(ListTasksRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListTasks operation.
         /// </summary>
@@ -719,6 +753,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  RegisterTaskDefinition
+
 
         /// <summary>
         /// Registers a new task definition from the supplied <code>family</code> and <code>containerDefinitions</code>.
@@ -743,6 +778,7 @@ namespace Amazon.ECS
         /// </exception>
         RegisterTaskDefinitionResponse RegisterTaskDefinition(RegisterTaskDefinitionRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterTaskDefinition operation.
         /// </summary>
@@ -757,6 +793,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  RunTask
+
 
         /// <summary>
         /// Start a task using random placement and the default Amazon ECS scheduler. If you want
@@ -789,6 +826,7 @@ namespace Amazon.ECS
         /// </exception>
         RunTaskResponse RunTask(RunTaskRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RunTask operation.
         /// </summary>
@@ -803,6 +841,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  StartTask
+
 
         /// <summary>
         /// Starts a new task from the specified task definition on the specified container instance
@@ -835,6 +874,7 @@ namespace Amazon.ECS
         /// </exception>
         StartTaskResponse StartTask(StartTaskRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the StartTask operation.
         /// </summary>
@@ -849,6 +889,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  StopTask
+
 
         /// <summary>
         /// Stops a running task.
@@ -873,6 +914,7 @@ namespace Amazon.ECS
         /// </exception>
         StopTaskResponse StopTask(StopTaskRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the StopTask operation.
         /// </summary>
@@ -887,6 +929,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  UpdateContainerAgent
+
 
         /// <summary>
         /// Updates the Amazon ECS container agent on a specified container instance.
@@ -929,6 +972,7 @@ namespace Amazon.ECS
         /// </exception>
         UpdateContainerAgentResponse UpdateContainerAgent(UpdateContainerAgentRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateContainerAgent operation.
         /// </summary>
@@ -943,6 +987,7 @@ namespace Amazon.ECS
         #endregion
         
         #region  UpdateService
+
 
         /// <summary>
         /// Modify the desired count or task definition used in a service.
@@ -993,6 +1038,7 @@ namespace Amazon.ECS
         /// <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.
         /// </exception>
         UpdateServiceResponse UpdateService(UpdateServiceRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateService operation.

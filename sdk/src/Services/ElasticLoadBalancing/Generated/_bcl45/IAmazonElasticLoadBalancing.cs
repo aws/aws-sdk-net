@@ -53,6 +53,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  AddTags
 
+
         /// <summary>
         /// Adds the specified tags to the specified load balancer. Each load balancer can have
         /// a maximum of 10 tags.
@@ -83,6 +84,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         AddTagsResponse AddTags(AddTagsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddTags operation.
         /// </summary>
@@ -97,6 +99,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  ApplySecurityGroupsToLoadBalancer
+
 
         /// <summary>
         /// Associates one or more security groups with your load balancer in a virtual private
@@ -123,6 +126,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         ApplySecurityGroupsToLoadBalancerResponse ApplySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ApplySecurityGroupsToLoadBalancer operation.
         /// </summary>
@@ -137,6 +141,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  AttachLoadBalancerToSubnets
+
 
         /// <summary>
         /// Adds one or more subnets to the set of configured subnets for the specified load balancer.
@@ -165,6 +170,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         AttachLoadBalancerToSubnetsResponse AttachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AttachLoadBalancerToSubnets operation.
         /// </summary>
@@ -179,6 +185,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  ConfigureHealthCheck
+
 
         /// <summary>
         /// Specifies the health check settings to use when evaluating the health state of your
@@ -198,6 +205,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         ConfigureHealthCheckResponse ConfigureHealthCheck(ConfigureHealthCheckRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ConfigureHealthCheck operation.
         /// </summary>
@@ -212,6 +220,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  CreateAppCookieStickinessPolicy
+
 
         /// <summary>
         /// Generates a stickiness policy with sticky session lifetimes that follow that of an
@@ -253,6 +262,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         CreateAppCookieStickinessPolicyResponse CreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAppCookieStickinessPolicy operation.
         /// </summary>
@@ -267,6 +277,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  CreateLBCookieStickinessPolicy
+
 
         /// <summary>
         /// Generates a stickiness policy with sticky session lifetimes controlled by the lifetime
@@ -311,6 +322,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         CreateLBCookieStickinessPolicyResponse CreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLBCookieStickinessPolicy operation.
         /// </summary>
@@ -325,6 +337,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  CreateLoadBalancer
+
 
         /// <summary>
         /// Creates a load balancer.
@@ -396,6 +409,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         CreateLoadBalancerResponse CreateLoadBalancer(CreateLoadBalancerRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoadBalancer operation.
         /// </summary>
@@ -410,6 +424,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  CreateLoadBalancerListeners
+
 
         /// <summary>
         /// Creates one or more listeners for the specified load balancer. If a listener with
@@ -441,6 +456,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         CreateLoadBalancerListenersResponse CreateLoadBalancerListeners(CreateLoadBalancerListenersRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoadBalancerListeners operation.
         /// </summary>
@@ -455,6 +471,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  CreateLoadBalancerPolicy
+
 
         /// <summary>
         /// Creates a policy with the specified attributes for the specified load balancer.
@@ -486,6 +503,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         CreateLoadBalancerPolicyResponse CreateLoadBalancerPolicy(CreateLoadBalancerPolicyRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoadBalancerPolicy operation.
         /// </summary>
@@ -500,6 +518,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  DeleteLoadBalancer
+
 
         /// <summary>
         /// Deletes the specified load balancer.
@@ -522,6 +541,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <returns>The response from the DeleteLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
         DeleteLoadBalancerResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoadBalancer operation.
         /// </summary>
@@ -537,6 +557,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  DeleteLoadBalancerListeners
 
+
         /// <summary>
         /// Deletes the specified listeners from the specified load balancer.
         /// </summary>
@@ -547,6 +568,7 @@ namespace Amazon.ElasticLoadBalancing
         /// The specified load balancer does not exist.
         /// </exception>
         DeleteLoadBalancerListenersResponse DeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoadBalancerListeners operation.
@@ -563,6 +585,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  DeleteLoadBalancerPolicy
 
+
         /// <summary>
         /// Deletes the specified policy from the specified load balancer. This policy must not
         /// be enabled for any listeners.
@@ -578,6 +601,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         DeleteLoadBalancerPolicyResponse DeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoadBalancerPolicy operation.
         /// </summary>
@@ -592,6 +616,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  DeregisterInstancesFromLoadBalancer
+
 
         /// <summary>
         /// Deregisters the specified instances from the specified load balancer. After the instance
@@ -619,6 +644,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         DeregisterInstancesFromLoadBalancerResponse DeregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterInstancesFromLoadBalancer operation.
         /// </summary>
@@ -633,6 +659,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  DescribeInstanceHealth
+
 
         /// <summary>
         /// Describes the state of the specified instances registered with the specified load
@@ -650,6 +677,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         DescribeInstanceHealthResponse DescribeInstanceHealth(DescribeInstanceHealthRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstanceHealth operation.
         /// </summary>
@@ -665,6 +693,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  DescribeLoadBalancerAttributes
 
+
         /// <summary>
         /// Describes the attributes for the specified load balancer.
         /// </summary>
@@ -678,6 +707,7 @@ namespace Amazon.ElasticLoadBalancing
         /// The specified load balancer attribute does not exist.
         /// </exception>
         DescribeLoadBalancerAttributesResponse DescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancerAttributes operation.
@@ -693,6 +723,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  DescribeLoadBalancerPolicies
+
 
         /// <summary>
         /// Describes the specified policies.
@@ -716,6 +747,7 @@ namespace Amazon.ElasticLoadBalancing
         /// One or more of the specified policies do not exist.
         /// </exception>
         DescribeLoadBalancerPoliciesResponse DescribeLoadBalancerPolicies();
+
 
         /// <summary>
         /// Describes the specified policies.
@@ -741,6 +773,34 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         DescribeLoadBalancerPoliciesResponse DescribeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest request);
 
+
+        /// <summary>
+        /// Describes the specified policies.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify a load balancer name, the action returns the descriptions of all policies
+        /// created for the load balancer. If you specify a policy name associated with your load
+        /// balancer, the action returns the description of that policy. If you don't specify
+        /// a load balancer name, the action returns descriptions of the specified sample policies,
+        /// or descriptions of all sample policies. The names of the sample policies have the
+        /// <code>ELBSample-</code> prefix.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLoadBalancerPolicies service method, as returned by ElasticLoadBalancing.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// The specified load balancer does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
+        /// One or more of the specified policies do not exist.
+        /// </exception>
+        Task<DescribeLoadBalancerPoliciesResponse> DescribeLoadBalancerPoliciesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancerPolicies operation.
         /// </summary>
@@ -755,6 +815,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  DescribeLoadBalancerPolicyTypes
+
 
         /// <summary>
         /// Describes the specified load balancer policy types.
@@ -771,6 +832,7 @@ namespace Amazon.ElasticLoadBalancing
         /// One or more of the specified policy types do not exist.
         /// </exception>
         DescribeLoadBalancerPolicyTypesResponse DescribeLoadBalancerPolicyTypes();
+
 
         /// <summary>
         /// Describes the specified load balancer policy types.
@@ -789,6 +851,27 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         DescribeLoadBalancerPolicyTypesResponse DescribeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest request);
 
+
+        /// <summary>
+        /// Describes the specified load balancer policy types.
+        /// 
+        ///  
+        /// <para>
+        /// You can use these policy types with <a>CreateLoadBalancerPolicy</a> to create policy
+        /// configurations for a load balancer.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLoadBalancerPolicyTypes service method, as returned by ElasticLoadBalancing.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyTypeNotFoundException">
+        /// One or more of the specified policy types do not exist.
+        /// </exception>
+        Task<DescribeLoadBalancerPolicyTypesResponse> DescribeLoadBalancerPolicyTypesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancerPolicyTypes operation.
         /// </summary>
@@ -804,6 +887,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  DescribeLoadBalancers
 
+
         /// <summary>
         /// Describes the specified the load balancers. If no load balancers are specified, the
         /// call describes all of your load balancers.
@@ -814,6 +898,7 @@ namespace Amazon.ElasticLoadBalancing
         /// The specified load balancer does not exist.
         /// </exception>
         DescribeLoadBalancersResponse DescribeLoadBalancers();
+
 
         /// <summary>
         /// Describes the specified the load balancers. If no load balancers are specified, the
@@ -826,6 +911,22 @@ namespace Amazon.ElasticLoadBalancing
         /// The specified load balancer does not exist.
         /// </exception>
         DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request);
+
+
+        /// <summary>
+        /// Describes the specified the load balancers. If no load balancers are specified, the
+        /// call describes all of your load balancers.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLoadBalancers service method, as returned by ElasticLoadBalancing.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// The specified load balancer does not exist.
+        /// </exception>
+        Task<DescribeLoadBalancersResponse> DescribeLoadBalancersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancers operation.
@@ -842,6 +943,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  DescribeTags
 
+
         /// <summary>
         /// Describes the tags associated with the specified load balancers.
         /// </summary>
@@ -852,6 +954,7 @@ namespace Amazon.ElasticLoadBalancing
         /// The specified load balancer does not exist.
         /// </exception>
         DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTags operation.
@@ -867,6 +970,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  DetachLoadBalancerFromSubnets
+
 
         /// <summary>
         /// Removes the specified subnets from the set of configured subnets for the load balancer.
@@ -889,6 +993,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         DetachLoadBalancerFromSubnetsResponse DetachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DetachLoadBalancerFromSubnets operation.
         /// </summary>
@@ -903,6 +1008,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  DisableAvailabilityZonesForLoadBalancer
+
 
         /// <summary>
         /// Removes the specified Availability Zones from the set of Availability Zones for the
@@ -934,6 +1040,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         DisableAvailabilityZonesForLoadBalancerResponse DisableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DisableAvailabilityZonesForLoadBalancer operation.
         /// </summary>
@@ -948,6 +1055,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  EnableAvailabilityZonesForLoadBalancer
+
 
         /// <summary>
         /// Adds the specified Availability Zones to the set of Availability Zones for the specified
@@ -972,6 +1080,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         EnableAvailabilityZonesForLoadBalancerResponse EnableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the EnableAvailabilityZonesForLoadBalancer operation.
         /// </summary>
@@ -986,6 +1095,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  ModifyLoadBalancerAttributes
+
 
         /// <summary>
         /// Modifies the attributes of the specified load balancer.
@@ -1022,6 +1132,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         ModifyLoadBalancerAttributesResponse ModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyLoadBalancerAttributes operation.
         /// </summary>
@@ -1036,6 +1147,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  RegisterInstancesWithLoadBalancer
+
 
         /// <summary>
         /// Adds the specified instances to the specified load balancer.
@@ -1087,6 +1199,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         RegisterInstancesWithLoadBalancerResponse RegisterInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterInstancesWithLoadBalancer operation.
         /// </summary>
@@ -1102,6 +1215,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region  RemoveTags
 
+
         /// <summary>
         /// Removes one or more tags from the specified load balancer.
         /// </summary>
@@ -1112,6 +1226,7 @@ namespace Amazon.ElasticLoadBalancing
         /// The specified load balancer does not exist.
         /// </exception>
         RemoveTagsResponse RemoveTags(RemoveTagsRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTags operation.
@@ -1127,6 +1242,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  SetLoadBalancerListenerSSLCertificate
+
 
         /// <summary>
         /// Sets the certificate that terminates the specified listener's SSL connections. The
@@ -1158,6 +1274,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         SetLoadBalancerListenerSSLCertificateResponse SetLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBalancerListenerSSLCertificate operation.
         /// </summary>
@@ -1172,6 +1289,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  SetLoadBalancerPoliciesForBackendServer
+
 
         /// <summary>
         /// Replaces the set of policies associated with the specified port on which the back-end
@@ -1205,6 +1323,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         SetLoadBalancerPoliciesForBackendServerResponse SetLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBalancerPoliciesForBackendServer operation.
         /// </summary>
@@ -1219,6 +1338,7 @@ namespace Amazon.ElasticLoadBalancing
         #endregion
         
         #region  SetLoadBalancerPoliciesOfListener
+
 
         /// <summary>
         /// Associates, updates, or disables a policy with a listener for the specified load balancer.
@@ -1240,6 +1360,7 @@ namespace Amazon.ElasticLoadBalancing
         /// One or more of the specified policies do not exist.
         /// </exception>
         SetLoadBalancerPoliciesOfListenerResponse SetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBalancerPoliciesOfListener operation.

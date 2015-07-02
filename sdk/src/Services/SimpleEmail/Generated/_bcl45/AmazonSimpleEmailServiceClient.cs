@@ -234,6 +234,7 @@ namespace Amazon.SimpleEmail
         
         #region  DeleteIdentity
 
+
         /// <summary>
         /// Deletes the specified identity (email address or domain) from the list of verified
         /// identities.
@@ -275,6 +276,7 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  DeleteVerifiedEmailAddress
+
 
         /// <summary>
         /// Deletes the specified email address from the list of verified addresses.
@@ -318,6 +320,7 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  GetIdentityDkimAttributes
+
 
         /// <summary>
         /// Returns the current status of Easy DKIM signing for an entity. For domain name identities,
@@ -376,6 +379,7 @@ namespace Amazon.SimpleEmail
         
         #region  GetIdentityNotificationAttributes
 
+
         /// <summary>
         /// Given a list of verified identities (email addresses and/or domains), returns a structure
         /// describing identity notification attributes.
@@ -423,6 +427,7 @@ namespace Amazon.SimpleEmail
         
         #region  GetIdentityVerificationAttributes
 
+
         /// <summary>
         /// Given a list of identities (email addresses and/or domains), returns the verification
         /// status and (for domain identities) the verification token for each identity.
@@ -465,6 +470,7 @@ namespace Amazon.SimpleEmail
         
         #region  GetSendQuota
 
+
         /// <summary>
         /// Returns the user's current sending limits.
         /// 
@@ -479,6 +485,7 @@ namespace Amazon.SimpleEmail
         {
             return GetSendQuota(new GetSendQuotaRequest());
         }
+
 
         /// <summary>
         /// Returns the user's current sending limits.
@@ -499,6 +506,24 @@ namespace Amazon.SimpleEmail
             return Invoke<GetSendQuotaRequest,GetSendQuotaResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns the user's current sending limits.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSendQuota service method, as returned by SimpleEmailService.</returns>
+        public Task<GetSendQuotaResponse> GetSendQuotaAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetSendQuotaAsync(new GetSendQuotaRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the GetSendQuota operation.
         /// </summary>
@@ -521,6 +546,7 @@ namespace Amazon.SimpleEmail
         
         #region  GetSendStatistics
 
+
         /// <summary>
         /// Returns the user's sending statistics. The result is a list of data points, representing
         /// the last two weeks of sending activity. 
@@ -540,6 +566,7 @@ namespace Amazon.SimpleEmail
         {
             return GetSendStatistics(new GetSendStatisticsRequest());
         }
+
 
         /// <summary>
         /// Returns the user's sending statistics. The result is a list of data points, representing
@@ -565,6 +592,29 @@ namespace Amazon.SimpleEmail
             return Invoke<GetSendStatisticsRequest,GetSendStatisticsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns the user's sending statistics. The result is a list of data points, representing
+        /// the last two weeks of sending activity. 
+        /// 
+        ///  
+        /// <para>
+        /// Each data point in the list contains statistics for a 15-minute interval.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSendStatistics service method, as returned by SimpleEmailService.</returns>
+        public Task<GetSendStatisticsResponse> GetSendStatisticsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetSendStatisticsAsync(new GetSendStatisticsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the GetSendStatistics operation.
         /// </summary>
@@ -587,6 +637,7 @@ namespace Amazon.SimpleEmail
         
         #region  ListIdentities
 
+
         /// <summary>
         /// Returns a list containing all of the identities (email addresses and domains) for
         /// a specific AWS Account, regardless of verification status.
@@ -602,6 +653,7 @@ namespace Amazon.SimpleEmail
         {
             return ListIdentities(new ListIdentitiesRequest());
         }
+
 
         /// <summary>
         /// Returns a list containing all of the identities (email addresses and domains) for
@@ -623,6 +675,25 @@ namespace Amazon.SimpleEmail
             return Invoke<ListIdentitiesRequest,ListIdentitiesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns a list containing all of the identities (email addresses and domains) for
+        /// a specific AWS Account, regardless of verification status.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIdentities service method, as returned by SimpleEmailService.</returns>
+        public Task<ListIdentitiesResponse> ListIdentitiesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListIdentitiesAsync(new ListIdentitiesRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the ListIdentities operation.
         /// </summary>
@@ -645,6 +716,7 @@ namespace Amazon.SimpleEmail
         
         #region  ListVerifiedEmailAddresses
 
+
         /// <summary>
         /// Returns a list containing all of the email addresses that have been verified.
         /// 
@@ -661,6 +733,7 @@ namespace Amazon.SimpleEmail
         {
             return ListVerifiedEmailAddresses(new ListVerifiedEmailAddressesRequest());
         }
+
 
         /// <summary>
         /// Returns a list containing all of the email addresses that have been verified.
@@ -683,6 +756,26 @@ namespace Amazon.SimpleEmail
             return Invoke<ListVerifiedEmailAddressesRequest,ListVerifiedEmailAddressesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns a list containing all of the email addresses that have been verified.
+        /// 
+        ///  <important>The ListVerifiedEmailAddresses action is deprecated as of the May 15,
+        /// 2012 release of Domain Verification. The ListIdentities action is now preferred.</important>
+        /// 
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVerifiedEmailAddresses service method, as returned by SimpleEmailService.</returns>
+        public Task<ListVerifiedEmailAddressesResponse> ListVerifiedEmailAddressesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListVerifiedEmailAddressesAsync(new ListVerifiedEmailAddressesRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the ListVerifiedEmailAddresses operation.
         /// </summary>
@@ -704,6 +797,7 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  SendEmail
+
 
         /// <summary>
         /// Composes an email message based on input data, and then immediately queues the message
@@ -769,6 +863,7 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  SendRawEmail
+
 
         /// <summary>
         /// Sends an email message, with header and content specified by the client. The <code>SendRawEmail</code>
@@ -842,6 +937,7 @@ namespace Amazon.SimpleEmail
         
         #region  SetIdentityDkimEnabled
 
+
         /// <summary>
         /// Enables or disables Easy DKIM signing of email sent from an identity:
         /// 
@@ -898,6 +994,7 @@ namespace Amazon.SimpleEmail
         
         #region  SetIdentityFeedbackForwardingEnabled
 
+
         /// <summary>
         /// Given an identity (email address or domain), enables or disables whether Amazon SES
         /// forwards bounce and complaint notifications as email. Feedback forwarding can only
@@ -948,6 +1045,7 @@ namespace Amazon.SimpleEmail
         
         #region  SetIdentityNotificationTopic
 
+
         /// <summary>
         /// Given an identity (email address or domain), sets the Amazon Simple Notification Service
         /// (Amazon SNS) topic to which Amazon SES will publish bounce, complaint, and/or delivery
@@ -997,6 +1095,7 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  VerifyDomainDkim
+
 
         /// <summary>
         /// Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings
@@ -1054,6 +1153,7 @@ namespace Amazon.SimpleEmail
         
         #region  VerifyDomainIdentity
 
+
         /// <summary>
         /// Verifies a domain.
         /// 
@@ -1094,6 +1194,7 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  VerifyEmailAddress
+
 
         /// <summary>
         /// Verifies an email address. This action causes a confirmation email message to be sent
@@ -1138,6 +1239,7 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  VerifyEmailIdentity
+
 
         /// <summary>
         /// Verifies an email address. This action causes a confirmation email message to be sent

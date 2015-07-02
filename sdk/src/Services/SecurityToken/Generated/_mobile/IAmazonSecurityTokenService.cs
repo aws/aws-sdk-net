@@ -98,6 +98,7 @@ namespace Amazon.SecurityToken
                 
         #region  AssumeRole
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AssumeRole operation.
         /// </summary>
@@ -107,11 +108,12 @@ namespace Amazon.SecurityToken
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AssumeRoleResponse> AssumeRoleAsync(AssumeRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AssumeRoleResponse> AssumeRoleAsync(AssumeRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  AssumeRoleWithSAML
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssumeRoleWithSAML operation.
@@ -122,11 +124,12 @@ namespace Amazon.SecurityToken
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AssumeRoleWithSAMLResponse> AssumeRoleWithSAMLAsync(AssumeRoleWithSAMLRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AssumeRoleWithSAMLResponse> AssumeRoleWithSAMLAsync(AssumeRoleWithSAMLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  AssumeRoleWithWebIdentity
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssumeRoleWithWebIdentity operation.
@@ -137,11 +140,12 @@ namespace Amazon.SecurityToken
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AssumeRoleWithWebIdentityResponse> AssumeRoleWithWebIdentityAsync(AssumeRoleWithWebIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AssumeRoleWithWebIdentityResponse> AssumeRoleWithWebIdentityAsync(AssumeRoleWithWebIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DecodeAuthorizationMessage
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DecodeAuthorizationMessage operation.
@@ -152,11 +156,12 @@ namespace Amazon.SecurityToken
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DecodeAuthorizationMessageResponse> DecodeAuthorizationMessageAsync(DecodeAuthorizationMessageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DecodeAuthorizationMessageResponse> DecodeAuthorizationMessageAsync(DecodeAuthorizationMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetFederationToken
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetFederationToken operation.
@@ -167,11 +172,62 @@ namespace Amazon.SecurityToken
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetFederationTokenResponse> GetFederationTokenAsync(GetFederationTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetFederationTokenResponse> GetFederationTokenAsync(GetFederationTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetSessionToken
+
+
+        /// <summary>
+        /// Returns a set of temporary credentials for an AWS account or IAM user. The credentials
+        /// consist of an access key ID, a secret access key, and a security token. Typically,
+        /// you use <code>GetSessionToken</code> if you want to use MFA to protect programmatic
+        /// calls to specific AWS APIs like Amazon EC2 <code>StopInstances</code>. MFA-enabled
+        /// IAM users would need to call <code>GetSessionToken</code> and submit an MFA code that
+        /// is associated with their MFA device. Using the temporary security credentials that
+        /// are returned from the call, IAM users can then make programmatic calls to APIs that
+        /// require MFA authentication. 
+        /// 
+        ///  
+        /// <para>
+        /// The <code>GetSessionToken</code> action must be called by using the long-term AWS
+        /// security credentials of the AWS account or an IAM user. Credentials that are created
+        /// by IAM users are valid for the duration that you specify, between 900 seconds (15
+        /// minutes) and 129600 seconds (36 hours); credentials that are created by using account
+        /// credentials have a maximum duration of 3600 seconds (1 hour). 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// We recommend that you do not call <code>GetSessionToken</code> with root account credentials.
+        /// Instead, follow our <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html#create-iam-users">best
+        /// practices</a> by creating one or more IAM users, giving them the necessary permissions,
+        /// and using IAM users for everyday interaction with AWS. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The permissions associated with the temporary security credentials returned by <code>GetSessionToken</code>
+        /// are based on the permissions associated with account or IAM user whose credentials
+        /// are used to call the action. If <code>GetSessionToken</code> is called using root
+        /// account credentials, the temporary credentials have root account permissions. Similarly,
+        /// if <code>GetSessionToken</code> is called using the credentials of an IAM user, the
+        /// temporary credentials have the same permissions as the IAM user. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using <code>GetSessionToken</code> to create temporary
+        /// credentials, go to <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSessionTokens.html"
+        /// target="_blank">Creating Temporary Credentials to Enable Access for IAM Users</a>
+        /// in <i>Using Temporary Security Credentials</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSessionToken service method, as returned by SecurityTokenService.</returns>
+        Task<GetSessionTokenResponse> GetSessionTokenAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetSessionToken operation.
@@ -182,7 +238,7 @@ namespace Amazon.SecurityToken
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetSessionTokenResponse> GetSessionTokenAsync(GetSessionTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetSessionTokenResponse> GetSessionTokenAsync(GetSessionTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

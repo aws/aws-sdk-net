@@ -435,6 +435,7 @@ namespace Amazon.CognitoIdentity
             return DeleteIdentityPool(request);
         }
 
+
         /// <summary>
         /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
         /// with the pool.
@@ -540,6 +541,7 @@ namespace Amazon.CognitoIdentity
             return DescribeIdentity(request);
         }
 
+
         /// <summary>
         /// Returns metadata related to the given identity, including when the identity was created
         /// and any associated linked logins.
@@ -644,6 +646,7 @@ namespace Amazon.CognitoIdentity
             request.IdentityPoolId = identityPoolId;
             return DescribeIdentityPool(request);
         }
+
 
         /// <summary>
         /// Gets details about a particular identity pool, including the pool name, ID description,
@@ -762,6 +765,7 @@ namespace Amazon.CognitoIdentity
             return GetCredentialsForIdentity(request);
         }
 
+
         /// <summary>
         /// Returns credentials for the the provided identity ID. Any provided logins will be
         /// validated against supported login providers. If the token is for cognito-identity.amazonaws.com,
@@ -809,6 +813,7 @@ namespace Amazon.CognitoIdentity
             request.Logins = logins;
             return GetCredentialsForIdentity(request);
         }
+
 
         /// <summary>
         /// Returns credentials for the the provided identity ID. Any provided logins will be
@@ -1013,6 +1018,7 @@ namespace Amazon.CognitoIdentity
             return GetIdentityPoolRoles(request);
         }
 
+
         /// <summary>
         /// Gets the roles for an identity pool.
         /// 
@@ -1130,6 +1136,7 @@ namespace Amazon.CognitoIdentity
             request.IdentityId = identityId;
             return GetOpenIdToken(request);
         }
+
 
         /// <summary>
         /// Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned
@@ -1638,6 +1645,7 @@ namespace Amazon.CognitoIdentity
             request.Roles = roles;
             return SetIdentityPoolRoles(request);
         }
+
 
         /// <summary>
         /// Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code>

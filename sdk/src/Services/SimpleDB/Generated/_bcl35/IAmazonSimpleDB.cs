@@ -53,6 +53,7 @@ namespace Amazon.SimpleDB
         
         #region  BatchDeleteAttributes
 
+
         /// <summary>
         /// Performs multiple DeleteAttributes operations in a single call, which reduces round
         /// trips and latencies. This enables Amazon SimpleDB to optimize requests, which generally
@@ -96,6 +97,7 @@ namespace Amazon.SimpleDB
         #endregion
         
         #region  BatchPutAttributes
+
 
         /// <summary>
         /// The <code>BatchPutAttributes</code> operation creates or replaces attributes within
@@ -210,6 +212,7 @@ namespace Amazon.SimpleDB
         
         #region  CreateDomain
 
+
         /// <summary>
         /// The <code>CreateDomain</code> operation creates a new domain. The domain name should
         /// be unique among the domains associated with the Access Key ID provided in the request.
@@ -266,6 +269,7 @@ namespace Amazon.SimpleDB
         #endregion
         
         #region  DeleteAttributes
+
 
         /// <summary>
         /// Deletes one or more attributes associated with an item. If all attributes of the
@@ -329,6 +333,7 @@ namespace Amazon.SimpleDB
         
         #region  DeleteDomain
 
+
         /// <summary>
         /// The <code>DeleteDomain</code> operation deletes a domain. Any items (and their attributes)
         /// in the domain are deleted as well. The <code>DeleteDomain</code> operation might take
@@ -369,6 +374,7 @@ namespace Amazon.SimpleDB
         #endregion
         
         #region  DomainMetadata
+
 
         /// <summary>
         /// Returns information about the domain, including when the domain was created, the
@@ -413,6 +419,7 @@ namespace Amazon.SimpleDB
         #endregion
         
         #region  GetAttributes
+
 
         /// <summary>
         /// Returns all of the attributes associated with the specified item. Optionally, the
@@ -467,6 +474,7 @@ namespace Amazon.SimpleDB
         #endregion
         
         #region  ListDomains
+
 
         /// <summary>
         /// The <code>ListDomains</code> operation lists all domains associated with the Access
@@ -532,6 +540,7 @@ namespace Amazon.SimpleDB
         #endregion
         
         #region  PutAttributes
+
 
         /// <summary>
         /// The PutAttributes operation creates or replaces attributes in an item. The client
@@ -631,6 +640,7 @@ namespace Amazon.SimpleDB
         #endregion
         
         #region  Select
+
 
         /// <summary>
         /// The <code>Select</code> operation returns a set of attributes for <code>ItemNames</code>

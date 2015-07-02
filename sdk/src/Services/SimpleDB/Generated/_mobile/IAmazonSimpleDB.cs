@@ -54,6 +54,7 @@ namespace Amazon.SimpleDB
                 
         #region  BatchDeleteAttributes
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the BatchDeleteAttributes operation.
         /// </summary>
@@ -63,11 +64,12 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<BatchDeleteAttributesResponse> BatchDeleteAttributesAsync(BatchDeleteAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<BatchDeleteAttributesResponse> BatchDeleteAttributesAsync(BatchDeleteAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  BatchPutAttributes
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the BatchPutAttributes operation.
@@ -78,11 +80,12 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<BatchPutAttributesResponse> BatchPutAttributesAsync(BatchPutAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<BatchPutAttributesResponse> BatchPutAttributesAsync(BatchPutAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateDomain
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDomain operation.
@@ -93,11 +96,12 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteAttributes
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAttributes operation.
@@ -108,11 +112,12 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteAttributesResponse> DeleteAttributesAsync(DeleteAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteAttributesResponse> DeleteAttributesAsync(DeleteAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteDomain
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDomain operation.
@@ -123,11 +128,12 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DomainMetadata
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DomainMetadata operation.
@@ -138,11 +144,12 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DomainMetadataResponse> DomainMetadataAsync(DomainMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DomainMetadataResponse> DomainMetadataAsync(DomainMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetAttributes
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetAttributes operation.
@@ -153,11 +160,34 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetAttributesResponse> GetAttributesAsync(GetAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetAttributesResponse> GetAttributesAsync(GetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListDomains
+
+
+        /// <summary>
+        /// The <code>ListDomains</code> operation lists all domains associated with the Access
+        /// Key ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>.
+        /// A <a href="#NextToken">NextToken</a> is returned if there are more than <code>MaxNumberOfDomains</code>
+        /// domains. Calling <code>ListDomains</code> successive times with the <code>NextToken</code>
+        /// provided by the operation returns up to <code>MaxNumberOfDomains</code> more domain
+        /// names with each successive operation call.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDomains service method, as returned by SimpleDB.</returns>
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidNextTokenException">
+        /// The specified NextToken is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        Task<ListDomainsResponse> ListDomainsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomains operation.
@@ -168,11 +198,12 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutAttributes
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutAttributes operation.
@@ -183,11 +214,12 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutAttributesResponse> PutAttributesAsync(PutAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutAttributesResponse> PutAttributesAsync(PutAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  Select
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the Select operation.
@@ -198,7 +230,7 @@ namespace Amazon.SimpleDB
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<SelectResponse> SelectAsync(SelectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<SelectResponse> SelectAsync(SelectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -64,6 +64,7 @@ namespace Amazon.SimpleSystemsManagement
         
         #region  CreateAssociation
 
+
         /// <summary>
         /// Associates the specified configuration document with the specified instance.
         /// 
@@ -165,6 +166,7 @@ namespace Amazon.SimpleSystemsManagement
         
         #region  CreateAssociationBatch
 
+
         /// <summary>
         /// Associates the specified configuration documents with the specified instances.
         /// 
@@ -228,6 +230,7 @@ namespace Amazon.SimpleSystemsManagement
         #endregion
         
         #region  CreateDocument
+
 
         /// <summary>
         /// Creates a configuration document.
@@ -315,6 +318,7 @@ namespace Amazon.SimpleSystemsManagement
         #endregion
         
         #region  DeleteAssociation
+
 
         /// <summary>
         /// Disassociates the specified configuration document from the specified instance.
@@ -407,6 +411,7 @@ namespace Amazon.SimpleSystemsManagement
         
         #region  DeleteDocument
 
+
         /// <summary>
         /// Deletes the specified configuration document.
         /// 
@@ -483,6 +488,7 @@ namespace Amazon.SimpleSystemsManagement
         
         #region  DescribeAssociation
 
+
         /// <summary>
         /// Describes the associations for the specified configuration document or instance.
         /// </summary>
@@ -552,6 +558,7 @@ namespace Amazon.SimpleSystemsManagement
         
         #region  DescribeDocument
 
+
         /// <summary>
         /// Describes the specified configuration document.
         /// </summary>
@@ -607,6 +614,7 @@ namespace Amazon.SimpleSystemsManagement
         #endregion
         
         #region  GetDocument
+
 
         /// <summary>
         /// Gets the contents of the specified configuration document.
@@ -664,6 +672,7 @@ namespace Amazon.SimpleSystemsManagement
         
         #region  ListAssociations
 
+
         /// <summary>
         /// Lists the associations for the specified configuration document or instance.
         /// </summary>
@@ -705,6 +714,7 @@ namespace Amazon.SimpleSystemsManagement
         #endregion
         
         #region  ListDocuments
+
 
         /// <summary>
         /// Describes one or more of your configuration documents.
@@ -760,6 +770,7 @@ namespace Amazon.SimpleSystemsManagement
         #endregion
         
         #region  UpdateAssociationStatus
+
 
         /// <summary>
         /// Updates the status of the configuration document associated with the specified instance.

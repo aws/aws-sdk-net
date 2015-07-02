@@ -53,6 +53,7 @@ namespace Amazon.DirectConnect
         
         #region  AllocateConnectionOnInterconnect
 
+
         /// <summary>
         /// Creates a hosted connection on an interconnect.
         /// 
@@ -102,6 +103,7 @@ namespace Amazon.DirectConnect
         #endregion
         
         #region  AllocatePrivateVirtualInterface
+
 
         /// <summary>
         /// Provisions a private virtual interface to be owned by a different customer.
@@ -160,6 +162,7 @@ namespace Amazon.DirectConnect
         
         #region  AllocatePublicVirtualInterface
 
+
         /// <summary>
         /// Provisions a public virtual interface to be owned by a different customer.
         /// 
@@ -217,6 +220,7 @@ namespace Amazon.DirectConnect
         
         #region  ConfirmConnection
 
+
         /// <summary>
         /// Confirm the creation of a hosted connection on an interconnect.
         /// 
@@ -267,6 +271,7 @@ namespace Amazon.DirectConnect
         #endregion
         
         #region  ConfirmPrivateVirtualInterface
+
 
         /// <summary>
         /// Accept ownership of a private virtual interface created by another customer.
@@ -319,6 +324,7 @@ namespace Amazon.DirectConnect
         
         #region  ConfirmPublicVirtualInterface
 
+
         /// <summary>
         /// Accept ownership of a public virtual interface created by another customer.
         /// 
@@ -368,6 +374,7 @@ namespace Amazon.DirectConnect
         #endregion
         
         #region  CreateConnection
+
 
         /// <summary>
         /// Creates a new connection between the customer network and a specific AWS Direct Connect
@@ -423,6 +430,7 @@ namespace Amazon.DirectConnect
         #endregion
         
         #region  CreateInterconnect
+
 
         /// <summary>
         /// Creates a new interconnect between a AWS Direct Connect partner's network and a specific
@@ -487,6 +495,7 @@ namespace Amazon.DirectConnect
         
         #region  CreatePrivateVirtualInterface
 
+
         /// <summary>
         /// Creates a new private virtual interface. A virtual interface is the VLAN that transports
         /// AWS Direct Connect traffic. A private virtual interface supports sending traffic to
@@ -533,6 +542,7 @@ namespace Amazon.DirectConnect
         
         #region  CreatePublicVirtualInterface
 
+
         /// <summary>
         /// Creates a new public virtual interface. A virtual interface is the VLAN that transports
         /// AWS Direct Connect traffic. A public virtual interface supports sending traffic to
@@ -578,6 +588,7 @@ namespace Amazon.DirectConnect
         #endregion
         
         #region  DeleteConnection
+
 
         /// <summary>
         /// Deletes the connection.
@@ -631,6 +642,7 @@ namespace Amazon.DirectConnect
         
         #region  DeleteInterconnect
 
+
         /// <summary>
         /// Deletes the specified interconnect.
         /// </summary>
@@ -675,6 +687,7 @@ namespace Amazon.DirectConnect
         
         #region  DeleteVirtualInterface
 
+
         /// <summary>
         /// Deletes a virtual interface.
         /// </summary>
@@ -718,6 +731,7 @@ namespace Amazon.DirectConnect
         #endregion
         
         #region  DescribeConnections
+
 
         /// <summary>
         /// Displays all connections in this region.
@@ -788,6 +802,7 @@ namespace Amazon.DirectConnect
         
         #region  DescribeConnectionsOnInterconnect
 
+
         /// <summary>
         /// Return a list of connections that have been provisioned on the given interconnect.
         /// </summary>
@@ -831,6 +846,7 @@ namespace Amazon.DirectConnect
         #endregion
         
         #region  DescribeInterconnects
+
 
         /// <summary>
         /// Returns a list of interconnects owned by the AWS account.
@@ -901,6 +917,7 @@ namespace Amazon.DirectConnect
         
         #region  DescribeLocations
 
+
         /// <summary>
         /// Returns the list of AWS Direct Connect locations in the current AWS region. These
         /// are the locations that may be selected when calling CreateConnection or CreateInterconnect.
@@ -961,6 +978,7 @@ namespace Amazon.DirectConnect
         #endregion
         
         #region  DescribeVirtualGateways
+
 
         /// <summary>
         /// Returns a list of virtual private gateways owned by the AWS account.
@@ -1036,6 +1054,7 @@ namespace Amazon.DirectConnect
         #endregion
         
         #region  DescribeVirtualInterfaces
+
 
         /// <summary>
         /// Displays all virtual interfaces for an AWS account. Virtual interfaces deleted fewer

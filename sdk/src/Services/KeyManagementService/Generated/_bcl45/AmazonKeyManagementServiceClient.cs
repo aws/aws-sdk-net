@@ -306,6 +306,7 @@ namespace Amazon.KeyManagementService
         
         #region  CreateAlias
 
+
         /// <summary>
         /// Creates a display name for a customer master key. An alias can be used to identify
         /// a key and should be unique. The console enforces a one-to-one mapping between the
@@ -354,6 +355,7 @@ namespace Amazon.KeyManagementService
             return CreateAlias(request);
         }
 
+
         /// <summary>
         /// Creates a display name for a customer master key. An alias can be used to identify
         /// a key and should be unique. The console enforces a one-to-one mapping between the
@@ -401,6 +403,58 @@ namespace Amazon.KeyManagementService
             return Invoke<CreateAliasRequest,CreateAliasResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Creates a display name for a customer master key. An alias can be used to identify
+        /// a key and should be unique. The console enforces a one-to-one mapping between the
+        /// alias and a key. An alias name can contain only alphanumeric characters, forward slashes
+        /// (/), underscores (_), and dashes (-). An alias must start with the word "alias" followed
+        /// by a forward slash (alias/). An alias that begins with "aws" after the forward slash
+        /// (alias/aws...) is reserved by Amazon Web Services (AWS). 
+        /// 
+        ///  
+        /// <para>
+        /// To associate an alias with a different key, call <a>UpdateAlias</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that you cannot create or update an alias that represents a key in another account.
+        /// </para>
+        /// </summary>
+        /// <param name="aliasName">String that contains the display name. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved. </param>
+        /// <param name="targetKeyId">An identifier of the key for which you are creating the alias. This value cannot be another alias but can be a globally unique identifier or a fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAlias service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.AlreadyExistsException">
+        /// The request was rejected because it attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidAliasNameException">
+        /// The request was rejected because the specified alias name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
+        /// The request was rejected because a quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public Task<CreateAliasResponse> CreateAliasAsync(string aliasName, string targetKeyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new CreateAliasRequest();
+            request.AliasName = aliasName;
+            request.TargetKeyId = targetKeyId;
+            return CreateAliasAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAlias operation.
         /// </summary>
@@ -422,6 +476,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  CreateGrant
+
 
         /// <summary>
         /// Adds a grant to a key to specify who can access the key and under what conditions.
@@ -486,6 +541,7 @@ namespace Amazon.KeyManagementService
         
         #region  CreateKey
 
+
         /// <summary>
         /// Creates a customer master key. Customer master keys can be used to encrypt small amounts
         /// of data (less than 4K) directly, but they are most commonly used to encrypt or envelope
@@ -544,6 +600,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  Decrypt
+
 
         /// <summary>
         /// Decrypts ciphertext. Ciphertext is plaintext that has been previously encrypted by
@@ -619,6 +676,7 @@ namespace Amazon.KeyManagementService
         
         #region  DeleteAlias
 
+
         /// <summary>
         /// Deletes the specified alias. To associate an alias with a different key, call <a>UpdateAlias</a>.
         /// </summary>
@@ -641,6 +699,7 @@ namespace Amazon.KeyManagementService
             request.AliasName = aliasName;
             return DeleteAlias(request);
         }
+
 
         /// <summary>
         /// Deletes the specified alias. To associate an alias with a different key, call <a>UpdateAlias</a>.
@@ -666,6 +725,33 @@ namespace Amazon.KeyManagementService
             return Invoke<DeleteAliasRequest,DeleteAliasResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Deletes the specified alias. To associate an alias with a different key, call <a>UpdateAlias</a>.
+        /// </summary>
+        /// <param name="aliasName">The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAlias service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public Task<DeleteAliasResponse> DeleteAliasAsync(string aliasName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DeleteAliasRequest();
+            request.AliasName = aliasName;
+            return DeleteAliasAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAlias operation.
         /// </summary>
@@ -687,6 +773,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  DescribeKey
+
 
         /// <summary>
         /// Provides detailed information about the specified customer master key.
@@ -713,6 +800,7 @@ namespace Amazon.KeyManagementService
             request.KeyId = keyId;
             return DescribeKey(request);
         }
+
 
         /// <summary>
         /// Provides detailed information about the specified customer master key.
@@ -741,6 +829,36 @@ namespace Amazon.KeyManagementService
             return Invoke<DescribeKeyRequest,DescribeKeyResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Provides detailed information about the specified customer master key.
+        /// </summary>
+        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> <li>Alias Name Example - alias/MyAliasName</li> </ul> </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeKey service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public Task<DescribeKeyResponse> DescribeKeyAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DescribeKeyRequest();
+            request.KeyId = keyId;
+            return DescribeKeyAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeKey operation.
         /// </summary>
@@ -762,6 +880,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  DisableKey
+
 
         /// <summary>
         /// Marks a key as disabled, thereby preventing its use.
@@ -788,6 +907,7 @@ namespace Amazon.KeyManagementService
             request.KeyId = keyId;
             return DisableKey(request);
         }
+
 
         /// <summary>
         /// Marks a key as disabled, thereby preventing its use.
@@ -816,6 +936,36 @@ namespace Amazon.KeyManagementService
             return Invoke<DisableKeyRequest,DisableKeyResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Marks a key as disabled, thereby preventing its use.
+        /// </summary>
+        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableKey service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public Task<DisableKeyResponse> DisableKeyAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DisableKeyRequest();
+            request.KeyId = keyId;
+            return DisableKeyAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the DisableKey operation.
         /// </summary>
@@ -837,6 +987,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  DisableKeyRotation
+
 
         /// <summary>
         /// Disables rotation of the specified key.
@@ -866,6 +1017,7 @@ namespace Amazon.KeyManagementService
             request.KeyId = keyId;
             return DisableKeyRotation(request);
         }
+
 
         /// <summary>
         /// Disables rotation of the specified key.
@@ -897,6 +1049,39 @@ namespace Amazon.KeyManagementService
             return Invoke<DisableKeyRotationRequest,DisableKeyRotationResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Disables rotation of the specified key.
+        /// </summary>
+        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableKeyRotation service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
+        /// A request was rejected because the specified key was marked as disabled.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public Task<DisableKeyRotationResponse> DisableKeyRotationAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DisableKeyRotationRequest();
+            request.KeyId = keyId;
+            return DisableKeyRotationAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the DisableKeyRotation operation.
         /// </summary>
@@ -918,6 +1103,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  EnableKey
+
 
         /// <summary>
         /// Marks a key as enabled, thereby permitting its use. You can have up to 25 enabled
@@ -948,6 +1134,7 @@ namespace Amazon.KeyManagementService
             request.KeyId = keyId;
             return EnableKey(request);
         }
+
 
         /// <summary>
         /// Marks a key as enabled, thereby permitting its use. You can have up to 25 enabled
@@ -980,6 +1167,40 @@ namespace Amazon.KeyManagementService
             return Invoke<EnableKeyRequest,EnableKeyResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Marks a key as enabled, thereby permitting its use. You can have up to 25 enabled
+        /// keys at one time.
+        /// </summary>
+        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableKey service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
+        /// The request was rejected because a quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public Task<EnableKeyResponse> EnableKeyAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new EnableKeyRequest();
+            request.KeyId = keyId;
+            return EnableKeyAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the EnableKey operation.
         /// </summary>
@@ -1001,6 +1222,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  EnableKeyRotation
+
 
         /// <summary>
         /// Enables rotation of the specified customer master key.
@@ -1030,6 +1252,7 @@ namespace Amazon.KeyManagementService
             request.KeyId = keyId;
             return EnableKeyRotation(request);
         }
+
 
         /// <summary>
         /// Enables rotation of the specified customer master key.
@@ -1061,6 +1284,39 @@ namespace Amazon.KeyManagementService
             return Invoke<EnableKeyRotationRequest,EnableKeyRotationResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Enables rotation of the specified customer master key.
+        /// </summary>
+        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableKeyRotation service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
+        /// A request was rejected because the specified key was marked as disabled.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public Task<EnableKeyRotationResponse> EnableKeyRotationAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new EnableKeyRotationRequest();
+            request.KeyId = keyId;
+            return EnableKeyRotationAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the EnableKeyRotation operation.
         /// </summary>
@@ -1082,6 +1338,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  Encrypt
+
 
         /// <summary>
         /// Encrypts plaintext into ciphertext by using a customer master key. The <code>Encrypt</code>
@@ -1164,6 +1421,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  GenerateDataKey
+
 
         /// <summary>
         /// Generates a data key that you can use in your application to locally encrypt data.
@@ -1260,6 +1518,7 @@ namespace Amazon.KeyManagementService
         
         #region  GenerateDataKeyWithoutPlaintext
 
+
         /// <summary>
         /// Returns a data key encrypted by a customer master key without the plaintext copy of
         /// that key. Otherwise, this API functions exactly like <a>GenerateDataKey</a>. You can
@@ -1323,6 +1582,7 @@ namespace Amazon.KeyManagementService
         
         #region  GenerateRandom
 
+
         /// <summary>
         /// Generates an unpredictable byte string.
         /// </summary>
@@ -1343,6 +1603,7 @@ namespace Amazon.KeyManagementService
             return GenerateRandom(request);
         }
 
+
         /// <summary>
         /// Generates an unpredictable byte string.
         /// </summary>
@@ -1362,6 +1623,30 @@ namespace Amazon.KeyManagementService
             var unmarshaller = GenerateRandomResponseUnmarshaller.Instance;
 
             return Invoke<GenerateRandomRequest,GenerateRandomResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Generates an unpredictable byte string.
+        /// </summary>
+        /// <param name="numberOfBytes">Integer that contains the number of bytes to generate. Common values are 128, 256, 512, 1024 and so on. The current limit is 1024 bytes. </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GenerateRandom service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        public Task<GenerateRandomResponse> GenerateRandomAsync(int numberOfBytes, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new GenerateRandomRequest();
+            request.NumberOfBytes = numberOfBytes;
+            return GenerateRandomAsync(request, cancellationToken);
         }
 
         /// <summary>
@@ -1385,6 +1670,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  GetKeyPolicy
+
 
         /// <summary>
         /// Retrieves a policy attached to the specified key.
@@ -1414,6 +1700,7 @@ namespace Amazon.KeyManagementService
             return GetKeyPolicy(request);
         }
 
+
         /// <summary>
         /// Retrieves a policy attached to the specified key.
         /// </summary>
@@ -1441,6 +1728,38 @@ namespace Amazon.KeyManagementService
             return Invoke<GetKeyPolicyRequest,GetKeyPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Retrieves a policy attached to the specified key.
+        /// </summary>
+        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
+        /// <param name="policyName">String that contains the name of the policy. Currently, this must be "default". Policy names can be discovered by calling <a>ListKeyPolicies</a>. </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetKeyPolicy service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public Task<GetKeyPolicyResponse> GetKeyPolicyAsync(string keyId, string policyName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new GetKeyPolicyRequest();
+            request.KeyId = keyId;
+            request.PolicyName = policyName;
+            return GetKeyPolicyAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetKeyPolicy operation.
         /// </summary>
@@ -1462,6 +1781,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  GetKeyRotationStatus
+
 
         /// <summary>
         /// Retrieves a Boolean value that indicates whether key rotation is enabled for the specified
@@ -1489,6 +1809,7 @@ namespace Amazon.KeyManagementService
             request.KeyId = keyId;
             return GetKeyRotationStatus(request);
         }
+
 
         /// <summary>
         /// Retrieves a Boolean value that indicates whether key rotation is enabled for the specified
@@ -1518,6 +1839,37 @@ namespace Amazon.KeyManagementService
             return Invoke<GetKeyRotationStatusRequest,GetKeyRotationStatusResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Retrieves a Boolean value that indicates whether key rotation is enabled for the specified
+        /// key.
+        /// </summary>
+        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetKeyRotationStatus service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public Task<GetKeyRotationStatusResponse> GetKeyRotationStatusAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new GetKeyRotationStatusRequest();
+            request.KeyId = keyId;
+            return GetKeyRotationStatusAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetKeyRotationStatus operation.
         /// </summary>
@@ -1539,6 +1891,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  ListAliases
+
 
         /// <summary>
         /// Lists all of the key aliases in the account.
@@ -1586,6 +1939,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  ListGrants
+
 
         /// <summary>
         /// List the grants for a specified key.
@@ -1637,6 +1991,7 @@ namespace Amazon.KeyManagementService
         
         #region  ListKeyPolicies
 
+
         /// <summary>
         /// Retrieves a list of policies attached to a key.
         /// </summary>
@@ -1686,6 +2041,7 @@ namespace Amazon.KeyManagementService
         
         #region  ListKeys
 
+
         /// <summary>
         /// Lists the customer master keys.
         /// </summary>
@@ -1728,6 +2084,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  PutKeyPolicy
+
 
         /// <summary>
         /// Attaches a policy to the specified key.
@@ -1772,6 +2129,7 @@ namespace Amazon.KeyManagementService
             return PutKeyPolicy(request);
         }
 
+
         /// <summary>
         /// Attaches a policy to the specified key.
         /// </summary>
@@ -1812,6 +2170,53 @@ namespace Amazon.KeyManagementService
             return Invoke<PutKeyPolicyRequest,PutKeyPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Attaches a policy to the specified key.
+        /// </summary>
+        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
+        /// <param name="policy">The policy, in JSON format, to be attached to the key.</param>
+        /// <param name="policyName">Name of the policy to be attached. Currently, the only supported name is "default".</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutKeyPolicy service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
+        /// The request was rejected because a quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.MalformedPolicyDocumentException">
+        /// The request was rejected because the specified policy is not syntactically or semantically
+        /// correct.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported.
+        /// </exception>
+        public Task<PutKeyPolicyResponse> PutKeyPolicyAsync(string keyId, string policy, string policyName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new PutKeyPolicyRequest();
+            request.KeyId = keyId;
+            request.Policy = policy;
+            request.PolicyName = policyName;
+            return PutKeyPolicyAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutKeyPolicy operation.
         /// </summary>
@@ -1833,6 +2238,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  ReEncrypt
+
 
         /// <summary>
         /// Encrypts data on the server side with a new customer master key without exposing the
@@ -1912,6 +2318,7 @@ namespace Amazon.KeyManagementService
         
         #region  RetireGrant
 
+
         /// <summary>
         /// Retires a grant. You can retire a grant when you're done using it to clean up. You
         /// should revoke a grant when you intend to actively deny operations that depend on it.
@@ -1945,6 +2352,7 @@ namespace Amazon.KeyManagementService
             request.GrantToken = grantToken;
             return RetireGrant(request);
         }
+
 
         /// <summary>
         /// Retires a grant. You can retire a grant when you're done using it to clean up. You
@@ -1981,6 +2389,44 @@ namespace Amazon.KeyManagementService
             return Invoke<RetireGrantRequest,RetireGrantResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Retires a grant. You can retire a grant when you're done using it to clean up. You
+        /// should revoke a grant when you intend to actively deny operations that depend on it.
+        /// The following are permitted to call this API: <ul> <li>The account that created the
+        /// grant</li> <li>The <code>RetiringPrincipal</code>, if present</li> <li>The <code>GranteePrincipal</code>,
+        /// if <code>RetireGrant</code> is a grantee operation</li> </ul> The grant to retire
+        /// must be identified by its grant token or by a combination of the key ARN and the grant
+        /// ID. A grant token is a unique variable-length base64-encoded string. A grant ID is
+        /// a 64 character unique identifier of a grant. Both are returned by the <code>CreateGrant</code>
+        /// function.
+        /// </summary>
+        /// <param name="grantToken">Token that identifies the grant to be retired.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RetireGrant service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
+        /// A grant token provided as part of the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public Task<RetireGrantResponse> RetireGrantAsync(string grantToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new RetireGrantRequest();
+            request.GrantToken = grantToken;
+            return RetireGrantAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the RetireGrant operation.
         /// </summary>
@@ -2002,6 +2448,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  RevokeGrant
+
 
         /// <summary>
         /// Revokes a grant. You can revoke a grant to actively deny operations that depend on
@@ -2032,6 +2479,7 @@ namespace Amazon.KeyManagementService
             return RevokeGrant(request);
         }
 
+
         /// <summary>
         /// Revokes a grant. You can revoke a grant to actively deny operations that depend on
         /// it.
@@ -2060,6 +2508,39 @@ namespace Amazon.KeyManagementService
             return Invoke<RevokeGrantRequest,RevokeGrantResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Revokes a grant. You can revoke a grant to actively deny operations that depend on
+        /// it.
+        /// </summary>
+        /// <param name="grantId">Identifier of the grant to be revoked.</param>
+        /// <param name="keyId">A unique identifier for the customer master key associated with the grant. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RevokeGrant service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public Task<RevokeGrantResponse> RevokeGrantAsync(string grantId, string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new RevokeGrantRequest();
+            request.GrantId = grantId;
+            request.KeyId = keyId;
+            return RevokeGrantAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeGrant operation.
         /// </summary>
@@ -2081,6 +2562,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  UpdateAlias
+
 
         /// <summary>
         /// Updates an alias to associate it with a different key.
@@ -2124,6 +2606,7 @@ namespace Amazon.KeyManagementService
             return UpdateAlias(request);
         }
 
+
         /// <summary>
         /// Updates an alias to associate it with a different key.
         /// 
@@ -2165,6 +2648,52 @@ namespace Amazon.KeyManagementService
             return Invoke<UpdateAliasRequest,UpdateAliasResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Updates an alias to associate it with a different key.
+        /// 
+        ///  
+        /// <para>
+        /// An alias name can contain only alphanumeric characters, forward slashes (/), underscores
+        /// (_), and dashes (-). An alias must start with the word "alias" followed by a forward
+        /// slash (alias/). An alias that begins with "aws" after the forward slash (alias/aws...)
+        /// is reserved by Amazon Web Services (AWS). 
+        /// </para>
+        ///  
+        /// <para>
+        /// An alias is not a property of a key. Therefore, an alias can be associated with and
+        /// disassociated from an existing key without changing the properties of the key. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that you cannot create or update an alias that represents a key in another account.
+        /// </para>
+        /// </summary>
+        /// <param name="aliasName">String that contains the name of the alias to be modifed. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</param>
+        /// <param name="targetKeyId">Unique identifier of the customer master key to be associated with the alias. This value can be a globally unique identifier or the fully specified ARN of a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAlias service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public Task<UpdateAliasResponse> UpdateAliasAsync(string aliasName, string targetKeyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new UpdateAliasRequest();
+            request.AliasName = aliasName;
+            request.TargetKeyId = targetKeyId;
+            return UpdateAliasAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAlias operation.
         /// </summary>
@@ -2186,6 +2715,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  UpdateKeyDescription
+
 
         /// <summary>
         /// Updates the description of a key.
@@ -2215,6 +2745,7 @@ namespace Amazon.KeyManagementService
             return UpdateKeyDescription(request);
         }
 
+
         /// <summary>
         /// Updates the description of a key.
         /// </summary>
@@ -2240,6 +2771,38 @@ namespace Amazon.KeyManagementService
             var unmarshaller = UpdateKeyDescriptionResponseUnmarshaller.Instance;
 
             return Invoke<UpdateKeyDescriptionRequest,UpdateKeyDescriptionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Updates the description of a key.
+        /// </summary>
+        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
+        /// <param name="description">New description for the key.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateKeyDescription service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. This error can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public Task<UpdateKeyDescriptionResponse> UpdateKeyDescriptionAsync(string keyId, string description, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new UpdateKeyDescriptionRequest();
+            request.KeyId = keyId;
+            request.Description = description;
+            return UpdateKeyDescriptionAsync(request, cancellationToken);
         }
 
         /// <summary>

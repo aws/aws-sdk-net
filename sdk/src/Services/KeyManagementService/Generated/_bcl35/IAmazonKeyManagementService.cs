@@ -115,6 +115,7 @@ namespace Amazon.KeyManagementService
         
         #region  CreateAlias
 
+
         /// <summary>
         /// Creates a display name for a customer master key. An alias can be used to identify
         /// a key and should be unique. The console enforces a one-to-one mapping between the
@@ -226,6 +227,7 @@ namespace Amazon.KeyManagementService
         
         #region  CreateGrant
 
+
         /// <summary>
         /// Adds a grant to a key to specify who can access the key and under what conditions.
         /// Grants are alternate permission mechanisms to key policies. For more information about
@@ -289,6 +291,7 @@ namespace Amazon.KeyManagementService
         
         #region  CreateKey
 
+
         /// <summary>
         /// Creates a customer master key. Customer master keys can be used to encrypt small amounts
         /// of data (less than 4K) directly, but they are most commonly used to encrypt or envelope
@@ -347,6 +350,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  Decrypt
+
 
         /// <summary>
         /// Decrypts ciphertext. Ciphertext is plaintext that has been previously encrypted by
@@ -422,6 +426,7 @@ namespace Amazon.KeyManagementService
         
         #region  DeleteAlias
 
+
         /// <summary>
         /// Deletes the specified alias. To associate an alias with a different key, call <a>UpdateAlias</a>.
         /// </summary>
@@ -485,6 +490,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  DescribeKey
+
 
         /// <summary>
         /// Provides detailed information about the specified customer master key.
@@ -556,6 +562,7 @@ namespace Amazon.KeyManagementService
         
         #region  DisableKey
 
+
         /// <summary>
         /// Marks a key as disabled, thereby preventing its use.
         /// </summary>
@@ -625,6 +632,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  DisableKeyRotation
+
 
         /// <summary>
         /// Disables rotation of the specified key.
@@ -701,6 +709,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  EnableKey
+
 
         /// <summary>
         /// Marks a key as enabled, thereby permitting its use. You can have up to 25 enabled
@@ -780,6 +789,7 @@ namespace Amazon.KeyManagementService
         
         #region  EnableKeyRotation
 
+
         /// <summary>
         /// Enables rotation of the specified customer master key.
         /// </summary>
@@ -855,6 +865,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  Encrypt
+
 
         /// <summary>
         /// Encrypts plaintext into ciphertext by using a customer master key. The <code>Encrypt</code>
@@ -937,6 +948,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  GenerateDataKey
+
 
         /// <summary>
         /// Generates a data key that you can use in your application to locally encrypt data.
@@ -1033,6 +1045,7 @@ namespace Amazon.KeyManagementService
         
         #region  GenerateDataKeyWithoutPlaintext
 
+
         /// <summary>
         /// Returns a data key encrypted by a customer master key without the plaintext copy of
         /// that key. Otherwise, this API functions exactly like <a>GenerateDataKey</a>. You can
@@ -1096,6 +1109,7 @@ namespace Amazon.KeyManagementService
         
         #region  GenerateRandom
 
+
         /// <summary>
         /// Generates an unpredictable byte string.
         /// </summary>
@@ -1153,6 +1167,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  GetKeyPolicy
+
 
         /// <summary>
         /// Retrieves a policy attached to the specified key.
@@ -1224,6 +1239,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  GetKeyRotationStatus
+
 
         /// <summary>
         /// Retrieves a Boolean value that indicates whether key rotation is enabled for the specified
@@ -1297,6 +1313,7 @@ namespace Amazon.KeyManagementService
         
         #region  ListAliases
 
+
         /// <summary>
         /// Lists all of the key aliases in the account.
         /// </summary>
@@ -1343,6 +1360,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  ListGrants
+
 
         /// <summary>
         /// List the grants for a specified key.
@@ -1394,6 +1412,7 @@ namespace Amazon.KeyManagementService
         
         #region  ListKeyPolicies
 
+
         /// <summary>
         /// Retrieves a list of policies attached to a key.
         /// </summary>
@@ -1443,6 +1462,7 @@ namespace Amazon.KeyManagementService
         
         #region  ListKeys
 
+
         /// <summary>
         /// Lists the customer master keys.
         /// </summary>
@@ -1485,6 +1505,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  PutKeyPolicy
+
 
         /// <summary>
         /// Attaches a policy to the specified key.
@@ -1584,6 +1605,7 @@ namespace Amazon.KeyManagementService
         
         #region  ReEncrypt
 
+
         /// <summary>
         /// Encrypts data on the server side with a new customer master key without exposing the
         /// plaintext of the data on the client side. The data is first decrypted and then encrypted.
@@ -1661,6 +1683,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  RetireGrant
+
 
         /// <summary>
         /// Retires a grant. You can retire a grant when you're done using it to clean up. You
@@ -1748,6 +1771,7 @@ namespace Amazon.KeyManagementService
         
         #region  RevokeGrant
 
+
         /// <summary>
         /// Revokes a grant. You can revoke a grant to actively deny operations that depend on
         /// it.
@@ -1820,6 +1844,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  UpdateAlias
+
 
         /// <summary>
         /// Updates an alias to associate it with a different key.
@@ -1919,6 +1944,7 @@ namespace Amazon.KeyManagementService
         #endregion
         
         #region  UpdateKeyDescription
+
 
         /// <summary>
         /// Updates the description of a key.

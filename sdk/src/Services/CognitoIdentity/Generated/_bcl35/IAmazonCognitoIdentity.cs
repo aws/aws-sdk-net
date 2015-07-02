@@ -77,6 +77,7 @@ namespace Amazon.CognitoIdentity
         
         #region  CreateIdentityPool
 
+
         /// <summary>
         /// Creates a new identity pool. The identity pool is a store of user identity information
         /// that is specific to your AWS account. The limit on identity pools is 60 per account.
@@ -133,6 +134,7 @@ namespace Amazon.CognitoIdentity
         
         #region  DeleteIdentities
 
+
         /// <summary>
         /// Deletes identities from an identity pool. You can specify a list of 1-60 identities
         /// that you want to delete.
@@ -183,6 +185,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  DeleteIdentityPool
+
 
         /// <summary>
         /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
@@ -270,6 +273,7 @@ namespace Amazon.CognitoIdentity
         
         #region  DescribeIdentity
 
+
         /// <summary>
         /// Returns metadata related to the given identity, including when the identity was created
         /// and any associated linked logins.
@@ -356,6 +360,7 @@ namespace Amazon.CognitoIdentity
         
         #region  DescribeIdentityPool
 
+
         /// <summary>
         /// Gets details about a particular identity pool, including the pool name, ID description,
         /// creation date, and current number of users.
@@ -441,6 +446,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  GetCredentialsForIdentity
+
 
         /// <summary>
         /// Returns credentials for the the provided identity ID. Any provided logins will be
@@ -594,6 +600,7 @@ namespace Amazon.CognitoIdentity
         
         #region  GetId
 
+
         /// <summary>
         /// Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit
         /// linked account.
@@ -663,6 +670,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  GetIdentityPoolRoles
+
 
         /// <summary>
         /// Gets the roles for an identity pool.
@@ -753,6 +761,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  GetOpenIdToken
+
 
         /// <summary>
         /// Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned
@@ -862,6 +871,7 @@ namespace Amazon.CognitoIdentity
         
         #region  GetOpenIdTokenForDeveloperIdentity
 
+
         /// <summary>
         /// Registers (or retrieves) a Cognito <code>IdentityId</code> and an OpenID Connect token
         /// for a user authenticated by your backend authentication process. Supplying multiple
@@ -938,6 +948,7 @@ namespace Amazon.CognitoIdentity
         
         #region  ListIdentities
 
+
         /// <summary>
         /// Lists the identities in a pool.
         /// 
@@ -994,6 +1005,7 @@ namespace Amazon.CognitoIdentity
         
         #region  ListIdentityPools
 
+
         /// <summary>
         /// Lists all of the Cognito identity pools registered for your account.
         /// 
@@ -1046,6 +1058,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  LookupDeveloperIdentity
+
 
         /// <summary>
         /// Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code>
@@ -1114,6 +1127,7 @@ namespace Amazon.CognitoIdentity
         
         #region  MergeDeveloperIdentities
 
+
         /// <summary>
         /// Merges two users having different <code>IdentityId</code>s, existing in the same identity
         /// pool, and identified by the same developer provider. You can use this action to request
@@ -1178,6 +1192,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  SetIdentityPoolRoles
+
 
         /// <summary>
         /// Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code>
@@ -1272,6 +1287,7 @@ namespace Amazon.CognitoIdentity
         
         #region  UnlinkDeveloperIdentity
 
+
         /// <summary>
         /// Unlinks a <code>DeveloperUserIdentifier</code> from an existing identity. Unlinked
         /// developer users will be considered new identities next time they are seen. If, for
@@ -1333,6 +1349,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  UnlinkIdentity
+
 
         /// <summary>
         /// Unlinks a federated identity from an existing account. Unlinked logins will be considered
@@ -1397,6 +1414,7 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  UpdateIdentityPool
+
 
         /// <summary>
         /// Updates a user pool.

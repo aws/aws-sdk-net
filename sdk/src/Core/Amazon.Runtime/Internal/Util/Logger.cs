@@ -77,6 +77,11 @@ namespace Amazon.Runtime.Internal.Util
             InternalSystemDiagnosticsLogger sdLogger = new InternalSystemDiagnosticsLogger(type);
             loggers.Add(sdLogger);
 #endif
+#if PCL
+            InternalConsoleLogger dbLogger = new InternalConsoleLogger(type);
+            loggers.Add(dbLogger);
+#endif
+
             ConfigureLoggers();
             AWSConfigs.PropertyChanged += ConfigsChanged;
         }
@@ -98,6 +103,11 @@ namespace Amazon.Runtime.Internal.Util
                 if (il is InternalSystemDiagnosticsLogger)
                     il.IsEnabled = (logging & LoggingOptions.SystemDiagnostics) == LoggingOptions.SystemDiagnostics;
 #endif
+#if PCL
+                if (il is InternalConsoleLogger)
+                    il.IsEnabled = (logging & LoggingOptions.SystemDiagnostics) == LoggingOptions.SystemDiagnostics;
+#endif
+
             }
         }
 

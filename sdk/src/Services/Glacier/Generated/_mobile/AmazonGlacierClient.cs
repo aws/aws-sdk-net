@@ -231,6 +231,7 @@ namespace Amazon.Glacier
             return Invoke<AbortMultipartUploadRequest,AbortMultipartUploadResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AbortMultipartUpload operation.
         /// </summary>
@@ -260,6 +261,7 @@ namespace Amazon.Glacier
 
             return Invoke<CompleteMultipartUploadRequest,CompleteMultipartUploadResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CompleteMultipartUpload operation.
@@ -291,6 +293,7 @@ namespace Amazon.Glacier
             return Invoke<CreateVaultRequest,CreateVaultResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVault operation.
         /// </summary>
@@ -320,6 +323,7 @@ namespace Amazon.Glacier
 
             return Invoke<DeleteArchiveRequest,DeleteArchiveResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteArchive operation.
@@ -351,6 +355,7 @@ namespace Amazon.Glacier
             return Invoke<DeleteVaultRequest,DeleteVaultResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVault operation.
         /// </summary>
@@ -380,6 +385,7 @@ namespace Amazon.Glacier
 
             return Invoke<DeleteVaultAccessPolicyRequest,DeleteVaultAccessPolicyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVaultAccessPolicy operation.
@@ -411,6 +417,7 @@ namespace Amazon.Glacier
             return Invoke<DeleteVaultNotificationsRequest,DeleteVaultNotificationsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVaultNotifications operation.
         /// </summary>
@@ -440,6 +447,7 @@ namespace Amazon.Glacier
 
             return Invoke<DescribeJobRequest,DescribeJobResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeJob operation.
@@ -471,6 +479,7 @@ namespace Amazon.Glacier
             return Invoke<DescribeVaultRequest,DescribeVaultResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVault operation.
         /// </summary>
@@ -500,6 +509,7 @@ namespace Amazon.Glacier
 
             return Invoke<GetDataRetrievalPolicyRequest,GetDataRetrievalPolicyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDataRetrievalPolicy operation.
@@ -531,6 +541,7 @@ namespace Amazon.Glacier
             return Invoke<GetJobOutputRequest,GetJobOutputResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetJobOutput operation.
         /// </summary>
@@ -560,6 +571,7 @@ namespace Amazon.Glacier
 
             return Invoke<GetVaultAccessPolicyRequest,GetVaultAccessPolicyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetVaultAccessPolicy operation.
@@ -591,6 +603,7 @@ namespace Amazon.Glacier
             return Invoke<GetVaultNotificationsRequest,GetVaultNotificationsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetVaultNotifications operation.
         /// </summary>
@@ -620,6 +633,7 @@ namespace Amazon.Glacier
 
             return Invoke<InitiateJobRequest,InitiateJobResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the InitiateJob operation.
@@ -651,6 +665,7 @@ namespace Amazon.Glacier
             return Invoke<InitiateMultipartUploadRequest,InitiateMultipartUploadResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the InitiateMultipartUpload operation.
         /// </summary>
@@ -680,6 +695,7 @@ namespace Amazon.Glacier
 
             return Invoke<ListJobsRequest,ListJobsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobs operation.
@@ -711,6 +727,7 @@ namespace Amazon.Glacier
             return Invoke<ListMultipartUploadsRequest,ListMultipartUploadsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListMultipartUploads operation.
         /// </summary>
@@ -740,6 +757,7 @@ namespace Amazon.Glacier
 
             return Invoke<ListPartsRequest,ListPartsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListParts operation.
@@ -775,6 +793,61 @@ namespace Amazon.Glacier
             return Invoke<ListVaultsRequest,ListVaultsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// This operation lists all vaults owned by the calling user's account. The list returned
+        /// in the response is ASCII-sorted by vault name. 
+        /// 
+        ///  
+        /// <para>
+        /// By default, this operation returns up to 1,000 items. If there are more vaults to
+        /// list, the response <code class="code">marker</code> field contains the vault Amazon
+        /// Resource Name (ARN) at which to continue the list with a new List Vaults request;
+        /// otherwise, the <code class="code">marker</code> field is <code class="code">null</code>.
+        /// To return a list of vaults that begins at a specific vault, set the <code class="code">marker</code>
+        /// request parameter to the vault ARN you obtained from a previous List Vaults request.
+        /// You can also limit the number of vaults returned in the response by specifying the
+        /// <code class="code">limit</code> parameter in the request. 
+        /// </para>
+        ///  
+        /// <para>
+        /// An AWS account has full permission to perform all operations (actions). However, AWS
+        /// Identity and Access Management (IAM) users don't have any permissions by default.
+        /// You must grant them explicit permission to perform specific actions. For more information,
+        /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
+        /// Control Using AWS Identity and Access Management (IAM)</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
+        /// Vault Metadata in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html">List
+        /// Vaults </a> in the <i>Amazon Glacier Developer Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVaults service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
+        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        public Task<ListVaultsResponse> ListVaultsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListVaultsAsync(new ListVaultsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListVaults operation.
         /// </summary>
@@ -804,6 +877,7 @@ namespace Amazon.Glacier
 
             return Invoke<SetDataRetrievalPolicyRequest,SetDataRetrievalPolicyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetDataRetrievalPolicy operation.
@@ -835,6 +909,7 @@ namespace Amazon.Glacier
             return Invoke<SetVaultAccessPolicyRequest,SetVaultAccessPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SetVaultAccessPolicy operation.
         /// </summary>
@@ -864,6 +939,7 @@ namespace Amazon.Glacier
 
             return Invoke<SetVaultNotificationsRequest,SetVaultNotificationsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetVaultNotifications operation.
@@ -895,6 +971,7 @@ namespace Amazon.Glacier
             return Invoke<UploadArchiveRequest,UploadArchiveResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UploadArchive operation.
         /// </summary>
@@ -924,6 +1001,7 @@ namespace Amazon.Glacier
 
             return Invoke<UploadMultipartPartRequest,UploadMultipartPartResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadMultipartPart operation.

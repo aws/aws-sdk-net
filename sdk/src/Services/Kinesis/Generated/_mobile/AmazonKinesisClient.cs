@@ -184,6 +184,7 @@ namespace Amazon.Kinesis
             return Invoke<AddTagsToStreamRequest,AddTagsToStreamResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddTagsToStream operation.
         /// </summary>
@@ -213,6 +214,7 @@ namespace Amazon.Kinesis
 
             return Invoke<CreateStreamRequest,CreateStreamResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStream operation.
@@ -244,6 +246,7 @@ namespace Amazon.Kinesis
             return Invoke<DeleteStreamRequest,DeleteStreamResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStream operation.
         /// </summary>
@@ -273,6 +276,7 @@ namespace Amazon.Kinesis
 
             return Invoke<DescribeStreamRequest,DescribeStreamResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStream operation.
@@ -304,6 +308,7 @@ namespace Amazon.Kinesis
             return Invoke<GetRecordsRequest,GetRecordsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetRecords operation.
         /// </summary>
@@ -333,6 +338,7 @@ namespace Amazon.Kinesis
 
             return Invoke<GetShardIteratorRequest,GetShardIteratorResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetShardIterator operation.
@@ -368,6 +374,47 @@ namespace Amazon.Kinesis
             return Invoke<ListStreamsRequest,ListStreamsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists your streams.
+        /// 
+        ///  
+        /// <para>
+        ///  The number of streams may be too large to return from a single call to <code>ListStreams</code>.
+        /// You can limit the number of returned streams using the <code>Limit</code> parameter.
+        /// If you do not specify a value for the <code>Limit</code> parameter, Amazon Kinesis
+        /// uses the default limit, which is currently 10.
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can detect if there are more streams available to list by using the <code>HasMoreStreams</code>
+        /// flag from the returned output. If there are more streams available, you can request
+        /// more streams by using the name of the last stream returned by the <code>ListStreams</code>
+        /// request in the <code>ExclusiveStartStreamName</code> parameter in a subsequent request
+        /// to <code>ListStreams</code>. The group of stream names returned by the subsequent
+        /// request is then added to the list. You can continue this process until all the stream
+        /// names have been collected in the list. 
+        /// </para>
+        ///  
+        /// <para>
+        /// <a>ListStreams</a> has a limit of 5 transactions per second per account.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStreams service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed (5).
+        /// </exception>
+        public Task<ListStreamsResponse> ListStreamsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListStreamsAsync(new ListStreamsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListStreams operation.
         /// </summary>
@@ -397,6 +444,7 @@ namespace Amazon.Kinesis
 
             return Invoke<ListTagsForStreamRequest,ListTagsForStreamResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListTagsForStream operation.
@@ -428,6 +476,7 @@ namespace Amazon.Kinesis
             return Invoke<MergeShardsRequest,MergeShardsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the MergeShards operation.
         /// </summary>
@@ -457,6 +506,7 @@ namespace Amazon.Kinesis
 
             return Invoke<PutRecordRequest,PutRecordResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutRecord operation.
@@ -488,6 +538,7 @@ namespace Amazon.Kinesis
             return Invoke<PutRecordsRequest,PutRecordsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutRecords operation.
         /// </summary>
@@ -518,6 +569,7 @@ namespace Amazon.Kinesis
             return Invoke<RemoveTagsFromStreamRequest,RemoveTagsFromStreamResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTagsFromStream operation.
         /// </summary>
@@ -547,6 +599,7 @@ namespace Amazon.Kinesis
 
             return Invoke<SplitShardRequest,SplitShardResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SplitShard operation.

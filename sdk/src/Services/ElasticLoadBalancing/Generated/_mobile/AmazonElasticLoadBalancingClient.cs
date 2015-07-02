@@ -203,6 +203,7 @@ namespace Amazon.ElasticLoadBalancing
             return Invoke<AddTagsRequest,AddTagsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddTags operation.
         /// </summary>
@@ -232,6 +233,7 @@ namespace Amazon.ElasticLoadBalancing
 
             return Invoke<ApplySecurityGroupsToLoadBalancerRequest,ApplySecurityGroupsToLoadBalancerResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ApplySecurityGroupsToLoadBalancer operation.
@@ -263,6 +265,7 @@ namespace Amazon.ElasticLoadBalancing
             return Invoke<AttachLoadBalancerToSubnetsRequest,AttachLoadBalancerToSubnetsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AttachLoadBalancerToSubnets operation.
         /// </summary>
@@ -292,6 +295,7 @@ namespace Amazon.ElasticLoadBalancing
 
             return Invoke<ConfigureHealthCheckRequest,ConfigureHealthCheckResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ConfigureHealthCheck operation.
@@ -323,6 +327,7 @@ namespace Amazon.ElasticLoadBalancing
             return Invoke<CreateAppCookieStickinessPolicyRequest,CreateAppCookieStickinessPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAppCookieStickinessPolicy operation.
         /// </summary>
@@ -352,6 +357,7 @@ namespace Amazon.ElasticLoadBalancing
 
             return Invoke<CreateLBCookieStickinessPolicyRequest,CreateLBCookieStickinessPolicyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLBCookieStickinessPolicy operation.
@@ -383,6 +389,7 @@ namespace Amazon.ElasticLoadBalancing
             return Invoke<CreateLoadBalancerRequest,CreateLoadBalancerResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoadBalancer operation.
         /// </summary>
@@ -412,6 +419,7 @@ namespace Amazon.ElasticLoadBalancing
 
             return Invoke<CreateLoadBalancerListenersRequest,CreateLoadBalancerListenersResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoadBalancerListeners operation.
@@ -443,6 +451,7 @@ namespace Amazon.ElasticLoadBalancing
             return Invoke<CreateLoadBalancerPolicyRequest,CreateLoadBalancerPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoadBalancerPolicy operation.
         /// </summary>
@@ -472,6 +481,7 @@ namespace Amazon.ElasticLoadBalancing
 
             return Invoke<DeleteLoadBalancerRequest,DeleteLoadBalancerResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoadBalancer operation.
@@ -503,6 +513,7 @@ namespace Amazon.ElasticLoadBalancing
             return Invoke<DeleteLoadBalancerListenersRequest,DeleteLoadBalancerListenersResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoadBalancerListeners operation.
         /// </summary>
@@ -532,6 +543,7 @@ namespace Amazon.ElasticLoadBalancing
 
             return Invoke<DeleteLoadBalancerPolicyRequest,DeleteLoadBalancerPolicyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoadBalancerPolicy operation.
@@ -563,6 +575,7 @@ namespace Amazon.ElasticLoadBalancing
             return Invoke<DeregisterInstancesFromLoadBalancerRequest,DeregisterInstancesFromLoadBalancerResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterInstancesFromLoadBalancer operation.
         /// </summary>
@@ -593,6 +606,7 @@ namespace Amazon.ElasticLoadBalancing
             return Invoke<DescribeInstanceHealthRequest,DescribeInstanceHealthResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstanceHealth operation.
         /// </summary>
@@ -622,6 +636,7 @@ namespace Amazon.ElasticLoadBalancing
 
             return Invoke<DescribeLoadBalancerAttributesRequest,DescribeLoadBalancerAttributesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancerAttributes operation.
@@ -657,6 +672,37 @@ namespace Amazon.ElasticLoadBalancing
             return Invoke<DescribeLoadBalancerPoliciesRequest,DescribeLoadBalancerPoliciesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Describes the specified policies.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify a load balancer name, the action returns the descriptions of all policies
+        /// created for the load balancer. If you specify a policy name associated with your load
+        /// balancer, the action returns the description of that policy. If you don't specify
+        /// a load balancer name, the action returns descriptions of the specified sample policies,
+        /// or descriptions of all sample policies. The names of the sample policies have the
+        /// <code>ELBSample-</code> prefix.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLoadBalancerPolicies service method, as returned by ElasticLoadBalancing.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// The specified load balancer does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
+        /// One or more of the specified policies do not exist.
+        /// </exception>
+        public Task<DescribeLoadBalancerPoliciesResponse> DescribeLoadBalancerPoliciesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeLoadBalancerPoliciesAsync(new DescribeLoadBalancerPoliciesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancerPolicies operation.
         /// </summary>
@@ -690,6 +736,30 @@ namespace Amazon.ElasticLoadBalancing
 
             return Invoke<DescribeLoadBalancerPolicyTypesRequest,DescribeLoadBalancerPolicyTypesResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Describes the specified load balancer policy types.
+        /// 
+        ///  
+        /// <para>
+        /// You can use these policy types with <a>CreateLoadBalancerPolicy</a> to create policy
+        /// configurations for a load balancer.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLoadBalancerPolicyTypes service method, as returned by ElasticLoadBalancing.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyTypeNotFoundException">
+        /// One or more of the specified policy types do not exist.
+        /// </exception>
+        public Task<DescribeLoadBalancerPolicyTypesResponse> DescribeLoadBalancerPolicyTypesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeLoadBalancerPolicyTypesAsync(new DescribeLoadBalancerPolicyTypesRequest(), cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancerPolicyTypes operation.
@@ -725,6 +795,25 @@ namespace Amazon.ElasticLoadBalancing
             return Invoke<DescribeLoadBalancersRequest,DescribeLoadBalancersResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Describes the specified the load balancers. If no load balancers are specified, the
+        /// call describes all of your load balancers.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLoadBalancers service method, as returned by ElasticLoadBalancing.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// The specified load balancer does not exist.
+        /// </exception>
+        public Task<DescribeLoadBalancersResponse> DescribeLoadBalancersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeLoadBalancersAsync(new DescribeLoadBalancersRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancers operation.
         /// </summary>
@@ -754,6 +843,7 @@ namespace Amazon.ElasticLoadBalancing
 
             return Invoke<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTags operation.
@@ -785,6 +875,7 @@ namespace Amazon.ElasticLoadBalancing
             return Invoke<DetachLoadBalancerFromSubnetsRequest,DetachLoadBalancerFromSubnetsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DetachLoadBalancerFromSubnets operation.
         /// </summary>
@@ -814,6 +905,7 @@ namespace Amazon.ElasticLoadBalancing
 
             return Invoke<DisableAvailabilityZonesForLoadBalancerRequest,DisableAvailabilityZonesForLoadBalancerResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableAvailabilityZonesForLoadBalancer operation.
@@ -845,6 +937,7 @@ namespace Amazon.ElasticLoadBalancing
             return Invoke<EnableAvailabilityZonesForLoadBalancerRequest,EnableAvailabilityZonesForLoadBalancerResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the EnableAvailabilityZonesForLoadBalancer operation.
         /// </summary>
@@ -874,6 +967,7 @@ namespace Amazon.ElasticLoadBalancing
 
             return Invoke<ModifyLoadBalancerAttributesRequest,ModifyLoadBalancerAttributesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyLoadBalancerAttributes operation.
@@ -905,6 +999,7 @@ namespace Amazon.ElasticLoadBalancing
             return Invoke<RegisterInstancesWithLoadBalancerRequest,RegisterInstancesWithLoadBalancerResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterInstancesWithLoadBalancer operation.
         /// </summary>
@@ -934,6 +1029,7 @@ namespace Amazon.ElasticLoadBalancing
 
             return Invoke<RemoveTagsRequest,RemoveTagsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTags operation.
@@ -965,6 +1061,7 @@ namespace Amazon.ElasticLoadBalancing
             return Invoke<SetLoadBalancerListenerSSLCertificateRequest,SetLoadBalancerListenerSSLCertificateResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBalancerListenerSSLCertificate operation.
         /// </summary>
@@ -995,6 +1092,7 @@ namespace Amazon.ElasticLoadBalancing
             return Invoke<SetLoadBalancerPoliciesForBackendServerRequest,SetLoadBalancerPoliciesForBackendServerResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBalancerPoliciesForBackendServer operation.
         /// </summary>
@@ -1024,6 +1122,7 @@ namespace Amazon.ElasticLoadBalancing
 
             return Invoke<SetLoadBalancerPoliciesOfListenerRequest,SetLoadBalancerPoliciesOfListenerResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBalancerPoliciesOfListener operation.

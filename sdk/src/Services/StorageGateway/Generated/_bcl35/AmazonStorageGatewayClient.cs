@@ -2855,6 +2855,7 @@ namespace Amazon.StorageGateway
             return ResetCache(request);
         }
 
+
         /// <summary>
         /// This operation resets all cache disks that have encountered a error and makes the
         /// disks available for reconfiguration as cache storage. If your cache disk encounters

@@ -36,6 +36,7 @@ namespace Amazon.CloudHSM
         
         #region  CreateHapg
 
+
         /// <summary>
         /// Creates a high-availability partition group. A high-availability partition group is
         /// a group of partitions that spans multiple physical HSMs.
@@ -100,6 +101,7 @@ namespace Amazon.CloudHSM
         
         #region  CreateHsm
 
+
         /// <summary>
         /// Creates an uninitialized HSM instance. Running this command provisions an HSM appliance
         /// and will result in charges to your AWS account for the HSM.
@@ -146,6 +148,7 @@ namespace Amazon.CloudHSM
         
         #region  CreateLunaClient
 
+
         /// <summary>
         /// Creates an HSM client.
         /// </summary>
@@ -190,6 +193,7 @@ namespace Amazon.CloudHSM
         #endregion
         
         #region  DeleteHapg
+
 
         /// <summary>
         /// Deletes a high-availability partition group.
@@ -252,6 +256,7 @@ namespace Amazon.CloudHSM
         #endregion
         
         #region  DeleteHsm
+
 
         /// <summary>
         /// Deletes an HSM. Once complete, this operation cannot be undone and your key material
@@ -317,6 +322,7 @@ namespace Amazon.CloudHSM
         
         #region  DeleteLunaClient
 
+
         /// <summary>
         /// Deletes a client.
         /// </summary>
@@ -379,6 +385,7 @@ namespace Amazon.CloudHSM
         
         #region  DescribeHapg
 
+
         /// <summary>
         /// Retrieves information about a high-availability partition group.
         /// </summary>
@@ -440,6 +447,7 @@ namespace Amazon.CloudHSM
         #endregion
         
         #region  DescribeHsm
+
 
         /// <summary>
         /// Retrieves information about an HSM. You can identify the HSM by its ARN or its serial
@@ -505,6 +513,7 @@ namespace Amazon.CloudHSM
         
         #region  DescribeLunaClient
 
+
         /// <summary>
         /// Retrieves information about an HSM client.
         /// </summary>
@@ -549,6 +558,7 @@ namespace Amazon.CloudHSM
         #endregion
         
         #region  GetConfig
+
 
         /// <summary>
         /// Gets the configuration files necessary to connect to all high availability partition
@@ -595,6 +605,7 @@ namespace Amazon.CloudHSM
         #endregion
         
         #region  ListAvailableZones
+
 
         /// <summary>
         /// Lists the Availability Zones that have available AWS CloudHSM capacity.
@@ -656,6 +667,7 @@ namespace Amazon.CloudHSM
         #endregion
         
         #region  ListHapgs
+
 
         /// <summary>
         /// Lists the high-availability partition groups for the account.
@@ -734,6 +746,7 @@ namespace Amazon.CloudHSM
         
         #region  ListHsms
 
+
         /// <summary>
         /// Retrieves the identifiers of all of the HSMs provisioned for the current customer.
         /// 
@@ -810,6 +823,7 @@ namespace Amazon.CloudHSM
         #endregion
         
         #region  ListLunaClients
+
 
         /// <summary>
         /// Lists all of the clients.
@@ -888,6 +902,7 @@ namespace Amazon.CloudHSM
         
         #region  ModifyHapg
 
+
         /// <summary>
         /// Modifies an existing high-availability partition group.
         /// </summary>
@@ -933,6 +948,7 @@ namespace Amazon.CloudHSM
         
         #region  ModifyHsm
 
+
         /// <summary>
         /// Modifies an HSM.
         /// </summary>
@@ -977,6 +993,7 @@ namespace Amazon.CloudHSM
         #endregion
         
         #region  ModifyLunaClient
+
 
         /// <summary>
         /// Modifies the certificate used by the client.

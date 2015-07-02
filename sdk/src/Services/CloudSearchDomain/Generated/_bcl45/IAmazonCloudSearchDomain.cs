@@ -53,6 +53,7 @@ namespace Amazon.CloudSearchDomain
         
         #region  Search
 
+
         /// <summary>
         /// Retrieves a list of documents that match the specified search criteria. How you specify
         /// the search criteria depends on which query parser you use. Amazon CloudSearch supports
@@ -87,6 +88,7 @@ namespace Amazon.CloudSearchDomain
         /// </exception>
         SearchResponse Search(SearchRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the Search operation.
         /// </summary>
@@ -101,6 +103,7 @@ namespace Amazon.CloudSearchDomain
         #endregion
         
         #region  Suggest
+
 
         /// <summary>
         /// Retrieves autocomplete suggestions for a partial query string. You can use suggestions
@@ -133,6 +136,7 @@ namespace Amazon.CloudSearchDomain
         /// </exception>
         SuggestResponse Suggest(SuggestRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the Suggest operation.
         /// </summary>
@@ -147,6 +151,7 @@ namespace Amazon.CloudSearchDomain
         #endregion
         
         #region  UploadDocuments
+
 
         /// <summary>
         /// Posts a batch of documents to a search domain for indexing. A document batch is a
@@ -182,6 +187,7 @@ namespace Amazon.CloudSearchDomain
         /// Information about any problems encountered while processing an upload request.
         /// </exception>
         UploadDocumentsResponse UploadDocuments(UploadDocumentsRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadDocuments operation.

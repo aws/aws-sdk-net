@@ -213,6 +213,7 @@ namespace Amazon.CognitoSync
             return Invoke<BulkPublishRequest,BulkPublishResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the BulkPublish operation.
         /// </summary>
@@ -242,6 +243,7 @@ namespace Amazon.CognitoSync
 
             return Invoke<DeleteDatasetRequest,DeleteDatasetResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDataset operation.
@@ -273,6 +275,7 @@ namespace Amazon.CognitoSync
             return Invoke<DescribeDatasetRequest,DescribeDatasetResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDataset operation.
         /// </summary>
@@ -302,6 +305,45 @@ namespace Amazon.CognitoSync
 
             return Invoke<DescribeIdentityPoolUsageRequest,DescribeIdentityPoolUsageResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Gets usage details (for example, data storage) about a particular identity pool.
+        /// 
+        ///  
+        /// <para>
+        /// DescribeIdentityPoolUsage can only be called with developer credentials. You cannot
+        /// make this API call with the temporary user credentials provided by Cognito Identity.
+        /// </para>
+        /// </summary>
+        /// <param name="identityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIdentityPoolUsage service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        public Task<DescribeIdentityPoolUsageResponse> DescribeIdentityPoolUsageAsync(string identityPoolId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DescribeIdentityPoolUsageRequest();
+            request.IdentityPoolId = identityPoolId;
+            return DescribeIdentityPoolUsageAsync(request, cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeIdentityPoolUsage operation.
@@ -333,6 +375,7 @@ namespace Amazon.CognitoSync
             return Invoke<DescribeIdentityUsageRequest,DescribeIdentityUsageResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeIdentityUsage operation.
         /// </summary>
@@ -362,6 +405,7 @@ namespace Amazon.CognitoSync
 
             return Invoke<GetBulkPublishDetailsRequest,GetBulkPublishDetailsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBulkPublishDetails operation.
@@ -393,6 +437,7 @@ namespace Amazon.CognitoSync
             return Invoke<GetCognitoEventsRequest,GetCognitoEventsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetCognitoEvents operation.
         /// </summary>
@@ -422,6 +467,39 @@ namespace Amazon.CognitoSync
 
             return Invoke<GetIdentityPoolConfigurationRequest,GetIdentityPoolConfigurationResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Gets the configuration settings of an identity pool.
+        /// </summary>
+        /// <param name="identityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIdentityPoolConfiguration service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        public Task<GetIdentityPoolConfigurationResponse> GetIdentityPoolConfigurationAsync(string identityPoolId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new GetIdentityPoolConfigurationRequest();
+            request.IdentityPoolId = identityPoolId;
+            return GetIdentityPoolConfigurationAsync(request, cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityPoolConfiguration operation.
@@ -453,6 +531,7 @@ namespace Amazon.CognitoSync
             return Invoke<ListDatasetsRequest,ListDatasetsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListDatasets operation.
         /// </summary>
@@ -482,6 +561,7 @@ namespace Amazon.CognitoSync
 
             return Invoke<ListIdentityPoolUsageRequest,ListIdentityPoolUsageResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListIdentityPoolUsage operation.
@@ -513,6 +593,7 @@ namespace Amazon.CognitoSync
             return Invoke<ListRecordsRequest,ListRecordsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListRecords operation.
         /// </summary>
@@ -542,6 +623,7 @@ namespace Amazon.CognitoSync
 
             return Invoke<RegisterDeviceRequest,RegisterDeviceResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterDevice operation.
@@ -573,6 +655,7 @@ namespace Amazon.CognitoSync
             return Invoke<SetCognitoEventsRequest,SetCognitoEventsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SetCognitoEvents operation.
         /// </summary>
@@ -602,6 +685,7 @@ namespace Amazon.CognitoSync
 
             return Invoke<SetIdentityPoolConfigurationRequest,SetIdentityPoolConfigurationResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityPoolConfiguration operation.
@@ -633,6 +717,7 @@ namespace Amazon.CognitoSync
             return Invoke<SubscribeToDatasetRequest,SubscribeToDatasetResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SubscribeToDataset operation.
         /// </summary>
@@ -663,6 +748,7 @@ namespace Amazon.CognitoSync
             return Invoke<UnsubscribeFromDatasetRequest,UnsubscribeFromDatasetResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UnsubscribeFromDataset operation.
         /// </summary>
@@ -692,6 +778,7 @@ namespace Amazon.CognitoSync
 
             return Invoke<UpdateRecordsRequest,UpdateRecordsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateRecords operation.

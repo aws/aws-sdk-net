@@ -262,6 +262,7 @@ namespace Amazon.S3
             return AbortMultipartUpload(request);
         }
 
+
         /// <summary>
         /// Aborts a multipart upload.
         /// 
@@ -387,6 +388,7 @@ namespace Amazon.S3
             return CopyObject(request);
         }
 
+
         /// <summary>
         /// Creates a copy of an object that is already stored in Amazon S3.
         /// </summary>
@@ -407,6 +409,7 @@ namespace Amazon.S3
             request.DestinationKey = destinationKey;
             return CopyObject(request);
         }
+
 
         /// <summary>
         /// Creates a copy of an object that is already stored in Amazon S3.
@@ -479,6 +482,7 @@ namespace Amazon.S3
             return CopyPart(request);
         }
 
+
         /// <summary>
         /// Uploads a part by copying data from an existing object as data source.
         /// </summary>
@@ -501,6 +505,7 @@ namespace Amazon.S3
             request.UploadId = uploadId;
             return CopyPart(request);
         }
+
 
         /// <summary>
         /// Uploads a part by copying data from an existing object as data source.
@@ -566,6 +571,7 @@ namespace Amazon.S3
             return DeleteBucket(request);
         }
 
+
         /// <summary>
         /// Deletes the bucket. All objects (including all object versions and Delete Markers)
         /// in the bucket must be deleted before the bucket itself can be deleted.
@@ -629,6 +635,7 @@ namespace Amazon.S3
             request.BucketName = bucketName;
             return DeleteBucketPolicy(request);
         }
+
 
         /// <summary>
         /// Deletes the policy from the bucket.
@@ -743,6 +750,7 @@ namespace Amazon.S3
             return DeleteBucketTagging(request);
         }
 
+
         /// <summary>
         /// Deletes the tags from the bucket.
         /// </summary>
@@ -805,6 +813,7 @@ namespace Amazon.S3
             request.BucketName = bucketName;
             return DeleteBucketWebsite(request);
         }
+
 
         /// <summary>
         /// This operation removes the website configuration from the bucket.
@@ -869,6 +878,7 @@ namespace Amazon.S3
             return DeleteCORSConfiguration(request);
         }
 
+
         /// <summary>
         /// Deletes the cors configuration information set for the bucket.
         /// </summary>
@@ -931,6 +941,7 @@ namespace Amazon.S3
             request.BucketName = bucketName;
             return DeleteLifecycleConfiguration(request);
         }
+
 
         /// <summary>
         /// Deletes the lifecycle configuration from the bucket.
@@ -999,6 +1010,7 @@ namespace Amazon.S3
             return DeleteObject(request);
         }
 
+
         /// <summary>
         /// Removes the null version (if there is one) of an object and inserts a delete marker,
         /// which becomes the latest version of the object. If there isn't a null version, Amazon
@@ -1017,6 +1029,7 @@ namespace Amazon.S3
             request.VersionId = versionId;
             return DeleteObject(request);
         }
+
 
         /// <summary>
         /// Removes the null version (if there is one) of an object and inserts a delete marker,
@@ -1134,6 +1147,7 @@ namespace Amazon.S3
             return GetACL(request);
         }
 
+
         /// <summary>
         /// Gets the access control policy for the bucket.
         /// </summary>
@@ -1196,6 +1210,7 @@ namespace Amazon.S3
             request.BucketName = bucketName;
             return GetBucketLocation(request);
         }
+
 
         /// <summary>
         /// Returns the region the bucket resides in.
@@ -1261,6 +1276,7 @@ namespace Amazon.S3
             return GetBucketLogging(request);
         }
 
+
         /// <summary>
         /// Returns the logging status of a bucket and the permissions users have to view and
         /// modify that status. To use GET, you must be the bucket owner.
@@ -1325,6 +1341,7 @@ namespace Amazon.S3
             return GetBucketNotification(request);
         }
 
+
         /// <summary>
         /// Return the notification configuration of a bucket.
         /// </summary>
@@ -1387,6 +1404,7 @@ namespace Amazon.S3
             request.BucketName = bucketName;
             return GetBucketPolicy(request);
         }
+
 
         /// <summary>
         /// Returns the policy of a specified bucket.
@@ -1501,6 +1519,7 @@ namespace Amazon.S3
             return GetBucketRequestPayment(request);
         }
 
+
         /// <summary>
         /// Returns the request payment configuration of a bucket.
         /// </summary>
@@ -1614,6 +1633,7 @@ namespace Amazon.S3
             return GetBucketVersioning(request);
         }
 
+
         /// <summary>
         /// Returns the versioning state of a bucket.
         /// </summary>
@@ -1676,6 +1696,7 @@ namespace Amazon.S3
             request.BucketName = bucketName;
             return GetBucketWebsite(request);
         }
+
 
         /// <summary>
         /// Returns the website configuration for a bucket.
@@ -1740,6 +1761,7 @@ namespace Amazon.S3
             return GetCORSConfiguration(request);
         }
 
+
         /// <summary>
         /// Returns the cors configuration for the bucket.
         /// </summary>
@@ -1802,6 +1824,7 @@ namespace Amazon.S3
             request.BucketName = bucketName;
             return GetLifecycleConfiguration(request);
         }
+
 
         /// <summary>
         /// Returns the lifecycle configuration information set on the bucket.
@@ -1868,6 +1891,7 @@ namespace Amazon.S3
             return GetObject(request);
         }
 
+
         /// <summary>
         /// Retrieves objects from Amazon S3.
         /// </summary>
@@ -1884,6 +1908,7 @@ namespace Amazon.S3
             request.VersionId = versionId;
             return GetObject(request);
         }
+
 
         /// <summary>
         /// Retrieves objects from Amazon S3.
@@ -1952,6 +1977,7 @@ namespace Amazon.S3
             return GetObjectMetadata(request);
         }
 
+
         /// <summary>
         /// The HEAD operation retrieves metadata from an object without returning the object
         /// itself. This operation is useful if you're only interested in an object's metadata.
@@ -1970,6 +1996,7 @@ namespace Amazon.S3
             request.VersionId = versionId;
             return GetObjectMetadata(request);
         }
+
 
         /// <summary>
         /// The HEAD operation retrieves metadata from an object without returning the object
@@ -2037,6 +2064,7 @@ namespace Amazon.S3
             request.Key = key;
             return GetObjectTorrent(request);
         }
+
 
         /// <summary>
         /// Return torrent files from a bucket.
@@ -2161,6 +2189,7 @@ namespace Amazon.S3
             request.Key = key;
             return InitiateMultipartUpload(request);
         }
+
 
         /// <summary>
         /// Initiates a multipart upload and returns an upload ID.
@@ -2293,6 +2322,7 @@ namespace Amazon.S3
             return ListMultipartUploads(request);
         }
 
+
         /// <summary>
         /// This operation lists in-progress multipart uploads.
         /// </summary>
@@ -2307,6 +2337,7 @@ namespace Amazon.S3
             request.Prefix = prefix;
             return ListMultipartUploads(request);
         }
+
 
         /// <summary>
         /// This operation lists in-progress multipart uploads.
@@ -2372,6 +2403,7 @@ namespace Amazon.S3
             return ListObjects(request);
         }
 
+
         /// <summary>
         /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
         /// parameters as selection criteria to return a subset of the objects in a bucket.
@@ -2387,6 +2419,7 @@ namespace Amazon.S3
             request.Prefix = prefix;
             return ListObjects(request);
         }
+
 
         /// <summary>
         /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
@@ -2456,6 +2489,7 @@ namespace Amazon.S3
             return ListParts(request);
         }
 
+
         /// <summary>
         /// Lists the parts that have been uploaded for a specific multipart upload.
         /// </summary>
@@ -2519,6 +2553,7 @@ namespace Amazon.S3
             return ListVersions(request);
         }
 
+
         /// <summary>
         /// Returns metadata about all of the versions of objects in a bucket.
         /// </summary>
@@ -2533,6 +2568,7 @@ namespace Amazon.S3
             request.Prefix = prefix;
             return ListVersions(request);
         }
+
 
         /// <summary>
         /// Returns metadata about all of the versions of objects in a bucket.
@@ -2646,6 +2682,7 @@ namespace Amazon.S3
             request.BucketName = bucketName;
             return PutBucket(request);
         }
+
 
         /// <summary>
         /// Creates a new bucket.
@@ -2815,6 +2852,7 @@ namespace Amazon.S3
             return PutBucketPolicy(request);
         }
 
+
         /// <summary>
         /// Replaces a policy on a bucket. If the bucket already has a policy, the one in this
         /// request completely replaces it.
@@ -2832,6 +2870,7 @@ namespace Amazon.S3
             request.ContentMD5 = contentMD5;
             return PutBucketPolicy(request);
         }
+
 
         /// <summary>
         /// Replaces a policy on a bucket. If the bucket already has a policy, the one in this
@@ -2952,6 +2991,7 @@ namespace Amazon.S3
             return PutBucketRequestPayment(request);
         }
 
+
         /// <summary>
         /// Sets the request payment configuration for a bucket. By default, the bucket owner
         /// pays for downloads from the bucket. This configuration parameter enables the bucket
@@ -3019,6 +3059,7 @@ namespace Amazon.S3
             request.TagSet = tagSet;
             return PutBucketTagging(request);
         }
+
 
         /// <summary>
         /// Sets the tags for a bucket.
@@ -3136,6 +3177,7 @@ namespace Amazon.S3
             return PutBucketWebsite(request);
         }
 
+
         /// <summary>
         /// Set the website configuration for a bucket.
         /// </summary>
@@ -3200,6 +3242,7 @@ namespace Amazon.S3
             request.Configuration = configuration;
             return PutCORSConfiguration(request);
         }
+
 
         /// <summary>
         /// Sets the cors configuration for a bucket.
@@ -3266,6 +3309,7 @@ namespace Amazon.S3
             request.Configuration = configuration;
             return PutLifecycleConfiguration(request);
         }
+
 
         /// <summary>
         /// Sets lifecycle configuration for your bucket. If a lifecycle configuration exists,
@@ -3383,6 +3427,7 @@ namespace Amazon.S3
             return RestoreObject(request);
         }
 
+
         /// <summary>
         /// Restores an archived copy of an object back into Amazon S3
         /// </summary>
@@ -3400,6 +3445,7 @@ namespace Amazon.S3
             return RestoreObject(request);
         }
 
+
         /// <summary>
         /// Restores an archived copy of an object back into Amazon S3
         /// </summary>
@@ -3416,6 +3462,7 @@ namespace Amazon.S3
             request.VersionId = versionId;
             return RestoreObject(request);
         }
+
 
         /// <summary>
         /// Restores an archived copy of an object back into Amazon S3
@@ -3435,6 +3482,7 @@ namespace Amazon.S3
             request.Days = days;
             return RestoreObject(request);
         }
+
 
         /// <summary>
         /// Restores an archived copy of an object back into Amazon S3

@@ -43,6 +43,7 @@ namespace Amazon.SimpleEmail
         
         #region  DeleteIdentity
 
+
         /// <summary>
         /// Deletes the specified identity (email address or domain) from the list of verified
         /// identities.
@@ -84,6 +85,7 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  DeleteVerifiedEmailAddress
+
 
         /// <summary>
         /// Deletes the specified email address from the list of verified addresses.
@@ -127,6 +129,7 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  GetIdentityDkimAttributes
+
 
         /// <summary>
         /// Returns the current status of Easy DKIM signing for an entity. For domain name identities,
@@ -185,6 +188,7 @@ namespace Amazon.SimpleEmail
         
         #region  GetIdentityNotificationAttributes
 
+
         /// <summary>
         /// Given a list of verified identities (email addresses and/or domains), returns a structure
         /// describing identity notification attributes.
@@ -232,6 +236,7 @@ namespace Amazon.SimpleEmail
         
         #region  GetIdentityVerificationAttributes
 
+
         /// <summary>
         /// Given a list of identities (email addresses and/or domains), returns the verification
         /// status and (for domain identities) the verification token for each identity.
@@ -273,6 +278,7 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  GetSendQuota
+
 
         /// <summary>
         /// Returns the user's current sending limits.
@@ -326,6 +332,7 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  GetSendStatistics
+
 
         /// <summary>
         /// Returns the user's sending statistics. The result is a list of data points, representing
@@ -390,6 +397,7 @@ namespace Amazon.SimpleEmail
         
         #region  ListIdentities
 
+
         /// <summary>
         /// Returns a list containing all of the identities (email addresses and domains) for
         /// a specific AWS Account, regardless of verification status.
@@ -444,6 +452,7 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  ListVerifiedEmailAddresses
+
 
         /// <summary>
         /// Returns a list containing all of the email addresses that have been verified.
@@ -501,6 +510,7 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  SendEmail
+
 
         /// <summary>
         /// Composes an email message based on input data, and then immediately queues the message
@@ -566,6 +576,7 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  SendRawEmail
+
 
         /// <summary>
         /// Sends an email message, with header and content specified by the client. The <code>SendRawEmail</code>
@@ -639,6 +650,7 @@ namespace Amazon.SimpleEmail
         
         #region  SetIdentityDkimEnabled
 
+
         /// <summary>
         /// Enables or disables Easy DKIM signing of email sent from an identity:
         /// 
@@ -695,6 +707,7 @@ namespace Amazon.SimpleEmail
         
         #region  SetIdentityFeedbackForwardingEnabled
 
+
         /// <summary>
         /// Given an identity (email address or domain), enables or disables whether Amazon SES
         /// forwards bounce and complaint notifications as email. Feedback forwarding can only
@@ -745,6 +758,7 @@ namespace Amazon.SimpleEmail
         
         #region  SetIdentityNotificationTopic
 
+
         /// <summary>
         /// Given an identity (email address or domain), sets the Amazon Simple Notification Service
         /// (Amazon SNS) topic to which Amazon SES will publish bounce, complaint, and/or delivery
@@ -794,6 +808,7 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  VerifyDomainDkim
+
 
         /// <summary>
         /// Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings
@@ -851,6 +866,7 @@ namespace Amazon.SimpleEmail
         
         #region  VerifyDomainIdentity
 
+
         /// <summary>
         /// Verifies a domain.
         /// 
@@ -891,6 +907,7 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  VerifyEmailAddress
+
 
         /// <summary>
         /// Verifies an email address. This action causes a confirmation email message to be sent
@@ -935,6 +952,7 @@ namespace Amazon.SimpleEmail
         #endregion
         
         #region  VerifyEmailIdentity
+
 
         /// <summary>
         /// Verifies an email address. This action causes a confirmation email message to be sent

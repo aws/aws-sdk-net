@@ -42,6 +42,7 @@ namespace Amazon.Kinesis
         
         #region  AddTagsToStream
 
+
         /// <summary>
         /// Adds or updates tags for the specified Amazon Kinesis stream. Each stream can have
         /// up to 10 tags. 
@@ -73,6 +74,7 @@ namespace Amazon.Kinesis
         /// </exception>
         AddTagsToStreamResponse AddTagsToStream(AddTagsToStreamRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddTagsToStream operation.
         /// </summary>
@@ -87,6 +89,7 @@ namespace Amazon.Kinesis
         #endregion
         
         #region  CreateStream
+
 
         /// <summary>
         /// Creates a Amazon Kinesis stream. A stream captures and transports data records that
@@ -158,6 +161,7 @@ namespace Amazon.Kinesis
         /// </exception>
         CreateStreamResponse CreateStream(CreateStreamRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStream operation.
         /// </summary>
@@ -172,6 +176,7 @@ namespace Amazon.Kinesis
         #endregion
         
         #region  DeleteStream
+
 
         /// <summary>
         /// Deletes a stream and all its shards and data. You must shut down any applications
@@ -218,6 +223,7 @@ namespace Amazon.Kinesis
         /// </exception>
         DeleteStreamResponse DeleteStream(DeleteStreamRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStream operation.
         /// </summary>
@@ -232,6 +238,7 @@ namespace Amazon.Kinesis
         #endregion
         
         #region  DescribeStream
+
 
         /// <summary>
         /// Describes the specified stream.
@@ -278,6 +285,7 @@ namespace Amazon.Kinesis
         /// </exception>
         DescribeStreamResponse DescribeStream(DescribeStreamRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStream operation.
         /// </summary>
@@ -292,6 +300,7 @@ namespace Amazon.Kinesis
         #endregion
         
         #region  GetRecords
+
 
         /// <summary>
         /// Gets data records from a shard.
@@ -368,6 +377,7 @@ namespace Amazon.Kinesis
         /// </exception>
         GetRecordsResponse GetRecords(GetRecordsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetRecords operation.
         /// </summary>
@@ -382,6 +392,7 @@ namespace Amazon.Kinesis
         #endregion
         
         #region  GetShardIterator
+
 
         /// <summary>
         /// Gets a shard iterator. A shard iterator expires five minutes after it is returned
@@ -454,6 +465,7 @@ namespace Amazon.Kinesis
         /// </exception>
         GetShardIteratorResponse GetShardIterator(GetShardIteratorRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetShardIterator operation.
         /// </summary>
@@ -468,6 +480,7 @@ namespace Amazon.Kinesis
         #endregion
         
         #region  ListStreams
+
 
         /// <summary>
         /// Lists your streams.
@@ -501,6 +514,7 @@ namespace Amazon.Kinesis
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
         ListStreamsResponse ListStreams();
+
 
         /// <summary>
         /// Lists your streams.
@@ -536,6 +550,44 @@ namespace Amazon.Kinesis
         /// </exception>
         ListStreamsResponse ListStreams(ListStreamsRequest request);
 
+
+        /// <summary>
+        /// Lists your streams.
+        /// 
+        ///  
+        /// <para>
+        ///  The number of streams may be too large to return from a single call to <code>ListStreams</code>.
+        /// You can limit the number of returned streams using the <code>Limit</code> parameter.
+        /// If you do not specify a value for the <code>Limit</code> parameter, Amazon Kinesis
+        /// uses the default limit, which is currently 10.
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can detect if there are more streams available to list by using the <code>HasMoreStreams</code>
+        /// flag from the returned output. If there are more streams available, you can request
+        /// more streams by using the name of the last stream returned by the <code>ListStreams</code>
+        /// request in the <code>ExclusiveStartStreamName</code> parameter in a subsequent request
+        /// to <code>ListStreams</code>. The group of stream names returned by the subsequent
+        /// request is then added to the list. You can continue this process until all the stream
+        /// names have been collected in the list. 
+        /// </para>
+        ///  
+        /// <para>
+        /// <a>ListStreams</a> has a limit of 5 transactions per second per account.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStreams service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed (5).
+        /// </exception>
+        Task<ListStreamsResponse> ListStreamsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListStreams operation.
         /// </summary>
@@ -550,6 +602,7 @@ namespace Amazon.Kinesis
         #endregion
         
         #region  ListTagsForStream
+
 
         /// <summary>
         /// Lists the tags for the specified Amazon Kinesis stream.
@@ -571,6 +624,7 @@ namespace Amazon.Kinesis
         /// </exception>
         ListTagsForStreamResponse ListTagsForStream(ListTagsForStreamRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListTagsForStream operation.
         /// </summary>
@@ -585,6 +639,7 @@ namespace Amazon.Kinesis
         #endregion
         
         #region  MergeShards
+
 
         /// <summary>
         /// Merges two adjacent shards in a stream and combines them into a single shard to reduce
@@ -662,6 +717,7 @@ namespace Amazon.Kinesis
         /// </exception>
         MergeShardsResponse MergeShards(MergeShardsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the MergeShards operation.
         /// </summary>
@@ -676,6 +732,7 @@ namespace Amazon.Kinesis
         #endregion
         
         #region  PutRecord
+
 
         /// <summary>
         /// Puts (writes) a single data record from a producer into an Amazon Kinesis stream.
@@ -754,6 +811,7 @@ namespace Amazon.Kinesis
         /// </exception>
         PutRecordResponse PutRecord(PutRecordRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutRecord operation.
         /// </summary>
@@ -768,6 +826,7 @@ namespace Amazon.Kinesis
         #endregion
         
         #region  PutRecords
+
 
         /// <summary>
         /// Puts (writes) multiple data records from a producer into an Amazon Kinesis stream
@@ -860,6 +919,7 @@ namespace Amazon.Kinesis
         /// </exception>
         PutRecordsResponse PutRecords(PutRecordsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutRecords operation.
         /// </summary>
@@ -874,6 +934,7 @@ namespace Amazon.Kinesis
         #endregion
         
         #region  RemoveTagsFromStream
+
 
         /// <summary>
         /// Deletes tags from the specified Amazon Kinesis stream.
@@ -904,6 +965,7 @@ namespace Amazon.Kinesis
         /// </exception>
         RemoveTagsFromStreamResponse RemoveTagsFromStream(RemoveTagsFromStreamRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTagsFromStream operation.
         /// </summary>
@@ -918,6 +980,7 @@ namespace Amazon.Kinesis
         #endregion
         
         #region  SplitShard
+
 
         /// <summary>
         /// Splits a shard into two new shards in the stream, to increase the stream's capacity
@@ -1008,6 +1071,7 @@ namespace Amazon.Kinesis
         /// it might not be in the <code>ACTIVE</code> state.
         /// </exception>
         SplitShardResponse SplitShard(SplitShardRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SplitShard operation.

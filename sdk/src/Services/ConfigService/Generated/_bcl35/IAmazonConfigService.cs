@@ -68,6 +68,7 @@ namespace Amazon.ConfigService
         
         #region  DeleteDeliveryChannel
 
+
         /// <summary>
         /// Deletes the specified delivery channel.
         /// 
@@ -139,6 +140,7 @@ namespace Amazon.ConfigService
         #endregion
         
         #region  DeliverConfigSnapshot
+
 
         /// <summary>
         /// Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified
@@ -216,6 +218,7 @@ namespace Amazon.ConfigService
         
         #region  DescribeConfigurationRecorders
 
+
         /// <summary>
         /// Returns the name of one or more specified configuration recorders. If the recorder
         /// name is not specified, this action returns the names of all the configuration recorders
@@ -281,6 +284,7 @@ namespace Amazon.ConfigService
         
         #region  DescribeConfigurationRecorderStatus
 
+
         /// <summary>
         /// Returns the current status of the specified configuration recorder. If a configuration
         /// recorder is not specified, this action returns the status of all configuration recorder
@@ -337,6 +341,7 @@ namespace Amazon.ConfigService
         #endregion
         
         #region  DescribeDeliveryChannels
+
 
         /// <summary>
         /// Returns details about the specified delivery channel. If a delivery channel is not
@@ -403,6 +408,7 @@ namespace Amazon.ConfigService
         
         #region  DescribeDeliveryChannelStatus
 
+
         /// <summary>
         /// Returns the current status of the specified delivery channel. If a delivery channel
         /// is not specified, this action returns the current status of all delivery channels
@@ -459,6 +465,7 @@ namespace Amazon.ConfigService
         #endregion
         
         #region  GetResourceConfigHistory
+
 
         /// <summary>
         /// Returns a list of configuration items for the specified resource. The list contains
@@ -528,6 +535,7 @@ namespace Amazon.ConfigService
         
         #region  PutConfigurationRecorder
 
+
         /// <summary>
         /// Creates a new configuration recorder to record the resource configurations. 
         /// 
@@ -584,6 +592,7 @@ namespace Amazon.ConfigService
         #endregion
         
         #region  PutDeliveryChannel
+
 
         /// <summary>
         /// Creates a new delivery channel object to deliver the configuration information to
@@ -658,6 +667,7 @@ namespace Amazon.ConfigService
         
         #region  StartConfigurationRecorder
 
+
         /// <summary>
         /// Starts recording configurations of all the resources associated with the account.
         /// 
@@ -725,6 +735,7 @@ namespace Amazon.ConfigService
         #endregion
         
         #region  StopConfigurationRecorder
+
 
         /// <summary>
         /// Stops recording configurations of all the resources associated with the account.

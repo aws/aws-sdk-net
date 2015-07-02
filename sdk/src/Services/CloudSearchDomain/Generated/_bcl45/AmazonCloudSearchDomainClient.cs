@@ -94,6 +94,7 @@ namespace Amazon.CloudSearchDomain
         
         #region  Search
 
+
         /// <summary>
         /// Retrieves a list of documents that match the specified search criteria. How you specify
         /// the search criteria depends on which query parser you use. Amazon CloudSearch supports
@@ -156,6 +157,7 @@ namespace Amazon.CloudSearchDomain
         
         #region  Suggest
 
+
         /// <summary>
         /// Retrieves autocomplete suggestions for a partial query string. You can use suggestions
         /// enable you to display likely matches before users finish typing. In Amazon CloudSearch,
@@ -214,6 +216,7 @@ namespace Amazon.CloudSearchDomain
         #endregion
         
         #region  UploadDocuments
+
 
         /// <summary>
         /// Posts a batch of documents to a search domain for indexing. A document batch is a

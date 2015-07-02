@@ -235,6 +235,7 @@ namespace Amazon.OpsWorks
             return Invoke<AssignInstanceRequest,AssignInstanceResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AssignInstance operation.
         /// </summary>
@@ -264,6 +265,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<AssignVolumeRequest,AssignVolumeResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssignVolume operation.
@@ -295,6 +297,7 @@ namespace Amazon.OpsWorks
             return Invoke<AssociateElasticIpRequest,AssociateElasticIpResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AssociateElasticIp operation.
         /// </summary>
@@ -324,6 +327,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<AttachElasticLoadBalancerRequest,AttachElasticLoadBalancerResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachElasticLoadBalancer operation.
@@ -355,6 +359,7 @@ namespace Amazon.OpsWorks
             return Invoke<CloneStackRequest,CloneStackResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CloneStack operation.
         /// </summary>
@@ -384,6 +389,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<CreateAppRequest,CreateAppResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateApp operation.
@@ -415,6 +421,7 @@ namespace Amazon.OpsWorks
             return Invoke<CreateDeploymentRequest,CreateDeploymentResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDeployment operation.
         /// </summary>
@@ -444,6 +451,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<CreateInstanceRequest,CreateInstanceResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInstance operation.
@@ -475,6 +483,7 @@ namespace Amazon.OpsWorks
             return Invoke<CreateLayerRequest,CreateLayerResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLayer operation.
         /// </summary>
@@ -504,6 +513,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<CreateStackRequest,CreateStackResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStack operation.
@@ -535,6 +545,7 @@ namespace Amazon.OpsWorks
             return Invoke<CreateUserProfileRequest,CreateUserProfileResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateUserProfile operation.
         /// </summary>
@@ -564,6 +575,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<DeleteAppRequest,DeleteAppResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteApp operation.
@@ -595,6 +607,7 @@ namespace Amazon.OpsWorks
             return Invoke<DeleteInstanceRequest,DeleteInstanceResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteInstance operation.
         /// </summary>
@@ -624,6 +637,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<DeleteLayerRequest,DeleteLayerResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLayer operation.
@@ -655,6 +669,7 @@ namespace Amazon.OpsWorks
             return Invoke<DeleteStackRequest,DeleteStackResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStack operation.
         /// </summary>
@@ -684,6 +699,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<DeleteUserProfileRequest,DeleteUserProfileResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteUserProfile operation.
@@ -715,6 +731,7 @@ namespace Amazon.OpsWorks
             return Invoke<DeregisterElasticIpRequest,DeregisterElasticIpResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterElasticIp operation.
         /// </summary>
@@ -744,6 +761,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<DeregisterInstanceRequest,DeregisterInstanceResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterInstance operation.
@@ -775,6 +793,7 @@ namespace Amazon.OpsWorks
             return Invoke<DeregisterRdsDbInstanceRequest,DeregisterRdsDbInstanceResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterRdsDbInstance operation.
         /// </summary>
@@ -804,6 +823,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<DeregisterVolumeRequest,DeregisterVolumeResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterVolume operation.
@@ -835,6 +855,7 @@ namespace Amazon.OpsWorks
             return Invoke<DescribeAppsRequest,DescribeAppsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeApps operation.
         /// </summary>
@@ -864,6 +885,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<DescribeCommandsRequest,DescribeCommandsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCommands operation.
@@ -895,6 +917,7 @@ namespace Amazon.OpsWorks
             return Invoke<DescribeDeploymentsRequest,DescribeDeploymentsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDeployments operation.
         /// </summary>
@@ -924,6 +947,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<DescribeElasticIpsRequest,DescribeElasticIpsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeElasticIps operation.
@@ -959,6 +983,39 @@ namespace Amazon.OpsWorks
             return Invoke<DescribeElasticLoadBalancersRequest,DescribeElasticLoadBalancersResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Describes a stack's Elastic Load Balancing instances.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You must specify at least one of the parameters.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeElasticLoadBalancers service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        public Task<DescribeElasticLoadBalancersResponse> DescribeElasticLoadBalancersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeElasticLoadBalancersAsync(new DescribeElasticLoadBalancersRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeElasticLoadBalancers operation.
         /// </summary>
@@ -988,6 +1045,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<DescribeInstancesRequest,DescribeInstancesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstances operation.
@@ -1019,6 +1077,7 @@ namespace Amazon.OpsWorks
             return Invoke<DescribeLayersRequest,DescribeLayersResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLayers operation.
         /// </summary>
@@ -1048,6 +1107,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<DescribeLoadBasedAutoScalingRequest,DescribeLoadBasedAutoScalingResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBasedAutoScaling operation.
@@ -1083,6 +1143,29 @@ namespace Amazon.OpsWorks
             return Invoke<DescribeMyUserProfileRequest,DescribeMyUserProfileResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Describes a user's SSH information.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
+        /// enabled or an attached policy that explicitly grants permissions. For more information
+        /// on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMyUserProfile service method, as returned by OpsWorks.</returns>
+        public Task<DescribeMyUserProfileResponse> DescribeMyUserProfileAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeMyUserProfileAsync(new DescribeMyUserProfileRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMyUserProfile operation.
         /// </summary>
@@ -1112,6 +1195,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<DescribePermissionsRequest,DescribePermissionsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribePermissions operation.
@@ -1143,6 +1227,7 @@ namespace Amazon.OpsWorks
             return Invoke<DescribeRaidArraysRequest,DescribeRaidArraysResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRaidArrays operation.
         /// </summary>
@@ -1172,6 +1257,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<DescribeRdsDbInstancesRequest,DescribeRdsDbInstancesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRdsDbInstances operation.
@@ -1207,6 +1293,35 @@ namespace Amazon.OpsWorks
             return Invoke<DescribeServiceErrorsRequest,DescribeServiceErrorsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Describes AWS OpsWorks service errors.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeServiceErrors service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        public Task<DescribeServiceErrorsResponse> DescribeServiceErrorsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeServiceErrorsAsync(new DescribeServiceErrorsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeServiceErrors operation.
         /// </summary>
@@ -1236,6 +1351,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<DescribeStackProvisioningParametersRequest,DescribeStackProvisioningParametersResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackProvisioningParameters operation.
@@ -1271,6 +1387,35 @@ namespace Amazon.OpsWorks
             return Invoke<DescribeStacksRequest,DescribeStacksResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Requests a description of one or more stacks.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeStacks service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        public Task<DescribeStacksResponse> DescribeStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeStacksAsync(new DescribeStacksRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStacks operation.
         /// </summary>
@@ -1301,6 +1446,7 @@ namespace Amazon.OpsWorks
             return Invoke<DescribeStackSummaryRequest,DescribeStackSummaryResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackSummary operation.
         /// </summary>
@@ -1330,6 +1476,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<DescribeTimeBasedAutoScalingRequest,DescribeTimeBasedAutoScalingResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTimeBasedAutoScaling operation.
@@ -1365,6 +1512,35 @@ namespace Amazon.OpsWorks
             return Invoke<DescribeUserProfilesRequest,DescribeUserProfilesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Describe specified users.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
+        /// policy that explicitly grants permissions. For more information on user permissions,
+        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeUserProfiles service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        public Task<DescribeUserProfilesResponse> DescribeUserProfilesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeUserProfilesAsync(new DescribeUserProfilesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeUserProfiles operation.
         /// </summary>
@@ -1394,6 +1570,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<DescribeVolumesRequest,DescribeVolumesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVolumes operation.
@@ -1425,6 +1602,7 @@ namespace Amazon.OpsWorks
             return Invoke<DetachElasticLoadBalancerRequest,DetachElasticLoadBalancerResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DetachElasticLoadBalancer operation.
         /// </summary>
@@ -1454,6 +1632,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<DisassociateElasticIpRequest,DisassociateElasticIpResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisassociateElasticIp operation.
@@ -1485,6 +1664,7 @@ namespace Amazon.OpsWorks
             return Invoke<GetHostnameSuggestionRequest,GetHostnameSuggestionResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetHostnameSuggestion operation.
         /// </summary>
@@ -1514,6 +1694,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<GrantAccessRequest,GrantAccessResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GrantAccess operation.
@@ -1545,6 +1726,7 @@ namespace Amazon.OpsWorks
             return Invoke<RebootInstanceRequest,RebootInstanceResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RebootInstance operation.
         /// </summary>
@@ -1574,6 +1756,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<RegisterElasticIpRequest,RegisterElasticIpResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterElasticIp operation.
@@ -1605,6 +1788,7 @@ namespace Amazon.OpsWorks
             return Invoke<RegisterInstanceRequest,RegisterInstanceResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterInstance operation.
         /// </summary>
@@ -1634,6 +1818,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<RegisterRdsDbInstanceRequest,RegisterRdsDbInstanceResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterRdsDbInstance operation.
@@ -1665,6 +1850,7 @@ namespace Amazon.OpsWorks
             return Invoke<RegisterVolumeRequest,RegisterVolumeResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterVolume operation.
         /// </summary>
@@ -1694,6 +1880,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<SetLoadBasedAutoScalingRequest,SetLoadBasedAutoScalingResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBasedAutoScaling operation.
@@ -1725,6 +1912,7 @@ namespace Amazon.OpsWorks
             return Invoke<SetPermissionRequest,SetPermissionResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SetPermission operation.
         /// </summary>
@@ -1754,6 +1942,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<SetTimeBasedAutoScalingRequest,SetTimeBasedAutoScalingResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetTimeBasedAutoScaling operation.
@@ -1785,6 +1974,7 @@ namespace Amazon.OpsWorks
             return Invoke<StartInstanceRequest,StartInstanceResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the StartInstance operation.
         /// </summary>
@@ -1814,6 +2004,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<StartStackRequest,StartStackResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the StartStack operation.
@@ -1845,6 +2036,7 @@ namespace Amazon.OpsWorks
             return Invoke<StopInstanceRequest,StopInstanceResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the StopInstance operation.
         /// </summary>
@@ -1874,6 +2066,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<StopStackRequest,StopStackResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the StopStack operation.
@@ -1905,6 +2098,7 @@ namespace Amazon.OpsWorks
             return Invoke<UnassignInstanceRequest,UnassignInstanceResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UnassignInstance operation.
         /// </summary>
@@ -1934,6 +2128,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<UnassignVolumeRequest,UnassignVolumeResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UnassignVolume operation.
@@ -1965,6 +2160,7 @@ namespace Amazon.OpsWorks
             return Invoke<UpdateAppRequest,UpdateAppResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateApp operation.
         /// </summary>
@@ -1994,6 +2190,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<UpdateElasticIpRequest,UpdateElasticIpResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateElasticIp operation.
@@ -2025,6 +2222,7 @@ namespace Amazon.OpsWorks
             return Invoke<UpdateInstanceRequest,UpdateInstanceResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateInstance operation.
         /// </summary>
@@ -2054,6 +2252,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<UpdateLayerRequest,UpdateLayerResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateLayer operation.
@@ -2089,6 +2288,32 @@ namespace Amazon.OpsWorks
             return Invoke<UpdateMyUserProfileRequest,UpdateMyUserProfileResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Updates a user's SSH public key.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
+        /// enabled or an attached policy that explicitly grants permissions. For more information
+        /// on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMyUserProfile service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        public Task<UpdateMyUserProfileResponse> UpdateMyUserProfileAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return UpdateMyUserProfileAsync(new UpdateMyUserProfileRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateMyUserProfile operation.
         /// </summary>
@@ -2118,6 +2343,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<UpdateRdsDbInstanceRequest,UpdateRdsDbInstanceResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateRdsDbInstance operation.
@@ -2149,6 +2375,7 @@ namespace Amazon.OpsWorks
             return Invoke<UpdateStackRequest,UpdateStackResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStack operation.
         /// </summary>
@@ -2179,6 +2406,7 @@ namespace Amazon.OpsWorks
             return Invoke<UpdateUserProfileRequest,UpdateUserProfileResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateUserProfile operation.
         /// </summary>
@@ -2208,6 +2436,7 @@ namespace Amazon.OpsWorks
 
             return Invoke<UpdateVolumeRequest,UpdateVolumeResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateVolume operation.

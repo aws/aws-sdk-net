@@ -259,11 +259,13 @@ namespace <#=this.Config.Namespace#>
         #region  <#=operation.Name#>
 
 <#
-        // Creates a version of the operation that takes no arguments and passes a request with no set members if specified in the cusomtizations
+        // Creates a version of the operation that takes no arguments and passes a request with no set members if specified in the customizations
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
         {
 #>
-<# this.FormatOperationDocumentation(operation, false); #>
+<#
+        this.FormatOperationDocumentationSync(operation, false);
+#>
         public <#=operation.Name#>Response <#=operation.Name#>()
         {
             return <#=operation.Name#>(new <#=operation.Name#>Request());
@@ -272,9 +274,11 @@ namespace <#=this.Config.Namespace#>
 <#
         }
         // Adds any simple method forms specified in the customizations file
-        AddSimpleClientMethods(operation);
+        AddSimpleClientMethods(operation, true);
 #>
-<# this.FormatOperationDocumentation(operation); #>
+<#
+        this.FormatOperationDocumentationSync(operation, true);
+#>
         <#=operation.IsInternal ? "internal" : "public"#> <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
         {
             var marshaller = new <#=operation.Name#>RequestMarshaller();
@@ -283,7 +287,26 @@ namespace <#=this.Config.Namespace#>
             return Invoke<<#=operation.Name#>Request,<#=operation.Name#>Response>(request, marshaller, unmarshaller);
         }
 
-<#AddAsyncDocumentation(operation.Name);#>
+<#
+        // Creates a version of the operation that takes no arguments and passes a request with no set members if specified in the customizations
+        if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
+        {
+#>
+<#
+        this.FormatOperationDocumentationAsync(operation, false);
+#>
+        public Task<<#=operation.Name#>Response> <#=operation.Name#>Async(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return <#=operation.Name#>Async(new <#=operation.Name#>Request(), cancellationToken);
+        }
+<#
+        }
+
+        // Add async simple methods
+        AddSimpleClientMethods(operation, false);
+
+        AddAsyncDocumentation(operation.Name);
+#>
         <#=operation.IsInternal ? "internal" : "public"#> Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=operation.Name#>Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new <#=operation.Name#>RequestMarshaller();

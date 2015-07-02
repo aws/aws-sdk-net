@@ -355,6 +355,7 @@ namespace Amazon.DataPipeline
             return AddTags(request);
         }
 
+
         /// <summary>
         /// Adds or modifies tags for the specified pipeline.
         /// </summary>
@@ -727,6 +728,7 @@ namespace Amazon.DataPipeline
             request.PipelineIds = pipelineIds;
             return DescribePipelines(request);
         }
+
 
         /// <summary>
         /// Retrieves metadata about one or more pipelines. The information retrieved includes
@@ -1270,6 +1272,7 @@ namespace Amazon.DataPipeline
             request.TagKeys = tagKeys;
             return RemoveTags(request);
         }
+
 
         /// <summary>
         /// Removes existing tags from the specified pipeline.

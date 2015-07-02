@@ -52,6 +52,7 @@ namespace Amazon.SimpleNotificationService
         
         #region  AddPermission
 
+
         /// <summary>
         /// Adds a statement to a topic's access control policy, granting access for the specified
         /// AWS accounts to the specified actions.
@@ -124,6 +125,7 @@ namespace Amazon.SimpleNotificationService
         #endregion
         
         #region  ConfirmSubscription
+
 
         /// <summary>
         /// Verifies an endpoint owner's intent to receive messages by validating      the token
@@ -237,6 +239,7 @@ namespace Amazon.SimpleNotificationService
         
         #region  CreatePlatformApplication
 
+
         /// <summary>
         /// Creates a platform application object for one of the supported push notification services,
         ///       such as APNS and GCM, to which devices and mobile apps may register. You must
@@ -292,6 +295,7 @@ namespace Amazon.SimpleNotificationService
         #endregion
         
         #region  CreatePlatformEndpoint
+
 
         /// <summary>
         /// Creates an endpoint for a device and mobile app on one of the supported push notification
@@ -358,6 +362,7 @@ namespace Amazon.SimpleNotificationService
         #endregion
         
         #region  CreateTopic
+
 
         /// <summary>
         /// Creates a topic to which notifications can be published. Users can create     at most
@@ -433,6 +438,7 @@ namespace Amazon.SimpleNotificationService
         
         #region  DeleteEndpoint
 
+
         /// <summary>
         /// Deletes the endpoint from Amazon SNS. This action is idempotent.       For more information,
         /// see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
@@ -480,6 +486,7 @@ namespace Amazon.SimpleNotificationService
         
         #region  DeletePlatformApplication
 
+
         /// <summary>
         /// Deletes a platform application object for one of the supported push notification services,
         ///       such as APNS and GCM.      For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
@@ -526,6 +533,7 @@ namespace Amazon.SimpleNotificationService
         #endregion
         
         #region  DeleteTopic
+
 
         /// <summary>
         /// Deletes a topic and all its subscriptions. Deleting a topic might      prevent some
@@ -601,6 +609,7 @@ namespace Amazon.SimpleNotificationService
         
         #region  GetEndpointAttributes
 
+
         /// <summary>
         /// Retrieves the endpoint attributes for a device on one of the supported push notification
         /// services, such as GCM and APNS.       For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
@@ -650,6 +659,7 @@ namespace Amazon.SimpleNotificationService
         #endregion
         
         #region  GetPlatformApplicationAttributes
+
 
         /// <summary>
         /// Retrieves the attributes of the platform application object for the supported push
@@ -701,6 +711,7 @@ namespace Amazon.SimpleNotificationService
         #endregion
         
         #region  GetSubscriptionAttributes
+
 
         /// <summary>
         /// Returns all of the properties of a subscription.
@@ -769,6 +780,7 @@ namespace Amazon.SimpleNotificationService
         #endregion
         
         #region  GetTopicAttributes
+
 
         /// <summary>
         /// Returns all of the properties of a topic.     Topic properties returned might differ
@@ -840,6 +852,7 @@ namespace Amazon.SimpleNotificationService
         
         #region  ListEndpointsByPlatformApplication
 
+
         /// <summary>
         /// Lists the endpoints and endpoint attributes for devices in a supported push notification
         /// service, such as GCM and APNS.       The results for <code>ListEndpointsByPlatformApplication</code>
@@ -895,6 +908,7 @@ namespace Amazon.SimpleNotificationService
         #endregion
         
         #region  ListPlatformApplications
+
 
         /// <summary>
         /// Lists the platform application objects for the supported push notification services,
@@ -972,6 +986,7 @@ namespace Amazon.SimpleNotificationService
         #endregion
         
         #region  ListSubscriptions
+
 
         /// <summary>
         /// Returns a list of the requester's subscriptions. Each call returns a limited list
@@ -1059,6 +1074,7 @@ namespace Amazon.SimpleNotificationService
         #endregion
         
         #region  ListSubscriptionsByTopic
+
 
         /// <summary>
         /// Returns a list of the subscriptions to a specific topic. Each call returns       a
@@ -1158,6 +1174,7 @@ namespace Amazon.SimpleNotificationService
         
         #region  ListTopics
 
+
         /// <summary>
         /// Returns a list of the requester's topics. Each call returns a limited list of topics,
         /// up to 100. If      there are more topics, a <code>NextToken</code> is also returned.
@@ -1244,6 +1261,7 @@ namespace Amazon.SimpleNotificationService
         #endregion
         
         #region  Publish
+
 
         /// <summary>
         /// Sends a message to all of a topic's subscribed endpoints. When a    <code>messageId</code>
@@ -1399,6 +1417,7 @@ namespace Amazon.SimpleNotificationService
         
         #region  RemovePermission
 
+
         /// <summary>
         /// Removes a statement from a topic's access control policy.
         /// </summary>
@@ -1468,6 +1487,7 @@ namespace Amazon.SimpleNotificationService
         
         #region  SetEndpointAttributes
 
+
         /// <summary>
         /// Sets the attributes for an endpoint for a device on one of the supported push notification
         /// services, such as GCM and APNS.      For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
@@ -1518,6 +1538,7 @@ namespace Amazon.SimpleNotificationService
         
         #region  SetPlatformApplicationAttributes
 
+
         /// <summary>
         /// Sets the attributes of the platform application object for the supported push notification
         /// services,       such as APNS and GCM.      For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
@@ -1567,6 +1588,7 @@ namespace Amazon.SimpleNotificationService
         #endregion
         
         #region  SetSubscriptionAttributes
+
 
         /// <summary>
         /// Allows a subscription owner to set an attribute of the topic to a new value.
@@ -1638,6 +1660,7 @@ namespace Amazon.SimpleNotificationService
         
         #region  SetTopicAttributes
 
+
         /// <summary>
         /// Allows a topic owner to set an attribute of the topic to a new value.
         /// </summary>
@@ -1707,6 +1730,7 @@ namespace Amazon.SimpleNotificationService
         #endregion
         
         #region  Subscribe
+
 
         /// <summary>
         /// Prepares to subscribe an endpoint by sending the endpoint a confirmation message.
@@ -1789,6 +1813,7 @@ namespace Amazon.SimpleNotificationService
         #endregion
         
         #region  Unsubscribe
+
 
         /// <summary>
         /// Deletes a subscription. If the subscription requires authentication for       deletion,

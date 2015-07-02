@@ -352,6 +352,7 @@ namespace Amazon.KeyManagementService
             return CreateAlias(request);
         }
 
+
         /// <summary>
         /// Creates a display name for a customer master key. An alias can be used to identify
         /// a key and should be unique. The console enforces a one-to-one mapping between the
@@ -696,6 +697,7 @@ namespace Amazon.KeyManagementService
             return DeleteAlias(request);
         }
 
+
         /// <summary>
         /// Deletes the specified alias. To associate an alias with a different key, call <a>UpdateAlias</a>.
         /// </summary>
@@ -781,6 +783,7 @@ namespace Amazon.KeyManagementService
             request.KeyId = keyId;
             return DescribeKey(request);
         }
+
 
         /// <summary>
         /// Provides detailed information about the specified customer master key.
@@ -870,6 +873,7 @@ namespace Amazon.KeyManagementService
             request.KeyId = keyId;
             return DisableKey(request);
         }
+
 
         /// <summary>
         /// Marks a key as disabled, thereby preventing its use.
@@ -962,6 +966,7 @@ namespace Amazon.KeyManagementService
             request.KeyId = keyId;
             return DisableKeyRotation(request);
         }
+
 
         /// <summary>
         /// Disables rotation of the specified key.
@@ -1059,6 +1064,7 @@ namespace Amazon.KeyManagementService
             return EnableKey(request);
         }
 
+
         /// <summary>
         /// Marks a key as enabled, thereby permitting its use. You can have up to 25 enabled
         /// keys at one time.
@@ -1154,6 +1160,7 @@ namespace Amazon.KeyManagementService
             request.KeyId = keyId;
             return EnableKeyRotation(request);
         }
+
 
         /// <summary>
         /// Enables rotation of the specified customer master key.
@@ -1523,6 +1530,7 @@ namespace Amazon.KeyManagementService
             return GenerateRandom(request);
         }
 
+
         /// <summary>
         /// Generates an unpredictable byte string.
         /// </summary>
@@ -1607,6 +1615,7 @@ namespace Amazon.KeyManagementService
             request.PolicyName = policyName;
             return GetKeyPolicy(request);
         }
+
 
         /// <summary>
         /// Retrieves a policy attached to the specified key.
@@ -1697,6 +1706,7 @@ namespace Amazon.KeyManagementService
             request.KeyId = keyId;
             return GetKeyRotationStatus(request);
         }
+
 
         /// <summary>
         /// Retrieves a Boolean value that indicates whether key rotation is enabled for the specified
@@ -2050,6 +2060,7 @@ namespace Amazon.KeyManagementService
             return PutKeyPolicy(request);
         }
 
+
         /// <summary>
         /// Attaches a policy to the specified key.
         /// </summary>
@@ -2252,6 +2263,7 @@ namespace Amazon.KeyManagementService
             return RetireGrant(request);
         }
 
+
         /// <summary>
         /// Retires a grant. You can retire a grant when you're done using it to clean up. You
         /// should revoke a grant when you intend to actively deny operations that depend on it.
@@ -2351,6 +2363,7 @@ namespace Amazon.KeyManagementService
             request.KeyId = keyId;
             return RevokeGrant(request);
         }
+
 
         /// <summary>
         /// Revokes a grant. You can revoke a grant to actively deny operations that depend on
@@ -2458,6 +2471,7 @@ namespace Amazon.KeyManagementService
             return UpdateAlias(request);
         }
 
+
         /// <summary>
         /// Updates an alias to associate it with a different key.
         /// 
@@ -2562,6 +2576,7 @@ namespace Amazon.KeyManagementService
             request.Description = description;
             return UpdateKeyDescription(request);
         }
+
 
         /// <summary>
         /// Updates the description of a key.

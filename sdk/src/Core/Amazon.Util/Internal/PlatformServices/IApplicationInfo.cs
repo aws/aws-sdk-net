@@ -7,6 +7,5 @@ namespace Amazon.Util.Internal.PlatformServices
         string AppVersionName { get; }
         string AppVersionCode { get; }
         string PackageName { get; }
-        string SpecialFolder { get; }
     }
 }

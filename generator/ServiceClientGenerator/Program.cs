@@ -59,9 +59,14 @@ namespace ServiceClientGenerator
             }
             catch (Exception e)
             {
-                Console.Error.WriteLine("Error running generator: " + e.Message);
-                Console.Error.WriteLine(e.StackTrace);
-                returnCode = -1;
+                if (options.WaitOnExit)
+                {
+                    Console.Error.WriteLine("Error running generator: " + e.Message);
+                    Console.Error.WriteLine(e.StackTrace);
+                    returnCode = -1;
+                }
+                else
+                    throw;
             }
 
             if (options.WaitOnExit)

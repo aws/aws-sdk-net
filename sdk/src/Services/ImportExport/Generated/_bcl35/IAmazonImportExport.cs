@@ -41,6 +41,7 @@ namespace Amazon.ImportExport
         
         #region  CancelJob
 
+
         /// <summary>
         /// This operation cancels a specified job. Only the job owner can cancel it. The operation
         /// fails if the job has already started or is complete.
@@ -97,6 +98,7 @@ namespace Amazon.ImportExport
         #endregion
         
         #region  CreateJob
+
 
         /// <summary>
         /// This operation initiates the process of scheduling an upload or download of your data.
@@ -194,6 +196,7 @@ namespace Amazon.ImportExport
         
         #region  GetShippingLabel
 
+
         /// <summary>
         /// This operation returns information about a job, including where the job is in the
         /// processing pipeline, the status of the results, and the signature value associated
@@ -255,6 +258,7 @@ namespace Amazon.ImportExport
         
         #region  GetStatus
 
+
         /// <summary>
         /// This operation returns information about a job, including where the job is in the
         /// processing pipeline, the status of the results, and the signature value associated
@@ -309,6 +313,7 @@ namespace Amazon.ImportExport
         #endregion
         
         #region  ListJobs
+
 
         /// <summary>
         /// This operation returns the jobs associated with the requester. AWS Import/Export lists
@@ -380,6 +385,7 @@ namespace Amazon.ImportExport
         #endregion
         
         #region  UpdateJob
+
 
         /// <summary>
         /// You use this operation to change the parameters specified in the original manifest

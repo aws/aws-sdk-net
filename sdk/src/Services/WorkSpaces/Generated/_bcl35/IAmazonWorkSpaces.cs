@@ -40,6 +40,7 @@ namespace Amazon.WorkSpaces
         
         #region  CreateWorkspaces
 
+
         /// <summary>
         /// Creates one or more WorkSpaces.
         /// 
@@ -84,6 +85,7 @@ namespace Amazon.WorkSpaces
         #endregion
         
         #region  DescribeWorkspaceBundles
+
 
         /// <summary>
         /// Obtains information about the WorkSpace bundles that are available to your account
@@ -162,6 +164,7 @@ namespace Amazon.WorkSpaces
         
         #region  DescribeWorkspaceDirectories
 
+
         /// <summary>
         /// Retrieves information about the AWS Directory Service directories in the region that
         /// are registered with Amazon WorkSpaces and are available to your account.
@@ -228,6 +231,7 @@ namespace Amazon.WorkSpaces
         #endregion
         
         #region  DescribeWorkspaces
+
 
         /// <summary>
         /// Obtains information about the specified WorkSpaces. 
@@ -310,6 +314,7 @@ namespace Amazon.WorkSpaces
         
         #region  RebootWorkspaces
 
+
         /// <summary>
         /// Reboots the specified WorkSpaces.
         /// 
@@ -356,6 +361,7 @@ namespace Amazon.WorkSpaces
         #endregion
         
         #region  RebuildWorkspaces
+
 
         /// <summary>
         /// Rebuilds the specified WorkSpaces.
@@ -415,6 +421,7 @@ namespace Amazon.WorkSpaces
         #endregion
         
         #region  TerminateWorkspaces
+
 
         /// <summary>
         /// Terminates the specified WorkSpaces.

@@ -36,6 +36,7 @@ namespace Amazon.CloudFront
         
         #region  CreateCloudFrontOriginAccessIdentity
 
+
         /// <summary>
         /// Create a new origin access identity.
         /// </summary>
@@ -91,6 +92,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  CreateDistribution
+
 
         /// <summary>
         /// Create a new distribution.
@@ -223,6 +225,7 @@ namespace Amazon.CloudFront
         
         #region  CreateInvalidation
 
+
         /// <summary>
         /// Create a new invalidation.
         /// </summary>
@@ -281,6 +284,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  CreateStreamingDistribution
+
 
         /// <summary>
         /// Create a new streaming distribution.
@@ -356,6 +360,7 @@ namespace Amazon.CloudFront
         
         #region  DeleteCloudFrontOriginAccessIdentity
 
+
         /// <summary>
         /// Delete an origin access identity.
         /// </summary>
@@ -428,6 +433,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  DeleteDistribution
+
 
         /// <summary>
         /// Delete a distribution.
@@ -502,6 +508,7 @@ namespace Amazon.CloudFront
         
         #region  DeleteStreamingDistribution
 
+
         /// <summary>
         /// Delete a streaming distribution.
         /// </summary>
@@ -575,6 +582,7 @@ namespace Amazon.CloudFront
         
         #region  GetCloudFrontOriginAccessIdentity
 
+
         /// <summary>
         /// Get the information about an origin access identity.
         /// </summary>
@@ -629,6 +637,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  GetCloudFrontOriginAccessIdentityConfig
+
 
         /// <summary>
         /// Get the configuration information about an origin access identity.
@@ -685,6 +694,7 @@ namespace Amazon.CloudFront
         
         #region  GetDistribution
 
+
         /// <summary>
         /// Get the information about a distribution.
         /// </summary>
@@ -739,6 +749,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  GetDistributionConfig
+
 
         /// <summary>
         /// Get the configuration information about a distribution.
@@ -795,6 +806,7 @@ namespace Amazon.CloudFront
         
         #region  GetInvalidation
 
+
         /// <summary>
         /// Get the information about an invalidation.
         /// </summary>
@@ -839,6 +851,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  GetStreamingDistribution
+
 
         /// <summary>
         /// Get the information about a streaming distribution.
@@ -895,6 +908,7 @@ namespace Amazon.CloudFront
         
         #region  GetStreamingDistributionConfig
 
+
         /// <summary>
         /// Get the configuration information about a streaming distribution.
         /// </summary>
@@ -950,6 +964,7 @@ namespace Amazon.CloudFront
         
         #region  ListCloudFrontOriginAccessIdentities
 
+
         /// <summary>
         /// List origin access identities.
         /// </summary>
@@ -998,6 +1013,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  ListDistributions
+
 
         /// <summary>
         /// List distributions.
@@ -1048,6 +1064,7 @@ namespace Amazon.CloudFront
         
         #region  ListInvalidations
 
+
         /// <summary>
         /// List invalidation batches.
         /// </summary>
@@ -1092,6 +1109,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  ListStreamingDistributions
+
 
         /// <summary>
         /// List streaming distributions.
@@ -1141,6 +1159,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  UpdateCloudFrontOriginAccessIdentity
+
 
         /// <summary>
         /// Update an origin access identity.
@@ -1202,6 +1221,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  UpdateDistribution
+
 
         /// <summary>
         /// Update a distribution.
@@ -1330,6 +1350,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  UpdateStreamingDistribution
+
 
         /// <summary>
         /// Update a streaming distribution.

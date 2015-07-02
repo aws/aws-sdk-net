@@ -183,6 +183,7 @@ namespace Amazon.ElasticTranscoder
             return Invoke<CancelJobRequest,CancelJobResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CancelJob operation.
         /// </summary>
@@ -212,6 +213,7 @@ namespace Amazon.ElasticTranscoder
 
             return Invoke<CreateJobRequest,CreateJobResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateJob operation.
@@ -243,6 +245,7 @@ namespace Amazon.ElasticTranscoder
             return Invoke<CreatePipelineRequest,CreatePipelineResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePipeline operation.
         /// </summary>
@@ -272,6 +275,7 @@ namespace Amazon.ElasticTranscoder
 
             return Invoke<CreatePresetRequest,CreatePresetResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePreset operation.
@@ -303,6 +307,7 @@ namespace Amazon.ElasticTranscoder
             return Invoke<DeletePipelineRequest,DeletePipelineResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePipeline operation.
         /// </summary>
@@ -332,6 +337,7 @@ namespace Amazon.ElasticTranscoder
 
             return Invoke<DeletePresetRequest,DeletePresetResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePreset operation.
@@ -363,6 +369,7 @@ namespace Amazon.ElasticTranscoder
             return Invoke<ListJobsByPipelineRequest,ListJobsByPipelineResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobsByPipeline operation.
         /// </summary>
@@ -392,6 +399,7 @@ namespace Amazon.ElasticTranscoder
 
             return Invoke<ListJobsByStatusRequest,ListJobsByStatusResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobsByStatus operation.
@@ -427,6 +435,35 @@ namespace Amazon.ElasticTranscoder
             return Invoke<ListPipelinesRequest,ListPipelinesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// The ListPipelines operation gets a list of the pipelines associated with the current
+        /// AWS account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPipelines service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
+        public Task<ListPipelinesResponse> ListPipelinesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListPipelinesAsync(new ListPipelinesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListPipelines operation.
         /// </summary>
@@ -461,6 +498,35 @@ namespace Amazon.ElasticTranscoder
             return Invoke<ListPresetsRequest,ListPresetsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// The ListPresets operation gets a list of the default presets included with Elastic
+        /// Transcoder and the presets that you've added in an AWS region.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPresets service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
+        public Task<ListPresetsResponse> ListPresetsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListPresetsAsync(new ListPresetsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListPresets operation.
         /// </summary>
@@ -490,6 +556,7 @@ namespace Amazon.ElasticTranscoder
 
             return Invoke<ReadJobRequest,ReadJobResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReadJob operation.
@@ -521,6 +588,7 @@ namespace Amazon.ElasticTranscoder
             return Invoke<ReadPipelineRequest,ReadPipelineResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ReadPipeline operation.
         /// </summary>
@@ -550,6 +618,7 @@ namespace Amazon.ElasticTranscoder
 
             return Invoke<ReadPresetRequest,ReadPresetResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReadPreset operation.
@@ -581,6 +650,7 @@ namespace Amazon.ElasticTranscoder
             return Invoke<TestRoleRequest,TestRoleResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the TestRole operation.
         /// </summary>
@@ -610,6 +680,7 @@ namespace Amazon.ElasticTranscoder
 
             return Invoke<UpdatePipelineRequest,UpdatePipelineResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdatePipeline operation.
@@ -641,6 +712,7 @@ namespace Amazon.ElasticTranscoder
             return Invoke<UpdatePipelineNotificationsRequest,UpdatePipelineNotificationsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdatePipelineNotifications operation.
         /// </summary>
@@ -670,6 +742,7 @@ namespace Amazon.ElasticTranscoder
 
             return Invoke<UpdatePipelineStatusRequest,UpdatePipelineStatusResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdatePipelineStatus operation.

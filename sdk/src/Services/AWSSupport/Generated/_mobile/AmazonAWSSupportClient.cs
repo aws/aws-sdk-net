@@ -228,6 +228,7 @@ namespace Amazon.AWSSupport
             return Invoke<AddAttachmentsToSetRequest,AddAttachmentsToSetResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddAttachmentsToSet operation.
         /// </summary>
@@ -257,6 +258,7 @@ namespace Amazon.AWSSupport
 
             return Invoke<AddCommunicationToCaseRequest,AddCommunicationToCaseResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddCommunicationToCase operation.
@@ -288,6 +290,7 @@ namespace Amazon.AWSSupport
             return Invoke<CreateCaseRequest,CreateCaseResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCase operation.
         /// </summary>
@@ -317,6 +320,7 @@ namespace Amazon.AWSSupport
 
             return Invoke<DescribeAttachmentRequest,DescribeAttachmentResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAttachment operation.
@@ -348,6 +352,7 @@ namespace Amazon.AWSSupport
             return Invoke<DescribeCasesRequest,DescribeCasesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCases operation.
         /// </summary>
@@ -377,6 +382,7 @@ namespace Amazon.AWSSupport
 
             return Invoke<DescribeCommunicationsRequest,DescribeCommunicationsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCommunications operation.
@@ -412,6 +418,37 @@ namespace Amazon.AWSSupport
             return Invoke<DescribeServicesRequest,DescribeServicesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns the current list of AWS services and a list of service categories that applies
+        /// to each one. You then use service names and categories in your <a>CreateCase</a> requests.
+        /// Each AWS service has its own set of categories.
+        /// 
+        ///  
+        /// <para>
+        /// The service codes and category codes correspond to the values that are displayed in
+        /// the <b>Service</b> and <b>Category</b> drop-down lists on the AWS Support Center <a
+        /// href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
+        /// The values in those fields, however, do not necessarily match the service codes and
+        /// categories returned by the <code>DescribeServices</code> request. Always use the service
+        /// codes and categories obtained programmatically. This practice ensures that you always
+        /// have the most recent set of service and category codes.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeServices service method, as returned by AWSSupport.</returns>
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
+        /// An internal server error occurred.
+        /// </exception>
+        public Task<DescribeServicesResponse> DescribeServicesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeServicesAsync(new DescribeServicesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeServices operation.
         /// </summary>
@@ -446,6 +483,26 @@ namespace Amazon.AWSSupport
             return Invoke<DescribeSeverityLevelsRequest,DescribeSeverityLevelsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns the list of severity levels that you can assign to an AWS Support case. The
+        /// severity level for a case is also a field in the <a>CaseDetails</a> data type included
+        /// in any <a>CreateCase</a> request.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSeverityLevels service method, as returned by AWSSupport.</returns>
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
+        /// An internal server error occurred.
+        /// </exception>
+        public Task<DescribeSeverityLevelsResponse> DescribeSeverityLevelsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeSeverityLevelsAsync(new DescribeSeverityLevelsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSeverityLevels operation.
         /// </summary>
@@ -475,6 +532,7 @@ namespace Amazon.AWSSupport
 
             return Invoke<DescribeTrustedAdvisorCheckRefreshStatusesRequest,DescribeTrustedAdvisorCheckRefreshStatusesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrustedAdvisorCheckRefreshStatuses operation.
@@ -506,6 +564,7 @@ namespace Amazon.AWSSupport
             return Invoke<DescribeTrustedAdvisorCheckResultRequest,DescribeTrustedAdvisorCheckResultResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrustedAdvisorCheckResult operation.
         /// </summary>
@@ -535,6 +594,7 @@ namespace Amazon.AWSSupport
 
             return Invoke<DescribeTrustedAdvisorChecksRequest,DescribeTrustedAdvisorChecksResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrustedAdvisorChecks operation.
@@ -566,6 +626,7 @@ namespace Amazon.AWSSupport
             return Invoke<DescribeTrustedAdvisorCheckSummariesRequest,DescribeTrustedAdvisorCheckSummariesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTrustedAdvisorCheckSummaries operation.
         /// </summary>
@@ -596,6 +657,7 @@ namespace Amazon.AWSSupport
             return Invoke<RefreshTrustedAdvisorCheckRequest,RefreshTrustedAdvisorCheckResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RefreshTrustedAdvisorCheck operation.
         /// </summary>
@@ -625,6 +687,7 @@ namespace Amazon.AWSSupport
 
             return Invoke<ResolveCaseRequest,ResolveCaseResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResolveCase operation.
