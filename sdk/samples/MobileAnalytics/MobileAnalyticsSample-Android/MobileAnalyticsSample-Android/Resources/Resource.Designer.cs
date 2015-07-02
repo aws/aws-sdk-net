@@ -26,10 +26,6 @@ namespace MobileAnalyticsSample_Android
 		
 		public static void UpdateIdValues()
 		{
-			global::PCLCrypto.Resource.String.ApplicationName = global::MobileAnalyticsSample_Android.Resource.String.ApplicationName;
-			global::PCLCrypto.Resource.String.Hello = global::MobileAnalyticsSample_Android.Resource.String.Hello;
-			global::PCLStorage.Resource.String.ApplicationName = global::MobileAnalyticsSample_Android.Resource.String.ApplicationName;
-			global::PCLStorage.Resource.String.Hello = global::MobileAnalyticsSample_Android.Resource.String.Hello;
 		}
 		
 		public partial class Attribute

@@ -28,7 +28,8 @@ namespace CommonTests.IntegrationTests
         [Test]
         public void TestSessionTimeout()
         {
-            Console.WriteLine("session delta is " + AWSConfigsMobileAnalytics.SessionTimeout);
+            MobileAnalyticsManagerConfig maConfig = new MobileAnalyticsManagerConfig();
+            Console.WriteLine("session delta is " + maConfig.SessionTimeout);
 
             string appId = "TestSessionTimeout-dummy-app-id";
 
@@ -45,7 +46,7 @@ namespace CommonTests.IntegrationTests
 
             // sleep for a while but wake up before session expires
             GetMobileAnalyticsManager(appId).PauseSession();
-            Task.Delay(Convert.ToInt32((AWSConfigsMobileAnalytics.SessionTimeout - 1) * 1000));
+            Task.Delay(Convert.ToInt32((maConfig.SessionTimeout - 1) * 1000));
 
             GetMobileAnalyticsManager(appId).ResumeSession();
 
@@ -64,7 +65,7 @@ namespace CommonTests.IntegrationTests
 
             // sleep longer until session expires
             GetMobileAnalyticsManager(appId).PauseSession();
-            Convert.ToInt32((AWSConfigsMobileAnalytics.SessionTimeout + 1) * 1000);
+            Convert.ToInt32((maConfig.SessionTimeout + 1) * 1000);
             GetMobileAnalyticsManager(appId).ResumeSession();
 
             DateTime startTimstamp3;
@@ -543,7 +544,8 @@ namespace CommonTests.IntegrationTests
         public void TestEventStore()
         {
             // Create table
-            SQLiteEventStore eventStore = new SQLiteEventStore();
+            MobileAnalyticsManagerConfig maConfig = new MobileAnalyticsManagerConfig();
+            SQLiteEventStore eventStore = new SQLiteEventStore(maConfig);
 
             // Insert row
             string eventString = "TestEventStore-dummy-event-string";
@@ -742,7 +744,7 @@ namespace CommonTests.IntegrationTests
 
         private MobileAnalyticsManager GetMobileAnalyticsManager(string appId)
         {
-            return MobileAnalyticsManager.GetOrCreateInstance(CommonTests.Framework.TestRunner.Credentials, RegionEndpoint.USEast1, appId);
+            return MobileAnalyticsManager.GetOrCreateInstance(CommonTests.Framework.TestRunner.Credentials, RegionEndpoint.USEast1, appId, null);
         }
     }
 

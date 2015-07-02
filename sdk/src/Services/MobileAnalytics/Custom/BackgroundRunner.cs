@@ -38,7 +38,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
         // Background thread wait time. Thread will sleep for the interval mention. Value is in Seconds.
         // Default 60 seconds.
-        private const int BackgroundSubmissionWaitTime = 10;
+        private const int BackgroundSubmissionWaitTime = 60;
 #if BCL35
         private static System.Threading.Thread _thread = null;
 

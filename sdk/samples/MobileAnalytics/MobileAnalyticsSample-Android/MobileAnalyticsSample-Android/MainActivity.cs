@@ -38,7 +38,7 @@ namespace MobileAnalyticsSample_Android
             Button monetizationEventButton = FindViewById<Button>(Resource.Id.button_monetization_event);
 
 
-            customEventButton.Click += delegate 
+            customEventButton.Click += delegate
             {
                 CustomEvent customEvent = new CustomEvent("level_complete");
 
@@ -65,7 +65,7 @@ namespace MobileAnalyticsSample_Android
 
                 _manager.RecordEventAsync(monetizationEvent);
             };
-            
+
             MobileAnalyticsManagerConfig config = new MobileAnalyticsManagerConfig();
             config.SessionTimeout = 5;
 
@@ -75,7 +75,7 @@ namespace MobileAnalyticsSample_Android
 
         protected override void OnResume()
         {
-            _manager.ResumeSession();           
+            _manager.ResumeSession();
             base.OnResume();
         }
 
@@ -84,7 +84,6 @@ namespace MobileAnalyticsSample_Android
             _manager.PauseSession();
             base.OnPause();
         }
-
     }
 }
 
