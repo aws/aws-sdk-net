@@ -181,6 +181,7 @@ namespace Amazon.MobileAnalytics
             return Invoke<PutEventsRequest,PutEventsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutEvents operation.
         /// </summary>

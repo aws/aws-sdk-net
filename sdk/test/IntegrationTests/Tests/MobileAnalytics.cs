@@ -55,7 +55,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("MobileAnalytics")]
         public void TestSessionTimeout()
         {
-            Console.WriteLine("session delta is " + AWSConfigsMobileAnalytics.SessionTimeout);
+            MobileAnalyticsManagerConfig maConfig = new MobileAnalyticsManagerConfig();
+            Console.WriteLine("session delta is " + maConfig.SessionTimeout);
 
             string appId = "TestSessionTimeout-dummy-app-id";
 
@@ -72,7 +73,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             // sleep for a while but wake up before session expires
             GetMobileAnalyticsManager(appId).PauseSession();
-            Thread.Sleep(Convert.ToInt32((AWSConfigsMobileAnalytics.SessionTimeout - 1) * 1000));
+            Thread.Sleep(Convert.ToInt32((maConfig.SessionTimeout - 1) * 1000));
             GetMobileAnalyticsManager(appId).ResumeSession();
 
             DateTime startTimstamp2;
@@ -90,7 +91,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             // sleep longer until session expires
             GetMobileAnalyticsManager(appId).PauseSession();
-            Thread.Sleep(Convert.ToInt32((AWSConfigsMobileAnalytics.SessionTimeout + 1) * 1000));
+            Thread.Sleep(Convert.ToInt32((maConfig.SessionTimeout + 1) * 1000));
             GetMobileAnalyticsManager(appId).ResumeSession();
 
             DateTime startTimstamp3;
@@ -646,11 +647,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
 
             // Create table
-            SQLiteEventStore eventStore = new SQLiteEventStore();
+            SQLiteEventStore eventStore = new SQLiteEventStore(new MobileAnalyticsManagerConfig());
 
             // Insert row
             string eventString = "TestEventStore-dummy-event-string";
-            string appId = "TestEventStore-dummy-app-id-TestEventStore";
+            string appId = Guid.NewGuid().ToString();
 
             const int EVENT_COUNT = 100;
 
@@ -841,7 +842,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         private MobileAnalyticsManager GetMobileAnalyticsManager(string appId)
         {
-            return MobileAnalyticsManager.GetOrCreateInstance(new StoredProfileAWSCredentials(), RegionEndpoint.USEast1, appId);
+            return MobileAnalyticsManager.GetOrCreateInstance(new StoredProfileAWSCredentials(), RegionEndpoint.USEast1, appId,null);
         }
 
     }

@@ -196,7 +196,7 @@
         "MobileAnalytics"        : {
             "Version" : "3.0.0.0",
 			"Dependencies" : {
-                "Core" : "3.0.0.2"
+                "Core" : "3.0.0.4"
             }
 		},
         "OpsWorks"             : {

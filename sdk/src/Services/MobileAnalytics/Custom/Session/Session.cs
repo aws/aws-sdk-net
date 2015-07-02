@@ -31,6 +31,9 @@ using System.Threading.Tasks;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 {
+    /// <summary>
+    /// The class controls session start, pause, resume and stop logic.
+    /// </summary>
     public class Session
     {
         private Logger _logger = Logger.GetLogger(typeof(Session));
@@ -54,6 +57,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         private string _sessionId;
         private long _duration;
         
+        // Session Timeout
+        int SESSION_TIMEOUT;
+
         // lock to guard session info
         private Object _lock = new Object();
        
@@ -70,10 +76,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             public string _sessionId;
             public long _duration;
         }
-        //private SessionStorage _sessionStorage = new SessionStorage();
+
         private volatile SessionStorage _sessionStorage = null;
 
-        private string _appid;
+        private string APP_ID;
         
         private string _sessionStorageFileName = "_session_storage.json";
         private string _sessionStorageFileFullPath = null;
@@ -82,27 +88,47 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         
         #region public
 
-
-        public Session(string appId)
+        /// <summary>
+        /// Constructor of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.Session"/>
+        /// </summary>
+        /// <param name="appId">Amazon Mobile Analytics App Identifier.</param>
+        /// <param name="sessionTimeout">Session time out value in seconds.</param>
+        public Session(string appId, int sessionTimeout)
         {
             if(string.IsNullOrEmpty(appId))
                 throw new ArgumentNullException("appId");
+            
+            if(sessionTimeout <= 0)
+                throw new ArgumentException("sessionTimeout must be integer bigger than 0.");
 
-            _appid = appId;
-            Amazon.Util.Internal.PlatformServices.ApplicationInfo appInfo = new Amazon.Util.Internal.PlatformServices.ApplicationInfo();
-            _sessionStorageFileFullPath = System.IO.Path.Combine(appInfo.SpecialFolder, _appid + _sessionStorageFileName);
+            APP_ID = appId;
+            SESSION_TIMEOUT = sessionTimeout;
+
+#if BCL35 || BCL45
+            _sessionStorageFileFullPath = _sessionStorageFileName;
+#elif PCL
+            _sessionStorageFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, appId + _sessionStorageFileName);
+#endif              
             _sessionStorage = new SessionStorage();
         }
         
         /// <summary>
         /// Start this session.
         /// </summary>
+#if BCL35 || BCL45
         internal void Start()
+#elif PCL
+        internal async void Start()
+#endif
         {
             // Read session info from persistent storage, in case app is killed.
             try
             {
+#if BCL35 || BCL45
                 RetrieveSessionStorage();
+#elif PCL
+                await RetrieveSessionStorage();
+#endif
             }
             catch (Exception e)
             {
@@ -146,8 +172,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             if(_stopTime == null)
             {
                 //this may sometimes be a valid scenario e.g when the applciation starts
-                InvalidOperationException e = new InvalidOperationException();
-                _logger.Error(e,"call Resume() without calling Pause() first");
+                _logger.InfoFormat("Call Resume() without calling Pause() first. But this can be valid opertion only when MobileAnalyticsManager instance is created.");
                 return;
             }
             
@@ -160,7 +185,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 long stopTimeStamp = Convert.ToInt64((_stopTime.Value - EPOCH_START).TotalSeconds);
                 
                 // new session 
-                if (resumeTimeStamp - stopTimeStamp > AWSConfigsMobileAnalytics.SessionTimeout)
+                if (resumeTimeStamp - stopTimeStamp > SESSION_TIMEOUT)
                 {
                     StopSession();
                     NewSession();
@@ -186,8 +211,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// </summary>
         /// <param name="startTimestamp">Start timestamp.</param>
         /// <param name="stopTimestamp">Stop timestamp.</param>
-        /// <param name="sessionId">Session identifier.</param>
-        /// <param name="duration">Duration.</param>
+        /// <param name="sessionId">Unique session identifier.</param>
+        /// <param name="duration">Session duration in milliseconds.</param>
         public void GetSessionInfo(out DateTime startTimestamp, out DateTime? stopTimestamp, out string sessionId, out long duration)
         {
             if(string.IsNullOrEmpty(_sessionId))
@@ -232,7 +257,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 sessionStartEvent.SessionId = _sessionId;
             }
 
-            MobileAnalyticsManager.GetInstance(_appid).RecordEventAsync(sessionStartEvent);
+            MobileAnalyticsManager.GetInstance(APP_ID).RecordEventAsync(sessionStartEvent);
         }
         
         private void StopSession()
@@ -257,7 +282,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 stopSessionEvent.SessionId = _sessionId;
                 stopSessionEvent.Duration = _duration;
             }
-            MobileAnalyticsManager.GetInstance(_appid).RecordEventAsync(stopSessionEvent);
+            MobileAnalyticsManager.GetInstance(APP_ID).RecordEventAsync(stopSessionEvent);
         }
         
         private void PauseSession()
@@ -282,7 +307,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 pauseSessionEvent.SessionId = _sessionId;    
                 pauseSessionEvent.Duration = _duration;
             }
-            MobileAnalyticsManager.GetInstance(_appid).RecordEventAsync(pauseSessionEvent);
+            MobileAnalyticsManager.GetInstance(APP_ID).RecordEventAsync(pauseSessionEvent);
         }
         
         private void ResumeSession()
@@ -305,7 +330,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 resumeSessionEvent.SessionId = _sessionId;    
                 resumeSessionEvent.Duration = _duration;
             }
-            MobileAnalyticsManager.GetInstance(_appid).RecordEventAsync(resumeSessionEvent);
+            MobileAnalyticsManager.GetInstance(APP_ID).RecordEventAsync(resumeSessionEvent);
         }
    
 #if BCL35 || BCL45

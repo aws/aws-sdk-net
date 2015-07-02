@@ -43,30 +43,74 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
     /// </summary>
     public class CustomEvent : IEvent, IEventConverter
     {
+        /// <summary>
+        /// Event type string that defines event type.
+        /// </summary>
         protected string _eventType;
+
+        /// <summary>
+        /// Dictionary that stores global attribute for specific event type.
+        /// </summary>
         protected static Dictionary<string, Dictionary<string,string>> _eventTypeGlobalAttributes = new Dictionary<string,Dictionary<string,string>>();
+        
+        /// <summary>
+        /// Dictionary that stores global metric for specific event type.
+        /// </summary>
         protected static Dictionary<string, Dictionary<string,double>> _eventTypeGlobalMetrics = new Dictionary<string, Dictionary<string,double>>();
 
+        /// <summary>
+        /// Dictionary that stores global attribute for all event type.
+        /// </summary>
         protected static Dictionary<string,string> _globalAttributes = new Dictionary<string,string>();
+
+        /// <summary>
+        /// Dictionary that stores global metric for all event type.
+        /// </summary>
         protected static Dictionary<string,double> _globalMetrics = new Dictionary<string,double>();
         
+        /// <summary>
+        /// Dictionary that stores attribute for this event only.
+        /// </summary>
         protected Dictionary<string,string> _attributes = new Dictionary<string,string>();
+
+        /// <summary>
+        /// Dictionary that stores metric for this event only.
+        /// </summary>
         protected Dictionary<string,double> _metrics = new Dictionary<string,double>();
 
+        /// <summary>
+        /// Unique Identifier of Session
+        /// </summary>
         public string SessionId {get;set;}
+
+        /// <summary>
+        /// Duration of the session in milliseconds.
+        /// </summary>
         public long Duration { get; set; }
 
-        //public string StartTimestamp {get;set;}
-        //public string StopTimestamp {get;set;}
-        //public string Timestamp {get;set;}
-
-
+        /// <summary>
+        /// Start time stamp of seesion.
+        /// </summary>
         public DateTime StartTimestamp {get;set;}
+
+        /// <summary>
+        /// Stop time stamp of session.
+        /// </summary>
         public DateTime? StopTimestamp { get; set; }
+
+        /// <summary>
+        /// Timestamp of when event is recorded.
+        /// </summary>
         public DateTime Timestamp { get; set; }
 
-
+        /// <summary>
+        /// Lock that protects global attribute and metric.
+        /// </summary>
         protected static Object _globalLock = new Object();
+        
+        /// <summary>
+        /// Lock that protects attribute and metric. 
+        /// </summary>
         protected Object _lock = new Object();
         
         private const int MAX_KEY_SIZE = 50;
@@ -113,7 +157,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// Converts to mobile analytics model event. <see cref="Amazon.MobileAnalytics.Model.Event"/>
         /// </summary>
         /// <returns>The to mobile analytics model event.</returns>
-        /// <param name="session">Session.</param>
+        /// <param name="session">Session. <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.Session"/></param>
         public virtual Amazon.MobileAnalytics.Model.Event ConvertToMobileAnalyticsModelEvent(Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.Session session)
         {
 
@@ -210,9 +254,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// <summary>
         /// Determines whether this instance has attribute the specified attributeName.
         /// </summary>
-        /// <returns>true</returns>
-        /// <c>false</c>
         /// <param name="attributeName">Attribute name.</param>
+        /// <returns><c>true</c>, if the event has the attribute, <c>false</c> otherwise.</returns>
         public bool HasAttribute(string attributeName)
         {
             if(string.IsNullOrEmpty(attributeName))
@@ -231,9 +274,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         
         /// <summary>
         /// Gets the attribute.
-        /// </summary>
-        /// <returns>The attribute. Return null of attribute doesn't exist.</returns>
+        /// </summary>    
         /// <param name="attributeName">Attribute name.</param>
+        /// <returns>The attribute. Return null of attribute doesn't exist.</returns>
         public string GetAttribute(string attributeName)
         {
             if(string.IsNullOrEmpty(attributeName))
@@ -293,9 +336,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// <summary>
         /// Determines whether this instance has metric the specified metricName.
         /// </summary>
-        /// <returns>true</returns>
-        /// <c>false</c>
         /// <param name="metricName">Metric name.</param>
+        /// <returns><c>true</c>, if the event has the attribute, <c>false</c> otherwise.</returns>
         public bool HasMetric(string metricName)
         {
             if(string.IsNullOrEmpty(metricName))
@@ -315,8 +357,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// <summary>
         /// Gets the metric.
         /// </summary>
-        /// <returns>The metric. Return null of metric doesn't exist.</returns>
         /// <param name="metricName">Metric name.</param>
+        /// <returns>The metric. Return null of metric doesn't exist.</returns>
         public double? GetMetric(string metricName)
         {
             if(string.IsNullOrEmpty(metricName))
@@ -485,8 +527,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// <summary>
         /// Gets the global attribute, which is valid for all events.
         /// </summary>
-        /// <returns>The global attribute. Return null if attribute doesn't exist.</returns>
         /// <param name="attributeName">Attribute name.</param>
+        /// <returns>The global attribute. Return null if attribute doesn't exist.</returns>
         public string GetGlobalAttribute(string attributeName)
         {
             if(string.IsNullOrEmpty(attributeName))
@@ -508,9 +550,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// <summary>
         /// Gets the global attribute, which is valid for some specific event type.
         /// </summary>
-        /// <returns>The global attribute. Return null if attribute doesn't exist. </returns>
         /// <param name="eventType">Event type.</param>
         /// <param name="attributeName">Attribute name.</param>
+        /// <returns>The global attribute. Return null if attribute doesn't exist. </returns>
         public string GetGlobalAttribute(string eventType, string attributeName)
         {
             if(string.IsNullOrEmpty(eventType))
@@ -670,9 +712,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// <summary>
         /// Gets the global metric, which is valid for some specific event type.
         /// </summary>
-        /// <returns>The global metric. Return null if metric doesn't exist. </returns>
         /// <param name="eventType">Event type.</param>
         /// <param name="metricName">Metric name.</param>
+        /// <returns>The global metric. Return null if metric doesn't exist. </returns>
         public double? GetGlobalMetric(string eventType, string metricName)
         {
             if(string.IsNullOrEmpty(eventType))

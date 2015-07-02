@@ -19,12 +19,15 @@ using System;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 {
+    /// <summary>
+    /// Interface for creating delivery policy.
+    /// </summary>
     public interface IDeliveryPolicyFactory
     {
         /// <summary>
-        /// returns a new connectivity policy.
+        /// Returns a new connectivity policy.
         /// </summary>
-        /// <returns>instance of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IDeliveryPolicy"/>, which checks for network connectivity</returns>
+        /// <returns>instance of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IDeliveryPolicy"/>, which checks network connectivity</returns>
         IDeliveryPolicy NewConnectivityPolicy();
         
     }

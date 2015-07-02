@@ -22,6 +22,10 @@ using Amazon.MobileAnalytics.MobileAnalyticsManager.Internal;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 {
+    
+    /// <summary>
+    /// Interface for converting <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.CustomEvent"/> to <see cref="Amazon.MobileAnalytics.Model.Event"/>.
+    /// </summary>
     public interface IEventConverter
     {
 	    /// <summary>

@@ -22,6 +22,10 @@ using System;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 {
+    
+    /// <summary>
+    /// Interface for Mobile Analytics Event.
+    /// </summary>
     public interface IEvent
     {
         /// <summary>
@@ -95,7 +99,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// </summary>
         /// <param name="metricName">Metric name. Max length is 50.</param>
         /// <param name="metricValue">Metric value.</param>
-        void AddMetric(string attributeName, double attributeValue);
+        void AddMetric(string metricName, double metricValue);
         
         /// <summary>
         /// Determines whether this instance has metric the specified metricName.

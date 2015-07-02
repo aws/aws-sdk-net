@@ -56,6 +56,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         private const string PURCHASE_EVENT_TRANSACTION_ID_ATTR = "_transaction_id";
         private const string PURCHASE_EVENT_CURRENCY_ATTR = "_currency";
 
+        /// <summary>
+        /// Constructor of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.MonetizationEvent"/>
+        /// </summary>
         public MonetizationEvent() : base(PURCHASE_EVENT_NAME)
         {
         }

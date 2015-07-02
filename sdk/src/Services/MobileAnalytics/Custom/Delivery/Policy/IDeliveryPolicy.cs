@@ -19,10 +19,15 @@ using System;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 {
+    
+    /// <summary>
+    /// This interface is for delivery policy that determines whether delivery client should send events 
+    /// to Mobile Analytics service.
+    /// </summary>
     public interface IDeliveryPolicy
     {
         /// <summary>
-        /// Determines whether this policy allows the delivery of the events or not
+        /// Determines whether this policy allows the delivery of the events or not.
         /// </summary>
         /// <returns><c>true</c> if this policy allows the delivery of events; otherwise, <c>false</c>.</returns>
         bool IsAllowed();

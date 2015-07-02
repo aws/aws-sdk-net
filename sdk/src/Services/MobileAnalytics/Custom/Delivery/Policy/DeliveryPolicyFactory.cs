@@ -21,6 +21,10 @@ using Amazon.MobileAnalytics.MobileAnalyticsManager;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 {
+    
+    /// <summary>
+    /// Object that creates delivery policy.
+    /// </summary>
     public class DeliveryPolicyFactory : IDeliveryPolicyFactory
     {
         private readonly bool IsDataNetworkAllowed;

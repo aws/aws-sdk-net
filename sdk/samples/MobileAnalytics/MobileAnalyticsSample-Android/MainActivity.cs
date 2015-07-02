@@ -65,8 +65,12 @@ namespace MobileAnalyticsSample_Android
 
                 _manager.RecordEventAsync(monetizationEvent);
             };
+            
+            MobileAnalyticsManagerConfig config = new MobileAnalyticsManagerConfig();
+            config.SessionTimeout = 5;
 
-            _manager = MobileAnalyticsManager.GetOrCreateInstance(new BasicAWSCredentials("AKIAI7DF4TKSGTQXDHJA", "n8SaFlNy9wq6aq5NcWknsN2HRa2QzN+9UoPS9TE3"), RegionEndpoint.USEast1, APP_ID);
+            _manager = MobileAnalyticsManager.GetOrCreateInstance(new BasicAWSCredentials("AKIAI7DF4TKSGTQXDHJA", "n8SaFlNy9wq6aq5NcWknsN2HRa2QzN+9UoPS9TE3"),
+                RegionEndpoint.USEast1, APP_ID, config);
         }
 
         protected override void OnResume()

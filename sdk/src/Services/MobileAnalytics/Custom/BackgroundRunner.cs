@@ -28,15 +28,17 @@ using System.Threading.Tasks;
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 {
     /// <summary>
-    /// Amazon mobile analytics background runner.
-    /// Background runner periodically sends events to server.
+    /// Amazon Mobile Analytics background runner.
+    /// Background runner periodically calls delivery client to send events to server.
     /// </summary>
     public class BackgroundRunner
     {
-
         private static Logger _logger = Logger.GetLogger(typeof(BackgroundRunner));
         private static object _lock = new object();
 
+        // Background thread wait time. Thread will sleep for the interval mention. Value is in Seconds.
+        // Default 60 seconds.
+        private const int BackgroundSubmissionWaitTime = 10;
 #if BCL35
         private static System.Threading.Thread _thread = null;
 
@@ -84,7 +86,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                             _logger.Error(e, "An exception occurred in Mobile Analytics Delivery Client.");
                         }
                     }
-                    Thread.Sleep(Convert.ToInt32(AWSConfigsMobileAnalytics.BackgroundSubmissionWaitTime) * 1000);
+                    Thread.Sleep(BackgroundSubmissionWaitTime * 1000);
                 }
                 catch (System.Exception e)
                 {
@@ -105,7 +107,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             // Start task again if it's cancelled or faulted
             if (1 == Interlocked.CompareExchange(ref _startFlag, 1, 1) && _deliveryTask != null && (_deliveryTask.Status == TaskStatus.Canceled || _deliveryTask.Status == TaskStatus.Faulted || _deliveryTask.Status == TaskStatus.RanToCompletion))
             {
-                _deliveryTask = DoWork((int)AWSConfigsMobileAnalytics.BackgroundSubmissionWaitTime*1000);
+                _deliveryTask = DoWork(BackgroundSubmissionWaitTime*1000);
                 await _deliveryTask;                
             }
 
@@ -114,7 +116,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             // Start background task if it is not started yet.
             if (0 == Interlocked.CompareExchange(ref _startFlag, 1, 0))
             {
-                _deliveryTask = DoWork((int)AWSConfigsMobileAnalytics.BackgroundSubmissionWaitTime * 1000);
+                _deliveryTask = DoWork(BackgroundSubmissionWaitTime * 1000);
                 await _deliveryTask;
             }
         }

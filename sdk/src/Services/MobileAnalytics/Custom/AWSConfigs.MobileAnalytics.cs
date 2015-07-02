@@ -31,13 +31,14 @@ using System.Configuration;
 
 using Amazon.Util;
 using Amazon.Util.Internal;
+using Amazon.MobileAnalytics.MobileAnalyticsManager;
 
-namespace Amazon
+namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 {
     /// <summary>
-    /// Represents configuration for Mobile Analytics.
+    /// Represents configuration for Mobile Analytics Manager.
     /// </summary>
-    public static class AWSConfigsMobileAnalytics
+    public class MobileAnalyticsManagerConfig
     {
         private const string mobileAnalyticsKey = "mobileAnalytics";
 
@@ -46,18 +47,23 @@ namespace Amazon
         private const double defaultDBWarningThreashold = 0.9;
         private const int defaultMaxRequestSize = 102400;
         private const bool defaultAllowUseDataNetwork = false;
-        private const int defaultBackgroundSubmissionWaitTime = 10;
 
-        static AWSConfigsMobileAnalytics()
+        /// <summary>
+        /// Constructor of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManagerConfig"/>
+        /// </summary>
+        public MobileAnalyticsManagerConfig()
         {
             SessionTimeout = defaultSessionTimeout;
             MaxDBSize = defaultMaxDBSize;
             DBWarningThreshold = defaultDBWarningThreashold;
             MaxRequestSize = defaultMaxRequestSize;
             AllowUseDataNetwork = defaultAllowUseDataNetwork;
-            BackgroundSubmissionWaitTime = defaultBackgroundSubmissionWaitTime;
         }
 
+        /// <summary>
+        /// Client Context Configuration . <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.ClientContextConfig"/>
+        /// </summary>
+        public ClientContextConfig ClientContextConfiguration { get; set; }
 
         /// <summary>
         /// If the app stays in background for a time greater than the SessionTimeout then Mobile Analytics client stops old session and 
@@ -65,7 +71,7 @@ namespace Amazon
         /// We recommend using values ranging from 5 to 10, 
         /// </summary>
         /// <value>default 5 seconds</value>
-        public static int SessionTimeout { get; set; }
+        public int SessionTimeout { get; set; }
 
         /// <summary>
         /// Gets the max size of the database used for local storage of events. Event Storage will ignore new 
@@ -73,14 +79,14 @@ namespace Amazon
         /// We recommend using values ranging from 1MB to 10MB
         /// </summary>
         /// <value>Default 5MB</value>
-        public static int MaxDBSize { get; set; }
+        public int MaxDBSize { get; set; }
 
         /// <summary>
         /// The Warning threshold. The values range between 0 - 1. If the values exceed beyond the threshold then the
         /// Warning logs will be generated.
         /// </summary>
         /// <value>Default 0.9</value>
-        public static double DBWarningThreshold { get; set; }
+        public double DBWarningThreshold { get; set; }
 
         /// <summary>
         /// The maximum size of the requests that can be submitted in every service call. Value can range between
@@ -88,7 +94,7 @@ namespace Amazon
         /// service to reject your Http request.
         /// </summary>
         /// <value>Default 100KB</value>
-        public static int MaxRequestSize { get; set; }
+        public int MaxRequestSize { get; set; }
 
 
         /// <summary>
@@ -96,13 +102,7 @@ namespace Amazon
         /// Turn on this by caution. This may increase customer's data usage.
         /// </summary>
         /// <value>Default false</value>
-        public static bool AllowUseDataNetwork { get; set; }
-
-        /// <summary>
-        /// Background thread wait time. Thread will sleep for the interval mention. Value is in Seconds.
-        /// </summary>
-        /// <value>Default 60 seconds</value>
-        public static int BackgroundSubmissionWaitTime { get; set; }
+        public bool AllowUseDataNetwork { get; set; }
     }
 
 }

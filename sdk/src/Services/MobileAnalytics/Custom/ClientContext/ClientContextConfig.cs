@@ -22,88 +22,72 @@ using System;
 using Amazon.Util;
 using Amazon.Util.Internal;
 
-namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
+namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 {
     /// <summary>
     /// Provides information for Mobile Analytics Client Context header. 
     /// Client Context header needs information like App title, version code, version name, package name etc.
     /// </summary>
     public class ClientContextConfig
-    {
-        private const string APP_CLIENT_ID_KEY = "mobile_analytics_client_id";
-        
-        private string _appTitle = "";
-        private string _appVersionName = "";
-        private string _appVersionCode = "";
-        private string _appPackageName = "";
-        private string _appId = "";
-
-
-        // TODO : add platform specific implementation: using PCLCommon
-#if PCL
+    { 
+        /// <summary>
+        /// Constuctor of ClientContextConfig.
+        /// </summary>
+        /// <param name="appId"></param>
         public ClientContextConfig(string appId)
-            : this("", "", "", "", appId)
         {
-
+            this.AppId = appId;
         }
-#elif BCL35 || BCL45
-        public ClientContextConfig(string appId)
-            : this("", "", "", "", appId)
-        {
-
-        }   
-#endif
 
         /// <summary>
-        /// Initializes a new instance of the
-        /// <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.ClientContextConfig"/> class.
+        /// Mobile Analytics app identifier. 
+        /// The value is obtained from Mobile Analytics console for record your app data.
         /// </summary>
-        /// <param name="appTitle">App title -  The title of your app. For example, My App.</param>
-        /// <param name="appVersionName">App version name - The version of your app. For example, V2.0.</param>
-        /// <param name="appVersionCode">App version code - The version code for your app. For example, 3.</param>
-        /// <param name="appPackageName">App package name - The name of your package. For example, com.example.my_app.</param>
-        /// <param name="appId">App identifier - AWS Mobile Analytics App ID corresponding to your App</param>
-        internal ClientContextConfig(string appTitle, string appVersionName,string appVersionCode, string appPackageName, string appId)
-        {
-            if (appTitle == null)
-            {
-                throw new ArgumentNullException("appTitle");
-            }
+        public string AppId { get; set; }
+        
+        /// <summary>
+        /// The title of your app. For example, "My App".
+        /// </summary>
+        public string AppTitle { get; set; }
 
-            if (appVersionName == null)
-            {
-                throw new ArgumentNullException("appVersionName");
-            }
-            
-            if(string.IsNullOrEmpty(appId))
-            {
-                throw new ArgumentNullException("appId");
-            }
+        /// <summary>
+        /// The version for your app. For example, V3.0.
+        /// </summary>
+        public string AppVersionName { get; set; }
 
-            if (appPackageName == null)
-            {
-                throw new ArgumentNullException("appPackageName");
-            }
+        /// <summary>
+        /// The version code of your app. For example, 3.0.
+        /// </summary>
+        public string AppVersionCode { get; set; }
 
-            if (appVersionCode == null)
-            {
-                throw new ArgumentNullException("appVersionCode");
-            }
+        /// <summary>
+        /// The name of your app package. For example, com.your_company.your_app.
+        /// </summary>
+        public string AppPackageName { get; set; }
 
-            this._appTitle = appTitle;
-            this._appVersionName = appVersionName;
-            this._appVersionCode = appVersionCode;
-            this._appPackageName = appPackageName;
-            this._appId = appId;
-            
-        }
+        /// <summary>
+        /// The operating system of the device. For example, iPhoneOS.
+        /// </summary>
+        public string Platform { get; set; }
 
-        internal string AppId
-        {
-            get
-            {
-                return _appId;
-            }
-        }
+        /// <summary>
+        /// The version of the operating system of the device. For example, 8.1.
+        /// </summary>
+        public string PlatformVersion { get; set; }
+
+        /// <summary>
+        /// The locale of the device. For example, en_US.
+        /// </summary>
+        public string Locale { get; set; }
+
+        /// <summary>
+        /// The manufacturer of the device. For example, Samsung.
+        /// </summary>
+        public string Make { get; set; }
+
+        /// <summary>
+        /// The model of the device. For example, Nexus.
+        /// </summary>
+        public string Model { get; set; }
     }
 }

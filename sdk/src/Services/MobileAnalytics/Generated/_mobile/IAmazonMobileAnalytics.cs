@@ -38,6 +38,7 @@ namespace Amazon.MobileAnalytics
                 
         #region  PutEvents
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutEvents operation.
         /// </summary>
@@ -47,7 +48,7 @@ namespace Amazon.MobileAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

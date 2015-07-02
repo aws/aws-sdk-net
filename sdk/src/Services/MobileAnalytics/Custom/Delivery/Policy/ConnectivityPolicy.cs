@@ -25,6 +25,10 @@ using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 {
+    /// <summary>
+    /// An object for determining whether the delivery client should send events
+    /// to mobile analytics service by checking the network status.
+    /// </summary>
     public class ConnectivityPolicy : IDeliveryPolicy
     {
         private readonly bool IsDataAllowed;
@@ -42,7 +46,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         }
 
         /// <summary>
-        /// Determines whether this policy allows the delivery of the events or not
+        /// Determines whether this policy allows the delivery of the events or not.
         /// </summary>
         /// <returns>true</returns>
         /// <c>false</c>

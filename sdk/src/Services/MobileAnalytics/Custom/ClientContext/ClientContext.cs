@@ -66,15 +66,18 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         private ClientContextConfig _config;
         private static object _lock = new object();
         private string _clientID = null;
-        private IApplicationSettings _appSetting = new ApplicationSettings();
-        private IApplicationInfo _appInfo = new ApplicationInfo();
+        private static IApplicationSettings _appSetting = new ApplicationSettings();
+        private static IApplicationInfo _appInfo = new ApplicationInfo();
+        private static IEnvironmentInfo _envInfo = new EnvironmentInfo();
+
         private const string APP_ID_KEY = "APP_ID_KEY";
-        
+        private const string CLIENT_ID_CACHE_FULL_PATH = "client-ID-cache";
+
         /// <summary>
         /// Initializes a new instance of the
         /// <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.ClientContext"/> class.
         /// </summary>
-        /// <param name="config">Config <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.ClientContextConfig"/></param>
+        /// <param name="config">Config <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.ClientContextConfig"/></param>
         public ClientContext (ClientContextConfig config)
         {
             this.Config = config;
@@ -91,15 +94,30 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 }
             }
 #elif BCL35 || BCL45
-
+            if (string.IsNullOrEmpty(_clientID))
+            {
+                if (!System.IO.File.Exists(CLIENT_ID_CACHE_FULL_PATH))
+                {
+                    System.IO.FileStream fs = System.IO.File.Create(CLIENT_ID_CACHE_FULL_PATH);
+                    fs.Close();
+                    _clientID = Guid.NewGuid().ToString();
+                    System.IO.File.WriteAllText(CLIENT_ID_CACHE_FULL_PATH, _clientID);
+                }
+                else
+                {
+                    System.IO.StreamReader file = new System.IO.StreamReader(CLIENT_ID_CACHE_FULL_PATH);
+                    _clientID = file.ReadToEnd();
+                    file.Close();
+                }
+            }
 #endif
 
         }
         
         /// <summary>
-        /// Gets or sets the config <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.ClientContextConfig"/>
+        /// Gets or sets the config <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.ClientContextConfig"/>.
         /// </summary>
-        /// <value>The config.</value>
+        /// <value>The client context config.</value>
         public ClientContextConfig Config
         {
             set
@@ -114,7 +132,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         }
         
         /// <summary>
-        /// Adds the custom attributes to the Client Context
+        /// Adds the custom attributes to the Client Context.
         /// </summary>
         /// <param name="key">Key.</param>
         /// <param name="value">Value.</param>
@@ -127,7 +145,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         }
         
         /// <summary>
-        /// Gets a Json Representation of the Client Context
+        /// Gets a Json Representation of the Client Context.
         /// </summary>
         /// <returns>Json Representation of Client Context</returns>
         public String ToJsonString()
@@ -139,26 +157,58 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 _services = new Dictionary<string, IDictionary>();
 
 #if PCL || __IOS__ || __ANDROID__
+                 // client
                 _client.Add(CLIENT_ID_KEY, _clientID);
                 _client.Add(CLIENT_APP_TITLE_KEY, _appInfo.AppTitle);
                 _client.Add(CLIENT_APP_VERSION_NAME_KEY, _appInfo.AppVersionName);
                 _client.Add(CLIENT_APP_VERSION_CODE_KEY, _appInfo.AppVersionCode);
                 _client.Add(CLIENT_APP_PACKAGE_NAME_KEY, _appInfo.PackageName);
 
-                ////// env
-                _env.Add(ENV_PLATFORM_KEY, "iPhoneOS");
-                _env.Add(ENV_PLATFORM_VERSION_KEY, "8.1.2");
-                _env.Add(ENV_LOCALE_KEY, "en_US");
-                _env.Add(ENV_MAKE_KEY, "Apple");
-                _env.Add(ENV_MODEL_KEY, "iPhone");
+                // env
+                _env.Add(ENV_PLATFORM_KEY, _envInfo.Platform);
+                _env.Add(ENV_PLATFORM_VERSION_KEY, _envInfo.PlatformVersion);
+                _env.Add(ENV_LOCALE_KEY, _envInfo.Locale);
+                _env.Add(ENV_MAKE_KEY, _envInfo.Make);
+                _env.Add(ENV_MODEL_KEY, _envInfo.Model);
 
 #elif BCL35 || BCL45
-                ////// client
-                _client.Add(CLIENT_ID_KEY, "111710ab-5cba-4ae4-bfee-d1f4d59f5111");
+                // client
+                _client.Add(CLIENT_ID_KEY, _clientID);
 
-                ////// env
-                _env.Add(ENV_LOCALE_KEY, System.Globalization.CultureInfo.CurrentCulture.Name);
-	        
+                if(!string.IsNullOrEmpty(this.Config.AppTitle))
+                    _client.Add(CLIENT_APP_TITLE_KEY, this.Config.AppTitle);
+                
+                if(!string.IsNullOrEmpty(this.Config.AppVersionName))
+                    _client.Add(CLIENT_APP_VERSION_NAME_KEY, this.Config.AppVersionName);
+                
+                if(!string.IsNullOrEmpty(this.Config.AppVersionCode))
+                    _client.Add(CLIENT_APP_VERSION_CODE_KEY, this.Config.AppVersionCode);
+
+                if(!string.IsNullOrEmpty(this.Config.AppPackageName))
+                    _client.Add(CLIENT_APP_PACKAGE_NAME_KEY, this.Config.AppPackageName);
+
+
+                // env
+                if(!string.IsNullOrEmpty(this.Config.Platform))
+                    _env.Add(ENV_PLATFORM_KEY, this.Config.Platform);
+                else
+                    _env.Add(ENV_PLATFORM_KEY, Environment.OSVersion.Platform.ToString());
+                
+                if(!string.IsNullOrEmpty(this.Config.PlatformVersion))
+                    _env.Add(ENV_PLATFORM_KEY, this.Config.PlatformVersion);
+                else
+                    _env.Add(ENV_PLATFORM_VERSION_KEY, Environment.OSVersion.Version.ToString());
+                
+                if(!string.IsNullOrEmpty(this.Config.Locale))
+                    _env.Add(ENV_LOCALE_KEY, this.Config.Locale);
+                else
+                    _env.Add(ENV_LOCALE_KEY, System.Globalization.CultureInfo.CurrentCulture.Name);
+                
+                if (!string.IsNullOrEmpty(this.Config.Make))
+                    _env.Add(ENV_MAKE_KEY, this.Config.Make);
+                
+                if(!string.IsNullOrEmpty(this.Config.Model))
+                    _env.Add(ENV_MODEL_KEY, this.Config.Model);
 #endif
                 // services
                 IDictionary mobileAnalyticsService = new Dictionary<string, string>();

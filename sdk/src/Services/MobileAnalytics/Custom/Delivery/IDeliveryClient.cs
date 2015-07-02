@@ -20,12 +20,15 @@ using Amazon.MobileAnalytics.Model;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 {
+    /// <summary>
+    /// The interface for delivery client.
+    /// </summary>
     public interface IDeliveryClient
     {
-#if PCL || BCL45
         /// <summary>
         /// Attempts the delivery of events from local store to service.
         /// </summary>
+#if PCL || BCL45
         System.Threading.Tasks.Task AttemptDeliveryAsync();
 #elif BCL35
         void AttemptDelivery();  
@@ -43,7 +46,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <summary>
         /// Sets custom policies to the delivery client. This will allow you to fine grain control on when an attempt should be made to deliver the events on the service.
         /// </summary>
-        /// <param name="policy">An instance of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.IDeliveryPolicy"/></param>
+        /// <param name="policy">An instance of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IDeliveryPolicy"/></param>
         void AddDeliveryPolicies(IDeliveryPolicy policy);
     }
 }

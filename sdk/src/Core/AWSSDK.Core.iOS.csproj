@@ -31,7 +31,7 @@
     <DocumentationFile>bin\Debug\Xamarin.iOS10\AWSSDK.Core.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>none</DebugType>
+    <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\Xamarin.iOS10</OutputPath>
     <DefineConstants>TRACE;;PCL;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>

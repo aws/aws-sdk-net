@@ -27,8 +27,18 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     /// </summary>
     public class EventStoreException : Exception
     {
+        
+        /// <summary>
+        /// Constructor of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.EventStoreException"/>
+        /// </summary>
+        /// <param name="message">Exception message.</param>
         public EventStoreException(string message) : base(message) { }
 
+        /// <summary>
+        /// Constructor of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.EventStoreException"/>
+        /// </summary>
+        /// <param name="message">Exception message.</param>
+        /// <param name="innerException">Inner exception.</param>
         public EventStoreException(string message, Exception innerException) : base(message, innerException) { }
     }
 } 

@@ -23,33 +23,41 @@ using ThirdParty.Json.LitJson;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 {
+    
+    /// <summary>
+    /// The interface for managing events storage.
+    /// </summary>
     public interface IEventStore
     {
         /// <summary>
         /// Add an event to the store.
         /// </summary>
+        /// <param name="eventString">Amazon Mobile Analytics event in string.</param>
+        /// <param name="appId">Amazon Mobile Analytics App ID.</param>
         /// <returns><c>true</c>, if event was put, <c>false</c> otherwise.</returns>
         bool PutEvent(string eventString, string appId);
         
         /// <summary>
-        /// Get All event from the Event Store
+        /// Get events from the Event Store
         /// </summary>
         /// <param name="appid">Amazon Mobile Analytics App Id.</param>
-        /// <returns>All the events as a List of <see cref="ThirdParty.Json.LitJson.JsonData"/>.</returns>
+        /// <param name="maxAllowed">Max number of events is allowed to return.</param>
+        /// <returns>The events as a List of <see cref="ThirdParty.Json.LitJson.JsonData"/>.</returns>
         List<JsonData> GetEvents(string appid, int maxAllowed);
         
         /// <summary>
         /// Deletes a list of events.
         /// </summary>
+        /// <param name="rowIds">List of row identifiers.</param>
         /// <returns><c>true</c>, if events was deleted, <c>false</c> otherwise.</returns>
-        /// <param name="rowIds">Row identifiers.</param>
         bool DeleteEvent(List<string> rowIds);
         
         /// <summary>
         /// Gets Numbers the of events.
         /// </summary>
+        /// <param name="appId">Amazon Mobile Analytics App Identifier.</param>
         /// <returns>The number of events.</returns>
-        long NumberOfEvents(string appid);
+        long NumberOfEvents(string appId);
         
         /// <summary>
         /// Gets the size of the database.

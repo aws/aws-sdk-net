@@ -39,6 +39,10 @@ using SQLitePCL;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 {
+    /// <summary>
+    /// Implementation of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IEventStore"/>.
+    /// The object stores Mobile Analytic events in SQLite database.
+    /// </summary>
     public class SQLiteEventStore : IEventStore
     {
 
@@ -56,22 +60,36 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         // platform specific db file path
         private static String _dbFileFullPath = null;
         private static object _lock = new object();
-
+        private MobileAnalyticsManagerConfig _maConfig;
+        
         /// <summary>
         /// Initializes the <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore"/> class.
         /// </summary>
         static SQLiteEventStore()
         {
-            // get platform specific db file full path                    
-            Amazon.Util.Internal.PlatformServices.ApplicationInfo appInfo = new Amazon.Util.Internal.PlatformServices.ApplicationInfo();
-             _dbFileFullPath = System.IO.Path.Combine(appInfo.SpecialFolder, dbFileName);
+
+#if BCL35 || BCL45
+            _dbFileFullPath = dbFileName;
+#elif PCL
+            _dbFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, dbFileName);
+#endif      
             SetUpDatabase(dbFileName);
         }
 
         /// <summary>
-        /// Sets up database.
+        /// Constructor of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore"/>
         /// </summary>
-        /// <param name="dbPath">Db path.</param>
+        /// <param name="maConfig">Mobile Analytics Manager Configuration.</param>
+        public SQLiteEventStore(MobileAnalyticsManagerConfig maConfig)
+        {
+            _maConfig = maConfig;
+        }
+
+
+        /// <summary>
+        /// Sets up SQLite database.
+        /// </summary>
+        /// <param name="dbPath">Database file full path.</param>
         private static void SetUpDatabase(String dbPath)
         {
 #if __IOS__
@@ -142,6 +160,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <summary>
         /// Add an event to the store.
         /// </summary>
+        /// <param name="eventString">Amazon Mobile Analytics event in string.</param>
+        /// <param name="appId">Amazon Mobile Analytics App ID.</param>
         /// <returns><c>true</c>, if event was put, <c>false</c> otherwise.</returns>
         public bool PutEvent(string eventString, string appId)
         {
@@ -149,12 +169,12 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             bool result = false;
             long currentDatabaseSize = GetDatabaseSize();
 
-            if (currentDatabaseSize >= AWSConfigsMobileAnalytics.MaxDBSize)
+            if (currentDatabaseSize >= _maConfig.MaxDBSize)
             {
                 InvalidOperationException e = new InvalidOperationException();
                 _logger.Error(e, "The database size has exceeded the threshold limit. Unable to insert any new events");
             }
-            else if ((double)currentDatabaseSize / (double)AWSConfigsMobileAnalytics.MaxDBSize >= AWSConfigsMobileAnalytics.DBWarningThreshold)
+            else if ((double)currentDatabaseSize / (double)_maConfig.MaxDBSize >= _maConfig.DBWarningThreshold)
             {
                 _logger.InfoFormat("The database size is almost full");
             }
@@ -221,8 +241,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <summary>
         /// Deletes a list of events.
         /// </summary>
+        /// <param name="rowIds">List of row identifiers.</param>
         /// <returns><c>true</c>, if events was deleted, <c>false</c> otherwise.</returns>
-        /// <param name="rowIds">Row identifiers.</param>
         public bool DeleteEvent(List<string> rowIds)
         {
             bool result = false;
@@ -274,10 +294,11 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         }
 
         /// <summary>
-        /// Get All event from the Event Store
+        /// Get events from the Event Store
         /// </summary>
-        /// <param name="appid">Appid.</param>
-        /// <returns>All the events as a List of <see cref="ThirdParty.Json.LitJson.JsonData"/>.</returns>
+        /// <param name="appId">Amazon Mobile Analytics App Id.</param>
+        /// <param name="maxAllowed">Max number of events is allowed to return.</param>
+        /// <returns>The events as a List of <see cref="ThirdParty.Json.LitJson.JsonData"/>.</returns>
         public List<JsonData> GetEvents(string appId, int maxAllowed)
         {
             
@@ -347,6 +368,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <summary>
         /// Gets Numbers the of events.
         /// </summary>
+        /// <param name="appId">Amazon Mobile Analytics App Identifier.</param>
         /// <returns>The number of events.</returns>
         public long NumberOfEvents(string appId)
         {

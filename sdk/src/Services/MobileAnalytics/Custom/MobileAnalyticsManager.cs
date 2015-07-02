@@ -35,7 +35,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
     /// </summary>
     public partial class MobileAnalyticsManager
     {  
-        private string _appId = null;
         private static object _lock = new object();
         private static IDictionary<string,MobileAnalyticsManager> _instanceDictionary = new Dictionary<string, MobileAnalyticsManager>();
         private static Logger _logger = Logger.GetLogger(typeof(MobileAnalyticsManager));
@@ -46,13 +45,15 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// Gets the or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
         /// creates new instance and returns it.
         /// </summary>
-        /// <returns>Mobile Analytics Manager instance.</returns>
-        /// <param name="credentials">AWS Credentials.</param>
+        /// <param name="credential">AWS Credentials.</param>
         /// <param name="regionEndpoint">Region endpoint.</param>
         /// <param name="appId">Amazon Mobile Analytics Application ID.</param>
+        /// <param name="maConfig">Amazon Mobile Analytics Manager configuration.</param>
+        /// <returns>Mobile Analytics Manager instance. If it's null, default configuration would be created.</returns>
         public static MobileAnalyticsManager GetOrCreateInstance(AWSCredentials credential,
                                                                          RegionEndpoint regionEndpoint,
-                                                                         string appId
+                                                                         string appId,
+                                                                         MobileAnalyticsManagerConfig maConfig
                                                                          )
         {
             if (credential == null)
@@ -62,35 +63,56 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             if (string.IsNullOrEmpty(appId))
                 throw new ArgumentNullException("appId");
 
-            ClientContextConfig config = new ClientContextConfig(appId);
-            return MobileAnalyticsManager.GetOrCreateInstance(credential, regionEndpoint, config);
+
+            MobileAnalyticsManager managerInstance = null;
+            bool isNewInstance = false;
+            lock (_lock)
+            {
+                if (_instanceDictionary.ContainsKey(appId))
+                {
+                    managerInstance = _instanceDictionary[appId];
+                }
+                else
+                {
+                    if (maConfig == null)
+                        maConfig = new MobileAnalyticsManagerConfig();
+                    if (maConfig.ClientContextConfiguration == null)
+                        maConfig.ClientContextConfiguration = new ClientContextConfig(appId);
+
+                    managerInstance = new MobileAnalyticsManager(credential, regionEndpoint, maConfig);
+                    _instanceDictionary[appId] = managerInstance;
+                    isNewInstance = true;
+                }
+            }
+
+            if (isNewInstance)
+                managerInstance.Session.Start();
+
+            BackgroundRunner.StartWork();
+
+            return managerInstance;
         }
 
-        /// <summary>
-        /// Gets the or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
-        /// creates new instance and returns it.
-        /// </summary>
-        /// <returns>Mobile Analytics Manager instance.</returns>
-        /// <param name="credentials">AWS Credentials.</param>
-        /// <param name="appId">Amazon Mobile Analytics Application ID.</param>
-        public static MobileAnalyticsManager GetOrCreateInstance(AWSCredentials credential,
-                                                                         string appId)
-        {
-            if (credential == null)
-                throw new ArgumentNullException("credential");
-            if (string.IsNullOrEmpty(appId))
-                throw new ArgumentNullException("appId");
 
-            ClientContextConfig config = new ClientContextConfig(appId);
-            return MobileAnalyticsManager.GetOrCreateInstance(credential, null, config);
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManager"/> class.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials.</param>
+        /// <param name="regionEndpoint">Region endpoint.</param>
+        /// <param name="maConfig">Mobile Ananlytics Manager Config.</param>
+        private MobileAnalyticsManager(AWSCredentials credentials, RegionEndpoint regionEndpoint, MobileAnalyticsManagerConfig maConfig)
+        {
+            this.ClientContext = new ClientContext(maConfig.ClientContextConfiguration);
+            this.BackgroundDeliveryClient = new DeliveryClient(maConfig, ClientContext, credentials, regionEndpoint);
+            this.Session = new Session(maConfig.ClientContextConfiguration.AppId, maConfig.SessionTimeout);
         }
 
         /// <summary>
         /// Gets Mobile Analytics Manager instance by Application ID. Returns Mobile Analytics Manager instance if it's found.
         /// Throws InvalidOperationException if the instance has not been instantiated.
         /// </summary>
-        /// <returns>The Mobile Analytics Manager instance.</returns>
         /// <param name="appId">Amazon Mobile Analytics Application ID.</param>
+        /// <returns>The Mobile Analytics Manager instance.</returns>
         public static MobileAnalyticsManager GetInstance(string appId)
         {
             if (string.IsNullOrEmpty(appId))
@@ -108,108 +130,51 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
                 }
             }
         }
-        
-        
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManager"/> class.
-        /// </summary>
-        /// <param name="clientContextConfig">Client context config.</param>
-        /// <param name="regionEndpoint">Region endpoint.</param>
-        /// <param name="credentials">AWS Credentials.</param>
-        private MobileAnalyticsManager(ClientContextConfig clientContextConfig,RegionEndpoint regionEndpoint,AWSCredentials credentials)
-        {        
-            if(clientContextConfig == null)
-                throw new ArgumentNullException("clientContextConfig");
-            ClientContext = new ClientContext(clientContextConfig);
-            
-            if(string.IsNullOrEmpty(clientContextConfig.AppId))
-                throw new ArgumentNullException("application id");
-            _appId = clientContextConfig.AppId;
-            
-            if(credentials == null)
-                throw new ArgumentNullException("credentials");
 
-            BackgroundDeliveryClient = new DeliveryClient(AWSConfigsMobileAnalytics.AllowUseDataNetwork, ClientContext, credentials, regionEndpoint);
-            
-            Session = new Session(_appId);
-        }
 
-        /// <summary>
-        /// Gets the or create instance.
-        /// </summary>
-        /// <returns>The or create instance.</returns>
-        /// <param name="clientContextConfig">Client context config.</param>
-        /// <param name="regionEndpoint">Region endpoint.</param>
-        /// <param name="credentials">Credentials.</param>
-        private static MobileAnalyticsManager GetOrCreateInstance(AWSCredentials credential,
-                                                                       RegionEndpoint regionEndpoint,
-                                                                       ClientContextConfig clientContextConfig
-                                                                       )
-        {
-            string appId = clientContextConfig.AppId;
-            MobileAnalyticsManager managerInstance =null;
-            bool isNewInstance = false;
-            lock(_lock)
-            {
-                if(_instanceDictionary.ContainsKey(appId)){
-                    managerInstance = _instanceDictionary[appId];
-                }else{
-                    managerInstance = new MobileAnalyticsManager(clientContextConfig,regionEndpoint,credential);
-                    _instanceDictionary[appId] = managerInstance;
-                    isNewInstance = true;
-                }
-            }
-            
-            if(isNewInstance)
-                managerInstance.Session.Start();
-            
-            BackgroundRunner.StartWork();
-
-            return managerInstance;
-        }
         #endregion
         
         #region public
         /// <summary>
         /// Pauses the current session.
-        /// PauseSession() is the entry point into the Amazon Mobile Analytics SDK where sessions can be resumed. Session is created and started immediately 
+        /// PauseSession() is the entry point into the Amazon Mobile Analytics SDK where sessions can be paused. Session is created and started immediately 
         /// after instantiating the MobileAnalyticsManager object. The session remains active until it is paused. When in a paused state, the session time will 
         /// not accumulate. When resuming a session, if enough time has elapsed from when the session is paused to when it's resumed, the session is ended and 
         /// a new session is created and started. Otherwise, the paused session is resumed and the session time continues to accumulate. Currently session 
         /// time out default value is 5 seconds.
         /// 
-        /// For example, when MobileAnalyticsManager is first instantiated, it creates Session 1. As the user transitions from scene to scene, the old 
-        /// scene will pause the current session, and the new scene will immediately resume the current session. In this case, Session 1 remains active 
+        /// For example, on Android platform, when MobileAnalyticsManager is first instantiated, it creates Session 1. As the user transitions from activity to activity, the old 
+        /// activity will pause the current session, and the new activity will immediately resume the current session. In this case, Session 1 remains active 
         /// and accumulates session time. The user continues to use the App for a total of 3 minutes, at which point, the user receives a phone call. 
-        /// When transitioning to the phone call, the current scene will pause the session and then transition to the phone app. In this case Session 1 
+        /// When transitioning to the phone call, the current activity will pause the session and then transition to the phone app. In this case Session 1 
         /// remains paused while the phone call is in progress and session time does not accumulate. After completing the phone call a few minutes later, 
-        /// the user returns to the App and the scene will resume Session 1. Since enough time has elapsed since resuming Session 1, Session 1 will be ended 
+        /// the user returns to the App and the activity will resume Session 1. Since enough time has elapsed since resuming Session 1, Session 1 will be ended 
         /// with a play time of 3 minutes. Session 2 will then be immediately created and started.
         /// 
-        /// In order for MobileAnalyticsManager to track sessions, you must call the PauseSession() and ResumeSession() in each scene of your Unity app
-        /// and you must call them from main thread.
+        /// In order for MobileAnalyticsManager to track sessions, you must call the PauseSession() and ResumeSession() in each activity of your app.
         /// <example>
-        /// The example below shows how to pause and resume session
+        /// The example below shows how to pause and resume session in Xamarin Android
         /// <code>
-        /// public class AmazonMobileAnalyticsSample : MonoBehaviour
-        /// {
-        ///     void Start()
-        ///     {
-        ///         analyticsManager = MobileAnalyticsManager.GetOrCreateInstance(credential,region,appId);
-        ///     }
-        /// 
-        ///     void OnApplicationFocus(bool focus) 
-        ///     {
-        ///         if(focus)
-        ///         {
-        ///             analyticsManager.ResumeSession();
-        ///         }
-        ///         else
-        ///         {
-        ///             analyticsManager.PauseSession();
-        ///         }
-        ///     }
-        /// }
+        ///public class MainActivity : Activity
+        ///{
+        ///    private static MobileAnalyticsManager _manager = null;
+        ///
+        ///    protected override void OnCreate(Bundle bundle)
+        ///    {
+        ///        _manager = MobileAnalyticsManager.GetOrCreateInstance(YourCredential, RegionEndpoint.USEast1, YourAppId, YourConfig);
+        ///        base.OnCreate(bundle);
+        ///    }
+        ///    protected override void OnResume()
+        ///    {
+        ///        _manager.ResumeSession();
+        ///        base.OnResume();
+        ///    }
+        ///    protected override void OnPause()
+        ///    {
+        ///        _manager.PauseSession();
+        ///        base.OnPause();
+        ///    }
+        ///}
         /// </code>  
         /// </example> 
         /// </summary>
@@ -233,38 +198,38 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// a new session is created and started. Otherwise, the paused session is resumed and the session time continues to accumulate. Currently session 
         /// time out default value is 5 seconds.
         /// 
-        /// For example, when MobileAnalyticsManager is first instantiated, it creates Session 1. As the user transitions from scene to scene, the old 
-        /// scene will pause the current session, and the new scene will immediately resume the current session. In this case, Session 1 remains active 
+        /// For example, on Android platform, when MobileAnalyticsManager is first instantiated, it creates Session 1. As the user transitions from activity to activity, the old 
+        /// activity will pause the current session, and the new activity will immediately resume the current session. In this case, Session 1 remains active 
         /// and accumulates session time. The user continues to use the App for a total of 3 minutes, at which point, the user receives a phone call. 
-        /// When transitioning to the phone call, the current scene will pause the session and then transition to the phone app. In this case Session 1 
+        /// When transitioning to the phone call, the current activity will pause the session and then transition to the phone app. In this case Session 1 
         /// remains paused while the phone call is in progress and session time does not accumulate. After completing the phone call a few minutes later, 
-        /// the user returns to the App and the scene will resume Session 1. Since enough time has elapsed since resuming Session 1, Session 1 will be ended 
+        /// the user returns to the App and the activity will resume Session 1. Since enough time has elapsed since resuming Session 1, Session 1 will be ended 
         /// with a play time of 3 minutes. Session 2 will then be immediately created and started.
         /// 
-        /// In order for MobileAnalyticsManager to track sessions, you must call the PauseSession() and ResumeSession() in each scene of your Unity app
-        /// and you must call them from main thread.
+        /// In order for MobileAnalyticsManager to track sessions, you must call the PauseSession() and ResumeSession() in each activity of your app.
         /// <example>
-        /// The example below shows how to pause and resume session
+        /// The example below shows how to pause and resume session in Xamarin Android
         /// <code>
-        /// public class AmazonMobileAnalyticsSample : MonoBehaviour
-        /// {
-        ///     void Start()
-        ///     {
-        ///         analyticsManager = MobileAnalyticsManager.GetOrCreateInstance(credential,region,appId);
-        ///     }
-        /// 
-        ///     void OnApplicationFocus(bool focus) 
-        ///     {
-        ///         if(focus)
-        ///         {
-        ///             analyticsManager.ResumeSession();
-        ///         }
-        ///         else
-        ///         {
-        ///             analyticsManager.PauseSession();
-        ///         }
-        ///     }
-        /// }
+        ///public class MainActivity : Activity
+        ///{
+        ///    private static MobileAnalyticsManager _manager = null;
+        ///
+        ///    protected override void OnCreate(Bundle bundle)
+        ///    {
+        ///        _manager = MobileAnalyticsManager.GetOrCreateInstance(YourCredential, RegionEndpoint.USEast1, YourAppId, YourConfig);
+        ///        base.OnCreate(bundle);
+        ///    }
+        ///    protected override void OnResume()
+        ///    {
+        ///        _manager.ResumeSession();
+        ///        base.OnResume();
+        ///    }
+        ///    protected override void OnPause()
+        ///    {
+        ///        _manager.PauseSession();
+        ///        base.OnPause();
+        ///    }
+        ///}
         /// </code>  
         /// </example> 
         /// </summary>
@@ -284,7 +249,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 		/// <summary>
         /// Records the custom event to the local persistent storage. Background thread will deliver the event later.
         /// </summary>
-        /// <param name="customEvent">The event.</param>
+        /// <param name="customEvent">The Mobile Analytics event.</param>
         public void RecordEventAsync(CustomEvent customEvent)
         {
             customEvent.Timestamp = DateTime.UtcNow;
@@ -314,13 +279,20 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 
             ClientContext.AddCustomAttributes(key,value);
         }
+
+        /// <summary>
+        /// Get the object which represents Mobile Analytics Session.
+        /// </summary>
+        public Session Session { get; private set; }
+
+        /// <summary>
+        /// Get the object which represents Mobile Analytics Client Context header.
+        /// </summary>
+        public ClientContext ClientContext { get; private set; }   
         #endregion
 
 
         #region internal
-        public Session Session {get;private set;}
-        public ClientContext ClientContext {get;private set;}
-        
         internal IDeliveryClient BackgroundDeliveryClient{get;private set;}
         
         internal static IDictionary<string,MobileAnalyticsManager> InstanceDictionary

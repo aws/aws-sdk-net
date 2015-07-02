@@ -45,54 +45,62 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     {
         private Logger _logger = Logger.GetLogger(typeof(DeliveryClient));
 
-        private static bool _deliveryInProgress = false;
         private static object _deliveryLock = new object();
 
         private readonly IDeliveryPolicyFactory _policyFactory;
-        private IEventStore _eventStore;
-
-        private ClientContext _clientContext;
-        private AmazonMobileAnalyticsClient _mobileAnalyticsLowLevelClient;
-        private string _appId;
         private List<IDeliveryPolicy> _deliveryPolicies;
 
+        private IEventStore _eventStore;
+        private AmazonMobileAnalyticsClient _mobileAnalyticsLowLevelClient;
+
+        private ClientContext _clientContext;
+        private string _appId;
+        private MobileAnalyticsManagerConfig _maConfig;
+        
         private const int MAX_ALLOWED_SELECTS = 200;
 
         /// <summary>
-        /// Constructor of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.DeliveryClient"/> class.
+        /// Constructor of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.DeliveryClient"/> class.
         /// </summary>
-        /// <param name="isDataAllowed">If set to <c>true</c> The delivery will be attempted even on Data Network, else it will be only attempted on Wifi.</param>
-        /// <param name="clientContext">An instance of ClientContext <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.ClientContext"/></param>
-        /// <param name="credentials">An instance of Credentials <see cref="Amazon.Runtime.AWSCredentials"/></param>
-        /// <param name="regionEndPoint">Region end point <see cref="Amazon.RegionEndpoint"/></param>
-        public DeliveryClient(bool isDataAllowed, ClientContext clientContext, AWSCredentials credentials, RegionEndpoint regionEndPoint) :
-            this(new DeliveryPolicyFactory(isDataAllowed), clientContext, credentials, regionEndPoint)
+        /// <param name="maConfig">Mobile Analytics Manager configuration. <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManagerConfig"/></param>
+        /// <param name="clientContext">An instance of ClientContext. <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.ClientContext"/></param>
+        /// <param name="credentials">An instance of Credentials. <see cref="Amazon.Runtime.AWSCredentials"/></param>
+        /// <param name="regionEndPoint">Region end point. <see cref="Amazon.RegionEndpoint"/></param>
+        public DeliveryClient(MobileAnalyticsManagerConfig maConfig, ClientContext clientContext, AWSCredentials credentials, RegionEndpoint regionEndPoint) :
+            this(new DeliveryPolicyFactory(maConfig.AllowUseDataNetwork), maConfig, clientContext, credentials, regionEndPoint)
         {
         }
 
         /// <summary>
-        /// Constructor of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.DeliveryClient"/> class.
+        /// Constructor of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.DeliveryClient"/> class.
         /// </summary>
-        /// <param name="isDataAllowed">An instance of IDeliveryPolicyFactory <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IDeliveryPolicyFactory"/></param>
-        /// <param name="clientContext">An instance of ClientContext <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.ClientContext"/></param>
-        /// <param name="credentials">An instance of Credentials <see cref="Amazon.Runtime.AWSCredentials"/></param>
-        /// <param name="regionEndPoint">Region end point <see cref="Amazon.RegionEndpoint"/></param>
-        public DeliveryClient(IDeliveryPolicyFactory policyFactory, ClientContext clientContext, AWSCredentials credentials, RegionEndpoint regionEndPoint)
+        /// <param name="policyFactory">An instance of IDeliveryPolicyFactory. <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IDeliveryPolicyFactory"/></param>
+        /// <param name="maConfig">Mobile Analytics Manager configuration. <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManagerConfig"/></param>
+        /// <param name="clientContext">An instance of ClientContext. <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.ClientContext"/></param>
+        /// <param name="credentials">An instance of Credentials. <see cref="Amazon.Runtime.AWSCredentials"/></param>
+        /// <param name="regionEndPoint">Region end point. <see cref="Amazon.RegionEndpoint"/></param>
+        public DeliveryClient(IDeliveryPolicyFactory policyFactory,MobileAnalyticsManagerConfig maConfig, ClientContext clientContext, AWSCredentials credentials, RegionEndpoint regionEndPoint)
         {
             _policyFactory = policyFactory;
+
+            _deliveryPolicies = new List<IDeliveryPolicy>();
+#if PCL || __IOS__ || __ANDROID__         
+            _deliveryPolicies.Add(_policyFactory.NewConnectivityPolicy());
+#endif
+            _eventStore = new SQLiteEventStore(maConfig);
             _mobileAnalyticsLowLevelClient = new AmazonMobileAnalyticsClient(credentials, regionEndPoint);
+
             _clientContext = clientContext;
             _appId = clientContext.Config.AppId;
-            _eventStore = new SQLiteEventStore();
-            _deliveryPolicies = new List<IDeliveryPolicy>();
-            _deliveryPolicies.Add(_policyFactory.NewConnectivityPolicy());
+            _maConfig = maConfig;
+
         }
 
  
         /// <summary>
-        /// Enqueues the events for delivery. The event is stored in an <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IEventStore"/>.
+        /// Enqueues the events for delivery. The event is stored in an instance of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IEventStore"/>.
         /// </summary>
-        /// <param name="eventObject">Event object. <see cref="Amazon.MobileAnalytics.Model.Event"/></param>
+        /// <param name="eventObject">Event object.<see cref="Amazon.MobileAnalytics.Model.Event"/></param>
 #if BCL35
         public void EnqueueEventsForDeliveryAsync(Amazon.MobileAnalytics.Model.Event eventObject)
 #elif PCL || BCL45        
@@ -137,11 +145,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
         /// <summary>
         /// Attempts the delivery. 
-        /// It will fail delivery if any of the policies.isAllowed() returns false.
-        /// The policies are attmpted in batches of fixed size. To increase or decrease the size of bytes 
-        /// transfered per batch you can awsconfig.xml and configure the maxRequestSize property. 
+        /// Delivery will fail if any of the policies isAllowed() returns false.
+        /// The delivery are attmpted in batches of fixed size. To increase or decrease the size,
+        /// you can override MaxRequestSize in MobileAnalyticsManagerConfig.<see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManagerConfig"/>
         /// </summary>
-        /// <param name="policies">list of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.IDeliveryPolicy"/></param>
 #if BCL35        
         public void AttemptDelivery()
 #elif PCL || BCL45        
@@ -177,7 +184,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             foreach (JsonData eventData in allEventList)
             {
                 submitEventsLength += ((string)eventData["event"]).Length;
-                if (submitEventsLength < AWSConfigsMobileAnalytics.MaxRequestSize)
+                if (submitEventsLength < _maConfig.MaxRequestSize)
                 {
                     _logger.InfoFormat("Event string is {0}", (string)eventData["event"]);
 
@@ -210,9 +217,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <summary>
         /// Submits a single batch of events to the service.
         /// </summary>
-        /// <param name="rowIds">Row identifiers. The list of rowIds is returned back once the service execution completes on the background thread.</param>
-        /// <param name="eventArray">All the events that need to be submitted</param>
-        /// <param name="callback">Callback Handler once the Service Attempts the delivery</param>
+        /// <param name="rowIds">Row identifiers. The list of rowId, that is unique identifier of each event.</param>
+        /// <param name="eventList">The list of events that need to be submitted.</param>
 #if BCL35        
         private void SubmitEvents(List<string> rowIds, List<Amazon.MobileAnalytics.Model.Event> eventList)
 #elif PCL || BCL45        
@@ -279,9 +285,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
 
         /// <summary>
-        /// Set custom policies to the delivery client. This will allow you to fine grain control on when an attempt should be made to deliver the events on the service.
+        /// Set custom policies to the delivery client. This will allow you to fine grain control on when an attempt should be made to deliver the events to the service.
         /// </summary>
-        /// <param name="policy">An instance of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.IDeliveryPolicy"/></param>
+        /// <param name="policy">An instance of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IDeliveryPolicy"/></param>
         public void AddDeliveryPolicies(IDeliveryPolicy policy)
         {
             if (policy != null)
