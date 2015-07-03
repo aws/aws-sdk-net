@@ -14,14 +14,17 @@ using System.Collections.Generic;
 using Amazon.MobileAnalytics;
 using System.Collections;
 using ThirdParty.Json.LitJson;
+using Amazon.CognitoIdentity;
 
 namespace MobileAnalyticsSample_Android
 {
     [Activity(Label = "MobileAnalyticsSample_Android", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        int count = 1;
-        private const string APP_ID = "c2a810692c0b49af83d987c843269a18";
+        private const string APP_ID = "YourAppID";
+        private string COGNITO_POOL_ID = "YourPoolID";
+        private RegionEndpoint COGNITO_REGION = RegionEndpoint.USEast1;
+        
         private static MobileAnalyticsManager _manager = null;
 
 
@@ -66,11 +69,12 @@ namespace MobileAnalyticsSample_Android
                 _manager.RecordEventAsync(monetizationEvent);
             };
 
+
+            // customize your Mobile Analytics Manager Config
             MobileAnalyticsManagerConfig config = new MobileAnalyticsManagerConfig();
             config.SessionTimeout = 5;
-
-            _manager = MobileAnalyticsManager.GetOrCreateInstance(new BasicAWSCredentials("AKIAI7DF4TKSGTQXDHJA", "n8SaFlNy9wq6aq5NcWknsN2HRa2QzN+9UoPS9TE3"),
-                RegionEndpoint.USEast1, APP_ID, config);
+            
+            _manager = MobileAnalyticsManager.GetOrCreateInstance(new CognitoAWSCredentials(COGNITO_POOL_ID, COGNITO_REGION), RegionEndpoint.USEast1, APP_ID, config);
         }
 
         protected override void OnResume()
