@@ -34,7 +34,7 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// If you exceed your maximum limit of Auto Scaling groups, which by default is 20 per
-    /// region, the call fails. For information about viewing and updating these limits, see
+    /// region, the call fails. For information about viewing and updating this limit, see
     /// <a>DescribeAccountLimits</a>.
     /// </para>
     ///  
@@ -106,8 +106,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>DefaultCooldown</code> is not specified, the default value is 300. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+        /// If this parameter is not specified, the default value is 300. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
         /// Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -126,9 +126,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        /// The number of EC2 instances that should be running in the group. This value must be
-        /// greater than or equal to the minimum size of the group and less than or equal to the
-        /// maximum size of the group.
+        /// The number of EC2 instances that should be running in the group. This number must
+        /// be greater than or equal to the minimum size of the group and less than or equal to
+        /// the maximum size of the group.
         /// </para>
         /// </summary>
         public int DesiredCapacity

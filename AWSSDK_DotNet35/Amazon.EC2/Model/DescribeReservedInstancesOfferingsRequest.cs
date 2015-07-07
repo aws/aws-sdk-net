@@ -113,9 +113,11 @@ namespace Amazon.EC2.Model
         /// VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE
         /// Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code>
         /// | <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Windows</code> | <code>Windows
-        /// (Amazon VPC)</code>) | <code>Windows with SQL Server Standard</code> | <code>Windows
+        /// (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows
         /// with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code>
-        /// | <code> Windows with SQL Server Web (Amazon VPC))</code> 
+        /// | <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL
+        /// Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>

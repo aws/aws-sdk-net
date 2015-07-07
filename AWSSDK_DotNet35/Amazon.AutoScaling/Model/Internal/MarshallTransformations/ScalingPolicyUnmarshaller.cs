@@ -74,6 +74,24 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.Cooldown = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("EstimatedInstanceWarmup", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.EstimatedInstanceWarmup = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MetricAggregationType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MetricAggregationType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MinAdjustmentMagnitude", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MinAdjustmentMagnitude = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MinAdjustmentStep", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
@@ -92,10 +110,23 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.PolicyName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PolicyType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PolicyType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ScalingAdjustment", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.ScalingAdjustment = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StepAdjustments/member", targetDepth))
+                    {
+                        var unmarshaller = StepAdjustmentUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.StepAdjustments.Add(item);
                         continue;
                     }
                 }

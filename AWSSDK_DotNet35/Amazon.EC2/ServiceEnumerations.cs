@@ -1539,6 +1539,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType T1Micro = new InstanceType("t1.micro");
         /// <summary>
+        /// Constant T2Large for InstanceType
+        /// </summary>
+        public static readonly InstanceType T2Large = new InstanceType("t2.large");
+        /// <summary>
         /// Constant T2Medium for InstanceType
         /// </summary>
         public static readonly InstanceType T2Medium = new InstanceType("t2.medium");
@@ -3562,6 +3566,74 @@ namespace Amazon.EC2
         }
 
         public static implicit operator VpcAttributeName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VpcPeeringConnectionStateReasonCode.
+    /// </summary>
+    public class VpcPeeringConnectionStateReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for VpcPeeringConnectionStateReasonCode
+        /// </summary>
+        public static readonly VpcPeeringConnectionStateReasonCode Active = new VpcPeeringConnectionStateReasonCode("active");
+        /// <summary>
+        /// Constant Deleted for VpcPeeringConnectionStateReasonCode
+        /// </summary>
+        public static readonly VpcPeeringConnectionStateReasonCode Deleted = new VpcPeeringConnectionStateReasonCode("deleted");
+        /// <summary>
+        /// Constant Deleting for VpcPeeringConnectionStateReasonCode
+        /// </summary>
+        public static readonly VpcPeeringConnectionStateReasonCode Deleting = new VpcPeeringConnectionStateReasonCode("deleting");
+        /// <summary>
+        /// Constant Expired for VpcPeeringConnectionStateReasonCode
+        /// </summary>
+        public static readonly VpcPeeringConnectionStateReasonCode Expired = new VpcPeeringConnectionStateReasonCode("expired");
+        /// <summary>
+        /// Constant Failed for VpcPeeringConnectionStateReasonCode
+        /// </summary>
+        public static readonly VpcPeeringConnectionStateReasonCode Failed = new VpcPeeringConnectionStateReasonCode("failed");
+        /// <summary>
+        /// Constant InitiatingRequest for VpcPeeringConnectionStateReasonCode
+        /// </summary>
+        public static readonly VpcPeeringConnectionStateReasonCode InitiatingRequest = new VpcPeeringConnectionStateReasonCode("initiating-request");
+        /// <summary>
+        /// Constant PendingAcceptance for VpcPeeringConnectionStateReasonCode
+        /// </summary>
+        public static readonly VpcPeeringConnectionStateReasonCode PendingAcceptance = new VpcPeeringConnectionStateReasonCode("pending-acceptance");
+        /// <summary>
+        /// Constant Provisioning for VpcPeeringConnectionStateReasonCode
+        /// </summary>
+        public static readonly VpcPeeringConnectionStateReasonCode Provisioning = new VpcPeeringConnectionStateReasonCode("provisioning");
+        /// <summary>
+        /// Constant Rejected for VpcPeeringConnectionStateReasonCode
+        /// </summary>
+        public static readonly VpcPeeringConnectionStateReasonCode Rejected = new VpcPeeringConnectionStateReasonCode("rejected");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public VpcPeeringConnectionStateReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcPeeringConnectionStateReasonCode FindValue(string value)
+        {
+            return FindValue<VpcPeeringConnectionStateReasonCode>(value);
+        }
+
+        public static implicit operator VpcPeeringConnectionStateReasonCode(string value)
         {
             return FindValue(value);
         }

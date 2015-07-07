@@ -60,6 +60,18 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Cooldown", StringUtils.FromInt(publicRequest.Cooldown));
                 }
+                if(publicRequest.IsSetEstimatedInstanceWarmup())
+                {
+                    request.Parameters.Add("EstimatedInstanceWarmup", StringUtils.FromInt(publicRequest.EstimatedInstanceWarmup));
+                }
+                if(publicRequest.IsSetMetricAggregationType())
+                {
+                    request.Parameters.Add("MetricAggregationType", StringUtils.FromString(publicRequest.MetricAggregationType));
+                }
+                if(publicRequest.IsSetMinAdjustmentMagnitude())
+                {
+                    request.Parameters.Add("MinAdjustmentMagnitude", StringUtils.FromInt(publicRequest.MinAdjustmentMagnitude));
+                }
                 if(publicRequest.IsSetMinAdjustmentStep())
                 {
                     request.Parameters.Add("MinAdjustmentStep", StringUtils.FromInt(publicRequest.MinAdjustmentStep));
@@ -68,9 +80,33 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PolicyName", StringUtils.FromString(publicRequest.PolicyName));
                 }
+                if(publicRequest.IsSetPolicyType())
+                {
+                    request.Parameters.Add("PolicyType", StringUtils.FromString(publicRequest.PolicyType));
+                }
                 if(publicRequest.IsSetScalingAdjustment())
                 {
                     request.Parameters.Add("ScalingAdjustment", StringUtils.FromInt(publicRequest.ScalingAdjustment));
+                }
+                if(publicRequest.IsSetStepAdjustments())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.StepAdjustments)
+                    {
+                        if(publicRequestlistValue.IsSetMetricIntervalLowerBound())
+                        {
+                            request.Parameters.Add("StepAdjustments" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricIntervalLowerBound", StringUtils.FromDouble(publicRequestlistValue.MetricIntervalLowerBound));
+                        }
+                        if(publicRequestlistValue.IsSetMetricIntervalUpperBound())
+                        {
+                            request.Parameters.Add("StepAdjustments" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricIntervalUpperBound", StringUtils.FromDouble(publicRequestlistValue.MetricIntervalUpperBound));
+                        }
+                        if(publicRequestlistValue.IsSetScalingAdjustment())
+                        {
+                            request.Parameters.Add("StepAdjustments" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ScalingAdjustment", StringUtils.FromInt(publicRequestlistValue.ScalingAdjustment));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
             return request;

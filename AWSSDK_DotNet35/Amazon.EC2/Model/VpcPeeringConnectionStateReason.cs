@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class VpcPeeringConnectionStateReason
     {
-        private string _code;
+        private VpcPeeringConnectionStateReasonCode _code;
         private string _message;
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// The status of the VPC peering connection.
         /// </para>
         /// </summary>
-        public string Code
+        public VpcPeeringConnectionStateReasonCode Code
         {
             get { return this._code; }
             set { this._code = value; }

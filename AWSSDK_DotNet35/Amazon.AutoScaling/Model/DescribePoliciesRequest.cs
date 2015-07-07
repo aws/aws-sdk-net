@@ -37,6 +37,7 @@ namespace Amazon.AutoScaling.Model
         private int? _maxRecords;
         private string _nextToken;
         private List<string> _policyNames = new List<string>();
+        private List<string> _policyTypes = new List<string>();
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -112,6 +113,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetPolicyNames()
         {
             return this._policyNames != null && this._policyNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyTypes. 
+        /// <para>
+        /// One or more policy types. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+        /// </para>
+        /// </summary>
+        public List<string> PolicyTypes
+        {
+            get { return this._policyTypes; }
+            set { this._policyTypes = value; }
+        }
+
+        // Check to see if PolicyTypes property is set
+        internal bool IsSetPolicyTypes()
+        {
+            return this._policyTypes != null && this._policyTypes.Count > 0; 
         }
 
     }

@@ -56,6 +56,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DestinationRegion", StringUtils.FromString(publicRequest.DestinationRegion));
                 }
+                if(publicRequest.IsSetEncrypted())
+                {
+                    request.Parameters.Add("Encrypted", StringUtils.FromBool(publicRequest.Encrypted));
+                }
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
+                }
                 if(publicRequest.IsSetPresignedUrl())
                 {
                     request.Parameters.Add("PresignedUrl", StringUtils.FromString(publicRequest.PresignedUrl));

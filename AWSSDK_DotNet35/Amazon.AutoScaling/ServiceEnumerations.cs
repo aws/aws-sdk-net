@@ -147,6 +147,10 @@ namespace Amazon.AutoScaling
         /// </summary>
         public static readonly ScalingActivityStatusCode WaitingForInstanceId = new ScalingActivityStatusCode("WaitingForInstanceId");
         /// <summary>
+        /// Constant WaitingForInstanceWarmup for ScalingActivityStatusCode
+        /// </summary>
+        public static readonly ScalingActivityStatusCode WaitingForInstanceWarmup = new ScalingActivityStatusCode("WaitingForInstanceWarmup");
+        /// <summary>
         /// Constant WaitingForSpotInstanceId for ScalingActivityStatusCode
         /// </summary>
         public static readonly ScalingActivityStatusCode WaitingForSpotInstanceId = new ScalingActivityStatusCode("WaitingForSpotInstanceId");

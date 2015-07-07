@@ -94,7 +94,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The ID of the subnet.
+        /// The ID of the subnet. A subnet ID is not returned for an implicit association.
         /// </para>
         /// </summary>
         public string SubnetId
