@@ -1,6 +1,6 @@
 # AWS SDK for Dot Net - Xamarin Android S3 Sample
 
-#### This sample demonstrates how to use Amazon S3 with the AWS Mobile SDK for Unity. 
+#### This sample demonstrates how to use Amazon S3 with the AWS Mobile SDK for Xamarin. 
 
 ##### Configure the S3 Sample
 Note: To run the S3 Sample you will need to create a Cognito Identity Pool, to handle authentication with AWS.  A pool can be created on the [Cognito console]( https://console.aws.amazon.com/cognito/home).
