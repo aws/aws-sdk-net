@@ -677,8 +677,8 @@ namespace ServiceClientGenerator
                 { "ProjectFileConfigurations", this.ProjectFileConfigurations}
             };
 
-            if (Configuration.PlatformDependencies != null)
-                session.Add("PlatformDependencies", Configuration.PlatformDependencies);
+            if (Configuration.NugetDependencies != null)
+                session.Add("NugetDependencies", Configuration.NugetDependencies);
 
             var nuspecGenerator = new Nuspec { Session = session };
             var text = nuspecGenerator.TransformText();

@@ -408,9 +408,9 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             
             #line 175 "C:\dev\Xamarin\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\IOSProjectFile.tt"
 
-    if(this.Session.ContainsKey("PlatformDependencies"))
+    if(this.Session.ContainsKey("ReferenceDependencies"))
     {
-		foreach(var dependency in (List<Dependency>)this.Session["PlatformDependencies"])
+		foreach(var dependency in (List<Dependency>)this.Session["ReferenceDependencies"])
 		{
 
             

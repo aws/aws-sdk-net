@@ -32,7 +32,6 @@
             
       <group targetFramework="xamarinios10">
             <dependency id="SQLitePCL" version="3.8.7.2" />
-                <dependency id="SQLitePCL.Ext" version="3.8.7.2" />
           </group>
       <group>
         <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />

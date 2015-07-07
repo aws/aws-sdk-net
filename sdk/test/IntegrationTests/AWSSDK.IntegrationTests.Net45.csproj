@@ -285,7 +285,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="Config\App.45.config">
       <SubType>Designer</SubType>
     </None>

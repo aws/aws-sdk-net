@@ -34,11 +34,12 @@ namespace ServiceClientGenerator
             public const string MaxRetriesKey = "max-retries";
             public const string SynopsisKey = "synopsis";
             public const string DependenciesKey = "dependencies";
-            public const string PlatformDependenciesKey = "platform-dependencies";
+            public const string ReferenceDependenciesKey = "reference-dependencies";
+            public const string NugetDependenciesKey = "nuget-dependencies";
             public const string PclVariantsKey = "pcl-variants";
-            public const string PlatformDependencyNameKey = "name";
-            public const string PlatformDependencyVersionKey = "version";
-            public const string PlatformDependencyHintPathKey = "hint-path";
+            public const string DependencyNameKey = "name";
+            public const string DependencyVersionKey = "version";
+            public const string DependencyHintPathKey = "hint-path";
         }
 
         abstract class ProjectsSectionKeys
@@ -143,25 +144,45 @@ namespace ServiceClientGenerator
                 }
                 
 
-                if (modelNode[ModelsSectionKeys.PlatformDependenciesKey] != null)
+                if (modelNode[ModelsSectionKeys.ReferenceDependenciesKey] != null)
                 {
-                    config.PlatformDependencies = new Dictionary<string, List<Dependency>>();
-                    foreach (KeyValuePair<string, JsonData> kvp in modelNode[ModelsSectionKeys.PlatformDependenciesKey])
+                    config.ReferenceDependencies = new Dictionary<string, List<Dependency>>();
+                    foreach (KeyValuePair<string, JsonData> kvp in modelNode[ModelsSectionKeys.ReferenceDependenciesKey])
                     {
                         var platformDependencies = new List<Dependency>();
                         foreach (JsonData item in kvp.Value)
                         {
                             var platformDependency = new Dependency
                             {
-                                Name = item[ModelsSectionKeys.PlatformDependencyNameKey].ToString(),
-                                Version = item[ModelsSectionKeys.PlatformDependencyVersionKey].ToString(),
-                                HintPath = item[ModelsSectionKeys.PlatformDependencyHintPathKey].ToString(),
+                                Name = item[ModelsSectionKeys.DependencyNameKey].ToString(),
+                                Version = item[ModelsSectionKeys.DependencyVersionKey].ToString(),
+                                HintPath = item[ModelsSectionKeys.DependencyHintPathKey].ToString(),
                             };
                             platformDependencies.Add(platformDependency);
                         }
-                        config.PlatformDependencies.Add(kvp.Key, platformDependencies);
+                        config.ReferenceDependencies.Add(kvp.Key, platformDependencies);
                     }
                 }
+
+                if (modelNode[ModelsSectionKeys.NugetDependenciesKey] != null)
+                {
+                    config.NugetDependencies = new Dictionary<string, List<Dependency>>();
+                    foreach (KeyValuePair<string, JsonData> kvp in modelNode[ModelsSectionKeys.NugetDependenciesKey])
+                    {
+                        var nugetDependencies = new List<Dependency>();
+                        foreach (JsonData item in kvp.Value)
+                        {
+                            var nugetDependency = new Dependency
+                            {
+                                Name = item[ModelsSectionKeys.DependencyNameKey].ToString(),
+                                Version = item[ModelsSectionKeys.DependencyVersionKey].ToString(),
+                            };
+                            nugetDependencies.Add(nugetDependency);
+                        }
+                        config.NugetDependencies.Add(kvp.Key, nugetDependencies);
+                    }
+                }
+
 
                 // Provides a way to specify a customizations file rather than using a generated one
                 config.CustomizationsPath = modelNode[ModelsSectionKeys.CustomizationFileKey] == null

@@ -173,9 +173,9 @@
       <HintPath><#=this.Session["NugetPackagesLocation"]#>Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
 <#
-    if(this.Session.ContainsKey("PlatformDependencies"))
+    if(this.Session.ContainsKey("ReferenceDependencies"))
     {
-		foreach(var dependency in (List<Dependency>)this.Session["PlatformDependencies"])
+		foreach(var dependency in (List<Dependency>)this.Session["ReferenceDependencies"])
 		{
 #>
     <Reference Include="<#=dependency.Name#>">

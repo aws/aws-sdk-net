@@ -30,9 +30,9 @@
     }
 #>
 <#
-	if(this.Session.ContainsKey("PlatformDependencies"))
+	if(this.Session.ContainsKey("NugetDependencies"))
     {
-		var dependencies = (Dictionary<string,List<Dependency>>)this.Session["PlatformDependencies"];
+		var dependencies = (Dictionary<string,List<Dependency>>)this.Session["NugetDependencies"];
 		if(dependencies.ContainsKey("PCL"))
 		{
 			foreach(var dependency in dependencies["PCL"])
@@ -46,9 +46,9 @@
 #>
       </group>
 <#
-	if(this.Session.ContainsKey("PlatformDependencies"))
+	if(this.Session.ContainsKey("NugetDependencies"))
     {
-		var dependencies = (Dictionary<string,List<Dependency>>)this.Session["PlatformDependencies"];
+		var dependencies = (Dictionary<string,List<Dependency>>)this.Session["NugetDependencies"];
 		foreach(var dependencyList in dependencies)
 		{
 			if(dependencyList.Key.Equals("PCL"))
