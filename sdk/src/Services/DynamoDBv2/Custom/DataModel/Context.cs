@@ -443,6 +443,5 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         #endregion
-
     }
 }

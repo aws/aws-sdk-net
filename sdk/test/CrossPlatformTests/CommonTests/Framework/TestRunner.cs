@@ -43,7 +43,16 @@ namespace CommonTests.Framework
 
         private TextWriter LogWriter { get; set; }
         public virtual ITestListener Listener { get; private set; }
-        public virtual ITestFilter Filter { get { return TestFilter.Empty; } }
+        public virtual ITestFilter Filter
+        {
+            get
+            {
+                if (TestsToRun == null || TestsToRun.Count == 0)
+                    return TestFilter.Empty;
+                return SpecificTestsFilter.RunOnly(TestsToRun);
+            }
+        }
+        public ICollection<string> TestsToRun { get; set; }
 
         private LogLevel _logMode = LogLevel.Info | LogLevel.Error;
         public LogLevel LogMode
@@ -56,6 +65,11 @@ namespace CommonTests.Framework
         {
             TestRunner.Credentials = Settings.Credentials;
             TestRunner.RegionEndpoint = Settings.RegionEndpoint;
+            var logging = AWSConfigs.LoggingConfig;
+            logging.LogTo = LoggingOptions.SystemDiagnostics;
+            logging.LogResponses = ResponseLoggingOption.Always;
+            logging.LogMetrics = true;
+
             Instance = this;
             LogWriter = new StringWriter();
         }
@@ -65,13 +79,12 @@ namespace CommonTests.Framework
             return Execute();
         }
 
-
         public async Task<bool> ExecuteAllTestsAsync()
         {
             return await Task.Run(() => Execute());  
         }
 
-        public bool Execute()
+        private bool Execute()
         {
             var runner = new NUnitTestAssemblyRunner(new DefaultTestAssemblyBuilder());
             var currentAssembly = typeof(TestRunner).GetTypeInfo().Assembly;
@@ -141,6 +154,8 @@ namespace CommonTests.Framework
             get;
         }
 
+        #region Log pushes
+
         private void PushLog(bool allPassed)
         {
             if (string.IsNullOrEmpty(Settings.ResultsBucket) &&
@@ -164,6 +179,8 @@ namespace CommonTests.Framework
             {
                 WriteError("Error pushing logs: {0}", e);
             }
+
+            WriteInfo("Logs pushed");
         }
 
         private void PushLogToSNS(string snsSubject, string log)
@@ -225,6 +242,8 @@ namespace CommonTests.Framework
             }
         }
 
+        #endregion
+
         #region ITestListener
 
         public void TestFinished(ITestResult result)
@@ -257,7 +276,7 @@ namespace CommonTests.Framework
             {
                 if (result.FailCount > 0)
                 {
-                    this.WriteError("FAIL {0}", testMethod.MethodName);
+                    this.WriteError("FAIL {0} ({1})", testMethod.MethodName, testMethod.FullName);
                     this.WriteError("\tMessage : {0}", result.Message);
                     this.WriteError("\tStack trace : {0}", result.StackTrace);
                 }
@@ -308,5 +327,47 @@ namespace CommonTests.Framework
         }
 
         #endregion
+
+        private class SpecificTestsFilter : ITestFilter
+        {
+            private ICollection<string> _tests;
+            private bool _isRunOnly;
+
+            public static SpecificTestsFilter RunOnly(ICollection<string> testsToRun)
+            {
+                return new SpecificTestsFilter
+                {
+                    _tests = testsToRun ?? new HashSet<string>(),
+                    _isRunOnly = true
+                };
+            }
+            public static SpecificTestsFilter RunAllExcept(ICollection<string> testsToSkip)
+            {
+                return new SpecificTestsFilter
+                {
+                    _tests = testsToSkip ?? new HashSet<string>(),
+                    _isRunOnly = false
+                };
+            }
+
+            private bool ShouldRun(string name)
+            {
+                if (_isRunOnly)
+                    // only run tests in collection
+                    return (_tests.Contains(name));
+                else
+                    // only run tests NOT in collection
+                    return (!_tests.Contains(name));
+            }
+
+            public bool Pass(ITest test)
+            {
+                if (test.Method == null)
+                    return true;
+
+                var testName = test.Name;
+                return ShouldRun(testName);
+            }
+        }
     }
 }

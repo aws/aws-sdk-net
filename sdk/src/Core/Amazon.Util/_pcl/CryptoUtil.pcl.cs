@@ -38,75 +38,6 @@ namespace Amazon.Util
     {
         partial class CryptoUtil : ICryptoUtil
         {
-            private static string Sha256Name = HashAlgorithm.Sha256.ToString();
-            private static string Md5Name = HashAlgorithm.Md5.ToString();
-
-            public byte[] ComputeSHA256Hash(byte[] data)
-            {
-                return ComputeHash(data, Sha256Name);
-            }
-
-            public byte[] ComputeSHA256Hash(Stream steam)
-            {
-                return ComputeHash(steam, Sha256Name);
-            }
-
-            public byte[] ComputeMD5Hash(byte[] data)
-            {
-                return ComputeHash(data, Md5Name);
-            }
-
-            public byte[] ComputeMD5Hash(Stream steam)
-            {
-                return ComputeHash(steam, Md5Name);
-            }
-
-            private byte[] ComputeHash(byte[] data, string algorithmName)
-            {
-                //IBuffer inputBuffer = CryptographicBuffer.CreateFromByteArray(data);
-
-                //var hasher = HashAlgorithmProvider.OpenAlgorithm(algorithmName);
-                //var outputBuffer = hasher.HashData(inputBuffer);
-
-                //byte[] hash;
-                //CryptographicBuffer.CopyToByteArray(outputBuffer, out hash);
-                //return hash;
-
-                using (var wrapper = new HashingWrapper(algorithmName))
-                {
-                    return wrapper.ComputeHash(data);
-                }
-            }
-
-            private byte[] ComputeHash(Stream steam, string algorithmName)
-            {
-                //var hasher = HashAlgorithmProvider.OpenAlgorithm(algorithmName);
-                //var hash = hasher.CreateHash();
-
-                //int bytesRead = 0;
-                //var cryptoBuffer = CryptographicBuffer.CreateFromByteArray(new byte[AWSSDKUtils.DefaultBufferSize]);
-                //byte[] buffer = new byte[AWSSDKUtils.DefaultBufferSize];
-                //while ((bytesRead = steam.Read(buffer, 0, buffer.Length)) != 0)
-                //{
-                //    if (bytesRead != cryptoBuffer.Length)
-                //        cryptoBuffer = CryptographicBuffer.CreateFromByteArray(new byte[bytesRead]);
-
-                //    buffer.CopyTo(0, cryptoBuffer, 0, bytesRead);
-                //    hash.Append(cryptoBuffer);
-                //}
-
-                ////return hash.GetValueAndReset().ToArray();
-
-                //byte[] bytes;
-                //CryptographicBuffer.CopyToByteArray(hash, out bytes);
-                //return bytes;
-
-                using(var wrapper = new HashingWrapper(algorithmName))
-                {
-                    return wrapper.ComputeHash(steam);
-                }
-            }
-
             public string HMACSign(string data, string key, SigningAlgorithm algorithmName)
             {
                 var binaryData = Encoding.UTF8.GetBytes(data);
@@ -114,7 +45,7 @@ namespace Amazon.Util
             }
 
             public string HMACSign(byte[] data, string key, SigningAlgorithm algorithmName)
-            {                
+            {
                 //var crypt = MacAlgorithmProvider.OpenAlgorithm(ConvertToAlgorithName(algorithmName));
                 var crypt = WinRTCrypto.MacAlgorithmProvider.OpenAlgorithm(Convert(algorithmName));
 
@@ -176,18 +107,39 @@ namespace Amazon.Util
                 return result;
             }
 
-            //string ConvertToAlgorithName(SigningAlgorithm algorithm)
-            //{
-            //    switch (algorithm)
-            //    {
-            //        case SigningAlgorithm.HmacSHA256:
-            //            return MacAlgorithmNames.HmacSha256;
-            //        case SigningAlgorithm.HmacSHA1:
-            //            return MacAlgorithmNames.HmacSha1;
-            //        default:
-            //            throw new Exception("Unknown signing algorithm: " + algorithm.ToString());
-            //    }
-            //}
+            public byte[] ComputeSHA256Hash(byte[] data)
+            {
+                return SHA256HashAlgorithmInstance.HashData(data);
+            }
+
+            public byte[] ComputeSHA256Hash(Stream stream)
+            {
+                using (var hash = SHA256HashAlgorithmInstance.CreateHash())
+                {
+                    int bytesRead = 0;
+                    byte[] buffer = new byte[AWSSDKUtils.DefaultBufferSize];
+                    while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) != 0)
+                        hash.Append(buffer);
+
+                    return hash.GetValueAndReset();
+                }
+            }
+
+            public byte[] ComputeMD5Hash(byte[] data)
+            {
+                using (var wrapper = new HashingWrapperMD5())
+                {
+                    return wrapper.ComputeHash(data);
+                }
+            }
+
+            public byte[] ComputeMD5Hash(Stream stream)
+            {
+                using (var wrapper = new HashingWrapperMD5())
+                {
+                    return wrapper.ComputeHash(stream);
+                }
+            }
 
             MacAlgorithm Convert(SigningAlgorithm algorithm)
             {
@@ -199,6 +151,18 @@ namespace Amazon.Util
                         return MacAlgorithm.HmacSha1;
                     default:
                         throw new Exception("Unknown signing algorithm: " + algorithm.ToString());
+                }
+            }
+
+            [ThreadStatic]
+            private static IHashAlgorithmProvider _hashAlgorithm = null;
+            private static IHashAlgorithmProvider SHA256HashAlgorithmInstance
+            {
+                get
+                {
+                    if (null == _hashAlgorithm)
+                        _hashAlgorithm = PCLCrypto.WinRTCrypto.HashAlgorithmProvider.OpenAlgorithm(HashAlgorithm.Sha256);
+                    return _hashAlgorithm;
                 }
             }
         }

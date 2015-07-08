@@ -70,7 +70,32 @@ namespace Amazon.Util.Internal
 
             public override MemberInfo[] GetMembers()
             {
-                return this._typeInfo.DeclaredMembers.ToArray();
+                var members = GetMembers_Helper(this._typeInfo).Distinct().ToArray();
+                return members;
+            }
+            private static readonly Type objectType = typeof(object);
+            private static bool IsBackingField(MemberInfo mi)
+            {
+                var isBackingField = mi.Name.IndexOf("k__BackingField", StringComparison.Ordinal) >= 0;
+                return isBackingField;
+            }
+            private static IEnumerable<MemberInfo> GetMembers_Helper(TypeInfo ti)
+            {
+                var members = ti.DeclaredMembers;
+                foreach (var member in members)
+                    if (!IsBackingField(member))
+                        yield return member;
+
+                var baseType = ti.BaseType;
+                var isObject = (baseType == objectType);
+                if (baseType != null && !isObject)
+                {
+                    var baseTi = baseType.GetTypeInfo();
+                    var baseMembers = GetMembers_Helper(baseTi).ToList();
+
+                    foreach (var baseMember in baseMembers)
+                        yield return baseMember;
+                }
             }
 
             public override bool IsClass
