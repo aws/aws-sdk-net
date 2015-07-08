@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         /// Instantiates ResetSnapshotAttributeRequest with the parameterized properties
         /// </summary>
         /// <param name="snapshotId">The ID of the snapshot.</param>
-        /// <param name="attribute">The attribute to reset (currently only the attribute for permission to create volumes can be reset).</param>
+        /// <param name="attribute">The attribute to reset. Currently, only the attribute for permission to create volumes can be reset.</param>
         public ResetSnapshotAttributeRequest(string snapshotId, SnapshotAttributeName attribute)
         {
             _snapshotId = snapshotId;
@@ -61,8 +61,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Attribute. 
         /// <para>
-        /// The attribute to reset (currently only the attribute for permission to create volumes
-        /// can be reset).
+        /// The attribute to reset. Currently, only the attribute for permission to create volumes
+        /// can be reset.
         /// </para>
         /// </summary>
         public SnapshotAttributeName Attribute

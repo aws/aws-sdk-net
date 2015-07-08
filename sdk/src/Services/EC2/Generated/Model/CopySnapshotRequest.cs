@@ -37,14 +37,12 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// Copies of encrypted EBS snapshots remain encrypted. Copies of unencrypted snapshots
-    /// remain unencrypted.
+    /// remain unencrypted, unless the <code>Encrypted</code> flag is specified during the
+    /// snapshot copy operation. By default, encrypted snapshot copies use the default AWS
+    /// Key Management Service (KMS) master key; however, you can specify a non-default master
+    /// key with the <code>KmsKeyId</code> parameter.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// Copying snapshots that were encrypted with non-default AWS Key Management Service
-    /// (KMS) master keys is not supported at this time. 
-    /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
     /// an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -54,6 +52,8 @@ namespace Amazon.EC2.Model
     {
         private string _description;
         private string _destinationRegion;
+        private bool? _encrypted;
+        private string _kmsKeyId;
         private string _presignedUrl;
         private string _sourceRegion;
         private string _sourceSnapshotId;
@@ -102,6 +102,55 @@ namespace Amazon.EC2.Model
         internal bool IsSetDestinationRegion()
         {
             return this._destinationRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// Specifies whether the destination snapshot should be encrypted. There is no way to
+        /// create an unencrypted snapshot copy from an encrypted snapshot; however, you can encrypt
+        /// a copy of an unencrypted snapshot with this flag. The default master key is used unless
+        /// a non-default AWS Key Management Service (KMS) master key is specified with <code>KmsKeyId</code>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The full ARN of the AWS Key Management Service (KMS) master key to use when creating
+        /// the snapshot copy. This parameter is only required if you want to use a non-default
+        /// master key; if this parameter is not specified, the default master key is used. The
+        /// ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+        /// master key, the AWS account ID of the master key owner, the <code>key</code> namespace,
+        /// and then the master key ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+        /// The specified key must exist in the region that the snapshot is being copied to. If
+        /// a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be
+        /// set.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

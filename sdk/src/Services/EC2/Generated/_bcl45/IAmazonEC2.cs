@@ -829,14 +829,12 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// Copies of encrypted EBS snapshots remain encrypted. Copies of unencrypted snapshots
-        /// remain unencrypted.
+        /// remain unencrypted, unless the <code>Encrypted</code> flag is specified during the
+        /// snapshot copy operation. By default, encrypted snapshot copies use the default AWS
+        /// Key Management Service (KMS) master key; however, you can specify a non-default master
+        /// key with the <code>KmsKeyId</code> parameter.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Copying snapshots that were encrypted with non-default AWS Key Management Service
-        /// (KMS) master keys is not supported at this time. 
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
         /// an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -3806,8 +3804,14 @@ namespace Amazon.EC2
         #region  DescribeRouteTables
 
         /// <summary>
-        /// Describes one or more of your route tables.
+        /// Describes one or more of your route tables. 
         /// 
+        ///  
+        /// <para>
+        /// Each subnet in your VPC must be associated with a route table. If a subnet is not
+        /// explicitly associated with any route table, it is implicitly associated with the main
+        /// route table. This command does not return the subnet ID for implicit associations.
+        /// </para>
         ///  
         /// <para>
         /// For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
@@ -3819,8 +3823,14 @@ namespace Amazon.EC2
         DescribeRouteTablesResponse DescribeRouteTables();
 
         /// <summary>
-        /// Describes one or more of your route tables.
+        /// Describes one or more of your route tables. 
         /// 
+        ///  
+        /// <para>
+        /// Each subnet in your VPC must be associated with a route table. If a subnet is not
+        /// explicitly associated with any route table, it is implicitly associated with the main
+        /// route table. This command does not return the subnet ID for implicit associations.
+        /// </para>
         ///  
         /// <para>
         /// For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
