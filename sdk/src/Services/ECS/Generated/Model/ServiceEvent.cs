@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// 
+    /// Details on an event associated with a service.
     /// </summary>
     public partial class ServiceEvent
     {

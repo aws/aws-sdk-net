@@ -273,6 +273,25 @@ namespace Amazon.ECS
         /// <summary>
         /// Deregisters an Amazon ECS container instance from the specified cluster. This instance
         /// will no longer be available to run tasks.
+        /// 
+        ///  
+        /// <para>
+        /// If you intend to use the container instance for some other purpose after deregistration,
+        /// you should stop all of the tasks running on the container instance before deregistration
+        /// to avoid any orphaned tasks from consuming resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// Deregistering a container instance removes the instance from a cluster, but it does
+        /// not terminate the EC2 instance; if you are finished using the instance, be sure to
+        /// terminate it in the Amazon EC2 console to stop billing.
+        /// </para>
+        ///  <note>
+        /// <para>
+        /// When you terminate a container instance, it is automatically deregistered from your
+        /// cluster.
+        /// </para>
+        /// </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterContainerInstance service method.</param>
         /// 
@@ -1160,7 +1179,20 @@ namespace Amazon.ECS
         #region  UpdateContainerAgent
 
         /// <summary>
-        /// Updates the Amazon ECS container agent on a specified container instance.
+        /// Updates the Amazon ECS container agent on a specified container instance. Updating
+        /// the Amazon ECS container agent does not interrupt running tasks or services on the
+        /// container instance. The process for updating the agent differs depending on whether
+        /// your container instance was launched with the Amazon ECS-optimized AMI or another
+        /// operating system.
+        /// 
+        ///  
+        /// <para>
+        /// <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or Amazon
+        /// Linux with the <code>ecs-init</code> service installed and running. For help updating
+        /// the Amazon ECS container agent on other operating systems, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
+        /// Updating the Amazon ECS Container Agent</a> in the <i>Amazon EC2 Container Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContainerAgent service method.</param>
         /// 
