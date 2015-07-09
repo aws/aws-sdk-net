@@ -37,39 +37,27 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     public class Session
     {
         private Logger _logger = Logger.GetLogger(typeof(Session));
-        
-        // Event Type Constants ---------------------------
-        public static string SESSION_START_EVENT_TYPE            = "_session.start";
-        public static string SESSION_STOP_EVENT_TYPE             = "_session.stop";
-        public static string SESSION_PAUSE_EVENT_TYPE            = "_session.pause";
-        public static string SESSION_RESUME_EVENT_TYPE           = "_session.resume";
-        // Event Attribute/Metric Key Constants -----------
-        private const string SESSION_ID_ATTRIBUTE_KEY            = "_session.id";
-        private const string SESSION_DURATION_METRIC_KEY         = "_session.duration";
-        private const string SESSION_START_TIME_ATTRIBUTE_KEY    = "_session.startTime";
-        private const string SESSION_STOP_TIME_ATTRIBUTE_KEY     = "_session.stopTime";
-        
-        
+
         // session info
         private DateTime _startTime;
         private DateTime? _stopTime;
         private DateTime _preStartTime;
         private string _sessionId;
         private long _duration;
-        
+
         // Session Timeout
         int SESSION_TIMEOUT;
 
         // lock to guard session info
         private Object _lock = new Object();
-       
+
         internal class SessionStorage
         {
             public SessionStorage()
             {
                 _sessionId = null; _duration = 0;
             }
-            
+
             public DateTime _startTime;
             public DateTime? _stopTime;
             public DateTime _preStartTime;
@@ -80,12 +68,12 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         private volatile SessionStorage _sessionStorage = null;
 
         private string APP_ID;
-        
+
         private string _sessionStorageFileName = "_session_storage.json";
         private string _sessionStorageFileFullPath = null;
         internal static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-        
-        
+
+
         #region public
 
         /// <summary>
@@ -95,10 +83,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <param name="sessionTimeout">Session time out value in seconds.</param>
         public Session(string appId, int sessionTimeout)
         {
-            if(string.IsNullOrEmpty(appId))
+            if (string.IsNullOrEmpty(appId))
                 throw new ArgumentNullException("appId");
-            
-            if(sessionTimeout <= 0)
+
+            if (sessionTimeout <= 0)
                 throw new ArgumentException("sessionTimeout must be integer bigger than 0.");
 
             APP_ID = appId;
@@ -108,10 +96,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             _sessionStorageFileFullPath = _sessionStorageFileName;
 #elif PCL
             _sessionStorageFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, appId + _sessionStorageFileName);
-#endif              
+#endif
             _sessionStorage = new SessionStorage();
         }
-        
+
         /// <summary>
         /// Start this session.
         /// </summary>
@@ -122,36 +110,30 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 #endif
         {
             // Read session info from persistent storage, in case app is killed.
-            try
-            {
+
 #if BCL35 || BCL45
-                RetrieveSessionStorage();
+            RetrieveSessionStorage();
 #elif PCL
-                await RetrieveSessionStorage();
+            await RetrieveSessionStorage();
 #endif
-            }
-            catch (Exception e)
-            {
-                _logger.Error(e, "Catch exception when read session storage file.");
-            }
-            
+
             // If session storage is valid, restore session and resume session.
-            if(_sessionStorage != null && !string.IsNullOrEmpty(_sessionStorage._sessionId))
+            if (_sessionStorage != null && !string.IsNullOrEmpty(_sessionStorage._sessionId))
             {
                 _startTime = _sessionStorage._startTime;
                 _stopTime = _sessionStorage._stopTime;
                 _sessionId = _sessionStorage._sessionId;
                 _duration = _sessionStorage._duration;
-                
+
                 Resume();
             }
             else
             {
                 NewSession();
             }
-            
+
         }
-        
+
         /// <summary>
         /// Pause this session.
         /// </summary>
@@ -163,40 +145,40 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             SaveSessionStorage();
             _logger.InfoFormat("after Save session storage");
         }
-        
+
         /// <summary>
         /// Resume this session.
         /// </summary>
         public void Resume()
         {
-            if(_stopTime == null)
+            if (_stopTime == null)
             {
                 //this may sometimes be a valid scenario e.g when the applciation starts
                 _logger.InfoFormat("Call Resume() without calling Pause() first. But this can be valid opertion only when MobileAnalyticsManager instance is created.");
                 return;
             }
-            
+
             DateTime currentTime = DateTime.UtcNow;
-            
-            if(_stopTime.Value < currentTime)
+
+            if (_stopTime.Value < currentTime)
             {
 
                 long resumeTimeStamp = Convert.ToInt64((currentTime - EPOCH_START).TotalSeconds);
                 long stopTimeStamp = Convert.ToInt64((_stopTime.Value - EPOCH_START).TotalSeconds);
-                
+
                 // new session 
                 if (resumeTimeStamp - stopTimeStamp > SESSION_TIMEOUT)
                 {
                     StopSession();
                     NewSession();
-                    
+
                 }
                 // resume old session
                 else
                 {
                     ResumeSession();
                 }
-            
+
             }
             else
             {
@@ -209,39 +191,47 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <summary>
         /// Gets the session info.
         /// </summary>
-        /// <param name="startTimestamp">Start timestamp.</param>
-        /// <param name="stopTimestamp">Stop timestamp.</param>
-        /// <param name="sessionId">Unique session identifier.</param>
-        /// <param name="duration">Session duration in milliseconds.</param>
-        public void GetSessionInfo(out DateTime startTimestamp, out DateTime? stopTimestamp, out string sessionId, out long duration)
+        /// <returns>SessionInfo object.</returns>
+        public SessionInfo RetrieveSessionInfo()
         {
-            if(string.IsNullOrEmpty(_sessionId))
+            SessionInfo sessionInfo = new SessionInfo();
+
+            lock (_lock)
             {
-                InvalidOperationException e = new InvalidOperationException();
-                _logger.Error(e, "session id is empty");
-                NewSession();
-            }
-            
-            lock(_lock)
-            {
-                startTimestamp = _startTime;
-                if(_stopTime != null)
+                sessionInfo.StartTimestamp = _startTime;
+                if (_stopTime != null)
                 {
-                    stopTimestamp = _stopTime;
+                    sessionInfo.StopTimestamp = _stopTime;
                 }
                 else
-                    stopTimestamp = null;
-                sessionId = _sessionId;
-                duration = _duration;
+                    sessionInfo.StopTimestamp = null;
+                sessionInfo.SessionId = _sessionId;
+                sessionInfo.Duration = _duration;
             }
+            return sessionInfo;
         }
+
+
+
+        /// <summary>
+        /// Object that represnets session's information such as start time stamp, stop time stamp , unique session ID and duration.
+        /// </summary>
+        public class SessionInfo
+        {
+            public DateTime StartTimestamp { get; set; }
+            public DateTime? StopTimestamp { get; set; }
+            public string SessionId { get; set; }
+            public long Duration { get; set; }
+        }
+
+
         #endregion
-        
-        
+
+
         #region private
         private void NewSession()
         {
-            lock(_lock)
+            lock (_lock)
             {
                 _startTime = DateTime.UtcNow;
                 _preStartTime = DateTime.UtcNow;
@@ -250,7 +240,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 _duration = 0;
             }
 
-            CustomEvent sessionStartEvent = new CustomEvent(SESSION_START_EVENT_TYPE);
+            CustomEvent sessionStartEvent = new CustomEvent(Constants.SESSION_START_EVENT_TYPE);
             lock (_lock)
             {
                 sessionStartEvent.StartTimestamp = _startTime;
@@ -259,24 +249,24 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
             MobileAnalyticsManager.GetInstance(APP_ID).RecordEventAsync(sessionStartEvent);
         }
-        
+
         private void StopSession()
         {
             DateTime currentTime = DateTime.UtcNow;
-            
+
             // update session info
-            lock(_lock)
+            lock (_lock)
             {
                 _stopTime = currentTime;
             }
 
-            
+
             // record session stop event
-            CustomEvent stopSessionEvent = new CustomEvent(SESSION_STOP_EVENT_TYPE);
-            lock(_lock)
+            CustomEvent stopSessionEvent = new CustomEvent(Constants.SESSION_STOP_EVENT_TYPE);
+            lock (_lock)
             {
                 stopSessionEvent.StartTimestamp = _startTime;
-                
+
                 if (_stopTime != null)
                     stopSessionEvent.StopTimestamp = _stopTime;
                 stopSessionEvent.SessionId = _sessionId;
@@ -284,55 +274,55 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             }
             MobileAnalyticsManager.GetInstance(APP_ID).RecordEventAsync(stopSessionEvent);
         }
-        
+
         private void PauseSession()
         {
             DateTime currentTime = DateTime.UtcNow;
-           
+
             // update session info
-            lock(_lock)
+            lock (_lock)
             {
                 _stopTime = currentTime;
-                _duration += Convert.ToInt64((currentTime-_preStartTime).TotalMilliseconds);
+                _duration += Convert.ToInt64((currentTime - _preStartTime).TotalMilliseconds);
             }
-            
+
             // record session pause event
-            CustomEvent pauseSessionEvent = new CustomEvent(SESSION_PAUSE_EVENT_TYPE);
-            lock(_lock)
+            CustomEvent pauseSessionEvent = new CustomEvent(Constants.SESSION_PAUSE_EVENT_TYPE);
+            lock (_lock)
             {
                 pauseSessionEvent.StartTimestamp = _startTime;
 
                 if (_stopTime != null)
                     pauseSessionEvent.StopTimestamp = _stopTime;
-                pauseSessionEvent.SessionId = _sessionId;    
+                pauseSessionEvent.SessionId = _sessionId;
                 pauseSessionEvent.Duration = _duration;
             }
             MobileAnalyticsManager.GetInstance(APP_ID).RecordEventAsync(pauseSessionEvent);
         }
-        
+
         private void ResumeSession()
         {
             DateTime currentTime = DateTime.UtcNow;
-            
+
             // update session info
-            lock(_lock)
+            lock (_lock)
             {
                 _preStartTime = currentTime;
             }
-            
+
             // record session resume event
-            CustomEvent resumeSessionEvent = new CustomEvent(SESSION_RESUME_EVENT_TYPE);
-            lock(_lock)
+            CustomEvent resumeSessionEvent = new CustomEvent(Constants.SESSION_RESUME_EVENT_TYPE);
+            lock (_lock)
             {
                 resumeSessionEvent.StartTimestamp = _startTime;
                 if (_stopTime != null)
                     resumeSessionEvent.StopTimestamp = _stopTime;
-                resumeSessionEvent.SessionId = _sessionId;    
+                resumeSessionEvent.SessionId = _sessionId;
                 resumeSessionEvent.Duration = _duration;
             }
             MobileAnalyticsManager.GetInstance(APP_ID).RecordEventAsync(resumeSessionEvent);
         }
-   
+
 #if BCL35 || BCL45
         private void SaveSessionStorage()
 #elif PCL 
@@ -423,10 +413,11 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 }
                 return true;
             }
-            else { 
+            else
+            {
                 return false;
             }
-                
+
         }
         #endregion
     }

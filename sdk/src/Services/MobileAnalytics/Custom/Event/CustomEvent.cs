@@ -46,37 +46,37 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// <summary>
         /// Event type string that defines event type.
         /// </summary>
-        protected string _eventType;
+        private string _eventType;
 
         /// <summary>
         /// Dictionary that stores global attribute for specific event type.
         /// </summary>
-        protected static Dictionary<string, Dictionary<string,string>> _eventTypeGlobalAttributes = new Dictionary<string,Dictionary<string,string>>();
+        private static Dictionary<string, Dictionary<string,string>> _eventTypeGlobalAttributes = new Dictionary<string,Dictionary<string,string>>();
         
         /// <summary>
         /// Dictionary that stores global metric for specific event type.
         /// </summary>
-        protected static Dictionary<string, Dictionary<string,double>> _eventTypeGlobalMetrics = new Dictionary<string, Dictionary<string,double>>();
+        private static Dictionary<string, Dictionary<string,double>> _eventTypeGlobalMetrics = new Dictionary<string, Dictionary<string,double>>();
 
         /// <summary>
         /// Dictionary that stores global attribute for all event type.
         /// </summary>
-        protected static Dictionary<string,string> _globalAttributes = new Dictionary<string,string>();
+        private static Dictionary<string,string> _globalAttributes = new Dictionary<string,string>();
 
         /// <summary>
         /// Dictionary that stores global metric for all event type.
         /// </summary>
-        protected static Dictionary<string,double> _globalMetrics = new Dictionary<string,double>();
+        private static Dictionary<string,double> _globalMetrics = new Dictionary<string,double>();
         
         /// <summary>
         /// Dictionary that stores attribute for this event only.
         /// </summary>
-        protected Dictionary<string,string> _attributes = new Dictionary<string,string>();
+        private Dictionary<string,string> _attributes = new Dictionary<string,string>();
 
         /// <summary>
         /// Dictionary that stores metric for this event only.
         /// </summary>
-        protected Dictionary<string,double> _metrics = new Dictionary<string,double>();
+        private Dictionary<string,double> _metrics = new Dictionary<string,double>();
 
         /// <summary>
         /// Unique Identifier of Session
@@ -106,12 +106,12 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// <summary>
         /// Lock that protects global attribute and metric.
         /// </summary>
-        protected static Object _globalLock = new Object();
+        private static Object _globalLock = new Object();
         
         /// <summary>
         /// Lock that protects attribute and metric. 
         /// </summary>
-        protected Object _lock = new Object();
+        private Object _lock = new Object();
         
         private const int MAX_KEY_SIZE = 50;
         private const int MAX_ATTRIB_VALUE_SIZE = 255;
@@ -163,25 +163,19 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 
             Amazon.MobileAnalytics.Model.Event modelEvent = new Amazon.MobileAnalytics.Model.Event();
             
-            // get session info
-            DateTime startTimestamp;
-            DateTime? stopTimestamp;
-            string sessionId = null; 
-            long duration = 0;
-            session.GetSessionInfo(out startTimestamp,out stopTimestamp,out sessionId,out duration);
+            Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.Session.SessionInfo sessionInfo = session.RetrieveSessionInfo();
 
-            this.StartTimestamp = startTimestamp;
-            this.SessionId = sessionId;
+            this.StartTimestamp = sessionInfo.StartTimestamp;
+            this.SessionId = sessionInfo.SessionId;
             
-            
-            
+
             // assign session info from manager event to model event
             modelEvent.EventType = this._eventType;
             modelEvent.Session = new Amazon.MobileAnalytics.Model.Session();
-            modelEvent.Session.Id = sessionId;
-            modelEvent.Session.StartTimestamp = startTimestamp;
+            modelEvent.Session.Id = sessionInfo.SessionId;
+            modelEvent.Session.StartTimestamp = sessionInfo.StartTimestamp;
             
-            if(this._eventType == Session.SESSION_STOP_EVENT_TYPE)
+            if(this._eventType == Constants.SESSION_STOP_EVENT_TYPE)
             {
                 modelEvent.Session.StopTimestamp = this.StopTimestamp.Value;
                 modelEvent.Session.Duration = this.Duration;
@@ -297,14 +291,18 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// Gets all attributes.
         /// </summary>
         /// <returns>All the attributes.</returns>
-        public IDictionary<string, string> GetAllAttributes()
+        public IDictionary<string, string> AllAttributes
         {
-            IDictionary<string,string> ret;
-            lock(_lock)
+            get 
             {
-                ret = CopyDict(_attributes);
+                IDictionary<string,string> ret;
+                lock(_lock)
+                {
+                    ret = CopyDict(_attributes);
+                }
+                return ret;            
             }
-            return ret;
+
         }
         #endregion
         
@@ -383,14 +381,17 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// Gets all metrics.
         /// </summary>
         /// <returns>All the metrics.</returns>
-        public IDictionary<string, double> GetAllMetrics()
+        public IDictionary<string, double> AllMetrics
         {
-            IDictionary<string,double> ret;
-            lock(_lock)
+            get 
             {
-                ret = CopyDict(_metrics);
+                IDictionary<string,double> ret;
+                lock(_lock)
+                {
+                    ret = CopyDict(_metrics);
+                }
+                return ret;            
             }
-            return ret;
         }
         #endregion
         
@@ -741,7 +742,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         
         
         #region util
-        private void AddDict<T, S>(Dictionary<T, S> srcDict, Dictionary<T, S> dstDict)
+        private static void AddDict<T, S>(Dictionary<T, S> srcDict, Dictionary<T, S> dstDict)
         {
             if(srcDict == null)
             {
@@ -760,7 +761,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         }
         
         
-        private Dictionary<T, S> CopyDict<T, S>(Dictionary<T, S> srcDict)
+        private static Dictionary<T, S> CopyDict<T, S>(Dictionary<T, S> srcDict)
         {
             if(srcDict == null)
             {

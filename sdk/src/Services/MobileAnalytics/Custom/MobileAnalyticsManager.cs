@@ -34,12 +34,20 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
     /// MobileAnalyticsManager in the entry point to recording analytic events for your application
     /// </summary>
     public partial class MobileAnalyticsManager
-    {  
-        private static object _lock = new object();
-        private static IDictionary<string,MobileAnalyticsManager> _instanceDictionary = new Dictionary<string, MobileAnalyticsManager>();
-        private static Logger _logger = Logger.GetLogger(typeof(MobileAnalyticsManager));
-
+    {
+        private static object _lock;
+        private static IDictionary<string, MobileAnalyticsManager> _instanceDictionary;
+        private Logger _logger = Logger.GetLogger(typeof(MobileAnalyticsManager));
+        private static BackgroundRunner _backgroundRunner;
         #region constructor
+        
+        static MobileAnalyticsManager()
+        {
+            _lock = new object();
+            _instanceDictionary = new Dictionary<string, MobileAnalyticsManager>();
+            _backgroundRunner = new BackgroundRunner();
+        }
+
 
         /// <summary>
         /// Gets the or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
@@ -88,7 +96,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             if (isNewInstance)
                 managerInstance.Session.Start();
 
-            BackgroundRunner.StartWork();
+            _backgroundRunner.StartWork();
 
             return managerInstance;
         }
@@ -235,11 +243,11 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// </summary>
         public void ResumeSession()
         {
-            try 
-            {         
+            try
+            {
                 Session.Resume();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 _logger.Error(e, "An exception occurred when resume session.");
             }
