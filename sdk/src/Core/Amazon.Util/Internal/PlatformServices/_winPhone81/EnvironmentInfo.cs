@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Amazon.Util.Internal.PlatformServices
 {
-    public class EnvironmentInfo
+    public class EnvironmentInfo : IEnvironmentInfo
     {
         public string Platform
         {
             get
             {
-                return "";
+                return string.Empty;
             }
         }
 
@@ -21,7 +21,7 @@ namespace Amazon.Util.Internal.PlatformServices
         {
             get
             {
-                return "";
+                return string.Empty;
             }
         }
 
@@ -29,7 +29,7 @@ namespace Amazon.Util.Internal.PlatformServices
         {
             get
             {
-                return "";
+                return string.Empty;
             }
         }
 
@@ -37,7 +37,7 @@ namespace Amazon.Util.Internal.PlatformServices
         {
             get
             {
-                return "";
+                return string.Empty;
             }
         }
 
@@ -45,7 +45,7 @@ namespace Amazon.Util.Internal.PlatformServices
         {
             get
             {
-                return CultureInfo.CurrentCulture.DisplayName;
+                return string.Empty;
             }
         }
     }
