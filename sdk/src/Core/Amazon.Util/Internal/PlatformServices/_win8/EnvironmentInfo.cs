@@ -6,45 +6,45 @@ using System.Threading.Tasks;
 
 namespace Amazon.Util.Internal.PlatformServices
 {
-    public class EnvironmentInfo
+    public class EnvironmentInfo : IEnvironmentInfo
     {
-        public static string Platform
+        public string Platform
         {
             get
             {
-                throw new NotImplementedException();
+                return string.Empty;
             }
         }
 
-        public static string Model
+        public string Model
         {
             get
             {
-                throw new NotImplementedException();
+                return string.Empty;
             }
         }
 
-        public static string Make
+        public string Make
         {
             get
             {
-                throw new NotImplementedException();
+                return string.Empty;
             }
         }
 
-        public static string PlatformVersion
+        public string PlatformVersion
         {
             get
             {
-                throw new NotImplementedException();
+                return string.Empty;
             }
         }
 
-        public static string Locale
+        public string Locale
         {
             get
             {
-                throw new NotImplementedException();
+                return string.Empty;
             }
         }
     }
