@@ -18,9 +18,6 @@
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-        <dependency id="Microsoft.Net.Http" version="2.2.29" />
-        <dependency id="PCLStorage" version="1.0.2" />
-        <dependency id="PCLCrypto" version="1.0.2.15130" />
 <#
     foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
     {
