@@ -71,8 +71,8 @@ namespace MobileAnalyticsSample_Android
 
 
             // customize your Mobile Analytics Manager Config
-            MobileAnalyticsManagerConfig config = new MobileAnalyticsManagerConfig();
-            config.SessionTimeout = 5;
+			MobileAnalyticsManagerConfig config = new MobileAnalyticsManagerConfig();
+			config.AllowUseDataNetwork = true;
             
             _manager = MobileAnalyticsManager.GetOrCreateInstance(new CognitoAWSCredentials(COGNITO_POOL_ID, COGNITO_REGION), RegionEndpoint.USEast1, APP_ID, config);
         }
