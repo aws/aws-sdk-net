@@ -35,19 +35,12 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
     /// </summary>
     public partial class MobileAnalyticsManager
     {
-        private static object _lock;
-        private static IDictionary<string, MobileAnalyticsManager> _instanceDictionary;
+        private static object _lock = new object();
+        private static IDictionary<string, MobileAnalyticsManager> _instanceDictionary = new Dictionary<string, MobileAnalyticsManager>();
         private Logger _logger = Logger.GetLogger(typeof(MobileAnalyticsManager));
-        private static BackgroundRunner _backgroundRunner;
-        #region constructor
+        private static BackgroundRunner _backgroundRunner = new BackgroundRunner();
         
-        static MobileAnalyticsManager()
-        {
-            _lock = new object();
-            _instanceDictionary = new Dictionary<string, MobileAnalyticsManager>();
-            _backgroundRunner = new BackgroundRunner();
-        }
-
+        #region constructor
 
         /// <summary>
         /// Gets the or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise

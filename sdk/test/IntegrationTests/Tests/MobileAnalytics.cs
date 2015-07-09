@@ -64,10 +64,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             //DateTime? stopTimestamp;
             //string sessionId;
             //long duration;
-            Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.Session.SessionInfo sessionInfo1 = GetMobileAnalyticsManager(appId).Session.RetrieveSessionInfo();
+            Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SessionInfo sessionInfo1 = GetMobileAnalyticsManager(appId).Session.RetrieveSessionInfo();
 
             Console.WriteLine("start time stamp is " + sessionInfo1.StartTimestamp);
-            Console.WriteLine("stop time stamp is " + sessionInfo1.StopTimestamp.Value);
+            if (sessionInfo1.StopTimestamp != null)
+                Console.WriteLine("stop time stamp is " + sessionInfo1.StopTimestamp.Value);
             Console.WriteLine("session id is " + sessionInfo1.SessionId);
             Console.WriteLine("duration is " + sessionInfo1.Duration);
 
@@ -80,10 +81,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             //DateTime? stopTimestamp2;
             //string sessionId2;
             //long duration2;
-            Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.Session.SessionInfo sessionInfo2 = GetMobileAnalyticsManager(appId).Session.RetrieveSessionInfo();
+            Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SessionInfo sessionInfo2 = GetMobileAnalyticsManager(appId).Session.RetrieveSessionInfo();
             
             Console.WriteLine("start time stamp is " + sessionInfo2.StartTimestamp);
-            Console.WriteLine("stop time stamp is " + sessionInfo2.StopTimestamp.Value);
+            if (sessionInfo2.StopTimestamp != null)
+                Console.WriteLine("stop time stamp is " + sessionInfo2.StopTimestamp.Value);
             Console.WriteLine("session id is " + sessionInfo2.SessionId);
             Console.WriteLine("duration is " + sessionInfo2.Duration);
 
@@ -99,10 +101,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             //DateTime? stopTimestamp3;
             //string sessionId3;
             //long duration3;
-            Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.Session.SessionInfo sessionInfo3 = GetMobileAnalyticsManager(appId).Session.RetrieveSessionInfo();
+            Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SessionInfo sessionInfo3 = GetMobileAnalyticsManager(appId).Session.RetrieveSessionInfo();
 
             Console.WriteLine("start time stamp is " + sessionInfo3.StartTimestamp);
-            Console.WriteLine("stop time stamp is " + sessionInfo3.StopTimestamp.Value);
+            if (sessionInfo3.StopTimestamp != null)
+                Console.WriteLine("stop time stamp is " + sessionInfo3.StopTimestamp.Value);
             Console.WriteLine("session id is " + sessionInfo3.SessionId);
             Console.WriteLine("duration is " + sessionInfo3.Duration);
 

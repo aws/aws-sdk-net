@@ -40,7 +40,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         // Default 60 seconds.
         private const int BackgroundSubmissionWaitTime = 60;
 #if BCL35
-        private static System.Threading.Thread _thread = null;
+        private System.Threading.Thread _thread = null;
 
         /// <summary>
         /// Starts the Mobile Analytics Manager background thread.

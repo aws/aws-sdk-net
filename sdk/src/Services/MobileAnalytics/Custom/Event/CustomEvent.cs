@@ -163,7 +163,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 
             Amazon.MobileAnalytics.Model.Event modelEvent = new Amazon.MobileAnalytics.Model.Event();
             
-            Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.Session.SessionInfo sessionInfo = session.RetrieveSessionInfo();
+            SessionInfo sessionInfo = session.RetrieveSessionInfo();
 
             this.StartTimestamp = sessionInfo.StartTimestamp;
             this.SessionId = sessionInfo.SessionId;

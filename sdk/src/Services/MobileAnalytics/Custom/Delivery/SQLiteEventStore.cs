@@ -45,6 +45,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     /// Implementation of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IEventStore"/>.
     /// The object stores Mobile Analytic events in SQLite database.
     /// </summary>
+    [System.Security.SecuritySafeCritical]
     public class SQLiteEventStore : IEventStore
     {
         private Logger _logger = Logger.GetLogger(typeof(SQLiteEventStore));
@@ -59,22 +60,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         private const String dbFileName = "mobile_analytic_event.db";
 
         // platform specific db file path
-        private static String _dbFileFullPath;
-        private static object _lock;
+        private String _dbFileFullPath;
+        private object _lock = new object();
         private MobileAnalyticsManagerConfig _maConfig;
-        
-        /// <summary>
-        /// Initializes the <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore"/> class.
-        /// </summary>
-        static SQLiteEventStore()
-        {
-            _lock = new object();
-#if BCL35 || BCL45
-            _dbFileFullPath = dbFileName;
-#elif PCL
-            _dbFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, dbFileName);
-#endif      
-        }
 
         /// <summary>
         /// Constructor of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore"/>
@@ -83,6 +71,11 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         public SQLiteEventStore(MobileAnalyticsManagerConfig maConfig)
         {
             _maConfig = maConfig;
+#if BCL35 || BCL45
+            _dbFileFullPath = dbFileName;
+#elif PCL
+            _dbFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, dbFileName);
+#endif     
             SetupSQLiteEventStore();
         }
 
@@ -163,6 +156,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <param name="eventString">Amazon Mobile Analytics event in string.</param>
         /// <param name="appId">Amazon Mobile Analytics App ID.</param>
         /// <returns><c>true</c>, if event was put, <c>false</c> otherwise.</returns>
+        [System.Security.SecuritySafeCritical]
         public bool PutEvent(string eventString, string appId)
         {
             
@@ -243,6 +237,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// </summary>
         /// <param name="rowIds">List of row identifiers.</param>
         /// <returns><c>true</c>, if events was deleted, <c>false</c> otherwise.</returns>
+        [System.Security.SecuritySafeCritical]
         public bool DeleteEvent(List<string> rowIds)
         {
             bool result = false;
@@ -299,6 +294,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <param name="appId">Amazon Mobile Analytics App Id.</param>
         /// <param name="maxAllowed">Max number of events is allowed to return.</param>
         /// <returns>The events as a List of <see cref="ThirdParty.Json.LitJson.JsonData"/>.</returns>
+        [System.Security.SecuritySafeCritical]
         public List<JsonData> GetEvents(string appId, int maxAllowed)
         {
             
@@ -370,6 +366,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// </summary>
         /// <param name="appId">Amazon Mobile Analytics App Identifier.</param>
         /// <returns>The number of events.</returns>
+        [System.Security.SecuritySafeCritical]
         public long NumberOfEvents(string appId)
         {
             
@@ -478,7 +475,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// Get the SQLite Event Store's database file full path.
         /// </summary>
         /// <returns> The database file full path. </returns>
-        public static string DBfileFullPath
+        public string DBfileFullPath
         {
             get
             {

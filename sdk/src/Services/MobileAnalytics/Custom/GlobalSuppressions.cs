@@ -19,7 +19,6 @@ using System.Diagnostics.CodeAnalysis;
 // Identifier should not match keywords
 [module: SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", Scope="type", Target="Amazon.MobileAnalytics.Model.Event", MessageId="Event")]
 
-
 // supress warning for implementing ISerializable interface
 [module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope="type", Target="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.EventStoreException")]
 
@@ -28,14 +27,6 @@ using System.Diagnostics.CodeAnalysis;
 
 // Keep MobileAnalyticsManager namespace
 [module: SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Scope = "type", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManager")]
-
-
-[module: SuppressMessage("Microsoft.Security", "CA2141:TransparentMethodsMustNotSatisfyLinkDemandsFxCopRule", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore.#GetEvents(System.String,System.Int32)")]
-[module: SuppressMessage("Microsoft.Security", "CA2141:TransparentMethodsMustNotSatisfyLinkDemandsFxCopRule", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore.#DeleteEvent(System.Collections.Generic.List`1<System.String>)")]
-[module: SuppressMessage("Microsoft.Security", "CA2141:TransparentMethodsMustNotSatisfyLinkDemandsFxCopRule", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore.#PutEvent(System.String,System.String)")]
-[module: SuppressMessage("Microsoft.Security", "CA2141:TransparentMethodsMustNotSatisfyLinkDemandsFxCopRule", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore.#NumberOfEvents(System.String)")]
-[module: SuppressMessage("Microsoft.Security", "CA2141:TransparentMethodsMustNotSatisfyLinkDemandsFxCopRule", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore.#SetUpDatabase()")]
-
 
 // supress warnings for catching general exception
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManager.#ResumeSession()")]
@@ -46,4 +37,6 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore.#DeleteEvent(System.Collections.Generic.List`1<System.String>)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore.#PutEvent(System.String,System.String)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore.#NumberOfEvents(System.String)")]
-[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore.#SetUpDatabase()")]
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.BackgroundRunner.#DoWork()")]
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore.#SetupSQLiteEventStore()")]
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.DeliveryClient.#SubmitEvents(System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<Amazon.MobileAnalytics.Model.Event>)")]
