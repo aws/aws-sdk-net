@@ -51,6 +51,7 @@ namespace CommonTests.IntegrationTests.S3
                 try
                 {
                     await UtilityMethods.DeleteBucketWithObjectsAsync(Client, bucketName);
+                    //await Client.DeleteBucketAsync(bucketName);
                 }
                 catch(Exception e)
                 {
@@ -62,6 +63,42 @@ namespace CommonTests.IntegrationTests.S3
         }        
 
         [Test]
+        public void SimpleTest()
+        {
+            RunAsSync(async () =>
+            {
+                var versioning = await Client.GetBucketVersioningAsync(bucketName);
+                var status = versioning.VersioningConfig.Status;
+                Assert.AreEqual(VersionStatus.Off, status);
+
+                var key = "test.txt";
+                var contents = "Sample content";
+                var putResult = await Client.PutObjectAsync(new PutObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    ContentBody = contents
+                });
+                var etag = putResult.ETag;
+                Assert.IsNotNull(etag);
+
+                var objects = (await Client.ListObjectsAsync(bucketName)).S3Objects;
+                Assert.IsNotNull(objects);
+                Assert.AreEqual(1, objects.Count);
+
+                var metadataResult = await Client.GetObjectMetadataAsync(bucketName, key);
+                Assert.AreEqual(etag, metadataResult.ETag);
+
+                await Client.DeleteObjectAsync(bucketName, key);
+
+                // this code will fail on Silverlight, due to http caching
+                //objects = (await Client.ListObjectsAsync(bucketName)).S3Objects;
+                //Assert.IsNotNull(objects);
+                //Assert.AreEqual(0, objects.Count);
+            });
+        }
+
+        //[Test]
         public void TestHttpErrorResponseUnmarshalling()
         {
             RunAsSync(async () =>
@@ -88,7 +125,7 @@ namespace CommonTests.IntegrationTests.S3
             });
         }
 
-        [Test]
+        //[Test]
         public void SimplePutObjectTest()
         {
             RunAsSync(async () =>
@@ -107,7 +144,7 @@ namespace CommonTests.IntegrationTests.S3
             });
         }
 
-        [Test]
+        //[Test]
         public void SimplePathPutObjectTest()
         {
             RunAsSync(async () =>
@@ -125,15 +162,4 @@ namespace CommonTests.IntegrationTests.S3
             });
         }
     }
-
-    //public class NonRewindableStream : MemoryStream
-    //{
-    //    public override bool CanSeek
-    //    {
-    //        get
-    //        {
-    //            return false;
-    //        }
-    //    }
-    //}
 }

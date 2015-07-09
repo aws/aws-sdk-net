@@ -54,6 +54,8 @@ namespace CommonTests.Framework
             UtilityMethods.RunAsSync(asyncFunc);
         }
 
+        #region IDispose implementation
+
         public void Dispose()
         {
             Dispose(true);
@@ -70,6 +72,17 @@ namespace CommonTests.Framework
                 RunAsSync(async () => await BaseFolder.DeleteAsync());
                 _disposed = true;
             }
+        }
+
+        #endregion
+
+        public static ServiceResponseCounter CountServiceResponses()
+        {
+            return CountServiceResponses(Client);
+        }
+        public static ServiceResponseCounter CountServiceResponses(AmazonServiceClient client)
+        {
+            return new ServiceResponseCounter(client);
         }
     }
 

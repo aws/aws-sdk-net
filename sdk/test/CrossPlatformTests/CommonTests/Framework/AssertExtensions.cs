@@ -9,49 +9,53 @@ namespace CommonTests.Framework
 {
     public static class AssertExtensions
     {
-        public static async Task ExpectExceptionAsync(Task task)
+        public static async Task ExpectExceptionAsync(Task task, string message = null)
         {
             bool gotException = false;
             try
             {
                 await task;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 gotException = true;
+                if (!string.IsNullOrEmpty(message))
+                    Assert.AreEqual(message, e.Message);
             }
 
             Assert.IsTrue(gotException, "Failed to get expected exception");
         }
 
-        public static void ExpectException(Action action)
+        public static void ExpectException(Action action, string message = null)
         {
             bool gotException = false;
             try
             {
                 action();
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 gotException = true;
+                if (!string.IsNullOrEmpty(message))
+                    Assert.AreEqual(message, e.Message);
             }
 
             Assert.IsTrue(gotException, "Failed to get expected exception");
         }
 
 
-        public static Task<T> ExpectExceptionAsync<T>(Task task) where T : Exception
+        public static Task<T> ExpectExceptionAsync<T>(Task task, string message = null) where T : Exception
         {
-            return ExpectException_HelperAsync<T>(task);
+            return ExpectException_HelperAsync<T>(task, message);
         }
 
-        public static T ExpectException<T>(Action action) where T : Exception
+        public static T ExpectException<T>(Action action, string message = null) where T : Exception
         {
-            return ExpectException_Helper<T>(action);
+            return ExpectException_Helper<T>(action, message);
         }
 
 
-        private static T ExpectException_Helper<T>(Action action) where T : Exception
+        private static T ExpectException_Helper<T>(Action action, string message = null) where T : Exception
         {
             var exceptionType = typeof(T);
             bool gotException = false;
@@ -64,13 +68,15 @@ namespace CommonTests.Framework
             {
                 exception = e;
                 Assert.AreEqual(e.GetType(), exceptionType);
+                if (!string.IsNullOrEmpty(message))
+                    Assert.AreEqual(message, e.Message);
                 gotException = true;
             }
 
             Assert.IsTrue(gotException, "Failed to get expected exception: " + exceptionType.FullName);
             return (T)exception;
         }
-        private static async Task<T> ExpectException_HelperAsync<T>(Task task) where T : Exception
+        private static async Task<T> ExpectException_HelperAsync<T>(Task task, string message = null) where T : Exception
         {
             var exceptionType = typeof(T);
             bool gotException = false;
@@ -83,6 +89,8 @@ namespace CommonTests.Framework
             {
                 exception = e;
                 Assert.AreEqual(e.GetType(), exceptionType);
+                if (!string.IsNullOrEmpty(message))
+                    Assert.AreEqual(message, e.Message);
                 gotException = true;
             }
 

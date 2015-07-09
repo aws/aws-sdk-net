@@ -6,6 +6,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using CommonTests.Framework;
+using System.Collections.Generic;
 
 namespace AndroidApp
 {
