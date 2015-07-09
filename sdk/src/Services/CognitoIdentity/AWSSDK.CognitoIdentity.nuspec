@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.CognitoIdentity</id>
     <title>AWSSDK - Amazon Cognito Identity</title>
-    <version>3.0.1.1-preview</version> 
+    <version>3.0.1.2-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.</description> 
     <language>en-US</language>
@@ -13,12 +13,12 @@
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.SecurityToken" version="[3.0.0.3-preview, 3.1-preview)" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.SecurityToken" version="[3.0.0.4-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.5-preview, 3.1-preview)" />
       </group>
       <group>
-        <dependency id="AWSSDK.SecurityToken" version="[3.0.0.3-preview, 3.1-preview)" />
-        <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
+        <dependency id="AWSSDK.SecurityToken" version="[3.0.0.4-preview, 3.1-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.0.0.5-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 

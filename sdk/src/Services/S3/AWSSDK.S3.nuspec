@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.S3</id>
     <title>AWSSDK - Amazon Simple Storage Service</title>
-    <version>3.0.0.4-preview</version> 
+    <version>3.0.0.5-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage.</description> 
     <language>en-US</language>
@@ -13,10 +13,10 @@
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.5-preview, 3.1-preview)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.0.0.5-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 
