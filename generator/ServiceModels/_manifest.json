@@ -159,6 +159,16 @@
             "service-url": "https://logs.us-east-1.amazonaws.com",
             "synopsis": "Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms."
         },
+		{
+			"active" : true,
+			
+			"model" : "codecommit",
+			"base-name" : "CodeCommit",
+			"region-lookup-name" : "codecommit",
+			"authentication-service-name" : "codecommit",
+            "service-url": "http://codecommit.us-east-1.amazonaws.com",
+            "mobile-platforms" : []
+		},
         {
             "active": true,
 
