@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// 
+    /// Details on a load balancer that is used with a service.
     /// </summary>
     public partial class LoadBalancer
     {

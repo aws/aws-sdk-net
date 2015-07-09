@@ -138,6 +138,16 @@
             "service-url": "https://logs.us-east-1.amazonaws.com",
             "mobile-platforms": [ ]
         },
+		{
+			"active" : true,
+			
+			"model" : "codecommit",
+			"base-name" : "CodeCommit",
+			"region-lookup-name" : "codecommit",
+			"authentication-service-name" : "codecommit",
+            "service-url": "http://codecommit.us-east-1.amazonaws.com",
+            "mobile-platforms" : []
+		},
         {
             "active": true,
 
@@ -146,6 +156,16 @@
             "region-lookup-name": "codedeploy",
             "authentication-service-name": "codedeploy",
             "service-url": "http://codedeploy.us-east-1.amazonaws.com",
+            "mobile-platforms": [ ]
+        },
+		{
+            "active": true,
+
+            "model": "codepipeline",
+            "base-name": "CodePipeline",
+            "region-lookup-name": "codepipeline",
+            "authentication-service-name": "codepipeline",
+            "service-url": "http://codepipeline.us-east-1.amazonaws.com",
             "mobile-platforms": [ ]
         },
         {

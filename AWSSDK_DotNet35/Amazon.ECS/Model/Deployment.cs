@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// 
+    /// The details of an Amazon ECS service deployment.
     /// </summary>
     public partial class Deployment
     {

@@ -69,6 +69,46 @@ namespace Amazon.IdentityManagement
 
 
     /// <summary>
+    /// Constants used for properties of type EncodingType.
+    /// </summary>
+    public class EncodingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PEM for EncodingType
+        /// </summary>
+        public static readonly EncodingType PEM = new EncodingType("PEM");
+        /// <summary>
+        /// Constant SSH for EncodingType
+        /// </summary>
+        public static readonly EncodingType SSH = new EncodingType("SSH");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public EncodingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncodingType FindValue(string value)
+        {
+            return FindValue<EncodingType>(value);
+        }
+
+        public static implicit operator EncodingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EntityType.
     /// </summary>
     public class EntityType : ConstantClass

@@ -143,6 +143,10 @@
     <Compile Include="Amazon.CloudHSM\IAmazonCloudHSM.cs" />
     <Compile Include="Amazon.CodeDeploy\AmazonCodeDeployClient.cs" />
     <Compile Include="Amazon.CodeDeploy\IAmazonCodeDeploy.cs" />
+    <Compile Include="Amazon.CodeCommit\AmazonCodeCommitClient.cs" />
+    <Compile Include="Amazon.CodeCommit\IAmazonCodeCommit.cs" />
+    <Compile Include="Amazon.CodePipeline\AmazonCodePipelineClient.cs" />
+    <Compile Include="Amazon.CodePipeline\IAmazonCodePipeline.cs" />
     <Compile Include="Amazon.CognitoIdentity\AmazonCognitoIdentityClient.cs" />
     <Compile Include="Amazon.CognitoIdentity\IAmazonCognitoIdentity.cs" />
     <Compile Include="Amazon.CognitoSync\AmazonCognitoSyncClient.cs" />
@@ -372,6 +376,28 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CodeDeploy\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CodeCommit\*" Exclude="..\AWSSDK_DotNet35\Amazon.CodeCommit\IAmazonCodeCommit.cs;..\AWSSDK_DotNet35\Amazon.CodeCommit\AmazonCodeCommitClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CodeCommit\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CodeCommit\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CodePipeline\*" Exclude="..\AWSSDK_DotNet35\Amazon.CodePipeline\IAmazonCodePipeline.cs;..\AWSSDK_DotNet35\Amazon.CodePipeline\AmazonCodePipelineClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CodePipeline\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CodePipeline\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>

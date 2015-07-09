@@ -39,8 +39,8 @@ namespace Amazon.SecurityToken.Model
         /// Gets and sets the property Arn. 
         /// <para>
         /// The ARN of the temporary security credentials that are returned from the <a>AssumeRole</a>
-        /// action. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-        /// target="_blank"> Identifiers for IAM Entities </a> in <i>Using IAM</i>. 
+        /// action. For more information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+        /// Identifiers</a> in <i>Using IAM</i>. 
         /// </para>
         /// </summary>
         public string Arn

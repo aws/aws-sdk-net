@@ -152,6 +152,24 @@
     <Compile Include="Amazon.CodeDeploy\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CodeCommit\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CodeCommit\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CodeCommit\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CodePipeline\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CodePipeline\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CodePipeline\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.CloudHSM\*.cs">
       <SubType>Code</SubType>
     </Compile>

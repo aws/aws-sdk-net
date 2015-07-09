@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// 
+    /// A docker container that is part of a task.
     /// </summary>
     public partial class Container
     {
@@ -113,7 +113,10 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkBindings.
+        /// Gets and sets the property NetworkBindings. 
+        /// <para>
+        /// The network bindings associated with the container.
+        /// </para>
         /// </summary>
         public List<NetworkBinding> NetworkBindings
         {

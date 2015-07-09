@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The name of a container in a task definition and the command it should run instead
-    /// of its default.
+    /// The overrides that should be sent to a container.
     /// </summary>
     public partial class ContainerOverride
     {

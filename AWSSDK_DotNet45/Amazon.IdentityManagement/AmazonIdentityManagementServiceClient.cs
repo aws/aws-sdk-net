@@ -2417,6 +2417,54 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DeleteSSHPublicKey
+
+        /// <summary>
+        /// Deletes the specified SSH public key.
+        /// 
+        ///  
+        /// <para>
+        /// The SSH public key deleted by this action is used only for authenticating the associated
+        /// IAM user to an AWS CodeCommit repository. For more information about using SSH keys
+        /// to authenticate to an AWS CodeCommit repository, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
+        /// up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSSHPublicKey service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSSHPublicKey service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public DeleteSSHPublicKeyResponse DeleteSSHPublicKey(DeleteSSHPublicKeyRequest request)
+        {
+            var marshaller = new DeleteSSHPublicKeyRequestMarshaller();
+            var unmarshaller = DeleteSSHPublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSSHPublicKeyRequest,DeleteSSHPublicKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSSHPublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteSSHPublicKeyResponse> DeleteSSHPublicKeyAsync(DeleteSSHPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteSSHPublicKeyRequestMarshaller();
+            var unmarshaller = DeleteSSHPublicKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSSHPublicKeyRequest,DeleteSSHPublicKeyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteUser
 
         /// <summary>
@@ -2773,8 +2821,8 @@ namespace Amazon.IdentityManagement
         /// error message describes the entity.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.InvalidAuthenticationCodeException">
-        /// The request was rejected because the authentication code was not recognized. The
-        /// error message describes the specific error.
+        /// The request was rejected because the authentication code was not recognized. The error
+        /// message describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
@@ -3744,6 +3792,58 @@ namespace Amazon.IdentityManagement
             var unmarshaller = GetServerCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetServerCertificateRequest,GetServerCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSSHPublicKey
+
+        /// <summary>
+        /// Retrieves the specified SSH public key, including metadata about the key.
+        /// 
+        ///  
+        /// <para>
+        /// The SSH public key retrieved by this action is used only for authenticating the associated
+        /// IAM user to an AWS CodeCommit repository. For more information about using SSH keys
+        /// to authenticate to an AWS CodeCommit repository, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
+        /// up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSSHPublicKey service method.</param>
+        /// 
+        /// <returns>The response from the GetSSHPublicKey service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.UnrecognizedPublicKeyEncodingException">
+        /// The request was rejected because the public key encoding format is unsupported or
+        /// unrecognized.
+        /// </exception>
+        public GetSSHPublicKeyResponse GetSSHPublicKey(GetSSHPublicKeyRequest request)
+        {
+            var marshaller = new GetSSHPublicKeyRequestMarshaller();
+            var unmarshaller = GetSSHPublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<GetSSHPublicKeyRequest,GetSSHPublicKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSSHPublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetSSHPublicKeyResponse> GetSSHPublicKeyAsync(GetSSHPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetSSHPublicKeyRequestMarshaller();
+            var unmarshaller = GetSSHPublicKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSSHPublicKeyRequest,GetSSHPublicKeyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -5182,6 +5282,60 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  ListSSHPublicKeys
+
+        /// <summary>
+        /// Returns information about the SSH public keys associated with the specified IAM user.
+        /// If there are none, the action returns an empty list.
+        /// 
+        ///  
+        /// <para>
+        /// The SSH public keys returned by this action are used only for authenticating the IAM
+        /// user to an AWS CodeCommit repository. For more information about using SSH keys to
+        /// authenticate to an AWS CodeCommit repository, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
+        /// up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Although each user is limited to a small number of keys, you can still paginate the
+        /// results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSSHPublicKeys service method.</param>
+        /// 
+        /// <returns>The response from the ListSSHPublicKeys service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public ListSSHPublicKeysResponse ListSSHPublicKeys(ListSSHPublicKeysRequest request)
+        {
+            var marshaller = new ListSSHPublicKeysRequestMarshaller();
+            var unmarshaller = ListSSHPublicKeysResponseUnmarshaller.Instance;
+
+            return Invoke<ListSSHPublicKeysRequest,ListSSHPublicKeysResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSSHPublicKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSSHPublicKeys operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListSSHPublicKeysResponse> ListSSHPublicKeysAsync(ListSSHPublicKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListSSHPublicKeysRequestMarshaller();
+            var unmarshaller = ListSSHPublicKeysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSSHPublicKeysRequest,ListSSHPublicKeysResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListUserPolicies
 
         /// <summary>
@@ -5763,8 +5917,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ResyncMFADevice service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.InvalidAuthenticationCodeException">
-        /// The request was rejected because the authentication code was not recognized. The
-        /// error message describes the specific error.
+        /// The request was rejected because the authentication code was not recognized. The error
+        /// message describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
@@ -6442,6 +6596,56 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  UpdateSSHPublicKey
+
+        /// <summary>
+        /// Sets the status of the specified SSH public key to active or inactive. SSH public
+        /// keys that are inactive cannot be used for authentication. This action can be used
+        /// to disable a user's SSH public key as part of a key rotation work flow. 
+        /// 
+        ///  
+        /// <para>
+        /// The SSH public key affected by this action is used only for authenticating the associated
+        /// IAM user to an AWS CodeCommit repository. For more information about using SSH keys
+        /// to authenticate to an AWS CodeCommit repository, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
+        /// up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSSHPublicKey service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSSHPublicKey service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public UpdateSSHPublicKeyResponse UpdateSSHPublicKey(UpdateSSHPublicKeyRequest request)
+        {
+            var marshaller = new UpdateSSHPublicKeyRequestMarshaller();
+            var unmarshaller = UpdateSSHPublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSSHPublicKeyRequest,UpdateSSHPublicKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSSHPublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateSSHPublicKeyResponse> UpdateSSHPublicKeyAsync(UpdateSSHPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateSSHPublicKeyRequestMarshaller();
+            var unmarshaller = UpdateSSHPublicKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSSHPublicKeyRequest,UpdateSSHPublicKeyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateUser
 
         /// <summary>
@@ -6602,8 +6806,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the UploadSigningCertificate service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.DuplicateCertificateException">
-        /// The request was rejected because the same certificate is associated to another user
-        /// under the account.
+        /// The request was rejected because the same certificate is associated with an IAM user
+        /// in the account.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
@@ -6649,6 +6853,69 @@ namespace Amazon.IdentityManagement
             var unmarshaller = UploadSigningCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<UploadSigningCertificateRequest,UploadSigningCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UploadSSHPublicKey
+
+        /// <summary>
+        /// Uploads an SSH public key and associates it with the specified IAM user.
+        /// 
+        ///  
+        /// <para>
+        /// The SSH public key uploaded by this action can be used only for authenticating the
+        /// associated IAM user to an AWS CodeCommit repository. For more information about using
+        /// SSH keys to authenticate to an AWS CodeCommit repository, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
+        /// up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UploadSSHPublicKey service method.</param>
+        /// 
+        /// <returns>The response from the UploadSSHPublicKey service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.DuplicateSSHPublicKeyException">
+        /// The request was rejected because the SSH public key is already associated with the
+        /// specified IAM user.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidPublicKeyException">
+        /// The request was rejected because the public key is malformed or otherwise invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.UnrecognizedPublicKeyEncodingException">
+        /// The request was rejected because the public key encoding format is unsupported or
+        /// unrecognized.
+        /// </exception>
+        public UploadSSHPublicKeyResponse UploadSSHPublicKey(UploadSSHPublicKeyRequest request)
+        {
+            var marshaller = new UploadSSHPublicKeyRequestMarshaller();
+            var unmarshaller = UploadSSHPublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<UploadSSHPublicKeyRequest,UploadSSHPublicKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UploadSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UploadSSHPublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UploadSSHPublicKeyResponse> UploadSSHPublicKeyAsync(UploadSSHPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UploadSSHPublicKeyRequestMarshaller();
+            var unmarshaller = UploadSSHPublicKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UploadSSHPublicKeyRequest,UploadSSHPublicKeyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

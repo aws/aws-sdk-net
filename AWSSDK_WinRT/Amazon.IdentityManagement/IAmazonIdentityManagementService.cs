@@ -621,6 +621,21 @@ namespace Amazon.IdentityManagement
 
         #endregion
                 
+        #region  DeleteSSHPublicKey
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSSHPublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteSSHPublicKeyResponse> DeleteSSHPublicKeyAsync(DeleteSSHPublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteUser
 
         /// <summary>
@@ -981,6 +996,21 @@ namespace Amazon.IdentityManagement
 
         #endregion
                 
+        #region  GetSSHPublicKey
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSSHPublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetSSHPublicKeyResponse> GetSSHPublicKeyAsync(GetSSHPublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetUser
 
         /// <summary>
@@ -1311,6 +1341,21 @@ namespace Amazon.IdentityManagement
 
         #endregion
                 
+        #region  ListSSHPublicKeys
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSSHPublicKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSSHPublicKeys operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListSSHPublicKeysResponse> ListSSHPublicKeysAsync(ListSSHPublicKeysRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListUserPolicies
 
         /// <summary>
@@ -1611,6 +1656,21 @@ namespace Amazon.IdentityManagement
 
         #endregion
                 
+        #region  UpdateSSHPublicKey
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSSHPublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateSSHPublicKeyResponse> UpdateSSHPublicKeyAsync(UpdateSSHPublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateUser
 
         /// <summary>
@@ -1653,6 +1713,21 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<UploadSigningCertificateResponse> UploadSigningCertificateAsync(UploadSigningCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UploadSSHPublicKey
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UploadSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UploadSSHPublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UploadSSHPublicKeyResponse> UploadSSHPublicKeyAsync(UploadSSHPublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
