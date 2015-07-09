@@ -170,10 +170,10 @@ namespace ServiceClientGenerator
                     templateSession["SystemReferences"] = new List<string> { "System.Net.Http" };
                 }
 
-                if (serviceConfiguration.PlatformDependencies != null &&
-                    serviceConfiguration.PlatformDependencies.ContainsKey(projectFileConfiguration.Name))
+                if (serviceConfiguration.ReferenceDependencies != null &&
+                    serviceConfiguration.ReferenceDependencies.ContainsKey(projectFileConfiguration.Name))
                 {
-                    templateSession["PlatformDependencies"] = serviceConfiguration.PlatformDependencies[projectFileConfiguration.Name];
+                    templateSession["ReferenceDependencies"] = serviceConfiguration.ReferenceDependencies[projectFileConfiguration.Name];
                     templateSession["NuGetTargetFramework"] = projectFileConfiguration.NuGetTargetPlatform;
                 }
 

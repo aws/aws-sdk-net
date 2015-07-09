@@ -72,9 +72,6 @@
     <Compile Include="Custom\Session\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\Util\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Generated\*.cs">
       <SubType>Code</SubType>
     </Compile>

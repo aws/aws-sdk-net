@@ -112,8 +112,8 @@
 
 	<Target Name="fxcop" DependsOnTargets="init;copy-assemblies" Condition="Exists('$(fxcopcmdexe)')">
 		<!-- Update FxCop project files -->
-		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net35" FxCopProject="..\sdk\SDK-3.5.FxCop" />
-		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net45" FxCopProject="..\sdk\SDK-4.5.FxCop" />
+		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net35" FxCopProject="..\sdk\SDK-3.5.FxCop" BinSuffix="net35"/>
+		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net45" FxCopProject="..\sdk\SDK-4.5.FxCop" BinSuffix="net45"/>
 
 		<!-- Compile custom FxCop rules -->
 		<MSBuild Projects="..\buildtools\CustomFxCopRules\CustomFxCopRules.sln"

@@ -33,19 +33,19 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     /// </summary>
     public class BackgroundRunner
     {
-        private static Logger _logger = Logger.GetLogger(typeof(BackgroundRunner));
-        private static object _lock = new object();
+        private Logger _logger = Logger.GetLogger(typeof(BackgroundRunner));
+        private object _lock = new object();
 
         // Background thread wait time. Thread will sleep for the interval mention. Value is in Seconds.
         // Default 60 seconds.
         private const int BackgroundSubmissionWaitTime = 60;
 #if BCL35
-        private static System.Threading.Thread _thread = null;
+        private System.Threading.Thread _thread = null;
 
         /// <summary>
         /// Starts the Mobile Analytics Manager background thread.
         /// </summary>
-        public static void StartWork()
+        public void StartWork()
         {
             lock (_lock)
             {
@@ -57,7 +57,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             
         }
 
-        private static bool IsAlive()
+        private bool IsAlive()
         {
             return _thread != null && _thread.ThreadState != ThreadState.Stopped
                                    && _thread.ThreadState != ThreadState.Aborted
@@ -65,7 +65,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         }
 
 
-        private static void DoWork()
+        private void DoWork()
         {
             while (true)
             {
@@ -96,13 +96,13 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         }
 
 #elif BCL45 || PCL
-        private static int _startFlag = 0;
-        private static Task _deliveryTask = null;
+        private int _startFlag = 0;
+        private Task _deliveryTask = null;
 
         /// <summary>
         /// Starts the Mobile Analytics Manager background thread.
         /// </summary>
-        public static async void StartWork()
+        public async void StartWork()
         {
             // Start task again if it's cancelled or faulted
             if (1 == Interlocked.CompareExchange(ref _startFlag, 1, 1) && _deliveryTask != null && (_deliveryTask.Status == TaskStatus.Canceled || _deliveryTask.Status == TaskStatus.Faulted || _deliveryTask.Status == TaskStatus.RanToCompletion))
@@ -110,8 +110,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 _deliveryTask = DoWork(BackgroundSubmissionWaitTime*1000);
                 await _deliveryTask;                
             }
-
-            
 
             // Start background task if it is not started yet.
             if (0 == Interlocked.CompareExchange(ref _startFlag, 1, 0))
@@ -121,7 +119,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             }
         }
 
-        private static async Task DoWork(int millisecondsDelay)
+        private async Task DoWork(int millisecondsDelay)
         {
             while (true)
             {

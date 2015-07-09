@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.CloudHSM</id>
     <title>AWSSDK - Amazon CloudHSM</title>
-    <version>3.0.0.3-preview</version> 
+    <version>3.0.0.4-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>The AWS CloudHSM service helps you meet corporate, contractual and regulatory compliance requirements for data security by using dedicated Hardware Security Module (HSM) appliances within the AWS cloud. With CloudHSM, you control the encryption keys and cryptographic operations performed by the HSM.</description> 
     <language>en-US</language>
@@ -13,13 +13,10 @@
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-        <dependency id="Microsoft.Net.Http" version="2.2.29" />
-        <dependency id="PCLStorage" version="1.0.2" />
-        <dependency id="PCLCrypto" version="1.0.2.15130" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.5-preview, 3.1-preview)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.0.0.5-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 

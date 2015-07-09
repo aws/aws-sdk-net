@@ -262,9 +262,9 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line 97 "C:\dev\Xamarin\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\BclProjectFile.tt"
 
 
-	if(this.Session.ContainsKey("PlatformDependencies"))
+	if(this.Session.ContainsKey("ReferenceDependencies"))
     {
-		foreach(var dependency in (List<Dependency>)this.Session["PlatformDependencies"])
+		foreach(var dependency in (List<Dependency>)this.Session["ReferenceDependencies"])
 		{
 
             
@@ -510,9 +510,9 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
 	private bool IsDependencyPresentFor35(string name)
 	{
 		if(this.Session["Name"].Equals(SolutionFileCreator.ProjectTypes.Net35) &&
-		   this.Session.ContainsKey("PlatformDependencies"))
+		   this.Session.ContainsKey("ReferenceDependencies"))
 		{		
-			var dependencies = (List<Dependency>)this.Session["PlatformDependencies"];	
+			var dependencies = (List<Dependency>)this.Session["ReferenceDependencies"];	
 			return dependencies.SingleOrDefault(d=>d.Name.Equals(name)) != null;
 		}
 

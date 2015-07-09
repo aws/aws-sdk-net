@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Amazon.Util.Internal.PlatformServices
 {
-    public class EnvironmentInfo
+    public class EnvironmentInfo : IEnvironmentInfo
     {
         public string Platform
         {
             get
             {
-                throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
+                return string.Empty;
             }
         }
 
@@ -20,7 +20,7 @@ namespace Amazon.Util.Internal.PlatformServices
         {
             get
             {
-                throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
+                return string.Empty;
             }
         }
 
@@ -28,7 +28,7 @@ namespace Amazon.Util.Internal.PlatformServices
         {
             get
             {
-                throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
+                return string.Empty;
             }
         }
 
@@ -36,7 +36,7 @@ namespace Amazon.Util.Internal.PlatformServices
         {
             get
             {
-                throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
+                return string.Empty;
             }
         }
 
@@ -44,7 +44,7 @@ namespace Amazon.Util.Internal.PlatformServices
         {
             get
             {
-                throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
+                return string.Empty;
             }
         }
     }

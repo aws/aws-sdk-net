@@ -17,6 +17,7 @@
  *
  *  AWS SDK for .NET
  */
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,8 +27,8 @@ using System.Text;
 using Amazon.Runtime;
 //using ThirdParty.MD5;
 
-using PCLCrypto;
 using Amazon.Util;
+using PCLCrypto;
 
 namespace Amazon.Runtime.Internal.Util
 {

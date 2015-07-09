@@ -25,7 +25,7 @@ namespace CommonTests.IntegrationTests
     [TestFixture]
     public class ProtocolTests
     {
-        [Test]
+        //[Test]
         public void TestJson()
         {
             UtilityMethods.RunAsSync(TestJson_Async);
