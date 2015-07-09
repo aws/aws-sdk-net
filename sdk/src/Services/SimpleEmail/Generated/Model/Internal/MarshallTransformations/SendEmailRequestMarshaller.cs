@@ -140,9 +140,17 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ReturnPath", StringUtils.FromString(publicRequest.ReturnPath));
                 }
+                if(publicRequest.IsSetReturnPathArn())
+                {
+                    request.Parameters.Add("ReturnPathArn", StringUtils.FromString(publicRequest.ReturnPathArn));
+                }
                 if(publicRequest.IsSetSource())
                 {
                     request.Parameters.Add("Source", StringUtils.FromString(publicRequest.Source));
+                }
+                if(publicRequest.IsSetSourceArn())
+                {
+                    request.Parameters.Add("SourceArn", StringUtils.FromString(publicRequest.SourceArn));
                 }
             }
             return request;

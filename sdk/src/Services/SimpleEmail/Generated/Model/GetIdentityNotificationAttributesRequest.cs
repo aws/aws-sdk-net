@@ -34,7 +34,8 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  
     /// <para>
-    /// This action is throttled at one request per second.
+    /// This action is throttled at one request per second and can only get notification attributes
+    /// for up to 100 identities at a time.
     /// </para>
     ///  
     /// <para>
@@ -49,7 +50,9 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Identities. 
         /// <para>
-        /// A list of one or more identities.
+        /// A list of one or more identities. You can specify an identity by using its name or
+        /// by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>,
+        /// <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
         /// </para>
         /// </summary>
         public List<string> Identities

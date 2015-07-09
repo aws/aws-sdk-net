@@ -28,36 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetIdentityVerificationAttributes operation.
-    /// Given a list of identities (email addresses and/or domains), returns the verification
-    /// status and (for domain identities) the verification token for each identity.
-    /// 
-    ///  
-    /// <para>
-    /// This action is throttled at one request per second and can only get verification attributes
-    /// for up to 100 identities at a time.
-    /// </para>
+    /// Represents a map of policy names to policies returned from a successful <code>GetIdentityPolicies</code>
+    /// request.
     /// </summary>
-    public partial class GetIdentityVerificationAttributesRequest : AmazonSimpleEmailServiceRequest
+    public partial class GetIdentityPoliciesResponse : AmazonWebServiceResponse
     {
-        private List<string> _identities = new List<string>();
+        private Dictionary<string, string> _policies = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Identities. 
+        /// Gets and sets the property Policies. 
         /// <para>
-        /// A list of identities.
+        /// A map of policy names to policies.
         /// </para>
         /// </summary>
-        public List<string> Identities
+        public Dictionary<string, string> Policies
         {
-            get { return this._identities; }
-            set { this._identities = value; }
+            get { return this._policies; }
+            set { this._policies = value; }
         }
 
-        // Check to see if Identities property is set
-        internal bool IsSetIdentities()
+        // Check to see if Policies property is set
+        internal bool IsSetPolicies()
         {
-            return this._identities != null && this._identities.Count > 0; 
+            return this._policies != null && this._policies.Count > 0; 
         }
 
     }

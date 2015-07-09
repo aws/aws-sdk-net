@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SendRawEmail Request Marshaller
+    /// GetIdentityPolicies Request Marshaller
     /// </summary>       
-    public class SendRawEmailRequestMarshaller : IMarshaller<IRequest, SendRawEmailRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetIdentityPoliciesRequestMarshaller : IMarshaller<IRequest, GetIdentityPoliciesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((SendRawEmailRequest)input);
+            return this.Marshall((GetIdentityPoliciesRequest)input);
         }
     
         /// <summary>
@@ -50,45 +50,26 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(SendRawEmailRequest publicRequest)
+        public IRequest Marshall(GetIdentityPoliciesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmail");
-            request.Parameters.Add("Action", "SendRawEmail");
+            request.Parameters.Add("Action", "GetIdentityPolicies");
             request.Parameters.Add("Version", "2010-12-01");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetDestinations())
+                if(publicRequest.IsSetIdentity())
+                {
+                    request.Parameters.Add("Identity", StringUtils.FromString(publicRequest.Identity));
+                }
+                if(publicRequest.IsSetPolicyNames())
                 {
                     int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Destinations)
+                    foreach(var publicRequestlistValue in publicRequest.PolicyNames)
                     {
-                        request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        request.Parameters.Add("PolicyNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
-                }
-                if(publicRequest.IsSetFromArn())
-                {
-                    request.Parameters.Add("FromArn", StringUtils.FromString(publicRequest.FromArn));
-                }
-                if(publicRequest.IsSetRawMessage())
-                {
-                    if(publicRequest.RawMessage.IsSetData())
-                    {
-                        request.Parameters.Add("RawMessage" + "." + "Data", StringUtils.FromMemoryStream(publicRequest.RawMessage.Data));
-                    }
-                }
-                if(publicRequest.IsSetReturnPathArn())
-                {
-                    request.Parameters.Add("ReturnPathArn", StringUtils.FromString(publicRequest.ReturnPathArn));
-                }
-                if(publicRequest.IsSetSource())
-                {
-                    request.Parameters.Add("Source", StringUtils.FromString(publicRequest.Source));
-                }
-                if(publicRequest.IsSetSourceArn())
-                {
-                    request.Parameters.Add("SourceArn", StringUtils.FromString(publicRequest.SourceArn));
                 }
             }
             return request;
