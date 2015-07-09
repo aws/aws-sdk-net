@@ -32,10 +32,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <summary>
         /// Add an event to the store.
         /// </summary>
-        /// <param name="eventString">Amazon Mobile Analytics event in string.</param>
+        /// <param name="value">Amazon Mobile Analytics event in string.</param>
         /// <param name="appId">Amazon Mobile Analytics App ID.</param>
         /// <returns><c>true</c>, if event was put, <c>false</c> otherwise.</returns>
-        bool PutEvent(string eventString, string appId);
+        bool PutEvent(string value, string appId);
         
         /// <summary>
         /// Get events from the Event Store
@@ -63,7 +63,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// Gets the size of the database.
         /// </summary>
         /// <returns>The database size.</returns>
-        long GetDatabaseSize();
+        long DatabaseSize { get; }
         
     }
 }

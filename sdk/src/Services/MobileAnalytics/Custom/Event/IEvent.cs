@@ -90,7 +90,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// Gets all attributes.
         /// </summary>
         /// <returns>All the attributes.</returns>
-        IDictionary<string, string> GetAllAttributes();
+        IDictionary<string, string> AllAttributes { get;  }
         #endregion
         
         #region metric
@@ -119,7 +119,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// Gets all metrics.
         /// </summary>
         /// <returns>All the metrics.</returns>
-        IDictionary<string, double> GetAllMetrics();   
+        IDictionary<string, double> AllMetrics { get; }   
         #endregion
         
         #region gloablattribute

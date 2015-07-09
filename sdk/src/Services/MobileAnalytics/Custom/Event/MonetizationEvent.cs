@@ -18,6 +18,7 @@
 using System.Collections;
 using System;
 using Amazon.MobileAnalytics.MobileAnalyticsManager.Internal;
+using System.Globalization;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 {
@@ -69,13 +70,13 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// Sets the quantity.
         /// </summary>
         /// <value>The quantity. For example, 1.0 </value>
-        public double? Quantity {private get;set;}
+        public double? Quantity { get;set; }
         
         /// <summary>
         /// Sets the item price.
         /// </summary>
         /// <value>The item price. For example, 3.0 </value>
-        public double? ItemPrice {private get;set;}
+        public double? ItemPrice { get;set; }
         
         // attributes
 
@@ -83,31 +84,31 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// Sets the product identifier.
         /// </summary>
         /// <value>The product identifier. For example, ProductId123.</value>
-        public string ProductId {private get;set;}
+        public string ProductId { get;set; }
 
         /// <summary>
         /// Sets the item price formatted.
         /// </summary>
         /// <value>The item price formatted. For example, $1.99 </value>
-        public string ItemPriceFormatted {private get;set;}
+        public string ItemPriceFormatted { get;set; }
         
         /// <summary>
         /// Sets the store.
         /// </summary>
         /// <value>The store. For example, AppStore.</value>
-        public string Store {private get;set;}
+        public string Store { get;set; }
         
         /// <summary>
         /// Sets the transaction identifier.
         /// </summary>
         /// <value>The transaction identifier. For example, TransactionId123.</value>
-        public string TransactionId {private get;set;}
+        public string TransactionId { get;set; }
         
         /// <summary>
         /// Sets the currency.
         /// </summary>
         /// <value>The currency.</value>
-        public string Currency {private get;set;}
+        public string Currency { get;set; }
         
         /// <summary>
         /// Converts to mobile analytics model event. <see cref="Amazon.MobileAnalytics.Model.Event"/>
@@ -118,12 +119,12 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         {
             if(Quantity != null)
             {
-                this.AddMetric(PURCHASE_EVENT_QUANTITY_METRIC,Convert.ToDouble(Quantity));
+                this.AddMetric(PURCHASE_EVENT_QUANTITY_METRIC,Convert.ToDouble(Quantity, CultureInfo.InvariantCulture));
             }
             
             if(ItemPrice != null)
             {
-                this.AddMetric(PURCHASE_EVENT_ITEM_PRICE_METRIC,Convert.ToDouble(ItemPrice));
+                this.AddMetric(PURCHASE_EVENT_ITEM_PRICE_METRIC, Convert.ToDouble(ItemPrice, CultureInfo.InvariantCulture));
             }
             
             if(!string.IsNullOrEmpty(ProductId))
