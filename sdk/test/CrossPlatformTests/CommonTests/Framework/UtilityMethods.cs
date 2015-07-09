@@ -107,7 +107,7 @@ namespace CommonTests.Framework
                     //                );
                     //}
                 }
-                catch (DeleteObjectsException deleteObjectsException)
+                catch //(DeleteObjectsException deleteObjectsException)
                 {
                     //if (deleteOptions.ContinueOnError)
                     //{

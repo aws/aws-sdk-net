@@ -22,9 +22,56 @@
   </ProjectOptions>
   <Targets>
     <AssemblyReferenceDirectories>
-      <Directory>$(ProjectDir)/Deployment/wp8/</Directory>
-      <Directory>$(ProjectDir)/Deployment/winrt/</Directory>
-      <Directory>$(ProjectDir)/Deployment/dotnet45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/autoscaling/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/awssupport/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cloudformation/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cloudfront/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cloudhsm/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cloudsearch/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cloudsearchdomain/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cloudtrail/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cloudwatch/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cloudwatchlogs/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/codedeploy/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cognitoidentity/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cognitosync/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/configservice/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/datapipeline/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/directconnect/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/directoryservice/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/dynamodbv2/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/ec2/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/ecs/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/elasticache/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/elasticbeanstalk/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/elasticfilesystem/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/elasticloadbalancing/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/elasticmapreduce/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/elastictranscoder/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/glacier/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/identitymanagement/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/importexport/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/keymanagementservice/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/kinesis/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/lambda/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/machinelearning/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/mobileanalytics/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/opsworks/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/rds/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/redshift/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/route53/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/route53domains/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/s3/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/securitytoken/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/simpledb/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/simpleemail/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/simplenotificationservice/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/simplesystemsmanagement/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/simpleworkflow/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/sqs/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/storagegateway/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/workspaces/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Core/bin/Release/net35/</Directory>
     </AssemblyReferenceDirectories>
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AWSSupport.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -59,6 +106,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Kinesis.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Lambda.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MachineLearning.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MobileAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.OpsWorks.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.RDS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Redshift.dll" Analyze="True" AnalyzeAllChildren="True" />
