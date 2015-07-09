@@ -256,6 +256,10 @@
       <Project>{12D6C04C-72EB-483A-A8D7-1E58C0F07BDC}</Project>
       <Name>AWSSDK.CodeCommit.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\CodePipeline\AWSSDK.CodePipeline.Net35.csproj">
+      <Project>{FE7BDC8E-BFBB-4AD2-B7B5-28C8B5E0F5A5}</Project>
+      <Name>AWSSDK.CodePipeline.Net35</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">

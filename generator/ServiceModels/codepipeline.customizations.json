@@ -1,0 +1,108 @@
+{
+	"simpleMethods" : 
+	{
+		"operations" :
+		{
+			"AcknowledgeJob" : 
+			{
+				"methodForms" : 
+				[
+					[ "JobId", "Nonce" ]
+				]
+			},
+			"AcknowledgeThirdPartyJob" : 
+			{
+				"methodForms" : 
+				[
+					[ "ClientToken", "JobId", "Nonce" ]
+				]
+			},
+			"CreatePipeline" : 
+			{
+				"methodForms" : 
+				[
+					[ "Pipeline" ]
+				]
+			},
+			"DeletePipeline" : 
+			{
+				"methodForms" : 
+				[
+					[ "Name" ]
+				]
+			},
+			"GetJobDetails" : 
+			{
+				"methodForms" : 
+				[
+					[ "JobId" ]
+				]
+			},
+			"GetPipeline" : 
+			{
+				"methodForms" : 
+				[
+					[ "Name", "Version" ],
+					[ "Name" ]
+				]
+			},
+			"GetPipelineState" : 
+			{
+				"methodForms" : 
+				[
+					[ "Name" ]
+				]
+			},
+			"GetThirdPartyJobDetails" : 
+			{
+				"methodForms" : 
+				[
+					[ "ClientToken", "JobId" ]
+				]
+			},
+			"ListActionTypes" : 
+			{
+				"methodForms" : 
+				[
+					[ ],
+					[ "ActionOwnerFilter" ]
+				]
+			},
+			"ListPipelines" :
+			{
+				"methodForms" : 
+				[
+					[]
+				]
+			},
+			"PutJobFailureResult" : 
+			{
+				"methodForms" : 
+				[
+					[ "JobId", "FailureDetails" ]
+				]
+			},
+			"PutThirdPartyJobFailureResult" : 
+			{
+				"methodForms" : 
+				[
+					[ "JobId", "ClientToken", "FailureDetails" ]
+				]
+			},
+			"StartPipelineExecution" : 
+			{
+				"methodForms" : 
+				[
+					[ "Name" ]
+				]
+			},
+			"UpdatePipeline" : 
+			{
+				"methodForms" : 
+				[
+					[ "Pipeline" ]
+				]
+			}
+		}
+	}
+}
