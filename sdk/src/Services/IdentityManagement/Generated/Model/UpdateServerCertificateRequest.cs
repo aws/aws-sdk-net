@@ -84,7 +84,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property NewServerCertificateName. 
         /// <para>
         ///  The new name for the server certificate. Include this only if you are updating the
-        /// server certificate's name. 
+        /// server certificate's name. The name of the certificate cannot contain any spaces.
         /// </para>
         /// </summary>
         public string NewServerCertificateName
