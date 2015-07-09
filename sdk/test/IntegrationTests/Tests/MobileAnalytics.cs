@@ -51,8 +51,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
 
         #region Public API Test
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
         public void TestSessionTimeout()
         {
             MobileAnalyticsManagerConfig maConfig = new MobileAnalyticsManagerConfig();
@@ -113,8 +113,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
 
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
         public void TestManagerAddClientContextCustomAttribute()
         {
             string KEY1 = "key1";
@@ -141,8 +141,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
 
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
         public void TestManagerMultipleInstance()
         {
             string APP_ID_1 = "TestManagerMultipleInstance-app-id-1";
@@ -165,8 +165,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
 
         #region Low Level API Test
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
         public void TestLowLevelAPI()
         {
             List<Amazon.MobileAnalytics.Model.Event> listEvent = new List<Amazon.MobileAnalytics.Model.Event>();
@@ -189,8 +189,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
 
         # region Session, Event and Client Context Test
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
         public void TestSession()
         {
             string sessionID = Guid.NewGuid().ToString();
@@ -210,8 +210,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreEqual(HttpStatusCode.Accepted, PutResponse.HttpStatusCode);
         }
 
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
         public void TestCustomEventConcurrency()
         {
             // event type
@@ -409,8 +409,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         }
 
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
         public void TestMonetizationEventConcurrency()
         {
             // event type
@@ -637,8 +637,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
 
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
         public void TestClientContextHeader()
         {
 
@@ -646,8 +646,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         #endregion
 
         #region Event Storage Test
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
         public void TestEventStore()
         {
 
