@@ -5,49 +5,37 @@ using System.Text;
 
 using Foundation;
 using UIKit;
+using System.Reflection;
 
 namespace Amazon.Util.Internal.PlatformServices
 {
     public class EnvironmentInfo : IEnvironmentInfo
     {
-        public string Platform
+        public EnvironmentInfo()
         {
-            get
-            {
-                return UIDevice.CurrentDevice.SystemName;
-            }
+            this.Platform = UIDevice.CurrentDevice.SystemName;
+            this.Model = UIDevice.CurrentDevice.Model;
+            this.Make = "apple";
+            this.PlatformVersion = UIDevice.CurrentDevice.SystemVersion;
+            this.Locale = NSLocale.AutoUpdatingCurrentLocale.LocaleIdentifier;
+            this.FrameworkUserAgent = InternalSDKUtils.GetMonoRuntimeVersion();
+            this.PclPlatform = "PCL/Xamarin.iOS";
         }
 
-        public string Model
-        {
-            get
-            {
-                return UIDevice.CurrentDevice.Model;
-            }
-        }
+        public string Platform { get; private set; }
 
-        public string Make
-        {
-            get
-            {
-                return @"apple";
-            }
-        }
+        public string PlatformUserAgent { get; private set; }
 
-        public string PlatformVersion
-        {
-            get
-            {
-                return UIDevice.CurrentDevice.SystemVersion;
-            }
-        }
+        public string Model { get; private set; }
 
-        public string Locale
-        {
-            get
-            {
-                return NSLocale.AutoUpdatingCurrentLocale.LocaleIdentifier;
-            }
-        }
+        public string Make { get; private set; }
+
+        public string PlatformVersion { get; private set; }
+
+        public string Locale { get; private set; }
+
+        public string FrameworkUserAgent { get; private set; }
+
+        public string PclPlatform { get; private set; }
     }
 }
