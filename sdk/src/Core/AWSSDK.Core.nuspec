@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Core</id>
     <title>AWSSDK - Core Runtime</title>
-    <version>3.0.0.5-preview</version> 
+    <version>3.0.0.6-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>The Amazon Web Services SDK for .NET - Core Runtime</description> 
     <language>en-US</language>
