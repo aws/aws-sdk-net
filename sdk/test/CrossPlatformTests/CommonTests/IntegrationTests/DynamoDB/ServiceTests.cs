@@ -101,7 +101,7 @@ namespace CommonTests.IntegrationTests.DynamoDB
             CreatedTables.Add(table3Name);
 
             // Wait for tables to be ready before creating another table with an index
-            WaitForTableStatus(CreatedTables, TableStatus.ACTIVE);
+            WaitForTableStatus(Client, CreatedTables, TableStatus.ACTIVE);
 
             // Create hash-and-range-key table with local and global indexes
             var table4Name = TableNamePrefix + "Table4";
@@ -160,7 +160,7 @@ namespace CommonTests.IntegrationTests.DynamoDB
             Assert.AreEqual(tableCount + 4, tables.Count);
 
             // Wait for tables to be ready
-            WaitForTableStatus(CreatedTables, TableStatus.ACTIVE);
+            WaitForTableStatus(Client, CreatedTables, TableStatus.ACTIVE);
 
             // Update throughput for a table
             await Client.UpdateTableAsync(
@@ -172,7 +172,7 @@ namespace CommonTests.IntegrationTests.DynamoDB
                 });
 
             // Wait for tables to be ready
-            WaitForTableStatus(CreatedTables, TableStatus.ACTIVE);
+            WaitForTableStatus(Client, CreatedTables, TableStatus.ACTIVE);
 
             // Delete new tables
             await Client.DeleteTableAsync(table1Name);
@@ -181,7 +181,7 @@ namespace CommonTests.IntegrationTests.DynamoDB
             await Client.DeleteTableAsync(table4Name);
 
             // Wait for tables to be deleted
-            WaitForTableStatus(new string[] { table1Name, table2Name, table3Name, table4Name }, null);
+            WaitForTableStatus(Client, new string[] { table1Name, table2Name, table3Name, table4Name }, null);
 
             // Count tables again
             tables = GetTableNames();
