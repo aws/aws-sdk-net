@@ -48,7 +48,7 @@ namespace Amazon.Util
                 if (data == null || data.Length == 0)
                     throw new ArgumentNullException("data", "Please specify data to sign.");
 
-                KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(algorithmName.ToString().ToUpper(CultureInfo.InvariantCulture));
+                KeyedHashAlgorithm algorithm = CreateKeyedHashAlgorithm(algorithmName);
                 if (null == algorithm)
                     throw new InvalidOperationException("Please specify a KeyedHashAlgorithm to use.");
 
@@ -63,8 +63,6 @@ namespace Amazon.Util
                     algorithm.Dispose();
                 }
             }
-
-
 
             public byte[] ComputeSHA256Hash(byte[] data)
             {
@@ -96,7 +94,7 @@ namespace Amazon.Util
                 if (data == null || data.Length == 0)
                     throw new ArgumentNullException("data", "Please specify data to sign.");
 
-                KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(algorithmName.ToString().ToUpper(CultureInfo.InvariantCulture));
+                KeyedHashAlgorithm algorithm = CreateKeyedHashAlgorithm(algorithmName);
                 if (null == algorithm)
                     throw new InvalidOperationException("Please specify a KeyedHashAlgorithm to use.");
 
@@ -111,6 +109,25 @@ namespace Amazon.Util
                     algorithm.Dispose();
                 }
             }
+
+            KeyedHashAlgorithm CreateKeyedHashAlgorithm(SigningAlgorithm algorithmName)
+            {
+                KeyedHashAlgorithm algorithm;
+                switch (algorithmName)
+                {
+                    case SigningAlgorithm.HmacSHA256:
+                        algorithm = new HMACSHA256();
+                        break;
+                    case SigningAlgorithm.HmacSHA1:
+                        algorithm = new HMACSHA1();
+                        break;
+                    default:
+                        throw new Exception(string.Format("KeyedHashAlgorithm {0} was not found.", algorithmName.ToString()));
+                }
+
+                return algorithm;
+            }
+
 
             [ThreadStatic]
             private static HashAlgorithm _hashAlgorithm = null;
