@@ -218,6 +218,7 @@ namespace Amazon.Runtime.Internal
         
         private void LogForRetry(IRequestContext requestContext, Exception exception)
         {
+#if !DNX
             var webException = exception as WebException;
             if (webException != null)
             {
@@ -230,13 +231,16 @@ namespace Amazon.Runtime.Internal
             }
             else
             {
+#endif
                 Logger.InfoFormat("{0} making request {1} to {2}. Attempting retry {3} of {4}.",
                           exception.GetType().Name,
                           requestContext.RequestName,
                           requestContext.Request.Endpoint.ToString(),
                           requestContext.Retries,
                           this.RetryPolicy.MaxRetries);
+#if !DNX
             }
+#endif
         }
 
         private void LogForError(IRequestContext requestContext, Exception exception)

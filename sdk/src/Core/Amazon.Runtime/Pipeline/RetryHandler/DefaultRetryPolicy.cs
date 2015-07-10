@@ -29,6 +29,7 @@ namespace Amazon.Runtime.Internal
     {
         private int _maxBackoffInMilliseconds = (int)TimeSpan.FromSeconds(30).TotalMilliseconds;
 
+#if !DNX
         // Set of web exception status codes to retry on.
         private ICollection<WebExceptionStatus> _webExceptionStatusesToRetryOn = new HashSet<WebExceptionStatus>
         {
@@ -46,6 +47,7 @@ namespace Amazon.Runtime.Internal
             (WebExceptionStatus)3,
 #endif
         };
+#endif
 
         // Set of AWS error codes to retry on.
         private ICollection<string> _errorCodesToRetryOn = new HashSet<string>
@@ -74,6 +76,7 @@ namespace Amazon.Runtime.Internal
             get { return _errorCodesToRetryOn; }
         }
 
+#if !DNX
         /// <summary>
         /// List of WebExceptionStatus for a WebException which will be retried.
         /// </summary>
@@ -81,7 +84,7 @@ namespace Amazon.Runtime.Internal
         {
             get { return _webExceptionStatusesToRetryOn; }
         }
-
+#endif
         /// <summary>
         /// Constructor for DefaultRetryPolicy.
         /// </summary>
@@ -159,6 +162,7 @@ namespace Amazon.Runtime.Internal
                     }
                 }
 
+#if !DNX
                 WebException webException;
                 if (IsInnerException<WebException>(exception, out webException))
                 {
@@ -167,6 +171,7 @@ namespace Amazon.Runtime.Internal
                         return true;
                     }
                 }
+#endif
             }
 
             return false;
