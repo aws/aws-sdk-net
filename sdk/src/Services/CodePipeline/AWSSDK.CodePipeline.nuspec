@@ -14,10 +14,10 @@
     <dependencies>
       <group targetFramework="portable-wpa+netcore45">
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.3-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
       </group>
       <group>
-      <dependency id="AWSSDK.Core" version="[3.0.0.3-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 

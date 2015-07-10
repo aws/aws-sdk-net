@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.0.5.0",
-    "CoreVersion"    : "3.0.0.3",
+    "ProductVersion" : "3.0.6.0",
+    "CoreVersion"    : "3.0.0.4",
     "ServiceVersions" : {
         "CloudHSM" : {
             "Version" : "3.0.0.2",
@@ -10,7 +10,7 @@
             }
         },
         "AutoScaling" : {
-            "Version" : "3.0.1.0",
+            "Version" : "3.0.2.0",
             "Dependencies" : {
                 "Core" : "3.0.0.2"
             }
@@ -28,7 +28,7 @@
             }
         },
         "CloudFront"     : {
-            "Version" : "3.0.1.1",
+            "Version" : "3.0.2.0",
             "Dependencies" : {
                 "Core" : "3.0.0.2"
             }
@@ -52,7 +52,7 @@
             }
         },
         "ConfigService"     : {
-            "Version" : "3.0.0.2",
+            "Version" : "3.0.1.0",
             "Dependencies" : {
                 "Core" : "3.0.0.2"
             }
@@ -76,14 +76,14 @@
             }
         },
         "CognitoIdentity"   : {
-            "Version" : "3.0.1.0",
+            "Version" : "3.0.1.1",
             "Dependencies" : {
                 "Core" : "3.0.0.2",
                 "SecurityToken" : "3.0.0.2"
             }
         },
         "CognitoSync"       : {
-            "Version" : "3.0.0.2",
+            "Version" : "3.0.0.3",
             "Dependencies" : {
                 "Core" : "3.0.0.2",
                 "CognitoIdentity" : "3.0.0.2"
@@ -108,13 +108,13 @@
             }
         },
         "EC2"               : {
-            "Version" : "3.0.4.0",
+            "Version" : "3.0.5.0",
             "Dependencies" : {
                 "Core" : "3.0.0.2"
             }
         },
         "ECS"               : {
-            "Version" : "3.0.2.0",
+            "Version" : "3.0.3.0",
             "Dependencies" : {
                 "Core" : "3.0.0.2"
             }
@@ -150,7 +150,7 @@
             }
         },
         "Glacier"              : {
-            "Version" : "3.0.1.1",
+            "Version" : "3.0.2.0",
             "Dependencies" : {
                 "Core" : "3.0.0.2",
                 "SQS"  : "3.0.0.2",
@@ -158,7 +158,7 @@
             }
         },
         "IdentityManagement"   : {
-            "Version" : "3.0.0.2",
+            "Version" : "3.0.1.0",
             "Dependencies" : {
                 "Core" : "3.0.0.2"
             }
@@ -176,7 +176,7 @@
             }
         },
         "Lambda"               : {
-            "Version" : "3.0.1.1",
+            "Version" : "3.0.2.0",
             "Dependencies" : {
                 "Core" : "3.0.0.2"
             }
@@ -194,7 +194,7 @@
             }
         },
         "OpsWorks"             : {
-            "Version" : "3.0.1.0",
+            "Version" : "3.0.2.0",
             "Dependencies" : {
                 "Core" : "3.0.0.2"
             }
@@ -206,7 +206,7 @@
             }
         },
         "Redshift"             : {
-            "Version" : "3.0.0.2",
+            "Version" : "3.0.1.0",
             "Dependencies" : {
                 "Core" : "3.0.0.2"
             }
@@ -242,7 +242,7 @@
             }
         },
         "SimpleEmail"          : {
-            "Version" : "3.0.0.2",
+            "Version" : "3.0.1.0",
             "Dependencies" : {
                 "Core" : "3.0.0.2"
             }
@@ -293,6 +293,18 @@
             "Version" : "3.0.0.0",
             "Dependencies" : {
                 "Core" : "3.0.0.2"
+            }
+        },
+        "CodeCommit"                : {
+            "Version" : "3.0.0.0",
+            "Dependencies" : {
+                "Core" : "3.0.0.4"
+            }
+        },
+        "CodePipeline"              : {
+            "Version" : "3.0.0.0",
+            "Dependencies" : {
+                "Core" : "3.0.0.4"
             }
         }
     }
