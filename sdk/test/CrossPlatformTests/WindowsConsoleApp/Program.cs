@@ -22,8 +22,12 @@ namespace WindowsConsoleApp
             {
                 var runner = new ConsoleRunner();
 
-                if (args != null && args.Length > 0)
-                    runner.TestsToRun = new HashSet<string>(args, StringComparer.OrdinalIgnoreCase);
+                runner.TestsToRun = new string[]
+                {
+                };
+                runner.CategoriesToRun = new string[]
+                {
+                };
 
                 allPassed = runner.ExecuteAllTests();
             }

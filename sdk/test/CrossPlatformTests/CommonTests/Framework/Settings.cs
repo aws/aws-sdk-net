@@ -66,7 +66,7 @@ namespace CommonTests.Framework
             StoredSettings storedSettings;
             try
             {
-                var settingsStream = GetSettingsStream(settingsResourcePartialName);
+                var settingsStream = UtilityMethods.GetResourceStream(settingsResourcePartialName);
                 string json;
                 using (var reader = new StreamReader(settingsStream))
                 {
@@ -80,18 +80,6 @@ namespace CommonTests.Framework
                 storedSettings = null;
             }
             return storedSettings;
-        }
-
-        private static Stream GetSettingsStream(string settingsResourcePartialName)
-        {
-            var assembly = typeof(Settings).GetTypeInfo().Assembly;
-            var resources = assembly.GetManifestResourceNames();
-            var credentialsResourceName = resources.FirstOrDefault(r => r.IndexOf(settingsResourcePartialName, StringComparison.OrdinalIgnoreCase) >= 0);
-            if (string.IsNullOrEmpty(credentialsResourceName))
-                throw new Exception(string.Format(
-                    "Unable to find resource matching the pattern *{0}*.", settingsResourcePartialName));
-            var credsStream = assembly.GetManifestResourceStream(credentialsResourceName);
-            return credsStream;
         }
 
         private class StoredCredentials : AWSCredentials

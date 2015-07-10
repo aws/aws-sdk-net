@@ -39,19 +39,45 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Framework\AssertExtensions.cs" />
+    <Compile Include="Framework\BaseExtensions.cs" />
     <Compile Include="Framework\Console.cs" />
     <Compile Include="Framework\DisposableSwitch.cs" />
     <Compile Include="Framework\Settings.cs" />
     <Compile Include="Framework\TestBase.cs" />
     <Compile Include="Framework\TestRunner.cs" />
     <Compile Include="Framework\UtilityMethods.cs" />
+    <Compile Include="IntegrationTests\AutoScaling.cs" />
+    <Compile Include="IntegrationTests\AWSPublicIpAddressRanges.cs" />
+    <Compile Include="IntegrationTests\AWSSupport.cs" />
+    <Compile Include="IntegrationTests\Beanstalk.cs" />
+    <Compile Include="IntegrationTests\Cache.cs" />
+    <Compile Include="IntegrationTests\CloudFormation.cs" />
+    <Compile Include="IntegrationTests\CloudFront.cs" />
+    <Compile Include="IntegrationTests\CloudHSM.cs" />
+    <Compile Include="IntegrationTests\CloudSearch.cs" />
+    <Compile Include="IntegrationTests\CloudTrail.cs" />
+    <Compile Include="IntegrationTests\CloudWatch.cs" />
+    <Compile Include="IntegrationTests\CloudWatchLogs.cs" />
+    <Compile Include="IntegrationTests\CodeDeploy.cs" />
+    <Compile Include="IntegrationTests\CredentialsTests.cs" />
+    <Compile Include="IntegrationTests\DataPipeline.cs" />
+    <Compile Include="IntegrationTests\DirectConnect.cs" />
+    <Compile Include="IntegrationTests\DirectoryService.cs" />
     <Compile Include="IntegrationTests\DynamoDB\Config.cs" />
     <Compile Include="IntegrationTests\DynamoDB\DataModelTests.cs" />
     <Compile Include="IntegrationTests\DynamoDB\DocumentTests.cs" />
     <Compile Include="IntegrationTests\DynamoDB\DynamoDBTestsBase.cs" />
     <Compile Include="IntegrationTests\DynamoDB\JSONTests.cs" />
     <Compile Include="IntegrationTests\DynamoDB\ServiceTests.cs" />
+    <Compile Include="IntegrationTests\ECS.cs" />
+    <Compile Include="IntegrationTests\ElastiCache.cs" />
+    <Compile Include="IntegrationTests\ElasticLoadBalancing.cs" />
+    <Compile Include="IntegrationTests\ElasticTranscoder.cs" />
     <Compile Include="IntegrationTests\GeneralTests.cs" />
+    <Compile Include="IntegrationTests\Glacier.cs" />
+    <Compile Include="IntegrationTests\ImportExport.cs" />
+    <Compile Include="IntegrationTests\KeyManagementService.cs" />
+    <Compile Include="IntegrationTests\Kinesis.cs" />
     <Compile Include="IntegrationTests\ProtocolTests.cs" />
     <Compile Include="IntegrationTests\S3\PutObjectTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,6 +111,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="IntegrationTests\CloudTrailBucketPolicy.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -92,21 +119,161 @@
       <Project>{029cf5b7-1ef7-4d02-b417-bb83bcc30d9a}</Project>
       <Name>AWSSDK.Core.PCL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\AutoScaling\AWSSDK.AutoScaling.PCL.csproj">
+      <Project>{e2789e19-ab3d-4064-9506-42788eeeaa19}</Project>
+      <Name>AWSSDK.AutoScaling.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\AWSSupport\AWSSDK.AWSSupport.PCL.csproj">
+      <Project>{3e98f8f7-2671-4746-8202-8802e68e9134}</Project>
+      <Name>AWSSDK.AWSSupport.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CloudFormation\AWSSDK.CloudFormation.PCL.csproj">
+      <Project>{a386f1e6-8272-4285-930e-befe7f856934}</Project>
+      <Name>AWSSDK.CloudFormation.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CloudFront\AWSSDK.CloudFront.PCL.csproj">
+      <Project>{ea1a5f63-e939-4273-b81b-2cc0274d7380}</Project>
+      <Name>AWSSDK.CloudFront.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CloudHSM\AWSSDK.CloudHSM.PCL.csproj">
+      <Project>{c0dda449-323d-430f-b347-a333f7bd39f1}</Project>
+      <Name>AWSSDK.CloudHSM.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CloudSearchDomain\AWSSDK.CloudSearchDomain.PCL.csproj">
+      <Project>{c9f6defe-848f-4e73-8509-25d5ebf48cc5}</Project>
+      <Name>AWSSDK.CloudSearchDomain.PCL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\src\Services\CloudSearch\AWSSDK.CloudSearch.PCL.csproj">
       <Project>{7a011f04-319c-4825-9197-c2716df46da1}</Project>
       <Name>AWSSDK.CloudSearch.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CloudTrail\AWSSDK.CloudTrail.PCL.csproj">
+      <Project>{4e745706-f02a-4f99-b6f0-a67aadb0ee7a}</Project>
+      <Name>AWSSDK.CloudTrail.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CloudWatchLogs\AWSSDK.CloudWatchLogs.PCL.csproj">
+      <Project>{92fc45a0-d85d-4139-b746-a3805ae71fb9}</Project>
+      <Name>AWSSDK.CloudWatchLogs.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CloudWatch\AWSSDK.CloudWatch.PCL.csproj">
+      <Project>{181bbcba-4b2a-48f0-989c-09e33999b950}</Project>
+      <Name>AWSSDK.CloudWatch.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CodeDeploy\AWSSDK.CodeDeploy.PCL.csproj">
+      <Project>{7fd370b3-a965-47ba-a8eb-46da185c95f7}</Project>
+      <Name>AWSSDK.CodeDeploy.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CognitoIdentity\AWSSDK.CognitoIdentity.PCL.csproj">
+      <Project>{1c5f7691-6dd8-400b-8ec1-788317af0bfe}</Project>
+      <Name>AWSSDK.CognitoIdentity.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CognitoSync\AWSSDK.CognitoSync.PCL.csproj">
+      <Project>{44713a63-6d4b-4f6f-9af8-578ba30f8333}</Project>
+      <Name>AWSSDK.CognitoSync.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\ConfigService\AWSSDK.ConfigService.PCL.csproj">
+      <Project>{6a629c05-3726-459b-b62b-4b1119429bc0}</Project>
+      <Name>AWSSDK.ConfigService.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\DataPipeline\AWSSDK.DataPipeline.PCL.csproj">
+      <Project>{23972f26-4fd3-44a7-84fe-ada055323191}</Project>
+      <Name>AWSSDK.DataPipeline.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\DirectConnect\AWSSDK.DirectConnect.PCL.csproj">
+      <Project>{603829d4-1276-427e-b9f3-138bea534ed4}</Project>
+      <Name>AWSSDK.DirectConnect.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\DirectoryService\AWSSDK.DirectoryService.PCL.csproj">
+      <Project>{a58a8062-30c6-4c62-8be6-103d85002f9a}</Project>
+      <Name>AWSSDK.DirectoryService.PCL</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.PCL.csproj">
       <Project>{ff9a7cda-940c-4a29-a8f6-da4392e11def}</Project>
       <Name>AWSSDK.DynamoDBv2.PCL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\EC2\AWSSDK.EC2.PCL.csproj">
+      <Project>{0c0cba92-fb47-4713-ac32-c2006d50bd95}</Project>
+      <Name>AWSSDK.EC2.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\ECS\AWSSDK.ECS.PCL.csproj">
+      <Project>{5bab6939-0f88-4964-875d-711fbc917a6d}</Project>
+      <Name>AWSSDK.ECS.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\ElastiCache\AWSSDK.ElastiCache.PCL.csproj">
+      <Project>{e1ddb631-5e61-4d72-a86f-aa6749a1e4a2}</Project>
+      <Name>AWSSDK.ElastiCache.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\ElasticBeanstalk\AWSSDK.ElasticBeanstalk.PCL.csproj">
+      <Project>{eb0eb1aa-ccf4-40de-8a38-4cc07e8e2e01}</Project>
+      <Name>AWSSDK.ElasticBeanstalk.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\ElasticFileSystem\AWSSDK.ElasticFileSystem.PCL.csproj">
+      <Project>{d48750b7-378b-41c4-bbc3-7b3082eee6b9}</Project>
+      <Name>AWSSDK.ElasticFileSystem.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\ElasticLoadBalancing\AWSSDK.ElasticLoadBalancing.PCL.csproj">
+      <Project>{e958831a-68d9-4e8d-a730-be29ec700b34}</Project>
+      <Name>AWSSDK.ElasticLoadBalancing.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\ElasticMapReduce\AWSSDK.ElasticMapReduce.PCL.csproj">
+      <Project>{4fad21e8-41f4-446e-9b56-a3e99a2005d4}</Project>
+      <Name>AWSSDK.ElasticMapReduce.PCL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.PCL.csproj">
       <Project>{e0cf8866-9af9-4375-8116-6bddb505e773}</Project>
       <Name>AWSSDK.ElasticTranscoder.PCL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\Glacier\AWSSDK.Glacier.PCL.csproj">
+      <Project>{ce3c866e-e8be-458f-a27e-99e002e54852}</Project>
+      <Name>AWSSDK.Glacier.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\IdentityManagement\AWSSDK.IdentityManagement.PCL.csproj">
+      <Project>{ffc3331f-8ea8-417c-839e-b8c2061ba809}</Project>
+      <Name>AWSSDK.IdentityManagement.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\ImportExport\AWSSDK.ImportExport.PCL.csproj">
+      <Project>{3bf9f15a-af1a-4bd7-ac2d-5b184be7bfb1}</Project>
+      <Name>AWSSDK.ImportExport.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.PCL.csproj">
+      <Project>{0f98464e-856f-4692-8abb-6d82209b8265}</Project>
+      <Name>AWSSDK.KeyManagementService.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\Kinesis\AWSSDK.Kinesis.PCL.csproj">
+      <Project>{1a175c0b-1e35-4c65-a885-e49fdc236c24}</Project>
+      <Name>AWSSDK.Kinesis.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\Lambda\AWSSDK.Lambda.PCL.csproj">
+      <Project>{52eb2667-1274-4721-bee0-1d078b2e8cc0}</Project>
+      <Name>AWSSDK.Lambda.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\MachineLearning\AWSSDK.MachineLearning.PCL.csproj">
+      <Project>{c6bd2209-2710-4c5b-8d4d-e412eff17fa5}</Project>
+      <Name>AWSSDK.MachineLearning.PCL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.PCL.csproj">
       <Project>{938f4e28-e150-46cf-b36d-be43fe8d8c0b}</Project>
       <Name>AWSSDK.MobileAnalytics.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\OpsWorks\AWSSDK.OpsWorks.PCL.csproj">
+      <Project>{eecabb7e-3bdc-4e64-9ad7-9b7641d42321}</Project>
+      <Name>AWSSDK.OpsWorks.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\RDS\AWSSDK.RDS.PCL.csproj">
+      <Project>{2223d453-8c33-4def-8fb4-09416a9d5f55}</Project>
+      <Name>AWSSDK.RDS.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\Redshift\AWSSDK.Redshift.PCL.csproj">
+      <Project>{c3f8173a-4471-439e-9d7a-a57dc32c920f}</Project>
+      <Name>AWSSDK.Redshift.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\Route53Domains\AWSSDK.Route53Domains.PCL.csproj">
+      <Project>{08b2ebef-0dc3-4431-ad6e-fe23380a1892}</Project>
+      <Name>AWSSDK.Route53Domains.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\Route53\AWSSDK.Route53.PCL.csproj">
+      <Project>{3cb17392-51ab-4ca4-b1b3-81faa777bbd2}</Project>
+      <Name>AWSSDK.Route53.PCL</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.PCL.csproj">
       <Project>{17adb7d7-59f4-4eae-86b3-15a949bed449}</Project>
@@ -116,13 +283,37 @@
       <Project>{1bc2b016-b393-4016-ab85-649e1071067b}</Project>
       <Name>AWSSDK.SecurityToken.PCL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\SimpleDB\AWSSDK.SimpleDB.PCL.csproj">
+      <Project>{7bb36ae8-6e16-487e-bb8e-ffe48f624f83}</Project>
+      <Name>AWSSDK.SimpleDB.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\SimpleEmail\AWSSDK.SimpleEmail.PCL.csproj">
+      <Project>{daa7a5c9-9cc8-46a5-a248-1643f11e2737}</Project>
+      <Name>AWSSDK.SimpleEmail.PCL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.PCL.csproj">
       <Project>{ae784d21-b10c-42bf-a4b4-116127ae2219}</Project>
       <Name>AWSSDK.SimpleNotificationService.PCL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\SimpleSystemsManagement\AWSSDK.SimpleSystemsManagement.PCL.csproj">
+      <Project>{c77552f1-b97d-4871-906f-e33059e702f7}</Project>
+      <Name>AWSSDK.SimpleSystemsManagement.PCL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\src\Services\SimpleWorkflow\AWSSDK.SimpleWorkflow.PCL.csproj">
       <Project>{5fbcbad4-c22d-428c-ba56-7abd134c0f8a}</Project>
       <Name>AWSSDK.SimpleWorkflow.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\SQS\AWSSDK.SQS.PCL.csproj">
+      <Project>{0f2c8e1f-6555-4db4-bdd3-c2729f243673}</Project>
+      <Name>AWSSDK.SQS.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\StorageGateway\AWSSDK.StorageGateway.PCL.csproj">
+      <Project>{b67e16e9-0582-4e8b-ae79-a1283ee61772}</Project>
+      <Name>AWSSDK.StorageGateway.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\WorkSpaces\AWSSDK.WorkSpaces.PCL.csproj">
+      <Project>{1e347233-57d0-44ab-8096-2f5edbbb2902}</Project>
+      <Name>AWSSDK.WorkSpaces.PCL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

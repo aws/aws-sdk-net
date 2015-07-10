@@ -1,4 +1,5 @@
-﻿using Amazon.Runtime;
+﻿using Amazon;
+using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using CommonTests.Framework;
@@ -17,23 +18,46 @@ namespace CommonTests.Framework
         public TestBase()
         {     
         }
+
+        public static TClient CreateClient<TClient>(AWSCredentials alternateCredentials = null, RegionEndpoint alternateEndpoint = null)
+            where TClient : AmazonServiceClient
+        {
+            var credentials = alternateCredentials ?? TestRunner.Credentials;
+            var endpoint = alternateEndpoint ?? TestRunner.RegionEndpoint;
+
+            return (TClient)Activator.CreateInstance(typeof(TClient),
+                    new object[] { TestRunner.Credentials,  endpoint});
+        }
     }
 
     public abstract class TestBase<T> : TestBase where T : AmazonServiceClient, IDisposable
     {
         private bool _disposed = false;
 
-        public static T Client { get; private set; }
+        private T _client = null;
+        public T Client
+        {
+            get
+            {
+                if (_client == null)
+                {
+                    _client = CreateClient<T>(alternateEndpoint: AlternateEndpoint);
+                }
+                return _client;
+            }
+        }
 
         /// <summary>
         /// Base folder for this test class
         /// </summary>
         public IFolder BaseFolder { get; private set; }
 
-        static TestBase()
+        protected virtual RegionEndpoint AlternateEndpoint
         {
-            Client = (T)Activator.CreateInstance(typeof(T),
-                    new object[] { TestRunner.Credentials, TestRunner.RegionEndpoint });
+            get
+            {
+                return null;
+            }
         }
 
         public TestBase()
@@ -47,6 +71,11 @@ namespace CommonTests.Framework
                 this.BaseFolder = await rootFolder.CreateFolderAsync(
                     Path.Combine("AWSSDK.IntegrationTests", typeof(T).Name), CreationCollisionOption.OpenIfExists);
             });
+        }
+
+        public void BaseClean()
+        {
+            Dispose();
         }
         
         protected static void RunAsSync(Func<Task> asyncFunc)
@@ -76,7 +105,7 @@ namespace CommonTests.Framework
 
         #endregion
 
-        public static ServiceResponseCounter CountServiceResponses()
+        public ServiceResponseCounter CountServiceResponses()
         {
             return CountServiceResponses(Client);
         }
