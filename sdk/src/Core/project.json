@@ -9,7 +9,21 @@
   "dependencies": {
   },
 
-  "exclude": [ "**/_pcl/*", "**/_bcl35/*", "**/_bcl45/*", "**/_bcl/*", "**/_android/*", "**/_ios/*", "**/_pclReference/*", "**/_win8/*", "**/_winPhone81/*", "**/_winPhoneSilverlight8/*" ],
+  "exclude": [
+    "**/_pcl/*",
+    "**/_pcl-sl/*",
+    "**/_bcl35/*",
+    "**/_bcl45/*",
+    "**/_bcl/*",
+    "**/_bcl+sl/*",
+    "**/_android/*",
+    "**/_ios/*",
+    "**/_pclReference/*",
+    "**/_win8/*",
+    "**/_winPhone81/*",
+    "**/_winPhoneSilverlight8/*" 
+
+  ],
 
   "compilationOptions": {
     "define": ["DNX"]

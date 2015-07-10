@@ -393,8 +393,6 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         private static IPipelineHandler GetInnermostHandler(IPipelineHandler handler)
         {
-            Debug.Assert(handler != null);
-
             var current = handler;
             while (current.InnerHandler != null)
             {

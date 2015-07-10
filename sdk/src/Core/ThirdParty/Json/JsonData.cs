@@ -17,7 +17,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 
-#if (PCL && !(__ANDROID__ || __IOS__))
+#if ((PCL || DNX) && !(__ANDROID__ || __IOS__))
 using Amazon.MissingTypes;
 #endif
 

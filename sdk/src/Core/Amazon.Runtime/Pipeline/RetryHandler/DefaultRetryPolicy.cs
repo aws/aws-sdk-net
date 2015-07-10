@@ -114,7 +114,7 @@ namespace Amazon.Runtime.Internal
             if (exception is IOException)
             {
 
-#if !PCL   // ThreadAbortException is not available on WIN RT
+#if !PCL && !DNX  // ThreadAbortException is not PCL and CoreCLR
 
                 // Don't retry IOExceptions that are caused by a ThreadAbortException
                 if (IsInnerException<ThreadAbortException>(exception))

@@ -319,17 +319,10 @@ namespace Amazon
             {
                 try
                 {
-                    HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
-                    var asynResult = request.BeginGetResponse(null, null);
-                    HttpWebResponse response = request.EndGetResponse(asynResult) as HttpWebResponse;
-
-                    using (response)
+                    using (var stream = Amazon.Util.AWSSDKUtils.OpenStream(new Uri(url)))
                     {
-                        using (var stream = response.GetResponseStream())
-                        {
-                            ReadEndpointFile(stream);
-                            return;
-                        }
+                        ReadEndpointFile(stream);
+                        return;
                     }
                 }
                 catch (WebException e)

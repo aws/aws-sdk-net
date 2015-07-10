@@ -93,8 +93,6 @@ namespace Amazon.Runtime.Internal
                         throw new AmazonUnmarshallingException(requestId, lastKnownLocation: null, responseBody: body, innerException: e);
                     }
 
-                    Debug.Assert(errorResponseException != null);
-
                     requestContext.Metrics.AddProperty(Metric.AWSRequestID, errorResponseException.RequestId);
                     requestContext.Metrics.AddProperty(Metric.AWSErrorCode, errorResponseException.ErrorCode);
 

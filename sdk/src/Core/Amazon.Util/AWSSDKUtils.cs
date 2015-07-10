@@ -23,6 +23,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 using Amazon.Runtime;
@@ -763,6 +764,41 @@ namespace Amazon.Util
                     now += AWSConfigs.ClockOffset;
                 return now;
             }
+        }
+
+        public static string DownloadStringContent(Uri uri)
+        {
+#if DNX
+            using (var client = new System.Net.Http.HttpClient())
+            {
+                var task = client.GetStringAsync(uri);
+                return task.Result;
+            }
+#else
+            HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
+            var asyncResult = request.BeginGetResponse(null, null);
+            using (HttpWebResponse response = request.EndGetResponse(asyncResult) as HttpWebResponse)
+            using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+            {
+                return reader.ReadToEnd();
+            }
+#endif
+        }
+
+        public static Stream OpenStream(Uri uri)
+        {
+#if DNX
+            using (var client = new System.Net.Http.HttpClient())
+            {
+                var task = client.GetStreamAsync(uri);
+                return task.Result;
+            }
+#else
+            HttpWebRequest request = WebRequest.Create(uri) as HttpWebRequest;
+            var asynResult = request.BeginGetResponse(null, null);
+            HttpWebResponse response = request.EndGetResponse(asynResult) as HttpWebResponse;
+            return response.GetResponseStream();
+#endif
         }
 
         #endregion

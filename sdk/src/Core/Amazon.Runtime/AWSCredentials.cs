@@ -996,13 +996,7 @@ namespace Amazon.Runtime
         {
             try
             {
-                HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
-                var asyncResult = request.BeginGetResponse(null, null);
-                using (HttpWebResponse response = request.EndGetResponse(asyncResult) as HttpWebResponse)
-                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-                {
-                    return reader.ReadToEnd();
-                }
+                return AWSSDKUtils.DownloadStringContent(uri);
             }
             catch (WebException)
             {
@@ -1022,10 +1016,10 @@ namespace Amazon.Runtime
             throw new InvalidOperationException("No roles found");
         }
 
-        #endregion
+#endregion
 
 
-        #region Private serialization classes
+#region Private serialization classes
 
         private class SecurityBase
         {
@@ -1049,7 +1043,7 @@ namespace Amazon.Runtime
             public DateTime Expiration { get; set; }
         }
 
-        #endregion
+#endregion
     }
 
     /// <summary>
@@ -1058,7 +1052,7 @@ namespace Amazon.Runtime
     /// </summary>
     public class AnonymousAWSCredentials : AWSCredentials
     {
-        #region Abstract class overrides
+#region Abstract class overrides
 
         /// <summary>
         /// Returns an instance of ImmutableCredentials for this instance
@@ -1069,7 +1063,7 @@ namespace Amazon.Runtime
             throw new NotSupportedException("AnonymousAWSCredentials do not support this operation");
         }
 
-        #endregion
+#endregion
     }
 
     // Credentials fallback mechanism
