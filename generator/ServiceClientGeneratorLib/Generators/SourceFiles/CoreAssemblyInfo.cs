@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+    #line 1 "C:\dev\DotNet\xamarin\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class CoreAssemblyInfo : BaseGenerator
     {
@@ -51,14 +51,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "bers \r\n// by using the \'*\' as shown below:\r\n// [assembly: AssemblyVersion(\"1.0.*" +
                     "\")]\r\n[assembly: AssemblyVersion(\"");
             
-            #line 48 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            #line 48 "C:\dev\DotNet\xamarin\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["Version"]));
             
             #line default
             #line hidden
             this.Write("\")]\r\n[assembly: AssemblyFileVersion(\"");
             
-            #line 49 "C:\code\dotnet\v3\xamarin-CURRENT-WORK\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            #line 49 "C:\dev\DotNet\xamarin\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default
@@ -79,6 +79,22 @@ namespace ServiceClientGenerator.Generators.SourceFiles
 // Setting SecurityRules to level 1 to match .NET 2.0 rules and allow the
 // Amazon.Util.Settings.UserCrypto methods to work in .NET 4.5
 [assembly: System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
+#endif
+
+
+//declare the permission we use in the manifest
+#if __ANDROID__
+//network permission
+[assembly: Android.App.UsesPermission(Name=""android.permission.INTERNET"")]
+
+//for network reachability
+[assembly: Android.App.UsesPermission(Name=""android.permission.ACCESS_NETWORK_STATE"")]
+[assembly: Android.App.UsesPermission(Name=""android.permission.ACCESS_WIFI_STATE"")]
+
+//for storage
+[assembly: Android.App.UsesPermission(Name=""android.permission.READ_EXTERNAL_STORAGE"")]
+[assembly: Android.App.UsesPermission(Name=""android.permission.WRITE_EXTERNAL_STORAGE"")]
+
 #endif");
             return this.GenerationEnvironment.ToString();
         }

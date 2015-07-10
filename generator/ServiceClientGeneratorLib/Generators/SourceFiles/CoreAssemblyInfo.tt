@@ -63,3 +63,19 @@ using System.Runtime.CompilerServices;
 // Amazon.Util.Settings.UserCrypto methods to work in .NET 4.5
 [assembly: System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
+
+
+//declare the permission we use in the manifest
+#if __ANDROID__
+//network permission
+[assembly: Android.App.UsesPermission(Name="android.permission.INTERNET")]
+
+//for network reachability
+[assembly: Android.App.UsesPermission(Name="android.permission.ACCESS_NETWORK_STATE")]
+[assembly: Android.App.UsesPermission(Name="android.permission.ACCESS_WIFI_STATE")]
+
+//for storage
+[assembly: Android.App.UsesPermission(Name="android.permission.READ_EXTERNAL_STORAGE")]
+[assembly: Android.App.UsesPermission(Name="android.permission.WRITE_EXTERNAL_STORAGE")]
+
+#endif
