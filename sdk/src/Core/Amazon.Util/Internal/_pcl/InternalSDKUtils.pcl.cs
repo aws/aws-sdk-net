@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
 using System.Text;
+using Amazon.Util.Internal.PlatformServices;
 
 namespace Amazon.Util.Internal
 {
@@ -29,19 +30,21 @@ namespace Amazon.Util.Internal
     {
         static string _userAgentBaseName = "aws-sdk-dotnet-pcl";
 
-        static string DetermineRuntime()
-        {
-            return "PCL";
-        }
+#if __IOS__ || __ANDROID__
 
-        static string DetermineFramework()
+        public static string GetMonoRuntimeVersion()
         {
-            return "4.5";
-        }
+            Type type = Type.GetType("Mono.Runtime");
+            if (type != null)
+            {
+                MethodInfo displayName = type.GetMethod("GetDisplayName",
+                    BindingFlags.NonPublic | BindingFlags.Static);
+                if (displayName != null)
+                    return (string)displayName.Invoke(null, null);
+            }
 
-        static string DetermineOSVersion()
-        {
-            return "Unknown";
+            return string.Empty;
         }
+#endif
     }
 }
