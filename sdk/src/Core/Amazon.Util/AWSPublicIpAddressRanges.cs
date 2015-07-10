@@ -101,7 +101,7 @@ namespace Amazon.Util
 
                     return instance;
                 }
-                catch (WebException e)
+                catch (Exception e)
                 {
                     retries++;
                     if (retries == maxDownloadRetries)

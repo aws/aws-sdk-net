@@ -237,10 +237,17 @@ namespace Amazon.Runtime
             }
             catch (HttpRequestException e)
             {
-                if (e.InnerException != null && (e.InnerException is IOException || e.InnerException is WebException))
-                    throw e.InnerException;
-                else
-                    throw;
+                if (e.InnerException != null)
+                {
+                    if (e.InnerException is IOException)
+                        throw e.InnerException;
+#if !DNX
+                    if (e.InnerException is WebException)
+                        throw e.InnerException;
+#endif
+                }
+
+                throw;
             }
         }
 

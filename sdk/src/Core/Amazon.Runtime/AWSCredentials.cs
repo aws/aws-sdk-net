@@ -998,7 +998,7 @@ namespace Amazon.Runtime
             {
                 return AWSSDKUtils.DownloadStringContent(uri);
             }
-            catch (WebException)
+            catch (Exception)
             {
                 throw new AmazonServiceException("Unable to reach credentials server");
             }

@@ -325,7 +325,7 @@ namespace Amazon
                         return;
                     }
                 }
-                catch (WebException e)
+                catch (Exception e)
                 {
                     retries++;
                     if (retries == MAX_DOWNLOAD_RETRIES)
