@@ -34,6 +34,7 @@ namespace ServiceClientGenerator
             public const string MaxRetriesKey = "max-retries";
             public const string SynopsisKey = "synopsis";
             public const string DependenciesKey = "dependencies";
+            public const string ParentModelBasenameKey = "parent-base-name";
         }
 
         abstract class ProjectsSectionKeys
@@ -99,12 +100,13 @@ namespace ServiceClientGenerator
         /// Sets the ServiceConfigurations member on exit with the collection of loaded
         /// configurations.
         /// </summary>
-        /// <param name="document"></param>
-        /// <param name="modelsFolder"></param>
+        /// <param name="manifest">The manifest file listing all services to be generated.</param>
+        /// <param name="coreVersion">The API version of the Core runtime the services will be compatible with.</param>
+        /// <param name="versions">The collection of service versions.</param>
+        /// <param name="modelsFolder">The folder containing the service models referenced in the manifest.</param>
         void LoadServiceConfigurations(JsonData manifest, string coreVersion, JsonData versions, string modelsFolder)
         {
             var serviceConfigurations = new List<ServiceConfiguration>();
-            //var serviceVersions = new Dictionary<string, string>();
 
             var modelsNode = manifest[ModelsSectionKeys.ModelsKey];
             foreach (JsonData modelNode in modelsNode)
@@ -143,6 +145,23 @@ namespace ServiceClientGenerator
                 if (modelNode[ModelsSectionKeys.SynopsisKey] != null)
                     config.Synopsis = (string)modelNode[ModelsSectionKeys.SynopsisKey];
 
+                // The parent model for current model. If set the client will be generated in the same namespace and 
+                // share common types.
+                var parentModelName = modelNode[ModelsSectionKeys.ParentModelBasenameKey] != null ? modelNode[ModelsSectionKeys.ParentModelBasenameKey].ToString() : null;
+                if (parentModelName != null)
+                {
+                    try
+                    {
+                        config.ParentConfig = serviceConfigurations.Single(c => c.BaseName.Equals(parentModelName));
+                    }
+                    catch (KeyNotFoundException exception)
+                    {
+                        // Note : the parent model should be defined in the manifest before being referred by a child model
+                        throw new KeyNotFoundException(
+                            string.Format("A parent model with name {0} is not defined in the manifest", parentModelName),
+                            exception); ;
+                    }
+                }
 
                 config.ServiceDependencies = new Dictionary<string, string>(StringComparer.Ordinal);
                 if (modelNode[ModelsSectionKeys.DependenciesKey] != null && modelNode[ModelsSectionKeys.DependenciesKey].IsArray)
@@ -174,13 +193,11 @@ namespace ServiceClientGenerator
                     var versionTokens = coreVersion.Split('.');
                     config.ServiceFileVersion = string.Format("{0}.{1}.0.0", versionTokens[0], versionTokens[1]);
                 }
-                //serviceVersions.Add(serviceName, versionText);
 
                 serviceConfigurations.Add(config);
             }
 
             ServiceConfigurations = serviceConfigurations;
-            //ServiceVersions = serviceVersions;
         }
 
         /// <summary>

@@ -503,7 +503,18 @@ namespace ServiceClientGenerator
                 case "timestamp":
                     return "DateTimeUnmarshaller";
                 case "structure":
-                    return extendsNode.ToString() + "Unmarshaller";
+                    var shapeName = extendsNode.ToString();
+                    var renamedShape = this.model.Customizations.GetOverrideShapeName(shapeName);
+                    var substitutedShape = this.model.Customizations.GetSubstituteShapeName(shapeName);
+                    if (!string.IsNullOrWhiteSpace(renamedShape))
+                    {
+                        shapeName = renamedShape;
+                    }
+                    else if(!string.IsNullOrWhiteSpace(substitutedShape))
+                    {
+                        shapeName = substitutedShape;
+                    }
+                    return shapeName + "Unmarshaller";
                 case "map":
                     var keyType = DetermineType(memberShape[Shape.KeyKey], true);
                     var keyTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.KeyKey]);

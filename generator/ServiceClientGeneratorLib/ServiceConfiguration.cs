@@ -40,7 +40,20 @@ namespace ServiceClientGenerator
         /// </summary>
         public ServiceModel ServiceModel 
         {
-            get { return this._serviceModel ?? (this._serviceModel = new ServiceModel(this.ModelPath, this.CustomizationsPath)); }
+            get
+            {
+                if (this._serviceModel == null)
+                {
+                    this._serviceModel = new ServiceModel(this.ModelPath, this.CustomizationsPath);
+
+                    if (this.IsChildConfig)
+                    {
+                        _serviceModel.ParentModel = ParentConfig.ServiceModel;
+                    }
+                }
+
+                return this._serviceModel;
+            }
         }
 
         string _customizationsPath;
@@ -134,5 +147,15 @@ namespace ServiceClientGenerator
         public string ServiceFileVersion { get; set; }
 
         public bool SkipV1 { get; set; }
+
+        public bool IsChildConfig
+        {
+            get
+            {
+                return this.ParentConfig != null;
+            }
+        }
+
+        public ServiceConfiguration ParentConfig { get; set; }
     }
 }

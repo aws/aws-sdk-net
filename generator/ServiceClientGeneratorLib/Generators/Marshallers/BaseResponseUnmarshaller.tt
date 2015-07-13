@@ -40,6 +40,8 @@ using Amazon.Runtime.Internal.Util;
 	// members were generated
 	public bool HasSuppressedResult { get; set; }
 
+	public string BaseException { get; set; }
+
     // The shape of the response
     public Shape Structure 
     { 

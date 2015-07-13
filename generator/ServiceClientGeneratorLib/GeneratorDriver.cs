@@ -137,8 +137,18 @@ namespace ServiceClientGenerator
             // The top level request that all operation requests are children of
             ExecuteGenerator(new BaseRequest(), "Amazon" + Configuration.BaseName + "Request.cs", "Model");
 
+            var enumFileName = this.Configuration.IsChildConfig ?
+                string.Format("ServiceEnumerations.{0}.cs", Configuration.BaseName) : "ServiceEnumerations.cs";
+
             // Any enumerations for the service
-            ExecuteGenerator(new ServiceEnumerations(), "ServiceEnumerations.cs");
+            this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
+            
+            // Do not generate base exception if this is a child model.
+            // We use the base exceptions generated for the parent model.
+            if (!this.Configuration.IsChildConfig)
+            {
+                this.ExecuteGenerator(new BaseServiceException(), "Amazon" + this.Configuration.BaseName + "Exception.cs");
+            }
             
             // Generates the Request, Responce, Marshaller, Unmarshaller, and Exception objects for a given client operation
             foreach (var operation in Configuration.ServiceModel.Operations)
@@ -383,17 +393,24 @@ namespace ServiceClientGenerator
         /// <param name="operation">The operation to generate exceptions for</param>
         void GenerateExceptions(Operation operation)
         {
-            this.ExecuteGenerator(new BaseServiceException(), "Amazon" + this.Configuration.BaseName + "Exception.cs");
-
             foreach (var exception in operation.Exceptions)
             {
+                // Skip exceptions that have already been generated for the parent model
+                if (IsExceptionPresentInParentModel(this.Configuration, exception.Name))
+                    continue;
+
                 // Check to see if the exceptions has already been generated for a previous operation.
                 if (!this._processedStructures.Contains(exception.Name))
                 {
+                    var baseException = string.Format("Amazon{0}Exception",
+                        this.Configuration.IsChildConfig ?
+                        this.Configuration.ParentConfig.BaseName : this.Configuration.BaseName);
+
                     var generator = new ExceptionClass()
                     {
                         Exception = exception,
-                        GenerateComplexException = this.Configuration.ServiceModel.Customizations.GenerateComplexException
+                        GenerateComplexException = this.Configuration.ServiceModel.Customizations.GenerateComplexException,
+                        BaseException = baseException
                     };
                     this.ExecuteGenerator(generator, exception.Name + ".cs", "Model");
                     this._processedStructures.Add(exception.Name);
@@ -425,6 +442,10 @@ namespace ServiceClientGenerator
 
                 foreach (var nestedStructure in lookup.NestedStructures)
                 {
+                    // Skip structure marshallers that have already been generated for the parent model
+                    if (IsShapePresentInParentModel(this.Configuration, nestedStructure.Name))
+                        continue;
+
                     if (!this._processedMarshallers.Contains(nestedStructure.Name))
                     {
                         var structureGenerator = GetStructureMarshaller();
@@ -444,10 +465,15 @@ namespace ServiceClientGenerator
         void GenerateResponseUnmarshaller(Operation operation)
         {
             {
+                var baseException = string.Format("Amazon{0}Exception",
+                        this.Configuration.IsChildConfig ?
+                        this.Configuration.ParentConfig.BaseName : this.Configuration.BaseName);
+
                 var generator = GetResponseUnmarshaller();
                 generator.Operation = operation;
                 generator.IsWrapped = operation.IsResponseWrapped;
                 generator.HasSuppressedResult = this.Configuration.ServiceModel.Customizations.ResultGenerationSuppressions.Contains(operation.Name);
+                generator.BaseException = baseException;
 
                 var modifier = operation.model.Customizations.GetOperationModifiers(operation.Name);
                 if (modifier != null)
@@ -479,6 +505,10 @@ namespace ServiceClientGenerator
 
                 foreach (var nestedStructure in lookup.NestedStructures)
                 {
+                    // Skip structure unmarshallers that have already been generated for the parent model
+                    if (IsShapePresentInParentModel(this.Configuration, nestedStructure.Name))
+                        continue;
+
                     if (this.Configuration.ServiceModel.Customizations.IsSubstitutedShape(nestedStructure.Name))
                         continue;
 
@@ -600,6 +630,10 @@ namespace ServiceClientGenerator
 
             foreach (var definition in this._structuresToProcess)
             {
+                // Skip structures that have already been generated for the parent model
+                if (IsShapePresentInParentModel(this.Configuration, definition.Name))
+                    continue;
+
                 if (!this._processedStructures.Contains(definition.Name) && !definition.IsException)
                 {
                     // if the shape had a substitution, we can skip generation
@@ -621,6 +655,36 @@ namespace ServiceClientGenerator
                     this._processedStructures.Add(definition.Name);
                 }
             }
+        }
+
+        static bool IsShapePresentInParentModel(ServiceConfiguration config, string shapeName)
+        {
+            if (config.IsChildConfig)
+            {
+                // Check to see if the structure is present in a parent model
+                if (config.ParentConfig.ServiceModel.Shapes.SingleOrDefault(
+                    e => e.Name.Equals(shapeName)) != null)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        static bool IsExceptionPresentInParentModel(ServiceConfiguration config, string exceptionName)
+        {
+            if (config.IsChildConfig)
+            {
+                // Check to see if the exception is present in a parent model
+                if (config.ParentConfig.ServiceModel.Exceptions.SingleOrDefault(
+                        e => e.Name.Equals(exceptionName)) != null)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         /// <summary>
