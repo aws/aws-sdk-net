@@ -7,7 +7,7 @@
   "licenseUrl": "",
 
   "dependencies": {
-        "System.Net.Http": "4.0.0-beta-23019",
+    "System.Net.Http": "4.0.0-beta-23019"
   },
 
   "exclude": [
@@ -27,7 +27,8 @@
   ],
 
   "resource": [
-    "endpoints.json", "endpoints.customizations.json"
+    "endpoints.json",
+    "endpoints.customizations.json"
   ],
 
   "compilationOptions": {
@@ -35,7 +36,19 @@
   },
 
   "frameworks": {
+    "dnx451": {
+      "frameworkAssemblies": {
+        "System.Xml": "4.0.0.0",
+        "System.Xml.Linq": "4.0.0.0"
+      },
+      "compilationOptions": {
+
+      }
+    },
     "dnxcore50": {
+      "compilationOptions": {
+        "define": [ "ADD_SUPPORT_IORDERED_DICTIONARY" ]
+      },
       "dependencies": {
         "System.Collections": "4.0.10-beta-23019",
         "System.Collections.NonGeneric": "4.0.0-beta-23019",
