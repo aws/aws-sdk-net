@@ -137,7 +137,7 @@ namespace Amazon.Util
                 {
                     if (null == _hashAlgorithm)
                     {
-                        _hashAlgorithm = new HMACSHA256();
+                        _hashAlgorithm = SHA256.Create();
                     }
                     return _hashAlgorithm;
                 }

@@ -139,7 +139,7 @@ namespace Amazon.SQS.Internal
 
             public void Dispose()
             {
-#if PCL
+#if PCL || DNX
                 writer.Dispose();
 #else
                 writer.Close();

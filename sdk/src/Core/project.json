@@ -7,6 +7,7 @@
   "licenseUrl": "",
 
   "dependencies": {
+        "System.Net.Http": "4.0.0-beta-23019",
   },
 
   "exclude": [
@@ -21,40 +22,35 @@
     "**/_pclReference/*",
     "**/_win8/*",
     "**/_winPhone81/*",
-    "**/_winPhoneSilverlight8/*" 
+    "**/_winPhoneSilverlight8/*"
 
   ],
 
+  "resource": [
+    "endpoints.json", "endpoints.customizations.json"
+  ],
+
   "compilationOptions": {
-    "define": ["DNX"]
+    "define": [ "DNX", "AWS_ASYNC_API" ]
   },
 
-  "frameworks" : {
-    "dnxcore50" : {
+  "frameworks": {
+    "dnxcore50": {
       "dependencies": {
-        "System.Collections": "4.0.10-beta-22816",
-        "System.Collections.NonGeneric": "4.0.0-beta-22816",
-        "System.ComponentModel.TypeConverter": "4.0.0-beta-22816",
-        "System.Diagnostics.Tools": "4.0.0-beta-22816",
-        "System.Diagnostics.TraceSource": "4.0.0-beta-22816",
-        "System.IO.FileSystem": "4.0.0-beta-22816",
-        "System.IO.FileSystem.Watcher": "4.0.0-beta-22816",
-        "System.Linq": "4.0.0-beta-22816",
-        "System.Net.Http": "4.0.0-beta-22816",
-        "System.Net.Security": "4.0.0-beta-22816",
-        "System.Runtime.Extensions": "4.0.10-beta-22816",
-        "System.Security.Cryptography.Encryption": "4.0.0-beta-22816",
+        "System.Collections": "4.0.10-beta-23019",
+        "System.Collections.NonGeneric": "4.0.0-beta-23019",
+        "System.Diagnostics.Tools": "4.0.0-beta-23019",
+        "System.Linq": "4.0.0-beta-23019",
+        "System.Net.Http": "4.0.0-beta-23019",
+        "System.Runtime.Extensions": "4.0.10-beta-23019",
         "System.Security.Cryptography.Hashing": "4.0.0-beta-23019",
         "System.Security.Cryptography.Hashing.Algorithms": "4.0.0-beta-23019",
-        "System.Security.Cryptography.RSA": "4.0.0-beta-22816",
-        "System.Text.Encoding.Extensions": "4.0.10-beta-22816",
-        "System.Text.RegularExpressions": "4.0.10-beta-22816",
-        "System.Threading": "4.0.10-beta-22816",
-        "System.Threading.Thread": "4.0.0-beta-22816",
-        "System.Xml.XDocument": "4.0.10-beta-22816",
-        "System.Xml.ReaderWriter": "4.0.10-beta-22816",
-        "Microsoft.CSharp": "4.0.0-beta-22816",
-        "Microsoft.Win32.Registry": "4.0.0-beta-22816"
+        "System.Text.Encoding.Extensions": "4.0.10-beta-23019",
+        "System.Text.RegularExpressions": "4.0.10-beta-23019",
+        "System.Threading": "4.0.10-beta-23019",
+        "System.Threading.Thread": "4.0.0-beta-23019",
+        "System.Xml.XDocument": "4.0.10-beta-23019",
+        "Microsoft.CSharp": "4.0.0-beta-23019"
       }
     }
   }

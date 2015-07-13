@@ -43,14 +43,21 @@ namespace Amazon
     /// </summary>
     public class RegionEndpoint
     {
+#if DNX
+        // The shared endpoint rules used by other AWS SDKs.
+        const string REGIONS_FILE = "Core.endpoints.json";
+        // The .NET SDK specific customization to support legacy decisions made for endpoints.
+        const string REGIONS_CUSTOMIZATIONS_FILE = "Core.endpoints.customizations.json";
+#else
         // The shared endpoint rules used by other AWS SDKs.
         const string REGIONS_FILE = "Amazon.endpoints.json";
         // The .NET SDK specific customization to support legacy decisions made for endpoints.
         const string REGIONS_CUSTOMIZATIONS_FILE = "Amazon.endpoints.customizations.json";
+#endif
 
         const string DEFAULT_RULE = "*/*";
 
-        #region Statics
+#region Statics
 
         static Dictionary<string, JsonData> _documentEndpoints;
 
@@ -350,7 +357,7 @@ namespace Amazon
             }
         }
 
-        #endregion
+#endregion
 
         private RegionEndpoint(string systemName, string displayName)
         {

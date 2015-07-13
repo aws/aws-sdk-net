@@ -1,6 +1,6 @@
 {
-    "projects": [ "src/Core" ],
-    "sdk": {
-        "version": "1.0.0-beta4"
-    }
+  "projects": [ "src/Core", "src/Services", "src" ],
+  "sdk": {
+    "version": "1.0.0-beta5"
+  }
 }

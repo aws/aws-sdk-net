@@ -71,7 +71,7 @@ namespace Amazon.Runtime.Internal
             return (T)executionContext.ResponseContext.Response;
         }
 
-#elif PCL
+#elif PCL || DNX
 
         /// <summary>
         /// Unmarshalls the response returned by the HttpHandler.
@@ -157,7 +157,7 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-#if PCL
+#if PCL || DNX
 
         /// <summary>
         /// Unmarshalls the HTTP response.
