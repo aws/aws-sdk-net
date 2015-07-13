@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2014-11-06.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2015-04-17.normal.json service model.
  */
 
 
@@ -327,6 +327,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
         /// </exception>
@@ -345,6 +348,9 @@ namespace Amazon.CloudFront
         /// in your request, or omit the RequiredProtocols element from your distribution configuration.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
@@ -1752,6 +1758,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
         /// </exception>
@@ -1763,6 +1772,9 @@ namespace Amazon.CloudFront
         /// in your request, or omit the RequiredProtocols element from your distribution configuration.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">

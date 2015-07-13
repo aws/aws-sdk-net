@@ -34,6 +34,7 @@
 		<!-- resources folder where test settings should be placed -->
 		<TestSettingsLocation>..\sdk\test\CrossPlatformTests\CommonTests\Resources</TestSettingsLocation>
         
+        <RunKeyScan Condition="'$(RunKeyScan)'==''">false</RunKeyScan>
     </PropertyGroup>
     
 	<Target Name="build-custom-tasks">		
@@ -46,9 +47,9 @@
 	
 	<Target Name="init" DependsOnTargets="clean;build-custom-tasks"/>
 
-	<Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;doc-build;consolidate-docartifacts;save-build"/>
+	<Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;doc-build;keyscan;consolidate-docartifacts;save-build"/>
 
-	<Target Name="full-build-nodocs" DependsOnTargets="test-sdk;copy-assemblies;save-build"/>
+	<Target Name="full-build-nodocs" DependsOnTargets="test-sdk;keyscan;copy-assemblies;save-build"/>
 	
 	<Target Name="run-generator">
 		<Message Text="Build and run code generator"/>		
@@ -186,6 +187,24 @@
 			DestinationFolder="$(Deployment)" />
 	</Target>
 	
+    <Target Name="keyscan" 
+            Condition="Exists('$(InternalBuildTools)\references.targets') And $(RunKeyScan)" 
+            DependsOnTargets="build-tools">
+        <ItemGroup>
+            <PrivateKeyException Include="generator\ServiceModels\ec2-2014-02-01.normal.json" />
+            <PrivateKeyException Include="generator\ServiceModels\iam-2010-05-08.normal.json" />
+            <PrivateKeyException Include="sdk\test\UnitTests\Custom\EC2\PasswordTest.cs" />
+        </ItemGroup>
+        
+        <KeyScannerTask 
+            Folder="$(MSBuildProjectDirectory)\.."
+            FilePattern="**"
+            PrivateKeyExceptions="@(PrivateKeyException)"
+            ParallelScan="true"
+            />
+        
+    </Target>
+    
 	<Target Name="save-build" Condition="Exists('$(InternalBuildTools)\references.targets')" DependsOnTargets="build-tools">		
 		<SaveBuildArtifactTask
 			RepositoryRoot="$(MSBuildProjectDirectory)\.."

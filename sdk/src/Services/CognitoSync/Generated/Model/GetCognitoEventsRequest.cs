@@ -30,7 +30,13 @@ namespace Amazon.CognitoSync.Model
     /// <summary>
     /// Container for the parameters to the GetCognitoEvents operation.
     /// Gets the events and the corresponding Lambda functions associated with an identity
-    /// pool
+    /// pool.
+    /// 
+    ///  
+    /// <para>
+    /// This API can only be called with developer credentials. You cannot call this API with
+    /// the temporary user credentials provided by Cognito Identity.
+    /// </para>
     /// </summary>
     public partial class GetCognitoEventsRequest : AmazonCognitoSyncRequest
     {

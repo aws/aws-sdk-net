@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RouteTables. 
         /// <para>
-        /// Information about one or more route tables.
+        /// Information about one or more route tables. 
         /// </para>
         /// </summary>
         public List<RouteTable> RouteTables

@@ -32,7 +32,9 @@
       <Directory>$(ProjectDir)/src/Services/cloudtrail/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/cloudwatch/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/cloudwatchlogs/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/codecommit/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/codedeploy/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/codepipeline/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/cognitoidentity/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/cognitosync/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/configservice/bin/Release/net35/</Directory>
@@ -83,7 +85,9 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CloudTrail.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CloudWatch.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CloudWatchLogs.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CodeCommit.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CodeDeploy.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CodePipeline.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CognitoIdentity.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CognitoSync.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ConfigService.dll" Analyze="True" AnalyzeAllChildren="True" />

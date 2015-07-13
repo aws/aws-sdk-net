@@ -44,7 +44,8 @@ namespace Amazon.SimpleEmail.Model
     /// verified the DKIM tokens published in the domain's DNS. This information is only returned
     /// for domain name identities, not for email addresses.</li> </ul> 
     /// <para>
-    /// This action is throttled at one request per second.
+    /// This action is throttled at one request per second and can only get DKIM attributes
+    /// for up to 100 identities at a time.
     /// </para>
     ///  
     /// <para>

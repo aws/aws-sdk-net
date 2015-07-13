@@ -80,7 +80,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
+        /// When <code>IsTruncated</code> is <code>true</code>, this element is present and contains
         /// the value to use for the <code>Marker</code> parameter in a subsequent pagination
         /// request.
         /// </para>

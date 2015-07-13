@@ -68,6 +68,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SimpleEmailService")]
+        public void DeleteIdentityPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteIdentityPolicy");
+
+            var request = InstantiateClassGenerator.Execute<DeleteIdentityPolicyRequest>();
+            var marshaller = new DeleteIdentityPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteIdentityPolicyResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteIdentityPolicyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
         public void DeleteVerifiedEmailAddressMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteVerifiedEmailAddress");
@@ -126,6 +150,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = GetIdentityNotificationAttributesResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetIdentityNotificationAttributesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void GetIdentityPoliciesMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIdentityPolicies");
+
+            var request = InstantiateClassGenerator.Execute<GetIdentityPoliciesRequest>();
+            var marshaller = new GetIdentityPoliciesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetIdentityPoliciesResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetIdentityPoliciesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -231,6 +279,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SimpleEmailService")]
+        public void ListIdentityPoliciesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListIdentityPolicies");
+
+            var request = InstantiateClassGenerator.Execute<ListIdentityPoliciesRequest>();
+            var marshaller = new ListIdentityPoliciesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListIdentityPoliciesResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListIdentityPoliciesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
         public void ListVerifiedEmailAddressesMarshallTest()
         {
             var operation = service_model.FindOperation("ListVerifiedEmailAddresses");
@@ -246,6 +318,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = ListVerifiedEmailAddressesResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListVerifiedEmailAddressesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void PutIdentityPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutIdentityPolicy");
+
+            var request = InstantiateClassGenerator.Execute<PutIdentityPolicyRequest>();
+            var marshaller = new PutIdentityPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = PutIdentityPolicyResponseUnmarshaller.Instance.Unmarshall(context)
+                as PutIdentityPolicyResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

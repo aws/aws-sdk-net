@@ -32,6 +32,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class Instance
     {
+        private string _agentVersion;
         private string _amiId;
         private Architecture _architecture;
         private AutoScalingType _autoScalingType;
@@ -50,6 +51,7 @@ namespace Amazon.OpsWorks.Model
         private string _lastServiceErrorId;
         private List<string> _layerIds = new List<string>();
         private string _os;
+        private string _platform;
         private string _privateDns;
         private string _privateIp;
         private string _publicDns;
@@ -69,11 +71,28 @@ namespace Amazon.OpsWorks.Model
         private VirtualizationType _virtualizationType;
 
         /// <summary>
+        /// Gets and sets the property AgentVersion. 
+        /// <para>
+        /// The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits
+        /// the default stack setting or to a a version number for a fixed agent version.
+        /// </para>
+        /// </summary>
+        public string AgentVersion
+        {
+            get { return this._agentVersion; }
+            set { this._agentVersion = value; }
+        }
+
+        // Check to see if AgentVersion property is set
+        internal bool IsSetAgentVersion()
+        {
+            return this._agentVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AmiId. 
         /// <para>
-        /// A custom AMI ID to be used to create the instance. The AMI should be based on one
-        /// of the standard AWS OpsWorks APIs: Amazon Linux, Ubuntu 12.04 LTS, or Ubuntu 14.04
-        /// LTS. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+        /// A custom AMI ID to be used to create the instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
         /// </para>
         /// </summary>
         public string AmiId
@@ -91,7 +110,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Architecture. 
         /// <para>
-        /// The instance architecture, "i386" or "x86_64".
+        /// The instance architecture: "i386" or "x86_64".
         /// </para>
         /// </summary>
         public Architecture Architecture
@@ -256,7 +275,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property InfrastructureClass. 
         /// <para>
-        /// For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>
+        /// For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.
         /// </para>
         /// </summary>
         public string InfrastructureClass
@@ -277,7 +296,7 @@ namespace Amazon.OpsWorks.Model
         /// Whether to install operating system and package updates when the instance boots. The
         /// default value is <code>true</code>. If this value is set to <code>false</code>, you
         /// must then update your instances manually by using <a>CreateDeployment</a> to run the
-        /// <code>update_dependencies</code> stack command or manually running <code>yum</code>
+        /// <code>update_dependencies</code> stack command or by manually running <code>yum</code>
         /// (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. 
         /// </para>
         ///  <note> 
@@ -340,10 +359,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type. AWS OpsWorks supports all instance types except Cluster Compute,
-        /// Cluster GPU, and High Memory Cluster. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Families and Types</a>. The parameter values that specify the various types are in
-        /// the API Name column of the Available Instance Types table.
+        /// The instance type, such as <code>t2.micro</code>.
         /// </para>
         /// </summary>
         public string InstanceType
@@ -413,9 +429,27 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The instance's platform.
+        /// </para>
+        /// </summary>
+        public string Platform
+        {
+            get { return this._platform; }
+            set { this._platform = value; }
+        }
+
+        // Check to see if Platform property is set
+        internal bool IsSetPlatform()
+        {
+            return this._platform != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PrivateDns. 
         /// <para>
-        /// The instance private DNS name.
+        /// The The instance's private DNS name.
         /// </para>
         /// </summary>
         public string PrivateDns
@@ -433,7 +467,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property PrivateIp. 
         /// <para>
-        /// The instance private IP address.
+        /// The instance's private IP address.
         /// </para>
         /// </summary>
         public string PrivateIp
@@ -596,7 +630,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property SshHostDsaKeyFingerprint. 
         /// <para>
-        /// The SSH key's DSA fingerprint.
+        /// The SSH key's Deep Security Agent (DSA) fingerprint.
         /// </para>
         /// </summary>
         public string SshHostDsaKeyFingerprint
@@ -632,7 +666,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property SshKeyName. 
         /// <para>
-        /// The instance's Amazon EC2 key pair name.
+        /// The instance's Amazon EC2 key-pair name.
         /// </para>
         /// </summary>
         public string SshKeyName
@@ -692,7 +726,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The instance's subnet ID, if the stack is running in a VPC.
+        /// The instance's subnet ID; applicable only if the stack is running in a VPC.
         /// </para>
         /// </summary>
         public string SubnetId
@@ -710,7 +744,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property VirtualizationType. 
         /// <para>
-        /// The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.
+        /// The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.
         /// </para>
         /// </summary>
         public VirtualizationType VirtualizationType

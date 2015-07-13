@@ -527,8 +527,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>dw1.xlarge</code> | <code>dw1.8xlarge</code> | <code>dw2.large</code>
-        /// | <code>dw2.8xlarge</code>. 
+        ///  Valid Values: <code>ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code>ds2.xlarge</code>
+        /// | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code>. 
         /// </para>
         /// </summary>
         public string NodeType

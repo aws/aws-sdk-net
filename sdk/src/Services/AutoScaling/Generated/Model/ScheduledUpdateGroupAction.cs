@@ -82,8 +82,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The time that the action is scheduled to end. This value can be up to one month in
-        /// the future.
+        /// The date and time that the action is scheduled to end. This date and time can be up
+        /// to one month in the future.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -191,8 +191,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time that the action is scheduled to begin. This value can be up to one month
-        /// in the future.
+        /// The date and time that the action is scheduled to begin. This date and time can be
+        /// up to one month in the future.
         /// </para>
         ///  
         /// <para>
@@ -215,7 +215,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Time. 
         /// <para>
-        /// <code>Time</code> is deprecated; use <code>StartTime</code> instead.
+        /// This parameter is deprecated; use <code>StartTime</code> instead.
         /// </para>
         /// </summary>
         public DateTime Time

@@ -258,6 +258,14 @@
       <Project>{0701A0D6-DF61-47D7-B89D-73FB88A5FAB7}</Project>
       <Name>AWSSDK.MobileAnalytics.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\CodeCommit\AWSSDK.CodeCommit.Net45.csproj">
+      <Project>{4690400D-CBE7-49B7-B3E3-2955BAB25585}</Project>
+      <Name>AWSSDK.CodeCommit.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\CodePipeline\AWSSDK.CodePipeline.Net45.csproj">
+      <Project>{C37C4303-B362-4AAB-BABC-EC00C0D371C8}</Project>
+      <Name>AWSSDK.CodePipeline.Net45</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">

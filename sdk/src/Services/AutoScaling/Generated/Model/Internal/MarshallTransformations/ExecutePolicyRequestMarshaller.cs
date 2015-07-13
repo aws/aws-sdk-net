@@ -62,9 +62,17 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
+                if(publicRequest.IsSetBreachThreshold())
+                {
+                    request.Parameters.Add("BreachThreshold", StringUtils.FromDouble(publicRequest.BreachThreshold));
+                }
                 if(publicRequest.IsSetHonorCooldown())
                 {
                     request.Parameters.Add("HonorCooldown", StringUtils.FromBool(publicRequest.HonorCooldown));
+                }
+                if(publicRequest.IsSetMetricValue())
+                {
+                    request.Parameters.Add("MetricValue", StringUtils.FromDouble(publicRequest.MetricValue));
                 }
                 if(publicRequest.IsSetPolicyName())
                 {

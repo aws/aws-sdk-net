@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class ConfirmProductInstanceResponse : AmazonWebServiceResponse
     {
         private string _ownerId;
+        private bool? _return;
 
         /// <summary>
         /// Gets and sets the property OwnerId. 
@@ -51,6 +52,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetOwnerId()
         {
             return this._ownerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Return. 
+        /// <para>
+        /// The return value of the request. Returns <code>true</code> if the specified product
+        /// code is owned by the requester and associated with the specified instance.
+        /// </para>
+        /// </summary>
+        public bool Return
+        {
+            get { return this._return.GetValueOrDefault(); }
+            set { this._return = value; }
+        }
+
+        // Check to see if Return property is set
+        internal bool IsSetReturn()
+        {
+            return this._return.HasValue; 
         }
 
     }

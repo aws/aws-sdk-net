@@ -74,6 +74,46 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  DeleteIdentityPolicy
+
+
+        /// <summary>
+        /// Deletes the specified sending authorization policy for the given identity (email address
+        /// or domain). This API returns successfully even if a policy with the specified name
+        /// does not exist.
+        /// 
+        ///  <note>This API is for the identity owner only. If you have not verified the identity,
+        /// this API will return an error.</note> 
+        /// <para>
+        /// Sending authorization is a feature that enables an identity owner to authorize other
+        /// senders to use its identities. For information about using sending authorization,
+        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIdentityPolicy service method, as returned by SimpleEmailService.</returns>
+        DeleteIdentityPolicyResponse DeleteIdentityPolicy(DeleteIdentityPolicyRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIdentityPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteIdentityPolicyResponse> DeleteIdentityPolicyAsync(DeleteIdentityPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteVerifiedEmailAddress
 
 
@@ -125,7 +165,8 @@ namespace Amazon.SimpleEmail
         /// verified the DKIM tokens published in the domain's DNS. This information is only returned
         /// for domain name identities, not for email addresses.</li> </ul> 
         /// <para>
-        /// This action is throttled at one request per second.
+        /// This action is throttled at one request per second and can only get DKIM attributes
+        /// for up to 100 identities at a time.
         /// </para>
         ///  
         /// <para>
@@ -161,7 +202,8 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// This action is throttled at one request per second.
+        /// This action is throttled at one request per second and can only get notification attributes
+        /// for up to 100 identities at a time.
         /// </para>
         ///  
         /// <para>
@@ -188,6 +230,46 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  GetIdentityPolicies
+
+
+        /// <summary>
+        /// Returns the requested sending authorization policies for the given identity (email
+        /// address or domain). The policies are returned as a map of policy names to policy contents.
+        /// You can retrieve a maximum of 20 policies at a time.
+        /// 
+        ///  <note>This API is for the identity owner only. If you have not verified the identity,
+        /// this API will return an error.</note> 
+        /// <para>
+        /// Sending authorization is a feature that enables an identity owner to authorize other
+        /// senders to use its identities. For information about using sending authorization,
+        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityPolicies service method.</param>
+        /// 
+        /// <returns>The response from the GetIdentityPolicies service method, as returned by SimpleEmailService.</returns>
+        GetIdentityPoliciesResponse GetIdentityPolicies(GetIdentityPoliciesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdentityPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityPolicies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetIdentityPoliciesResponse> GetIdentityPoliciesAsync(GetIdentityPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetIdentityVerificationAttributes
 
 
@@ -197,7 +279,8 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// This action is throttled at one request per second.
+        /// This action is throttled at one request per second and can only get verification attributes
+        /// for up to 100 identities at a time.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityVerificationAttributes service method.</param>
@@ -414,6 +497,46 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  ListIdentityPolicies
+
+
+        /// <summary>
+        /// Returns a list of sending authorization policies that are attached to the given identity
+        /// (email address or domain). This API returns only a list. If you want the actual policy
+        /// content, you can use <code>GetIdentityPolicies</code>.
+        /// 
+        ///  <note>This API is for the identity owner only. If you have not verified the identity,
+        /// this API will return an error.</note> 
+        /// <para>
+        /// Sending authorization is a feature that enables an identity owner to authorize other
+        /// senders to use its identities. For information about using sending authorization,
+        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentityPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListIdentityPolicies service method, as returned by SimpleEmailService.</returns>
+        ListIdentityPoliciesResponse ListIdentityPolicies(ListIdentityPoliciesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIdentityPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentityPolicies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListIdentityPoliciesResponse> ListIdentityPoliciesAsync(ListIdentityPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListVerifiedEmailAddresses
 
 
@@ -479,6 +602,49 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  PutIdentityPolicy
+
+
+        /// <summary>
+        /// Adds or updates a sending authorization policy for the specified identity (email address
+        /// or domain).
+        /// 
+        ///  <note>This API is for the identity owner only. If you have not verified the identity,
+        /// this API will return an error.</note> 
+        /// <para>
+        /// Sending authorization is a feature that enables an identity owner to authorize other
+        /// senders to use its identities. For information about using sending authorization,
+        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutIdentityPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutIdentityPolicy service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidPolicyException">
+        /// Indicates that the provided policy is invalid. Check the error stack for more information
+        /// about what caused the error.
+        /// </exception>
+        PutIdentityPolicyResponse PutIdentityPolicy(PutIdentityPolicyRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutIdentityPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutIdentityPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutIdentityPolicyResponse> PutIdentityPolicyAsync(PutIdentityPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  SendEmail
 
 
@@ -486,29 +652,25 @@ namespace Amazon.SimpleEmail
         /// Composes an email message based on input data, and then immediately queues the message
         /// for sending. 
         /// 
-        ///  <important> You can only send email from verified email addresses and domains. If
-        /// you have not requested production access to Amazon SES, you must also verify every
-        /// recipient email address except for the recipients provided by the Amazon SES mailbox
-        /// simulator. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
-        /// SES Developer Guide</a>. </important> 
-        /// <para>
-        /// The total size of the message cannot exceed 10 MB.
-        /// </para>
         ///  
         /// <para>
-        /// Amazon SES has a limit on the total number of recipients per message: The combined
-        /// number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send
-        /// an email message to a larger audience, you can divide your recipient list into groups
-        /// of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.
-        /// 
+        /// There are several important points to know about <code>SendEmail</code>:
         /// </para>
-        ///  
-        /// <para>
-        /// For every message that you send, the total number of recipients (To:, CC: and BCC:)
-        /// is counted against your <i>sending quota</i> - the maximum number of emails you can
-        /// send in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-        /// SES Developer Guide</a>. 
-        /// </para>
+        ///  <ul> <li>You can only send email from verified email addresses and domains; otherwise,
+        /// you will get an "Email address not verified" error. If your account is still in the
+        /// Amazon SES sandbox, you must also verify every recipient email address except for
+        /// the recipients provided by the Amazon SES mailbox simulator. For more information,
+        /// go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+        /// SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10 MB.
+        /// This includes any attachments that are part of the message.</li> <li>Amazon SES has
+        /// a limit on the total number of recipients per message. The combined number of To:,
+        /// CC: and BCC: email addresses cannot exceed 50. If you need to send an email message
+        /// to a larger audience, you can divide your recipient list into groups of 50 or fewer,
+        /// and then call Amazon SES repeatedly to send the message to each group.</li> <li>For
+        /// every message that you send, the total number of recipients (To:, CC: and BCC:) is
+        /// counted against your sending quota - the maximum number of emails you can send in
+        /// a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
+        /// SES Developer Guide</a>.</li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendEmail service method.</param>
         /// 
@@ -541,35 +703,42 @@ namespace Amazon.SimpleEmail
         /// action is useful for sending multipart MIME emails. The raw text of the message must
         /// comply with Internet email standards; otherwise, the message cannot be sent. 
         /// 
-        ///  <important> You can only send email from verified email addresses and domains. If
-        /// you have not requested production access to Amazon SES, you must also verify every
-        /// recipient email address except for the recipients provided by the Amazon SES mailbox
-        /// simulator. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
-        /// SES Developer Guide</a>. </important> 
-        /// <para>
-        /// The total size of the message cannot exceed 10 MB. This includes any attachments that
-        /// are part of the message.
-        /// </para>
         ///  
         /// <para>
-        /// Amazon SES has a limit on the total number of recipients per message: The combined
-        /// number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send
-        /// an email message to a larger audience, you can divide your recipient list into groups
-        /// of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.
-        /// 
+        /// There are several important points to know about <code>SendRawEmail</code>:
         /// </para>
-        ///  
-        /// <para>
-        /// The To:, CC:, and BCC: headers in the raw message can contain a group list. Note that
-        /// each recipient in a group list counts towards the 50-recipient limit. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For every message that you send, the total number of recipients (To:, CC: and BCC:)
-        /// is counted against your <i>sending quota</i> - the maximum number of emails you can
-        /// send in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-        /// SES Developer Guide</a>. 
-        /// </para>
+        ///  <ul> <li>You can only send email from verified email addresses and domains; otherwise,
+        /// you will get an "Email address not verified" error. If your account is still in the
+        /// Amazon SES sandbox, you must also verify every recipient email address except for
+        /// the recipients provided by the Amazon SES mailbox simulator. For more information,
+        /// go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+        /// SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10 MB.
+        /// This includes any attachments that are part of the message.</li> <li>Amazon SES has
+        /// a limit on the total number of recipients per message. The combined number of To:,
+        /// CC: and BCC: email addresses cannot exceed 50. If you need to send an email message
+        /// to a larger audience, you can divide your recipient list into groups of 50 or fewer,
+        /// and then call Amazon SES repeatedly to send the message to each group.</li> <li>The
+        /// To:, CC:, and BCC: headers in the raw message can contain a group list. Note that
+        /// each recipient in a group list counts towards the 50-recipient limit.</li> <li>For
+        /// every message that you send, the total number of recipients (To:, CC: and BCC:) is
+        /// counted against your sending quota - the maximum number of emails you can send in
+        /// a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
+        /// SES Developer Guide</a>.</li> <li>If you are using sending authorization to send on
+        /// behalf of another user, <code>SendRawEmail</code> enables you to specify the cross-account
+        /// identity for the email's "Source," "From," and "Return-Path" parameters in one of
+        /// two ways: you can pass optional parameters <code>SourceArn</code>, <code>FromArn</code>,
+        /// and/or <code>ReturnPathArn</code> to the API, or you can include the following X-headers
+        /// in the header of your raw email: <ul> <li><code>X-SES-SOURCE-ARN</code></li> <li><code>X-SES-FROM-ARN</code></li>
+        /// <li><code>X-SES-RETURN-PATH-ARN</code></li> </ul> <important>Do not include these
+        /// X-headers in the DKIM signature, because they are removed by Amazon SES before sending
+        /// the email.</important> For the most common sending authorization use case, we recommend
+        /// that you specify the <code>SourceIdentityArn</code> and do not specify either the
+        /// <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code>. (The same note
+        /// applies to the corresponding X-headers.) If you only specify the <code>SourceIdentityArn</code>,
+        /// Amazon SES will simply set the "From" address and the "Return Path" address to the
+        /// identity specified in <code>SourceIdentityArn</code>. For more information about sending
+        /// authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// SES Developer Guide</a>.</li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendRawEmail service method.</param>
         /// 

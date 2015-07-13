@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package> 
+  <metadata> 
+    <id>AWSSDK.CodePipeline</id>
+    <title>AWSSDK - CodePipeline Service</title>
+    <version>3.0.0.0-preview</version> 
+    <authors>Amazon Web Services</authors>
+    <description>CodePipeline Service</description> 
+    <language>en-US</language>
+    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
+    <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
+    <tags>AWS Amazon cloud CodePipeline</tags>
+    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+    <dependencies>
+      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
+      <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
+      </group>
+      <group>
+        <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
+      </group>
+    </dependencies>
+  </metadata> 
+  <files>
+
+    <file src="..\..\..\nuget-content\install.ps1" target="tools\net35" />
+    <file src="..\..\..\nuget-content\install.ps1" target="tools\net45" />
+
+    <file src=".\bin\Release\net35\AWSSDK.CodePipeline.dll" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.CodePipeline.xml" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.CodePipeline.pdb" target="lib\net35" />
+
+    <file src=".\bin\Release\net45\AWSSDK.CodePipeline.dll" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.CodePipeline.xml" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.CodePipeline.pdb" target="lib\net45" />
+
+    <file src=".\bin\Release\pcl\AWSSDK.CodePipeline.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.CodePipeline.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.CodePipeline.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+  </files>
+</package>

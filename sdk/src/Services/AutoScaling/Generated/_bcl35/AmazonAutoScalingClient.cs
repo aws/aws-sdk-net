@@ -434,7 +434,7 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// If you exceed your maximum limit of Auto Scaling groups, which by default is 20 per
-        /// region, the call fails. For information about viewing and updating these limits, see
+        /// region, the call fails. For information about viewing and updating this limit, see
         /// <a>DescribeAccountLimits</a>.
         /// </para>
         ///  
@@ -507,7 +507,7 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// If you exceed your maximum limit of launch configurations, which by default is 100
-        /// per region, the call fails. For information about viewing and updating these limits,
+        /// per region, the call fails. For information about viewing and updating this limit,
         /// see <a>DescribeAccountLimits</a>.
         /// </para>
         ///  
@@ -2730,6 +2730,12 @@ namespace Amazon.AutoScaling
         /// Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto
         /// Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// If you exceed your maximum limit of lifecycle hooks, which by default is 50 per region,
+        /// the call fails. For information about updating this limit, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
+        /// Service Limits</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleHook service method.</param>
         /// 
@@ -2862,6 +2868,13 @@ namespace Amazon.AutoScaling
         /// use the existing policy name and set the parameters you want to change. Any existing
         /// parameter not changed in an update to an existing policy is not changed in this update
         /// request.
+        /// 
+        ///  
+        /// <para>
+        /// If you exceed your maximum limit of step adjustments, which by default is 20 per region,
+        /// the call fails. For information about updating this limit, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
+        /// Service Limits</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutScalingPolicy service method.</param>
         /// 

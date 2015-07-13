@@ -34,7 +34,9 @@ namespace Amazon.AutoScaling.Model
     public partial class ExecutePolicyRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
+        private double? _breachThreshold;
         private bool? _honorCooldown;
+        private double? _metricValue;
         private string _policyName;
 
         /// <summary>
@@ -56,16 +58,38 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HonorCooldown. 
+        /// Gets and sets the property BreachThreshold. 
         /// <para>
-        /// Set to <code>True</code> if you want Auto Scaling to wait for the cooldown period
-        /// associated with the Auto Scaling group to complete before executing the policy.
+        /// The breach threshold for the alarm.
         /// </para>
         ///  
         /// <para>
-        /// Set to <code>False</code> if you want Auto Scaling to circumvent the cooldown period
-        /// associated with the Auto Scaling group and execute the policy before the cooldown
-        /// period ends.
+        /// This parameter is required if the policy type is <code>StepScaling</code> and not
+        /// supported otherwise.
+        /// </para>
+        /// </summary>
+        public double BreachThreshold
+        {
+            get { return this._breachThreshold.GetValueOrDefault(); }
+            set { this._breachThreshold = value; }
+        }
+
+        // Check to see if BreachThreshold property is set
+        internal bool IsSetBreachThreshold()
+        {
+            return this._breachThreshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HonorCooldown. 
+        /// <para>
+        /// If this parameter is true, Auto Scaling waits for the cooldown period to complete
+        /// before executing the policy. Otherwise, Auto Scaling executes the policy without waiting
+        /// for the cooldown period to complete.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is not supported if the policy type is <code>StepScaling</code>.
         /// </para>
         ///  
         /// <para>
@@ -83,6 +107,37 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetHonorCooldown()
         {
             return this._honorCooldown.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricValue. 
+        /// <para>
+        /// The metric value to compare to <code>BreachThreshold</code>. This enables you to execute
+        /// a policy of type <code>StepScaling</code> and determine which step adjustment to use.
+        /// For example, if the breach threshold is 50 and you want to use a step adjustment with
+        /// a lower bound of 0 and an upper bound of 10, you can set the metric value to 59.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a metric value that doesn't correspond to a step adjustment for the
+        /// policy, the call returns an error.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is required if the policy type is <code>StepScaling</code> and not
+        /// supported otherwise.
+        /// </para>
+        /// </summary>
+        public double MetricValue
+        {
+            get { return this._metricValue.GetValueOrDefault(); }
+            set { this._metricValue = value; }
+        }
+
+        // Check to see if MetricValue property is set
+        internal bool IsSetMetricValue()
+        {
+            return this._metricValue.HasValue; 
         }
 
         /// <summary>

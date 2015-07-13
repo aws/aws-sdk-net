@@ -44,7 +44,7 @@ namespace Amazon.ConfigService
     /// between the resources. An AWS resource can be an Amazon Compute Cloud (Amazon EC2)
     /// instance, an Elastic Block Store (EBS) volume, an Elastic network Interface (ENI),
     /// or a security group. For a complete list of resources currently supported by AWS Config,
-    /// see <a href="http://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html">Supported
+    /// see <a href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
     /// AWS Resources</a>.
     /// </para>
     ///  
@@ -665,7 +665,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Starts recording configurations of all the resources associated with the account.
+        /// Starts recording configurations of the AWS resources you have selected to record in
+        /// your AWS account.
         /// 
         ///  
         /// <para>
@@ -725,7 +726,8 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Stops recording configurations of all the resources associated with the account.
+        /// Stops recording configurations of the AWS resources you have selected to record in
+        /// your AWS account.
         /// </summary>
         /// <param name="configurationRecorderName">The name of the recorder object that records each configuration change made to the resources.</param>
         /// <param name="cancellationToken">

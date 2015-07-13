@@ -123,7 +123,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SourceAccount. 
         /// <para>
-        /// The AWS account ID (without a hyphen) of the source owner. If the <code>SourceArn</code>
+        /// The AWS account ID (without a hyphen) of the source owner. For example, if the <code>SourceArn</code>
         /// identifies a bucket, then this is the bucket owner's account ID. You can use this
         /// additional condition to ensure the bucket you specify is owned by a specific account
         /// (it is possible the bucket owner deleted the bucket and some other AWS account created

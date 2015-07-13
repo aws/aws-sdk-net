@@ -115,8 +115,8 @@ namespace Amazon.CognitoSync
         /// 
         ///  
         /// <para>
-        /// DescribeIdentityPoolUsage can only be called with developer credentials. You cannot
-        /// make this API call with the temporary user credentials provided by Cognito Identity.
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
         /// </para>
         /// </summary>
         /// <param name="identityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
@@ -208,6 +208,12 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Gets the configuration settings of an identity pool.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
+        /// </para>
         /// </summary>
         /// <param name="identityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</param>
         /// <param name="cancellationToken">

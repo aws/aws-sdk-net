@@ -581,6 +581,9 @@ namespace Amazon.CognitoIdentity
         /// </param>
         /// 
         /// <returns>The response from the SetIdentityPoolRoles service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ConcurrentModificationException">
+        /// Thrown if there are parallel requests to modify a resource.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>

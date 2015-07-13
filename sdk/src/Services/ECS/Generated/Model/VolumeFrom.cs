@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// 
+    /// Details on a data volume from another container.
     /// </summary>
     public partial class VolumeFrom
     {

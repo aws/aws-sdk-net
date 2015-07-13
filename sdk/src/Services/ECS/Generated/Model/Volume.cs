@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// 
+    /// A data volume used in a task definition.
     /// </summary>
     public partial class Volume
     {

@@ -35,7 +35,7 @@ namespace Amazon.CognitoSync.Model
     /// 
     ///  
     /// <para>
-    /// DeleteDataset can be called with temporary user credentials provided by Cognito Identity
+    /// This API can be called with temporary user credentials provided by Cognito Identity
     /// or with developer credentials.
     /// </para>
     /// </summary>

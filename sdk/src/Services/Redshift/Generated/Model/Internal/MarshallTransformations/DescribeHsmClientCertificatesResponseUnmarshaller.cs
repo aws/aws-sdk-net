@@ -115,6 +115,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 return new HsmClientCertificateNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTagFault"))
+            {
+                return new InvalidTagException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static DescribeHsmClientCertificatesResponseUnmarshaller _instance = new DescribeHsmClientCertificatesResponseUnmarshaller();        

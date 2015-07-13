@@ -241,6 +241,22 @@ namespace Amazon.Redshift
 
         #endregion
                 
+        #region  CreateSnapshotCopyGrant
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSnapshotCopyGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshotCopyGrant operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateSnapshotCopyGrantResponse> CreateSnapshotCopyGrantAsync(CreateSnapshotCopyGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateTags
 
 
@@ -385,6 +401,22 @@ namespace Amazon.Redshift
 
         #endregion
                 
+        #region  DeleteSnapshotCopyGrant
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSnapshotCopyGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshotCopyGrant operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteSnapshotCopyGrantResponse> DeleteSnapshotCopyGrantAsync(DeleteSnapshotCopyGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteTags
 
 
@@ -412,7 +444,7 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+        ///  For more information about parameters and parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
         /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// 
         /// </para>
@@ -437,6 +469,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeClusterParameterGroups service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupNotFoundException">
         /// The parameter group name does not refer to an existing parameter group.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
         /// </exception>
         Task<DescribeClusterParameterGroupsResponse> DescribeClusterParameterGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -502,6 +537,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         Task<DescribeClustersResponse> DescribeClustersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -554,6 +592,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
         /// The cluster security group name does not refer to an existing cluster security group.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         Task<DescribeClusterSecurityGroupsResponse> DescribeClusterSecurityGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -602,6 +643,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         Task<DescribeClusterSnapshotsResponse> DescribeClusterSnapshotsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -647,6 +691,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeClusterSubnetGroups service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException">
         /// The cluster subnet group name does not refer to an existing cluster subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
         /// </exception>
         Task<DescribeClusterSubnetGroupsResponse> DescribeClusterSubnetGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -832,6 +879,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.HsmClientCertificateNotFoundException">
         /// There is no Amazon Redshift HSM client certificate with the specified identifier.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         Task<DescribeHsmClientCertificatesResponse> DescribeHsmClientCertificatesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -877,6 +927,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeHsmConfigurations service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.HsmConfigurationNotFoundException">
         /// There is no Amazon Redshift HSM configuration with the specified identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
         /// </exception>
         Task<DescribeHsmConfigurationsResponse> DescribeHsmConfigurationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -957,7 +1010,7 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
+        ///  For more information about reserved node offerings, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
         /// Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
         /// </para>
         /// </summary>
@@ -968,6 +1021,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeReservedNodeOfferings service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ReservedNodeOfferingNotFoundException">
         /// Specified offering does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         Task<DescribeReservedNodeOfferingsResponse> DescribeReservedNodeOfferingsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1028,6 +1084,22 @@ namespace Amazon.Redshift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeResizeResponse> DescribeResizeAsync(DescribeResizeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeSnapshotCopyGrants
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSnapshotCopyGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotCopyGrants operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeSnapshotCopyGrantsResponse> DescribeSnapshotCopyGrantsAsync(DescribeSnapshotCopyGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

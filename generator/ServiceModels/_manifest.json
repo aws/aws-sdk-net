@@ -214,6 +214,16 @@
             "service-url": "https://logs.us-east-1.amazonaws.com",
             "synopsis": "Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms."
         },
+		{
+			"active" : true,
+			
+			"model" : "codecommit",
+			"base-name" : "CodeCommit",
+			"region-lookup-name" : "codecommit",
+			"authentication-service-name" : "codecommit",
+            "service-url": "http://codecommit.us-east-1.amazonaws.com",
+            "mobile-platforms" : []
+		},
         {
             "active": true,
 
@@ -223,6 +233,16 @@
             "authentication-service-name": "codedeploy",
             "service-url": "http://codedeploy.us-east-1.amazonaws.com",
             "synopsis": "AWS CodeDeploy is a service that automates code deployments. AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during deployment, and handles the complexity of updating your applications."
+        },
+		{
+            "active": true,
+
+            "model": "codepipeline",
+            "base-name": "CodePipeline",
+            "region-lookup-name": "codepipeline",
+            "authentication-service-name": "codepipeline",
+            "service-url": "http://codepipeline.us-east-1.amazonaws.com",
+            "mobile-platforms": [ ]
         },
         {
             "active": true,

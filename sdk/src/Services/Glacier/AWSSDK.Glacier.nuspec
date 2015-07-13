@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Glacier</id>
     <title>AWSSDK - Amazon Glacier</title>
-    <version>3.0.1.4-preview</version> 
+    <version>3.0.2.0-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.</description> 
     <language>en-US</language>

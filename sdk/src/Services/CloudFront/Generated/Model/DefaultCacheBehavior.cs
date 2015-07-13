@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2014-11-06.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2015-04-17.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,7 +35,9 @@ namespace Amazon.CloudFront.Model
     public partial class DefaultCacheBehavior
     {
         private AllowedMethods _allowedMethods;
+        private long? _defaultTTL;
         private ForwardedValues _forwardedValues;
+        private long? _maxTTL;
         private long? _minTTL;
         private bool? _smoothStreaming;
         private string _targetOriginId;
@@ -58,6 +60,27 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DefaultTTL. If you don't configure your origin to add a
+        /// Cache-Control max-age directive or an Expires header, DefaultTTL is the default amount
+        /// of time (in seconds) that an object is in a CloudFront cache before CloudFront forwards
+        /// another request to your origin to determine whether the object has been updated. The
+        /// value that you specify applies only when your origin does not add HTTP headers such
+        /// as Cache-Control max-age, Cache-Control s-maxage, and Expires to objects. You can
+        /// specify a value from 0 to 3,153,600,000 seconds (100 years).
+        /// </summary>
+        public long DefaultTTL
+        {
+            get { return this._defaultTTL.GetValueOrDefault(); }
+            set { this._defaultTTL = value; }
+        }
+
+        // Check to see if DefaultTTL property is set
+        internal bool IsSetDefaultTTL()
+        {
+            return this._defaultTTL.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ForwardedValues. A complex type that specifies how CloudFront
         /// handles query strings, cookies and headers.
         /// </summary>
@@ -71,6 +94,26 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetForwardedValues()
         {
             return this._forwardedValues != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxTTL. The maximum amount of time (in seconds) that an
+        /// object is in a CloudFront cache before CloudFront forwards another request to your
+        /// origin to determine whether the object has been updated. The value that you specify
+        /// applies only when your origin adds HTTP headers such as Cache-Control max-age, Cache-Control
+        /// s-maxage, and Expires to objects. You can specify a value from 0 to 3,153,600,000
+        /// seconds (100 years).
+        /// </summary>
+        public long MaxTTL
+        {
+            get { return this._maxTTL.GetValueOrDefault(); }
+            set { this._maxTTL = value; }
+        }
+
+        // Check to see if MaxTTL property is set
+        internal bool IsSetMaxTTL()
+        {
+            return this._maxTTL.HasValue; 
         }
 
         /// <summary>

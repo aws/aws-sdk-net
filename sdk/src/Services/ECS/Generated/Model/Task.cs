@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// 
+    /// Details on a task in a cluster.
     /// </summary>
     public partial class Task
     {

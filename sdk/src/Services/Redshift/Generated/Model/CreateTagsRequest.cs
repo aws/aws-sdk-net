@@ -70,12 +70,11 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property Tags. 
         /// <para>
         ///  One or more name/value pairs to add as tags to the specified resource. Each tag name
-        /// is passed in with the parameter <code>tag-key</code> and the corresponding value is
-        /// passed in with the parameter <code>tag-value</code>. The <code>tag-key</code> and
-        /// <code>tag-value</code> parameters are separated by a colon (:). Separate multiple
-        /// tags with a space. For example, <code>--tags "tag-key"="owner":"tag-value"="admin"
-        /// "tag-key"="environment":"tag-value"="test" "tag-key"="version":"tag-value"="1.0"</code>.
-        /// 
+        /// is passed in with the parameter <code>Key</code> and the corresponding value is passed
+        /// in with the parameter <code>Value</code>. The <code>Key</code> and <code>Value</code>
+        /// parameters are separated by a comma (,). Separate multiple tags with a space. For
+        /// example, <code>--tags "Key"="owner","Value"="admin" "Key"="environment","Value"="test"
+        /// "Key"="version","Value"="1.0"</code>. 
         /// </para>
         /// </summary>
         public List<Tag> Tags

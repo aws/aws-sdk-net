@@ -79,6 +79,15 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetPolicyTypes())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.PolicyTypes)
+                    {
+                        request.Parameters.Add("PolicyTypes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
             }
             return request;
         }

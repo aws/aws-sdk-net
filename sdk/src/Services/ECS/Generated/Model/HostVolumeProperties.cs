@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// 
+    /// Details on a container instance host volume.
     /// </summary>
     public partial class HostVolumeProperties
     {

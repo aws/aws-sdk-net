@@ -1392,6 +1392,37 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DeleteSSHPublicKey
+
+        internal DeleteSSHPublicKeyResponse DeleteSSHPublicKey(DeleteSSHPublicKeyRequest request)
+        {
+            var marshaller = new DeleteSSHPublicKeyRequestMarshaller();
+            var unmarshaller = DeleteSSHPublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSSHPublicKeyRequest,DeleteSSHPublicKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSSHPublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteSSHPublicKeyResponse> DeleteSSHPublicKeyAsync(DeleteSSHPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteSSHPublicKeyRequestMarshaller();
+            var unmarshaller = DeleteSSHPublicKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSSHPublicKeyRequest,DeleteSSHPublicKeyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteUser
 
         internal DeleteUserResponse DeleteUser(DeleteUserRequest request)
@@ -2248,6 +2279,37 @@ namespace Amazon.IdentityManagement
             var unmarshaller = GetServerCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetServerCertificateRequest,GetServerCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSSHPublicKey
+
+        internal GetSSHPublicKeyResponse GetSSHPublicKey(GetSSHPublicKeyRequest request)
+        {
+            var marshaller = new GetSSHPublicKeyRequestMarshaller();
+            var unmarshaller = GetSSHPublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<GetSSHPublicKeyRequest,GetSSHPublicKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSSHPublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetSSHPublicKeyResponse> GetSSHPublicKeyAsync(GetSSHPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetSSHPublicKeyRequestMarshaller();
+            var unmarshaller = GetSSHPublicKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSSHPublicKeyRequest,GetSSHPublicKeyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3289,6 +3351,37 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  ListSSHPublicKeys
+
+        internal ListSSHPublicKeysResponse ListSSHPublicKeys(ListSSHPublicKeysRequest request)
+        {
+            var marshaller = new ListSSHPublicKeysRequestMarshaller();
+            var unmarshaller = ListSSHPublicKeysResponseUnmarshaller.Instance;
+
+            return Invoke<ListSSHPublicKeysRequest,ListSSHPublicKeysResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSSHPublicKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSSHPublicKeys operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListSSHPublicKeysResponse> ListSSHPublicKeysAsync(ListSSHPublicKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListSSHPublicKeysRequestMarshaller();
+            var unmarshaller = ListSSHPublicKeysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSSHPublicKeysRequest,ListSSHPublicKeysResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListUserPolicies
 
         internal ListUserPoliciesResponse ListUserPolicies(ListUserPoliciesRequest request)
@@ -4010,6 +4103,37 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  UpdateSSHPublicKey
+
+        internal UpdateSSHPublicKeyResponse UpdateSSHPublicKey(UpdateSSHPublicKeyRequest request)
+        {
+            var marshaller = new UpdateSSHPublicKeyRequestMarshaller();
+            var unmarshaller = UpdateSSHPublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSSHPublicKeyRequest,UpdateSSHPublicKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSSHPublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateSSHPublicKeyResponse> UpdateSSHPublicKeyAsync(UpdateSSHPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateSSHPublicKeyRequestMarshaller();
+            var unmarshaller = UpdateSSHPublicKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSSHPublicKeyRequest,UpdateSSHPublicKeyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateUser
 
         internal UpdateUserResponse UpdateUser(UpdateUserRequest request)
@@ -4098,6 +4222,37 @@ namespace Amazon.IdentityManagement
             var unmarshaller = UploadSigningCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<UploadSigningCertificateRequest,UploadSigningCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UploadSSHPublicKey
+
+        internal UploadSSHPublicKeyResponse UploadSSHPublicKey(UploadSSHPublicKeyRequest request)
+        {
+            var marshaller = new UploadSSHPublicKeyRequestMarshaller();
+            var unmarshaller = UploadSSHPublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<UploadSSHPublicKeyRequest,UploadSSHPublicKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UploadSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UploadSSHPublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UploadSSHPublicKeyResponse> UploadSSHPublicKeyAsync(UploadSSHPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UploadSSHPublicKeyRequestMarshaller();
+            var unmarshaller = UploadSSHPublicKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UploadSSHPublicKeyRequest,UploadSSHPublicKeyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -82,7 +82,8 @@ namespace Amazon.EC2.Model
         /// | <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Windows</code> | <code>Windows
         /// (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows
         /// with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code>
-        /// | <code>Windows with SQL Server Web (Amazon VPC)</code>).
+        /// | <code>Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server
+        /// Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

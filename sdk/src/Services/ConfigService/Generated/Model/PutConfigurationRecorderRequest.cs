@@ -29,17 +29,23 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the PutConfigurationRecorder operation.
-    /// Creates a new configuration recorder to record the resource configurations. 
+    /// Creates a new configuration recorder to record the selected resource configurations.
+    /// 
     /// 
     ///  
     /// <para>
-    /// You can use this action to change the role (<code>roleARN</code>) of an existing recorder.
-    /// To change the role, call the action on the existing configuration recorder and specify
-    /// a role.
+    /// You can use this action to change the role <code>roleARN</code> and/or the <code>recordingGroup</code>
+    /// of an existing recorder. To change the role, call the action on the existing configuration
+    /// recorder and specify a role.
     /// </para>
     ///  <note> 
     /// <para>
-    /// Currently, you can specify only one configuration recorder per account. 
+    /// Currently, you can specify only one configuration recorder per account.
+    /// </para>
+    ///  
+    /// <para>
+    /// If <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b> parameter
+    /// specified, the default is to record all supported resource types.
     /// </para>
     ///  </note>
     /// </summary>

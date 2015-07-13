@@ -60,6 +60,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Glacier")]
+        public void AddTagsToVaultMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddTagsToVault");
+
+            var request = InstantiateClassGenerator.Execute<AddTagsToVaultRequest>();
+            var marshaller = new AddTagsToVaultRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("AddTagsToVault", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Glacier")]
         public void CompleteMultipartUploadMarshallTest()
         {
             var operation = service_model.FindOperation("CompleteMultipartUpload");
@@ -557,6 +574,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Glacier")]
+        public void ListTagsForVaultMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForVault");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForVaultRequest>();
+            var marshaller = new ListTagsForVaultRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("ListTagsForVault", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListTagsForVaultResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Glacier")]
         public void ListVaultsMarshallTest()
         {
             var operation = service_model.FindOperation("ListVaults");
@@ -582,6 +631,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = unmarshaller.Unmarshall(context)
                 as ListVaultsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Glacier")]
+        public void RemoveTagsFromVaultMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveTagsFromVault");
+
+            var request = InstantiateClassGenerator.Execute<RemoveTagsFromVaultRequest>();
+            var marshaller = new RemoveTagsFromVaultRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("RemoveTagsFromVault", request, internalRequest, service_model);            
+
         }
 
         
