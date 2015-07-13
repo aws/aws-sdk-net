@@ -14,6 +14,9 @@
 **/Temp/
 **/NuGet.exe
 **/buildlogs/
+**/.vs/
+
+**/project.lock.json
 
 sdk/packages/**
 sdk/test/PCLTests/AndroidTests/packages/**
