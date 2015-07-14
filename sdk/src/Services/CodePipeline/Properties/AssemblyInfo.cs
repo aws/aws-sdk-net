@@ -11,12 +11,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - CodePipeline Service. CodePipeline Service")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - CodePipeline Service. CodePipeline Service")]
-#elif (WIN_RT && WINDOWS_PHONE)
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Portable)- CodePipeline Service. CodePipeline Service")]
-#elif WIN_RT
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows RT) - CodePipeline Service. CodePipeline Service")]
-#elif WINDOWS_PHONE
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows Phone 8)- CodePipeline Service. CodePipeline Service")]
+#elif PCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Core Runtime")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

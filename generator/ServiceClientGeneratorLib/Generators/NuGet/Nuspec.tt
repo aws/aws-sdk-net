@@ -17,8 +17,7 @@
     <tags>AWS Amazon cloud <#=this.Session["BaseName"]#></tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="portable-wpa+netcore45">
-        <dependency id="Microsoft.Net.Http" version="2.2.29" />
+      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
 <#
     foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
     {
@@ -27,13 +26,54 @@
 <#
     }
 #>
+<#
+	if(this.Session.ContainsKey("NugetDependencies"))
+    {
+		var dependencies = (Dictionary<string,List<Dependency>>)this.Session["NugetDependencies"];
+		if(dependencies.ContainsKey("PCL"))
+		{
+			foreach(var dependency in dependencies["PCL"])
+			{
+#>
+		<dependency id="<#=dependency.Name#>" version="<#=dependency.Version#>" />
+<#		
+			}
+		}
+	}	
+#>
       </group>
+<#
+	if(this.Session.ContainsKey("NugetDependencies"))
+    {
+		var dependencies = (Dictionary<string,List<Dependency>>)this.Session["NugetDependencies"];
+		foreach(var dependencyList in dependencies)
+		{
+			if(dependencyList.Key.Equals("PCL"))
+				continue;
+
+			var projectFileConfigurations = (IEnumerable<ProjectFileConfiguration>)this.Session["ProjectFileConfigurations"];
+			var targetFramework = projectFileConfigurations.Single(p=>p.Name.Equals(dependencyList.Key)).NuGetTargetPlatform;
+#>			
+      <group targetFramework="<#=targetFramework#>">
+<#
+				foreach(var dependency in dependencyList.Value)
+				{
+	#>
+			<dependency id="<#=dependency.Name#>" version="<#=dependency.Version#>" />
+	<#		
+				}
+#>
+      </group>
+<#
+		}
+	}	
+#>
       <group>
 <#
     foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
     {
 #>
-      <dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
+		<dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
 <#
     }
 #>
@@ -47,11 +87,24 @@
 
     <file src=".\bin\Release\net35\\<#=this.Session["AssemblyName"]#>.dll" target="lib\net35" />
     <file src=".\bin\Release\net35\\<#=this.Session["AssemblyName"]#>.xml" target="lib\net35" />
+	<file src=".\bin\Release\net35\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\net35" />
 
     <file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.xml" target="lib\net45" />
-	
-	<file src=".\bin\Release\portable\\<#=this.Session["AssemblyName"]#>.dll" target="lib\portable-wpa+netcore45" />
-	<file src=".\bin\Release\portable\\<#=this.Session["AssemblyName"]#>.xml" target="lib\portable-wpa+netcore45" />
+	<file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\net45" />
+
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+	<file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+<#  
+    if(((string)this.Session["AssemblyName"]).Equals("AWSSDK.MobileAnalytics",StringComparison.CurrentCultureIgnoreCase))
+    {
+#>
+    <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.MobileAnalytics.dll" target="lib\Xamarin.iOS10" />
+    <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.MobileAnalytics.xml" target="lib\Xamarin.iOS10" />
+    <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.MobileAnalytics.pdb" target="lib\Xamarin.iOS10" />
+<#
+    }
+#>
   </files>
 </package>

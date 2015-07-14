@@ -30,6 +30,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
+<#
+    if(this.Session.ContainsKey("SupressWarnings"))
+    {
+#>
+	<NoWarn><#=this.Session["SupressWarnings"]#></NoWarn>
+<#
+    }
+#>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -40,6 +48,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
+<#
+    if(this.Session.ContainsKey("SupressWarnings"))
+    {
+#>
+	<NoWarn><#=this.Session["SupressWarnings"]#></NoWarn>
+<#
+    }
+#>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
   </PropertyGroup>
   <PropertyGroup>
@@ -48,7 +64,20 @@
   <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
+<#
+    if(this.Session.ContainsKey("KeyFilePath"))
+    {
+#>
+		<AssemblyOriginatorKeyFile><#=this.Session["KeyFilePath"]#></AssemblyOriginatorKeyFile>
+<#
+    }
+	else
+    {
+#>
         <AssemblyOriginatorKeyFile>..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+<#
+    }
+#>
       </PropertyGroup>
     </When>
     <Otherwise>
@@ -66,6 +95,21 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
 <#
+
+	if(this.Session.ContainsKey("ReferenceDependencies"))
+    {
+		foreach(var dependency in (List<Dependency>)this.Session["ReferenceDependencies"])
+		{
+#>
+    
+    <Reference Include="<#=dependency.Name#>">
+      <HintPath><#=this.Session["NugetPackagesLocation"]#><#=dependency.HintPath#></HintPath>
+      <Private>True</Private>
+    </Reference>
+<#   
+		}
+	}
+
     object systemReferences;
     if(this.Session.TryGetValue("SystemReferences", out systemReferences) && systemReferences is IList<string>)
     {
@@ -141,7 +185,23 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
+<#
+	if(IsDependencyPresentFor35("System.Data.SQLite"))
+	{
+#>
+    <Error Condition="!Exists('..\..\..\packages\System.Data.SQLite.Core.1.0.97.0\build\net20\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\System.Data.SQLite.Core.1.0.97.0\build\net20\System.Data.SQLite.Core.targets'))" />
+<#
+	}
+#>
   </Target>
+<#
+	if(IsDependencyPresentFor35("System.Data.SQLite"))
+	{
+#>
+  <Import Project="..\..\..\packages\System.Data.SQLite.Core.1.0.97.0\build\net20\System.Data.SQLite.Core.targets" Condition="Exists('..\..\..\packages\System.Data.SQLite.Core.1.0.97.0\build\net20\System.Data.SQLite.Core.targets')" />
+<#
+	}
+#>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -150,3 +210,16 @@
   </Target>
   -->
 </Project>
+<#+
+	private bool IsDependencyPresentFor35(string name)
+	{
+		if(this.Session["Name"].Equals(SolutionFileCreator.ProjectTypes.Net35) &&
+		   this.Session.ContainsKey("ReferenceDependencies"))
+		{		
+			var dependencies = (List<Dependency>)this.Session["ReferenceDependencies"];	
+			return dependencies.SingleOrDefault(d=>d.Name.Equals(name)) != null;
+		}
+
+		return false;
+   }
+#>

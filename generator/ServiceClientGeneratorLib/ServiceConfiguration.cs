@@ -13,6 +13,9 @@ namespace ServiceClientGenerator
         private const string amazonDotPrefix = "Amazon.";
 
         string _modelPath;
+        ServiceModel _serviceModel;
+        string _customizationsPath;
+        string _namespace;
 
         /// <summary>
         /// The name of the model, taken from the "model" entry in the service models 
@@ -33,8 +36,6 @@ namespace ServiceClientGenerator
             }
         }
 
-        ServiceModel _serviceModel;
-
         /// <summary>
         /// The ServiceModel object, used to parse information inside of the model*.normal.json file as well as any customizations
         /// </summary>
@@ -42,8 +43,6 @@ namespace ServiceClientGenerator
         {
             get { return this._serviceModel ?? (this._serviceModel = new ServiceModel(this.ModelPath, this.CustomizationsPath)); }
         }
-
-        string _customizationsPath;
 
         /// <summary>
         /// Path to the file used for customizations
@@ -64,8 +63,6 @@ namespace ServiceClientGenerator
         /// The base name used in the client and the top level request class for a service
         /// </summary>
         public string BaseName { get; set; }
-
-        string _namespace;
 
         /// <summary>
         /// The namespace of the service, if not specified it is Amazon.BASENAME
@@ -119,10 +116,13 @@ namespace ServiceClientGenerator
         public int? OverrideMaxRetries { get; set; }
         public string ServiceUrl { get; set; }
         public string DefaultRegion { get; set; }
-		public bool GenerateConstructors { get; set; }
+        public bool GenerateConstructors { get; set; }
         public string LockedApiVersion { get; set; }
         public string Synopsis { get; set; }
         public Dictionary<string, string> ServiceDependencies { get; set; }
+        public Dictionary<string, List<Dependency>> ReferenceDependencies { get; set; }
+        public Dictionary<string, List<Dependency>> NugetDependencies { get; set; }
+        public List<string> PclVariants { get; set; }
         public string ServiceVersion
         {
             get
@@ -134,5 +134,18 @@ namespace ServiceClientGenerator
         public string ServiceFileVersion { get; set; }
 
         public bool SkipV1 { get; set; }
+
+
+        public override string ToString()
+        {
+            return string.Format("{0} - {1}", this.Namespace, this.ModelPath);
+        }
+    }
+
+    public class Dependency
+    {
+        public string Name { get; set; }
+        public string Version { get; set; }
+        public string HintPath { get; set; }
     }
 }

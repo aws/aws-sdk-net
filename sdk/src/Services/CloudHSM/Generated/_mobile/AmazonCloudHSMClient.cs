@@ -146,6 +146,9 @@ namespace Amazon.CloudHSM
 
         #region Overrides
 
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new AWS4Signer();
@@ -156,6 +159,9 @@ namespace Amazon.CloudHSM
 
         #region Dispose
 
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -173,6 +179,34 @@ namespace Amazon.CloudHSM
 
             return Invoke<CreateHapgRequest,CreateHapgResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Creates a high-availability partition group. A high-availability partition group is
+        /// a group of partitions that spans multiple physical HSMs.
+        /// </summary>
+        /// <param name="label">The label of the new high-availability partition group.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateHapg service method, as returned by CloudHSM.</returns>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmInternalException">
+        /// Indicates that an internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmServiceException">
+        /// Indicates that an exception occurred in the AWS CloudHSM service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
+        /// Indicates that one or more of the request parameters are not valid.
+        /// </exception>
+        public Task<CreateHapgResponse> CreateHapgAsync(string label, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new CreateHapgRequest();
+            request.Label = label;
+            return CreateHapgAsync(request, cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateHapg operation.
@@ -204,6 +238,7 @@ namespace Amazon.CloudHSM
             return Invoke<CreateHsmRequest,CreateHsmResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateHsm operation.
         /// </summary>
@@ -233,6 +268,7 @@ namespace Amazon.CloudHSM
 
             return Invoke<CreateLunaClientRequest,CreateLunaClientResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLunaClient operation.
@@ -264,6 +300,33 @@ namespace Amazon.CloudHSM
             return Invoke<DeleteHapgRequest,DeleteHapgResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Deletes a high-availability partition group.
+        /// </summary>
+        /// <param name="hapgArn">The ARN of the high-availability partition group to delete.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteHapg service method, as returned by CloudHSM.</returns>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmInternalException">
+        /// Indicates that an internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmServiceException">
+        /// Indicates that an exception occurred in the AWS CloudHSM service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
+        /// Indicates that one or more of the request parameters are not valid.
+        /// </exception>
+        public Task<DeleteHapgResponse> DeleteHapgAsync(string hapgArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DeleteHapgRequest();
+            request.HapgArn = hapgArn;
+            return DeleteHapgAsync(request, cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteHapg operation.
         /// </summary>
@@ -293,6 +356,34 @@ namespace Amazon.CloudHSM
 
             return Invoke<DeleteHsmRequest,DeleteHsmResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Deletes an HSM. Once complete, this operation cannot be undone and your key material
+        /// cannot be recovered.
+        /// </summary>
+        /// <param name="hsmArn">The ARN of the HSM to delete.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteHsm service method, as returned by CloudHSM.</returns>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmInternalException">
+        /// Indicates that an internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmServiceException">
+        /// Indicates that an exception occurred in the AWS CloudHSM service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
+        /// Indicates that one or more of the request parameters are not valid.
+        /// </exception>
+        public Task<DeleteHsmResponse> DeleteHsmAsync(string hsmArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DeleteHsmRequest();
+            request.HsmArn = hsmArn;
+            return DeleteHsmAsync(request, cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteHsm operation.
@@ -324,6 +415,33 @@ namespace Amazon.CloudHSM
             return Invoke<DeleteLunaClientRequest,DeleteLunaClientResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Deletes a client.
+        /// </summary>
+        /// <param name="clientArn">The ARN of the client to delete.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLunaClient service method, as returned by CloudHSM.</returns>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmInternalException">
+        /// Indicates that an internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmServiceException">
+        /// Indicates that an exception occurred in the AWS CloudHSM service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
+        /// Indicates that one or more of the request parameters are not valid.
+        /// </exception>
+        public Task<DeleteLunaClientResponse> DeleteLunaClientAsync(string clientArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DeleteLunaClientRequest();
+            request.ClientArn = clientArn;
+            return DeleteLunaClientAsync(request, cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLunaClient operation.
         /// </summary>
@@ -353,6 +471,33 @@ namespace Amazon.CloudHSM
 
             return Invoke<DescribeHapgRequest,DescribeHapgResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Retrieves information about a high-availability partition group.
+        /// </summary>
+        /// <param name="hapgArn">The ARN of the high-availability partition group to describe.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeHapg service method, as returned by CloudHSM.</returns>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmInternalException">
+        /// Indicates that an internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmServiceException">
+        /// Indicates that an exception occurred in the AWS CloudHSM service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
+        /// Indicates that one or more of the request parameters are not valid.
+        /// </exception>
+        public Task<DescribeHapgResponse> DescribeHapgAsync(string hapgArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DescribeHapgRequest();
+            request.HapgArn = hapgArn;
+            return DescribeHapgAsync(request, cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeHapg operation.
@@ -384,6 +529,34 @@ namespace Amazon.CloudHSM
             return Invoke<DescribeHsmRequest,DescribeHsmResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Retrieves information about an HSM. You can identify the HSM by its ARN or its serial
+        /// number.
+        /// </summary>
+        /// <param name="hsmArn">The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i> parameter must be specified.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeHsm service method, as returned by CloudHSM.</returns>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmInternalException">
+        /// Indicates that an internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmServiceException">
+        /// Indicates that an exception occurred in the AWS CloudHSM service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
+        /// Indicates that one or more of the request parameters are not valid.
+        /// </exception>
+        public Task<DescribeHsmResponse> DescribeHsmAsync(string hsmArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DescribeHsmRequest();
+            request.HsmArn = hsmArn;
+            return DescribeHsmAsync(request, cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeHsm operation.
         /// </summary>
@@ -413,6 +586,7 @@ namespace Amazon.CloudHSM
 
             return Invoke<DescribeLunaClientRequest,DescribeLunaClientResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLunaClient operation.
@@ -444,6 +618,7 @@ namespace Amazon.CloudHSM
             return Invoke<GetConfigRequest,GetConfigResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetConfig operation.
         /// </summary>
@@ -473,6 +648,31 @@ namespace Amazon.CloudHSM
 
             return Invoke<ListAvailableZonesRequest,ListAvailableZonesResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Lists the Availability Zones that have available AWS CloudHSM capacity.
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAvailableZones service method, as returned by CloudHSM.</returns>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmInternalException">
+        /// Indicates that an internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmServiceException">
+        /// Indicates that an exception occurred in the AWS CloudHSM service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
+        /// Indicates that one or more of the request parameters are not valid.
+        /// </exception>
+        public Task<ListAvailableZonesResponse> ListAvailableZonesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new ListAvailableZonesRequest();
+            return ListAvailableZonesAsync(request, cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListAvailableZones operation.
@@ -504,6 +704,39 @@ namespace Amazon.CloudHSM
             return Invoke<ListHapgsRequest,ListHapgsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists the high-availability partition groups for the account.
+        /// 
+        ///  
+        /// <para>
+        /// This operation supports pagination with the use of the <i>NextToken</i> member. If
+        /// more results are available, the <i>NextToken</i> member of the response contains a
+        /// token that you pass in the next call to <a>ListHapgs</a> to retrieve the next set
+        /// of items.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHapgs service method, as returned by CloudHSM.</returns>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmInternalException">
+        /// Indicates that an internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmServiceException">
+        /// Indicates that an exception occurred in the AWS CloudHSM service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
+        /// Indicates that one or more of the request parameters are not valid.
+        /// </exception>
+        public Task<ListHapgsResponse> ListHapgsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new ListHapgsRequest();
+            return ListHapgsAsync(request, cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListHapgs operation.
         /// </summary>
@@ -533,6 +766,39 @@ namespace Amazon.CloudHSM
 
             return Invoke<ListHsmsRequest,ListHsmsResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Retrieves the identifiers of all of the HSMs provisioned for the current customer.
+        /// 
+        ///  
+        /// <para>
+        /// This operation supports pagination with the use of the <i>NextToken</i> member. If
+        /// more results are available, the <i>NextToken</i> member of the response contains a
+        /// token that you pass in the next call to <a>ListHsms</a> to retrieve the next set of
+        /// items.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHsms service method, as returned by CloudHSM.</returns>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmInternalException">
+        /// Indicates that an internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmServiceException">
+        /// Indicates that an exception occurred in the AWS CloudHSM service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
+        /// Indicates that one or more of the request parameters are not valid.
+        /// </exception>
+        public Task<ListHsmsResponse> ListHsmsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new ListHsmsRequest();
+            return ListHsmsAsync(request, cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListHsms operation.
@@ -564,6 +830,39 @@ namespace Amazon.CloudHSM
             return Invoke<ListLunaClientsRequest,ListLunaClientsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists all of the clients.
+        /// 
+        ///  
+        /// <para>
+        /// This operation supports pagination with the use of the <i>NextToken</i> member. If
+        /// more results are available, the <i>NextToken</i> member of the response contains a
+        /// token that you pass in the next call to <a>ListLunaClients</a> to retrieve the next
+        /// set of items.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLunaClients service method, as returned by CloudHSM.</returns>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmInternalException">
+        /// Indicates that an internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmServiceException">
+        /// Indicates that an exception occurred in the AWS CloudHSM service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
+        /// Indicates that one or more of the request parameters are not valid.
+        /// </exception>
+        public Task<ListLunaClientsResponse> ListLunaClientsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new ListLunaClientsRequest();
+            return ListLunaClientsAsync(request, cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListLunaClients operation.
         /// </summary>
@@ -593,6 +892,7 @@ namespace Amazon.CloudHSM
 
             return Invoke<ModifyHapgRequest,ModifyHapgResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyHapg operation.
@@ -624,6 +924,7 @@ namespace Amazon.CloudHSM
             return Invoke<ModifyHsmRequest,ModifyHsmResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyHsm operation.
         /// </summary>
@@ -653,6 +954,7 @@ namespace Amazon.CloudHSM
 
             return Invoke<ModifyLunaClientRequest,ModifyLunaClientResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyLunaClient operation.

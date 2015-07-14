@@ -239,6 +239,7 @@ namespace Amazon.CodeCommit
         
         #region  BatchGetRepositories
 
+
         /// <summary>
         /// Gets information about one or more repositories.
         /// 
@@ -313,6 +314,7 @@ namespace Amazon.CodeCommit
         #endregion
         
         #region  CreateBranch
+
 
         /// <summary>
         /// Creates a new branch in a repository and points the branch to a commit.
@@ -400,6 +402,7 @@ namespace Amazon.CodeCommit
         
         #region  CreateRepository
 
+
         /// <summary>
         /// Creates a new, empty repository.
         /// </summary>
@@ -470,6 +473,7 @@ namespace Amazon.CodeCommit
         
         #region  DeleteRepository
 
+
         /// <summary>
         /// Deletes a repository. If a specified repository was already deleted, a null repository
         /// ID will be returned.
@@ -535,6 +539,7 @@ namespace Amazon.CodeCommit
         #endregion
         
         #region  GetBranch
+
 
         /// <summary>
         /// Retrieves information about a repository branch, including its name and the last commit
@@ -610,6 +615,7 @@ namespace Amazon.CodeCommit
         
         #region  GetRepository
 
+
         /// <summary>
         /// Gets information about a repository.
         /// 
@@ -684,6 +690,7 @@ namespace Amazon.CodeCommit
         
         #region  ListBranches
 
+
         /// <summary>
         /// Gets information about one or more branches in a repository.
         /// </summary>
@@ -751,6 +758,7 @@ namespace Amazon.CodeCommit
         
         #region  ListRepositories
 
+
         /// <summary>
         /// Gets information about one or more repositories.
         /// </summary>
@@ -795,6 +803,7 @@ namespace Amazon.CodeCommit
         #endregion
         
         #region  UpdateDefaultBranch
+
 
         /// <summary>
         /// Sets or changes the default branch name for the specified repository.
@@ -873,6 +882,7 @@ namespace Amazon.CodeCommit
         
         #region  UpdateRepositoryDescription
 
+
         /// <summary>
         /// Sets or changes the comment or description for a repository.
         /// 
@@ -949,6 +959,7 @@ namespace Amazon.CodeCommit
         #endregion
         
         #region  UpdateRepositoryName
+
 
         /// <summary>
         /// Renames a repository.

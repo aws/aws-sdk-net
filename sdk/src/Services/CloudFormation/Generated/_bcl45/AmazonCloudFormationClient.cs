@@ -260,6 +260,7 @@ namespace Amazon.CloudFormation
         
         #region  CancelUpdateStack
 
+
         /// <summary>
         /// Cancels an update on the specified stack. If the call completes successfully, the
         /// stack will roll back the update and revert to the previous stack configuration.
@@ -298,6 +299,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  CreateStack
+
 
         /// <summary>
         /// Creates a stack as specified in the template. After the call completes successfully,
@@ -347,6 +349,7 @@ namespace Amazon.CloudFormation
         
         #region  DeleteStack
 
+
         /// <summary>
         /// Deletes a specified stack. Once the call completes successfully, stack deletion starts.
         /// Deleted stacks do not show up in the <a>DescribeStacks</a> API if the deletion has
@@ -384,6 +387,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  DescribeStackEvents
+
 
         /// <summary>
         /// Returns all stack related events for a specified stack. For more information about
@@ -426,6 +430,7 @@ namespace Amazon.CloudFormation
         
         #region  DescribeStackResource
 
+
         /// <summary>
         /// Returns a description of the specified resource in the specified stack.
         /// 
@@ -467,6 +472,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  DescribeStackResources
+
 
         /// <summary>
         /// Returns AWS resource descriptions for running and deleted stacks. If <code>StackName</code>
@@ -524,6 +530,7 @@ namespace Amazon.CloudFormation
         
         #region  DescribeStacks
 
+
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
         /// it returns the description for all the stacks created.
@@ -534,6 +541,7 @@ namespace Amazon.CloudFormation
         {
             return DescribeStacks(new DescribeStacksRequest());
         }
+
 
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
@@ -550,6 +558,20 @@ namespace Amazon.CloudFormation
             return Invoke<DescribeStacksRequest,DescribeStacksResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns the description for the specified stack; if no stack name was specified, then
+        /// it returns the description for all the stacks created.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeStacks service method, as returned by CloudFormation.</returns>
+        public Task<DescribeStacksResponse> DescribeStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeStacksAsync(new DescribeStacksRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStacks operation.
         /// </summary>
@@ -571,6 +593,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  EstimateTemplateCost
+
 
         /// <summary>
         /// Returns the estimated monthly cost of a template. The return value is an AWS Simple
@@ -610,6 +633,7 @@ namespace Amazon.CloudFormation
         
         #region  GetStackPolicy
 
+
         /// <summary>
         /// Returns the stack policy for a specified stack. If a stack doesn't have a policy,
         /// a null value is returned.
@@ -646,6 +670,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  GetTemplate
+
 
         /// <summary>
         /// Returns the template body for a specified stack. You can get the template for running
@@ -691,6 +716,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  GetTemplateSummary
+
 
         /// <summary>
         /// Returns information about a new or existing template. The <code>GetTemplateSummary</code>
@@ -742,6 +768,7 @@ namespace Amazon.CloudFormation
         
         #region  ListStackResources
 
+
         /// <summary>
         /// Returns descriptions of all resources of the specified stack.
         /// 
@@ -784,6 +811,7 @@ namespace Amazon.CloudFormation
         
         #region  ListStacks
 
+
         /// <summary>
         /// Returns the summary information for stacks whose status matches the specified StackStatusFilter.
         /// Summary information for stacks that have been deleted is kept for 90 days after the
@@ -796,6 +824,7 @@ namespace Amazon.CloudFormation
         {
             return ListStacks(new ListStacksRequest());
         }
+
 
         /// <summary>
         /// Returns the summary information for stacks whose status matches the specified StackStatusFilter.
@@ -814,6 +843,22 @@ namespace Amazon.CloudFormation
             return Invoke<ListStacksRequest,ListStacksResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns the summary information for stacks whose status matches the specified StackStatusFilter.
+        /// Summary information for stacks that have been deleted is kept for 90 days after the
+        /// stack is deleted. If no StackStatusFilter is specified, summary information for all
+        /// stacks is returned (including existing stacks and stacks that have been deleted).
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStacks service method, as returned by CloudFormation.</returns>
+        public Task<ListStacksResponse> ListStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListStacksAsync(new ListStacksRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the ListStacks operation.
         /// </summary>
@@ -835,6 +880,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  SetStackPolicy
+
 
         /// <summary>
         /// Sets a stack policy for a specified stack.
@@ -871,6 +917,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  SignalResource
+
 
         /// <summary>
         /// Sends a signal to the specified resource with a success or failure status. You can
@@ -912,6 +959,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  UpdateStack
+
 
         /// <summary>
         /// Updates a stack as specified in the template. After the call completes successfully,
@@ -972,6 +1020,7 @@ namespace Amazon.CloudFormation
         
         #region  ValidateTemplate
 
+
         /// <summary>
         /// Validates a specified template.
         /// </summary>
@@ -981,6 +1030,7 @@ namespace Amazon.CloudFormation
         {
             return ValidateTemplate(new ValidateTemplateRequest());
         }
+
 
         /// <summary>
         /// Validates a specified template.
@@ -996,6 +1046,19 @@ namespace Amazon.CloudFormation
             return Invoke<ValidateTemplateRequest,ValidateTemplateResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Validates a specified template.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ValidateTemplate service method, as returned by CloudFormation.</returns>
+        public Task<ValidateTemplateResponse> ValidateTemplateAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ValidateTemplateAsync(new ValidateTemplateRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the ValidateTemplate operation.
         /// </summary>

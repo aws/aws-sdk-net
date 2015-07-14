@@ -11,12 +11,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon DynamoDB. Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon DynamoDB. Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.")]
-#elif (WIN_RT && WINDOWS_PHONE)
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Portable)- Amazon DynamoDB. Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.")]
-#elif WIN_RT
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows RT) - Amazon DynamoDB. Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.")]
-#elif WINDOWS_PHONE
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows Phone 8)- Amazon DynamoDB. Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.")]
+#elif PCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Core Runtime")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
@@ -44,7 +40,7 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.0")]
-[assembly: AssemblyFileVersion("3.0.0.3")]
+[assembly: AssemblyFileVersion("3.0.0.6")]
 
 #if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]

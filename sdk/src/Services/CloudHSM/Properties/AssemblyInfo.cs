@@ -11,12 +11,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon CloudHSM. The AWS CloudHSM service helps you meet corporate, contractual and regulatory compliance requirements for data security by using dedicated Hardware Security Module (HSM) appliances within the AWS cloud. With CloudHSM, you control the encryption keys and cryptographic operations performed by the HSM.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon CloudHSM. The AWS CloudHSM service helps you meet corporate, contractual and regulatory compliance requirements for data security by using dedicated Hardware Security Module (HSM) appliances within the AWS cloud. With CloudHSM, you control the encryption keys and cryptographic operations performed by the HSM.")]
-#elif (WIN_RT && WINDOWS_PHONE)
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Portable)- Amazon CloudHSM. The AWS CloudHSM service helps you meet corporate, contractual and regulatory compliance requirements for data security by using dedicated Hardware Security Module (HSM) appliances within the AWS cloud. With CloudHSM, you control the encryption keys and cryptographic operations performed by the HSM.")]
-#elif WIN_RT
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows RT) - Amazon CloudHSM. The AWS CloudHSM service helps you meet corporate, contractual and regulatory compliance requirements for data security by using dedicated Hardware Security Module (HSM) appliances within the AWS cloud. With CloudHSM, you control the encryption keys and cryptographic operations performed by the HSM.")]
-#elif WINDOWS_PHONE
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows Phone 8)- Amazon CloudHSM. The AWS CloudHSM service helps you meet corporate, contractual and regulatory compliance requirements for data security by using dedicated Hardware Security Module (HSM) appliances within the AWS cloud. With CloudHSM, you control the encryption keys and cryptographic operations performed by the HSM.")]
+#elif PCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Core Runtime")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
@@ -44,7 +40,7 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.0")]
-[assembly: AssemblyFileVersion("3.0.0.2")]
+[assembly: AssemblyFileVersion("3.0.0.5")]
 
 #if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]

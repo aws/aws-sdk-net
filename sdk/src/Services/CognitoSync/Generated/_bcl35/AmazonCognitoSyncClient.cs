@@ -522,6 +522,7 @@ namespace Amazon.CognitoSync
             return DescribeIdentityPoolUsage(request);
         }
 
+
         /// <summary>
         /// Gets usage details (for example, data storage) about a particular identity pool.
         /// 
@@ -837,6 +838,7 @@ namespace Amazon.CognitoSync
             request.IdentityPoolId = identityPoolId;
             return GetIdentityPoolConfiguration(request);
         }
+
 
         /// <summary>
         /// Gets the configuration settings of an identity pool.

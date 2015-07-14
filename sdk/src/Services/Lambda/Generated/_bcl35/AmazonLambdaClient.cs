@@ -592,6 +592,7 @@ namespace Amazon.Lambda
             return DeleteFunction(request);
         }
 
+
         /// <summary>
         /// Deletes the specified Lambda function code and configuration.
         /// 
@@ -764,6 +765,7 @@ namespace Amazon.Lambda
             return GetFunction(request);
         }
 
+
         /// <summary>
         /// Returns the configuration information of the Lambda function and a presigned URL link
         /// to the .zip file you uploaded with <a>CreateFunction</a> so you can download the .zip
@@ -861,6 +863,7 @@ namespace Amazon.Lambda
             request.FunctionName = functionName;
             return GetFunctionConfiguration(request);
         }
+
 
         /// <summary>
         /// Returns the configuration information of the Lambda function. This the same information
@@ -1240,6 +1243,7 @@ namespace Amazon.Lambda
             var request = new ListFunctionsRequest();
             return ListFunctions(request);
         }
+
 
         /// <summary>
         /// Returns a list of your Lambda functions. For each function, the response includes

@@ -184,6 +184,9 @@ namespace Amazon.CloudWatchLogs
 
         #region Overrides
 
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new AWS4Signer();
@@ -194,6 +197,9 @@ namespace Amazon.CloudWatchLogs
 
         #region Dispose
 
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -211,6 +217,7 @@ namespace Amazon.CloudWatchLogs
 
             return Invoke<CreateLogGroupRequest,CreateLogGroupResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLogGroup operation.
@@ -242,6 +249,7 @@ namespace Amazon.CloudWatchLogs
             return Invoke<CreateLogStreamRequest,CreateLogStreamResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLogStream operation.
         /// </summary>
@@ -271,6 +279,7 @@ namespace Amazon.CloudWatchLogs
 
             return Invoke<DeleteLogGroupRequest,DeleteLogGroupResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLogGroup operation.
@@ -302,6 +311,7 @@ namespace Amazon.CloudWatchLogs
             return Invoke<DeleteLogStreamRequest,DeleteLogStreamResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLogStream operation.
         /// </summary>
@@ -331,6 +341,7 @@ namespace Amazon.CloudWatchLogs
 
             return Invoke<DeleteMetricFilterRequest,DeleteMetricFilterResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteMetricFilter operation.
@@ -362,6 +373,7 @@ namespace Amazon.CloudWatchLogs
             return Invoke<DeleteRetentionPolicyRequest,DeleteRetentionPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRetentionPolicy operation.
         /// </summary>
@@ -391,6 +403,7 @@ namespace Amazon.CloudWatchLogs
 
             return Invoke<DeleteSubscriptionFilterRequest,DeleteSubscriptionFilterResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSubscriptionFilter operation.
@@ -426,6 +439,36 @@ namespace Amazon.CloudWatchLogs
             return Invoke<DescribeLogGroupsRequest,DescribeLogGroupsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns all the log groups that are associated with the AWS account making the request.
+        /// The list returned in the response is ASCII-sorted by log group name. 
+        /// 
+        ///  
+        /// <para>
+        ///  By default, this operation returns up to 50 log groups. If there are more log groups
+        /// to list, the response would contain a <code class="code">nextToken</code> value in
+        /// the response body. You can also limit the number of log groups returned in the response
+        /// by specifying the <code class="code">limit</code> parameter in the request. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLogGroups service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        public Task<DescribeLogGroupsResponse> DescribeLogGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeLogGroupsAsync(new DescribeLogGroupsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLogGroups operation.
         /// </summary>
@@ -455,6 +498,7 @@ namespace Amazon.CloudWatchLogs
 
             return Invoke<DescribeLogStreamsRequest,DescribeLogStreamsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLogStreams operation.
@@ -486,6 +530,7 @@ namespace Amazon.CloudWatchLogs
             return Invoke<DescribeMetricFiltersRequest,DescribeMetricFiltersResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMetricFilters operation.
         /// </summary>
@@ -515,6 +560,7 @@ namespace Amazon.CloudWatchLogs
 
             return Invoke<DescribeSubscriptionFiltersRequest,DescribeSubscriptionFiltersResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSubscriptionFilters operation.
@@ -546,6 +592,7 @@ namespace Amazon.CloudWatchLogs
             return Invoke<FilterLogEventsRequest,FilterLogEventsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the FilterLogEvents operation.
         /// </summary>
@@ -575,6 +622,7 @@ namespace Amazon.CloudWatchLogs
 
             return Invoke<GetLogEventsRequest,GetLogEventsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetLogEvents operation.
@@ -606,6 +654,7 @@ namespace Amazon.CloudWatchLogs
             return Invoke<PutLogEventsRequest,PutLogEventsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutLogEvents operation.
         /// </summary>
@@ -635,6 +684,7 @@ namespace Amazon.CloudWatchLogs
 
             return Invoke<PutMetricFilterRequest,PutMetricFilterResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutMetricFilter operation.
@@ -666,6 +716,7 @@ namespace Amazon.CloudWatchLogs
             return Invoke<PutRetentionPolicyRequest,PutRetentionPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutRetentionPolicy operation.
         /// </summary>
@@ -696,6 +747,7 @@ namespace Amazon.CloudWatchLogs
             return Invoke<PutSubscriptionFilterRequest,PutSubscriptionFilterResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutSubscriptionFilter operation.
         /// </summary>
@@ -725,6 +777,7 @@ namespace Amazon.CloudWatchLogs
 
             return Invoke<TestMetricFilterRequest,TestMetricFilterResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the TestMetricFilter operation.

@@ -98,6 +98,7 @@ namespace Amazon.IdentityManagement
                 
         #region  AddClientIDToOpenIDConnectProvider
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddClientIDToOpenIDConnectProvider operation.
         /// </summary>
@@ -107,11 +108,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AddClientIDToOpenIDConnectProviderResponse> AddClientIDToOpenIDConnectProviderAsync(AddClientIDToOpenIDConnectProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AddClientIDToOpenIDConnectProviderResponse> AddClientIDToOpenIDConnectProviderAsync(AddClientIDToOpenIDConnectProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  AddRoleToInstanceProfile
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddRoleToInstanceProfile operation.
@@ -122,11 +124,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AddRoleToInstanceProfileResponse> AddRoleToInstanceProfileAsync(AddRoleToInstanceProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AddRoleToInstanceProfileResponse> AddRoleToInstanceProfileAsync(AddRoleToInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  AddUserToGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddUserToGroup operation.
@@ -137,11 +140,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AddUserToGroupResponse> AddUserToGroupAsync(AddUserToGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AddUserToGroupResponse> AddUserToGroupAsync(AddUserToGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  AttachGroupPolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachGroupPolicy operation.
@@ -152,11 +156,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AttachGroupPolicyResponse> AttachGroupPolicyAsync(AttachGroupPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AttachGroupPolicyResponse> AttachGroupPolicyAsync(AttachGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  AttachRolePolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachRolePolicy operation.
@@ -167,11 +172,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AttachRolePolicyResponse> AttachRolePolicyAsync(AttachRolePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AttachRolePolicyResponse> AttachRolePolicyAsync(AttachRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  AttachUserPolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachUserPolicy operation.
@@ -182,11 +188,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AttachUserPolicyResponse> AttachUserPolicyAsync(AttachUserPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AttachUserPolicyResponse> AttachUserPolicyAsync(AttachUserPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ChangePassword
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ChangePassword operation.
@@ -197,11 +204,52 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ChangePasswordResponse> ChangePasswordAsync(ChangePasswordRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ChangePasswordResponse> ChangePasswordAsync(ChangePasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateAccessKey
+
+
+        /// <summary>
+        /// Creates a new AWS secret access key and corresponding AWS access key ID for the specified
+        /// user. The default status for new keys is <code>Active</code>. 
+        /// 
+        ///  
+        /// <para>
+        ///  If you do not specify a user name, IAM determines the user name implicitly based
+        /// on the AWS access key ID signing the request. Because this action works for access
+        /// keys under the AWS account, you can use this action to manage root credentials even
+        /// if the AWS account has no associated users. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For information about limits on the number of keys you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        ///  <important> To ensure the security of your AWS account, the secret access key is
+        /// accessible only during key and user creation. You must save the key (for example,
+        /// in a text file) if you want to be able to access it again. If a secret key is lost,
+        /// you can delete the access keys for the associated user and then create new keys. </important>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAccessKey service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<CreateAccessKeyResponse> CreateAccessKeyAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAccessKey operation.
@@ -212,11 +260,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateAccessKeyResponse> CreateAccessKeyAsync(CreateAccessKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateAccessKeyResponse> CreateAccessKeyAsync(CreateAccessKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateAccountAlias
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAccountAlias operation.
@@ -227,11 +276,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateAccountAliasResponse> CreateAccountAliasAsync(CreateAccountAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateAccountAliasResponse> CreateAccountAliasAsync(CreateAccountAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateGroup operation.
@@ -242,11 +292,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateInstanceProfile
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInstanceProfile operation.
@@ -257,11 +308,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateInstanceProfileResponse> CreateInstanceProfileAsync(CreateInstanceProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateInstanceProfileResponse> CreateInstanceProfileAsync(CreateInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateLoginProfile
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLoginProfile operation.
@@ -272,11 +324,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateLoginProfileResponse> CreateLoginProfileAsync(CreateLoginProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateLoginProfileResponse> CreateLoginProfileAsync(CreateLoginProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateOpenIDConnectProvider
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateOpenIDConnectProvider operation.
@@ -287,11 +340,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateOpenIDConnectProviderResponse> CreateOpenIDConnectProviderAsync(CreateOpenIDConnectProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateOpenIDConnectProviderResponse> CreateOpenIDConnectProviderAsync(CreateOpenIDConnectProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreatePolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePolicy operation.
@@ -302,11 +356,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreatePolicyResponse> CreatePolicyAsync(CreatePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreatePolicyResponse> CreatePolicyAsync(CreatePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreatePolicyVersion
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePolicyVersion operation.
@@ -317,11 +372,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreatePolicyVersionResponse> CreatePolicyVersionAsync(CreatePolicyVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreatePolicyVersionResponse> CreatePolicyVersionAsync(CreatePolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateRole
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateRole operation.
@@ -332,11 +388,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateRoleResponse> CreateRoleAsync(CreateRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateRoleResponse> CreateRoleAsync(CreateRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateSAMLProvider
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSAMLProvider operation.
@@ -347,11 +404,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateSAMLProviderResponse> CreateSAMLProviderAsync(CreateSAMLProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateSAMLProviderResponse> CreateSAMLProviderAsync(CreateSAMLProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateUser
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateUser operation.
@@ -362,11 +420,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateVirtualMFADevice
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVirtualMFADevice operation.
@@ -377,11 +436,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateVirtualMFADeviceResponse> CreateVirtualMFADeviceAsync(CreateVirtualMFADeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateVirtualMFADeviceResponse> CreateVirtualMFADeviceAsync(CreateVirtualMFADeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeactivateMFADevice
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeactivateMFADevice operation.
@@ -392,11 +452,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeactivateMFADeviceResponse> DeactivateMFADeviceAsync(DeactivateMFADeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeactivateMFADeviceResponse> DeactivateMFADeviceAsync(DeactivateMFADeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteAccessKey
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAccessKey operation.
@@ -407,11 +468,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteAccessKeyResponse> DeleteAccessKeyAsync(DeleteAccessKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteAccessKeyResponse> DeleteAccessKeyAsync(DeleteAccessKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteAccountAlias
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAccountAlias operation.
@@ -422,11 +484,34 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteAccountAliasResponse> DeleteAccountAliasAsync(DeleteAccountAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteAccountAliasResponse> DeleteAccountAliasAsync(DeleteAccountAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteAccountPasswordPolicy
+
+
+        /// <summary>
+        /// Deletes the password policy for the AWS account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<DeleteAccountPasswordPolicyResponse> DeleteAccountPasswordPolicyAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAccountPasswordPolicy operation.
@@ -437,11 +522,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteAccountPasswordPolicyResponse> DeleteAccountPasswordPolicyAsync(DeleteAccountPasswordPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteAccountPasswordPolicyResponse> DeleteAccountPasswordPolicyAsync(DeleteAccountPasswordPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteGroup operation.
@@ -452,11 +538,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteGroupPolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteGroupPolicy operation.
@@ -467,11 +554,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteGroupPolicyResponse> DeleteGroupPolicyAsync(DeleteGroupPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteGroupPolicyResponse> DeleteGroupPolicyAsync(DeleteGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteInstanceProfile
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteInstanceProfile operation.
@@ -482,11 +570,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteInstanceProfileResponse> DeleteInstanceProfileAsync(DeleteInstanceProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteInstanceProfileResponse> DeleteInstanceProfileAsync(DeleteInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteLoginProfile
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLoginProfile operation.
@@ -497,11 +586,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteLoginProfileResponse> DeleteLoginProfileAsync(DeleteLoginProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteLoginProfileResponse> DeleteLoginProfileAsync(DeleteLoginProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteOpenIDConnectProvider
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteOpenIDConnectProvider operation.
@@ -512,11 +602,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteOpenIDConnectProviderResponse> DeleteOpenIDConnectProviderAsync(DeleteOpenIDConnectProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteOpenIDConnectProviderResponse> DeleteOpenIDConnectProviderAsync(DeleteOpenIDConnectProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeletePolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePolicy operation.
@@ -527,11 +618,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeletePolicyVersion
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePolicyVersion operation.
@@ -542,11 +634,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeletePolicyVersionResponse> DeletePolicyVersionAsync(DeletePolicyVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeletePolicyVersionResponse> DeletePolicyVersionAsync(DeletePolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteRole
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRole operation.
@@ -557,11 +650,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteRoleResponse> DeleteRoleAsync(DeleteRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteRoleResponse> DeleteRoleAsync(DeleteRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteRolePolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRolePolicy operation.
@@ -572,11 +666,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteRolePolicyResponse> DeleteRolePolicyAsync(DeleteRolePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteRolePolicyResponse> DeleteRolePolicyAsync(DeleteRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteSAMLProvider
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSAMLProvider operation.
@@ -587,11 +682,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteSAMLProviderResponse> DeleteSAMLProviderAsync(DeleteSAMLProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteSAMLProviderResponse> DeleteSAMLProviderAsync(DeleteSAMLProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteServerCertificate
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteServerCertificate operation.
@@ -602,11 +698,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteServerCertificateResponse> DeleteServerCertificateAsync(DeleteServerCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteServerCertificateResponse> DeleteServerCertificateAsync(DeleteServerCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteSigningCertificate
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSigningCertificate operation.
@@ -617,11 +714,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteSigningCertificateResponse> DeleteSigningCertificateAsync(DeleteSigningCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteSigningCertificateResponse> DeleteSigningCertificateAsync(DeleteSigningCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteSSHPublicKey
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSSHPublicKey operation.
@@ -632,11 +730,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteSSHPublicKeyResponse> DeleteSSHPublicKeyAsync(DeleteSSHPublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteSSHPublicKeyResponse> DeleteSSHPublicKeyAsync(DeleteSSHPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteUser
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteUser operation.
@@ -647,11 +746,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteUserPolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteUserPolicy operation.
@@ -662,11 +762,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteUserPolicyResponse> DeleteUserPolicyAsync(DeleteUserPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteUserPolicyResponse> DeleteUserPolicyAsync(DeleteUserPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteVirtualMFADevice
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVirtualMFADevice operation.
@@ -677,11 +778,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteVirtualMFADeviceResponse> DeleteVirtualMFADeviceAsync(DeleteVirtualMFADeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteVirtualMFADeviceResponse> DeleteVirtualMFADeviceAsync(DeleteVirtualMFADeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DetachGroupPolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachGroupPolicy operation.
@@ -692,11 +794,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DetachGroupPolicyResponse> DetachGroupPolicyAsync(DetachGroupPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DetachGroupPolicyResponse> DetachGroupPolicyAsync(DetachGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DetachRolePolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachRolePolicy operation.
@@ -707,11 +810,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DetachRolePolicyResponse> DetachRolePolicyAsync(DetachRolePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DetachRolePolicyResponse> DetachRolePolicyAsync(DetachRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DetachUserPolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachUserPolicy operation.
@@ -722,11 +826,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DetachUserPolicyResponse> DetachUserPolicyAsync(DetachUserPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DetachUserPolicyResponse> DetachUserPolicyAsync(DetachUserPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  EnableMFADevice
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableMFADevice operation.
@@ -737,11 +842,32 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<EnableMFADeviceResponse> EnableMFADeviceAsync(EnableMFADeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<EnableMFADeviceResponse> EnableMFADeviceAsync(EnableMFADeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GenerateCredentialReport
+
+
+        /// <summary>
+        /// Generates a credential report for the AWS account. For more information about the
+        /// credential report, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
+        /// Credential Reports</a> in the <i>Using IAM</i> guide.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GenerateCredentialReport service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<GenerateCredentialReportResponse> GenerateCredentialReportAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GenerateCredentialReport operation.
@@ -752,11 +878,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GenerateCredentialReportResponse> GenerateCredentialReportAsync(GenerateCredentialReportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GenerateCredentialReportResponse> GenerateCredentialReportAsync(GenerateCredentialReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetAccessKeyLastUsed
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetAccessKeyLastUsed operation.
@@ -767,11 +894,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetAccessKeyLastUsedResponse> GetAccessKeyLastUsedAsync(GetAccessKeyLastUsedRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetAccessKeyLastUsedResponse> GetAccessKeyLastUsedAsync(GetAccessKeyLastUsedRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetAccountAuthorizationDetails
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetAccountAuthorizationDetails operation.
@@ -782,11 +910,32 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetAccountAuthorizationDetailsResponse> GetAccountAuthorizationDetailsAsync(GetAccountAuthorizationDetailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetAccountAuthorizationDetailsResponse> GetAccountAuthorizationDetailsAsync(GetAccountAuthorizationDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetAccountPasswordPolicy
+
+
+        /// <summary>
+        /// Retrieves the password policy for the AWS account. For more information about using
+        /// a password policy, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+        /// an IAM Password Policy</a>.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<GetAccountPasswordPolicyResponse> GetAccountPasswordPolicyAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetAccountPasswordPolicy operation.
@@ -797,11 +946,32 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetAccountPasswordPolicyResponse> GetAccountPasswordPolicyAsync(GetAccountPasswordPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetAccountPasswordPolicyResponse> GetAccountPasswordPolicyAsync(GetAccountPasswordPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetAccountSummary
+
+
+        /// <summary>
+        /// Retrieves information about IAM entity usage and IAM quotas in the AWS account.
+        /// 
+        ///  
+        /// <para>
+        ///  For information about limitations on IAM entities, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountSummary service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<GetAccountSummaryResponse> GetAccountSummaryAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetAccountSummary operation.
@@ -812,11 +982,41 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetAccountSummaryResponse> GetAccountSummaryAsync(GetAccountSummaryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetAccountSummaryResponse> GetAccountSummaryAsync(GetAccountSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetCredentialReport
+
+
+        /// <summary>
+        /// Retrieves a credential report for the AWS account. For more information about the
+        /// credential report, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
+        /// Credential Reports</a> in the <i>Using IAM</i> guide.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCredentialReport service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportExpiredException">
+        /// The request was rejected because the most recent credential report has expired. To
+        /// generate a new credential report, use <a>GenerateCredentialReport</a>. For more information
+        /// about credential report expiration, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
+        /// Credential Reports</a> in the <i>Using IAM</i> guide.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotPresentException">
+        /// The request was rejected because the credential report does not exist. To generate
+        /// a credential report, use <a>GenerateCredentialReport</a>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotReadyException">
+        /// The request was rejected because the credential report is still being generated.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<GetCredentialReportResponse> GetCredentialReportAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetCredentialReport operation.
@@ -827,11 +1027,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetCredentialReportResponse> GetCredentialReportAsync(GetCredentialReportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetCredentialReportResponse> GetCredentialReportAsync(GetCredentialReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetGroup operation.
@@ -842,11 +1043,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetGroupResponse> GetGroupAsync(GetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetGroupResponse> GetGroupAsync(GetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetGroupPolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetGroupPolicy operation.
@@ -857,11 +1059,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetGroupPolicyResponse> GetGroupPolicyAsync(GetGroupPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetGroupPolicyResponse> GetGroupPolicyAsync(GetGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetInstanceProfile
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetInstanceProfile operation.
@@ -872,11 +1075,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetInstanceProfileResponse> GetInstanceProfileAsync(GetInstanceProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetInstanceProfileResponse> GetInstanceProfileAsync(GetInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetLoginProfile
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetLoginProfile operation.
@@ -887,11 +1091,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetLoginProfileResponse> GetLoginProfileAsync(GetLoginProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetLoginProfileResponse> GetLoginProfileAsync(GetLoginProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetOpenIDConnectProvider
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetOpenIDConnectProvider operation.
@@ -902,11 +1107,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetOpenIDConnectProviderResponse> GetOpenIDConnectProviderAsync(GetOpenIDConnectProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetOpenIDConnectProviderResponse> GetOpenIDConnectProviderAsync(GetOpenIDConnectProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetPolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetPolicy operation.
@@ -917,11 +1123,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetPolicyVersion
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetPolicyVersion operation.
@@ -932,11 +1139,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetPolicyVersionResponse> GetPolicyVersionAsync(GetPolicyVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetPolicyVersionResponse> GetPolicyVersionAsync(GetPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetRole
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetRole operation.
@@ -947,11 +1155,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetRoleResponse> GetRoleAsync(GetRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetRoleResponse> GetRoleAsync(GetRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetRolePolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetRolePolicy operation.
@@ -962,11 +1171,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetRolePolicyResponse> GetRolePolicyAsync(GetRolePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetRolePolicyResponse> GetRolePolicyAsync(GetRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetSAMLProvider
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetSAMLProvider operation.
@@ -977,11 +1187,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetSAMLProviderResponse> GetSAMLProviderAsync(GetSAMLProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetSAMLProviderResponse> GetSAMLProviderAsync(GetSAMLProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetServerCertificate
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetServerCertificate operation.
@@ -992,11 +1203,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetServerCertificateResponse> GetServerCertificateAsync(GetServerCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetServerCertificateResponse> GetServerCertificateAsync(GetServerCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetSSHPublicKey
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetSSHPublicKey operation.
@@ -1007,11 +1219,37 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetSSHPublicKeyResponse> GetSSHPublicKeyAsync(GetSSHPublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetSSHPublicKeyResponse> GetSSHPublicKeyAsync(GetSSHPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetUser
+
+
+        /// <summary>
+        /// Retrieves information about the specified user, including the user's creation date,
+        /// path, unique ID, and ARN. 
+        /// 
+        ///  
+        /// <para>
+        /// If you do not specify a user name, IAM determines the user name implicitly based on
+        /// the AWS access key ID used to sign the request. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetUser service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<GetUserResponse> GetUserAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetUser operation.
@@ -1022,11 +1260,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetUserResponse> GetUserAsync(GetUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetUserResponse> GetUserAsync(GetUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetUserPolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetUserPolicy operation.
@@ -1037,11 +1276,46 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetUserPolicyResponse> GetUserPolicyAsync(GetUserPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetUserPolicyResponse> GetUserPolicyAsync(GetUserPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListAccessKeys
+
+
+        /// <summary>
+        /// Returns information about the access key IDs associated with the specified user. If
+        /// there are none, the action returns an empty list. 
+        /// 
+        ///  
+        /// <para>
+        /// Although each user is limited to a small number of keys, you can still paginate the
+        /// results using the <code>MaxItems</code> and <code>Marker</code> parameters. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
+        /// based on the AWS access key ID used to sign the request. Because this action works
+        /// for access keys under the AWS account, you can use this action to manage root credentials
+        /// even if the AWS account has no associated users. 
+        /// </para>
+        ///  <note>To ensure the security of your AWS account, the secret access key is accessible
+        /// only during key and user creation. </note>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAccessKeys service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<ListAccessKeysResponse> ListAccessKeysAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListAccessKeys operation.
@@ -1052,11 +1326,34 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListAccessKeysResponse> ListAccessKeysAsync(ListAccessKeysRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListAccessKeysResponse> ListAccessKeysAsync(ListAccessKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListAccountAliases
+
+
+        /// <summary>
+        /// Lists the account aliases associated with the account. For information about using
+        /// an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+        /// an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide. 
+        /// 
+        ///  
+        /// <para>
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAccountAliases service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<ListAccountAliasesResponse> ListAccountAliasesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListAccountAliases operation.
@@ -1067,11 +1364,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListAccountAliasesResponse> ListAccountAliasesAsync(ListAccountAliasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListAccountAliasesResponse> ListAccountAliasesAsync(ListAccountAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListAttachedGroupPolicies
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListAttachedGroupPolicies operation.
@@ -1082,11 +1380,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListAttachedGroupPoliciesResponse> ListAttachedGroupPoliciesAsync(ListAttachedGroupPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListAttachedGroupPoliciesResponse> ListAttachedGroupPoliciesAsync(ListAttachedGroupPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListAttachedRolePolicies
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListAttachedRolePolicies operation.
@@ -1097,11 +1396,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListAttachedRolePoliciesResponse> ListAttachedRolePoliciesAsync(ListAttachedRolePoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListAttachedRolePoliciesResponse> ListAttachedRolePoliciesAsync(ListAttachedRolePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListAttachedUserPolicies
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListAttachedUserPolicies operation.
@@ -1112,11 +1412,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListAttachedUserPoliciesResponse> ListAttachedUserPoliciesAsync(ListAttachedUserPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListAttachedUserPoliciesResponse> ListAttachedUserPoliciesAsync(ListAttachedUserPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListEntitiesForPolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListEntitiesForPolicy operation.
@@ -1127,11 +1428,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListEntitiesForPolicyResponse> ListEntitiesForPolicyAsync(ListEntitiesForPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListEntitiesForPolicyResponse> ListEntitiesForPolicyAsync(ListEntitiesForPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListGroupPolicies
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListGroupPolicies operation.
@@ -1142,11 +1444,32 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListGroupPoliciesResponse> ListGroupPoliciesAsync(ListGroupPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListGroupPoliciesResponse> ListGroupPoliciesAsync(ListGroupPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListGroups
+
+
+        /// <summary>
+        /// Lists the groups that have the specified path prefix.
+        /// 
+        ///  
+        /// <para>
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGroups service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<ListGroupsResponse> ListGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListGroups operation.
@@ -1157,11 +1480,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListGroupsForUser
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListGroupsForUser operation.
@@ -1172,11 +1496,35 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListGroupsForUserResponse> ListGroupsForUserAsync(ListGroupsForUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListGroupsForUserResponse> ListGroupsForUserAsync(ListGroupsForUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListInstanceProfiles
+
+
+        /// <summary>
+        /// Lists the instance profiles that have the specified path prefix. If there are none,
+        /// the action returns an empty list. For more information about instance profiles, go
+        /// to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+        /// Instance Profiles</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInstanceProfiles service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<ListInstanceProfilesResponse> ListInstanceProfilesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListInstanceProfiles operation.
@@ -1187,11 +1535,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListInstanceProfilesResponse> ListInstanceProfilesAsync(ListInstanceProfilesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListInstanceProfilesResponse> ListInstanceProfilesAsync(ListInstanceProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListInstanceProfilesForRole
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListInstanceProfilesForRole operation.
@@ -1202,11 +1551,39 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListInstanceProfilesForRoleResponse> ListInstanceProfilesForRoleAsync(ListInstanceProfilesForRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListInstanceProfilesForRoleResponse> ListInstanceProfilesForRoleAsync(ListInstanceProfilesForRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListMFADevices
+
+
+        /// <summary>
+        /// Lists the MFA devices. If the request includes the user name, then this action lists
+        /// all the MFA devices associated with the specified user name. If you do not specify
+        /// a user name, IAM determines the user name implicitly based on the AWS access key ID
+        /// signing the request. 
+        /// 
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMFADevices service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<ListMFADevicesResponse> ListMFADevicesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListMFADevices operation.
@@ -1217,11 +1594,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListMFADevicesResponse> ListMFADevicesAsync(ListMFADevicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListMFADevicesResponse> ListMFADevicesAsync(ListMFADevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListOpenIDConnectProviders
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListOpenIDConnectProviders operation.
@@ -1232,11 +1610,45 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListOpenIDConnectProvidersResponse> ListOpenIDConnectProvidersAsync(ListOpenIDConnectProvidersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListOpenIDConnectProvidersResponse> ListOpenIDConnectProvidersAsync(ListOpenIDConnectProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListPolicies
+
+
+        /// <summary>
+        /// Lists all the managed policies that are available to your account, including your
+        /// own customer managed policies and all AWS managed policies. 
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the list of policies that is returned using the optional <code>OnlyAttached</code>,
+        /// <code>Scope</code>, and <code>PathPrefix</code> parameters. For example, to list only
+        /// the customer managed policies in your AWS account, set <code>Scope</code> to <code>Local</code>.
+        /// To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPolicies service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<ListPoliciesResponse> ListPoliciesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListPolicies operation.
@@ -1247,11 +1659,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListPoliciesResponse> ListPoliciesAsync(ListPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListPoliciesResponse> ListPoliciesAsync(ListPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListPolicyVersions
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListPolicyVersions operation.
@@ -1262,11 +1675,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListPolicyVersionsResponse> ListPolicyVersionsAsync(ListPolicyVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListPolicyVersionsResponse> ListPolicyVersionsAsync(ListPolicyVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListRolePolicies
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListRolePolicies operation.
@@ -1277,11 +1691,34 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListRolePoliciesResponse> ListRolePoliciesAsync(ListRolePoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListRolePoliciesResponse> ListRolePoliciesAsync(ListRolePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListRoles
+
+
+        /// <summary>
+        /// Lists the roles that have the specified path prefix. If there are none, the action
+        /// returns an empty list. For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+        /// with Roles</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRoles service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<ListRolesResponse> ListRolesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListRoles operation.
@@ -1292,11 +1729,29 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListRolesResponse> ListRolesAsync(ListRolesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListRolesResponse> ListRolesAsync(ListRolesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListSAMLProviders
+
+
+        /// <summary>
+        /// Lists the SAML providers in the account.
+        /// 
+        ///  <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4</a>. </note>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSAMLProviders service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<ListSAMLProvidersResponse> ListSAMLProvidersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListSAMLProviders operation.
@@ -1307,11 +1762,33 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListSAMLProvidersResponse> ListSAMLProvidersAsync(ListSAMLProvidersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListSAMLProvidersResponse> ListSAMLProvidersAsync(ListSAMLProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListServerCertificates
+
+
+        /// <summary>
+        /// Lists the server certificates that have the specified path prefix. If none exist,
+        /// the action returns an empty list. 
+        /// 
+        ///  
+        /// <para>
+        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServerCertificates service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<ListServerCertificatesResponse> ListServerCertificatesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListServerCertificates operation.
@@ -1322,11 +1799,45 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListServerCertificatesResponse> ListServerCertificatesAsync(ListServerCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListServerCertificatesResponse> ListServerCertificatesAsync(ListServerCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListSigningCertificates
+
+
+        /// <summary>
+        /// Returns information about the signing certificates associated with the specified user.
+        /// If there are none, the action returns an empty list. 
+        /// 
+        ///  
+        /// <para>
+        /// Although each user is limited to a small number of signing certificates, you can still
+        /// paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
+        /// based on the AWS access key ID used to sign the request. Because this action works
+        /// for access keys under the AWS account, you can use this action to manage root credentials
+        /// even if the AWS account has no associated users. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSigningCertificates service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<ListSigningCertificatesResponse> ListSigningCertificatesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListSigningCertificates operation.
@@ -1337,11 +1848,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListSigningCertificatesResponse> ListSigningCertificatesAsync(ListSigningCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListSigningCertificatesResponse> ListSigningCertificatesAsync(ListSigningCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListSSHPublicKeys
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListSSHPublicKeys operation.
@@ -1352,11 +1864,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListSSHPublicKeysResponse> ListSSHPublicKeysAsync(ListSSHPublicKeysRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListSSHPublicKeysResponse> ListSSHPublicKeysAsync(ListSSHPublicKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListUserPolicies
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListUserPolicies operation.
@@ -1367,11 +1880,34 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListUserPoliciesResponse> ListUserPoliciesAsync(ListUserPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListUserPoliciesResponse> ListUserPoliciesAsync(ListUserPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListUsers
+
+
+        /// <summary>
+        /// Lists the IAM users that have the specified path prefix. If no path prefix is specified,
+        /// the action returns all users in the AWS account. If there are none, the action returns
+        /// an empty list. 
+        /// 
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListUsers service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<ListUsersResponse> ListUsersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListUsers operation.
@@ -1382,11 +1918,32 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListVirtualMFADevices
+
+
+        /// <summary>
+        /// Lists the virtual MFA devices under the AWS account by assignment status. If you do
+        /// not specify an assignment status, the action returns a list of all virtual MFA devices.
+        /// Assignment status can be <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVirtualMFADevices service method, as returned by IdentityManagementService.</returns>
+        Task<ListVirtualMFADevicesResponse> ListVirtualMFADevicesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListVirtualMFADevices operation.
@@ -1397,11 +1954,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListVirtualMFADevicesResponse> ListVirtualMFADevicesAsync(ListVirtualMFADevicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListVirtualMFADevicesResponse> ListVirtualMFADevicesAsync(ListVirtualMFADevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutGroupPolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutGroupPolicy operation.
@@ -1412,11 +1970,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutGroupPolicyResponse> PutGroupPolicyAsync(PutGroupPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutGroupPolicyResponse> PutGroupPolicyAsync(PutGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutRolePolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutRolePolicy operation.
@@ -1427,11 +1986,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutRolePolicyResponse> PutRolePolicyAsync(PutRolePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutRolePolicyResponse> PutRolePolicyAsync(PutRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutUserPolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutUserPolicy operation.
@@ -1442,11 +2002,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutUserPolicyResponse> PutUserPolicyAsync(PutUserPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutUserPolicyResponse> PutUserPolicyAsync(PutUserPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  RemoveClientIDFromOpenIDConnectProvider
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveClientIDFromOpenIDConnectProvider operation.
@@ -1457,11 +2018,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<RemoveClientIDFromOpenIDConnectProviderResponse> RemoveClientIDFromOpenIDConnectProviderAsync(RemoveClientIDFromOpenIDConnectProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<RemoveClientIDFromOpenIDConnectProviderResponse> RemoveClientIDFromOpenIDConnectProviderAsync(RemoveClientIDFromOpenIDConnectProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  RemoveRoleFromInstanceProfile
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveRoleFromInstanceProfile operation.
@@ -1472,11 +2034,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<RemoveRoleFromInstanceProfileResponse> RemoveRoleFromInstanceProfileAsync(RemoveRoleFromInstanceProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<RemoveRoleFromInstanceProfileResponse> RemoveRoleFromInstanceProfileAsync(RemoveRoleFromInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  RemoveUserFromGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveUserFromGroup operation.
@@ -1487,11 +2050,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<RemoveUserFromGroupResponse> RemoveUserFromGroupAsync(RemoveUserFromGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<RemoveUserFromGroupResponse> RemoveUserFromGroupAsync(RemoveUserFromGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ResyncMFADevice
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResyncMFADevice operation.
@@ -1502,11 +2066,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ResyncMFADeviceResponse> ResyncMFADeviceAsync(ResyncMFADeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ResyncMFADeviceResponse> ResyncMFADeviceAsync(ResyncMFADeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  SetDefaultPolicyVersion
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetDefaultPolicyVersion operation.
@@ -1517,11 +2082,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<SetDefaultPolicyVersionResponse> SetDefaultPolicyVersionAsync(SetDefaultPolicyVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<SetDefaultPolicyVersionResponse> SetDefaultPolicyVersionAsync(SetDefaultPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateAccessKey
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAccessKey operation.
@@ -1532,11 +2098,50 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateAccessKeyResponse> UpdateAccessKeyAsync(UpdateAccessKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateAccessKeyResponse> UpdateAccessKeyAsync(UpdateAccessKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateAccountPasswordPolicy
+
+
+        /// <summary>
+        /// Updates the password policy settings for the AWS account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action does not support partial updates. No parameters are required, but if you
+        /// do not specify a parameter, that parameter's value reverts to its default value. See
+        /// the <b>Request Parameters</b> section for each parameter's default value. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+        /// an IAM Password Policy</a> in the <i>Using IAM</i> guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
+        /// The request was rejected because the policy document was malformed. The error message
+        /// describes the specific error.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        Task<UpdateAccountPasswordPolicyResponse> UpdateAccountPasswordPolicyAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAccountPasswordPolicy operation.
@@ -1547,11 +2152,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateAccountPasswordPolicyResponse> UpdateAccountPasswordPolicyAsync(UpdateAccountPasswordPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateAccountPasswordPolicyResponse> UpdateAccountPasswordPolicyAsync(UpdateAccountPasswordPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateAssumeRolePolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAssumeRolePolicy operation.
@@ -1562,11 +2168,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateAssumeRolePolicyResponse> UpdateAssumeRolePolicyAsync(UpdateAssumeRolePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateAssumeRolePolicyResponse> UpdateAssumeRolePolicyAsync(UpdateAssumeRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateGroup operation.
@@ -1577,11 +2184,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateLoginProfile
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateLoginProfile operation.
@@ -1592,11 +2200,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateLoginProfileResponse> UpdateLoginProfileAsync(UpdateLoginProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateLoginProfileResponse> UpdateLoginProfileAsync(UpdateLoginProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateOpenIDConnectProviderThumbprint
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateOpenIDConnectProviderThumbprint operation.
@@ -1607,11 +2216,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateOpenIDConnectProviderThumbprintResponse> UpdateOpenIDConnectProviderThumbprintAsync(UpdateOpenIDConnectProviderThumbprintRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateOpenIDConnectProviderThumbprintResponse> UpdateOpenIDConnectProviderThumbprintAsync(UpdateOpenIDConnectProviderThumbprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateSAMLProvider
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSAMLProvider operation.
@@ -1622,11 +2232,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateSAMLProviderResponse> UpdateSAMLProviderAsync(UpdateSAMLProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateSAMLProviderResponse> UpdateSAMLProviderAsync(UpdateSAMLProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateServerCertificate
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateServerCertificate operation.
@@ -1637,11 +2248,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateServerCertificateResponse> UpdateServerCertificateAsync(UpdateServerCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateServerCertificateResponse> UpdateServerCertificateAsync(UpdateServerCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateSigningCertificate
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSigningCertificate operation.
@@ -1652,11 +2264,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateSigningCertificateResponse> UpdateSigningCertificateAsync(UpdateSigningCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateSigningCertificateResponse> UpdateSigningCertificateAsync(UpdateSigningCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateSSHPublicKey
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSSHPublicKey operation.
@@ -1667,11 +2280,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateSSHPublicKeyResponse> UpdateSSHPublicKeyAsync(UpdateSSHPublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateSSHPublicKeyResponse> UpdateSSHPublicKeyAsync(UpdateSSHPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateUser
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateUser operation.
@@ -1682,11 +2296,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UploadServerCertificate
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadServerCertificate operation.
@@ -1697,11 +2312,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UploadServerCertificateResponse> UploadServerCertificateAsync(UploadServerCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UploadServerCertificateResponse> UploadServerCertificateAsync(UploadServerCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UploadSigningCertificate
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadSigningCertificate operation.
@@ -1712,11 +2328,12 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UploadSigningCertificateResponse> UploadSigningCertificateAsync(UploadSigningCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UploadSigningCertificateResponse> UploadSigningCertificateAsync(UploadSigningCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UploadSSHPublicKey
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadSSHPublicKey operation.
@@ -1727,7 +2344,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UploadSSHPublicKeyResponse> UploadSSHPublicKeyAsync(UploadSSHPublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UploadSSHPublicKeyResponse> UploadSSHPublicKeyAsync(UploadSSHPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

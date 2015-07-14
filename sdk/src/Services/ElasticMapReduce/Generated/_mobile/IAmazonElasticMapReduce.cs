@@ -40,6 +40,7 @@ namespace Amazon.ElasticMapReduce
                 
         #region  AddInstanceGroups
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddInstanceGroups operation.
         /// </summary>
@@ -49,11 +50,12 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AddInstanceGroupsResponse> AddInstanceGroupsAsync(AddInstanceGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AddInstanceGroupsResponse> AddInstanceGroupsAsync(AddInstanceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  AddJobFlowSteps
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddJobFlowSteps operation.
@@ -64,11 +66,12 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AddJobFlowStepsResponse> AddJobFlowStepsAsync(AddJobFlowStepsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AddJobFlowStepsResponse> AddJobFlowStepsAsync(AddJobFlowStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  AddTags
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddTags operation.
@@ -79,11 +82,30 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeCluster
+
+
+        /// <summary>
+        /// Provides cluster-level details including status, hardware and software configuration,
+        /// VPC settings, and so on. For information about the cluster steps, see <a>ListSteps</a>.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCluster service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        Task<DescribeClusterResponse> DescribeClusterAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCluster operation.
@@ -94,11 +116,53 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeJobFlows
+
+
+        /// <summary>
+        /// This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>,
+        /// <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a> and <a>ListBootstrapActions</a>
+        /// instead.
+        /// 
+        ///  
+        /// <para>
+        ///  DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
+        /// The parameters can include a list of job flow IDs, job flow states, and restrictions
+        /// on job flow creation date and time.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Regardless of supplied parameters, only job flows created within the last two months
+        /// are returned.
+        /// </para>
+        ///  
+        /// <para>
+        ///  If no parameters are supplied, then job flows matching either of the following criteria
+        /// are returned:
+        /// </para>
+        ///  <ul> <li>Job flows created and completed in the last two weeks</li> <li> Job flows
+        /// created within the last two months that are in one of the following states: <code>RUNNING</code>,
+        /// <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code> </li> </ul>
+        /// 
+        /// <para>
+        ///  Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeJobFlows service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        Task<DescribeJobFlowsResponse> DescribeJobFlowsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeJobFlows operation.
@@ -109,11 +173,29 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeJobFlowsResponse> DescribeJobFlowsAsync(DescribeJobFlowsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeJobFlowsResponse> DescribeJobFlowsAsync(DescribeJobFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeStep
+
+
+        /// <summary>
+        /// Provides more detail about the cluster step.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeStep service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        Task<DescribeStepResponse> DescribeStepAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStep operation.
@@ -124,11 +206,29 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeStepResponse> DescribeStepAsync(DescribeStepRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeStepResponse> DescribeStepAsync(DescribeStepRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListBootstrapActions
+
+
+        /// <summary>
+        /// Provides information about the bootstrap actions associated with a cluster.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBootstrapActions service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        Task<ListBootstrapActionsResponse> ListBootstrapActionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListBootstrapActions operation.
@@ -139,11 +239,33 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListBootstrapActionsResponse> ListBootstrapActionsAsync(ListBootstrapActionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListBootstrapActionsResponse> ListBootstrapActionsAsync(ListBootstrapActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListClusters
+
+
+        /// <summary>
+        /// Provides the status of all clusters visible to this AWS account. Allows you to filter
+        /// the list of clusters based on certain criteria; for example, filtering by cluster
+        /// creation date and time or by status. This call returns a maximum of 50 clusters per
+        /// call, but returns a marker to track the paging of the cluster list across multiple
+        /// ListClusters calls.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListClusters service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        Task<ListClustersResponse> ListClustersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListClusters operation.
@@ -154,11 +276,29 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListInstanceGroups
+
+
+        /// <summary>
+        /// Provides all available details about the instance groups in a cluster.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInstanceGroups service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        Task<ListInstanceGroupsResponse> ListInstanceGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListInstanceGroups operation.
@@ -169,11 +309,32 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListInstanceGroupsResponse> ListInstanceGroupsAsync(ListInstanceGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListInstanceGroupsResponse> ListInstanceGroupsAsync(ListInstanceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListInstances
+
+
+        /// <summary>
+        /// Provides information about the cluster instances that Amazon EMR provisions on behalf
+        /// of a user when it creates the cluster. For example, this operation indicates when
+        /// the EC2 instances reach the Ready state, when instances become available to Amazon
+        /// EMR to use for jobs, and the IP addresses for cluster instances, etc.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInstances service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        Task<ListInstancesResponse> ListInstancesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListInstances operation.
@@ -184,11 +345,29 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListSteps
+
+
+        /// <summary>
+        /// Provides a list of steps for the cluster.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSteps service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        Task<ListStepsResponse> ListStepsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListSteps operation.
@@ -199,11 +378,12 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListStepsResponse> ListStepsAsync(ListStepsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListStepsResponse> ListStepsAsync(ListStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ModifyInstanceGroups
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyInstanceGroups operation.
@@ -214,11 +394,12 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ModifyInstanceGroupsResponse> ModifyInstanceGroupsAsync(ModifyInstanceGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ModifyInstanceGroupsResponse> ModifyInstanceGroupsAsync(ModifyInstanceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  RemoveTags
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTags operation.
@@ -229,11 +410,12 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  RunJobFlow
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RunJobFlow operation.
@@ -244,11 +426,12 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<RunJobFlowResponse> RunJobFlowAsync(RunJobFlowRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<RunJobFlowResponse> RunJobFlowAsync(RunJobFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  SetTerminationProtection
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetTerminationProtection operation.
@@ -259,11 +442,12 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<SetTerminationProtectionResponse> SetTerminationProtectionAsync(SetTerminationProtectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<SetTerminationProtectionResponse> SetTerminationProtectionAsync(SetTerminationProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  SetVisibleToAllUsers
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetVisibleToAllUsers operation.
@@ -274,11 +458,12 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<SetVisibleToAllUsersResponse> SetVisibleToAllUsersAsync(SetVisibleToAllUsersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<SetVisibleToAllUsersResponse> SetVisibleToAllUsersAsync(SetVisibleToAllUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  TerminateJobFlows
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateJobFlows operation.
@@ -289,7 +474,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<TerminateJobFlowsResponse> TerminateJobFlowsAsync(TerminateJobFlowsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<TerminateJobFlowsResponse> TerminateJobFlowsAsync(TerminateJobFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

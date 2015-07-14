@@ -53,6 +53,7 @@ namespace Amazon.ElastiCache
         
         #region  AddTagsToResource
 
+
         /// <summary>
         /// The <i>AddTagsToResource</i> action adds up to 10 cost allocation tags to the named
         /// resource. A <i>cost allocation tag</i> is a key-value pair where the key and value
@@ -116,6 +117,7 @@ namespace Amazon.ElastiCache
         
         #region  AuthorizeCacheSecurityGroupIngress
 
+
         /// <summary>
         /// The <i>AuthorizeCacheSecurityGroupIngress</i> action allows network ingress to a cache
         /// security group. Applications using ElastiCache must be running on Amazon EC2, and
@@ -174,6 +176,7 @@ namespace Amazon.ElastiCache
         
         #region  CopySnapshot
 
+
         /// <summary>
         /// The <i>CopySnapshot</i> action makes a copy of an existing snapshot.
         /// </summary>
@@ -227,6 +230,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  CreateCacheCluster
+
 
         /// <summary>
         /// The <i>CreateCacheCluster</i> action creates a cache cluster. All nodes in the cache
@@ -315,6 +319,7 @@ namespace Amazon.ElastiCache
         
         #region  CreateCacheParameterGroup
 
+
         /// <summary>
         /// The <i>CreateCacheParameterGroup</i> action creates a new cache parameter group. A
         /// cache parameter group is a collection of parameters that you apply to all of the nodes
@@ -369,6 +374,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  CreateCacheSecurityGroup
+
 
         /// <summary>
         /// The <i>CreateCacheSecurityGroup</i> action creates a new cache security group. Use
@@ -427,6 +433,7 @@ namespace Amazon.ElastiCache
         
         #region  CreateCacheSubnetGroup
 
+
         /// <summary>
         /// The <i>CreateCacheSubnetGroup</i> action creates a new cache subnet group.
         /// 
@@ -483,6 +490,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  CreateReplicationGroup
+
 
         /// <summary>
         /// The <i>CreateReplicationGroup</i> action creates a replication group. A replication
@@ -583,6 +591,7 @@ namespace Amazon.ElastiCache
         
         #region  CreateSnapshot
 
+
         /// <summary>
         /// The <i>CreateSnapshot</i> action creates a copy of an entire cache cluster at a specific
         /// moment in time.
@@ -653,6 +662,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  DeleteCacheCluster
+
 
         /// <summary>
         /// The <i>DeleteCacheCluster</i> action deletes a previously provisioned cache cluster.
@@ -734,6 +744,7 @@ namespace Amazon.ElastiCache
         
         #region  DeleteCacheParameterGroup
 
+
         /// <summary>
         /// The <i>DeleteCacheParameterGroup</i> action deletes the specified cache parameter
         /// group. You cannot delete a cache parameter group if it is associated with any cache
@@ -785,6 +796,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  DeleteCacheSecurityGroup
+
 
         /// <summary>
         /// The <i>DeleteCacheSecurityGroup</i> action deletes a cache security group.
@@ -838,6 +850,7 @@ namespace Amazon.ElastiCache
         
         #region  DeleteCacheSubnetGroup
 
+
         /// <summary>
         /// The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.
         /// 
@@ -881,6 +894,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  DeleteReplicationGroup
+
 
         /// <summary>
         /// The <i>DeleteReplicationGroup</i> action deletes an existing replication group. By
@@ -961,6 +975,7 @@ namespace Amazon.ElastiCache
         
         #region  DeleteSnapshot
 
+
         /// <summary>
         /// The <i>DeleteSnapshot</i> action deletes an existing snapshot. When you receive a
         /// successful response from this action, ElastiCache immediately begins deleting the
@@ -1010,6 +1025,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  DescribeCacheClusters
+
 
         /// <summary>
         /// The <i>DescribeCacheClusters</i> action returns information about all provisioned
@@ -1134,6 +1150,7 @@ namespace Amazon.ElastiCache
         
         #region  DescribeCacheEngineVersions
 
+
         /// <summary>
         /// The <i>DescribeCacheEngineVersions</i> action returns a list of the available cache
         /// engines and their versions.
@@ -1178,6 +1195,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  DescribeCacheParameterGroups
+
 
         /// <summary>
         /// The <i>DescribeCacheParameterGroups</i> action returns a list of cache parameter group
@@ -1246,6 +1264,7 @@ namespace Amazon.ElastiCache
         
         #region  DescribeCacheParameters
 
+
         /// <summary>
         /// The <i>DescribeCacheParameters</i> action returns the detailed parameter list for
         /// a particular cache parameter group.
@@ -1292,6 +1311,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  DescribeCacheSecurityGroups
+
 
         /// <summary>
         /// The <i>DescribeCacheSecurityGroups</i> action returns a list of cache security group
@@ -1360,6 +1380,7 @@ namespace Amazon.ElastiCache
         
         #region  DescribeCacheSubnetGroups
 
+
         /// <summary>
         /// The <i>DescribeCacheSubnetGroups</i> action returns a list of cache subnet group descriptions.
         /// If a subnet group name is specified, the list will contain only the description of
@@ -1413,6 +1434,7 @@ namespace Amazon.ElastiCache
         
         #region  DescribeEngineDefaultParameters
 
+
         /// <summary>
         /// The <i>DescribeEngineDefaultParameters</i> action returns the default engine and system
         /// parameter information for the specified cache engine.
@@ -1455,6 +1477,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  DescribeEvents
+
 
         /// <summary>
         /// The <i>DescribeEvents</i> action returns events related to cache clusters, cache security
@@ -1529,6 +1552,7 @@ namespace Amazon.ElastiCache
         
         #region  DescribeReplicationGroups
 
+
         /// <summary>
         /// The <i>DescribeReplicationGroups</i> action returns information about a particular
         /// replication group. If no identifier is specified, <i>DescribeReplicationGroups</i>
@@ -1594,6 +1618,7 @@ namespace Amazon.ElastiCache
         
         #region  DescribeReservedCacheNodes
 
+
         /// <summary>
         /// The <i>DescribeReservedCacheNodes</i> action returns information about reserved cache
         /// nodes for this account, or about a specified reserved cache node.
@@ -1657,6 +1682,7 @@ namespace Amazon.ElastiCache
         
         #region  DescribeReservedCacheNodesOfferings
 
+
         /// <summary>
         /// The <i>DescribeReservedCacheNodesOfferings</i> action lists available reserved cache
         /// node offerings.
@@ -1719,6 +1745,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  DescribeSnapshots
+
 
         /// <summary>
         /// The <i>DescribeSnapshots</i> action returns information about cache cluster snapshots.
@@ -1793,6 +1820,7 @@ namespace Amazon.ElastiCache
         
         #region  ListTagsForResource
 
+
         /// <summary>
         /// The <i>ListTagsForResource</i> action lists all cost allocation tags currently on
         /// the named resource. A <i>cost allocation tag</i> is a key-value pair where the key
@@ -1847,6 +1875,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  ModifyCacheCluster
+
 
         /// <summary>
         /// The <i>ModifyCacheCluster</i> action modifies the settings for a cache cluster. You
@@ -1923,6 +1952,7 @@ namespace Amazon.ElastiCache
         
         #region  ModifyCacheParameterGroup
 
+
         /// <summary>
         /// The <i>ModifyCacheParameterGroup</i> action modifies the parameters of a cache parameter
         /// group. You can modify up to 20 parameters in a single request by submitting a list
@@ -1975,6 +2005,7 @@ namespace Amazon.ElastiCache
         
         #region  ModifyCacheSubnetGroup
 
+
         /// <summary>
         /// The <i>ModifyCacheSubnetGroup</i> action modifies an existing cache subnet group.
         /// </summary>
@@ -2023,6 +2054,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  ModifyReplicationGroup
+
 
         /// <summary>
         /// The <i>ModifyReplicationGroup</i> action modifies the settings for a replication group.
@@ -2103,6 +2135,7 @@ namespace Amazon.ElastiCache
         
         #region  PurchaseReservedCacheNodesOffering
 
+
         /// <summary>
         /// The <i>PurchaseReservedCacheNodesOffering</i> action allows you to purchase a reserved
         /// cache node offering.
@@ -2154,6 +2187,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  RebootCacheCluster
+
 
         /// <summary>
         /// The <i>RebootCacheCluster</i> action reboots some, or all, of the cache nodes within
@@ -2211,6 +2245,7 @@ namespace Amazon.ElastiCache
         
         #region  RemoveTagsFromResource
 
+
         /// <summary>
         /// The <i>RemoveTagsFromResource</i> action removes the tags identified by the <code>TagKeys</code>
         /// list from the named resource.
@@ -2259,6 +2294,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  ResetCacheParameterGroup
+
 
         /// <summary>
         /// The <i>ResetCacheParameterGroup</i> action modifies the parameters of a cache parameter
@@ -2312,6 +2348,7 @@ namespace Amazon.ElastiCache
         #endregion
         
         #region  RevokeCacheSecurityGroupIngress
+
 
         /// <summary>
         /// The <i>RevokeCacheSecurityGroupIngress</i> action revokes ingress from a cache security

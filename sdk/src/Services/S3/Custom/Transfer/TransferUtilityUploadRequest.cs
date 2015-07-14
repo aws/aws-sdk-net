@@ -408,15 +408,18 @@ namespace Amazon.S3.Transfer
 #if BCL
                 if (this.IsSetFilePath())
                 {
+                    //System.IO.
                     FileInfo fileInfo = new FileInfo(this.FilePath);
                     length = fileInfo.Length;
                 }
-#elif WIN_RT || WINDOWS_PHONE
-                if (IsSetStorageFile())
+#elif PCL
+                if (this.IsSetFilePath())
                 {
-                    var result = System.Threading.Tasks.Task.Run(() =>
-                        this.StorageFile.GetBasicPropertiesAsync().AsTask()).Result;
-                    length = checked((long)result.Size);
+                    var file = PCLStorage.FileSystem.Current.GetFileFromPathAsync(this.FilePath).Result;
+                    using (var stream = file.OpenAsync(PCLStorage.FileAccess.Read).Result)
+                    {
+                        length = stream.Length;
+                    }
                 }
 #endif
                 else

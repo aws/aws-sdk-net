@@ -170,6 +170,9 @@ namespace Amazon.StorageGateway
 
         #region Overrides
 
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new AWS4Signer();
@@ -180,6 +183,9 @@ namespace Amazon.StorageGateway
 
         #region Dispose
 
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -197,6 +203,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<ActivateGatewayRequest,ActivateGatewayResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ActivateGateway operation.
@@ -228,6 +235,7 @@ namespace Amazon.StorageGateway
             return Invoke<AddCacheRequest,AddCacheResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddCache operation.
         /// </summary>
@@ -257,6 +265,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<AddUploadBufferRequest,AddUploadBufferResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddUploadBuffer operation.
@@ -288,6 +297,7 @@ namespace Amazon.StorageGateway
             return Invoke<AddWorkingStorageRequest,AddWorkingStorageResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddWorkingStorage operation.
         /// </summary>
@@ -317,6 +327,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<CancelArchivalRequest,CancelArchivalResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelArchival operation.
@@ -348,6 +359,7 @@ namespace Amazon.StorageGateway
             return Invoke<CancelRetrievalRequest,CancelRetrievalResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CancelRetrieval operation.
         /// </summary>
@@ -377,6 +389,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<CreateCachediSCSIVolumeRequest,CreateCachediSCSIVolumeResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCachediSCSIVolume operation.
@@ -408,6 +421,7 @@ namespace Amazon.StorageGateway
             return Invoke<CreateSnapshotRequest,CreateSnapshotResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshot operation.
         /// </summary>
@@ -437,6 +451,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<CreateSnapshotFromVolumeRecoveryPointRequest,CreateSnapshotFromVolumeRecoveryPointResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshotFromVolumeRecoveryPoint operation.
@@ -468,6 +483,7 @@ namespace Amazon.StorageGateway
             return Invoke<CreateStorediSCSIVolumeRequest,CreateStorediSCSIVolumeResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStorediSCSIVolume operation.
         /// </summary>
@@ -497,6 +513,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<CreateTapesRequest,CreateTapesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTapes operation.
@@ -528,6 +545,7 @@ namespace Amazon.StorageGateway
             return Invoke<DeleteBandwidthRateLimitRequest,DeleteBandwidthRateLimitResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBandwidthRateLimit operation.
         /// </summary>
@@ -557,6 +575,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<DeleteChapCredentialsRequest,DeleteChapCredentialsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteChapCredentials operation.
@@ -588,6 +607,7 @@ namespace Amazon.StorageGateway
             return Invoke<DeleteGatewayRequest,DeleteGatewayResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteGateway operation.
         /// </summary>
@@ -617,6 +637,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<DeleteSnapshotScheduleRequest,DeleteSnapshotScheduleResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSnapshotSchedule operation.
@@ -648,6 +669,7 @@ namespace Amazon.StorageGateway
             return Invoke<DeleteTapeRequest,DeleteTapeResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTape operation.
         /// </summary>
@@ -677,6 +699,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<DeleteTapeArchiveRequest,DeleteTapeArchiveResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTapeArchive operation.
@@ -708,6 +731,7 @@ namespace Amazon.StorageGateway
             return Invoke<DeleteVolumeRequest,DeleteVolumeResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVolume operation.
         /// </summary>
@@ -737,6 +761,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<DescribeBandwidthRateLimitRequest,DescribeBandwidthRateLimitResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeBandwidthRateLimit operation.
@@ -768,6 +793,7 @@ namespace Amazon.StorageGateway
             return Invoke<DescribeCacheRequest,DescribeCacheResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCache operation.
         /// </summary>
@@ -797,6 +823,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<DescribeCachediSCSIVolumesRequest,DescribeCachediSCSIVolumesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCachediSCSIVolumes operation.
@@ -828,6 +855,7 @@ namespace Amazon.StorageGateway
             return Invoke<DescribeChapCredentialsRequest,DescribeChapCredentialsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeChapCredentials operation.
         /// </summary>
@@ -857,6 +885,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<DescribeGatewayInformationRequest,DescribeGatewayInformationResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeGatewayInformation operation.
@@ -888,6 +917,7 @@ namespace Amazon.StorageGateway
             return Invoke<DescribeMaintenanceStartTimeRequest,DescribeMaintenanceStartTimeResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMaintenanceStartTime operation.
         /// </summary>
@@ -918,6 +948,7 @@ namespace Amazon.StorageGateway
             return Invoke<DescribeSnapshotScheduleRequest,DescribeSnapshotScheduleResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshotSchedule operation.
         /// </summary>
@@ -947,6 +978,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<DescribeStorediSCSIVolumesRequest,DescribeStorediSCSIVolumesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStorediSCSIVolumes operation.
@@ -982,6 +1014,36 @@ namespace Amazon.StorageGateway
             return Invoke<DescribeTapeArchivesRequest,DescribeTapeArchivesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns a description of specified virtual tapes in the virtual tape shelf (VTS).
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
+        /// description of all virtual tapes found in the VTS associated with your account.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTapeArchives service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. See the error and message
+        /// fields for more information.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// See the error and message fields for more information.
+        /// </exception>
+        public Task<DescribeTapeArchivesResponse> DescribeTapeArchivesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeTapeArchivesAsync(new DescribeTapeArchivesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTapeArchives operation.
         /// </summary>
@@ -1011,6 +1073,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<DescribeTapeRecoveryPointsRequest,DescribeTapeRecoveryPointsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTapeRecoveryPoints operation.
@@ -1042,6 +1105,7 @@ namespace Amazon.StorageGateway
             return Invoke<DescribeTapesRequest,DescribeTapesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTapes operation.
         /// </summary>
@@ -1071,6 +1135,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<DescribeUploadBufferRequest,DescribeUploadBufferResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeUploadBuffer operation.
@@ -1102,6 +1167,7 @@ namespace Amazon.StorageGateway
             return Invoke<DescribeVTLDevicesRequest,DescribeVTLDevicesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVTLDevices operation.
         /// </summary>
@@ -1132,6 +1198,7 @@ namespace Amazon.StorageGateway
             return Invoke<DescribeWorkingStorageRequest,DescribeWorkingStorageResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkingStorage operation.
         /// </summary>
@@ -1161,6 +1228,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<DisableGatewayRequest,DisableGatewayResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableGateway operation.
@@ -1196,6 +1264,43 @@ namespace Amazon.StorageGateway
             return Invoke<ListGatewaysRequest,ListGatewaysResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// This operation lists gateways owned by an AWS account in a region specified in the
+        /// request. The returned list is ordered by gateway Amazon Resource Name (ARN).
+        /// 
+        ///  
+        /// <para>
+        /// By default, the operation returns a maximum of 100 gateways. This operation supports
+        /// pagination that allows you to optionally reduce the number of gateways returned in
+        /// a response.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have more gateways than are returned in a response-that is, the response returns
+        /// only a truncated list of your gateways-the response contains a marker that you can
+        /// specify in your next request to fetch the next page of gateways.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGateways service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. See the error and message
+        /// fields for more information.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// See the error and message fields for more information.
+        /// </exception>
+        public Task<ListGatewaysResponse> ListGatewaysAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListGatewaysAsync(new ListGatewaysRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListGateways operation.
         /// </summary>
@@ -1225,6 +1330,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<ListLocalDisksRequest,ListLocalDisksResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListLocalDisks operation.
@@ -1256,6 +1362,7 @@ namespace Amazon.StorageGateway
             return Invoke<ListVolumeInitiatorsRequest,ListVolumeInitiatorsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListVolumeInitiators operation.
         /// </summary>
@@ -1285,6 +1392,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<ListVolumeRecoveryPointsRequest,ListVolumeRecoveryPointsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListVolumeRecoveryPoints operation.
@@ -1316,6 +1424,7 @@ namespace Amazon.StorageGateway
             return Invoke<ListVolumesRequest,ListVolumesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListVolumes operation.
         /// </summary>
@@ -1345,6 +1454,46 @@ namespace Amazon.StorageGateway
 
             return Invoke<ResetCacheRequest,ResetCacheResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// This operation resets all cache disks that have encountered a error and makes the
+        /// disks available for reconfiguration as cache storage. If your cache disk encounters
+        /// a error, the gateway prevents read and write operations on virtual tapes in the gateway.
+        /// For example, an error can occur when a disk is corrupted or removed from the gateway.
+        /// When a cache is reset, the gateway loses its cache storage. At this point you can
+        /// reconfigure the disks as cache disks. 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If the cache disk you are resetting contains data that has not been uploaded to Amazon
+        /// S3 yet, that data can be lost. After you reset cache disks, there will be no configured
+        /// cache disks left in the gateway, so you must configure at least one new cache disk
+        /// for your gateway to function properly.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="gatewayARN">A property of ResetCacheRequest used to execute the ResetCache service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResetCache service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. See the error and message
+        /// fields for more information.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// See the error and message fields for more information.
+        /// </exception>
+        public Task<ResetCacheResponse> ResetCacheAsync(string gatewayARN, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new ResetCacheRequest();
+            request.GatewayARN = gatewayARN;
+            return ResetCacheAsync(request, cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResetCache operation.
@@ -1376,6 +1525,7 @@ namespace Amazon.StorageGateway
             return Invoke<RetrieveTapeArchiveRequest,RetrieveTapeArchiveResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RetrieveTapeArchive operation.
         /// </summary>
@@ -1405,6 +1555,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<RetrieveTapeRecoveryPointRequest,RetrieveTapeRecoveryPointResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RetrieveTapeRecoveryPoint operation.
@@ -1436,6 +1587,7 @@ namespace Amazon.StorageGateway
             return Invoke<ShutdownGatewayRequest,ShutdownGatewayResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ShutdownGateway operation.
         /// </summary>
@@ -1465,6 +1617,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<StartGatewayRequest,StartGatewayResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the StartGateway operation.
@@ -1496,6 +1649,7 @@ namespace Amazon.StorageGateway
             return Invoke<UpdateBandwidthRateLimitRequest,UpdateBandwidthRateLimitResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateBandwidthRateLimit operation.
         /// </summary>
@@ -1525,6 +1679,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<UpdateChapCredentialsRequest,UpdateChapCredentialsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateChapCredentials operation.
@@ -1556,6 +1711,7 @@ namespace Amazon.StorageGateway
             return Invoke<UpdateGatewayInformationRequest,UpdateGatewayInformationResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateGatewayInformation operation.
         /// </summary>
@@ -1585,6 +1741,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<UpdateGatewaySoftwareNowRequest,UpdateGatewaySoftwareNowResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateGatewaySoftwareNow operation.
@@ -1616,6 +1773,7 @@ namespace Amazon.StorageGateway
             return Invoke<UpdateMaintenanceStartTimeRequest,UpdateMaintenanceStartTimeResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateMaintenanceStartTime operation.
         /// </summary>
@@ -1646,6 +1804,7 @@ namespace Amazon.StorageGateway
             return Invoke<UpdateSnapshotScheduleRequest,UpdateSnapshotScheduleResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSnapshotSchedule operation.
         /// </summary>
@@ -1675,6 +1834,7 @@ namespace Amazon.StorageGateway
 
             return Invoke<UpdateVTLDeviceTypeRequest,UpdateVTLDeviceTypeResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateVTLDeviceType operation.

@@ -41,6 +41,7 @@ namespace Amazon.AutoScaling
         
         #region  AttachInstances
 
+
         /// <summary>
         /// Attaches one or more EC2 instances to the specified Auto Scaling group.
         /// 
@@ -86,6 +87,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  AttachLoadBalancers
+
 
         /// <summary>
         /// Attaches one or more load balancers to the specified Auto Scaling group.
@@ -137,6 +139,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  CompleteLifecycleAction
+
 
         /// <summary>
         /// Completes the lifecycle action for the associated token initiated under the given
@@ -197,6 +200,7 @@ namespace Amazon.AutoScaling
         
         #region  CreateAutoScalingGroup
 
+
         /// <summary>
         /// Creates an Auto Scaling group with the specified name and attributes.
         /// 
@@ -256,6 +260,7 @@ namespace Amazon.AutoScaling
         
         #region  CreateLaunchConfiguration
 
+
         /// <summary>
         /// Creates a launch configuration.
         /// 
@@ -314,6 +319,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  CreateOrUpdateTags
+
 
         /// <summary>
         /// Creates or updates tags for the specified Auto Scaling group.
@@ -381,6 +387,7 @@ namespace Amazon.AutoScaling
         
         #region  DeleteAutoScalingGroup
 
+
         /// <summary>
         /// Deletes the specified Auto Scaling group.
         /// 
@@ -437,6 +444,7 @@ namespace Amazon.AutoScaling
         
         #region  DeleteLaunchConfiguration
 
+
         /// <summary>
         /// Deletes the specified launch configuration.
         /// 
@@ -486,6 +494,7 @@ namespace Amazon.AutoScaling
         
         #region  DeleteLifecycleHook
 
+
         /// <summary>
         /// Deletes the specified lifecycle hook.
         /// 
@@ -532,6 +541,7 @@ namespace Amazon.AutoScaling
         
         #region  DeleteNotificationConfiguration
 
+
         /// <summary>
         /// Deletes the specified notification.
         /// </summary>
@@ -571,6 +581,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  DeletePolicy
+
 
         /// <summary>
         /// Deletes the specified Auto Scaling policy.
@@ -612,6 +623,7 @@ namespace Amazon.AutoScaling
         
         #region  DeleteScheduledAction
 
+
         /// <summary>
         /// Deletes the specified scheduled action.
         /// </summary>
@@ -652,6 +664,7 @@ namespace Amazon.AutoScaling
         
         #region  DeleteTags
 
+
         /// <summary>
         /// Deletes the specified tags.
         /// </summary>
@@ -691,6 +704,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  DescribeAccountLimits
+
 
         /// <summary>
         /// Describes the current Auto Scaling resource limits for your AWS account.
@@ -755,6 +769,7 @@ namespace Amazon.AutoScaling
         
         #region  DescribeAdjustmentTypes
 
+
         /// <summary>
         /// Describes the policy adjustment types for use with <a>PutScalingPolicy</a>.
         /// </summary>
@@ -805,6 +820,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  DescribeAutoScalingGroups
+
 
         /// <summary>
         /// Describes one or more Auto Scaling groups. If a list of names is not provided, the
@@ -865,6 +881,7 @@ namespace Amazon.AutoScaling
         
         #region  DescribeAutoScalingInstances
 
+
         /// <summary>
         /// Describes one or more Auto Scaling instances. If a list is not provided, the call
         /// describes all instances.
@@ -924,6 +941,7 @@ namespace Amazon.AutoScaling
         
         #region  DescribeAutoScalingNotificationTypes
 
+
         /// <summary>
         /// Describes the notification types that are supported by Auto Scaling.
         /// </summary>
@@ -974,6 +992,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  DescribeLaunchConfigurations
+
 
         /// <summary>
         /// Describes one or more launch configurations. If you omit the list of names, then the
@@ -1034,6 +1053,7 @@ namespace Amazon.AutoScaling
         
         #region  DescribeLifecycleHooks
 
+
         /// <summary>
         /// Describes the lifecycle hooks for the specified Auto Scaling group.
         /// </summary>
@@ -1073,6 +1093,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  DescribeLifecycleHookTypes
+
 
         /// <summary>
         /// Describes the available types of lifecycle hooks.
@@ -1114,6 +1135,7 @@ namespace Amazon.AutoScaling
         
         #region  DescribeLoadBalancers
 
+
         /// <summary>
         /// Describes the load balancers for the specified Auto Scaling group.
         /// </summary>
@@ -1153,6 +1175,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  DescribeMetricCollectionTypes
+
 
         /// <summary>
         /// Describes the available CloudWatch metrics for Auto Scaling.
@@ -1217,6 +1240,7 @@ namespace Amazon.AutoScaling
         
         #region  DescribeNotificationConfigurations
 
+
         /// <summary>
         /// Describes the notification actions associated with the specified Auto Scaling group.
         /// </summary>
@@ -1274,6 +1298,7 @@ namespace Amazon.AutoScaling
         
         #region  DescribePolicies
 
+
         /// <summary>
         /// Describes the policies for the specified Auto Scaling group.
         /// </summary>
@@ -1330,6 +1355,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  DescribeScalingActivities
+
 
         /// <summary>
         /// Describes one or more scaling activities for the specified Auto Scaling group. If
@@ -1394,6 +1420,7 @@ namespace Amazon.AutoScaling
         
         #region  DescribeScalingProcessTypes
 
+
         /// <summary>
         /// Describes the scaling process types for use with <a>ResumeProcesses</a> and <a>SuspendProcesses</a>.
         /// </summary>
@@ -1444,6 +1471,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  DescribeScheduledActions
+
 
         /// <summary>
         /// Describes the actions scheduled for your Auto Scaling group that haven't run. To describe
@@ -1503,6 +1531,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  DescribeTags
+
 
         /// <summary>
         /// Describes the specified tags.
@@ -1587,6 +1616,7 @@ namespace Amazon.AutoScaling
         
         #region  DescribeTerminationPolicyTypes
 
+
         /// <summary>
         /// Describes the termination policies supported by Auto Scaling.
         /// </summary>
@@ -1638,6 +1668,7 @@ namespace Amazon.AutoScaling
         
         #region  DetachInstances
 
+
         /// <summary>
         /// Removes one or more instances from the specified Auto Scaling group. After the instances
         /// are detached, you can manage them independently from the rest of the Auto Scaling
@@ -1685,6 +1716,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  DetachLoadBalancers
+
 
         /// <summary>
         /// Removes one or more load balancers from the specified Auto Scaling group.
@@ -1734,6 +1766,7 @@ namespace Amazon.AutoScaling
         
         #region  DisableMetricsCollection
 
+
         /// <summary>
         /// Disables monitoring of the specified metrics for the specified Auto Scaling group.
         /// </summary>
@@ -1773,6 +1806,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  EnableMetricsCollection
+
 
         /// <summary>
         /// Enables monitoring of the specified metrics for the specified Auto Scaling group.
@@ -1820,6 +1854,7 @@ namespace Amazon.AutoScaling
         
         #region  EnterStandby
 
+
         /// <summary>
         /// Moves the specified instances into <code>Standby</code> mode.
         /// 
@@ -1866,6 +1901,7 @@ namespace Amazon.AutoScaling
         
         #region  ExecutePolicy
 
+
         /// <summary>
         /// Executes the specified policy.
         /// </summary>
@@ -1908,6 +1944,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  ExitStandby
+
 
         /// <summary>
         /// Moves the specified instances out of <code>Standby</code> mode.
@@ -1954,6 +1991,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  PutLifecycleHook
+
 
         /// <summary>
         /// Creates or updates a lifecycle hook for the specified Auto Scaling Group.
@@ -2029,6 +2067,7 @@ namespace Amazon.AutoScaling
         
         #region  PutNotificationConfiguration
 
+
         /// <summary>
         /// Configures an Auto Scaling group to send notifications when specified events take
         /// place. Subscribers to this topic can have messages for events delivered to an endpoint
@@ -2086,6 +2125,7 @@ namespace Amazon.AutoScaling
         
         #region  PutScalingPolicy
 
+
         /// <summary>
         /// Creates or updates a policy for an Auto Scaling group. To update an existing policy,
         /// use the existing policy name and set the parameters you want to change. Any existing
@@ -2139,6 +2179,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  PutScheduledUpdateGroupAction
+
 
         /// <summary>
         /// Creates or updates a scheduled scaling action for an Auto Scaling group. When updating
@@ -2194,6 +2235,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  RecordLifecycleActionHeartbeat
+
 
         /// <summary>
         /// Records a heartbeat for the lifecycle action associated with a specific token. This
@@ -2255,6 +2297,7 @@ namespace Amazon.AutoScaling
         
         #region  ResumeProcesses
 
+
         /// <summary>
         /// Resumes the specified suspended Auto Scaling processes for the specified Auto Scaling
         /// group. To resume specific processes, use the <code>ScalingProcesses</code> parameter.
@@ -2301,6 +2344,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  SetDesiredCapacity
+
 
         /// <summary>
         /// Sets the size of the specified Auto Scaling group.
@@ -2351,6 +2395,7 @@ namespace Amazon.AutoScaling
         
         #region  SetInstanceHealth
 
+
         /// <summary>
         /// Sets the health status of the specified instance.
         /// 
@@ -2396,6 +2441,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  SuspendProcesses
+
 
         /// <summary>
         /// Suspends the specified Auto Scaling processes for the specified Auto Scaling group.
@@ -2457,6 +2503,7 @@ namespace Amazon.AutoScaling
         
         #region  TerminateInstanceInAutoScalingGroup
 
+
         /// <summary>
         /// Terminates the specified instance and optionally adjusts the desired group size.
         /// 
@@ -2504,6 +2551,7 @@ namespace Amazon.AutoScaling
         #endregion
         
         #region  UpdateAutoScalingGroup
+
 
         /// <summary>
         /// Updates the configuration for the specified Auto Scaling group.

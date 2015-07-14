@@ -159,6 +159,9 @@ namespace Amazon.CloudSearch
 
         #region Overrides
 
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new AWS4Signer();
@@ -169,6 +172,9 @@ namespace Amazon.CloudSearch
 
         #region Dispose
 
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -186,6 +192,7 @@ namespace Amazon.CloudSearch
 
             return Invoke<BuildSuggestersRequest,BuildSuggestersResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the BuildSuggesters operation.
@@ -217,6 +224,7 @@ namespace Amazon.CloudSearch
             return Invoke<CreateDomainRequest,CreateDomainResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDomain operation.
         /// </summary>
@@ -246,6 +254,7 @@ namespace Amazon.CloudSearch
 
             return Invoke<DefineAnalysisSchemeRequest,DefineAnalysisSchemeResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DefineAnalysisScheme operation.
@@ -277,6 +286,7 @@ namespace Amazon.CloudSearch
             return Invoke<DefineExpressionRequest,DefineExpressionResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DefineExpression operation.
         /// </summary>
@@ -306,6 +316,7 @@ namespace Amazon.CloudSearch
 
             return Invoke<DefineIndexFieldRequest,DefineIndexFieldResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DefineIndexField operation.
@@ -337,6 +348,7 @@ namespace Amazon.CloudSearch
             return Invoke<DefineSuggesterRequest,DefineSuggesterResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DefineSuggester operation.
         /// </summary>
@@ -366,6 +378,7 @@ namespace Amazon.CloudSearch
 
             return Invoke<DeleteAnalysisSchemeRequest,DeleteAnalysisSchemeResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAnalysisScheme operation.
@@ -397,6 +410,7 @@ namespace Amazon.CloudSearch
             return Invoke<DeleteDomainRequest,DeleteDomainResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDomain operation.
         /// </summary>
@@ -426,6 +440,7 @@ namespace Amazon.CloudSearch
 
             return Invoke<DeleteExpressionRequest,DeleteExpressionResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteExpression operation.
@@ -457,6 +472,7 @@ namespace Amazon.CloudSearch
             return Invoke<DeleteIndexFieldRequest,DeleteIndexFieldResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteIndexField operation.
         /// </summary>
@@ -486,6 +502,7 @@ namespace Amazon.CloudSearch
 
             return Invoke<DeleteSuggesterRequest,DeleteSuggesterResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSuggester operation.
@@ -517,6 +534,7 @@ namespace Amazon.CloudSearch
             return Invoke<DescribeAnalysisSchemesRequest,DescribeAnalysisSchemesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAnalysisSchemes operation.
         /// </summary>
@@ -546,6 +564,7 @@ namespace Amazon.CloudSearch
 
             return Invoke<DescribeAvailabilityOptionsRequest,DescribeAvailabilityOptionsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAvailabilityOptions operation.
@@ -581,6 +600,35 @@ namespace Amazon.CloudSearch
             return Invoke<DescribeDomainsRequest,DescribeDomainsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Gets information about the search domains owned by this account. Can be limited to
+        /// specific domains. Shows all domains by default. To get the number of searchable documents
+        /// in a domain, use the console or submit a <code>matchall</code> request to your domain's
+        /// search endpoint: <code>q=matchall&amp;amp;q.parser=structured&amp;amp;size=0</code>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
+        /// target="_blank">Getting Information about a Search Domain</a> in the <i>Amazon CloudSearch
+        /// Developer Guide</i>.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDomains service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        public Task<DescribeDomainsResponse> DescribeDomainsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeDomainsAsync(new DescribeDomainsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDomains operation.
         /// </summary>
@@ -610,6 +658,7 @@ namespace Amazon.CloudSearch
 
             return Invoke<DescribeExpressionsRequest,DescribeExpressionsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeExpressions operation.
@@ -641,6 +690,7 @@ namespace Amazon.CloudSearch
             return Invoke<DescribeIndexFieldsRequest,DescribeIndexFieldsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeIndexFields operation.
         /// </summary>
@@ -670,6 +720,7 @@ namespace Amazon.CloudSearch
 
             return Invoke<DescribeScalingParametersRequest,DescribeScalingParametersResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeScalingParameters operation.
@@ -701,6 +752,7 @@ namespace Amazon.CloudSearch
             return Invoke<DescribeServiceAccessPoliciesRequest,DescribeServiceAccessPoliciesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeServiceAccessPolicies operation.
         /// </summary>
@@ -731,6 +783,7 @@ namespace Amazon.CloudSearch
             return Invoke<DescribeSuggestersRequest,DescribeSuggestersResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSuggesters operation.
         /// </summary>
@@ -760,6 +813,7 @@ namespace Amazon.CloudSearch
 
             return Invoke<IndexDocumentsRequest,IndexDocumentsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the IndexDocuments operation.
@@ -795,6 +849,24 @@ namespace Amazon.CloudSearch
             return Invoke<ListDomainNamesRequest,ListDomainNamesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists all search domains owned by an account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDomainNames service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        public Task<ListDomainNamesResponse> ListDomainNamesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListDomainNamesAsync(new ListDomainNamesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomainNames operation.
         /// </summary>
@@ -824,6 +896,7 @@ namespace Amazon.CloudSearch
 
             return Invoke<UpdateAvailabilityOptionsRequest,UpdateAvailabilityOptionsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAvailabilityOptions operation.
@@ -855,6 +928,7 @@ namespace Amazon.CloudSearch
             return Invoke<UpdateScalingParametersRequest,UpdateScalingParametersResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateScalingParameters operation.
         /// </summary>
@@ -884,6 +958,7 @@ namespace Amazon.CloudSearch
 
             return Invoke<UpdateServiceAccessPoliciesRequest,UpdateServiceAccessPoliciesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateServiceAccessPolicies operation.

@@ -48,13 +48,8 @@ namespace Amazon.S3.Transfer.Internal
                     try
                     {
                         response.WriteObjectProgressEvent += OnWriteObjectProgressEvent;
-#if BCL45
-                        await response.WriteResponseStreamToFileAsync(this._request.FilePath, false, cancellationToken).
-                            ConfigureAwait(continueOnCapturedContext: false);
-#elif WIN_RT || WINDOWS_PHONE
-                         await response.WriteResponseStreamToFileAsync(this._request.StorageFile, false, cancellationToken).
-                            ConfigureAwait(continueOnCapturedContext: false);
-#endif
+                        await response.WriteResponseStreamToFileAsync(this._request.FilePath, false, cancellationToken)
+                            .ConfigureAwait(continueOnCapturedContext: false);
                     }
                     catch (Exception exception)
                     {

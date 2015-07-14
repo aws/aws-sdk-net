@@ -11,12 +11,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Security Token Service. The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Security Token Service. The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.")]
-#elif (WIN_RT && WINDOWS_PHONE)
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Portable)- AWS Security Token Service. The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.")]
-#elif WIN_RT
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows RT) - AWS Security Token Service. The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.")]
-#elif WINDOWS_PHONE
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows Phone 8)- AWS Security Token Service. The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.")]
+#elif PCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Core Runtime")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
@@ -44,7 +40,7 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.0")]
-[assembly: AssemblyFileVersion("3.0.0.2")]
+[assembly: AssemblyFileVersion("3.0.0.5")]
 
 #if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]

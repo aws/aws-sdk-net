@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.CloudSearch</id>
     <title>AWSSDK - Amazon CloudSearch</title>
-    <version>3.0.0.2-preview</version> 
+    <version>3.0.0.5-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application.</description> 
     <language>en-US</language>
@@ -12,12 +12,11 @@
     <tags>AWS Amazon cloud CloudSearch</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="portable-wpa+netcore45">
-        <dependency id="Microsoft.Net.Http" version="2.2.29" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
+      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
+      <dependency id="AWSSDK.Core" version="[3.0.0.6-preview, 3.1-preview)" />
       </group>
       <group>
-      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.0.0.6-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 
@@ -28,11 +27,14 @@
 
     <file src=".\bin\Release\net35\AWSSDK.CloudSearch.dll" target="lib\net35" />
     <file src=".\bin\Release\net35\AWSSDK.CloudSearch.xml" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.CloudSearch.pdb" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.CloudSearch.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.CloudSearch.xml" target="lib\net45" />
-    
-    <file src=".\bin\Release\portable\AWSSDK.CloudSearch.dll" target="lib\portable-wpa+netcore45" />
-    <file src=".\bin\Release\portable\AWSSDK.CloudSearch.xml" target="lib\portable-wpa+netcore45" />
+    <file src=".\bin\Release\net45\AWSSDK.CloudSearch.pdb" target="lib\net45" />
+
+    <file src=".\bin\Release\pcl\AWSSDK.CloudSearch.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.CloudSearch.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.CloudSearch.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
   </files>
 </package>

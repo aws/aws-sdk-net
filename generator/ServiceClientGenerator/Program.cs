@@ -36,7 +36,8 @@ namespace ServiceClientGenerator
                 var generationManifest = GenerationManifest.Load(options.Manifest, options.Versions, options.ModelsFolder);
                 if (string.IsNullOrEmpty(options.SelfServiceModel))
                 {
-                    foreach (var serviceConfig in generationManifest.ServiceConfigurations)
+					GeneratorDriver.GenerateCoreProjects(generationManifest, options);
+					foreach (var serviceConfig in generationManifest.ServiceConfigurations)
                     {
                         if (modelsToProcess.Any() && !modelsToProcess.Contains(serviceConfig.ModelName))
                         {
@@ -49,9 +50,9 @@ namespace ServiceClientGenerator
                         driver.Execute();
                     }
 
-                    GeneratorDriver.UpdateSolutionFiles(options);
-                    GeneratorDriver.UpdateAssemblyVersionInfo(generationManifest, options);
-                    GeneratorDriver.UpdateUnitTestProjectReferences(options);
+					GeneratorDriver.UpdateSolutionFiles(generationManifest, options);
+					GeneratorDriver.UpdateAssemblyVersionInfo(generationManifest, options);
+					GeneratorDriver.UpdateUnitTestProjectReferences(options);
                 }
                 else
                 {
@@ -75,7 +76,6 @@ namespace ServiceClientGenerator
                         Console.WriteLine("Using customization file: {0}", serviceConfig.CustomizationsPath);
                     }
                     
-
                     Console.WriteLine("Processing self service {0} with model {1}.", options.SelfServiceBaseName, options.SelfServiceModel);
                     var driver = new GeneratorDriver(serviceConfig, generationManifest, options);
                     driver.Execute();
@@ -83,9 +83,14 @@ namespace ServiceClientGenerator
             }
             catch (Exception e)
             {
-                Console.Error.WriteLine("Error running generator: " + e.Message);
-                Console.Error.WriteLine(e.StackTrace);
-                returnCode = -1;
+                if (options.WaitOnExit)
+                {
+                    Console.Error.WriteLine("Error running generator: " + e.Message);
+                    Console.Error.WriteLine(e.StackTrace);
+                    returnCode = -1;
+                }
+                else
+                    throw;
             }
 
             if (options.WaitOnExit)

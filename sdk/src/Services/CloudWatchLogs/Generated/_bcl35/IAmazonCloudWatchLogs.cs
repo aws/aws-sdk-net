@@ -74,6 +74,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  CreateLogGroup
 
+
         /// <summary>
         /// Creates a new log group with the specified name. The name of the log group must be
         /// unique within a region for an AWS account. You can create up to 500 log groups per
@@ -135,6 +136,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  CreateLogStream
 
+
         /// <summary>
         /// Creates a new log stream in the specified log group. The name of the log stream must
         /// be unique within the log group. There is no limit on the number of log streams that
@@ -192,6 +194,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DeleteLogGroup
 
+
         /// <summary>
         /// Deletes the log group with the specified name and permanently deletes all the archived
         /// log events associated with it.
@@ -240,6 +243,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  DeleteLogStream
+
 
         /// <summary>
         /// Deletes a log stream and permanently deletes all the archived log events associated
@@ -290,6 +294,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DeleteMetricFilter
 
+
         /// <summary>
         /// Deletes a metric filter associated with the specified log group.
         /// </summary>
@@ -337,6 +342,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  DeleteRetentionPolicy
+
 
         /// <summary>
         /// Deletes the retention policy of the specified log group. Log events would not expire
@@ -387,6 +393,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DeleteSubscriptionFilter
 
+
         /// <summary>
         /// Deletes a subscription filter associated with the specified log group.
         /// </summary>
@@ -434,6 +441,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  DescribeLogGroups
+
 
         /// <summary>
         /// Returns all the log groups that are associated with the AWS account making the request.
@@ -508,6 +516,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DescribeLogStreams
 
+
         /// <summary>
         /// Returns all the log streams that are associated with the specified log group. The
         /// list returned in the response is ASCII-sorted by log stream name. 
@@ -564,6 +573,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DescribeMetricFilters
 
+
         /// <summary>
         /// Returns all the metrics filters associated with the specified log group. The list
         /// returned in the response is ASCII-sorted by filter name. 
@@ -619,6 +629,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  DescribeSubscriptionFilters
 
+
         /// <summary>
         /// Returns all the subscription filters associated with the specified log group. The
         /// list returned in the response is ASCII-sorted by filter name. 
@@ -673,6 +684,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  FilterLogEvents
+
 
         /// <summary>
         /// Retrieves log events, optionally filtered by a filter pattern from the specified
@@ -735,6 +747,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  GetLogEvents
 
+
         /// <summary>
         /// Retrieves log events from the specified log stream. You can provide an optional time
         /// range to filter the results on the event <code class="code">timestamp</code>. 
@@ -791,6 +804,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  PutLogEvents
+
 
         /// <summary>
         /// Uploads a batch of log events to the specified log stream. 
@@ -863,6 +877,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  PutMetricFilter
 
+
         /// <summary>
         /// Creates or updates a metric filter and associates it with the specified log group.
         /// Metric filters allow you to configure rules to extract metric data from log events
@@ -922,6 +937,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  PutRetentionPolicy
 
+
         /// <summary>
         /// Sets the retention of the specified log group. A retention policy allows you to configure
         /// the number of days you want to retain log events in the specified log group.
@@ -970,6 +986,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  PutSubscriptionFilter
+
 
         /// <summary>
         /// Creates or updates a subscription filter and associates it with the specified log
@@ -1031,6 +1048,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  TestMetricFilter
+
 
         /// <summary>
         /// Tests the filter pattern of a metric filter against a sample of log event messages.

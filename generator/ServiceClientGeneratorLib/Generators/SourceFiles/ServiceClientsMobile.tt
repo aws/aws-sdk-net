@@ -140,6 +140,9 @@ namespace <#=this.Config.Namespace#>
 
         #region Overrides
 
+		/// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new <#=GeneratorHelpers.DetermineSigner(this.Config.ServiceModel.SignatureVersion, this.Config.BaseName)#>();
@@ -150,6 +153,10 @@ namespace <#=this.Config.Namespace#>
         if(this.Config.ServiceModel.Customizations.PipelineOverride != null)
         {
 #>
+		/// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
 <#
@@ -179,6 +186,9 @@ namespace <#=this.Config.Namespace#>
 
         #region Dispose
 
+		/// <summary>
+        /// Disposes the service client.
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -213,7 +223,28 @@ namespace <#=this.Config.Namespace#>
             return Invoke<<#=operation.Name#>Request,<#=operation.Name#>Response>(request, marshaller, unmarshaller);
         }
 
-<#AddAsyncDocumentation(operation.Name);#>
+<#
+        // Creates a version of the operation that takes no arguments and passes a request with no set members if specified in the customizations
+        if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
+        {
+#>
+<#
+        this.FormatOperationDocumentationAsync(operation, false);
+#>
+        public Task<<#=operation.Name#>Response> <#=operation.Name#>Async(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return <#=operation.Name#>Async(new <#=operation.Name#>Request(), cancellationToken);
+        }
+
+<#
+        }
+// Add async simple methods
+AddSimpleClientMethods(operation, false);
+#>
+
+<#
+AddAsyncDocumentation(operation.Name);
+#>
         <#=operation.IsInternal ? "internal" : "public"#> Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=operation.Name#>Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new <#=operation.Name#>RequestMarshaller();

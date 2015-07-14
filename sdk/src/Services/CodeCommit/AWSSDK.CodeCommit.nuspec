@@ -12,12 +12,11 @@
     <tags>AWS Amazon cloud CodeCommit</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="portable-wpa+netcore45">
-        <dependency id="Microsoft.Net.Http" version="2.2.29" />
+      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
       <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
       </group>
       <group>
-      <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.0.0.4-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 
@@ -28,11 +27,14 @@
 
     <file src=".\bin\Release\net35\AWSSDK.CodeCommit.dll" target="lib\net35" />
     <file src=".\bin\Release\net35\AWSSDK.CodeCommit.xml" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.CodeCommit.pdb" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.CodeCommit.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.CodeCommit.xml" target="lib\net45" />
-    
-    <file src=".\bin\Release\portable\AWSSDK.CodeCommit.dll" target="lib\portable-wpa+netcore45" />
-    <file src=".\bin\Release\portable\AWSSDK.CodeCommit.xml" target="lib\portable-wpa+netcore45" />
+    <file src=".\bin\Release\net45\AWSSDK.CodeCommit.pdb" target="lib\net45" />
+
+    <file src=".\bin\Release\pcl\AWSSDK.CodeCommit.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.CodeCommit.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.CodeCommit.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
   </files>
 </package>

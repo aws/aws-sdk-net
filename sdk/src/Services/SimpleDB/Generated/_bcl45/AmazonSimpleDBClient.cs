@@ -244,6 +244,7 @@ namespace Amazon.SimpleDB
         
         #region  BatchDeleteAttributes
 
+
         /// <summary>
         /// Performs multiple DeleteAttributes operations in a single call, which reduces round
         /// trips and latencies. This enables Amazon SimpleDB to optimize requests, which generally
@@ -287,6 +288,7 @@ namespace Amazon.SimpleDB
         #endregion
         
         #region  BatchPutAttributes
+
 
         /// <summary>
         /// The <code>BatchPutAttributes</code> operation creates or replaces attributes within
@@ -401,6 +403,7 @@ namespace Amazon.SimpleDB
         
         #region  CreateDomain
 
+
         /// <summary>
         /// The <code>CreateDomain</code> operation creates a new domain. The domain name should
         /// be unique among the domains associated with the Access Key ID provided in the request.
@@ -457,6 +460,7 @@ namespace Amazon.SimpleDB
         #endregion
         
         #region  DeleteAttributes
+
 
         /// <summary>
         /// Deletes one or more attributes associated with an item. If all attributes of the
@@ -520,6 +524,7 @@ namespace Amazon.SimpleDB
         
         #region  DeleteDomain
 
+
         /// <summary>
         /// The <code>DeleteDomain</code> operation deletes a domain. Any items (and their attributes)
         /// in the domain are deleted as well. The <code>DeleteDomain</code> operation might take
@@ -560,6 +565,7 @@ namespace Amazon.SimpleDB
         #endregion
         
         #region  DomainMetadata
+
 
         /// <summary>
         /// Returns information about the domain, including when the domain was created, the
@@ -604,6 +610,7 @@ namespace Amazon.SimpleDB
         #endregion
         
         #region  GetAttributes
+
 
         /// <summary>
         /// Returns all of the attributes associated with the specified item. Optionally, the
@@ -659,6 +666,7 @@ namespace Amazon.SimpleDB
         
         #region  ListDomains
 
+
         /// <summary>
         /// The <code>ListDomains</code> operation lists all domains associated with the Access
         /// Key ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>.
@@ -679,6 +687,7 @@ namespace Amazon.SimpleDB
         {
             return ListDomains(new ListDomainsRequest());
         }
+
 
         /// <summary>
         /// The <code>ListDomains</code> operation lists all domains associated with the Access
@@ -705,6 +714,30 @@ namespace Amazon.SimpleDB
             return Invoke<ListDomainsRequest,ListDomainsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// The <code>ListDomains</code> operation lists all domains associated with the Access
+        /// Key ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>.
+        /// A <a href="#NextToken">NextToken</a> is returned if there are more than <code>MaxNumberOfDomains</code>
+        /// domains. Calling <code>ListDomains</code> successive times with the <code>NextToken</code>
+        /// provided by the operation returns up to <code>MaxNumberOfDomains</code> more domain
+        /// names with each successive operation call.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDomains service method, as returned by SimpleDB.</returns>
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidNextTokenException">
+        /// The specified NextToken is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleDB.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        public Task<ListDomainsResponse> ListDomainsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListDomainsAsync(new ListDomainsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomains operation.
         /// </summary>
@@ -726,6 +759,7 @@ namespace Amazon.SimpleDB
         #endregion
         
         #region  PutAttributes
+
 
         /// <summary>
         /// The PutAttributes operation creates or replaces attributes in an item. The client
@@ -825,6 +859,7 @@ namespace Amazon.SimpleDB
         #endregion
         
         #region  Select
+
 
         /// <summary>
         /// The <code>Select</code> operation returns a set of attributes for <code>ItemNames</code>

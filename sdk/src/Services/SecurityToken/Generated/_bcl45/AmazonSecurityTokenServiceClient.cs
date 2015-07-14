@@ -288,6 +288,7 @@ namespace Amazon.SecurityToken
         
         #region  AssumeRole
 
+
         /// <summary>
         /// Returns a set of temporary security credentials (consisting of an access key ID, a
         /// secret access key, and a security token) that you can use to access AWS resources
@@ -428,6 +429,7 @@ namespace Amazon.SecurityToken
         
         #region  AssumeRoleWithSAML
 
+
         /// <summary>
         /// Returns a set of temporary security credentials for users who have been authenticated
         /// via a SAML authentication response. This operation provides a mechanism for tying
@@ -544,6 +546,7 @@ namespace Amazon.SecurityToken
         #endregion
         
         #region  AssumeRoleWithWebIdentity
+
 
         /// <summary>
         /// Returns a set of temporary security credentials for users who have been authenticated
@@ -694,6 +697,7 @@ namespace Amazon.SecurityToken
         
         #region  DecodeAuthorizationMessage
 
+
         /// <summary>
         /// Decodes additional information about the authorization status of a request from an
         /// encoded message returned in response to an AWS request. 
@@ -761,6 +765,7 @@ namespace Amazon.SecurityToken
         #endregion
         
         #region  GetFederationToken
+
 
         /// <summary>
         /// Returns a set of temporary security credentials (consisting of an access key ID, a
@@ -885,6 +890,7 @@ namespace Amazon.SecurityToken
         
         #region  GetSessionToken
 
+
         /// <summary>
         /// Returns a set of temporary credentials for an AWS account or IAM user. The credentials
         /// consist of an access key ID, a secret access key, and a security token. Typically,
@@ -933,6 +939,7 @@ namespace Amazon.SecurityToken
         {
             return GetSessionToken(new GetSessionTokenRequest());
         }
+
 
         /// <summary>
         /// Returns a set of temporary credentials for an AWS account or IAM user. The credentials
@@ -987,6 +994,58 @@ namespace Amazon.SecurityToken
             return Invoke<GetSessionTokenRequest,GetSessionTokenResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns a set of temporary credentials for an AWS account or IAM user. The credentials
+        /// consist of an access key ID, a secret access key, and a security token. Typically,
+        /// you use <code>GetSessionToken</code> if you want to use MFA to protect programmatic
+        /// calls to specific AWS APIs like Amazon EC2 <code>StopInstances</code>. MFA-enabled
+        /// IAM users would need to call <code>GetSessionToken</code> and submit an MFA code that
+        /// is associated with their MFA device. Using the temporary security credentials that
+        /// are returned from the call, IAM users can then make programmatic calls to APIs that
+        /// require MFA authentication. 
+        /// 
+        ///  
+        /// <para>
+        /// The <code>GetSessionToken</code> action must be called by using the long-term AWS
+        /// security credentials of the AWS account or an IAM user. Credentials that are created
+        /// by IAM users are valid for the duration that you specify, between 900 seconds (15
+        /// minutes) and 129600 seconds (36 hours); credentials that are created by using account
+        /// credentials have a maximum duration of 3600 seconds (1 hour). 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// We recommend that you do not call <code>GetSessionToken</code> with root account credentials.
+        /// Instead, follow our <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html#create-iam-users">best
+        /// practices</a> by creating one or more IAM users, giving them the necessary permissions,
+        /// and using IAM users for everyday interaction with AWS. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The permissions associated with the temporary security credentials returned by <code>GetSessionToken</code>
+        /// are based on the permissions associated with account or IAM user whose credentials
+        /// are used to call the action. If <code>GetSessionToken</code> is called using root
+        /// account credentials, the temporary credentials have root account permissions. Similarly,
+        /// if <code>GetSessionToken</code> is called using the credentials of an IAM user, the
+        /// temporary credentials have the same permissions as the IAM user. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using <code>GetSessionToken</code> to create temporary
+        /// credentials, go to <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSessionTokens.html"
+        /// target="_blank">Creating Temporary Credentials to Enable Access for IAM Users</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSessionToken service method, as returned by SecurityTokenService.</returns>
+        public Task<GetSessionTokenResponse> GetSessionTokenAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetSessionTokenAsync(new GetSessionTokenRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the GetSessionToken operation.
         /// </summary>

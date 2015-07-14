@@ -61,6 +61,7 @@ namespace Amazon.StorageGateway
                 
         #region  ActivateGateway
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ActivateGateway operation.
         /// </summary>
@@ -70,11 +71,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ActivateGatewayResponse> ActivateGatewayAsync(ActivateGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ActivateGatewayResponse> ActivateGatewayAsync(ActivateGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  AddCache
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddCache operation.
@@ -85,11 +87,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AddCacheResponse> AddCacheAsync(AddCacheRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AddCacheResponse> AddCacheAsync(AddCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  AddUploadBuffer
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddUploadBuffer operation.
@@ -100,11 +103,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AddUploadBufferResponse> AddUploadBufferAsync(AddUploadBufferRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AddUploadBufferResponse> AddUploadBufferAsync(AddUploadBufferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  AddWorkingStorage
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AddWorkingStorage operation.
@@ -115,11 +119,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AddWorkingStorageResponse> AddWorkingStorageAsync(AddWorkingStorageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AddWorkingStorageResponse> AddWorkingStorageAsync(AddWorkingStorageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CancelArchival
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelArchival operation.
@@ -130,11 +135,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CancelArchivalResponse> CancelArchivalAsync(CancelArchivalRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CancelArchivalResponse> CancelArchivalAsync(CancelArchivalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CancelRetrieval
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelRetrieval operation.
@@ -145,11 +151,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CancelRetrievalResponse> CancelRetrievalAsync(CancelRetrievalRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CancelRetrievalResponse> CancelRetrievalAsync(CancelRetrievalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateCachediSCSIVolume
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCachediSCSIVolume operation.
@@ -160,11 +167,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateCachediSCSIVolumeResponse> CreateCachediSCSIVolumeAsync(CreateCachediSCSIVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateCachediSCSIVolumeResponse> CreateCachediSCSIVolumeAsync(CreateCachediSCSIVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateSnapshot
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshot operation.
@@ -175,11 +183,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateSnapshotFromVolumeRecoveryPoint
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshotFromVolumeRecoveryPoint operation.
@@ -190,11 +199,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateSnapshotFromVolumeRecoveryPointResponse> CreateSnapshotFromVolumeRecoveryPointAsync(CreateSnapshotFromVolumeRecoveryPointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateSnapshotFromVolumeRecoveryPointResponse> CreateSnapshotFromVolumeRecoveryPointAsync(CreateSnapshotFromVolumeRecoveryPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateStorediSCSIVolume
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStorediSCSIVolume operation.
@@ -205,11 +215,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateStorediSCSIVolumeResponse> CreateStorediSCSIVolumeAsync(CreateStorediSCSIVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateStorediSCSIVolumeResponse> CreateStorediSCSIVolumeAsync(CreateStorediSCSIVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateTapes
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTapes operation.
@@ -220,11 +231,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateTapesResponse> CreateTapesAsync(CreateTapesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateTapesResponse> CreateTapesAsync(CreateTapesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteBandwidthRateLimit
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBandwidthRateLimit operation.
@@ -235,11 +247,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteBandwidthRateLimitResponse> DeleteBandwidthRateLimitAsync(DeleteBandwidthRateLimitRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteBandwidthRateLimitResponse> DeleteBandwidthRateLimitAsync(DeleteBandwidthRateLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteChapCredentials
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteChapCredentials operation.
@@ -250,11 +263,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteChapCredentialsResponse> DeleteChapCredentialsAsync(DeleteChapCredentialsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteChapCredentialsResponse> DeleteChapCredentialsAsync(DeleteChapCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteGateway
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteGateway operation.
@@ -265,11 +279,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteGatewayResponse> DeleteGatewayAsync(DeleteGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteGatewayResponse> DeleteGatewayAsync(DeleteGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteSnapshotSchedule
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSnapshotSchedule operation.
@@ -280,11 +295,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteSnapshotScheduleResponse> DeleteSnapshotScheduleAsync(DeleteSnapshotScheduleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteSnapshotScheduleResponse> DeleteSnapshotScheduleAsync(DeleteSnapshotScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteTape
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTape operation.
@@ -295,11 +311,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteTapeResponse> DeleteTapeAsync(DeleteTapeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteTapeResponse> DeleteTapeAsync(DeleteTapeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteTapeArchive
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTapeArchive operation.
@@ -310,11 +327,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteTapeArchiveResponse> DeleteTapeArchiveAsync(DeleteTapeArchiveRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteTapeArchiveResponse> DeleteTapeArchiveAsync(DeleteTapeArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteVolume
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVolume operation.
@@ -325,11 +343,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteVolumeResponse> DeleteVolumeAsync(DeleteVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteVolumeResponse> DeleteVolumeAsync(DeleteVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeBandwidthRateLimit
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeBandwidthRateLimit operation.
@@ -340,11 +359,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeBandwidthRateLimitResponse> DescribeBandwidthRateLimitAsync(DescribeBandwidthRateLimitRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeBandwidthRateLimitResponse> DescribeBandwidthRateLimitAsync(DescribeBandwidthRateLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeCache
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCache operation.
@@ -355,11 +375,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeCacheResponse> DescribeCacheAsync(DescribeCacheRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeCacheResponse> DescribeCacheAsync(DescribeCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeCachediSCSIVolumes
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCachediSCSIVolumes operation.
@@ -370,11 +391,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeCachediSCSIVolumesResponse> DescribeCachediSCSIVolumesAsync(DescribeCachediSCSIVolumesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeCachediSCSIVolumesResponse> DescribeCachediSCSIVolumesAsync(DescribeCachediSCSIVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeChapCredentials
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeChapCredentials operation.
@@ -385,11 +407,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeChapCredentialsResponse> DescribeChapCredentialsAsync(DescribeChapCredentialsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeChapCredentialsResponse> DescribeChapCredentialsAsync(DescribeChapCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeGatewayInformation
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeGatewayInformation operation.
@@ -400,11 +423,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeGatewayInformationResponse> DescribeGatewayInformationAsync(DescribeGatewayInformationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeGatewayInformationResponse> DescribeGatewayInformationAsync(DescribeGatewayInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeMaintenanceStartTime
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMaintenanceStartTime operation.
@@ -415,11 +439,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeMaintenanceStartTimeResponse> DescribeMaintenanceStartTimeAsync(DescribeMaintenanceStartTimeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeMaintenanceStartTimeResponse> DescribeMaintenanceStartTimeAsync(DescribeMaintenanceStartTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeSnapshotSchedule
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshotSchedule operation.
@@ -430,11 +455,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeSnapshotScheduleResponse> DescribeSnapshotScheduleAsync(DescribeSnapshotScheduleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeSnapshotScheduleResponse> DescribeSnapshotScheduleAsync(DescribeSnapshotScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeStorediSCSIVolumes
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStorediSCSIVolumes operation.
@@ -445,11 +471,38 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeStorediSCSIVolumesResponse> DescribeStorediSCSIVolumesAsync(DescribeStorediSCSIVolumesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeStorediSCSIVolumesResponse> DescribeStorediSCSIVolumesAsync(DescribeStorediSCSIVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeTapeArchives
+
+
+        /// <summary>
+        /// Returns a description of specified virtual tapes in the virtual tape shelf (VTS).
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
+        /// description of all virtual tapes found in the VTS associated with your account.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTapeArchives service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. See the error and message
+        /// fields for more information.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// See the error and message fields for more information.
+        /// </exception>
+        Task<DescribeTapeArchivesResponse> DescribeTapeArchivesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTapeArchives operation.
@@ -460,11 +513,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeTapeArchivesResponse> DescribeTapeArchivesAsync(DescribeTapeArchivesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeTapeArchivesResponse> DescribeTapeArchivesAsync(DescribeTapeArchivesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeTapeRecoveryPoints
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTapeRecoveryPoints operation.
@@ -475,11 +529,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeTapeRecoveryPointsResponse> DescribeTapeRecoveryPointsAsync(DescribeTapeRecoveryPointsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeTapeRecoveryPointsResponse> DescribeTapeRecoveryPointsAsync(DescribeTapeRecoveryPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeTapes
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTapes operation.
@@ -490,11 +545,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeTapesResponse> DescribeTapesAsync(DescribeTapesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeTapesResponse> DescribeTapesAsync(DescribeTapesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeUploadBuffer
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeUploadBuffer operation.
@@ -505,11 +561,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeUploadBufferResponse> DescribeUploadBufferAsync(DescribeUploadBufferRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeUploadBufferResponse> DescribeUploadBufferAsync(DescribeUploadBufferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeVTLDevices
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVTLDevices operation.
@@ -520,11 +577,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeVTLDevicesResponse> DescribeVTLDevicesAsync(DescribeVTLDevicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeVTLDevicesResponse> DescribeVTLDevicesAsync(DescribeVTLDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeWorkingStorage
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkingStorage operation.
@@ -535,11 +593,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeWorkingStorageResponse> DescribeWorkingStorageAsync(DescribeWorkingStorageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeWorkingStorageResponse> DescribeWorkingStorageAsync(DescribeWorkingStorageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DisableGateway
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableGateway operation.
@@ -550,11 +609,45 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DisableGatewayResponse> DisableGatewayAsync(DisableGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DisableGatewayResponse> DisableGatewayAsync(DisableGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListGateways
+
+
+        /// <summary>
+        /// This operation lists gateways owned by an AWS account in a region specified in the
+        /// request. The returned list is ordered by gateway Amazon Resource Name (ARN).
+        /// 
+        ///  
+        /// <para>
+        /// By default, the operation returns a maximum of 100 gateways. This operation supports
+        /// pagination that allows you to optionally reduce the number of gateways returned in
+        /// a response.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have more gateways than are returned in a response-that is, the response returns
+        /// only a truncated list of your gateways-the response contains a marker that you can
+        /// specify in your next request to fetch the next page of gateways.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGateways service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. See the error and message
+        /// fields for more information.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// See the error and message fields for more information.
+        /// </exception>
+        Task<ListGatewaysResponse> ListGatewaysAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListGateways operation.
@@ -565,11 +658,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListGatewaysResponse> ListGatewaysAsync(ListGatewaysRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListGatewaysResponse> ListGatewaysAsync(ListGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListLocalDisks
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListLocalDisks operation.
@@ -580,11 +674,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListLocalDisksResponse> ListLocalDisksAsync(ListLocalDisksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListLocalDisksResponse> ListLocalDisksAsync(ListLocalDisksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListVolumeInitiators
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListVolumeInitiators operation.
@@ -595,11 +690,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListVolumeInitiatorsResponse> ListVolumeInitiatorsAsync(ListVolumeInitiatorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListVolumeInitiatorsResponse> ListVolumeInitiatorsAsync(ListVolumeInitiatorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListVolumeRecoveryPoints
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListVolumeRecoveryPoints operation.
@@ -610,11 +706,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListVolumeRecoveryPointsResponse> ListVolumeRecoveryPointsAsync(ListVolumeRecoveryPointsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListVolumeRecoveryPointsResponse> ListVolumeRecoveryPointsAsync(ListVolumeRecoveryPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListVolumes
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListVolumes operation.
@@ -625,11 +722,45 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListVolumesResponse> ListVolumesAsync(ListVolumesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListVolumesResponse> ListVolumesAsync(ListVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ResetCache
+
+
+        /// <summary>
+        /// This operation resets all cache disks that have encountered a error and makes the
+        /// disks available for reconfiguration as cache storage. If your cache disk encounters
+        /// a error, the gateway prevents read and write operations on virtual tapes in the gateway.
+        /// For example, an error can occur when a disk is corrupted or removed from the gateway.
+        /// When a cache is reset, the gateway loses its cache storage. At this point you can
+        /// reconfigure the disks as cache disks. 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If the cache disk you are resetting contains data that has not been uploaded to Amazon
+        /// S3 yet, that data can be lost. After you reset cache disks, there will be no configured
+        /// cache disks left in the gateway, so you must configure at least one new cache disk
+        /// for your gateway to function properly.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="gatewayARN">A property of ResetCacheRequest used to execute the ResetCache service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResetCache service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. See the error and message
+        /// fields for more information.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// See the error and message fields for more information.
+        /// </exception>
+        Task<ResetCacheResponse> ResetCacheAsync(string gatewayARN, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResetCache operation.
@@ -640,11 +771,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ResetCacheResponse> ResetCacheAsync(ResetCacheRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ResetCacheResponse> ResetCacheAsync(ResetCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  RetrieveTapeArchive
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RetrieveTapeArchive operation.
@@ -655,11 +787,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<RetrieveTapeArchiveResponse> RetrieveTapeArchiveAsync(RetrieveTapeArchiveRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<RetrieveTapeArchiveResponse> RetrieveTapeArchiveAsync(RetrieveTapeArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  RetrieveTapeRecoveryPoint
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RetrieveTapeRecoveryPoint operation.
@@ -670,11 +803,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<RetrieveTapeRecoveryPointResponse> RetrieveTapeRecoveryPointAsync(RetrieveTapeRecoveryPointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<RetrieveTapeRecoveryPointResponse> RetrieveTapeRecoveryPointAsync(RetrieveTapeRecoveryPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ShutdownGateway
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ShutdownGateway operation.
@@ -685,11 +819,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ShutdownGatewayResponse> ShutdownGatewayAsync(ShutdownGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ShutdownGatewayResponse> ShutdownGatewayAsync(ShutdownGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  StartGateway
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the StartGateway operation.
@@ -700,11 +835,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<StartGatewayResponse> StartGatewayAsync(StartGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<StartGatewayResponse> StartGatewayAsync(StartGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateBandwidthRateLimit
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateBandwidthRateLimit operation.
@@ -715,11 +851,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateBandwidthRateLimitResponse> UpdateBandwidthRateLimitAsync(UpdateBandwidthRateLimitRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateBandwidthRateLimitResponse> UpdateBandwidthRateLimitAsync(UpdateBandwidthRateLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateChapCredentials
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateChapCredentials operation.
@@ -730,11 +867,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateChapCredentialsResponse> UpdateChapCredentialsAsync(UpdateChapCredentialsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateChapCredentialsResponse> UpdateChapCredentialsAsync(UpdateChapCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateGatewayInformation
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateGatewayInformation operation.
@@ -745,11 +883,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateGatewayInformationResponse> UpdateGatewayInformationAsync(UpdateGatewayInformationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateGatewayInformationResponse> UpdateGatewayInformationAsync(UpdateGatewayInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateGatewaySoftwareNow
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateGatewaySoftwareNow operation.
@@ -760,11 +899,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateGatewaySoftwareNowResponse> UpdateGatewaySoftwareNowAsync(UpdateGatewaySoftwareNowRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateGatewaySoftwareNowResponse> UpdateGatewaySoftwareNowAsync(UpdateGatewaySoftwareNowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateMaintenanceStartTime
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateMaintenanceStartTime operation.
@@ -775,11 +915,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateMaintenanceStartTimeResponse> UpdateMaintenanceStartTimeAsync(UpdateMaintenanceStartTimeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateMaintenanceStartTimeResponse> UpdateMaintenanceStartTimeAsync(UpdateMaintenanceStartTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateSnapshotSchedule
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSnapshotSchedule operation.
@@ -790,11 +931,12 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateSnapshotScheduleResponse> UpdateSnapshotScheduleAsync(UpdateSnapshotScheduleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateSnapshotScheduleResponse> UpdateSnapshotScheduleAsync(UpdateSnapshotScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateVTLDeviceType
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateVTLDeviceType operation.
@@ -805,7 +947,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateVTLDeviceTypeResponse> UpdateVTLDeviceTypeAsync(UpdateVTLDeviceTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateVTLDeviceTypeResponse> UpdateVTLDeviceTypeAsync(UpdateVTLDeviceTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

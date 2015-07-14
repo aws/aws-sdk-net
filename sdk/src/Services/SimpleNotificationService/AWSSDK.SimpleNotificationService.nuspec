@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.SimpleNotificationService</id>
     <title>AWSSDK - Amazon Simple Notification Service</title>
-    <version>3.0.0.2-preview</version> 
+    <version>3.0.0.5-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Simple Notification Service (Amazon SNS) is a fast, flexible, fully managed push messaging service. Amazon SNS makes it simple and cost-effective to push notifications to Apple, Google, Fire OS, and Windows devices, as well as Android devices in China with Baidu Cloud Push.  You can also use SNS to push notifications to internet connected smart devices, as well as other distributed services.</description> 
     <language>en-US</language>
@@ -12,12 +12,11 @@
     <tags>AWS Amazon cloud SimpleNotificationService</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="portable-wpa+netcore45">
-        <dependency id="Microsoft.Net.Http" version="2.2.29" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
+      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
+      <dependency id="AWSSDK.Core" version="[3.0.0.6-preview, 3.1-preview)" />
       </group>
       <group>
-      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.0.0.6-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 
@@ -28,11 +27,14 @@
 
     <file src=".\bin\Release\net35\AWSSDK.SimpleNotificationService.dll" target="lib\net35" />
     <file src=".\bin\Release\net35\AWSSDK.SimpleNotificationService.xml" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.SimpleNotificationService.pdb" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.SimpleNotificationService.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.SimpleNotificationService.xml" target="lib\net45" />
-    
-    <file src=".\bin\Release\portable\AWSSDK.SimpleNotificationService.dll" target="lib\portable-wpa+netcore45" />
-    <file src=".\bin\Release\portable\AWSSDK.SimpleNotificationService.xml" target="lib\portable-wpa+netcore45" />
+    <file src=".\bin\Release\net45\AWSSDK.SimpleNotificationService.pdb" target="lib\net45" />
+
+    <file src=".\bin\Release\pcl\AWSSDK.SimpleNotificationService.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.SimpleNotificationService.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.SimpleNotificationService.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
   </files>
 </package>

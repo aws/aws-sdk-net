@@ -284,6 +284,7 @@ namespace Amazon.ConfigService
             return DeleteDeliveryChannel(request);
         }
 
+
         /// <summary>
         /// Deletes the specified delivery channel.
         /// 
@@ -376,6 +377,7 @@ namespace Amazon.ConfigService
             request.DeliveryChannelName = deliveryChannelName;
             return DeliverConfigSnapshot(request);
         }
+
 
         /// <summary>
         /// Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified
@@ -1031,6 +1033,7 @@ namespace Amazon.ConfigService
             return StartConfigurationRecorder(request);
         }
 
+
         /// <summary>
         /// Starts recording configurations of the AWS resources you have selected to record in
         /// your AWS account.
@@ -1110,6 +1113,7 @@ namespace Amazon.ConfigService
             request.ConfigurationRecorderName = configurationRecorderName;
             return StopConfigurationRecorder(request);
         }
+
 
         /// <summary>
         /// Stops recording configurations of the AWS resources you have selected to record in

@@ -1,0 +1,26 @@
+{    
+	"unityOverrides":{
+		"handleXAmznErrorTypeHeader" : true
+	}
+	"dataTypeSwap" : {
+		"Session" : {
+			"startTimestamp" : {
+				"Type" : "DateTime",
+				"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
+				"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+			},
+			"stopTimestamp" : {
+				"Type" : "DateTime",
+				"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
+				"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+			}
+		},
+		"Event" : {
+			"timestamp" : {
+				"Type" : "DateTime",
+				"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
+				"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+			}
+		}
+	}
+}

@@ -72,6 +72,7 @@ namespace Amazon.SQS
         
         #region  AddPermission
 
+
         /// <summary>
         /// Adds a permission to a queue for a specific <a href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a>.
         /// This allows for sharing access to the queue.
@@ -182,6 +183,7 @@ namespace Amazon.SQS
         #endregion
         
         #region  ChangeMessageVisibility
+
 
         /// <summary>
         /// Changes the visibility timeout of a specified message in a queue to a new value. The
@@ -301,6 +303,7 @@ namespace Amazon.SQS
         
         #region  ChangeMessageVisibilityBatch
 
+
         /// <summary>
         /// Changes the visibility timeout of multiple messages. This is a batch version of <a>ChangeMessageVisibility</a>.
         /// The result of the action on each message is reported individually in the response.
@@ -403,6 +406,7 @@ namespace Amazon.SQS
         #endregion
         
         #region  CreateQueue
+
 
         /// <summary>
         /// Creates a new queue, or returns the URL of an existing one. When you request <code>CreateQueue</code>,
@@ -536,6 +540,7 @@ namespace Amazon.SQS
         
         #region  DeleteMessage
 
+
         /// <summary>
         /// Deletes the specified message from the specified queue. You specify the message by
         /// using the message's <code>receipt handle</code> and not the <code>message ID</code>
@@ -640,6 +645,7 @@ namespace Amazon.SQS
         #endregion
         
         #region  DeleteMessageBatch
+
 
         /// <summary>
         /// Deletes up to ten messages from the specified queue. This is a batch version of <a>DeleteMessage</a>.
@@ -746,6 +752,7 @@ namespace Amazon.SQS
         
         #region  DeleteQueue
 
+
         /// <summary>
         /// Deletes the queue specified by the <b>queue URL</b>, regardless of whether the queue
         /// is empty. If the specified queue does not exist, Amazon SQS returns a successful response.
@@ -833,6 +840,7 @@ namespace Amazon.SQS
         #endregion
         
         #region  GetQueueAttributes
+
 
         /// <summary>
         /// Gets attributes for the specified queue. The following attributes are supported: <ul>
@@ -963,6 +971,7 @@ namespace Amazon.SQS
         
         #region  GetQueueUrl
 
+
         /// <summary>
         /// Returns the URL of an existing queue. This action provides a simple way to retrieve
         /// the URL of an Amazon SQS queue. 
@@ -1033,6 +1042,7 @@ namespace Amazon.SQS
         
         #region  ListDeadLetterSourceQueues
 
+
         /// <summary>
         /// Returns a list of your queues that have the RedrivePolicy queue attribute configured
         /// with a dead letter queue.
@@ -1078,6 +1088,7 @@ namespace Amazon.SQS
         #endregion
         
         #region  ListQueues
+
 
         /// <summary>
         /// Returns a list of your queues. The maximum number of queues that can be returned is
@@ -1126,6 +1137,7 @@ namespace Amazon.SQS
         #endregion
         
         #region  PurgeQueue
+
 
         /// <summary>
         /// Deletes the messages in a queue specified by the <b>queue URL</b>.
@@ -1204,6 +1216,7 @@ namespace Amazon.SQS
         #endregion
         
         #region  ReceiveMessage
+
 
         /// <summary>
         /// Retrieves one or more messages, with a maximum limit of 10 messages, from the specified
@@ -1389,6 +1402,7 @@ namespace Amazon.SQS
         
         #region  RemovePermission
 
+
         /// <summary>
         /// Revokes any permissions in the queue policy that matches the specified <code>Label</code>
         /// parameter. Only the owner of the queue can remove permissions.
@@ -1435,6 +1449,7 @@ namespace Amazon.SQS
         #endregion
         
         #region  SendMessage
+
 
         /// <summary>
         /// Delivers a message to the specified queue. With Amazon SQS, you now have the ability
@@ -1524,6 +1539,7 @@ namespace Amazon.SQS
         #endregion
         
         #region  SendMessageBatch
+
 
         /// <summary>
         /// Delivers up to ten messages to the specified queue. This is a batch version of <a>SendMessage</a>.
@@ -1673,6 +1689,7 @@ namespace Amazon.SQS
         #endregion
         
         #region  SetQueueAttributes
+
 
         /// <summary>
         /// Sets the value of one or more queue attributes. When you change a queue's attributes,

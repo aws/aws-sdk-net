@@ -176,6 +176,9 @@ namespace Amazon.Redshift
 
         #region Overrides
 
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new AWS4Signer();
@@ -186,6 +189,9 @@ namespace Amazon.Redshift
 
         #region Dispose
 
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -203,6 +209,7 @@ namespace Amazon.Redshift
 
             return Invoke<AuthorizeClusterSecurityGroupIngressRequest,AuthorizeClusterSecurityGroupIngressResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeClusterSecurityGroupIngress operation.
@@ -234,6 +241,7 @@ namespace Amazon.Redshift
             return Invoke<AuthorizeSnapshotAccessRequest,AuthorizeSnapshotAccessResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeSnapshotAccess operation.
         /// </summary>
@@ -263,6 +271,7 @@ namespace Amazon.Redshift
 
             return Invoke<CopyClusterSnapshotRequest,CopyClusterSnapshotResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyClusterSnapshot operation.
@@ -294,6 +303,7 @@ namespace Amazon.Redshift
             return Invoke<CreateClusterRequest,CreateClusterResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCluster operation.
         /// </summary>
@@ -323,6 +333,7 @@ namespace Amazon.Redshift
 
             return Invoke<CreateClusterParameterGroupRequest,CreateClusterParameterGroupResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateClusterParameterGroup operation.
@@ -354,6 +365,7 @@ namespace Amazon.Redshift
             return Invoke<CreateClusterSecurityGroupRequest,CreateClusterSecurityGroupResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateClusterSecurityGroup operation.
         /// </summary>
@@ -383,6 +395,7 @@ namespace Amazon.Redshift
 
             return Invoke<CreateClusterSnapshotRequest,CreateClusterSnapshotResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateClusterSnapshot operation.
@@ -414,6 +427,7 @@ namespace Amazon.Redshift
             return Invoke<CreateClusterSubnetGroupRequest,CreateClusterSubnetGroupResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateClusterSubnetGroup operation.
         /// </summary>
@@ -443,6 +457,7 @@ namespace Amazon.Redshift
 
             return Invoke<CreateEventSubscriptionRequest,CreateEventSubscriptionResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateEventSubscription operation.
@@ -474,6 +489,7 @@ namespace Amazon.Redshift
             return Invoke<CreateHsmClientCertificateRequest,CreateHsmClientCertificateResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateHsmClientCertificate operation.
         /// </summary>
@@ -503,6 +519,7 @@ namespace Amazon.Redshift
 
             return Invoke<CreateHsmConfigurationRequest,CreateHsmConfigurationResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateHsmConfiguration operation.
@@ -534,6 +551,7 @@ namespace Amazon.Redshift
             return Invoke<CreateSnapshotCopyGrantRequest,CreateSnapshotCopyGrantResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshotCopyGrant operation.
         /// </summary>
@@ -563,6 +581,7 @@ namespace Amazon.Redshift
 
             return Invoke<CreateTagsRequest,CreateTagsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTags operation.
@@ -594,6 +613,7 @@ namespace Amazon.Redshift
             return Invoke<DeleteClusterRequest,DeleteClusterResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCluster operation.
         /// </summary>
@@ -623,6 +643,7 @@ namespace Amazon.Redshift
 
             return Invoke<DeleteClusterParameterGroupRequest,DeleteClusterParameterGroupResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteClusterParameterGroup operation.
@@ -654,6 +675,7 @@ namespace Amazon.Redshift
             return Invoke<DeleteClusterSecurityGroupRequest,DeleteClusterSecurityGroupResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteClusterSecurityGroup operation.
         /// </summary>
@@ -683,6 +705,7 @@ namespace Amazon.Redshift
 
             return Invoke<DeleteClusterSnapshotRequest,DeleteClusterSnapshotResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteClusterSnapshot operation.
@@ -714,6 +737,7 @@ namespace Amazon.Redshift
             return Invoke<DeleteClusterSubnetGroupRequest,DeleteClusterSubnetGroupResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteClusterSubnetGroup operation.
         /// </summary>
@@ -743,6 +767,7 @@ namespace Amazon.Redshift
 
             return Invoke<DeleteEventSubscriptionRequest,DeleteEventSubscriptionResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteEventSubscription operation.
@@ -774,6 +799,7 @@ namespace Amazon.Redshift
             return Invoke<DeleteHsmClientCertificateRequest,DeleteHsmClientCertificateResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteHsmClientCertificate operation.
         /// </summary>
@@ -803,6 +829,7 @@ namespace Amazon.Redshift
 
             return Invoke<DeleteHsmConfigurationRequest,DeleteHsmConfigurationResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteHsmConfiguration operation.
@@ -834,6 +861,7 @@ namespace Amazon.Redshift
             return Invoke<DeleteSnapshotCopyGrantRequest,DeleteSnapshotCopyGrantResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSnapshotCopyGrant operation.
         /// </summary>
@@ -863,6 +891,7 @@ namespace Amazon.Redshift
 
             return Invoke<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTags operation.
@@ -898,6 +927,50 @@ namespace Amazon.Redshift
             return Invoke<DescribeClusterParameterGroupsRequest,DescribeClusterParameterGroupsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns a list of Amazon Redshift parameter groups, including parameter groups you
+        /// created and the default parameter group. For each parameter group, the response includes
+        /// the parameter group name, description, and parameter group family name. You can optionally
+        /// specify a name to retrieve the description of a specific parameter group. 
+        /// 
+        ///  
+        /// <para>
+        ///  For more information about parameters and parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+        /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all parameter groups that match any combination of the specified keys and values.
+        /// For example, if you have <code>owner</code> and <code>environment</code> for tag keys,
+        /// and <code>admin</code> and <code>test</code> for tag values, all parameter groups
+        /// that have any combination of those values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, parameter groups are returned
+        /// regardless of whether they have tag keys or values associated with them.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeClusterParameterGroups service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupNotFoundException">
+        /// The parameter group name does not refer to an existing parameter group.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        public Task<DescribeClusterParameterGroupsResponse> DescribeClusterParameterGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeClusterParameterGroupsAsync(new DescribeClusterParameterGroupsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterParameterGroups operation.
         /// </summary>
@@ -927,6 +1000,7 @@ namespace Amazon.Redshift
 
             return Invoke<DescribeClusterParametersRequest,DescribeClusterParametersResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterParameters operation.
@@ -962,6 +1036,45 @@ namespace Amazon.Redshift
             return Invoke<DescribeClustersRequest,DescribeClustersResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns properties of provisioned clusters including general cluster properties,
+        /// cluster database properties, maintenance and backup properties, and security and access
+        /// properties. This operation supports pagination. For more information about managing
+        /// clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i> . 
+        /// 
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all clusters that match any combination of the specified keys and values. For example,
+        /// if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code>
+        /// and <code>test</code> for tag values, all clusters that have any combination of those
+        /// values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, clusters are returned regardless
+        /// of whether they have tag keys or values associated with them.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeClusters service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        public Task<DescribeClustersResponse> DescribeClustersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeClustersAsync(new DescribeClustersRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusters operation.
         /// </summary>
@@ -995,6 +1108,49 @@ namespace Amazon.Redshift
 
             return Invoke<DescribeClusterSecurityGroupsRequest,DescribeClusterSecurityGroupsResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Returns information about Amazon Redshift security groups. If the name of a security
+        /// group is specified, the response will contain only information about only that security
+        /// group. 
+        /// 
+        ///  
+        /// <para>
+        ///  For information about managing security groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
+        /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management
+        /// Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all security groups that match any combination of the specified keys and values. For
+        /// example, if you have <code>owner</code> and <code>environment</code> for tag keys,
+        /// and <code>admin</code> and <code>test</code> for tag values, all security groups that
+        /// have any combination of those values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, security groups are returned
+        /// regardless of whether they have tag keys or values associated with them.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeClusterSecurityGroups service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
+        /// The cluster security group name does not refer to an existing cluster security group.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        public Task<DescribeClusterSecurityGroupsResponse> DescribeClusterSecurityGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeClusterSecurityGroupsAsync(new DescribeClusterSecurityGroupsRequest(), cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterSecurityGroups operation.
@@ -1030,6 +1186,45 @@ namespace Amazon.Redshift
             return Invoke<DescribeClusterSnapshotsRequest,DescribeClusterSnapshotsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns one or more snapshot objects, which contain metadata about your cluster snapshots.
+        /// By default, this operation returns information about all snapshots of all clusters
+        /// that are owned by you AWS customer account. No information is returned for snapshots
+        /// owned by inactive AWS customer accounts. 
+        /// 
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all snapshots that match any combination of the specified keys and values. For example,
+        /// if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code>
+        /// and <code>test</code> for tag values, all snapshots that have any combination of those
+        /// values are returned. Only snapshots that you own are returned in the response; shared
+        /// snapshots are not returned with the tag key and tag value request parameters.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, snapshots are returned regardless
+        /// of whether they have tag keys or values associated with them.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeClusterSnapshots service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
+        /// The snapshot identifier does not refer to an existing cluster snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        public Task<DescribeClusterSnapshotsResponse> DescribeClusterSnapshotsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeClusterSnapshotsAsync(new DescribeClusterSnapshotsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterSnapshots operation.
         /// </summary>
@@ -1063,6 +1258,43 @@ namespace Amazon.Redshift
 
             return Invoke<DescribeClusterSubnetGroupsRequest,DescribeClusterSubnetGroupsResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Returns one or more cluster subnet group objects, which contain metadata about your
+        /// cluster subnet groups. By default, this operation returns information about all cluster
+        /// subnet groups that are defined in you AWS account. 
+        /// 
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all subnet groups that match any combination of the specified keys and values. For
+        /// example, if you have <code>owner</code> and <code>environment</code> for tag keys,
+        /// and <code>admin</code> and <code>test</code> for tag values, all subnet groups that
+        /// have any combination of those values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, subnet groups are returned
+        /// regardless of whether they have tag keys or values associated with them.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeClusterSubnetGroups service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException">
+        /// The cluster subnet group name does not refer to an existing cluster subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        public Task<DescribeClusterSubnetGroupsResponse> DescribeClusterSubnetGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeClusterSubnetGroupsAsync(new DescribeClusterSubnetGroupsRequest(), cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterSubnetGroups operation.
@@ -1098,6 +1330,24 @@ namespace Amazon.Redshift
             return Invoke<DescribeClusterVersionsRequest,DescribeClusterVersionsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns descriptions of the available Amazon Redshift cluster versions. You can call
+        /// this operation even before creating any clusters to learn more about the Amazon Redshift
+        /// versions. For more information about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeClusterVersions service method, as returned by Redshift.</returns>
+        public Task<DescribeClusterVersionsResponse> DescribeClusterVersionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeClusterVersionsAsync(new DescribeClusterVersionsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusterVersions operation.
         /// </summary>
@@ -1127,6 +1377,7 @@ namespace Amazon.Redshift
 
             return Invoke<DescribeDefaultClusterParametersRequest,DescribeDefaultClusterParametersResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDefaultClusterParameters operation.
@@ -1162,6 +1413,23 @@ namespace Amazon.Redshift
             return Invoke<DescribeEventCategoriesRequest,DescribeEventCategoriesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Displays a list of event categories for all event source types, or for a specified
+        /// source type. For a list of the event categories and source types, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon
+        /// Redshift Event Notifications</a>.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEventCategories service method, as returned by Redshift.</returns>
+        public Task<DescribeEventCategoriesResponse> DescribeEventCategoriesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeEventCategoriesAsync(new DescribeEventCategoriesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEventCategories operation.
         /// </summary>
@@ -1195,6 +1463,24 @@ namespace Amazon.Redshift
 
             return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Returns events related to clusters, security groups, snapshots, and parameter groups
+        /// for the past 14 days. Events specific to a particular cluster, security group, snapshot
+        /// or parameter group can be obtained by providing the name as a parameter. By default,
+        /// the past hour of events are returned.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEvents service method, as returned by Redshift.</returns>
+        public Task<DescribeEventsResponse> DescribeEventsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeEventsAsync(new DescribeEventsRequest(), cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
@@ -1230,6 +1516,27 @@ namespace Amazon.Redshift
             return Invoke<DescribeEventSubscriptionsRequest,DescribeEventSubscriptionsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists descriptions of all the Amazon Redshift event notifications subscription for
+        /// a customer account. If you specify a subscription name, lists the description for
+        /// that subscription.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEventSubscriptions service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.SubscriptionNotFoundException">
+        /// An Amazon Redshift event notification subscription with the specified name does not
+        /// exist.
+        /// </exception>
+        public Task<DescribeEventSubscriptionsResponse> DescribeEventSubscriptionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeEventSubscriptionsAsync(new DescribeEventSubscriptionsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEventSubscriptions operation.
         /// </summary>
@@ -1263,6 +1570,43 @@ namespace Amazon.Redshift
 
             return Invoke<DescribeHsmClientCertificatesRequest,DescribeHsmClientCertificatesResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Returns information about the specified HSM client certificate. If no certificate
+        /// ID is specified, returns information about all the HSM certificates owned by your
+        /// AWS customer account.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all HSM client certificates that match any combination of the specified keys and values.
+        /// For example, if you have <code>owner</code> and <code>environment</code> for tag keys,
+        /// and <code>admin</code> and <code>test</code> for tag values, all HSM client certificates
+        /// that have any combination of those values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, HSM client certificates
+        /// are returned regardless of whether they have tag keys or values associated with them.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeHsmClientCertificates service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.HsmClientCertificateNotFoundException">
+        /// There is no Amazon Redshift HSM client certificate with the specified identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        public Task<DescribeHsmClientCertificatesResponse> DescribeHsmClientCertificatesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeHsmClientCertificatesAsync(new DescribeHsmClientCertificatesRequest(), cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeHsmClientCertificates operation.
@@ -1298,6 +1642,43 @@ namespace Amazon.Redshift
             return Invoke<DescribeHsmConfigurationsRequest,DescribeHsmConfigurationsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns information about the specified Amazon Redshift HSM configuration. If no configuration
+        /// ID is specified, returns information about all the HSM configurations owned by your
+        /// AWS customer account.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
+        /// all HSM connections that match any combination of the specified keys and values. For
+        /// example, if you have <code>owner</code> and <code>environment</code> for tag keys,
+        /// and <code>admin</code> and <code>test</code> for tag values, all HSM connections that
+        /// have any combination of those values are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both tag keys and values are omitted from the request, HSM connections are returned
+        /// regardless of whether they have tag keys or values associated with them.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeHsmConfigurations service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.HsmConfigurationNotFoundException">
+        /// There is no Amazon Redshift HSM configuration with the specified identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        public Task<DescribeHsmConfigurationsResponse> DescribeHsmConfigurationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeHsmConfigurationsAsync(new DescribeHsmConfigurationsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeHsmConfigurations operation.
         /// </summary>
@@ -1327,6 +1708,7 @@ namespace Amazon.Redshift
 
             return Invoke<DescribeLoggingStatusRequest,DescribeLoggingStatusResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoggingStatus operation.
@@ -1362,6 +1744,28 @@ namespace Amazon.Redshift
             return Invoke<DescribeOrderableClusterOptionsRequest,DescribeOrderableClusterOptionsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns a list of orderable cluster options. Before you create a new cluster you
+        /// can use this operation to find what options are available, such as the EC2 Availability
+        /// Zones (AZ) in the specific AWS region that you can specify, and the node types you
+        /// can request. The node types differ by available storage, memory, CPU and price. With
+        /// the cost involved you might want to obtain a list of cluster options in the specific
+        /// region and specify values when creating a cluster. For more information about managing
+        /// clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeOrderableClusterOptions service method, as returned by Redshift.</returns>
+        public Task<DescribeOrderableClusterOptionsResponse> DescribeOrderableClusterOptionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeOrderableClusterOptionsAsync(new DescribeOrderableClusterOptionsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOrderableClusterOptions operation.
         /// </summary>
@@ -1395,6 +1799,38 @@ namespace Amazon.Redshift
 
             return Invoke<DescribeReservedNodeOfferingsRequest,DescribeReservedNodeOfferingsResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Returns a list of the available reserved node offerings by Amazon Redshift with their
+        /// descriptions including the node type, the fixed and recurring costs of reserving the
+        /// node and duration the node will be reserved for you. These descriptions help you determine
+        /// which reserve node offering you want to purchase. You then use the unique offering
+        /// ID in you call to <a>PurchaseReservedNodeOffering</a> to reserve one or more nodes
+        /// for your Amazon Redshift cluster. 
+        /// 
+        ///  
+        /// <para>
+        ///  For more information about reserved node offerings, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
+        /// Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReservedNodeOfferings service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ReservedNodeOfferingNotFoundException">
+        /// Specified offering does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        public Task<DescribeReservedNodeOfferingsResponse> DescribeReservedNodeOfferingsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeReservedNodeOfferingsAsync(new DescribeReservedNodeOfferingsRequest(), cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedNodeOfferings operation.
@@ -1430,6 +1866,24 @@ namespace Amazon.Redshift
             return Invoke<DescribeReservedNodesRequest,DescribeReservedNodesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns the descriptions of the reserved nodes.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReservedNodes service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ReservedNodeNotFoundException">
+        /// The specified reserved compute node not found.
+        /// </exception>
+        public Task<DescribeReservedNodesResponse> DescribeReservedNodesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeReservedNodesAsync(new DescribeReservedNodesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedNodes operation.
         /// </summary>
@@ -1459,6 +1913,7 @@ namespace Amazon.Redshift
 
             return Invoke<DescribeResizeRequest,DescribeResizeResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeResize operation.
@@ -1490,6 +1945,7 @@ namespace Amazon.Redshift
             return Invoke<DescribeSnapshotCopyGrantsRequest,DescribeSnapshotCopyGrantsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshotCopyGrants operation.
         /// </summary>
@@ -1519,6 +1975,7 @@ namespace Amazon.Redshift
 
             return Invoke<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTags operation.
@@ -1550,6 +2007,7 @@ namespace Amazon.Redshift
             return Invoke<DisableLoggingRequest,DisableLoggingResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DisableLogging operation.
         /// </summary>
@@ -1579,6 +2037,7 @@ namespace Amazon.Redshift
 
             return Invoke<DisableSnapshotCopyRequest,DisableSnapshotCopyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableSnapshotCopy operation.
@@ -1610,6 +2069,7 @@ namespace Amazon.Redshift
             return Invoke<EnableLoggingRequest,EnableLoggingResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the EnableLogging operation.
         /// </summary>
@@ -1639,6 +2099,7 @@ namespace Amazon.Redshift
 
             return Invoke<EnableSnapshotCopyRequest,EnableSnapshotCopyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableSnapshotCopy operation.
@@ -1670,6 +2131,7 @@ namespace Amazon.Redshift
             return Invoke<ModifyClusterRequest,ModifyClusterResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyCluster operation.
         /// </summary>
@@ -1699,6 +2161,7 @@ namespace Amazon.Redshift
 
             return Invoke<ModifyClusterParameterGroupRequest,ModifyClusterParameterGroupResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyClusterParameterGroup operation.
@@ -1730,6 +2193,7 @@ namespace Amazon.Redshift
             return Invoke<ModifyClusterSubnetGroupRequest,ModifyClusterSubnetGroupResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyClusterSubnetGroup operation.
         /// </summary>
@@ -1759,6 +2223,7 @@ namespace Amazon.Redshift
 
             return Invoke<ModifyEventSubscriptionRequest,ModifyEventSubscriptionResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyEventSubscription operation.
@@ -1790,6 +2255,7 @@ namespace Amazon.Redshift
             return Invoke<ModifySnapshotCopyRetentionPeriodRequest,ModifySnapshotCopyRetentionPeriodResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ModifySnapshotCopyRetentionPeriod operation.
         /// </summary>
@@ -1819,6 +2285,7 @@ namespace Amazon.Redshift
 
             return Invoke<PurchaseReservedNodeOfferingRequest,PurchaseReservedNodeOfferingResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PurchaseReservedNodeOffering operation.
@@ -1850,6 +2317,7 @@ namespace Amazon.Redshift
             return Invoke<RebootClusterRequest,RebootClusterResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RebootCluster operation.
         /// </summary>
@@ -1879,6 +2347,7 @@ namespace Amazon.Redshift
 
             return Invoke<ResetClusterParameterGroupRequest,ResetClusterParameterGroupResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResetClusterParameterGroup operation.
@@ -1910,6 +2379,7 @@ namespace Amazon.Redshift
             return Invoke<RestoreFromClusterSnapshotRequest,RestoreFromClusterSnapshotResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreFromClusterSnapshot operation.
         /// </summary>
@@ -1939,6 +2409,7 @@ namespace Amazon.Redshift
 
             return Invoke<RevokeClusterSecurityGroupIngressRequest,RevokeClusterSecurityGroupIngressResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeClusterSecurityGroupIngress operation.
@@ -1970,6 +2441,7 @@ namespace Amazon.Redshift
             return Invoke<RevokeSnapshotAccessRequest,RevokeSnapshotAccessResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeSnapshotAccess operation.
         /// </summary>
@@ -1999,6 +2471,7 @@ namespace Amazon.Redshift
 
             return Invoke<RotateEncryptionKeyRequest,RotateEncryptionKeyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RotateEncryptionKey operation.

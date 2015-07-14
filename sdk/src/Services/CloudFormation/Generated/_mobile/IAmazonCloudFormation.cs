@@ -62,6 +62,7 @@ namespace Amazon.CloudFormation
                 
         #region  CancelUpdateStack
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CancelUpdateStack operation.
         /// </summary>
@@ -71,11 +72,12 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CancelUpdateStackResponse> CancelUpdateStackAsync(CancelUpdateStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CancelUpdateStackResponse> CancelUpdateStackAsync(CancelUpdateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateStack
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStack operation.
@@ -86,11 +88,12 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateStackResponse> CreateStackAsync(CreateStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateStackResponse> CreateStackAsync(CreateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteStack
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStack operation.
@@ -101,11 +104,12 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeStackEvents
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackEvents operation.
@@ -116,11 +120,12 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeStackEventsResponse> DescribeStackEventsAsync(DescribeStackEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeStackEventsResponse> DescribeStackEventsAsync(DescribeStackEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeStackResource
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackResource operation.
@@ -131,11 +136,12 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeStackResourceResponse> DescribeStackResourceAsync(DescribeStackResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeStackResourceResponse> DescribeStackResourceAsync(DescribeStackResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeStackResources
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackResources operation.
@@ -146,11 +152,24 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeStackResourcesResponse> DescribeStackResourcesAsync(DescribeStackResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeStackResourcesResponse> DescribeStackResourcesAsync(DescribeStackResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeStacks
+
+
+        /// <summary>
+        /// Returns the description for the specified stack; if no stack name was specified, then
+        /// it returns the description for all the stacks created.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeStacks service method, as returned by CloudFormation.</returns>
+        Task<DescribeStacksResponse> DescribeStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStacks operation.
@@ -161,11 +180,12 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  EstimateTemplateCost
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the EstimateTemplateCost operation.
@@ -176,11 +196,12 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<EstimateTemplateCostResponse> EstimateTemplateCostAsync(EstimateTemplateCostRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<EstimateTemplateCostResponse> EstimateTemplateCostAsync(EstimateTemplateCostRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetStackPolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetStackPolicy operation.
@@ -191,11 +212,12 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetStackPolicyResponse> GetStackPolicyAsync(GetStackPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetStackPolicyResponse> GetStackPolicyAsync(GetStackPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetTemplate
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetTemplate operation.
@@ -206,11 +228,12 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetTemplateResponse> GetTemplateAsync(GetTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetTemplateResponse> GetTemplateAsync(GetTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetTemplateSummary
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetTemplateSummary operation.
@@ -221,11 +244,12 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetTemplateSummaryResponse> GetTemplateSummaryAsync(GetTemplateSummaryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetTemplateSummaryResponse> GetTemplateSummaryAsync(GetTemplateSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListStackResources
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListStackResources operation.
@@ -236,11 +260,26 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListStackResourcesResponse> ListStackResourcesAsync(ListStackResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListStackResourcesResponse> ListStackResourcesAsync(ListStackResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListStacks
+
+
+        /// <summary>
+        /// Returns the summary information for stacks whose status matches the specified StackStatusFilter.
+        /// Summary information for stacks that have been deleted is kept for 90 days after the
+        /// stack is deleted. If no StackStatusFilter is specified, summary information for all
+        /// stacks is returned (including existing stacks and stacks that have been deleted).
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStacks service method, as returned by CloudFormation.</returns>
+        Task<ListStacksResponse> ListStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListStacks operation.
@@ -251,11 +290,12 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListStacksResponse> ListStacksAsync(ListStacksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListStacksResponse> ListStacksAsync(ListStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  SetStackPolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetStackPolicy operation.
@@ -266,11 +306,12 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<SetStackPolicyResponse> SetStackPolicyAsync(SetStackPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<SetStackPolicyResponse> SetStackPolicyAsync(SetStackPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  SignalResource
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SignalResource operation.
@@ -281,11 +322,12 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<SignalResourceResponse> SignalResourceAsync(SignalResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<SignalResourceResponse> SignalResourceAsync(SignalResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateStack
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStack operation.
@@ -296,11 +338,23 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ValidateTemplate
+
+
+        /// <summary>
+        /// Validates a specified template.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ValidateTemplate service method, as returned by CloudFormation.</returns>
+        Task<ValidateTemplateResponse> ValidateTemplateAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ValidateTemplate operation.
@@ -311,7 +365,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ValidateTemplateResponse> ValidateTemplateAsync(ValidateTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ValidateTemplateResponse> ValidateTemplateAsync(ValidateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

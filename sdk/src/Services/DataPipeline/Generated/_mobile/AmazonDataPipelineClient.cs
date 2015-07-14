@@ -169,6 +169,9 @@ namespace Amazon.DataPipeline
 
         #region Overrides
 
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new AWS4Signer();
@@ -179,6 +182,9 @@ namespace Amazon.DataPipeline
 
         #region Dispose
 
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -196,6 +202,7 @@ namespace Amazon.DataPipeline
 
             return Invoke<ActivatePipelineRequest,ActivatePipelineResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ActivatePipeline operation.
@@ -227,6 +234,41 @@ namespace Amazon.DataPipeline
             return Invoke<AddTagsRequest,AddTagsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Adds or modifies tags for the specified pipeline.
+        /// </summary>
+        /// <param name="pipelineId">The ID of the pipeline.</param>
+        /// <param name="tags">The tags to add, as key/value pairs.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddTags service method, as returned by DataPipeline.</returns>
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
+        /// The request was not valid. Verify that your request was properly formatted, that the
+        /// signature was generated with the correct credentials, and that you haven't exceeded
+        /// any of the service limits for your account.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
+        /// The specified pipeline has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was not found. Verify that you used the correct user and account
+        /// identifiers.
+        /// </exception>
+        public Task<AddTagsResponse> AddTagsAsync(string pipelineId, List<Tag> tags, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new AddTagsRequest();
+            request.PipelineId = pipelineId;
+            request.Tags = tags;
+            return AddTagsAsync(request, cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddTags operation.
         /// </summary>
@@ -256,6 +298,7 @@ namespace Amazon.DataPipeline
 
             return Invoke<CreatePipelineRequest,CreatePipelineResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePipeline operation.
@@ -287,6 +330,7 @@ namespace Amazon.DataPipeline
             return Invoke<DeactivatePipelineRequest,DeactivatePipelineResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeactivatePipeline operation.
         /// </summary>
@@ -316,6 +360,7 @@ namespace Amazon.DataPipeline
 
             return Invoke<DeletePipelineRequest,DeletePipelineResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePipeline operation.
@@ -347,6 +392,7 @@ namespace Amazon.DataPipeline
             return Invoke<DescribeObjectsRequest,DescribeObjectsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeObjects operation.
         /// </summary>
@@ -376,6 +422,50 @@ namespace Amazon.DataPipeline
 
             return Invoke<DescribePipelinesRequest,DescribePipelinesResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Retrieves metadata about one or more pipelines. The information retrieved includes
+        /// the name of the pipeline, the pipeline identifier, its current state, and the user
+        /// account that owns the pipeline. Using account credentials, you can retrieve metadata
+        /// about pipelines that you or your IAM users have created. If you are using an IAM user
+        /// account, you can retrieve metadata about only those pipelines for which you have read
+        /// permissions.
+        /// 
+        ///  
+        /// <para>
+        /// To retrieve the full pipeline definition instead of metadata about the pipeline, call
+        /// <a>GetPipelineDefinition</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="pipelineIds">The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <a>ListPipelines</a>.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePipelines service method, as returned by DataPipeline.</returns>
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
+        /// The request was not valid. Verify that your request was properly formatted, that the
+        /// signature was generated with the correct credentials, and that you haven't exceeded
+        /// any of the service limits for your account.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
+        /// The specified pipeline has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was not found. Verify that you used the correct user and account
+        /// identifiers.
+        /// </exception>
+        public Task<DescribePipelinesResponse> DescribePipelinesAsync(List<string> pipelineIds, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DescribePipelinesRequest();
+            request.PipelineIds = pipelineIds;
+            return DescribePipelinesAsync(request, cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribePipelines operation.
@@ -407,6 +497,7 @@ namespace Amazon.DataPipeline
             return Invoke<EvaluateExpressionRequest,EvaluateExpressionResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the EvaluateExpression operation.
         /// </summary>
@@ -436,6 +527,7 @@ namespace Amazon.DataPipeline
 
             return Invoke<GetPipelineDefinitionRequest,GetPipelineDefinitionResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetPipelineDefinition operation.
@@ -471,6 +563,30 @@ namespace Amazon.DataPipeline
             return Invoke<ListPipelinesRequest,ListPipelinesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists the pipeline identifiers for all active pipelines that you have permission to
+        /// access.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPipelines service method, as returned by DataPipeline.</returns>
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
+        /// The request was not valid. Verify that your request was properly formatted, that the
+        /// signature was generated with the correct credentials, and that you haven't exceeded
+        /// any of the service limits for your account.
+        /// </exception>
+        public Task<ListPipelinesResponse> ListPipelinesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListPipelinesAsync(new ListPipelinesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListPipelines operation.
         /// </summary>
@@ -500,6 +616,7 @@ namespace Amazon.DataPipeline
 
             return Invoke<PollForTaskRequest,PollForTaskResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PollForTask operation.
@@ -531,6 +648,7 @@ namespace Amazon.DataPipeline
             return Invoke<PutPipelineDefinitionRequest,PutPipelineDefinitionResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutPipelineDefinition operation.
         /// </summary>
@@ -560,6 +678,7 @@ namespace Amazon.DataPipeline
 
             return Invoke<QueryObjectsRequest,QueryObjectsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the QueryObjects operation.
@@ -591,6 +710,41 @@ namespace Amazon.DataPipeline
             return Invoke<RemoveTagsRequest,RemoveTagsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Removes existing tags from the specified pipeline.
+        /// </summary>
+        /// <param name="pipelineId">The ID of the pipeline.</param>
+        /// <param name="tagKeys">The keys of the tags to remove.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveTags service method, as returned by DataPipeline.</returns>
+        /// <exception cref="Amazon.DataPipeline.Model.InternalServiceErrorException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.InvalidRequestException">
+        /// The request was not valid. Verify that your request was properly formatted, that the
+        /// signature was generated with the correct credentials, and that you haven't exceeded
+        /// any of the service limits for your account.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineDeletedException">
+        /// The specified pipeline has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.DataPipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was not found. Verify that you used the correct user and account
+        /// identifiers.
+        /// </exception>
+        public Task<RemoveTagsResponse> RemoveTagsAsync(string pipelineId, List<string> tagKeys, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new RemoveTagsRequest();
+            request.PipelineId = pipelineId;
+            request.TagKeys = tagKeys;
+            return RemoveTagsAsync(request, cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTags operation.
         /// </summary>
@@ -620,6 +774,7 @@ namespace Amazon.DataPipeline
 
             return Invoke<ReportTaskProgressRequest,ReportTaskProgressResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReportTaskProgress operation.
@@ -651,6 +806,7 @@ namespace Amazon.DataPipeline
             return Invoke<ReportTaskRunnerHeartbeatRequest,ReportTaskRunnerHeartbeatResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ReportTaskRunnerHeartbeat operation.
         /// </summary>
@@ -680,6 +836,7 @@ namespace Amazon.DataPipeline
 
             return Invoke<SetStatusRequest,SetStatusResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetStatus operation.
@@ -711,6 +868,7 @@ namespace Amazon.DataPipeline
             return Invoke<SetTaskStatusRequest,SetTaskStatusResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SetTaskStatus operation.
         /// </summary>
@@ -740,6 +898,7 @@ namespace Amazon.DataPipeline
 
             return Invoke<ValidatePipelineDefinitionRequest,ValidatePipelineDefinitionResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ValidatePipelineDefinition operation.

@@ -42,6 +42,7 @@ namespace Amazon.AutoScaling
                 
         #region  AttachInstances
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AttachInstances operation.
         /// </summary>
@@ -51,11 +52,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AttachInstancesResponse> AttachInstancesAsync(AttachInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AttachInstancesResponse> AttachInstancesAsync(AttachInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  AttachLoadBalancers
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachLoadBalancers operation.
@@ -66,11 +68,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AttachLoadBalancersResponse> AttachLoadBalancersAsync(AttachLoadBalancersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AttachLoadBalancersResponse> AttachLoadBalancersAsync(AttachLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CompleteLifecycleAction
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CompleteLifecycleAction operation.
@@ -81,11 +84,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CompleteLifecycleActionResponse> CompleteLifecycleActionAsync(CompleteLifecycleActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CompleteLifecycleActionResponse> CompleteLifecycleActionAsync(CompleteLifecycleActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateAutoScalingGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAutoScalingGroup operation.
@@ -96,11 +100,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateAutoScalingGroupResponse> CreateAutoScalingGroupAsync(CreateAutoScalingGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateAutoScalingGroupResponse> CreateAutoScalingGroupAsync(CreateAutoScalingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateLaunchConfiguration
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLaunchConfiguration operation.
@@ -111,11 +116,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateLaunchConfigurationResponse> CreateLaunchConfigurationAsync(CreateLaunchConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateLaunchConfigurationResponse> CreateLaunchConfigurationAsync(CreateLaunchConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateOrUpdateTags
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateOrUpdateTags operation.
@@ -126,11 +132,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateOrUpdateTagsResponse> CreateOrUpdateTagsAsync(CreateOrUpdateTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateOrUpdateTagsResponse> CreateOrUpdateTagsAsync(CreateOrUpdateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteAutoScalingGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAutoScalingGroup operation.
@@ -141,11 +148,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteAutoScalingGroupResponse> DeleteAutoScalingGroupAsync(DeleteAutoScalingGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteAutoScalingGroupResponse> DeleteAutoScalingGroupAsync(DeleteAutoScalingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteLaunchConfiguration
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLaunchConfiguration operation.
@@ -156,11 +164,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteLaunchConfigurationResponse> DeleteLaunchConfigurationAsync(DeleteLaunchConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteLaunchConfigurationResponse> DeleteLaunchConfigurationAsync(DeleteLaunchConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteLifecycleHook
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLifecycleHook operation.
@@ -171,11 +180,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteLifecycleHookResponse> DeleteLifecycleHookAsync(DeleteLifecycleHookRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteLifecycleHookResponse> DeleteLifecycleHookAsync(DeleteLifecycleHookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteNotificationConfiguration
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteNotificationConfiguration operation.
@@ -186,11 +196,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteNotificationConfigurationResponse> DeleteNotificationConfigurationAsync(DeleteNotificationConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteNotificationConfigurationResponse> DeleteNotificationConfigurationAsync(DeleteNotificationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeletePolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePolicy operation.
@@ -201,11 +212,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteScheduledAction
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteScheduledAction operation.
@@ -216,11 +228,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteScheduledActionResponse> DeleteScheduledActionAsync(DeleteScheduledActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteScheduledActionResponse> DeleteScheduledActionAsync(DeleteScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteTags
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTags operation.
@@ -231,11 +244,33 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeAccountLimits
+
+
+        /// <summary>
+        /// Describes the current Auto Scaling resource limits for your AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
+        /// Service Limits</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAccountLimits service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        Task<DescribeAccountLimitsResponse> DescribeAccountLimitsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAccountLimits operation.
@@ -246,11 +281,27 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeAccountLimitsResponse> DescribeAccountLimitsAsync(DescribeAccountLimitsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeAccountLimitsResponse> DescribeAccountLimitsAsync(DescribeAccountLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeAdjustmentTypes
+
+
+        /// <summary>
+        /// Describes the policy adjustment types for use with <a>PutScalingPolicy</a>.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAdjustmentTypes service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        Task<DescribeAdjustmentTypesResponse> DescribeAdjustmentTypesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAdjustmentTypes operation.
@@ -261,11 +312,31 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeAdjustmentTypesResponse> DescribeAdjustmentTypesAsync(DescribeAdjustmentTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeAdjustmentTypesResponse> DescribeAdjustmentTypesAsync(DescribeAdjustmentTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeAutoScalingGroups
+
+
+        /// <summary>
+        /// Describes one or more Auto Scaling groups. If a list of names is not provided, the
+        /// call describes all Auto Scaling groups.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAutoScalingGroups service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        Task<DescribeAutoScalingGroupsResponse> DescribeAutoScalingGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAutoScalingGroups operation.
@@ -276,11 +347,31 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeAutoScalingGroupsResponse> DescribeAutoScalingGroupsAsync(DescribeAutoScalingGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeAutoScalingGroupsResponse> DescribeAutoScalingGroupsAsync(DescribeAutoScalingGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeAutoScalingInstances
+
+
+        /// <summary>
+        /// Describes one or more Auto Scaling instances. If a list is not provided, the call
+        /// describes all instances.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAutoScalingInstances service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        Task<DescribeAutoScalingInstancesResponse> DescribeAutoScalingInstancesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAutoScalingInstances operation.
@@ -291,11 +382,27 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeAutoScalingInstancesResponse> DescribeAutoScalingInstancesAsync(DescribeAutoScalingInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeAutoScalingInstancesResponse> DescribeAutoScalingInstancesAsync(DescribeAutoScalingInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeAutoScalingNotificationTypes
+
+
+        /// <summary>
+        /// Describes the notification types that are supported by Auto Scaling.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAutoScalingNotificationTypes service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        Task<DescribeAutoScalingNotificationTypesResponse> DescribeAutoScalingNotificationTypesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAutoScalingNotificationTypes operation.
@@ -306,11 +413,31 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeAutoScalingNotificationTypesResponse> DescribeAutoScalingNotificationTypesAsync(DescribeAutoScalingNotificationTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeAutoScalingNotificationTypesResponse> DescribeAutoScalingNotificationTypesAsync(DescribeAutoScalingNotificationTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeLaunchConfigurations
+
+
+        /// <summary>
+        /// Describes one or more launch configurations. If you omit the list of names, then the
+        /// call describes all launch configurations.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLaunchConfigurations service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        Task<DescribeLaunchConfigurationsResponse> DescribeLaunchConfigurationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLaunchConfigurations operation.
@@ -321,11 +448,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeLaunchConfigurationsResponse> DescribeLaunchConfigurationsAsync(DescribeLaunchConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeLaunchConfigurationsResponse> DescribeLaunchConfigurationsAsync(DescribeLaunchConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeLifecycleHooks
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLifecycleHooks operation.
@@ -336,11 +464,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeLifecycleHooksResponse> DescribeLifecycleHooksAsync(DescribeLifecycleHooksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeLifecycleHooksResponse> DescribeLifecycleHooksAsync(DescribeLifecycleHooksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeLifecycleHookTypes
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLifecycleHookTypes operation.
@@ -351,11 +480,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeLifecycleHookTypesResponse> DescribeLifecycleHookTypesAsync(DescribeLifecycleHookTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeLifecycleHookTypesResponse> DescribeLifecycleHookTypesAsync(DescribeLifecycleHookTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeLoadBalancers
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBalancers operation.
@@ -366,11 +496,33 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeLoadBalancersResponse> DescribeLoadBalancersAsync(DescribeLoadBalancersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeLoadBalancersResponse> DescribeLoadBalancersAsync(DescribeLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeMetricCollectionTypes
+
+
+        /// <summary>
+        /// Describes the available CloudWatch metrics for Auto Scaling.
+        /// 
+        ///  
+        /// <para>
+        /// Note that the <code>GroupStandbyInstances</code> metric is not returned by default.
+        /// You must explicitly request this metric when calling <a>EnableMetricsCollection</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMetricCollectionTypes service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        Task<DescribeMetricCollectionTypesResponse> DescribeMetricCollectionTypesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMetricCollectionTypes operation.
@@ -381,11 +533,30 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeMetricCollectionTypesResponse> DescribeMetricCollectionTypesAsync(DescribeMetricCollectionTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeMetricCollectionTypesResponse> DescribeMetricCollectionTypesAsync(DescribeMetricCollectionTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeNotificationConfigurations
+
+
+        /// <summary>
+        /// Describes the notification actions associated with the specified Auto Scaling group.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeNotificationConfigurations service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        Task<DescribeNotificationConfigurationsResponse> DescribeNotificationConfigurationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeNotificationConfigurations operation.
@@ -396,11 +567,30 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeNotificationConfigurationsResponse> DescribeNotificationConfigurationsAsync(DescribeNotificationConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeNotificationConfigurationsResponse> DescribeNotificationConfigurationsAsync(DescribeNotificationConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribePolicies
+
+
+        /// <summary>
+        /// Describes the policies for the specified Auto Scaling group.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePolicies service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        Task<DescribePoliciesResponse> DescribePoliciesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribePolicies operation.
@@ -411,11 +601,33 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribePoliciesResponse> DescribePoliciesAsync(DescribePoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribePoliciesResponse> DescribePoliciesAsync(DescribePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeScalingActivities
+
+
+        /// <summary>
+        /// Describes one or more scaling activities for the specified Auto Scaling group. If
+        /// you omit the <code>ActivityIds</code>, the call returns all activities from the past
+        /// six weeks. Activities are sorted by the start time. Activities still in progress appear
+        /// first on the list.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeScalingActivities service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        Task<DescribeScalingActivitiesResponse> DescribeScalingActivitiesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeScalingActivities operation.
@@ -426,11 +638,27 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeScalingActivitiesResponse> DescribeScalingActivitiesAsync(DescribeScalingActivitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeScalingActivitiesResponse> DescribeScalingActivitiesAsync(DescribeScalingActivitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeScalingProcessTypes
+
+
+        /// <summary>
+        /// Describes the scaling process types for use with <a>ResumeProcesses</a> and <a>SuspendProcesses</a>.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeScalingProcessTypes service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        Task<DescribeScalingProcessTypesResponse> DescribeScalingProcessTypesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeScalingProcessTypes operation.
@@ -441,11 +669,31 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeScalingProcessTypesResponse> DescribeScalingProcessTypesAsync(DescribeScalingProcessTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeScalingProcessTypesResponse> DescribeScalingProcessTypesAsync(DescribeScalingProcessTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeScheduledActions
+
+
+        /// <summary>
+        /// Describes the actions scheduled for your Auto Scaling group that haven't run. To describe
+        /// the actions that have already run, use <a>DescribeScalingActivities</a>.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeScheduledActions service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        Task<DescribeScheduledActionsResponse> DescribeScheduledActionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeScheduledActions operation.
@@ -456,11 +704,43 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeScheduledActionsResponse> DescribeScheduledActionsAsync(DescribeScheduledActionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeScheduledActionsResponse> DescribeScheduledActionsAsync(DescribeScheduledActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeTags
+
+
+        /// <summary>
+        /// Describes the specified tags.
+        /// 
+        ///  
+        /// <para>
+        /// You can use filters to limit the results. For example, you can query for the tags
+        /// for a specific Auto Scaling group. You can specify multiple values for a filter. A
+        /// tag must match at least one of the specified values for it to be included in the results.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also specify multiple filters. The result includes information for a particular
+        /// tag only if it matches all the filters. If there's no match, no special message is
+        /// returned.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTags service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        Task<DescribeTagsResponse> DescribeTagsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTags operation.
@@ -471,11 +751,27 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeTerminationPolicyTypes
+
+
+        /// <summary>
+        /// Describes the termination policies supported by Auto Scaling.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTerminationPolicyTypes service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        Task<DescribeTerminationPolicyTypesResponse> DescribeTerminationPolicyTypesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTerminationPolicyTypes operation.
@@ -486,11 +782,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeTerminationPolicyTypesResponse> DescribeTerminationPolicyTypesAsync(DescribeTerminationPolicyTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeTerminationPolicyTypesResponse> DescribeTerminationPolicyTypesAsync(DescribeTerminationPolicyTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DetachInstances
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachInstances operation.
@@ -501,11 +798,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DetachInstancesResponse> DetachInstancesAsync(DetachInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DetachInstancesResponse> DetachInstancesAsync(DetachInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DetachLoadBalancers
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachLoadBalancers operation.
@@ -516,11 +814,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DetachLoadBalancersResponse> DetachLoadBalancersAsync(DetachLoadBalancersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DetachLoadBalancersResponse> DetachLoadBalancersAsync(DetachLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DisableMetricsCollection
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableMetricsCollection operation.
@@ -531,11 +830,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DisableMetricsCollectionResponse> DisableMetricsCollectionAsync(DisableMetricsCollectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DisableMetricsCollectionResponse> DisableMetricsCollectionAsync(DisableMetricsCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  EnableMetricsCollection
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableMetricsCollection operation.
@@ -546,11 +846,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<EnableMetricsCollectionResponse> EnableMetricsCollectionAsync(EnableMetricsCollectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<EnableMetricsCollectionResponse> EnableMetricsCollectionAsync(EnableMetricsCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  EnterStandby
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnterStandby operation.
@@ -561,11 +862,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<EnterStandbyResponse> EnterStandbyAsync(EnterStandbyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<EnterStandbyResponse> EnterStandbyAsync(EnterStandbyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ExecutePolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ExecutePolicy operation.
@@ -576,11 +878,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ExecutePolicyResponse> ExecutePolicyAsync(ExecutePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ExecutePolicyResponse> ExecutePolicyAsync(ExecutePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ExitStandby
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ExitStandby operation.
@@ -591,11 +894,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ExitStandbyResponse> ExitStandbyAsync(ExitStandbyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ExitStandbyResponse> ExitStandbyAsync(ExitStandbyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutLifecycleHook
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutLifecycleHook operation.
@@ -606,11 +910,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutLifecycleHookResponse> PutLifecycleHookAsync(PutLifecycleHookRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutLifecycleHookResponse> PutLifecycleHookAsync(PutLifecycleHookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutNotificationConfiguration
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutNotificationConfiguration operation.
@@ -621,11 +926,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutNotificationConfigurationResponse> PutNotificationConfigurationAsync(PutNotificationConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutNotificationConfigurationResponse> PutNotificationConfigurationAsync(PutNotificationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutScalingPolicy
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutScalingPolicy operation.
@@ -636,11 +942,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutScalingPolicyResponse> PutScalingPolicyAsync(PutScalingPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutScalingPolicyResponse> PutScalingPolicyAsync(PutScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutScheduledUpdateGroupAction
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutScheduledUpdateGroupAction operation.
@@ -651,11 +958,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutScheduledUpdateGroupActionResponse> PutScheduledUpdateGroupActionAsync(PutScheduledUpdateGroupActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutScheduledUpdateGroupActionResponse> PutScheduledUpdateGroupActionAsync(PutScheduledUpdateGroupActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  RecordLifecycleActionHeartbeat
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RecordLifecycleActionHeartbeat operation.
@@ -666,11 +974,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<RecordLifecycleActionHeartbeatResponse> RecordLifecycleActionHeartbeatAsync(RecordLifecycleActionHeartbeatRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<RecordLifecycleActionHeartbeatResponse> RecordLifecycleActionHeartbeatAsync(RecordLifecycleActionHeartbeatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ResumeProcesses
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResumeProcesses operation.
@@ -681,11 +990,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ResumeProcessesResponse> ResumeProcessesAsync(ResumeProcessesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ResumeProcessesResponse> ResumeProcessesAsync(ResumeProcessesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  SetDesiredCapacity
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetDesiredCapacity operation.
@@ -696,11 +1006,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<SetDesiredCapacityResponse> SetDesiredCapacityAsync(SetDesiredCapacityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<SetDesiredCapacityResponse> SetDesiredCapacityAsync(SetDesiredCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  SetInstanceHealth
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetInstanceHealth operation.
@@ -711,11 +1022,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<SetInstanceHealthResponse> SetInstanceHealthAsync(SetInstanceHealthRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<SetInstanceHealthResponse> SetInstanceHealthAsync(SetInstanceHealthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  SuspendProcesses
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SuspendProcesses operation.
@@ -726,11 +1038,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<SuspendProcessesResponse> SuspendProcessesAsync(SuspendProcessesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<SuspendProcessesResponse> SuspendProcessesAsync(SuspendProcessesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  TerminateInstanceInAutoScalingGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateInstanceInAutoScalingGroup operation.
@@ -741,11 +1054,12 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<TerminateInstanceInAutoScalingGroupResponse> TerminateInstanceInAutoScalingGroupAsync(TerminateInstanceInAutoScalingGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<TerminateInstanceInAutoScalingGroupResponse> TerminateInstanceInAutoScalingGroupAsync(TerminateInstanceInAutoScalingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateAutoScalingGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAutoScalingGroup operation.
@@ -756,7 +1070,7 @@ namespace Amazon.AutoScaling
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateAutoScalingGroupResponse> UpdateAutoScalingGroupAsync(UpdateAutoScalingGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateAutoScalingGroupResponse> UpdateAutoScalingGroupAsync(UpdateAutoScalingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

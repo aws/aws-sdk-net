@@ -62,6 +62,7 @@ namespace Amazon.StorageGateway
         
         #region  ActivateGateway
 
+
         /// <summary>
         /// This operation activates the gateway you previously deployed on your host. For more
         /// information, see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html">
@@ -86,6 +87,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         ActivateGatewayResponse ActivateGateway(ActivateGatewayRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ActivateGateway operation.
         /// </summary>
@@ -100,6 +102,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  AddCache
+
 
         /// <summary>
         /// This operation configures one or more gateway local disks as cache for a cached-volume
@@ -126,6 +129,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         AddCacheResponse AddCache(AddCacheRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddCache operation.
         /// </summary>
@@ -140,6 +144,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  AddUploadBuffer
+
 
         /// <summary>
         /// This operation configures one or more gateway local disks as upload buffer for a specified
@@ -166,6 +171,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         AddUploadBufferResponse AddUploadBuffer(AddUploadBufferRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddUploadBuffer operation.
         /// </summary>
@@ -180,6 +186,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  AddWorkingStorage
+
 
         /// <summary>
         /// This operation configures one or more gateway local disks as working storage for a
@@ -212,6 +219,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         AddWorkingStorageResponse AddWorkingStorage(AddWorkingStorageRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddWorkingStorage operation.
         /// </summary>
@@ -226,6 +234,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  CancelArchival
+
 
         /// <summary>
         /// Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving
@@ -244,6 +253,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         CancelArchivalResponse CancelArchival(CancelArchivalRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CancelArchival operation.
         /// </summary>
@@ -258,6 +268,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  CancelRetrieval
+
 
         /// <summary>
         /// Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a gateway
@@ -276,6 +287,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         CancelRetrievalResponse CancelRetrieval(CancelRetrievalRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CancelRetrieval operation.
         /// </summary>
@@ -290,6 +302,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  CreateCachediSCSIVolume
+
 
         /// <summary>
         /// This operation creates a cached volume on a specified cached gateway. This operation
@@ -319,6 +332,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         CreateCachediSCSIVolumeResponse CreateCachediSCSIVolume(CreateCachediSCSIVolumeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCachediSCSIVolume operation.
         /// </summary>
@@ -333,6 +347,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  CreateSnapshot
+
 
         /// <summary>
         /// This operation initiates a snapshot of a volume.
@@ -372,6 +387,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshot operation.
         /// </summary>
@@ -386,6 +402,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  CreateSnapshotFromVolumeRecoveryPoint
+
 
         /// <summary>
         /// This operation initiates a snapshot of a gateway from a volume recovery point. This
@@ -426,6 +443,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         CreateSnapshotFromVolumeRecoveryPointResponse CreateSnapshotFromVolumeRecoveryPoint(CreateSnapshotFromVolumeRecoveryPointRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshotFromVolumeRecoveryPoint operation.
         /// </summary>
@@ -440,6 +458,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  CreateStorediSCSIVolume
+
 
         /// <summary>
         /// This operation creates a volume on a specified gateway. This operation is supported
@@ -473,6 +492,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         CreateStorediSCSIVolumeResponse CreateStorediSCSIVolume(CreateStorediSCSIVolumeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStorediSCSIVolume operation.
         /// </summary>
@@ -487,6 +507,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  CreateTapes
+
 
         /// <summary>
         /// Creates one or more virtual tapes. You write data to the virtual tapes and then archive
@@ -508,6 +529,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         CreateTapesResponse CreateTapes(CreateTapesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTapes operation.
         /// </summary>
@@ -522,6 +544,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DeleteBandwidthRateLimit
+
 
         /// <summary>
         /// This operation deletes the bandwidth rate limits of a gateway. You can delete either
@@ -542,6 +565,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DeleteBandwidthRateLimitResponse DeleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBandwidthRateLimit operation.
         /// </summary>
@@ -556,6 +580,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DeleteChapCredentials
+
 
         /// <summary>
         /// This operation deletes Challenge-Handshake Authentication Protocol (CHAP) credentials
@@ -574,6 +599,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DeleteChapCredentialsResponse DeleteChapCredentials(DeleteChapCredentialsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteChapCredentials operation.
         /// </summary>
@@ -588,6 +614,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DeleteGateway
+
 
         /// <summary>
         /// This operation deletes a gateway. To specify which gateway to delete, use the Amazon
@@ -625,6 +652,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DeleteGatewayResponse DeleteGateway(DeleteGatewayRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteGateway operation.
         /// </summary>
@@ -639,6 +667,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DeleteSnapshotSchedule
+
 
         /// <summary>
         /// This operation deletes a snapshot of a volume. 
@@ -671,6 +700,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DeleteSnapshotScheduleResponse DeleteSnapshotSchedule(DeleteSnapshotScheduleRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSnapshotSchedule operation.
         /// </summary>
@@ -685,6 +715,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DeleteTape
+
 
         /// <summary>
         /// Deletes the specified virtual tape.
@@ -702,6 +733,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DeleteTapeResponse DeleteTape(DeleteTapeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTape operation.
         /// </summary>
@@ -716,6 +748,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DeleteTapeArchive
+
 
         /// <summary>
         /// Deletes the specified virtual tape from the virtual tape shelf (VTS).
@@ -733,6 +766,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DeleteTapeArchiveResponse DeleteTapeArchive(DeleteTapeArchiveRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTapeArchive operation.
         /// </summary>
@@ -747,6 +781,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DeleteVolume
+
 
         /// <summary>
         /// This operation delete the specified gateway volume that you previously created using
@@ -782,6 +817,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVolume operation.
         /// </summary>
@@ -796,6 +832,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DescribeBandwidthRateLimit
+
 
         /// <summary>
         /// This operation returns the bandwidth rate limits of a gateway. By default, these limits
@@ -822,6 +859,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DescribeBandwidthRateLimitResponse DescribeBandwidthRateLimit(DescribeBandwidthRateLimitRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeBandwidthRateLimit operation.
         /// </summary>
@@ -836,6 +874,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DescribeCache
+
 
         /// <summary>
         /// This operation returns information about the cache of a gateway. This operation is
@@ -860,6 +899,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DescribeCacheResponse DescribeCache(DescribeCacheRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCache operation.
         /// </summary>
@@ -874,6 +914,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DescribeCachediSCSIVolumes
+
 
         /// <summary>
         /// This operation returns a description of the gateway volumes specified in the request.
@@ -899,6 +940,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DescribeCachediSCSIVolumesResponse DescribeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCachediSCSIVolumes operation.
         /// </summary>
@@ -913,6 +955,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DescribeChapCredentials
+
 
         /// <summary>
         /// This operation returns an array of Challenge-Handshake Authentication Protocol (CHAP)
@@ -932,6 +975,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DescribeChapCredentialsResponse DescribeChapCredentials(DescribeChapCredentialsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeChapCredentials operation.
         /// </summary>
@@ -946,6 +990,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DescribeGatewayInformation
+
 
         /// <summary>
         /// This operation returns metadata about a gateway such as its name, network interfaces,
@@ -966,6 +1011,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DescribeGatewayInformationResponse DescribeGatewayInformation(DescribeGatewayInformationRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeGatewayInformation operation.
         /// </summary>
@@ -980,6 +1026,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DescribeMaintenanceStartTime
+
 
         /// <summary>
         /// This operation returns your gateway's weekly maintenance start time including the
@@ -998,6 +1045,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DescribeMaintenanceStartTimeResponse DescribeMaintenanceStartTime(DescribeMaintenanceStartTimeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMaintenanceStartTime operation.
         /// </summary>
@@ -1012,6 +1060,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DescribeSnapshotSchedule
+
 
         /// <summary>
         /// This operation describes the snapshot schedule for the specified gateway volume. The
@@ -1031,6 +1080,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DescribeSnapshotScheduleResponse DescribeSnapshotSchedule(DescribeSnapshotScheduleRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshotSchedule operation.
         /// </summary>
@@ -1045,6 +1095,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DescribeStorediSCSIVolumes
+
 
         /// <summary>
         /// This operation returns the description of the gateway volumes specified in the request.
@@ -1064,6 +1115,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DescribeStorediSCSIVolumesResponse DescribeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStorediSCSIVolumes operation.
         /// </summary>
@@ -1078,6 +1130,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DescribeTapeArchives
+
 
         /// <summary>
         /// Returns a description of specified virtual tapes in the virtual tape shelf (VTS).
@@ -1100,6 +1153,7 @@ namespace Amazon.StorageGateway
         /// See the error and message fields for more information.
         /// </exception>
         DescribeTapeArchivesResponse DescribeTapeArchives();
+
 
         /// <summary>
         /// Returns a description of specified virtual tapes in the virtual tape shelf (VTS).
@@ -1124,6 +1178,33 @@ namespace Amazon.StorageGateway
         /// </exception>
         DescribeTapeArchivesResponse DescribeTapeArchives(DescribeTapeArchivesRequest request);
 
+
+        /// <summary>
+        /// Returns a description of specified virtual tapes in the virtual tape shelf (VTS).
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
+        /// description of all virtual tapes found in the VTS associated with your account.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTapeArchives service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. See the error and message
+        /// fields for more information.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// See the error and message fields for more information.
+        /// </exception>
+        Task<DescribeTapeArchivesResponse> DescribeTapeArchivesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTapeArchives operation.
         /// </summary>
@@ -1138,6 +1219,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DescribeTapeRecoveryPoints
+
 
         /// <summary>
         /// Returns a list of virtual tape recovery points that are available for the specified
@@ -1163,6 +1245,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DescribeTapeRecoveryPointsResponse DescribeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTapeRecoveryPoints operation.
         /// </summary>
@@ -1177,6 +1260,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DescribeTapes
+
 
         /// <summary>
         /// Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes.
@@ -1196,6 +1280,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DescribeTapesResponse DescribeTapes(DescribeTapesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTapes operation.
         /// </summary>
@@ -1210,6 +1295,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DescribeUploadBuffer
+
 
         /// <summary>
         /// This operation returns information about the upload buffer of a gateway. This operation
@@ -1235,6 +1321,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DescribeUploadBufferResponse DescribeUploadBuffer(DescribeUploadBufferRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeUploadBuffer operation.
         /// </summary>
@@ -1249,6 +1336,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DescribeVTLDevices
+
 
         /// <summary>
         /// Returns a description of virtual tape library (VTL) devices for the specified gateway.
@@ -1272,6 +1360,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DescribeVTLDevicesResponse DescribeVTLDevices(DescribeVTLDevicesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVTLDevices operation.
         /// </summary>
@@ -1286,6 +1375,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DescribeWorkingStorage
+
 
         /// <summary>
         /// This operation returns information about the working storage of a gateway. This operation
@@ -1316,6 +1406,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DescribeWorkingStorageResponse DescribeWorkingStorage(DescribeWorkingStorageRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkingStorage operation.
         /// </summary>
@@ -1330,6 +1421,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  DisableGateway
+
 
         /// <summary>
         /// Disables a gateway when the gateway is no longer functioning. For example, if your
@@ -1355,6 +1447,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         DisableGatewayResponse DisableGateway(DisableGatewayRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DisableGateway operation.
         /// </summary>
@@ -1369,6 +1462,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  ListGateways
+
 
         /// <summary>
         /// This operation lists gateways owned by an AWS account in a region specified in the
@@ -1398,6 +1492,7 @@ namespace Amazon.StorageGateway
         /// See the error and message fields for more information.
         /// </exception>
         ListGatewaysResponse ListGateways();
+
 
         /// <summary>
         /// This operation lists gateways owned by an AWS account in a region specified in the
@@ -1429,6 +1524,40 @@ namespace Amazon.StorageGateway
         /// </exception>
         ListGatewaysResponse ListGateways(ListGatewaysRequest request);
 
+
+        /// <summary>
+        /// This operation lists gateways owned by an AWS account in a region specified in the
+        /// request. The returned list is ordered by gateway Amazon Resource Name (ARN).
+        /// 
+        ///  
+        /// <para>
+        /// By default, the operation returns a maximum of 100 gateways. This operation supports
+        /// pagination that allows you to optionally reduce the number of gateways returned in
+        /// a response.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have more gateways than are returned in a response-that is, the response returns
+        /// only a truncated list of your gateways-the response contains a marker that you can
+        /// specify in your next request to fetch the next page of gateways.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGateways service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. See the error and message
+        /// fields for more information.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// See the error and message fields for more information.
+        /// </exception>
+        Task<ListGatewaysResponse> ListGatewaysAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListGateways operation.
         /// </summary>
@@ -1443,6 +1572,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  ListLocalDisks
+
 
         /// <summary>
         /// This operation returns a list of the gateway's local disks. To specify which gateway
@@ -1472,6 +1602,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         ListLocalDisksResponse ListLocalDisks(ListLocalDisksRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListLocalDisks operation.
         /// </summary>
@@ -1486,6 +1617,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  ListVolumeInitiators
+
 
         /// <summary>
         /// This operation lists iSCSI initiators that are connected to a volume. You can use
@@ -1504,6 +1636,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         ListVolumeInitiatorsResponse ListVolumeInitiators(ListVolumeInitiatorsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListVolumeInitiators operation.
         /// </summary>
@@ -1518,6 +1651,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  ListVolumeRecoveryPoints
+
 
         /// <summary>
         /// This operation lists the recovery points for a specified gateway. This operation is
@@ -1544,6 +1678,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         ListVolumeRecoveryPointsResponse ListVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListVolumeRecoveryPoints operation.
         /// </summary>
@@ -1558,6 +1693,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  ListVolumes
+
 
         /// <summary>
         /// This operation lists the iSCSI stored volumes of a gateway. Results are sorted by
@@ -1586,6 +1722,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         ListVolumesResponse ListVolumes(ListVolumesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListVolumes operation.
         /// </summary>
@@ -1600,6 +1737,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  ResetCache
+
 
         /// <summary>
         /// This operation resets all cache disks that have encountered a error and makes the
@@ -1661,6 +1799,40 @@ namespace Amazon.StorageGateway
         /// </exception>
         ResetCacheResponse ResetCache(ResetCacheRequest request);
 
+
+        /// <summary>
+        /// This operation resets all cache disks that have encountered a error and makes the
+        /// disks available for reconfiguration as cache storage. If your cache disk encounters
+        /// a error, the gateway prevents read and write operations on virtual tapes in the gateway.
+        /// For example, an error can occur when a disk is corrupted or removed from the gateway.
+        /// When a cache is reset, the gateway loses its cache storage. At this point you can
+        /// reconfigure the disks as cache disks. 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If the cache disk you are resetting contains data that has not been uploaded to Amazon
+        /// S3 yet, that data can be lost. After you reset cache disks, there will be no configured
+        /// cache disks left in the gateway, so you must configure at least one new cache disk
+        /// for your gateway to function properly.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="gatewayARN">A property of ResetCacheRequest used to execute the ResetCache service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResetCache service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. See the error and message
+        /// fields for more information.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// See the error and message fields for more information.
+        /// </exception>
+        Task<ResetCacheResponse> ResetCacheAsync(string gatewayARN, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
         /// Initiates the asynchronous execution of the ResetCache operation.
         /// </summary>
@@ -1675,6 +1847,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  RetrieveTapeArchive
+
 
         /// <summary>
         /// Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a gateway-VTL.
@@ -1702,6 +1875,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         RetrieveTapeArchiveResponse RetrieveTapeArchive(RetrieveTapeArchiveRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RetrieveTapeArchive operation.
         /// </summary>
@@ -1716,6 +1890,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  RetrieveTapeRecoveryPoint
+
 
         /// <summary>
         /// Retrieves the recovery point for the specified virtual tape.
@@ -1743,6 +1918,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         RetrieveTapeRecoveryPointResponse RetrieveTapeRecoveryPoint(RetrieveTapeRecoveryPointRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RetrieveTapeRecoveryPoint operation.
         /// </summary>
@@ -1757,6 +1933,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  ShutdownGateway
+
 
         /// <summary>
         /// This operation shuts down a gateway. To specify which gateway to shut down, use the
@@ -1797,6 +1974,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         ShutdownGatewayResponse ShutdownGateway(ShutdownGatewayRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ShutdownGateway operation.
         /// </summary>
@@ -1811,6 +1989,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  StartGateway
+
 
         /// <summary>
         /// This operation starts a gateway that you previously shut down (see <a>ShutdownGateway</a>).
@@ -1840,6 +2019,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         StartGatewayResponse StartGateway(StartGatewayRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the StartGateway operation.
         /// </summary>
@@ -1854,6 +2034,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  UpdateBandwidthRateLimit
+
 
         /// <summary>
         /// This operation updates the bandwidth rate limits of a gateway. You can update both
@@ -1885,6 +2066,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         UpdateBandwidthRateLimitResponse UpdateBandwidthRateLimit(UpdateBandwidthRateLimitRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateBandwidthRateLimit operation.
         /// </summary>
@@ -1899,6 +2081,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  UpdateChapCredentials
+
 
         /// <summary>
         /// This operation updates the Challenge-Handshake Authentication Protocol (CHAP) credentials
@@ -1925,6 +2108,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         UpdateChapCredentialsResponse UpdateChapCredentials(UpdateChapCredentialsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateChapCredentials operation.
         /// </summary>
@@ -1939,6 +2123,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  UpdateGatewayInformation
+
 
         /// <summary>
         /// This operation updates a gateway's metadata, which includes the gateway's name and
@@ -1958,6 +2143,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         UpdateGatewayInformationResponse UpdateGatewayInformation(UpdateGatewayInformationRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateGatewayInformation operation.
         /// </summary>
@@ -1972,6 +2158,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  UpdateGatewaySoftwareNow
+
 
         /// <summary>
         /// This operation updates the gateway virtual machine (VM) software. The request immediately
@@ -2000,6 +2187,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         UpdateGatewaySoftwareNowResponse UpdateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateGatewaySoftwareNow operation.
         /// </summary>
@@ -2014,6 +2202,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  UpdateMaintenanceStartTime
+
 
         /// <summary>
         /// This operation updates a gateway's weekly maintenance start time information, including
@@ -2033,6 +2222,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         UpdateMaintenanceStartTimeResponse UpdateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateMaintenanceStartTime operation.
         /// </summary>
@@ -2047,6 +2237,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  UpdateSnapshotSchedule
+
 
         /// <summary>
         /// This operation updates a snapshot schedule configured for a gateway volume.
@@ -2077,6 +2268,7 @@ namespace Amazon.StorageGateway
         /// </exception>
         UpdateSnapshotScheduleResponse UpdateSnapshotSchedule(UpdateSnapshotScheduleRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateSnapshotSchedule operation.
         /// </summary>
@@ -2091,6 +2283,7 @@ namespace Amazon.StorageGateway
         #endregion
         
         #region  UpdateVTLDeviceType
+
 
         /// <summary>
         /// This operation updates the type of medium changer in a gateway-VTL. When you activate
@@ -2109,6 +2302,7 @@ namespace Amazon.StorageGateway
         /// See the error and message fields for more information.
         /// </exception>
         UpdateVTLDeviceTypeResponse UpdateVTLDeviceType(UpdateVTLDeviceTypeRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateVTLDeviceType operation.

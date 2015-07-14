@@ -36,6 +36,7 @@ namespace Amazon.MachineLearning
         
         #region  CreateBatchPrediction
 
+
         /// <summary>
         /// Generates predictions for a group of observations. The observations to process exist
         /// in one or more data files referenced by a <code>DataSource</code>. This operation
@@ -99,6 +100,7 @@ namespace Amazon.MachineLearning
         #endregion
         
         #region  CreateDataSourceFromRDS
+
 
         /// <summary>
         /// Creates a <code>DataSource</code> object from an <a href="http://aws.amazon.com/rds/">
@@ -165,6 +167,7 @@ namespace Amazon.MachineLearning
         #endregion
         
         #region  CreateDataSourceFromRedshift
+
 
         /// <summary>
         /// Creates a <code>DataSource</code> from <a href="http://aws.amazon.com/redshift/">Amazon
@@ -252,6 +255,7 @@ namespace Amazon.MachineLearning
         
         #region  CreateDataSourceFromS3
 
+
         /// <summary>
         /// Creates a <code>DataSource</code> object. A <code>DataSource</code> references data
         /// that can be used to perform <a>CreateMLModel</a>, <a>CreateEvaluation</a>, or <a>CreateBatchPrediction</a>
@@ -338,6 +342,7 @@ namespace Amazon.MachineLearning
         
         #region  CreateEvaluation
 
+
         /// <summary>
         /// Creates a new <code>Evaluation</code> of an <code>MLModel</code>. An <code>MLModel</code>
         /// is evaluated on a set of observations associated to a <code>DataSource</code>. Like
@@ -404,6 +409,7 @@ namespace Amazon.MachineLearning
         #endregion
         
         #region  CreateMLModel
+
 
         /// <summary>
         /// Creates a new <code>MLModel</code> using the data files and the recipe as information
@@ -478,6 +484,7 @@ namespace Amazon.MachineLearning
         
         #region  CreateRealtimeEndpoint
 
+
         /// <summary>
         /// Creates a real-time endpoint for the <code>MLModel</code>. The endpoint contains the
         /// URI of the <code>MLModel</code>; that is, the location to send real-time prediction
@@ -543,6 +550,7 @@ namespace Amazon.MachineLearning
         #endregion
         
         #region  DeleteBatchPrediction
+
 
         /// <summary>
         /// Assigns the DELETED status to a <code>BatchPrediction</code>, rendering it unusable.
@@ -630,6 +638,7 @@ namespace Amazon.MachineLearning
         
         #region  DeleteDataSource
 
+
         /// <summary>
         /// Assigns the DELETED status to a <code>DataSource</code>, rendering it unusable.
         /// 
@@ -713,6 +722,7 @@ namespace Amazon.MachineLearning
         #endregion
         
         #region  DeleteEvaluation
+
 
         /// <summary>
         /// Assigns the <code>DELETED</code> status to an <code>Evaluation</code>, rendering it
@@ -800,6 +810,7 @@ namespace Amazon.MachineLearning
         
         #region  DeleteMLModel
 
+
         /// <summary>
         /// Assigns the DELETED status to an <code>MLModel</code>, rendering it unusable.
         /// 
@@ -884,6 +895,7 @@ namespace Amazon.MachineLearning
         
         #region  DeleteRealtimeEndpoint
 
+
         /// <summary>
         /// Deletes a real time endpoint of an <code>MLModel</code>.
         /// </summary>
@@ -946,6 +958,7 @@ namespace Amazon.MachineLearning
         
         #region  DescribeBatchPredictions
 
+
         /// <summary>
         /// Returns a list of <code>BatchPrediction</code> operations that match the search criteria
         /// in the request.
@@ -989,6 +1002,7 @@ namespace Amazon.MachineLearning
         
         #region  DescribeDataSources
 
+
         /// <summary>
         /// Returns a list of <code>DataSource</code> that match the search criteria in the request.
         /// </summary>
@@ -1030,6 +1044,7 @@ namespace Amazon.MachineLearning
         #endregion
         
         #region  DescribeEvaluations
+
 
         /// <summary>
         /// Returns a list of <code>DescribeEvaluations</code> that match the search criteria
@@ -1074,6 +1089,7 @@ namespace Amazon.MachineLearning
         
         #region  DescribeMLModels
 
+
         /// <summary>
         /// Returns a list of <code>MLModel</code> that match the search criteria in the request.
         /// </summary>
@@ -1115,6 +1131,7 @@ namespace Amazon.MachineLearning
         #endregion
         
         #region  GetBatchPrediction
+
 
         /// <summary>
         /// Returns a <code>BatchPrediction</code> that includes detailed metadata, status, and
@@ -1179,6 +1196,7 @@ namespace Amazon.MachineLearning
         #endregion
         
         #region  GetDataSource
+
 
         /// <summary>
         /// Returns a <code>DataSource</code> that includes metadata and data file information,
@@ -1284,6 +1302,7 @@ namespace Amazon.MachineLearning
         
         #region  GetEvaluation
 
+
         /// <summary>
         /// Returns an <code>Evaluation</code> that includes metadata as well as the current status
         /// of the <code>Evaluation</code>.
@@ -1347,6 +1366,7 @@ namespace Amazon.MachineLearning
         #endregion
         
         #region  GetMLModel
+
 
         /// <summary>
         /// Returns an <code>MLModel</code> that includes detailed metadata, and data source information
@@ -1446,6 +1466,7 @@ namespace Amazon.MachineLearning
         
         #region  Predict
 
+
         /// <summary>
         /// Generates a prediction for the observation using the specified <code>MLModel</code>.
         /// 
@@ -1538,6 +1559,7 @@ namespace Amazon.MachineLearning
         
         #region  UpdateBatchPrediction
 
+
         /// <summary>
         /// Updates the <code>BatchPredictionName</code> of a <code>BatchPrediction</code>.
         /// 
@@ -1612,6 +1634,7 @@ namespace Amazon.MachineLearning
         #endregion
         
         #region  UpdateDataSource
+
 
         /// <summary>
         /// Updates the <code>DataSourceName</code> of a <code>DataSource</code>.
@@ -1688,6 +1711,7 @@ namespace Amazon.MachineLearning
         
         #region  UpdateEvaluation
 
+
         /// <summary>
         /// Updates the <code>EvaluationName</code> of an <code>Evaluation</code>.
         /// 
@@ -1762,6 +1786,7 @@ namespace Amazon.MachineLearning
         #endregion
         
         #region  UpdateMLModel
+
 
         /// <summary>
         /// Updates the <code>MLModelName</code> and the <code>ScoreThreshold</code> of an <code>MLModel</code>.

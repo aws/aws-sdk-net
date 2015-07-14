@@ -106,7 +106,7 @@ namespace Amazon.Runtime.Internal
             {
                 if (disposing && _waitHandle != null)
                 {
-#if WIN_RT
+#if PCL
                     _waitHandle.Dispose();
 #else
                     _waitHandle.Close();

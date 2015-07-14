@@ -50,6 +50,7 @@ namespace Amazon.CodeCommit
         
         #region  BatchGetRepositories
 
+
         /// <summary>
         /// Gets information about one or more repositories.
         /// 
@@ -97,6 +98,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         BatchGetRepositoriesResponse BatchGetRepositories(BatchGetRepositoriesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the BatchGetRepositories operation.
         /// </summary>
@@ -111,6 +113,7 @@ namespace Amazon.CodeCommit
         #endregion
         
         #region  CreateBranch
+
 
         /// <summary>
         /// Creates a new branch in a repository and points the branch to a commit.
@@ -170,6 +173,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         CreateBranchResponse CreateBranch(CreateBranchRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateBranch operation.
         /// </summary>
@@ -184,6 +188,7 @@ namespace Amazon.CodeCommit
         #endregion
         
         #region  CreateRepository
+
 
         /// <summary>
         /// Creates a new, empty repository.
@@ -227,6 +232,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateRepository operation.
         /// </summary>
@@ -241,6 +247,7 @@ namespace Amazon.CodeCommit
         #endregion
         
         #region  DeleteRepository
+
 
         /// <summary>
         /// Deletes a repository. If a specified repository was already deleted, a null repository
@@ -280,6 +287,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRepository operation.
         /// </summary>
@@ -294,6 +302,7 @@ namespace Amazon.CodeCommit
         #endregion
         
         #region  GetBranch
+
 
         /// <summary>
         /// Retrieves information about a repository branch, including its name and the last commit
@@ -341,6 +350,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         GetBranchResponse GetBranch(GetBranchRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetBranch operation.
         /// </summary>
@@ -355,6 +365,7 @@ namespace Amazon.CodeCommit
         #endregion
         
         #region  GetRepository
+
 
         /// <summary>
         /// Gets information about a repository.
@@ -402,6 +413,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         GetRepositoryResponse GetRepository(GetRepositoryRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetRepository operation.
         /// </summary>
@@ -416,6 +428,7 @@ namespace Amazon.CodeCommit
         #endregion
         
         #region  ListBranches
+
 
         /// <summary>
         /// Gets information about one or more branches in a repository.
@@ -456,6 +469,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         ListBranchesResponse ListBranches(ListBranchesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListBranches operation.
         /// </summary>
@@ -470,6 +484,7 @@ namespace Amazon.CodeCommit
         #endregion
         
         #region  ListRepositories
+
 
         /// <summary>
         /// Gets information about one or more repositories.
@@ -488,6 +503,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         ListRepositoriesResponse ListRepositories(ListRepositoriesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListRepositories operation.
         /// </summary>
@@ -502,6 +518,7 @@ namespace Amazon.CodeCommit
         #endregion
         
         #region  UpdateDefaultBranch
+
 
         /// <summary>
         /// Sets or changes the default branch name for the specified repository.
@@ -552,6 +569,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         UpdateDefaultBranchResponse UpdateDefaultBranch(UpdateDefaultBranchRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDefaultBranch operation.
         /// </summary>
@@ -566,6 +584,7 @@ namespace Amazon.CodeCommit
         #endregion
         
         #region  UpdateRepositoryDescription
+
 
         /// <summary>
         /// Sets or changes the comment or description for a repository.
@@ -616,6 +635,7 @@ namespace Amazon.CodeCommit
         /// </exception>
         UpdateRepositoryDescriptionResponse UpdateRepositoryDescription(UpdateRepositoryDescriptionRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateRepositoryDescription operation.
         /// </summary>
@@ -630,6 +650,7 @@ namespace Amazon.CodeCommit
         #endregion
         
         #region  UpdateRepositoryName
+
 
         /// <summary>
         /// Renames a repository.
@@ -654,6 +675,7 @@ namespace Amazon.CodeCommit
         /// A repository name is required but was not specified.
         /// </exception>
         UpdateRepositoryNameResponse UpdateRepositoryName(UpdateRepositoryNameRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateRepositoryName operation.

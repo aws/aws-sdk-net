@@ -128,6 +128,29 @@ namespace Amazon.CodePipeline
                 
         #region  AcknowledgeJob
 
+
+        /// <summary>
+        /// Returns information about a specified job and whether that job has been received by
+        /// the job worker. Only used for custom actions.
+        /// </summary>
+        /// <param name="jobId">The unique system-generated ID of the job for which you want to confirm receipt.</param>
+        /// <param name="nonce">A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. This number must be returned in the response.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcknowledgeJob service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNonceException">
+        /// The specified nonce was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
+        /// The specified job was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        Task<AcknowledgeJobResponse> AcknowledgeJobAsync(string jobId, string nonce, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
         /// Initiates the asynchronous execution of the AcknowledgeJob operation.
         /// </summary>
@@ -137,11 +160,37 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AcknowledgeJobResponse> AcknowledgeJobAsync(AcknowledgeJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AcknowledgeJobResponse> AcknowledgeJobAsync(AcknowledgeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  AcknowledgeThirdPartyJob
+
+
+        /// <summary>
+        /// Confirms a job worker has received the specified job. Only used for partner actions.
+        /// </summary>
+        /// <param name="clientToken">The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</param>
+        /// <param name="jobId">The unique system-generated ID of the job.</param>
+        /// <param name="nonce">A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. This number must be returned in the response.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcknowledgeThirdPartyJob service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidClientTokenException">
+        /// The client token was specified in an invalid format
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNonceException">
+        /// The specified nonce was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
+        /// The specified job was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        Task<AcknowledgeThirdPartyJobResponse> AcknowledgeThirdPartyJobAsync(string clientToken, string jobId, string nonce, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the AcknowledgeThirdPartyJob operation.
@@ -152,11 +201,12 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AcknowledgeThirdPartyJobResponse> AcknowledgeThirdPartyJobAsync(AcknowledgeThirdPartyJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AcknowledgeThirdPartyJobResponse> AcknowledgeThirdPartyJobAsync(AcknowledgeThirdPartyJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateCustomActionType
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCustomActionType operation.
@@ -167,11 +217,45 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateCustomActionTypeResponse> CreateCustomActionTypeAsync(CreateCustomActionTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateCustomActionTypeResponse> CreateCustomActionTypeAsync(CreateCustomActionTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreatePipeline
+
+
+        /// <summary>
+        /// Creates a pipeline.
+        /// </summary>
+        /// <param name="pipeline">A property of CreatePipelineRequest used to execute the CreatePipeline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePipeline service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidActionDeclarationException">
+        /// The specified action declaration was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidBlockerDeclarationException">
+        /// The specified gate declaration was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidStageDeclarationException">
+        /// The specified stage declaration was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
+        /// The specified structure was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
+        /// The number of pipelines associated with the AWS account has exceeded the limit allowed
+        /// for the account.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNameInUseException">
+        /// The specified pipeline name is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        Task<CreatePipelineResponse> CreatePipelineAsync(PipelineDeclaration pipeline, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePipeline operation.
@@ -182,11 +266,12 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteCustomActionType
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCustomActionType operation.
@@ -197,11 +282,26 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteCustomActionTypeResponse> DeleteCustomActionTypeAsync(DeleteCustomActionTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteCustomActionTypeResponse> DeleteCustomActionTypeAsync(DeleteCustomActionTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeletePipeline
+
+
+        /// <summary>
+        /// Deletes the specified pipeline.
+        /// </summary>
+        /// <param name="name">The name of the pipeline to be deleted.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePipeline service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        Task<DeletePipelineResponse> DeletePipelineAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePipeline operation.
@@ -212,11 +312,12 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DisableStageTransition
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableStageTransition operation.
@@ -227,11 +328,12 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DisableStageTransitionResponse> DisableStageTransitionAsync(DisableStageTransitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DisableStageTransitionResponse> DisableStageTransitionAsync(DisableStageTransitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  EnableStageTransition
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableStageTransition operation.
@@ -242,11 +344,38 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<EnableStageTransitionResponse> EnableStageTransitionAsync(EnableStageTransitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<EnableStageTransitionResponse> EnableStageTransitionAsync(EnableStageTransitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetJobDetails
+
+
+        /// <summary>
+        /// Returns information about a job. Only used for custom actions.
+        /// 
+        ///  <important>
+        /// <para>
+        /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
+        /// S3 bucket used to store artifacts for the pipeline, if the action requires access
+        /// to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns
+        /// any secret values defined for the action.
+        /// </para>
+        /// </important>
+        /// </summary>
+        /// <param name="jobId">The unique system-generated ID for the job.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJobDetails service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
+        /// The specified job was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        Task<GetJobDetailsResponse> GetJobDetailsAsync(string jobId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetJobDetails operation.
@@ -257,11 +386,57 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetJobDetailsResponse> GetJobDetailsAsync(GetJobDetailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetJobDetailsResponse> GetJobDetailsAsync(GetJobDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetPipeline
+
+
+        /// <summary>
+        /// Returns the metadata, structure, stages, and actions of a pipeline. Can be used to
+        /// return the entire structure of a pipeline in JSON format, which can then be modified
+        /// and used to update the pipeline structure with <a>UpdatePipeline</a>.
+        /// </summary>
+        /// <param name="name">The name of the pipeline for which you want to get information. Pipeline names must be unique under an Amazon Web Services (AWS) user account.</param>
+        /// <param name="version">The version number of the pipeline. If you do not specify a version, defaults to the most current version.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPipeline service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineVersionNotFoundException">
+        /// The specified pipeline version was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        Task<GetPipelineResponse> GetPipelineAsync(string name, int version, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Returns the metadata, structure, stages, and actions of a pipeline. Can be used to
+        /// return the entire structure of a pipeline in JSON format, which can then be modified
+        /// and used to update the pipeline structure with <a>UpdatePipeline</a>.
+        /// </summary>
+        /// <param name="name">The name of the pipeline for which you want to get information. Pipeline names must be unique under an Amazon Web Services (AWS) user account.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPipeline service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineVersionNotFoundException">
+        /// The specified pipeline version was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        Task<GetPipelineResponse> GetPipelineAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetPipeline operation.
@@ -272,11 +447,30 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetPipelineResponse> GetPipelineAsync(GetPipelineRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetPipelineResponse> GetPipelineAsync(GetPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetPipelineState
+
+
+        /// <summary>
+        /// Returns information about the state of a pipeline, including the stages, actions,
+        /// and details about the last run of the pipeline.
+        /// </summary>
+        /// <param name="name">The name of the pipeline about which you want to get information.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPipelineState service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        Task<GetPipelineStateResponse> GetPipelineStateAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetPipelineState operation.
@@ -287,11 +481,45 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetPipelineStateResponse> GetPipelineStateAsync(GetPipelineStateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetPipelineStateResponse> GetPipelineStateAsync(GetPipelineStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetThirdPartyJobDetails
+
+
+        /// <summary>
+        /// Requests the details of a job for a third party action. Only used for partner actions.
+        /// 
+        ///  <important>
+        /// <para>
+        /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
+        /// S3 bucket used to store artifacts for the pipeline, if the action requires access
+        /// to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns
+        /// any secret values defined for the action.
+        /// </para>
+        /// </important>
+        /// </summary>
+        /// <param name="clientToken">The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</param>
+        /// <param name="jobId">The unique system-generated ID used for identifying the job.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetThirdPartyJobDetails service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidClientTokenException">
+        /// The client token was specified in an invalid format
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidJobException">
+        /// The specified job was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
+        /// The specified job was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        Task<GetThirdPartyJobDetailsResponse> GetThirdPartyJobDetailsAsync(string clientToken, string jobId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetThirdPartyJobDetails operation.
@@ -302,11 +530,47 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetThirdPartyJobDetailsResponse> GetThirdPartyJobDetailsAsync(GetThirdPartyJobDetailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetThirdPartyJobDetailsResponse> GetThirdPartyJobDetailsAsync(GetThirdPartyJobDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListActionTypes
+
+
+        /// <summary>
+        /// Gets a summary of all AWS CodePipeline action types associated with your account.
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListActionTypes service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provided is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        Task<ListActionTypesResponse> ListActionTypesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets a summary of all AWS CodePipeline action types associated with your account.
+        /// </summary>
+        /// <param name="actionOwnerFilter">Filters the list of action types to those created by a specified entity.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListActionTypes service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provided is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        Task<ListActionTypesResponse> ListActionTypesAsync(ActionOwner actionOwnerFilter, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListActionTypes operation.
@@ -317,11 +581,26 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListActionTypesResponse> ListActionTypesAsync(ListActionTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListActionTypesResponse> ListActionTypesAsync(ListActionTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListPipelines
+
+
+        /// <summary>
+        /// Gets a summary of all of the pipelines associated with your account.
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPipelines service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provided is the token returned by a previous call.
+        /// </exception>
+        Task<ListPipelinesResponse> ListPipelinesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListPipelines operation.
@@ -332,11 +611,12 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PollForJobs
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PollForJobs operation.
@@ -347,11 +627,12 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PollForJobsResponse> PollForJobsAsync(PollForJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PollForJobsResponse> PollForJobsAsync(PollForJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PollForThirdPartyJobs
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PollForThirdPartyJobs operation.
@@ -362,11 +643,12 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PollForThirdPartyJobsResponse> PollForThirdPartyJobsAsync(PollForThirdPartyJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PollForThirdPartyJobsResponse> PollForThirdPartyJobsAsync(PollForThirdPartyJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutActionRevision
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutActionRevision operation.
@@ -377,11 +659,34 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutActionRevisionResponse> PutActionRevisionAsync(PutActionRevisionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutActionRevisionResponse> PutActionRevisionAsync(PutActionRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutJobFailureResult
+
+
+        /// <summary>
+        /// Represents the failure of a job as returned to the pipeline by a job worker. Only
+        /// used for custom actions.
+        /// </summary>
+        /// <param name="jobId">The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.</param>
+        /// <param name="failureDetails">The details about the failure of a job. </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutJobFailureResult service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidJobStateException">
+        /// The specified job state was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
+        /// The specified job was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        Task<PutJobFailureResultResponse> PutJobFailureResultAsync(string jobId, FailureDetails failureDetails, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutJobFailureResult operation.
@@ -392,11 +697,12 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutJobFailureResultResponse> PutJobFailureResultAsync(PutJobFailureResultRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutJobFailureResultResponse> PutJobFailureResultAsync(PutJobFailureResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutJobSuccessResult
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutJobSuccessResult operation.
@@ -407,11 +713,38 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutJobSuccessResultResponse> PutJobSuccessResultAsync(PutJobSuccessResultRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutJobSuccessResultResponse> PutJobSuccessResultAsync(PutJobSuccessResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutThirdPartyJobFailureResult
+
+
+        /// <summary>
+        /// Represents the failure of a third party job as returned to the pipeline by a job worker.
+        /// Only used for partner actions.
+        /// </summary>
+        /// <param name="jobId">The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.</param>
+        /// <param name="clientToken">The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</param>
+        /// <param name="failureDetails">A property of PutThirdPartyJobFailureResultRequest used to execute the PutThirdPartyJobFailureResult service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutThirdPartyJobFailureResult service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidClientTokenException">
+        /// The client token was specified in an invalid format
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidJobStateException">
+        /// The specified job state was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
+        /// The specified job was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        Task<PutThirdPartyJobFailureResultResponse> PutThirdPartyJobFailureResultAsync(string jobId, string clientToken, FailureDetails failureDetails, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutThirdPartyJobFailureResult operation.
@@ -422,11 +755,12 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutThirdPartyJobFailureResultResponse> PutThirdPartyJobFailureResultAsync(PutThirdPartyJobFailureResultRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutThirdPartyJobFailureResultResponse> PutThirdPartyJobFailureResultAsync(PutThirdPartyJobFailureResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutThirdPartyJobSuccessResult
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutThirdPartyJobSuccessResult operation.
@@ -437,11 +771,30 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutThirdPartyJobSuccessResultResponse> PutThirdPartyJobSuccessResultAsync(PutThirdPartyJobSuccessResultRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutThirdPartyJobSuccessResultResponse> PutThirdPartyJobSuccessResultAsync(PutThirdPartyJobSuccessResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  StartPipelineExecution
+
+
+        /// <summary>
+        /// Starts the specified pipeline. Specifically, it begins processing the latest commit
+        /// to the source location specified as part of the pipeline.
+        /// </summary>
+        /// <param name="name">The name of the pipeline to start.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartPipelineExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        Task<StartPipelineExecutionResponse> StartPipelineExecutionAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the StartPipelineExecution operation.
@@ -452,11 +805,41 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<StartPipelineExecutionResponse> StartPipelineExecutionAsync(StartPipelineExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<StartPipelineExecutionResponse> StartPipelineExecutionAsync(StartPipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdatePipeline
+
+
+        /// <summary>
+        /// Updates a specified pipeline with edits or changes to its structure. Use a JSON file
+        /// with the pipeline structure in conjunction with UpdatePipeline to provide the full
+        /// structure of the pipeline. Updating the pipeline increases the version number of the
+        /// pipeline by 1.
+        /// </summary>
+        /// <param name="pipeline">The name of the pipeline to be updated.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePipeline service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidActionDeclarationException">
+        /// The specified action declaration was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidBlockerDeclarationException">
+        /// The specified gate declaration was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidStageDeclarationException">
+        /// The specified stage declaration was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
+        /// The specified structure was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        Task<UpdatePipelineResponse> UpdatePipelineAsync(PipelineDeclaration pipeline, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdatePipeline operation.
@@ -467,7 +850,7 @@ namespace Amazon.CodePipeline
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

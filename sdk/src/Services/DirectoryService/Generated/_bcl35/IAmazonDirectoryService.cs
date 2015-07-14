@@ -40,6 +40,7 @@ namespace Amazon.DirectoryService
         
         #region  ConnectDirectory
 
+
         /// <summary>
         /// Creates an AD Connector to connect an on-premises directory.
         /// </summary>
@@ -87,6 +88,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  CreateAlias
+
 
         /// <summary>
         /// Creates an alias for a directory and assigns the alias to the directory. The alias
@@ -146,6 +148,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  CreateComputer
+
 
         /// <summary>
         /// Creates a computer account in the specified directory, and joins the computer to the
@@ -208,6 +211,7 @@ namespace Amazon.DirectoryService
         
         #region  CreateDirectory
 
+
         /// <summary>
         /// Creates a Simple AD directory.
         /// </summary>
@@ -255,6 +259,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  CreateSnapshot
+
 
         /// <summary>
         /// Creates a snapshot of an existing directory.
@@ -312,6 +317,7 @@ namespace Amazon.DirectoryService
         
         #region  DeleteDirectory
 
+
         /// <summary>
         /// Deletes an AWS Directory Service directory.
         /// </summary>
@@ -356,6 +362,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  DeleteSnapshot
+
 
         /// <summary>
         /// Deletes a directory snapshot.
@@ -404,6 +411,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  DescribeDirectories
+
 
         /// <summary>
         /// Obtains information about the directories that belong to this account.
@@ -514,6 +522,7 @@ namespace Amazon.DirectoryService
         
         #region  DescribeSnapshots
 
+
         /// <summary>
         /// Obtains information about the directory snapshots that belong to this account.
         /// 
@@ -577,6 +586,7 @@ namespace Amazon.DirectoryService
         
         #region  DisableRadius
 
+
         /// <summary>
         /// Disables multi-factor authentication (MFA) with Remote Authentication Dial In User
         /// Service (RADIUS) for an AD Connector directory.
@@ -622,6 +632,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  DisableSso
+
 
         /// <summary>
         /// Disables single-sign on for a directory.
@@ -673,6 +684,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  EnableRadius
+
 
         /// <summary>
         /// Enables multi-factor authentication (MFA) with Remote Authentication Dial In User
@@ -726,6 +738,7 @@ namespace Amazon.DirectoryService
         
         #region  EnableSso
 
+
         /// <summary>
         /// Enables single-sign on for a directory.
         /// </summary>
@@ -776,6 +789,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  GetDirectoryLimits
+
 
         /// <summary>
         /// Obtains directory limit information for the current region.
@@ -838,6 +852,7 @@ namespace Amazon.DirectoryService
         
         #region  GetSnapshotLimits
 
+
         /// <summary>
         /// Obtains the manual snapshot limits for a directory.
         /// </summary>
@@ -882,6 +897,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  RestoreFromSnapshot
+
 
         /// <summary>
         /// Restores a directory using an existing directory snapshot.
@@ -943,6 +959,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  UpdateRadius
+
 
         /// <summary>
         /// Updates the Remote Authentication Dial In User Service (RADIUS) server information

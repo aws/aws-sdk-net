@@ -30,12 +30,17 @@
         -->
         <SDKPlatform Condition="'$(SDKPlatform)'==''">net45</SDKPlatform>
         <SDKServices Condition="'$(SDKServices)'==''">*</SDKServices>
+		
+		<!-- resources folder where test settings should be placed -->
+		<TestSettingsLocation>..\sdk\test\CrossPlatformTests\CommonTests\Resources</TestSettingsLocation>
         
         <RunKeyScan Condition="'$(RunKeyScan)'==''">false</RunKeyScan>
     </PropertyGroup>
     
-	<Target Name="build-custom-tasks">
-		<Exec Command="$(devenv2013) /Rebuild Release .\CustomTasks\CustomTasks.sln"/>
+	<Target Name="build-custom-tasks">		
+		<MSBuild Projects=".\CustomTasks\CustomTasks.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release" />
 	</Target>
 	
 	<UsingTask TaskName="CustomTasks.UpdateFxCopProject" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
@@ -47,23 +52,25 @@
 	<Target Name="full-build-nodocs" DependsOnTargets="test-sdk;keyscan;copy-assemblies;save-build"/>
 	
 	<Target Name="run-generator">
-		<Message Text="Build and run code generator"/>
-		<Exec Command="$(devenv2013) /Rebuild Release ..\generator\AWSSDKGenerator.sln"/>
+		<Message Text="Build and run code generator"/>		
+		<MSBuild Projects="..\generator\AWSSDKGenerator.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release" />
 		<Exec Command="ServiceClientGenerator.exe" 
 			WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
 	</Target>
 
 	<Target Name="restore-nuget" DependsOnTargets="run-generator">
 		<Message Text="Restore nuget packages"/>
-		<Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.sln"/>
+		<Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.All.sln"/>
 	</Target>
 	
 	<Target Name="build-sdk" DependsOnTargets="restore-nuget;run-generator">
 		<Message Text="Compile the SDK"/>
-		<SetEnvironmentVariable VariableName="AWSKeyFile" VariableValue="$(CustomSnkFileLocation)" />
-		<Exec Command="$(devenv2013) /Rebuild Release ..\sdk\AWSSDK.sln"/>
-		<SetEnvironmentVariable VariableName="AWSKeyFile" VariableValue="" />
-		
+		<MSBuild Projects="..\sdk\AWSSDK.All.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation)" />
+
 		<Copy
 			SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
 			DestinationFolder="$(Deployment)" />
@@ -89,7 +96,7 @@
 	</Target>
 	
 	<Target Name="nuget-pack" DependsOnTargets="build-sdk">
-		<Exec ContinueOnError="ErrorAndStop" 
+		<Exec LogStandardErrorAsError="true"
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1" />		
 	</Target>
 
@@ -98,7 +105,7 @@
 		<PropertyGroup>
 			<CustomSnkPublicKeyToken Condition="'$(CustomSnkPublicKeyToken)' == '' ">71c852f8be1c371d</CustomSnkPublicKeyToken>
 		</PropertyGroup>
-		<Exec ContinueOnError="ErrorAndStop" 
+		<Exec LogStandardErrorAsError="true"
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File copy-sdkassemblies.ps1 -PublicKeyTokenToCheck $(CustomSnkPublicKeyToken)" />		
 	</Target>
 	
@@ -106,11 +113,13 @@
 
 	<Target Name="fxcop" DependsOnTargets="init;copy-assemblies" Condition="Exists('$(fxcopcmdexe)')">
 		<!-- Update FxCop project files -->
-		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net35" FxCopProject="..\sdk\SDK-3.5.FxCop" />
-		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net45" FxCopProject="..\sdk\SDK-4.5.FxCop" />
+		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net35" FxCopProject="..\sdk\SDK-3.5.FxCop" BinSuffix="net35"/>
+		<UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net45" FxCopProject="..\sdk\SDK-4.5.FxCop" BinSuffix="net45"/>
 
 		<!-- Compile custom FxCop rules -->
-		<Exec Command="$(devenv2013) /Rebuild Release ..\buildtools\CustomFxCopRules\CustomFxCopRules.sln"/>
+		<MSBuild Projects="..\buildtools\CustomFxCopRules\CustomFxCopRules.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release" />
 		
 		<!-- Run FxCop -->
 		<Exec Command="$(fxcopcmd) /p:..\sdk\SDK-3.5.FxCop /o:..\fxcop-report-3.5.xml /s"/>
@@ -159,21 +168,6 @@
 			</Code>
 		</Task>
 	</UsingTask>
-	
-	<UsingTask TaskName="SetEnvironmentVariable" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
-		<ParameterGroup>
-			<VariableName ParameterType="System.String" Required="true" />
-			<VariableValue ParameterType="System.String" Required="false" />
-		</ParameterGroup>
-		<Task>
-			<Code Type="Fragment" Language="cs">
-				<![CDATA[
-					Log.LogMessage("Setting variable {0} = {1}", VariableName, VariableValue);
-					System.Environment.SetEnvironmentVariable(VariableName, VariableValue);
-				]]>
-			</Code>
-		</Task>
-	</UsingTask>
 
 	<Target Name="deploy-test-results" >	
 		<ItemGroup>
@@ -218,7 +212,14 @@
 			GitBranch="$(SaveReferenceGitBranch)"
 			LocalArchiveRootFolder="$(LocalArchiveRootFolder)"
 			/>
-	</Target>	
+	</Target>
+	
+	<Target Name="prepare-tests" Condition="'$(TestSettingsFile)' != ''">
+		<Copy
+			SourceFiles="$(TestSettingsFile)"
+			DestinationFolder="$(TestSettingsLocation)" />
+	</Target>
+
     
     <!-- DOCUMENTATION BUILD TARGETS -->
     
@@ -241,7 +242,9 @@
     
     <Target Name="build-docgenerator">
 		<Message Text="Building documentation generator"/>
-		<Exec Command="$(devenv2013) /Rebuild Release ..\docgenerator\AWSSDKDocGenerator.sln"/>
+		<MSBuild Projects="..\docgenerator\AWSSDKDocGenerator.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release" />
     </Target>
     
 	<Target Name="doc-platform-build" DependsOnTargets="build-docgenerator">

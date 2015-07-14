@@ -50,7 +50,7 @@ namespace Amazon.Util.Internal
             UseSdkCache = AWSConfigs._useSdkCache;
             CorrectForClockSkew = true;
 
-#if !WIN_RT && !WINDOWS_PHONE
+#if !PCL
             var root = AWSConfigs.GetSection<AWSSection>(_rootAwsSectionName);
 
             Logging.Configure(root.Logging);

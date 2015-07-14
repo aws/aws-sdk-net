@@ -65,6 +65,7 @@ namespace Amazon.RDS
         
         #region  AddSourceIdentifierToSubscription
 
+
         /// <summary>
         /// Adds a source identifier to an existing RDS event notification subscription.
         /// </summary>
@@ -106,6 +107,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  AddTagsToResource
+
 
         /// <summary>
         /// Adds metadata tags to an Amazon RDS resource. These tags can also be used with cost
@@ -157,6 +159,7 @@ namespace Amazon.RDS
         
         #region  ApplyPendingMaintenanceAction
 
+
         /// <summary>
         /// Applies a pending maintenance action to a resource (for example, a DB instance).
         /// </summary>
@@ -195,6 +198,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  AuthorizeDBSecurityGroupIngress
+
 
         /// <summary>
         /// Enables ingress to a DBSecurityGroup using one of two forms of authorization. First,
@@ -258,6 +262,7 @@ namespace Amazon.RDS
         
         #region  CopyDBParameterGroup
 
+
         /// <summary>
         /// Copies the specified DB parameter group.
         /// </summary>
@@ -302,6 +307,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  CopyDBSnapshot
+
 
         /// <summary>
         /// Copies the specified DBSnapshot. The source DBSnapshot must be in the "available"
@@ -352,6 +358,7 @@ namespace Amazon.RDS
         
         #region  CopyOptionGroup
 
+
         /// <summary>
         /// Copies the specified option group.
         /// </summary>
@@ -396,6 +403,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  CreateDBInstance
+
 
         /// <summary>
         /// Creates a new DB instance.
@@ -487,6 +495,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  CreateDBInstanceReadReplica
+
 
         /// <summary>
         /// Creates a DB instance that acts as a Read Replica of a source DB instance. 
@@ -596,6 +605,7 @@ namespace Amazon.RDS
         
         #region  CreateDBParameterGroup
 
+
         /// <summary>
         /// Creates a new DB parameter group. 
         /// 
@@ -662,6 +672,7 @@ namespace Amazon.RDS
         
         #region  CreateDBSecurityGroup
 
+
         /// <summary>
         /// Creates a new DB security group. DB security groups control access to a DB instance.
         /// </summary>
@@ -707,6 +718,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  CreateDBSnapshot
+
 
         /// <summary>
         /// Creates a DBSnapshot. The source DBInstance must be in "available" state.
@@ -755,6 +767,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  CreateDBSubnetGroup
+
 
         /// <summary>
         /// Creates a new DB subnet group. DB subnet groups must contain at least one subnet
@@ -810,6 +823,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  CreateEventSubscription
+
 
         /// <summary>
         /// Creates an RDS event notification subscription. This action requires a topic ARN (Amazon
@@ -890,6 +904,7 @@ namespace Amazon.RDS
         
         #region  CreateOptionGroup
 
+
         /// <summary>
         /// Creates a new option group. You can create up to 20 option groups.
         /// </summary>
@@ -931,6 +946,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DeleteDBInstance
+
 
         /// <summary>
         /// The DeleteDBInstance action deletes a previously provisioned DB instance. A successful
@@ -992,6 +1008,7 @@ namespace Amazon.RDS
         
         #region  DeleteDBParameterGroup
 
+
         /// <summary>
         /// Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted cannot be
         /// associated with any DB instances.
@@ -1034,6 +1051,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DeleteDBSecurityGroup
+
 
         /// <summary>
         /// Deletes a DB security group. 
@@ -1079,6 +1097,7 @@ namespace Amazon.RDS
         
         #region  DeleteDBSnapshot
 
+
         /// <summary>
         /// Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated.
         /// 
@@ -1123,6 +1142,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DeleteDBSubnetGroup
+
 
         /// <summary>
         /// Deletes a DB subnet group. 
@@ -1171,6 +1191,7 @@ namespace Amazon.RDS
         
         #region  DeleteEventSubscription
 
+
         /// <summary>
         /// Deletes an RDS event notification subscription.
         /// </summary>
@@ -1214,6 +1235,7 @@ namespace Amazon.RDS
         
         #region  DeleteOptionGroup
 
+
         /// <summary>
         /// Deletes an existing option group.
         /// </summary>
@@ -1255,6 +1277,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DescribeAccountAttributes
+
 
         /// <summary>
         /// Lists all of the attributes for a customer account. The attributes include Amazon
@@ -1315,6 +1338,7 @@ namespace Amazon.RDS
         
         #region  DescribeCertificates
 
+
         /// <summary>
         /// Lists the set of CA certificates provided by Amazon RDS for this AWS account.
         /// </summary>
@@ -1353,6 +1377,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DescribeDBEngineVersions
+
 
         /// <summary>
         /// Returns a list of the available DB engines.
@@ -1396,6 +1421,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DescribeDBInstances
+
 
         /// <summary>
         /// Returns information about provisioned RDS instances. This API supports pagination.
@@ -1446,6 +1472,7 @@ namespace Amazon.RDS
         
         #region  DescribeDBLogFiles
 
+
         /// <summary>
         /// Returns a list of DB log files for the DB instance.
         /// </summary>
@@ -1484,6 +1511,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DescribeDBParameterGroups
+
 
         /// <summary>
         /// Returns a list of <code>DBParameterGroup</code> descriptions. If a <code>DBParameterGroupName</code>
@@ -1538,6 +1566,7 @@ namespace Amazon.RDS
         
         #region  DescribeDBParameters
 
+
         /// <summary>
         /// Returns the detailed parameter list for a particular DB parameter group.
         /// </summary>
@@ -1576,6 +1605,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DescribeDBSecurityGroups
+
 
         /// <summary>
         /// Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code>
@@ -1630,6 +1660,7 @@ namespace Amazon.RDS
         
         #region  DescribeDBSnapshots
 
+
         /// <summary>
         /// Returns information about DB snapshots. This API supports pagination.
         /// </summary>
@@ -1678,6 +1709,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DescribeDBSubnetGroups
+
 
         /// <summary>
         /// Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified,
@@ -1742,6 +1774,7 @@ namespace Amazon.RDS
         
         #region  DescribeEngineDefaultParameters
 
+
         /// <summary>
         /// Returns the default engine and system parameter information for the specified database
         /// engine.
@@ -1778,6 +1811,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DescribeEventCategories
+
 
         /// <summary>
         /// Displays a list of categories for all event source types, or, if specified, for a
@@ -1828,6 +1862,7 @@ namespace Amazon.RDS
         
         #region  DescribeEvents
 
+
         /// <summary>
         /// Returns events related to DB instances, DB security groups, DB snapshots, and DB
         /// parameter groups for the past 14 days. Events specific to a particular DB instance,
@@ -1876,6 +1911,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DescribeEventSubscriptions
+
 
         /// <summary>
         /// Lists all the subscription descriptions for a customer account. The description for
@@ -1940,6 +1976,7 @@ namespace Amazon.RDS
         
         #region  DescribeOptionGroupOptions
 
+
         /// <summary>
         /// Describes all available options.
         /// </summary>
@@ -1975,6 +2012,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DescribeOptionGroups
+
 
         /// <summary>
         /// Describes the available option groups.
@@ -2025,6 +2063,7 @@ namespace Amazon.RDS
         
         #region  DescribeOrderableDBInstanceOptions
 
+
         /// <summary>
         /// Returns a list of orderable DB instance options for the specified engine.
         /// </summary>
@@ -2060,6 +2099,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DescribePendingMaintenanceActions
+
 
         /// <summary>
         /// Returns a list of resources (for example, DB instances) that have at least one pending
@@ -2100,6 +2140,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DescribeReservedDBInstances
+
 
         /// <summary>
         /// Returns information about reserved DB instances for this account, or about a specified
@@ -2152,6 +2193,7 @@ namespace Amazon.RDS
         
         #region  DescribeReservedDBInstancesOfferings
 
+
         /// <summary>
         /// Lists available reserved DB instance offerings.
         /// </summary>
@@ -2201,6 +2243,7 @@ namespace Amazon.RDS
         
         #region  DownloadDBLogFilePortion
 
+
         /// <summary>
         /// Downloads all or a portion of the specified log file.
         /// </summary>
@@ -2239,6 +2282,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  ListTagsForResource
+
 
         /// <summary>
         /// Lists all tags on an Amazon RDS resource.
@@ -2287,6 +2331,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  ModifyDBInstance
+
 
         /// <summary>
         /// Modify settings for a DB instance. You can change one or more database configuration
@@ -2378,6 +2423,7 @@ namespace Amazon.RDS
         
         #region  ModifyDBParameterGroup
 
+
         /// <summary>
         /// Modifies the parameters of a DB parameter group. To modify more than one parameter,
         /// submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
@@ -2443,6 +2489,7 @@ namespace Amazon.RDS
         
         #region  ModifyDBSubnetGroup
 
+
         /// <summary>
         /// Modifies an existing DB subnet group. DB subnet groups must contain at least one
         /// subnet in at least two AZs in the region.
@@ -2497,6 +2544,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  ModifyEventSubscription
+
 
         /// <summary>
         /// Modifies an existing RDS event notification subscription. Note that you cannot modify
@@ -2562,6 +2610,7 @@ namespace Amazon.RDS
         
         #region  ModifyOptionGroup
 
+
         /// <summary>
         /// Modifies an existing option group.
         /// </summary>
@@ -2603,6 +2652,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  PromoteReadReplica
+
 
         /// <summary>
         /// Promotes a Read Replica DB instance to a standalone DB instance. 
@@ -2655,6 +2705,7 @@ namespace Amazon.RDS
         
         #region  PurchaseReservedDBInstancesOffering
 
+
         /// <summary>
         /// Purchases a reserved DB instance offering.
         /// </summary>
@@ -2699,6 +2750,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  RebootDBInstance
+
 
         /// <summary>
         /// Rebooting a DB instance restarts the database engine service. A reboot also applies
@@ -2762,6 +2814,7 @@ namespace Amazon.RDS
         
         #region  RemoveSourceIdentifierFromSubscription
 
+
         /// <summary>
         /// Removes a source identifier from an existing RDS event notification subscription.
         /// </summary>
@@ -2803,6 +2856,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  RemoveTagsFromResource
+
 
         /// <summary>
         /// Removes metadata tags from an Amazon RDS resource.
@@ -2852,6 +2906,7 @@ namespace Amazon.RDS
         
         #region  ResetDBParameterGroup
 
+
         /// <summary>
         /// Modifies the parameters of a DB parameter group to the engine/system default value.
         /// To reset specific parameters submit a list of the following: <code>ParameterName</code>
@@ -2899,6 +2954,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  RestoreDBInstanceFromDBSnapshot
+
 
         /// <summary>
         /// Creates a new DB instance from a DB snapshot. The target database is created from
@@ -3008,6 +3064,7 @@ namespace Amazon.RDS
         
         #region  RestoreDBInstanceToPointInTime
 
+
         /// <summary>
         /// Restores a DB instance to an arbitrary point-in-time. Users can restore to any point
         /// in time before the LatestRestorableTime for up to BackupRetentionPeriod days. The
@@ -3109,6 +3166,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  RevokeDBSecurityGroupIngress
+
 
         /// <summary>
         /// Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2

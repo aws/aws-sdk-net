@@ -19,6 +19,64 @@ namespace ServiceClientGenerator
         /// </summary>
         public Dictionary<string, ProjectConfigurationData> CreatedProjectFiles { get; set; }
 
+        public void ExecuteCore(string coreFilesRoot, IEnumerable<ProjectFileConfiguration> projectFileConfigurations)
+        {
+            CreatedProjectFiles = new Dictionary<string, ProjectConfigurationData>();
+
+            foreach (var projectFileConfiguration in projectFileConfigurations)
+            {
+                var projectType = projectFileConfiguration.Name;
+
+                var assemblyName = "AWSSDK.Core";
+                var projectFilename = string.Concat(assemblyName, ".", projectType, ".csproj");
+                bool newProject = false;
+                string projectGuid;
+                if (File.Exists(Path.Combine(coreFilesRoot, projectFilename)))
+                {
+                    Console.WriteLine("...updating existing project file {0}", projectFilename);
+                    var projectPath = Path.Combine(coreFilesRoot, projectFilename);
+                    projectGuid = GetProjectGuid(projectPath);
+                }
+                else
+                {
+                    newProject = true;
+                    projectGuid = NewProjectGuid;
+                    Console.WriteLine("...creating project file {0}", projectFilename);
+                }
+
+
+                var templateSession = new Dictionary<string, object>();
+
+                templateSession["Name"] = projectFileConfiguration.Name;
+                templateSession["ProjectGuid"] = projectGuid;
+                templateSession["RootNamespace"] = "Amazon";
+                templateSession["AssemblyName"] = assemblyName;
+                templateSession["SourceDirectories"] = GetCoreProjectSourceFolders(projectFileConfiguration, coreFilesRoot);
+                templateSession["IndividualFileIncludes"] = new List<string>
+                {
+                    "endpoints.json",
+                    "endpoints.customizations.json"
+                };
+                templateSession["KeyFilePath"] = @"..\..\awssdk.dll.snk";
+                templateSession["SupressWarnings"] = "419,1570,1591";
+                templateSession["NugetPackagesLocation"] = @"..\..\packages\";
+                templateSession["TargetFrameworkVersion"] = projectFileConfiguration.TargetFrameworkVersion;
+                templateSession["DefineConstants"] = projectFileConfiguration.CompilationConstants;
+                templateSession["BinSubfolder"] = projectFileConfiguration.BinSubFolder;
+
+                var projectConfigurationData = new ProjectConfigurationData { ProjectGuid = projectGuid };
+                var projectName = Path.GetFileNameWithoutExtension(projectFilename);
+
+                if (newProject)
+                    CreatedProjectFiles[projectName] = projectConfigurationData;
+                
+                var projectReferences = new List<ProjectReference>();
+                templateSession["ProjectReferences"] = projectReferences.OrderBy(x => x.Name).ToList();
+
+                GenerateProjectFile(projectFileConfiguration, projectConfigurationData, templateSession, coreFilesRoot, projectFilename);
+            }
+        }
+
         /// <summary>
         /// Creates the platform-specific project files for the given service configuration
         /// </summary>
@@ -31,6 +89,13 @@ namespace ServiceClientGenerator
 
             foreach (var projectFileConfiguration in projectFileConfigurations)
             {
+                if (projectFileConfiguration.IsSubProfile &&
+                    !(serviceConfiguration.PclVariants!=null && serviceConfiguration.PclVariants.Any(p=>p.Equals(projectFileConfiguration.Name))))
+                {
+                    // Skip sub profiles for service projects.
+                    continue;
+                }
+
                 var projectType = projectFileConfiguration.Name;
 
                 var assemblyName = "AWSSDK." + serviceConfiguration.Namespace.Split('.')[1];
@@ -40,15 +105,8 @@ namespace ServiceClientGenerator
                 if (File.Exists(Path.Combine(serviceFilesRoot, projectFilename)))
                 {
                     Console.WriteLine("...updating existing project file {0}", projectFilename);
-                    var xdoc = new XmlDocument();
-                    xdoc.Load(Path.Combine(serviceFilesRoot, projectFilename));
-                    var propertyGroups = xdoc.GetElementsByTagName("PropertyGroup");
-                    var element = ((XmlElement)propertyGroups[0]).GetElementsByTagName("ProjectGuid")[0];
-                    if(element == null)
-                    {
-                        throw new ApplicationException("Failed to find project guid for existing project: " + Path.Combine(serviceFilesRoot, projectFilename));
-                    }
-                    projectGuid = element.InnerText;
+                    var projectPath = Path.Combine(serviceFilesRoot, projectFilename);
+                    projectGuid = GetProjectGuid(projectPath);
                 }
                 else
                 {
@@ -60,6 +118,7 @@ namespace ServiceClientGenerator
 
                 var templateSession = new Dictionary<string, object>();
 
+                templateSession["Name"] = projectFileConfiguration.Name;
                 templateSession["ProjectGuid"] = projectGuid;
                 templateSession["RootNamespace"] = serviceConfiguration.Namespace;
                 templateSession["AssemblyName"] = assemblyName;
@@ -97,7 +156,7 @@ namespace ServiceClientGenerator
                         projectReferences.Add(new ProjectReference
                         {
                             IncludePath = dependencyProject,
-                            ProjectGuid = ProjectGuidFromFile(Path.Combine(serviceFilesRoot, dependencyProject)),
+                            ProjectGuid = GetProjectGuid(Path.Combine(serviceFilesRoot, dependencyProject)),
                             Name = dependencyProjectName
                         });
                     }
@@ -109,6 +168,13 @@ namespace ServiceClientGenerator
                 if (serviceConfiguration.ModelName.Equals("s3", StringComparison.OrdinalIgnoreCase) && projectType == "Net45")
                 {
                     templateSession["SystemReferences"] = new List<string> { "System.Net.Http" };
+                }
+
+                if (serviceConfiguration.ReferenceDependencies != null &&
+                    serviceConfiguration.ReferenceDependencies.ContainsKey(projectFileConfiguration.Name))
+                {
+                    templateSession["ReferenceDependencies"] = serviceConfiguration.ReferenceDependencies[projectFileConfiguration.Name];
+                    templateSession["NuGetTargetFramework"] = projectFileConfiguration.NuGetTargetPlatform;
                 }
 
                 GenerateProjectFile(projectFileConfiguration, projectConfigurationData, templateSession, serviceFilesRoot, projectFilename);
@@ -129,44 +195,116 @@ namespace ServiceClientGenerator
                                          string projectFilename)
         {
             var projectName = Path.GetFileNameWithoutExtension(projectFilename);
-
-            // have not found a reasonable way to be able to activate from a string typename and
-            // cast back to actual generator type instance :-(. Was hoping to make this completely
-            // generic.
-            string generatedContent;
-            switch (projectFileConfiguration.Template)
+            string generatedContent = null;
+            try
             {
-                case "BclProjectFile":
-                    {
-                        var generator = new BclProjectFile { Session = session };
-                        generatedContent = generator.TransformText();
-                    }
-                    break;
-                case "PhoneProjectFile":
-                    {
-                        var generator = new PhoneProjectFile { Session = session };
-                        generatedContent = generator.TransformText();
-                    }
-                    break;
-                case "RtProjectFile":
-                    {
-                        var generator = new RtProjectFile { Session = session };
-                        generatedContent = generator.TransformText();
-                    }
-                    break;
-                case "PortableProjectFile":
-                    {
-                        var generator = new PortableProjectFile { Session = session };
-                        generatedContent = generator.TransformText();
-                    }
-                    break;
-                default:
-                    throw new ArgumentException("Project template name " + projectFileConfiguration.Template + " is not recognized");
+                var projectTemplateType = Type.GetType(
+                    "ServiceClientGenerator.Generators.ProjectFiles." +
+                    projectFileConfiguration.Template);
+                dynamic generator = Activator.CreateInstance(projectTemplateType);
+                generator.Session = session;
+                generatedContent = generator.TransformText();
             }
-
+            catch (Exception)
+            {
+                throw new ArgumentException("Project template name " 
+                    + projectFileConfiguration.Template + " is not recognized");
+            }            
 
             GeneratorDriver.WriteFile(serviceFilesRoot, string.Empty, projectFilename, generatedContent);
             projectConfiguration.ConfigurationPlatforms = projectFileConfiguration.Configurations;
+        }
+
+        /// <summary>
+        /// Returns the collection of subfolders containing source code that need to be 
+        /// included in the project file. This is comprised the standard platform folders
+        /// under Generated, plus any custom folders we find that are not otherwise handled
+        /// (eg Properties).
+        /// </summary>
+        /// <param name="projectFileConfiguration">
+        /// The .Net project type we are generating. This governs the platform-specific
+        /// subfolders that get included in the project.
+        /// </param>
+        /// <param name="serviceRootFolder">The root output folder for the service code</param>
+        /// <returns></returns>
+        private IList<string> GetCoreProjectSourceFolders(ProjectFileConfiguration projectFileConfiguration, string coreRootFolder)
+        {
+            var exclusionList = new List<string>
+            {
+                "Properties",
+                "bin",
+                "obj"
+            };
+
+            // Start with the standard folders for core
+            var sourceCodeFolders = new List<string>
+            {
+                "."
+            };
+
+            var childDirectories = Directory.GetDirectories(coreRootFolder, "*", SearchOption.AllDirectories);
+            foreach (var childDirectory in childDirectories)
+            {
+                var folder = childDirectory.Substring(coreRootFolder.Length).TrimStart('\\');
+
+                if (exclusionList.Any(e => folder.Equals(e, StringComparison.InvariantCulture) ||
+                    folder.StartsWith(e + "\\", StringComparison.InvariantCulture)))
+                    continue;
+
+                if (projectFileConfiguration.IsPlatformCodeFolder(folder))
+                {
+                    if (projectFileConfiguration.IsValidPlatformCodeFolderForProject(folder))
+                        sourceCodeFolders.Add(folder);
+                }
+                else
+                {
+                    sourceCodeFolders.Add(folder);
+                }
+
+
+            }
+
+            
+
+            //var platformSubFolders = projectFileConfiguration.PlatformCodeFolders;
+            //sourceCodeFolders.AddRange(platformSubFolders.Select(folder => Path.Combine(@"Generated", folder)));
+
+            //// Augment the returned folders with any custom subfolders already in existence. If the custom folder 
+            //// ends with a recognised platform, only add it to the set if it matches the platform being generated
+            ////if (Directory.Exists(serviceRootFolder))
+            //{
+            //    var subFolders = Directory.GetDirectories(coreRootFolder, "*", SearchOption.AllDirectories);
+            //    subFolders = subFolders.Except(exclusionList).ToArray();
+            //    if (subFolders.Any())
+            //    {
+            //        foreach (var folder in subFolders)
+            //        {
+            //            var serviceRelativeFolder = folder.Substring(coreRootFolder.Length);
+
+            //            if (!serviceRelativeFolder.StartsWith(@"\Custom", StringComparison.OrdinalIgnoreCase))
+            //                continue;
+
+            //            if (projectFileConfiguration.IsPlatformCodeFolder(serviceRelativeFolder))
+            //            {
+            //                if (projectFileConfiguration.IsValidPlatformCodeFolderForProject(serviceRelativeFolder))
+            //                    sourceCodeFolders.Add(serviceRelativeFolder.TrimStart('\\'));
+            //            }
+            //            else
+            //                sourceCodeFolders.Add(serviceRelativeFolder.TrimStart('\\'));
+            //        }
+            //    }
+            //}
+
+            var foldersThatExist = new List<string>();
+            foreach (var folder in sourceCodeFolders)
+            {
+                if (Directory.Exists(Path.Combine(coreRootFolder, folder)))
+                    foldersThatExist.Add(folder);
+            }
+
+            // sort so we get a predictable layout
+            foldersThatExist.Sort(StringComparer.OrdinalIgnoreCase);
+            return foldersThatExist;
         }
 
         /// <summary>
@@ -232,19 +370,33 @@ namespace ServiceClientGenerator
             return foldersThatExist;
         }
 
+        //private static string ProjectGuidFromFile(string projectFile)
+        //{
+        //    var content = File.ReadAllText(projectFile);
+        //    var pos = content.IndexOf("<ProjectGuid>", StringComparison.OrdinalIgnoreCase) + "<ProjectGuid>".Length;
+        //    var lastPos = content.IndexOf("</ProjectGuid>", pos, StringComparison.OrdinalIgnoreCase);
+
+        //    return content.Substring(pos, lastPos - pos);
+        //}
+
         /// <summary>
         /// Recovers the guid of a project from an existing project file.
         /// </summary>
         /// <param name="projectFile"></param>
         /// <returns></returns>
-        string ProjectGuidFromFile(string projectFile)
+        private static string GetProjectGuid(string projectPath)
         {
-            var content = File.ReadAllText(projectFile);
-            var pos = content.IndexOf("<ProjectGuid>", StringComparison.OrdinalIgnoreCase) + "<ProjectGuid>".Length;
-            var lastPos = content.IndexOf("</ProjectGuid>", pos, StringComparison.OrdinalIgnoreCase);
+            var xdoc = new XmlDocument();
+            xdoc.Load(projectPath);
+            var propertyGroups = xdoc.GetElementsByTagName("PropertyGroup");
+            var element = ((XmlElement)propertyGroups[0]).GetElementsByTagName("ProjectGuid")[0];
+            if (element == null)
+                throw new ApplicationException("Failed to find project guid for existing project: " + projectPath);
 
-            return content.Substring(pos, lastPos - pos);
+            var projectGuid = element.InnerText;
+            return projectGuid;
         }
+
 
         public static string NewProjectGuid
         {

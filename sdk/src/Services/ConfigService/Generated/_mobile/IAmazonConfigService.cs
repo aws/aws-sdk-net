@@ -69,6 +69,32 @@ namespace Amazon.ConfigService
                 
         #region  DeleteDeliveryChannel
 
+
+        /// <summary>
+        /// Deletes the specified delivery channel.
+        /// 
+        ///  
+        /// <para>
+        /// The delivery channel cannot be deleted if it is the only delivery channel and the
+        /// configuration recorder is still running. To delete the delivery channel, stop the
+        /// running configuration recorder using the <a>StopConfigurationRecorder</a> action.
+        /// </para>
+        /// </summary>
+        /// <param name="deliveryChannelName">The name of the delivery channel to delete.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDeliveryChannel service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.LastDeliveryChannelDeleteFailedException">
+        /// You cannot delete the delivery channel you specified because the configuration recorder
+        /// is running.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
+        /// You have specified a delivery channel that does not exist.
+        /// </exception>
+        Task<DeleteDeliveryChannelResponse> DeleteDeliveryChannelAsync(string deliveryChannelName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDeliveryChannel operation.
         /// </summary>
@@ -78,11 +104,39 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteDeliveryChannelResponse> DeleteDeliveryChannelAsync(DeleteDeliveryChannelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteDeliveryChannelResponse> DeleteDeliveryChannelAsync(DeleteDeliveryChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeliverConfigSnapshot
+
+
+        /// <summary>
+        /// Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified
+        /// delivery channel. After the delivery has started, AWS Config sends following notifications
+        /// using an Amazon SNS topic that you have specified.
+        /// 
+        ///  <ul> <li>Notification of starting the delivery.</li> <li>Notification of delivery
+        /// completed, if the delivery was successfully completed.</li> <li>Notification of delivery
+        /// failure, if the delivery failed to complete.</li> </ul>
+        /// </summary>
+        /// <param name="deliveryChannelName">The name of the delivery channel through which the snapshot is delivered.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeliverConfigSnapshot service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
+        /// There are no configuration recorders available to provide the role needed to describe
+        /// your resources.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoRunningConfigurationRecorderException">
+        /// There is no configuration recorder running.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
+        /// You have specified a delivery channel that does not exist.
+        /// </exception>
+        Task<DeliverConfigSnapshotResponse> DeliverConfigSnapshotAsync(string deliveryChannelName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeliverConfigSnapshot operation.
@@ -93,11 +147,34 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeliverConfigSnapshotResponse> DeliverConfigSnapshotAsync(DeliverConfigSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeliverConfigSnapshotResponse> DeliverConfigSnapshotAsync(DeliverConfigSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeConfigurationRecorders
+
+
+        /// <summary>
+        /// Returns the name of one or more specified configuration recorders. If the recorder
+        /// name is not specified, this action returns the names of all the configuration recorders
+        /// associated with the account. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Currently, you can specify only one configuration recorder per account.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConfigurationRecorders service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
+        /// You have specified a configuration recorder that does not exist.
+        /// </exception>
+        Task<DescribeConfigurationRecordersResponse> DescribeConfigurationRecordersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConfigurationRecorders operation.
@@ -108,11 +185,30 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeConfigurationRecordersResponse> DescribeConfigurationRecordersAsync(DescribeConfigurationRecordersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeConfigurationRecordersResponse> DescribeConfigurationRecordersAsync(DescribeConfigurationRecordersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeConfigurationRecorderStatus
+
+
+        /// <summary>
+        /// Returns the current status of the specified configuration recorder. If a configuration
+        /// recorder is not specified, this action returns the status of all configuration recorder
+        /// associated with the account.
+        /// 
+        ///  <note>Currently, you can specify only one configuration recorder per account.</note>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConfigurationRecorderStatus service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
+        /// You have specified a configuration recorder that does not exist.
+        /// </exception>
+        Task<DescribeConfigurationRecorderStatusResponse> DescribeConfigurationRecorderStatusAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConfigurationRecorderStatus operation.
@@ -123,11 +219,34 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeConfigurationRecorderStatusResponse> DescribeConfigurationRecorderStatusAsync(DescribeConfigurationRecorderStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeConfigurationRecorderStatusResponse> DescribeConfigurationRecorderStatusAsync(DescribeConfigurationRecorderStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeDeliveryChannels
+
+
+        /// <summary>
+        /// Returns details about the specified delivery channel. If a delivery channel is not
+        /// specified, this action returns the details of all delivery channels associated with
+        /// the account. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Currently, you can specify only one delivery channel per account.
+        /// </para>
+        /// </note>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDeliveryChannels service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
+        /// You have specified a delivery channel that does not exist.
+        /// </exception>
+        Task<DescribeDeliveryChannelsResponse> DescribeDeliveryChannelsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDeliveryChannels operation.
@@ -138,11 +257,30 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeDeliveryChannelsResponse> DescribeDeliveryChannelsAsync(DescribeDeliveryChannelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeDeliveryChannelsResponse> DescribeDeliveryChannelsAsync(DescribeDeliveryChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeDeliveryChannelStatus
+
+
+        /// <summary>
+        /// Returns the current status of the specified delivery channel. If a delivery channel
+        /// is not specified, this action returns the current status of all delivery channels
+        /// associated with the account. 
+        /// 
+        ///  <note>Currently, you can specify only one delivery channel per account.</note>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDeliveryChannelStatus service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
+        /// You have specified a delivery channel that does not exist.
+        /// </exception>
+        Task<DescribeDeliveryChannelStatusResponse> DescribeDeliveryChannelStatusAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDeliveryChannelStatus operation.
@@ -153,11 +291,12 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeDeliveryChannelStatusResponse> DescribeDeliveryChannelStatusAsync(DescribeDeliveryChannelStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeDeliveryChannelStatusResponse> DescribeDeliveryChannelStatusAsync(DescribeDeliveryChannelStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetResourceConfigHistory
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetResourceConfigHistory operation.
@@ -168,11 +307,12 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetResourceConfigHistoryResponse> GetResourceConfigHistoryAsync(GetResourceConfigHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetResourceConfigHistoryResponse> GetResourceConfigHistoryAsync(GetResourceConfigHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutConfigurationRecorder
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutConfigurationRecorder operation.
@@ -183,11 +323,12 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutConfigurationRecorderResponse> PutConfigurationRecorderAsync(PutConfigurationRecorderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutConfigurationRecorderResponse> PutConfigurationRecorderAsync(PutConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutDeliveryChannel
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutDeliveryChannel operation.
@@ -198,11 +339,36 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutDeliveryChannelResponse> PutDeliveryChannelAsync(PutDeliveryChannelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutDeliveryChannelResponse> PutDeliveryChannelAsync(PutDeliveryChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  StartConfigurationRecorder
+
+
+        /// <summary>
+        /// Starts recording configurations of the AWS resources you have selected to record in
+        /// your AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// You must have created at least one delivery channel to successfully start the configuration
+        /// recorder.
+        /// </para>
+        /// </summary>
+        /// <param name="configurationRecorderName">The name of the recorder object that records each configuration change made to the resources.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartConfigurationRecorder service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoAvailableDeliveryChannelException">
+        /// There is no delivery channel available to record configurations.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
+        /// You have specified a configuration recorder that does not exist.
+        /// </exception>
+        Task<StartConfigurationRecorderResponse> StartConfigurationRecorderAsync(string configurationRecorderName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the StartConfigurationRecorder operation.
@@ -213,11 +379,27 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<StartConfigurationRecorderResponse> StartConfigurationRecorderAsync(StartConfigurationRecorderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<StartConfigurationRecorderResponse> StartConfigurationRecorderAsync(StartConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  StopConfigurationRecorder
+
+
+        /// <summary>
+        /// Stops recording configurations of the AWS resources you have selected to record in
+        /// your AWS account.
+        /// </summary>
+        /// <param name="configurationRecorderName">The name of the recorder object that records each configuration change made to the resources.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopConfigurationRecorder service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
+        /// You have specified a configuration recorder that does not exist.
+        /// </exception>
+        Task<StopConfigurationRecorderResponse> StopConfigurationRecorderAsync(string configurationRecorderName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the StopConfigurationRecorder operation.
@@ -228,7 +410,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<StopConfigurationRecorderResponse> StopConfigurationRecorderAsync(StopConfigurationRecorderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<StopConfigurationRecorderResponse> StopConfigurationRecorderAsync(StopConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

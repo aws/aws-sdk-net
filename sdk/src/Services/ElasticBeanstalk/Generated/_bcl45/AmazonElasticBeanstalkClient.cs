@@ -256,6 +256,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  AbortEnvironmentUpdate
 
+
         /// <summary>
         /// Cancels in-progress environment configuration update or application version deployment.
         /// </summary>
@@ -296,6 +297,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  CheckDNSAvailability
 
+
         /// <summary>
         /// Checks if the specified CNAME is available.
         /// </summary>
@@ -331,6 +333,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  CreateApplication
+
 
         /// <summary>
         /// Creates an application that has one configuration template named <code>default</code>
@@ -372,6 +375,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  CreateApplicationVersion
+
 
         /// <summary>
         /// Creates an application version for the specified application.
@@ -429,6 +433,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  CreateConfigurationTemplate
 
+
         /// <summary>
         /// Creates a configuration template. Templates are associated with a specific application
         /// and are used to deploy different versions of the application with the same configuration
@@ -482,6 +487,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  CreateEnvironment
 
+
         /// <summary>
         /// Launches an environment for the specified application using the specified configuration.
         /// </summary>
@@ -525,6 +531,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  CreateStorageLocation
 
+
         /// <summary>
         /// Creates the Amazon S3 storage location for the account. 
         /// 
@@ -550,6 +557,7 @@ namespace Amazon.ElasticBeanstalk
         {
             return CreateStorageLocation(new CreateStorageLocationRequest());
         }
+
 
         /// <summary>
         /// Creates the Amazon S3 storage location for the account. 
@@ -581,6 +589,35 @@ namespace Amazon.ElasticBeanstalk
             return Invoke<CreateStorageLocationRequest,CreateStorageLocationResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Creates the Amazon S3 storage location for the account. 
+        /// 
+        ///  
+        /// <para>
+        ///  This location is used to store user log files. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateStorageLocation service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// Unable to perform the specified operation because the user does not have enough privileges
+        /// for one of more downstream aws services
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.S3SubscriptionRequiredException">
+        /// The caller does not have a subscription to Amazon S3.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The web service attempted to create a bucket in an Amazon S3 account that already
+        /// has 100 buckets.
+        /// </exception>
+        public Task<CreateStorageLocationResponse> CreateStorageLocationAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return CreateStorageLocationAsync(new CreateStorageLocationRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStorageLocation operation.
         /// </summary>
@@ -602,6 +639,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  DeleteApplication
+
 
         /// <summary>
         /// Deletes the specified application along with all associated versions and configurations.
@@ -645,6 +683,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  DeleteApplicationVersion
+
 
         /// <summary>
         /// Deletes the specified version from the specified application. 
@@ -700,6 +739,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  DeleteConfigurationTemplate
 
+
         /// <summary>
         /// Deletes the specified configuration template.
         /// 
@@ -743,6 +783,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  DeleteEnvironmentConfiguration
+
 
         /// <summary>
         /// Deletes the draft configuration associated with the running environment. 
@@ -790,6 +831,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  DescribeApplications
 
+
         /// <summary>
         /// Returns the descriptions of existing applications.
         /// </summary>
@@ -799,6 +841,7 @@ namespace Amazon.ElasticBeanstalk
         {
             return DescribeApplications(new DescribeApplicationsRequest());
         }
+
 
         /// <summary>
         /// Returns the descriptions of existing applications.
@@ -814,6 +857,19 @@ namespace Amazon.ElasticBeanstalk
             return Invoke<DescribeApplicationsRequest,DescribeApplicationsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns the descriptions of existing applications.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeApplications service method, as returned by ElasticBeanstalk.</returns>
+        public Task<DescribeApplicationsResponse> DescribeApplicationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeApplicationsAsync(new DescribeApplicationsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeApplications operation.
         /// </summary>
@@ -836,6 +892,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  DescribeApplicationVersions
 
+
         /// <summary>
         /// Returns descriptions for existing application versions.
         /// </summary>
@@ -845,6 +902,7 @@ namespace Amazon.ElasticBeanstalk
         {
             return DescribeApplicationVersions(new DescribeApplicationVersionsRequest());
         }
+
 
         /// <summary>
         /// Returns descriptions for existing application versions.
@@ -860,6 +918,19 @@ namespace Amazon.ElasticBeanstalk
             return Invoke<DescribeApplicationVersionsRequest,DescribeApplicationVersionsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns descriptions for existing application versions.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeApplicationVersions service method, as returned by ElasticBeanstalk.</returns>
+        public Task<DescribeApplicationVersionsResponse> DescribeApplicationVersionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeApplicationVersionsAsync(new DescribeApplicationVersionsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeApplicationVersions operation.
         /// </summary>
@@ -882,6 +953,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  DescribeConfigurationOptions
 
+
         /// <summary>
         /// Describes the configuration options that are used in a particular configuration template
         /// or environment, or that a specified solution stack defines. The description includes
@@ -894,6 +966,7 @@ namespace Amazon.ElasticBeanstalk
         {
             return DescribeConfigurationOptions(new DescribeConfigurationOptionsRequest());
         }
+
 
         /// <summary>
         /// Describes the configuration options that are used in a particular configuration template
@@ -912,6 +985,22 @@ namespace Amazon.ElasticBeanstalk
             return Invoke<DescribeConfigurationOptionsRequest,DescribeConfigurationOptionsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Describes the configuration options that are used in a particular configuration template
+        /// or environment, or that a specified solution stack defines. The description includes
+        /// the values the options, their default values, and an indication of the required action
+        /// on a running environment if an option value is changed.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConfigurationOptions service method, as returned by ElasticBeanstalk.</returns>
+        public Task<DescribeConfigurationOptionsResponse> DescribeConfigurationOptionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeConfigurationOptionsAsync(new DescribeConfigurationOptionsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConfigurationOptions operation.
         /// </summary>
@@ -933,6 +1022,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  DescribeConfigurationSettings
+
 
         /// <summary>
         /// Returns a description of the settings for the specified configuration set, that is,
@@ -985,6 +1075,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  DescribeEnvironmentResources
 
+
         /// <summary>
         /// Returns AWS resources for this environment.
         /// </summary>
@@ -1025,6 +1116,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  DescribeEnvironments
 
+
         /// <summary>
         /// Returns descriptions for existing environments.
         /// </summary>
@@ -1034,6 +1126,7 @@ namespace Amazon.ElasticBeanstalk
         {
             return DescribeEnvironments(new DescribeEnvironmentsRequest());
         }
+
 
         /// <summary>
         /// Returns descriptions for existing environments.
@@ -1049,6 +1142,19 @@ namespace Amazon.ElasticBeanstalk
             return Invoke<DescribeEnvironmentsRequest,DescribeEnvironmentsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns descriptions for existing environments.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEnvironments service method, as returned by ElasticBeanstalk.</returns>
+        public Task<DescribeEnvironmentsResponse> DescribeEnvironmentsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeEnvironmentsAsync(new DescribeEnvironmentsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEnvironments operation.
         /// </summary>
@@ -1071,6 +1177,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  DescribeEvents
 
+
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
         /// 
@@ -1083,6 +1190,7 @@ namespace Amazon.ElasticBeanstalk
         {
             return DescribeEvents(new DescribeEventsRequest());
         }
+
 
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
@@ -1101,6 +1209,22 @@ namespace Amazon.ElasticBeanstalk
             return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns list of event descriptions matching criteria up to the last 6 weeks.
+        /// 
+        ///  <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
+        /// </note>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEvents service method, as returned by ElasticBeanstalk.</returns>
+        public Task<DescribeEventsResponse> DescribeEventsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeEventsAsync(new DescribeEventsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
         /// </summary>
@@ -1123,6 +1247,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  ListAvailableSolutionStacks
 
+
         /// <summary>
         /// Returns a list of the available solution stack names.
         /// </summary>
@@ -1132,6 +1257,7 @@ namespace Amazon.ElasticBeanstalk
         {
             return ListAvailableSolutionStacks(new ListAvailableSolutionStacksRequest());
         }
+
 
         /// <summary>
         /// Returns a list of the available solution stack names.
@@ -1147,6 +1273,19 @@ namespace Amazon.ElasticBeanstalk
             return Invoke<ListAvailableSolutionStacksRequest,ListAvailableSolutionStacksResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns a list of the available solution stack names.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAvailableSolutionStacks service method, as returned by ElasticBeanstalk.</returns>
+        public Task<ListAvailableSolutionStacksResponse> ListAvailableSolutionStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListAvailableSolutionStacksAsync(new ListAvailableSolutionStacksRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the ListAvailableSolutionStacks operation.
         /// </summary>
@@ -1168,6 +1307,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  RebuildEnvironment
+
 
         /// <summary>
         /// Deletes and recreates all of the AWS resources (for example: the Auto Scaling group,
@@ -1209,6 +1349,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  RequestEnvironmentInfo
+
 
         /// <summary>
         /// Initiates a request to compile the specified type of information of the deployed
@@ -1269,6 +1410,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  RestartAppServer
 
+
         /// <summary>
         /// Causes the environment to restart the application container server running on each
         /// Amazon EC2 instance.
@@ -1305,6 +1447,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  RetrieveEnvironmentInfo
+
 
         /// <summary>
         /// Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request.
@@ -1349,6 +1492,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  SwapEnvironmentCNAMEs
 
+
         /// <summary>
         /// Swaps the CNAMEs of two environments.
         /// </summary>
@@ -1384,6 +1528,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  TerminateEnvironment
+
 
         /// <summary>
         /// Terminates the specified environment.
@@ -1425,6 +1570,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  UpdateApplication
 
+
         /// <summary>
         /// Updates the specified application to have the specified properties. 
         /// 
@@ -1464,6 +1610,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region  UpdateApplicationVersion
 
+
         /// <summary>
         /// Updates the specified application version to have the specified properties. 
         /// 
@@ -1502,6 +1649,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  UpdateConfigurationTemplate
+
 
         /// <summary>
         /// Updates the specified configuration template to have the specified properties or
@@ -1551,6 +1699,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  UpdateEnvironment
+
 
         /// <summary>
         /// Updates the environment description, deploys a new application version, updates the
@@ -1606,6 +1755,7 @@ namespace Amazon.ElasticBeanstalk
         #endregion
         
         #region  ValidateConfigurationSettings
+
 
         /// <summary>
         /// Takes a set of configuration settings and either a configuration template or environment,

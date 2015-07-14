@@ -49,6 +49,7 @@ namespace Amazon.CodeCommit
                 
         #region  BatchGetRepositories
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the BatchGetRepositories operation.
         /// </summary>
@@ -58,11 +59,12 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<BatchGetRepositoriesResponse> BatchGetRepositoriesAsync(BatchGetRepositoriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<BatchGetRepositoriesResponse> BatchGetRepositoriesAsync(BatchGetRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateBranch
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateBranch operation.
@@ -73,11 +75,12 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateBranchResponse> CreateBranchAsync(CreateBranchRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateBranchResponse> CreateBranchAsync(CreateBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateRepository
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateRepository operation.
@@ -88,11 +91,12 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateRepositoryResponse> CreateRepositoryAsync(CreateRepositoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateRepositoryResponse> CreateRepositoryAsync(CreateRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteRepository
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRepository operation.
@@ -103,11 +107,12 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteRepositoryResponse> DeleteRepositoryAsync(DeleteRepositoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteRepositoryResponse> DeleteRepositoryAsync(DeleteRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetBranch
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBranch operation.
@@ -118,11 +123,12 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetBranchResponse> GetBranchAsync(GetBranchRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetBranchResponse> GetBranchAsync(GetBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetRepository
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetRepository operation.
@@ -133,11 +139,12 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetRepositoryResponse> GetRepositoryAsync(GetRepositoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetRepositoryResponse> GetRepositoryAsync(GetRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListBranches
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListBranches operation.
@@ -148,11 +155,12 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListBranchesResponse> ListBranchesAsync(ListBranchesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListBranchesResponse> ListBranchesAsync(ListBranchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListRepositories
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListRepositories operation.
@@ -163,11 +171,12 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListRepositoriesResponse> ListRepositoriesAsync(ListRepositoriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListRepositoriesResponse> ListRepositoriesAsync(ListRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateDefaultBranch
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDefaultBranch operation.
@@ -178,11 +187,12 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateDefaultBranchResponse> UpdateDefaultBranchAsync(UpdateDefaultBranchRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateDefaultBranchResponse> UpdateDefaultBranchAsync(UpdateDefaultBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateRepositoryDescription
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateRepositoryDescription operation.
@@ -193,11 +203,12 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateRepositoryDescriptionResponse> UpdateRepositoryDescriptionAsync(UpdateRepositoryDescriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateRepositoryDescriptionResponse> UpdateRepositoryDescriptionAsync(UpdateRepositoryDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateRepositoryName
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateRepositoryName operation.
@@ -208,7 +219,7 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateRepositoryNameResponse> UpdateRepositoryNameAsync(UpdateRepositoryNameRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateRepositoryNameResponse> UpdateRepositoryNameAsync(UpdateRepositoryNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

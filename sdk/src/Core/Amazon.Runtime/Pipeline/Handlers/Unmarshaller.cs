@@ -71,7 +71,7 @@ namespace Amazon.Runtime.Internal
             return (T)executionContext.ResponseContext.Response;
         }
 
-#elif WIN_RT || WINDOWS_PHONE 
+#elif PCL
 
         /// <summary>
         /// Unmarshalls the response returned by the HttpHandler.
@@ -157,7 +157,7 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-#if WIN_RT || WINDOWS_PHONE
+#if PCL
 
         /// <summary>
         /// Unmarshalls the HTTP response.

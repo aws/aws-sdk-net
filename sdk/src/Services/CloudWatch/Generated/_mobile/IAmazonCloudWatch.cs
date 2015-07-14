@@ -87,6 +87,7 @@ namespace Amazon.CloudWatch
                 
         #region  DeleteAlarms
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAlarms operation.
         /// </summary>
@@ -96,11 +97,28 @@ namespace Amazon.CloudWatch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteAlarmsResponse> DeleteAlarmsAsync(DeleteAlarmsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteAlarmsResponse> DeleteAlarmsAsync(DeleteAlarmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeAlarmHistory
+
+
+        /// <summary>
+        /// Retrieves history for the specified alarm. Filter alarms by date range or item type.
+        /// If an alarm name is not specified, Amazon CloudWatch returns histories for all of
+        /// the owner's alarms.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAlarmHistory service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        Task<DescribeAlarmHistoryResponse> DescribeAlarmHistoryAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAlarmHistory operation.
@@ -111,11 +129,28 @@ namespace Amazon.CloudWatch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeAlarmHistoryResponse> DescribeAlarmHistoryAsync(DescribeAlarmHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeAlarmHistoryResponse> DescribeAlarmHistoryAsync(DescribeAlarmHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeAlarms
+
+
+        /// <summary>
+        /// Retrieves alarms with the specified names. If no name is specified, all alarms for
+        /// the user are returned. Alarms can be retrieved by using only a prefix for the alarm
+        /// name, the alarm state, or a prefix for any action.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAlarms service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        Task<DescribeAlarmsResponse> DescribeAlarmsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAlarms operation.
@@ -126,11 +161,12 @@ namespace Amazon.CloudWatch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeAlarmsResponse> DescribeAlarmsAsync(DescribeAlarmsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeAlarmsResponse> DescribeAlarmsAsync(DescribeAlarmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeAlarmsForMetric
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAlarmsForMetric operation.
@@ -141,11 +177,12 @@ namespace Amazon.CloudWatch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeAlarmsForMetricResponse> DescribeAlarmsForMetricAsync(DescribeAlarmsForMetricRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeAlarmsForMetricResponse> DescribeAlarmsForMetricAsync(DescribeAlarmsForMetricRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DisableAlarmActions
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableAlarmActions operation.
@@ -156,11 +193,12 @@ namespace Amazon.CloudWatch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DisableAlarmActionsResponse> DisableAlarmActionsAsync(DisableAlarmActionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DisableAlarmActionsResponse> DisableAlarmActionsAsync(DisableAlarmActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  EnableAlarmActions
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableAlarmActions operation.
@@ -171,11 +209,12 @@ namespace Amazon.CloudWatch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<EnableAlarmActionsResponse> EnableAlarmActionsAsync(EnableAlarmActionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<EnableAlarmActionsResponse> EnableAlarmActionsAsync(EnableAlarmActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetMetricStatistics
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetMetricStatistics operation.
@@ -186,11 +225,32 @@ namespace Amazon.CloudWatch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetMetricStatisticsResponse> GetMetricStatisticsAsync(GetMetricStatisticsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetMetricStatisticsResponse> GetMetricStatisticsAsync(GetMetricStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListMetrics
+
+
+        /// <summary>
+        /// Returns a list of valid metrics stored for the AWS account owner. Returned metrics
+        /// can be used with <a>GetMetricStatistics</a> to obtain statistical data for a given
+        /// metric.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMetrics service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Indicates that the request processing has failed due to some unknown error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// Bad or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        Task<ListMetricsResponse> ListMetricsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListMetrics operation.
@@ -201,11 +261,12 @@ namespace Amazon.CloudWatch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListMetricsResponse> ListMetricsAsync(ListMetricsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListMetricsResponse> ListMetricsAsync(ListMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutMetricAlarm
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutMetricAlarm operation.
@@ -216,11 +277,12 @@ namespace Amazon.CloudWatch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutMetricAlarmResponse> PutMetricAlarmAsync(PutMetricAlarmRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutMetricAlarmResponse> PutMetricAlarmAsync(PutMetricAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  PutMetricData
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutMetricData operation.
@@ -231,11 +293,12 @@ namespace Amazon.CloudWatch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutMetricDataResponse> PutMetricDataAsync(PutMetricDataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<PutMetricDataResponse> PutMetricDataAsync(PutMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  SetAlarmState
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetAlarmState operation.
@@ -246,7 +309,7 @@ namespace Amazon.CloudWatch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<SetAlarmStateResponse> SetAlarmStateAsync(SetAlarmStateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<SetAlarmStateResponse> SetAlarmStateAsync(SetAlarmStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

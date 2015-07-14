@@ -36,18 +36,40 @@ namespace <#=this.Config.Namespace#>
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
         {
 #>
-<# this.FormatOperationDocumentation(operation, false); #>
+<#
+this.FormatOperationDocumentationSync(operation, false);
+#>
         <#=operation.Name#>Response <#=operation.Name#>();
 
 <#
         }
         // Adds simple method forms defined in the customizations file
-        AddSimpleClientMethodInterfaces(operation);
+        AddSimpleClientMethodInterfaces(operation, true);
 #>
-<# this.FormatOperationDocumentation(operation); #>
+<#
+this.FormatOperationDocumentationSync(operation, true);
+#>
         <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request);
 
-<#AddAsyncDocumentation(operation.Name);#>
+<#
+        // Creates a parameterless definition of the operation if specified in the customizations file
+        if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
+        {
+#>
+<#
+this.FormatOperationDocumentationAsync(operation, false);
+#>
+        Task<<#=operation.Name#>Response> <#=operation.Name#>Async(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+<#
+        }
+
+        AddSimpleClientMethodInterfaces(operation, false);
+#>
+
+<#
+        AddAsyncDocumentation(operation.Name);
+#>
         Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=operation.Name#>Request request, CancellationToken cancellationToken = default(CancellationToken));
 
 		#endregion

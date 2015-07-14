@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Kinesis</id>
     <title>AWSSDK - Amazon Kinesis</title>
-    <version>3.0.1.0-preview</version> 
+    <version>3.0.1.3-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.</description> 
     <language>en-US</language>
@@ -12,12 +12,11 @@
     <tags>AWS Amazon cloud Kinesis</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="portable-wpa+netcore45">
-        <dependency id="Microsoft.Net.Http" version="2.2.29" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
+      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
+      <dependency id="AWSSDK.Core" version="[3.0.0.6-preview, 3.1-preview)" />
       </group>
       <group>
-      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.0.0.6-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 
@@ -28,11 +27,14 @@
 
     <file src=".\bin\Release\net35\AWSSDK.Kinesis.dll" target="lib\net35" />
     <file src=".\bin\Release\net35\AWSSDK.Kinesis.xml" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.Kinesis.pdb" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.Kinesis.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.Kinesis.xml" target="lib\net45" />
-    
-    <file src=".\bin\Release\portable\AWSSDK.Kinesis.dll" target="lib\portable-wpa+netcore45" />
-    <file src=".\bin\Release\portable\AWSSDK.Kinesis.xml" target="lib\portable-wpa+netcore45" />
+    <file src=".\bin\Release\net45\AWSSDK.Kinesis.pdb" target="lib\net45" />
+
+    <file src=".\bin\Release\pcl\AWSSDK.Kinesis.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.Kinesis.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.Kinesis.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
   </files>
 </package>

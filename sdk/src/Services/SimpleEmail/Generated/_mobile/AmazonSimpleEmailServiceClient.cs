@@ -153,6 +153,9 @@ namespace Amazon.SimpleEmail
 
         #region Overrides
 
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new AWS4Signer();
@@ -163,6 +166,9 @@ namespace Amazon.SimpleEmail
 
         #region Dispose
 
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -180,6 +186,7 @@ namespace Amazon.SimpleEmail
 
             return Invoke<DeleteIdentityRequest,DeleteIdentityResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteIdentity operation.
@@ -211,6 +218,7 @@ namespace Amazon.SimpleEmail
             return Invoke<DeleteIdentityPolicyRequest,DeleteIdentityPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteIdentityPolicy operation.
         /// </summary>
@@ -240,6 +248,7 @@ namespace Amazon.SimpleEmail
 
             return Invoke<DeleteVerifiedEmailAddressRequest,DeleteVerifiedEmailAddressResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVerifiedEmailAddress operation.
@@ -271,6 +280,7 @@ namespace Amazon.SimpleEmail
             return Invoke<GetIdentityDkimAttributesRequest,GetIdentityDkimAttributesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityDkimAttributes operation.
         /// </summary>
@@ -300,6 +310,7 @@ namespace Amazon.SimpleEmail
 
             return Invoke<GetIdentityNotificationAttributesRequest,GetIdentityNotificationAttributesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityNotificationAttributes operation.
@@ -331,6 +342,7 @@ namespace Amazon.SimpleEmail
             return Invoke<GetIdentityPoliciesRequest,GetIdentityPoliciesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityPolicies operation.
         /// </summary>
@@ -360,6 +372,7 @@ namespace Amazon.SimpleEmail
 
             return Invoke<GetIdentityVerificationAttributesRequest,GetIdentityVerificationAttributesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityVerificationAttributes operation.
@@ -395,6 +408,26 @@ namespace Amazon.SimpleEmail
             return Invoke<GetSendQuotaRequest,GetSendQuotaResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns the user's current sending limits.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSendQuota service method, as returned by SimpleEmailService.</returns>
+        public Task<GetSendQuotaResponse> GetSendQuotaAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetSendQuotaAsync(new GetSendQuotaRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetSendQuota operation.
         /// </summary>
@@ -428,6 +461,31 @@ namespace Amazon.SimpleEmail
 
             return Invoke<GetSendStatisticsRequest,GetSendStatisticsResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Returns the user's sending statistics. The result is a list of data points, representing
+        /// the last two weeks of sending activity. 
+        /// 
+        ///  
+        /// <para>
+        /// Each data point in the list contains statistics for a 15-minute interval.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSendStatistics service method, as returned by SimpleEmailService.</returns>
+        public Task<GetSendStatisticsResponse> GetSendStatisticsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetSendStatisticsAsync(new GetSendStatisticsRequest(), cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetSendStatistics operation.
@@ -463,6 +521,27 @@ namespace Amazon.SimpleEmail
             return Invoke<ListIdentitiesRequest,ListIdentitiesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns a list containing all of the identities (email addresses and domains) for
+        /// a specific AWS Account, regardless of verification status.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIdentities service method, as returned by SimpleEmailService.</returns>
+        public Task<ListIdentitiesResponse> ListIdentitiesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListIdentitiesAsync(new ListIdentitiesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListIdentities operation.
         /// </summary>
@@ -492,6 +571,7 @@ namespace Amazon.SimpleEmail
 
             return Invoke<ListIdentityPoliciesRequest,ListIdentityPoliciesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListIdentityPolicies operation.
@@ -527,6 +607,28 @@ namespace Amazon.SimpleEmail
             return Invoke<ListVerifiedEmailAddressesRequest,ListVerifiedEmailAddressesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns a list containing all of the email addresses that have been verified.
+        /// 
+        ///  <important>The ListVerifiedEmailAddresses action is deprecated as of the May 15,
+        /// 2012 release of Domain Verification. The ListIdentities action is now preferred.</important>
+        /// 
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVerifiedEmailAddresses service method, as returned by SimpleEmailService.</returns>
+        public Task<ListVerifiedEmailAddressesResponse> ListVerifiedEmailAddressesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListVerifiedEmailAddressesAsync(new ListVerifiedEmailAddressesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListVerifiedEmailAddresses operation.
         /// </summary>
@@ -556,6 +658,7 @@ namespace Amazon.SimpleEmail
 
             return Invoke<PutIdentityPolicyRequest,PutIdentityPolicyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutIdentityPolicy operation.
@@ -587,6 +690,7 @@ namespace Amazon.SimpleEmail
             return Invoke<SendEmailRequest,SendEmailResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SendEmail operation.
         /// </summary>
@@ -616,6 +720,7 @@ namespace Amazon.SimpleEmail
 
             return Invoke<SendRawEmailRequest,SendRawEmailResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SendRawEmail operation.
@@ -647,6 +752,7 @@ namespace Amazon.SimpleEmail
             return Invoke<SetIdentityDkimEnabledRequest,SetIdentityDkimEnabledResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityDkimEnabled operation.
         /// </summary>
@@ -676,6 +782,7 @@ namespace Amazon.SimpleEmail
 
             return Invoke<SetIdentityFeedbackForwardingEnabledRequest,SetIdentityFeedbackForwardingEnabledResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityFeedbackForwardingEnabled operation.
@@ -707,6 +814,7 @@ namespace Amazon.SimpleEmail
             return Invoke<SetIdentityNotificationTopicRequest,SetIdentityNotificationTopicResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityNotificationTopic operation.
         /// </summary>
@@ -736,6 +844,7 @@ namespace Amazon.SimpleEmail
 
             return Invoke<VerifyDomainDkimRequest,VerifyDomainDkimResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyDomainDkim operation.
@@ -767,6 +876,7 @@ namespace Amazon.SimpleEmail
             return Invoke<VerifyDomainIdentityRequest,VerifyDomainIdentityResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyDomainIdentity operation.
         /// </summary>
@@ -797,6 +907,7 @@ namespace Amazon.SimpleEmail
             return Invoke<VerifyEmailAddressRequest,VerifyEmailAddressResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyEmailAddress operation.
         /// </summary>
@@ -826,6 +937,7 @@ namespace Amazon.SimpleEmail
 
             return Invoke<VerifyEmailIdentityRequest,VerifyEmailIdentityResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyEmailIdentity operation.

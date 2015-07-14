@@ -277,6 +277,7 @@ namespace Amazon.CloudWatch
         
         #region  DeleteAlarms
 
+
         /// <summary>
         /// Deletes all specified alarms. In the event of an error, no alarms are deleted.
         /// </summary>
@@ -316,6 +317,7 @@ namespace Amazon.CloudWatch
         
         #region  DescribeAlarmHistory
 
+
         /// <summary>
         /// Retrieves history for the specified alarm. Filter alarms by date range or item type.
         /// If an alarm name is not specified, Amazon CloudWatch returns histories for all of
@@ -330,6 +332,7 @@ namespace Amazon.CloudWatch
         {
             return DescribeAlarmHistory(new DescribeAlarmHistoryRequest());
         }
+
 
         /// <summary>
         /// Retrieves history for the specified alarm. Filter alarms by date range or item type.
@@ -350,6 +353,24 @@ namespace Amazon.CloudWatch
             return Invoke<DescribeAlarmHistoryRequest,DescribeAlarmHistoryResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Retrieves history for the specified alarm. Filter alarms by date range or item type.
+        /// If an alarm name is not specified, Amazon CloudWatch returns histories for all of
+        /// the owner's alarms.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAlarmHistory service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        public Task<DescribeAlarmHistoryResponse> DescribeAlarmHistoryAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeAlarmHistoryAsync(new DescribeAlarmHistoryRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAlarmHistory operation.
         /// </summary>
@@ -372,6 +393,7 @@ namespace Amazon.CloudWatch
         
         #region  DescribeAlarms
 
+
         /// <summary>
         /// Retrieves alarms with the specified names. If no name is specified, all alarms for
         /// the user are returned. Alarms can be retrieved by using only a prefix for the alarm
@@ -386,6 +408,7 @@ namespace Amazon.CloudWatch
         {
             return DescribeAlarms(new DescribeAlarmsRequest());
         }
+
 
         /// <summary>
         /// Retrieves alarms with the specified names. If no name is specified, all alarms for
@@ -406,6 +429,24 @@ namespace Amazon.CloudWatch
             return Invoke<DescribeAlarmsRequest,DescribeAlarmsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Retrieves alarms with the specified names. If no name is specified, all alarms for
+        /// the user are returned. Alarms can be retrieved by using only a prefix for the alarm
+        /// name, the alarm state, or a prefix for any action.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAlarms service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        public Task<DescribeAlarmsResponse> DescribeAlarmsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeAlarmsAsync(new DescribeAlarmsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAlarms operation.
         /// </summary>
@@ -427,6 +468,7 @@ namespace Amazon.CloudWatch
         #endregion
         
         #region  DescribeAlarmsForMetric
+
 
         /// <summary>
         /// Retrieves all alarms for a single metric. Specify a statistic, period, or unit to
@@ -465,6 +507,7 @@ namespace Amazon.CloudWatch
         
         #region  DisableAlarmActions
 
+
         /// <summary>
         /// Disables actions for the specified alarms. When an alarm's actions are disabled the
         /// alarm's state may change, but none of the alarm's actions will execute.
@@ -502,6 +545,7 @@ namespace Amazon.CloudWatch
         
         #region  EnableAlarmActions
 
+
         /// <summary>
         /// Enables actions for the specified alarms.
         /// </summary>
@@ -537,6 +581,7 @@ namespace Amazon.CloudWatch
         #endregion
         
         #region  GetMetricStatistics
+
 
         /// <summary>
         /// Gets statistics for the specified metric. 
@@ -620,6 +665,7 @@ namespace Amazon.CloudWatch
         
         #region  ListMetrics
 
+
         /// <summary>
         /// Returns a list of valid metrics stored for the AWS account owner. Returned metrics
         /// can be used with <a>GetMetricStatistics</a> to obtain statistical data for a given
@@ -638,6 +684,7 @@ namespace Amazon.CloudWatch
         {
             return ListMetrics(new ListMetricsRequest());
         }
+
 
         /// <summary>
         /// Returns a list of valid metrics stored for the AWS account owner. Returned metrics
@@ -662,6 +709,28 @@ namespace Amazon.CloudWatch
             return Invoke<ListMetricsRequest,ListMetricsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns a list of valid metrics stored for the AWS account owner. Returned metrics
+        /// can be used with <a>GetMetricStatistics</a> to obtain statistical data for a given
+        /// metric.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMetrics service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Indicates that the request processing has failed due to some unknown error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// Bad or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        public Task<ListMetricsResponse> ListMetricsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListMetricsAsync(new ListMetricsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the ListMetrics operation.
         /// </summary>
@@ -683,6 +752,7 @@ namespace Amazon.CloudWatch
         #endregion
         
         #region  PutMetricAlarm
+
 
         /// <summary>
         /// Creates or updates an alarm and associates it with the specified Amazon CloudWatch
@@ -731,6 +801,7 @@ namespace Amazon.CloudWatch
         #endregion
         
         #region  PutMetricData
+
 
         /// <summary>
         /// Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the
@@ -797,6 +868,7 @@ namespace Amazon.CloudWatch
         #endregion
         
         #region  SetAlarmState
+
 
         /// <summary>
         /// Temporarily sets the state of an alarm. When the updated <code>StateValue</code>

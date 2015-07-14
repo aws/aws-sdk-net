@@ -38,6 +38,7 @@ namespace Amazon.CloudFront
         
         #region  CreateCloudFrontOriginAccessIdentity
 
+
         /// <summary>
         /// Create a new origin access identity.
         /// </summary>
@@ -66,6 +67,7 @@ namespace Amazon.CloudFront
         /// </exception>
         CreateCloudFrontOriginAccessIdentityResponse CreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCloudFrontOriginAccessIdentity operation.
         /// </summary>
@@ -80,6 +82,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  CreateDistribution
+
 
         /// <summary>
         /// Create a new distribution.
@@ -190,6 +193,7 @@ namespace Amazon.CloudFront
         /// </exception>
         CreateDistributionResponse CreateDistribution(CreateDistributionRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDistribution operation.
         /// </summary>
@@ -204,6 +208,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  CreateInvalidation
+
 
         /// <summary>
         /// Create a new invalidation.
@@ -236,6 +241,7 @@ namespace Amazon.CloudFront
         /// </exception>
         CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInvalidation operation.
         /// </summary>
@@ -250,6 +256,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  CreateStreamingDistribution
+
 
         /// <summary>
         /// Create a new streaming distribution.
@@ -297,6 +304,7 @@ namespace Amazon.CloudFront
         /// </exception>
         CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStreamingDistribution operation.
         /// </summary>
@@ -311,6 +319,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  DeleteCloudFrontOriginAccessIdentity
+
 
         /// <summary>
         /// Delete an origin access identity.
@@ -333,6 +342,7 @@ namespace Amazon.CloudFront
         /// The precondition given in one or more of the request-header fields evaluated to false.
         /// </exception>
         DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity();
+
 
         /// <summary>
         /// Delete an origin access identity.
@@ -357,6 +367,33 @@ namespace Amazon.CloudFront
         /// </exception>
         DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request);
 
+
+        /// <summary>
+        /// Delete an origin access identity.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CloudFrontOriginAccessIdentityInUseException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The If-Match version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// </exception>
+        Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCloudFrontOriginAccessIdentity operation.
         /// </summary>
@@ -371,6 +408,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  DeleteDistribution
+
 
         /// <summary>
         /// Delete a distribution.
@@ -393,6 +431,7 @@ namespace Amazon.CloudFront
         /// The precondition given in one or more of the request-header fields evaluated to false.
         /// </exception>
         DeleteDistributionResponse DeleteDistribution();
+
 
         /// <summary>
         /// Delete a distribution.
@@ -417,6 +456,33 @@ namespace Amazon.CloudFront
         /// </exception>
         DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request);
 
+
+        /// <summary>
+        /// Delete a distribution.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.DistributionNotDisabledException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The If-Match version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// </exception>
+        Task<DeleteDistributionResponse> DeleteDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDistribution operation.
         /// </summary>
@@ -431,6 +497,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  DeleteStreamingDistribution
+
 
         /// <summary>
         /// Delete a streaming distribution.
@@ -453,6 +520,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         DeleteStreamingDistributionResponse DeleteStreamingDistribution();
+
 
         /// <summary>
         /// Delete a streaming distribution.
@@ -477,6 +545,33 @@ namespace Amazon.CloudFront
         /// </exception>
         DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request);
 
+
+        /// <summary>
+        /// Delete a streaming distribution.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The If-Match version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
+        /// 
+        /// </exception>
+        Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStreamingDistribution operation.
         /// </summary>
@@ -492,6 +587,7 @@ namespace Amazon.CloudFront
         
         #region  GetCloudFrontOriginAccessIdentity
 
+
         /// <summary>
         /// Get the information about an origin access identity.
         /// </summary>
@@ -504,6 +600,7 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity();
+
 
         /// <summary>
         /// Get the information about an origin access identity.
@@ -518,6 +615,24 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request);
+
+
+        /// <summary>
+        /// Get the information about an origin access identity.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetCloudFrontOriginAccessIdentity operation.
@@ -534,6 +649,7 @@ namespace Amazon.CloudFront
         
         #region  GetCloudFrontOriginAccessIdentityConfig
 
+
         /// <summary>
         /// Get the configuration information about an origin access identity.
         /// </summary>
@@ -546,6 +662,7 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig();
+
 
         /// <summary>
         /// Get the configuration information about an origin access identity.
@@ -560,6 +677,24 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request);
+
+
+        /// <summary>
+        /// Get the configuration information about an origin access identity.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCloudFrontOriginAccessIdentityConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetCloudFrontOriginAccessIdentityConfig operation.
@@ -576,6 +711,7 @@ namespace Amazon.CloudFront
         
         #region  GetDistribution
 
+
         /// <summary>
         /// Get the information about a distribution.
         /// </summary>
@@ -588,6 +724,7 @@ namespace Amazon.CloudFront
         /// The specified distribution does not exist.
         /// </exception>
         GetDistributionResponse GetDistribution();
+
 
         /// <summary>
         /// Get the information about a distribution.
@@ -602,6 +739,24 @@ namespace Amazon.CloudFront
         /// The specified distribution does not exist.
         /// </exception>
         GetDistributionResponse GetDistribution(GetDistributionRequest request);
+
+
+        /// <summary>
+        /// Get the information about a distribution.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        Task<GetDistributionResponse> GetDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDistribution operation.
@@ -618,6 +773,7 @@ namespace Amazon.CloudFront
         
         #region  GetDistributionConfig
 
+
         /// <summary>
         /// Get the configuration information about a distribution.
         /// </summary>
@@ -630,6 +786,7 @@ namespace Amazon.CloudFront
         /// The specified distribution does not exist.
         /// </exception>
         GetDistributionConfigResponse GetDistributionConfig();
+
 
         /// <summary>
         /// Get the configuration information about a distribution.
@@ -645,6 +802,24 @@ namespace Amazon.CloudFront
         /// </exception>
         GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request);
 
+
+        /// <summary>
+        /// Get the configuration information about a distribution.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDistributionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        Task<GetDistributionConfigResponse> GetDistributionConfigAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetDistributionConfig operation.
         /// </summary>
@@ -659,6 +834,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  GetInvalidation
+
 
         /// <summary>
         /// Get the information about an invalidation.
@@ -677,6 +853,7 @@ namespace Amazon.CloudFront
         /// </exception>
         GetInvalidationResponse GetInvalidation(GetInvalidationRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetInvalidation operation.
         /// </summary>
@@ -692,6 +869,7 @@ namespace Amazon.CloudFront
         
         #region  GetStreamingDistribution
 
+
         /// <summary>
         /// Get the information about a streaming distribution.
         /// </summary>
@@ -704,6 +882,7 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         GetStreamingDistributionResponse GetStreamingDistribution();
+
 
         /// <summary>
         /// Get the information about a streaming distribution.
@@ -718,6 +897,24 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request);
+
+
+        /// <summary>
+        /// Get the information about a streaming distribution.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetStreamingDistribution operation.
@@ -734,6 +931,7 @@ namespace Amazon.CloudFront
         
         #region  GetStreamingDistributionConfig
 
+
         /// <summary>
         /// Get the configuration information about a streaming distribution.
         /// </summary>
@@ -746,6 +944,7 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         GetStreamingDistributionConfigResponse GetStreamingDistributionConfig();
+
 
         /// <summary>
         /// Get the configuration information about a streaming distribution.
@@ -760,6 +959,24 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request);
+
+
+        /// <summary>
+        /// Get the configuration information about a streaming distribution.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetStreamingDistributionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetStreamingDistributionConfig operation.
@@ -776,6 +993,7 @@ namespace Amazon.CloudFront
         
         #region  ListCloudFrontOriginAccessIdentities
 
+
         /// <summary>
         /// List origin access identities.
         /// </summary>
@@ -785,6 +1003,7 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities();
+
 
         /// <summary>
         /// List origin access identities.
@@ -796,6 +1015,21 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request);
+
+
+        /// <summary>
+        /// List origin access identities.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCloudFrontOriginAccessIdentities service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListCloudFrontOriginAccessIdentities operation.
@@ -812,6 +1046,7 @@ namespace Amazon.CloudFront
         
         #region  ListDistributions
 
+
         /// <summary>
         /// List distributions.
         /// </summary>
@@ -821,6 +1056,7 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         ListDistributionsResponse ListDistributions();
+
 
         /// <summary>
         /// List distributions.
@@ -832,6 +1068,21 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         ListDistributionsResponse ListDistributions(ListDistributionsRequest request);
+
+
+        /// <summary>
+        /// List distributions.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDistributions service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        Task<ListDistributionsResponse> ListDistributionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDistributions operation.
@@ -847,6 +1098,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  ListInvalidations
+
 
         /// <summary>
         /// List invalidation batches.
@@ -865,6 +1117,7 @@ namespace Amazon.CloudFront
         /// </exception>
         ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListInvalidations operation.
         /// </summary>
@@ -880,6 +1133,7 @@ namespace Amazon.CloudFront
         
         #region  ListStreamingDistributions
 
+
         /// <summary>
         /// List streaming distributions.
         /// </summary>
@@ -889,6 +1143,7 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         ListStreamingDistributionsResponse ListStreamingDistributions();
+
 
         /// <summary>
         /// List streaming distributions.
@@ -900,6 +1155,21 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request);
+
+
+        /// <summary>
+        /// List streaming distributions.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStreamingDistributions service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListStreamingDistributions operation.
@@ -915,6 +1185,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  UpdateCloudFrontOriginAccessIdentity
+
 
         /// <summary>
         /// Update an origin access identity.
@@ -949,6 +1220,7 @@ namespace Amazon.CloudFront
         /// </exception>
         UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateCloudFrontOriginAccessIdentity operation.
         /// </summary>
@@ -963,6 +1235,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  UpdateDistribution
+
 
         /// <summary>
         /// Update a distribution.
@@ -1070,6 +1343,7 @@ namespace Amazon.CloudFront
         /// </exception>
         UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDistribution operation.
         /// </summary>
@@ -1084,6 +1358,7 @@ namespace Amazon.CloudFront
         #endregion
         
         #region  UpdateStreamingDistribution
+
 
         /// <summary>
         /// Update a streaming distribution.
@@ -1132,6 +1407,7 @@ namespace Amazon.CloudFront
         /// One or more of your trusted signers do not exist.
         /// </exception>
         UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStreamingDistribution operation.

@@ -76,6 +76,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  CreateLogGroup
 
+
         /// <summary>
         /// Creates a new log group with the specified name. The name of the log group must be
         /// unique within a region for an AWS account. You can create up to 500 log groups per
@@ -109,6 +110,7 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         CreateLogGroupResponse CreateLogGroup(CreateLogGroupRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLogGroup operation.
         /// </summary>
@@ -123,6 +125,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  CreateLogStream
+
 
         /// <summary>
         /// Creates a new log stream in the specified log group. The name of the log stream must
@@ -153,6 +156,7 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         CreateLogStreamResponse CreateLogStream(CreateLogStreamRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLogStream operation.
         /// </summary>
@@ -167,6 +171,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  DeleteLogGroup
+
 
         /// <summary>
         /// Deletes the log group with the specified name and permanently deletes all the archived
@@ -189,6 +194,7 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         DeleteLogGroupResponse DeleteLogGroup(DeleteLogGroupRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLogGroup operation.
         /// </summary>
@@ -203,6 +209,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  DeleteLogStream
+
 
         /// <summary>
         /// Deletes a log stream and permanently deletes all the archived log events associated
@@ -225,6 +232,7 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         DeleteLogStreamResponse DeleteLogStream(DeleteLogStreamRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLogStream operation.
         /// </summary>
@@ -239,6 +247,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  DeleteMetricFilter
+
 
         /// <summary>
         /// Deletes a metric filter associated with the specified log group.
@@ -260,6 +269,7 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         DeleteMetricFilterResponse DeleteMetricFilter(DeleteMetricFilterRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteMetricFilter operation.
         /// </summary>
@@ -274,6 +284,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  DeleteRetentionPolicy
+
 
         /// <summary>
         /// Deletes the retention policy of the specified log group. Log events would not expire
@@ -296,6 +307,7 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         DeleteRetentionPolicyResponse DeleteRetentionPolicy(DeleteRetentionPolicyRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRetentionPolicy operation.
         /// </summary>
@@ -310,6 +322,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  DeleteSubscriptionFilter
+
 
         /// <summary>
         /// Deletes a subscription filter associated with the specified log group.
@@ -331,6 +344,7 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         DeleteSubscriptionFilterResponse DeleteSubscriptionFilter(DeleteSubscriptionFilterRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSubscriptionFilter operation.
         /// </summary>
@@ -345,6 +359,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  DescribeLogGroups
+
 
         /// <summary>
         /// Returns all the log groups that are associated with the AWS account making the request.
@@ -367,6 +382,7 @@ namespace Amazon.CloudWatchLogs
         /// Returned if the service cannot complete the request.
         /// </exception>
         DescribeLogGroupsResponse DescribeLogGroups();
+
 
         /// <summary>
         /// Returns all the log groups that are associated with the AWS account making the request.
@@ -391,6 +407,33 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         DescribeLogGroupsResponse DescribeLogGroups(DescribeLogGroupsRequest request);
 
+
+        /// <summary>
+        /// Returns all the log groups that are associated with the AWS account making the request.
+        /// The list returned in the response is ASCII-sorted by log group name. 
+        /// 
+        ///  
+        /// <para>
+        ///  By default, this operation returns up to 50 log groups. If there are more log groups
+        /// to list, the response would contain a <code class="code">nextToken</code> value in
+        /// the response body. You can also limit the number of log groups returned in the response
+        /// by specifying the <code class="code">limit</code> parameter in the request. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLogGroups service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        Task<DescribeLogGroupsResponse> DescribeLogGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLogGroups operation.
         /// </summary>
@@ -405,6 +448,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  DescribeLogStreams
+
 
         /// <summary>
         /// Returns all the log streams that are associated with the specified log group. The
@@ -434,6 +478,7 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         DescribeLogStreamsResponse DescribeLogStreams(DescribeLogStreamsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLogStreams operation.
         /// </summary>
@@ -448,6 +493,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  DescribeMetricFilters
+
 
         /// <summary>
         /// Returns all the metrics filters associated with the specified log group. The list
@@ -476,6 +522,7 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         DescribeMetricFiltersResponse DescribeMetricFilters(DescribeMetricFiltersRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMetricFilters operation.
         /// </summary>
@@ -490,6 +537,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  DescribeSubscriptionFilters
+
 
         /// <summary>
         /// Returns all the subscription filters associated with the specified log group. The
@@ -518,6 +566,7 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         DescribeSubscriptionFiltersResponse DescribeSubscriptionFilters(DescribeSubscriptionFiltersRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSubscriptionFilters operation.
         /// </summary>
@@ -532,6 +581,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  FilterLogEvents
+
 
         /// <summary>
         /// Retrieves log events, optionally filtered by a filter pattern from the specified
@@ -566,6 +616,7 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         FilterLogEventsResponse FilterLogEvents(FilterLogEventsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the FilterLogEvents operation.
         /// </summary>
@@ -580,6 +631,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  GetLogEvents
+
 
         /// <summary>
         /// Retrieves log events from the specified log stream. You can provide an optional time
@@ -610,6 +662,7 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         GetLogEventsResponse GetLogEvents(GetLogEventsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetLogEvents operation.
         /// </summary>
@@ -624,6 +677,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  PutLogEvents
+
 
         /// <summary>
         /// Uploads a batch of log events to the specified log stream. 
@@ -668,6 +722,7 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         PutLogEventsResponse PutLogEvents(PutLogEventsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutLogEvents operation.
         /// </summary>
@@ -682,6 +737,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  PutMetricFilter
+
 
         /// <summary>
         /// Creates or updates a metric filter and associates it with the specified log group.
@@ -714,6 +770,7 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         PutMetricFilterResponse PutMetricFilter(PutMetricFilterRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutMetricFilter operation.
         /// </summary>
@@ -728,6 +785,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  PutRetentionPolicy
+
 
         /// <summary>
         /// Sets the retention of the specified log group. A retention policy allows you to configure
@@ -750,6 +808,7 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         PutRetentionPolicyResponse PutRetentionPolicy(PutRetentionPolicyRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutRetentionPolicy operation.
         /// </summary>
@@ -764,6 +823,7 @@ namespace Amazon.CloudWatchLogs
         #endregion
         
         #region  PutSubscriptionFilter
+
 
         /// <summary>
         /// Creates or updates a subscription filter and associates it with the specified log
@@ -798,6 +858,7 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         PutSubscriptionFilterResponse PutSubscriptionFilter(PutSubscriptionFilterRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PutSubscriptionFilter operation.
         /// </summary>
@@ -813,6 +874,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  TestMetricFilter
 
+
         /// <summary>
         /// Tests the filter pattern of a metric filter against a sample of log event messages.
         /// You can use this operation to validate the correctness of a metric filter pattern.
@@ -827,6 +889,7 @@ namespace Amazon.CloudWatchLogs
         /// Returned if the service cannot complete the request.
         /// </exception>
         TestMetricFilterResponse TestMetricFilter(TestMetricFilterRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the TestMetricFilter operation.

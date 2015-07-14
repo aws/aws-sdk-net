@@ -42,6 +42,7 @@ namespace Amazon.WorkSpaces
         
         #region  CreateWorkspaces
 
+
         /// <summary>
         /// Creates one or more WorkSpaces.
         /// 
@@ -59,6 +60,7 @@ namespace Amazon.WorkSpaces
         /// </exception>
         CreateWorkspacesResponse CreateWorkspaces(CreateWorkspacesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateWorkspaces operation.
         /// </summary>
@@ -73,6 +75,7 @@ namespace Amazon.WorkSpaces
         #endregion
         
         #region  DescribeWorkspaceBundles
+
 
         /// <summary>
         /// Obtains information about the WorkSpace bundles that are available to your account
@@ -123,6 +126,34 @@ namespace Amazon.WorkSpaces
         /// </exception>
         DescribeWorkspaceBundlesResponse DescribeWorkspaceBundles(DescribeWorkspaceBundlesRequest request);
 
+
+        /// <summary>
+        /// Obtains information about the WorkSpace bundles that are available to your account
+        /// in the specified region.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the results with either the <code>BundleIds</code> parameter, or the
+        /// <code>Owner</code> parameter, but not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation supports pagination with the use of the <code>NextToken</code> request
+        /// and response parameters. If more results are available, the <code>NextToken</code>
+        /// response member contains a token that you pass in the next call to this operation
+        /// to retrieve the next set of items.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorkspaceBundles service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        Task<DescribeWorkspaceBundlesResponse> DescribeWorkspaceBundlesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkspaceBundles operation.
         /// </summary>
@@ -137,6 +168,7 @@ namespace Amazon.WorkSpaces
         #endregion
         
         #region  DescribeWorkspaceDirectories
+
 
         /// <summary>
         /// Retrieves information about the AWS Directory Service directories in the region that
@@ -177,6 +209,29 @@ namespace Amazon.WorkSpaces
         /// </exception>
         DescribeWorkspaceDirectoriesResponse DescribeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest request);
 
+
+        /// <summary>
+        /// Retrieves information about the AWS Directory Service directories in the region that
+        /// are registered with Amazon WorkSpaces and are available to your account.
+        /// 
+        ///  
+        /// <para>
+        /// This operation supports pagination with the use of the <code>NextToken</code> request
+        /// and response parameters. If more results are available, the <code>NextToken</code>
+        /// response member contains a token that you pass in the next call to this operation
+        /// to retrieve the next set of items.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorkspaceDirectories service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        Task<DescribeWorkspaceDirectoriesResponse> DescribeWorkspaceDirectoriesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkspaceDirectories operation.
         /// </summary>
@@ -191,6 +246,7 @@ namespace Amazon.WorkSpaces
         #endregion
         
         #region  DescribeWorkspaces
+
 
         /// <summary>
         /// Obtains information about the specified WorkSpaces. 
@@ -245,6 +301,36 @@ namespace Amazon.WorkSpaces
         /// </exception>
         DescribeWorkspacesResponse DescribeWorkspaces(DescribeWorkspacesRequest request);
 
+
+        /// <summary>
+        /// Obtains information about the specified WorkSpaces. 
+        /// 
+        ///  
+        /// <para>
+        /// Only one of the filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>,
+        /// or <code>WorkspaceIds</code>, can be specified at a time.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation supports pagination with the use of the <code>NextToken</code> request
+        /// and response parameters. If more results are available, the <code>NextToken</code>
+        /// response member contains a token that you pass in the next call to this operation
+        /// to retrieve the next set of items.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceUnavailableException">
+        /// The specified resource is not available.
+        /// </exception>
+        Task<DescribeWorkspacesResponse> DescribeWorkspacesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkspaces operation.
         /// </summary>
@@ -259,6 +345,7 @@ namespace Amazon.WorkSpaces
         #endregion
         
         #region  RebootWorkspaces
+
 
         /// <summary>
         /// Reboots the specified WorkSpaces.
@@ -279,6 +366,7 @@ namespace Amazon.WorkSpaces
         /// <returns>The response from the RebootWorkspaces service method, as returned by WorkSpaces.</returns>
         RebootWorkspacesResponse RebootWorkspaces(RebootWorkspacesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RebootWorkspaces operation.
         /// </summary>
@@ -293,6 +381,7 @@ namespace Amazon.WorkSpaces
         #endregion
         
         #region  RebuildWorkspaces
+
 
         /// <summary>
         /// Rebuilds the specified WorkSpaces.
@@ -325,6 +414,7 @@ namespace Amazon.WorkSpaces
         /// <returns>The response from the RebuildWorkspaces service method, as returned by WorkSpaces.</returns>
         RebuildWorkspacesResponse RebuildWorkspaces(RebuildWorkspacesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RebuildWorkspaces operation.
         /// </summary>
@@ -339,6 +429,7 @@ namespace Amazon.WorkSpaces
         #endregion
         
         #region  TerminateWorkspaces
+
 
         /// <summary>
         /// Terminates the specified WorkSpaces.
@@ -364,6 +455,7 @@ namespace Amazon.WorkSpaces
         /// 
         /// <returns>The response from the TerminateWorkspaces service method, as returned by WorkSpaces.</returns>
         TerminateWorkspacesResponse TerminateWorkspaces(TerminateWorkspacesRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateWorkspaces operation.

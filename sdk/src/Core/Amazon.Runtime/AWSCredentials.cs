@@ -629,7 +629,7 @@ namespace Amazon.Runtime
         /// Refresh state container consisting of credentials
         /// and the date of the their expiration
         /// </summary>
-        protected class CredentialsRefreshState
+        public class CredentialsRefreshState
         {
             public ImmutableCredentials Credentials { get; set; }
             public DateTime Expiration { get; set; }
@@ -644,7 +644,7 @@ namespace Amazon.Runtime
         }
 
 
-        private CredentialsRefreshState _currentState = null;
+        protected CredentialsRefreshState _currentState = null;
         private object _refreshLock = new object();
 
         #endregion
@@ -789,7 +789,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Clears currently-stored credentials, forcing the next GetCredentials call to generate new credentials.
         /// </summary>
-        protected void ClearCredentials()
+        public virtual void ClearCredentials()
         {
             _currentState = null;
         }
@@ -1071,7 +1071,6 @@ namespace Amazon.Runtime
 
         #endregion
     }
-
 
     // Credentials fallback mechanism
     public static class FallbackCredentialsFactory

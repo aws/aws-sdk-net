@@ -39,6 +39,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  AddInstanceGroups
 
+
         /// <summary>
         /// AddInstanceGroups adds an instance group to a running cluster.
         /// </summary>
@@ -78,6 +79,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
         
         #region  AddJobFlowSteps
+
 
         /// <summary>
         /// AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are
@@ -149,6 +151,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  AddTags
 
+
         /// <summary>
         /// Adds tags to an Amazon EMR resource. Tags make it easier to associate clusters in
         /// various ways, such as grouping clusters to track your Amazon EMR resource allocation
@@ -193,6 +196,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
         
         #region  DescribeCluster
+
 
         /// <summary>
         /// Provides cluster-level details including status, hardware and software configuration,
@@ -250,6 +254,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
         
         #region  DescribeJobFlows
+
 
         /// <summary>
         /// This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>,
@@ -354,6 +359,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  DescribeStep
 
+
         /// <summary>
         /// Provides more detail about the cluster step.
         /// </summary>
@@ -409,6 +415,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  ListBootstrapActions
 
+
         /// <summary>
         /// Provides information about the bootstrap actions associated with a cluster.
         /// </summary>
@@ -463,6 +470,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
         
         #region  ListClusters
+
 
         /// <summary>
         /// Provides the status of all clusters visible to this AWS account. Allows you to filter
@@ -527,6 +535,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  ListInstanceGroups
 
+
         /// <summary>
         /// Provides all available details about the instance groups in a cluster.
         /// </summary>
@@ -581,6 +590,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
         
         #region  ListInstances
+
 
         /// <summary>
         /// Provides information about the cluster instances that Amazon EMR provisions on behalf
@@ -643,6 +653,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  ListSteps
 
+
         /// <summary>
         /// Provides a list of steps for the cluster.
         /// </summary>
@@ -698,6 +709,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  ModifyInstanceGroups
 
+
         /// <summary>
         /// ModifyInstanceGroups modifies the number of nodes and configuration settings of an
         /// instance group. The input parameters include the new target instance count for the
@@ -739,6 +751,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
         
         #region  RemoveTags
+
 
         /// <summary>
         /// Removes tags from an Amazon EMR resource. Tags make it easier to associate clusters
@@ -789,6 +802,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
         
         #region  RunJobFlow
+
 
         /// <summary>
         /// RunJobFlow creates and starts running a new job flow. The job flow will run the steps
@@ -860,6 +874,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  SetTerminationProtection
 
+
         /// <summary>
         /// SetTerminationProtection locks a job flow so the Amazon EC2 instances in the cluster
         /// cannot be terminated by user intervention, an API call, or in the event of a job-flow
@@ -922,6 +937,7 @@ namespace Amazon.ElasticMapReduce
         
         #region  SetVisibleToAllUsers
 
+
         /// <summary>
         /// Sets whether all AWS Identity and Access Management (IAM) users under your account
         /// can access the specified job flows. This action works on running job flows. You can
@@ -965,6 +981,7 @@ namespace Amazon.ElasticMapReduce
         #endregion
         
         #region  TerminateJobFlows
+
 
         /// <summary>
         /// TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any

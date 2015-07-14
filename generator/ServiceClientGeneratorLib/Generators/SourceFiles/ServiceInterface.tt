@@ -33,14 +33,18 @@ namespace <#=this.Config.Namespace#>
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
         {
 #>
-<# this.FormatOperationDocumentation(operation, false); #>
+<#
+        this.FormatOperationDocumentationSync(operation, false);
+#>
         <#=operation.Name#>Response <#=operation.Name#>();
-
 <#
         }
-        AddSimpleClientMethodInterfaces(operation);
+
+        AddSimpleClientMethodInterfaces(operation, true);
 #>
-<# this.FormatOperationDocumentation(operation); #>
+<#
+        this.FormatOperationDocumentationSync(operation, true);
+#>
         <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request);
 
 <#AddBeginAsyncDocumentation(operation.Name);#>

@@ -59,6 +59,7 @@ namespace Amazon.DataPipeline
         
         #region  ActivatePipeline
 
+
         /// <summary>
         /// Validates the specified pipeline and starts processing pipeline tasks. If the pipeline
         /// does not pass validation, activation fails.
@@ -121,6 +122,7 @@ namespace Amazon.DataPipeline
         #endregion
         
         #region  AddTags
+
 
         /// <summary>
         /// Adds or modifies tags for the specified pipeline.
@@ -197,6 +199,7 @@ namespace Amazon.DataPipeline
         
         #region  CreatePipeline
 
+
         /// <summary>
         /// Creates a new, empty pipeline. Use <a>PutPipelineDefinition</a> to populate the pipeline.
         /// </summary>
@@ -240,6 +243,7 @@ namespace Amazon.DataPipeline
         #endregion
         
         #region  DeactivatePipeline
+
 
         /// <summary>
         /// Deactivates the specified running pipeline. The pipeline is set to the <code>DEACTIVATING</code>
@@ -300,6 +304,7 @@ namespace Amazon.DataPipeline
         
         #region  DeletePipeline
 
+
         /// <summary>
         /// Deletes a pipeline, its pipeline definition, and its run history. AWS Data Pipeline
         /// attempts to cancel instances associated with the pipeline that are currently being
@@ -358,6 +363,7 @@ namespace Amazon.DataPipeline
         
         #region  DescribeObjects
 
+
         /// <summary>
         /// Gets the object definitions for a set of objects associated with the pipeline. Object
         /// definitions are composed of a set of fields that define the properties of the object.
@@ -409,6 +415,7 @@ namespace Amazon.DataPipeline
         #endregion
         
         #region  DescribePipelines
+
 
         /// <summary>
         /// Retrieves metadata about one or more pipelines. The information retrieved includes
@@ -506,6 +513,7 @@ namespace Amazon.DataPipeline
         
         #region  EvaluateExpression
 
+
         /// <summary>
         /// Task runners call <code>EvaluateExpression</code> to evaluate a string in the context
         /// of the specified object. For example, a task runner can evaluate SQL queries stored
@@ -562,6 +570,7 @@ namespace Amazon.DataPipeline
         
         #region  GetPipelineDefinition
 
+
         /// <summary>
         /// Gets the definition of the specified pipeline. You can call <code>GetPipelineDefinition</code>
         /// to retrieve the pipeline definition that you provided using <a>PutPipelineDefinition</a>.
@@ -613,6 +622,7 @@ namespace Amazon.DataPipeline
         #endregion
         
         #region  ListPipelines
+
 
         /// <summary>
         /// Lists the pipeline identifiers for all active pipelines that you have permission to
@@ -674,6 +684,7 @@ namespace Amazon.DataPipeline
         #endregion
         
         #region  PollForTask
+
 
         /// <summary>
         /// Task runners call <code>PollForTask</code> to receive a task to perform from AWS Data
@@ -737,6 +748,7 @@ namespace Amazon.DataPipeline
         #endregion
         
         #region  PutPipelineDefinition
+
 
         /// <summary>
         /// Adds tasks, schedules, and preconditions to the specified pipeline. You can use <code>PutPipelineDefinition</code>
@@ -804,6 +816,7 @@ namespace Amazon.DataPipeline
         
         #region  QueryObjects
 
+
         /// <summary>
         /// Queries the specified pipeline for the names of objects that match the specified set
         /// of conditions.
@@ -855,6 +868,7 @@ namespace Amazon.DataPipeline
         #endregion
         
         #region  RemoveTags
+
 
         /// <summary>
         /// Removes existing tags from the specified pipeline.
@@ -931,6 +945,7 @@ namespace Amazon.DataPipeline
         
         #region  ReportTaskProgress
 
+
         /// <summary>
         /// Task runners call <code>ReportTaskProgress</code> when assigned a task to acknowledge
         /// that it has the task. If the web service does not receive this acknowledgement within
@@ -998,6 +1013,7 @@ namespace Amazon.DataPipeline
         
         #region  ReportTaskRunnerHeartbeat
 
+
         /// <summary>
         /// Task runners call <code>ReportTaskRunnerHeartbeat</code> every 15 minutes to indicate
         /// that they are operational. If the AWS Data Pipeline Task Runner is launched on a resource
@@ -1044,6 +1060,7 @@ namespace Amazon.DataPipeline
         #endregion
         
         #region  SetStatus
+
 
         /// <summary>
         /// Requests that the status of the specified physical or logical pipeline objects be
@@ -1099,6 +1116,7 @@ namespace Amazon.DataPipeline
         #endregion
         
         #region  SetTaskStatus
+
 
         /// <summary>
         /// Task runners call <code>SetTaskStatus</code> to notify AWS Data Pipeline that a task
@@ -1157,6 +1175,7 @@ namespace Amazon.DataPipeline
         #endregion
         
         #region  ValidatePipelineDefinition
+
 
         /// <summary>
         /// Validates the specified pipeline definition to ensure that it is well formed and can

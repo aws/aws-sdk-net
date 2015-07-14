@@ -160,6 +160,9 @@ namespace Amazon.ECS
 
         #region Overrides
 
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new AWS4Signer();
@@ -170,6 +173,9 @@ namespace Amazon.ECS
 
         #region Dispose
 
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -187,6 +193,7 @@ namespace Amazon.ECS
 
             return Invoke<CreateClusterRequest,CreateClusterResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCluster operation.
@@ -218,6 +225,7 @@ namespace Amazon.ECS
             return Invoke<CreateServiceRequest,CreateServiceResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateService operation.
         /// </summary>
@@ -247,6 +255,7 @@ namespace Amazon.ECS
 
             return Invoke<DeleteClusterRequest,DeleteClusterResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCluster operation.
@@ -278,6 +287,7 @@ namespace Amazon.ECS
             return Invoke<DeleteServiceRequest,DeleteServiceResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteService operation.
         /// </summary>
@@ -307,6 +317,7 @@ namespace Amazon.ECS
 
             return Invoke<DeregisterContainerInstanceRequest,DeregisterContainerInstanceResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterContainerInstance operation.
@@ -338,6 +349,7 @@ namespace Amazon.ECS
             return Invoke<DeregisterTaskDefinitionRequest,DeregisterTaskDefinitionResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterTaskDefinition operation.
         /// </summary>
@@ -367,6 +379,7 @@ namespace Amazon.ECS
 
             return Invoke<DescribeClustersRequest,DescribeClustersResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClusters operation.
@@ -398,6 +411,7 @@ namespace Amazon.ECS
             return Invoke<DescribeContainerInstancesRequest,DescribeContainerInstancesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeContainerInstances operation.
         /// </summary>
@@ -427,6 +441,7 @@ namespace Amazon.ECS
 
             return Invoke<DescribeServicesRequest,DescribeServicesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeServices operation.
@@ -458,6 +473,7 @@ namespace Amazon.ECS
             return Invoke<DescribeTaskDefinitionRequest,DescribeTaskDefinitionResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTaskDefinition operation.
         /// </summary>
@@ -487,6 +503,7 @@ namespace Amazon.ECS
 
             return Invoke<DescribeTasksRequest,DescribeTasksResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTasks operation.
@@ -518,6 +535,7 @@ namespace Amazon.ECS
             return Invoke<ListClustersRequest,ListClustersResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListClusters operation.
         /// </summary>
@@ -547,6 +565,7 @@ namespace Amazon.ECS
 
             return Invoke<ListContainerInstancesRequest,ListContainerInstancesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListContainerInstances operation.
@@ -578,6 +597,7 @@ namespace Amazon.ECS
             return Invoke<ListServicesRequest,ListServicesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListServices operation.
         /// </summary>
@@ -607,6 +627,7 @@ namespace Amazon.ECS
 
             return Invoke<ListTaskDefinitionFamiliesRequest,ListTaskDefinitionFamiliesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListTaskDefinitionFamilies operation.
@@ -638,6 +659,7 @@ namespace Amazon.ECS
             return Invoke<ListTaskDefinitionsRequest,ListTaskDefinitionsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListTaskDefinitions operation.
         /// </summary>
@@ -667,6 +689,7 @@ namespace Amazon.ECS
 
             return Invoke<ListTasksRequest,ListTasksResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListTasks operation.
@@ -698,6 +721,7 @@ namespace Amazon.ECS
             return Invoke<RegisterTaskDefinitionRequest,RegisterTaskDefinitionResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterTaskDefinition operation.
         /// </summary>
@@ -727,6 +751,7 @@ namespace Amazon.ECS
 
             return Invoke<RunTaskRequest,RunTaskResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RunTask operation.
@@ -758,6 +783,7 @@ namespace Amazon.ECS
             return Invoke<StartTaskRequest,StartTaskResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the StartTask operation.
         /// </summary>
@@ -787,6 +813,7 @@ namespace Amazon.ECS
 
             return Invoke<StopTaskRequest,StopTaskResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the StopTask operation.
@@ -818,6 +845,7 @@ namespace Amazon.ECS
             return Invoke<UpdateContainerAgentRequest,UpdateContainerAgentResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateContainerAgent operation.
         /// </summary>
@@ -847,6 +875,7 @@ namespace Amazon.ECS
 
             return Invoke<UpdateServiceRequest,UpdateServiceResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateService operation.

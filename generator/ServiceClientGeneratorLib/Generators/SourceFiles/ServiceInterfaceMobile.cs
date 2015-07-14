@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+    #line 1 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class ServiceInterfaceMobile : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public override string TransformText()
         {
             
-            #line 6 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 6 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
 
 	AddLicenseHeader();
 
@@ -39,35 +39,35 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\r\n\r\nusing System;\r\nusing System.Threading;\r\nusing System.Threading.Tasks;\r\nusing " +
                     "System.Collections.Generic;\r\n\r\nusing ");
             
-            #line 16 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 16 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model;\r\n\r\nnamespace ");
             
-            #line 18 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 18 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n");
             
-            #line 20 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 20 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
     this.FormatServiceInterfaceDocumentation(this.Config.ServiceModel.Documentation); 
             
             #line default
             #line hidden
             this.Write("\tpublic partial interface IAmazon");
             
-            #line 21 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 21 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write(" : IDisposable\r\n\t{\r\n\t\t");
             
-            #line 23 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 23 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
 
     // Generates definitions for each operation in the service model
 		foreach(var operation in this.Config.ServiceModel.Operations)
@@ -80,43 +80,90 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\t\r\n\t\t#region  ");
             
-            #line 31 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 31 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n");
             
-            #line 33 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
-AddAsyncDocumentation(operation.Name);
+            #line 33 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+
+        // Creates a parameterless definition of the operation if specified in the customizations file
+        if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
+        {
+
+            
+            #line default
+            #line hidden
+            
+            #line 38 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+
+this.FormatOperationDocumentationAsync(operation, false);
+
             
             #line default
             #line hidden
             this.Write("        Task<");
             
-            #line 34 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 41 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> ");
             
-            #line 34 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 41 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+            
+            #line default
+            #line hidden
+            this.Write("Async(System.Threading.CancellationToken cancellationToken = default(Cancellation" +
+                    "Token));\r\n\r\n");
+            
+            #line 43 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+
+        }
+
+        AddSimpleClientMethodInterfaces(operation, false);
+
+            
+            #line default
+            #line hidden
+            this.Write("\r\n");
+            
+            #line 49 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+        
+        AddAsyncDocumentation(operation.Name);
+
+            
+            #line default
+            #line hidden
+            this.Write("        Task<");
+            
+            #line 52 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+            
+            #line default
+            #line hidden
+            this.Write("Response> ");
+            
+            #line 52 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Async(");
             
-            #line 34 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 52 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write("Request request, CancellationToken cancellationToken = default(CancellationToken)" +
-                    ");\r\n\r\n\t\t#endregion\r\n\t\t");
+            this.Write("Request request, System.Threading.CancellationToken cancellationToken = default(C" +
+                    "ancellationToken));\r\n\r\n\t\t#endregion\r\n\t\t");
             
-            #line 37 "C:\Dev\AWS\GitFarm\AWSDotNetSDKAndTools\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 55 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
 
 		}
 		

@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
+    #line 1 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class PackagesConfig : PackagesConfigBase
     {
@@ -30,10 +30,42 @@ namespace ServiceClientGenerator.Generators.NuGet
         {
             this.Write(@"<?xml version=""1.0"" encoding=""utf-8""?>
 <packages>
-  <package id=""Microsoft.Bcl"" version=""1.1.9"" targetFramework=""wp80"" />
-  <package id=""Microsoft.Bcl.Build"" version=""1.0.14"" targetFramework=""wp80"" />
-  <package id=""Microsoft.Net.Http"" version=""2.2.29"" targetFramework=""wp80"" />
-</packages>");
+  <package id=""Microsoft.Bcl"" version=""1.1.10"" targetFramework=""portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
+  <package id=""Microsoft.Bcl.Build"" version=""1.0.14"" targetFramework=""portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
+  <package id=""Microsoft.Net.Http"" version=""2.2.29"" targetFramework=""portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
+  <package id=""PCLCrypto"" version=""1.0.2.15130"" targetFramework=""portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
+  <package id=""PCLStorage"" version=""1.0.2"" targetFramework=""portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
+  <package id=""Validation"" version=""2.0.6.15003"" targetFramework=""portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
+");
+            
+            #line 14 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
+  
+    if(((string)this.Session["AssemblyName"]).Equals("AWSSDK.MobileAnalytics",StringComparison.CurrentCultureIgnoreCase))
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write(@"  <package id=""SQLitePCL"" version=""3.8.7.2"" targetFramework=""xamarinios10"" />
+  <package id=""SQLitePCL"" version=""3.8.7.2"" targetFramework=""portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
+  <package id=""System.Data.SQLite"" version=""1.0.97.0"" targetFramework=""net35"" />
+  <package id=""System.Data.SQLite.Core"" version=""1.0.97.0"" targetFramework=""net35"" />
+  <package id=""System.Data.SQLite.Linq"" version=""1.0.97.0"" targetFramework=""net35"" />
+  <package id=""System.Data.SQLite.EF6"" version=""1.0.97.0"" targetFramework=""net35"" />
+  <package id=""System.Data.SQLite"" version=""1.0.97.0"" targetFramework=""net45"" />
+  <package id=""System.Data.SQLite.Core"" version=""1.0.97.0"" targetFramework=""net45"" />
+  <package id=""System.Data.SQLite.Linq"" version=""1.0.97.0"" targetFramework=""net45"" />
+  <package id=""System.Data.SQLite.EF6"" version=""1.0.97.0"" targetFramework=""net45"" />
+");
+            
+            #line 28 "C:\dev\Xamarin-AMA\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
+
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("</packages>");
             return this.GenerationEnvironment.ToString();
         }
     }

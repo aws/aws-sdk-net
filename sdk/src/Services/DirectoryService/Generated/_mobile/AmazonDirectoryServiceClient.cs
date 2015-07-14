@@ -150,6 +150,9 @@ namespace Amazon.DirectoryService
 
         #region Overrides
 
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new AWS4Signer();
@@ -160,6 +163,9 @@ namespace Amazon.DirectoryService
 
         #region Dispose
 
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -177,6 +183,7 @@ namespace Amazon.DirectoryService
 
             return Invoke<ConnectDirectoryRequest,ConnectDirectoryResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ConnectDirectory operation.
@@ -208,6 +215,7 @@ namespace Amazon.DirectoryService
             return Invoke<CreateAliasRequest,CreateAliasResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAlias operation.
         /// </summary>
@@ -237,6 +245,7 @@ namespace Amazon.DirectoryService
 
             return Invoke<CreateComputerRequest,CreateComputerResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateComputer operation.
@@ -268,6 +277,7 @@ namespace Amazon.DirectoryService
             return Invoke<CreateDirectoryRequest,CreateDirectoryResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDirectory operation.
         /// </summary>
@@ -297,6 +307,7 @@ namespace Amazon.DirectoryService
 
             return Invoke<CreateSnapshotRequest,CreateSnapshotResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshot operation.
@@ -328,6 +339,7 @@ namespace Amazon.DirectoryService
             return Invoke<DeleteDirectoryRequest,DeleteDirectoryResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDirectory operation.
         /// </summary>
@@ -357,6 +369,7 @@ namespace Amazon.DirectoryService
 
             return Invoke<DeleteSnapshotRequest,DeleteSnapshotResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSnapshot operation.
@@ -392,6 +405,54 @@ namespace Amazon.DirectoryService
             return Invoke<DescribeDirectoriesRequest,DescribeDirectoriesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Obtains information about the directories that belong to this account.
+        /// 
+        ///  
+        /// <para>
+        /// You can retrieve information about specific directories by passing the directory identifiers
+        /// in the <i>DirectoryIds</i> parameter. Otherwise, all directories that belong to the
+        /// current account are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation supports pagination with the use of the <i>NextToken</i> request and
+        /// response parameters. If more results are available, the <i>DescribeDirectoriesResult.NextToken</i>
+        /// member contains a token that you pass in the next call to <a>DescribeDirectories</a>
+        /// to retrieve the next set of items.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also specify a maximum number of return results with the <i>Limit</i> parameter.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDirectories service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// 
+        /// </exception>
+        public Task<DescribeDirectoriesResponse> DescribeDirectoriesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeDirectoriesAsync(new DescribeDirectoriesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDirectories operation.
         /// </summary>
@@ -421,6 +482,7 @@ namespace Amazon.DirectoryService
 
             return Invoke<DescribeSnapshotsRequest,DescribeSnapshotsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshots operation.
@@ -452,6 +514,7 @@ namespace Amazon.DirectoryService
             return Invoke<DisableRadiusRequest,DisableRadiusResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DisableRadius operation.
         /// </summary>
@@ -481,6 +544,7 @@ namespace Amazon.DirectoryService
 
             return Invoke<DisableSsoRequest,DisableSsoResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableSso operation.
@@ -512,6 +576,7 @@ namespace Amazon.DirectoryService
             return Invoke<EnableRadiusRequest,EnableRadiusResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the EnableRadius operation.
         /// </summary>
@@ -541,6 +606,7 @@ namespace Amazon.DirectoryService
 
             return Invoke<EnableSsoRequest,EnableSsoResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableSso operation.
@@ -576,6 +642,30 @@ namespace Amazon.DirectoryService
             return Invoke<GetDirectoryLimitsRequest,GetDirectoryLimitsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Obtains directory limit information for the current region.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDirectoryLimits service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// 
+        /// </exception>
+        public Task<GetDirectoryLimitsResponse> GetDirectoryLimitsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetDirectoryLimitsAsync(new GetDirectoryLimitsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetDirectoryLimits operation.
         /// </summary>
@@ -605,6 +695,7 @@ namespace Amazon.DirectoryService
 
             return Invoke<GetSnapshotLimitsRequest,GetSnapshotLimitsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetSnapshotLimits operation.
@@ -636,6 +727,7 @@ namespace Amazon.DirectoryService
             return Invoke<RestoreFromSnapshotRequest,RestoreFromSnapshotResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreFromSnapshot operation.
         /// </summary>
@@ -665,6 +757,7 @@ namespace Amazon.DirectoryService
 
             return Invoke<UpdateRadiusRequest,UpdateRadiusResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateRadius operation.
