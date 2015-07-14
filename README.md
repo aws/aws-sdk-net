@@ -7,6 +7,7 @@ The **AWS SDK for .NET** enables .NET developers to easily work with [Amazon Web
 * [SDK Homepage][sdk-website]
 * [Forum][sdk-forum]
 * [GitHub Issues][sdk-issues]
+* [SDK Samples](https://github.com/awslabs/aws-sdk-net-samples)
 
 ## SDK Change Log
 
