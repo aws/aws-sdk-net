@@ -110,6 +110,8 @@ namespace ServiceClientGenerator
             }
         }
 
+        public bool InPreview {get; set;}
+
         public bool HasOverrideNamespace { get { return !string.IsNullOrEmpty(this._namespace); } }
         public string RegionLookupName { get; set; }
         public string AuthenticationServiceName { get; set; }

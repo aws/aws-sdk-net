@@ -9,7 +9,7 @@
   <metadata> 
     <id>AWSSDK.Core</id>
     <title>AWSSDK - Core Runtime</title>
-    <version><#=this.Session["FileVersion"]#>-preview</version> 
+    <version><#=this.Session["FileVersion"]#><#=this.Session["NuGetPreviewFlag"]#></version> 
     <authors>Amazon Web Services</authors>
     <description>The Amazon Web Services SDK for .NET - Core Runtime</description> 
     <language>en-US</language>

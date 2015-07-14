@@ -75,6 +75,8 @@ namespace ServiceClientGenerator
         public const string UnitTestsSubFoldername = "UnitTests";
         public const string IntegrationTestsSubFolderName = "IntegrationTests";
 
+        public const string NuGetPreviewFlag = "-preview";
+
         // Records any new project files we produce as part of generation. If this collection is
         // not empty when we've processed all source, we must update the solution files to add
         // the new projects.
@@ -655,9 +657,21 @@ namespace ServiceClientGenerator
                 {
                     var service = kvp.Key;
                     var version = kvp.Value;
+                    var dependentService = GenerationManifest.ServiceConfigurations.FirstOrDefault(x => string.Equals(x.BaseName, service, StringComparison.InvariantCultureIgnoreCase));
+
+                    string previewFlag = "";
+                    if(dependentService != null)
+                    {
+                        if (dependentService.InPreview)
+                            previewFlag = GeneratorDriver.NuGetPreviewFlag;
+                    }
+                    else if(string.Equals(service, "Core", StringComparison.InvariantCultureIgnoreCase) && GenerationManifest.DefaultToPreview)
+                    {
+                        previewFlag = GeneratorDriver.NuGetPreviewFlag;
+                    }
 
                     var verTokens = version.Split('.');
-                    var versionRange = string.Format("[{0}-preview, {1}.{2}-preview)", version, verTokens[0], int.Parse(verTokens[1]) + 1);
+                    var versionRange = string.Format("[{0}{3}, {1}.{2}{3})", version, verTokens[0], int.Parse(verTokens[1]) + 1, previewFlag);
 
                     awsDependencies.Add(string.Format("AWSSDK.{0}", service), versionRange);
                 }
@@ -679,6 +693,8 @@ namespace ServiceClientGenerator
 
             if (Configuration.NugetDependencies != null)
                 session.Add("NugetDependencies", Configuration.NugetDependencies);
+
+            session["NuGetPreviewFlag"] = Configuration.InPreview ? GeneratorDriver.NuGetPreviewFlag : "";
 
             var nuspecGenerator = new Nuspec { Session = session };
             var text = nuspecGenerator.TransformText();

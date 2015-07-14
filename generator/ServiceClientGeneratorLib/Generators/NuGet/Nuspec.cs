@@ -49,8 +49,13 @@ namespace ServiceClientGenerator.Generators.NuGet
             
             #line default
             #line hidden
-            this.Write("-preview</version> \r\n    <authors>Amazon Web Services</authors>\r\n    <description" +
-                    ">");
+            
+            #line 11 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NuGetPreviewFlag"]));
+            
+            #line default
+            #line hidden
+            this.Write("</version> \r\n    <authors>Amazon Web Services</authors>\r\n    <description>");
             
             #line 13 "C:\dev\DotNet\xamarin\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyDescription"]));
