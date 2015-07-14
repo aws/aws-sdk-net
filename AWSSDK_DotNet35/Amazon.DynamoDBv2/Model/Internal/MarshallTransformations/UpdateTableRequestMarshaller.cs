@@ -100,6 +100,17 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetStreamSpecification())
+                {
+                    context.Writer.WritePropertyName("StreamSpecification");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StreamSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StreamSpecification, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTableName())
                 {
                     context.Writer.WritePropertyName("TableName");

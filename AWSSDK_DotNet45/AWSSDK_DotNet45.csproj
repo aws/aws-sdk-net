@@ -171,6 +171,8 @@
     <Compile Include="Amazon.CloudWatch\IAmazonCloudWatch.cs" />
     <Compile Include="Amazon.DataPipeline\AmazonDataPipelineClient.cs" />
     <Compile Include="Amazon.DataPipeline\IAmazonDataPipeline.cs" />
+    <Compile Include="Amazon.DeviceFarm\AmazonDeviceFarmClient.cs" />
+    <Compile Include="Amazon.DeviceFarm\IAmazonDeviceFarm.cs" />
     <Compile Include="Amazon.DirectConnect\AmazonDirectConnectClient.cs" />
     <Compile Include="Amazon.DirectConnect\IAmazonDirectConnect.cs" />
     <Compile Include="Amazon.DirectoryService\AmazonDirectoryServiceClient.cs" />
@@ -203,6 +205,8 @@
     <Compile Include="Amazon.DynamoDBv2\DocumentModel\Table.Async.cs" />
     <Compile Include="Amazon.DynamoDBv2\DocumentModel\Table.Sync.cs" />
     <Compile Include="Amazon.DynamoDBv2\IAmazonDynamoDB.cs" />
+    <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBStreamsClient.cs" />
+    <Compile Include="Amazon.DynamoDBv2\IAmazonDynamoDBStreams.cs" />
     <Compile Include="Amazon.EC2\AmazonEC2Client.cs" />
     <Compile Include="Amazon.EC2\IAmazonEC2.cs" />
     <Compile Include="Amazon.ECS\AmazonECSClient.cs" />
@@ -293,6 +297,7 @@
     </Compile>
     <EmbeddedResource Include="..\AWSSDK_DotNet35\endpoints.xml">
       <Link>endpoints.xml</Link>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -560,6 +565,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.DeviceFarm\*" Exclude="..\AWSSDK_DotNet35\Amazon.DeviceFarm\IAmazonDeviceFarm.cs;..\AWSSDK_DotNet35\Amazon.DeviceFarm\AmazonDeviceFarmClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.DeviceFarm\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.DeviceFarm\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.DirectConnect\*" Exclude="..\AWSSDK_DotNet35\Amazon.DirectConnect\IAmazonDirectConnect.cs;..\AWSSDK_DotNet35\Amazon.DirectConnect\AmazonDirectConnectClient.cs">
       <Visible>false</Visible>
     </Compile>
@@ -582,7 +598,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\*" Exclude="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\IAmazonDynamoDB.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\AmazonDynamoDBClient.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DynamoDBAsync.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\*" Exclude="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\IAmazonDynamoDB.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\AmazonDynamoDBClient.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DynamoDBAsync.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\IAmazonDynamoDBStreams.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\AmazonDynamoDBStreamsClient.cs;">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\Internal\*.cs">

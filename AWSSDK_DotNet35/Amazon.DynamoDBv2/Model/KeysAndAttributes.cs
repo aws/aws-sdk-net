@@ -139,9 +139,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </note> 
         /// <para>
-        /// For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
-        /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.
+        /// For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+        /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ExpressionAttributeNames

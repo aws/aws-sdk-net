@@ -28,6 +28,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>An asynchronous task of the request</returns>
         [System.CLSCompliant(false)]
+        [Obsolete("This method is obsolete and will be removed in a future update.")]
         public Task UploadFromAsync(IStorageFile sourceFile, CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new Amazon.S3.Transfer.TransferUtilityUploadRequest();
@@ -45,6 +46,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>An asynchronous task of the request</returns>
         [System.CLSCompliant(false)]
+        [Obsolete("This method is obsolete and will be removed in a future update.")]
         public Task DownloadToAsync(IStorageFile storageFile, CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new Amazon.S3.Transfer.TransferUtilityDownloadRequest();

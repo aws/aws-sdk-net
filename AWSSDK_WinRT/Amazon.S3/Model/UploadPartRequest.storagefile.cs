@@ -46,6 +46,7 @@ namespace Amazon.S3.Model
         /// from and upload to Amazon S3.
         /// </summary>
         [System.CLSCompliant(false)]
+        [Obsolete("This property is obsolete and will be removed in a future update. Please use the FilePath property instead.")]
         public IStorageFile StorageFile
         {
             get;

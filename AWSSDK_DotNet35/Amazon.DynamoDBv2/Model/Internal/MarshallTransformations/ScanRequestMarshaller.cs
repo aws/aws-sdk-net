@@ -74,6 +74,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ConditionalOperator);
                 }
 
+                if(publicRequest.IsSetConsistentRead())
+                {
+                    context.Writer.WritePropertyName("ConsistentRead");
+                    context.Writer.Write(publicRequest.ConsistentRead);
+                }
+
                 if(publicRequest.IsSetExclusiveStartKey())
                 {
                     context.Writer.WritePropertyName("ExclusiveStartKey");

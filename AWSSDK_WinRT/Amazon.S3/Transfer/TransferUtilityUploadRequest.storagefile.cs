@@ -44,6 +44,7 @@ namespace Amazon.S3.Transfer
         /// from and upload to Amazon S3.
         /// </summary>
         [System.CLSCompliant(false)]
+        [Obsolete("This property is obsolete and will be removed in a future update.")]
         public IStorageFile StorageFile
         {
             get { return _storageFile; }

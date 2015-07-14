@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
+    #line 1 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class ExceptionClass : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators
         public override string TransformText()
         {
             
-            #line 6 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
+            #line 6 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
 
 	AddLicenseHeader();
 
@@ -38,35 +38,35 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("using System;\r\nusing System.Net;\r\nusing Amazon.Runtime;\r\n\r\nnamespace ");
             
-            #line 13 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
+            #line 13 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model\r\n{\r\n    ///<summary>\r\n    /// ");
             
-            #line 16 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
+            #line 16 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write(" exception\r\n    /// </summary>\r\n    public class ");
             
-            #line 18 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
+            #line 18 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
             #line hidden
-            this.Write(" : Amazon");
+            this.Write(" : ");
             
-            #line 18 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            #line 18 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(BaseException));
             
             #line default
             #line hidden
-            this.Write("Exception \r\n    {\r\n        /// <summary>\r\n        /// Constructs a new ");
+            this.Write(" \r\n    {\r\n        /// <summary>\r\n        /// Constructs a new ");
             
-            #line 21 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
+            #line 21 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
@@ -75,14 +75,14 @@ namespace ServiceClientGenerator.Generators
                     "/// <param name=\"message\">\r\n        /// Describes the error encountered.\r\n      " +
                     "  /// </param>\r\n        public ");
             
-            #line 27 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
+            #line 27 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
             #line hidden
             this.Write("(string message) \r\n            : base(message) {}\r\n          \r\n        public ");
             
-            #line 30 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
+            #line 30 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
@@ -90,7 +90,7 @@ namespace ServiceClientGenerator.Generators
             this.Write("(string message, Exception innerException) \r\n            : base(message, innerExc" +
                     "eption) {}\r\n            \r\n        public ");
             
-            #line 33 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
+            #line 33 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
@@ -98,7 +98,7 @@ namespace ServiceClientGenerator.Generators
             this.Write("(Exception innerException) \r\n            : base(innerException) {}\r\n            \r" +
                     "\n        public ");
             
-            #line 36 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
+            #line 36 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
@@ -107,7 +107,7 @@ namespace ServiceClientGenerator.Generators
                     " string RequestId, HttpStatusCode statusCode) \r\n            : base(message, inne" +
                     "rException, errorType, errorCode, RequestId, statusCode) {}\r\n\r\n        public ");
             
-            #line 39 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
+            #line 39 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
@@ -116,7 +116,7 @@ namespace ServiceClientGenerator.Generators
                     "tusCode statusCode) \r\n            : base(message, errorType, errorCode, RequestI" +
                     "d, statusCode) {}\r\n\r\n");
             
-            #line 42 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
+            #line 42 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
 		
 		if(this.GenerateComplexException)
 		{
@@ -129,21 +129,21 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("\t\tpublic ");
             
-            #line 49 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
+            #line 49 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 49 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
+            #line 49 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" { get; set; }\r\n\r\n");
             
-            #line 51 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
+            #line 51 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
 
 			}
 		}
@@ -155,11 +155,13 @@ namespace ServiceClientGenerator.Generators
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 58 "C:\dev\net\runtime.rebase\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
+        #line 58 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\ExceptionClass.tt"
 
     public ExceptionModel Exception { get; set; }
 
 	public bool GenerateComplexException { get; set; }
+
+	public string BaseException { get; set; }
 
         
         #line default

@@ -30,6 +30,7 @@ namespace Amazon.S3.Model
     public partial class GetObjectResponse
     {
         [CLSCompliant(false)]
+        [Obsolete("This method is obsolete and will be removed in a future update.")]
         public async Task WriteResponseStreamToFileAsync(IStorageFile storageFile, bool append, CancellationToken cancellationToken)
         {
             Stream outputStream = await storageFile.OpenStreamForWriteAsync().ConfigureAwait(false); 

@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+    #line 1 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class AWSQueryResponseUnmarshaller : BaseResponseUnmarshaller
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators
         public override string TransformText()
         {
             
-            #line 6 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 6 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
 
     AddLicenseHeader();
 
@@ -40,7 +40,7 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("namespace ");
             
-            #line 11 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 11 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -48,14 +48,14 @@ namespace ServiceClientGenerator.Generators
             this.Write(".Model.Internal.MarshallTransformations\r\n{\r\n    /// <summary>\r\n    /// Response U" +
                     "nmarshaller for ");
             
-            #line 14 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 14 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
             #line hidden
             this.Write(" operation\r\n    /// </summary>  \r\n    public class ");
             
-            #line 16 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 16 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
@@ -64,14 +64,14 @@ namespace ServiceClientGenerator.Generators
                     "azonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)\r\n        {\r\n  " +
                     "          ");
             
-            #line 20 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 20 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
             #line hidden
             this.Write("Response response = new ");
             
-            #line 20 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 20 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -86,7 +86,7 @@ namespace ServiceClientGenerator.Generators
                 {                    
                     if(context.TestExpression(""");
             
-            #line 28 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 28 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
@@ -109,7 +109,7 @@ namespace ServiceClientGenerator.Generators
 
 ");
             
-            #line 44 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 44 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
 
 	if (this.Structure == null || this.Structure.Members.Count == 0)
 	{
@@ -120,7 +120,7 @@ namespace ServiceClientGenerator.Generators
             this.Write("\t\t[System.Diagnostics.CodeAnalysis.SuppressMessage(\"Microsoft.Usage\", \"CA1801:Rev" +
                     "iewUnusedParameters\", MessageId=\"response\")]\r\n");
             
-            #line 49 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 49 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
 
 	}
 
@@ -129,7 +129,7 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("        private static void UnmarshallResult(XmlUnmarshallerContext context, ");
             
-            #line 52 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 52 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
@@ -150,7 +150,7 @@ namespace ServiceClientGenerator.Generators
 
 ");
             
-            #line 66 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 66 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
 
     if(this.Structure != null)
     {
@@ -162,21 +162,21 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("                    if ( context.TestExpression(\"");
             
-            #line 72 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 72 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.MarshallName));
             
             #line default
             #line hidden
             this.Write("\", targetDepth))\r\n                    {\r\n                        response.");
             
-            #line 74 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 74 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(MemberAccessorFor(this.Structure.Name)));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 74 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 74 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -184,7 +184,7 @@ namespace ServiceClientGenerator.Generators
             this.Write("Unmarshaller.Instance.Unmarshall(context);\r\n                        continue;\r\n  " +
                     "                  }\r\n");
             
-            #line 77 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 77 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
  
         }
         else
@@ -198,7 +198,7 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("                    if (context.TestExpression(\"");
             
-            #line 85 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 85 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(testExpression));
             
             #line default
@@ -206,14 +206,14 @@ namespace ServiceClientGenerator.Generators
             this.Write("\", targetDepth))\r\n                    {\r\n                        var unmarshaller" +
                     " = ");
             
-            #line 87 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 87 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineTypeUnmarshallerInstantiate()));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 88 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 88 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
 
                 if (member.IsMap || member.IsList)
                 {
@@ -224,14 +224,14 @@ namespace ServiceClientGenerator.Generators
             this.Write("                        var item = unmarshaller.Unmarshall(context);\r\n           " +
                     "             response.");
             
-            #line 93 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 93 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(MemberAccessorFor(member.PropertyName)));
             
             #line default
             #line hidden
             this.Write(".Add(item);\r\n");
             
-            #line 94 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 94 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
 
                 }
                 else
@@ -242,14 +242,14 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("                        response.");
             
-            #line 99 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 99 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(MemberAccessorFor(member.PropertyName)));
             
             #line default
             #line hidden
             this.Write(" = unmarshaller.Unmarshall(context);\r\n");
             
-            #line 100 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 100 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
 
                 }
 
@@ -258,7 +258,7 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("                        continue;\r\n                    }\r\n");
             
-            #line 105 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 105 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
 
             }
         }
@@ -279,7 +279,7 @@ namespace ServiceClientGenerator.Generators
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
 ");
             
-            #line 120 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 120 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
 
     foreach (var exception in this.Operation.Exceptions)
     {
@@ -289,14 +289,14 @@ namespace ServiceClientGenerator.Generators
             #line hidden
             this.Write("            if (errorResponse.Code != null && errorResponse.Code.Equals(\"");
             
-            #line 124 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 124 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Code));
             
             #line default
             #line hidden
             this.Write("\"))\r\n            {\r\n                return new ");
             
-            #line 126 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 126 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
             
             #line default
@@ -304,24 +304,24 @@ namespace ServiceClientGenerator.Generators
             this.Write("(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, e" +
                     "rrorResponse.RequestId, statusCode);\r\n            }\r\n");
             
-            #line 128 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 128 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
 
     }
 
             
             #line default
             #line hidden
-            this.Write("            return new Amazon");
+            this.Write("            return new ");
             
-            #line 131 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            #line 131 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.BaseException));
             
             #line default
             #line hidden
-            this.Write("Exception(errorResponse.Message, innerException, errorResponse.Type, errorRespons" +
-                    "e.Code, errorResponse.RequestId, statusCode);\r\n        }\r\n");
+            this.Write("(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, e" +
+                    "rrorResponse.RequestId, statusCode);\r\n        }\r\n");
             
-            #line 133 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+            #line 133 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
 
 	    this.AddResponseSingletonMethod();
 
@@ -332,7 +332,7 @@ namespace ServiceClientGenerator.Generators
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 138 "C:\code\dotnet\release-merging\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
+        #line 138 "C:\dev\net\service.updates\sdk\src\ServiceClientGenerator\Generators\AWSQueryResponseUnmarshaller.tt"
 
 // if the result fields have been wrapped in a subordinate structure, wire the accessor
 // to use it when addressing a member

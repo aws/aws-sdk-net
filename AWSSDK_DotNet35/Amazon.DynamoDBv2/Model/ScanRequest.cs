@@ -43,21 +43,24 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  
     /// <para>
-    /// The result set is eventually consistent. 
-    /// </para>
-    ///  
-    /// <para>
     /// By default, <i>Scan</i> operations proceed sequentially; however, for faster performance
     /// on a large table or secondary index, applications can request a parallel <i>Scan</i>
     /// operation by providing the <i>Segment</i> and <i>TotalSegments</i> parameters. For
     /// more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
     /// Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    /// By default, <i>Scan</i> uses eventually consistent reads when acessing the data in
+    /// the table or local secondary index. However, you can use strongly consistent reads
+    /// instead by setting the <i>ConsistentRead</i> parameter to <i>true</i>.
+    /// </para>
     /// </summary>
     public partial class ScanRequest : AmazonDynamoDBRequest
     {
         private List<string> _attributesToGet = new List<string>();
         private ConditionalOperator _conditionalOperator;
+        private bool? _consistentRead;
         private Dictionary<string, AttributeValue> _exclusiveStartKey = new Dictionary<string, AttributeValue>();
         private Dictionary<string, string> _expressionAttributeNames = new Dictionary<string, string>();
         private Dictionary<string, AttributeValue> _expressionAttributeValues = new Dictionary<string, AttributeValue>();
@@ -173,6 +176,48 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConsistentRead. 
+        /// <para>
+        /// A Boolean value that determines the read consistency model during the scan:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i> will use eventually
+        /// consistent reads. The data returned from <i>Scan</i> might not contain the results
+        /// of other recently completed write operations (PutItem, UpdateItem or DeleteItem).
+        /// The <i>Scan</i> response might include some stale data.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i> will use strongly
+        /// consistent reads. All of the write operations that completed before the <i>Scan</i>
+        /// began are guaranteed to be contained in the <i>Scan</i> response.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The default setting for <i>ConsistentRead</i> is <code>false</code>, meaning that
+        /// eventually consistent reads will be used.
+        /// </para>
+        ///  
+        /// <para>
+        /// Strongly consistent reads are not supported on global secondary indexes. If you scan
+        /// a global secondary index with <i>ConsistentRead</i> set to true, you will receive
+        /// a <i>ValidationException</i>.
+        /// </para>
+        /// </summary>
+        public bool ConsistentRead
+        {
+            get { return this._consistentRead.GetValueOrDefault(); }
+            set { this._consistentRead = value; }
+        }
+
+        // Check to see if ConsistentRead property is set
+        internal bool IsSetConsistentRead()
+        {
+            return this._consistentRead.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ExclusiveStartKey. 
         /// <para>
         /// The primary key of the first item that this operation will evaluate. Use the value
@@ -256,9 +301,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </note> 
         /// <para>
-        /// For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
-        /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.
+        /// For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+        /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ExpressionAttributeNames
@@ -307,9 +351,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on expression attribute values, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
-        /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.
+        /// For more information on expression attribute values, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+        /// Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> ExpressionAttributeValues

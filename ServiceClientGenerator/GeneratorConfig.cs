@@ -37,7 +37,14 @@ namespace ServiceClientGenerator
             get
             {
                 if (this._serviceModel == null)
+                {
                     this._serviceModel = new ServiceModel(this.ModelPath, this.CustomizationsPath);
+
+                    if (this.IsChildConfig)
+                    {
+                        _serviceModel.ParentModel = ParentConfig.ServiceModel;
+                    }
+                }
 
                 return this._serviceModel;
             }
@@ -127,5 +134,15 @@ namespace ServiceClientGenerator
             get;
             private set;
         }
+
+        public bool IsChildConfig
+        {
+            get
+            {
+                return this.ParentConfig != null;
+            }
+        }
+
+        public GeneratorConfig ParentConfig { get; set; }
     }
 }

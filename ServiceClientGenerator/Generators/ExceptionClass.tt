@@ -15,7 +15,7 @@ namespace <#=this.Config.Namespace#>.Model
     ///<summary>
     /// <#= this.Config.BaseName#> exception
     /// </summary>
-    public class <#=this.Exception.Name#> : Amazon<#=this.Config.BaseName#>Exception 
+    public class <#=this.Exception.Name#> : <#=BaseException#> 
     {
         /// <summary>
         /// Constructs a new <#=this.Exception.Name#> with the specified error
@@ -59,4 +59,6 @@ namespace <#=this.Config.Namespace#>.Model
     public ExceptionModel Exception { get; set; }
 
 	public bool GenerateComplexException { get; set; }
+
+	public string BaseException { get; set; }
 #>

@@ -706,7 +706,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 AttributesToGet = currentConfig.AttributesToGet,
                 Select = currentConfig.Select,
                 CollectResults = currentConfig.CollectResults,
-                IndexName = currentConfig.IndexName
+                IndexName = currentConfig.IndexName,
+                IsConsistentRead = currentConfig.ConsistentRead
             };
 
             if (currentConfig.TotalSegments != 0)

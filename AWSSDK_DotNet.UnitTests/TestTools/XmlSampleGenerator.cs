@@ -121,7 +121,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 WriteStructure(writer, shape);
             else if (shape.IsEnum)
             {
-                var enumerationWrapper = this._model.Enumerations.First(x => x.Name == shape.Name);
+                var enumerationWrapper = this._model.Enumerations(true).First(x => x.Name == shape.Name);
                 writer.WriteValue(enumerationWrapper.EnumerationValues.ElementAt(0).MarshallName);
             }
             else if (shape.IsString)

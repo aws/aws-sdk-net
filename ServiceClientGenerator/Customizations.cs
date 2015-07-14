@@ -694,15 +694,7 @@ namespace ServiceClientGenerator
 
         public string GetOverrideShapeName(string originalShapeName)
         {
-            var substitutionsData = _documentRoot[ShapeSubstitutionsKey];
-            if (substitutionsData == null)
-                return null;
-
-            var shapeRemapData = substitutionsData[originalShapeName] as JsonData;
-            if (null == shapeRemapData || null == shapeRemapData[RenameShapeKey])
-                return null;
-
-            return (string)shapeRemapData[RenameShapeKey];
+            return GetRemappedShapeName(originalShapeName, RenameShapeKey);
         }
 
         /// <summary>
@@ -712,15 +704,20 @@ namespace ServiceClientGenerator
         /// <returns>The new name, or null if not found</returns>
         public string GetSubstituteShapeName(string originalShapeName)
         {
-            var substitutionsData = _documentRoot[ShapeSubstitutionsKey];
+            return GetRemappedShapeName(originalShapeName, EmitAsShapeKey);
+        }
+
+        private string GetRemappedShapeName(string originalShapeName, string key)
+        {
+             var substitutionsData = _documentRoot[ShapeSubstitutionsKey];
             if (substitutionsData == null)
                 return null;
 
             var shapeRemapData = substitutionsData[originalShapeName] as JsonData;
-            if (null == shapeRemapData || null == shapeRemapData[EmitAsShapeKey])
+            if (null == shapeRemapData || null == shapeRemapData[key])
                 return null;
 
-            return (string)shapeRemapData[EmitAsShapeKey];
+            return (string)shapeRemapData[key];
         }
 
         /// <summary>

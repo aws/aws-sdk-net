@@ -71,7 +71,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested item.</param>
         /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide both the hash attribute and the range attribute.</param>
-        /// <param name="consistentRead">A value that if set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, eventually consistent reads are used.</param>
+        /// <param name="consistentRead">Determines the read consistency model: If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</param>
         public GetItemRequest(string tableName, Dictionary<string, AttributeValue> key, bool consistentRead)
         {
             _tableName = tableName;
@@ -120,8 +120,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ConsistentRead. 
         /// <para>
-        /// A value that if set to <code>true</code>, then the operation uses strongly consistent
-        /// reads; otherwise, eventually consistent reads are used.
+        /// Determines the read consistency model: If set to <code>true</code>, then the operation
+        /// uses strongly consistent reads; otherwise, the operation uses eventually consistent
+        /// reads.
         /// </para>
         /// </summary>
         public bool ConsistentRead
@@ -190,9 +191,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </note> 
         /// <para>
-        /// For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
-        /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.
+        /// For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+        /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ExpressionAttributeNames

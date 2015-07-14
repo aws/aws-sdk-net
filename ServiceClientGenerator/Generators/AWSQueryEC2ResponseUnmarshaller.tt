@@ -108,7 +108,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
     }
 #>
-            return new Amazon<#=this.Config.BaseName#>Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            return new <#=this.BaseException#>(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 <#
 	    this.AddResponseSingletonMethod();

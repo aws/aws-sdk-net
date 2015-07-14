@@ -49,6 +49,12 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  
     /// <para>
+    /// If you have DynamoDB Streams enabled on the table, then the corresponding stream on
+    /// that table goes into the <code>DISABLED</code> state, and the stream is automatically
+    /// deleted after 24 hours.
+    /// </para>
+    ///  
+    /// <para>
     /// Use the <i>DescribeTable</i> API to check the status of the table. 
     /// </para>
     /// </summary>

@@ -158,12 +158,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Limit = Int32.MaxValue;
             Select = SelectValues.AllAttributes;
             ConditionalOperator = ConditionalOperatorValues.And;
+            ConsistentRead = false;
         }
 
         /// <summary>
         /// List of attributes to retrieve as part of the search
         /// </summary>
         public List<string> AttributesToGet { get; set; }
+
+        /// <summary>
+        /// If set to true, this flag ensures that the most recently written data is
+        /// returned.
+        /// </summary>
+        public bool ConsistentRead { get; set; }
 
         /// <summary>
         /// Upper limit on the number of items scanned per request

@@ -201,6 +201,15 @@
         {
             "active": true,
 
+            "model": "devicefarm",
+            "base-name": "DeviceFarm",
+            "region-lookup-name": "devicefarm",
+            "authentication-service-name": "devicefarm",
+            "mobile-platforms": [ "WinRT" ]
+        },
+        {
+            "active": true,
+
             "model": "directconnect",
             "base-name": "DirectConnect",
             "region-lookup-name": "directconnect",
@@ -220,8 +229,8 @@
         },
         {
             "active": true,
-
-            "model": "dynamodb",
+            "comment": "This has the extra hyphen in the prefix to make sure we don't pick up dynamodbstreams model",
+            "model": "dynamodb-",
             "namespace": "Amazon.DynamoDBv2",
             "base-name": "DynamoDB",
             "region-lookup-name": "dynamodb",
@@ -229,6 +238,19 @@
             "service-url": "https://dynamodb.us-east-1.amazonaws.com/",
             "max-retries": 10,
             "mobile-platforms": [ "WinRT" ]
+        },
+        {
+            "active": true,
+
+            "model": "dynamodbstreams",
+            "namespace": "Amazon.DynamoDBv2",
+            "base-name": "DynamoDBStreams",
+            "region-lookup-name": "streams.dynamodb",
+            "authentication-service-name": "dynamodb",
+            "service-url": "https://streams.dynamodb.us-east-1.amazonaws.com/",
+            "max-retries": 10,
+            "mobile-platforms": [ "WinRT" ],
+            "parent-base-name": "DynamoDB"
         },
         {
             "active": true,

@@ -294,7 +294,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Boolean functions: <code>attribute_exists | attribute_not_exists | contains | begins_with</code>
+        /// Functions: <code>attribute_exists | attribute_not_exists | attribute_type | contains
+        /// | begins_with | size</code>
         /// </para>
         ///  
         /// <para>
@@ -700,9 +701,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </note> 
         /// <para>
-        /// For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
-        /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.
+        /// For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+        /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ExpressionAttributeNames
@@ -751,9 +751,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on expression attribute values, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
-        /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.
+        /// For more information on expression attribute values, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+        /// Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> ExpressionAttributeValues
@@ -811,9 +810,10 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ReturnItemCollectionMetrics. 
         /// <para>
-        /// A value that if set to <code>SIZE</code>, the response includes statistics about item
-        /// collections, if any, that were modified during the operation are returned in the response.
-        /// If set to <code>NONE</code> (the default), no statistics are returned.
+        /// Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
+        /// the response includes statistics about item collections, if any, that were modified
+        /// during the operation are returned in the response. If set to <code>NONE</code> (the
+        /// default), no statistics are returned.
         /// </para>
         /// </summary>
         public ReturnItemCollectionMetrics ReturnItemCollectionMetrics
@@ -902,7 +902,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// <code>SET</code> - Adds one or more attributes and values to an item. If any of these
         /// attribute already exist, they are replaced by the new values. You can also use <code>SET</code>
-        /// to add or subtract from an attribute that is of type Number.
+        /// to add or subtract from an attribute that is of type Number. For example: <code>SET
+        /// myNum = myNum + :val</code>
         /// </para>
         ///  
         /// <para>
@@ -989,8 +990,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <important>
         /// <para>
-        /// The <code>DELETE</code> action only supports Number and set data types. In addition,
-        /// <code>DELETE</code> can only be used on top-level attributes, not nested attributes.
+        /// The <code>DELETE</code> action only supports set data types. In addition, <code>DELETE</code>
+        /// can only be used on top-level attributes, not nested attributes.
         /// </para>
         ///  </important> </li> </ul> 
         /// <para>

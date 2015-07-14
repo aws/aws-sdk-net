@@ -311,7 +311,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\*" Exclude="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\IAmazonDynamoDB.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\AmazonDynamoDBClient.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\*" Exclude="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\IAmazonDynamoDB.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\AmazonDynamoDBClient.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\IAmazonDynamoDBStreams.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\AmazonDynamoDBStreamsClient.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\Internal\*">

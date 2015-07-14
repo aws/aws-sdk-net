@@ -14,7 +14,7 @@ using Amazon.Runtime;
 namespace <#=this.Config.Namespace#>
 {
 <#
-foreach(var enumeration in this.Config.ServiceModel.Enumerations)
+foreach(var enumeration in this.Config.ServiceModel.Enumerations(false))
 {
 #>
 

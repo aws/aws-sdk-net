@@ -36,8 +36,8 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>
     /// Use the <i>KeyConditionExpression</i> parameter to provide a specific hash key value.
     /// The <i>Query</i> operation will return all of the items from the table or index with
-    /// that hash key value. You can optionally narrow the scope of the <i>Query</i> by specifying
-    /// a range key value and a comparison operator in the <i>KeyConditionExpression</i>.
+    /// that hash key value. You can optionally narrow the scope of the <i>Query</i> operation
+    /// by specifying a range key value and a comparison operator in <i>KeyConditionExpression</i>.
     /// You can use the <i>ScanIndexForward</i> parameter to get results in forward or reverse
     /// order, by range key or by index key. 
     /// </para>
@@ -49,19 +49,19 @@ namespace Amazon.DynamoDBv2.Model
     ///  
     /// <para>
     /// If the total number of items meeting the query criteria exceeds the result set size
-    /// limit of 1 MB, the query stops and results are returned to the user with <i>LastEvaluatedKey</i>
-    /// to continue the query in a subsequent operation. Unlike a <i>Scan</i> operation, a
-    /// <i>Query</i> operation never returns both an empty result set and a <i>LastEvaluatedKey</i>.
-    /// The <i>LastEvaluatedKey</i> is only provided if the results exceed 1 MB, or if you
-    /// have used <i>Limit</i>. 
+    /// limit of 1 MB, the query stops and results are returned to the user with the <i>LastEvaluatedKey</i>
+    /// element to continue the query in a subsequent operation. Unlike a <i>Scan</i> operation,
+    /// a <i>Query</i> operation never returns both an empty result set and a <i>LastEvaluatedKey</i>
+    /// value. <i>LastEvaluatedKey</i> is only provided if the results exceed 1 MB, or if
+    /// you have used the <i>Limit</i> parameter. 
     /// </para>
     ///  
     /// <para>
     /// You can query a table, a local secondary index, or a global secondary index. For a
-    /// query on a table or on a local secondary index, you can set <i>ConsistentRead</i>
-    /// to true and obtain a strongly consistent result. Global secondary indexes support
-    /// eventually consistent reads only, so do not specify <i>ConsistentRead</i> when querying
-    /// a global secondary index.
+    /// query on a table or on a local secondary index, you can set the <i>ConsistentRead</i>
+    /// parameter to <code>true</code> and obtain a strongly consistent result. Global secondary
+    /// indexes support eventually consistent reads only, so do not specify <i>ConsistentRead</i>
+    /// when querying a global secondary index.
     /// </para>
     /// </summary>
     public partial class QueryRequest : AmazonDynamoDBRequest
@@ -208,14 +208,15 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ConsistentRead. 
         /// <para>
-        /// A value that if set to <code>true</code>, then the operation uses strongly consistent
-        /// reads; otherwise, eventually consistent reads are used.
+        /// Determines the read consistency model: If set to <code>true</code>, then the operation
+        /// uses strongly consistent reads; otherwise, the operation uses eventually consistent
+        /// reads.
         /// </para>
         ///  
         /// <para>
         /// Strongly consistent reads are not supported on global secondary indexes. If you query
         /// a global secondary index with <i>ConsistentRead</i> set to <code>true</code>, you
-        /// will receive an error message.
+        /// will receive a <i>ValidationException</i>.
         /// </para>
         /// </summary>
         public bool ConsistentRead
@@ -308,9 +309,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </note> 
         /// <para>
-        /// For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
-        /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.
+        /// For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+        /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ExpressionAttributeNames
@@ -359,9 +359,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on expression attribute values, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionPlaceholders.html">Using
-        /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.
+        /// For more information on expression attribute values, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+        /// Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> ExpressionAttributeValues
@@ -441,9 +440,10 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         /// The condition must perform an equality test on a single hash key value. The condition
-        /// can also test for one or more range key values. A <i>Query</i> can use <i>KeyConditionExpression</i>
-        /// to retrieve a single item with a given hash and range key value, or several items
-        /// that have the same hash key value but different range key values.
+        /// can also perform one of several comparison tests on a single range key value. <i>Query</i>
+        /// can use <i>KeyConditionExpression</i> to retrieve one item with a given hash and range
+        /// key value, or several items that have the same hash key value but different range
+        /// key values.
         /// </para>
         ///  
         /// <para>
@@ -496,14 +496,15 @@ namespace Amazon.DynamoDBv2.Model
         ///  </li> <li> 
         /// <para>
         /// <code>rangeAttributeName</code> <i>BETWEEN</i> <code>:rangeval1</code> <i>AND</i>
-        /// <code>:rangeval2</code> - true if the range key is less than or greater than <code>:rangeval1</code>,
+        /// <code>:rangeval2</code> - true if the range key is greater than or equal to <code>:rangeval1</code>,
         /// and less than or equal to <code>:rangeval2</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// <i>begins_with (</i><code>rangeAttributeName</code>, <code>:rangeval</code><i>)</i>
-        /// - true if the range key begins with a particular operand. Note that the function name
-        /// <code>begins_with</code> is case-sensitive.
+        /// - true if the range key begins with a particular operand. (You cannot use this function
+        /// with a range key that is of type Number.) Note that the function name <code>begins_with</code>
+        /// is case-sensitive.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -513,14 +514,15 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         /// You can optionally use the <i>ExpressionAttributeNames</i> parameter to replace the
-        /// names of the hash and range attributes with placeholder tokens. This might be necessary
-        /// if an attribute name conflicts with a DynamoDB reserved word. For example, the following
-        /// <i>KeyConditionExpression</i> causes an error because <i>Size</i> is a reserved word:
+        /// names of the hash and range attributes with placeholder tokens. This option might
+        /// be necessary if an attribute name conflicts with a DynamoDB reserved word. For example,
+        /// the following <i>KeyConditionExpression</i> parameter causes an error because <i>Size</i>
+        /// is a reserved word:
         /// </para>
         ///  <ul> <li> <code>Size = :myval</code> </li> </ul> 
         /// <para>
-        /// To work around this, define a placeholder (such a <code>#myval</code>) to represent
-        /// the attribute name <i>Size</i>. <i>KeyConditionExpression</i> then is as follows:
+        /// To work around this, define a placeholder (such a <code>#S</code>) to represent the
+        /// attribute name <i>Size</i>. <i>KeyConditionExpression</i> then is as follows:
         /// </para>
         ///  <ul> <li> <code>#S = :myval</code> </li> </ul> 
         /// <para>
@@ -808,7 +810,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// This parameter does not support attributes of type List or Map.
         /// </para>
-        ///  <note> 
+        ///  <note>
         /// <para>
         /// A <i>QueryFilter</i> is applied after the items have already been read; the process
         /// of filtering does not consume any additional read capacity units.
@@ -908,16 +910,25 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ScanIndexForward. 
         /// <para>
-        /// A value that specifies ascending (true) or descending (false) traversal of the index.
-        /// DynamoDB returns results reflecting the requested order determined by the range key.
-        /// If the data type is Number, the results are returned in numeric order. For type String,
-        /// the results are returned in order of ASCII character code values. For type Binary,
-        /// DynamoDB treats each byte of the binary data as unsigned when it compares binary values.
+        /// Specifies the order in which to return the query results - either ascending (<code>true</code>)
+        /// or descending (<code>false</code>).
         /// </para>
         ///  
         /// <para>
-        /// If <i>ScanIndexForward</i> is not specified, the results are returned in ascending
-        /// order.
+        /// Items with the same hash key are stored in sorted order by range key .If the range
+        /// key data type is Number, the results are stored in numeric order. For type String,
+        /// the results are returned in order of ASCII character code values. For type Binary,
+        /// DynamoDB treats each byte of the binary data as unsigned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <i>ScanIndexForward</i> is <code>true</code>, DynamoDB returns the results in order,
+        /// by range key. This is the default behavior.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <i>ScanIndexForward</i> is <code>false</code>, DynamoDB sorts the results in descending
+        /// order by range key, and then returns the results to the client.
         /// </para>
         /// </summary>
         public bool ScanIndexForward

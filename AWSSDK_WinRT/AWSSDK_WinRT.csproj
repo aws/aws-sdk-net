@@ -209,6 +209,8 @@
     <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBClient.cs" />
     <Compile Include="Amazon.DynamoDBv2\DataModel\S3Link.storagefile.cs" />
     <Compile Include="Amazon.DynamoDBv2\IAmazonDynamoDB.cs" />
+    <Compile Include="Amazon.DynamoDBv2\IAmazonDynamoDBStreams.cs" />
+    <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBStreamsClient.cs" />
     <Compile Include="Amazon.EC2\AmazonEC2Client.cs" />
     <Compile Include="Amazon.EC2\IAmazonEC2.cs" />
     <Compile Include="Amazon.ECS\AmazonECSClient.cs" />
@@ -472,7 +474,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\*" Exclude="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\IAmazonDynamoDB.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\AmazonDynamoDBClient.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\*" Exclude="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\IAmazonDynamoDB.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\AmazonDynamoDBClient.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\AmazonDynamoDBstreamsClient.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\IAmazonDynamoDBStreams.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\Internal\*">

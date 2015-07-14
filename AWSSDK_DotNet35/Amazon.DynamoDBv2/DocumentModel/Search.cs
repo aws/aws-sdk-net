@@ -201,6 +201,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             AttributesToGet = AttributesToGet,
                             ScanFilter = Filter.ToConditions(SourceTable.Conversion),
                             Select = EnumMapper.Convert(Select),
+                            ConsistentRead = IsConsistentRead
                         };
                         if (!string.IsNullOrEmpty(this.IndexName))
                             scanReq.IndexName = this.IndexName;
@@ -382,7 +383,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                 TableName = TableName,
                                 Select = EnumMapper.Convert(SelectValues.Count),
                                 ExclusiveStartKey = NextKey,
-                                ScanFilter = Filter.ToConditions(SourceTable.Conversion)
+                                ScanFilter = Filter.ToConditions(SourceTable.Conversion),
+                                ConsistentRead = IsConsistentRead
                             };
                             if (!string.IsNullOrEmpty(this.IndexName))
                                 scanReq.IndexName = this.IndexName;

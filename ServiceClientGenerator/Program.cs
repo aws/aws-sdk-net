@@ -98,6 +98,8 @@ namespace ServiceClientGenerator
         /// <returns></returns>
         public static IEnumerable<GeneratorConfig> LoadGeneratorConfigs(string manifestPath, string modelsFolder)
         {
+            var generatorConfigs = new List<GeneratorConfig>();
+
             JsonData document;
             using (StreamReader reader = new StreamReader(manifestPath))
                 document = JsonMapper.ToObject(reader);
@@ -120,7 +122,7 @@ namespace ServiceClientGenerator
                     AuthenticationServiceName = modelNode["authentication-service-name"] != null ? modelNode["authentication-service-name"].ToString() : null,
                     ServiceUrl = modelNode["service-url"] != null ? modelNode["service-url"].ToString() : null,
                     DefaultRegion = modelNode["default-region"] != null ? modelNode["default-region"].ToString() : null,
-                    GenerateConstructors = modelNode["generate-client-constructors"] != null ? (bool)modelNode["generate-client-constructors"] : true // A way to prevent generating basic constructors
+                    GenerateConstructors = modelNode["generate-client-constructors"] != null ? (bool)modelNode["generate-client-constructors"] : true, // A way to prevent generating basic constructors                                                               
                 };
 
                 if (modelNode["mobile-platforms"] != null && modelNode["mobile-platforms"].IsArray)
@@ -142,8 +144,29 @@ namespace ServiceClientGenerator
                 if (modelNode["max-retries"] != null && modelNode["max-retries"].IsInt) 
                     config.OverrideMaxRetries = Convert.ToInt32(modelNode["max-retries"].ToString());
 
-                yield return config;
+                // The parent model for current model, if set, the client will be generated
+                // in the same namespace and share common types.
+                var parentModelName = modelNode["parent-base-name"] != null ? modelNode["parent-base-name"].ToString() : null;                
+                if (parentModelName != null)
+                {
+                    try
+                    {
+                        config.ParentConfig = generatorConfigs.Single(c => c.BaseName.Equals(parentModelName));
+                        
+                    }
+                    catch (KeyNotFoundException exception)
+                    {
+                        // Note : the parent model should be defined in the manifest before being referred by a child model
+                        throw new KeyNotFoundException(
+                            string.Format("A parent model with name {0} is not defined in the manifest", parentModelName),
+                            exception); ;
+                    }
+                }
+
+                generatorConfigs.Add(config);
             }
+
+            return generatorConfigs;
         }
 
         /// <summary>

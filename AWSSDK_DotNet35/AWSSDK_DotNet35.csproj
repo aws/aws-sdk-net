@@ -312,6 +312,15 @@
     <Compile Include="Amazon.DataPipeline\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.DeviceFarm\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DeviceFarm\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.DeviceFarm\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.DirectConnect\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -330,26 +339,11 @@
     <Compile Include="Amazon.DirectoryService\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBClient.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBConfig.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBException.cs">
+    <Compile Include="Amazon.DynamoDBv2\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.DynamoDBv2\Conversion\*.cs" />
     <Compile Include="Amazon.DynamoDBv2\DocumentModel\*.cs" />
-    <Compile Include="Amazon.DynamoDBv2\DynamoDBAsync.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDBv2\IAmazonDynamoDB.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.DynamoDBv2\ServiceEnumerations.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.DynamoDBv2\Internal\DynamoDBRetryPolicy.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\*.cs">
       <SubType>Code</SubType>
