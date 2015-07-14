@@ -33,6 +33,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class GlobalSecondaryIndexDescription
     {
         private bool? _backfilling;
+        private string _indexArn;
         private string _indexName;
         private long? _indexSizeBytes;
         private IndexStatus _indexStatus;
@@ -67,6 +68,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetBackfilling()
         {
             return this._backfilling.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IndexArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies the index.
+        /// </para>
+        /// </summary>
+        public string IndexArn
+        {
+            get { return this._indexArn; }
+            set { this._indexArn = value; }
+        }
+
+        // Check to see if IndexArn property is set
+        internal bool IsSetIndexArn()
+        {
+            return this._indexArn != null;
         }
 
         /// <summary>

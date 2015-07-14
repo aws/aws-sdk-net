@@ -2,14 +2,14 @@
 <package> 
   <metadata> 
     <id>AWSSDK.DynamoDBv2</id>
-    <title>AWSSDK - Amazon DynamoDB</title>
+    <title>AWSSDK - Amazon DynamoDB Streams</title>
     <version>3.0.0.3-preview</version> 
     <authors>Amazon Web Services</authors>
-    <description>Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.</description> 
+    <description>Amazon DynamoDB Streams</description> 
     <language>en-US</language>
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
     <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
-    <tags>AWS Amazon cloud DynamoDB</tags>
+    <tags>AWS Amazon cloud DynamoDBStreams</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-wpa+netcore45">

@@ -8,15 +8,15 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.DynamoDBv2")]
 #if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon DynamoDB. Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon DynamoDB Streams. Amazon DynamoDB Streams")]
 #elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon DynamoDB. Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon DynamoDB Streams. Amazon DynamoDB Streams")]
 #elif (WIN_RT && WINDOWS_PHONE)
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Portable)- Amazon DynamoDB. Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Portable)- Amazon DynamoDB Streams. Amazon DynamoDB Streams")]
 #elif WIN_RT
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows RT) - Amazon DynamoDB. Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows RT) - Amazon DynamoDB Streams. Amazon DynamoDB Streams")]
 #elif WINDOWS_PHONE
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows Phone 8)- Amazon DynamoDB. Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows Phone 8)- Amazon DynamoDB Streams. Amazon DynamoDB Streams")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

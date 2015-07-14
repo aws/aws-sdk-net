@@ -244,7 +244,7 @@
 		{
             "active": true,
 
-            "model": "dynamodb",
+            "model": "dynamodb-",
             "namespace": "Amazon.DynamoDBv2",
             "base-name": "DynamoDB",
             "region-lookup-name": "dynamodb",
@@ -252,6 +252,18 @@
             "service-url": "https://dynamodb.us-east-1.amazonaws.com/",
             "max-retries": 10,
             "synopsis": "Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale."
+        },
+        {
+            "active": true,
+
+            "model": "dynamodbstreams",
+            "namespace": "Amazon.DynamoDBv2",
+            "base-name": "DynamoDBStreams",
+            "region-lookup-name": "streams.dynamodb",
+            "authentication-service-name": "dynamodb",
+            "service-url": "https://streams.dynamodb.us-east-1.amazonaws.com/",
+            "max-retries": 10,
+            "parent-base-name": "DynamoDB"
         },
         {
             "active": true,

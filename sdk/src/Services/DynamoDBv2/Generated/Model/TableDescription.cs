@@ -37,8 +37,12 @@ namespace Amazon.DynamoDBv2.Model
         private List<GlobalSecondaryIndexDescription> _globalSecondaryIndexes = new List<GlobalSecondaryIndexDescription>();
         private long? _itemCount;
         private List<KeySchemaElement> _keySchema = new List<KeySchemaElement>();
+        private string _latestStreamArn;
+        private string _latestStreamLabel;
         private List<LocalSecondaryIndexDescription> _localSecondaryIndexes = new List<LocalSecondaryIndexDescription>();
         private ProvisionedThroughputDescription _provisionedThroughput;
+        private StreamSpecification _streamSpecification;
+        private string _tableArn;
         private string _tableName;
         private long? _tableSizeBytes;
         private TableStatus _tableStatus;
@@ -263,6 +267,62 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LatestStreamArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this
+        /// table.
+        /// </para>
+        /// </summary>
+        public string LatestStreamArn
+        {
+            get { return this._latestStreamArn; }
+            set { this._latestStreamArn = value; }
+        }
+
+        // Check to see if LatestStreamArn property is set
+        internal bool IsSetLatestStreamArn()
+        {
+            return this._latestStreamArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestStreamLabel. 
+        /// <para>
+        /// A timestamp, in ISO 8601 format, for this stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because
+        /// it is possible that a stream from another table might have the same timestamp. However,
+        /// the combination of the following three elements is guaranteed to be unique:
+        /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// the AWS customer ID.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// the table name.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// the <i>StreamLabel</i>.
+        /// </para>
+        /// </li> </ul>
+        /// </summary>
+        public string LatestStreamLabel
+        {
+            get { return this._latestStreamLabel; }
+            set { this._latestStreamLabel = value; }
+        }
+
+        // Check to see if LatestStreamLabel property is set
+        internal bool IsSetLatestStreamLabel()
+        {
+            return this._latestStreamLabel != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LocalSecondaryIndexes. 
         /// <para>
         /// Represents one or more local secondary indexes on the table. Each index is scoped
@@ -359,6 +419,42 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetProvisionedThroughput()
         {
             return this._provisionedThroughput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamSpecification. 
+        /// <para>
+        /// The current DynamoDB Streams configuration for the table.
+        /// </para>
+        /// </summary>
+        public StreamSpecification StreamSpecification
+        {
+            get { return this._streamSpecification; }
+            set { this._streamSpecification = value; }
+        }
+
+        // Check to see if StreamSpecification property is set
+        internal bool IsSetStreamSpecification()
+        {
+            return this._streamSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TableArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies the table.
+        /// </para>
+        /// </summary>
+        public string TableArn
+        {
+            get { return this._tableArn; }
+            set { this._tableArn = value; }
+        }
+
+        // Check to see if TableArn property is set
+        internal bool IsSetTableArn()
+        {
+            return this._tableArn != null;
         }
 
         /// <summary>

@@ -70,6 +70,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Backfilling = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IndexArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IndexArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IndexName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -94,6 +94,18 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.KeySchema = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LatestStreamArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LatestStreamArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestStreamLabel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LatestStreamLabel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LocalSecondaryIndexes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<LocalSecondaryIndexDescription, LocalSecondaryIndexDescriptionUnmarshaller>(LocalSecondaryIndexDescriptionUnmarshaller.Instance);
@@ -104,6 +116,18 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ProvisionedThroughputDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StreamSpecification", targetDepth))
+                {
+                    var unmarshaller = StreamSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.StreamSpecification = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TableArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TableArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TableName", targetDepth))

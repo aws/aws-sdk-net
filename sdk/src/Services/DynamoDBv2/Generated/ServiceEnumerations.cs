@@ -608,6 +608,59 @@ namespace Amazon.DynamoDBv2
 
 
     /// <summary>
+    /// Constants used for properties of type StreamViewType.
+    /// </summary>
+    public class StreamViewType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KEYS_ONLY for StreamViewType
+        /// </summary>
+        public static readonly StreamViewType KEYS_ONLY = new StreamViewType("KEYS_ONLY");
+        /// <summary>
+        /// Constant NEW_AND_OLD_IMAGES for StreamViewType
+        /// </summary>
+        public static readonly StreamViewType NEW_AND_OLD_IMAGES = new StreamViewType("NEW_AND_OLD_IMAGES");
+        /// <summary>
+        /// Constant NEW_IMAGE for StreamViewType
+        /// </summary>
+        public static readonly StreamViewType NEW_IMAGE = new StreamViewType("NEW_IMAGE");
+        /// <summary>
+        /// Constant OLD_IMAGE for StreamViewType
+        /// </summary>
+        public static readonly StreamViewType OLD_IMAGE = new StreamViewType("OLD_IMAGE");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public StreamViewType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamViewType FindValue(string value)
+        {
+            return FindValue<StreamViewType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamViewType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TableStatus.
     /// </summary>
     public class TableStatus : ConstantClass
