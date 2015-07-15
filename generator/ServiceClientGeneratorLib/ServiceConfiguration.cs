@@ -136,6 +136,9 @@ namespace ServiceClientGenerator
         public string LockedApiVersion { get; set; }
         public string Synopsis { get; set; }
         public Dictionary<string, string> ServiceDependencies { get; set; }
+        public Dictionary<string, List<Dependency>> ReferenceDependencies { get; set; }
+        public Dictionary<string, List<Dependency>> NugetDependencies { get; set; }
+        public List<string> PclVariants { get; set; }
         public string ServiceVersion
         {
             get
@@ -157,5 +160,17 @@ namespace ServiceClientGenerator
         }
 
         public ServiceConfiguration ParentConfig { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("{0} - {1}", this.Namespace, this.ModelPath);
+        }
+    }
+
+    public class Dependency
+    {
+        public string Name { get; set; }
+        public string Version { get; set; }
+        public string HintPath { get; set; }
     }
 }

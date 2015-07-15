@@ -39,6 +39,7 @@
       <Directory>$(ProjectDir)/src/Services/cognitosync/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/configservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/datapipeline/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/devicefarm/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/directconnect/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/directoryservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/dynamodbv2/bin/Release/net35/</Directory>

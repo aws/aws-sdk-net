@@ -228,6 +228,7 @@ namespace Amazon.DeviceFarm
         
         #region  CreateDevicePool
 
+
         /// <summary>
         /// Creates a device pool.
         /// </summary>
@@ -276,6 +277,7 @@ namespace Amazon.DeviceFarm
         
         #region  CreateProject
 
+
         /// <summary>
         /// Creates a new project.
         /// </summary>
@@ -300,6 +302,7 @@ namespace Amazon.DeviceFarm
             request.Name = name;
             return CreateProject(request);
         }
+
 
         /// <summary>
         /// Creates a new project.
@@ -327,6 +330,35 @@ namespace Amazon.DeviceFarm
             return Invoke<CreateProjectRequest,CreateProjectResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Creates a new project.
+        /// </summary>
+        /// <param name="name">The project's name.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProject service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public Task<CreateProjectResponse> CreateProjectAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new CreateProjectRequest();
+            request.Name = name;
+            return CreateProjectAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateProject operation.
         /// </summary>
@@ -348,6 +380,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  CreateUpload
+
 
         /// <summary>
         /// Uploads an app or test scripts.
@@ -397,6 +430,7 @@ namespace Amazon.DeviceFarm
         
         #region  GetDevice
 
+
         /// <summary>
         /// Gets information about a unique device type.
         /// </summary>
@@ -421,6 +455,7 @@ namespace Amazon.DeviceFarm
             request.Arn = arn;
             return GetDevice(request);
         }
+
 
         /// <summary>
         /// Gets information about a unique device type.
@@ -448,6 +483,35 @@ namespace Amazon.DeviceFarm
             return Invoke<GetDeviceRequest,GetDeviceResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Gets information about a unique device type.
+        /// </summary>
+        /// <param name="arn">The device type's ARN.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDevice service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public Task<GetDeviceResponse> GetDeviceAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new GetDeviceRequest();
+            request.Arn = arn;
+            return GetDeviceAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetDevice operation.
         /// </summary>
@@ -469,6 +533,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  GetDevicePool
+
 
         /// <summary>
         /// Gets information about a device pool.
@@ -494,6 +559,7 @@ namespace Amazon.DeviceFarm
             request.Arn = arn;
             return GetDevicePool(request);
         }
+
 
         /// <summary>
         /// Gets information about a device pool.
@@ -521,6 +587,35 @@ namespace Amazon.DeviceFarm
             return Invoke<GetDevicePoolRequest,GetDevicePoolResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Gets information about a device pool.
+        /// </summary>
+        /// <param name="arn">The device pool's ARN.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDevicePool service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public Task<GetDevicePoolResponse> GetDevicePoolAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new GetDevicePoolRequest();
+            request.Arn = arn;
+            return GetDevicePoolAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetDevicePool operation.
         /// </summary>
@@ -542,6 +637,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  GetDevicePoolCompatibility
+
 
         /// <summary>
         /// Gets information about compatibility with a device pool.
@@ -591,6 +687,7 @@ namespace Amazon.DeviceFarm
         
         #region  GetJob
 
+
         /// <summary>
         /// Gets information about a job.
         /// </summary>
@@ -615,6 +712,7 @@ namespace Amazon.DeviceFarm
             request.Arn = arn;
             return GetJob(request);
         }
+
 
         /// <summary>
         /// Gets information about a job.
@@ -642,6 +740,35 @@ namespace Amazon.DeviceFarm
             return Invoke<GetJobRequest,GetJobResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Gets information about a job.
+        /// </summary>
+        /// <param name="arn">The job's ARN.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJob service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public Task<GetJobResponse> GetJobAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new GetJobRequest();
+            request.Arn = arn;
+            return GetJobAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetJob operation.
         /// </summary>
@@ -663,6 +790,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  GetProject
+
 
         /// <summary>
         /// Gets information about a project.
@@ -688,6 +816,7 @@ namespace Amazon.DeviceFarm
             request.Arn = arn;
             return GetProject(request);
         }
+
 
         /// <summary>
         /// Gets information about a project.
@@ -715,6 +844,35 @@ namespace Amazon.DeviceFarm
             return Invoke<GetProjectRequest,GetProjectResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Gets information about a project.
+        /// </summary>
+        /// <param name="arn">The project's ARN.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetProject service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public Task<GetProjectResponse> GetProjectAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new GetProjectRequest();
+            request.Arn = arn;
+            return GetProjectAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetProject operation.
         /// </summary>
@@ -736,6 +894,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  GetRun
+
 
         /// <summary>
         /// Gets information about a run.
@@ -761,6 +920,7 @@ namespace Amazon.DeviceFarm
             request.Arn = arn;
             return GetRun(request);
         }
+
 
         /// <summary>
         /// Gets information about a run.
@@ -788,6 +948,35 @@ namespace Amazon.DeviceFarm
             return Invoke<GetRunRequest,GetRunResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Gets information about a run.
+        /// </summary>
+        /// <param name="arn">The run's ARN.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRun service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public Task<GetRunResponse> GetRunAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new GetRunRequest();
+            request.Arn = arn;
+            return GetRunAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetRun operation.
         /// </summary>
@@ -809,6 +998,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  GetSuite
+
 
         /// <summary>
         /// Gets information about a suite.
@@ -834,6 +1024,7 @@ namespace Amazon.DeviceFarm
             request.Arn = arn;
             return GetSuite(request);
         }
+
 
         /// <summary>
         /// Gets information about a suite.
@@ -861,6 +1052,35 @@ namespace Amazon.DeviceFarm
             return Invoke<GetSuiteRequest,GetSuiteResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Gets information about a suite.
+        /// </summary>
+        /// <param name="arn">The suite's ARN.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSuite service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public Task<GetSuiteResponse> GetSuiteAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new GetSuiteRequest();
+            request.Arn = arn;
+            return GetSuiteAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetSuite operation.
         /// </summary>
@@ -882,6 +1102,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  GetTest
+
 
         /// <summary>
         /// Gets information about a test.
@@ -907,6 +1128,7 @@ namespace Amazon.DeviceFarm
             request.Arn = arn;
             return GetTest(request);
         }
+
 
         /// <summary>
         /// Gets information about a test.
@@ -934,6 +1156,35 @@ namespace Amazon.DeviceFarm
             return Invoke<GetTestRequest,GetTestResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Gets information about a test.
+        /// </summary>
+        /// <param name="arn">The test's ARN.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTest service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public Task<GetTestResponse> GetTestAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new GetTestRequest();
+            request.Arn = arn;
+            return GetTestAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetTest operation.
         /// </summary>
@@ -955,6 +1206,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  GetUpload
+
 
         /// <summary>
         /// Gets information about an upload.
@@ -980,6 +1232,7 @@ namespace Amazon.DeviceFarm
             request.Arn = arn;
             return GetUpload(request);
         }
+
 
         /// <summary>
         /// Gets information about an upload.
@@ -1007,6 +1260,35 @@ namespace Amazon.DeviceFarm
             return Invoke<GetUploadRequest,GetUploadResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Gets information about an upload.
+        /// </summary>
+        /// <param name="arn">The upload's ARN.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetUpload service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public Task<GetUploadResponse> GetUploadAsync(string arn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new GetUploadRequest();
+            request.Arn = arn;
+            return GetUploadAsync(request, cancellationToken);
+        }
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetUpload operation.
         /// </summary>
@@ -1028,6 +1310,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  ListArtifacts
+
 
         /// <summary>
         /// Gets information about artifacts.
@@ -1077,6 +1360,7 @@ namespace Amazon.DeviceFarm
         
         #region  ListDevicePools
 
+
         /// <summary>
         /// Gets information about device pools.
         /// </summary>
@@ -1124,6 +1408,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  ListDevices
+
 
         /// <summary>
         /// Gets information about unique device types.
@@ -1173,6 +1458,7 @@ namespace Amazon.DeviceFarm
         
         #region  ListJobs
 
+
         /// <summary>
         /// Gets information about jobs.
         /// </summary>
@@ -1220,6 +1506,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  ListProjects
+
 
         /// <summary>
         /// Gets information about projects.
@@ -1269,6 +1556,7 @@ namespace Amazon.DeviceFarm
         
         #region  ListRuns
 
+
         /// <summary>
         /// Gets information about runs.
         /// </summary>
@@ -1316,6 +1604,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  ListSamples
+
 
         /// <summary>
         /// Gets information about samples.
@@ -1365,6 +1654,7 @@ namespace Amazon.DeviceFarm
         
         #region  ListSuites
 
+
         /// <summary>
         /// Gets information about suites.
         /// </summary>
@@ -1412,6 +1702,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  ListTests
+
 
         /// <summary>
         /// Gets information about tests.
@@ -1461,6 +1752,7 @@ namespace Amazon.DeviceFarm
         
         #region  ListUniqueProblems
 
+
         /// <summary>
         /// Gets information about unique problems.
         /// </summary>
@@ -1509,6 +1801,7 @@ namespace Amazon.DeviceFarm
         
         #region  ListUploads
 
+
         /// <summary>
         /// Gets information about uploads.
         /// </summary>
@@ -1556,6 +1849,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  ScheduleRun
+
 
         /// <summary>
         /// Schedules a run.

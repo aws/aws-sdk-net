@@ -39,6 +39,7 @@
       <Directory>$(ProjectDir)/src/Services/cognitosync/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/configservice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/datapipeline/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/devicefarm/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/directconnect/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/directoryservice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/dynamodbv2/bin/Release/net45/</Directory>

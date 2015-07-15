@@ -313,6 +313,7 @@ namespace Amazon.DeviceFarm
             return CreateProject(request);
         }
 
+
         /// <summary>
         /// Creates a new project.
         /// </summary>
@@ -462,6 +463,7 @@ namespace Amazon.DeviceFarm
             return GetDevice(request);
         }
 
+
         /// <summary>
         /// Gets information about a unique device type.
         /// </summary>
@@ -548,6 +550,7 @@ namespace Amazon.DeviceFarm
             request.Arn = arn;
             return GetDevicePool(request);
         }
+
 
         /// <summary>
         /// Gets information about a device pool.
@@ -698,6 +701,7 @@ namespace Amazon.DeviceFarm
             return GetJob(request);
         }
 
+
         /// <summary>
         /// Gets information about a job.
         /// </summary>
@@ -784,6 +788,7 @@ namespace Amazon.DeviceFarm
             request.Arn = arn;
             return GetProject(request);
         }
+
 
         /// <summary>
         /// Gets information about a project.
@@ -872,6 +877,7 @@ namespace Amazon.DeviceFarm
             return GetRun(request);
         }
 
+
         /// <summary>
         /// Gets information about a run.
         /// </summary>
@@ -958,6 +964,7 @@ namespace Amazon.DeviceFarm
             request.Arn = arn;
             return GetSuite(request);
         }
+
 
         /// <summary>
         /// Gets information about a suite.
@@ -1046,6 +1053,7 @@ namespace Amazon.DeviceFarm
             return GetTest(request);
         }
 
+
         /// <summary>
         /// Gets information about a test.
         /// </summary>
@@ -1132,6 +1140,7 @@ namespace Amazon.DeviceFarm
             request.Arn = arn;
             return GetUpload(request);
         }
+
 
         /// <summary>
         /// Gets information about an upload.

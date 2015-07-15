@@ -311,6 +311,7 @@ namespace Amazon.DynamoDBv2
             return DescribeStream(request);
         }
 
+
         /// <summary>
         /// Returns information about a stream, including the current status of the stream, its
         /// Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB
@@ -443,6 +444,7 @@ namespace Amazon.DynamoDBv2
             request.ShardIterator = shardIterator;
             return GetRecords(request);
         }
+
 
         /// <summary>
         /// Retrieves the stream records from a given shard.

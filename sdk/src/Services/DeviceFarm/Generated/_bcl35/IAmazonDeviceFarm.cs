@@ -37,6 +37,7 @@ namespace Amazon.DeviceFarm
         
         #region  CreateDevicePool
 
+
         /// <summary>
         /// Creates a device pool.
         /// </summary>
@@ -84,6 +85,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  CreateProject
+
 
         /// <summary>
         /// Creates a new project.
@@ -153,6 +155,7 @@ namespace Amazon.DeviceFarm
         
         #region  CreateUpload
 
+
         /// <summary>
         /// Uploads an app or test scripts.
         /// </summary>
@@ -200,6 +203,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  GetDevice
+
 
         /// <summary>
         /// Gets information about a unique device type.
@@ -269,6 +273,7 @@ namespace Amazon.DeviceFarm
         
         #region  GetDevicePool
 
+
         /// <summary>
         /// Gets information about a device pool.
         /// </summary>
@@ -337,6 +342,7 @@ namespace Amazon.DeviceFarm
         
         #region  GetDevicePoolCompatibility
 
+
         /// <summary>
         /// Gets information about compatibility with a device pool.
         /// </summary>
@@ -384,6 +390,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  GetJob
+
 
         /// <summary>
         /// Gets information about a job.
@@ -453,6 +460,7 @@ namespace Amazon.DeviceFarm
         
         #region  GetProject
 
+
         /// <summary>
         /// Gets information about a project.
         /// </summary>
@@ -520,6 +528,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  GetRun
+
 
         /// <summary>
         /// Gets information about a run.
@@ -589,6 +598,7 @@ namespace Amazon.DeviceFarm
         
         #region  GetSuite
 
+
         /// <summary>
         /// Gets information about a suite.
         /// </summary>
@@ -656,6 +666,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  GetTest
+
 
         /// <summary>
         /// Gets information about a test.
@@ -725,6 +736,7 @@ namespace Amazon.DeviceFarm
         
         #region  GetUpload
 
+
         /// <summary>
         /// Gets information about an upload.
         /// </summary>
@@ -793,6 +805,7 @@ namespace Amazon.DeviceFarm
         
         #region  ListArtifacts
 
+
         /// <summary>
         /// Gets information about artifacts.
         /// </summary>
@@ -840,6 +853,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  ListDevicePools
+
 
         /// <summary>
         /// Gets information about device pools.
@@ -889,6 +903,7 @@ namespace Amazon.DeviceFarm
         
         #region  ListDevices
 
+
         /// <summary>
         /// Gets information about unique device types.
         /// </summary>
@@ -936,6 +951,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  ListJobs
+
 
         /// <summary>
         /// Gets information about jobs.
@@ -985,6 +1001,7 @@ namespace Amazon.DeviceFarm
         
         #region  ListProjects
 
+
         /// <summary>
         /// Gets information about projects.
         /// </summary>
@@ -1032,6 +1049,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  ListRuns
+
 
         /// <summary>
         /// Gets information about runs.
@@ -1081,6 +1099,7 @@ namespace Amazon.DeviceFarm
         
         #region  ListSamples
 
+
         /// <summary>
         /// Gets information about samples.
         /// </summary>
@@ -1128,6 +1147,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  ListSuites
+
 
         /// <summary>
         /// Gets information about suites.
@@ -1177,6 +1197,7 @@ namespace Amazon.DeviceFarm
         
         #region  ListTests
 
+
         /// <summary>
         /// Gets information about tests.
         /// </summary>
@@ -1224,6 +1245,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  ListUniqueProblems
+
 
         /// <summary>
         /// Gets information about unique problems.
@@ -1273,6 +1295,7 @@ namespace Amazon.DeviceFarm
         
         #region  ListUploads
 
+
         /// <summary>
         /// Gets information about uploads.
         /// </summary>
@@ -1320,6 +1343,7 @@ namespace Amazon.DeviceFarm
         #endregion
         
         #region  ScheduleRun
+
 
         /// <summary>
         /// Schedules a run.

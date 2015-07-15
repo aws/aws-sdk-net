@@ -80,6 +80,7 @@ namespace Amazon.DynamoDBv2
         
         #region  DescribeStream
 
+
         /// <summary>
         /// Returns information about a stream, including the current status of the stream, its
         /// Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB
@@ -165,6 +166,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  GetRecords
+
 
         /// <summary>
         /// Retrieves the stream records from a given shard.
@@ -308,6 +310,7 @@ namespace Amazon.DynamoDBv2
         
         #region  GetShardIterator
 
+
         /// <summary>
         /// Returns a shard iterator. A shard iterator provides information about how to retrieve
         /// the stream records from within a shard. Use the shard iterator in a subsequent <code>GetRecords</code>
@@ -372,6 +375,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  ListStreams
+
 
         /// <summary>
         /// Returns an array of stream ARNs associated with the current account and endpoint.

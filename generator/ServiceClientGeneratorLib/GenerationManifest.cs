@@ -40,6 +40,7 @@ namespace ServiceClientGenerator
             public const string DependencyNameKey = "name";
             public const string DependencyVersionKey = "version";
             public const string DependencyHintPathKey = "hint-path";
+            public const string ParentBaseNameKey = "parent-base-name";
         }
 
         abstract class ProjectsSectionKeys
@@ -229,7 +230,24 @@ namespace ServiceClientGenerator
                     var versionTokens = coreVersion.Split('.');
                     config.ServiceFileVersion = string.Format("{0}.{1}.0.0", versionTokens[0], versionTokens[1]);
                 }
-                //serviceVersions.Add(serviceName, versionText);
+
+                // The parent model for current model, if set, the client will be generated
+                // in the same namespace and share common types.
+                var parentModelName = modelNode[ModelsSectionKeys.ParentBaseNameKey] != null ? modelNode[ModelsSectionKeys.ParentBaseNameKey].ToString() : null;
+                if (parentModelName != null)
+                {
+                    try
+                    {
+                        config.ParentConfig = serviceConfigurations.Single(c => c.BaseName.Equals(parentModelName));
+                    }
+                    catch (KeyNotFoundException exception)
+                    {
+                        // Note : the parent model should be defined in the manifest before being referred by a child model
+                        throw new KeyNotFoundException(
+                            string.Format("A parent model with name {0} is not defined in the manifest", parentModelName),
+                            exception); ;
+                    }
+                }
 
                 serviceConfigurations.Add(config);
             }

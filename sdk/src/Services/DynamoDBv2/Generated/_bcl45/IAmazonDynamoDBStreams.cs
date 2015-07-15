@@ -82,6 +82,7 @@ namespace Amazon.DynamoDBv2
         
         #region  DescribeStream
 
+
         /// <summary>
         /// Returns information about a stream, including the current status of the stream, its
         /// Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB
@@ -140,6 +141,39 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         DescribeStreamResponse DescribeStream(DescribeStreamRequest request);
 
+
+        /// <summary>
+        /// Returns information about a stream, including the current status of the stream, its
+        /// Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB
+        /// table.
+        /// 
+        ///  <note>
+        /// <para>
+        /// You can call <i>DescribeStream</i> at a maximum rate of 10 times per second.
+        /// </para>
+        /// </note> 
+        /// <para>
+        /// Each shard in the stream has a <code>SequenceNumberRange</code> associated with it.
+        /// If the <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code>
+        /// but no <code>EndingSequenceNumber</code>, then the shard is still open (able to receive
+        /// more stream records). If both <code>StartingSequenceNumber</code> and <code>EndingSequenceNumber</code>
+        /// are present, the that shared is closed and can no longer receive more data.
+        /// </para>
+        /// </summary>
+        /// <param name="streamArn">The Amazon Resource Name (ARN) for the stream.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeStream service method, as returned by DynamoDBStreams.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent stream.
+        /// </exception>
+        Task<DescribeStreamResponse> DescribeStreamAsync(string streamArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStream operation.
         /// </summary>
@@ -154,6 +188,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  GetRecords
+
 
         /// <summary>
         /// Retrieves the stream records from a given shard.
@@ -269,6 +304,67 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         GetRecordsResponse GetRecords(GetRecordsRequest request);
 
+
+        /// <summary>
+        /// Retrieves the stream records from a given shard.
+        /// 
+        ///  
+        /// <para>
+        /// Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard
+        /// iterator specifies the position in the shard from which you want to start reading
+        /// stream records sequentially. If there are no stream records available in the portion
+        /// of the shard that the iterator points to, <code>GetRecords</code> returns an empty
+        /// list. Note that it might take multiple calls to get to a portion of the shard that
+        /// contains stream records.
+        /// </para>
+        ///  <note>
+        /// <para>
+        /// GetRecords can retrieve a maximum of 1 MB of data or 2000 stream records, whichever
+        /// comes first.
+        /// </para>
+        /// </note>
+        /// </summary>
+        /// <param name="shardIterator">A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRecords service method, as returned by DynamoDBStreams.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ExpiredIteratorException">
+        /// The shard iterator has expired and can no longer be used to retrieve stream records.
+        /// A shard iterator expires 15 minutes after it is retrieved using the <i>GetShardIterator</i>
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
+        /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent stream.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TrimmedDataAccessException">
+        /// The operation attempted to read past the oldest stream record in a shard.
+        /// 
+        ///  
+        /// <para>
+        /// In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose
+        /// age exceeds this limit are subject to removal (trimming) from the stream. You might
+        /// receive a TrimmedDataAccessException if:
+        /// </para>
+        ///  <ul> <li>You request a shard iterator with a sequence number older than the trim
+        /// point (24 hours).</li> <li>You obtain a shard iterator, but before you use the iterator
+        /// in a <i>GetRecords</i> request, a stream record in the shard exceeds the 24 hour period
+        /// and is trimmed. This causes the iterator to access a record that no longer exists.</li>
+        /// </ul>
+        /// </exception>
+        Task<GetRecordsResponse> GetRecordsAsync(string shardIterator, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetRecords operation.
         /// </summary>
@@ -283,6 +379,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  GetShardIterator
+
 
         /// <summary>
         /// Returns a shard iterator. A shard iterator provides information about how to retrieve
@@ -321,6 +418,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         GetShardIteratorResponse GetShardIterator(GetShardIteratorRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetShardIterator operation.
         /// </summary>
@@ -335,6 +433,7 @@ namespace Amazon.DynamoDBv2
         #endregion
         
         #region  ListStreams
+
 
         /// <summary>
         /// Returns an array of stream ARNs associated with the current account and endpoint.
@@ -357,6 +456,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         ListStreamsResponse ListStreams();
 
+
         /// <summary>
         /// Returns an array of stream ARNs associated with the current account and endpoint.
         /// If the <code>TableName</code> parameter is present, then <i>ListStreams</i> will return
@@ -378,6 +478,32 @@ namespace Amazon.DynamoDBv2
         /// The operation tried to access a nonexistent stream.
         /// </exception>
         ListStreamsResponse ListStreams(ListStreamsRequest request);
+
+
+        /// <summary>
+        /// Returns an array of stream ARNs associated with the current account and endpoint.
+        /// If the <code>TableName</code> parameter is present, then <i>ListStreams</i> will return
+        /// only the streams ARNs for that table.
+        /// 
+        ///  <note>
+        /// <para>
+        /// You can call <i>ListStreams</i> at a maximum rate of 5 times per second.
+        /// </para>
+        /// </note>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStreams service method, as returned by DynamoDBStreams.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent stream.
+        /// </exception>
+        Task<ListStreamsResponse> ListStreamsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListStreams operation.

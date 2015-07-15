@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+    #line 1 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class ServiceClients45 : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public override string TransformText()
         {
             
-            #line 6 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 6 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
     AddLicenseHeader();
 
@@ -39,14 +39,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\r\n\r\nusing System;\r\nusing System.Runtime.ExceptionServices;\r\nusing System.Threadin" +
                     "g;\r\nusing System.Threading.Tasks;\r\nusing System.Collections.Generic;\r\n\r\nusing ");
             
-            #line 17 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 17 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model;\r\nusing ");
             
-            #line 18 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 18 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -55,35 +55,35 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "time.Internal;\r\nusing Amazon.Runtime.Internal.Auth;\r\nusing Amazon.Runtime.Intern" +
                     "al.Transform;\r\n\r\nnamespace ");
             
-            #line 24 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 24 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n");
             
-            #line 26 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 26 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
     this.FormatServiceClientDocumentation(this.Config.ServiceModel.Documentation); 
             
             #line default
             #line hidden
             this.Write("    public partial class Amazon");
             
-            #line 27 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 27 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client : AmazonServiceClient, IAmazon");
             
-            #line 27 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 27 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("\r\n    {\r\n");
             
-            #line 29 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 29 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
     // Generates basic constructors for the service if enabled in the model
     if(this.Config.GenerateConstructors)
@@ -95,7 +95,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("        #region Constructors\r\n\r\n        /// <summary>\r\n        /// Constructs Ama" +
                     "zon");
             
-            #line 37 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 37 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -116,7 +116,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// </summary>
         public Amazon");
             
-            #line 51 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 51 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -124,14 +124,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Client()\r\n            : base(FallbackCredentialsFactory.GetCredentials(), new Ama" +
                     "zon");
             
-            #line 52 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 52 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Config()) { }\r\n\r\n        /// <summary>\r\n        /// Constructs Amazon");
             
-            #line 55 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 55 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -153,7 +153,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""region"">The region to connect.</param>
         public Amazon");
             
-            #line 70 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 70 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -161,7 +161,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Client(RegionEndpoint region)\r\n            : base(FallbackCredentialsFactory.GetC" +
                     "redentials(), new Amazon");
             
-            #line 71 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 71 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -169,7 +169,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config{RegionEndpoint = region}) { }\r\n\r\n        /// <summary>\r\n        /// Constr" +
                     "ucts Amazon");
             
-            #line 74 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 74 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -190,21 +190,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// </summary>
         /// <param name=""config"">The Amazon");
             
-            #line 88 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 88 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client Configuration Object</param>\r\n        public Amazon");
             
-            #line 89 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 89 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client(Amazon");
             
-            #line 89 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 89 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -212,7 +212,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config config)\r\n            : base(FallbackCredentialsFactory.GetCredentials(), c" +
                     "onfig) { }\r\n\r\n        /// <summary>\r\n        /// Constructs Amazon");
             
-            #line 93 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 93 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -220,14 +220,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Client with AWS Credentials\r\n        /// </summary>\r\n        /// <param name=\"cre" +
                     "dentials\">AWS Credentials</param>\r\n        public Amazon");
             
-            #line 96 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 96 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client(AWSCredentials credentials)\r\n            : this(credentials, new Amazon");
             
-            #line 97 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 97 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -235,7 +235,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config())\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n        /// Constructs " +
                     "Amazon");
             
-            #line 102 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 102 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -244,7 +244,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "dentials\">AWS Credentials</param>\r\n        /// <param name=\"region\">The region t" +
                     "o connect.</param>\r\n        public Amazon");
             
-            #line 106 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 106 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -252,7 +252,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Client(AWSCredentials credentials, RegionEndpoint region)\r\n            : this(cre" +
                     "dentials, new Amazon");
             
-            #line 107 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 107 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -260,14 +260,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config{RegionEndpoint = region})\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n" +
                     "        /// Constructs Amazon");
             
-            #line 112 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 112 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client with AWS Credentials and an\r\n        /// Amazon");
             
-            #line 113 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 113 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -276,21 +276,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "edentials\">AWS Credentials</param>\r\n        /// <param name=\"clientConfig\">The A" +
                     "mazon");
             
-            #line 116 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 116 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client Configuration Object</param>\r\n        public Amazon");
             
-            #line 117 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 117 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client(AWSCredentials credentials, Amazon");
             
-            #line 117 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 117 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -298,7 +298,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config clientConfig)\r\n            : base(credentials, clientConfig)\r\n        {\r\n " +
                     "       }\r\n\r\n        /// <summary>\r\n        /// Constructs Amazon");
             
-            #line 123 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 123 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -307,7 +307,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     " /// <param name=\"awsAccessKeyId\">AWS Access Key ID</param>\r\n        /// <param " +
                     "name=\"awsSecretAccessKey\">AWS Secret Access Key</param>\r\n        public Amazon");
             
-            #line 127 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 127 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -315,7 +315,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Client(string awsAccessKeyId, string awsSecretAccessKey)\r\n            : this(awsA" +
                     "ccessKeyId, awsSecretAccessKey, new Amazon");
             
-            #line 128 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 128 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -323,7 +323,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config())\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n        /// Constructs " +
                     "Amazon");
             
-            #line 133 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 133 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -335,7 +335,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""region"">The region to connect.</param>
         public Amazon");
             
-            #line 138 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 138 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -343,7 +343,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Client(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)\r\n" +
                     "            : this(awsAccessKeyId, awsSecretAccessKey, new Amazon");
             
-            #line 139 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 139 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -351,14 +351,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config() {RegionEndpoint=region})\r\n        {\r\n        }\r\n\r\n        /// <summary>\r" +
                     "\n        /// Constructs Amazon");
             
-            #line 144 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 144 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client with AWS Access Key ID, AWS Secret Key and an\r\n        /// Amazon");
             
-            #line 145 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 145 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -368,21 +368,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "ssKey\">AWS Secret Access Key</param>\r\n        /// <param name=\"clientConfig\">The" +
                     " Amazon");
             
-            #line 149 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 149 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client Configuration Object</param>\r\n        public Amazon");
             
-            #line 150 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 150 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client(string awsAccessKeyId, string awsSecretAccessKey, Amazon");
             
-            #line 150 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 150 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -391,7 +391,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "ntConfig)\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n        /// Constructs" +
                     " Amazon");
             
-            #line 156 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 156 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -403,7 +403,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""awsSessionToken"">AWS Session Token</param>
         public Amazon");
             
-            #line 161 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 161 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -412,7 +412,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "\n            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new Ama" +
                     "zon");
             
-            #line 162 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 162 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -420,7 +420,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config())\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n        /// Constructs " +
                     "Amazon");
             
-            #line 167 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 167 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -433,7 +433,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""region"">The region to connect.</param>
         public Amazon");
             
-            #line 173 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 173 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -442,7 +442,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "RegionEndpoint region)\r\n            : this(awsAccessKeyId, awsSecretAccessKey, a" +
                     "wsSessionToken, new Amazon");
             
-            #line 174 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 174 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -450,14 +450,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config{RegionEndpoint = region})\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n" +
                     "        /// Constructs Amazon");
             
-            #line 179 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 179 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client with AWS Access Key ID, AWS Secret Key and an\r\n        /// Amazon");
             
-            #line 180 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 180 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -469,14 +469,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""awsSessionToken"">AWS Session Token</param>
         /// <param name=""clientConfig"">The Amazon");
             
-            #line 185 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 185 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client Configuration Object</param>\r\n        public Amazon");
             
-            #line 186 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 186 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -484,7 +484,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Client(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, " +
                     "Amazon");
             
-            #line 186 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 186 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -492,7 +492,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config clientConfig)\r\n            : base(awsAccessKeyId, awsSecretAccessKey, awsS" +
                     "essionToken, clientConfig)\r\n        {\r\n        }\r\n\r\n        #endregion\r\n");
             
-            #line 192 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 192 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
     }
 
@@ -503,14 +503,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "ner for the service.\r\n        /// </summary>\r\n        protected override Abstrac" +
                     "tAWSSigner CreateSigner()\r\n        {\r\n            return new ");
             
-            #line 203 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 203 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.DetermineSigner(this.Config.ServiceModel.SignatureVersion, this.Config.BaseName)));
             
             #line default
             #line hidden
             this.Write("();\r\n        }    \r\n\r\n");
             
-            #line 206 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 206 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
     // Generates any overrides specified in the customizations file
         if(this.Config.ServiceModel.Customizations.PipelineOverride != null)
@@ -523,7 +523,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "\r\n        /// <param name=\"pipeline\"></param>\r\n        protected override void C" +
                     "ustomizeRuntimePipeline(RuntimePipeline pipeline)\r\n        {\r\n");
             
-            #line 217 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 217 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
             var pipelineOverrides = this.Config.ServiceModel.Customizations.PipelineOverride;
             foreach(var o in pipelineOverrides.Overrides )
@@ -536,14 +536,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            pipeline.");
             
-            #line 224 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 224 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(o.FormattedOverrideMethod));
             
             #line default
             #line hidden
             this.Write("();\r\n");
             
-            #line 225 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 225 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
                 }
                 else
@@ -554,28 +554,28 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            pipeline.");
             
-            #line 230 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 230 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(o.FormattedOverrideMethod));
             
             #line default
             #line hidden
             this.Write("(new ");
             
-            #line 230 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 230 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(o.NewType));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 230 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 230 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(o.ConstructorInput));
             
             #line default
             #line hidden
             this.Write("));\r\n");
             
-            #line 231 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 231 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
                 }
             }
@@ -585,7 +585,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        }\t\r\n");
             
-            #line 236 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 236 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
         }
 
@@ -609,7 +609,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
 
         ");
             
-            #line 254 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 254 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
         foreach(var operation in this.Config.ServiceModel.Operations)
         {
@@ -619,14 +619,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\r\n        #region  ");
             
-            #line 259 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 259 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n");
             
-            #line 261 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 261 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
         // Creates a version of the operation that takes no arguments and passes a request with no set members if specified in the customizations
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
@@ -636,7 +636,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line default
             #line hidden
             
-            #line 266 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 266 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
         this.FormatOperationDocumentationSync(operation, false);
 
@@ -645,35 +645,35 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        public ");
             
-            #line 269 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 269 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response ");
             
-            #line 269 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 269 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("()\r\n        {\r\n            return ");
             
-            #line 271 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 271 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(new ");
             
-            #line 271 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 271 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request());\r\n        }\r\n\r\n");
             
-            #line 274 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 274 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
         }
         // Adds any simple method forms specified in the customizations file
@@ -683,7 +683,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line default
             #line hidden
             
-            #line 279 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 279 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
         this.FormatOperationDocumentationSync(operation, true);
 
@@ -692,63 +692,63 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        ");
             
-            #line 282 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 282 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.IsInternal ? "internal" : "public"));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 282 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 282 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response ");
             
-            #line 282 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 282 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 282 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 282 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request request)\r\n        {\r\n            var marshaller = new ");
             
-            #line 284 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 284 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("RequestMarshaller();\r\n            var unmarshaller = ");
             
-            #line 285 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 285 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("ResponseUnmarshaller.Instance;\r\n\r\n            return Invoke<");
             
-            #line 287 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 287 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request,");
             
-            #line 287 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 287 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response>(request, marshaller, unmarshaller);\r\n        }\r\n\r\n");
             
-            #line 290 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 290 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
         // Creates a version of the operation that takes no arguments and passes a request with no set members if specified in the customizations
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
@@ -758,7 +758,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line default
             #line hidden
             
-            #line 295 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 295 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
         this.FormatOperationDocumentationAsync(operation, false);
 
@@ -767,14 +767,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        public Task<");
             
-            #line 298 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 298 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> ");
             
-            #line 298 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 298 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -782,21 +782,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Async(System.Threading.CancellationToken cancellationToken = default(Cancellation" +
                     "Token))\r\n        {\r\n            return ");
             
-            #line 300 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 300 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Async(new ");
             
-            #line 300 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 300 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request(), cancellationToken);\r\n        }\r\n");
             
-            #line 302 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 302 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
         }
 
@@ -810,28 +810,28 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        ");
             
-            #line 310 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 310 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.IsInternal ? "internal" : "public"));
             
             #line default
             #line hidden
             this.Write(" Task<");
             
-            #line 310 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 310 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> ");
             
-            #line 310 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 310 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Async(");
             
-            #line 310 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 310 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -839,28 +839,28 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Request request, System.Threading.CancellationToken cancellationToken = default(C" +
                     "ancellationToken))\r\n        {\r\n            var marshaller = new ");
             
-            #line 312 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 312 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("RequestMarshaller();\r\n            var unmarshaller = ");
             
-            #line 313 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 313 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("ResponseUnmarshaller.Instance;\r\n\r\n            return InvokeAsync<");
             
-            #line 315 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 315 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request,");
             
-            #line 315 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 315 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -868,7 +868,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Response>(request, marshaller, \r\n                unmarshaller, cancellationToken)" +
                     ";\r\n        }\r\n\r\n        #endregion\r\n        ");
             
-            #line 320 "C:\code\dotnet\v3\xamarin-CLEAN\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
+            #line 320 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
         }
         

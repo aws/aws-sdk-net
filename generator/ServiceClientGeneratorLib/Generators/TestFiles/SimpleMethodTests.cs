@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\GitBranches\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
+    #line 1 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class SimpleMethodTests : Generators.BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
         public override string TransformText()
         {
             
-            #line 6 "C:\codebase\GitBranches\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
+            #line 6 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
 
 	AddLicenseHeader();
 
@@ -40,14 +40,14 @@ namespace ServiceClientGenerator.Generators.TestFiles
                     "Linq;\r\nusing System.Text;\r\nusing Microsoft.VisualStudio.TestTools.UnitTesting;\r\n" +
                     "\r\nusing ");
             
-            #line 16 "C:\codebase\GitBranches\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
+            #line 16 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model;\r\nusing ");
             
-            #line 17 "C:\codebase\GitBranches\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
+            #line 17 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -55,7 +55,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write(";\r\n\r\nnamespace AWSSDK_DotNet35.UnitTests.TestTools\r\n{\r\n    [TestClass]\r\n    publi" +
                     "c class ");
             
-            #line 22 "C:\codebase\GitBranches\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
+            #line 22 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -63,21 +63,21 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("MethodCustomizationsTests\r\n    {\r\n        [TestMethod]\r\n\t\t[TestCategory(\"UnitTest" +
                     "\")]\r\n        [TestCategory(\"SimpleMethods\"), TestCategory(\"");
             
-            #line 26 "C:\codebase\GitBranches\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
+            #line 26 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("\")]\r\n        public void ");
             
-            #line 27 "C:\codebase\GitBranches\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
+            #line 27 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("SimpleMethodTests()\r\n        {\r\n");
             
-            #line 29 "C:\codebase\GitBranches\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
+            #line 29 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
 
         foreach(var operation in this.Config.ServiceModel.Operations)
         {
@@ -95,49 +95,49 @@ namespace ServiceClientGenerator.Generators.TestFiles
             #line hidden
             this.Write("            EnsureSimpleMethodExists(typeof(");
             
-            #line 41 "C:\codebase\GitBranches\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
+            #line 41 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Amazon");
             
-            #line 41 "C:\codebase\GitBranches\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
+            #line 41 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client), \"");
             
-            #line 41 "C:\codebase\GitBranches\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
+            #line 41 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\", new Type[] { ");
             
-            #line 41 "C:\codebase\GitBranches\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
+            #line 41 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
 foreach (var member in docMembers) { 
             
             #line default
             #line hidden
             this.Write("typeof(");
             
-            #line 41 "C:\codebase\GitBranches\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
+            #line 41 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
             
             #line default
             #line hidden
             this.Write("), ");
             
-            #line 41 "C:\codebase\GitBranches\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
+            #line 41 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
  }
             
             #line default
             #line hidden
             this.Write("});\r\n");
             
-            #line 42 "C:\codebase\GitBranches\Modularization\sdkv3\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
+            #line 42 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
 
                 }
             }
