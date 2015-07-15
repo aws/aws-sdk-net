@@ -260,6 +260,10 @@
       <Project>{FE7BDC8E-BFBB-4AD2-B7B5-28C8B5E0F5A5}</Project>
       <Name>AWSSDK.CodePipeline.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\DeviceFarm\AWSSDK.DeviceFarm.Net35.csproj">
+      <Project>{24F0A0C5-C22E-425E-8C9D-91694AA36190}</Project>
+      <Name>AWSSDK.DeviceFarm.Net35</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">

@@ -43,6 +43,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CognitoSync.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ConfigService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DataPipeline.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DeviceFarm.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DirectConnect.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DirectoryService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DynamoDBv2.dll" Analyze="True" AnalyzeAllChildren="True" />
