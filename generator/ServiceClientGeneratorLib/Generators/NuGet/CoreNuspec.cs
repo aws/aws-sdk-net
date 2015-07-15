@@ -36,46 +36,52 @@ namespace ServiceClientGenerator.Generators.NuGet
             
             #line default
             #line hidden
-            this.Write("-preview</version> \r\n    <authors>Amazon Web Services</authors>\r\n    <description" +
-                    ">The Amazon Web Services SDK for .NET - Core Runtime</description> \r\n    <langua" +
-                    "ge>en-US</language>\r\n    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUr" +
-                    "l>    \r\n    <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/<" +
-                    "/projectUrl>\r\n    <tags>AWS Amazon cloud</tags>\r\n    <iconUrl>http://media.amazo" +
-                    "nwebservices.com/aws_singlebox_01.png</iconUrl>\r\n    <dependencies>\r\n\t  <group t" +
-                    "argetFramework=\"net45\">\r\n      </group>\r\n      <group targetFramework=\"portable-" +
-                    "net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10\">\r\n        <dep" +
-                    "endency id=\"Microsoft.Net.Http\" version=\"2.2.29\" />\r\n\t\t<dependency id=\"PCLStorag" +
-                    "e\" version=\"1.0.2\" />\r\n        <dependency id=\"PCLCrypto\" version=\"1.0.2.15130\" " +
-                    "/>\r\n      </group>\r\n    </dependencies>\r\n  </metadata> \r\n  <files>\r\n\r\n    <file " +
-                    "src=\"..\\..\\nuget-content\\account-management.ps1\" target=\"tools\" />\r\n\r\n    <file " +
-                    "src=\".\\bin\\Release\\net35\\AWSSDK.Core.dll\" target=\"lib\\net35\" />\r\n    <file src=\"" +
-                    ".\\bin\\Release\\net35\\AWSSDK.Core.xml\" target=\"lib\\net35\" />\r\n\t<file src=\".\\bin\\Re" +
-                    "lease\\net35\\AWSSDK.Core.pdb\" target=\"lib\\net35\" />\r\n\r\n    <file src=\".\\bin\\Relea" +
-                    "se\\net45\\AWSSDK.Core.dll\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\ne" +
-                    "t45\\AWSSDK.Core.xml\" target=\"lib\\net45\" />\r\n\t<file src=\".\\bin\\Release\\net45\\AWSS" +
-                    "DK.Core.pdb\" target=\"lib\\net45\" />\r\n\r\n    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Co" +
-                    "re.dll\" target=\"lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios1" +
-                    "0+MonoTouch10\" />\r\n    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Core.xml\" target=\"lib" +
-                    "\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10\" />\r\n" +
-                    "\t<file src=\".\\bin\\Release\\pcl\\AWSSDK.Core.pdb\" target=\"lib\\portable-net45+netcor" +
-                    "e45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10\" />\r\n    \r\n    <file src=\"." +
-                    "\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.dll\" target=\"lib\\Xamarin.iOS10\" />\r\n    <" +
-                    "file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.xml\" target=\"lib\\Xamarin.iOS10" +
-                    "\" />\r\n    \r\n    <file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.dll\" target=\"" +
-                    "lib\\Xamarin.Mac20\" />\r\n    <file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.xm" +
-                    "l\" target=\"lib\\Xamarin.Mac20\" />\r\n    \r\n    <file src=\".\\bin\\Release\\monoandroid" +
-                    "\\AWSSDK.Core.dll\" target=\"lib\\monoandroid\" />\r\n    <file src=\".\\bin\\Release\\mono" +
-                    "android\\AWSSDK.Core.xml\" target=\"lib\\monoandroid\" />\r\n\t<file src=\".\\bin\\Release\\" +
-                    "monoandroid\\AWSSDK.Core.pdb\" target=\"lib\\monoandroid\" />\r\n    \r\n    <file src=\"." +
-                    "\\bin\\Release\\windows8\\AWSSDK.Core.dll\" target=\"lib\\windows8\" />\r\n    <file src=\"" +
-                    ".\\bin\\Release\\windows8\\AWSSDK.Core.xml\" target=\"lib\\windows8\" />\r\n\t<file src=\".\\" +
-                    "bin\\Release\\windows8\\AWSSDK.Core.pdb\" target=\"lib\\windows8\" />\r\n    \r\n    <file " +
-                    "src=\".\\bin\\Release\\wpa81\\AWSSDK.Core.dll\" target=\"lib\\wpa81\" />\r\n    <file src=\"" +
-                    ".\\bin\\Release\\wpa81\\AWSSDK.Core.xml\" target=\"lib\\wpa81\" />\r\n\t<file src=\".\\bin\\Re" +
-                    "lease\\wpa81\\AWSSDK.Core.pdb\" target=\"lib\\wpa81\" />\r\n\r\n\t<file src=\".\\bin\\Release\\" +
-                    "wp8\\AWSSDK.Core.dll\" target=\"lib\\wp8\" />\r\n    <file src=\".\\bin\\Release\\wp8\\AWSSD" +
-                    "K.Core.xml\" target=\"lib\\wp8\" />\r\n\t<file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.pdb\" " +
-                    "target=\"lib\\wp8\" />\r\n  </files>\r\n</package>");
+            
+            #line 12 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NuGetPreviewFlag"]));
+            
+            #line default
+            #line hidden
+            this.Write("</version> \r\n    <authors>Amazon Web Services</authors>\r\n    <description>The Ama" +
+                    "zon Web Services SDK for .NET - Core Runtime</description> \r\n    <language>en-US" +
+                    "</language>\r\n    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    \r\n" +
+                    "    <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</project" +
+                    "Url>\r\n    <tags>AWS Amazon cloud</tags>\r\n    <iconUrl>http://media.amazonwebserv" +
+                    "ices.com/aws_singlebox_01.png</iconUrl>\r\n    <dependencies>\r\n\t  <group targetFra" +
+                    "mework=\"net45\">\r\n      </group>\r\n      <group targetFramework=\"portable-net45+ne" +
+                    "tcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10\">\r\n        <dependency " +
+                    "id=\"Microsoft.Net.Http\" version=\"2.2.29\" />\r\n\t\t<dependency id=\"PCLStorage\" versi" +
+                    "on=\"1.0.2\" />\r\n        <dependency id=\"PCLCrypto\" version=\"1.0.2.15130\" />\r\n    " +
+                    "  </group>\r\n    </dependencies>\r\n  </metadata> \r\n  <files>\r\n\r\n    <file src=\"..\\" +
+                    "..\\nuget-content\\account-management.ps1\" target=\"tools\" />\r\n\r\n    <file src=\".\\b" +
+                    "in\\Release\\net35\\AWSSDK.Core.dll\" target=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Re" +
+                    "lease\\net35\\AWSSDK.Core.xml\" target=\"lib\\net35\" />\r\n\t<file src=\".\\bin\\Release\\ne" +
+                    "t35\\AWSSDK.Core.pdb\" target=\"lib\\net35\" />\r\n\r\n    <file src=\".\\bin\\Release\\net45" +
+                    "\\AWSSDK.Core.dll\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\AWSS" +
+                    "DK.Core.xml\" target=\"lib\\net45\" />\r\n\t<file src=\".\\bin\\Release\\net45\\AWSSDK.Core." +
+                    "pdb\" target=\"lib\\net45\" />\r\n\r\n    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Core.dll\" " +
+                    "target=\"lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTo" +
+                    "uch10\" />\r\n    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Core.xml\" target=\"lib\\portabl" +
+                    "e-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10\" />\r\n\t<file s" +
+                    "rc=\".\\bin\\Release\\pcl\\AWSSDK.Core.pdb\" target=\"lib\\portable-net45+netcore45+wpa8" +
+                    "1+wp8+MonoAndroid10+xamarinios10+MonoTouch10\" />\r\n    \r\n    <file src=\".\\bin\\Rel" +
+                    "ease\\Xamarin.iOS10\\AWSSDK.Core.dll\" target=\"lib\\Xamarin.iOS10\" />\r\n    <file src" +
+                    "=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.xml\" target=\"lib\\Xamarin.iOS10\" />\r\n  " +
+                    "  \r\n    <file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.dll\" target=\"lib\\Xama" +
+                    "rin.Mac20\" />\r\n    <file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.xml\" targe" +
+                    "t=\"lib\\Xamarin.Mac20\" />\r\n    \r\n    <file src=\".\\bin\\Release\\monoandroid\\AWSSDK." +
+                    "Core.dll\" target=\"lib\\monoandroid\" />\r\n    <file src=\".\\bin\\Release\\monoandroid\\" +
+                    "AWSSDK.Core.xml\" target=\"lib\\monoandroid\" />\r\n\t<file src=\".\\bin\\Release\\monoandr" +
+                    "oid\\AWSSDK.Core.pdb\" target=\"lib\\monoandroid\" />\r\n    \r\n    <file src=\".\\bin\\Rel" +
+                    "ease\\windows8\\AWSSDK.Core.dll\" target=\"lib\\windows8\" />\r\n    <file src=\".\\bin\\Re" +
+                    "lease\\windows8\\AWSSDK.Core.xml\" target=\"lib\\windows8\" />\r\n\t<file src=\".\\bin\\Rele" +
+                    "ase\\windows8\\AWSSDK.Core.pdb\" target=\"lib\\windows8\" />\r\n    \r\n    <file src=\".\\b" +
+                    "in\\Release\\wpa81\\AWSSDK.Core.dll\" target=\"lib\\wpa81\" />\r\n    <file src=\".\\bin\\Re" +
+                    "lease\\wpa81\\AWSSDK.Core.xml\" target=\"lib\\wpa81\" />\r\n\t<file src=\".\\bin\\Release\\wp" +
+                    "a81\\AWSSDK.Core.pdb\" target=\"lib\\wpa81\" />\r\n\r\n\t<file src=\".\\bin\\Release\\wp8\\AWSS" +
+                    "DK.Core.dll\" target=\"lib\\wp8\" />\r\n    <file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.x" +
+                    "ml\" target=\"lib\\wp8\" />\r\n\t<file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.pdb\" target=\"" +
+                    "lib\\wp8\" />\r\n  </files>\r\n</package>");
             return this.GenerationEnvironment.ToString();
         }
     }

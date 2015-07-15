@@ -31,6 +31,8 @@ namespace ServiceClientGenerator
                 { "Version", Manifest.CoreVersion },
                 { "FileVersion", Manifest.CoreFileVersion }
             };
+
+            session["NuGetPreviewFlag"] = manifest.DefaultToPreview ? GeneratorDriver.NuGetPreviewFlag : "";
         }
 
         public void Execute()

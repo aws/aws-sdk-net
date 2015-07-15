@@ -2,6 +2,7 @@
 {
     "ProductVersion" : "3.0.8.0",
     "CoreVersion"    : "3.0.0.6",
+    "DefaultToPreview" :  true,
     "ServiceVersions" : {
         "CloudHSM" : {
             "Version" : "3.0.0.5",
@@ -90,6 +91,12 @@
             }
         },
         "DataPipeline"      : {
+            "Version" : "3.0.0.5",
+            "Dependencies" : {
+                "Core" : "3.0.0.6"
+            }
+        },
+        "DeviceFarm"      : {
             "Version" : "3.0.0.5",
             "Dependencies" : {
                 "Core" : "3.0.0.6"

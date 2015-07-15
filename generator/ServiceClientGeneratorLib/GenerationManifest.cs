@@ -79,6 +79,12 @@ namespace ServiceClientGenerator
             }
         }
         public string CoreFileVersion { get; private set; }
+
+        public bool DefaultToPreview
+        {
+            get;
+            private set;
+        }
  
         /// <summary>
         /// Processes the control manifest to yield the set of services available to
@@ -96,6 +102,8 @@ namespace ServiceClientGenerator
             var coreVersionJson = versionsManifest["CoreVersion"];
             generationManifest.CoreFileVersion = coreVersionJson.ToString();
             var versions = versionsManifest["ServiceVersions"];
+
+            generationManifest.DefaultToPreview = (bool)versionsManifest["DefaultToPreview"];
 
             generationManifest.LoadServiceConfigurations(manifest, generationManifest.CoreFileVersion, versions, modelsFolder);
             generationManifest.LoadProjectConfigurations(manifest);
@@ -223,6 +231,8 @@ namespace ServiceClientGenerator
 
                     var versionText = versionInfoJson["Version"].ToString();
                     config.ServiceFileVersion = versionText;
+
+                    config.InPreview = versionInfoJson["InPreview"] != null ? (bool)versionInfoJson["InPreview"] : this.DefaultToPreview;
                 }
                 else
                 {
