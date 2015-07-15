@@ -178,6 +178,8 @@ namespace ServiceClientGenerator
                 }
 
                 GenerateProjectFile(projectFileConfiguration, projectConfigurationData, templateSession, serviceFilesRoot, projectFilename);
+
+                GenerateDnxProjectFiles(serviceFilesRoot, serviceConfiguration, assemblyName);
             }
         }
 
@@ -213,6 +215,51 @@ namespace ServiceClientGenerator
 
             GeneratorDriver.WriteFile(serviceFilesRoot, string.Empty, projectFilename, generatedContent);
             projectConfiguration.ConfigurationPlatforms = projectFileConfiguration.Configurations;
+        }
+
+        private void GenerateDnxProjectFiles(string serviceFilesRoot, ServiceConfiguration serviceConfiguration, string assemblyName)
+        {
+            var projectFilename = string.Concat(assemblyName, ".Dnx.xproj");
+            string projectGuid;
+            if (File.Exists(Path.Combine(serviceFilesRoot, projectFilename)))
+            {
+                Console.WriteLine("...updating existing project file {0}", projectFilename);
+                var projectPath = Path.Combine(serviceFilesRoot, projectFilename);
+                projectGuid = GetProjectGuid(projectPath);
+            }
+            else
+            {
+                projectGuid = NewProjectGuid;
+                Console.WriteLine("...creating project file {0}", projectFilename);
+            }
+
+
+            {
+                var templateSession = new Dictionary<string, object>();
+                templateSession["RootNamespace"] = serviceConfiguration.Namespace;
+                templateSession["AssemblyName"] = assemblyName;
+                templateSession["ProjectGuid"] = projectGuid;
+
+                DnxProjectFile projectFileTemplate = new DnxProjectFile();
+                projectFileTemplate.Session = templateSession;
+                var content = projectFileTemplate.TransformText();
+
+                GeneratorDriver.WriteFile(serviceFilesRoot, string.Empty, projectFilename, content);
+            }
+
+            {
+                var templateSession = new Dictionary<string, object>();
+
+                // TODO: add dependency information
+
+                var projectJsonTemplate = new DnxProjectJson();
+                projectJsonTemplate.Session = templateSession;
+
+                var content = projectJsonTemplate.TransformText();
+
+                GeneratorDriver.WriteFile(serviceFilesRoot, string.Empty, "project.json", content);
+            }
+
         }
 
         /// <summary>
@@ -389,7 +436,15 @@ namespace ServiceClientGenerator
             var xdoc = new XmlDocument();
             xdoc.Load(projectPath);
             var propertyGroups = xdoc.GetElementsByTagName("PropertyGroup");
-            var element = ((XmlElement)propertyGroups[0]).GetElementsByTagName("ProjectGuid")[0];
+
+            int propertyGroupIndex;
+            if (string.Equals(Path.GetExtension(projectPath), ".xproj", StringComparison.CurrentCultureIgnoreCase))
+                propertyGroupIndex = 1;
+            else
+                propertyGroupIndex = 0;
+
+            var element = ((XmlElement)propertyGroups[propertyGroupIndex]).GetElementsByTagName("ProjectGuid")[0];
+
             if (element == null)
                 throw new ApplicationException("Failed to find project guid for existing project: " + projectPath);
 

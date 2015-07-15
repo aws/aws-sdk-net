@@ -21,6 +21,7 @@ namespace ServiceClientGenerator
         {
             public const string Net35 = "Net35";
             public const string Net45 = "Net45";
+            public const string Dnx = "Dnx";
             public const string Win8 = "Win8";
             public const string WinPhone81 = "WinPhone81";
             public const string WinPhoneSilverlight8 = "WinPhoneSilverlight8";
@@ -103,6 +104,8 @@ namespace ServiceClientGenerator
                     GetProjectConfig(ProjectTypes.WinPhoneSilverlight8)
             });
 
+            GenerateDnxSolution();
+
             // Include solutions that Travis CI can build
             GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net35), false, "AWSSDK.Net35.Travis.sln");
             GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net45), false, "AWSSDK.Net45.Travis.sln");
@@ -121,7 +124,7 @@ namespace ServiceClientGenerator
         /// </summary>
         private void ScanForExistingProjects()
         {
-            const string awssdkProjectNamePattern = "AWSSDK.*.csproj";
+            const string awssdkProjectNamePattern = "AWSSDK.*.*proj";
 
             var foldersToProcess = new[]
             {
@@ -207,6 +210,7 @@ namespace ServiceClientGenerator
 
                 case ProjectTypes.Net35:
                 case ProjectTypes.Net45:
+                case ProjectTypes.Dnx:
                 case ProjectTypes.PCL:
                 case ProjectTypes.Android:
                 case ProjectTypes.IOS:
@@ -383,6 +387,41 @@ namespace ServiceClientGenerator
             var generator = new SolutionFileGenerator { Session = session };
             var content = generator.TransformText();            
             GeneratorDriver.WriteFile(Options.SdkRootFolder, null, solutionFileName, content, true, false);
+        }
+
+
+        private void GenerateDnxSolution()
+        {
+            var sdkSourceFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.SourceSubFoldername);
+            var session = new Dictionary<string, object>();
+
+            var coreProjectsRoot = Path.Combine(sdkSourceFolder, GeneratorDriver.CoreSubFoldername);
+            var coreProjects = new List<Project>() { CoreProjectFromFile(Path.Combine(coreProjectsRoot, "AWSSDK.Core.Dnx.xproj")) };
+            session["CoreProjects"] = coreProjects;
+
+            var buildConfigurations = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var solutionProjects = new Dictionary<string, ProjectFileCreator.ProjectConfigurationData>();
+
+            var serviceSolutionFolders = new List<ServiceSolutionFolder>();
+            var serviceProjectsRoot = Path.Combine(sdkSourceFolder, GeneratorDriver.ServicesSubFoldername);
+            foreach (var servicePath in Directory.GetDirectories(serviceProjectsRoot))
+            {
+                var di = new DirectoryInfo(servicePath);
+                var folder = ServiceSolutionFolderFromPath(di.Name);
+
+                foreach (var projectFile in Directory.GetFiles(servicePath, "*Dnx.xproj", SearchOption.TopDirectoryOnly))
+                {
+                    folder.Projects.Add(ServiceProjectFromFile(di.Name, projectFile));
+                    SelectProjectAndConfigurationsForSolution(projectFile, solutionProjects, buildConfigurations);
+                }
+
+                serviceSolutionFolders.Add(folder);
+            }
+            session["ServiceSolutionFolders"] = serviceSolutionFolders;
+
+            var generator = new DnxSolutionFile() { Session = session };
+            var content = generator.TransformText();
+            GeneratorDriver.WriteFile(Options.SdkRootFolder, null, "AWSSDK.DnxCore.sln", content, true, false);
         }
 
         private void GeneratePlatformSpecificSolution(ProjectFileConfiguration projectConfig, bool includeTests, string solutionFileName = null)

@@ -53,6 +53,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AndroidProjectFile.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generators\ProjectFiles\DnxProjectFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DnxProjectFile.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\ProjectFiles\DnxProjectJson.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DnxProjectJson.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\ProjectFiles\DnxSolutionFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DnxSolutionFile.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generators\ProjectFiles\IOSProjectFile.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -516,6 +531,20 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Generators\ProjectFiles\DnxProjectFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DnxProjectFile.cs</LastGenOutput>
+    </Content>
+    <Content Include="Generators\ProjectFiles\DnxProjectJson.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DnxProjectJson.cs</LastGenOutput>
+    </Content>
+    <Content Include="Generators\ProjectFiles\DnxSolutionFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DnxSolutionFile.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
