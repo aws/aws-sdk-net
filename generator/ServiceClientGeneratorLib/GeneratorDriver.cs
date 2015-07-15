@@ -657,17 +657,20 @@ namespace ServiceClientGenerator
                 {
                     var service = kvp.Key;
                     var version = kvp.Value;
-                    var dependentService = GenerationManifest.ServiceConfigurations.FirstOrDefault(x => string.Equals(x.BaseName, service, StringComparison.InvariantCultureIgnoreCase));
+                    var dependentService = GenerationManifest.ServiceConfigurations.FirstOrDefault(x => string.Equals(x.Namespace, "Amazon." + service, StringComparison.InvariantCultureIgnoreCase));
 
-                    string previewFlag = "";
-                    if(dependentService != null)
+                    string previewFlag;
+                    if(dependentService != null && dependentService.InPreview)
                     {
-                        if (dependentService.InPreview)
-                            previewFlag = GeneratorDriver.NuGetPreviewFlag;
+                        previewFlag = GeneratorDriver.NuGetPreviewFlag;
                     }
                     else if(string.Equals(service, "Core", StringComparison.InvariantCultureIgnoreCase) && GenerationManifest.DefaultToPreview)
                     {
                         previewFlag = GeneratorDriver.NuGetPreviewFlag;
+                    }
+                    else
+                    {
+                        previewFlag = string.Empty;
                     }
 
                     var verTokens = version.Split('.');
