@@ -354,7 +354,7 @@ namespace SDKDocGenerator.Writers
                         break;
                 }
 
-                sb.AppendFormat("{0}", parameterTypeName);
+                sb.AppendFormat("{0}{1}", info.IsOut ? "out " : "", parameterTypeName);
             }
             return sb.ToString();
         }
