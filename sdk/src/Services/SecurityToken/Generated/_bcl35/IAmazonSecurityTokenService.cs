@@ -97,6 +97,7 @@ namespace Amazon.SecurityToken
         
         #region  AssumeRole
 
+
         /// <summary>
         /// Returns a set of temporary security credentials (consisting of an access key ID, a
         /// secret access key, and a security token) that you can use to access AWS resources
@@ -237,6 +238,7 @@ namespace Amazon.SecurityToken
         
         #region  AssumeRoleWithSAML
 
+
         /// <summary>
         /// Returns a set of temporary security credentials for users who have been authenticated
         /// via a SAML authentication response. This operation provides a mechanism for tying
@@ -353,6 +355,7 @@ namespace Amazon.SecurityToken
         #endregion
         
         #region  AssumeRoleWithWebIdentity
+
 
         /// <summary>
         /// Returns a set of temporary security credentials for users who have been authenticated
@@ -503,6 +506,7 @@ namespace Amazon.SecurityToken
         
         #region  DecodeAuthorizationMessage
 
+
         /// <summary>
         /// Decodes additional information about the authorization status of a request from an
         /// encoded message returned in response to an AWS request. 
@@ -570,6 +574,7 @@ namespace Amazon.SecurityToken
         #endregion
         
         #region  GetFederationToken
+
 
         /// <summary>
         /// Returns a set of temporary security credentials (consisting of an access key ID, a
@@ -693,6 +698,7 @@ namespace Amazon.SecurityToken
         #endregion
         
         #region  GetSessionToken
+
 
         /// <summary>
         /// Returns a set of temporary credentials for an AWS account or IAM user. The credentials

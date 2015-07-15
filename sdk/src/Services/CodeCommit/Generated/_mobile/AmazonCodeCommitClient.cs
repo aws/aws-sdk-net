@@ -158,6 +158,9 @@ namespace Amazon.CodeCommit
 
         #region Overrides
 
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new AWS4Signer();
@@ -168,6 +171,9 @@ namespace Amazon.CodeCommit
 
         #region Dispose
 
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -185,6 +191,7 @@ namespace Amazon.CodeCommit
 
             return Invoke<BatchGetRepositoriesRequest,BatchGetRepositoriesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the BatchGetRepositories operation.
@@ -216,6 +223,7 @@ namespace Amazon.CodeCommit
             return Invoke<CreateBranchRequest,CreateBranchResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateBranch operation.
         /// </summary>
@@ -245,6 +253,7 @@ namespace Amazon.CodeCommit
 
             return Invoke<CreateRepositoryRequest,CreateRepositoryResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateRepository operation.
@@ -276,6 +285,7 @@ namespace Amazon.CodeCommit
             return Invoke<DeleteRepositoryRequest,DeleteRepositoryResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRepository operation.
         /// </summary>
@@ -305,6 +315,7 @@ namespace Amazon.CodeCommit
 
             return Invoke<GetBranchRequest,GetBranchResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBranch operation.
@@ -336,6 +347,7 @@ namespace Amazon.CodeCommit
             return Invoke<GetRepositoryRequest,GetRepositoryResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetRepository operation.
         /// </summary>
@@ -365,6 +377,7 @@ namespace Amazon.CodeCommit
 
             return Invoke<ListBranchesRequest,ListBranchesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListBranches operation.
@@ -396,6 +409,7 @@ namespace Amazon.CodeCommit
             return Invoke<ListRepositoriesRequest,ListRepositoriesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListRepositories operation.
         /// </summary>
@@ -425,6 +439,7 @@ namespace Amazon.CodeCommit
 
             return Invoke<UpdateDefaultBranchRequest,UpdateDefaultBranchResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDefaultBranch operation.
@@ -456,6 +471,7 @@ namespace Amazon.CodeCommit
             return Invoke<UpdateRepositoryDescriptionRequest,UpdateRepositoryDescriptionResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateRepositoryDescription operation.
         /// </summary>
@@ -485,6 +501,7 @@ namespace Amazon.CodeCommit
 
             return Invoke<UpdateRepositoryNameRequest,UpdateRepositoryNameResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateRepositoryName operation.

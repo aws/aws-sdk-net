@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Core</id>
     <title>AWSSDK - Core Runtime</title>
-    <version>3.0.0.4-preview</version> 
+    <version>3.0.0.6-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>The Amazon Web Services SDK for .NET - Core Runtime</description> 
     <language>en-US</language>
@@ -12,10 +12,12 @@
     <tags>AWS Amazon cloud</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="portable-wpa+netcore45">
-        <dependency id="Microsoft.Net.Http" version="2.2.29" />
+      <group targetFramework="net45">
       </group>
-      <group>
+      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
+        <dependency id="Microsoft.Net.Http" version="2.2.29" />
+        <dependency id="PCLStorage" version="1.0.2" />
+        <dependency id="PCLCrypto" version="1.0.2.15130" />
       </group>
     </dependencies>
   </metadata> 
@@ -25,11 +27,36 @@
 
     <file src=".\bin\Release\net35\AWSSDK.Core.dll" target="lib\net35" />
     <file src=".\bin\Release\net35\AWSSDK.Core.xml" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.Core.pdb" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.Core.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.Core.xml" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.Core.pdb" target="lib\net45" />
+
+    <file src=".\bin\Release\pcl\AWSSDK.Core.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.Core.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.Core.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
     
-    <file src=".\bin\Release\portable\AWSSDK.Core.dll" target="lib\portable-wpa+netcore45" />
-    <file src=".\bin\Release\portable\AWSSDK.Core.xml" target="lib\portable-wpa+netcore45" />
+    <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.Core.dll" target="lib\Xamarin.iOS10" />
+    <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.Core.xml" target="lib\Xamarin.iOS10" />
+    
+    <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.Core.dll" target="lib\Xamarin.Mac20" />
+    <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.Core.xml" target="lib\Xamarin.Mac20" />
+    
+    <file src=".\bin\Release\monoandroid\AWSSDK.Core.dll" target="lib\monoandroid" />
+    <file src=".\bin\Release\monoandroid\AWSSDK.Core.xml" target="lib\monoandroid" />
+    <file src=".\bin\Release\monoandroid\AWSSDK.Core.pdb" target="lib\monoandroid" />
+    
+    <file src=".\bin\Release\windows8\AWSSDK.Core.dll" target="lib\windows8" />
+    <file src=".\bin\Release\windows8\AWSSDK.Core.xml" target="lib\windows8" />
+    <file src=".\bin\Release\windows8\AWSSDK.Core.pdb" target="lib\windows8" />
+    
+    <file src=".\bin\Release\wpa81\AWSSDK.Core.dll" target="lib\wpa81" />
+    <file src=".\bin\Release\wpa81\AWSSDK.Core.xml" target="lib\wpa81" />
+    <file src=".\bin\Release\wpa81\AWSSDK.Core.pdb" target="lib\wpa81" />
+
+    <file src=".\bin\Release\wp8\AWSSDK.Core.dll" target="lib\wp8" />
+    <file src=".\bin\Release\wp8\AWSSDK.Core.xml" target="lib\wp8" />
+    <file src=".\bin\Release\wp8\AWSSDK.Core.pdb" target="lib\wp8" />
   </files>
 </package>

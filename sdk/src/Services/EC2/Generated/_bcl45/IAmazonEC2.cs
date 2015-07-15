@@ -43,6 +43,7 @@ namespace Amazon.EC2
         
         #region  AcceptVpcPeeringConnection
 
+
         /// <summary>
         /// Accept a VPC peering connection request. To accept a request, the VPC peering connection
         /// must be in the <code>pending-acceptance</code> state, and you must be the owner of
@@ -53,6 +54,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the AcceptVpcPeeringConnection service method, as returned by EC2.</returns>
         AcceptVpcPeeringConnectionResponse AcceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AcceptVpcPeeringConnection operation.
@@ -69,6 +71,7 @@ namespace Amazon.EC2
         
         #region  AllocateAddress
 
+
         /// <summary>
         /// Acquires an Elastic IP address.
         /// 
@@ -82,6 +85,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the AllocateAddress service method, as returned by EC2.</returns>
         AllocateAddressResponse AllocateAddress();
+
 
         /// <summary>
         /// Acquires an Elastic IP address.
@@ -98,6 +102,25 @@ namespace Amazon.EC2
         /// <returns>The response from the AllocateAddress service method, as returned by EC2.</returns>
         AllocateAddressResponse AllocateAddress(AllocateAddressRequest request);
 
+
+        /// <summary>
+        /// Acquires an Elastic IP address.
+        /// 
+        ///  
+        /// <para>
+        /// An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. For
+        /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AllocateAddress service method, as returned by EC2.</returns>
+        Task<AllocateAddressResponse> AllocateAddressAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the AllocateAddress operation.
         /// </summary>
@@ -112,6 +135,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  AssignPrivateIpAddresses
+
 
         /// <summary>
         /// Assigns one or more secondary private IP addresses to the specified network interface.
@@ -133,6 +157,7 @@ namespace Amazon.EC2
         /// <returns>The response from the AssignPrivateIpAddresses service method, as returned by EC2.</returns>
         AssignPrivateIpAddressesResponse AssignPrivateIpAddresses(AssignPrivateIpAddressesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AssignPrivateIpAddresses operation.
         /// </summary>
@@ -147,6 +172,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  AssociateAddress
+
 
         /// <summary>
         /// Associates an Elastic IP address with an instance or a network interface.
@@ -181,6 +207,7 @@ namespace Amazon.EC2
         /// <returns>The response from the AssociateAddress service method, as returned by EC2.</returns>
         AssociateAddressResponse AssociateAddress(AssociateAddressRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AssociateAddress operation.
         /// </summary>
@@ -195,6 +222,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  AssociateDhcpOptions
+
 
         /// <summary>
         /// Associates a set of DHCP options (that you've previously created) with the specified
@@ -219,6 +247,7 @@ namespace Amazon.EC2
         /// <returns>The response from the AssociateDhcpOptions service method, as returned by EC2.</returns>
         AssociateDhcpOptionsResponse AssociateDhcpOptions(AssociateDhcpOptionsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AssociateDhcpOptions operation.
         /// </summary>
@@ -233,6 +262,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  AssociateRouteTable
+
 
         /// <summary>
         /// Associates a subnet with a route table. The subnet and route table must be in the
@@ -252,6 +282,7 @@ namespace Amazon.EC2
         /// <returns>The response from the AssociateRouteTable service method, as returned by EC2.</returns>
         AssociateRouteTableResponse AssociateRouteTable(AssociateRouteTableRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AssociateRouteTable operation.
         /// </summary>
@@ -266,6 +297,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  AttachClassicLinkVpc
+
 
         /// <summary>
         /// Links an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of
@@ -290,6 +322,7 @@ namespace Amazon.EC2
         /// <returns>The response from the AttachClassicLinkVpc service method, as returned by EC2.</returns>
         AttachClassicLinkVpcResponse AttachClassicLinkVpc(AttachClassicLinkVpcRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AttachClassicLinkVpc operation.
         /// </summary>
@@ -305,6 +338,7 @@ namespace Amazon.EC2
         
         #region  AttachInternetGateway
 
+
         /// <summary>
         /// Attaches an Internet gateway to a VPC, enabling connectivity between the Internet
         /// and the VPC. For more information about your VPC and Internet gateway, see the <a
@@ -315,6 +349,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the AttachInternetGateway service method, as returned by EC2.</returns>
         AttachInternetGatewayResponse AttachInternetGateway(AttachInternetGatewayRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachInternetGateway operation.
@@ -331,6 +366,7 @@ namespace Amazon.EC2
         
         #region  AttachNetworkInterface
 
+
         /// <summary>
         /// Attaches a network interface to an instance.
         /// </summary>
@@ -338,6 +374,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the AttachNetworkInterface service method, as returned by EC2.</returns>
         AttachNetworkInterfaceResponse AttachNetworkInterface(AttachNetworkInterfaceRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachNetworkInterface operation.
@@ -353,6 +390,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  AttachVolume
+
 
         /// <summary>
         /// Attaches an EBS volume to a running or stopped instance and exposes it to the instance
@@ -395,6 +433,7 @@ namespace Amazon.EC2
         /// <returns>The response from the AttachVolume service method, as returned by EC2.</returns>
         AttachVolumeResponse AttachVolume(AttachVolumeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AttachVolume operation.
         /// </summary>
@@ -410,6 +449,7 @@ namespace Amazon.EC2
         
         #region  AttachVpnGateway
 
+
         /// <summary>
         /// Attaches a virtual private gateway to a VPC. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
         /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
@@ -419,6 +459,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the AttachVpnGateway service method, as returned by EC2.</returns>
         AttachVpnGatewayResponse AttachVpnGateway(AttachVpnGatewayRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AttachVpnGateway operation.
@@ -434,6 +475,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  AuthorizeSecurityGroupEgress
+
 
         /// <summary>
         /// Adds one or more egress rules to a security group for use with a VPC. Specifically,
@@ -469,6 +511,7 @@ namespace Amazon.EC2
         /// <returns>The response from the AuthorizeSecurityGroupEgress service method, as returned by EC2.</returns>
         AuthorizeSecurityGroupEgressResponse AuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeSecurityGroupEgress operation.
         /// </summary>
@@ -483,6 +526,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  AuthorizeSecurityGroupIngress
+
 
         /// <summary>
         /// Adds one or more ingress rules to a security group.
@@ -520,6 +564,7 @@ namespace Amazon.EC2
         /// <returns>The response from the AuthorizeSecurityGroupIngress service method, as returned by EC2.</returns>
         AuthorizeSecurityGroupIngressResponse AuthorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeSecurityGroupIngress operation.
         /// </summary>
@@ -534,6 +579,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  BundleInstance
+
 
         /// <summary>
         /// Bundles an Amazon instance store-backed Windows instance.
@@ -559,6 +605,7 @@ namespace Amazon.EC2
         /// <returns>The response from the BundleInstance service method, as returned by EC2.</returns>
         BundleInstanceResponse BundleInstance(BundleInstanceRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the BundleInstance operation.
         /// </summary>
@@ -574,6 +621,7 @@ namespace Amazon.EC2
         
         #region  CancelBundleTask
 
+
         /// <summary>
         /// Cancels a bundling operation for an instance store-backed Windows instance.
         /// </summary>
@@ -581,6 +629,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CancelBundleTask service method, as returned by EC2.</returns>
         CancelBundleTaskResponse CancelBundleTask(CancelBundleTaskRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelBundleTask operation.
@@ -596,6 +645,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CancelConversionTask
+
 
         /// <summary>
         /// Cancels an active conversion task. The task can be the import of an instance or volume.
@@ -615,6 +665,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CancelConversionTask service method, as returned by EC2.</returns>
         CancelConversionTaskResponse CancelConversionTask(CancelConversionTaskRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CancelConversionTask operation.
         /// </summary>
@@ -630,6 +681,7 @@ namespace Amazon.EC2
         
         #region  CancelExportTask
 
+
         /// <summary>
         /// Cancels an active export task. The request removes all artifacts of the export, including
         /// any partially-created Amazon S3 objects. If the export task is complete or is in the
@@ -639,6 +691,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CancelExportTask service method, as returned by EC2.</returns>
         CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelExportTask operation.
@@ -655,6 +708,7 @@ namespace Amazon.EC2
         
         #region  CancelImportTask
 
+
         /// <summary>
         /// Cancels an in-process import virtual machine or import snapshot task.
         /// </summary>
@@ -662,6 +716,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CancelImportTask service method, as returned by EC2.</returns>
         CancelImportTaskResponse CancelImportTask(CancelImportTaskRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelImportTask operation.
@@ -678,6 +733,7 @@ namespace Amazon.EC2
         
         #region  CancelReservedInstancesListing
 
+
         /// <summary>
         /// Cancels the specified Reserved Instance listing in the Reserved Instance Marketplace.
         /// 
@@ -691,6 +747,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CancelReservedInstancesListing service method, as returned by EC2.</returns>
         CancelReservedInstancesListingResponse CancelReservedInstancesListing(CancelReservedInstancesListingRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelReservedInstancesListing operation.
@@ -707,6 +764,7 @@ namespace Amazon.EC2
         
         #region  CancelSpotFleetRequests
 
+
         /// <summary>
         /// Cancels the specified Spot fleet requests.
         /// </summary>
@@ -714,6 +772,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CancelSpotFleetRequests service method, as returned by EC2.</returns>
         CancelSpotFleetRequestsResponse CancelSpotFleetRequests(CancelSpotFleetRequestsRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelSpotFleetRequests operation.
@@ -729,6 +788,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CancelSpotInstanceRequests
+
 
         /// <summary>
         /// Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon
@@ -749,6 +809,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CancelSpotInstanceRequests service method, as returned by EC2.</returns>
         CancelSpotInstanceRequestsResponse CancelSpotInstanceRequests(CancelSpotInstanceRequestsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CancelSpotInstanceRequests operation.
         /// </summary>
@@ -764,6 +825,7 @@ namespace Amazon.EC2
         
         #region  ConfirmProductInstance
 
+
         /// <summary>
         /// Determines whether a product code is associated with an instance. This action can
         /// only be used by the owner of the product code. It is useful when a product code owner
@@ -773,6 +835,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ConfirmProductInstance service method, as returned by EC2.</returns>
         ConfirmProductInstanceResponse ConfirmProductInstance(ConfirmProductInstanceRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ConfirmProductInstance operation.
@@ -788,6 +851,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CopyImage
+
 
         /// <summary>
         /// Initiates the copy of an AMI from the specified source region to the current region.
@@ -805,6 +869,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CopyImage service method, as returned by EC2.</returns>
         CopyImageResponse CopyImage(CopyImageRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CopyImage operation.
         /// </summary>
@@ -819,6 +884,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CopySnapshot
+
 
         /// <summary>
         /// Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can
@@ -845,6 +911,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CopySnapshot service method, as returned by EC2.</returns>
         CopySnapshotResponse CopySnapshot(CopySnapshotRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CopySnapshot operation.
         /// </summary>
@@ -859,6 +926,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateCustomerGateway
+
 
         /// <summary>
         /// Provides information to AWS about your VPN customer gateway device. The customer gateway
@@ -901,6 +969,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateCustomerGateway service method, as returned by EC2.</returns>
         CreateCustomerGatewayResponse CreateCustomerGateway(CreateCustomerGatewayRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCustomerGateway operation.
         /// </summary>
@@ -915,6 +984,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateDhcpOptions
+
 
         /// <summary>
         /// Creates a set of DHCP options for your VPC. After creating the set, you must associate
@@ -955,6 +1025,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateDhcpOptions service method, as returned by EC2.</returns>
         CreateDhcpOptionsResponse CreateDhcpOptions(CreateDhcpOptionsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDhcpOptions operation.
         /// </summary>
@@ -969,6 +1040,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateFlowLogs
+
 
         /// <summary>
         /// Creates one or more flow logs to capture IP traffic for a specific network interface,
@@ -989,6 +1061,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateFlowLogs service method, as returned by EC2.</returns>
         CreateFlowLogsResponse CreateFlowLogs(CreateFlowLogsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateFlowLogs operation.
         /// </summary>
@@ -1003,6 +1076,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateImage
+
 
         /// <summary>
         /// Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is either
@@ -1026,6 +1100,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateImage service method, as returned by EC2.</returns>
         CreateImageResponse CreateImage(CreateImageRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateImage operation.
         /// </summary>
@@ -1040,6 +1115,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateInstanceExportTask
+
 
         /// <summary>
         /// Exports a running or stopped instance to an S3 bucket.
@@ -1056,6 +1132,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateInstanceExportTask service method, as returned by EC2.</returns>
         CreateInstanceExportTaskResponse CreateInstanceExportTask(CreateInstanceExportTaskRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInstanceExportTask operation.
         /// </summary>
@@ -1071,6 +1148,7 @@ namespace Amazon.EC2
         
         #region  CreateInternetGateway
 
+
         /// <summary>
         /// Creates an Internet gateway for use with a VPC. After creating the Internet gateway,
         /// you attach it to a VPC using <a>AttachInternetGateway</a>.
@@ -1084,6 +1162,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateInternetGateway service method, as returned by EC2.</returns>
         CreateInternetGatewayResponse CreateInternetGateway();
+
 
         /// <summary>
         /// Creates an Internet gateway for use with a VPC. After creating the Internet gateway,
@@ -1100,6 +1179,25 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateInternetGateway service method, as returned by EC2.</returns>
         CreateInternetGatewayResponse CreateInternetGateway(CreateInternetGatewayRequest request);
 
+
+        /// <summary>
+        /// Creates an Internet gateway for use with a VPC. After creating the Internet gateway,
+        /// you attach it to a VPC using <a>AttachInternetGateway</a>.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about your VPC and Internet gateway, see the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
+        /// Virtual Private Cloud User Guide</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateInternetGateway service method, as returned by EC2.</returns>
+        Task<CreateInternetGatewayResponse> CreateInternetGatewayAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInternetGateway operation.
         /// </summary>
@@ -1114,6 +1212,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateKeyPair
+
 
         /// <summary>
         /// Creates a 2048-bit RSA key pair with the specified name. Amazon EC2 stores the public
@@ -1141,6 +1240,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateKeyPair service method, as returned by EC2.</returns>
         CreateKeyPairResponse CreateKeyPair(CreateKeyPairRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateKeyPair operation.
         /// </summary>
@@ -1155,6 +1255,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateNetworkAcl
+
 
         /// <summary>
         /// Creates a network ACL in a VPC. Network ACLs provide an optional layer of security
@@ -1171,6 +1272,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateNetworkAcl service method, as returned by EC2.</returns>
         CreateNetworkAclResponse CreateNetworkAcl(CreateNetworkAclRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateNetworkAcl operation.
         /// </summary>
@@ -1185,6 +1287,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateNetworkAclEntry
+
 
         /// <summary>
         /// Creates an entry (a rule) in a network ACL with the specified rule number. Each network
@@ -1217,6 +1320,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateNetworkAclEntry service method, as returned by EC2.</returns>
         CreateNetworkAclEntryResponse CreateNetworkAclEntry(CreateNetworkAclEntryRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateNetworkAclEntry operation.
         /// </summary>
@@ -1232,6 +1336,7 @@ namespace Amazon.EC2
         
         #region  CreateNetworkInterface
 
+
         /// <summary>
         /// Creates a network interface in the specified subnet.
         /// 
@@ -1245,6 +1350,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateNetworkInterface service method, as returned by EC2.</returns>
         CreateNetworkInterfaceResponse CreateNetworkInterface(CreateNetworkInterfaceRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateNetworkInterface operation.
@@ -1261,6 +1367,7 @@ namespace Amazon.EC2
         
         #region  CreatePlacementGroup
 
+
         /// <summary>
         /// Creates a placement group that you launch cluster instances into. You must give the
         /// group a name that's unique within the scope of your account.
@@ -1276,6 +1383,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreatePlacementGroup service method, as returned by EC2.</returns>
         CreatePlacementGroupResponse CreatePlacementGroup(CreatePlacementGroupRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePlacementGroup operation.
         /// </summary>
@@ -1290,6 +1398,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateReservedInstancesListing
+
 
         /// <summary>
         /// Creates a listing for Amazon EC2 Reserved Instances to be sold in the Reserved Instance
@@ -1323,6 +1432,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateReservedInstancesListing service method, as returned by EC2.</returns>
         CreateReservedInstancesListingResponse CreateReservedInstancesListing(CreateReservedInstancesListingRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateReservedInstancesListing operation.
         /// </summary>
@@ -1337,6 +1447,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateRoute
+
 
         /// <summary>
         /// Creates a route in a route table within a VPC.
@@ -1377,6 +1488,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateRoute service method, as returned by EC2.</returns>
         CreateRouteResponse CreateRoute(CreateRouteRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateRoute operation.
         /// </summary>
@@ -1391,6 +1503,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateRouteTable
+
 
         /// <summary>
         /// Creates a route table for the specified VPC. After you create a route table, you can
@@ -1407,6 +1520,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateRouteTable service method, as returned by EC2.</returns>
         CreateRouteTableResponse CreateRouteTable(CreateRouteTableRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateRouteTable operation.
         /// </summary>
@@ -1421,6 +1535,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateSecurityGroup
+
 
         /// <summary>
         /// Creates a security group.
@@ -1467,6 +1582,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateSecurityGroup service method, as returned by EC2.</returns>
         CreateSecurityGroupResponse CreateSecurityGroup(CreateSecurityGroupRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSecurityGroup operation.
         /// </summary>
@@ -1481,6 +1597,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateSnapshot
+
 
         /// <summary>
         /// Creates a snapshot of an EBS volume and stores it in Amazon S3. You can use snapshots
@@ -1526,6 +1643,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateSnapshot service method, as returned by EC2.</returns>
         CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshot operation.
         /// </summary>
@@ -1541,6 +1659,7 @@ namespace Amazon.EC2
         
         #region  CreateSpotDatafeedSubscription
 
+
         /// <summary>
         /// Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs.
         /// You can create one data feed per AWS account. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
@@ -1550,6 +1669,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the CreateSpotDatafeedSubscription service method, as returned by EC2.</returns>
         CreateSpotDatafeedSubscriptionResponse CreateSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSpotDatafeedSubscription operation.
@@ -1565,6 +1685,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateSubnet
+
 
         /// <summary>
         /// Creates a subnet in an existing VPC.
@@ -1608,6 +1729,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateSubnet service method, as returned by EC2.</returns>
         CreateSubnetResponse CreateSubnet(CreateSubnetRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSubnet operation.
         /// </summary>
@@ -1622,6 +1744,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateTags
+
 
         /// <summary>
         /// Adds or overwrites one or more tags for the specified Amazon EC2 resource or resources.
@@ -1639,6 +1762,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateTags service method, as returned by EC2.</returns>
         CreateTagsResponse CreateTags(CreateTagsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateTags operation.
         /// </summary>
@@ -1653,6 +1777,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateVolume
+
 
         /// <summary>
         /// Creates an EBS volume that can be attached to an instance in the same Availability
@@ -1685,6 +1810,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateVolume service method, as returned by EC2.</returns>
         CreateVolumeResponse CreateVolume(CreateVolumeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVolume operation.
         /// </summary>
@@ -1699,6 +1825,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateVpc
+
 
         /// <summary>
         /// Creates a VPC with the specified CIDR block.
@@ -1723,6 +1850,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateVpc service method, as returned by EC2.</returns>
         CreateVpcResponse CreateVpc(CreateVpcRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpc operation.
         /// </summary>
@@ -1737,6 +1865,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateVpcEndpoint
+
 
         /// <summary>
         /// Creates a VPC endpoint for a specified AWS service. An endpoint enables you to create
@@ -1755,6 +1884,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateVpcEndpoint service method, as returned by EC2.</returns>
         CreateVpcEndpointResponse CreateVpcEndpoint(CreateVpcEndpointRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpcEndpoint operation.
         /// </summary>
@@ -1769,6 +1899,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateVpcPeeringConnection
+
 
         /// <summary>
         /// Requests a VPC peering connection between two VPCs: a requester VPC that you own and
@@ -1792,6 +1923,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateVpcPeeringConnection service method, as returned by EC2.</returns>
         CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpcPeeringConnection operation.
         /// </summary>
@@ -1806,6 +1938,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateVpnConnection
+
 
         /// <summary>
         /// Creates a VPN connection between an existing virtual private gateway and a VPN customer
@@ -1839,6 +1972,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateVpnConnection service method, as returned by EC2.</returns>
         CreateVpnConnectionResponse CreateVpnConnection(CreateVpnConnectionRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpnConnection operation.
         /// </summary>
@@ -1853,6 +1987,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateVpnConnectionRoute
+
 
         /// <summary>
         /// Creates a static route associated with a VPN connection between an existing virtual
@@ -1871,6 +2006,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateVpnConnectionRoute service method, as returned by EC2.</returns>
         CreateVpnConnectionRouteResponse CreateVpnConnectionRoute(CreateVpnConnectionRouteRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpnConnectionRoute operation.
         /// </summary>
@@ -1885,6 +2021,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateVpnGateway
+
 
         /// <summary>
         /// Creates a virtual private gateway. A virtual private gateway is the endpoint on the
@@ -1903,6 +2040,7 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateVpnGateway service method, as returned by EC2.</returns>
         CreateVpnGatewayResponse CreateVpnGateway(CreateVpnGatewayRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateVpnGateway operation.
         /// </summary>
@@ -1918,6 +2056,7 @@ namespace Amazon.EC2
         
         #region  DeleteCustomerGateway
 
+
         /// <summary>
         /// Deletes the specified customer gateway. You must delete the VPN connection before
         /// you can delete the customer gateway.
@@ -1926,6 +2065,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeleteCustomerGateway service method, as returned by EC2.</returns>
         DeleteCustomerGatewayResponse DeleteCustomerGateway(DeleteCustomerGatewayRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCustomerGateway operation.
@@ -1942,6 +2082,7 @@ namespace Amazon.EC2
         
         #region  DeleteDhcpOptions
 
+
         /// <summary>
         /// Deletes the specified set of DHCP options. You must disassociate the set of DHCP options
         /// before you can delete it. You can disassociate the set of DHCP options by associating
@@ -1951,6 +2092,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeleteDhcpOptions service method, as returned by EC2.</returns>
         DeleteDhcpOptionsResponse DeleteDhcpOptions(DeleteDhcpOptionsRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDhcpOptions operation.
@@ -1967,6 +2109,7 @@ namespace Amazon.EC2
         
         #region  DeleteFlowLogs
 
+
         /// <summary>
         /// Deletes one or more flow logs.
         /// </summary>
@@ -1974,6 +2117,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeleteFlowLogs service method, as returned by EC2.</returns>
         DeleteFlowLogsResponse DeleteFlowLogs(DeleteFlowLogsRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteFlowLogs operation.
@@ -1990,6 +2134,7 @@ namespace Amazon.EC2
         
         #region  DeleteInternetGateway
 
+
         /// <summary>
         /// Deletes the specified Internet gateway. You must detach the Internet gateway from
         /// the VPC before you can delete it.
@@ -1998,6 +2143,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeleteInternetGateway service method, as returned by EC2.</returns>
         DeleteInternetGatewayResponse DeleteInternetGateway(DeleteInternetGatewayRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteInternetGateway operation.
@@ -2014,6 +2160,7 @@ namespace Amazon.EC2
         
         #region  DeleteKeyPair
 
+
         /// <summary>
         /// Deletes the specified key pair, by removing the public key from Amazon EC2.
         /// </summary>
@@ -2021,6 +2168,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeleteKeyPair service method, as returned by EC2.</returns>
         DeleteKeyPairResponse DeleteKeyPair(DeleteKeyPairRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteKeyPair operation.
@@ -2037,6 +2185,7 @@ namespace Amazon.EC2
         
         #region  DeleteNetworkAcl
 
+
         /// <summary>
         /// Deletes the specified network ACL. You can't delete the ACL if it's associated with
         /// any subnets. You can't delete the default network ACL.
@@ -2045,6 +2194,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeleteNetworkAcl service method, as returned by EC2.</returns>
         DeleteNetworkAclResponse DeleteNetworkAcl(DeleteNetworkAclRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteNetworkAcl operation.
@@ -2061,6 +2211,7 @@ namespace Amazon.EC2
         
         #region  DeleteNetworkAclEntry
 
+
         /// <summary>
         /// Deletes the specified ingress or egress entry (rule) from the specified network ACL.
         /// </summary>
@@ -2068,6 +2219,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeleteNetworkAclEntry service method, as returned by EC2.</returns>
         DeleteNetworkAclEntryResponse DeleteNetworkAclEntry(DeleteNetworkAclEntryRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteNetworkAclEntry operation.
@@ -2084,6 +2236,7 @@ namespace Amazon.EC2
         
         #region  DeleteNetworkInterface
 
+
         /// <summary>
         /// Deletes the specified network interface. You must detach the network interface before
         /// you can delete it.
@@ -2092,6 +2245,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeleteNetworkInterface service method, as returned by EC2.</returns>
         DeleteNetworkInterfaceResponse DeleteNetworkInterface(DeleteNetworkInterfaceRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteNetworkInterface operation.
@@ -2108,6 +2262,7 @@ namespace Amazon.EC2
         
         #region  DeletePlacementGroup
 
+
         /// <summary>
         /// Deletes the specified placement group. You must terminate all instances in the placement
         /// group before you can delete the placement group. For more information about placement
@@ -2118,6 +2273,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeletePlacementGroup service method, as returned by EC2.</returns>
         DeletePlacementGroupResponse DeletePlacementGroup(DeletePlacementGroupRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePlacementGroup operation.
@@ -2134,6 +2290,7 @@ namespace Amazon.EC2
         
         #region  DeleteRoute
 
+
         /// <summary>
         /// Deletes the specified route from the specified route table.
         /// </summary>
@@ -2141,6 +2298,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeleteRoute service method, as returned by EC2.</returns>
         DeleteRouteResponse DeleteRoute(DeleteRouteRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRoute operation.
@@ -2157,6 +2315,7 @@ namespace Amazon.EC2
         
         #region  DeleteRouteTable
 
+
         /// <summary>
         /// Deletes the specified route table. You must disassociate the route table from any
         /// subnets before you can delete it. You can't delete the main route table.
@@ -2165,6 +2324,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeleteRouteTable service method, as returned by EC2.</returns>
         DeleteRouteTableResponse DeleteRouteTable(DeleteRouteTableRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteRouteTable operation.
@@ -2181,6 +2341,7 @@ namespace Amazon.EC2
         
         #region  DeleteSecurityGroup
 
+
         /// <summary>
         /// Deletes a security group.
         /// 
@@ -2196,6 +2357,7 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteSecurityGroup service method, as returned by EC2.</returns>
         DeleteSecurityGroupResponse DeleteSecurityGroup(DeleteSecurityGroupRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSecurityGroup operation.
         /// </summary>
@@ -2210,6 +2372,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DeleteSnapshot
+
 
         /// <summary>
         /// Deletes the specified snapshot.
@@ -2238,6 +2401,7 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteSnapshot service method, as returned by EC2.</returns>
         DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSnapshot operation.
         /// </summary>
@@ -2253,6 +2417,7 @@ namespace Amazon.EC2
         
         #region  DeleteSpotDatafeedSubscription
 
+
         /// <summary>
         /// Deletes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
         /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -2260,6 +2425,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeleteSpotDatafeedSubscription service method, as returned by EC2.</returns>
         DeleteSpotDatafeedSubscriptionResponse DeleteSpotDatafeedSubscription();
+
 
         /// <summary>
         /// Deletes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
@@ -2269,6 +2435,19 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeleteSpotDatafeedSubscription service method, as returned by EC2.</returns>
         DeleteSpotDatafeedSubscriptionResponse DeleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest request);
+
+
+        /// <summary>
+        /// Deletes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSpotDatafeedSubscription service method, as returned by EC2.</returns>
+        Task<DeleteSpotDatafeedSubscriptionResponse> DeleteSpotDatafeedSubscriptionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSpotDatafeedSubscription operation.
@@ -2285,6 +2464,7 @@ namespace Amazon.EC2
         
         #region  DeleteSubnet
 
+
         /// <summary>
         /// Deletes the specified subnet. You must terminate all running instances in the subnet
         /// before you can delete the subnet.
@@ -2293,6 +2473,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeleteSubnet service method, as returned by EC2.</returns>
         DeleteSubnetResponse DeleteSubnet(DeleteSubnetRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSubnet operation.
@@ -2309,6 +2490,7 @@ namespace Amazon.EC2
         
         #region  DeleteTags
 
+
         /// <summary>
         /// Deletes the specified set of tags from the specified set of resources. This call is
         /// designed to follow a <code>DescribeTags</code> request.
@@ -2324,6 +2506,7 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteTags service method, as returned by EC2.</returns>
         DeleteTagsResponse DeleteTags(DeleteTagsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteTags operation.
         /// </summary>
@@ -2338,6 +2521,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DeleteVolume
+
 
         /// <summary>
         /// Deletes the specified EBS volume. The volume must be in the <code>available</code>
@@ -2358,6 +2542,7 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteVolume service method, as returned by EC2.</returns>
         DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVolume operation.
         /// </summary>
@@ -2373,6 +2558,7 @@ namespace Amazon.EC2
         
         #region  DeleteVpc
 
+
         /// <summary>
         /// Deletes the specified VPC. You must detach or delete all gateways and resources that
         /// are associated with the VPC before you can delete it. For example, you must terminate
@@ -2384,6 +2570,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeleteVpc service method, as returned by EC2.</returns>
         DeleteVpcResponse DeleteVpc(DeleteVpcRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpc operation.
@@ -2400,6 +2587,7 @@ namespace Amazon.EC2
         
         #region  DeleteVpcEndpoints
 
+
         /// <summary>
         /// Deletes one or more specified VPC endpoints. Deleting the endpoint also deletes the
         /// endpoint routes in the route tables that were associated with the endpoint.
@@ -2408,6 +2596,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeleteVpcEndpoints service method, as returned by EC2.</returns>
         DeleteVpcEndpointsResponse DeleteVpcEndpoints(DeleteVpcEndpointsRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpcEndpoints operation.
@@ -2424,6 +2613,7 @@ namespace Amazon.EC2
         
         #region  DeleteVpcPeeringConnection
 
+
         /// <summary>
         /// Deletes a VPC peering connection. Either the owner of the requester VPC or the owner
         /// of the peer VPC can delete the VPC peering connection if it's in the <code>active</code>
@@ -2434,6 +2624,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeleteVpcPeeringConnection service method, as returned by EC2.</returns>
         DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpcPeeringConnection operation.
@@ -2449,6 +2640,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DeleteVpnConnection
+
 
         /// <summary>
         /// Deletes the specified VPN connection.
@@ -2469,6 +2661,7 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteVpnConnection service method, as returned by EC2.</returns>
         DeleteVpnConnectionResponse DeleteVpnConnection(DeleteVpnConnectionRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpnConnection operation.
         /// </summary>
@@ -2484,6 +2677,7 @@ namespace Amazon.EC2
         
         #region  DeleteVpnConnectionRoute
 
+
         /// <summary>
         /// Deletes the specified static route associated with a VPN connection between an existing
         /// virtual private gateway and a VPN customer gateway. The static route allows traffic
@@ -2493,6 +2687,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeleteVpnConnectionRoute service method, as returned by EC2.</returns>
         DeleteVpnConnectionRouteResponse DeleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpnConnectionRoute operation.
@@ -2509,6 +2704,7 @@ namespace Amazon.EC2
         
         #region  DeleteVpnGateway
 
+
         /// <summary>
         /// Deletes the specified virtual private gateway. We recommend that before you delete
         /// a virtual private gateway, you detach it from the VPC and delete the VPN connection.
@@ -2519,6 +2715,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeleteVpnGateway service method, as returned by EC2.</returns>
         DeleteVpnGatewayResponse DeleteVpnGateway(DeleteVpnGatewayRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVpnGateway operation.
@@ -2535,6 +2732,7 @@ namespace Amazon.EC2
         
         #region  DeregisterImage
 
+
         /// <summary>
         /// Deregisters the specified AMI. After you deregister an AMI, it can't be used to launch
         /// new instances.
@@ -2548,6 +2746,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DeregisterImage service method, as returned by EC2.</returns>
         DeregisterImageResponse DeregisterImage(DeregisterImageRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterImage operation.
@@ -2563,6 +2762,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeAccountAttributes
+
 
         /// <summary>
         /// Describes attributes of your AWS account. The following are the supported account
@@ -2602,6 +2802,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by EC2.</returns>
         DescribeAccountAttributesResponse DescribeAccountAttributes();
+
 
         /// <summary>
         /// Describes attributes of your AWS account. The following are the supported account
@@ -2643,6 +2844,50 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by EC2.</returns>
         DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request);
 
+
+        /// <summary>
+        /// Describes attributes of your AWS account. The following are the supported account
+        /// attributes:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// <code>supported-platforms</code>: Indicates whether your account can launch instances
+        /// into EC2-Classic and EC2-VPC, or only into EC2-VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>max-instances</code>: The maximum number of On-Demand instances that you can
+        /// run.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
+        /// groups that you can assign to a network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
+        /// can allocate for use with EC2-Classic. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
+        /// you can allocate for use with EC2-VPC.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAccountAttributes service method, as returned by EC2.</returns>
+        Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAccountAttributes operation.
         /// </summary>
@@ -2658,6 +2903,7 @@ namespace Amazon.EC2
         
         #region  DescribeAddresses
 
+
         /// <summary>
         /// Describes one or more of your Elastic IP addresses.
         /// 
@@ -2671,6 +2917,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeAddresses service method, as returned by EC2.</returns>
         DescribeAddressesResponse DescribeAddresses();
+
 
         /// <summary>
         /// Describes one or more of your Elastic IP addresses.
@@ -2687,6 +2934,25 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeAddresses service method, as returned by EC2.</returns>
         DescribeAddressesResponse DescribeAddresses(DescribeAddressesRequest request);
 
+
+        /// <summary>
+        /// Describes one or more of your Elastic IP addresses.
+        /// 
+        ///  
+        /// <para>
+        /// An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For
+        /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAddresses service method, as returned by EC2.</returns>
+        Task<DescribeAddressesResponse> DescribeAddressesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAddresses operation.
         /// </summary>
@@ -2701,6 +2967,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeAvailabilityZones
+
 
         /// <summary>
         /// Describes one or more of the Availability Zones that are available to you. The results
@@ -2717,6 +2984,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeAvailabilityZones service method, as returned by EC2.</returns>
         DescribeAvailabilityZonesResponse DescribeAvailabilityZones();
+
 
         /// <summary>
         /// Describes one or more of the Availability Zones that are available to you. The results
@@ -2735,6 +3003,27 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeAvailabilityZones service method, as returned by EC2.</returns>
         DescribeAvailabilityZonesResponse DescribeAvailabilityZones(DescribeAvailabilityZonesRequest request);
 
+
+        /// <summary>
+        /// Describes one or more of the Availability Zones that are available to you. The results
+        /// include zones only for the region you're currently using. If there is an event impacting
+        /// an Availability Zone, you can use this request to view the state and any provided
+        /// message for that Availability Zone.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
+        /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAvailabilityZones service method, as returned by EC2.</returns>
+        Task<DescribeAvailabilityZonesResponse> DescribeAvailabilityZonesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAvailabilityZones operation.
         /// </summary>
@@ -2749,6 +3038,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeBundleTasks
+
 
         /// <summary>
         /// Describes one or more of your bundling tasks.
@@ -2765,6 +3055,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeBundleTasks service method, as returned by EC2.</returns>
         DescribeBundleTasksResponse DescribeBundleTasks();
+
 
         /// <summary>
         /// Describes one or more of your bundling tasks.
@@ -2783,6 +3074,27 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeBundleTasks service method, as returned by EC2.</returns>
         DescribeBundleTasksResponse DescribeBundleTasks(DescribeBundleTasksRequest request);
 
+
+        /// <summary>
+        /// Describes one or more of your bundling tasks.
+        /// 
+        ///  <note>
+        /// <para>
+        /// Completed bundle tasks are listed for only a limited time. If your bundle task is
+        /// no longer in the list, you can still register an AMI from it. Just use <code>RegisterImage</code>
+        /// with the Amazon S3 bucket name and image manifest name you provided to the bundle
+        /// task.
+        /// </para>
+        /// </note>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeBundleTasks service method, as returned by EC2.</returns>
+        Task<DescribeBundleTasksResponse> DescribeBundleTasksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeBundleTasks operation.
         /// </summary>
@@ -2798,6 +3110,7 @@ namespace Amazon.EC2
         
         #region  DescribeClassicLinkInstances
 
+
         /// <summary>
         /// Describes one or more of your linked EC2-Classic instances. This request only returns
         /// information about EC2-Classic instances linked to a VPC through ClassicLink; you cannot
@@ -2807,6 +3120,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeClassicLinkInstances service method, as returned by EC2.</returns>
         DescribeClassicLinkInstancesResponse DescribeClassicLinkInstances(DescribeClassicLinkInstancesRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeClassicLinkInstances operation.
@@ -2823,6 +3137,7 @@ namespace Amazon.EC2
         
         #region  DescribeConversionTasks
 
+
         /// <summary>
         /// Describes one or more of your conversion tasks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
         /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
@@ -2831,6 +3146,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeConversionTasks service method, as returned by EC2.</returns>
         DescribeConversionTasksResponse DescribeConversionTasks();
+
 
         /// <summary>
         /// Describes one or more of your conversion tasks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
@@ -2841,6 +3157,20 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeConversionTasks service method, as returned by EC2.</returns>
         DescribeConversionTasksResponse DescribeConversionTasks(DescribeConversionTasksRequest request);
+
+
+        /// <summary>
+        /// Describes one or more of your conversion tasks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
+        /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
+        /// Elastic Compute Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConversionTasks service method, as returned by EC2.</returns>
+        Task<DescribeConversionTasksResponse> DescribeConversionTasksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeConversionTasks operation.
@@ -2857,6 +3187,7 @@ namespace Amazon.EC2
         
         #region  DescribeCustomerGateways
 
+
         /// <summary>
         /// Describes one or more of your VPN customer gateways.
         /// 
@@ -2870,6 +3201,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeCustomerGateways service method, as returned by EC2.</returns>
         DescribeCustomerGatewaysResponse DescribeCustomerGateways();
+
 
         /// <summary>
         /// Describes one or more of your VPN customer gateways.
@@ -2886,6 +3218,25 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeCustomerGateways service method, as returned by EC2.</returns>
         DescribeCustomerGatewaysResponse DescribeCustomerGateways(DescribeCustomerGatewaysRequest request);
 
+
+        /// <summary>
+        /// Describes one or more of your VPN customer gateways.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about VPN customer gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
+        /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
+        /// Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCustomerGateways service method, as returned by EC2.</returns>
+        Task<DescribeCustomerGatewaysResponse> DescribeCustomerGatewaysAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCustomerGateways operation.
         /// </summary>
@@ -2901,6 +3252,7 @@ namespace Amazon.EC2
         
         #region  DescribeDhcpOptions
 
+
         /// <summary>
         /// Describes one or more of your DHCP options sets.
         /// 
@@ -2913,6 +3265,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeDhcpOptions service method, as returned by EC2.</returns>
         DescribeDhcpOptionsResponse DescribeDhcpOptions();
+
 
         /// <summary>
         /// Describes one or more of your DHCP options sets.
@@ -2927,6 +3280,24 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeDhcpOptions service method, as returned by EC2.</returns>
         DescribeDhcpOptionsResponse DescribeDhcpOptions(DescribeDhcpOptionsRequest request);
+
+
+        /// <summary>
+        /// Describes one or more of your DHCP options sets.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about DHCP options sets, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+        /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDhcpOptions service method, as returned by EC2.</returns>
+        Task<DescribeDhcpOptionsResponse> DescribeDhcpOptionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDhcpOptions operation.
@@ -2943,12 +3314,14 @@ namespace Amazon.EC2
         
         #region  DescribeExportTasks
 
+
         /// <summary>
         /// Describes one or more of your export tasks.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeExportTasks service method, as returned by EC2.</returns>
         DescribeExportTasksResponse DescribeExportTasks();
+
 
         /// <summary>
         /// Describes one or more of your export tasks.
@@ -2957,6 +3330,18 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeExportTasks service method, as returned by EC2.</returns>
         DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request);
+
+
+        /// <summary>
+        /// Describes one or more of your export tasks.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeExportTasks service method, as returned by EC2.</returns>
+        Task<DescribeExportTasksResponse> DescribeExportTasksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeExportTasks operation.
@@ -2973,6 +3358,7 @@ namespace Amazon.EC2
         
         #region  DescribeFlowLogs
 
+
         /// <summary>
         /// Describes one or more flow logs. To view the information in your flow logs (the log
         /// streams for the network interfaces), you must use the CloudWatch Logs console or the
@@ -2982,6 +3368,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeFlowLogs service method, as returned by EC2.</returns>
         DescribeFlowLogsResponse DescribeFlowLogs(DescribeFlowLogsRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeFlowLogs operation.
@@ -2998,6 +3385,7 @@ namespace Amazon.EC2
         
         #region  DescribeImageAttribute
 
+
         /// <summary>
         /// Describes the specified attribute of the specified AMI. You can specify only one attribute
         /// at a time.
@@ -3006,6 +3394,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeImageAttribute service method, as returned by EC2.</returns>
         DescribeImageAttributeResponse DescribeImageAttribute(DescribeImageAttributeRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeImageAttribute operation.
@@ -3022,6 +3411,7 @@ namespace Amazon.EC2
         
         #region  DescribeImages
 
+
         /// <summary>
         /// Describes one or more of the images (AMIs, AKIs, and ARIs) available to you. Images
         /// available to you include public images, private images that you own, and private images
@@ -3037,6 +3427,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeImages service method, as returned by EC2.</returns>
         DescribeImagesResponse DescribeImages();
+
 
         /// <summary>
         /// Describes one or more of the images (AMIs, AKIs, and ARIs) available to you. Images
@@ -3055,6 +3446,27 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeImages service method, as returned by EC2.</returns>
         DescribeImagesResponse DescribeImages(DescribeImagesRequest request);
 
+
+        /// <summary>
+        /// Describes one or more of the images (AMIs, AKIs, and ARIs) available to you. Images
+        /// available to you include public images, private images that you own, and private images
+        /// owned by other AWS accounts but for which you have explicit launch permissions.
+        /// 
+        ///  <note>
+        /// <para>
+        /// Deregistered images are included in the returned results for an unspecified interval
+        /// after deregistration.
+        /// </para>
+        /// </note>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImages service method, as returned by EC2.</returns>
+        Task<DescribeImagesResponse> DescribeImagesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeImages operation.
         /// </summary>
@@ -3070,6 +3482,7 @@ namespace Amazon.EC2
         
         #region  DescribeImportImageTasks
 
+
         /// <summary>
         /// Displays details about an import virtual machine or import snapshot tasks that are
         /// already created.
@@ -3078,6 +3491,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeImportImageTasks service method, as returned by EC2.</returns>
         DescribeImportImageTasksResponse DescribeImportImageTasks(DescribeImportImageTasksRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeImportImageTasks operation.
@@ -3094,6 +3508,7 @@ namespace Amazon.EC2
         
         #region  DescribeImportSnapshotTasks
 
+
         /// <summary>
         /// Describes your import snapshot tasks.
         /// </summary>
@@ -3101,6 +3516,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeImportSnapshotTasks service method, as returned by EC2.</returns>
         DescribeImportSnapshotTasksResponse DescribeImportSnapshotTasks(DescribeImportSnapshotTasksRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeImportSnapshotTasks operation.
@@ -3117,6 +3533,7 @@ namespace Amazon.EC2
         
         #region  DescribeInstanceAttribute
 
+
         /// <summary>
         /// Describes the specified attribute of the specified instance. You can specify only
         /// one attribute at a time. Valid attribute values are: <code>instanceType</code> | <code>kernel</code>
@@ -3129,6 +3546,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeInstanceAttribute service method, as returned by EC2.</returns>
         DescribeInstanceAttributeResponse DescribeInstanceAttribute(DescribeInstanceAttributeRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstanceAttribute operation.
@@ -3144,6 +3562,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeInstances
+
 
         /// <summary>
         /// Describes one or more of your instances.
@@ -3165,6 +3584,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeInstances service method, as returned by EC2.</returns>
         DescribeInstancesResponse DescribeInstances();
+
 
         /// <summary>
         /// Describes one or more of your instances.
@@ -3188,6 +3608,32 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeInstances service method, as returned by EC2.</returns>
         DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request);
 
+
+        /// <summary>
+        /// Describes one or more of your instances.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify one or more instance IDs, Amazon EC2 returns information for those
+        /// instances. If you do not specify instance IDs, Amazon EC2 returns information for
+        /// all relevant instances. If you specify an instance ID that is not valid, an error
+        /// is returned. If you specify an instance that you do not own, it is not included in
+        /// the returned results.
+        /// </para>
+        ///  
+        /// <para>
+        /// Recently terminated instances might appear in the returned results. This interval
+        /// is usually less than one hour.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInstances service method, as returned by EC2.</returns>
+        Task<DescribeInstancesResponse> DescribeInstancesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstances operation.
         /// </summary>
@@ -3202,6 +3648,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeInstanceStatus
+
 
         /// <summary>
         /// Describes the status of one or more instances.
@@ -3236,6 +3683,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeInstanceStatus service method, as returned by EC2.</returns>
         DescribeInstanceStatusResponse DescribeInstanceStatus();
+
 
         /// <summary>
         /// Describes the status of one or more instances.
@@ -3272,6 +3720,45 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeInstanceStatus service method, as returned by EC2.</returns>
         DescribeInstanceStatusResponse DescribeInstanceStatus(DescribeInstanceStatusRequest request);
 
+
+        /// <summary>
+        /// Describes the status of one or more instances.
+        /// 
+        ///  
+        /// <para>
+        /// Instance status includes the following components:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
+        /// to identify hardware and software issues. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
+        /// Checks for Your Instances</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
+        /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
+        /// terminate) for your instances related to hardware issues, software updates, or system
+        /// maintenance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
+        /// Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <b>Instance state</b> - You can manage your instances from the moment you launch them
+        /// through their termination. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+        /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInstanceStatus service method, as returned by EC2.</returns>
+        Task<DescribeInstanceStatusResponse> DescribeInstanceStatusAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstanceStatus operation.
         /// </summary>
@@ -3287,12 +3774,14 @@ namespace Amazon.EC2
         
         #region  DescribeInternetGateways
 
+
         /// <summary>
         /// Describes one or more of your Internet gateways.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeInternetGateways service method, as returned by EC2.</returns>
         DescribeInternetGatewaysResponse DescribeInternetGateways();
+
 
         /// <summary>
         /// Describes one or more of your Internet gateways.
@@ -3301,6 +3790,18 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeInternetGateways service method, as returned by EC2.</returns>
         DescribeInternetGatewaysResponse DescribeInternetGateways(DescribeInternetGatewaysRequest request);
+
+
+        /// <summary>
+        /// Describes one or more of your Internet gateways.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInternetGateways service method, as returned by EC2.</returns>
+        Task<DescribeInternetGatewaysResponse> DescribeInternetGatewaysAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInternetGateways operation.
@@ -3317,6 +3818,7 @@ namespace Amazon.EC2
         
         #region  DescribeKeyPairs
 
+
         /// <summary>
         /// Describes one or more of your key pairs.
         /// 
@@ -3329,6 +3831,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeKeyPairs service method, as returned by EC2.</returns>
         DescribeKeyPairsResponse DescribeKeyPairs();
+
 
         /// <summary>
         /// Describes one or more of your key pairs.
@@ -3343,6 +3846,24 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeKeyPairs service method, as returned by EC2.</returns>
         DescribeKeyPairsResponse DescribeKeyPairs(DescribeKeyPairsRequest request);
+
+
+        /// <summary>
+        /// Describes one or more of your key pairs.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about key pairs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeKeyPairs service method, as returned by EC2.</returns>
+        Task<DescribeKeyPairsResponse> DescribeKeyPairsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeKeyPairs operation.
@@ -3359,6 +3880,7 @@ namespace Amazon.EC2
         
         #region  DescribeMovingAddresses
 
+
         /// <summary>
         /// Describes your Elastic IP addresses that are being moved to the EC2-VPC platform,
         /// or that are being restored to the EC2-Classic platform. This request does not return
@@ -3368,6 +3890,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeMovingAddresses service method, as returned by EC2.</returns>
         DescribeMovingAddressesResponse DescribeMovingAddresses(DescribeMovingAddressesRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMovingAddresses operation.
@@ -3384,6 +3907,7 @@ namespace Amazon.EC2
         
         #region  DescribeNetworkAcls
 
+
         /// <summary>
         /// Describes one or more of your network ACLs.
         /// 
@@ -3396,6 +3920,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeNetworkAcls service method, as returned by EC2.</returns>
         DescribeNetworkAclsResponse DescribeNetworkAcls();
+
 
         /// <summary>
         /// Describes one or more of your network ACLs.
@@ -3410,6 +3935,24 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeNetworkAcls service method, as returned by EC2.</returns>
         DescribeNetworkAclsResponse DescribeNetworkAcls(DescribeNetworkAclsRequest request);
+
+
+        /// <summary>
+        /// Describes one or more of your network ACLs.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about network ACLs, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+        /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeNetworkAcls service method, as returned by EC2.</returns>
+        Task<DescribeNetworkAclsResponse> DescribeNetworkAclsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeNetworkAcls operation.
@@ -3426,6 +3969,7 @@ namespace Amazon.EC2
         
         #region  DescribeNetworkInterfaceAttribute
 
+
         /// <summary>
         /// Describes a network interface attribute. You can specify only one attribute at a time.
         /// </summary>
@@ -3433,6 +3977,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeNetworkInterfaceAttribute service method, as returned by EC2.</returns>
         DescribeNetworkInterfaceAttributeResponse DescribeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeNetworkInterfaceAttribute operation.
@@ -3449,12 +3994,14 @@ namespace Amazon.EC2
         
         #region  DescribeNetworkInterfaces
 
+
         /// <summary>
         /// Describes one or more of your network interfaces.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeNetworkInterfaces service method, as returned by EC2.</returns>
         DescribeNetworkInterfacesResponse DescribeNetworkInterfaces();
+
 
         /// <summary>
         /// Describes one or more of your network interfaces.
@@ -3463,6 +4010,18 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeNetworkInterfaces service method, as returned by EC2.</returns>
         DescribeNetworkInterfacesResponse DescribeNetworkInterfaces(DescribeNetworkInterfacesRequest request);
+
+
+        /// <summary>
+        /// Describes one or more of your network interfaces.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeNetworkInterfaces service method, as returned by EC2.</returns>
+        Task<DescribeNetworkInterfacesResponse> DescribeNetworkInterfacesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeNetworkInterfaces operation.
@@ -3479,6 +4038,7 @@ namespace Amazon.EC2
         
         #region  DescribePlacementGroups
 
+
         /// <summary>
         /// Describes one or more of your placement groups. For more information about placement
         /// groups and cluster instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
@@ -3487,6 +4047,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribePlacementGroups service method, as returned by EC2.</returns>
         DescribePlacementGroupsResponse DescribePlacementGroups();
+
 
         /// <summary>
         /// Describes one or more of your placement groups. For more information about placement
@@ -3497,6 +4058,20 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribePlacementGroups service method, as returned by EC2.</returns>
         DescribePlacementGroupsResponse DescribePlacementGroups(DescribePlacementGroupsRequest request);
+
+
+        /// <summary>
+        /// Describes one or more of your placement groups. For more information about placement
+        /// groups and cluster instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
+        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePlacementGroups service method, as returned by EC2.</returns>
+        Task<DescribePlacementGroupsResponse> DescribePlacementGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribePlacementGroups operation.
@@ -3513,6 +4088,7 @@ namespace Amazon.EC2
         
         #region  DescribePrefixLists
 
+
         /// <summary>
         /// Describes available AWS services in a prefix list format, which includes the prefix
         /// list name and prefix list ID of the service and the IP address range for the service.
@@ -3523,6 +4099,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribePrefixLists service method, as returned by EC2.</returns>
         DescribePrefixListsResponse DescribePrefixLists(DescribePrefixListsRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribePrefixLists operation.
@@ -3539,6 +4116,7 @@ namespace Amazon.EC2
         
         #region  DescribeRegions
 
+
         /// <summary>
         /// Describes one or more regions that are currently available to you.
         /// 
@@ -3551,6 +4129,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeRegions service method, as returned by EC2.</returns>
         DescribeRegionsResponse DescribeRegions();
+
 
         /// <summary>
         /// Describes one or more regions that are currently available to you.
@@ -3565,6 +4144,24 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeRegions service method, as returned by EC2.</returns>
         DescribeRegionsResponse DescribeRegions(DescribeRegionsRequest request);
+
+
+        /// <summary>
+        /// Describes one or more regions that are currently available to you.
+        /// 
+        ///  
+        /// <para>
+        /// For a list of the regions supported by Amazon EC2, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">Regions
+        /// and Endpoints</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRegions service method, as returned by EC2.</returns>
+        Task<DescribeRegionsResponse> DescribeRegionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRegions operation.
@@ -3581,6 +4178,7 @@ namespace Amazon.EC2
         
         #region  DescribeReservedInstances
 
+
         /// <summary>
         /// Describes one or more of the Reserved Instances that you purchased.
         /// 
@@ -3593,6 +4191,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeReservedInstances service method, as returned by EC2.</returns>
         DescribeReservedInstancesResponse DescribeReservedInstances();
+
 
         /// <summary>
         /// Describes one or more of the Reserved Instances that you purchased.
@@ -3608,6 +4207,24 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeReservedInstances service method, as returned by EC2.</returns>
         DescribeReservedInstancesResponse DescribeReservedInstances(DescribeReservedInstancesRequest request);
 
+
+        /// <summary>
+        /// Describes one or more of the Reserved Instances that you purchased.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about Reserved Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
+        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReservedInstances service method, as returned by EC2.</returns>
+        Task<DescribeReservedInstancesResponse> DescribeReservedInstancesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedInstances operation.
         /// </summary>
@@ -3622,6 +4239,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeReservedInstancesListings
+
 
         /// <summary>
         /// Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
@@ -3656,6 +4274,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeReservedInstancesListings service method, as returned by EC2.</returns>
         DescribeReservedInstancesListingsResponse DescribeReservedInstancesListings();
+
 
         /// <summary>
         /// Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
@@ -3692,6 +4311,45 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeReservedInstancesListings service method, as returned by EC2.</returns>
         DescribeReservedInstancesListingsResponse DescribeReservedInstancesListings(DescribeReservedInstancesListingsRequest request);
 
+
+        /// <summary>
+        /// Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
+        /// 
+        ///  
+        /// <para>
+        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
+        /// capacity that they no longer need with buyers who want to purchase additional capacity.
+        /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
+        /// like any other Reserved Instances. 
+        /// </para>
+        ///  
+        /// <para>
+        /// As a seller, you choose to list some or all of your Reserved Instances, and you specify
+        /// the upfront price to receive for them. Your Reserved Instances are then listed in
+        /// the Reserved Instance Marketplace and are available for purchase. 
+        /// </para>
+        ///  
+        /// <para>
+        /// As a buyer, you specify the configuration of the Reserved Instance to purchase, and
+        /// the Marketplace matches what you're searching for with what's available. The Marketplace
+        /// first sells the lowest priced Reserved Instances to you, and continues to sell available
+        /// Reserved Instance listings to you until your demand is met. You are charged based
+        /// on the total price of all of the listings that you purchase.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReservedInstancesListings service method, as returned by EC2.</returns>
+        Task<DescribeReservedInstancesListingsResponse> DescribeReservedInstancesListingsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedInstancesListings operation.
         /// </summary>
@@ -3706,6 +4364,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeReservedInstancesModifications
+
 
         /// <summary>
         /// Describes the modifications made to your Reserved Instances. If no parameter is specified,
@@ -3722,6 +4381,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeReservedInstancesModifications service method, as returned by EC2.</returns>
         DescribeReservedInstancesModificationsResponse DescribeReservedInstancesModifications();
+
 
         /// <summary>
         /// Describes the modifications made to your Reserved Instances. If no parameter is specified,
@@ -3740,6 +4400,27 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeReservedInstancesModifications service method, as returned by EC2.</returns>
         DescribeReservedInstancesModificationsResponse DescribeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest request);
 
+
+        /// <summary>
+        /// Describes the modifications made to your Reserved Instances. If no parameter is specified,
+        /// information about all your Reserved Instances modification requests is returned. If
+        /// a modification ID is specified, only information about the specific modification is
+        /// returned.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
+        /// Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReservedInstancesModifications service method, as returned by EC2.</returns>
+        Task<DescribeReservedInstancesModificationsResponse> DescribeReservedInstancesModificationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedInstancesModifications operation.
         /// </summary>
@@ -3754,6 +4435,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeReservedInstancesOfferings
+
 
         /// <summary>
         /// Describes Reserved Instance offerings that are available for purchase. With Reserved
@@ -3770,6 +4452,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeReservedInstancesOfferings service method, as returned by EC2.</returns>
         DescribeReservedInstancesOfferingsResponse DescribeReservedInstancesOfferings();
+
 
         /// <summary>
         /// Describes Reserved Instance offerings that are available for purchase. With Reserved
@@ -3788,6 +4471,27 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeReservedInstancesOfferings service method, as returned by EC2.</returns>
         DescribeReservedInstancesOfferingsResponse DescribeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest request);
 
+
+        /// <summary>
+        /// Describes Reserved Instance offerings that are available for purchase. With Reserved
+        /// Instances, you purchase the right to launch instances for a period of time. During
+        /// that time period, you do not receive insufficient capacity errors, and you pay a lower
+        /// usage rate than the rate charged for On-Demand instances for the actual time used.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReservedInstancesOfferings service method, as returned by EC2.</returns>
+        Task<DescribeReservedInstancesOfferingsResponse> DescribeReservedInstancesOfferingsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedInstancesOfferings operation.
         /// </summary>
@@ -3802,6 +4506,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeRouteTables
+
 
         /// <summary>
         /// Describes one or more of your route tables. 
@@ -3821,6 +4526,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeRouteTables service method, as returned by EC2.</returns>
         DescribeRouteTablesResponse DescribeRouteTables();
+
 
         /// <summary>
         /// Describes one or more of your route tables. 
@@ -3842,6 +4548,30 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeRouteTables service method, as returned by EC2.</returns>
         DescribeRouteTablesResponse DescribeRouteTables(DescribeRouteTablesRequest request);
 
+
+        /// <summary>
+        /// Describes one or more of your route tables. 
+        /// 
+        ///  
+        /// <para>
+        /// Each subnet in your VPC must be associated with a route table. If a subnet is not
+        /// explicitly associated with any route table, it is implicitly associated with the main
+        /// route table. This command does not return the subnet ID for implicit associations.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+        /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRouteTables service method, as returned by EC2.</returns>
+        Task<DescribeRouteTablesResponse> DescribeRouteTablesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRouteTables operation.
         /// </summary>
@@ -3856,6 +4586,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeSecurityGroups
+
 
         /// <summary>
         /// Describes one or more of your security groups.
@@ -3872,6 +4603,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSecurityGroups service method, as returned by EC2.</returns>
         DescribeSecurityGroupsResponse DescribeSecurityGroups();
+
 
         /// <summary>
         /// Describes one or more of your security groups.
@@ -3890,6 +4622,27 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeSecurityGroups service method, as returned by EC2.</returns>
         DescribeSecurityGroupsResponse DescribeSecurityGroups(DescribeSecurityGroupsRequest request);
 
+
+        /// <summary>
+        /// Describes one or more of your security groups.
+        /// 
+        ///  
+        /// <para>
+        /// A security group is for use with instances either in the EC2-Classic platform or in
+        /// a specific VPC. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
+        /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
+        /// <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
+        /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSecurityGroups service method, as returned by EC2.</returns>
+        Task<DescribeSecurityGroupsResponse> DescribeSecurityGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSecurityGroups operation.
         /// </summary>
@@ -3904,6 +4657,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeSnapshotAttribute
+
 
         /// <summary>
         /// Describes the specified attribute of the specified snapshot. You can specify only
@@ -3920,6 +4674,7 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeSnapshotAttribute service method, as returned by EC2.</returns>
         DescribeSnapshotAttributeResponse DescribeSnapshotAttribute(DescribeSnapshotAttributeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshotAttribute operation.
         /// </summary>
@@ -3934,6 +4689,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeSnapshots
+
 
         /// <summary>
         /// Describes one or more of the EBS snapshots available to you. Available snapshots include
@@ -3995,6 +4751,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by EC2.</returns>
         DescribeSnapshotsResponse DescribeSnapshots();
+
 
         /// <summary>
         /// Describes one or more of the EBS snapshots available to you. Available snapshots include
@@ -4058,6 +4815,72 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeSnapshots service method, as returned by EC2.</returns>
         DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request);
 
+
+        /// <summary>
+        /// Describes one or more of the EBS snapshots available to you. Available snapshots include
+        /// public snapshots available for any AWS account to launch, private snapshots that you
+        /// own, and private snapshots owned by another AWS account but for which you've been
+        /// given explicit create volume permissions.
+        /// 
+        ///  
+        /// <para>
+        /// The create volume permissions fall into the following categories:
+        /// </para>
+        ///  <ul> <li> <i>public</i>: The owner of the snapshot granted create volume permissions
+        /// for the snapshot to the <code>all</code> group. All AWS accounts have create volume
+        /// permissions for these snapshots.</li> <li> <i>explicit</i>: The owner of the snapshot
+        /// granted create volume permissions to a specific AWS account.</li> <li> <i>implicit</i>:
+        /// An AWS account has implicit create volume permissions for all snapshots it owns.</li>
+        /// </ul> 
+        /// <para>
+        /// The list of snapshots returned can be modified by specifying snapshot IDs, snapshot
+        /// owners, or AWS accounts with create volume permissions. If no options are specified,
+        /// Amazon EC2 returns all snapshots for which you have create volume permissions.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify one or more snapshot IDs, only snapshots that have the specified IDs
+        /// are returned. If you specify an invalid snapshot ID, an error is returned. If you
+        /// specify a snapshot ID for which you do not have access, it is not included in the
+        /// returned results.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify one or more snapshot owners, only snapshots from the specified owners
+        /// and for which you have access are returned. The results can include the AWS account
+        /// IDs of the specified owners, <code>amazon</code> for snapshots owned by Amazon, or
+        /// <code>self</code> for snapshots that you own.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a list of restorable users, only snapshots with create snapshot permissions
+        /// for those users are returned. You can specify AWS account IDs (if you own the snapshots),
+        /// <code>self</code> for snapshots for which you own or have explicit permissions, or
+        /// <code>all</code> for public snapshots.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are describing a long list of snapshots, you can paginate the output to make
+        /// the list more manageable. The <code>MaxResults</code> parameter sets the maximum number
+        /// of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
+        /// value, then that number of results is returned along with a <code>NextToken</code>
+        /// value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
+        /// retrieve the remaining results.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+        /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSnapshots service method, as returned by EC2.</returns>
+        Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshots operation.
         /// </summary>
@@ -4073,6 +4896,7 @@ namespace Amazon.EC2
         
         #region  DescribeSpotDatafeedSubscription
 
+
         /// <summary>
         /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
         /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -4080,6 +4904,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSpotDatafeedSubscription service method, as returned by EC2.</returns>
         DescribeSpotDatafeedSubscriptionResponse DescribeSpotDatafeedSubscription();
+
 
         /// <summary>
         /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
@@ -4089,6 +4914,19 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSpotDatafeedSubscription service method, as returned by EC2.</returns>
         DescribeSpotDatafeedSubscriptionResponse DescribeSpotDatafeedSubscription(DescribeSpotDatafeedSubscriptionRequest request);
+
+
+        /// <summary>
+        /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSpotDatafeedSubscription service method, as returned by EC2.</returns>
+        Task<DescribeSpotDatafeedSubscriptionResponse> DescribeSpotDatafeedSubscriptionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSpotDatafeedSubscription operation.
@@ -4105,6 +4943,7 @@ namespace Amazon.EC2
         
         #region  DescribeSpotFleetInstances
 
+
         /// <summary>
         /// Describes the running instances for the specified Spot fleet.
         /// </summary>
@@ -4112,6 +4951,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSpotFleetInstances service method, as returned by EC2.</returns>
         DescribeSpotFleetInstancesResponse DescribeSpotFleetInstances(DescribeSpotFleetInstancesRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSpotFleetInstances operation.
@@ -4128,6 +4968,7 @@ namespace Amazon.EC2
         
         #region  DescribeSpotFleetRequestHistory
 
+
         /// <summary>
         /// Describes the events for the specified Spot fleet request during the specified time.
         /// 
@@ -4141,6 +4982,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSpotFleetRequestHistory service method, as returned by EC2.</returns>
         DescribeSpotFleetRequestHistoryResponse DescribeSpotFleetRequestHistory(DescribeSpotFleetRequestHistoryRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSpotFleetRequestHistory operation.
@@ -4157,6 +4999,7 @@ namespace Amazon.EC2
         
         #region  DescribeSpotFleetRequests
 
+
         /// <summary>
         /// Describes your Spot fleet requests.
         /// </summary>
@@ -4164,6 +5007,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSpotFleetRequests service method, as returned by EC2.</returns>
         DescribeSpotFleetRequestsResponse DescribeSpotFleetRequests(DescribeSpotFleetRequestsRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSpotFleetRequests operation.
@@ -4179,6 +5023,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeSpotInstanceRequests
+
 
         /// <summary>
         /// Describes the Spot Instance requests that belong to your account. Spot Instances are
@@ -4200,6 +5045,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSpotInstanceRequests service method, as returned by EC2.</returns>
         DescribeSpotInstanceRequestsResponse DescribeSpotInstanceRequests();
+
 
         /// <summary>
         /// Describes the Spot Instance requests that belong to your account. Spot Instances are
@@ -4223,6 +5069,32 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeSpotInstanceRequests service method, as returned by EC2.</returns>
         DescribeSpotInstanceRequestsResponse DescribeSpotInstanceRequests(DescribeSpotInstanceRequestsRequest request);
 
+
+        /// <summary>
+        /// Describes the Spot Instance requests that belong to your account. Spot Instances are
+        /// instances that Amazon EC2 launches when the bid price that you specify exceeds the
+        /// current Spot Price. Amazon EC2 periodically sets the Spot Price based on available
+        /// Spot Instance capacity and current Spot Instance requests. For more information, see
+        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
+        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
+        /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
+        /// the instance ID appears in the response and contains the identifier of the instance.
+        /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
+        /// where the instance lifecycle is <code>spot</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSpotInstanceRequests service method, as returned by EC2.</returns>
+        Task<DescribeSpotInstanceRequestsResponse> DescribeSpotInstanceRequestsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSpotInstanceRequests operation.
         /// </summary>
@@ -4237,6 +5109,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeSpotPriceHistory
+
 
         /// <summary>
         /// Describes the Spot Price history. The prices returned are listed in chronological
@@ -4255,6 +5128,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSpotPriceHistory service method, as returned by EC2.</returns>
         DescribeSpotPriceHistoryResponse DescribeSpotPriceHistory();
+
 
         /// <summary>
         /// Describes the Spot Price history. The prices returned are listed in chronological
@@ -4275,6 +5149,29 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeSpotPriceHistory service method, as returned by EC2.</returns>
         DescribeSpotPriceHistoryResponse DescribeSpotPriceHistory(DescribeSpotPriceHistoryRequest request);
 
+
+        /// <summary>
+        /// Describes the Spot Price history. The prices returned are listed in chronological
+        /// order, from the oldest to the most recent, for up to the past 90 days. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
+        /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// When you specify a start and end time, this operation returns the prices of the instance
+        /// types within the time range that you specified and the time when the price changed.
+        /// The price is valid within the time period that you specified; the response merely
+        /// indicates the last time that the price changed.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSpotPriceHistory service method, as returned by EC2.</returns>
+        Task<DescribeSpotPriceHistoryResponse> DescribeSpotPriceHistoryAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSpotPriceHistory operation.
         /// </summary>
@@ -4290,6 +5187,7 @@ namespace Amazon.EC2
         
         #region  DescribeSubnets
 
+
         /// <summary>
         /// Describes one or more of your subnets.
         /// 
@@ -4302,6 +5200,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSubnets service method, as returned by EC2.</returns>
         DescribeSubnetsResponse DescribeSubnets();
+
 
         /// <summary>
         /// Describes one or more of your subnets.
@@ -4316,6 +5215,24 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeSubnets service method, as returned by EC2.</returns>
         DescribeSubnetsResponse DescribeSubnets(DescribeSubnetsRequest request);
+
+
+        /// <summary>
+        /// Describes one or more of your subnets.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about subnets, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+        /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSubnets service method, as returned by EC2.</returns>
+        Task<DescribeSubnetsResponse> DescribeSubnetsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSubnets operation.
@@ -4332,6 +5249,7 @@ namespace Amazon.EC2
         
         #region  DescribeTags
 
+
         /// <summary>
         /// Describes one or more of the tags for your EC2 resources.
         /// 
@@ -4344,6 +5262,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by EC2.</returns>
         DescribeTagsResponse DescribeTags();
+
 
         /// <summary>
         /// Describes one or more of the tags for your EC2 resources.
@@ -4358,6 +5277,24 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by EC2.</returns>
         DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
+
+
+        /// <summary>
+        /// Describes one or more of the tags for your EC2 resources.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+        /// Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTags service method, as returned by EC2.</returns>
+        Task<DescribeTagsResponse> DescribeTagsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTags operation.
@@ -4374,6 +5311,7 @@ namespace Amazon.EC2
         
         #region  DescribeVolumeAttribute
 
+
         /// <summary>
         /// Describes the specified attribute of the specified volume. You can specify only one
         /// attribute at a time.
@@ -4389,6 +5327,7 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeVolumeAttribute service method, as returned by EC2.</returns>
         DescribeVolumeAttributeResponse DescribeVolumeAttribute(DescribeVolumeAttributeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVolumeAttribute operation.
         /// </summary>
@@ -4403,6 +5342,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeVolumes
+
 
         /// <summary>
         /// Describes the specified EBS volumes.
@@ -4425,6 +5365,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVolumes service method, as returned by EC2.</returns>
         DescribeVolumesResponse DescribeVolumes();
+
 
         /// <summary>
         /// Describes the specified EBS volumes.
@@ -4449,6 +5390,33 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeVolumes service method, as returned by EC2.</returns>
         DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request);
 
+
+        /// <summary>
+        /// Describes the specified EBS volumes.
+        /// 
+        ///  
+        /// <para>
+        /// If you are describing a long list of volumes, you can paginate the output to make
+        /// the list more manageable. The <code>MaxResults</code> parameter sets the maximum number
+        /// of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
+        /// value, then that number of results is returned along with a <code>NextToken</code>
+        /// value that can be passed to a subsequent <code>DescribeVolumes</code> request to retrieve
+        /// the remaining results.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+        /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVolumes service method, as returned by EC2.</returns>
+        Task<DescribeVolumesResponse> DescribeVolumesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVolumes operation.
         /// </summary>
@@ -4463,6 +5431,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeVolumeStatus
+
 
         /// <summary>
         /// Describes the status of the specified volumes. Volume status provides the result of
@@ -4515,6 +5484,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVolumeStatus service method, as returned by EC2.</returns>
         DescribeVolumeStatusResponse DescribeVolumeStatus();
+
 
         /// <summary>
         /// Describes the status of the specified volumes. Volume status provides the result of
@@ -4569,6 +5539,63 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeVolumeStatus service method, as returned by EC2.</returns>
         DescribeVolumeStatusResponse DescribeVolumeStatus(DescribeVolumeStatusRequest request);
 
+
+        /// <summary>
+        /// Describes the status of the specified volumes. Volume status provides the result of
+        /// the checks performed on your volumes to determine events that can impair the performance
+        /// of your volumes. The performance of a volume can be affected if an issue occurs on
+        /// the volume's underlying host. If the volume's underlying host experiences a power
+        /// outage or system issue, after the system is restored, there could be data inconsistencies
+        /// on the volume. Volume events notify you if this occurs. Volume actions notify you
+        /// if any action needs to be taken in response to the event.
+        /// 
+        ///  
+        /// <para>
+        /// The <code>DescribeVolumeStatus</code> operation provides the following information
+        /// about the specified volumes:
+        /// </para>
+        ///  
+        /// <para>
+        /// <i>Status</i>: Reflects the current status of the volume. The possible values are
+        /// <code>ok</code>, <code>impaired</code> , <code>warning</code>, or <code>insufficient-data</code>.
+        /// If all checks pass, the overall status of the volume is <code>ok</code>. If the check
+        /// fails, the overall status is <code>impaired</code>. If the status is <code>insufficient-data</code>,
+        /// then the checks may still be taking place on your volume at the time. We recommend
+        /// that you retry the request. For more information on volume status, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
+        /// the Status of Your Volumes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// <i>Events</i>: Reflect the cause of a volume status and may require you to take action.
+        /// For example, if your volume returns an <code>impaired</code> status, then the volume
+        /// event might be <code>potential-data-inconsistency</code>. This means that your volume
+        /// has been affected by an issue with the underlying host, has all I/O operations disabled,
+        /// and may have inconsistent data.
+        /// </para>
+        ///  
+        /// <para>
+        /// <i>Actions</i>: Reflect the actions you may have to take in response to an event.
+        /// For example, if the status of the volume is <code>impaired</code> and the volume event
+        /// shows <code>potential-data-inconsistency</code>, then the action shows <code>enable-volume-io</code>.
+        /// This means that you may want to enable the I/O operations for the volume by calling
+        /// the <a>EnableVolumeIO</a> action and then check the volume for data consistency.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Volume status is based on the volume status checks, and does not reflect the volume
+        /// state. Therefore, volume status does not indicate volumes in the <code>error</code>
+        /// state (for example, when a volume is incapable of accepting I/O.)
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVolumeStatus service method, as returned by EC2.</returns>
+        Task<DescribeVolumeStatusResponse> DescribeVolumeStatusAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVolumeStatus operation.
         /// </summary>
@@ -4584,6 +5611,7 @@ namespace Amazon.EC2
         
         #region  DescribeVpcAttribute
 
+
         /// <summary>
         /// Describes the specified attribute of the specified VPC. You can specify only one attribute
         /// at a time.
@@ -4592,6 +5620,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVpcAttribute service method, as returned by EC2.</returns>
         DescribeVpcAttributeResponse DescribeVpcAttribute(DescribeVpcAttributeRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpcAttribute operation.
@@ -4608,6 +5637,7 @@ namespace Amazon.EC2
         
         #region  DescribeVpcClassicLink
 
+
         /// <summary>
         /// Describes the ClassicLink status of one or more VPCs.
         /// </summary>
@@ -4615,6 +5645,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVpcClassicLink service method, as returned by EC2.</returns>
         DescribeVpcClassicLinkResponse DescribeVpcClassicLink(DescribeVpcClassicLinkRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpcClassicLink operation.
@@ -4631,6 +5662,7 @@ namespace Amazon.EC2
         
         #region  DescribeVpcEndpoints
 
+
         /// <summary>
         /// Describes one or more of your VPC endpoints.
         /// </summary>
@@ -4638,6 +5670,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVpcEndpoints service method, as returned by EC2.</returns>
         DescribeVpcEndpointsResponse DescribeVpcEndpoints(DescribeVpcEndpointsRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpcEndpoints operation.
@@ -4654,6 +5687,7 @@ namespace Amazon.EC2
         
         #region  DescribeVpcEndpointServices
 
+
         /// <summary>
         /// Describes all supported AWS services that can be specified when creating a VPC endpoint.
         /// </summary>
@@ -4661,6 +5695,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVpcEndpointServices service method, as returned by EC2.</returns>
         DescribeVpcEndpointServicesResponse DescribeVpcEndpointServices(DescribeVpcEndpointServicesRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpcEndpointServices operation.
@@ -4677,12 +5712,14 @@ namespace Amazon.EC2
         
         #region  DescribeVpcPeeringConnections
 
+
         /// <summary>
         /// Describes one or more of your VPC peering connections.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVpcPeeringConnections service method, as returned by EC2.</returns>
         DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections();
+
 
         /// <summary>
         /// Describes one or more of your VPC peering connections.
@@ -4691,6 +5728,18 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVpcPeeringConnections service method, as returned by EC2.</returns>
         DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request);
+
+
+        /// <summary>
+        /// Describes one or more of your VPC peering connections.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVpcPeeringConnections service method, as returned by EC2.</returns>
+        Task<DescribeVpcPeeringConnectionsResponse> DescribeVpcPeeringConnectionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpcPeeringConnections operation.
@@ -4707,12 +5756,14 @@ namespace Amazon.EC2
         
         #region  DescribeVpcs
 
+
         /// <summary>
         /// Describes one or more of your VPCs.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVpcs service method, as returned by EC2.</returns>
         DescribeVpcsResponse DescribeVpcs();
+
 
         /// <summary>
         /// Describes one or more of your VPCs.
@@ -4721,6 +5772,18 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVpcs service method, as returned by EC2.</returns>
         DescribeVpcsResponse DescribeVpcs(DescribeVpcsRequest request);
+
+
+        /// <summary>
+        /// Describes one or more of your VPCs.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVpcs service method, as returned by EC2.</returns>
+        Task<DescribeVpcsResponse> DescribeVpcsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpcs operation.
@@ -4737,6 +5800,7 @@ namespace Amazon.EC2
         
         #region  DescribeVpnConnections
 
+
         /// <summary>
         /// Describes one or more of your VPN connections.
         /// 
@@ -4750,6 +5814,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVpnConnections service method, as returned by EC2.</returns>
         DescribeVpnConnectionsResponse DescribeVpnConnections();
+
 
         /// <summary>
         /// Describes one or more of your VPN connections.
@@ -4766,6 +5831,25 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeVpnConnections service method, as returned by EC2.</returns>
         DescribeVpnConnectionsResponse DescribeVpnConnections(DescribeVpnConnectionsRequest request);
 
+
+        /// <summary>
+        /// Describes one or more of your VPN connections.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about VPN connections, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
+        /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
+        /// Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVpnConnections service method, as returned by EC2.</returns>
+        Task<DescribeVpnConnectionsResponse> DescribeVpnConnectionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpnConnections operation.
         /// </summary>
@@ -4781,6 +5865,7 @@ namespace Amazon.EC2
         
         #region  DescribeVpnGateways
 
+
         /// <summary>
         /// Describes one or more of your virtual private gateways.
         /// 
@@ -4794,6 +5879,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DescribeVpnGateways service method, as returned by EC2.</returns>
         DescribeVpnGatewaysResponse DescribeVpnGateways();
+
 
         /// <summary>
         /// Describes one or more of your virtual private gateways.
@@ -4810,6 +5896,25 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeVpnGateways service method, as returned by EC2.</returns>
         DescribeVpnGatewaysResponse DescribeVpnGateways(DescribeVpnGatewaysRequest request);
 
+
+        /// <summary>
+        /// Describes one or more of your virtual private gateways.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about virtual private gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
+        /// an IPsec Hardware VPN to Your VPC</a> in the <i>Amazon Virtual Private Cloud User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVpnGateways service method, as returned by EC2.</returns>
+        Task<DescribeVpnGatewaysResponse> DescribeVpnGatewaysAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVpnGateways operation.
         /// </summary>
@@ -4825,6 +5930,7 @@ namespace Amazon.EC2
         
         #region  DetachClassicLinkVpc
 
+
         /// <summary>
         /// Unlinks (detaches) a linked EC2-Classic instance from a VPC. After the instance has
         /// been unlinked, the VPC security groups are no longer associated with it. An instance
@@ -4834,6 +5940,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DetachClassicLinkVpc service method, as returned by EC2.</returns>
         DetachClassicLinkVpcResponse DetachClassicLinkVpc(DetachClassicLinkVpcRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachClassicLinkVpc operation.
@@ -4850,6 +5957,7 @@ namespace Amazon.EC2
         
         #region  DetachInternetGateway
 
+
         /// <summary>
         /// Detaches an Internet gateway from a VPC, disabling connectivity between the Internet
         /// and the VPC. The VPC must not contain any running instances with Elastic IP addresses.
@@ -4858,6 +5966,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DetachInternetGateway service method, as returned by EC2.</returns>
         DetachInternetGatewayResponse DetachInternetGateway(DetachInternetGatewayRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachInternetGateway operation.
@@ -4874,6 +5983,7 @@ namespace Amazon.EC2
         
         #region  DetachNetworkInterface
 
+
         /// <summary>
         /// Detaches a network interface from an instance.
         /// </summary>
@@ -4881,6 +5991,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DetachNetworkInterface service method, as returned by EC2.</returns>
         DetachNetworkInterfaceResponse DetachNetworkInterface(DetachNetworkInterfaceRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DetachNetworkInterface operation.
@@ -4896,6 +6007,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DetachVolume
+
 
         /// <summary>
         /// Detaches an EBS volume from an instance. Make sure to unmount any file systems on
@@ -4923,6 +6035,7 @@ namespace Amazon.EC2
         /// <returns>The response from the DetachVolume service method, as returned by EC2.</returns>
         DetachVolumeResponse DetachVolume(DetachVolumeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DetachVolume operation.
         /// </summary>
@@ -4937,6 +6050,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DetachVpnGateway
+
 
         /// <summary>
         /// Detaches a virtual private gateway from a VPC. You do this if you're planning to turn
@@ -4955,6 +6069,7 @@ namespace Amazon.EC2
         /// <returns>The response from the DetachVpnGateway service method, as returned by EC2.</returns>
         DetachVpnGatewayResponse DetachVpnGateway(DetachVpnGatewayRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DetachVpnGateway operation.
         /// </summary>
@@ -4970,6 +6085,7 @@ namespace Amazon.EC2
         
         #region  DisableVgwRoutePropagation
 
+
         /// <summary>
         /// Disables a virtual private gateway (VGW) from propagating routes to a specified route
         /// table of a VPC.
@@ -4978,6 +6094,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DisableVgwRoutePropagation service method, as returned by EC2.</returns>
         DisableVgwRoutePropagationResponse DisableVgwRoutePropagation(DisableVgwRoutePropagationRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableVgwRoutePropagation operation.
@@ -4994,6 +6111,7 @@ namespace Amazon.EC2
         
         #region  DisableVpcClassicLink
 
+
         /// <summary>
         /// Disables ClassicLink for a VPC. You cannot disable ClassicLink for a VPC that has
         /// EC2-Classic instances linked to it.
@@ -5002,6 +6120,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the DisableVpcClassicLink service method, as returned by EC2.</returns>
         DisableVpcClassicLinkResponse DisableVpcClassicLink(DisableVpcClassicLinkRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableVpcClassicLink operation.
@@ -5017,6 +6136,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DisassociateAddress
+
 
         /// <summary>
         /// Disassociates an Elastic IP address from the instance or network interface it's associated
@@ -5039,6 +6159,7 @@ namespace Amazon.EC2
         /// <returns>The response from the DisassociateAddress service method, as returned by EC2.</returns>
         DisassociateAddressResponse DisassociateAddress(DisassociateAddressRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DisassociateAddress operation.
         /// </summary>
@@ -5053,6 +6174,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DisassociateRouteTable
+
 
         /// <summary>
         /// Disassociates a subnet from a route table.
@@ -5070,6 +6192,7 @@ namespace Amazon.EC2
         /// <returns>The response from the DisassociateRouteTable service method, as returned by EC2.</returns>
         DisassociateRouteTableResponse DisassociateRouteTable(DisassociateRouteTableRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DisassociateRouteTable operation.
         /// </summary>
@@ -5085,6 +6208,7 @@ namespace Amazon.EC2
         
         #region  EnableVgwRoutePropagation
 
+
         /// <summary>
         /// Enables a virtual private gateway (VGW) to propagate routes to the specified route
         /// table of a VPC.
@@ -5093,6 +6217,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the EnableVgwRoutePropagation service method, as returned by EC2.</returns>
         EnableVgwRoutePropagationResponse EnableVgwRoutePropagation(EnableVgwRoutePropagationRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableVgwRoutePropagation operation.
@@ -5109,6 +6234,7 @@ namespace Amazon.EC2
         
         #region  EnableVolumeIO
 
+
         /// <summary>
         /// Enables I/O operations for a volume that had I/O operations disabled because the data
         /// on the volume was potentially inconsistent.
@@ -5117,6 +6243,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the EnableVolumeIO service method, as returned by EC2.</returns>
         EnableVolumeIOResponse EnableVolumeIO(EnableVolumeIORequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableVolumeIO operation.
@@ -5133,6 +6260,7 @@ namespace Amazon.EC2
         
         #region  EnableVpcClassicLink
 
+
         /// <summary>
         /// Enables a VPC for ClassicLink. You can then link EC2-Classic instances to your ClassicLink-enabled
         /// VPC to allow communication over private IP addresses. You cannot enable your VPC for
@@ -5146,6 +6274,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the EnableVpcClassicLink service method, as returned by EC2.</returns>
         EnableVpcClassicLinkResponse EnableVpcClassicLink(EnableVpcClassicLinkRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableVpcClassicLink operation.
@@ -5161,6 +6290,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  GetConsoleOutput
+
 
         /// <summary>
         /// Gets the console output for the specified instance.
@@ -5196,6 +6326,7 @@ namespace Amazon.EC2
         /// <returns>The response from the GetConsoleOutput service method, as returned by EC2.</returns>
         GetConsoleOutputResponse GetConsoleOutput(GetConsoleOutputRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetConsoleOutput operation.
         /// </summary>
@@ -5210,6 +6341,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  GetPasswordData
+
 
         /// <summary>
         /// Retrieves the encrypted administrator password for an instance running Windows.
@@ -5239,6 +6371,7 @@ namespace Amazon.EC2
         /// <returns>The response from the GetPasswordData service method, as returned by EC2.</returns>
         GetPasswordDataResponse GetPasswordData(GetPasswordDataRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetPasswordData operation.
         /// </summary>
@@ -5254,6 +6387,7 @@ namespace Amazon.EC2
         
         #region  ImportImage
 
+
         /// <summary>
         /// Import single or multi-volume disk images or EBS snapshots into an Amazon Machine
         /// Image (AMI).
@@ -5262,6 +6396,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ImportImage service method, as returned by EC2.</returns>
         ImportImageResponse ImportImage(ImportImageRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ImportImage operation.
@@ -5278,6 +6413,7 @@ namespace Amazon.EC2
         
         #region  ImportInstance
 
+
         /// <summary>
         /// Creates an import instance task using metadata from the specified disk image. <code>ImportInstance</code>
         /// only supports single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a>.
@@ -5290,6 +6426,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ImportInstance service method, as returned by EC2.</returns>
         ImportInstanceResponse ImportInstance(ImportInstanceRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ImportInstance operation.
@@ -5305,6 +6442,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ImportKeyPair
+
 
         /// <summary>
         /// Imports the public key from an RSA key pair that you created with a third-party tool.
@@ -5324,6 +6462,7 @@ namespace Amazon.EC2
         /// <returns>The response from the ImportKeyPair service method, as returned by EC2.</returns>
         ImportKeyPairResponse ImportKeyPair(ImportKeyPairRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ImportKeyPair operation.
         /// </summary>
@@ -5339,6 +6478,7 @@ namespace Amazon.EC2
         
         #region  ImportSnapshot
 
+
         /// <summary>
         /// Imports a disk into an EBS snapshot.
         /// </summary>
@@ -5346,6 +6486,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ImportSnapshot service method, as returned by EC2.</returns>
         ImportSnapshotResponse ImportSnapshot(ImportSnapshotRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ImportSnapshot operation.
@@ -5362,6 +6503,7 @@ namespace Amazon.EC2
         
         #region  ImportVolume
 
+
         /// <summary>
         /// Creates an import volume task using metadata from the specified disk image. After
         /// importing the image, you then upload it using the <code>ec2-import-volume</code> command
@@ -5374,6 +6516,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ImportVolume service method, as returned by EC2.</returns>
         ImportVolumeResponse ImportVolume(ImportVolumeRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ImportVolume operation.
@@ -5389,6 +6532,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ModifyImageAttribute
+
 
         /// <summary>
         /// Modifies the specified attribute of the specified AMI. You can specify only one attribute
@@ -5406,6 +6550,7 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyImageAttribute service method, as returned by EC2.</returns>
         ModifyImageAttributeResponse ModifyImageAttribute(ModifyImageAttributeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyImageAttribute operation.
         /// </summary>
@@ -5420,6 +6565,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ModifyInstanceAttribute
+
 
         /// <summary>
         /// Modifies the specified attribute of the specified instance. You can specify only one
@@ -5437,6 +6583,7 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyInstanceAttribute service method, as returned by EC2.</returns>
         ModifyInstanceAttributeResponse ModifyInstanceAttribute(ModifyInstanceAttributeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyInstanceAttribute operation.
         /// </summary>
@@ -5452,6 +6599,7 @@ namespace Amazon.EC2
         
         #region  ModifyNetworkInterfaceAttribute
 
+
         /// <summary>
         /// Modifies the specified network interface attribute. You can specify only one attribute
         /// at a time.
@@ -5460,6 +6608,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ModifyNetworkInterfaceAttribute service method, as returned by EC2.</returns>
         ModifyNetworkInterfaceAttributeResponse ModifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyNetworkInterfaceAttribute operation.
@@ -5475,6 +6624,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ModifyReservedInstances
+
 
         /// <summary>
         /// Modifies the Availability Zone, instance count, instance type, or network platform
@@ -5493,6 +6643,7 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyReservedInstances service method, as returned by EC2.</returns>
         ModifyReservedInstancesResponse ModifyReservedInstances(ModifyReservedInstancesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyReservedInstances operation.
         /// </summary>
@@ -5507,6 +6658,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ModifySnapshotAttribute
+
 
         /// <summary>
         /// Adds or removes permission settings for the specified snapshot. You may add or remove
@@ -5530,6 +6682,7 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifySnapshotAttribute service method, as returned by EC2.</returns>
         ModifySnapshotAttributeResponse ModifySnapshotAttribute(ModifySnapshotAttributeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ModifySnapshotAttribute operation.
         /// </summary>
@@ -5545,6 +6698,7 @@ namespace Amazon.EC2
         
         #region  ModifySubnetAttribute
 
+
         /// <summary>
         /// Modifies a subnet attribute.
         /// </summary>
@@ -5552,6 +6706,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ModifySubnetAttribute service method, as returned by EC2.</returns>
         ModifySubnetAttributeResponse ModifySubnetAttribute(ModifySubnetAttributeRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifySubnetAttribute operation.
@@ -5567,6 +6722,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ModifyVolumeAttribute
+
 
         /// <summary>
         /// Modifies a volume attribute.
@@ -5589,6 +6745,7 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyVolumeAttribute service method, as returned by EC2.</returns>
         ModifyVolumeAttributeResponse ModifyVolumeAttribute(ModifyVolumeAttributeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyVolumeAttribute operation.
         /// </summary>
@@ -5604,6 +6761,7 @@ namespace Amazon.EC2
         
         #region  ModifyVpcAttribute
 
+
         /// <summary>
         /// Modifies the specified attribute of the specified VPC.
         /// </summary>
@@ -5611,6 +6769,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ModifyVpcAttribute service method, as returned by EC2.</returns>
         ModifyVpcAttributeResponse ModifyVpcAttribute(ModifyVpcAttributeRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyVpcAttribute operation.
@@ -5627,6 +6786,7 @@ namespace Amazon.EC2
         
         #region  ModifyVpcEndpoint
 
+
         /// <summary>
         /// Modifies attributes of a specified VPC endpoint. You can modify the policy associated
         /// with the endpoint, and you can add and remove route tables associated with the endpoint.
@@ -5635,6 +6795,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ModifyVpcEndpoint service method, as returned by EC2.</returns>
         ModifyVpcEndpointResponse ModifyVpcEndpoint(ModifyVpcEndpointRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyVpcEndpoint operation.
@@ -5651,6 +6812,7 @@ namespace Amazon.EC2
         
         #region  MonitorInstances
 
+
         /// <summary>
         /// Enables monitoring for a running instance. For more information about monitoring instances,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
@@ -5660,6 +6822,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the MonitorInstances service method, as returned by EC2.</returns>
         MonitorInstancesResponse MonitorInstances(MonitorInstancesRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the MonitorInstances operation.
@@ -5676,6 +6839,7 @@ namespace Amazon.EC2
         
         #region  MoveAddressToVpc
 
+
         /// <summary>
         /// Moves an Elastic IP address from the EC2-Classic platform to the EC2-VPC platform.
         /// The Elastic IP address must be allocated to your account, and it must not be associated
@@ -5688,6 +6852,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the MoveAddressToVpc service method, as returned by EC2.</returns>
         MoveAddressToVpcResponse MoveAddressToVpc(MoveAddressToVpcRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the MoveAddressToVpc operation.
@@ -5703,6 +6868,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  PurchaseReservedInstancesOffering
+
 
         /// <summary>
         /// Purchases a Reserved Instance for use with your account. With Amazon EC2 Reserved
@@ -5728,6 +6894,7 @@ namespace Amazon.EC2
         /// <returns>The response from the PurchaseReservedInstancesOffering service method, as returned by EC2.</returns>
         PurchaseReservedInstancesOfferingResponse PurchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PurchaseReservedInstancesOffering operation.
         /// </summary>
@@ -5742,6 +6909,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  RebootInstances
+
 
         /// <summary>
         /// Requests a reboot of one or more instances. This operation is asynchronous; it only
@@ -5766,6 +6934,7 @@ namespace Amazon.EC2
         /// <returns>The response from the RebootInstances service method, as returned by EC2.</returns>
         RebootInstancesResponse RebootInstances(RebootInstancesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RebootInstances operation.
         /// </summary>
@@ -5780,6 +6949,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  RegisterImage
+
 
         /// <summary>
         /// Registers an AMI. When you're creating an AMI, this is the final step you must complete
@@ -5816,6 +6986,7 @@ namespace Amazon.EC2
         /// <returns>The response from the RegisterImage service method, as returned by EC2.</returns>
         RegisterImageResponse RegisterImage(RegisterImageRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterImage operation.
         /// </summary>
@@ -5831,6 +7002,7 @@ namespace Amazon.EC2
         
         #region  RejectVpcPeeringConnection
 
+
         /// <summary>
         /// Rejects a VPC peering connection request. The VPC peering connection must be in the
         /// <code>pending-acceptance</code> state. Use the <a>DescribeVpcPeeringConnections</a>
@@ -5842,6 +7014,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the RejectVpcPeeringConnection service method, as returned by EC2.</returns>
         RejectVpcPeeringConnectionResponse RejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RejectVpcPeeringConnection operation.
@@ -5857,6 +7030,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ReleaseAddress
+
 
         /// <summary>
         /// Releases the specified Elastic IP address.
@@ -5886,6 +7060,7 @@ namespace Amazon.EC2
         /// <returns>The response from the ReleaseAddress service method, as returned by EC2.</returns>
         ReleaseAddressResponse ReleaseAddress(ReleaseAddressRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ReleaseAddress operation.
         /// </summary>
@@ -5901,6 +7076,7 @@ namespace Amazon.EC2
         
         #region  ReplaceNetworkAclAssociation
 
+
         /// <summary>
         /// Changes which network ACL a subnet is associated with. By default when you create
         /// a subnet, it's automatically associated with the default network ACL. For more information
@@ -5911,6 +7087,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ReplaceNetworkAclAssociation service method, as returned by EC2.</returns>
         ReplaceNetworkAclAssociationResponse ReplaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReplaceNetworkAclAssociation operation.
@@ -5927,6 +7104,7 @@ namespace Amazon.EC2
         
         #region  ReplaceNetworkAclEntry
 
+
         /// <summary>
         /// Replaces an entry (rule) in a network ACL. For more information about network ACLs,
         /// see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
@@ -5936,6 +7114,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ReplaceNetworkAclEntry service method, as returned by EC2.</returns>
         ReplaceNetworkAclEntryResponse ReplaceNetworkAclEntry(ReplaceNetworkAclEntryRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ReplaceNetworkAclEntry operation.
@@ -5951,6 +7130,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ReplaceRoute
+
 
         /// <summary>
         /// Replaces an existing route within a route table in a VPC. You must provide only one
@@ -5968,6 +7148,7 @@ namespace Amazon.EC2
         /// <returns>The response from the ReplaceRoute service method, as returned by EC2.</returns>
         ReplaceRouteResponse ReplaceRoute(ReplaceRouteRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ReplaceRoute operation.
         /// </summary>
@@ -5982,6 +7163,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ReplaceRouteTableAssociation
+
 
         /// <summary>
         /// Changes the route table associated with a given subnet in a VPC. After the operation
@@ -6001,6 +7183,7 @@ namespace Amazon.EC2
         /// <returns>The response from the ReplaceRouteTableAssociation service method, as returned by EC2.</returns>
         ReplaceRouteTableAssociationResponse ReplaceRouteTableAssociation(ReplaceRouteTableAssociationRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ReplaceRouteTableAssociation operation.
         /// </summary>
@@ -6015,6 +7198,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ReportInstanceStatus
+
 
         /// <summary>
         /// Submits feedback about the status of an instance. The instance must be in the <code>running</code>
@@ -6033,6 +7217,7 @@ namespace Amazon.EC2
         /// <returns>The response from the ReportInstanceStatus service method, as returned by EC2.</returns>
         ReportInstanceStatusResponse ReportInstanceStatus(ReportInstanceStatusRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ReportInstanceStatus operation.
         /// </summary>
@@ -6048,6 +7233,7 @@ namespace Amazon.EC2
         
         #region  RequestSpotFleet
 
+
         /// <summary>
         /// Creates a Spot fleet request.
         /// 
@@ -6061,6 +7247,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the RequestSpotFleet service method, as returned by EC2.</returns>
         RequestSpotFleetResponse RequestSpotFleet(RequestSpotFleetRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RequestSpotFleet operation.
@@ -6077,6 +7264,7 @@ namespace Amazon.EC2
         
         #region  RequestSpotInstances
 
+
         /// <summary>
         /// Creates a Spot Instance request. Spot Instances are instances that Amazon EC2 launches
         /// when the bid price that you specify exceeds the current Spot Price. Amazon EC2 periodically
@@ -6088,6 +7276,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the RequestSpotInstances service method, as returned by EC2.</returns>
         RequestSpotInstancesResponse RequestSpotInstances(RequestSpotInstancesRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RequestSpotInstances operation.
@@ -6104,6 +7293,7 @@ namespace Amazon.EC2
         
         #region  ResetImageAttribute
 
+
         /// <summary>
         /// Resets an attribute of an AMI to its default value.
         /// 
@@ -6117,6 +7307,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ResetImageAttribute service method, as returned by EC2.</returns>
         ResetImageAttributeResponse ResetImageAttribute(ResetImageAttributeRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResetImageAttribute operation.
@@ -6132,6 +7323,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ResetInstanceAttribute
+
 
         /// <summary>
         /// Resets an attribute of an instance to its default value. To reset the <code>kernel</code>
@@ -6152,6 +7344,7 @@ namespace Amazon.EC2
         /// <returns>The response from the ResetInstanceAttribute service method, as returned by EC2.</returns>
         ResetInstanceAttributeResponse ResetInstanceAttribute(ResetInstanceAttributeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ResetInstanceAttribute operation.
         /// </summary>
@@ -6167,6 +7360,7 @@ namespace Amazon.EC2
         
         #region  ResetNetworkInterfaceAttribute
 
+
         /// <summary>
         /// Resets a network interface attribute. You can specify only one attribute at a time.
         /// </summary>
@@ -6174,6 +7368,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ResetNetworkInterfaceAttribute service method, as returned by EC2.</returns>
         ResetNetworkInterfaceAttributeResponse ResetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResetNetworkInterfaceAttribute operation.
@@ -6190,6 +7385,7 @@ namespace Amazon.EC2
         
         #region  ResetSnapshotAttribute
 
+
         /// <summary>
         /// Resets permission settings for the specified snapshot.
         /// 
@@ -6203,6 +7399,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the ResetSnapshotAttribute service method, as returned by EC2.</returns>
         ResetSnapshotAttributeResponse ResetSnapshotAttribute(ResetSnapshotAttributeRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResetSnapshotAttribute operation.
@@ -6219,6 +7416,7 @@ namespace Amazon.EC2
         
         #region  RestoreAddressToClassic
 
+
         /// <summary>
         /// Restores an Elastic IP address that was previously moved to the EC2-VPC platform back
         /// to the EC2-Classic platform. You cannot move an Elastic IP address that was originally
@@ -6229,6 +7427,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the RestoreAddressToClassic service method, as returned by EC2.</returns>
         RestoreAddressToClassicResponse RestoreAddressToClassic(RestoreAddressToClassicRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreAddressToClassic operation.
@@ -6244,6 +7443,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  RevokeSecurityGroupEgress
+
 
         /// <summary>
         /// Removes one or more egress rules from a security group for EC2-VPC. The values that
@@ -6267,6 +7467,7 @@ namespace Amazon.EC2
         /// <returns>The response from the RevokeSecurityGroupEgress service method, as returned by EC2.</returns>
         RevokeSecurityGroupEgressResponse RevokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeSecurityGroupEgress operation.
         /// </summary>
@@ -6281,6 +7482,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  RevokeSecurityGroupIngress
+
 
         /// <summary>
         /// Removes one or more ingress rules from a security group. The values that you specify
@@ -6304,6 +7506,7 @@ namespace Amazon.EC2
         /// <returns>The response from the RevokeSecurityGroupIngress service method, as returned by EC2.</returns>
         RevokeSecurityGroupIngressResponse RevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeSecurityGroupIngress operation.
         /// </summary>
@@ -6318,6 +7521,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  RunInstances
+
 
         /// <summary>
         /// Launches the specified number of instances using an AMI for which you have permissions.
@@ -6369,6 +7573,7 @@ namespace Amazon.EC2
         /// <returns>The response from the RunInstances service method, as returned by EC2.</returns>
         RunInstancesResponse RunInstances(RunInstancesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RunInstances operation.
         /// </summary>
@@ -6383,6 +7588,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  StartInstances
+
 
         /// <summary>
         /// Starts an Amazon EBS-backed AMI that you've previously stopped.
@@ -6418,6 +7624,7 @@ namespace Amazon.EC2
         /// <returns>The response from the StartInstances service method, as returned by EC2.</returns>
         StartInstancesResponse StartInstances(StartInstancesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the StartInstances operation.
         /// </summary>
@@ -6432,6 +7639,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  StopInstances
+
 
         /// <summary>
         /// Stops an Amazon EBS-backed instance. Each time you transition an instance from stopped
@@ -6482,6 +7690,7 @@ namespace Amazon.EC2
         /// <returns>The response from the StopInstances service method, as returned by EC2.</returns>
         StopInstancesResponse StopInstances(StopInstancesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the StopInstances operation.
         /// </summary>
@@ -6496,6 +7705,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  TerminateInstances
+
 
         /// <summary>
         /// Shuts down one or more instances. This operation is idempotent; if you terminate an
@@ -6532,6 +7742,7 @@ namespace Amazon.EC2
         /// <returns>The response from the TerminateInstances service method, as returned by EC2.</returns>
         TerminateInstancesResponse TerminateInstances(TerminateInstancesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateInstances operation.
         /// </summary>
@@ -6547,6 +7758,7 @@ namespace Amazon.EC2
         
         #region  UnassignPrivateIpAddresses
 
+
         /// <summary>
         /// Unassigns one or more secondary private IP addresses from a network interface.
         /// </summary>
@@ -6554,6 +7766,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the UnassignPrivateIpAddresses service method, as returned by EC2.</returns>
         UnassignPrivateIpAddressesResponse UnassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UnassignPrivateIpAddresses operation.
@@ -6570,6 +7783,7 @@ namespace Amazon.EC2
         
         #region  UnmonitorInstances
 
+
         /// <summary>
         /// Disables monitoring for a running instance. For more information about monitoring
         /// instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
@@ -6579,6 +7793,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>The response from the UnmonitorInstances service method, as returned by EC2.</returns>
         UnmonitorInstancesResponse UnmonitorInstances(UnmonitorInstancesRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UnmonitorInstances operation.

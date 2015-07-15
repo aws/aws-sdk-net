@@ -36,6 +36,7 @@ namespace Amazon.S3
         
         #region  AbortMultipartUpload
 
+
         /// <summary>
         /// Aborts a multipart upload.
         /// 
@@ -94,6 +95,7 @@ namespace Amazon.S3
         
         #region  CompleteMultipartUpload
 
+
         /// <summary>
         /// Completes a multipart upload by assembling previously uploaded parts.
         /// </summary>
@@ -129,6 +131,7 @@ namespace Amazon.S3
         #endregion
         
         #region  CopyObject
+
 
         /// <summary>
         /// Creates a copy of an object that is already stored in Amazon S3.
@@ -188,6 +191,7 @@ namespace Amazon.S3
         #endregion
         
         #region  CopyPart
+
 
         /// <summary>
         /// Uploads a part by copying data from an existing object as data source.
@@ -250,6 +254,7 @@ namespace Amazon.S3
         
         #region  DeleteBucket
 
+
         /// <summary>
         /// Deletes the bucket. All objects (including all object versions and Delete Markers)
         /// in the bucket must be deleted before the bucket itself can be deleted.
@@ -296,6 +301,7 @@ namespace Amazon.S3
         
         #region  DeleteBucketPolicy
 
+
         /// <summary>
         /// Deletes the policy from the bucket.
         /// </summary>
@@ -340,6 +346,7 @@ namespace Amazon.S3
         
         #region  DeleteBucketReplication
 
+
         /// <summary>
         /// Deletes the replication configuration for the given Amazon S3 bucket.
         /// </summary>
@@ -375,6 +382,7 @@ namespace Amazon.S3
         #endregion
         
         #region  DeleteBucketTagging
+
 
         /// <summary>
         /// Deletes the tags from the bucket.
@@ -420,6 +428,7 @@ namespace Amazon.S3
         
         #region  DeleteBucketWebsite
 
+
         /// <summary>
         /// This operation removes the website configuration from the bucket.
         /// </summary>
@@ -463,6 +472,7 @@ namespace Amazon.S3
         #endregion
         
         #region  DeleteCORSConfiguration
+
 
         /// <summary>
         /// Deletes the cors configuration information set for the bucket.
@@ -508,6 +518,7 @@ namespace Amazon.S3
         
         #region  DeleteLifecycleConfiguration
 
+
         /// <summary>
         /// Deletes the lifecycle configuration from the bucket.
         /// </summary>
@@ -551,6 +562,7 @@ namespace Amazon.S3
         #endregion
         
         #region  DeleteObject
+
 
         /// <summary>
         /// Removes the null version (if there is one) of an object and inserts a delete marker,
@@ -613,6 +625,7 @@ namespace Amazon.S3
         
         #region  DeleteObjects
 
+
         /// <summary>
         /// This operation enables you to delete multiple objects from a bucket using a single
         /// HTTP request. You may specify up to 1000 keys.
@@ -649,6 +662,7 @@ namespace Amazon.S3
         #endregion
         
         #region  GetACL
+
 
         /// <summary>
         /// Gets the access control policy for the bucket.
@@ -694,6 +708,7 @@ namespace Amazon.S3
         
         #region  GetBucketLocation
 
+
         /// <summary>
         /// Returns the region the bucket resides in.
         /// </summary>
@@ -737,6 +752,7 @@ namespace Amazon.S3
         #endregion
         
         #region  GetBucketLogging
+
 
         /// <summary>
         /// Returns the logging status of a bucket and the permissions users have to view and
@@ -784,6 +800,7 @@ namespace Amazon.S3
         
         #region  GetBucketNotification
 
+
         /// <summary>
         /// Return the notification configuration of a bucket.
         /// </summary>
@@ -827,6 +844,7 @@ namespace Amazon.S3
         #endregion
         
         #region  GetBucketPolicy
+
 
         /// <summary>
         /// Returns the policy of a specified bucket.
@@ -872,6 +890,7 @@ namespace Amazon.S3
         
         #region  GetBucketReplication
 
+
         /// <summary>
         /// Retrieves the replication configuration for the given Amazon S3 bucket.
         /// </summary>
@@ -907,6 +926,7 @@ namespace Amazon.S3
         #endregion
         
         #region  GetBucketRequestPayment
+
 
         /// <summary>
         /// Returns the request payment configuration of a bucket.
@@ -952,6 +972,7 @@ namespace Amazon.S3
         
         #region  GetBucketTagging
 
+
         /// <summary>
         /// Returns the tag set associated with the bucket.
         /// </summary>
@@ -987,6 +1008,7 @@ namespace Amazon.S3
         #endregion
         
         #region  GetBucketVersioning
+
 
         /// <summary>
         /// Returns the versioning state of a bucket.
@@ -1032,6 +1054,7 @@ namespace Amazon.S3
         
         #region  GetBucketWebsite
 
+
         /// <summary>
         /// Returns the website configuration for a bucket.
         /// </summary>
@@ -1075,6 +1098,7 @@ namespace Amazon.S3
         #endregion
         
         #region  GetCORSConfiguration
+
 
         /// <summary>
         /// Returns the cors configuration for the bucket.
@@ -1120,6 +1144,7 @@ namespace Amazon.S3
         
         #region  GetLifecycleConfiguration
 
+
         /// <summary>
         /// Returns the lifecycle configuration information set on the bucket.
         /// </summary>
@@ -1163,6 +1188,7 @@ namespace Amazon.S3
         #endregion
         
         #region  GetObject
+
 
         /// <summary>
         /// Retrieves objects from Amazon S3.
@@ -1218,6 +1244,7 @@ namespace Amazon.S3
         #endregion
         
         #region  GetObjectMetadata
+
 
         /// <summary>
         /// The HEAD operation retrieves metadata from an object without returning the object
@@ -1280,6 +1307,7 @@ namespace Amazon.S3
         
         #region  GetObjectTorrent
 
+
         /// <summary>
         /// Return torrent files from a bucket.
         /// </summary>
@@ -1324,6 +1352,7 @@ namespace Amazon.S3
         #endregion
         
         #region  InitiateMultipartUpload
+
 
         /// <summary>
         /// Initiates a multipart upload and returns an upload ID.
@@ -1386,6 +1415,7 @@ namespace Amazon.S3
         
         #region  ListBuckets
 
+
         /// <summary>
         /// Returns a list of all buckets owned by the authenticated sender of the request.
         /// </summary>
@@ -1428,6 +1458,7 @@ namespace Amazon.S3
         #endregion
         
         #region  ListMultipartUploads
+
 
         /// <summary>
         /// This operation lists in-progress multipart uploads.
@@ -1481,6 +1512,7 @@ namespace Amazon.S3
         #endregion
         
         #region  ListObjects
+
 
         /// <summary>
         /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
@@ -1538,6 +1570,7 @@ namespace Amazon.S3
         
         #region  ListParts
 
+
         /// <summary>
         /// Lists the parts that have been uploaded for a specific multipart upload.
         /// </summary>
@@ -1583,6 +1616,7 @@ namespace Amazon.S3
         #endregion
         
         #region  ListVersions
+
 
         /// <summary>
         /// Returns metadata about all of the versions of objects in a bucket.
@@ -1637,6 +1671,7 @@ namespace Amazon.S3
         
         #region  PutACL
 
+
         /// <summary>
         /// Sets the permissions on a bucket using access control lists (ACL).
         /// </summary>
@@ -1672,6 +1707,7 @@ namespace Amazon.S3
         #endregion
         
         #region  PutBucket
+
 
         /// <summary>
         /// Creates a new bucket.
@@ -1717,6 +1753,7 @@ namespace Amazon.S3
         
         #region  PutBucketLogging
 
+
         /// <summary>
         /// Set the logging parameters for a bucket and to specify permissions for who can view
         /// and modify the logging parameters. To set the logging status of a bucket, you must
@@ -1755,6 +1792,7 @@ namespace Amazon.S3
         
         #region  PutBucketNotification
 
+
         /// <summary>
         /// Enables notifications of specified events for a bucket.
         /// </summary>
@@ -1790,6 +1828,7 @@ namespace Amazon.S3
         #endregion
         
         #region  PutBucketPolicy
+
 
         /// <summary>
         /// Replaces a policy on a bucket. If the bucket already has a policy, the one in this
@@ -1849,6 +1888,7 @@ namespace Amazon.S3
         
         #region  PutBucketReplication
 
+
         /// <summary>
         /// Sets a replication configuration for the Amazon S3 bucket.
         /// </summary>
@@ -1884,6 +1924,7 @@ namespace Amazon.S3
         #endregion
         
         #region  PutBucketRequestPayment
+
 
         /// <summary>
         /// Sets the request payment configuration for a bucket. By default, the bucket owner
@@ -1936,6 +1977,7 @@ namespace Amazon.S3
         
         #region  PutBucketTagging
 
+
         /// <summary>
         /// Sets the tags for a bucket.
         /// </summary>
@@ -1981,6 +2023,7 @@ namespace Amazon.S3
         
         #region  PutBucketVersioning
 
+
         /// <summary>
         /// Sets the versioning state of an existing bucket. To set the versioning state, you
         /// must be the bucket owner.
@@ -2017,6 +2060,7 @@ namespace Amazon.S3
         #endregion
         
         #region  PutBucketWebsite
+
 
         /// <summary>
         /// Set the website configuration for a bucket.
@@ -2063,6 +2107,7 @@ namespace Amazon.S3
         
         #region  PutCORSConfiguration
 
+
         /// <summary>
         /// Sets the cors configuration for a bucket.
         /// </summary>
@@ -2107,6 +2152,7 @@ namespace Amazon.S3
         #endregion
         
         #region  PutLifecycleConfiguration
+
 
         /// <summary>
         /// Sets lifecycle configuration for your bucket. If a lifecycle configuration exists,
@@ -2155,6 +2201,7 @@ namespace Amazon.S3
         
         #region  PutObject
 
+
         /// <summary>
         /// Adds an object to a bucket.
         /// </summary>
@@ -2190,6 +2237,7 @@ namespace Amazon.S3
         #endregion
         
         #region  RestoreObject
+
 
         /// <summary>
         /// Restores an archived copy of an object back into Amazon S3
@@ -2266,6 +2314,7 @@ namespace Amazon.S3
         #endregion
         
         #region  UploadPart
+
 
         /// <summary>
         /// Uploads a part in a multipart upload.

@@ -34,13 +34,13 @@ namespace Amazon.S3.Transfer.Internal
             {
                 if (AsyncThrottler != null)
                 {
-                    await this.AsyncThrottler.WaitAsync(cancellationToken).
-                            ConfigureAwait(continueOnCapturedContext: false);
+                    await this.AsyncThrottler.WaitAsync(cancellationToken)
+                        .ConfigureAwait(continueOnCapturedContext: false);
                 }
 
                 var putRequest = ConstructRequest();
-                await _s3Client.PutObjectAsync(putRequest, cancellationToken).
-                    ConfigureAwait(continueOnCapturedContext: false);
+                await _s3Client.PutObjectAsync(putRequest, cancellationToken)
+                    .ConfigureAwait(continueOnCapturedContext: false);
             }
             finally
             {

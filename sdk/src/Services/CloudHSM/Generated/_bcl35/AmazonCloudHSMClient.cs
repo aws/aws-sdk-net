@@ -248,6 +248,7 @@ namespace Amazon.CloudHSM
             return CreateHapg(request);
         }
 
+
         /// <summary>
         /// Creates a high-availability partition group. A high-availability partition group is
         /// a group of partitions that spans multiple physical HSMs.
@@ -449,6 +450,7 @@ namespace Amazon.CloudHSM
             return DeleteHapg(request);
         }
 
+
         /// <summary>
         /// Deletes a high-availability partition group.
         /// </summary>
@@ -530,6 +532,7 @@ namespace Amazon.CloudHSM
             request.HsmArn = hsmArn;
             return DeleteHsm(request);
         }
+
 
         /// <summary>
         /// Deletes an HSM. Once complete, this operation cannot be undone and your key material
@@ -613,6 +616,7 @@ namespace Amazon.CloudHSM
             return DeleteLunaClient(request);
         }
 
+
         /// <summary>
         /// Deletes a client.
         /// </summary>
@@ -693,6 +697,7 @@ namespace Amazon.CloudHSM
             request.HapgArn = hapgArn;
             return DescribeHapg(request);
         }
+
 
         /// <summary>
         /// Retrieves information about a high-availability partition group.
@@ -775,6 +780,7 @@ namespace Amazon.CloudHSM
             request.HsmArn = hsmArn;
             return DescribeHsm(request);
         }
+
 
         /// <summary>
         /// Retrieves information about an HSM. You can identify the HSM by its ARN or its serial
@@ -975,6 +981,7 @@ namespace Amazon.CloudHSM
             return ListAvailableZones(request);
         }
 
+
         /// <summary>
         /// Lists the Availability Zones that have available AWS CloudHSM capacity.
         /// </summary>
@@ -1061,6 +1068,7 @@ namespace Amazon.CloudHSM
             var request = new ListHapgsRequest();
             return ListHapgs(request);
         }
+
 
         /// <summary>
         /// Lists the high-availability partition groups for the account.
@@ -1157,6 +1165,7 @@ namespace Amazon.CloudHSM
             return ListHsms(request);
         }
 
+
         /// <summary>
         /// Retrieves the identifiers of all of the HSMs provisioned for the current customer.
         /// 
@@ -1251,6 +1260,7 @@ namespace Amazon.CloudHSM
             var request = new ListLunaClientsRequest();
             return ListLunaClients(request);
         }
+
 
         /// <summary>
         /// Lists all of the clients.

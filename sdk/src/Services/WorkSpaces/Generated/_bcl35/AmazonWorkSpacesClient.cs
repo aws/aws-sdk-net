@@ -316,6 +316,7 @@ namespace Amazon.WorkSpaces
             return DescribeWorkspaceBundles(request);
         }
 
+
         /// <summary>
         /// Obtains information about the WorkSpace bundles that are available to your account
         /// in the specified region.
@@ -405,6 +406,7 @@ namespace Amazon.WorkSpaces
             var request = new DescribeWorkspaceDirectoriesRequest();
             return DescribeWorkspaceDirectories(request);
         }
+
 
         /// <summary>
         /// Retrieves information about the AWS Directory Service directories in the region that
@@ -497,6 +499,7 @@ namespace Amazon.WorkSpaces
             var request = new DescribeWorkspacesRequest();
             return DescribeWorkspaces(request);
         }
+
 
         /// <summary>
         /// Obtains information about the specified WorkSpaces. 

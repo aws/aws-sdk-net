@@ -4,12 +4,14 @@ using System.IO;
 using System.Linq;
 
 using ServiceClientGenerator.Generators.ProjectFiles;
+using System.Xml;
 
 namespace ServiceClientGenerator
 {
     public class SolutionFileCreator
     {
         public GeneratorOptions Options { get; set; }
+        public IEnumerable<ProjectFileConfiguration> ProjectFileConfigurations { get; set; }
 
         /// <summary>
         /// The set of project 'types' (or platforms) that we generate the SDK against.
@@ -19,24 +21,13 @@ namespace ServiceClientGenerator
         {
             public const string Net35 = "Net35";
             public const string Net45 = "Net45";
-            public const string WinRt = "WinRT";
-            public const string WinPhone8 = "WP8";
-            public const string Portable = "Portable";
-        }
+            public const string Win8 = "Win8";
+            public const string WinPhone81 = "WinPhone81";
+            public const string WinPhoneSilverlight8 = "WinPhoneSilverlight8";
+            public const string PCL = "PCL";
+            public const string Android = "Android";
+            public const string IOS = "iOS";
 
-        static IEnumerable<string> ProjectTypesList
-        {
-            get
-            {
-                return new List<string>
-                {
-                    ProjectTypes.Net35,
-                    ProjectTypes.Net45,
-                    ProjectTypes.WinRt,
-                    ProjectTypes.WinPhone8,
-                    ProjectTypes.Portable 
-                };
-            }
         }
 
         // build configuration platforms used for net 3.5, 4.5 and portable project types
@@ -94,17 +85,27 @@ namespace ServiceClientGenerator
             ScanForExistingProjects();
 
             // build one uber-solution for every project and platform
-            GenerateAllPlatformsSolution();
+            GenerateAllPlatformsSolution("AWSSDK.All.sln", ProjectFileConfigurations);
 
-            // emit per-platform solutions that are easier to handle
-            foreach (var projectType in ProjectTypesList)
-            {
-                GeneratePlatformSpecificSolution(projectType, true);
-            }
+            GenerateCombinedSolution("AWSSDK.Desktop.sln", true,
+                new List<ProjectFileConfiguration> { 
+                    GetProjectConfig(ProjectTypes.Net35),
+                    GetProjectConfig(ProjectTypes.Net45)
+            });
+
+            GenerateCombinedSolution("AWSSDK.PCL.sln", true,
+                new List<ProjectFileConfiguration> { 
+                    GetProjectConfig(ProjectTypes.PCL),
+                    GetProjectConfig(ProjectTypes.Android),
+                    GetProjectConfig(ProjectTypes.IOS),
+                    GetProjectConfig(ProjectTypes.Win8),
+                    GetProjectConfig(ProjectTypes.WinPhone81),
+                    GetProjectConfig(ProjectTypes.WinPhoneSilverlight8)
+            });
 
             // Include solutions that Travis CI can build
-            GeneratePlatformSpecificSolution(ProjectTypes.Net35, false, "AWSSDK.Net35.Travis.sln");
-            GeneratePlatformSpecificSolution(ProjectTypes.Net45, false, "AWSSDK.Net45.Travis.sln");
+            GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net35), false, "AWSSDK.Net35.Travis.sln");
+            GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net45), false, "AWSSDK.Net45.Travis.sln");
         }
 
         // adds any necessary projects to the collection prior to generating the solution file(s)
@@ -136,15 +137,9 @@ namespace ServiceClientGenerator
                     if (_allProjects.ContainsKey(projectName))
                         continue;
 
-                    var content = File.ReadAllText(projectFile);
-
-                    var pos = content.IndexOf("<ProjectGuid>", StringComparison.OrdinalIgnoreCase) + "<ProjectGuid>".Length;
-                    var lastPos = content.IndexOf("</ProjectGuid>", pos, StringComparison.OrdinalIgnoreCase);
-                    var guid = content.Substring(pos, lastPos - pos);
-
                     var projectConfig = new ProjectFileCreator.ProjectConfigurationData
                     {
-                        ProjectGuid = guid,
+                        ProjectGuid = GetProjectGuid(projectFile),
                         ConfigurationPlatforms = GetProjectPlatforms(projectName)
                     };
 
@@ -153,6 +148,51 @@ namespace ServiceClientGenerator
             }
         }
 
+        private ProjectFileConfiguration GetProjectConfig(string configType)
+        {
+            var config = ProjectFileConfigurations
+                .Single(pfc => string.Equals(pfc.Name, configType, StringComparison.Ordinal));
+            return config;
+        }
+
+        private static string GetProjectGuid(string projectFile)
+        {
+            var content = File.ReadAllText(projectFile);
+
+            var pos = content.IndexOf("<ProjectGuid>", StringComparison.OrdinalIgnoreCase) + "<ProjectGuid>".Length;
+            var lastPos = content.IndexOf("</ProjectGuid>", pos, StringComparison.OrdinalIgnoreCase);
+            var guid = content.Substring(pos, lastPos - pos);
+            return guid;
+        }
+
+        static IEnumerable<string> GetProjectPlatformsFromFile(string projectFile)
+        {
+            var platforms = new List<string>();
+
+            var content = File.ReadAllText(projectFile);
+            var doc = new XmlDocument();
+            doc.LoadXml(content);
+
+            var searchPhrase = "$(Configuration)|$(Platform)";
+            var propertyGroups = doc.GetElementsByTagName("PropertyGroup");
+            foreach(XmlNode pg in propertyGroups)
+            {
+                var conditionAttrbiute = pg.Attributes["Condition"];
+                if (conditionAttrbiute != null)
+                {
+                    var condition = conditionAttrbiute.Value;
+                    if (condition.IndexOf(searchPhrase, StringComparison.Ordinal) >= 0)
+                    {
+                        var thirdQuote = condition.IndexOfNthOccurence('\'', 0, 3);
+                        var fourthQuote = condition.IndexOf('\'', thirdQuote);
+                        var platform = condition.Substring(thirdQuote, fourthQuote - thirdQuote);
+                        platforms.Add(platform);
+                    }
+                }
+            }
+
+            return platforms;
+        }
         static IEnumerable<string> GetProjectPlatforms(string projectName)
         {
             var projectTypeStart = projectName.LastIndexOf('.');
@@ -160,24 +200,27 @@ namespace ServiceClientGenerator
 
             switch (projectType)
             {
-                case ProjectTypes.WinRt:
-                case ProjectTypes.WinPhone8:
+                case ProjectTypes.Win8:
+                case ProjectTypes.WinPhone81:
+                case ProjectTypes.WinPhoneSilverlight8:
                     return PhoneRtPlatformConfigurations;
 
-                case ProjectTypes.Portable:
                 case ProjectTypes.Net35:
                 case ProjectTypes.Net45:
+                case ProjectTypes.PCL:
+                case ProjectTypes.Android:
+                case ProjectTypes.IOS:
                     return StandardPlatformConfigurations;
             }
 
             throw new Exception(string.Format("Unrecognized platform type in project name - '{0}'", projectType));
         }
 
-        private void GenerateAllPlatformsSolution()
+        private void GenerateAllPlatformsSolution(string solutionFileName, IEnumerable<ProjectFileConfiguration> projectFileConfigurations)
         {
             var session = new Dictionary<string, object>();
 
-            Console.WriteLine("...generating all-platforms solution file AWSSDK.sln");
+            Console.WriteLine("...generating all-platforms solution file solutionFileName", solutionFileName);
 
             // use an AWSSDK prefix on project names so as to not collect any user-created projects (unless they
             // chose to use our naming pattern)
@@ -222,6 +265,11 @@ namespace ServiceClientGenerator
                 }
             }
 
+            foreach(var pfc in projectFileConfigurations)
+            {
+                AddExtraTestProjects(pfc, _allProjects, testProjects);
+            }
+
             // as we are processing _allProjects, construct the set of distinct build configurations at the end
             var distinctConfigurations = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             foreach (var projectKey in _allProjects.Keys)
@@ -243,11 +291,109 @@ namespace ServiceClientGenerator
 
             var generator = new SolutionFileGenerator { Session = session };
             var content = generator.TransformText();
-            GeneratorDriver.WriteFile(Options.SdkRootFolder, null, "AWSSDK.sln", content, true, false);
+            GeneratorDriver.WriteFile(Options.SdkRootFolder, null, solutionFileName, content, true, false);
         }
 
-        private void GeneratePlatformSpecificSolution(string projectType, bool includeTests, string solutionFileName = null)
+        private void GenerateCombinedSolution(string solutionFileName, bool includeTests, IEnumerable<ProjectFileConfiguration> projectFileConfigurations)
+        {            
+            Console.WriteLine("Generating solution file {0}", solutionFileName);
+
+            var session = new Dictionary<string, object>();
+
+            var buildConfigurations = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var solutionProjects = new Dictionary<string, ProjectFileCreator.ProjectConfigurationData>();            
+
+            var sdkSourceFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.SourceSubFoldername);
+
+            var coreProjects = new List<Project>();
+            var coreProjectsRoot = Path.Combine(sdkSourceFolder, GeneratorDriver.CoreSubFoldername);
+
+            foreach (var pfc in projectFileConfigurations)
+            {
+                var projectTypeWildCard = string.Format("AWSSDK.*.{0}.csproj", pfc.Name);
+                foreach (var projectFile in Directory.GetFiles(coreProjectsRoot, projectTypeWildCard, SearchOption.TopDirectoryOnly))
+                {
+                    coreProjects.Add(CoreProjectFromFile(projectFile));
+                    SelectProjectAndConfigurationsForSolution(projectFile, solutionProjects, buildConfigurations);
+                }
+            }
+
+            var serviceSolutionFolders = new List<ServiceSolutionFolder>();
+            var serviceProjectsRoot = Path.Combine(sdkSourceFolder, GeneratorDriver.ServicesSubFoldername);
+            foreach (var servicePath in Directory.GetDirectories(serviceProjectsRoot))
+            {
+                var di = new DirectoryInfo(servicePath);
+                var folder = ServiceSolutionFolderFromPath(di.Name);
+                foreach (var pfc in projectFileConfigurations)
+                {
+                    var projectTypeWildCard = string.Format("AWSSDK.*.{0}.csproj", pfc.Name);
+                    foreach (var projectFile in Directory.GetFiles(servicePath, projectTypeWildCard, SearchOption.TopDirectoryOnly))
+                    {
+                        folder.Projects.Add(ServiceProjectFromFile(di.Name, projectFile));
+                        SelectProjectAndConfigurationsForSolution(projectFile, solutionProjects, buildConfigurations);
+                    }
+                }
+
+                serviceSolutionFolders.Add(folder);
+            }
+
+            var testProjects = new List<Project>();
+            if (includeTests)
+            {
+                foreach (var pfc in projectFileConfigurations)
+                {
+                    var projectType = pfc.Name;
+                    var projectTypeWildCard = string.Format("AWSSDK.*.{0}.csproj", pfc.Name);
+
+                    var sdkTestsFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
+                    foreach (var testFoldername in new[] { GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
+                    {
+                        var testFolder = Path.Combine(sdkTestsFolder, testFoldername);
+                        foreach (var projectFile in Directory.GetFiles(testFolder, projectTypeWildCard, SearchOption.TopDirectoryOnly))
+                        {
+                            testProjects.Add(TestProjectFromFile(testFoldername, projectFile));
+
+                            var projectKey = Path.GetFileNameWithoutExtension(projectFile);
+                            solutionProjects.Add(projectKey, _allProjects[projectKey]);
+                            SelectBuildConfigurationsForProject(projectKey, buildConfigurations);
+                        }
+                    }
+
+                    if (projectType.Equals(ProjectTypes.Net35, StringComparison.Ordinal) || projectType.Equals(ProjectTypes.Net45, StringComparison.Ordinal) &&
+                        !solutionProjects.ContainsKey(GeneratorLibProjectName))
+                    {
+                        solutionProjects.Add(GeneratorLibProjectName, GeneratorLibProjectConfig);
+                        testProjects.Add(GeneratorLibProject);
+                        SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
+                    }
+
+                    AddExtraTestProjects(pfc, solutionProjects, testProjects);
+                }
+            }
+
+            var configurationsList = buildConfigurations.ToList();
+            configurationsList.Sort();
+
+            session["AllProjects"] = solutionProjects;
+            session["CoreProjects"] = coreProjects;
+            session["ServiceSolutionFolders"] = serviceSolutionFolders;
+            session["TestProjects"] = testProjects;
+            session["Configurations"] = configurationsList;
+
+            var generator = new SolutionFileGenerator { Session = session };
+            var content = generator.TransformText();            
+            GeneratorDriver.WriteFile(Options.SdkRootFolder, null, solutionFileName, content, true, false);
+        }
+
+        private void GeneratePlatformSpecificSolution(ProjectFileConfiguration projectConfig, bool includeTests, string solutionFileName = null)
         {
+            // Do not generate solutions for PCL sub profiles.
+            if (projectConfig.IsSubProfile)
+            {
+                return;
+            }
+
+            var projectType = projectConfig.Name;
             Console.WriteLine("...generating platform-specific solution file AWSSDK.{0}.sln", projectType);
 
             var session = new Dictionary<string, object>();
@@ -306,6 +452,8 @@ namespace ServiceClientGenerator
                     testProjects.Add(GeneratorLibProject);
                     SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
                 }
+
+                AddExtraTestProjects(projectConfig, solutionProjects, testProjects);
             }
 
             var configurationsList = buildConfigurations.ToList();
@@ -322,6 +470,26 @@ namespace ServiceClientGenerator
             if (string.IsNullOrEmpty(solutionFileName))
                 solutionFileName = string.Format("AWSSDK.{0}.sln", projectType);
             GeneratorDriver.WriteFile(Options.SdkRootFolder, null, solutionFileName, content, true, false);
+        }
+
+        private void AddExtraTestProjects(ProjectFileConfiguration projectConfig, Dictionary<string, ProjectFileCreator.ProjectConfigurationData> solutionProjects, List<Project> testProjects)
+        {
+            foreach (var extraTestProject in projectConfig.ExtraTestProjects)
+            {
+                var projectPath = @"..\..\..\..\sdk\" + extraTestProject;
+
+                var projectGuid = GetProjectGuid(projectPath);
+                var testProject = ProjectFromFile(extraTestProject, projectGuid);
+
+                var testProjectConfig = new ProjectFileCreator.ProjectConfigurationData
+                {
+                    ProjectGuid = projectGuid,
+                    ConfigurationPlatforms = GetProjectPlatformsFromFile(projectPath).ToList()
+                };
+
+                solutionProjects.Add(testProject.Name, testProjectConfig);
+                testProjects.Add(testProject);
+            }
         }
 
         void SelectProjectAndConfigurationsForSolution(string projectFile, 
@@ -377,14 +545,21 @@ namespace ServiceClientGenerator
             };
         }
 
+        Project ProjectFromFile(string projectFile, string projectGuid)
+        {
+            var fi = new FileInfo(projectFile);
+            var projectName = Path.GetFileNameWithoutExtension(fi.Name);
+            return new Project
+            {
+                Name = Path.GetFileNameWithoutExtension(projectFile),
+                ProjectGuid = projectGuid,
+                ProjectPath = projectFile
+            };
+        }
+
         ServiceSolutionFolder ServiceSolutionFolderFromPath(string folderName)
         {
-            return new ServiceSolutionFolder
-            {
-                Name = folderName.Replace("Amazon.", ""),
-                ProjectGuid = ProjectFileCreator.NewProjectGuid,
-                Projects = new List<Project>()
-            };
+            return new ServiceSolutionFolder(folderName.Replace("Amazon.", ""));
         }
 
         public class Project
@@ -396,9 +571,27 @@ namespace ServiceClientGenerator
 
         public class ServiceSolutionFolder
         {
-            public string Name { get; set; }
-            public List<Project> Projects { get; set; }
-            public string ProjectGuid { get; set; }
+            public string Name { get; private set; }
+            public List<Project> Projects { get; private set; }
+            public string ProjectGuid { get; private set; }
+
+            public ServiceSolutionFolder(string folderName)
+            {
+                Name = folderName;
+                Projects = new List<Project>();
+                ProjectGuid = GetFolderGuid(folderName);
+            }
+
+            private static string GetFolderGuid(string folderName)
+            {
+                var hash = folderName.GetHashCode();
+                var random = new Random(hash);
+                var bytes = new byte[16];
+                random.NextBytes(bytes);
+                var guid = new Guid(bytes);
+                var text = guid.ToString("B").ToUpper();
+                return text;
+            }
         }
     }
 }

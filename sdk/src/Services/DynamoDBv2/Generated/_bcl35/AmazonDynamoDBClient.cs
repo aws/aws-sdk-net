@@ -473,6 +473,7 @@ namespace Amazon.DynamoDBv2
             return BatchGetItem(request);
         }
 
+
         /// <summary>
         /// The <i>BatchGetItem</i> operation returns the attributes of one or more items from
         /// one or more tables. You identify requested items by primary key.
@@ -567,6 +568,7 @@ namespace Amazon.DynamoDBv2
             request.RequestItems = requestItems;
             return BatchGetItem(request);
         }
+
 
         /// <summary>
         /// The <i>BatchGetItem</i> operation returns the attributes of one or more items from
@@ -828,6 +830,7 @@ namespace Amazon.DynamoDBv2
             return BatchWriteItem(request);
         }
 
+
         /// <summary>
         /// The <i>BatchWriteItem</i> operation puts or deletes multiple items in one or more
         /// tables. A single call to <i>BatchWriteItem</i> can write up to 16 MB of data, which
@@ -1056,6 +1059,7 @@ namespace Amazon.DynamoDBv2
             return CreateTable(request);
         }
 
+
         /// <summary>
         /// The <i>CreateTable</i> operation adds a new table to your account. In an AWS account,
         /// table names must be unique within each region. That is, you can have two tables with
@@ -1205,6 +1209,7 @@ namespace Amazon.DynamoDBv2
             return DeleteItem(request);
         }
 
+
         /// <summary>
         /// Deletes a single item in a table by primary key. You can perform a conditional delete
         /// operation that deletes the item if it exists, or if it has an expected attribute value.
@@ -1261,6 +1266,7 @@ namespace Amazon.DynamoDBv2
             request.ReturnValues = returnValues;
             return DeleteItem(request);
         }
+
 
         /// <summary>
         /// Deletes a single item in a table by primary key. You can perform a conditional delete
@@ -1419,6 +1425,7 @@ namespace Amazon.DynamoDBv2
             return DeleteTable(request);
         }
 
+
         /// <summary>
         /// The <i>DeleteTable</i> operation deletes a table and all of its items. After a <i>DeleteTable</i>
         /// request, the specified table is in the <code>DELETING</code> state until DynamoDB
@@ -1553,6 +1560,7 @@ namespace Amazon.DynamoDBv2
             return DescribeTable(request);
         }
 
+
         /// <summary>
         /// Returns information about the table, including the current status of the table, when
         /// it was created, the primary key schema, and any indexes on the table.
@@ -1658,6 +1666,7 @@ namespace Amazon.DynamoDBv2
             return GetItem(request);
         }
 
+
         /// <summary>
         /// The <i>GetItem</i> operation returns a set of attributes for the item with the given
         /// primary key. If there is no matching item, <i>GetItem</i> does not return any data.
@@ -1697,6 +1706,7 @@ namespace Amazon.DynamoDBv2
             request.ConsistentRead = consistentRead;
             return GetItem(request);
         }
+
 
         /// <summary>
         /// The <i>GetItem</i> operation returns a set of attributes for the item with the given
@@ -1804,6 +1814,7 @@ namespace Amazon.DynamoDBv2
             return ListTables(request);
         }
 
+
         /// <summary>
         /// Returns an array of table names associated with the current account and endpoint.
         /// The output from <i>ListTables</i> is paginated, with each page returning a maximum
@@ -1824,6 +1835,7 @@ namespace Amazon.DynamoDBv2
             return ListTables(request);
         }
 
+
         /// <summary>
         /// Returns an array of table names associated with the current account and endpoint.
         /// The output from <i>ListTables</i> is paginated, with each page returning a maximum
@@ -1841,6 +1853,7 @@ namespace Amazon.DynamoDBv2
             request.Limit = limit;
             return ListTables(request);
         }
+
 
         /// <summary>
         /// Returns an array of table names associated with the current account and endpoint.
@@ -1967,6 +1980,7 @@ namespace Amazon.DynamoDBv2
             return PutItem(request);
         }
 
+
         /// <summary>
         /// Creates a new item, or replaces an old item with a new item. If an item that has the
         /// same primary key as the new item already exists in the specified table, the new item
@@ -2038,6 +2052,7 @@ namespace Amazon.DynamoDBv2
             request.ReturnValues = returnValues;
             return PutItem(request);
         }
+
 
         /// <summary>
         /// Creates a new item, or replaces an old item with a new item. If an item that has the
@@ -2295,6 +2310,7 @@ namespace Amazon.DynamoDBv2
             return Scan(request);
         }
 
+
         /// <summary>
         /// The <i>Scan</i> operation returns one or more items and item attributes by accessing
         /// every item in a table or a secondary index. To have DynamoDB return fewer items, you
@@ -2348,6 +2364,7 @@ namespace Amazon.DynamoDBv2
             request.ScanFilter = scanFilter;
             return Scan(request);
         }
+
 
         /// <summary>
         /// The <i>Scan</i> operation returns one or more items and item attributes by accessing
@@ -2404,6 +2421,7 @@ namespace Amazon.DynamoDBv2
             request.ScanFilter = scanFilter;
             return Scan(request);
         }
+
 
         /// <summary>
         /// The <i>Scan</i> operation returns one or more items and item attributes by accessing
@@ -2543,6 +2561,7 @@ namespace Amazon.DynamoDBv2
             return UpdateItem(request);
         }
 
+
         /// <summary>
         /// Edits an existing item's attributes, or adds a new item to the table if it does not
         /// already exist. You can put, delete, or add attribute values. You can also perform
@@ -2593,6 +2612,7 @@ namespace Amazon.DynamoDBv2
             request.ReturnValues = returnValues;
             return UpdateItem(request);
         }
+
 
         /// <summary>
         /// Edits an existing item's attributes, or adds a new item to the table if it does not
@@ -2747,6 +2767,7 @@ namespace Amazon.DynamoDBv2
             request.ProvisionedThroughput = provisionedThroughput;
             return UpdateTable(request);
         }
+
 
         /// <summary>
         /// Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB

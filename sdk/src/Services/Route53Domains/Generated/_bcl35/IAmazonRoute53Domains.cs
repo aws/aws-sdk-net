@@ -36,6 +36,7 @@ namespace Amazon.Route53Domains
         
         #region  CheckDomainAvailability
 
+
         /// <summary>
         /// This operation checks the availability of one domain name. You can access this API
         /// without authenticating. Note that if the availability status of a domain is pending,
@@ -81,6 +82,7 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  DeleteTagsForDomain
+
 
         /// <summary>
         /// This operation deletes the specified tags for a domain.
@@ -161,6 +163,7 @@ namespace Amazon.Route53Domains
         
         #region  DisableDomainAutoRenew
 
+
         /// <summary>
         /// This operation disables automatic renewal of domain registration for the specified
         /// domain.
@@ -209,6 +212,7 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  DisableDomainTransferLock
+
 
         /// <summary>
         /// This operation removes the transfer lock on the domain (specifically the <code>clientTransferProhibited</code>
@@ -268,6 +272,7 @@ namespace Amazon.Route53Domains
         
         #region  EnableDomainAutoRenew
 
+
         /// <summary>
         /// This operation configures Amazon Route 53 to automatically renew the specified domain
         /// before the domain registration expires. The cost of renewing your domain registration
@@ -322,6 +327,7 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  EnableDomainTransferLock
+
 
         /// <summary>
         /// This operation sets the transfer lock on the domain (specifically the <code>clientTransferProhibited</code>
@@ -379,6 +385,7 @@ namespace Amazon.Route53Domains
         
         #region  GetDomainDetail
 
+
         /// <summary>
         /// This operation returns detailed information about the domain. The domain's contact
         /// information is also returned as part of the output.
@@ -424,6 +431,7 @@ namespace Amazon.Route53Domains
         
         #region  GetOperationDetail
 
+
         /// <summary>
         /// This operation returns the current status of an operation that is not completed.
         /// </summary>
@@ -464,6 +472,7 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  ListDomains
+
 
         /// <summary>
         /// This operation returns all the domain names registered with Amazon Route 53 for the
@@ -520,6 +529,7 @@ namespace Amazon.Route53Domains
         
         #region  ListOperations
 
+
         /// <summary>
         /// This operation returns the operation IDs of operations that are not yet complete.
         /// </summary>
@@ -572,6 +582,7 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  ListTagsForDomain
+
 
         /// <summary>
         /// This operation returns all of the tags that are associated with the specified domain.
@@ -651,6 +662,7 @@ namespace Amazon.Route53Domains
         
         #region  RegisterDomain
 
+
         /// <summary>
         /// This operation registers a domain. Domains are registered by the AWS registrar partner,
         /// Gandi. For some top-level domains (TLDs), this operation requires extra parameters.
@@ -726,6 +738,7 @@ namespace Amazon.Route53Domains
         
         #region  RetrieveDomainAuthCode
 
+
         /// <summary>
         /// This operation returns the AuthCode for the domain. To transfer a domain to another
         /// registrar, you provide this value to the new registrar.
@@ -770,6 +783,7 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  TransferDomain
+
 
         /// <summary>
         /// This operation transfers a domain from another registrar to Amazon Route 53. When
@@ -855,6 +869,7 @@ namespace Amazon.Route53Domains
         
         #region  UpdateDomainContact
 
+
         /// <summary>
         /// This operation updates the contact information for a particular domain. Information
         /// for at least one contact (registrant, administrator, or technical) must be supplied
@@ -916,6 +931,7 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  UpdateDomainContactPrivacy
+
 
         /// <summary>
         /// This operation updates the specified domain contact's privacy setting. When the privacy
@@ -983,6 +999,7 @@ namespace Amazon.Route53Domains
         
         #region  UpdateDomainNameservers
 
+
         /// <summary>
         /// This operation replaces the current set of name servers for the domain with the specified
         /// set of name servers. If you use Amazon Route 53 as your DNS service, specify the four
@@ -1044,6 +1061,7 @@ namespace Amazon.Route53Domains
         #endregion
         
         #region  UpdateTagsForDomain
+
 
         /// <summary>
         /// This operation adds or updates tags for a specified domain.

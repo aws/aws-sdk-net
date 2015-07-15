@@ -84,10 +84,6 @@
       <Project>{F3B1F33E-0466-49DE-B171-625A0288665B}</Project>
       <Name>AWSSDK.CloudSearchDomain.Net35</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\CloudSearch_2011_02_01\AWSSDK.CloudSearch_2011_02_01.Net35.csproj">
-      <Project>{E337982A-AF00-48D2-A0A9-AD12651F94AF}</Project>
-      <Name>AWSSDK.CloudSearch_2011_02_01.Net35</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CloudTrail\AWSSDK.CloudTrail.Net35.csproj">
       <Project>{D0D5AD3D-9737-47B4-8E0E-D7D4AADBDFCF}</Project>
       <Name>AWSSDK.CloudTrail.Net35</Name>
@@ -251,6 +247,14 @@
     <ProjectReference Include="..\..\src\Services\ElasticFileSystem\AWSSDK.ElasticFileSystem.Net35.csproj">
       <Project>{C5294C97-CB6C-4188-B36F-54C13B186980}</Project>
       <Name>AWSSDK.ElasticFileSystem.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\CognitoSync\AWSSDK.CognitoSync.Net35.csproj">
+      <Project>{39825610-39BF-4C58-A130-29FAAC5F8883}</Project>
+      <Name>AWSSDK.CognitoSync.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.Net35.csproj">
+      <Project>{014DC5E2-2920-4DF5-9E2D-22B659B30772}</Project>
+      <Name>AWSSDK.MobileAnalytics.Net35</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CodeCommit\AWSSDK.CodeCommit.Net35.csproj">
       <Project>{12D6C04C-72EB-483A-A8D7-1E58C0F07BDC}</Project>

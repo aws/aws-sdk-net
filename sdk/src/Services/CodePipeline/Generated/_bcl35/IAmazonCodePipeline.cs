@@ -127,6 +127,7 @@ namespace Amazon.CodePipeline
         
         #region  AcknowledgeJob
 
+
         /// <summary>
         /// Returns information about a specified job and whether that job has been received by
         /// the job worker. Only used for custom actions.
@@ -191,6 +192,7 @@ namespace Amazon.CodePipeline
         #endregion
         
         #region  AcknowledgeThirdPartyJob
+
 
         /// <summary>
         /// Confirms a job worker has received the specified job. Only used for partner actions.
@@ -262,6 +264,7 @@ namespace Amazon.CodePipeline
         
         #region  CreateCustomActionType
 
+
         /// <summary>
         /// Creates a new custom action that can be used in all pipelines associated with the
         /// AWS account. Only used for custom actions.
@@ -305,6 +308,7 @@ namespace Amazon.CodePipeline
         #endregion
         
         #region  CreatePipeline
+
 
         /// <summary>
         /// Creates a pipeline.
@@ -394,6 +398,7 @@ namespace Amazon.CodePipeline
         
         #region  DeleteCustomActionType
 
+
         /// <summary>
         /// Marks a custom action as deleted. PollForJobs for the custom action will fail after
         /// the action is marked for deletion. Only used for custom actions.
@@ -440,6 +445,7 @@ namespace Amazon.CodePipeline
         #endregion
         
         #region  DeletePipeline
+
 
         /// <summary>
         /// Deletes the specified pipeline.
@@ -491,6 +497,7 @@ namespace Amazon.CodePipeline
         
         #region  DisableStageTransition
 
+
         /// <summary>
         /// Prevents artifacts in a pipeline from transitioning to the next stage in the pipeline.
         /// </summary>
@@ -536,6 +543,7 @@ namespace Amazon.CodePipeline
         
         #region  EnableStageTransition
 
+
         /// <summary>
         /// Enables artifacts in a pipeline to transition to a stage in a pipeline.
         /// </summary>
@@ -580,6 +588,7 @@ namespace Amazon.CodePipeline
         #endregion
         
         #region  GetJobDetails
+
 
         /// <summary>
         /// Returns information about a job. Only used for custom actions.
@@ -654,6 +663,7 @@ namespace Amazon.CodePipeline
         #endregion
         
         #region  GetPipeline
+
 
         /// <summary>
         /// Returns the metadata, structure, stages, and actions of a pipeline. Can be used to
@@ -741,6 +751,7 @@ namespace Amazon.CodePipeline
         
         #region  GetPipelineState
 
+
         /// <summary>
         /// Returns information about the state of a pipeline, including the stages, actions,
         /// and details about the last run of the pipeline.
@@ -798,6 +809,7 @@ namespace Amazon.CodePipeline
         #endregion
         
         #region  GetThirdPartyJobDetails
+
 
         /// <summary>
         /// Requests the details of a job for a third party action. Only used for partner actions.
@@ -886,6 +898,7 @@ namespace Amazon.CodePipeline
         
         #region  ListActionTypes
 
+
         /// <summary>
         /// Gets a summary of all AWS CodePipeline action types associated with your account.
         /// </summary>
@@ -958,6 +971,7 @@ namespace Amazon.CodePipeline
         
         #region  ListPipelines
 
+
         /// <summary>
         /// Gets a summary of all of the pipelines associated with your account.
         /// </summary>
@@ -1008,6 +1022,7 @@ namespace Amazon.CodePipeline
         #endregion
         
         #region  PollForJobs
+
 
         /// <summary>
         /// Returns information about any jobs for AWS CodePipeline to act upon.
@@ -1060,6 +1075,7 @@ namespace Amazon.CodePipeline
         
         #region  PollForThirdPartyJobs
 
+
         /// <summary>
         /// Determines whether there are any third party jobs for a job worker to act on. Only
         /// used for partner actions.
@@ -1111,6 +1127,7 @@ namespace Amazon.CodePipeline
         
         #region  PutActionRevision
 
+
         /// <summary>
         /// Provides information to AWS CodePipeline about new revisions to a source.
         /// </summary>
@@ -1158,6 +1175,7 @@ namespace Amazon.CodePipeline
         #endregion
         
         #region  PutJobFailureResult
+
 
         /// <summary>
         /// Represents the failure of a job as returned to the pipeline by a job worker. Only
@@ -1224,6 +1242,7 @@ namespace Amazon.CodePipeline
         
         #region  PutJobSuccessResult
 
+
         /// <summary>
         /// Represents the success of a job as returned to the pipeline by a job worker. Only
         /// used for custom actions.
@@ -1269,6 +1288,7 @@ namespace Amazon.CodePipeline
         #endregion
         
         #region  PutThirdPartyJobFailureResult
+
 
         /// <summary>
         /// Represents the failure of a third party job as returned to the pipeline by a job worker.
@@ -1342,6 +1362,7 @@ namespace Amazon.CodePipeline
         
         #region  PutThirdPartyJobSuccessResult
 
+
         /// <summary>
         /// Represents the success of a third party job as returned to the pipeline by a job worker.
         /// Only used for partner actions.
@@ -1390,6 +1411,7 @@ namespace Amazon.CodePipeline
         #endregion
         
         #region  StartPipelineExecution
+
 
         /// <summary>
         /// Starts the specified pipeline. Specifically, it begins processing the latest commit
@@ -1448,6 +1470,7 @@ namespace Amazon.CodePipeline
         #endregion
         
         #region  UpdatePipeline
+
 
         /// <summary>
         /// Updates a specified pipeline with edits or changes to its structure. Use a JSON file

@@ -55,6 +55,7 @@ namespace Amazon.SimpleWorkflow
         
         #region  CountClosedWorkflowExecutions
 
+
         /// <summary>
         /// Returns the number of closed workflow executions within the given domain that meet
         /// the specified filtering criteria.
@@ -125,6 +126,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  CountOpenWorkflowExecutions
+
 
         /// <summary>
         /// Returns the number of open workflow executions within the given domain that meet the
@@ -197,6 +199,7 @@ namespace Amazon.SimpleWorkflow
         
         #region  CountPendingActivityTasks
 
+
         /// <summary>
         /// Returns the estimated number of activity tasks in the specified task list. The count
         /// returned is an approximation and is not guaranteed to be exact. If you specify a task
@@ -265,6 +268,7 @@ namespace Amazon.SimpleWorkflow
         
         #region  CountPendingDecisionTasks
 
+
         /// <summary>
         /// Returns the estimated number of decision tasks in the specified task list. The count
         /// returned is an approximation and is not guaranteed to be exact. If you specify a task
@@ -332,6 +336,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  DeprecateActivityType
+
 
         /// <summary>
         /// Deprecates the specified <i>activity type</i>. After an activity type has been deprecated,
@@ -407,6 +412,7 @@ namespace Amazon.SimpleWorkflow
         
         #region  DeprecateDomain
 
+
         /// <summary>
         /// Deprecates the specified domain. After a domain has been deprecated it cannot be used
         /// to create new workflow executions or register new types. However, you can still use
@@ -479,6 +485,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  DeprecateWorkflowType
+
 
         /// <summary>
         /// Deprecates the specified <i>workflow type</i>. After a workflow type has been deprecated,
@@ -555,6 +562,7 @@ namespace Amazon.SimpleWorkflow
         
         #region  DescribeActivityType
 
+
         /// <summary>
         /// Returns information about the specified activity type. This includes configuration
         /// settings provided when the type was registered and other general information about
@@ -625,6 +633,7 @@ namespace Amazon.SimpleWorkflow
         
         #region  DescribeDomain
 
+
         /// <summary>
         /// Returns information about the specified domain, including description and status.
         /// 
@@ -689,6 +698,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  DescribeWorkflowExecution
+
 
         /// <summary>
         /// Returns information about the specified workflow execution including its type and
@@ -756,6 +766,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  DescribeWorkflowType
+
 
         /// <summary>
         /// Returns information about the specified <i>workflow type</i>. This includes configuration
@@ -827,6 +838,7 @@ namespace Amazon.SimpleWorkflow
         
         #region  GetWorkflowExecutionHistory
 
+
         /// <summary>
         /// Returns the history of the specified workflow execution. The results may be split
         /// into multiple pages. To retrieve subsequent pages, make the call again using the <code>nextPageToken</code>
@@ -894,6 +906,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  ListActivityTypes
+
 
         /// <summary>
         /// Returns information about all activities registered in the specified domain that match
@@ -963,6 +976,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  ListClosedWorkflowExecutions
+
 
         /// <summary>
         /// Returns a list of closed workflow executions in the specified domain that meet the
@@ -1036,6 +1050,7 @@ namespace Amazon.SimpleWorkflow
         
         #region  ListDomains
 
+
         /// <summary>
         /// Returns the list of domains registered in the account. The results may be split into
         /// multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken
@@ -1099,6 +1114,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  ListOpenWorkflowExecutions
+
 
         /// <summary>
         /// Returns a list of open workflow executions in the specified domain that meet the filtering
@@ -1172,6 +1188,7 @@ namespace Amazon.SimpleWorkflow
         
         #region  ListWorkflowTypes
 
+
         /// <summary>
         /// Returns information about workflow types in the specified domain. The results may
         /// be split into multiple pages that can be retrieved by making the call repeatedly.
@@ -1237,6 +1254,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  PollForActivityTask
+
 
         /// <summary>
         /// Used by workers to get an <a>ActivityTask</a> from the specified activity <code>taskList</code>.
@@ -1316,6 +1334,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  PollForDecisionTask
+
 
         /// <summary>
         /// Used by deciders to get a <a>DecisionTask</a> from the specified decision <code>taskList</code>.
@@ -1407,6 +1426,7 @@ namespace Amazon.SimpleWorkflow
         
         #region  RecordActivityTaskHeartbeat
 
+
         /// <summary>
         /// Used by activity workers to report to the service that the <a>ActivityTask</a> represented
         /// by the specified <code>taskToken</code> is still making progress. The worker can also
@@ -1497,6 +1517,7 @@ namespace Amazon.SimpleWorkflow
         
         #region  RegisterActivityType
 
+
         /// <summary>
         /// Registers a new <i>activity type</i> along with its configuration settings in the
         /// specified domain.
@@ -1578,6 +1599,7 @@ namespace Amazon.SimpleWorkflow
         
         #region  RegisterDomain
 
+
         /// <summary>
         /// Registers a new domain.
         /// 
@@ -1647,6 +1669,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  RegisterWorkflowType
+
 
         /// <summary>
         /// Registers a new <i>workflow type</i> and its configuration settings in the specified
@@ -1734,6 +1757,7 @@ namespace Amazon.SimpleWorkflow
         
         #region  RequestCancelWorkflowExecution
 
+
         /// <summary>
         /// Records a <code>WorkflowExecutionCancelRequested</code> event in the currently running
         /// workflow execution identified by the given domain, workflowId, and runId. This logically
@@ -1805,6 +1829,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  RespondActivityTaskCanceled
+
 
         /// <summary>
         /// Used by workers to tell the service that the <a>ActivityTask</a> identified by the
@@ -1888,6 +1913,7 @@ namespace Amazon.SimpleWorkflow
         
         #region  RespondActivityTaskCompleted
 
+
         /// <summary>
         /// Used by workers to tell the service that the <a>ActivityTask</a> identified by the
         /// <code>taskToken</code> completed successfully with a <code>result</code> (if provided).
@@ -1967,6 +1993,7 @@ namespace Amazon.SimpleWorkflow
         
         #region  RespondActivityTaskFailed
 
+
         /// <summary>
         /// Used by workers to tell the service that the <a>ActivityTask</a> identified by the
         /// <code>taskToken</code> has failed with <code>reason</code> (if specified). The <code>reason</code>
@@ -2043,6 +2070,7 @@ namespace Amazon.SimpleWorkflow
         
         #region  RespondDecisionTaskCompleted
 
+
         /// <summary>
         /// Used by deciders to tell the service that the <a>DecisionTask</a> identified by the
         /// <code>taskToken</code> has successfully completed. The <code>decisions</code> argument
@@ -2108,6 +2136,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  SignalWorkflowExecution
+
 
         /// <summary>
         /// Records a <code>WorkflowExecutionSignaled</code> event in the workflow execution history
@@ -2179,6 +2208,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  StartWorkflowExecution
+
 
         /// <summary>
         /// Starts an execution of the workflow type in the specified domain using the provided
@@ -2273,6 +2303,7 @@ namespace Amazon.SimpleWorkflow
         #endregion
         
         #region  TerminateWorkflowExecution
+
 
         /// <summary>
         /// Records a <code>WorkflowExecutionTerminated</code> event and forces closure of the

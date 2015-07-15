@@ -150,7 +150,7 @@ namespace Amazon.Runtime.Internal
 
                         if (edi != null)
                         {
-                            await CompleteFailedRequest(executionContext, httpRequest);
+                            await CompleteFailedRequest(executionContext, httpRequest).ConfigureAwait(false);
 
                             edi.Throw();
                         }

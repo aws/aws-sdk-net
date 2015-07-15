@@ -11,12 +11,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Core Runtime")]
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Core Runtime")]
-#elif (WIN_RT && WINDOWS_PHONE)
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Portable)- Core Runtime")]
-#elif WIN_RT
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows RT) - Core Runtime")]
-#elif WINDOWS_PHONE
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Windows Phone 8)- Core Runtime")]
+#elif PCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Core Runtime")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
@@ -44,7 +40,7 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.0")]
-[assembly: AssemblyFileVersion("3.0.0.4")]
+[assembly: AssemblyFileVersion("3.0.0.6")]
 
 #if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]
@@ -60,4 +56,20 @@ using System.Runtime.CompilerServices;
 // Setting SecurityRules to level 1 to match .NET 2.0 rules and allow the
 // Amazon.Util.Settings.UserCrypto methods to work in .NET 4.5
 [assembly: System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
+#endif
+
+
+//declare the permission we use in the manifest
+#if __ANDROID__
+//network permission
+[assembly: Android.App.UsesPermission(Name="android.permission.INTERNET")]
+
+//for network reachability
+[assembly: Android.App.UsesPermission(Name="android.permission.ACCESS_NETWORK_STATE")]
+[assembly: Android.App.UsesPermission(Name="android.permission.ACCESS_WIFI_STATE")]
+
+//for storage
+[assembly: Android.App.UsesPermission(Name="android.permission.READ_EXTERNAL_STORAGE")]
+[assembly: Android.App.UsesPermission(Name="android.permission.WRITE_EXTERNAL_STORAGE")]
+
 #endif

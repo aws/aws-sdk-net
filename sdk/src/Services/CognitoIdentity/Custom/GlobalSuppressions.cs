@@ -21,7 +21,11 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix", Scope = "type", Target = "Amazon.CognitoIdentity.CognitoAWSCredentials+IdentityChangedArgs")]
 // Nested types, breaking change
 [module: SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Scope = "type", Target = "Amazon.CognitoIdentity.CognitoAWSCredentials+IdentityChangedArgs")]
+[module: SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Scope = "type", Target = "Amazon.CognitoIdentity.CognitoAWSCredentials+IdentityState")]
 // Use properties, design decision to suppress
 [module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.CognitoIdentity.CognitoAWSCredentials.#GetIdentityId()")]
 [module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.CognitoIdentity.CognitoAWSCredentials.#GetCachedIdentityId()")]
 [module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.CognitoIdentity.CognitoAWSCredentials.#GetIdentityIdAsync()")]
+[module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.CognitoIdentity.CognitoAWSCredentials.#GetCachedCredentials()")]
+// Overridable methods from constructor
+[module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.CognitoIdentity.CognitoAWSCredentials.#.ctor(System.String,System.String,System.String,System.String,Amazon.CognitoIdentity.IAmazonCognitoIdentity,Amazon.SecurityToken.IAmazonSecurityTokenService)")]

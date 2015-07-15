@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.ElasticMapReduce</id>
     <title>AWSSDK - Amazon Elastic MapReduce</title>
-    <version>3.0.0.2-preview</version> 
+    <version>3.0.0.5-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to quickly and cost-effectively process vast amounts of data.</description> 
     <language>en-US</language>
@@ -12,12 +12,11 @@
     <tags>AWS Amazon cloud ElasticMapReduce</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="portable-wpa+netcore45">
-        <dependency id="Microsoft.Net.Http" version="2.2.29" />
-      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
+      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
+      <dependency id="AWSSDK.Core" version="[3.0.0.6-preview, 3.1-preview)" />
       </group>
       <group>
-      <dependency id="AWSSDK.Core" version="[3.0.0.2-preview, 3.1-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.0.0.6-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 
@@ -28,11 +27,14 @@
 
     <file src=".\bin\Release\net35\AWSSDK.ElasticMapReduce.dll" target="lib\net35" />
     <file src=".\bin\Release\net35\AWSSDK.ElasticMapReduce.xml" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.ElasticMapReduce.pdb" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.ElasticMapReduce.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.ElasticMapReduce.xml" target="lib\net45" />
-    
-    <file src=".\bin\Release\portable\AWSSDK.ElasticMapReduce.dll" target="lib\portable-wpa+netcore45" />
-    <file src=".\bin\Release\portable\AWSSDK.ElasticMapReduce.xml" target="lib\portable-wpa+netcore45" />
+    <file src=".\bin\Release\net45\AWSSDK.ElasticMapReduce.pdb" target="lib\net45" />
+
+    <file src=".\bin\Release\pcl\AWSSDK.ElasticMapReduce.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.ElasticMapReduce.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.ElasticMapReduce.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
   </files>
 </package>

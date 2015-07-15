@@ -270,11 +270,7 @@ namespace Amazon.S3
                 }
 
                 // Set the input stream to null since it was created during the request to represent the filepath or content body
-                if (!string.IsNullOrEmpty(putObjectRequest.FilePath) || !string.IsNullOrEmpty(putObjectRequest.ContentBody)
-#if WIN_RT || WINDOWS_PHONE
-                    || putObjectRequest.StorageFile != null
-#endif
-)
+                if (!string.IsNullOrEmpty(putObjectRequest.FilePath) || !string.IsNullOrEmpty(putObjectRequest.ContentBody))
                 {
                     putObjectRequest.InputStream = null;
                 }
@@ -289,11 +285,7 @@ namespace Amazon.S3
                     uploadPartRequest.InputStream.Dispose();
                 }
 
-                if (uploadPartRequest.IsSetFilePath()
-#if WIN_RT || WINDOWS_PHONE
-                    || uploadPartRequest.StorageFile != null
-#endif
-)
+                if (uploadPartRequest.IsSetFilePath())
                     uploadPartRequest.InputStream = null;
             }
         }
@@ -547,7 +539,7 @@ namespace Amazon.S3
             };
             InternalSDKUtils.ApplyValues(request, additionalProperties);
 
-            await this.DeleteObjectAsync(request, cancellationToken);
+            await this.DeleteObjectAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
         async Task ICoreAmazonS3.UploadObjectFromStreamAsync(string bucketName, string objectKey, Stream stream, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
@@ -561,7 +553,7 @@ namespace Amazon.S3
             };
             InternalSDKUtils.ApplyValues(request, additionalProperties);
 
-            await transfer.UploadAsync(request, cancellationToken);
+            await transfer.UploadAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
         async Task<Stream> ICoreAmazonS3.GetObjectStreamAsync(string bucketName, string objectKey, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
@@ -573,7 +565,7 @@ namespace Amazon.S3
             };
             InternalSDKUtils.ApplyValues(request, additionalProperties);
 
-            return (await this.GetObjectAsync(request, cancellationToken)).ResponseStream;
+            return (await this.GetObjectAsync(request, cancellationToken).ConfigureAwait(false)).ResponseStream;
         }
 
         Task ICoreAmazonS3.UploadObjectFromFilePathAsync(string bucketName, string objectKey, string filepath, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)

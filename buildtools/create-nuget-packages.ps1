@@ -1,3 +1,4 @@
+#$ErrorActionPreference = "Stop"
 $OriginalDirectory = Get-Location
 $OutputDirectory = Join-Path -Path $OriginalDirectory.Path -ChildPath "..\Deployment\nuget"
 

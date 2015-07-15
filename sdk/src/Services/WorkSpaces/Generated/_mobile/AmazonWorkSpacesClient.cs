@@ -150,6 +150,9 @@ namespace Amazon.WorkSpaces
 
         #region Overrides
 
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new AWS4Signer();
@@ -160,6 +163,9 @@ namespace Amazon.WorkSpaces
 
         #region Dispose
 
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -177,6 +183,7 @@ namespace Amazon.WorkSpaces
 
             return Invoke<CreateWorkspacesRequest,CreateWorkspacesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateWorkspaces operation.
@@ -208,6 +215,39 @@ namespace Amazon.WorkSpaces
             return Invoke<DescribeWorkspaceBundlesRequest,DescribeWorkspaceBundlesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Obtains information about the WorkSpace bundles that are available to your account
+        /// in the specified region.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the results with either the <code>BundleIds</code> parameter, or the
+        /// <code>Owner</code> parameter, but not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation supports pagination with the use of the <code>NextToken</code> request
+        /// and response parameters. If more results are available, the <code>NextToken</code>
+        /// response member contains a token that you pass in the next call to this operation
+        /// to retrieve the next set of items.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorkspaceBundles service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        public Task<DescribeWorkspaceBundlesResponse> DescribeWorkspaceBundlesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DescribeWorkspaceBundlesRequest();
+            return DescribeWorkspaceBundlesAsync(request, cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkspaceBundles operation.
         /// </summary>
@@ -237,6 +277,34 @@ namespace Amazon.WorkSpaces
 
             return Invoke<DescribeWorkspaceDirectoriesRequest,DescribeWorkspaceDirectoriesResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Retrieves information about the AWS Directory Service directories in the region that
+        /// are registered with Amazon WorkSpaces and are available to your account.
+        /// 
+        ///  
+        /// <para>
+        /// This operation supports pagination with the use of the <code>NextToken</code> request
+        /// and response parameters. If more results are available, the <code>NextToken</code>
+        /// response member contains a token that you pass in the next call to this operation
+        /// to retrieve the next set of items.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorkspaceDirectories service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        public Task<DescribeWorkspaceDirectoriesResponse> DescribeWorkspaceDirectoriesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DescribeWorkspaceDirectoriesRequest();
+            return DescribeWorkspaceDirectoriesAsync(request, cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkspaceDirectories operation.
@@ -268,6 +336,41 @@ namespace Amazon.WorkSpaces
             return Invoke<DescribeWorkspacesRequest,DescribeWorkspacesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Obtains information about the specified WorkSpaces. 
+        /// 
+        ///  
+        /// <para>
+        /// Only one of the filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>,
+        /// or <code>WorkspaceIds</code>, can be specified at a time.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation supports pagination with the use of the <code>NextToken</code> request
+        /// and response parameters. If more results are available, the <code>NextToken</code>
+        /// response member contains a token that you pass in the next call to this operation
+        /// to retrieve the next set of items.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceUnavailableException">
+        /// The specified resource is not available.
+        /// </exception>
+        public Task<DescribeWorkspacesResponse> DescribeWorkspacesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DescribeWorkspacesRequest();
+            return DescribeWorkspacesAsync(request, cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkspaces operation.
         /// </summary>
@@ -297,6 +400,7 @@ namespace Amazon.WorkSpaces
 
             return Invoke<RebootWorkspacesRequest,RebootWorkspacesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RebootWorkspaces operation.
@@ -328,6 +432,7 @@ namespace Amazon.WorkSpaces
             return Invoke<RebuildWorkspacesRequest,RebuildWorkspacesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RebuildWorkspaces operation.
         /// </summary>
@@ -357,6 +462,7 @@ namespace Amazon.WorkSpaces
 
             return Invoke<TerminateWorkspacesRequest,TerminateWorkspacesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateWorkspaces operation.

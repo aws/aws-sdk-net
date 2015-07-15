@@ -341,6 +341,7 @@ namespace Amazon.CodePipeline
             return AcknowledgeJob(request);
         }
 
+
         /// <summary>
         /// Returns information about a specified job and whether that job has been received by
         /// the job worker. Only used for custom actions.
@@ -429,6 +430,7 @@ namespace Amazon.CodePipeline
             request.Nonce = nonce;
             return AcknowledgeThirdPartyJob(request);
         }
+
 
         /// <summary>
         /// Confirms a job worker has received the specified job. Only used for partner actions.
@@ -585,6 +587,7 @@ namespace Amazon.CodePipeline
             return CreatePipeline(request);
         }
 
+
         /// <summary>
         /// Creates a pipeline.
         /// </summary>
@@ -733,6 +736,7 @@ namespace Amazon.CodePipeline
             request.Name = name;
             return DeletePipeline(request);
         }
+
 
         /// <summary>
         /// Deletes the specified pipeline.
@@ -933,6 +937,7 @@ namespace Amazon.CodePipeline
             return GetJobDetails(request);
         }
 
+
         /// <summary>
         /// Returns information about a job. Only used for custom actions.
         /// 
@@ -1024,6 +1029,7 @@ namespace Amazon.CodePipeline
             return GetPipeline(request);
         }
 
+
         /// <summary>
         /// Returns the metadata, structure, stages, and actions of a pipeline. Can be used to
         /// return the entire structure of a pipeline in JSON format, which can then be modified
@@ -1047,6 +1053,7 @@ namespace Amazon.CodePipeline
             request.Name = name;
             return GetPipeline(request);
         }
+
 
         /// <summary>
         /// Returns the metadata, structure, stages, and actions of a pipeline. Can be used to
@@ -1128,6 +1135,7 @@ namespace Amazon.CodePipeline
             request.Name = name;
             return GetPipelineState(request);
         }
+
 
         /// <summary>
         /// Returns information about the state of a pipeline, including the stages, actions,
@@ -1222,6 +1230,7 @@ namespace Amazon.CodePipeline
             return GetThirdPartyJobDetails(request);
         }
 
+
         /// <summary>
         /// Requests the details of a job for a third party action. Only used for partner actions.
         /// 
@@ -1311,6 +1320,7 @@ namespace Amazon.CodePipeline
             return ListActionTypes(request);
         }
 
+
         /// <summary>
         /// Gets a summary of all AWS CodePipeline action types associated with your account.
         /// </summary>
@@ -1330,6 +1340,7 @@ namespace Amazon.CodePipeline
             request.ActionOwnerFilter = actionOwnerFilter;
             return ListActionTypes(request);
         }
+
 
         /// <summary>
         /// Gets a summary of all AWS CodePipeline action types associated with your account.
@@ -1402,6 +1413,7 @@ namespace Amazon.CodePipeline
             var request = new ListPipelinesRequest();
             return ListPipelines(request);
         }
+
 
         /// <summary>
         /// Gets a summary of all of the pipelines associated with your account.
@@ -1674,6 +1686,7 @@ namespace Amazon.CodePipeline
             return PutJobFailureResult(request);
         }
 
+
         /// <summary>
         /// Represents the failure of a job as returned to the pipeline by a job worker. Only
         /// used for custom actions.
@@ -1824,6 +1837,7 @@ namespace Amazon.CodePipeline
             return PutThirdPartyJobFailureResult(request);
         }
 
+
         /// <summary>
         /// Represents the failure of a third party job as returned to the pipeline by a job worker.
         /// Only used for partner actions.
@@ -1970,6 +1984,7 @@ namespace Amazon.CodePipeline
             return StartPipelineExecution(request);
         }
 
+
         /// <summary>
         /// Starts the specified pipeline. Specifically, it begins processing the latest commit
         /// to the source location specified as part of the pipeline.
@@ -2057,6 +2072,7 @@ namespace Amazon.CodePipeline
             request.Pipeline = pipeline;
             return UpdatePipeline(request);
         }
+
 
         /// <summary>
         /// Updates a specified pipeline with edits or changes to its structure. Use a JSON file

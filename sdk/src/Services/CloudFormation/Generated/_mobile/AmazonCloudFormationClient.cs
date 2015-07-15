@@ -171,11 +171,18 @@ namespace Amazon.CloudFormation
 
         #region Overrides
 
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.CloudFormation.Internal.ProcessRequestHandler());
@@ -185,6 +192,9 @@ namespace Amazon.CloudFormation
 
         #region Dispose
 
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -202,6 +212,7 @@ namespace Amazon.CloudFormation
 
             return Invoke<CancelUpdateStackRequest,CancelUpdateStackResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelUpdateStack operation.
@@ -233,6 +244,7 @@ namespace Amazon.CloudFormation
             return Invoke<CreateStackRequest,CreateStackResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStack operation.
         /// </summary>
@@ -262,6 +274,7 @@ namespace Amazon.CloudFormation
 
             return Invoke<DeleteStackRequest,DeleteStackResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStack operation.
@@ -293,6 +306,7 @@ namespace Amazon.CloudFormation
             return Invoke<DescribeStackEventsRequest,DescribeStackEventsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackEvents operation.
         /// </summary>
@@ -323,6 +337,7 @@ namespace Amazon.CloudFormation
             return Invoke<DescribeStackResourceRequest,DescribeStackResourceResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackResource operation.
         /// </summary>
@@ -352,6 +367,7 @@ namespace Amazon.CloudFormation
 
             return Invoke<DescribeStackResourcesRequest,DescribeStackResourcesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackResources operation.
@@ -387,6 +403,22 @@ namespace Amazon.CloudFormation
             return Invoke<DescribeStacksRequest,DescribeStacksResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns the description for the specified stack; if no stack name was specified, then
+        /// it returns the description for all the stacks created.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeStacks service method, as returned by CloudFormation.</returns>
+        public Task<DescribeStacksResponse> DescribeStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeStacksAsync(new DescribeStacksRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStacks operation.
         /// </summary>
@@ -416,6 +448,7 @@ namespace Amazon.CloudFormation
 
             return Invoke<EstimateTemplateCostRequest,EstimateTemplateCostResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the EstimateTemplateCost operation.
@@ -447,6 +480,7 @@ namespace Amazon.CloudFormation
             return Invoke<GetStackPolicyRequest,GetStackPolicyResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetStackPolicy operation.
         /// </summary>
@@ -476,6 +510,7 @@ namespace Amazon.CloudFormation
 
             return Invoke<GetTemplateRequest,GetTemplateResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetTemplate operation.
@@ -507,6 +542,7 @@ namespace Amazon.CloudFormation
             return Invoke<GetTemplateSummaryRequest,GetTemplateSummaryResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetTemplateSummary operation.
         /// </summary>
@@ -536,6 +572,7 @@ namespace Amazon.CloudFormation
 
             return Invoke<ListStackResourcesRequest,ListStackResourcesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListStackResources operation.
@@ -571,6 +608,24 @@ namespace Amazon.CloudFormation
             return Invoke<ListStacksRequest,ListStacksResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns the summary information for stacks whose status matches the specified StackStatusFilter.
+        /// Summary information for stacks that have been deleted is kept for 90 days after the
+        /// stack is deleted. If no StackStatusFilter is specified, summary information for all
+        /// stacks is returned (including existing stacks and stacks that have been deleted).
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStacks service method, as returned by CloudFormation.</returns>
+        public Task<ListStacksResponse> ListStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListStacksAsync(new ListStacksRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListStacks operation.
         /// </summary>
@@ -600,6 +655,7 @@ namespace Amazon.CloudFormation
 
             return Invoke<SetStackPolicyRequest,SetStackPolicyResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetStackPolicy operation.
@@ -631,6 +687,7 @@ namespace Amazon.CloudFormation
             return Invoke<SignalResourceRequest,SignalResourceResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SignalResource operation.
         /// </summary>
@@ -660,6 +717,7 @@ namespace Amazon.CloudFormation
 
             return Invoke<UpdateStackRequest,UpdateStackResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStack operation.
@@ -694,6 +752,21 @@ namespace Amazon.CloudFormation
 
             return Invoke<ValidateTemplateRequest,ValidateTemplateResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// Validates a specified template.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ValidateTemplate service method, as returned by CloudFormation.</returns>
+        public Task<ValidateTemplateResponse> ValidateTemplateAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ValidateTemplateAsync(new ValidateTemplateRequest(), cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ValidateTemplate operation.

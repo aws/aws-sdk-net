@@ -41,6 +41,7 @@ namespace Amazon.EC2
         
         #region  AcceptVpcPeeringConnection
 
+
         /// <summary>
         /// Accept a VPC peering connection request. To accept a request, the VPC peering connection
         /// must be in the <code>pending-acceptance</code> state, and you must be the owner of
@@ -79,6 +80,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  AllocateAddress
+
 
         /// <summary>
         /// Acquires an Elastic IP address.
@@ -137,6 +139,7 @@ namespace Amazon.EC2
         
         #region  AssignPrivateIpAddresses
 
+
         /// <summary>
         /// Assigns one or more secondary private IP addresses to the specified network interface.
         /// You can specify one or more specific secondary IP addresses, or you can specify the
@@ -184,6 +187,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  AssociateAddress
+
 
         /// <summary>
         /// Associates an Elastic IP address with an instance or a network interface.
@@ -246,6 +250,7 @@ namespace Amazon.EC2
         
         #region  AssociateDhcpOptions
 
+
         /// <summary>
         /// Associates a set of DHCP options (that you've previously created) with the specified
         /// VPC, or associates no DHCP options with the VPC.
@@ -297,6 +302,7 @@ namespace Amazon.EC2
         
         #region  AssociateRouteTable
 
+
         /// <summary>
         /// Associates a subnet with a route table. The subnet and route table must be in the
         /// same VPC. This association causes traffic originating from the subnet to be routed
@@ -342,6 +348,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  AttachClassicLinkVpc
+
 
         /// <summary>
         /// Links an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of
@@ -394,6 +401,7 @@ namespace Amazon.EC2
         
         #region  AttachInternetGateway
 
+
         /// <summary>
         /// Attaches an Internet gateway to a VPC, enabling connectivity between the Internet
         /// and the VPC. For more information about your VPC and Internet gateway, see the <a
@@ -433,6 +441,7 @@ namespace Amazon.EC2
         
         #region  AttachNetworkInterface
 
+
         /// <summary>
         /// Attaches a network interface to an instance.
         /// </summary>
@@ -468,6 +477,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  AttachVolume
+
 
         /// <summary>
         /// Attaches an EBS volume to a running or stopped instance and exposes it to the instance
@@ -538,6 +548,7 @@ namespace Amazon.EC2
         
         #region  AttachVpnGateway
 
+
         /// <summary>
         /// Attaches a virtual private gateway to a VPC. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
         /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
@@ -575,6 +586,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  AuthorizeSecurityGroupEgress
+
 
         /// <summary>
         /// Adds one or more egress rules to a security group for use with a VPC. Specifically,
@@ -637,6 +649,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  AuthorizeSecurityGroupIngress
+
 
         /// <summary>
         /// Adds one or more ingress rules to a security group.
@@ -702,6 +715,7 @@ namespace Amazon.EC2
         
         #region  BundleInstance
 
+
         /// <summary>
         /// Bundles an Amazon instance store-backed Windows instance.
         /// 
@@ -754,6 +768,7 @@ namespace Amazon.EC2
         
         #region  CancelBundleTask
 
+
         /// <summary>
         /// Cancels a bundling operation for an instance store-backed Windows instance.
         /// </summary>
@@ -789,6 +804,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CancelConversionTask
+
 
         /// <summary>
         /// Cancels an active conversion task. The task can be the import of an instance or volume.
@@ -836,6 +852,7 @@ namespace Amazon.EC2
         
         #region  CancelExportTask
 
+
         /// <summary>
         /// Cancels an active export task. The request removes all artifacts of the export, including
         /// any partially-created Amazon S3 objects. If the export task is complete or is in the
@@ -874,6 +891,7 @@ namespace Amazon.EC2
         
         #region  CancelImportTask
 
+
         /// <summary>
         /// Cancels an in-process import virtual machine or import snapshot task.
         /// </summary>
@@ -909,6 +927,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CancelReservedInstancesListing
+
 
         /// <summary>
         /// Cancels the specified Reserved Instance listing in the Reserved Instance Marketplace.
@@ -952,6 +971,7 @@ namespace Amazon.EC2
         
         #region  CancelSpotFleetRequests
 
+
         /// <summary>
         /// Cancels the specified Spot fleet requests.
         /// </summary>
@@ -987,6 +1007,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CancelSpotInstanceRequests
+
 
         /// <summary>
         /// Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon
@@ -1035,6 +1056,7 @@ namespace Amazon.EC2
         
         #region  ConfirmProductInstance
 
+
         /// <summary>
         /// Determines whether a product code is associated with an instance. This action can
         /// only be used by the owner of the product code. It is useful when a product code owner
@@ -1072,6 +1094,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CopyImage
+
 
         /// <summary>
         /// Initiates the copy of an AMI from the specified source region to the current region.
@@ -1116,6 +1139,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CopySnapshot
+
 
         /// <summary>
         /// Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can
@@ -1169,6 +1193,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateCustomerGateway
+
 
         /// <summary>
         /// Provides information to AWS about your VPN customer gateway device. The customer gateway
@@ -1239,6 +1264,7 @@ namespace Amazon.EC2
         
         #region  CreateDhcpOptions
 
+
         /// <summary>
         /// Creates a set of DHCP options for your VPC. After creating the set, you must associate
         /// it with the VPC, causing all existing and new instances that you launch in the VPC
@@ -1306,6 +1332,7 @@ namespace Amazon.EC2
         
         #region  CreateFlowLogs
 
+
         /// <summary>
         /// Creates one or more flow logs to capture IP traffic for a specific network interface,
         /// subnet, or VPC. Flow logs are delivered to a specified log group in Amazon CloudWatch
@@ -1352,6 +1379,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateImage
+
 
         /// <summary>
         /// Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is either
@@ -1403,6 +1431,7 @@ namespace Amazon.EC2
         
         #region  CreateInstanceExportTask
 
+
         /// <summary>
         /// Exports a running or stopped instance to an S3 bucket.
         /// 
@@ -1445,6 +1474,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateInternetGateway
+
 
         /// <summary>
         /// Creates an Internet gateway for use with a VPC. After creating the Internet gateway,
@@ -1503,6 +1533,7 @@ namespace Amazon.EC2
         
         #region  CreateKeyPair
 
+
         /// <summary>
         /// Creates a 2048-bit RSA key pair with the specified name. Amazon EC2 stores the public
         /// key and displays the private key for you to save to a file. The private key is returned
@@ -1557,6 +1588,7 @@ namespace Amazon.EC2
         
         #region  CreateNetworkAcl
 
+
         /// <summary>
         /// Creates a network ACL in a VPC. Network ACLs provide an optional layer of security
         /// (in addition to security groups) for the instances in your VPC.
@@ -1599,6 +1631,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateNetworkAclEntry
+
 
         /// <summary>
         /// Creates an entry (a rule) in a network ACL with the specified rule number. Each network
@@ -1659,6 +1692,7 @@ namespace Amazon.EC2
         
         #region  CreateNetworkInterface
 
+
         /// <summary>
         /// Creates a network interface in the specified subnet.
         /// 
@@ -1700,6 +1734,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreatePlacementGroup
+
 
         /// <summary>
         /// Creates a placement group that you launch cluster instances into. You must give the
@@ -1743,6 +1778,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateReservedInstancesListing
+
 
         /// <summary>
         /// Creates a listing for Amazon EC2 Reserved Instances to be sold in the Reserved Instance
@@ -1803,6 +1839,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateRoute
+
 
         /// <summary>
         /// Creates a route in a route table within a VPC.
@@ -1871,6 +1908,7 @@ namespace Amazon.EC2
         
         #region  CreateRouteTable
 
+
         /// <summary>
         /// Creates a route table for the specified VPC. After you create a route table, you can
         /// add routes and associate the table with a subnet.
@@ -1913,6 +1951,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateSecurityGroup
+
 
         /// <summary>
         /// Creates a security group.
@@ -1987,6 +2026,7 @@ namespace Amazon.EC2
         
         #region  CreateSnapshot
 
+
         /// <summary>
         /// Creates a snapshot of an EBS volume and stores it in Amazon S3. You can use snapshots
         /// for backups, to make copies of EBS volumes, and to save data before shutting down
@@ -2059,6 +2099,7 @@ namespace Amazon.EC2
         
         #region  CreateSpotDatafeedSubscription
 
+
         /// <summary>
         /// Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs.
         /// You can create one data feed per AWS account. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
@@ -2096,6 +2137,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateSubnet
+
 
         /// <summary>
         /// Creates a subnet in an existing VPC.
@@ -2167,6 +2209,7 @@ namespace Amazon.EC2
         
         #region  CreateTags
 
+
         /// <summary>
         /// Adds or overwrites one or more tags for the specified Amazon EC2 resource or resources.
         /// Each resource can have a maximum of 10 tags. Each tag consists of a key and optional
@@ -2210,6 +2253,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateVolume
+
 
         /// <summary>
         /// Creates an EBS volume that can be attached to an instance in the same Availability
@@ -2270,6 +2314,7 @@ namespace Amazon.EC2
         
         #region  CreateVpc
 
+
         /// <summary>
         /// Creates a VPC with the specified CIDR block.
         /// 
@@ -2321,6 +2366,7 @@ namespace Amazon.EC2
         
         #region  CreateVpcEndpoint
 
+
         /// <summary>
         /// Creates a VPC endpoint for a specified AWS service. An endpoint enables you to create
         /// a private connection between your VPC and another AWS service in your account. You
@@ -2365,6 +2411,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateVpcPeeringConnection
+
 
         /// <summary>
         /// Requests a VPC peering connection between two VPCs: a requester VPC that you own and
@@ -2415,6 +2462,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateVpnConnection
+
 
         /// <summary>
         /// Creates a VPN connection between an existing virtual private gateway and a VPN customer
@@ -2476,6 +2524,7 @@ namespace Amazon.EC2
         
         #region  CreateVpnConnectionRoute
 
+
         /// <summary>
         /// Creates a static route associated with a VPN connection between an existing virtual
         /// private gateway and a VPN customer gateway. The static route allows traffic to be
@@ -2520,6 +2569,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  CreateVpnGateway
+
 
         /// <summary>
         /// Creates a virtual private gateway. A virtual private gateway is the endpoint on the
@@ -2566,6 +2616,7 @@ namespace Amazon.EC2
         
         #region  DeleteCustomerGateway
 
+
         /// <summary>
         /// Deletes the specified customer gateway. You must delete the VPN connection before
         /// you can delete the customer gateway.
@@ -2602,6 +2653,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DeleteDhcpOptions
+
 
         /// <summary>
         /// Deletes the specified set of DHCP options. You must disassociate the set of DHCP options
@@ -2641,6 +2693,7 @@ namespace Amazon.EC2
         
         #region  DeleteFlowLogs
 
+
         /// <summary>
         /// Deletes one or more flow logs.
         /// </summary>
@@ -2676,6 +2729,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DeleteInternetGateway
+
 
         /// <summary>
         /// Deletes the specified Internet gateway. You must detach the Internet gateway from
@@ -2714,6 +2768,7 @@ namespace Amazon.EC2
         
         #region  DeleteKeyPair
 
+
         /// <summary>
         /// Deletes the specified key pair, by removing the public key from Amazon EC2.
         /// </summary>
@@ -2749,6 +2804,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DeleteNetworkAcl
+
 
         /// <summary>
         /// Deletes the specified network ACL. You can't delete the ACL if it's associated with
@@ -2787,6 +2843,7 @@ namespace Amazon.EC2
         
         #region  DeleteNetworkAclEntry
 
+
         /// <summary>
         /// Deletes the specified ingress or egress entry (rule) from the specified network ACL.
         /// </summary>
@@ -2822,6 +2879,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DeleteNetworkInterface
+
 
         /// <summary>
         /// Deletes the specified network interface. You must detach the network interface before
@@ -2859,6 +2917,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DeletePlacementGroup
+
 
         /// <summary>
         /// Deletes the specified placement group. You must terminate all instances in the placement
@@ -2899,6 +2958,7 @@ namespace Amazon.EC2
         
         #region  DeleteRoute
 
+
         /// <summary>
         /// Deletes the specified route from the specified route table.
         /// </summary>
@@ -2934,6 +2994,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DeleteRouteTable
+
 
         /// <summary>
         /// Deletes the specified route table. You must disassociate the route table from any
@@ -2971,6 +3032,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DeleteSecurityGroup
+
 
         /// <summary>
         /// Deletes a security group.
@@ -3014,6 +3076,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DeleteSnapshot
+
 
         /// <summary>
         /// Deletes the specified snapshot.
@@ -3070,6 +3133,7 @@ namespace Amazon.EC2
         
         #region  DeleteSpotDatafeedSubscription
 
+
         /// <summary>
         /// Deletes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
         /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -3115,6 +3179,7 @@ namespace Amazon.EC2
         
         #region  DeleteSubnet
 
+
         /// <summary>
         /// Deletes the specified subnet. You must terminate all running instances in the subnet
         /// before you can delete the subnet.
@@ -3151,6 +3216,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DeleteTags
+
 
         /// <summary>
         /// Deletes the specified set of tags from the specified set of resources. This call is
@@ -3194,6 +3260,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DeleteVolume
+
 
         /// <summary>
         /// Deletes the specified EBS volume. The volume must be in the <code>available</code>
@@ -3242,6 +3309,7 @@ namespace Amazon.EC2
         
         #region  DeleteVpc
 
+
         /// <summary>
         /// Deletes the specified VPC. You must detach or delete all gateways and resources that
         /// are associated with the VPC before you can delete it. For example, you must terminate
@@ -3282,6 +3350,7 @@ namespace Amazon.EC2
         
         #region  DeleteVpcEndpoints
 
+
         /// <summary>
         /// Deletes one or more specified VPC endpoints. Deleting the endpoint also deletes the
         /// endpoint routes in the route tables that were associated with the endpoint.
@@ -3318,6 +3387,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DeleteVpcPeeringConnection
+
 
         /// <summary>
         /// Deletes a VPC peering connection. Either the owner of the requester VPC or the owner
@@ -3357,6 +3427,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DeleteVpnConnection
+
 
         /// <summary>
         /// Deletes the specified VPN connection.
@@ -3405,6 +3476,7 @@ namespace Amazon.EC2
         
         #region  DeleteVpnConnectionRoute
 
+
         /// <summary>
         /// Deletes the specified static route associated with a VPN connection between an existing
         /// virtual private gateway and a VPN customer gateway. The static route allows traffic
@@ -3442,6 +3514,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DeleteVpnGateway
+
 
         /// <summary>
         /// Deletes the specified virtual private gateway. We recommend that before you delete
@@ -3481,6 +3554,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DeregisterImage
+
 
         /// <summary>
         /// Deregisters the specified AMI. After you deregister an AMI, it can't be used to launch
@@ -3523,6 +3597,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeAccountAttributes
+
 
         /// <summary>
         /// Describes attributes of your AWS account. The following are the supported account
@@ -3631,6 +3706,7 @@ namespace Amazon.EC2
         
         #region  DescribeAddresses
 
+
         /// <summary>
         /// Describes one or more of your Elastic IP addresses.
         /// 
@@ -3687,6 +3763,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeAvailabilityZones
+
 
         /// <summary>
         /// Describes one or more of the Availability Zones that are available to you. The results
@@ -3749,6 +3826,7 @@ namespace Amazon.EC2
         
         #region  DescribeBundleTasks
 
+
         /// <summary>
         /// Describes one or more of your bundling tasks.
         /// 
@@ -3810,6 +3888,7 @@ namespace Amazon.EC2
         
         #region  DescribeClassicLinkInstances
 
+
         /// <summary>
         /// Describes one or more of your linked EC2-Classic instances. This request only returns
         /// information about EC2-Classic instances linked to a VPC through ClassicLink; you cannot
@@ -3847,6 +3926,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeConversionTasks
+
 
         /// <summary>
         /// Describes one or more of your conversion tasks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
@@ -3894,6 +3974,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeCustomerGateways
+
 
         /// <summary>
         /// Describes one or more of your VPN customer gateways.
@@ -3952,6 +4033,7 @@ namespace Amazon.EC2
         
         #region  DescribeDhcpOptions
 
+
         /// <summary>
         /// Describes one or more of your DHCP options sets.
         /// 
@@ -4007,6 +4089,7 @@ namespace Amazon.EC2
         
         #region  DescribeExportTasks
 
+
         /// <summary>
         /// Describes one or more of your export tasks.
         /// </summary>
@@ -4050,6 +4133,7 @@ namespace Amazon.EC2
         
         #region  DescribeFlowLogs
 
+
         /// <summary>
         /// Describes one or more flow logs. To view the information in your flow logs (the log
         /// streams for the network interfaces), you must use the CloudWatch Logs console or the
@@ -4088,6 +4172,7 @@ namespace Amazon.EC2
         
         #region  DescribeImageAttribute
 
+
         /// <summary>
         /// Describes the specified attribute of the specified AMI. You can specify only one attribute
         /// at a time.
@@ -4124,6 +4209,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeImages
+
 
         /// <summary>
         /// Describes one or more of the images (AMIs, AKIs, and ARIs) available to you. Images
@@ -4186,6 +4272,7 @@ namespace Amazon.EC2
         
         #region  DescribeImportImageTasks
 
+
         /// <summary>
         /// Displays details about an import virtual machine or import snapshot tasks that are
         /// already created.
@@ -4223,6 +4310,7 @@ namespace Amazon.EC2
         
         #region  DescribeImportSnapshotTasks
 
+
         /// <summary>
         /// Describes your import snapshot tasks.
         /// </summary>
@@ -4258,6 +4346,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeInstanceAttribute
+
 
         /// <summary>
         /// Describes the specified attribute of the specified instance. You can specify only
@@ -4299,6 +4388,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeInstances
+
 
         /// <summary>
         /// Describes one or more of your instances.
@@ -4370,6 +4460,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeInstanceStatus
+
 
         /// <summary>
         /// Describes the status of one or more instances.
@@ -4468,6 +4559,7 @@ namespace Amazon.EC2
         
         #region  DescribeInternetGateways
 
+
         /// <summary>
         /// Describes one or more of your Internet gateways.
         /// </summary>
@@ -4510,6 +4602,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeKeyPairs
+
 
         /// <summary>
         /// Describes one or more of your key pairs.
@@ -4566,6 +4659,7 @@ namespace Amazon.EC2
         
         #region  DescribeMovingAddresses
 
+
         /// <summary>
         /// Describes your Elastic IP addresses that are being moved to the EC2-VPC platform,
         /// or that are being restored to the EC2-Classic platform. This request does not return
@@ -4603,6 +4697,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeNetworkAcls
+
 
         /// <summary>
         /// Describes one or more of your network ACLs.
@@ -4659,6 +4754,7 @@ namespace Amazon.EC2
         
         #region  DescribeNetworkInterfaceAttribute
 
+
         /// <summary>
         /// Describes a network interface attribute. You can specify only one attribute at a time.
         /// </summary>
@@ -4694,6 +4790,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeNetworkInterfaces
+
 
         /// <summary>
         /// Describes one or more of your network interfaces.
@@ -4737,6 +4834,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribePlacementGroups
+
 
         /// <summary>
         /// Describes one or more of your placement groups. For more information about placement
@@ -4785,6 +4883,7 @@ namespace Amazon.EC2
         
         #region  DescribePrefixLists
 
+
         /// <summary>
         /// Describes available AWS services in a prefix list format, which includes the prefix
         /// list name and prefix list ID of the service and the IP address range for the service.
@@ -4823,6 +4922,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeRegions
+
 
         /// <summary>
         /// Describes one or more regions that are currently available to you.
@@ -4879,6 +4979,7 @@ namespace Amazon.EC2
         
         #region  DescribeReservedInstances
 
+
         /// <summary>
         /// Describes one or more of the Reserved Instances that you purchased.
         /// 
@@ -4933,6 +5034,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeReservedInstancesListings
+
 
         /// <summary>
         /// Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
@@ -5031,6 +5133,7 @@ namespace Amazon.EC2
         
         #region  DescribeReservedInstancesModifications
 
+
         /// <summary>
         /// Describes the modifications made to your Reserved Instances. If no parameter is specified,
         /// information about all your Reserved Instances modification requests is returned. If
@@ -5092,6 +5195,7 @@ namespace Amazon.EC2
         
         #region  DescribeReservedInstancesOfferings
 
+
         /// <summary>
         /// Describes Reserved Instance offerings that are available for purchase. With Reserved
         /// Instances, you purchase the right to launch instances for a period of time. During
@@ -5152,6 +5256,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeRouteTables
+
 
         /// <summary>
         /// Describes one or more of your route tables. 
@@ -5220,6 +5325,7 @@ namespace Amazon.EC2
         
         #region  DescribeSecurityGroups
 
+
         /// <summary>
         /// Describes one or more of your security groups.
         /// 
@@ -5281,6 +5387,7 @@ namespace Amazon.EC2
         
         #region  DescribeSnapshotAttribute
 
+
         /// <summary>
         /// Describes the specified attribute of the specified snapshot. You can specify only
         /// one attribute at a time.
@@ -5323,6 +5430,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeSnapshots
+
 
         /// <summary>
         /// Describes one or more of the EBS snapshots available to you. Available snapshots include
@@ -5475,6 +5583,7 @@ namespace Amazon.EC2
         
         #region  DescribeSpotDatafeedSubscription
 
+
         /// <summary>
         /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
         /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -5520,6 +5629,7 @@ namespace Amazon.EC2
         
         #region  DescribeSpotFleetInstances
 
+
         /// <summary>
         /// Describes the running instances for the specified Spot fleet.
         /// </summary>
@@ -5555,6 +5665,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeSpotFleetRequestHistory
+
 
         /// <summary>
         /// Describes the events for the specified Spot fleet request during the specified time.
@@ -5598,6 +5709,7 @@ namespace Amazon.EC2
         
         #region  DescribeSpotFleetRequests
 
+
         /// <summary>
         /// Describes your Spot fleet requests.
         /// </summary>
@@ -5633,6 +5745,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeSpotInstanceRequests
+
 
         /// <summary>
         /// Describes the Spot Instance requests that belong to your account. Spot Instances are
@@ -5705,6 +5818,7 @@ namespace Amazon.EC2
         
         #region  DescribeSpotPriceHistory
 
+
         /// <summary>
         /// Describes the Spot Price history. The prices returned are listed in chronological
         /// order, from the oldest to the most recent, for up to the past 90 days. For more information,
@@ -5770,6 +5884,7 @@ namespace Amazon.EC2
         
         #region  DescribeSubnets
 
+
         /// <summary>
         /// Describes one or more of your subnets.
         /// 
@@ -5824,6 +5939,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeTags
+
 
         /// <summary>
         /// Describes one or more of the tags for your EC2 resources.
@@ -5880,6 +5996,7 @@ namespace Amazon.EC2
         
         #region  DescribeVolumeAttribute
 
+
         /// <summary>
         /// Describes the specified attribute of the specified volume. You can specify only one
         /// attribute at a time.
@@ -5922,6 +6039,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeVolumes
+
 
         /// <summary>
         /// Describes the specified EBS volumes.
@@ -5995,6 +6113,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeVolumeStatus
+
 
         /// <summary>
         /// Describes the status of the specified volumes. Volume status provides the result of
@@ -6129,6 +6248,7 @@ namespace Amazon.EC2
         
         #region  DescribeVpcAttribute
 
+
         /// <summary>
         /// Describes the specified attribute of the specified VPC. You can specify only one attribute
         /// at a time.
@@ -6166,6 +6286,7 @@ namespace Amazon.EC2
         
         #region  DescribeVpcClassicLink
 
+
         /// <summary>
         /// Describes the ClassicLink status of one or more VPCs.
         /// </summary>
@@ -6201,6 +6322,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeVpcEndpoints
+
 
         /// <summary>
         /// Describes one or more of your VPC endpoints.
@@ -6238,6 +6360,7 @@ namespace Amazon.EC2
         
         #region  DescribeVpcEndpointServices
 
+
         /// <summary>
         /// Describes all supported AWS services that can be specified when creating a VPC endpoint.
         /// </summary>
@@ -6273,6 +6396,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeVpcPeeringConnections
+
 
         /// <summary>
         /// Describes one or more of your VPC peering connections.
@@ -6317,6 +6441,7 @@ namespace Amazon.EC2
         
         #region  DescribeVpcs
 
+
         /// <summary>
         /// Describes one or more of your VPCs.
         /// </summary>
@@ -6359,6 +6484,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DescribeVpnConnections
+
 
         /// <summary>
         /// Describes one or more of your VPN connections.
@@ -6417,6 +6543,7 @@ namespace Amazon.EC2
         
         #region  DescribeVpnGateways
 
+
         /// <summary>
         /// Describes one or more of your virtual private gateways.
         /// 
@@ -6474,6 +6601,7 @@ namespace Amazon.EC2
         
         #region  DetachClassicLinkVpc
 
+
         /// <summary>
         /// Unlinks (detaches) a linked EC2-Classic instance from a VPC. After the instance has
         /// been unlinked, the VPC security groups are no longer associated with it. An instance
@@ -6512,6 +6640,7 @@ namespace Amazon.EC2
         
         #region  DetachInternetGateway
 
+
         /// <summary>
         /// Detaches an Internet gateway from a VPC, disabling connectivity between the Internet
         /// and the VPC. The VPC must not contain any running instances with Elastic IP addresses.
@@ -6549,6 +6678,7 @@ namespace Amazon.EC2
         
         #region  DetachNetworkInterface
 
+
         /// <summary>
         /// Detaches a network interface from an instance.
         /// </summary>
@@ -6584,6 +6714,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DetachVolume
+
 
         /// <summary>
         /// Detaches an EBS volume from an instance. Make sure to unmount any file systems on
@@ -6639,6 +6770,7 @@ namespace Amazon.EC2
         
         #region  DetachVpnGateway
 
+
         /// <summary>
         /// Detaches a virtual private gateway from a VPC. You do this if you're planning to turn
         /// off the VPC and not use it anymore. You can confirm a virtual private gateway has
@@ -6684,6 +6816,7 @@ namespace Amazon.EC2
         
         #region  DisableVgwRoutePropagation
 
+
         /// <summary>
         /// Disables a virtual private gateway (VGW) from propagating routes to a specified route
         /// table of a VPC.
@@ -6721,6 +6854,7 @@ namespace Amazon.EC2
         
         #region  DisableVpcClassicLink
 
+
         /// <summary>
         /// Disables ClassicLink for a VPC. You cannot disable ClassicLink for a VPC that has
         /// EC2-Classic instances linked to it.
@@ -6757,6 +6891,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  DisassociateAddress
+
 
         /// <summary>
         /// Disassociates an Elastic IP address from the instance or network interface it's associated
@@ -6807,6 +6942,7 @@ namespace Amazon.EC2
         
         #region  DisassociateRouteTable
 
+
         /// <summary>
         /// Disassociates a subnet from a route table.
         /// 
@@ -6851,6 +6987,7 @@ namespace Amazon.EC2
         
         #region  EnableVgwRoutePropagation
 
+
         /// <summary>
         /// Enables a virtual private gateway (VGW) to propagate routes to the specified route
         /// table of a VPC.
@@ -6888,6 +7025,7 @@ namespace Amazon.EC2
         
         #region  EnableVolumeIO
 
+
         /// <summary>
         /// Enables I/O operations for a volume that had I/O operations disabled because the data
         /// on the volume was potentially inconsistent.
@@ -6924,6 +7062,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  EnableVpcClassicLink
+
 
         /// <summary>
         /// Enables a VPC for ClassicLink. You can then link EC2-Classic instances to your ClassicLink-enabled
@@ -6966,6 +7105,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  GetConsoleOutput
+
 
         /// <summary>
         /// Gets the console output for the specified instance.
@@ -7029,6 +7169,7 @@ namespace Amazon.EC2
         
         #region  GetPasswordData
 
+
         /// <summary>
         /// Retrieves the encrypted administrator password for an instance running Windows.
         /// 
@@ -7085,6 +7226,7 @@ namespace Amazon.EC2
         
         #region  ImportImage
 
+
         /// <summary>
         /// Import single or multi-volume disk images or EBS snapshots into an Amazon Machine
         /// Image (AMI).
@@ -7121,6 +7263,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ImportInstance
+
 
         /// <summary>
         /// Creates an import instance task using metadata from the specified disk image. <code>ImportInstance</code>
@@ -7162,6 +7305,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ImportKeyPair
+
 
         /// <summary>
         /// Imports the public key from an RSA key pair that you created with a third-party tool.
@@ -7209,6 +7353,7 @@ namespace Amazon.EC2
         
         #region  ImportSnapshot
 
+
         /// <summary>
         /// Imports a disk into an EBS snapshot.
         /// </summary>
@@ -7244,6 +7389,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ImportVolume
+
 
         /// <summary>
         /// Creates an import volume task using metadata from the specified disk image. After
@@ -7285,6 +7431,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ModifyImageAttribute
+
 
         /// <summary>
         /// Modifies the specified attribute of the specified AMI. You can specify only one attribute
@@ -7330,6 +7477,7 @@ namespace Amazon.EC2
         
         #region  ModifyInstanceAttribute
 
+
         /// <summary>
         /// Modifies the specified attribute of the specified instance. You can specify only one
         /// attribute at a time.
@@ -7374,6 +7522,7 @@ namespace Amazon.EC2
         
         #region  ModifyNetworkInterfaceAttribute
 
+
         /// <summary>
         /// Modifies the specified network interface attribute. You can specify only one attribute
         /// at a time.
@@ -7410,6 +7559,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ModifyReservedInstances
+
 
         /// <summary>
         /// Modifies the Availability Zone, instance count, instance type, or network platform
@@ -7455,6 +7605,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ModifySnapshotAttribute
+
 
         /// <summary>
         /// Adds or removes permission settings for the specified snapshot. You may add or remove
@@ -7506,6 +7657,7 @@ namespace Amazon.EC2
         
         #region  ModifySubnetAttribute
 
+
         /// <summary>
         /// Modifies a subnet attribute.
         /// </summary>
@@ -7541,6 +7693,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ModifyVolumeAttribute
+
 
         /// <summary>
         /// Modifies a volume attribute.
@@ -7591,6 +7744,7 @@ namespace Amazon.EC2
         
         #region  ModifyVpcAttribute
 
+
         /// <summary>
         /// Modifies the specified attribute of the specified VPC.
         /// </summary>
@@ -7626,6 +7780,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ModifyVpcEndpoint
+
 
         /// <summary>
         /// Modifies attributes of a specified VPC endpoint. You can modify the policy associated
@@ -7664,6 +7819,7 @@ namespace Amazon.EC2
         
         #region  MonitorInstances
 
+
         /// <summary>
         /// Enables monitoring for a running instance. For more information about monitoring instances,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
@@ -7701,6 +7857,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  MoveAddressToVpc
+
 
         /// <summary>
         /// Moves an Elastic IP address from the EC2-Classic platform to the EC2-VPC platform.
@@ -7742,6 +7899,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  PurchaseReservedInstancesOffering
+
 
         /// <summary>
         /// Purchases a Reserved Instance for use with your account. With Amazon EC2 Reserved
@@ -7795,6 +7953,7 @@ namespace Amazon.EC2
         
         #region  RebootInstances
 
+
         /// <summary>
         /// Requests a reboot of one or more instances. This operation is asynchronous; it only
         /// queues a request to reboot the specified instances. The operation succeeds if the
@@ -7845,6 +8004,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  RegisterImage
+
 
         /// <summary>
         /// Registers an AMI. When you're creating an AMI, this is the final step you must complete
@@ -7909,6 +8069,7 @@ namespace Amazon.EC2
         
         #region  RejectVpcPeeringConnection
 
+
         /// <summary>
         /// Rejects a VPC peering connection request. The VPC peering connection must be in the
         /// <code>pending-acceptance</code> state. Use the <a>DescribeVpcPeeringConnections</a>
@@ -7948,6 +8109,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ReleaseAddress
+
 
         /// <summary>
         /// Releases the specified Elastic IP address.
@@ -8005,6 +8167,7 @@ namespace Amazon.EC2
         
         #region  ReplaceNetworkAclAssociation
 
+
         /// <summary>
         /// Changes which network ACL a subnet is associated with. By default when you create
         /// a subnet, it's automatically associated with the default network ACL. For more information
@@ -8044,6 +8207,7 @@ namespace Amazon.EC2
         
         #region  ReplaceNetworkAclEntry
 
+
         /// <summary>
         /// Replaces an entry (rule) in a network ACL. For more information about network ACLs,
         /// see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
@@ -8081,6 +8245,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ReplaceRoute
+
 
         /// <summary>
         /// Replaces an existing route within a route table in a VPC. You must provide only one
@@ -8125,6 +8290,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ReplaceRouteTableAssociation
+
 
         /// <summary>
         /// Changes the route table associated with a given subnet in a VPC. After the operation
@@ -8172,6 +8338,7 @@ namespace Amazon.EC2
         
         #region  ReportInstanceStatus
 
+
         /// <summary>
         /// Submits feedback about the status of an instance. The instance must be in the <code>running</code>
         /// state. If your experience with the instance differs from the instance status returned
@@ -8217,6 +8384,7 @@ namespace Amazon.EC2
         
         #region  RequestSpotFleet
 
+
         /// <summary>
         /// Creates a Spot fleet request.
         /// 
@@ -8259,6 +8427,7 @@ namespace Amazon.EC2
         
         #region  RequestSpotInstances
 
+
         /// <summary>
         /// Creates a Spot Instance request. Spot Instances are instances that Amazon EC2 launches
         /// when the bid price that you specify exceeds the current Spot Price. Amazon EC2 periodically
@@ -8298,6 +8467,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ResetImageAttribute
+
 
         /// <summary>
         /// Resets an attribute of an AMI to its default value.
@@ -8340,6 +8510,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ResetInstanceAttribute
+
 
         /// <summary>
         /// Resets an attribute of an instance to its default value. To reset the <code>kernel</code>
@@ -8388,6 +8559,7 @@ namespace Amazon.EC2
         
         #region  ResetNetworkInterfaceAttribute
 
+
         /// <summary>
         /// Resets a network interface attribute. You can specify only one attribute at a time.
         /// </summary>
@@ -8423,6 +8595,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  ResetSnapshotAttribute
+
 
         /// <summary>
         /// Resets permission settings for the specified snapshot.
@@ -8466,6 +8639,7 @@ namespace Amazon.EC2
         
         #region  RestoreAddressToClassic
 
+
         /// <summary>
         /// Restores an Elastic IP address that was previously moved to the EC2-VPC platform back
         /// to the EC2-Classic platform. You cannot move an Elastic IP address that was originally
@@ -8504,6 +8678,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  RevokeSecurityGroupEgress
+
 
         /// <summary>
         /// Removes one or more egress rules from a security group for EC2-VPC. The values that
@@ -8555,6 +8730,7 @@ namespace Amazon.EC2
         
         #region  RevokeSecurityGroupIngress
 
+
         /// <summary>
         /// Removes one or more ingress rules from a security group. The values that you specify
         /// in the revoke request (for example, ports) must match the existing rule's values for
@@ -8604,6 +8780,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  RunInstances
+
 
         /// <summary>
         /// Launches the specified number of instances using an AMI for which you have permissions.
@@ -8683,6 +8860,7 @@ namespace Amazon.EC2
         
         #region  StartInstances
 
+
         /// <summary>
         /// Starts an Amazon EBS-backed AMI that you've previously stopped.
         /// 
@@ -8744,6 +8922,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  StopInstances
+
 
         /// <summary>
         /// Stops an Amazon EBS-backed instance. Each time you transition an instance from stopped
@@ -8822,6 +9001,7 @@ namespace Amazon.EC2
         
         #region  TerminateInstances
 
+
         /// <summary>
         /// Shuts down one or more instances. This operation is idempotent; if you terminate an
         /// instance more than once, each call succeeds.
@@ -8885,6 +9065,7 @@ namespace Amazon.EC2
         
         #region  UnassignPrivateIpAddresses
 
+
         /// <summary>
         /// Unassigns one or more secondary private IP addresses from a network interface.
         /// </summary>
@@ -8920,6 +9101,7 @@ namespace Amazon.EC2
         #endregion
         
         #region  UnmonitorInstances
+
 
         /// <summary>
         /// Disables monitoring for a running instance. For more information about monitoring

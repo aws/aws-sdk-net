@@ -256,6 +256,7 @@ namespace Amazon.RDS
         
         #region  AddSourceIdentifierToSubscription
 
+
         /// <summary>
         /// Adds a source identifier to an existing RDS event notification subscription.
         /// </summary>
@@ -297,6 +298,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  AddTagsToResource
+
 
         /// <summary>
         /// Adds metadata tags to an Amazon RDS resource. These tags can also be used with cost
@@ -348,6 +350,7 @@ namespace Amazon.RDS
         
         #region  ApplyPendingMaintenanceAction
 
+
         /// <summary>
         /// Applies a pending maintenance action to a resource (for example, a DB instance).
         /// </summary>
@@ -386,6 +389,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  AuthorizeDBSecurityGroupIngress
+
 
         /// <summary>
         /// Enables ingress to a DBSecurityGroup using one of two forms of authorization. First,
@@ -449,6 +453,7 @@ namespace Amazon.RDS
         
         #region  CopyDBParameterGroup
 
+
         /// <summary>
         /// Copies the specified DB parameter group.
         /// </summary>
@@ -493,6 +498,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  CopyDBSnapshot
+
 
         /// <summary>
         /// Copies the specified DBSnapshot. The source DBSnapshot must be in the "available"
@@ -543,6 +549,7 @@ namespace Amazon.RDS
         
         #region  CopyOptionGroup
 
+
         /// <summary>
         /// Copies the specified option group.
         /// </summary>
@@ -587,6 +594,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  CreateDBInstance
+
 
         /// <summary>
         /// Creates a new DB instance.
@@ -678,6 +686,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  CreateDBInstanceReadReplica
+
 
         /// <summary>
         /// Creates a DB instance that acts as a Read Replica of a source DB instance. 
@@ -787,6 +796,7 @@ namespace Amazon.RDS
         
         #region  CreateDBParameterGroup
 
+
         /// <summary>
         /// Creates a new DB parameter group. 
         /// 
@@ -853,6 +863,7 @@ namespace Amazon.RDS
         
         #region  CreateDBSecurityGroup
 
+
         /// <summary>
         /// Creates a new DB security group. DB security groups control access to a DB instance.
         /// </summary>
@@ -898,6 +909,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  CreateDBSnapshot
+
 
         /// <summary>
         /// Creates a DBSnapshot. The source DBInstance must be in "available" state.
@@ -946,6 +958,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  CreateDBSubnetGroup
+
 
         /// <summary>
         /// Creates a new DB subnet group. DB subnet groups must contain at least one subnet
@@ -1001,6 +1014,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  CreateEventSubscription
+
 
         /// <summary>
         /// Creates an RDS event notification subscription. This action requires a topic ARN (Amazon
@@ -1081,6 +1095,7 @@ namespace Amazon.RDS
         
         #region  CreateOptionGroup
 
+
         /// <summary>
         /// Creates a new option group. You can create up to 20 option groups.
         /// </summary>
@@ -1122,6 +1137,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DeleteDBInstance
+
 
         /// <summary>
         /// The DeleteDBInstance action deletes a previously provisioned DB instance. A successful
@@ -1183,6 +1199,7 @@ namespace Amazon.RDS
         
         #region  DeleteDBParameterGroup
 
+
         /// <summary>
         /// Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted cannot be
         /// associated with any DB instances.
@@ -1225,6 +1242,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DeleteDBSecurityGroup
+
 
         /// <summary>
         /// Deletes a DB security group. 
@@ -1270,6 +1288,7 @@ namespace Amazon.RDS
         
         #region  DeleteDBSnapshot
 
+
         /// <summary>
         /// Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated.
         /// 
@@ -1314,6 +1333,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DeleteDBSubnetGroup
+
 
         /// <summary>
         /// Deletes a DB subnet group. 
@@ -1362,6 +1382,7 @@ namespace Amazon.RDS
         
         #region  DeleteEventSubscription
 
+
         /// <summary>
         /// Deletes an RDS event notification subscription.
         /// </summary>
@@ -1405,6 +1426,7 @@ namespace Amazon.RDS
         
         #region  DeleteOptionGroup
 
+
         /// <summary>
         /// Deletes an existing option group.
         /// </summary>
@@ -1447,6 +1469,7 @@ namespace Amazon.RDS
         
         #region  DescribeAccountAttributes
 
+
         /// <summary>
         /// Lists all of the attributes for a customer account. The attributes include Amazon
         /// RDS quotas for the account, such as the number of DB instances allowed. The description
@@ -1464,6 +1487,7 @@ namespace Amazon.RDS
         {
             return DescribeAccountAttributes(new DescribeAccountAttributesRequest());
         }
+
 
         /// <summary>
         /// Lists all of the attributes for a customer account. The attributes include Amazon
@@ -1487,6 +1511,27 @@ namespace Amazon.RDS
             return Invoke<DescribeAccountAttributesRequest,DescribeAccountAttributesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists all of the attributes for a customer account. The attributes include Amazon
+        /// RDS quotas for the account, such as the number of DB instances allowed. The description
+        /// for a quota includes the quota name, current usage toward that quota, and the quota's
+        /// maximum value. 
+        /// 
+        ///  
+        /// <para>
+        /// This command does not take any parameters.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAccountAttributes service method, as returned by RDS.</returns>
+        public Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeAccountAttributesAsync(new DescribeAccountAttributesRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAccountAttributes operation.
         /// </summary>
@@ -1508,6 +1553,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DescribeCertificates
+
 
         /// <summary>
         /// Lists the set of CA certificates provided by Amazon RDS for this AWS account.
@@ -1548,6 +1594,7 @@ namespace Amazon.RDS
         
         #region  DescribeDBEngineVersions
 
+
         /// <summary>
         /// Returns a list of the available DB engines.
         /// </summary>
@@ -1557,6 +1604,7 @@ namespace Amazon.RDS
         {
             return DescribeDBEngineVersions(new DescribeDBEngineVersionsRequest());
         }
+
 
         /// <summary>
         /// Returns a list of the available DB engines.
@@ -1572,6 +1620,19 @@ namespace Amazon.RDS
             return Invoke<DescribeDBEngineVersionsRequest,DescribeDBEngineVersionsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns a list of the available DB engines.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBEngineVersions service method, as returned by RDS.</returns>
+        public Task<DescribeDBEngineVersionsResponse> DescribeDBEngineVersionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeDBEngineVersionsAsync(new DescribeDBEngineVersionsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBEngineVersions operation.
         /// </summary>
@@ -1594,6 +1655,7 @@ namespace Amazon.RDS
         
         #region  DescribeDBInstances
 
+
         /// <summary>
         /// Returns information about provisioned RDS instances. This API supports pagination.
         /// </summary>
@@ -1606,6 +1668,7 @@ namespace Amazon.RDS
         {
             return DescribeDBInstances(new DescribeDBInstancesRequest());
         }
+
 
         /// <summary>
         /// Returns information about provisioned RDS instances. This API supports pagination.
@@ -1624,6 +1687,22 @@ namespace Amazon.RDS
             return Invoke<DescribeDBInstancesRequest,DescribeDBInstancesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns information about provisioned RDS instances. This API supports pagination.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBInstances service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        public Task<DescribeDBInstancesResponse> DescribeDBInstancesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeDBInstancesAsync(new DescribeDBInstancesRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBInstances operation.
         /// </summary>
@@ -1645,6 +1724,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DescribeDBLogFiles
+
 
         /// <summary>
         /// Returns a list of DB log files for the DB instance.
@@ -1685,6 +1765,7 @@ namespace Amazon.RDS
         
         #region  DescribeDBParameterGroups
 
+
         /// <summary>
         /// Returns a list of <code>DBParameterGroup</code> descriptions. If a <code>DBParameterGroupName</code>
         /// is specified, the list will contain only the description of the specified DB parameter
@@ -1699,6 +1780,7 @@ namespace Amazon.RDS
         {
             return DescribeDBParameterGroups(new DescribeDBParameterGroupsRequest());
         }
+
 
         /// <summary>
         /// Returns a list of <code>DBParameterGroup</code> descriptions. If a <code>DBParameterGroupName</code>
@@ -1719,6 +1801,24 @@ namespace Amazon.RDS
             return Invoke<DescribeDBParameterGroupsRequest,DescribeDBParameterGroupsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns a list of <code>DBParameterGroup</code> descriptions. If a <code>DBParameterGroupName</code>
+        /// is specified, the list will contain only the description of the specified DB parameter
+        /// group.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBParameterGroups service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        public Task<DescribeDBParameterGroupsResponse> DescribeDBParameterGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeDBParameterGroupsAsync(new DescribeDBParameterGroupsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBParameterGroups operation.
         /// </summary>
@@ -1740,6 +1840,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DescribeDBParameters
+
 
         /// <summary>
         /// Returns the detailed parameter list for a particular DB parameter group.
@@ -1780,6 +1881,7 @@ namespace Amazon.RDS
         
         #region  DescribeDBSecurityGroups
 
+
         /// <summary>
         /// Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code>
         /// is specified, the list will contain only the descriptions of the specified DB security
@@ -1794,6 +1896,7 @@ namespace Amazon.RDS
         {
             return DescribeDBSecurityGroups(new DescribeDBSecurityGroupsRequest());
         }
+
 
         /// <summary>
         /// Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code>
@@ -1814,6 +1917,24 @@ namespace Amazon.RDS
             return Invoke<DescribeDBSecurityGroupsRequest,DescribeDBSecurityGroupsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code>
+        /// is specified, the list will contain only the descriptions of the specified DB security
+        /// group.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBSecurityGroups service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
+        /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+        /// </exception>
+        public Task<DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeDBSecurityGroupsAsync(new DescribeDBSecurityGroupsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBSecurityGroups operation.
         /// </summary>
@@ -1836,6 +1957,7 @@ namespace Amazon.RDS
         
         #region  DescribeDBSnapshots
 
+
         /// <summary>
         /// Returns information about DB snapshots. This API supports pagination.
         /// </summary>
@@ -1848,6 +1970,7 @@ namespace Amazon.RDS
         {
             return DescribeDBSnapshots(new DescribeDBSnapshotsRequest());
         }
+
 
         /// <summary>
         /// Returns information about DB snapshots. This API supports pagination.
@@ -1866,6 +1989,22 @@ namespace Amazon.RDS
             return Invoke<DescribeDBSnapshotsRequest,DescribeDBSnapshotsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns information about DB snapshots. This API supports pagination.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBSnapshots service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
+        /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+        /// </exception>
+        public Task<DescribeDBSnapshotsResponse> DescribeDBSnapshotsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeDBSnapshotsAsync(new DescribeDBSnapshotsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBSnapshots operation.
         /// </summary>
@@ -1888,6 +2027,7 @@ namespace Amazon.RDS
         
         #region  DescribeDBSubnetGroups
 
+
         /// <summary>
         /// Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified,
         /// the list will contain only the descriptions of the specified DBSubnetGroup. 
@@ -1907,6 +2047,7 @@ namespace Amazon.RDS
         {
             return DescribeDBSubnetGroups(new DescribeDBSubnetGroupsRequest());
         }
+
 
         /// <summary>
         /// Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified,
@@ -1932,6 +2073,29 @@ namespace Amazon.RDS
             return Invoke<DescribeDBSubnetGroupsRequest,DescribeDBSubnetGroupsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified,
+        /// the list will contain only the descriptions of the specified DBSubnetGroup. 
+        /// 
+        ///  
+        /// <para>
+        /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
+        /// Tutorial</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBSubnetGroups service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        public Task<DescribeDBSubnetGroupsResponse> DescribeDBSubnetGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeDBSubnetGroupsAsync(new DescribeDBSubnetGroupsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDBSubnetGroups operation.
         /// </summary>
@@ -1953,6 +2117,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DescribeEngineDefaultParameters
+
 
         /// <summary>
         /// Returns the default engine and system parameter information for the specified database
@@ -1991,6 +2156,7 @@ namespace Amazon.RDS
         
         #region  DescribeEventCategories
 
+
         /// <summary>
         /// Displays a list of categories for all event source types, or, if specified, for a
         /// specified source type. You can see a list of the event categories and source types
@@ -2003,6 +2169,7 @@ namespace Amazon.RDS
         {
             return DescribeEventCategories(new DescribeEventCategoriesRequest());
         }
+
 
         /// <summary>
         /// Displays a list of categories for all event source types, or, if specified, for a
@@ -2021,6 +2188,22 @@ namespace Amazon.RDS
             return Invoke<DescribeEventCategoriesRequest,DescribeEventCategoriesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Displays a list of categories for all event source types, or, if specified, for a
+        /// specified source type. You can see a list of the event categories and source types
+        /// in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
+        /// Events</a> topic in the Amazon RDS User Guide.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEventCategories service method, as returned by RDS.</returns>
+        public Task<DescribeEventCategoriesResponse> DescribeEventCategoriesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeEventCategoriesAsync(new DescribeEventCategoriesRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEventCategories operation.
         /// </summary>
@@ -2043,6 +2226,7 @@ namespace Amazon.RDS
         
         #region  DescribeEvents
 
+
         /// <summary>
         /// Returns events related to DB instances, DB security groups, DB snapshots, and DB
         /// parameter groups for the past 14 days. Events specific to a particular DB instance,
@@ -2055,6 +2239,7 @@ namespace Amazon.RDS
         {
             return DescribeEvents(new DescribeEventsRequest());
         }
+
 
         /// <summary>
         /// Returns events related to DB instances, DB security groups, DB snapshots, and DB
@@ -2073,6 +2258,22 @@ namespace Amazon.RDS
             return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns events related to DB instances, DB security groups, DB snapshots, and DB
+        /// parameter groups for the past 14 days. Events specific to a particular DB instance,
+        /// DB security group, database snapshot, or DB parameter group can be obtained by providing
+        /// the name as a parameter. By default, the past hour of events are returned.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEvents service method, as returned by RDS.</returns>
+        public Task<DescribeEventsResponse> DescribeEventsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeEventsAsync(new DescribeEventsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
         /// </summary>
@@ -2095,6 +2296,7 @@ namespace Amazon.RDS
         
         #region  DescribeEventSubscriptions
 
+
         /// <summary>
         /// Lists all the subscription descriptions for a customer account. The description for
         /// a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID,
@@ -2114,6 +2316,7 @@ namespace Amazon.RDS
         {
             return DescribeEventSubscriptions(new DescribeEventSubscriptionsRequest());
         }
+
 
         /// <summary>
         /// Lists all the subscription descriptions for a customer account. The description for
@@ -2139,6 +2342,29 @@ namespace Amazon.RDS
             return Invoke<DescribeEventSubscriptionsRequest,DescribeEventSubscriptionsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists all the subscription descriptions for a customer account. The description for
+        /// a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID,
+        /// CreationTime, and Status. 
+        /// 
+        ///  
+        /// <para>
+        /// If you specify a SubscriptionName, lists the description for that subscription.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEventSubscriptions service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.SubscriptionNotFoundException">
+        /// The subscription name does not exist.
+        /// </exception>
+        public Task<DescribeEventSubscriptionsResponse> DescribeEventSubscriptionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeEventSubscriptionsAsync(new DescribeEventSubscriptionsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEventSubscriptions operation.
         /// </summary>
@@ -2160,6 +2386,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DescribeOptionGroupOptions
+
 
         /// <summary>
         /// Describes all available options.
@@ -2197,6 +2424,7 @@ namespace Amazon.RDS
         
         #region  DescribeOptionGroups
 
+
         /// <summary>
         /// Describes the available option groups.
         /// </summary>
@@ -2209,6 +2437,7 @@ namespace Amazon.RDS
         {
             return DescribeOptionGroups(new DescribeOptionGroupsRequest());
         }
+
 
         /// <summary>
         /// Describes the available option groups.
@@ -2227,6 +2456,22 @@ namespace Amazon.RDS
             return Invoke<DescribeOptionGroupsRequest,DescribeOptionGroupsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Describes the available option groups.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeOptionGroups service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
+        /// The specified option group could not be found.
+        /// </exception>
+        public Task<DescribeOptionGroupsResponse> DescribeOptionGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeOptionGroupsAsync(new DescribeOptionGroupsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeOptionGroups operation.
         /// </summary>
@@ -2248,6 +2493,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DescribeOrderableDBInstanceOptions
+
 
         /// <summary>
         /// Returns a list of orderable DB instance options for the specified engine.
@@ -2284,6 +2530,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DescribePendingMaintenanceActions
+
 
         /// <summary>
         /// Returns a list of resources (for example, DB instances) that have at least one pending
@@ -2325,6 +2572,7 @@ namespace Amazon.RDS
         
         #region  DescribeReservedDBInstances
 
+
         /// <summary>
         /// Returns information about reserved DB instances for this account, or about a specified
         /// reserved DB instance.
@@ -2338,6 +2586,7 @@ namespace Amazon.RDS
         {
             return DescribeReservedDBInstances(new DescribeReservedDBInstancesRequest());
         }
+
 
         /// <summary>
         /// Returns information about reserved DB instances for this account, or about a specified
@@ -2357,6 +2606,23 @@ namespace Amazon.RDS
             return Invoke<DescribeReservedDBInstancesRequest,DescribeReservedDBInstancesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Returns information about reserved DB instances for this account, or about a specified
+        /// reserved DB instance.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReservedDBInstances service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.ReservedDBInstanceNotFoundException">
+        /// The specified reserved DB Instance not found.
+        /// </exception>
+        public Task<DescribeReservedDBInstancesResponse> DescribeReservedDBInstancesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeReservedDBInstancesAsync(new DescribeReservedDBInstancesRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedDBInstances operation.
         /// </summary>
@@ -2379,6 +2645,7 @@ namespace Amazon.RDS
         
         #region  DescribeReservedDBInstancesOfferings
 
+
         /// <summary>
         /// Lists available reserved DB instance offerings.
         /// </summary>
@@ -2391,6 +2658,7 @@ namespace Amazon.RDS
         {
             return DescribeReservedDBInstancesOfferings(new DescribeReservedDBInstancesOfferingsRequest());
         }
+
 
         /// <summary>
         /// Lists available reserved DB instance offerings.
@@ -2409,6 +2677,22 @@ namespace Amazon.RDS
             return Invoke<DescribeReservedDBInstancesOfferingsRequest,DescribeReservedDBInstancesOfferingsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists available reserved DB instance offerings.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReservedDBInstancesOfferings service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.ReservedDBInstancesOfferingNotFoundException">
+        /// Specified offering does not exist.
+        /// </exception>
+        public Task<DescribeReservedDBInstancesOfferingsResponse> DescribeReservedDBInstancesOfferingsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeReservedDBInstancesOfferingsAsync(new DescribeReservedDBInstancesOfferingsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedDBInstancesOfferings operation.
         /// </summary>
@@ -2430,6 +2714,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  DownloadDBLogFilePortion
+
 
         /// <summary>
         /// Downloads all or a portion of the specified log file.
@@ -2469,6 +2754,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  ListTagsForResource
+
 
         /// <summary>
         /// Lists all tags on an Amazon RDS resource.
@@ -2517,6 +2803,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  ModifyDBInstance
+
 
         /// <summary>
         /// Modify settings for a DB instance. You can change one or more database configuration
@@ -2608,6 +2895,7 @@ namespace Amazon.RDS
         
         #region  ModifyDBParameterGroup
 
+
         /// <summary>
         /// Modifies the parameters of a DB parameter group. To modify more than one parameter,
         /// submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
@@ -2673,6 +2961,7 @@ namespace Amazon.RDS
         
         #region  ModifyDBSubnetGroup
 
+
         /// <summary>
         /// Modifies an existing DB subnet group. DB subnet groups must contain at least one
         /// subnet in at least two AZs in the region.
@@ -2727,6 +3016,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  ModifyEventSubscription
+
 
         /// <summary>
         /// Modifies an existing RDS event notification subscription. Note that you cannot modify
@@ -2792,6 +3082,7 @@ namespace Amazon.RDS
         
         #region  ModifyOptionGroup
 
+
         /// <summary>
         /// Modifies an existing option group.
         /// </summary>
@@ -2833,6 +3124,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  PromoteReadReplica
+
 
         /// <summary>
         /// Promotes a Read Replica DB instance to a standalone DB instance. 
@@ -2885,6 +3177,7 @@ namespace Amazon.RDS
         
         #region  PurchaseReservedDBInstancesOffering
 
+
         /// <summary>
         /// Purchases a reserved DB instance offering.
         /// </summary>
@@ -2929,6 +3222,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  RebootDBInstance
+
 
         /// <summary>
         /// Rebooting a DB instance restarts the database engine service. A reboot also applies
@@ -2992,6 +3286,7 @@ namespace Amazon.RDS
         
         #region  RemoveSourceIdentifierFromSubscription
 
+
         /// <summary>
         /// Removes a source identifier from an existing RDS event notification subscription.
         /// </summary>
@@ -3033,6 +3328,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  RemoveTagsFromResource
+
 
         /// <summary>
         /// Removes metadata tags from an Amazon RDS resource.
@@ -3082,6 +3378,7 @@ namespace Amazon.RDS
         
         #region  ResetDBParameterGroup
 
+
         /// <summary>
         /// Modifies the parameters of a DB parameter group to the engine/system default value.
         /// To reset specific parameters submit a list of the following: <code>ParameterName</code>
@@ -3129,6 +3426,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  RestoreDBInstanceFromDBSnapshot
+
 
         /// <summary>
         /// Creates a new DB instance from a DB snapshot. The target database is created from
@@ -3238,6 +3536,7 @@ namespace Amazon.RDS
         
         #region  RestoreDBInstanceToPointInTime
 
+
         /// <summary>
         /// Restores a DB instance to an arbitrary point-in-time. Users can restore to any point
         /// in time before the LatestRestorableTime for up to BackupRetentionPeriod days. The
@@ -3339,6 +3638,7 @@ namespace Amazon.RDS
         #endregion
         
         #region  RevokeDBSecurityGroupIngress
+
 
         /// <summary>
         /// Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2

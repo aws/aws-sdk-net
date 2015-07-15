@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+    #line 1 "C:\dev\DotNet\xamarin\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class CoreAssemblyInfo : BaseGenerator
     {
@@ -35,33 +35,30 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "bly: AssemblyTitle(\"AWSSDK.Core\")]\r\n#if BCL35\r\n[assembly: AssemblyDescription(\"T" +
                     "he Amazon Web Services SDK for .NET (3.5) - Core Runtime\")]\r\n#elif BCL45\r\n[assem" +
                     "bly: AssemblyDescription(\"The Amazon Web Services SDK for .NET (4.5) - Core Runt" +
-                    "ime\")]\r\n#elif (WIN_RT && WINDOWS_PHONE)\r\n[assembly: AssemblyDescription(\"The Ama" +
-                    "zon Web Services SDK for .NET (Portable)- Core Runtime\")]\r\n#elif WIN_RT\r\n[assemb" +
-                    "ly: AssemblyDescription(\"The Amazon Web Services SDK for .NET (Windows RT) - Cor" +
-                    "e Runtime\")]\r\n#elif WINDOWS_PHONE\r\n[assembly: AssemblyDescription(\"The Amazon We" +
-                    "b Services SDK for .NET (Windows Phone 8)- Core Runtime\")]\r\n#else\r\n#error Unknow" +
-                    "n platform constant - unable to set correct AssemblyDescription\r\n#endif\r\n\r\n[asse" +
-                    "mbly: AssemblyConfiguration(\"\")]\r\n[assembly: AssemblyProduct(\"Amazon Web Service" +
-                    "s SDK for .NET\")]\r\n[assembly: AssemblyCompany(\"Amazon.com, Inc\")]\r\n[assembly: As" +
-                    "semblyCopyright(\"Copyright 2009-2015 Amazon.com, Inc. or its affiliates. All Rig" +
-                    "hts Reserved.\")]\r\n[assembly: AssemblyTrademark(\"\")]\r\n[assembly: AssemblyCulture(" +
-                    "\"\")]\r\n\r\n// Setting ComVisible to false makes the types in this assembly not visi" +
-                    "ble \r\n// to COM components.  If you need to access a type in this assembly from " +
-                    "\r\n// COM, set the ComVisible attribute to true on that type.\r\n[assembly: ComVisi" +
-                    "ble(false)]\r\n\r\n// Version information for an assembly consists of the following " +
-                    "four values:\r\n//\r\n//      Major Version\r\n//      Minor Version \r\n//      Build N" +
-                    "umber\r\n//      Revision\r\n//\r\n// You can specify all the values or you can defaul" +
-                    "t the Build and Revision Numbers \r\n// by using the \'*\' as shown below:\r\n// [asse" +
-                    "mbly: AssemblyVersion(\"1.0.*\")]\r\n[assembly: AssemblyVersion(\"");
+                    "ime\")]\r\n#elif PCL\r\n[assembly: AssemblyDescription(\"The Amazon Web Services SDK f" +
+                    "or .NET (PCL)- Core Runtime\")]\r\n#else\r\n#error Unknown platform constant - unable" +
+                    " to set correct AssemblyDescription\r\n#endif\r\n\r\n[assembly: AssemblyConfiguration(" +
+                    "\"\")]\r\n[assembly: AssemblyProduct(\"Amazon Web Services SDK for .NET\")]\r\n[assembly" +
+                    ": AssemblyCompany(\"Amazon.com, Inc\")]\r\n[assembly: AssemblyCopyright(\"Copyright 2" +
+                    "009-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.\")]\r\n[assembly:" +
+                    " AssemblyTrademark(\"\")]\r\n[assembly: AssemblyCulture(\"\")]\r\n\r\n// Setting ComVisibl" +
+                    "e to false makes the types in this assembly not visible \r\n// to COM components. " +
+                    " If you need to access a type in this assembly from \r\n// COM, set the ComVisible" +
+                    " attribute to true on that type.\r\n[assembly: ComVisible(false)]\r\n\r\n// Version in" +
+                    "formation for an assembly consists of the following four values:\r\n//\r\n//      Ma" +
+                    "jor Version\r\n//      Minor Version \r\n//      Build Number\r\n//      Revision\r\n//\r" +
+                    "\n// You can specify all the values or you can default the Build and Revision Num" +
+                    "bers \r\n// by using the \'*\' as shown below:\r\n// [assembly: AssemblyVersion(\"1.0.*" +
+                    "\")]\r\n[assembly: AssemblyVersion(\"");
             
-            #line 52 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            #line 48 "C:\dev\DotNet\xamarin\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["Version"]));
             
             #line default
             #line hidden
             this.Write("\")]\r\n[assembly: AssemblyFileVersion(\"");
             
-            #line 53 "C:\dev\net\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            #line 49 "C:\dev\DotNet\xamarin\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default
@@ -82,6 +79,22 @@ namespace ServiceClientGenerator.Generators.SourceFiles
 // Setting SecurityRules to level 1 to match .NET 2.0 rules and allow the
 // Amazon.Util.Settings.UserCrypto methods to work in .NET 4.5
 [assembly: System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
+#endif
+
+
+//declare the permission we use in the manifest
+#if __ANDROID__
+//network permission
+[assembly: Android.App.UsesPermission(Name=""android.permission.INTERNET"")]
+
+//for network reachability
+[assembly: Android.App.UsesPermission(Name=""android.permission.ACCESS_NETWORK_STATE"")]
+[assembly: Android.App.UsesPermission(Name=""android.permission.ACCESS_WIFI_STATE"")]
+
+//for storage
+[assembly: Android.App.UsesPermission(Name=""android.permission.READ_EXTERNAL_STORAGE"")]
+[assembly: Android.App.UsesPermission(Name=""android.permission.WRITE_EXTERNAL_STORAGE"")]
+
 #endif");
             return this.GenerationEnvironment.ToString();
         }

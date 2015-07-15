@@ -149,24 +149,37 @@
 <#+
     }
 
-    // Documents the operation in a client or interface and includes request param
-    public void FormatOperationDocumentation(Operation operation)
+    public void FormatOperationDocumentationSync(Operation operation, bool includeRequest)
     {
-        FormatOperationDocumentation(operation, true);
+        FormatOperationDocumentationHelper(operation, includeRequest, false);
+    }
+    public void FormatOperationDocumentationAsync(Operation operation, bool includeRequest)
+    {
+        FormatOperationDocumentationHelper(operation, includeRequest, true);
     }
 
     // Documents the operation in a client or interface and optionally includes request param
-    public void FormatOperationDocumentation(Operation operation, bool includeRequest)
+    private void FormatOperationDocumentationHelper(Operation operation, bool includeRequest, bool includeCancellationToken)
     {
         var documentation = CleanupDocumentation(operation.Documentation);
 
 #>
+
         /// <summary>
 <#+
         WriteCommentBlock("        ", documentation);
 #>
         /// </summary>
-<#+  if(includeRequest)
+<#+
+    if (includeCancellationToken)
+    {
+#>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+<#+
+    }
+    if (includeRequest)
     {
 #>
         /// <param name="request">Container for the necessary parameters to execute the <#=operation.Name#> service method.</param>
@@ -187,11 +200,12 @@
     }
 
         // Generates operation documentation with a param tag for each member in the list
-        public void FormatOperationDocumentation(Operation operation, List<Member> members)
+        public void FormatOperationDocumentation(Operation operation, List<Member> members, bool isSync)
     {
         var documentation = CleanupDocumentation(operation.Documentation);
 
 #>
+
         /// <summary>
 <#+
         WriteCommentBlock("        ", documentation);
@@ -201,6 +215,14 @@
     {
 #>
         /// <param name="<#=GeneratorHelpers.CamelCaseParam(item.PropertyName)#>"><#=item.GetParamDocumentationForOperation(operation.Name)#></param>
+<#+
+    }
+    if (!isSync)
+    {
+#>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
 <#+
     }
 #>
@@ -365,7 +387,7 @@
 <#+
     // Generates methods for the client that have request members as parameters for easy calls to the operation
     // Only generates them if they are specified in the customizations of the service
-    public void AddSimpleClientMethods(Operation operation)
+    public void AddSimpleClientMethods(Operation operation, bool isSync)
     {
         if (this.Config.ServiceModel.Customizations.SimpleMethodsModel.CreateSimpleMethods(operation.Name))
         {
@@ -377,9 +399,22 @@
                 string currentParams = this.Config.ServiceModel.Customizations.SimpleMethodsModel.GetSimpleParameters(form, members);
                 var docMembers = this.Config.ServiceModel.Customizations.SimpleMethodsModel.GetFormMembers(form, members);
 
-        this.FormatOperationDocumentation(operation, docMembers);
+        this.FormatOperationDocumentation(operation, docMembers, isSync);
+        if (isSync)
+        {
 #>
         public <#=operation.Name#>Response <#=operation.Name#>(<#=currentParams#>)
+<#+
+        }
+        else
+        {
+            if (!string.IsNullOrEmpty(currentParams))
+                currentParams += ", ";
+#>
+        public Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=currentParams#>System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+<#+
+        }
+#>
         {
             var request = new <#=operation.Name#>Request();
 <#+
@@ -390,8 +425,19 @@ foreach (var member in docMembers)
 <#+
         
 }
+        if (isSync)
+        {
 #>
             return <#=operation.Name#>(request);
+<#+
+        }
+        else
+        {
+#>
+            return <#=operation.Name#>Async(request, cancellationToken);
+<#+
+        }
+#>
         }
 
 <#+
@@ -403,7 +449,7 @@ foreach (var member in docMembers)
 <#+
     // Generates methods for the interface that have request members as parameters for easy calls to the operation
     // Only generates them if they are specified in the customizations of the service
-    public void AddSimpleClientMethodInterfaces(Operation operation)
+    public void AddSimpleClientMethodInterfaces(Operation operation, bool isSync)
     {
         if (this.Config.ServiceModel.Customizations.SimpleMethodsModel.CreateSimpleMethods(operation.Name))
         {
@@ -414,13 +460,23 @@ foreach (var member in docMembers)
             {
                 string currentParams = this.Config.ServiceModel.Customizations.SimpleMethodsModel.GetSimpleParameters(form, members);
                 var docMembers = this.Config.ServiceModel.Customizations.SimpleMethodsModel.GetFormMembers(form, members);
-                
-        this.FormatOperationDocumentation(operation, docMembers);
+
+        this.FormatOperationDocumentation(operation, docMembers, isSync);
+        if (isSync)
+        {
 #>
         <#=operation.Name#>Response <#=operation.Name#>(<#=currentParams#>);
-
+<#+
+        }
+        else
+        {
+            if (!string.IsNullOrEmpty(currentParams))
+                currentParams += ", ";
+#>
+        Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=currentParams#>System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 <#+
           }
+                }
         }
       }
 #>

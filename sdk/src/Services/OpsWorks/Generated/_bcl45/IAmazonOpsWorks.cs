@@ -93,6 +93,7 @@ namespace Amazon.OpsWorks
         
         #region  AssignInstance
 
+
         /// <summary>
         /// Assign a registered instance to a layer.
         /// 
@@ -118,6 +119,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         AssignInstanceResponse AssignInstance(AssignInstanceRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AssignInstance operation.
         /// </summary>
@@ -132,6 +134,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  AssignVolume
+
 
         /// <summary>
         /// Assigns one of the stack's registered Amazon EBS volumes to a specified instance.
@@ -159,6 +162,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         AssignVolumeResponse AssignVolume(AssignVolumeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AssignVolume operation.
         /// </summary>
@@ -173,6 +177,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  AssociateElasticIp
+
 
         /// <summary>
         /// Associates one of the stack's registered Elastic IP addresses with a specified instance.
@@ -199,6 +204,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         AssociateElasticIpResponse AssociateElasticIp(AssociateElasticIpRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AssociateElasticIp operation.
         /// </summary>
@@ -213,6 +219,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  AttachElasticLoadBalancer
+
 
         /// <summary>
         /// Attaches an Elastic Load Balancing load balancer to a specified layer. For more information,
@@ -244,6 +251,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         AttachElasticLoadBalancerResponse AttachElasticLoadBalancer(AttachElasticLoadBalancerRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AttachElasticLoadBalancer operation.
         /// </summary>
@@ -258,6 +266,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  CloneStack
+
 
         /// <summary>
         /// Creates a clone of a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone
@@ -282,6 +291,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         CloneStackResponse CloneStack(CloneStackRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CloneStack operation.
         /// </summary>
@@ -296,6 +306,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  CreateApp
+
 
         /// <summary>
         /// Creates an app for a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
@@ -320,6 +331,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         CreateAppResponse CreateApp(CreateAppRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateApp operation.
         /// </summary>
@@ -334,6 +346,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  CreateDeployment
+
 
         /// <summary>
         /// Runs deployment or stack commands. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html">Deploying
@@ -359,6 +372,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDeployment operation.
         /// </summary>
@@ -373,6 +387,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  CreateInstance
+
 
         /// <summary>
         /// Creates an instance in a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">Adding
@@ -397,6 +412,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         CreateInstanceResponse CreateInstance(CreateInstanceRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInstance operation.
         /// </summary>
@@ -411,6 +427,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  CreateLayer
+
 
         /// <summary>
         /// Creates a layer. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How
@@ -443,6 +460,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         CreateLayerResponse CreateLayer(CreateLayerRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateLayer operation.
         /// </summary>
@@ -457,6 +475,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  CreateStack
+
 
         /// <summary>
         /// Creates a new stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">Create
@@ -478,6 +497,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         CreateStackResponse CreateStack(CreateStackRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStack operation.
         /// </summary>
@@ -492,6 +512,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  CreateUserProfile
+
 
         /// <summary>
         /// Creates a new user profile.
@@ -512,6 +533,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateUserProfile operation.
         /// </summary>
@@ -526,6 +548,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DeleteApp
+
 
         /// <summary>
         /// Deletes a specified app.
@@ -549,6 +572,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DeleteAppResponse DeleteApp(DeleteAppRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteApp operation.
         /// </summary>
@@ -563,6 +587,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DeleteInstance
+
 
         /// <summary>
         /// Deletes a specified instance, which terminates the associated Amazon EC2 instance.
@@ -592,6 +617,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteInstance operation.
         /// </summary>
@@ -606,6 +632,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DeleteLayer
+
 
         /// <summary>
         /// Deletes a specified layer. You must first stop and then delete all associated instances
@@ -631,6 +658,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DeleteLayerResponse DeleteLayer(DeleteLayerRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLayer operation.
         /// </summary>
@@ -645,6 +673,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DeleteStack
+
 
         /// <summary>
         /// Deletes a specified stack. You must first delete all instances, layers, and apps or
@@ -670,6 +699,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DeleteStackResponse DeleteStack(DeleteStackRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStack operation.
         /// </summary>
@@ -684,6 +714,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DeleteUserProfile
+
 
         /// <summary>
         /// Deletes a user profile.
@@ -707,6 +738,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteUserProfile operation.
         /// </summary>
@@ -721,6 +753,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DeregisterElasticIp
+
 
         /// <summary>
         /// Deregisters a specified Elastic IP address. The address can then be registered by
@@ -746,6 +779,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DeregisterElasticIpResponse DeregisterElasticIp(DeregisterElasticIpRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterElasticIp operation.
         /// </summary>
@@ -760,6 +794,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DeregisterInstance
+
 
         /// <summary>
         /// Deregister a registered Amazon EC2 or on-premises instance. This action removes the
@@ -785,6 +820,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DeregisterInstanceResponse DeregisterInstance(DeregisterInstanceRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterInstance operation.
         /// </summary>
@@ -799,6 +835,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DeregisterRdsDbInstance
+
 
         /// <summary>
         /// Deregisters an Amazon RDS instance.
@@ -822,6 +859,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DeregisterRdsDbInstanceResponse DeregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterRdsDbInstance operation.
         /// </summary>
@@ -836,6 +874,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DeregisterVolume
+
 
         /// <summary>
         /// Deregisters an Amazon EBS volume. The volume can then be registered by another stack.
@@ -861,6 +900,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DeregisterVolumeResponse DeregisterVolume(DeregisterVolumeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterVolume operation.
         /// </summary>
@@ -875,6 +915,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeAgentVersions
+
 
         /// <summary>
         /// Describes the available AWS OpsWorks agent versions. You must specify a stack ID or
@@ -892,6 +933,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribeAgentVersionsResponse DescribeAgentVersions(DescribeAgentVersionsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeAgentVersions operation.
         /// </summary>
@@ -906,6 +948,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeApps
+
 
         /// <summary>
         /// Requests a description of a specified set of apps.
@@ -933,6 +976,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribeAppsResponse DescribeApps(DescribeAppsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeApps operation.
         /// </summary>
@@ -947,6 +991,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeCommands
+
 
         /// <summary>
         /// Describes the results of specified commands.
@@ -974,6 +1019,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribeCommandsResponse DescribeCommands(DescribeCommandsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCommands operation.
         /// </summary>
@@ -988,6 +1034,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeDeployments
+
 
         /// <summary>
         /// Requests a description of a specified set of deployments.
@@ -1015,6 +1062,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribeDeploymentsResponse DescribeDeployments(DescribeDeploymentsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDeployments operation.
         /// </summary>
@@ -1029,6 +1077,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeElasticIps
+
 
         /// <summary>
         /// Describes <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
@@ -1057,6 +1106,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribeElasticIpsResponse DescribeElasticIps(DescribeElasticIpsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeElasticIps operation.
         /// </summary>
@@ -1071,6 +1121,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeElasticLoadBalancers
+
 
         /// <summary>
         /// Describes a stack's Elastic Load Balancing instances.
@@ -1096,6 +1147,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers();
+
 
         /// <summary>
         /// Describes a stack's Elastic Load Balancing instances.
@@ -1123,6 +1175,36 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request);
 
+
+        /// <summary>
+        /// Describes a stack's Elastic Load Balancing instances.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You must specify at least one of the parameters.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeElasticLoadBalancers service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        Task<DescribeElasticLoadBalancersResponse> DescribeElasticLoadBalancersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeElasticLoadBalancers operation.
         /// </summary>
@@ -1137,6 +1219,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeInstances
+
 
         /// <summary>
         /// Requests a description of a set of instances.
@@ -1164,6 +1247,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeInstances operation.
         /// </summary>
@@ -1178,6 +1262,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeLayers
+
 
         /// <summary>
         /// Requests a description of one or more layers in a specified stack.
@@ -1205,6 +1290,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribeLayersResponse DescribeLayers(DescribeLayersRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLayers operation.
         /// </summary>
@@ -1219,6 +1305,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeLoadBasedAutoScaling
+
 
         /// <summary>
         /// Describes load-based auto scaling configurations for specified layers.
@@ -1246,6 +1333,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribeLoadBasedAutoScalingResponse DescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeLoadBasedAutoScaling operation.
         /// </summary>
@@ -1261,6 +1349,7 @@ namespace Amazon.OpsWorks
         
         #region  DescribeMyUserProfile
 
+
         /// <summary>
         /// Describes a user's SSH information.
         /// 
@@ -1275,6 +1364,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>The response from the DescribeMyUserProfile service method, as returned by OpsWorks.</returns>
         DescribeMyUserProfileResponse DescribeMyUserProfile();
+
 
         /// <summary>
         /// Describes a user's SSH information.
@@ -1292,6 +1382,26 @@ namespace Amazon.OpsWorks
         /// <returns>The response from the DescribeMyUserProfile service method, as returned by OpsWorks.</returns>
         DescribeMyUserProfileResponse DescribeMyUserProfile(DescribeMyUserProfileRequest request);
 
+
+        /// <summary>
+        /// Describes a user's SSH information.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
+        /// enabled or an attached policy that explicitly grants permissions. For more information
+        /// on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMyUserProfile service method, as returned by OpsWorks.</returns>
+        Task<DescribeMyUserProfileResponse> DescribeMyUserProfileAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeMyUserProfile operation.
         /// </summary>
@@ -1306,6 +1416,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribePermissions
+
 
         /// <summary>
         /// Describes the permissions for a specified stack.
@@ -1329,6 +1440,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribePermissionsResponse DescribePermissions(DescribePermissionsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribePermissions operation.
         /// </summary>
@@ -1343,6 +1455,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeRaidArrays
+
 
         /// <summary>
         /// Describe an instance's RAID arrays.
@@ -1370,6 +1483,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribeRaidArraysResponse DescribeRaidArrays(DescribeRaidArraysRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRaidArrays operation.
         /// </summary>
@@ -1384,6 +1498,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeRdsDbInstances
+
 
         /// <summary>
         /// Describes Amazon RDS instances.
@@ -1407,6 +1522,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribeRdsDbInstancesResponse DescribeRdsDbInstances(DescribeRdsDbInstancesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeRdsDbInstances operation.
         /// </summary>
@@ -1421,6 +1537,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeServiceErrors
+
 
         /// <summary>
         /// Describes AWS OpsWorks service errors.
@@ -1442,6 +1559,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeServiceErrorsResponse DescribeServiceErrors();
+
 
         /// <summary>
         /// Describes AWS OpsWorks service errors.
@@ -1465,6 +1583,32 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribeServiceErrorsResponse DescribeServiceErrors(DescribeServiceErrorsRequest request);
 
+
+        /// <summary>
+        /// Describes AWS OpsWorks service errors.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeServiceErrors service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        Task<DescribeServiceErrorsResponse> DescribeServiceErrorsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeServiceErrors operation.
         /// </summary>
@@ -1479,6 +1623,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeStackProvisioningParameters
+
 
         /// <summary>
         /// Requests a description of a stack's provisioning parameters.
@@ -1502,6 +1647,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribeStackProvisioningParametersResponse DescribeStackProvisioningParameters(DescribeStackProvisioningParametersRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackProvisioningParameters operation.
         /// </summary>
@@ -1516,6 +1662,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeStacks
+
 
         /// <summary>
         /// Requests a description of one or more stacks.
@@ -1537,6 +1684,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeStacksResponse DescribeStacks();
+
 
         /// <summary>
         /// Requests a description of one or more stacks.
@@ -1560,6 +1708,32 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribeStacksResponse DescribeStacks(DescribeStacksRequest request);
 
+
+        /// <summary>
+        /// Requests a description of one or more stacks.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeStacks service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        Task<DescribeStacksResponse> DescribeStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStacks operation.
         /// </summary>
@@ -1574,6 +1748,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeStackSummary
+
 
         /// <summary>
         /// Describes the number of layers and apps in a specified stack, and the number of instances
@@ -1598,6 +1773,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribeStackSummaryResponse DescribeStackSummary(DescribeStackSummaryRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackSummary operation.
         /// </summary>
@@ -1612,6 +1788,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeTimeBasedAutoScaling
+
 
         /// <summary>
         /// Describes time-based auto scaling configurations for specified instances.
@@ -1639,6 +1816,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribeTimeBasedAutoScalingResponse DescribeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeTimeBasedAutoScaling operation.
         /// </summary>
@@ -1653,6 +1831,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeUserProfiles
+
 
         /// <summary>
         /// Describe specified users.
@@ -1674,6 +1853,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was invalid.
         /// </exception>
         DescribeUserProfilesResponse DescribeUserProfiles();
+
 
         /// <summary>
         /// Describe specified users.
@@ -1697,6 +1877,32 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribeUserProfilesResponse DescribeUserProfiles(DescribeUserProfilesRequest request);
 
+
+        /// <summary>
+        /// Describe specified users.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
+        /// policy that explicitly grants permissions. For more information on user permissions,
+        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeUserProfiles service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        Task<DescribeUserProfilesResponse> DescribeUserProfilesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeUserProfiles operation.
         /// </summary>
@@ -1711,6 +1917,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DescribeVolumes
+
 
         /// <summary>
         /// Describes an instance's Amazon EBS volumes.
@@ -1738,6 +1945,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeVolumes operation.
         /// </summary>
@@ -1752,6 +1960,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DetachElasticLoadBalancer
+
 
         /// <summary>
         /// Detaches a specified Elastic Load Balancing instance from its layer.
@@ -1772,6 +1981,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DetachElasticLoadBalancerResponse DetachElasticLoadBalancer(DetachElasticLoadBalancerRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DetachElasticLoadBalancer operation.
         /// </summary>
@@ -1786,6 +1996,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  DisassociateElasticIp
+
 
         /// <summary>
         /// Disassociates an Elastic IP address from its instance. The address remains registered
@@ -1811,6 +2022,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         DisassociateElasticIpResponse DisassociateElasticIp(DisassociateElasticIpRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DisassociateElasticIp operation.
         /// </summary>
@@ -1825,6 +2037,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  GetHostnameSuggestion
+
 
         /// <summary>
         /// Gets a generated host name for the specified layer, based on the current host name
@@ -1849,6 +2062,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         GetHostnameSuggestionResponse GetHostnameSuggestion(GetHostnameSuggestionRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetHostnameSuggestion operation.
         /// </summary>
@@ -1863,6 +2077,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  GrantAccess
+
 
         /// <summary>
         /// <note>This action can be used only with Windows stacks.</note> 
@@ -1881,6 +2096,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         GrantAccessResponse GrantAccess(GrantAccessRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GrantAccess operation.
         /// </summary>
@@ -1895,6 +2111,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  RebootInstance
+
 
         /// <summary>
         /// Reboots a specified instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
@@ -1919,6 +2136,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         RebootInstanceResponse RebootInstance(RebootInstanceRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RebootInstance operation.
         /// </summary>
@@ -1933,6 +2151,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  RegisterElasticIp
+
 
         /// <summary>
         /// Registers an Elastic IP address with a specified stack. An address can be registered
@@ -1960,6 +2179,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         RegisterElasticIpResponse RegisterElasticIp(RegisterElasticIpRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterElasticIp operation.
         /// </summary>
@@ -1974,6 +2194,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  RegisterInstance
+
 
         /// <summary>
         /// Registers instances with a specified stack that were created outside of AWS OpsWorks.
@@ -2002,6 +2223,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         RegisterInstanceResponse RegisterInstance(RegisterInstanceRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterInstance operation.
         /// </summary>
@@ -2016,6 +2238,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  RegisterRdsDbInstance
+
 
         /// <summary>
         /// Registers an Amazon RDS instance with a stack.
@@ -2039,6 +2262,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         RegisterRdsDbInstanceResponse RegisterRdsDbInstance(RegisterRdsDbInstanceRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterRdsDbInstance operation.
         /// </summary>
@@ -2053,6 +2277,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  RegisterVolume
+
 
         /// <summary>
         /// Registers an Amazon EBS volume with a specified stack. A volume can be registered
@@ -2079,6 +2304,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         RegisterVolumeResponse RegisterVolume(RegisterVolumeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterVolume operation.
         /// </summary>
@@ -2093,6 +2319,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  SetLoadBasedAutoScaling
+
 
         /// <summary>
         /// Specify the load-based auto scaling configuration for a specified layer. For more
@@ -2124,6 +2351,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         SetLoadBasedAutoScalingResponse SetLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SetLoadBasedAutoScaling operation.
         /// </summary>
@@ -2138,6 +2366,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  SetPermission
+
 
         /// <summary>
         /// Specifies a user's permissions. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">Security
@@ -2162,6 +2391,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         SetPermissionResponse SetPermission(SetPermissionRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SetPermission operation.
         /// </summary>
@@ -2176,6 +2406,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  SetTimeBasedAutoScaling
+
 
         /// <summary>
         /// Specify the time-based auto scaling configuration for a specified instance. For more
@@ -2201,6 +2432,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         SetTimeBasedAutoScalingResponse SetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the SetTimeBasedAutoScaling operation.
         /// </summary>
@@ -2215,6 +2447,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  StartInstance
+
 
         /// <summary>
         /// Starts a specified instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
@@ -2239,6 +2472,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         StartInstanceResponse StartInstance(StartInstanceRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the StartInstance operation.
         /// </summary>
@@ -2253,6 +2487,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  StartStack
+
 
         /// <summary>
         /// Starts a stack's instances. 
@@ -2276,6 +2511,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         StartStackResponse StartStack(StartStackRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the StartStack operation.
         /// </summary>
@@ -2290,6 +2526,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  StopInstance
+
 
         /// <summary>
         /// Stops a specified instance. When you stop a standard instance, the data disappears
@@ -2316,6 +2553,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         StopInstanceResponse StopInstance(StopInstanceRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the StopInstance operation.
         /// </summary>
@@ -2330,6 +2568,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  StopStack
+
 
         /// <summary>
         /// Stops a specified stack.
@@ -2353,6 +2592,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         StopStackResponse StopStack(StopStackRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the StopStack operation.
         /// </summary>
@@ -2367,6 +2607,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  UnassignInstance
+
 
         /// <summary>
         /// Unassigns a registered instance from all of it's layers. The instance remains in the
@@ -2392,6 +2633,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         UnassignInstanceResponse UnassignInstance(UnassignInstanceRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UnassignInstance operation.
         /// </summary>
@@ -2406,6 +2648,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  UnassignVolume
+
 
         /// <summary>
         /// Unassigns an assigned Amazon EBS volume. The volume remains registered with the stack.
@@ -2431,6 +2674,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         UnassignVolumeResponse UnassignVolume(UnassignVolumeRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UnassignVolume operation.
         /// </summary>
@@ -2445,6 +2689,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  UpdateApp
+
 
         /// <summary>
         /// Updates a specified app.
@@ -2468,6 +2713,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         UpdateAppResponse UpdateApp(UpdateAppRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateApp operation.
         /// </summary>
@@ -2482,6 +2728,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  UpdateElasticIp
+
 
         /// <summary>
         /// Updates a registered Elastic IP address's name. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
@@ -2506,6 +2753,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         UpdateElasticIpResponse UpdateElasticIp(UpdateElasticIpRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateElasticIp operation.
         /// </summary>
@@ -2520,6 +2768,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  UpdateInstance
+
 
         /// <summary>
         /// Updates a specified instance.
@@ -2543,6 +2792,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateInstance operation.
         /// </summary>
@@ -2557,6 +2807,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  UpdateLayer
+
 
         /// <summary>
         /// Updates a specified layer.
@@ -2580,6 +2831,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         UpdateLayerResponse UpdateLayer(UpdateLayerRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateLayer operation.
         /// </summary>
@@ -2594,6 +2846,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  UpdateMyUserProfile
+
 
         /// <summary>
         /// Updates a user's SSH public key.
@@ -2612,6 +2865,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was invalid.
         /// </exception>
         UpdateMyUserProfileResponse UpdateMyUserProfile();
+
 
         /// <summary>
         /// Updates a user's SSH public key.
@@ -2632,6 +2886,29 @@ namespace Amazon.OpsWorks
         /// </exception>
         UpdateMyUserProfileResponse UpdateMyUserProfile(UpdateMyUserProfileRequest request);
 
+
+        /// <summary>
+        /// Updates a user's SSH public key.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
+        /// enabled or an attached policy that explicitly grants permissions. For more information
+        /// on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMyUserProfile service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        Task<UpdateMyUserProfileResponse> UpdateMyUserProfileAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateMyUserProfile operation.
         /// </summary>
@@ -2646,6 +2923,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  UpdateRdsDbInstance
+
 
         /// <summary>
         /// Updates an Amazon RDS instance.
@@ -2669,6 +2947,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         UpdateRdsDbInstanceResponse UpdateRdsDbInstance(UpdateRdsDbInstanceRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateRdsDbInstance operation.
         /// </summary>
@@ -2683,6 +2962,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  UpdateStack
+
 
         /// <summary>
         /// Updates a specified stack.
@@ -2706,6 +2986,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         UpdateStackResponse UpdateStack(UpdateStackRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStack operation.
         /// </summary>
@@ -2720,6 +3001,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  UpdateUserProfile
+
 
         /// <summary>
         /// Updates a specified user profile.
@@ -2743,6 +3025,7 @@ namespace Amazon.OpsWorks
         /// </exception>
         UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateUserProfile operation.
         /// </summary>
@@ -2757,6 +3040,7 @@ namespace Amazon.OpsWorks
         #endregion
         
         #region  UpdateVolume
+
 
         /// <summary>
         /// Updates an Amazon EBS volume's name or mount point. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
@@ -2780,6 +3064,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a request was invalid.
         /// </exception>
         UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateVolume operation.

@@ -41,6 +41,7 @@ namespace Amazon.DirectoryService
                 
         #region  ConnectDirectory
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ConnectDirectory operation.
         /// </summary>
@@ -50,11 +51,12 @@ namespace Amazon.DirectoryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ConnectDirectoryResponse> ConnectDirectoryAsync(ConnectDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ConnectDirectoryResponse> ConnectDirectoryAsync(ConnectDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateAlias
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateAlias operation.
@@ -65,11 +67,12 @@ namespace Amazon.DirectoryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateComputer
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateComputer operation.
@@ -80,11 +83,12 @@ namespace Amazon.DirectoryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateComputerResponse> CreateComputerAsync(CreateComputerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateComputerResponse> CreateComputerAsync(CreateComputerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateDirectory
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDirectory operation.
@@ -95,11 +99,12 @@ namespace Amazon.DirectoryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateDirectoryResponse> CreateDirectoryAsync(CreateDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateDirectoryResponse> CreateDirectoryAsync(CreateDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateSnapshot
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshot operation.
@@ -110,11 +115,12 @@ namespace Amazon.DirectoryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteDirectory
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDirectory operation.
@@ -125,11 +131,12 @@ namespace Amazon.DirectoryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteDirectoryResponse> DeleteDirectoryAsync(DeleteDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteDirectoryResponse> DeleteDirectoryAsync(DeleteDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteSnapshot
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSnapshot operation.
@@ -140,11 +147,56 @@ namespace Amazon.DirectoryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeDirectories
+
+
+        /// <summary>
+        /// Obtains information about the directories that belong to this account.
+        /// 
+        ///  
+        /// <para>
+        /// You can retrieve information about specific directories by passing the directory identifiers
+        /// in the <i>DirectoryIds</i> parameter. Otherwise, all directories that belong to the
+        /// current account are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation supports pagination with the use of the <i>NextToken</i> request and
+        /// response parameters. If more results are available, the <i>DescribeDirectoriesResult.NextToken</i>
+        /// member contains a token that you pass in the next call to <a>DescribeDirectories</a>
+        /// to retrieve the next set of items.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also specify a maximum number of return results with the <i>Limit</i> parameter.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDirectories service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// 
+        /// </exception>
+        Task<DescribeDirectoriesResponse> DescribeDirectoriesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDirectories operation.
@@ -155,11 +207,12 @@ namespace Amazon.DirectoryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeDirectoriesResponse> DescribeDirectoriesAsync(DescribeDirectoriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeDirectoriesResponse> DescribeDirectoriesAsync(DescribeDirectoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DescribeSnapshots
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshots operation.
@@ -170,11 +223,12 @@ namespace Amazon.DirectoryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(DescribeSnapshotsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(DescribeSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DisableRadius
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableRadius operation.
@@ -185,11 +239,12 @@ namespace Amazon.DirectoryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DisableRadiusResponse> DisableRadiusAsync(DisableRadiusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DisableRadiusResponse> DisableRadiusAsync(DisableRadiusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DisableSso
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DisableSso operation.
@@ -200,11 +255,12 @@ namespace Amazon.DirectoryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DisableSsoResponse> DisableSsoAsync(DisableSsoRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DisableSsoResponse> DisableSsoAsync(DisableSsoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  EnableRadius
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableRadius operation.
@@ -215,11 +271,12 @@ namespace Amazon.DirectoryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<EnableRadiusResponse> EnableRadiusAsync(EnableRadiusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<EnableRadiusResponse> EnableRadiusAsync(EnableRadiusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  EnableSso
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the EnableSso operation.
@@ -230,11 +287,32 @@ namespace Amazon.DirectoryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<EnableSsoResponse> EnableSsoAsync(EnableSsoRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<EnableSsoResponse> EnableSsoAsync(EnableSsoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetDirectoryLimits
+
+
+        /// <summary>
+        /// Obtains directory limit information for the current region.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDirectoryLimits service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// 
+        /// </exception>
+        Task<GetDirectoryLimitsResponse> GetDirectoryLimitsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDirectoryLimits operation.
@@ -245,11 +323,12 @@ namespace Amazon.DirectoryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetDirectoryLimitsResponse> GetDirectoryLimitsAsync(GetDirectoryLimitsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetDirectoryLimitsResponse> GetDirectoryLimitsAsync(GetDirectoryLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetSnapshotLimits
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetSnapshotLimits operation.
@@ -260,11 +339,12 @@ namespace Amazon.DirectoryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetSnapshotLimitsResponse> GetSnapshotLimitsAsync(GetSnapshotLimitsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetSnapshotLimitsResponse> GetSnapshotLimitsAsync(GetSnapshotLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  RestoreFromSnapshot
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RestoreFromSnapshot operation.
@@ -275,11 +355,12 @@ namespace Amazon.DirectoryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<RestoreFromSnapshotResponse> RestoreFromSnapshotAsync(RestoreFromSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<RestoreFromSnapshotResponse> RestoreFromSnapshotAsync(RestoreFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateRadius
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateRadius operation.
@@ -290,7 +371,7 @@ namespace Amazon.DirectoryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateRadiusResponse> UpdateRadiusAsync(UpdateRadiusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateRadiusResponse> UpdateRadiusAsync(UpdateRadiusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

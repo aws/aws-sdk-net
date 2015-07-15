@@ -21,6 +21,60 @@
     <IgnoreGeneratedCode>False</IgnoreGeneratedCode>
   </ProjectOptions>
   <Targets>
+    <AssemblyReferenceDirectories>
+      <Directory>$(ProjectDir)/src/Services/autoscaling/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/awssupport/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cloudformation/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cloudfront/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cloudhsm/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cloudsearch/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cloudsearchdomain/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cloudtrail/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cloudwatch/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cloudwatchlogs/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/codecommit/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/codedeploy/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/codepipeline/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cognitoidentity/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cognitosync/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/configservice/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/datapipeline/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/directconnect/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/directoryservice/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/dynamodbv2/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/ec2/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/ecs/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/elasticache/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/elasticbeanstalk/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/elasticfilesystem/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/elasticloadbalancing/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/elasticmapreduce/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/elastictranscoder/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/glacier/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/identitymanagement/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/importexport/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/keymanagementservice/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/kinesis/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/lambda/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/machinelearning/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/mobileanalytics/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/opsworks/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/rds/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/redshift/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/route53/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/route53domains/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/s3/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/securitytoken/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/simpledb/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/simpleemail/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/simplenotificationservice/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/simplesystemsmanagement/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/simpleworkflow/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/sqs/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/storagegateway/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/workspaces/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Core/bin/Release/net45/</Directory>
+    </AssemblyReferenceDirectories>
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AWSSupport.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CloudFormation.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -57,6 +111,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Kinesis.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Lambda.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MachineLearning.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MobileAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.OpsWorks.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.RDS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Redshift.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -81,6 +136,7 @@
             <Namespace Name="Amazon.Auth.AccessControlPolicy" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Auth.AccessControlPolicy.ActionIdentifiers" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Auth.AccessControlPolicy.Internal" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.MissingTypes" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Runtime" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Runtime.Internal" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Runtime.Internal.Auth" Analyze="True" AnalyzeAllChildren="True" />
@@ -90,6 +146,7 @@
             <Namespace Name="Amazon.Runtime.SharedInterfaces" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Util" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Util.Internal" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Util.Internal.PlatformServices" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="ThirdParty.MD5" Analyze="True" AnalyzeAllChildren="True" />
           </Namespaces>
           <Resources AnalyzeAllChildren="True" />
@@ -178,7 +235,6 @@
         <Rule Name="ResourceStringsShouldBeSpelledCorrectly" Enabled="True" />
         <Rule Name="TypeNamesShouldNotMatchNamespaces" Enabled="True" />
       </RuleFile>
-      <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
       <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="False">
         <Rule Name="AvoidExcessiveLocals" Enabled="True" />
         <Rule Name="AvoidUnsealedAttributes" Enabled="True" />
@@ -194,6 +250,7 @@
         <Rule Name="TestForEmptyStringsUsingStringLength" Enabled="True" />
         <Rule Name="UseLiteralsWhereAppropriate" Enabled="True" />
       </RuleFile>
+      <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
       <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="False">
         <Rule Name="AptcaMethodsShouldOnlyCallAptcaMethods" Enabled="True" />
         <Rule Name="AptcaTypesShouldOnlyExtendAptcaBaseTypes" Enabled="True" />

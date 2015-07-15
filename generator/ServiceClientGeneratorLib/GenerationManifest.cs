@@ -34,7 +34,12 @@ namespace ServiceClientGenerator
             public const string MaxRetriesKey = "max-retries";
             public const string SynopsisKey = "synopsis";
             public const string DependenciesKey = "dependencies";
-            public const string ParentModelBasenameKey = "parent-base-name";
+            public const string ReferenceDependenciesKey = "reference-dependencies";
+            public const string NugetDependenciesKey = "nuget-dependencies";
+            public const string PclVariantsKey = "pcl-variants";
+            public const string DependencyNameKey = "name";
+            public const string DependencyVersionKey = "version";
+            public const string DependencyHintPathKey = "hint-path";
         }
 
         abstract class ProjectsSectionKeys
@@ -47,6 +52,9 @@ namespace ServiceClientGenerator
             public const string BinSubFolderKey = "binSubFolder";
             public const string TemplateKey = "template";
             public const string PlatformCodeFoldersKey = "platformCodeFolders";
+            public const string ExtraTestProjects = "extraTestProjects";
+            public const string ParentProfile = "parentProfile";
+            public const string NuGetTargetFrameworkKey = "nugetTargetPlatform";
         }
 
         /// <summary>
@@ -100,10 +108,8 @@ namespace ServiceClientGenerator
         /// Sets the ServiceConfigurations member on exit with the collection of loaded
         /// configurations.
         /// </summary>
-        /// <param name="manifest">The manifest file listing all services to be generated.</param>
-        /// <param name="coreVersion">The API version of the Core runtime the services will be compatible with.</param>
-        /// <param name="versions">The collection of service versions.</param>
-        /// <param name="modelsFolder">The folder containing the service models referenced in the manifest.</param>
+        /// <param name="document"></param>
+        /// <param name="modelsFolder"></param>
         void LoadServiceConfigurations(JsonData manifest, string coreVersion, JsonData versions, string modelsFolder)
         {
             var serviceConfigurations = new List<ServiceConfiguration>();
@@ -114,7 +120,7 @@ namespace ServiceClientGenerator
                 var activeNode = modelNode[ModelsSectionKeys.ActiveKey];
                 if (activeNode != null && activeNode.IsBoolean && !(bool)activeNode) // skip models with active set to false
                     continue;
-
+                
                 // A new config that the api generates from
                 var modelName = modelNode[ModelsSectionKeys.ModelKey].ToString();
                 var config = new ServiceConfiguration
@@ -131,6 +137,53 @@ namespace ServiceClientGenerator
                     GenerateConstructors = modelNode[ModelsSectionKeys.GenerateClientConstructorsKey] == null || (bool)modelNode[ModelsSectionKeys.GenerateClientConstructorsKey] // A way to prevent generating basic constructors
                 };
 
+                if (modelNode[ModelsSectionKeys.PclVariantsKey] != null)
+                {                    
+                    config.PclVariants = (from object pcf in modelNode[ModelsSectionKeys.PclVariantsKey]
+                     select pcf.ToString()).ToList();
+                }
+                
+
+                if (modelNode[ModelsSectionKeys.ReferenceDependenciesKey] != null)
+                {
+                    config.ReferenceDependencies = new Dictionary<string, List<Dependency>>();
+                    foreach (KeyValuePair<string, JsonData> kvp in modelNode[ModelsSectionKeys.ReferenceDependenciesKey])
+                    {
+                        var platformDependencies = new List<Dependency>();
+                        foreach (JsonData item in kvp.Value)
+                        {
+                            var platformDependency = new Dependency
+                            {
+                                Name = item[ModelsSectionKeys.DependencyNameKey].ToString(),
+                                Version = item[ModelsSectionKeys.DependencyVersionKey].ToString(),
+                                HintPath = item[ModelsSectionKeys.DependencyHintPathKey].ToString(),
+                            };
+                            platformDependencies.Add(platformDependency);
+                        }
+                        config.ReferenceDependencies.Add(kvp.Key, platformDependencies);
+                    }
+                }
+
+                if (modelNode[ModelsSectionKeys.NugetDependenciesKey] != null)
+                {
+                    config.NugetDependencies = new Dictionary<string, List<Dependency>>();
+                    foreach (KeyValuePair<string, JsonData> kvp in modelNode[ModelsSectionKeys.NugetDependenciesKey])
+                    {
+                        var nugetDependencies = new List<Dependency>();
+                        foreach (JsonData item in kvp.Value)
+                        {
+                            var nugetDependency = new Dependency
+                            {
+                                Name = item[ModelsSectionKeys.DependencyNameKey].ToString(),
+                                Version = item[ModelsSectionKeys.DependencyVersionKey].ToString(),
+                            };
+                            nugetDependencies.Add(nugetDependency);
+                        }
+                        config.NugetDependencies.Add(kvp.Key, nugetDependencies);
+                    }
+                }
+
+
                 // Provides a way to specify a customizations file rather than using a generated one
                 config.CustomizationsPath = modelNode[ModelsSectionKeys.CustomizationFileKey] == null
                     ? DetermineCustomizationsPath(modelNode[ModelsSectionKeys.ModelKey].ToString())
@@ -145,23 +198,6 @@ namespace ServiceClientGenerator
                 if (modelNode[ModelsSectionKeys.SynopsisKey] != null)
                     config.Synopsis = (string)modelNode[ModelsSectionKeys.SynopsisKey];
 
-                // The parent model for current model. If set the client will be generated in the same namespace and 
-                // share common types.
-                var parentModelName = modelNode[ModelsSectionKeys.ParentModelBasenameKey] != null ? modelNode[ModelsSectionKeys.ParentModelBasenameKey].ToString() : null;
-                if (parentModelName != null)
-                {
-                    try
-                    {
-                        config.ParentConfig = serviceConfigurations.Single(c => c.BaseName.Equals(parentModelName));
-                    }
-                    catch (KeyNotFoundException exception)
-                    {
-                        // Note : the parent model should be defined in the manifest before being referred by a child model
-                        throw new KeyNotFoundException(
-                            string.Format("A parent model with name {0} is not defined in the manifest", parentModelName),
-                            exception); ;
-                    }
-                }
 
                 config.ServiceDependencies = new Dictionary<string, string>(StringComparer.Ordinal);
                 if (modelNode[ModelsSectionKeys.DependenciesKey] != null && modelNode[ModelsSectionKeys.DependenciesKey].IsArray)
@@ -193,11 +229,15 @@ namespace ServiceClientGenerator
                     var versionTokens = coreVersion.Split('.');
                     config.ServiceFileVersion = string.Format("{0}.{1}.0.0", versionTokens[0], versionTokens[1]);
                 }
+                //serviceVersions.Add(serviceName, versionText);
 
                 serviceConfigurations.Add(config);
             }
 
-            ServiceConfigurations = serviceConfigurations;
+            ServiceConfigurations = serviceConfigurations
+                .OrderBy(sc => sc.ServiceDependencies.Count)
+                .ToList();
+            //ServiceVersions = serviceVersions;
         }
 
         /// <summary>
@@ -221,17 +261,46 @@ namespace ServiceClientGenerator
                     TargetFrameworkVersion = projectNode[ProjectsSectionKeys.TargetFrameworkKey].ToString(),
                     CompilationConstants = projectNode[ProjectsSectionKeys.DefineConstantsKey].ToString(),
                     BinSubFolder = projectNode[ProjectsSectionKeys.BinSubFolderKey].ToString(),
-                    Template = projectNode[ProjectsSectionKeys.TemplateKey].ToString()
+                    Template = projectNode[ProjectsSectionKeys.TemplateKey].ToString(),
+                    NuGetTargetPlatform = projectNode[ProjectsSectionKeys.NuGetTargetFrameworkKey].ToString()
                 };
 
                 config.Configurations = (from object bc in projectNode[ProjectsSectionKeys.ConfigurationsKey] 
                                          select bc.ToString()).ToList();
                 config.PlatformCodeFolders = (from object pcf in projectNode[ProjectsSectionKeys.PlatformCodeFoldersKey]
                                               select pcf.ToString()).ToList();
+                var extraTestProjects = projectNode.SafeGet(ProjectsSectionKeys.ExtraTestProjects);
+                if (extraTestProjects == null)
+                {
+                    config.ExtraTestProjects = new List<string>();
+                }
+                else
+                {
+                    config.ExtraTestProjects = (from object etp in extraTestProjects
+                                                select etp.ToString()).ToList();
+                }
+
+                // This code assumes that the parent profile (project configuration) is defined in the manifest
+                // before it's being referred by a sub profile.
+                if (projectNode.PropertyNames.Contains(ProjectsSectionKeys.ParentProfile))
+                {
+                    var parentProfileName = projectNode[ProjectsSectionKeys.ParentProfile].ToString();
+                    if (!string.IsNullOrEmpty(parentProfileName))
+                    {
+                        var parentProfile = projectConfigurations.SingleOrDefault(
+                            p => p.Name.Equals(parentProfileName, StringComparison.InvariantCulture));
+                        if (parentProfile == null)
+                        {
+                            throw new KeyNotFoundException(string.Format("Parent profile {0} referred by current profile {1} does not exist.",
+                                parentProfile, config.Name));
+                        }
+                        config.ParentProfile = parentProfile;
+                    }
+                }
 
                 projectConfigurations.Add(config);
             }
-
+            
             ProjectFileConfigurations = projectConfigurations;
         }
 

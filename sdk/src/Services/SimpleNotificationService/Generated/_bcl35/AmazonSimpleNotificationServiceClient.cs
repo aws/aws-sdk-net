@@ -273,6 +273,7 @@ namespace Amazon.SimpleNotificationService
             return AddPermission(request);
         }
 
+
         /// <summary>
         /// Adds a statement to a topic's access control policy, granting access for the specified
         /// AWS accounts to the specified actions.
@@ -372,6 +373,7 @@ namespace Amazon.SimpleNotificationService
             return ConfirmSubscription(request);
         }
 
+
         /// <summary>
         /// Verifies an endpoint owner's intent to receive messages by validating      the token
         /// sent to the endpoint by an earlier <code>Subscribe</code> action. If the      token
@@ -405,6 +407,7 @@ namespace Amazon.SimpleNotificationService
             request.Token = token;
             return ConfirmSubscription(request);
         }
+
 
         /// <summary>
         /// Verifies an endpoint owner's intent to receive messages by validating      the token
@@ -653,6 +656,7 @@ namespace Amazon.SimpleNotificationService
             return CreateTopic(request);
         }
 
+
         /// <summary>
         /// Creates a topic to which notifications can be published. Users can create     at most
         /// 3000 topics. For more information, see <a href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>.
@@ -867,6 +871,7 @@ namespace Amazon.SimpleNotificationService
             request.TopicArn = topicArn;
             return DeleteTopic(request);
         }
+
 
         /// <summary>
         /// Deletes a topic and all its subscriptions. Deleting a topic might      prevent some
@@ -1087,6 +1092,7 @@ namespace Amazon.SimpleNotificationService
             return GetSubscriptionAttributes(request);
         }
 
+
         /// <summary>
         /// Returns all of the properties of a subscription.
         /// </summary>
@@ -1174,6 +1180,7 @@ namespace Amazon.SimpleNotificationService
             request.TopicArn = topicArn;
             return GetTopicAttributes(request);
         }
+
 
         /// <summary>
         /// Returns all of the properties of a topic.     Topic properties returned might differ
@@ -1449,6 +1456,7 @@ namespace Amazon.SimpleNotificationService
             return ListSubscriptions(request);
         }
 
+
         /// <summary>
         /// Returns a list of the requester's subscriptions. Each call returns a limited list
         ///      of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
@@ -1541,6 +1549,7 @@ namespace Amazon.SimpleNotificationService
             return ListSubscriptionsByTopic(request);
         }
 
+
         /// <summary>
         /// Returns a list of the subscriptions to a specific topic. Each call returns       a
         /// limited list of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
@@ -1568,6 +1577,7 @@ namespace Amazon.SimpleNotificationService
             request.TopicArn = topicArn;
             return ListSubscriptionsByTopic(request);
         }
+
 
         /// <summary>
         /// Returns a list of the subscriptions to a specific topic. Each call returns       a
@@ -1681,6 +1691,7 @@ namespace Amazon.SimpleNotificationService
             return ListTopics(request);
         }
 
+
         /// <summary>
         /// Returns a list of the requester's topics. Each call returns a limited list of topics,
         /// up to 100. If      there are more topics, a <code>NextToken</code> is also returned.
@@ -1791,6 +1802,7 @@ namespace Amazon.SimpleNotificationService
             return Publish(request);
         }
 
+
         /// <summary>
         /// Sends a message to all of a topic's subscribed endpoints. When a    <code>messageId</code>
         /// is returned, the message has been saved and Amazon SNS will attempt to deliver it
@@ -1840,6 +1852,7 @@ namespace Amazon.SimpleNotificationService
             request.Subject = subject;
             return Publish(request);
         }
+
 
         /// <summary>
         /// Sends a message to all of a topic's subscribed endpoints. When a    <code>messageId</code>
@@ -1950,6 +1963,7 @@ namespace Amazon.SimpleNotificationService
             request.Label = label;
             return RemovePermission(request);
         }
+
 
         /// <summary>
         /// Removes a statement from a topic's access control policy.
@@ -2170,6 +2184,7 @@ namespace Amazon.SimpleNotificationService
             return SetSubscriptionAttributes(request);
         }
 
+
         /// <summary>
         /// Allows a subscription owner to set an attribute of the topic to a new value.
         /// </summary>
@@ -2260,6 +2275,7 @@ namespace Amazon.SimpleNotificationService
             request.AttributeValue = attributeValue;
             return SetTopicAttributes(request);
         }
+
 
         /// <summary>
         /// Allows a topic owner to set an attribute of the topic to a new value.
@@ -2357,6 +2373,7 @@ namespace Amazon.SimpleNotificationService
             request.Endpoint = endpoint;
             return Subscribe(request);
         }
+
 
         /// <summary>
         /// Prepares to subscribe an endpoint by sending the endpoint a confirmation message.
@@ -2456,6 +2473,7 @@ namespace Amazon.SimpleNotificationService
             request.SubscriptionArn = subscriptionArn;
             return Unsubscribe(request);
         }
+
 
         /// <summary>
         /// Deletes a subscription. If the subscription requires authentication for       deletion,

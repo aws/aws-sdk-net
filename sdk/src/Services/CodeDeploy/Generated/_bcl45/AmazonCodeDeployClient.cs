@@ -299,6 +299,7 @@ namespace Amazon.CodeDeploy
         
         #region  AddTagsToOnPremisesInstances
 
+
         /// <summary>
         /// Adds tags to on-premises instances.
         /// </summary>
@@ -353,6 +354,7 @@ namespace Amazon.CodeDeploy
         
         #region  BatchGetApplications
 
+
         /// <summary>
         /// Gets information about one or more applications.
         /// </summary>
@@ -398,6 +400,7 @@ namespace Amazon.CodeDeploy
         
         #region  BatchGetDeployments
 
+
         /// <summary>
         /// Gets information about one or more deployments.
         /// </summary>
@@ -440,6 +443,7 @@ namespace Amazon.CodeDeploy
         
         #region  BatchGetOnPremisesInstances
 
+
         /// <summary>
         /// Gets information about one or more on-premises instances.
         /// </summary>
@@ -481,6 +485,7 @@ namespace Amazon.CodeDeploy
         #endregion
         
         #region  CreateApplication
+
 
         /// <summary>
         /// Creates a new application.
@@ -530,6 +535,7 @@ namespace Amazon.CodeDeploy
         #endregion
         
         #region  CreateDeployment
+
 
         /// <summary>
         /// Deploys an application revision through the specified deployment group.
@@ -603,6 +609,7 @@ namespace Amazon.CodeDeploy
         
         #region  CreateDeploymentConfig
 
+
         /// <summary>
         /// Creates a new deployment configuration.
         /// </summary>
@@ -654,6 +661,7 @@ namespace Amazon.CodeDeploy
         #endregion
         
         #region  CreateDeploymentGroup
+
 
         /// <summary>
         /// Creates a new deployment group for application revisions to be deployed to.
@@ -736,6 +744,7 @@ namespace Amazon.CodeDeploy
         
         #region  DeleteApplication
 
+
         /// <summary>
         /// Deletes an application.
         /// </summary>
@@ -777,6 +786,7 @@ namespace Amazon.CodeDeploy
         #endregion
         
         #region  DeleteDeploymentConfig
+
 
         /// <summary>
         /// Deletes a deployment configuration.
@@ -828,6 +838,7 @@ namespace Amazon.CodeDeploy
         #endregion
         
         #region  DeleteDeploymentGroup
+
 
         /// <summary>
         /// Deletes a deployment group.
@@ -882,6 +893,7 @@ namespace Amazon.CodeDeploy
         
         #region  DeregisterOnPremisesInstance
 
+
         /// <summary>
         /// Deregisters an on-premises instance.
         /// </summary>
@@ -923,6 +935,7 @@ namespace Amazon.CodeDeploy
         #endregion
         
         #region  GetApplication
+
 
         /// <summary>
         /// Gets information about an application.
@@ -968,6 +981,7 @@ namespace Amazon.CodeDeploy
         #endregion
         
         #region  GetApplicationRevision
+
 
         /// <summary>
         /// Gets information about an application revision.
@@ -1023,6 +1037,7 @@ namespace Amazon.CodeDeploy
         
         #region  GetDeployment
 
+
         /// <summary>
         /// Gets information about a deployment.
         /// </summary>
@@ -1068,6 +1083,7 @@ namespace Amazon.CodeDeploy
         
         #region  GetDeploymentConfig
 
+
         /// <summary>
         /// Gets information about a deployment configuration.
         /// </summary>
@@ -1112,6 +1128,7 @@ namespace Amazon.CodeDeploy
         #endregion
         
         #region  GetDeploymentGroup
+
 
         /// <summary>
         /// Gets information about a deployment group.
@@ -1167,6 +1184,7 @@ namespace Amazon.CodeDeploy
         
         #region  GetDeploymentInstance
 
+
         /// <summary>
         /// Gets information about an instance as part of a deployment.
         /// </summary>
@@ -1218,6 +1236,7 @@ namespace Amazon.CodeDeploy
         
         #region  GetOnPremisesInstance
 
+
         /// <summary>
         /// Gets information about an on-premises instance.
         /// </summary>
@@ -1262,6 +1281,7 @@ namespace Amazon.CodeDeploy
         #endregion
         
         #region  ListApplicationRevisions
+
 
         /// <summary>
         /// Lists information about revisions for an application.
@@ -1329,6 +1349,7 @@ namespace Amazon.CodeDeploy
         
         #region  ListApplications
 
+
         /// <summary>
         /// Lists the applications registered with the applicable IAM user or AWS account.
         /// </summary>
@@ -1341,6 +1362,7 @@ namespace Amazon.CodeDeploy
         {
             return ListApplications(new ListApplicationsRequest());
         }
+
 
         /// <summary>
         /// Lists the applications registered with the applicable IAM user or AWS account.
@@ -1359,6 +1381,22 @@ namespace Amazon.CodeDeploy
             return Invoke<ListApplicationsRequest,ListApplicationsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists the applications registered with the applicable IAM user or AWS account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListApplications service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format.
+        /// </exception>
+        public Task<ListApplicationsResponse> ListApplicationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListApplicationsAsync(new ListApplicationsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the ListApplications operation.
         /// </summary>
@@ -1381,6 +1419,7 @@ namespace Amazon.CodeDeploy
         
         #region  ListDeploymentConfigs
 
+
         /// <summary>
         /// Lists the deployment configurations with the applicable IAM user or AWS account.
         /// </summary>
@@ -1393,6 +1432,7 @@ namespace Amazon.CodeDeploy
         {
             return ListDeploymentConfigs(new ListDeploymentConfigsRequest());
         }
+
 
         /// <summary>
         /// Lists the deployment configurations with the applicable IAM user or AWS account.
@@ -1411,6 +1451,22 @@ namespace Amazon.CodeDeploy
             return Invoke<ListDeploymentConfigsRequest,ListDeploymentConfigsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Lists the deployment configurations with the applicable IAM user or AWS account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDeploymentConfigs service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format.
+        /// </exception>
+        public Task<ListDeploymentConfigsResponse> ListDeploymentConfigsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListDeploymentConfigsAsync(new ListDeploymentConfigsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the ListDeploymentConfigs operation.
         /// </summary>
@@ -1432,6 +1488,7 @@ namespace Amazon.CodeDeploy
         #endregion
         
         #region  ListDeploymentGroups
+
 
         /// <summary>
         /// Lists the deployment groups for an application registered with the applicable IAM
@@ -1481,6 +1538,7 @@ namespace Amazon.CodeDeploy
         #endregion
         
         #region  ListDeploymentInstances
+
 
         /// <summary>
         /// Lists the instances for a deployment associated with the applicable IAM user or AWS
@@ -1536,6 +1594,7 @@ namespace Amazon.CodeDeploy
         #endregion
         
         #region  ListDeployments
+
 
         /// <summary>
         /// Lists the deployments within a deployment group for an application registered with
@@ -1601,6 +1660,7 @@ namespace Amazon.CodeDeploy
         
         #region  ListOnPremisesInstances
 
+
         /// <summary>
         /// Gets a list of one or more on-premises instance names.
         /// 
@@ -1652,6 +1712,7 @@ namespace Amazon.CodeDeploy
         #endregion
         
         #region  RegisterApplicationRevision
+
 
         /// <summary>
         /// Registers with AWS CodeDeploy a revision for the specified application.
@@ -1707,6 +1768,7 @@ namespace Amazon.CodeDeploy
         
         #region  RegisterOnPremisesInstance
 
+
         /// <summary>
         /// Registers an on-premises instance.
         /// </summary>
@@ -1760,6 +1822,7 @@ namespace Amazon.CodeDeploy
         #endregion
         
         #region  RemoveTagsFromOnPremisesInstances
+
 
         /// <summary>
         /// Removes one or more tags from one or more on-premises instances.
@@ -1815,6 +1878,7 @@ namespace Amazon.CodeDeploy
         
         #region  StopDeployment
 
+
         /// <summary>
         /// Attempts to stop an ongoing deployment.
         /// </summary>
@@ -1862,6 +1926,7 @@ namespace Amazon.CodeDeploy
         #endregion
         
         #region  UpdateApplication
+
 
         /// <summary>
         /// Changes an existing application's name.
@@ -1911,6 +1976,7 @@ namespace Amazon.CodeDeploy
         #endregion
         
         #region  UpdateDeploymentGroup
+
 
         /// <summary>
         /// Changes information about an existing deployment group.

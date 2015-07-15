@@ -7,7 +7,8 @@
             "defineConstants": ";BCL;BCL35;AWS_APM_API;CODE_ANALYSIS;LOCAL_FILE",
             "binSubFolder": "net35",
             "template": "BclProjectFile",
-            "platformCodeFolders": [ "_bcl", "_bcl35" ]
+            "platformCodeFolders": [ "_bcl", "_bcl35", "_bcl+sl" ],
+            "nugetTargetPlatform": "net35"
         },
         {
             "name": "Net45",
@@ -16,34 +17,88 @@
             "defineConstants": ";BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE",
             "binSubFolder": "net45",
             "template": "BclProjectFile",
-            "platformCodeFolders": [ "_bcl", "_bcl45", "_async" ]
+            "platformCodeFolders": [ "_bcl", "_bcl45", "_async", "_bcl+sl" ],
+            "nugetTargetPlatform": "net45"
         },
         {
-            "name": "WinRT",
-            "configurations": [ "Debug|Any CPU", "Debug|ARM", "Debug|x64", "Debug|x86", "Release|Any CPU", "Release|ARM", "Release|x64", "Release|x86" ],
-            "targetFramework": "v4.5",
-            "defineConstants": ";NETFX_CORE;WIN_RT;AWS_ASYNC_API;STORAGE_FILE",
-            "binSubFolder": "winrt",
-            "template": "RtProjectFile",
-            "platformCodeFolders": [ "_mobile", "_async" ]
-        },
-        {
-            "name": "WP8",
-            "configurations": [ "Debug|Any CPU", "Debug|ARM", "Debug|x64", "Debug|x86", "Release|Any CPU", "Release|ARM", "Release|x64", "Release|x86" ],
-            "targetFramework": "v4.5",
-            "defineConstants": ";SILVERLIGHT;WINDOWS_PHONE;AWS_ASYNC_API;STORAGE_FILE",
-            "binSubFolder": "wp8",
-            "template": "PhoneProjectFile",
-            "platformCodeFolders": [ "_mobile", "_async" ]
-        },
-        {
-            "name": "Portable",
+            "name": "PCL",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
-            "defineConstants": ";WIN_RT;WINDOWS_PHONE;AWS_ASYNC_API;STORAGE_FILE",
-            "binSubFolder": "portable",
-            "template": "PortableProjectFile",
-            "platformCodeFolders": [ "_mobile", "_async" ]
+            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
+            "binSubFolder": "pcl",
+            "template": "PCLProjectFile",
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference", "_pcl-sl" ],
+            "nugetTargetPlatform": "portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10",
+			
+            "extraTestProjects": [
+				"test\\CrossPlatformTests\\CommonTests\\CommonTests.csproj",
+				"test\\CrossPlatformTests\\AndroidApp\\AndroidApp.csproj",
+				"test\\CrossPlatformTests\\iOSTests\\iOSTests.csproj",
+                "test\\CrossPlatformTests\\WindowsConsoleApp\\WindowsConsoleApp.csproj",
+                "test\\CrossPlatformTests\\WindowsApp\\WindowsApp.csproj",
+                "test\\CrossPlatformTests\\WindowsPhoneApp\\WindowsPhoneApp.csproj",
+                "test\\CrossPlatformTests\\WindowsPhoneSilverlightApp\\WindowsPhoneSilverlightApp.csproj",
+
+				"test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests\\XFormsPortableTests.csproj",
+				"test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests.Droid\\XFormsPortableTests.Droid.csproj",
+				"test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests.iOS\\XFormsPortableTests.iOS.csproj",
+                "test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests.WinPhone\\XFormsPortableTests.WinPhone.csproj"
+            ]
+        },
+		{
+            "name": "Android",
+            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
+            "targetFramework": "v4.5",
+            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
+            "binSubFolder": "monoandroid",
+            "template": "AndroidProjectFile",
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_android", "_pcl-sl" ],
+            "parentProfile": "PCL",
+            "nugetTargetPlatform": "MonoAndroid10"
+        },
+		{
+            "name": "iOS",
+            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
+            "targetFramework": "v4.5",
+            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
+            "binSubFolder": "Xamarin.iOS10",
+            "template": "IOSProjectFile",
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_ios", "_pcl-sl" ],
+            "parentProfile": "PCL",
+            "nugetTargetPlatform": "xamarinios10"
+        },
+		{
+            "name": "Win8",
+            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
+            "targetFramework": "v4.5",
+            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
+            "binSubFolder": "windows8",
+            "template": "Win8ProjectFile",
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8", "_pcl-sl" ],
+            "parentProfile": "PCL",
+            "nugetTargetPlatform": "netcore45"
+        },
+        {
+            "name": "WinPhone81",
+            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
+            "targetFramework": "v4.5",
+            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
+            "binSubFolder": "wpa81",
+            "template": "WinPhone81ProjectFile",
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhone81", "_pcl-sl" ],
+            "parentProfile": "PCL",
+            "nugetTargetPlatform": "wpa81"
+        },
+        {
+            "name": "WinPhoneSilverlight8",
+            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
+            "targetFramework": "v4.5",
+            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;WP_SL",
+            "binSubFolder": "wp8",
+            "template": "WinPhoneSilverlight8ProjectFile",
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhoneSilverlight8", "_bcl+sl" ],
+            "parentProfile": "PCL",
+            "nugetTargetPlatform": "wp8"
         }
     ],
     "models": [
@@ -302,7 +357,7 @@
             "region-lookup-name": "elasticfilesystem",
             "authentication-service-name": "elasticfilesystem",
             "service-url": "https://elasticfilesystem.us-west-2.amazonaws.com",
-            "mobile-platforms": [ "WinRT" ]
+            "mobile-platforms": [ "PCL" ]
         },
         {
             "active": true,

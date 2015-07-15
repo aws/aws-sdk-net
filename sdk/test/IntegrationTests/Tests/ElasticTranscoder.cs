@@ -123,6 +123,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var pipelineName = "sdktest-pipeline" + DateTime.Now.Ticks;
             var roleName = "sdktest-ets-role" + DateTime.Now.Ticks;
             var policyName = "Access_Policy";
+            var pipelineId = string.Empty;
+            var pipelineExists = false;
 
             try
             {
@@ -159,9 +161,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                         Role = role.Arn,
                         AwsKmsKeyArn = kmsKeyArn
                     }).Pipeline;
+                pipelineExists = true;
                 Assert.IsNotNull(pipeline);
                 Assert.AreEqual(pipeline.Name, pipelineName);
                 Thread.Sleep(1000 * 5);
+                pipelineId = pipeline.Id;
 
                 // List Pipelines
                 var pipelines = Client.ListPipelines().Pipelines;
@@ -170,38 +174,39 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
                 // Get Pipeline
                 var readPipelineResult = Client.ReadPipeline(
-                    new ReadPipelineRequest() { Id = pipeline.Id });
-                Assert.AreEqual(readPipelineResult.Pipeline.Id, pipeline.Id);
+                    new ReadPipelineRequest() { Id = pipelineId });
+                Assert.AreEqual(readPipelineResult.Pipeline.Id, pipelineId);
 
                 // Update pipeline
                 Client.UpdatePipelineStatus(
                     new UpdatePipelineStatusRequest
                     {
-                        Id = pipeline.Id,
+                        Id = pipelineId,
                         Status = "Paused"
                     });
 
                 // Get pipeline
                 readPipelineResult = Client.ReadPipeline(
-                    new ReadPipelineRequest { Id = pipeline.Id });
+                    new ReadPipelineRequest { Id = pipelineId });
                 Assert.AreEqual("Paused".ToLower(), readPipelineResult.Pipeline.Status.ToLower());
 
                 // List jobs
                 var jobs = Client.ListJobsByPipeline(
                     new ListJobsByPipelineRequest
                     {
-                        PipelineId = pipeline.Id,
+                        PipelineId = pipelineId,
                         Ascending = "true"
                     }).Jobs;
 
                 // Remove pipeline
                 Client.DeletePipeline(
-                    new DeletePipelineRequest { Id = pipeline.Id });
+                    new DeletePipelineRequest { Id = pipelineId });
+                pipelineExists = false;
 
                 AssertExtensions.ExpectException(() =>
                 {
                     readPipelineResult = Client.ReadPipeline(
-                        new ReadPipelineRequest() { Id = pipeline.Id });
+                        new ReadPipelineRequest() { Id = pipelineId });
                 }, typeof(AmazonElasticTranscoderException));
             }
             finally
@@ -219,6 +224,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 {
                     RoleName = roleName
                 });
+
+                if (pipelineExists)
+                {
+                    // Remove pipeline
+                    Client.DeletePipeline(new DeletePipelineRequest { Id = pipelineId });
+                }
             }
         }
 

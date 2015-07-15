@@ -182,7 +182,6 @@ namespace ServiceClientGenerator
 
             // Test that simple customizations were generated correctly
             GenerateCustomizationTests();
-
             ExecuteProjectFileGenerators();
         }
 
@@ -529,40 +528,27 @@ namespace ServiceClientGenerator
             }
         }
 
-        public static void UpdateSolutionFiles(GeneratorOptions options)
+        public static void GenerateCoreProjects(GenerationManifest generationManifest,
+            GeneratorOptions options)
         {
-            // if no new projects were created and all our expected solution files exist, we 
-            // can leave the solutions alone
-            var buildSolutionFiles = NewlyCreatedProjectFiles.Any();
-            if (!buildSolutionFiles)
+            Console.WriteLine("Updating Core project files.");
+            string coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "core");
+            var creator = new ProjectFileCreator();
+            creator.ExecuteCore(coreFilesRoot, generationManifest.ProjectFileConfigurations);
+            foreach (var newProjectKey in creator.CreatedProjectFiles.Keys)
             {
-                var expectedSolutions = new[]
-                {
-                    "AWSSDK.sln",
-                    "AWSSDK." + SolutionFileCreator.ProjectTypes.Net35 + ".sln",
-                    "AWSSDK." + SolutionFileCreator.ProjectTypes.Net45 + ".sln",
-                    "AWSSDK." + SolutionFileCreator.ProjectTypes.Portable + ".sln",
-                    "AWSSDK." + SolutionFileCreator.ProjectTypes.WinPhone8 + ".sln",
-                    "AWSSDK." + SolutionFileCreator.ProjectTypes.WinRt + ".sln"
-                };
-
-                if (expectedSolutions.Any(sln => !File.Exists(Path.Combine(options.SdkRootFolder, sln))))
-                {
-                    buildSolutionFiles = true;
-                }
-
-                if (!buildSolutionFiles)
-                {
-                    Console.WriteLine("Expected solution files present and no new projects, no solution updates required.");
-                    return;
-                }
-                else
-                    Console.WriteLine("One or more solution files missing, updates required.");
+                NewlyCreatedProjectFiles.Add(newProjectKey, creator.CreatedProjectFiles[newProjectKey]);
             }
-            else
-                Console.WriteLine("New projects created, solution file updates required.");
+        }
 
-            var solutionFileCreator = new SolutionFileCreator { Options = options };
+        public static void UpdateSolutionFiles(GenerationManifest manifest, GeneratorOptions options)
+        {
+            Console.WriteLine("Updating solution files.");
+            var solutionFileCreator = new SolutionFileCreator
+            {
+                Options = options,
+                ProjectFileConfigurations = manifest.ProjectFileConfigurations 
+            };
             solutionFileCreator.Execute(NewlyCreatedProjectFiles);
         }
 
@@ -708,8 +694,12 @@ namespace ServiceClientGenerator
 
         void GeneratePackagesConfig()
         {
-            // no customization in packages.config at present
-            var pcGenerator = new PackagesConfig();
+            var assemblyName = Configuration.Namespace.Replace("Amazon.", "AWSSDK.");
+            var session = new Dictionary<string, object>
+            {
+                { "AssemblyName", assemblyName },
+            };
+            var pcGenerator = new PackagesConfig() { Session = session };
             var text = pcGenerator.TransformText();
             WriteFile(ServiceFilesRoot, string.Empty, "packages.config", text);
         }
@@ -747,8 +737,12 @@ namespace ServiceClientGenerator
                 { "AssemblyDescription", Configuration.AssemblyDescription },
                 { "AssemblyVersion", assemblyVersion },
                 { "AWSDependencies", awsDependencies },
-                { "BaseName", this.Configuration.BaseName }
+                { "BaseName", this.Configuration.BaseName },
+                { "ProjectFileConfigurations", this.ProjectFileConfigurations}
             };
+
+            if (Configuration.NugetDependencies != null)
+                session.Add("NugetDependencies", Configuration.NugetDependencies);
 
             var nuspecGenerator = new Nuspec { Session = session };
             var text = nuspecGenerator.TransformText();

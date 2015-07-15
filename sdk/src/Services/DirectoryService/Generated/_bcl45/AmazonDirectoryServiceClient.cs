@@ -231,6 +231,7 @@ namespace Amazon.DirectoryService
         
         #region  ConnectDirectory
 
+
         /// <summary>
         /// Creates an AD Connector to connect an on-premises directory.
         /// </summary>
@@ -278,6 +279,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  CreateAlias
+
 
         /// <summary>
         /// Creates an alias for a directory and assigns the alias to the directory. The alias
@@ -337,6 +339,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  CreateComputer
+
 
         /// <summary>
         /// Creates a computer account in the specified directory, and joins the computer to the
@@ -399,6 +402,7 @@ namespace Amazon.DirectoryService
         
         #region  CreateDirectory
 
+
         /// <summary>
         /// Creates a Simple AD directory.
         /// </summary>
@@ -446,6 +450,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  CreateSnapshot
+
 
         /// <summary>
         /// Creates a snapshot of an existing directory.
@@ -503,6 +508,7 @@ namespace Amazon.DirectoryService
         
         #region  DeleteDirectory
 
+
         /// <summary>
         /// Deletes an AWS Directory Service directory.
         /// </summary>
@@ -547,6 +553,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  DeleteSnapshot
+
 
         /// <summary>
         /// Deletes a directory snapshot.
@@ -596,6 +603,7 @@ namespace Amazon.DirectoryService
         
         #region  DescribeDirectories
 
+
         /// <summary>
         /// Obtains information about the directories that belong to this account.
         /// 
@@ -638,6 +646,7 @@ namespace Amazon.DirectoryService
         {
             return DescribeDirectories(new DescribeDirectoriesRequest());
         }
+
 
         /// <summary>
         /// Obtains information about the directories that belong to this account.
@@ -686,6 +695,52 @@ namespace Amazon.DirectoryService
             return Invoke<DescribeDirectoriesRequest,DescribeDirectoriesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Obtains information about the directories that belong to this account.
+        /// 
+        ///  
+        /// <para>
+        /// You can retrieve information about specific directories by passing the directory identifiers
+        /// in the <i>DirectoryIds</i> parameter. Otherwise, all directories that belong to the
+        /// current account are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation supports pagination with the use of the <i>NextToken</i> request and
+        /// response parameters. If more results are available, the <i>DescribeDirectoriesResult.NextToken</i>
+        /// member contains a token that you pass in the next call to <a>DescribeDirectories</a>
+        /// to retrieve the next set of items.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also specify a maximum number of return results with the <i>Limit</i> parameter.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDirectories service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// 
+        /// </exception>
+        public Task<DescribeDirectoriesResponse> DescribeDirectoriesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeDirectoriesAsync(new DescribeDirectoriesRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDirectories operation.
         /// </summary>
@@ -707,6 +762,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  DescribeSnapshots
+
 
         /// <summary>
         /// Obtains information about the directory snapshots that belong to this account.
@@ -771,6 +827,7 @@ namespace Amazon.DirectoryService
         
         #region  DisableRadius
 
+
         /// <summary>
         /// Disables multi-factor authentication (MFA) with Remote Authentication Dial In User
         /// Service (RADIUS) for an AD Connector directory.
@@ -816,6 +873,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  DisableSso
+
 
         /// <summary>
         /// Disables single-sign on for a directory.
@@ -867,6 +925,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  EnableRadius
+
 
         /// <summary>
         /// Enables multi-factor authentication (MFA) with Remote Authentication Dial In User
@@ -920,6 +979,7 @@ namespace Amazon.DirectoryService
         
         #region  EnableSso
 
+
         /// <summary>
         /// Enables single-sign on for a directory.
         /// </summary>
@@ -971,6 +1031,7 @@ namespace Amazon.DirectoryService
         
         #region  GetDirectoryLimits
 
+
         /// <summary>
         /// Obtains directory limit information for the current region.
         /// </summary>
@@ -989,6 +1050,7 @@ namespace Amazon.DirectoryService
         {
             return GetDirectoryLimits(new GetDirectoryLimitsRequest());
         }
+
 
         /// <summary>
         /// Obtains directory limit information for the current region.
@@ -1013,6 +1075,28 @@ namespace Amazon.DirectoryService
             return Invoke<GetDirectoryLimitsRequest,GetDirectoryLimitsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// Obtains directory limit information for the current region.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDirectoryLimits service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// 
+        /// </exception>
+        public Task<GetDirectoryLimitsResponse> GetDirectoryLimitsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetDirectoryLimitsAsync(new GetDirectoryLimitsRequest(), cancellationToken);
+        }
         /// <summary>
         /// Initiates the asynchronous execution of the GetDirectoryLimits operation.
         /// </summary>
@@ -1034,6 +1118,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  GetSnapshotLimits
+
 
         /// <summary>
         /// Obtains the manual snapshot limits for a directory.
@@ -1079,6 +1164,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  RestoreFromSnapshot
+
 
         /// <summary>
         /// Restores a directory using an existing directory snapshot.
@@ -1140,6 +1226,7 @@ namespace Amazon.DirectoryService
         #endregion
         
         #region  UpdateRadius
+
 
         /// <summary>
         /// Updates the Remote Authentication Dial In User Service (RADIUS) server information

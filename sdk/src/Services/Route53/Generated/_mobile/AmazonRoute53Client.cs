@@ -146,11 +146,18 @@ namespace Amazon.Route53
 
         #region Overrides
 
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new AWS3Signer();
         } 
 
+        /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.Route53.Internal.AmazonRoute53PostMarshallHandler());
@@ -161,6 +168,9 @@ namespace Amazon.Route53
 
         #region Dispose
 
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -178,6 +188,7 @@ namespace Amazon.Route53
 
             return Invoke<AssociateVPCWithHostedZoneRequest,AssociateVPCWithHostedZoneResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the AssociateVPCWithHostedZone operation.
@@ -209,6 +220,7 @@ namespace Amazon.Route53
             return Invoke<ChangeResourceRecordSetsRequest,ChangeResourceRecordSetsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ChangeResourceRecordSets operation.
         /// </summary>
@@ -238,6 +250,7 @@ namespace Amazon.Route53
 
             return Invoke<ChangeTagsForResourceRequest,ChangeTagsForResourceResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ChangeTagsForResource operation.
@@ -269,6 +282,7 @@ namespace Amazon.Route53
             return Invoke<CreateHealthCheckRequest,CreateHealthCheckResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateHealthCheck operation.
         /// </summary>
@@ -298,6 +312,7 @@ namespace Amazon.Route53
 
             return Invoke<CreateHostedZoneRequest,CreateHostedZoneResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateHostedZone operation.
@@ -329,6 +344,7 @@ namespace Amazon.Route53
             return Invoke<CreateReusableDelegationSetRequest,CreateReusableDelegationSetResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateReusableDelegationSet operation.
         /// </summary>
@@ -358,6 +374,7 @@ namespace Amazon.Route53
 
             return Invoke<DeleteHealthCheckRequest,DeleteHealthCheckResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteHealthCheck operation.
@@ -389,6 +406,7 @@ namespace Amazon.Route53
             return Invoke<DeleteHostedZoneRequest,DeleteHostedZoneResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteHostedZone operation.
         /// </summary>
@@ -418,6 +436,7 @@ namespace Amazon.Route53
 
             return Invoke<DeleteReusableDelegationSetRequest,DeleteReusableDelegationSetResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteReusableDelegationSet operation.
@@ -449,6 +468,7 @@ namespace Amazon.Route53
             return Invoke<DisassociateVPCFromHostedZoneRequest,DisassociateVPCFromHostedZoneResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DisassociateVPCFromHostedZone operation.
         /// </summary>
@@ -478,6 +498,7 @@ namespace Amazon.Route53
 
             return Invoke<GetChangeRequest,GetChangeResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetChange operation.
@@ -509,6 +530,7 @@ namespace Amazon.Route53
             return Invoke<GetCheckerIpRangesRequest,GetCheckerIpRangesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetCheckerIpRanges operation.
         /// </summary>
@@ -538,6 +560,7 @@ namespace Amazon.Route53
 
             return Invoke<GetGeoLocationRequest,GetGeoLocationResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetGeoLocation operation.
@@ -569,6 +592,7 @@ namespace Amazon.Route53
             return Invoke<GetHealthCheckRequest,GetHealthCheckResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetHealthCheck operation.
         /// </summary>
@@ -598,6 +622,7 @@ namespace Amazon.Route53
 
             return Invoke<GetHealthCheckCountRequest,GetHealthCheckCountResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetHealthCheckCount operation.
@@ -629,6 +654,7 @@ namespace Amazon.Route53
             return Invoke<GetHealthCheckLastFailureReasonRequest,GetHealthCheckLastFailureReasonResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetHealthCheckLastFailureReason operation.
         /// </summary>
@@ -659,6 +685,7 @@ namespace Amazon.Route53
             return Invoke<GetHealthCheckStatusRequest,GetHealthCheckStatusResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetHealthCheckStatus operation.
         /// </summary>
@@ -688,6 +715,7 @@ namespace Amazon.Route53
 
             return Invoke<GetHostedZoneRequest,GetHostedZoneResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetHostedZone operation.
@@ -723,6 +751,25 @@ namespace Amazon.Route53
             return Invoke<GetHostedZoneCountRequest,GetHostedZoneCountResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// To retrieve a count of all your hosted zones, send a <code>GET</code> request to
+        /// the <code>2013-04-01/hostedzonecount</code> resource.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetHostedZoneCount service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        public Task<GetHostedZoneCountResponse> GetHostedZoneCountAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetHostedZoneCountAsync(new GetHostedZoneCountRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetHostedZoneCount operation.
         /// </summary>
@@ -752,6 +799,7 @@ namespace Amazon.Route53
 
             return Invoke<GetReusableDelegationSetRequest,GetReusableDelegationSetResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetReusableDelegationSet operation.
@@ -787,6 +835,39 @@ namespace Amazon.Route53
             return Invoke<ListGeoLocationsRequest,ListGeoLocationsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// To retrieve a list of supported geo locations, send a <code>GET</code> request to
+        /// the <code>2013-04-01/geolocations</code> resource. The response to this request includes
+        /// a <code>GeoLocationDetailsList</code> element with zero, one, or multiple <code>GeoLocationDetails</code>
+        /// child elements. The list is sorted by country code, and then subdivision code, followed
+        /// by continents at the end of the list. 
+        /// 
+        ///  
+        /// <para>
+        ///  By default, the list of geo locations is displayed on a single page. You can control
+        /// the length of the page that is displayed by using the <code>MaxItems</code> parameter.
+        /// If the list is truncated, <code>IsTruncated</code> will be set to <i>true</i> and
+        /// a combination of <code>NextContinentCode, NextCountryCode, NextSubdivisionCode</code>
+        /// will be populated. You can pass these as parameters to <code>StartContinentCode, StartCountryCode,
+        /// StartSubdivisionCode</code> to control the geo location that the list begins with.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGeoLocations service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        public Task<ListGeoLocationsResponse> ListGeoLocationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListGeoLocationsAsync(new ListGeoLocationsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListGeoLocations operation.
         /// </summary>
@@ -820,6 +901,37 @@ namespace Amazon.Route53
 
             return Invoke<ListHealthChecksRequest,ListHealthChecksResponse>(request, marshaller, unmarshaller);
         }
+
+
+        /// <summary>
+        /// To retrieve a list of your health checks, send a <code>GET</code> request to the
+        /// <code>2013-04-01/healthcheck</code> resource. The response to this request includes
+        /// a <code>HealthChecks</code> element with zero, one, or multiple <code>HealthCheck</code>
+        /// child elements. By default, the list of health checks is displayed on a single page.
+        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
+        /// parameter. You can use the <code>Marker</code> parameter to control the health check
+        /// that the list begins with. 
+        /// 
+        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
+        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHealthChecks service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.IncompatibleVersionException">
+        /// The resource you are trying to access is unsupported on this Route 53 endpoint. Please
+        /// consider using a newer endpoint or a tool that does so.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        public Task<ListHealthChecksResponse> ListHealthChecksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListHealthChecksAsync(new ListHealthChecksRequest(), cancellationToken);
+        }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListHealthChecks operation.
@@ -855,6 +967,39 @@ namespace Amazon.Route53
             return Invoke<ListHostedZonesRequest,ListHostedZonesResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// To retrieve a list of your hosted zones, send a <code>GET</code> request to the <code>2013-04-01/hostedzone</code>
+        /// resource. The response to this request includes a <code>HostedZones</code> element
+        /// with zero, one, or multiple <code>HostedZone</code> child elements. By default, the
+        /// list of hosted zones is displayed on a single page. You can control the length of
+        /// the page that is displayed by using the <code>MaxItems</code> parameter. You can use
+        /// the <code>Marker</code> parameter to control the hosted zone that the list begins
+        /// with. 
+        /// 
+        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
+        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHostedZones service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.DelegationSetNotReusableException">
+        /// The specified delegation set has not been marked as reusable.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
+        /// The specified delegation set does not exist.
+        /// </exception>
+        public Task<ListHostedZonesResponse> ListHostedZonesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListHostedZonesAsync(new ListHostedZonesRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListHostedZones operation.
         /// </summary>
@@ -885,6 +1030,7 @@ namespace Amazon.Route53
             return Invoke<ListHostedZonesByNameRequest,ListHostedZonesByNameResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListHostedZonesByName operation.
         /// </summary>
@@ -914,6 +1060,7 @@ namespace Amazon.Route53
 
             return Invoke<ListResourceRecordSetsRequest,ListResourceRecordSetsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListResourceRecordSets operation.
@@ -949,6 +1096,33 @@ namespace Amazon.Route53
             return Invoke<ListReusableDelegationSetsRequest,ListReusableDelegationSetsResponse>(request, marshaller, unmarshaller);
         }
 
+
+        /// <summary>
+        /// To retrieve a list of your reusable delegation sets, send a <code>GET</code> request
+        /// to the <code>2013-04-01/delegationset</code> resource. The response to this request
+        /// includes a <code>DelegationSets</code> element with zero, one, or multiple <code>DelegationSet</code>
+        /// child elements. By default, the list of delegation sets is displayed on a single page.
+        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
+        /// parameter. You can use the <code>Marker</code> parameter to control the delegation
+        /// set that the list begins with. 
+        /// 
+        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
+        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReusableDelegationSets service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        public Task<ListReusableDelegationSetsResponse> ListReusableDelegationSetsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListReusableDelegationSetsAsync(new ListReusableDelegationSetsRequest(), cancellationToken);
+        }
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListReusableDelegationSets operation.
         /// </summary>
@@ -978,6 +1152,7 @@ namespace Amazon.Route53
 
             return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListTagsForResource operation.
@@ -1009,6 +1184,7 @@ namespace Amazon.Route53
             return Invoke<ListTagsForResourcesRequest,ListTagsForResourcesResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListTagsForResources operation.
         /// </summary>
@@ -1039,6 +1215,7 @@ namespace Amazon.Route53
             return Invoke<UpdateHealthCheckRequest,UpdateHealthCheckResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateHealthCheck operation.
         /// </summary>
@@ -1068,6 +1245,7 @@ namespace Amazon.Route53
 
             return Invoke<UpdateHostedZoneCommentRequest,UpdateHostedZoneCommentResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateHostedZoneComment operation.

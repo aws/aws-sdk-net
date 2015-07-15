@@ -30,8 +30,26 @@ namespace <#=this.Config.Namespace#>
 		
 		#region  <#=operation.Name#>
 
-<#AddAsyncDocumentation(operation.Name);#>
-        Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=operation.Name#>Request request, CancellationToken cancellationToken = default(CancellationToken));
+<#
+        // Creates a parameterless definition of the operation if specified in the customizations file
+        if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
+        {
+#>
+<#
+this.FormatOperationDocumentationAsync(operation, false);
+#>
+        Task<<#=operation.Name#>Response> <#=operation.Name#>Async(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+<#
+        }
+
+        AddSimpleClientMethodInterfaces(operation, false);
+#>
+
+<#        
+        AddAsyncDocumentation(operation.Name);
+#>
+        Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=operation.Name#>Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 		#endregion
 		<#

@@ -324,10 +324,18 @@ namespace ThirdParty.Json.LitJson
             if (reader.Token == JsonToken.ArrayEnd)
                 return null;
 
+            //support for nullable types
+            Type underlying_type = Nullable.GetUnderlyingType(inst_type);
+            Type value_type = underlying_type ?? inst_type;
+            
             if (reader.Token == JsonToken.Null) {
-
-                if (!inst_typeInfo.IsClass)
-                    throw new JsonException (String.Format (
+                
+                if (underlying_type != null)
+                {
+                    return null;
+                }
+                
+                throw new JsonException (String.Format (
                             "Can't assign null to an instance of type {0}",
                             inst_type));
 
@@ -348,10 +356,10 @@ namespace ThirdParty.Json.LitJson
                 // If there's a custom importer that fits, use it
                 if (custom_importers_table.ContainsKey (json_type) &&
                     custom_importers_table[json_type].ContainsKey (
-                        inst_type)) {
+                        value_type)) {
 
                     ImporterFunc importer =
-                        custom_importers_table[json_type][inst_type];
+                        custom_importers_table[json_type][value_type];
 
                     return importer (reader.Value);
                 }
@@ -359,20 +367,20 @@ namespace ThirdParty.Json.LitJson
                 // Maybe there's a base importer that works
                 if (base_importers_table.ContainsKey (json_type) &&
                     base_importers_table[json_type].ContainsKey (
-                        inst_type)) {
+                        value_type)) {
 
                     ImporterFunc importer =
-                        base_importers_table[json_type][inst_type];
+                        base_importers_table[json_type][value_type];
 
                     return importer (reader.Value);
                 }
 
                 // Maybe it's an enum
                 if (inst_typeInfo.IsEnum)
-                    return Enum.ToObject (inst_type, reader.Value);
+                    return Enum.ToObject (value_type, reader.Value);
 
                 // Try using an implicit conversion operator
-                MethodInfo conv_op = GetConvOp (inst_type, json_type);
+                MethodInfo conv_op = GetConvOp (value_type, json_type);
 
                 if (conv_op != null)
                     return conv_op.Invoke (null,
@@ -426,10 +434,10 @@ namespace ThirdParty.Json.LitJson
 
             } else if (reader.Token == JsonToken.ObjectStart) {
 
-                AddObjectMetadata (inst_type);
-                ObjectMetadata t_data = object_metadata[inst_type];
+                AddObjectMetadata (value_type);
+                ObjectMetadata t_data = object_metadata[value_type];
 
-                instance = Activator.CreateInstance (inst_type);
+                instance = Activator.CreateInstance (value_type);
 
                 while (true) {
                     reader.Read ();
@@ -594,6 +602,16 @@ namespace ThirdParty.Json.LitJson
                 delegate (object obj, JsonWriter writer) {
                     writer.Write ((ulong) obj);
                 };
+
+            base_exporters_table[typeof(float)] =
+                delegate (object obj,JsonWriter writer){
+                    writer.Write(Convert.ToDouble((float) obj));
+                };
+
+            base_exporters_table[typeof(Int64)] =
+                delegate (object obj,JsonWriter writer){
+                    writer.Write(Convert.ToDouble((Int64) obj));
+                };
         }
 
         private static void RegisterBaseImporters ()
@@ -654,6 +672,12 @@ namespace ThirdParty.Json.LitJson
             RegisterImporter (base_importers_table, typeof (double),
                               typeof (decimal), importer);
 
+            importer = delegate(object input)
+            {
+                return Convert.ToSingle((float)(double)input);
+            };
+            RegisterImporter(base_importers_table,typeof(double),
+                              typeof(float),importer);
 
             importer = delegate (object input) {
                 return Convert.ToUInt32 ((long) input);
@@ -672,6 +696,12 @@ namespace ThirdParty.Json.LitJson
             };
             RegisterImporter (base_importers_table, typeof (string),
                               typeof (DateTime), importer);
+                              
+            importer = delegate(object input) {
+                return Convert.ToInt64 ((Int32)input);
+            };
+            RegisterImporter (base_importers_table, typeof (Int32),
+                              typeof(Int64), importer);
         }
 
         private static void RegisterImporter (

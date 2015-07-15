@@ -67,10 +67,21 @@ namespace Amazon.Runtime.Internal.Util
 
             InternalLog4netLogger log4netLogger = new InternalLog4netLogger(type);
             loggers.Add(log4netLogger);
+
+#if __IOS__ || __ANDROID__
+            MobileLogger logger = new MobileLogger(type);
+            loggers.Add(logger);
+#endif
+
 #if BCL
             InternalSystemDiagnosticsLogger sdLogger = new InternalSystemDiagnosticsLogger(type);
             loggers.Add(sdLogger);
 #endif
+#if PCL
+            InternalConsoleLogger dbLogger = new InternalConsoleLogger(type);
+            loggers.Add(dbLogger);
+#endif
+
             ConfigureLoggers();
             AWSConfigs.PropertyChanged += ConfigsChanged;
         }
@@ -92,6 +103,11 @@ namespace Amazon.Runtime.Internal.Util
                 if (il is InternalSystemDiagnosticsLogger)
                     il.IsEnabled = (logging & LoggingOptions.SystemDiagnostics) == LoggingOptions.SystemDiagnostics;
 #endif
+#if PCL
+                if (il is InternalConsoleLogger)
+                    il.IsEnabled = (logging & LoggingOptions.SystemDiagnostics) == LoggingOptions.SystemDiagnostics;
+#endif
+
             }
         }
 

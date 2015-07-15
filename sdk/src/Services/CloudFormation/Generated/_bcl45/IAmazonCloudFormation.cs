@@ -63,6 +63,7 @@ namespace Amazon.CloudFormation
         
         #region  CancelUpdateStack
 
+
         /// <summary>
         /// Cancels an update on the specified stack. If the call completes successfully, the
         /// stack will roll back the update and revert to the previous stack configuration.
@@ -73,6 +74,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the CancelUpdateStack service method, as returned by CloudFormation.</returns>
         CancelUpdateStackResponse CancelUpdateStack(CancelUpdateStackRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CancelUpdateStack operation.
@@ -88,6 +90,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  CreateStack
+
 
         /// <summary>
         /// Creates a stack as specified in the template. After the call completes successfully,
@@ -109,6 +112,7 @@ namespace Amazon.CloudFormation
         /// </exception>
         CreateStackResponse CreateStack(CreateStackRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStack operation.
         /// </summary>
@@ -124,6 +128,7 @@ namespace Amazon.CloudFormation
         
         #region  DeleteStack
 
+
         /// <summary>
         /// Deletes a specified stack. Once the call completes successfully, stack deletion starts.
         /// Deleted stacks do not show up in the <a>DescribeStacks</a> API if the deletion has
@@ -133,6 +138,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DeleteStack service method, as returned by CloudFormation.</returns>
         DeleteStackResponse DeleteStack(DeleteStackRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStack operation.
@@ -149,6 +155,7 @@ namespace Amazon.CloudFormation
         
         #region  DescribeStackEvents
 
+
         /// <summary>
         /// Returns all stack related events for a specified stack. For more information about
         /// a stack's event history, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
@@ -161,6 +168,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStackEvents service method, as returned by CloudFormation.</returns>
         DescribeStackEventsResponse DescribeStackEvents(DescribeStackEventsRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackEvents operation.
@@ -177,6 +185,7 @@ namespace Amazon.CloudFormation
         
         #region  DescribeStackResource
 
+
         /// <summary>
         /// Returns a description of the specified resource in the specified stack.
         /// 
@@ -190,6 +199,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStackResource service method, as returned by CloudFormation.</returns>
         DescribeStackResourceResponse DescribeStackResource(DescribeStackResourceRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackResource operation.
@@ -205,6 +215,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  DescribeStackResources
+
 
         /// <summary>
         /// Returns AWS resource descriptions for running and deleted stacks. If <code>StackName</code>
@@ -234,6 +245,7 @@ namespace Amazon.CloudFormation
         /// <returns>The response from the DescribeStackResources service method, as returned by CloudFormation.</returns>
         DescribeStackResourcesResponse DescribeStackResources(DescribeStackResourcesRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStackResources operation.
         /// </summary>
@@ -249,6 +261,7 @@ namespace Amazon.CloudFormation
         
         #region  DescribeStacks
 
+
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
         /// it returns the description for all the stacks created.
@@ -256,6 +269,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStacks service method, as returned by CloudFormation.</returns>
         DescribeStacksResponse DescribeStacks();
+
 
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
@@ -265,6 +279,19 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the DescribeStacks service method, as returned by CloudFormation.</returns>
         DescribeStacksResponse DescribeStacks(DescribeStacksRequest request);
+
+
+        /// <summary>
+        /// Returns the description for the specified stack; if no stack name was specified, then
+        /// it returns the description for all the stacks created.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeStacks service method, as returned by CloudFormation.</returns>
+        Task<DescribeStacksResponse> DescribeStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeStacks operation.
@@ -281,6 +308,7 @@ namespace Amazon.CloudFormation
         
         #region  EstimateTemplateCost
 
+
         /// <summary>
         /// Returns the estimated monthly cost of a template. The return value is an AWS Simple
         /// Monthly Calculator URL with a query string that describes the resources required to
@@ -290,6 +318,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the EstimateTemplateCost service method, as returned by CloudFormation.</returns>
         EstimateTemplateCostResponse EstimateTemplateCost(EstimateTemplateCostRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the EstimateTemplateCost operation.
@@ -306,6 +335,7 @@ namespace Amazon.CloudFormation
         
         #region  GetStackPolicy
 
+
         /// <summary>
         /// Returns the stack policy for a specified stack. If a stack doesn't have a policy,
         /// a null value is returned.
@@ -314,6 +344,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the GetStackPolicy service method, as returned by CloudFormation.</returns>
         GetStackPolicyResponse GetStackPolicy(GetStackPolicyRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetStackPolicy operation.
@@ -329,6 +360,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  GetTemplate
+
 
         /// <summary>
         /// Returns the template body for a specified stack. You can get the template for running
@@ -347,6 +379,7 @@ namespace Amazon.CloudFormation
         /// <returns>The response from the GetTemplate service method, as returned by CloudFormation.</returns>
         GetTemplateResponse GetTemplate(GetTemplateRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetTemplate operation.
         /// </summary>
@@ -361,6 +394,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  GetTemplateSummary
+
 
         /// <summary>
         /// Returns information about a new or existing template. The <code>GetTemplateSummary</code>
@@ -384,6 +418,7 @@ namespace Amazon.CloudFormation
         /// <returns>The response from the GetTemplateSummary service method, as returned by CloudFormation.</returns>
         GetTemplateSummaryResponse GetTemplateSummary(GetTemplateSummaryRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetTemplateSummary operation.
         /// </summary>
@@ -399,6 +434,7 @@ namespace Amazon.CloudFormation
         
         #region  ListStackResources
 
+
         /// <summary>
         /// Returns descriptions of all resources of the specified stack.
         /// 
@@ -412,6 +448,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListStackResources service method, as returned by CloudFormation.</returns>
         ListStackResourcesResponse ListStackResources(ListStackResourcesRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListStackResources operation.
@@ -428,6 +465,7 @@ namespace Amazon.CloudFormation
         
         #region  ListStacks
 
+
         /// <summary>
         /// Returns the summary information for stacks whose status matches the specified StackStatusFilter.
         /// Summary information for stacks that have been deleted is kept for 90 days after the
@@ -437,6 +475,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListStacks service method, as returned by CloudFormation.</returns>
         ListStacksResponse ListStacks();
+
 
         /// <summary>
         /// Returns the summary information for stacks whose status matches the specified StackStatusFilter.
@@ -448,6 +487,21 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ListStacks service method, as returned by CloudFormation.</returns>
         ListStacksResponse ListStacks(ListStacksRequest request);
+
+
+        /// <summary>
+        /// Returns the summary information for stacks whose status matches the specified StackStatusFilter.
+        /// Summary information for stacks that have been deleted is kept for 90 days after the
+        /// stack is deleted. If no StackStatusFilter is specified, summary information for all
+        /// stacks is returned (including existing stacks and stacks that have been deleted).
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStacks service method, as returned by CloudFormation.</returns>
+        Task<ListStacksResponse> ListStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListStacks operation.
@@ -464,6 +518,7 @@ namespace Amazon.CloudFormation
         
         #region  SetStackPolicy
 
+
         /// <summary>
         /// Sets a stack policy for a specified stack.
         /// </summary>
@@ -471,6 +526,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the SetStackPolicy service method, as returned by CloudFormation.</returns>
         SetStackPolicyResponse SetStackPolicy(SetStackPolicyRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetStackPolicy operation.
@@ -487,6 +543,7 @@ namespace Amazon.CloudFormation
         
         #region  SignalResource
 
+
         /// <summary>
         /// Sends a signal to the specified resource with a success or failure status. You can
         /// use the SignalResource API in conjunction with a creation policy or update policy.
@@ -499,6 +556,7 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the SignalResource service method, as returned by CloudFormation.</returns>
         SignalResourceResponse SignalResource(SignalResourceRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SignalResource operation.
@@ -514,6 +572,7 @@ namespace Amazon.CloudFormation
         #endregion
         
         #region  UpdateStack
+
 
         /// <summary>
         /// Updates a stack as specified in the template. After the call completes successfully,
@@ -546,6 +605,7 @@ namespace Amazon.CloudFormation
         /// </exception>
         UpdateStackResponse UpdateStack(UpdateStackRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStack operation.
         /// </summary>
@@ -561,12 +621,14 @@ namespace Amazon.CloudFormation
         
         #region  ValidateTemplate
 
+
         /// <summary>
         /// Validates a specified template.
         /// </summary>
         /// 
         /// <returns>The response from the ValidateTemplate service method, as returned by CloudFormation.</returns>
         ValidateTemplateResponse ValidateTemplate();
+
 
         /// <summary>
         /// Validates a specified template.
@@ -575,6 +637,18 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>The response from the ValidateTemplate service method, as returned by CloudFormation.</returns>
         ValidateTemplateResponse ValidateTemplate(ValidateTemplateRequest request);
+
+
+        /// <summary>
+        /// Validates a specified template.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ValidateTemplate service method, as returned by CloudFormation.</returns>
+        Task<ValidateTemplateResponse> ValidateTemplateAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ValidateTemplate operation.

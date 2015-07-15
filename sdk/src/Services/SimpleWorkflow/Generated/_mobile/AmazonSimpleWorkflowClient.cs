@@ -165,6 +165,9 @@ namespace Amazon.SimpleWorkflow
 
         #region Overrides
 
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
             return new AWS4Signer();
@@ -175,6 +178,9 @@ namespace Amazon.SimpleWorkflow
 
         #region Dispose
 
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -192,6 +198,7 @@ namespace Amazon.SimpleWorkflow
 
             return Invoke<CountClosedWorkflowExecutionsRequest,CountClosedWorkflowExecutionsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CountClosedWorkflowExecutions operation.
@@ -223,6 +230,7 @@ namespace Amazon.SimpleWorkflow
             return Invoke<CountOpenWorkflowExecutionsRequest,CountOpenWorkflowExecutionsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CountOpenWorkflowExecutions operation.
         /// </summary>
@@ -252,6 +260,7 @@ namespace Amazon.SimpleWorkflow
 
             return Invoke<CountPendingActivityTasksRequest,CountPendingActivityTasksResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CountPendingActivityTasks operation.
@@ -283,6 +292,7 @@ namespace Amazon.SimpleWorkflow
             return Invoke<CountPendingDecisionTasksRequest,CountPendingDecisionTasksResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CountPendingDecisionTasks operation.
         /// </summary>
@@ -312,6 +322,7 @@ namespace Amazon.SimpleWorkflow
 
             return Invoke<DeprecateActivityTypeRequest,DeprecateActivityTypeResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeprecateActivityType operation.
@@ -343,6 +354,7 @@ namespace Amazon.SimpleWorkflow
             return Invoke<DeprecateDomainRequest,DeprecateDomainResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeprecateDomain operation.
         /// </summary>
@@ -372,6 +384,7 @@ namespace Amazon.SimpleWorkflow
 
             return Invoke<DeprecateWorkflowTypeRequest,DeprecateWorkflowTypeResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeprecateWorkflowType operation.
@@ -403,6 +416,7 @@ namespace Amazon.SimpleWorkflow
             return Invoke<DescribeActivityTypeRequest,DescribeActivityTypeResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeActivityType operation.
         /// </summary>
@@ -432,6 +446,7 @@ namespace Amazon.SimpleWorkflow
 
             return Invoke<DescribeDomainRequest,DescribeDomainResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeDomain operation.
@@ -463,6 +478,7 @@ namespace Amazon.SimpleWorkflow
             return Invoke<DescribeWorkflowExecutionRequest,DescribeWorkflowExecutionResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkflowExecution operation.
         /// </summary>
@@ -492,6 +508,7 @@ namespace Amazon.SimpleWorkflow
 
             return Invoke<DescribeWorkflowTypeRequest,DescribeWorkflowTypeResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeWorkflowType operation.
@@ -523,6 +540,7 @@ namespace Amazon.SimpleWorkflow
             return Invoke<GetWorkflowExecutionHistoryRequest,GetWorkflowExecutionHistoryResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the GetWorkflowExecutionHistory operation.
         /// </summary>
@@ -552,6 +570,7 @@ namespace Amazon.SimpleWorkflow
 
             return Invoke<ListActivityTypesRequest,ListActivityTypesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListActivityTypes operation.
@@ -583,6 +602,7 @@ namespace Amazon.SimpleWorkflow
             return Invoke<ListClosedWorkflowExecutionsRequest,ListClosedWorkflowExecutionsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListClosedWorkflowExecutions operation.
         /// </summary>
@@ -612,6 +632,7 @@ namespace Amazon.SimpleWorkflow
 
             return Invoke<ListDomainsRequest,ListDomainsResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDomains operation.
@@ -643,6 +664,7 @@ namespace Amazon.SimpleWorkflow
             return Invoke<ListOpenWorkflowExecutionsRequest,ListOpenWorkflowExecutionsResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListOpenWorkflowExecutions operation.
         /// </summary>
@@ -672,6 +694,7 @@ namespace Amazon.SimpleWorkflow
 
             return Invoke<ListWorkflowTypesRequest,ListWorkflowTypesResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListWorkflowTypes operation.
@@ -703,6 +726,7 @@ namespace Amazon.SimpleWorkflow
             return Invoke<PollForActivityTaskRequest,PollForActivityTaskResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the PollForActivityTask operation.
         /// </summary>
@@ -732,6 +756,7 @@ namespace Amazon.SimpleWorkflow
 
             return Invoke<PollForDecisionTaskRequest,PollForDecisionTaskResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the PollForDecisionTask operation.
@@ -763,6 +788,7 @@ namespace Amazon.SimpleWorkflow
             return Invoke<RecordActivityTaskHeartbeatRequest,RecordActivityTaskHeartbeatResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RecordActivityTaskHeartbeat operation.
         /// </summary>
@@ -792,6 +818,7 @@ namespace Amazon.SimpleWorkflow
 
             return Invoke<RegisterActivityTypeRequest,RegisterActivityTypeResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterActivityType operation.
@@ -823,6 +850,7 @@ namespace Amazon.SimpleWorkflow
             return Invoke<RegisterDomainRequest,RegisterDomainResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterDomain operation.
         /// </summary>
@@ -852,6 +880,7 @@ namespace Amazon.SimpleWorkflow
 
             return Invoke<RegisterWorkflowTypeRequest,RegisterWorkflowTypeResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterWorkflowType operation.
@@ -883,6 +912,7 @@ namespace Amazon.SimpleWorkflow
             return Invoke<RequestCancelWorkflowExecutionRequest,RequestCancelWorkflowExecutionResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RequestCancelWorkflowExecution operation.
         /// </summary>
@@ -912,6 +942,7 @@ namespace Amazon.SimpleWorkflow
 
             return Invoke<RespondActivityTaskCanceledRequest,RespondActivityTaskCanceledResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RespondActivityTaskCanceled operation.
@@ -943,6 +974,7 @@ namespace Amazon.SimpleWorkflow
             return Invoke<RespondActivityTaskCompletedRequest,RespondActivityTaskCompletedResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RespondActivityTaskCompleted operation.
         /// </summary>
@@ -972,6 +1004,7 @@ namespace Amazon.SimpleWorkflow
 
             return Invoke<RespondActivityTaskFailedRequest,RespondActivityTaskFailedResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RespondActivityTaskFailed operation.
@@ -1003,6 +1036,7 @@ namespace Amazon.SimpleWorkflow
             return Invoke<RespondDecisionTaskCompletedRequest,RespondDecisionTaskCompletedResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the RespondDecisionTaskCompleted operation.
         /// </summary>
@@ -1032,6 +1066,7 @@ namespace Amazon.SimpleWorkflow
 
             return Invoke<SignalWorkflowExecutionRequest,SignalWorkflowExecutionResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the SignalWorkflowExecution operation.
@@ -1063,6 +1098,7 @@ namespace Amazon.SimpleWorkflow
             return Invoke<StartWorkflowExecutionRequest,StartWorkflowExecutionResponse>(request, marshaller, unmarshaller);
         }
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the StartWorkflowExecution operation.
         /// </summary>
@@ -1092,6 +1128,7 @@ namespace Amazon.SimpleWorkflow
 
             return Invoke<TerminateWorkflowExecutionRequest,TerminateWorkflowExecutionResponse>(request, marshaller, unmarshaller);
         }
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the TerminateWorkflowExecution operation.

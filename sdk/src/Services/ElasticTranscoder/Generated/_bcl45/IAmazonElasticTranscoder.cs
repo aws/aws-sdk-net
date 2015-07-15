@@ -41,6 +41,7 @@ namespace Amazon.ElasticTranscoder
         
         #region  CancelJob
 
+
         /// <summary>
         /// The CancelJob operation cancels an unfinished job.
         /// 
@@ -74,6 +75,7 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         CancelJobResponse CancelJob(CancelJobRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CancelJob operation.
         /// </summary>
@@ -88,6 +90,7 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  CreateJob
+
 
         /// <summary>
         /// When you create a job, Elastic Transcoder returns JSON data that includes the values
@@ -126,6 +129,7 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         CreateJobResponse CreateJob(CreateJobRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreateJob operation.
         /// </summary>
@@ -140,6 +144,7 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  CreatePipeline
+
 
         /// <summary>
         /// The CreatePipeline operation creates a pipeline with settings that you specify.
@@ -170,6 +175,7 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         CreatePipelineResponse CreatePipeline(CreatePipelineRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePipeline operation.
         /// </summary>
@@ -184,6 +190,7 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  CreatePreset
+
 
         /// <summary>
         /// The CreatePreset operation creates a preset with settings that you specify.
@@ -225,6 +232,7 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         CreatePresetResponse CreatePreset(CreatePresetRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the CreatePreset operation.
         /// </summary>
@@ -239,6 +247,7 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  DeletePipeline
+
 
         /// <summary>
         /// The DeletePipeline operation removes a pipeline.
@@ -276,6 +285,7 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         DeletePipelineResponse DeletePipeline(DeletePipelineRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePipeline operation.
         /// </summary>
@@ -290,6 +300,7 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  DeletePreset
+
 
         /// <summary>
         /// The DeletePreset operation removes a preset that you've added in an AWS region.
@@ -322,6 +333,7 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         DeletePresetResponse DeletePreset(DeletePresetRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the DeletePreset operation.
         /// </summary>
@@ -336,6 +348,7 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  ListJobsByPipeline
+
 
         /// <summary>
         /// The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.
@@ -368,6 +381,7 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         ListJobsByPipelineResponse ListJobsByPipeline(ListJobsByPipelineRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobsByPipeline operation.
         /// </summary>
@@ -382,6 +396,7 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  ListJobsByStatus
+
 
         /// <summary>
         /// The ListJobsByStatus operation gets a list of jobs that have a specified status. The
@@ -409,6 +424,7 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         ListJobsByStatusResponse ListJobsByStatus(ListJobsByStatusRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListJobsByStatus operation.
         /// </summary>
@@ -423,6 +439,7 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  ListPipelines
+
 
         /// <summary>
         /// The ListPipelines operation gets a list of the pipelines associated with the current
@@ -444,6 +461,7 @@ namespace Amazon.ElasticTranscoder
         /// One or more required parameter values were not provided in the request.
         /// </exception>
         ListPipelinesResponse ListPipelines();
+
 
         /// <summary>
         /// The ListPipelines operation gets a list of the pipelines associated with the current
@@ -467,6 +485,32 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         ListPipelinesResponse ListPipelines(ListPipelinesRequest request);
 
+
+        /// <summary>
+        /// The ListPipelines operation gets a list of the pipelines associated with the current
+        /// AWS account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPipelines service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
+        Task<ListPipelinesResponse> ListPipelinesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListPipelines operation.
         /// </summary>
@@ -481,6 +525,7 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  ListPresets
+
 
         /// <summary>
         /// The ListPresets operation gets a list of the default presets included with Elastic
@@ -502,6 +547,7 @@ namespace Amazon.ElasticTranscoder
         /// One or more required parameter values were not provided in the request.
         /// </exception>
         ListPresetsResponse ListPresets();
+
 
         /// <summary>
         /// The ListPresets operation gets a list of the default presets included with Elastic
@@ -525,6 +571,32 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         ListPresetsResponse ListPresets(ListPresetsRequest request);
 
+
+        /// <summary>
+        /// The ListPresets operation gets a list of the default presets included with Elastic
+        /// Transcoder and the presets that you've added in an AWS region.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPresets service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
+        Task<ListPresetsResponse> ListPresetsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
         /// <summary>
         /// Initiates the asynchronous execution of the ListPresets operation.
         /// </summary>
@@ -539,6 +611,7 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  ReadJob
+
 
         /// <summary>
         /// The ReadJob operation returns detailed information about a job.
@@ -565,6 +638,7 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         ReadJobResponse ReadJob(ReadJobRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ReadJob operation.
         /// </summary>
@@ -579,6 +653,7 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  ReadPipeline
+
 
         /// <summary>
         /// The ReadPipeline operation gets detailed information about a pipeline.
@@ -605,6 +680,7 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         ReadPipelineResponse ReadPipeline(ReadPipelineRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ReadPipeline operation.
         /// </summary>
@@ -619,6 +695,7 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  ReadPreset
+
 
         /// <summary>
         /// The ReadPreset operation gets detailed information about a preset.
@@ -645,6 +722,7 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         ReadPresetResponse ReadPreset(ReadPresetRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the ReadPreset operation.
         /// </summary>
@@ -659,6 +737,7 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  TestRole
+
 
         /// <summary>
         /// The TestRole operation tests the IAM role used to create the pipeline.
@@ -694,6 +773,7 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         TestRoleResponse TestRole(TestRoleRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the TestRole operation.
         /// </summary>
@@ -708,6 +788,7 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  UpdatePipeline
+
 
         /// <summary>
         /// Use the <code>UpdatePipeline</code> operation to update settings for a pipeline.
@@ -742,6 +823,7 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdatePipeline operation.
         /// </summary>
@@ -756,6 +838,7 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  UpdatePipelineNotifications
+
 
         /// <summary>
         /// With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification
@@ -793,6 +876,7 @@ namespace Amazon.ElasticTranscoder
         /// </exception>
         UpdatePipelineNotificationsResponse UpdatePipelineNotifications(UpdatePipelineNotificationsRequest request);
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the UpdatePipelineNotifications operation.
         /// </summary>
@@ -807,6 +891,7 @@ namespace Amazon.ElasticTranscoder
         #endregion
         
         #region  UpdatePipelineStatus
+
 
         /// <summary>
         /// The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline
@@ -845,6 +930,7 @@ namespace Amazon.ElasticTranscoder
         /// One or more required parameter values were not provided in the request.
         /// </exception>
         UpdatePipelineStatusResponse UpdatePipelineStatus(UpdatePipelineStatusRequest request);
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdatePipelineStatus operation.

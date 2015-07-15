@@ -109,6 +109,7 @@ namespace Amazon.CodeDeploy
                 
         #region  AddTagsToOnPremisesInstances
 
+
         /// <summary>
         /// Initiates the asynchronous execution of the AddTagsToOnPremisesInstances operation.
         /// </summary>
@@ -118,11 +119,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<AddTagsToOnPremisesInstancesResponse> AddTagsToOnPremisesInstancesAsync(AddTagsToOnPremisesInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AddTagsToOnPremisesInstancesResponse> AddTagsToOnPremisesInstancesAsync(AddTagsToOnPremisesInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  BatchGetApplications
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the BatchGetApplications operation.
@@ -133,11 +135,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<BatchGetApplicationsResponse> BatchGetApplicationsAsync(BatchGetApplicationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<BatchGetApplicationsResponse> BatchGetApplicationsAsync(BatchGetApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  BatchGetDeployments
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the BatchGetDeployments operation.
@@ -148,11 +151,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<BatchGetDeploymentsResponse> BatchGetDeploymentsAsync(BatchGetDeploymentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<BatchGetDeploymentsResponse> BatchGetDeploymentsAsync(BatchGetDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  BatchGetOnPremisesInstances
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the BatchGetOnPremisesInstances operation.
@@ -163,11 +167,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<BatchGetOnPremisesInstancesResponse> BatchGetOnPremisesInstancesAsync(BatchGetOnPremisesInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<BatchGetOnPremisesInstancesResponse> BatchGetOnPremisesInstancesAsync(BatchGetOnPremisesInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateApplication
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateApplication operation.
@@ -178,11 +183,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateDeployment
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDeployment operation.
@@ -193,11 +199,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateDeploymentConfig
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDeploymentConfig operation.
@@ -208,11 +215,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateDeploymentConfigResponse> CreateDeploymentConfigAsync(CreateDeploymentConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateDeploymentConfigResponse> CreateDeploymentConfigAsync(CreateDeploymentConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  CreateDeploymentGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDeploymentGroup operation.
@@ -223,11 +231,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateDeploymentGroupResponse> CreateDeploymentGroupAsync(CreateDeploymentGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<CreateDeploymentGroupResponse> CreateDeploymentGroupAsync(CreateDeploymentGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteApplication
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteApplication operation.
@@ -238,11 +247,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteDeploymentConfig
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDeploymentConfig operation.
@@ -253,11 +263,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteDeploymentConfigResponse> DeleteDeploymentConfigAsync(DeleteDeploymentConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteDeploymentConfigResponse> DeleteDeploymentConfigAsync(DeleteDeploymentConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeleteDeploymentGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDeploymentGroup operation.
@@ -268,11 +279,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteDeploymentGroupResponse> DeleteDeploymentGroupAsync(DeleteDeploymentGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeleteDeploymentGroupResponse> DeleteDeploymentGroupAsync(DeleteDeploymentGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  DeregisterOnPremisesInstance
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeregisterOnPremisesInstance operation.
@@ -283,11 +295,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeregisterOnPremisesInstanceResponse> DeregisterOnPremisesInstanceAsync(DeregisterOnPremisesInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<DeregisterOnPremisesInstanceResponse> DeregisterOnPremisesInstanceAsync(DeregisterOnPremisesInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetApplication
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetApplication operation.
@@ -298,11 +311,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetApplicationResponse> GetApplicationAsync(GetApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetApplicationResponse> GetApplicationAsync(GetApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetApplicationRevision
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetApplicationRevision operation.
@@ -313,11 +327,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetApplicationRevisionResponse> GetApplicationRevisionAsync(GetApplicationRevisionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetApplicationRevisionResponse> GetApplicationRevisionAsync(GetApplicationRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetDeployment
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDeployment operation.
@@ -328,11 +343,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetDeploymentConfig
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDeploymentConfig operation.
@@ -343,11 +359,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetDeploymentConfigResponse> GetDeploymentConfigAsync(GetDeploymentConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetDeploymentConfigResponse> GetDeploymentConfigAsync(GetDeploymentConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetDeploymentGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDeploymentGroup operation.
@@ -358,11 +375,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetDeploymentGroupResponse> GetDeploymentGroupAsync(GetDeploymentGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetDeploymentGroupResponse> GetDeploymentGroupAsync(GetDeploymentGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetDeploymentInstance
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDeploymentInstance operation.
@@ -373,11 +391,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetDeploymentInstanceResponse> GetDeploymentInstanceAsync(GetDeploymentInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetDeploymentInstanceResponse> GetDeploymentInstanceAsync(GetDeploymentInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  GetOnPremisesInstance
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetOnPremisesInstance operation.
@@ -388,11 +407,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<GetOnPremisesInstanceResponse> GetOnPremisesInstanceAsync(GetOnPremisesInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetOnPremisesInstanceResponse> GetOnPremisesInstanceAsync(GetOnPremisesInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListApplicationRevisions
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListApplicationRevisions operation.
@@ -403,11 +423,26 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListApplicationRevisionsResponse> ListApplicationRevisionsAsync(ListApplicationRevisionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListApplicationRevisionsResponse> ListApplicationRevisionsAsync(ListApplicationRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListApplications
+
+
+        /// <summary>
+        /// Lists the applications registered with the applicable IAM user or AWS account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListApplications service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format.
+        /// </exception>
+        Task<ListApplicationsResponse> ListApplicationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListApplications operation.
@@ -418,11 +453,26 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListDeploymentConfigs
+
+
+        /// <summary>
+        /// Lists the deployment configurations with the applicable IAM user or AWS account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDeploymentConfigs service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format.
+        /// </exception>
+        Task<ListDeploymentConfigsResponse> ListDeploymentConfigsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDeploymentConfigs operation.
@@ -433,11 +483,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListDeploymentConfigsResponse> ListDeploymentConfigsAsync(ListDeploymentConfigsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListDeploymentConfigsResponse> ListDeploymentConfigsAsync(ListDeploymentConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListDeploymentGroups
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDeploymentGroups operation.
@@ -448,11 +499,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListDeploymentGroupsResponse> ListDeploymentGroupsAsync(ListDeploymentGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListDeploymentGroupsResponse> ListDeploymentGroupsAsync(ListDeploymentGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListDeploymentInstances
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDeploymentInstances operation.
@@ -463,11 +515,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListDeploymentInstancesResponse> ListDeploymentInstancesAsync(ListDeploymentInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListDeploymentInstancesResponse> ListDeploymentInstancesAsync(ListDeploymentInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListDeployments
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDeployments operation.
@@ -478,11 +531,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListDeploymentsResponse> ListDeploymentsAsync(ListDeploymentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListDeploymentsResponse> ListDeploymentsAsync(ListDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  ListOnPremisesInstances
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListOnPremisesInstances operation.
@@ -493,11 +547,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListOnPremisesInstancesResponse> ListOnPremisesInstancesAsync(ListOnPremisesInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListOnPremisesInstancesResponse> ListOnPremisesInstancesAsync(ListOnPremisesInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  RegisterApplicationRevision
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterApplicationRevision operation.
@@ -508,11 +563,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<RegisterApplicationRevisionResponse> RegisterApplicationRevisionAsync(RegisterApplicationRevisionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<RegisterApplicationRevisionResponse> RegisterApplicationRevisionAsync(RegisterApplicationRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  RegisterOnPremisesInstance
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterOnPremisesInstance operation.
@@ -523,11 +579,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<RegisterOnPremisesInstanceResponse> RegisterOnPremisesInstanceAsync(RegisterOnPremisesInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<RegisterOnPremisesInstanceResponse> RegisterOnPremisesInstanceAsync(RegisterOnPremisesInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  RemoveTagsFromOnPremisesInstances
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemoveTagsFromOnPremisesInstances operation.
@@ -538,11 +595,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<RemoveTagsFromOnPremisesInstancesResponse> RemoveTagsFromOnPremisesInstancesAsync(RemoveTagsFromOnPremisesInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<RemoveTagsFromOnPremisesInstancesResponse> RemoveTagsFromOnPremisesInstancesAsync(RemoveTagsFromOnPremisesInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  StopDeployment
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the StopDeployment operation.
@@ -553,11 +611,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<StopDeploymentResponse> StopDeploymentAsync(StopDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<StopDeploymentResponse> StopDeploymentAsync(StopDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateApplication
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateApplication operation.
@@ -568,11 +627,12 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
         #region  UpdateDeploymentGroup
+
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDeploymentGroup operation.
@@ -583,7 +643,7 @@ namespace Amazon.CodeDeploy
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateDeploymentGroupResponse> UpdateDeploymentGroupAsync(UpdateDeploymentGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateDeploymentGroupResponse> UpdateDeploymentGroupAsync(UpdateDeploymentGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
