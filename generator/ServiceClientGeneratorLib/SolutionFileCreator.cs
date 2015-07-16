@@ -186,6 +186,8 @@ namespace ServiceClientGenerator
                         var thirdQuote = condition.IndexOfNthOccurence('\'', 0, 3);
                         var fourthQuote = condition.IndexOf('\'', thirdQuote);
                         var platform = condition.Substring(thirdQuote, fourthQuote - thirdQuote);
+                        // Project files use the string "AnyCPU", solution files use "Any CPU"
+                        platform = platform.Replace("AnyCPU", "Any CPU");
                         platforms.Add(platform);
                     }
                 }
