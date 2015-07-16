@@ -12,7 +12,9 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Route 53 Domains. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Core Runtime")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Amazon Route 53 Domains. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
+#elif DNX
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- Amazon Route 53 Domains. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

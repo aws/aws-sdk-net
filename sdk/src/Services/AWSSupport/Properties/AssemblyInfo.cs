@@ -12,7 +12,9 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Support. The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Core Runtime")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- AWS Support. The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center.")]
+#elif DNX
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- AWS Support. The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

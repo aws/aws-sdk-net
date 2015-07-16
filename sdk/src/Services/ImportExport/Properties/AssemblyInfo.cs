@@ -12,7 +12,9 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Import/Export. AWS Import/Export")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Core Runtime")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- AWS Import/Export. AWS Import/Export")]
+#elif DNX
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- AWS Import/Export. AWS Import/Export")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

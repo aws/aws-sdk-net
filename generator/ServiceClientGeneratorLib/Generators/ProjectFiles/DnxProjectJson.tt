@@ -12,6 +12,17 @@
   "licenseUrl": "",
 
   "dependencies": {
+<#
+    if(this.Session.ContainsKey("ServiceDependencies"))
+    {
+        foreach(string dependency in (List<string>)this.Session["ServiceDependencies"])
+        {
+#>
+    "<#=dependency#>": "1.0.0-*",
+<#
+        }
+    }
+#>
     "Core": "1.0.0-*"
   },
 
@@ -27,7 +38,8 @@
     "**/_pclReference/*",
     "**/_win8/*",
     "**/_winPhone81/*",
-    "**/_winPhoneSilverlight8/*"
+    "**/_winPhoneSilverlight8/*",
+    "**/_winstorage/*"
 
   ],
 

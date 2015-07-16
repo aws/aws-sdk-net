@@ -12,7 +12,9 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Elastic Load Balancing. Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Core Runtime")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Elastic Load Balancing. Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.")]
+#elif DNX
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- Elastic Load Balancing. Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

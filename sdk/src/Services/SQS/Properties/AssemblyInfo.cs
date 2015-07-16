@@ -12,9 +12,9 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Simple Queue Service. Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service. SQS makes it simple and cost-effective to decouple the components of a cloud application.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Amazon Simple Queue Service. Amazon Simple Queue Service")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Amazon Simple Queue Service. Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service. SQS makes it simple and cost-effective to decouple the components of a cloud application.")]
 #elif DNX
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- Amazon Simple Queue Service. Amazon Simple Queue Service")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- Amazon Simple Queue Service. Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service. SQS makes it simple and cost-effective to decouple the components of a cloud application.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

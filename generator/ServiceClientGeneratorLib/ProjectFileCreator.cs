@@ -250,7 +250,16 @@ namespace ServiceClientGenerator
             {
                 var templateSession = new Dictionary<string, object>();
 
-                // TODO: add dependency information
+                var dependencies = new List<string>();
+                foreach(var dependency in serviceConfiguration.ServiceDependencies.Keys)
+                {
+                    if (string.Equals(dependency, "Core", StringComparison.InvariantCultureIgnoreCase))
+                        continue;
+
+                    dependencies.Add(dependency);
+                }
+
+                templateSession["ServiceDependencies"] = dependencies;
 
                 var projectJsonTemplate = new DnxProjectJson();
                 projectJsonTemplate.Session = templateSession;

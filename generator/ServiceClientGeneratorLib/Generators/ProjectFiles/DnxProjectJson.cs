@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectJson.tt"
+    #line 1 "C:\codebase\V3\aws-sdk-net-dnx\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectJson.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class DnxProjectJson : DnxProjectJsonBase
     {
@@ -28,16 +28,37 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write(@"{
-  ""version"": ""1.0.0-*"",
-  ""description"": """",
-  ""authors"": [ """" ],
-  ""tags"": [ """" ],
-  ""projectUrl"": """",
-  ""licenseUrl"": """",
+            this.Write("{\r\n  \"version\": \"1.0.0-*\",\r\n  \"description\": \"\",\r\n  \"authors\": [ \"\" ],\r\n  \"tags\":" +
+                    " [ \"\" ],\r\n  \"projectUrl\": \"\",\r\n  \"licenseUrl\": \"\",\r\n\r\n  \"dependencies\": {\r\n");
+            
+            #line 15 "C:\codebase\V3\aws-sdk-net-dnx\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectJson.tt"
 
-  ""dependencies"": {
-    ""Core"": ""1.0.0-*""
+    if(this.Session.ContainsKey("ServiceDependencies"))
+    {
+        foreach(string dependency in (List<string>)this.Session["ServiceDependencies"])
+        {
+
+            
+            #line default
+            #line hidden
+            this.Write("    \"");
+            
+            #line 21 "C:\codebase\V3\aws-sdk-net-dnx\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectJson.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(dependency));
+            
+            #line default
+            #line hidden
+            this.Write("\": \"1.0.0-*\",\r\n");
+            
+            #line 22 "C:\codebase\V3\aws-sdk-net-dnx\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectJson.tt"
+
+        }
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write(@"    ""Core"": ""1.0.0-*""
   },
 
   ""exclude"": [
@@ -52,7 +73,8 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     ""**/_pclReference/*"",
     ""**/_win8/*"",
     ""**/_winPhone81/*"",
-    ""**/_winPhoneSilverlight8/*""
+    ""**/_winPhoneSilverlight8/*"",
+    ""**/_winstorage/*""
 
   ],
 
