@@ -29,7 +29,8 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the StopConfigurationRecorder operation.
-    /// Stops recording configurations of all the resources associated with the account.
+    /// Stops recording configurations of the AWS resources you have selected to record in
+    /// your AWS account.
     /// </summary>
     public partial class StopConfigurationRecorderRequest : AmazonConfigServiceRequest
     {

@@ -1,0 +1,24 @@
+
+{
+    "noArgOverloads": [
+		"ListStreams"
+	  ],
+    "simpleMethods" : {
+        "operations" : {
+            "DescribeStream" : {
+                "methodForms" : [
+                    [
+                        "StreamArn"
+                    ]
+                ]
+            },
+            "GetRecords" : {
+                "methodForms" : [
+                    [
+                        "ShardIterator"
+					]
+                ]
+            }            
+        }
+    }
+}

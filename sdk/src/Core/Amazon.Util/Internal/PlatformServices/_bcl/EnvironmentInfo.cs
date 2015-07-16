@@ -4,54 +4,45 @@ using System.Linq;
 using System.Text;
 
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using Microsoft.Win32;
 
 namespace Amazon.Util.Internal.PlatformServices
 {
     public class EnvironmentInfo : IEnvironmentInfo
     {
-        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
-        public string Platform
+        public EnvironmentInfo()
         {
-            get
-            {
-                throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
-            }
+            this.Platform = Environment.OSVersion.Platform.ToString();
+            this.PlatformVersion = Environment.OSVersion.Version.ToString();
+            this.PlatformUserAgent = Environment.OSVersion.VersionString;
+            this.Model = "Unknown";
+            this.Make = "Unknown";
+            this.Locale = CultureInfo.CurrentCulture.DisplayName;
+            this.FrameworkUserAgent =
+                string.Format(CultureInfo.InvariantCulture,
+                ".NET Runtime/{0}.{1} .NET Framework/{2}",
+                 Environment.Version.Major,
+                 Environment.Version.MajorRevision,
+                 InternalSDKUtils.DetermineFramework());
+            this.PclPlatform = string.Empty;
         }
 
-        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
-        public string Model
-        {
-            get
-            {
-                throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
-            }
-        }
+        public string Platform { get; private set; }
 
-        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
-        public string Make
-        {
-            get
-            {
-                throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
-            }
-        }
+        public string PlatformUserAgent { get; private set; }
 
-        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
-        public string PlatformVersion
-        {
-            get
-            {
-                throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
-            }
-        }
+        public string Model { get; private set; }
 
-        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
-        public string Locale
-        {
-            get
-            {
-                throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
-            }
-        }
+        public string Make { get; private set; }
+
+        public string PlatformVersion { get; private set; }
+
+        public string Locale { get; private set; }
+
+        public string FrameworkUserAgent { get; private set; }
+
+        public string PclPlatform { get; private set; }
+
     }
 }

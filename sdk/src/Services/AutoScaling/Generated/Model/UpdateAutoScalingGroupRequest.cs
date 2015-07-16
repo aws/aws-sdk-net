@@ -143,7 +143,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
         /// The number of EC2 instances that should be running in the Auto Scaling group. This
-        /// value must be greater than or equal to the minimum size of the group and less than
+        /// number must be greater than or equal to the minimum size of the group and less than
         /// or equal to the maximum size of the group.
         /// </para>
         /// </summary>

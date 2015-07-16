@@ -34,7 +34,8 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  
     /// <para>
-    /// This action is throttled at one request per second.
+    /// This action is throttled at one request per second and can only get verification attributes
+    /// for up to 100 identities at a time.
     /// </para>
     /// </summary>
     public partial class GetIdentityVerificationAttributesRequest : AmazonSimpleEmailServiceRequest

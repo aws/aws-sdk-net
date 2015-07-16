@@ -2261,6 +2261,55 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DeleteSSHPublicKey
+
+
+        /// <summary>
+        /// Deletes the specified SSH public key.
+        /// 
+        ///  
+        /// <para>
+        /// The SSH public key deleted by this action is used only for authenticating the associated
+        /// IAM user to an AWS CodeCommit repository. For more information about using SSH keys
+        /// to authenticate to an AWS CodeCommit repository, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
+        /// up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSSHPublicKey service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSSHPublicKey service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        DeleteSSHPublicKeyResponse DeleteSSHPublicKey(DeleteSSHPublicKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSSHPublicKey operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSSHPublicKey
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteSSHPublicKey(DeleteSSHPublicKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSSHPublicKey.</param>
+        /// 
+        /// <returns>Returns a  DeleteSSHPublicKeyResult from IdentityManagementService.</returns>
+        DeleteSSHPublicKeyResponse EndDeleteSSHPublicKey(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteUser
 
 
@@ -2624,8 +2673,8 @@ namespace Amazon.IdentityManagement
         /// error message describes the entity.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.InvalidAuthenticationCodeException">
-        /// The request was rejected because the authentication code was not recognized. The
-        /// error message describes the specific error.
+        /// The request was rejected because the authentication code was not recognized. The error
+        /// message describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
@@ -3602,6 +3651,59 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>Returns a  GetServerCertificateResult from IdentityManagementService.</returns>
         GetServerCertificateResponse EndGetServerCertificate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetSSHPublicKey
+
+
+        /// <summary>
+        /// Retrieves the specified SSH public key, including metadata about the key.
+        /// 
+        ///  
+        /// <para>
+        /// The SSH public key retrieved by this action is used only for authenticating the associated
+        /// IAM user to an AWS CodeCommit repository. For more information about using SSH keys
+        /// to authenticate to an AWS CodeCommit repository, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
+        /// up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSSHPublicKey service method.</param>
+        /// 
+        /// <returns>The response from the GetSSHPublicKey service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.UnrecognizedPublicKeyEncodingException">
+        /// The request was rejected because the public key encoding format is unsupported or
+        /// unrecognized.
+        /// </exception>
+        GetSSHPublicKeyResponse GetSSHPublicKey(GetSSHPublicKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSSHPublicKey operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSSHPublicKey
+        ///         operation.</returns>
+        IAsyncResult BeginGetSSHPublicKey(GetSSHPublicKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSSHPublicKey.</param>
+        /// 
+        /// <returns>Returns a  GetSSHPublicKeyResult from IdentityManagementService.</returns>
+        GetSSHPublicKeyResponse EndGetSSHPublicKey(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5027,6 +5129,61 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  ListSSHPublicKeys
+
+
+        /// <summary>
+        /// Returns information about the SSH public keys associated with the specified IAM user.
+        /// If there are none, the action returns an empty list.
+        /// 
+        ///  
+        /// <para>
+        /// The SSH public keys returned by this action are used only for authenticating the IAM
+        /// user to an AWS CodeCommit repository. For more information about using SSH keys to
+        /// authenticate to an AWS CodeCommit repository, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
+        /// up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Although each user is limited to a small number of keys, you can still paginate the
+        /// results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSSHPublicKeys service method.</param>
+        /// 
+        /// <returns>The response from the ListSSHPublicKeys service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        ListSSHPublicKeysResponse ListSSHPublicKeys(ListSSHPublicKeysRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSSHPublicKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSSHPublicKeys operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSSHPublicKeys
+        ///         operation.</returns>
+        IAsyncResult BeginListSSHPublicKeys(ListSSHPublicKeysRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSSHPublicKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSSHPublicKeys.</param>
+        /// 
+        /// <returns>Returns a  ListSSHPublicKeysResult from IdentityManagementService.</returns>
+        ListSSHPublicKeysResponse EndListSSHPublicKeys(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListUserPolicies
 
 
@@ -5612,8 +5769,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ResyncMFADevice service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.InvalidAuthenticationCodeException">
-        /// The request was rejected because the authentication code was not recognized. The
-        /// error message describes the specific error.
+        /// The request was rejected because the authentication code was not recognized. The error
+        /// message describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
@@ -6298,6 +6455,57 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  UpdateSSHPublicKey
+
+
+        /// <summary>
+        /// Sets the status of the specified SSH public key to active or inactive. SSH public
+        /// keys that are inactive cannot be used for authentication. This action can be used
+        /// to disable a user's SSH public key as part of a key rotation work flow. 
+        /// 
+        ///  
+        /// <para>
+        /// The SSH public key affected by this action is used only for authenticating the associated
+        /// IAM user to an AWS CodeCommit repository. For more information about using SSH keys
+        /// to authenticate to an AWS CodeCommit repository, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
+        /// up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSSHPublicKey service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSSHPublicKey service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        UpdateSSHPublicKeyResponse UpdateSSHPublicKey(UpdateSSHPublicKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSSHPublicKey operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSSHPublicKey
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateSSHPublicKey(UpdateSSHPublicKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSSHPublicKey.</param>
+        /// 
+        /// <returns>Returns a  UpdateSSHPublicKeyResult from IdentityManagementService.</returns>
+        UpdateSSHPublicKeyResponse EndUpdateSSHPublicKey(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateUser
 
 
@@ -6461,8 +6669,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the UploadSigningCertificate service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.DuplicateCertificateException">
-        /// The request was rejected because the same certificate is associated to another user
-        /// under the account.
+        /// The request was rejected because the same certificate is associated with an IAM user
+        /// in the account.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
@@ -6510,6 +6718,70 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>Returns a  UploadSigningCertificateResult from IdentityManagementService.</returns>
         UploadSigningCertificateResponse EndUploadSigningCertificate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UploadSSHPublicKey
+
+
+        /// <summary>
+        /// Uploads an SSH public key and associates it with the specified IAM user.
+        /// 
+        ///  
+        /// <para>
+        /// The SSH public key uploaded by this action can be used only for authenticating the
+        /// associated IAM user to an AWS CodeCommit repository. For more information about using
+        /// SSH keys to authenticate to an AWS CodeCommit repository, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
+        /// up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UploadSSHPublicKey service method.</param>
+        /// 
+        /// <returns>The response from the UploadSSHPublicKey service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.DuplicateSSHPublicKeyException">
+        /// The request was rejected because the SSH public key is already associated with the
+        /// specified IAM user.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidPublicKeyException">
+        /// The request was rejected because the public key is malformed or otherwise invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.UnrecognizedPublicKeyEncodingException">
+        /// The request was rejected because the public key encoding format is unsupported or
+        /// unrecognized.
+        /// </exception>
+        UploadSSHPublicKeyResponse UploadSSHPublicKey(UploadSSHPublicKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UploadSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UploadSSHPublicKey operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadSSHPublicKey
+        ///         operation.</returns>
+        IAsyncResult BeginUploadSSHPublicKey(UploadSSHPublicKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UploadSSHPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadSSHPublicKey.</param>
+        /// 
+        /// <returns>Returns a  UploadSSHPublicKeyResult from IdentityManagementService.</returns>
+        UploadSSHPublicKeyResponse EndUploadSSHPublicKey(IAsyncResult asyncResult);
 
         #endregion
         

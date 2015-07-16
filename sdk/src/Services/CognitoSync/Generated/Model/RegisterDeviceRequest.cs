@@ -30,6 +30,12 @@ namespace Amazon.CognitoSync.Model
     /// <summary>
     /// Container for the parameters to the RegisterDevice operation.
     /// Registers a device to receive push sync notifications.
+    /// 
+    ///  
+    /// <para>
+    /// This API can only be called with temporary credentials provided by Cognito Identity.
+    /// You cannot call this API with developer credentials.
+    /// </para>
     /// </summary>
     public partial class RegisterDeviceRequest : AmazonCognitoSyncRequest
     {

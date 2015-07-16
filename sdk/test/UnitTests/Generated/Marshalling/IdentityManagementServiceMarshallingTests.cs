@@ -764,6 +764,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void DeleteSSHPublicKeyMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteSSHPublicKey");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSSHPublicKeyRequest>();
+            var marshaller = new DeleteSSHPublicKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void DeleteUserMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteUser");
@@ -1305,6 +1324,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void GetSSHPublicKeyMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSSHPublicKey");
+
+            var request = InstantiateClassGenerator.Execute<GetSSHPublicKeyRequest>();
+            var marshaller = new GetSSHPublicKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetSSHPublicKeyResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetSSHPublicKeyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void GetUserMarshallTest()
         {
             var operation = service_model.FindOperation("GetUser");
@@ -1833,6 +1876,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void ListSSHPublicKeysMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListSSHPublicKeys");
+
+            var request = InstantiateClassGenerator.Execute<ListSSHPublicKeysRequest>();
+            var marshaller = new ListSSHPublicKeysRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListSSHPublicKeysResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListSSHPublicKeysResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void ListUserPoliciesMarshallTest()
         {
             var operation = service_model.FindOperation("ListUserPolicies");
@@ -2233,6 +2300,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void UpdateSSHPublicKeyMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateSSHPublicKey");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSSHPublicKeyRequest>();
+            var marshaller = new UpdateSSHPublicKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void UpdateUserMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateUser");
@@ -2291,6 +2377,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = UploadSigningCertificateResponseUnmarshaller.Instance.Unmarshall(context)
                 as UploadSigningCertificateResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void UploadSSHPublicKeyMarshallTest()
+        {
+            var operation = service_model.FindOperation("UploadSSHPublicKey");
+
+            var request = InstantiateClassGenerator.Execute<UploadSSHPublicKeyRequest>();
+            var marshaller = new UploadSSHPublicKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = UploadSSHPublicKeyResponseUnmarshaller.Instance.Unmarshall(context)
+                as UploadSSHPublicKeyResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

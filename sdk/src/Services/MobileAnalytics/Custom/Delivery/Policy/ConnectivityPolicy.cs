@@ -33,7 +33,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     {
         private readonly bool IsDataAllowed;
         private INetworkReachability networkReachability = new NetworkReachability();
-        private static Logger _logger = Logger.GetLogger(typeof(ConnectivityPolicy));
+        private Logger _logger = Logger.GetLogger(typeof(ConnectivityPolicy));
 
         /// <summary>
         /// Initializes a new instance of the

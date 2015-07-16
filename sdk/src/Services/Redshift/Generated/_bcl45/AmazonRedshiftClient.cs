@@ -497,6 +497,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidVPCNetworkStateException">
         /// The cluster subnet group does not cover all Availability Zones.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
+        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.NumberOfNodesPerClusterLimitExceededException">
         /// The operation would exceed the number of nodes allowed for a cluster.
         /// </exception>
@@ -555,8 +558,8 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  Parameters in the parameter group define specific behavior that applies to the databases
-        /// you create on the cluster. For more information about managing parameter groups, go
-        /// to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+        /// you create on the cluster. For more information about parameters and parameter groups,
+        /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
         /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// 
         /// </para>
@@ -1023,6 +1026,68 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  CreateSnapshotCopyGrant
+
+
+        /// <summary>
+        /// Creates a snapshot copy grant that permits Amazon Redshift to use a customer master
+        /// key (CMK) from AWS Key Management Service (AWS KMS) to encrypt copied snapshots in
+        /// a destination region.
+        /// 
+        ///  
+        /// <para>
+        ///  For more information about managing snapshot copy grants, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
+        /// Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshotCopyGrant service method.</param>
+        /// 
+        /// <returns>The response from the CreateSnapshotCopyGrant service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
+        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.SnapshotCopyGrantAlreadyExistsException">
+        /// The snapshot copy grant can't be created because a grant with the same name already
+        /// exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.SnapshotCopyGrantQuotaExceededException">
+        /// The AWS account has exceeded the maximum number of snapshot copy grants in this region.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
+        /// The request exceeds the limit of 10 tags for the resource.
+        /// </exception>
+        public CreateSnapshotCopyGrantResponse CreateSnapshotCopyGrant(CreateSnapshotCopyGrantRequest request)
+        {
+            var marshaller = new CreateSnapshotCopyGrantRequestMarshaller();
+            var unmarshaller = CreateSnapshotCopyGrantResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSnapshotCopyGrantRequest,CreateSnapshotCopyGrantResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSnapshotCopyGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshotCopyGrant operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateSnapshotCopyGrantResponse> CreateSnapshotCopyGrantAsync(CreateSnapshotCopyGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateSnapshotCopyGrantRequestMarshaller();
+            var unmarshaller = CreateSnapshotCopyGrantResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSnapshotCopyGrantRequest,CreateSnapshotCopyGrantResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTags
 
 
@@ -1478,6 +1543,50 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  DeleteSnapshotCopyGrant
+
+
+        /// <summary>
+        /// Deletes the specified snapshot copy grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshotCopyGrant service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSnapshotCopyGrant service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidSnapshotCopyGrantStateException">
+        /// The snapshot copy grant can't be deleted because it is used by one or more clusters.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.SnapshotCopyGrantNotFoundException">
+        /// The specified snapshot copy grant can't be found. Make sure that the name is typed
+        /// correctly and that the grant exists in the destination region.
+        /// </exception>
+        public DeleteSnapshotCopyGrantResponse DeleteSnapshotCopyGrant(DeleteSnapshotCopyGrantRequest request)
+        {
+            var marshaller = new DeleteSnapshotCopyGrantRequestMarshaller();
+            var unmarshaller = DeleteSnapshotCopyGrantResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSnapshotCopyGrantRequest,DeleteSnapshotCopyGrantResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSnapshotCopyGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshotCopyGrant operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteSnapshotCopyGrantResponse> DeleteSnapshotCopyGrantAsync(DeleteSnapshotCopyGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteSnapshotCopyGrantRequestMarshaller();
+            var unmarshaller = DeleteSnapshotCopyGrantResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSnapshotCopyGrantRequest,DeleteSnapshotCopyGrantResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteTags
 
 
@@ -1488,6 +1597,9 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
         /// 
         /// <returns>The response from the DeleteTags service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
@@ -1530,7 +1642,7 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+        ///  For more information about parameters and parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
         /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// 
         /// </para>
@@ -1553,6 +1665,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupNotFoundException">
         /// The parameter group name does not refer to an existing parameter group.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         public DescribeClusterParameterGroupsResponse DescribeClusterParameterGroups()
         {
             return DescribeClusterParameterGroups(new DescribeClusterParameterGroupsRequest());
@@ -1567,7 +1682,7 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+        ///  For more information about parameters and parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
         /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// 
         /// </para>
@@ -1591,6 +1706,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupNotFoundException">
         /// The parameter group name does not refer to an existing parameter group.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         public DescribeClusterParameterGroupsResponse DescribeClusterParameterGroups(DescribeClusterParameterGroupsRequest request)
         {
             var marshaller = new DescribeClusterParameterGroupsRequestMarshaller();
@@ -1608,7 +1726,7 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+        ///  For more information about parameters and parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
         /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// 
         /// </para>
@@ -1633,6 +1751,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeClusterParameterGroups service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupNotFoundException">
         /// The parameter group name does not refer to an existing parameter group.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
         /// </exception>
         public Task<DescribeClusterParameterGroupsResponse> DescribeClusterParameterGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1675,7 +1796,7 @@ namespace Amazon.Redshift
         /// </para>
         ///  
         /// <para>
-        ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+        ///  For more information about parameters and parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
         /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// 
         /// </para>
@@ -1743,6 +1864,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         public DescribeClustersResponse DescribeClusters()
         {
             return DescribeClusters(new DescribeClustersRequest());
@@ -1775,6 +1899,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeClusters service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
         /// </exception>
         public DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
         {
@@ -1813,6 +1940,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeClusters service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
         /// </exception>
         public Task<DescribeClustersResponse> DescribeClustersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1871,6 +2001,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
         /// The cluster security group name does not refer to an existing cluster security group.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         public DescribeClusterSecurityGroupsResponse DescribeClusterSecurityGroups()
         {
             return DescribeClusterSecurityGroups(new DescribeClusterSecurityGroupsRequest());
@@ -1907,6 +2040,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeClusterSecurityGroups service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
         /// The cluster security group name does not refer to an existing cluster security group.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
         /// </exception>
         public DescribeClusterSecurityGroupsResponse DescribeClusterSecurityGroups(DescribeClusterSecurityGroupsRequest request)
         {
@@ -1949,6 +2085,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeClusterSecurityGroups service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
         /// The cluster security group name does not refer to an existing cluster security group.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
         /// </exception>
         public Task<DescribeClusterSecurityGroupsResponse> DescribeClusterSecurityGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2003,6 +2142,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         public DescribeClusterSnapshotsResponse DescribeClusterSnapshots()
         {
             return DescribeClusterSnapshots(new DescribeClusterSnapshotsRequest());
@@ -2035,6 +2177,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeClusterSnapshots service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
         /// </exception>
         public DescribeClusterSnapshotsResponse DescribeClusterSnapshots(DescribeClusterSnapshotsRequest request)
         {
@@ -2073,6 +2218,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeClusterSnapshots service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
         /// </exception>
         public Task<DescribeClusterSnapshotsResponse> DescribeClusterSnapshotsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2125,6 +2273,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException">
         /// The cluster subnet group name does not refer to an existing cluster subnet group.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         public DescribeClusterSubnetGroupsResponse DescribeClusterSubnetGroups()
         {
             return DescribeClusterSubnetGroups(new DescribeClusterSubnetGroupsRequest());
@@ -2155,6 +2306,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeClusterSubnetGroups service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException">
         /// The cluster subnet group name does not refer to an existing cluster subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
         /// </exception>
         public DescribeClusterSubnetGroupsResponse DescribeClusterSubnetGroups(DescribeClusterSubnetGroupsRequest request)
         {
@@ -2191,6 +2345,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeClusterSubnetGroups service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException">
         /// The cluster subnet group name does not refer to an existing cluster subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
         /// </exception>
         public Task<DescribeClusterSubnetGroupsResponse> DescribeClusterSubnetGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2294,7 +2451,7 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+        ///  For more information about parameters and parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
         /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// 
         /// </para>
@@ -2573,6 +2730,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.HsmClientCertificateNotFoundException">
         /// There is no Amazon Redshift HSM client certificate with the specified identifier.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         public DescribeHsmClientCertificatesResponse DescribeHsmClientCertificates()
         {
             return DescribeHsmClientCertificates(new DescribeHsmClientCertificatesRequest());
@@ -2603,6 +2763,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeHsmClientCertificates service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.HsmClientCertificateNotFoundException">
         /// There is no Amazon Redshift HSM client certificate with the specified identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
         /// </exception>
         public DescribeHsmClientCertificatesResponse DescribeHsmClientCertificates(DescribeHsmClientCertificatesRequest request)
         {
@@ -2639,6 +2802,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeHsmClientCertificates service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.HsmClientCertificateNotFoundException">
         /// There is no Amazon Redshift HSM client certificate with the specified identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
         /// </exception>
         public Task<DescribeHsmClientCertificatesResponse> DescribeHsmClientCertificatesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2691,6 +2857,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.HsmConfigurationNotFoundException">
         /// There is no Amazon Redshift HSM configuration with the specified identifier.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         public DescribeHsmConfigurationsResponse DescribeHsmConfigurations()
         {
             return DescribeHsmConfigurations(new DescribeHsmConfigurationsRequest());
@@ -2721,6 +2890,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeHsmConfigurations service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.HsmConfigurationNotFoundException">
         /// There is no Amazon Redshift HSM configuration with the specified identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
         /// </exception>
         public DescribeHsmConfigurationsResponse DescribeHsmConfigurations(DescribeHsmConfigurationsRequest request)
         {
@@ -2757,6 +2929,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeHsmConfigurations service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.HsmConfigurationNotFoundException">
         /// There is no Amazon Redshift HSM configuration with the specified identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
         /// </exception>
         public Task<DescribeHsmConfigurationsResponse> DescribeHsmConfigurationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2918,7 +3093,7 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
+        ///  For more information about reserved node offerings, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
         /// Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
         /// </para>
         /// </summary>
@@ -2926,6 +3101,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeReservedNodeOfferings service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ReservedNodeOfferingNotFoundException">
         /// Specified offering does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         public DescribeReservedNodeOfferingsResponse DescribeReservedNodeOfferings()
         {
@@ -2943,7 +3121,7 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
+        ///  For more information about reserved node offerings, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
         /// Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
         /// </para>
         /// </summary>
@@ -2952,6 +3130,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeReservedNodeOfferings service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ReservedNodeOfferingNotFoundException">
         /// Specified offering does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         public DescribeReservedNodeOfferingsResponse DescribeReservedNodeOfferings(DescribeReservedNodeOfferingsRequest request)
         {
@@ -2972,7 +3153,7 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
+        ///  For more information about reserved node offerings, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
         /// Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
         /// </para>
         /// </summary>
@@ -2983,6 +3164,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeReservedNodeOfferings service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ReservedNodeOfferingNotFoundException">
         /// Specified offering does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         public Task<DescribeReservedNodeOfferingsResponse> DescribeReservedNodeOfferingsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -3130,6 +3314,58 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  DescribeSnapshotCopyGrants
+
+
+        /// <summary>
+        /// Returns a list of snapshot copy grants owned by the AWS account in the destination
+        /// region.
+        /// 
+        ///  
+        /// <para>
+        ///  For more information about managing snapshot copy grants, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
+        /// Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotCopyGrants service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSnapshotCopyGrants service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.SnapshotCopyGrantNotFoundException">
+        /// The specified snapshot copy grant can't be found. Make sure that the name is typed
+        /// correctly and that the grant exists in the destination region.
+        /// </exception>
+        public DescribeSnapshotCopyGrantsResponse DescribeSnapshotCopyGrants(DescribeSnapshotCopyGrantsRequest request)
+        {
+            var marshaller = new DescribeSnapshotCopyGrantsRequestMarshaller();
+            var unmarshaller = DescribeSnapshotCopyGrantsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSnapshotCopyGrantsRequest,DescribeSnapshotCopyGrantsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSnapshotCopyGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotCopyGrants operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeSnapshotCopyGrantsResponse> DescribeSnapshotCopyGrantsAsync(DescribeSnapshotCopyGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeSnapshotCopyGrantsRequestMarshaller();
+            var unmarshaller = DescribeSnapshotCopyGrantsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSnapshotCopyGrantsRequest,DescribeSnapshotCopyGrantsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTags
 
 
@@ -3163,6 +3399,9 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
@@ -3241,6 +3480,13 @@ namespace Amazon.Redshift
         /// <summary>
         /// Disables the automatic copying of snapshots from one region to another region for
         /// a specified cluster.
+        /// 
+        ///  
+        /// <para>
+        /// If your cluster and its snapshots are encrypted using a customer master key (CMK)
+        /// from AWS KMS, use <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon
+        /// Redshift permission to the CMK in the destination region. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableSnapshotCopy service method.</param>
         /// 
@@ -3364,8 +3610,15 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
+        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.SnapshotCopyAlreadyEnabledException">
         /// The cluster already has cross-region snapshot copy enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.SnapshotCopyGrantNotFoundException">
+        /// The specified snapshot copy grant can't be found. Make sure that the name is typed
+        /// correctly and that the grant exists in the destination region.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
@@ -3450,6 +3703,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
+        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.NumberOfNodesQuotaExceededException">
         /// The operation would exceed the number of nodes allotted to the account. For information
         /// about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
@@ -3497,7 +3753,7 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+        ///  For more information about parameters and parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
         /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// 
         /// </para>
@@ -3721,13 +3977,14 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Allows you to purchase reserved nodes. Amazon Redshift offers a predefined set of
-        /// reserved node offerings. You can purchase one of the offerings. You can call the <a>DescribeReservedNodeOfferings</a>
-        /// API to obtain the available reserved node offerings. You can call this API by providing
-        /// a specific reserved node offering and the number of nodes you want to reserve. 
+        /// reserved node offerings. You can purchase one or more of the offerings. You can call
+        /// the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node
+        /// offerings. You can call this API by providing a specific reserved node offering and
+        /// the number of nodes you want to reserve. 
         /// 
         ///  
         /// <para>
-        ///  For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
+        ///  For more information about reserved node offerings, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
         /// Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
         /// </para>
         /// </summary>
@@ -3744,6 +4001,9 @@ namespace Amazon.Redshift
         /// Request would exceed the user's compute node quota. For information about increasing
         /// your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         public PurchaseReservedNodeOfferingResponse PurchaseReservedNodeOffering(PurchaseReservedNodeOfferingRequest request)
         {
@@ -3873,12 +4133,13 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Creates a new cluster from a snapshot. Amazon Redshift creates the resulting cluster
-        /// with the same configuration as the original cluster from which the snapshot was created,
-        /// except that the new cluster is created with the default cluster security and parameter
-        /// group. After Amazon Redshift creates the cluster you can use the <a>ModifyCluster</a>
+        /// Creates a new cluster from a snapshot. By default, Amazon Redshift creates the resulting
+        /// cluster with the same configuration as the original cluster from which the snapshot
+        /// was created, except that the new cluster is created with the default cluster security
+        /// and parameter groups. After Amazon Redshift creates the cluster, you can use the <a>ModifyCluster</a>
         /// API to associate a different security group and different parameter group with the
-        /// restored cluster. 
+        /// restored cluster. If you are using a DS node type, you can also choose to change to
+        /// another DS node type of the same size during restore.
         /// 
         ///  
         /// <para>
@@ -3945,6 +4206,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidVPCNetworkStateException">
         /// The cluster subnet group does not cover all Availability Zones.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
+        /// The encryption key has exceeded its grant limit in AWS KMS.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.NumberOfNodesPerClusterLimitExceededException">
         /// The operation would exceed the number of nodes allowed for a cluster.

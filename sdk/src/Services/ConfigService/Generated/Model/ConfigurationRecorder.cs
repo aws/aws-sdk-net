@@ -33,6 +33,7 @@ namespace Amazon.ConfigService.Model
     public partial class ConfigurationRecorder
     {
         private string _name;
+        private RecordingGroup _recordingGroup;
         private string _rolearn;
 
         /// <summary>
@@ -52,6 +53,26 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecordingGroup. 
+        /// <para>
+        /// The recording group specifies either to record configurations for all supported resources
+        /// or to provide a list of resource types to record. The list of resource types must
+        /// be a subset of supported resource types.
+        /// </para>
+        /// </summary>
+        public RecordingGroup RecordingGroup
+        {
+            get { return this._recordingGroup; }
+            set { this._recordingGroup = value; }
+        }
+
+        // Check to see if RecordingGroup property is set
+        internal bool IsSetRecordingGroup()
+        {
+            return this._recordingGroup != null;
         }
 
         /// <summary>

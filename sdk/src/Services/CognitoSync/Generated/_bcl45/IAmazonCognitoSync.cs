@@ -68,6 +68,12 @@ namespace Amazon.CognitoSync
         /// stream. Customers are limited to one successful bulk publish per 24 hours. Bulk publish
         /// is an asynchronous request, customers can see the status of the request via the GetBulkPublishDetails
         /// operation.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BulkPublish service method.</param>
         /// 
@@ -118,7 +124,7 @@ namespace Amazon.CognitoSync
         /// 
         ///  
         /// <para>
-        /// DeleteDataset can be called with temporary user credentials provided by Cognito Identity
+        /// This API can be called with temporary user credentials provided by Cognito Identity
         /// or with developer credentials.
         /// </para>
         /// </summary>
@@ -170,9 +176,9 @@ namespace Amazon.CognitoSync
         /// 
         ///  
         /// <para>
-        /// DescribeDataset can be called with temporary user credentials provided by Cognito
-        /// Identity or with developer credentials. You should use Cognito Identity credentials
-        /// to make this API call.
+        /// This API can be called with temporary user credentials provided by Cognito Identity
+        /// or with developer credentials. You should use Cognito Identity credentials to make
+        /// this API call.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
@@ -217,8 +223,8 @@ namespace Amazon.CognitoSync
         /// 
         ///  
         /// <para>
-        /// DescribeIdentityPoolUsage can only be called with developer credentials. You cannot
-        /// make this API call with the temporary user credentials provided by Cognito Identity.
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
         /// </para>
         /// </summary>
         /// <param name="identityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
@@ -246,8 +252,8 @@ namespace Amazon.CognitoSync
         /// 
         ///  
         /// <para>
-        /// DescribeIdentityPoolUsage can only be called with developer credentials. You cannot
-        /// make this API call with the temporary user credentials provided by Cognito Identity.
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityPoolUsage service method.</param>
@@ -276,8 +282,8 @@ namespace Amazon.CognitoSync
         /// 
         ///  
         /// <para>
-        /// DescribeIdentityPoolUsage can only be called with developer credentials. You cannot
-        /// make this API call with the temporary user credentials provided by Cognito Identity.
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
         /// </para>
         /// </summary>
         /// <param name="identityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
@@ -324,8 +330,8 @@ namespace Amazon.CognitoSync
         /// 
         ///  
         /// <para>
-        /// DescribeIdentityUsage can be called with temporary user credentials provided by Cognito
-        /// Identity or with developer credentials.
+        /// This API can be called with temporary user credentials provided by Cognito Identity
+        /// or with developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityUsage service method.</param>
@@ -367,6 +373,12 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Get the status of the last BulkPublish operation for an identity pool.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBulkPublishDetails service method.</param>
         /// 
@@ -404,7 +416,13 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Gets the events and the corresponding Lambda functions associated with an identity
-        /// pool
+        /// pool.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCognitoEvents service method.</param>
         /// 
@@ -445,6 +463,12 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Gets the configuration settings of an identity pool.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
+        /// </para>
         /// </summary>
         /// <param name="identityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</param>
         /// 
@@ -468,6 +492,12 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Gets the configuration settings of an identity pool.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityPoolConfiguration service method.</param>
         /// 
@@ -492,6 +522,12 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Gets the configuration settings of an identity pool.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
+        /// </para>
         /// </summary>
         /// <param name="identityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</param>
         /// <param name="cancellationToken">
@@ -670,6 +706,12 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Registers a device to receive push sync notifications.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with temporary credentials provided by Cognito Identity.
+        /// You cannot call this API with developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterDevice service method.</param>
         /// 
@@ -715,6 +757,12 @@ namespace Amazon.CognitoSync
         /// Sets the AWS Lambda function for a given event type for an identity pool. This request
         /// only updates the key/value pair specified. Other key/values pairs are not updated.
         /// To remove a key value pair, pass a empty value for the particular key.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetCognitoEvents service method.</param>
         /// 
@@ -755,10 +803,19 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Sets the necessary configuration for push sync.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityPoolConfiguration service method.</param>
         /// 
         /// <returns>The response from the SetIdentityPoolConfiguration service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.ConcurrentModificationException">
+        /// Thrown if there are parallel requests to modify a resource.
+        /// </exception>
         /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
@@ -795,6 +852,12 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Subscribes to receive notifications when a dataset is modified by another device.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with temporary credentials provided by Cognito Identity.
+        /// You cannot call this API with developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SubscribeToDataset service method.</param>
         /// 
@@ -838,6 +901,12 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Unsubscribes from receiving notifications when a dataset is modified by another device.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with temporary credentials provided by Cognito Identity.
+        /// You cannot call this API with developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnsubscribeFromDataset service method.</param>
         /// 
@@ -884,8 +953,23 @@ namespace Amazon.CognitoSync
         /// 
         ///  
         /// <para>
-        /// UpdateRecords can only be called with temporary user credentials provided by Cognito
-        /// Identity. You cannot make this API call with developer credentials.
+        /// The sync count in the record patch is your last known sync count for that record.
+        /// The server will reject an UpdateRecords request with a ResourceConflictException if
+        /// you try to patch a record with a new value but a stale sync count.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if the sync count on the server is 5 for a key called highScore and you
+        /// try and submit a new highScore with sync count of 4, the request will be rejected.
+        /// To obtain the current sync count for a record, call ListRecords. On a successful update
+        /// of the record, the response returns the new sync count for that record. You should
+        /// present that sync count the next time you try to update that same record. When the
+        /// record does not exist, specify the sync count as 0.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API can be called with temporary user credentials provided by Cognito Identity
+        /// or with developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecords service method.</param>

@@ -1,0 +1,17 @@
+{    
+    "runtimePipelineOverride":{
+        "overrides":[
+            {
+                "operation":"replace",
+                "newType":"Amazon.Runtime.Internal.RetryHandler",
+                "targetType":"Amazon.Runtime.Internal.RetryHandler",
+                "constructorInput":"new Amazon.DynamoDBv2.Internal.DynamoDBRetryPolicy(this.Config.MaxErrorRetry)"
+            }
+        ]
+    },
+	"shapeSubstitutions": {
+        "Stream": {
+            "renameShape": "StreamSummary"
+        }	
+	}
+}

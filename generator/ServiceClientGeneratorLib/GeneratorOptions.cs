@@ -64,6 +64,16 @@
         /// </summary>
         public bool Clean { get; set; }
 
+        /// <summary>
+        /// If set the solution files will be rebuilt even if no new projects were added.
+        /// </summary>
+        public bool ForceSolutionRebuilt { get; set; }
+
+        public string SelfServiceModel { get; set; }
+        public string SelfServiceBaseName { get; set; }
+        public string SelfServiceEndpointPrefix { get; set; }
+        public string SelfServiceSigV4Name { get; set; }
+
         public GeneratorOptions()
         {
             Verbose = false;

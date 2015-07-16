@@ -51,8 +51,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
 
         #region Public API Test
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
         public void TestSessionTimeout()
         {
             MobileAnalyticsManagerConfig maConfig = new MobileAnalyticsManagerConfig();
@@ -60,33 +60,36 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             string appId = "TestSessionTimeout-dummy-app-id";
 
-            DateTime startTimstamp;
-            DateTime? stopTimestamp;
-            string sessionId;
-            long duration;
-            GetMobileAnalyticsManager(appId).Session.GetSessionInfo(out startTimstamp, out stopTimestamp, out sessionId, out duration);
+            //DateTime startTimstamp;
+            //DateTime? stopTimestamp;
+            //string sessionId;
+            //long duration;
+            Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SessionInfo sessionInfo1 = GetMobileAnalyticsManager(appId).Session.RetrieveSessionInfo();
 
-            Console.WriteLine("start time stamp is " + startTimstamp);
-            Console.WriteLine("stop time stamp is " + startTimstamp);
-            Console.WriteLine("session id is " + sessionId);
-            Console.WriteLine("duration is " + duration);
+            Console.WriteLine("start time stamp is " + sessionInfo1.StartTimestamp);
+            if (sessionInfo1.StopTimestamp != null)
+                Console.WriteLine("stop time stamp is " + sessionInfo1.StopTimestamp.Value);
+            Console.WriteLine("session id is " + sessionInfo1.SessionId);
+            Console.WriteLine("duration is " + sessionInfo1.Duration);
 
             // sleep for a while but wake up before session expires
             GetMobileAnalyticsManager(appId).PauseSession();
             Thread.Sleep(Convert.ToInt32((maConfig.SessionTimeout - 1) * 1000));
             GetMobileAnalyticsManager(appId).ResumeSession();
 
-            DateTime startTimstamp2;
-            DateTime? stopTimestamp2;
-            string sessionId2;
-            long duration2;
-            GetMobileAnalyticsManager(appId).Session.GetSessionInfo(out startTimstamp2, out stopTimestamp2, out sessionId2, out duration2);
-            Console.WriteLine("start time stamp is " + startTimstamp2);
-            Console.WriteLine("stop time stamp is " + startTimstamp2);
-            Console.WriteLine("session id is " + sessionId2);
-            Console.WriteLine("duration is " + duration2);
+            //DateTime startTimstamp2;
+            //DateTime? stopTimestamp2;
+            //string sessionId2;
+            //long duration2;
+            Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SessionInfo sessionInfo2 = GetMobileAnalyticsManager(appId).Session.RetrieveSessionInfo();
+            
+            Console.WriteLine("start time stamp is " + sessionInfo2.StartTimestamp);
+            if (sessionInfo2.StopTimestamp != null)
+                Console.WriteLine("stop time stamp is " + sessionInfo2.StopTimestamp.Value);
+            Console.WriteLine("session id is " + sessionInfo2.SessionId);
+            Console.WriteLine("duration is " + sessionInfo2.Duration);
 
-            Assert.IsTrue(startTimstamp == startTimstamp2 && sessionId == sessionId2);
+            Assert.IsTrue(sessionInfo1.StartTimestamp == sessionInfo2.StartTimestamp && sessionInfo1.SessionId == sessionInfo2.SessionId);
 
 
             // sleep longer until session expires
@@ -94,22 +97,24 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Thread.Sleep(Convert.ToInt32((maConfig.SessionTimeout + 1) * 1000));
             GetMobileAnalyticsManager(appId).ResumeSession();
 
-            DateTime startTimstamp3;
-            DateTime? stopTimestamp3;
-            string sessionId3;
-            long duration3;
-            GetMobileAnalyticsManager(appId).Session.GetSessionInfo(out startTimstamp3, out stopTimestamp3, out sessionId3, out duration3);
-            Console.WriteLine("start time stamp is " + startTimstamp3);
-            Console.WriteLine("stop time stamp is " + startTimstamp3);
-            Console.WriteLine("session id is " + sessionId3);
-            Console.WriteLine("duration is " + duration3);
+            //DateTime startTimstamp3;
+            //DateTime? stopTimestamp3;
+            //string sessionId3;
+            //long duration3;
+            Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SessionInfo sessionInfo3 = GetMobileAnalyticsManager(appId).Session.RetrieveSessionInfo();
 
-            Assert.IsTrue(startTimstamp2 != startTimstamp3 && sessionId2 != sessionId3);
+            Console.WriteLine("start time stamp is " + sessionInfo3.StartTimestamp);
+            if (sessionInfo3.StopTimestamp != null)
+                Console.WriteLine("stop time stamp is " + sessionInfo3.StopTimestamp.Value);
+            Console.WriteLine("session id is " + sessionInfo3.SessionId);
+            Console.WriteLine("duration is " + sessionInfo3.Duration);
+
+            Assert.IsTrue(sessionInfo2.StartTimestamp != sessionInfo3.StartTimestamp && sessionInfo2.SessionId != sessionInfo3.SessionId);
         }
 
 
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
         public void TestManagerAddClientContextCustomAttribute()
         {
             string KEY1 = "key1";
@@ -136,8 +141,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
 
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
         public void TestManagerMultipleInstance()
         {
             string APP_ID_1 = "TestManagerMultipleInstance-app-id-1";
@@ -160,8 +165,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
 
         #region Low Level API Test
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
         public void TestLowLevelAPI()
         {
             List<Amazon.MobileAnalytics.Model.Event> listEvent = new List<Amazon.MobileAnalytics.Model.Event>();
@@ -184,8 +189,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
 
         # region Session, Event and Client Context Test
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
         public void TestSession()
         {
             string sessionID = Guid.NewGuid().ToString();
@@ -205,8 +210,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreEqual(HttpStatusCode.Accepted, PutResponse.HttpStatusCode);
         }
 
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
         public void TestCustomEventConcurrency()
         {
             // event type
@@ -404,8 +409,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         }
 
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
         public void TestMonetizationEventConcurrency()
         {
             // event type
@@ -632,8 +637,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
 
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
         public void TestClientContextHeader()
         {
 
@@ -641,8 +646,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         #endregion
 
         #region Event Storage Test
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
         public void TestEventStore()
         {
 
@@ -660,12 +665,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 eventStore.PutEvent(eventString, appId);
             }
-            long dbFileSizeSmall = eventStore.GetDatabaseSize();
+            long dbFileSizeSmall = eventStore.DatabaseSize;
             for (int i = 0; i < EVENT_COUNT / 2; i++)
             {
                 eventStore.PutEvent(eventString, appId);
             }
-            long dbFileSizeBigger = eventStore.GetDatabaseSize();
+            long dbFileSizeBigger = eventStore.DatabaseSize;
             //Assert.IsTrue(dbFileSizeBigger > dbFileSizeSmall);
 
             Console.WriteLine("The num of events are {0}", eventStore.NumberOfEvents(appId));

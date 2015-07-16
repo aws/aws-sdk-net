@@ -21,8 +21,8 @@ namespace CommonTests.IntegrationTests.DynamoDB
     {
         public static string TableCacheIdentifier = typeof(Table).FullName;
 
-        private static ICache<string, TableDescription> _tableCache = null;
-        public static ICache<string, TableDescription> TableCache
+        private ICache<string, TableDescription> _tableCache = null;
+        public ICache<string, TableDescription> TableCache
         {
             get
             {
@@ -68,7 +68,7 @@ namespace CommonTests.IntegrationTests.DynamoDB
             Client.BeforeRequestEvent -= ClientBeforeRequestEvent;
         }
 
-        private static void ClientBeforeRequestEvent(object sender, Amazon.Runtime.RequestEventArgs e)
+        private void ClientBeforeRequestEvent(object sender, Amazon.Runtime.RequestEventArgs e)
         {
             var client = sender as AmazonServiceClient;
             if (client == null)
@@ -99,7 +99,7 @@ namespace CommonTests.IntegrationTests.DynamoDB
             });
         }
 
-        public static void CreateContext(DynamoDBEntryConversion conversion)
+        public void CreateContext(DynamoDBEntryConversion conversion)
         {
             var config = new DynamoDBContextConfig
             {
@@ -134,7 +134,7 @@ namespace CommonTests.IntegrationTests.DynamoDB
 #pragma warning restore 429
         public static List<string> CreatedTables = new List<string>();
 
-        public static async Task ClearTable(string tableName)
+        public async Task ClearTable(string tableName)
         {
             var table = Table.LoadTable(Client, tableName, DynamoDBEntryConversion.V1);
             var keyNames = table.Keys.Keys.ToList();
@@ -155,7 +155,7 @@ namespace CommonTests.IntegrationTests.DynamoDB
             await batchWrite.ExecuteAsync();
         }
 
-        public static async Task CreateTestTables()
+        public async Task CreateTestTables()
         {
             hashTableName = TableNamePrefix + "HashTable";
             hashRangeTableName = TableNamePrefix + "HashRangeTable";
@@ -164,14 +164,14 @@ namespace CommonTests.IntegrationTests.DynamoDB
 
             if (ReuseTables)
             {
-                if (await GetStatus(hashTableName) != null)
+                if (await GetStatus(Client, hashTableName) != null)
                 {
-                    WaitForTableStatus(hashTableName, TableStatus.ACTIVE);
+                    WaitForTableStatus(Client, hashTableName, TableStatus.ACTIVE);
                     createHashTable = false;
                 }
-                if (await GetStatus(hashRangeTableName) != null)
+                if (await GetStatus(Client, hashRangeTableName) != null)
                 {
-                    WaitForTableStatus(hashRangeTableName, TableStatus.ACTIVE);
+                    WaitForTableStatus(Client, hashRangeTableName, TableStatus.ACTIVE);
                     createHashRangeTable = false;
                 }
             }
@@ -211,7 +211,7 @@ namespace CommonTests.IntegrationTests.DynamoDB
                 CreatedTables.Add(hashTableName);
 
                 // Wait for table to be ready
-                WaitForTableStatus(hashTableName, TableStatus.ACTIVE);
+                WaitForTableStatus(Client, hashTableName, TableStatus.ACTIVE);
             }
 
             if (createHashRangeTable)
@@ -269,15 +269,15 @@ namespace CommonTests.IntegrationTests.DynamoDB
                 CreatedTables.Add(hashRangeTableName);
 
                 // Wait for table to be ready
-                WaitForTableStatus(hashRangeTableName, TableStatus.ACTIVE);
+                WaitForTableStatus(Client, hashRangeTableName, TableStatus.ACTIVE);
             }
         }
-        public static void RemoveCreatedTables()
+        public void RemoveCreatedTables()
         {
             if (CreatedTables.Count > 0)
             {
                 // Wait for all tables to be active first
-                WaitForTableStatus(CreatedTables, TableStatus.ACTIVE);
+                WaitForTableStatus(Client, CreatedTables, TableStatus.ACTIVE);
 
                 foreach (var table in CreatedTables)
                 {
@@ -285,17 +285,17 @@ namespace CommonTests.IntegrationTests.DynamoDB
                 }
 
                 // Wait for tables to be deleted
-                WaitForTableStatus(CreatedTables, null);
+                WaitForTableStatus(Client, CreatedTables, null);
 
                 CreatedTables.Clear();
             }
         }
 
-        public static void WaitForTableStatus(string tableName, TableStatus status)
+        public static void WaitForTableStatus(IAmazonDynamoDB client, string tableName, TableStatus status)
         {
-            WaitForTableStatus(new string[] { tableName }, status);
+            WaitForTableStatus(client, new string[] { tableName }, status);
         }
-        public static void WaitForTableStatus(IEnumerable<string> tableNames, TableStatus status)
+        public static void WaitForTableStatus(IAmazonDynamoDB client, IEnumerable<string> tableNames, TableStatus status)
         {
             Console.WriteLine("Waiting for tables [{0}] to reach status {1}",
                 string.Join(", ", tableNames.ToArray()), status);
@@ -306,7 +306,7 @@ namespace CommonTests.IntegrationTests.DynamoDB
                 bool allReady = true;
                 foreach(var tableName in tablesList.ToArray())
                 {
-                    var tableStatus = GetStatus(tableName).Result;
+                    var tableStatus = GetStatus(client, tableName).Result;
                     allReady &= (tableStatus == status);
                     if (allReady)
                         tablesList.Remove(tableName);
@@ -322,12 +322,12 @@ namespace CommonTests.IntegrationTests.DynamoDB
 
             Console.WriteLine("All tables ready");
         }
-        public static async Task<TableStatus> GetStatus(string tableName)
+        public static async Task<TableStatus> GetStatus(IAmazonDynamoDB client, string tableName)
         {
             TableStatus status = null;
             try
             {
-                status = (await Client.DescribeTableAsync(tableName)).Table.TableStatus;
+                status = (await client.DescribeTableAsync(tableName)).Table.TableStatus;
             }
             catch(ResourceNotFoundException)
             {

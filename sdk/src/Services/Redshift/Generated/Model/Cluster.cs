@@ -176,7 +176,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterParameterGroups. 
         /// <para>
-        ///  The list of cluster parameter groups that are associated with this cluster. 
+        /// The list of cluster parameter groups that are associated with this cluster. Each parameter
+        /// group in the list is returned with its status.
         /// </para>
         /// </summary>
         public List<ClusterParameterGroupStatus> ClusterParameterGroups

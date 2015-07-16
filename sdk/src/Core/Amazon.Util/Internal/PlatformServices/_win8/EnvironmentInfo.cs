@@ -1,51 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Amazon.Util.Internal.PlatformServices
 {
-    public class EnvironmentInfo
+    public class EnvironmentInfo : IEnvironmentInfo
     {
-        public static string Platform
+        public EnvironmentInfo()
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            this.Platform = "Windows";
+            this.PlatformVersion = "Unknown";
+            this.PlatformUserAgent = "Unknown";
+            this.Model = "Unknown";
+            this.Make = "Unknown";
+            this.Locale = CultureInfo.CurrentCulture.DisplayName;
+            this.FrameworkUserAgent = ".NET Runtime/Unknown .NET Framework/Unknown";
+            this.PclPlatform = "PCL/Windows8";
+
         }
 
-        public static string Model
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public string Platform { get; private set; }
 
-        public static string Make
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public string PlatformUserAgent { get; private set; }
 
-        public static string PlatformVersion
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public string Model { get; private set; }
 
-        public static string Locale
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public string Make { get; private set; }
+
+        public string PlatformVersion { get; private set; }
+
+        public string Locale { get; private set; }
+
+        public string FrameworkUserAgent { get; private set; }
+
+        public string PclPlatform { get; private set; }
+
     }
 }

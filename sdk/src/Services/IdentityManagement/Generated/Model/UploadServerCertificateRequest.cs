@@ -62,7 +62,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates UploadServerCertificateRequest with the parameterized properties
         /// </summary>
-        /// <param name="serverCertificateName">The name for the server certificate. Do not include the path in this value.</param>
+        /// <param name="serverCertificateName">The name for the server certificate. Do not include the path in this value. The name of the certificate cannot contain any spaces.</param>
         /// <param name="certificateBody">The contents of the public key certificate in PEM-encoded format.</param>
         /// <param name="privateKey">The contents of the private key in PEM-encoded format.</param>
         public UploadServerCertificateRequest(string serverCertificateName, string certificateBody, string privateKey)
@@ -157,7 +157,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ServerCertificateName. 
         /// <para>
-        /// The name for the server certificate. Do not include the path in this value.
+        /// The name for the server certificate. Do not include the path in this value. The name
+        /// of the certificate cannot contain any spaces.
         /// </para>
         /// </summary>
         public string ServerCertificateName

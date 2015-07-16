@@ -67,6 +67,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetFromArn())
+                {
+                    request.Parameters.Add("FromArn", StringUtils.FromString(publicRequest.FromArn));
+                }
                 if(publicRequest.IsSetRawMessage())
                 {
                     if(publicRequest.RawMessage.IsSetData())
@@ -74,9 +78,17 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                         request.Parameters.Add("RawMessage" + "." + "Data", StringUtils.FromMemoryStream(publicRequest.RawMessage.Data));
                     }
                 }
+                if(publicRequest.IsSetReturnPathArn())
+                {
+                    request.Parameters.Add("ReturnPathArn", StringUtils.FromString(publicRequest.ReturnPathArn));
+                }
                 if(publicRequest.IsSetSource())
                 {
                     request.Parameters.Add("Source", StringUtils.FromString(publicRequest.Source));
+                }
+                if(publicRequest.IsSetSourceArn())
+                {
+                    request.Parameters.Add("SourceArn", StringUtils.FromString(publicRequest.SourceArn));
                 }
             }
             return request;

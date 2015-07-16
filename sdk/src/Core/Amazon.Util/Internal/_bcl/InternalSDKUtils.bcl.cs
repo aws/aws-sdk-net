@@ -36,12 +36,7 @@ namespace Amazon.Util.Internal
 #else
         static string _userAgentBaseName = "aws-sdk-dotnet-35";
 #endif
-        static string DetermineRuntime()
-        {
-            return string.Format(CultureInfo.InvariantCulture, "{0}.{1}", Environment.Version.Major, Environment.Version.MajorRevision);
-        }
-
-        static string DetermineFramework()
+        public static string DetermineFramework()
         {
             try
             {
@@ -59,11 +54,6 @@ namespace Amazon.Util.Internal
             }
 
             return "Unknown";
-        }
-
-        static string DetermineOSVersion()
-        {
-            return Environment.OSVersion.Version.ToString();
         }
     }
 }

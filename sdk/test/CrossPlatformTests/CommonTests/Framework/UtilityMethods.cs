@@ -10,12 +10,47 @@ using System.Threading;
 using System.Net;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime;
+using System.IO;
+using System.Reflection;
+using Amazon.SimpleNotificationService;
+using Amazon.SimpleNotificationService.Model;
 
 namespace CommonTests.Framework
 {
     internal class UtilityMethods
     {
         public const string SDK_TEST_PREFIX = "aws-net-sdk";
+
+        static string _accountId;
+
+        /// <summary>
+        /// There is not a good way to get account id. This hack creates
+        /// a topic gets the account id out of the ARN and then deletes the topic.
+        /// </summary>
+        public static string AccountId
+        {
+            get
+            {
+                if (_accountId == null)
+                {
+                    var createRequest = new CreateTopicRequest
+                    {
+                        Name = "sdk-accountid-lookup" + DateTime.Now.Ticks
+                    };
+                    using (var snsClient = CreateClient<AmazonSimpleNotificationServiceClient>())
+                    {
+                        var response = snsClient.CreateTopicAsync(createRequest).Result;
+                        var tokens = response.TopicArn.Split(':');
+
+                        _accountId = tokens[4];
+
+                        snsClient.DeleteTopicAsync(new DeleteTopicRequest { TopicArn = response.TopicArn }).Wait();
+                    }
+                }
+
+                return _accountId;
+            }
+        }
 
         public async static Task<string> CreateBucketAsync(IAmazonS3 s3Client)
         {
@@ -230,6 +265,38 @@ namespace CommonTests.Framework
         public static void RunAsSync(Func<Task> asyncFunc)
         {
             Task.Run(asyncFunc).Wait();
+        }
+
+        public static string GetResourceText(string resourceName)
+        {
+            using (StreamReader reader = new StreamReader(GetResourceStream(resourceName)))
+            {
+                return reader.ReadToEnd();
+            }
+        }
+
+        public static Stream GetResourceStream(string resourceName)
+        {
+            Assembly assembly = typeof(UtilityMethods).GetTypeInfo().Assembly;
+            var resource = FindResourceName(resourceName);
+            Stream stream = assembly.GetManifestResourceStream(resource);
+            return stream;
+        }
+
+        public static string FindResourceName(string partialName)
+        {
+            return FindResourceName(s => s.IndexOf(partialName, StringComparison.OrdinalIgnoreCase) >= 0).Single();
+        }
+
+        public static IEnumerable<string> FindResourceName(Predicate<string> match)
+        {
+            Assembly assembly = typeof(UtilityMethods).GetTypeInfo().Assembly;
+            var allResources = assembly.GetManifestResourceNames();
+            foreach (var resource in allResources)
+            {
+                if (match(resource))
+                    yield return resource;
+            }
         }
 
         public static T CreateClient<T>()

@@ -14,6 +14,9 @@ using System.Threading;
 using System.Diagnostics;
 using Amazon.S3.Model;
 using Amazon.SimpleNotificationService.Model;
+using System.Collections;
+using System.Net;
+using System.Net.Http;
 
 namespace CommonTests.Framework
 {
@@ -28,6 +31,7 @@ namespace CommonTests.Framework
 
     public abstract class TestRunner : ITestListener
     {
+        private const string internetTestAddress = "http://aws.amazon.com/sdk-for-net/";
         private const string timestampFormat = "yyyy-MM-dd-HH-mm-ss";
         private const string s3KeyFormat = "{1}-{0}.txt"; // 0 - prefix, 1 - timestamp
         private const string snsSubjectFormat = "{2} - {0}-{1}"; // 0 - prefix, 1 - timestamp, 2 - PASSED or FAILED
@@ -47,12 +51,22 @@ namespace CommonTests.Framework
         {
             get
             {
-                if (TestsToRun == null || TestsToRun.Count == 0)
-                    return TestFilter.Empty;
-                return SpecificTestsFilter.RunOnly(TestsToRun);
+                var selectTests = (TestsToRun != null && TestsToRun.Count != 0);
+                var selectCategories = (CategoriesToRun != null && CategoriesToRun.Count != 0);
+                if (selectTests && selectCategories)
+                    throw new InvalidOperationException("Cannot set both TestsToRun and CategoriesToRun");
+
+                if (selectTests)
+                    return SpecificTestsFilter.RunOnlyTests(this, TestsToRun);
+                if (selectCategories)
+                    return SpecificTestsFilter.RunOnlyCategories(this, CategoriesToRun);
+                
+                return TestFilter.Empty;
             }
         }
+
         public ICollection<string> TestsToRun { get; set; }
+        public ICollection<string> CategoriesToRun { get; set; }
 
         private LogLevel _logMode = LogLevel.Info | LogLevel.Error;
         public LogLevel LogMode
@@ -60,6 +74,12 @@ namespace CommonTests.Framework
             get { return _logMode; }
             set { _logMode = value; }
         }
+
+        protected abstract string TestTypeNamePrefix
+        {
+            get;
+        }
+
     
         public TestRunner()
         {
@@ -86,11 +106,19 @@ namespace CommonTests.Framework
 
         private bool Execute()
         {
+            if (!IsInternetAvailable())
+            {
+                WriteInfo("Internet is not available, exiting");
+                return false;
+            }
+            
+            WriteInfo("Setting up runner...");
             var runner = new NUnitTestAssemblyRunner(new DefaultTestAssemblyBuilder());
             var currentAssembly = typeof(TestRunner).GetTypeInfo().Assembly;
             var options = new Dictionary<string, string>();
             var tests = runner.Load(currentAssembly, options);
-            
+
+            WriteInfo("Running tests...");
             var result = runner.Run(this, this.Filter);
             runner.WaitForCompletion(int.MaxValue);
 
@@ -100,11 +128,35 @@ namespace CommonTests.Framework
                 result.SkipCount == 0;
 
             WriteInfo("All tests executed");
+            WriteInfo("Time elapsed: {0}", TimeSpan.FromSeconds(result.Duration));
 
             PushLog(success);
 
             return success;
         }
+
+        private bool IsInternetAvailable()
+        {
+            try
+            {
+                var client = new HttpClient();
+                var content = client.GetStringAsync(internetTestAddress).Result;
+                if (string.IsNullOrEmpty(content))
+                {
+                    WriteError("Accessing {0} returned an empty body");
+                    return false;
+                }
+
+                return true;
+            }
+            catch(Exception e)
+            {
+                WriteError("Error accessing {0}: {1}", e);
+                return false;
+            }
+        }
+
+        #region Output
 
         public void WriteError(string format, params object[] args)
         {
@@ -139,6 +191,10 @@ namespace CommonTests.Framework
 
         protected abstract void WriteLine(string message);
 
+        #endregion
+
+        #region Test reporting
+
         protected virtual void TestCompleted(TestMethod test)
         {
 
@@ -149,10 +205,7 @@ namespace CommonTests.Framework
 
         }
 
-        protected abstract string TestTypeNamePrefix
-        {
-            get;
-        }
+        #endregion
 
         #region Log pushes
 
@@ -267,8 +320,7 @@ namespace CommonTests.Framework
                     this.WriteError("\tMessage : {0}", result.Message);
                     this.WriteError("\tStack trace : {0}", result.StackTrace);
                 }
-                this.WriteVerbose("  --- Executed tests in class {0}   ---\n", LogLevel.Verbose, 
-                    testFixture.FullName);
+                this.WriteVerbose("  --- Executed tests in class {0}   ---\n", testFixture.FullName);
             }
 
             var testMethod = result.Test as TestMethod;
@@ -330,27 +382,68 @@ namespace CommonTests.Framework
 
         private class SpecificTestsFilter : ITestFilter
         {
+            private const string CategoryKey = "Category";
+
+            private TestRunner _runner;
+            private ICollection<string> _categories;
             private ICollection<string> _tests;
             private bool _isRunOnly;
-
-            public static SpecificTestsFilter RunOnly(ICollection<string> testsToRun)
+            private bool CheckTests
             {
-                return new SpecificTestsFilter
+                get
                 {
-                    _tests = testsToRun ?? new HashSet<string>(),
-                    _isRunOnly = true
-                };
+                    return (_tests != null && _tests.Count != 0);
+                }
             }
-            public static SpecificTestsFilter RunAllExcept(ICollection<string> testsToSkip)
+            private bool CheckCategories
             {
-                return new SpecificTestsFilter
+                get
                 {
-                    _tests = testsToSkip ?? new HashSet<string>(),
-                    _isRunOnly = false
-                };
+                    return (_categories != null && _categories.Count != 0);
+                }
             }
 
-            private bool ShouldRun(string name)
+            private SpecificTestsFilter(TestRunner runner)
+            {
+                _runner = runner;
+            }
+
+            public static SpecificTestsFilter RunOnlyTests(TestRunner runner, ICollection<string> testsToRun)
+            {
+                return Create_Tests(runner, testsToRun, isRunOnly: true);
+            }
+            public static SpecificTestsFilter RunAllTestsExcept(TestRunner runner, ICollection<string> testsToSkip)
+            {
+                return Create_Tests(runner, testsToSkip, isRunOnly: false);
+            }
+            public static SpecificTestsFilter RunOnlyCategories(TestRunner runner, ICollection<string> categoriesToRun)
+            {
+                return Create_Categories(runner, categoriesToRun, isRunOnly: true);
+            }
+            public static SpecificTestsFilter RunAllCategoriesExcept(TestRunner runner, ICollection<string> categoriesToSkip)
+            {
+                return Create_Categories(runner, categoriesToSkip, isRunOnly: false);
+            }
+
+            private static SpecificTestsFilter Create_Tests(TestRunner runner, ICollection<string> tests, bool isRunOnly)
+            {
+                return new SpecificTestsFilter(runner)
+                {
+                    _tests = tests ?? new HashSet<string>(),
+                    _isRunOnly = isRunOnly
+                };
+            }
+            private static SpecificTestsFilter Create_Categories(TestRunner runner, ICollection<string> categories, bool isRunOnly)
+            {
+                return new SpecificTestsFilter(runner)
+                {
+                    _categories = categories ?? new HashSet<string>(),
+                    _isRunOnly = isRunOnly
+                };
+            }
+
+
+            private bool ShouldRunTest(string name)
             {
                 if (_isRunOnly)
                     // only run tests in collection
@@ -359,6 +452,17 @@ namespace CommonTests.Framework
                     // only run tests NOT in collection
                     return (!_tests.Contains(name));
             }
+            private bool ShouldRunCategories(IList categories)
+            {
+                var stringCategories = categories.Cast<string>().ToList();
+
+                if (_isRunOnly)
+                    // only run test if categories intersect (a category is present in both lists)
+                    return (_categories.Intersect(stringCategories).Any());
+                else
+                    // only run tests if categories DO NOT intersect (test has no categories that are present in _categories)
+                    return (!_categories.Intersect(stringCategories).Any());
+            }
 
             public bool Pass(ITest test)
             {
@@ -366,7 +470,15 @@ namespace CommonTests.Framework
                     return true;
 
                 var testName = test.Name;
-                return ShouldRun(testName);
+                var categories = (test.Properties.ContainsKey(CategoryKey)) ?
+                    test.Properties[CategoryKey] : new List<string>();
+
+                var shouldRunTest = CheckTests ? ShouldRunTest(testName) : ShouldRunCategories(categories);
+
+                if (!shouldRunTest)
+                    _runner.WriteInfo("Test {0} ({1}) excluded from run by filter", testName, test.FullName);
+
+                return shouldRunTest;
             }
         }
     }

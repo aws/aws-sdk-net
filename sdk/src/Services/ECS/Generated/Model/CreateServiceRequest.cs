@@ -144,7 +144,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ServiceName. 
         /// <para>
         /// The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens,
-        /// and underscores are allowed.
+        /// and underscores are allowed. Service names must be unique within a cluster, but you
+        /// can have similarly named services in multiple clusters within a region or across multiple
+        /// regions.
         /// </para>
         /// </summary>
         public string ServiceName

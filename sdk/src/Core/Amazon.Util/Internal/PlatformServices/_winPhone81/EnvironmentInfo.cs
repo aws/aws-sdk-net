@@ -7,46 +7,34 @@ using System.Threading.Tasks;
 
 namespace Amazon.Util.Internal.PlatformServices
 {
-    public class EnvironmentInfo
+    public class EnvironmentInfo : IEnvironmentInfo
     {
-        public string Platform
+        public EnvironmentInfo()
         {
-            get
-            {
-                return "";
-            }
+            this.Platform = "Windows Phone";
+            this.PlatformVersion = "Unknown";
+            this.Model = "Unknown";
+            this.Make = "Unknown";
+            this.Locale = CultureInfo.CurrentCulture.DisplayName;
+            this.FrameworkUserAgent = ".NET Runtime/Unknown .NET Framework/Unknown";
+            this.PclPlatform = "PCL/WindowsPhone8.1";
+            this.PlatformUserAgent = "Unknown";
         }
 
-        public string Model
-        {
-            get
-            {
-                return "";
-            }
-        }
+        public string Platform { get; private set; }
 
-        public string Make
-        {
-            get
-            {
-                return "";
-            }
-        }
+        public string Model { get; private set; }
 
-        public string PlatformVersion
-        {
-            get
-            {
-                return "";
-            }
-        }
+        public string Make { get; private set; }
 
-        public string Locale
-        {
-            get
-            {
-                return CultureInfo.CurrentCulture.DisplayName;
-            }
-        }
+        public string PlatformVersion { get; private set; }
+
+        public string Locale { get; private set; }
+
+        public string FrameworkUserAgent { get; private set; }
+
+        public string PclPlatform { get; private set; }
+
+        public string PlatformUserAgent { get; private set; }
     }
 }

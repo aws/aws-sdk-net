@@ -1,0 +1,78 @@
+{
+	"shapeModifiers": {
+        "RuleOperator": {
+            "modify": [
+                {
+                    "EQUALS": { "emitPropertyName": "EQUALS_TO" }
+                }
+            ]
+        }
+	},
+    "simpleMethods" : {
+        "operations" : {
+            "CreateProject" : {
+                "methodForms" : [
+                    [
+                        "Name"
+                    ]
+                ]
+            },
+            "GetDevice" : {
+                "methodForms" : [
+                    [
+                        "Arn"
+                    ]
+                ]
+            },
+            "GetDevicePool" : {
+                "methodForms" : [
+                    [
+                        "Arn"
+                    ]
+                ]
+            },
+            "GetJob" : {
+                "methodForms" : [
+                    [
+                        "Arn"
+                    ]
+                ]
+            },
+            "GetProject" : {
+                "methodForms" : [
+                    [
+                        "Arn"
+                    ]
+                ]
+            },
+            "GetRun" : {
+                "methodForms" : [
+                    [
+                        "Arn"
+                    ]
+                ]
+            },
+            "GetSuite" : {
+                "methodForms" : [
+                    [
+                        "Arn"
+                    ]
+                ]
+            },
+            "GetTest" : {
+                "methodForms" : [
+                    [
+                        "Arn"
+                    ]
+                ]
+            },
+            "GetUpload" : {
+                "methodForms" : [
+                    [
+                        "Arn"
+                    ]
+                ]
+            }		
+		}
+	}
+}

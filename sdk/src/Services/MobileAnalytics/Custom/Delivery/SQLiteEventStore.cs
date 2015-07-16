@@ -30,9 +30,11 @@ using Amazon.Util.Internal;
 
 #if BCL35 || BCL45
 using System.Data.SQLite;
+using System.Globalization;
 #elif PCL 
 using PCLStorage;
 using SQLitePCL;
+using System.Globalization;
 #endif
 
 
@@ -43,10 +45,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     /// Implementation of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IEventStore"/>.
     /// The object stores Mobile Analytic events in SQLite database.
     /// </summary>
+    [System.Security.SecuritySafeCritical]
     public class SQLiteEventStore : IEventStore
     {
-
-        private static Logger _logger = Logger.GetLogger(typeof(SQLiteEventStore));
+        private Logger _logger = Logger.GetLogger(typeof(SQLiteEventStore));
         private const String TABLE_NAME = "ma_events";
         private const String EVENT_COLUMN_NAME = "ma_event";
         private const String EVENT_ID_COLUMN_NAME = "ma_event_id";
@@ -58,23 +60,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         private const String dbFileName = "mobile_analytic_event.db";
 
         // platform specific db file path
-        private static String _dbFileFullPath = null;
-        private static object _lock = new object();
+        private String _dbFileFullPath;
+        private object _lock = new object();
         private MobileAnalyticsManagerConfig _maConfig;
-        
-        /// <summary>
-        /// Initializes the <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore"/> class.
-        /// </summary>
-        static SQLiteEventStore()
-        {
-
-#if BCL35 || BCL45
-            _dbFileFullPath = dbFileName;
-#elif PCL
-            _dbFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, dbFileName);
-#endif      
-            SetUpDatabase(dbFileName);
-        }
 
         /// <summary>
         /// Constructor of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore"/>
@@ -83,14 +71,19 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         public SQLiteEventStore(MobileAnalyticsManagerConfig maConfig)
         {
             _maConfig = maConfig;
+#if BCL35 || BCL45
+            _dbFileFullPath = dbFileName;
+#elif PCL
+            _dbFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, dbFileName);
+#endif     
+            SetupSQLiteEventStore();
         }
 
 
         /// <summary>
         /// Sets up SQLite database.
         /// </summary>
-        /// <param name="dbPath">Database file full path.</param>
-        private static void SetUpDatabase(String dbPath)
+        private void SetupSQLiteEventStore()
         {
 #if __IOS__
             SQLitePCL.CurrentPlatform.Init();
@@ -163,11 +156,12 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <param name="eventString">Amazon Mobile Analytics event in string.</param>
         /// <param name="appId">Amazon Mobile Analytics App ID.</param>
         /// <returns><c>true</c>, if event was put, <c>false</c> otherwise.</returns>
+        [System.Security.SecuritySafeCritical]
         public bool PutEvent(string eventString, string appId)
         {
             
             bool result = false;
-            long currentDatabaseSize = GetDatabaseSize();
+            long currentDatabaseSize = this.DatabaseSize;
 
             if (currentDatabaseSize >= _maConfig.MaxDBSize)
             {
@@ -243,11 +237,12 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// </summary>
         /// <param name="rowIds">List of row identifiers.</param>
         /// <returns><c>true</c>, if events was deleted, <c>false</c> otherwise.</returns>
+        [System.Security.SecuritySafeCritical]
         public bool DeleteEvent(List<string> rowIds)
         {
             bool result = false;
             string ids = "'" + String.Join("', '", rowIds.ToArray()) + "'";
-            string sqlCommand = String.Format("DELETE FROM " + TABLE_NAME + " WHERE " + EVENT_ID_COLUMN_NAME + " IN ({0})", ids);
+            string sqlCommand = String.Format(CultureInfo.InvariantCulture, "DELETE FROM " + TABLE_NAME + " WHERE " + EVENT_ID_COLUMN_NAME + " IN ({0})", ids);
             lock (_lock)
             {
 #if BCL35 || BCL45
@@ -299,6 +294,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <param name="appId">Amazon Mobile Analytics App Id.</param>
         /// <param name="maxAllowed">Max number of events is allowed to return.</param>
         /// <returns>The events as a List of <see cref="ThirdParty.Json.LitJson.JsonData"/>.</returns>
+        [System.Security.SecuritySafeCritical]
         public List<JsonData> GetEvents(string appId, int maxAllowed)
         {
             
@@ -319,7 +315,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                     {
                         JsonData data = new JsonData();
                         data["id"] = reader[EVENT_ID_COLUMN_NAME].ToString();
-                        data["event"] = reader[EVENT_COLUMN_NAME.ToLower()].ToString();
+                        data["event"] = reader[EVENT_COLUMN_NAME.ToUpperInvariant()].ToString();
                         data["appId"] = reader[MA_APP_ID_COLUMN_NAME].ToString();
 
                         eventList.Add(data);
@@ -334,7 +330,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                     if (null != connection)
                         connection.Close();
                 }
-#elif PCL 
+#elif PCL
                 string sqlCommand = "SELECT * FROM " + TABLE_NAME + " WHERE " + MA_APP_ID_COLUMN_NAME + " = ?  ORDER BY " + EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME + ",ROWID LIMIT " + maxAllowed;
                 try
                 {
@@ -370,6 +366,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// </summary>
         /// <param name="appId">Amazon Mobile Analytics App Identifier.</param>
         /// <returns>The number of events.</returns>
+        [System.Security.SecuritySafeCritical]
         public long NumberOfEvents(string appId)
         {
             
@@ -430,46 +427,48 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// Gets the size of the database.
         /// </summary>
         /// <returns>The database size.</returns>
-        public long GetDatabaseSize()
+        public long DatabaseSize
         {
+            get {
 #if BCL35 || BCL45
             FileInfo fileInfo = new FileInfo(_dbFileFullPath);
             return fileInfo.Length;
-#elif PCL 
-            string pageCountCommand = "PRAGMA page_count;";
-            string pageSizeCommand = "PRAGMA page_size;";
+#elif PCL
+                string pageCountCommand = "PRAGMA page_count;";
+                string pageSizeCommand = "PRAGMA page_size;";
 
-            long pageCount = 0, pageSize = 0;
+                long pageCount = 0, pageSize = 0;
 
-            try
-            {
-                using (var connection = new SQLiteConnection(_dbFileFullPath))
+                try
                 {
-                    using (var statement = connection.Prepare(pageCountCommand))
+                    using (var connection = new SQLiteConnection(_dbFileFullPath))
                     {
-                        while (statement.Step() == SQLiteResult.ROW)
+                        using (var statement = connection.Prepare(pageCountCommand))
                         {
-                            pageCount = statement.GetInteger(0);
+                            while (statement.Step() == SQLiteResult.ROW)
+                            {
+                                pageCount = statement.GetInteger(0);
+                            }
                         }
-                    }
 
-                    using (var statement = connection.Prepare(pageSizeCommand))
-                    {
-                        while (statement.Step() == SQLiteResult.ROW)
+                        using (var statement = connection.Prepare(pageSizeCommand))
                         {
-                            pageSize = statement.GetInteger(0);
+                            while (statement.Step() == SQLiteResult.ROW)
+                            {
+                                pageSize = statement.GetInteger(0);
+                            }
                         }
                     }
                 }
-            }
-            catch (Exception e)
-            {
-                _logger.Error(e, "Exception happens when getting number of events.");
-                return 0;
-            }
+                catch (Exception e)
+                {
+                    _logger.Error(e, "Exception happens when getting number of events.");
+                    return 0;
+                }
 
-            return pageCount*pageSize;
+                return pageCount * pageSize;
 #endif
+            }
         }
         
         /// <summary>

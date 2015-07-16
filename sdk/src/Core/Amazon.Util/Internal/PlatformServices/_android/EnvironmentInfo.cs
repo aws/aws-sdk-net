@@ -1,48 +1,36 @@
 ﻿using Android.App;
 using System;
+using System.Reflection;
 
 namespace Amazon.Util.Internal.PlatformServices
 {
     public class EnvironmentInfo : IEnvironmentInfo
     {
-        public string Platform
+        public EnvironmentInfo()
         {
-            get
-            {
-                return "ANDROID";
-            }
+            this.Platform = "ANDROID";
+            this.Model = Android.OS.Build.Model;
+            this.Make = Android.OS.Build.Manufacturer;
+            this.PlatformVersion = Android.OS.Build.VERSION.Release;
+            this.Locale = Application.Context.Resources.Configuration.Locale.ToString();
+            this.FrameworkUserAgent = InternalSDKUtils.GetMonoRuntimeVersion();
+            this.PclPlatform = "PCL/Xamarin.Android";
         }
 
-        public string Model
-        {
-            get
-            {
-                return Android.OS.Build.Model;
-            }
-        }
+        public string Platform { get; private set; }
 
-        public string Make
-        {
-            get
-            {
-                return Android.OS.Build.Manufacturer;
-            }
-        }
+        public string PlatformUserAgent { get; private set; }
 
-        public string PlatformVersion
-        {
-            get
-            {
-                return Android.OS.Build.VERSION.Release;
-            }
-        }
+        public string Model { get; private set; }
 
-        public string Locale
-        {
-            get
-            {
-                return Application.Context.Resources.Configuration.Locale.ToString();
-            }
-        }
+        public string Make { get; private set; }
+
+        public string PlatformVersion { get; private set; }
+
+        public string Locale { get; private set; }
+
+        public string FrameworkUserAgent { get; private set; }
+
+        public string PclPlatform { get; private set; }
     }
 }

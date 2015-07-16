@@ -79,7 +79,7 @@ namespace Amazon.SecurityToken.Model
     /// temporary security credentials. You cannot use the passed policy to grant permissions
     /// that are in excess of those allowed by the access policy of the role that is being
     /// assumed. For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-    /// for AssumeRoleWithWebIdentity</a> in <i>Using Temporary Security Credentials</i>.
+    /// for AssumeRoleWithWebIdentity</a>.
     /// </para>
     ///  
     /// <para>
@@ -97,7 +97,7 @@ namespace Amazon.SecurityToken.Model
     ///  <ul> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html#MobileApplication-KnownProvider">
     /// Creating a Mobile Application with Third-Party Sign-In</a> and <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html">
     /// Creating Temporary Security Credentials for Mobile Apps Using Third-Party Identity
-    /// Providers</a> in <i>Using Temporary Security Credentials</i>. </li> <li> <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
+    /// Providers</a>. </li> <li> <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
     /// Web Identity Federation Playground</a>. This interactive website lets you walk through
     /// the process of authenticating via Login with Amazon, Facebook, or Google, getting
     /// temporary security credentials, and then using those credentials to make a request
@@ -153,9 +153,12 @@ namespace Amazon.SecurityToken.Model
         /// temporary security credentials. You cannot use the passed policy to grant permissions
         /// that are in excess of those allowed by the access policy of the role that is being
         /// assumed. For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-        /// for AssumeRoleWithWebIdentity</a> in <i>Using Temporary Security Credentials</i>.
-        /// 
+        /// for AssumeRoleWithWebIdentity</a>. 
         /// </para>
+        ///  <note>The policy plain text must be 2048 bytes or shorter. However, an internal conversion
+        /// compresses it into a packed binary format with a separate limit. The PackedPolicySize
+        /// response element indicates by percentage how close to the upper size limit the policy
+        /// is, with 100% equaling the maximum allowed size. </note>
         /// </summary>
         public string Policy
         {

@@ -13,9 +13,6 @@ namespace ServiceClientGenerator
         private const string amazonDotPrefix = "Amazon.";
 
         string _modelPath;
-        ServiceModel _serviceModel;
-        string _customizationsPath;
-        string _namespace;
 
         /// <summary>
         /// The name of the model, taken from the "model" entry in the service models 
@@ -36,13 +33,30 @@ namespace ServiceClientGenerator
             }
         }
 
+        ServiceModel _serviceModel;
+
         /// <summary>
         /// The ServiceModel object, used to parse information inside of the model*.normal.json file as well as any customizations
         /// </summary>
         public ServiceModel ServiceModel 
         {
-            get { return this._serviceModel ?? (this._serviceModel = new ServiceModel(this.ModelPath, this.CustomizationsPath)); }
+            get
+            {
+                if (this._serviceModel == null)
+                {
+                    this._serviceModel = new ServiceModel(this.ModelPath, this.CustomizationsPath);
+
+                    if (this.IsChildConfig)
+                    {
+                        _serviceModel.ParentModel = ParentConfig.ServiceModel;
+                    }
+                }
+
+                return this._serviceModel;
+            }
         }
+
+        string _customizationsPath;
 
         /// <summary>
         /// Path to the file used for customizations
@@ -63,6 +77,8 @@ namespace ServiceClientGenerator
         /// The base name used in the client and the top level request class for a service
         /// </summary>
         public string BaseName { get; set; }
+
+        string _namespace;
 
         /// <summary>
         /// The namespace of the service, if not specified it is Amazon.BASENAME
@@ -110,13 +126,15 @@ namespace ServiceClientGenerator
             }
         }
 
+        public bool InPreview {get; set;}
+
         public bool HasOverrideNamespace { get { return !string.IsNullOrEmpty(this._namespace); } }
         public string RegionLookupName { get; set; }
         public string AuthenticationServiceName { get; set; }
         public int? OverrideMaxRetries { get; set; }
         public string ServiceUrl { get; set; }
         public string DefaultRegion { get; set; }
-        public bool GenerateConstructors { get; set; }
+		public bool GenerateConstructors { get; set; }
         public string LockedApiVersion { get; set; }
         public string Synopsis { get; set; }
         public Dictionary<string, string> ServiceDependencies { get; set; }
@@ -135,6 +153,15 @@ namespace ServiceClientGenerator
 
         public bool SkipV1 { get; set; }
 
+        public bool IsChildConfig
+        {
+            get
+            {
+                return this.ParentConfig != null;
+            }
+        }
+
+        public ServiceConfiguration ParentConfig { get; set; }
 
         public override string ToString()
         {

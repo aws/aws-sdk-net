@@ -29,29 +29,36 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTable operation.
-    /// Updates the provisioned throughput for the given table, or manages the global secondary
-    /// indexes on the table.
+    /// Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB
+    /// Streams settings for a given table.
     /// 
     ///  
     /// <para>
-    /// You can increase or decrease the table's provisioned throughput values within the
-    /// maximums and minimums listed in the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-    /// section in the <i>Amazon DynamoDB Developer Guide</i>.
+    /// You can only perform one of the following operations at once:
     /// </para>
-    ///  
+    ///  <ul> <li>
     /// <para>
-    /// In addition, you can use <i>UpdateTable</i> to add, modify or delete global secondary
-    /// indexes on the table. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
-    /// Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
+    /// Modify the provisioned throughput settings of the table.
     /// </para>
-    ///  
+    /// </li> <li>
     /// <para>
-    /// The table must be in the <code>ACTIVE</code> state for <i>UpdateTable</i> to succeed.
-    /// <i>UpdateTable</i> is an asynchronous operation; while executing the operation, the
-    /// table is in the <code>UPDATING</code> state. While the table is in the <code>UPDATING</code>
-    /// state, the table still has the provisioned throughput from before the call. The table's
-    /// new provisioned throughput settings go into effect when the table returns to the <code>ACTIVE</code>
-    /// state; at that point, the <i>UpdateTable</i> operation is complete. 
+    /// Enable or disable Streams on the table.
+    /// </para>
+    /// </li> <li>
+    /// <para>
+    /// Remove a global secondary index from the table.
+    /// </para>
+    /// </li> <li> 
+    /// <para>
+    /// Create a new global secondary index on the table. Once the index begins backfilling,
+    /// you can use <i>UpdateTable</i> to perform other operations.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// <i>UpdateTable</i> is an asynchronous operation; while it is executing, the table
+    /// status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it is <code>UPDATING</code>,
+    /// you cannot issue another <i>UpdateTable</i> request. When the table returns to the
+    /// <code>ACTIVE</code> state, the <i>UpdateTable</i> operation is complete.
     /// </para>
     /// </summary>
     public partial class UpdateTableRequest : AmazonDynamoDBRequest
@@ -59,6 +66,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<AttributeDefinition> _attributeDefinitions = new List<AttributeDefinition>();
         private List<GlobalSecondaryIndexUpdate> _globalSecondaryIndexUpdates = new List<GlobalSecondaryIndexUpdate>();
         private ProvisionedThroughput _provisionedThroughput;
+        private StreamSpecification _streamSpecification;
         private string _tableName;
 
         /// <summary>
@@ -116,7 +124,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// <i>Delete</i> - remove a global secondary index from the table.
         /// </para>
-        /// </li> </ul>
+        /// </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
+        /// Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
+        /// </para>
         /// </summary>
         public List<GlobalSecondaryIndexUpdate> GlobalSecondaryIndexUpdates
         {
@@ -143,6 +155,31 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetProvisionedThroughput()
         {
             return this._provisionedThroughput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamSpecification. 
+        /// <para>
+        /// Represents the DynamoDB Streams configuration for the table.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You will receive a <i>ResourceInUseException</i> if you attempt to enable a stream
+        /// on a table that already has a stream, or if you attempt to disable a stream on a table
+        /// which does not have a stream.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public StreamSpecification StreamSpecification
+        {
+            get { return this._streamSpecification; }
+            set { this._streamSpecification = value; }
+        }
+
+        // Check to see if StreamSpecification property is set
+        internal bool IsSetStreamSpecification()
+        {
+            return this._streamSpecification != null;
         }
 
         /// <summary>

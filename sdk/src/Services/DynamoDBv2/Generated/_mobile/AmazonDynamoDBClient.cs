@@ -345,7 +345,12 @@ namespace Amazon.DynamoDBv2
         /// <i>UnprocessedKeys</i>. You can use this value to retry the operation starting with
         /// the next item to get.
         /// </para>
-        ///  
+        ///  <important>
+        /// <para>
+        /// If you request more than 100 items <i>BatchGetItem</i> will return a <i>ValidationException</i>
+        /// with the message "Too many items requested for the BatchGetItem call".
+        /// </para>
+        /// </important> 
         /// <para>
         /// For example, if you ask to retrieve 100 items, but each individual item is 300 KB
         /// in size, the system returns 52 items (so as not to exceed the 16 MB limit). It also
@@ -398,7 +403,7 @@ namespace Amazon.DynamoDBv2
         /// Units Calculations</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <i>BatchGetItem</i> request. Each element in the map of items to retrieve consists of the following: <ul> <li> <i>ConsistentRead</i> - If <code>true</code>, a strongly consistent read is used; if <code>false</code> (the default), an eventually consistent read is used. </li> <li>  <i>ExpressionAttributeNames</i> - One or more substitution tokens for attribute names in the <i>ProjectionExpression</i> parameter. The following are some use cases for using <i>ExpressionAttributeNames</i>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul><li><code>Percentile</code></li></ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <i>ExpressionAttributeNames</i>: <ul><li><code>{"#P":"Percentile"}</code></li></ul> You could then use this substitution in an expression, as in this example: <ul><li><code>#P = :val</code></li></ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</note> For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li> <i>Keys</i> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide <i>both</i> the hash attribute and the range attribute. </li> <li> <i>ProjectionExpression</i> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <i>AttributesToGet</i> -  <important> This is a legacy parameter, for backward compatibility. New applications should use <i>ProjectionExpression</i> instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i> exception. This parameter allows you to retrieve attributes of type List or Map; however, it cannot retrieve individual elements within a List or a Map. </important> The names of one or more attributes to retrieve. If no attribute names are provided, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines capacity units consumed based on item size, not on the amount of data that is returned to an application. </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <i>BatchGetItem</i> request. Each element in the map of items to retrieve consists of the following: <ul> <li> <i>ConsistentRead</i> - If <code>true</code>, a strongly consistent read is used; if <code>false</code> (the default), an eventually consistent read is used. </li> <li>  <i>ExpressionAttributeNames</i> - One or more substitution tokens for attribute names in the <i>ProjectionExpression</i> parameter. The following are some use cases for using <i>ExpressionAttributeNames</i>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul><li><code>Percentile</code></li></ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <i>ExpressionAttributeNames</i>: <ul><li><code>{"#P":"Percentile"}</code></li></ul> You could then use this substitution in an expression, as in this example: <ul><li><code>#P = :val</code></li></ul> <note>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</note> For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li> <i>Keys</i> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide <i>both</i> the hash attribute and the range attribute. </li> <li> <i>ProjectionExpression</i> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <i>AttributesToGet</i> -  <important> This is a legacy parameter, for backward compatibility. New applications should use <i>ProjectionExpression</i> instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i> exception. This parameter allows you to retrieve attributes of type List or Map; however, it cannot retrieve individual elements within a List or a Map.</important> The names of one or more attributes to retrieve. If no attribute names are provided, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines capacity units consumed based on item size, not on the amount of data that is returned to an application. </li> </ul></param>
         /// <param name="returnConsumedCapacity">A property of BatchGetItemRequest used to execute the BatchGetItem service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -409,11 +414,10 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// The request rate is too high, or the request is too large, for the available throughput
-        /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
-        /// therefore, your request will eventually succeed, unless the request is too large or
-        /// your retry queue is too large to finish. Reduce the frequency of requests by using
-        /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -442,7 +446,12 @@ namespace Amazon.DynamoDBv2
         /// <i>UnprocessedKeys</i>. You can use this value to retry the operation starting with
         /// the next item to get.
         /// </para>
-        ///  
+        ///  <important>
+        /// <para>
+        /// If you request more than 100 items <i>BatchGetItem</i> will return a <i>ValidationException</i>
+        /// with the message "Too many items requested for the BatchGetItem call".
+        /// </para>
+        /// </important> 
         /// <para>
         /// For example, if you ask to retrieve 100 items, but each individual item is 300 KB
         /// in size, the system returns 52 items (so as not to exceed the 16 MB limit). It also
@@ -495,7 +504,7 @@ namespace Amazon.DynamoDBv2
         /// Units Calculations</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <i>BatchGetItem</i> request. Each element in the map of items to retrieve consists of the following: <ul> <li> <i>ConsistentRead</i> - If <code>true</code>, a strongly consistent read is used; if <code>false</code> (the default), an eventually consistent read is used. </li> <li>  <i>ExpressionAttributeNames</i> - One or more substitution tokens for attribute names in the <i>ProjectionExpression</i> parameter. The following are some use cases for using <i>ExpressionAttributeNames</i>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul><li><code>Percentile</code></li></ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <i>ExpressionAttributeNames</i>: <ul><li><code>{"#P":"Percentile"}</code></li></ul> You could then use this substitution in an expression, as in this example: <ul><li><code>#P = :val</code></li></ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</note> For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li> <i>Keys</i> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide <i>both</i> the hash attribute and the range attribute. </li> <li> <i>ProjectionExpression</i> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <i>AttributesToGet</i> -  <important> This is a legacy parameter, for backward compatibility. New applications should use <i>ProjectionExpression</i> instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i> exception. This parameter allows you to retrieve attributes of type List or Map; however, it cannot retrieve individual elements within a List or a Map. </important> The names of one or more attributes to retrieve. If no attribute names are provided, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines capacity units consumed based on item size, not on the amount of data that is returned to an application. </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <i>BatchGetItem</i> request. Each element in the map of items to retrieve consists of the following: <ul> <li> <i>ConsistentRead</i> - If <code>true</code>, a strongly consistent read is used; if <code>false</code> (the default), an eventually consistent read is used. </li> <li>  <i>ExpressionAttributeNames</i> - One or more substitution tokens for attribute names in the <i>ProjectionExpression</i> parameter. The following are some use cases for using <i>ExpressionAttributeNames</i>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul><li><code>Percentile</code></li></ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <i>ExpressionAttributeNames</i>: <ul><li><code>{"#P":"Percentile"}</code></li></ul> You could then use this substitution in an expression, as in this example: <ul><li><code>#P = :val</code></li></ul> <note>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</note> For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li> <i>Keys</i> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide <i>both</i> the hash attribute and the range attribute. </li> <li> <i>ProjectionExpression</i> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <i>AttributesToGet</i> -  <important> This is a legacy parameter, for backward compatibility. New applications should use <i>ProjectionExpression</i> instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i> exception. This parameter allows you to retrieve attributes of type List or Map; however, it cannot retrieve individual elements within a List or a Map.</important> The names of one or more attributes to retrieve. If no attribute names are provided, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines capacity units consumed based on item size, not on the amount of data that is returned to an application. </li> </ul></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -505,11 +514,10 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// The request rate is too high, or the request is too large, for the available throughput
-        /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
-        /// therefore, your request will eventually succeed, unless the request is too large or
-        /// your retry queue is too large to finish. Reduce the frequency of requests by using
-        /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -608,13 +616,13 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// If you use a programming language that supports concurrency, such as Java, you can
-        /// use threads to write items in parallel. Your application must include the necessary
-        /// logic to manage the threads. With languages that don't support threading, such as
-        /// PHP, you must update or delete the specified items one at a time. In both situations,
-        /// <i>BatchWriteItem</i> provides an alternative where the API performs the specified
-        /// put and delete operations in parallel, giving you the power of the thread pool approach
-        /// without having to introduce complexity into your application.
+        /// If you use a programming language that supports concurrency, you can use threads to
+        /// write items in parallel. Your application must include the necessary logic to manage
+        /// the threads. With languages that don't support threading, you must update or delete
+        /// the specified items one at a time. In both situations, <i>BatchWriteItem</i> provides
+        /// an alternative where the API performs the specified put and delete operations in parallel,
+        /// giving you the power of the thread pool approach without having to introduce complexity
+        /// into your application.
         /// </para>
         ///  
         /// <para>
@@ -669,11 +677,10 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// The request rate is too high, or the request is too large, for the available throughput
-        /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
-        /// therefore, your request will eventually succeed, unless the request is too large or
-        /// your retry queue is too large to finish. Reduce the frequency of requests by using
-        /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -857,11 +864,10 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// The request rate is too high, or the request is too large, for the available throughput
-        /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
-        /// therefore, your request will eventually succeed, unless the request is too large or
-        /// your retry queue is too large to finish. Reduce the frequency of requests by using
-        /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -918,11 +924,10 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// The request rate is too high, or the request is too large, for the available throughput
-        /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
-        /// therefore, your request will eventually succeed, unless the request is too large or
-        /// your retry queue is too large to finish. Reduce the frequency of requests by using
-        /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -988,6 +993,12 @@ namespace Amazon.DynamoDBv2
         ///  </note> 
         /// <para>
         /// When you delete a table, any indexes on that table are also deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have DynamoDB Streams enabled on the table, then the corresponding stream on
+        /// that table goes into the <code>DISABLED</code> state, and the stream is automatically
+        /// deleted after 24 hours.
         /// </para>
         ///  
         /// <para>
@@ -1154,11 +1165,10 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// The request rate is too high, or the request is too large, for the available throughput
-        /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
-        /// therefore, your request will eventually succeed, unless the request is too large or
-        /// your retry queue is too large to finish. Reduce the frequency of requests by using
-        /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1188,7 +1198,7 @@ namespace Amazon.DynamoDBv2
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested item.</param>
         /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide both the hash attribute and the range attribute.</param>
-        /// <param name="consistentRead">A value that if set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, eventually consistent reads are used.</param>
+        /// <param name="consistentRead">Determines the read consistency model: If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1198,11 +1208,10 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// The request rate is too high, or the request is too large, for the available throughput
-        /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
-        /// therefore, your request will eventually succeed, unless the request is too large or
-        /// your retry queue is too large to finish. Reduce the frequency of requests by using
-        /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1427,11 +1436,10 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// The request rate is too high, or the request is too large, for the available throughput
-        /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
-        /// therefore, your request will eventually succeed, unless the request is too large or
-        /// your retry queue is too large to finish. Reduce the frequency of requests by using
-        /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1486,7 +1494,7 @@ namespace Amazon.DynamoDBv2
         /// </summary>
         /// <param name="tableName">The name of the table to contain the item.</param>
         /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide both the hash attribute and the range attribute. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. For more information about primary keys, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <i>Item</i> map is an <i>AttributeValue</i> object.</param>
-        /// <param name="returnValues">Use <i>ReturnValues</i> if you want to get the item attributes as they appeared before they were updated with the <i>PutItem</i> request. For <i>PutItem</i>, the valid values are: <ul> <li> <code>NONE</code> - If <i>ReturnValues</i> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <i>ReturnValues</i>.) </li> <li> <code>ALL_OLD</code> - If <i>PutItem</i> overwrote an attribute name-value pair, then the content of the old item is returned. </li> </ul></param>
+        /// <param name="returnValues">Use <i>ReturnValues</i> if you want to get the item attributes as they appeared before they were updated with the <i>PutItem</i> request. For <i>PutItem</i>, the valid values are: <ul> <li> <code>NONE</code> - If <i>ReturnValues</i> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <i>ReturnValues</i>.) </li> <li> <code>ALL_OLD</code> - If <i>PutItem</i> overwrote an attribute name-value pair, then the content of the old item is returned. </li> </ul> <note>Other "Valid Values" are not relevant to PutItem.</note></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1503,11 +1511,10 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// The request rate is too high, or the request is too large, for the available throughput
-        /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
-        /// therefore, your request will eventually succeed, unless the request is too large or
-        /// your retry queue is too large to finish. Reduce the frequency of requests by using
-        /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1601,15 +1608,17 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// The result set is eventually consistent. 
-        /// </para>
-        ///  
-        /// <para>
         /// By default, <i>Scan</i> operations proceed sequentially; however, for faster performance
         /// on a large table or secondary index, applications can request a parallel <i>Scan</i>
         /// operation by providing the <i>Segment</i> and <i>TotalSegments</i> parameters. For
         /// more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
         /// Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, <i>Scan</i> uses eventually consistent reads when acessing the data in
+        /// the table or local secondary index. However, you can use strongly consistent reads
+        /// instead by setting the <i>ConsistentRead</i> parameter to <i>true</i>.
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</param>
@@ -1623,11 +1632,10 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// The request rate is too high, or the request is too large, for the available throughput
-        /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
-        /// therefore, your request will eventually succeed, unless the request is too large or
-        /// your retry queue is too large to finish. Reduce the frequency of requests by using
-        /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1658,15 +1666,17 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// The result set is eventually consistent. 
-        /// </para>
-        ///  
-        /// <para>
         /// By default, <i>Scan</i> operations proceed sequentially; however, for faster performance
         /// on a large table or secondary index, applications can request a parallel <i>Scan</i>
         /// operation by providing the <i>Segment</i> and <i>TotalSegments</i> parameters. For
         /// more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
         /// Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, <i>Scan</i> uses eventually consistent reads when acessing the data in
+        /// the table or local secondary index. However, you can use strongly consistent reads
+        /// instead by setting the <i>ConsistentRead</i> parameter to <i>true</i>.
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</param>
@@ -1680,11 +1690,10 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// The request rate is too high, or the request is too large, for the available throughput
-        /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
-        /// therefore, your request will eventually succeed, unless the request is too large or
-        /// your retry queue is too large to finish. Reduce the frequency of requests by using
-        /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1715,15 +1724,17 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// The result set is eventually consistent. 
-        /// </para>
-        ///  
-        /// <para>
         /// By default, <i>Scan</i> operations proceed sequentially; however, for faster performance
         /// on a large table or secondary index, applications can request a parallel <i>Scan</i>
         /// operation by providing the <i>Segment</i> and <i>TotalSegments</i> parameters. For
         /// more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
         /// Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, <i>Scan</i> uses eventually consistent reads when acessing the data in
+        /// the table or local secondary index. However, you can use strongly consistent reads
+        /// instead by setting the <i>ConsistentRead</i> parameter to <i>true</i>.
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</param>
@@ -1738,11 +1749,10 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// The request rate is too high, or the request is too large, for the available throughput
-        /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
-        /// therefore, your request will eventually succeed, unless the request is too large or
-        /// your retry queue is too large to finish. Reduce the frequency of requests by using
-        /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1823,11 +1833,10 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// The request rate is too high, or the request is too large, for the available throughput
-        /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
-        /// therefore, your request will eventually succeed, unless the request is too large or
-        /// your retry queue is too large to finish. Reduce the frequency of requests by using
-        /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1878,11 +1887,10 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// The request rate is too high, or the request is too large, for the available throughput
-        /// to accommodate. The AWS SDKs automatically retry requests that receive this exception;
-        /// therefore, your request will eventually succeed, unless the request is too large or
-        /// your retry queue is too large to finish. Reduce the frequency of requests by using
-        /// the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1932,29 +1940,36 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// Updates the provisioned throughput for the given table, or manages the global secondary
-        /// indexes on the table.
+        /// Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB
+        /// Streams settings for a given table.
         /// 
         ///  
         /// <para>
-        /// You can increase or decrease the table's provisioned throughput values within the
-        /// maximums and minimums listed in the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-        /// section in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// You can only perform one of the following operations at once:
         /// </para>
-        ///  
+        ///  <ul> <li>
         /// <para>
-        /// In addition, you can use <i>UpdateTable</i> to add, modify or delete global secondary
-        /// indexes on the table. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
-        /// Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
+        /// Modify the provisioned throughput settings of the table.
         /// </para>
-        ///  
+        /// </li> <li>
         /// <para>
-        /// The table must be in the <code>ACTIVE</code> state for <i>UpdateTable</i> to succeed.
-        /// <i>UpdateTable</i> is an asynchronous operation; while executing the operation, the
-        /// table is in the <code>UPDATING</code> state. While the table is in the <code>UPDATING</code>
-        /// state, the table still has the provisioned throughput from before the call. The table's
-        /// new provisioned throughput settings go into effect when the table returns to the <code>ACTIVE</code>
-        /// state; at that point, the <i>UpdateTable</i> operation is complete. 
+        /// Enable or disable Streams on the table.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// Remove a global secondary index from the table.
+        /// </para>
+        /// </li> <li> 
+        /// <para>
+        /// Create a new global secondary index on the table. Once the index begins backfilling,
+        /// you can use <i>UpdateTable</i> to perform other operations.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// <i>UpdateTable</i> is an asynchronous operation; while it is executing, the table
+        /// status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it is <code>UPDATING</code>,
+        /// you cannot issue another <i>UpdateTable</i> request. When the table returns to the
+        /// <code>ACTIVE</code> state, the <i>UpdateTable</i> operation is complete.
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table to be updated.</param>

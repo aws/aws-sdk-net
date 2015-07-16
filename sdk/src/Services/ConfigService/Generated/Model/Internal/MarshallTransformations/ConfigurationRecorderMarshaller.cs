@@ -51,6 +51,17 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetRecordingGroup())
+            {
+                context.Writer.WritePropertyName("recordingGroup");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RecordingGroupMarshaller.Instance;
+                marshaller.Marshall(requestObject.RecordingGroup, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRoleARN())
             {
                 context.Writer.WritePropertyName("roleARN");

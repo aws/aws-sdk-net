@@ -97,6 +97,8 @@ namespace ServiceClientGenerator
             get { return this._customizationModel; }
         }
 
+        public ServiceModel ParentModel { get; set; }
+
         /// <summary>
         /// Provides the targetPrefix if it is set in the metadata.
         /// Target prefix is defined so that the target can be set in the header of the request
@@ -227,6 +229,24 @@ namespace ServiceClientGenerator
             }
         }
 
+        public IEnumerable<ExceptionModel> Exceptions
+        {
+            get
+            {
+                var exceptions = new List<ExceptionModel>();
+                foreach (var operation in this.Operations)
+                {
+                    foreach (var exception in operation.Exceptions)
+                    {
+                        if (exceptions.All(e => !e.Name.Equals(exception.Name)))
+                            exceptions.Add(exception);
+                    }
+                }
+                
+                return exceptions;
+            }
+        }
+
         readonly HashSet<string> _excludedOperations = new HashSet<string>();
 
         public HashSet<string> ExcludedOperations
@@ -269,21 +289,31 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Returns all the enumerations defined in the model.
+        /// Returns list of enums defined in the service model.
         /// </summary>
-        public IEnumerable<Enumeration> Enumerations
+        /// <param name="includeParentEnums">Includes enums from current service model, which are also
+        /// defined in the parent model.</param>
+        /// <returns></returns>
+        public IEnumerable<Enumeration> Enumerations(bool includeParentEnums)
         {
-            get
+            var list = new List<Enumeration>();
+            foreach (KeyValuePair<string, JsonData> kvp in DocumentRoot[ShapesKey])
             {
-                var list = new List<Enumeration>();
-                foreach (KeyValuePair<string, JsonData> kvp in DocumentRoot[ShapesKey])
-                {
-                    var type = kvp.Value["type"];
-                    if (type != null && type.ToString() == "string" && kvp.Value["enum"] != null)
-                        list.Add(new Enumeration(this, kvp.Key, kvp.Value));
-                }
-                return list.OrderBy(x => x.Name).ToList();
+                var type = kvp.Value["type"];
+                if (type != null && type.ToString() == "string" && kvp.Value["enum"] != null)
+                    list.Add(new Enumeration(this, kvp.Key, kvp.Value));
             }
+            list = list.OrderBy(x => x.Name).ToList();
+
+            if (includeParentEnums || this.ParentModel == null)
+            {
+                return list;
+            }
+            else
+            {
+                // Remove enums already defined in the parent model                
+                return list.Where(e => ParentModel.Enumerations(true).All(en => !e.Name.Equals(en.Name)));
+            }         
         }
 
         /// <summary>

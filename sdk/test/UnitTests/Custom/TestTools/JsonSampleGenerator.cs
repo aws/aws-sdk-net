@@ -46,7 +46,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 WriteMap(writer, shape);
             else if (shape.IsEnum)
             {
-                var enumerationWrapper = this._model.Enumerations.First(x => x.Name == shape.Name);
+                var enumerationWrapper = this._model.Enumerations(true).First(x => x.Name == shape.Name);
                 writer.Write(enumerationWrapper.EnumerationValues.ElementAt(0).MarshallName);
             }
             else if (shape.IsString)

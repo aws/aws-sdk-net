@@ -214,6 +214,16 @@
             "service-url": "https://logs.us-east-1.amazonaws.com",
             "synopsis": "Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms."
         },
+		{
+			"active" : true,
+			
+			"model" : "codecommit",
+			"base-name" : "CodeCommit",
+			"region-lookup-name" : "codecommit",
+			"authentication-service-name" : "codecommit",
+            "service-url": "http://codecommit.us-east-1.amazonaws.com",
+            "mobile-platforms" : []
+		},
         {
             "active": true,
 
@@ -223,6 +233,16 @@
             "authentication-service-name": "codedeploy",
             "service-url": "http://codedeploy.us-east-1.amazonaws.com",
             "synopsis": "AWS CodeDeploy is a service that automates code deployments. AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during deployment, and handles the complexity of updating your applications."
+        },
+		{
+            "active": true,
+
+            "model": "codepipeline",
+            "base-name": "CodePipeline",
+            "region-lookup-name": "codepipeline",
+            "authentication-service-name": "codepipeline",
+            "service-url": "http://codepipeline.us-east-1.amazonaws.com",
+            "mobile-platforms": [ ]
         },
         {
             "active": true,
@@ -259,6 +279,15 @@
         {
             "active": true,
 
+            "model": "devicefarm",
+            "base-name": "DeviceFarm",
+            "region-lookup-name": "devicefarm",
+            "authentication-service-name": "devicefarm",
+            "synopsis": "AWS Device Farm is an app testing service that enables you to test your Android and Fire OS apps on real, physical phones and tablets that are hosted by AWS. The service allows you to upload your own tests or use built-in, script-free compatibility tests."
+        },
+        {
+            "active": true,
+
             "model": "directconnect",
             "base-name": "DirectConnect",
             "region-lookup-name": "directconnect",
@@ -279,7 +308,7 @@
 		{
             "active": true,
 
-            "model": "dynamodb",
+            "model": "dynamodb-",
             "namespace": "Amazon.DynamoDBv2",
             "base-name": "DynamoDB",
             "region-lookup-name": "dynamodb",
@@ -287,6 +316,18 @@
             "service-url": "https://dynamodb.us-east-1.amazonaws.com/",
             "max-retries": 10,
             "synopsis": "Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale."
+        },
+        {
+            "active": true,
+
+            "model": "dynamodbstreams",
+            "namespace": "Amazon.DynamoDBv2",
+            "base-name": "DynamoDBStreams",
+            "region-lookup-name": "streams.dynamodb",
+            "authentication-service-name": "dynamodb",
+            "service-url": "https://streams.dynamodb.us-east-1.amazonaws.com/",
+            "max-retries": 10,
+            "parent-base-name": "DynamoDB"
         },
         {
             "active": true,

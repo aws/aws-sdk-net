@@ -30,7 +30,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// Container for the parameters to the CloneStack operation.
     /// Creates a clone of a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone
-    /// a Stack</a>.
+    /// a Stack</a>. By default, all parameters are set to the values used by the parent stack.
     /// 
     ///  
     /// <para>
@@ -42,6 +42,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class CloneStackRequest : AmazonOpsWorksRequest
     {
+        private string _agentVersion;
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private ChefConfiguration _chefConfiguration;
         private List<string> _cloneAppIds = new List<string>();
@@ -63,6 +64,37 @@ namespace Amazon.OpsWorks.Model
         private bool? _useCustomCookbooks;
         private bool? _useOpsworksSecurityGroups;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property AgentVersion. 
+        /// <para>
+        /// The default AWS OpsWorks agent version. You have the following options:
+        /// </para>
+        ///  <ul> <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks automatically
+        /// installs new agent versions on the stack's instances as soon as they are available.</li>
+        /// <li>Fixed version - Set this parameter to your preferred agent version. To update
+        /// the agent version, you must edit the stack configuration and specify a new version.
+        /// AWS OpsWorks then automatically installs that version on the stack's instances.</li>
+        /// </ul> 
+        /// <para>
+        /// The default setting is <code>LATEST</code>. To specify an agent version, you must
+        /// use the complete version number, not the abbreviated number shown on the console.
+        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.
+        /// </para>
+        ///  <note>You can also specify an agent version when you create or update an instance,
+        /// which overrides the stack's default setting.</note>
+        /// </summary>
+        public string AgentVersion
+        {
+            get { return this._agentVersion; }
+            set { this._agentVersion = value; }
+        }
+
+        // Check to see if AgentVersion property is set
+        internal bool IsSetAgentVersion()
+        {
+            return this._agentVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -142,9 +174,9 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property ConfigurationManager. 
         /// <para>
-        /// The configuration manager. When you clone a stack we recommend that you use the configuration
-        /// manager to specify the Chef version, 0.9, 11.4, or 11.10. The default value is currently
-        /// 11.4.
+        /// The configuration manager. When you clone a Linux stack we recommend that you use
+        /// the configuration manager to specify the Chef version: 0.9, 11.4, or 11.10. The default
+        /// value is currently 11.10.
         /// </para>
         /// </summary>
         public StackConfigurationManager ConfigurationManager
@@ -179,7 +211,7 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// A string that contains user-defined, custom JSON. It is used to override the corresponding
         /// default stack configuration JSON values. The string should be in the following format
-        /// and must escape characters such as '"'.:
+        /// and must escape characters such as '"':
         /// </para>
         ///  
         /// <para>
@@ -250,14 +282,19 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The stack's operating system, which must be set to one of the following.
         /// </para>
-        ///  <ul> <li>Standard Linux operating systems: an Amazon Linux version such as <code>Amazon
-        /// Linux 2014.09</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-        /// <li>Custom Linux AMIs: <code>Custom</code>. You specify the custom AMI you want to
-        /// use when you create instances.</li> <li>Microsoft Windows Server 2012 R2.</li> </ul>
-        /// 
+        ///  <ul> <li>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon
+        /// Linux 2015.03</code>, <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
+        /// <li> <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>.
+        /// You specify the custom AMI you want to use when you create instances. For more information
+        /// on how to use custom AMIs with OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+        /// Custom AMIs</a>.</li> </ul> 
         /// <para>
-        ///  The default option is the current Amazon Linux version.
+        /// The default option is the parent stack's operating system. For more information on
+        /// the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
+        /// OpsWorks Operating Systems</a>.
         /// </para>
+        ///  <note>You can specify a different Linux operating system for the cloned stack, but
+        /// you cannot change from Linux to Windows or Windows to Linux.</note>
         /// </summary>
         public string DefaultOs
         {

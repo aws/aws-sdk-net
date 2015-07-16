@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// 
+    /// Details on the network bindings between a container and its host container instance.
     /// </summary>
     public partial class NetworkBinding
     {

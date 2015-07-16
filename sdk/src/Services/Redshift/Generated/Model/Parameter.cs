@@ -33,6 +33,7 @@ namespace Amazon.Redshift.Model
     public partial class Parameter
     {
         private string _allowedValues;
+        private ParameterApplyType _applyType;
         private string _dataType;
         private string _description;
         private bool? _isModifiable;
@@ -57,6 +58,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetAllowedValues()
         {
             return this._allowedValues != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApplyType. 
+        /// <para>
+        /// Specifies how to apply the parameter. Supported value: <code>static</code>.
+        /// </para>
+        /// </summary>
+        public ParameterApplyType ApplyType
+        {
+            get { return this._applyType; }
+            set { this._applyType = value; }
+        }
+
+        // Check to see if ApplyType property is set
+        internal bool IsSetApplyType()
+        {
+            return this._applyType != null;
         }
 
         /// <summary>

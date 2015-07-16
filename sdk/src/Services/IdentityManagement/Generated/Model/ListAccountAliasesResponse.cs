@@ -57,9 +57,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property IsTruncated. 
         /// <para>
-        ///  A flag that indicates whether there are more account aliases to list. If your results
-        /// were truncated, you can make a subsequent pagination request using the <code>Marker</code>
-        /// request parameter to retrieve more account aliases in the list. 
+        /// A flag that indicates whether there are more items to return. If your results were
+        /// truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items.
         /// </para>
         /// </summary>
         public bool IsTruncated
@@ -77,9 +77,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  Use this only when paginating results, and only in a subsequent request after you've
-        /// received a response where the results are truncated. Set it to the value of the <code>Marker</code>
-        /// element in the response you just received. 
+        /// When <code>IsTruncated</code> is <code>true</code>, this element is present and contains
+        /// the value to use for the <code>Marker</code> parameter in a subsequent pagination
+        /// request.
         /// </para>
         /// </summary>
         public string Marker

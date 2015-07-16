@@ -491,12 +491,10 @@ namespace SDKDocGenerator.Writers
 
             var docs35 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net35"), wrapper);
             var docs45 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net45"), wrapper);
-            var docsRT = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("winrt"), wrapper);
-            var docsWP = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("wp8"), wrapper);
-            var docsPortable = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("portable"), wrapper);
+            var docsPCL = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("pcl"), wrapper);
 
             // If there is no documentation then assume it is available for all platforms.
-            var boolNoDocs = docs35 == null && docs45 == null && docsRT == null && docsWP == null && docsPortable == null;
+            var boolNoDocs = docs35 == null && docs45 == null && docsPCL == null;
 
             var sb = new StringBuilder();
             if (boolNoDocs || (wrapper != null && docs45 != null))
@@ -513,38 +511,16 @@ namespace SDKDocGenerator.Writers
                 writer.WriteLine("<p><strong>.NET Framework: </strong><br/>Supported in: {0}<br/>", sb.ToString());
             }
 
-            if (boolNoDocs || docsRT != null || docsPortable != null)
+            if (boolNoDocs || docsPCL != null)
             {
-                sb = new StringBuilder();
-                if (docsPortable != null)
-                    sb.Append("Windows 8.1");
-                if (docsRT != null)
-                {
-                    if (sb.Length > 0)
-                        sb.Append(", ");
-                    sb.Append("Windows 8");
-                }
-
-                if (sb.Length > 0)
-                    writer.WriteLine("<p><strong>.NET for Windows Store apps: </strong><br/>Supported in: {0}<br/>", sb);
+                writer.WriteLine("<p><strong>Portable Class Library: </strong><br/>");
+                writer.WriteLine("Supported in: Windows Store Apps<br/>");
+                writer.WriteLine("Supported in: Windows Phone 8.1<br/>");
+                writer.WriteLine("Supported in: Xamarin Android<br/>");
+                writer.WriteLine("Supported in: Xamarin iOS<br/>");
+                writer.WriteLine("Supported in: Xamarin.Forms<br/>");
             }
 
-            if (boolNoDocs || docsWP != null || docsPortable != null)
-            {
-                sb = new StringBuilder();
-
-                if (docsPortable != null)
-                    sb.Append("Windows Phone 8.1");
-                if (docsWP != null)
-                {
-                    if (sb.Length > 0)
-                        sb.Append(", ");
-                    sb.Append("Windows Phone 8");
-                }
-
-                if (sb.Length > 0)
-                    writer.WriteLine("<p><strong>.NET for Windows Phone: </strong><br/>Supported in: {0}<br/>", sb);
-            }
             
             AddSectionClosing(writer);
         }

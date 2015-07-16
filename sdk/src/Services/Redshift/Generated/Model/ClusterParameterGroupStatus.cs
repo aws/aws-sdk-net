@@ -32,8 +32,33 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class ClusterParameterGroupStatus
     {
+        private List<ClusterParameterStatus> _clusterParameterStatusList = new List<ClusterParameterStatus>();
         private string _parameterApplyStatus;
         private string _parameterGroupName;
+
+        /// <summary>
+        /// Gets and sets the property ClusterParameterStatusList. 
+        /// <para>
+        /// The list of parameter statuses.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information about parameters and parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+        /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// 
+        /// </para>
+        /// </summary>
+        public List<ClusterParameterStatus> ClusterParameterStatusList
+        {
+            get { return this._clusterParameterStatusList; }
+            set { this._clusterParameterStatusList = value; }
+        }
+
+        // Check to see if ClusterParameterStatusList property is set
+        internal bool IsSetClusterParameterStatusList()
+        {
+            return this._clusterParameterStatusList != null && this._clusterParameterStatusList.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ParameterApplyStatus. 

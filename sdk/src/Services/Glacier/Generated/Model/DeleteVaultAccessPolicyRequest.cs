@@ -30,7 +30,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Container for the parameters to the DeleteVaultAccessPolicy operation.
     /// This operation deletes the access policy associated with the specified vault. The
-    /// operation is eventually consistent—that is, it might take some time for Amazon Glacier
+    /// operation is eventually consistent; that is, it might take some time for Amazon Glacier
     /// to completely remove the access policy, and you might still see the effect of the
     /// policy for a short time after you send the delete request.
     /// 

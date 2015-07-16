@@ -208,6 +208,37 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  DeleteIdentityPolicy
+
+        internal DeleteIdentityPolicyResponse DeleteIdentityPolicy(DeleteIdentityPolicyRequest request)
+        {
+            var marshaller = new DeleteIdentityPolicyRequestMarshaller();
+            var unmarshaller = DeleteIdentityPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIdentityPolicyRequest,DeleteIdentityPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIdentityPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteIdentityPolicyResponse> DeleteIdentityPolicyAsync(DeleteIdentityPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteIdentityPolicyRequestMarshaller();
+            var unmarshaller = DeleteIdentityPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIdentityPolicyRequest,DeleteIdentityPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteVerifiedEmailAddress
 
         internal DeleteVerifiedEmailAddressResponse DeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest request)
@@ -296,6 +327,37 @@ namespace Amazon.SimpleEmail
             var unmarshaller = GetIdentityNotificationAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetIdentityNotificationAttributesRequest,GetIdentityNotificationAttributesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIdentityPolicies
+
+        internal GetIdentityPoliciesResponse GetIdentityPolicies(GetIdentityPoliciesRequest request)
+        {
+            var marshaller = new GetIdentityPoliciesRequestMarshaller();
+            var unmarshaller = GetIdentityPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdentityPoliciesRequest,GetIdentityPoliciesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdentityPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityPolicies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetIdentityPoliciesResponse> GetIdentityPoliciesAsync(GetIdentityPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetIdentityPoliciesRequestMarshaller();
+            var unmarshaller = GetIdentityPoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIdentityPoliciesRequest,GetIdentityPoliciesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -500,6 +562,37 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  ListIdentityPolicies
+
+        internal ListIdentityPoliciesResponse ListIdentityPolicies(ListIdentityPoliciesRequest request)
+        {
+            var marshaller = new ListIdentityPoliciesRequestMarshaller();
+            var unmarshaller = ListIdentityPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListIdentityPoliciesRequest,ListIdentityPoliciesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIdentityPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentityPolicies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListIdentityPoliciesResponse> ListIdentityPoliciesAsync(ListIdentityPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListIdentityPoliciesRequestMarshaller();
+            var unmarshaller = ListIdentityPoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListIdentityPoliciesRequest,ListIdentityPoliciesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListVerifiedEmailAddresses
 
         internal ListVerifiedEmailAddressesResponse ListVerifiedEmailAddresses()
@@ -551,6 +644,37 @@ namespace Amazon.SimpleEmail
             var unmarshaller = ListVerifiedEmailAddressesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListVerifiedEmailAddressesRequest,ListVerifiedEmailAddressesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutIdentityPolicy
+
+        internal PutIdentityPolicyResponse PutIdentityPolicy(PutIdentityPolicyRequest request)
+        {
+            var marshaller = new PutIdentityPolicyRequestMarshaller();
+            var unmarshaller = PutIdentityPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutIdentityPolicyRequest,PutIdentityPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutIdentityPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutIdentityPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutIdentityPolicyResponse> PutIdentityPolicyAsync(PutIdentityPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutIdentityPolicyRequestMarshaller();
+            var unmarshaller = PutIdentityPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutIdentityPolicyRequest,PutIdentityPolicyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

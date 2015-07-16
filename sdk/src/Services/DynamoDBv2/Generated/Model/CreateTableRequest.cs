@@ -59,6 +59,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<KeySchemaElement> _keySchema = new List<KeySchemaElement>();
         private List<LocalSecondaryIndex> _localSecondaryIndexes = new List<LocalSecondaryIndex>();
         private ProvisionedThroughput _provisionedThroughput;
+        private StreamSpecification _streamSpecification;
         private string _tableName;
 
         /// <summary>
@@ -313,6 +314,56 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetProvisionedThroughput()
         {
             return this._provisionedThroughput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamSpecification. 
+        /// <para>
+        /// The settings for DynamoDB Streams on the table. These settings consist of:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// <i>StreamEnabled</i> - Indicates whether Streams is to be enabled (true) or disabled
+        /// (false).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <i>StreamViewType</i> - When an item in the table is modified, <i>StreamViewType</i>
+        /// determines what information is written to the table's stream. Valid values for <i>StreamViewType</i>
+        /// are:
+        /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// <i>KEYS_ONLY</i> - Only the key attributes of the modified item are written to the
+        /// stream.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <i>NEW_IMAGE</i> - The entire item, as it appears after it was modified, is written
+        /// to the stream.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <i>OLD_IMAGE</i> - The entire item, as it appeared before it was modified, is written
+        /// to the stream.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <i>NEW_AND_OLD_IMAGES</i> - Both the new and the old item images of the item are written
+        /// to the stream.
+        /// </para>
+        /// </li> </ul> </li> </ul>
+        /// </summary>
+        public StreamSpecification StreamSpecification
+        {
+            get { return this._streamSpecification; }
+            set { this._streamSpecification = value; }
+        }
+
+        // Check to see if StreamSpecification property is set
+        internal bool IsSetStreamSpecification()
+        {
+            return this._streamSpecification != null;
         }
 
         /// <summary>

@@ -20,6 +20,7 @@ using System.Globalization;
 using System.Text;
 
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util.Internal.PlatformServices;
 
 namespace Amazon.Util.Internal
 {
@@ -52,12 +53,12 @@ namespace Amazon.Util.Internal
                 _versionNumber = CoreVersionNumber;
             }
 
-            _customSdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} .NET Runtime/{2} .NET Framework/{3} OS/{4} {5}",
+            var environmentInfo = ServiceFactory.Instance.GetService<IEnvironmentInfo>();
+            _customSdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} {2} OS/{3} {4}",
                 _userAgentBaseName,
                 _versionNumber,
-                DetermineRuntime(),
-                DetermineFramework(),
-                DetermineOSVersion(),
+                environmentInfo.FrameworkUserAgent,
+                environmentInfo.PlatformUserAgent,                
                 _customData).Trim();
         }
 
@@ -69,14 +70,26 @@ namespace Amazon.Util.Internal
                 return _customSdkUserAgent;
             }
 
-            return string.Format(CultureInfo.InvariantCulture, "{0}/{1} aws-sdk-dotnet-core/{2} .NET Runtime/{3} .NET Framework/{4} OS/{5} {6}",
+            var environmentInfo = ServiceFactory.Instance.GetService<IEnvironmentInfo>();
+
+#if BCL
+            return string.Format(CultureInfo.InvariantCulture, "{0}/{1} aws-sdk-dotnet-core/{2} {3} OS/{4} {5}",
                 _userAgentBaseName,
                 serviceSdkVersion,
                 CoreVersionNumber,
-                DetermineRuntime(),
-                DetermineFramework(),
-                DetermineOSVersion(),
+                environmentInfo.FrameworkUserAgent,
+                environmentInfo.PlatformUserAgent,
                 _customData).Trim();
+#elif PCL
+            return string.Format(CultureInfo.InvariantCulture, "{0}/{1} aws-sdk-dotnet-core/{2} {3} OS/{4} {5} {6}",
+                _userAgentBaseName,
+                serviceSdkVersion,
+                CoreVersionNumber,
+                environmentInfo.FrameworkUserAgent,
+                environmentInfo.PlatformUserAgent,
+                environmentInfo.PclPlatform,
+                _customData).Trim();
+#endif
         }
 
 

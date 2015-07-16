@@ -32,11 +32,30 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class LocalSecondaryIndexDescription
     {
+        private string _indexArn;
         private string _indexName;
         private long? _indexSizeBytes;
         private long? _itemCount;
         private List<KeySchemaElement> _keySchema = new List<KeySchemaElement>();
         private Projection _projection;
+
+        /// <summary>
+        /// Gets and sets the property IndexArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies the index.
+        /// </para>
+        /// </summary>
+        public string IndexArn
+        {
+            get { return this._indexArn; }
+            set { this._indexArn = value; }
+        }
+
+        // Check to see if IndexArn property is set
+        internal bool IsSetIndexArn()
+        {
+            return this._indexArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IndexName. 

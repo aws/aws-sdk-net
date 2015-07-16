@@ -117,7 +117,10 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Handler. 
         /// <para>
         /// The function within your code that Lambda calls to begin execution. For Node.js, it
-        /// is the <i>module-name</i>.<i>export</i> value in your function. 
+        /// is the <i>module-name</i>.<i>export</i> value in your function. For Java, it can be
+        /// <code>package.class-name::handler</code> or <code>package.class-name</code>. For more
+        /// information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/java-programming-model-handler-types.html">Lambda
+        /// Function Handler (Java)</a>. 
         /// </para>
         /// </summary>
         public string Handler
@@ -179,7 +182,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Runtime. 
         /// <para>
         /// The runtime environment for the Lambda function you are uploading. Currently, Lambda
-        /// supports only "nodejs" as the runtime.
+        /// supports "java" and "nodejs" as the runtime.
         /// </para>
         /// </summary>
         public Runtime Runtime
