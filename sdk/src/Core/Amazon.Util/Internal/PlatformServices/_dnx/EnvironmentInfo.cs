@@ -53,5 +53,29 @@ namespace Amazon.Util.Internal.PlatformServices
                 throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
             }
         }
+
+        public string PclPlatform
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string PlatformUserAgent
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string FrameworkUserAgent
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

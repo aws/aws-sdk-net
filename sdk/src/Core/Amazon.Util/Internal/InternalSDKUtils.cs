@@ -89,6 +89,14 @@ namespace Amazon.Util.Internal
                 environmentInfo.PlatformUserAgent,
                 environmentInfo.PclPlatform,
                 _customData).Trim();
+#elif DNX
+            return string.Format(CultureInfo.InvariantCulture, "{0}/{1} aws-sdk-dotnet-core/{2} {3} OS/{4} {5}",
+                _userAgentBaseName,
+                serviceSdkVersion,
+                CoreVersionNumber,
+                environmentInfo.FrameworkUserAgent,
+                environmentInfo.PlatformUserAgent,
+                _customData).Trim();
 #endif
         }
 
