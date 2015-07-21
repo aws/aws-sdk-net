@@ -20,10 +20,6 @@ using Amazon.S3.Model;
 
 namespace Amazon.S3
 {
-#if STORAGE_FILE
-    [CLSCompliant(false)]
-#endif
-
     public partial interface IAmazonS3 : IDisposable, Amazon.Runtime.SharedInterfaces.ICoreAmazonS3
     {
         #region GetPreSignedURL
