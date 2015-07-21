@@ -37,18 +37,27 @@ namespace Amazon.S3.Transfer.Internal
     {
         static int MAX_BACKOFF_IN_MILLISECONDS = (int)TimeSpan.FromSeconds(30).TotalMilliseconds;
 
-        // Set of status codes to retry on.
-        static ICollection<WebExceptionStatus> WebExceptionStatusesToRetryOn = new HashSet<WebExceptionStatus>
+
+
+#if !DNX
+        // Set of web exception status codes to retry on.
+        private ICollection<WebExceptionStatus> WebExceptionStatusesToRetryOn = new HashSet<WebExceptionStatus>
         {
             WebExceptionStatus.ConnectFailure,
 
-#if !PCL
-            // These statuses are not available on WinRT
+#if !PCL // These statuses are not available on WinRT
             WebExceptionStatus.ConnectionClosed,
             WebExceptionStatus.KeepAliveFailure,
-            WebExceptionStatus.NameResolutionFailure,            
+            WebExceptionStatus.NameResolutionFailure,
+            WebExceptionStatus.ReceiveFailure,
+#else // WinRT does not expose the status as public enums so we hard code the status numbers.
+            (WebExceptionStatus)8,
+            (WebExceptionStatus)12,
+            (WebExceptionStatus)1,
+            (WebExceptionStatus)3,
 #endif
         };
+#endif
 
         static Logger Logger
         {
@@ -116,6 +125,7 @@ namespace Amazon.S3.Transfer.Internal
                     canRetry = false;
             }
 
+#if !DNX
             var webException = exception as WebException;
             if (webException != null)
             {
@@ -130,7 +140,7 @@ namespace Amazon.S3.Transfer.Internal
                 else
                     canRetry = false;
             }
-
+#endif
             if (!canRetry)
             {
                 Logger.Error(exception, "Encountered a {0}. Reached maximum retries {1} of {2}.", exception.GetType().Name, retries, maxRetries);

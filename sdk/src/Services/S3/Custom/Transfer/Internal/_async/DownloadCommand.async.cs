@@ -86,8 +86,11 @@ namespace Amazon.S3.Transfer.Internal
             var httpException = exception as HttpRequestException;
             if (httpException != null)
             {
-                if (httpException.InnerException is IOException ||
-                    httpException.InnerException is WebException)
+                if (httpException.InnerException is IOException
+#if !DNX
+                    || httpException.InnerException is WebException
+#endif
+                    )
                 {
                     return HandleException(httpException.InnerException, retries, maxRetries);
                 }

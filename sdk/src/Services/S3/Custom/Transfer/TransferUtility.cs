@@ -364,7 +364,7 @@ namespace Amazon.S3.Transfer
             if (request.IsSetFilePath())
             {
                 bool fileExists;
-#if BCL
+#if BCL || DNX
                 fileExists = File.Exists(request.FilePath);
 #elif PCL
                 var iFile = PCLStorage.FileSystem.Current.GetFileFromPathAsync(request.FilePath).Result;
