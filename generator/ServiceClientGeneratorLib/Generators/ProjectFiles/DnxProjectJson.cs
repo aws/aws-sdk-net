@@ -91,7 +91,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     },
     ""dnxcore50"": {
       ""compilationOptions"": {
-        ""define"": [ ""ADD_SUPPORT_IORDERED_DICTIONARY""	 ]
+        ""define"": [ ""ADD_SUPPORT_IORDERED_DICTIONARY"", ""ADD_SUPPORT_ICLONEABLE""	 ]
       },
       ""dependencies"": {
         ""System.Collections"": ""4.0.10-beta-23019"",
