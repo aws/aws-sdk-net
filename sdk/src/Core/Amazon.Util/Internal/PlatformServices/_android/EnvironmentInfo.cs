@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using System;
+using System.Globalization;
 using System.Reflection;
 
 namespace Amazon.Util.Internal.PlatformServices
@@ -15,6 +16,7 @@ namespace Amazon.Util.Internal.PlatformServices
             this.Locale = Application.Context.Resources.Configuration.Locale.ToString();
             this.FrameworkUserAgent = InternalSDKUtils.GetMonoRuntimeVersion();
             this.PclPlatform = "PCL/Xamarin.Android";
+            this.PlatformUserAgent = string.Format(CultureInfo.InstalledUICulture,"{0} {1}", this.Platform, this.PlatformVersion);
         }
 
         public string Platform { get; private set; }
