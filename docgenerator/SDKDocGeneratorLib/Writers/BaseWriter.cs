@@ -354,7 +354,7 @@ namespace SDKDocGenerator.Writers
                         break;
                 }
 
-                sb.AppendFormat("{0}", parameterTypeName);
+                sb.AppendFormat("{0}{1}", info.IsOut ? "out " : "", parameterTypeName);
             }
             return sb.ToString();
         }
@@ -517,7 +517,7 @@ namespace SDKDocGenerator.Writers
                 writer.WriteLine("Supported in: Windows Store Apps<br/>");
                 writer.WriteLine("Supported in: Windows Phone 8.1<br/>");
                 writer.WriteLine("Supported in: Xamarin Android<br/>");
-                writer.WriteLine("Supported in: Xamarin iOS<br/>");
+                writer.WriteLine("Supported in: Xamarin iOS (Unified)<br/>");
                 writer.WriteLine("Supported in: Xamarin.Forms<br/>");
             }
 

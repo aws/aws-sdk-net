@@ -675,6 +675,11 @@ namespace SDKDocGenerator
             }
         }
 
+        public bool IsOut
+        {
+            get { return this._info.IsOut; }
+        }
+
         public override string ToString()
         {
             return string.Format("Parameter {0}", this._info.Name);

@@ -264,7 +264,7 @@ namespace Amazon.S3.Transfer
 #if BCL     // Validations for Win RT/Win Phone are done in GetUploadCommand method's call to validate.
             if (!File.Exists(filePath))
             {
-                throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "The file {0} does not exists!", filePath));
+                throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "The file {0} does not exist!", filePath));
             }
 #endif
             return new TransferUtilityUploadRequest()
@@ -283,7 +283,7 @@ namespace Amazon.S3.Transfer
 #if BCL     // Validations for Win RT/Win Phone are done in GetUploadCommand method's call to validate.
             if (!File.Exists(filePath))
             {
-                throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "The file {0} does not exists!", filePath));
+                throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "The file {0} does not exist!", filePath));
             }
 # endif
             return new TransferUtilityUploadRequest()
