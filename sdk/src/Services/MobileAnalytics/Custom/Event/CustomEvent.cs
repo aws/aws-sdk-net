@@ -41,12 +41,12 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
     /// </code>  
     /// </example> 
     /// </summary>
-    public class CustomEvent : IEvent, IEventConverter
+    public class CustomEvent : IEvent
     {
         /// <summary>
         /// Event type string that defines event type.
         /// </summary>
-        private string _eventType;
+        public string EventType { get; set; }
 
         /// <summary>
         /// Dictionary that stores global attribute for specific event type.
@@ -132,26 +132,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// <param name="eventType">Event type.</param>
         public CustomEvent(string eventType)
         {
-            this._eventType = eventType;
+            this.EventType = eventType;
         } 
         #endregion
         
-        /// <summary>
-        /// Gets or sets the type of the event.
-        /// </summary>
-        /// <value>The type of the event.</value>
-        public string EventType 
-        {
-            get
-            {
-                return _eventType;
-            }
-            
-            set
-            {
-                _eventType = value;
-            }
-        }
         
         /// <summary>
         /// Converts to mobile analytics model event. <see cref="Amazon.MobileAnalytics.Model.Event"/>
@@ -163,19 +147,20 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 
             Amazon.MobileAnalytics.Model.Event modelEvent = new Amazon.MobileAnalytics.Model.Event();
             
-            SessionInfo sessionInfo = session.RetrieveSessionInfo();
-
-            this.StartTimestamp = sessionInfo.StartTimestamp;
-            this.SessionId = sessionInfo.SessionId;
+            this.StartTimestamp = session.StartTime;
+            this.SessionId = session.SessionId;
             
 
             // assign session info from manager event to model event
-            modelEvent.EventType = this._eventType;
+            modelEvent.EventType = this.EventType;
             modelEvent.Session = new Amazon.MobileAnalytics.Model.Session();
-            modelEvent.Session.Id = sessionInfo.SessionId;
-            modelEvent.Session.StartTimestamp = sessionInfo.StartTimestamp;
-            
-            if(this._eventType == Constants.SESSION_STOP_EVENT_TYPE)
+            modelEvent.Session.Id = session.SessionId;
+            modelEvent.Session.StartTimestamp = session.StartTime;
+            if (this.StopTimestamp != null)
+                modelEvent.Session.StopTimestamp = session.StopTime.Value;
+
+
+            if(this.EventType == Constants.SESSION_STOP_EVENT_TYPE)
             {
                 modelEvent.Session.StopTimestamp = this.StopTimestamp.Value;
                 modelEvent.Session.Duration = this.Duration;
@@ -184,15 +169,15 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             lock(_globalLock)
             {
                 AddDict(_globalAttributes,modelEvent.Attributes);
-                if(_eventTypeGlobalAttributes.ContainsKey(_eventType))
+                if(_eventTypeGlobalAttributes.ContainsKey(EventType))
                 {
-                    AddDict(_eventTypeGlobalAttributes[_eventType],modelEvent.Attributes);
+                    AddDict(_eventTypeGlobalAttributes[EventType],modelEvent.Attributes);
                 }
                 
                 AddDict(_globalMetrics,modelEvent.Metrics);
-                if(_eventTypeGlobalMetrics.ContainsKey(_eventType))
+                if(_eventTypeGlobalMetrics.ContainsKey(EventType))
                 {
-                    AddDict(_eventTypeGlobalMetrics[_eventType],modelEvent.Metrics);
+                    AddDict(_eventTypeGlobalMetrics[EventType],modelEvent.Metrics);
                 }
                
             }
@@ -288,9 +273,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         }
         
         /// <summary>
-        /// Gets all attributes.
+        /// Gets copy of all attributes.
         /// </summary>
-        /// <returns>All the attributes.</returns>
+        /// <returns>Copy of all the attributes.</returns>
         public IDictionary<string, string> AllAttributes
         {
             get 
@@ -378,9 +363,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         
         
         /// <summary>
-        /// Gets all metrics.
+        /// Gets copy of all metrics.
         /// </summary>
-        /// <returns>All the metrics.</returns>
+        /// <returns>Copy of all the metrics.</returns>
         public IDictionary<string, double> AllMetrics
         {
             get 

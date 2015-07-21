@@ -38,11 +38,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// Enqueues the events for delivery. The event is stored in an <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IEventStore"/>.
         /// </summary>
         /// <param name="eventObject">Event object. <see cref="Amazon.MobileAnalytics.Model.Event"/></param>
-#if PCL || BCL45
-        System.Threading.Tasks.Task EnqueueEventsForDeliveryAsync(Amazon.MobileAnalytics.Model.Event eventObject);
-#elif BCL35
-        void EnqueueEventsForDeliveryAsync(Amazon.MobileAnalytics.Model.Event eventObject);
-#endif
+        void EnqueueEventsForDelivery(Amazon.MobileAnalytics.Model.Event eventObject);
+
         /// <summary>
         /// Sets custom policies to the delivery client. This will allow you to fine grain control on when an attempt should be made to deliver the events on the service.
         /// </summary>

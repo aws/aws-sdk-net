@@ -35,7 +35,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <param name="value">Amazon Mobile Analytics event in string.</param>
         /// <param name="appId">Amazon Mobile Analytics App ID.</param>
         /// <returns><c>true</c>, if event was put, <c>false</c> otherwise.</returns>
-        bool PutEvent(string value, string appId);
+        void PutEvent(string value, string appId);
         
         /// <summary>
         /// Get events from the Event Store
@@ -50,7 +50,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// </summary>
         /// <param name="rowIds">List of row identifiers.</param>
         /// <returns><c>true</c>, if events was deleted, <c>false</c> otherwise.</returns>
-        bool DeleteEvent(List<string> rowIds);
+        void DeleteEvent(List<string> rowIds);
         
         /// <summary>
         /// Gets Numbers the of events.

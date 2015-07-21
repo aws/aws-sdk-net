@@ -38,7 +38,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
         // Background thread wait time. Thread will sleep for the interval mention. Value is in Seconds.
         // Default 60 seconds.
-        private const int BackgroundSubmissionWaitTime = 60;
+        private const int BackgroundSubmissionWaitTime = 15;
 #if BCL35
         private System.Threading.Thread _thread = null;
 
@@ -102,24 +102,16 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <summary>
         /// Starts the Mobile Analytics Manager background thread.
         /// </summary>
-        public async void StartWork()
+        public void StartWork()
         {
-            // Start task again if it's cancelled or faulted
-            if (1 == Interlocked.CompareExchange(ref _startFlag, 1, 1) && _deliveryTask != null && (_deliveryTask.Status == TaskStatus.Canceled || _deliveryTask.Status == TaskStatus.Faulted || _deliveryTask.Status == TaskStatus.RanToCompletion))
-            {
-                _deliveryTask = DoWork(BackgroundSubmissionWaitTime*1000);
-                await _deliveryTask;                
-            }
-
             // Start background task if it is not started yet.
             if (0 == Interlocked.CompareExchange(ref _startFlag, 1, 0))
             {
-                _deliveryTask = DoWork(BackgroundSubmissionWaitTime * 1000);
-                await _deliveryTask;
+                DoWorkAsync(BackgroundSubmissionWaitTime * 1000);
             }
         }
 
-        private async Task DoWork(int millisecondsDelay)
+        private async Task DoWorkAsync(int millisecondsDelay)
         {
             while (true)
             {
@@ -145,7 +137,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 }
                 catch (System.Exception e)
                 {
-                    _logger.Error(e, "An exception occurred in Mobile Analytics Manager : {1}", e.ToString());
+                    _logger.Error(e, "An exception occurred in Mobile Analytics Manager : {0}", e.ToString());
                 }
             }
         }

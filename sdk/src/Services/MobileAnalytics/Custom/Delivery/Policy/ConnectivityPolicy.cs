@@ -17,10 +17,9 @@
 
 using System;
 using System.Net;
-using Amazon.MobileAnalytics;
+//using Amazon.MobileAnalytics;
 using Amazon.Util.Internal.PlatformServices;
 using Amazon.Runtime.Internal.Util;
-
 
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
@@ -32,8 +31,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     public class ConnectivityPolicy : IDeliveryPolicy
     {
         private readonly bool IsDataAllowed;
-        private INetworkReachability networkReachability = new NetworkReachability();
         private Logger _logger = Logger.GetLogger(typeof(ConnectivityPolicy));
+#if PCL
+        private INetworkReachability networkReachability = ServiceFactory.Instance.GetService<INetworkReachability>();
+#endif
 
         /// <summary>
         /// Initializes a new instance of the
@@ -61,6 +62,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <returns><c>true</c> if this instance has network connectivity; otherwise, <c>false</c>.</returns>
         private bool HasNetworkConnectivity()
         {
+#if PCL
             NetworkStatus status = networkReachability.NetworkStatus;
             bool networkFlag = false;
             switch (status)
@@ -76,6 +78,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                     break;
             }
             return networkFlag;
+#elif BCL
+            return System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable();
+#endif
         }
     }
 }

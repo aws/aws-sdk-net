@@ -28,10 +28,9 @@ using Amazon.MobileAnalytics.Model;
 
 using ThirdParty.Json.LitJson;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Internal;
 
-#if BCL35
-
-#elif PCL || BCL45
+#if PCL || BCL45
 using System.Threading.Tasks;
 #endif
 
@@ -54,9 +53,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         private AmazonMobileAnalyticsClient _mobileAnalyticsLowLevelClient;
 
         private ClientContext _clientContext;
-        private string _appId;
+        private string _appID;
         private MobileAnalyticsManagerConfig _maConfig;
-        
+
         private const int MAX_ALLOWED_SELECTS = 200;
 
         /// <summary>
@@ -79,68 +78,75 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <param name="clientContext">An instance of ClientContext. <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.ClientContext"/></param>
         /// <param name="credentials">An instance of Credentials. <see cref="Amazon.Runtime.AWSCredentials"/></param>
         /// <param name="regionEndPoint">Region end point. <see cref="Amazon.RegionEndpoint"/></param>
-        public DeliveryClient(IDeliveryPolicyFactory policyFactory,MobileAnalyticsManagerConfig maConfig, ClientContext clientContext, AWSCredentials credentials, RegionEndpoint regionEndPoint)
+        public DeliveryClient(IDeliveryPolicyFactory policyFactory, MobileAnalyticsManagerConfig maConfig, ClientContext clientContext, AWSCredentials credentials, RegionEndpoint regionEndPoint)
         {
             _policyFactory = policyFactory;
-
             _deliveryPolicies = new List<IDeliveryPolicy>();
-#if PCL || __IOS__ || __ANDROID__         
             _deliveryPolicies.Add(_policyFactory.NewConnectivityPolicy());
-#endif
-            _eventStore = new SQLiteEventStore(maConfig);
-            _mobileAnalyticsLowLevelClient = new AmazonMobileAnalyticsClient(credentials, regionEndPoint);
 
             _clientContext = clientContext;
-            _appId = clientContext.Config.AppId;
+            _appID = clientContext.AppID;
             _maConfig = maConfig;
+            _eventStore = new SQLiteEventStore(maConfig);
 
+#if PCL
+            _mobileAnalyticsLowLevelClient = new AmazonMobileAnalyticsClient(credentials, regionEndPoint);
+#elif BCL
+            if (null == credentials && null == regionEndPoint)
+            {
+                _mobileAnalyticsLowLevelClient = new AmazonMobileAnalyticsClient();
+            }
+            else if (null == credentials)
+            {
+                _mobileAnalyticsLowLevelClient = new AmazonMobileAnalyticsClient(regionEndPoint);
+            }
+            else if (null == regionEndPoint)
+            {
+                _mobileAnalyticsLowLevelClient = new AmazonMobileAnalyticsClient(credentials);
+            }
+            else
+            {
+                _mobileAnalyticsLowLevelClient = new AmazonMobileAnalyticsClient(credentials, regionEndPoint);
+            }
+#endif
         }
 
- 
+
         /// <summary>
         /// Enqueues the events for delivery. The event is stored in an instance of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IEventStore"/>.
         /// </summary>
         /// <param name="eventObject">Event object.<see cref="Amazon.MobileAnalytics.Model.Event"/></param>
-#if BCL35
-        public void EnqueueEventsForDeliveryAsync(Amazon.MobileAnalytics.Model.Event eventObject)
-#elif PCL || BCL45        
-        public Task EnqueueEventsForDeliveryAsync(Amazon.MobileAnalytics.Model.Event eventObject)   
-#endif
-        {          
-            
+        public void EnqueueEventsForDelivery(Amazon.MobileAnalytics.Model.Event eventObject)
+        {
 #if BCL35            
             ThreadPool.QueueUserWorkItem(new WaitCallback(delegate
             {
-#elif PCL || BCL45            
-            return Task.Factory.StartNew(() =>
-            {     
+#elif PCL || BCL45
+            Task.Run( () =>
+            {
 #endif
                 string eventString = JsonMapper.ToJson(eventObject);
-                bool eventStored = false;
+
+                if (eventString.Contains("null"))
+                {
+                    _logger.DebugFormat("EnqueueEventsForDeliveryAsync find null in eventString {0}", eventString);
+                }
 
                 try
                 {
-                    eventStored = _eventStore.PutEvent(eventString, _appId);
+                    _eventStore.PutEvent(eventString, _appID);
                 }
                 catch (Exception e)
                 {
                     _logger.Error(e, "Event {0} is unable to be stored.", eventObject.EventType);
                 }
 
-                if (eventStored)
-                {
-                    _logger.DebugFormat("Event {0} is queued for delivery", eventObject.EventType);
-                }
-                else
-                {
-                    EventStoreException e = new EventStoreException("Event cannot be stored.");
-                    _logger.Error(e, "Event {0} is unable to be queued for delivery.", eventObject.EventType);
-                }
+                _logger.DebugFormat("Event {0} is queued for delivery", eventObject.EventType);
 #if BCL35
             }));
 #elif PCL || BCL45
             });
-#endif        
+#endif
         }
 
         /// <summary>
@@ -151,7 +157,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// </summary>
 #if BCL35        
         public void AttemptDelivery()
-#elif PCL || BCL45        
+#elif PCL || BCL45
         public async Task AttemptDeliveryAsync()
 #endif
         {
@@ -170,7 +176,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 }
             }
 
-            List<JsonData> allEventList = _eventStore.GetEvents(_appId, MAX_ALLOWED_SELECTS);
+            List<JsonData> allEventList = _eventStore.GetEvents(_appID, MAX_ALLOWED_SELECTS);
             if (allEventList.Count == 0)
             {
                 _logger.InfoFormat("No Events to deliver.");
@@ -189,7 +195,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                     _logger.InfoFormat("Event string is {0}", (string)eventData["event"]);
 
                     Amazon.MobileAnalytics.Model.Event _analyticsEvent = JsonMapper.ToObject<Amazon.MobileAnalytics.Model.Event>((string)eventData["event"]);
-                    
+
                     submitEventsIdList.Add(eventData["id"].ToString());
                     submitEventsList.Add(_analyticsEvent);
                 }
@@ -221,7 +227,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <param name="eventList">The list of events that need to be submitted.</param>
 #if BCL35        
         private void SubmitEvents(List<string> rowIds, List<Amazon.MobileAnalytics.Model.Event> eventList)
-#elif PCL || BCL45        
+#elif PCL || BCL45
         private async Task SubmitEvents(List<string> rowIds, List<Amazon.MobileAnalytics.Model.Event> eventList)
 #endif
         {
@@ -243,7 +249,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             {
 #if BCL35                
                 resp = _mobileAnalyticsLowLevelClient.PutEvents(putRequest);
-#elif PCL || BCl45            
+#elif PCL || BCL45
                 resp = await _mobileAnalyticsLowLevelClient.PutEventsAsync(putRequest);
 #endif
             }

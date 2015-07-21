@@ -24,14 +24,10 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 using System.Xml.Linq;
-
-#if BCL
-using System.Configuration;
-#endif
-
 using Amazon.Util;
 using Amazon.Util.Internal;
 using Amazon.MobileAnalytics.MobileAnalyticsManager;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 {
@@ -40,8 +36,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
     /// </summary>
     public class MobileAnalyticsManagerConfig
     {
-        private const string mobileAnalyticsKey = "mobileAnalytics";
-
         private const int defaultSessionTimeout = 5;
         private const int defaultMaxDBSize = 5242880;
         private const double defaultDBWarningThreashold = 0.9;
@@ -58,12 +52,17 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             DBWarningThreshold = defaultDBWarningThreashold;
             MaxRequestSize = defaultMaxRequestSize;
             AllowUseDataNetwork = defaultAllowUseDataNetwork;
+#if BCL
+            ClientContextConfiguration = new ClientContextConfig();
+#endif
         }
 
+#if BCL
         /// <summary>
         /// Client Context Configuration . <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.ClientContextConfig"/>
         /// </summary>
         public ClientContextConfig ClientContextConfiguration { get; set; }
+#endif
 
         /// <summary>
         /// If the app stays in background for a time greater than the SessionTimeout then Mobile Analytics client stops old session and 
