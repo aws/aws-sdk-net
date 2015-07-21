@@ -405,7 +405,7 @@ namespace Amazon.S3.Transfer
             get
             {
                 long length;
-#if BCL
+#if BCL || DNX
                 if (this.IsSetFilePath())
                 {
                     //System.IO.

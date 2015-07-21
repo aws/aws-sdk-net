@@ -7,8 +7,6 @@
   "licenseUrl": "",
 
   "dependencies": {
-    "SQS": "1.0.0-*",
-    "SimpleNotificationService": "1.0.0-*",
     "Core": "1.0.0-*"
   },
 
@@ -19,6 +17,7 @@
     "**/_bcl45/*",
     "**/_bcl/*",
     "**/_bcl+sl/*",
+    "**/_storagefile/*",
     "**/_android/*",
     "**/_ios/*",
     "**/_pclReference/*",

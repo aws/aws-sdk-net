@@ -102,7 +102,6 @@ namespace Amazon.S3.Model
         /// containing this object's version.<br />
         /// 2. You are deleting an object's version
         /// </remarks>
-        [XmlIgnore]
         public MfaCodes MfaCodes
         {
             get { return this.mfaCodes; }

@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\V3\aws-sdk-net-dnx\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectJson.tt"
+    #line 1 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectJson.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class DnxProjectJson : DnxProjectJsonBase
     {
@@ -31,7 +31,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("{\r\n  \"version\": \"1.0.0-*\",\r\n  \"description\": \"\",\r\n  \"authors\": [ \"\" ],\r\n  \"tags\":" +
                     " [ \"\" ],\r\n  \"projectUrl\": \"\",\r\n  \"licenseUrl\": \"\",\r\n\r\n  \"dependencies\": {\r\n");
             
-            #line 15 "C:\codebase\V3\aws-sdk-net-dnx\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectJson.tt"
+            #line 15 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectJson.tt"
 
     if(this.Session.ContainsKey("ServiceDependencies"))
     {
@@ -43,14 +43,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    \"");
             
-            #line 21 "C:\codebase\V3\aws-sdk-net-dnx\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectJson.tt"
+            #line 21 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectJson.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(dependency));
             
             #line default
             #line hidden
             this.Write("\": \"1.0.0-*\",\r\n");
             
-            #line 22 "C:\codebase\V3\aws-sdk-net-dnx\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectJson.tt"
+            #line 22 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectJson.tt"
 
         }
     }
@@ -91,7 +91,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     },
     ""dnxcore50"": {
       ""compilationOptions"": {
-        ""define"": [ ""ADD_SUPPORT_IORDERED_DICTIONARY"" ]
+        ""define"": [ ""ADD_SUPPORT_IORDERED_DICTIONARY""	 ]
       },
       ""dependencies"": {
         ""System.Collections"": ""4.0.10-beta-23019"",

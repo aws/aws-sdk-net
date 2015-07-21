@@ -49,7 +49,7 @@ namespace Amazon.DynamoDBv2.DataModel
         
         #region Constructors
 
-#if !PCL
+#if !PCL && !DNX
 
         /// <summary>
         /// Constructs a DynamoDBContext object with a default AmazonDynamoDBClient

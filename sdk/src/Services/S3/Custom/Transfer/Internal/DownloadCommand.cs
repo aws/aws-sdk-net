@@ -95,7 +95,7 @@ namespace Amazon.S3.Transfer.Internal
             var canRetry = true;
             if (exception is IOException)
             {
-#if !PCL
+#if !PCL && !DNX
                 while (exception.InnerException != null)
                 {
                     if (exception.InnerException is ThreadAbortException)

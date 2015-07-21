@@ -197,7 +197,7 @@ namespace Amazon.DynamoDBv2.DataModel
         private static object[] GetAttributeObjects(MemberInfo targetMemberInfo)
         {
             if (targetMemberInfo == null) throw new ArgumentNullException("targetMemberInfo");
-#if PCL
+#if PCL || DNX
             object[] attributes = targetMemberInfo.GetCustomAttributes(typeof(DynamoDBAttribute), true).ToArray();
 #else
             object[] attributes = targetMemberInfo.GetCustomAttributes(typeof(DynamoDBAttribute), true);
