@@ -19,11 +19,11 @@ namespace CommonTests.Framework
         {     
         }
 
-        public static TClient CreateClient<TClient>(AWSCredentials alternateCredentials = null, RegionEndpoint alternateEndpoint = null)
+        public static TClient CreateClient<TClient>(AWSCredentials credentials = null, RegionEndpoint endpoint = null)
             where TClient : AmazonServiceClient
         {
-            var credentials = alternateCredentials ?? TestRunner.Credentials;
-            var endpoint = alternateEndpoint ?? TestRunner.RegionEndpoint;
+            credentials = credentials ?? TestRunner.Credentials;
+            endpoint = endpoint ?? TestRunner.RegionEndpoint;
 
             return (TClient)Activator.CreateInstance(typeof(TClient),
                     new object[] { TestRunner.Credentials,  endpoint});
@@ -41,7 +41,7 @@ namespace CommonTests.Framework
             {
                 if (_client == null)
                 {
-                    _client = CreateClient<T>(alternateEndpoint: AlternateEndpoint);
+                    _client = CreateClient<T>(endpoint: ActualEndpoint);
                 }
                 return _client;
             }
@@ -57,6 +57,14 @@ namespace CommonTests.Framework
             get
             {
                 return null;
+            }
+        }
+
+        protected RegionEndpoint ActualEndpoint
+        {
+            get
+            {
+                return (AlternateEndpoint ?? TestRunner.RegionEndpoint);
             }
         }
 

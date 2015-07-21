@@ -1,4 +1,4 @@
-﻿using Amazon.Util.Internal.PlatformServices;
+using Amazon.Util.Internal.PlatformServices;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;

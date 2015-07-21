@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Amazon.DirectConnect;
 using Amazon.DirectConnect.Model;
 using NUnit.Framework;

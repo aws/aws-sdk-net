@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -39,7 +39,7 @@ namespace CommonTests.IntegrationTests
         }
 
         //  Test are disabled because not all acounts are subscribed to AWS Support
-        [Test]
+        //[Test]
         public void TestCaseOperations()
         {
             string caseId = null;
@@ -154,7 +154,7 @@ namespace CommonTests.IntegrationTests
         }
 
         //  Test are disabled because not all acounts are subscribed to AWS Support
-        [Test]
+        //[Test]
         public void TestDescribeServices()
         {
             var services = Client.DescribeServicesAsync().Result.Services;
@@ -172,7 +172,7 @@ namespace CommonTests.IntegrationTests
         }
 
         //  Test are disabled because not all acounts are subscribed to AWS Support
-        [Test]
+        //[Test]
         public void TestSeverityLevels()
         {
             var levels = Client.DescribeSeverityLevelsAsync().Result.SeverityLevels;
@@ -182,7 +182,7 @@ namespace CommonTests.IntegrationTests
         }
 
         //  Test are disabled because not all acounts are subscribed to AWS Support
-        [Test]
+        //[Test]
         public void TestTrustedAdvisorChecks()
         {
             var checks = Client.DescribeTrustedAdvisorChecksAsync(new DescribeTrustedAdvisorChecksRequest { Language = LANGUAGE }).Result.Checks;

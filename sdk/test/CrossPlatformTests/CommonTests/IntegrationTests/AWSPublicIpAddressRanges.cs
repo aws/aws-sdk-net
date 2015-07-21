@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Amazon.Util;
 using NUnit.Framework;
 
