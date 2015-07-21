@@ -963,7 +963,8 @@ namespace Amazon.DynamoDBv2.DataModel
                 Select = SelectValues.SpecificAttributes,
                 Filter = filter,
                 ConditionalOperator = flatConfig.ConditionalOperator,
-                IndexName = flatConfig.IndexName
+                IndexName = flatConfig.IndexName,
+                ConsistentRead = flatConfig.ConsistentRead.GetValueOrDefault(false)
             };
             Search scan = table.Scan(scanConfig);
             return new ContextSearch(scan, flatConfig);

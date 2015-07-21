@@ -29,7 +29,7 @@ namespace AndroidApp
 
         protected override void WriteLine(string message)
         {
-            _uiRunner(() => _textView.Append("\n"+message));
+            _uiRunner(() => _textView.Text = message + "\n" + _textView.Text);
         }
 
         protected override string TestTypeNamePrefix

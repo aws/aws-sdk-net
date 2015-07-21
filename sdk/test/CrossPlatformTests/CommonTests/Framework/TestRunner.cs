@@ -130,6 +130,9 @@ namespace CommonTests.Framework
             WriteInfo("All tests executed");
             WriteInfo("Time elapsed: {0}", TimeSpan.FromSeconds(result.Duration));
 
+            // optionally, write result as xml
+            //WriteInfo("Test results as XML: {0}", result.ToXml(true).OuterXml);
+
             PushLog(success);
 
             return success;
@@ -317,6 +320,18 @@ namespace CommonTests.Framework
             {
                 if (result.FailCount > 0)
                 {
+                    this.WriteError("Test Fixture {0} ({1}) has {2} failures.",
+                        testFixture.Name, testFixture.FullName, result.FailCount);
+
+                    if (result.HasChildren)
+                    {
+                        foreach (var childResult in result.Children)
+                        {
+                            if (childResult.ResultState.Site != FailureSite.Test)
+                                TestFinished(childResult);
+                        }
+                    }
+
                     this.WriteError("\tMessage : {0}", result.Message);
                     this.WriteError("\tStack trace : {0}", result.StackTrace);
                 }

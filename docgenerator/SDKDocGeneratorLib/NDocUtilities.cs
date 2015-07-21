@@ -106,7 +106,20 @@ namespace SDKDocGenerator
             {
                 if (parameters.Length > 0)
                     parameters.Append(",");
-                parameters.Append(param.ParameterType.FullName);
+                if (param.ParameterType.IsGenericType)
+                {
+                    parameters
+                        .Append(param.ParameterType.GenericTypeName)
+                        .Append("{")
+                        .Append(string.Join(",", param.ParameterType.GenericTypeArguments().Select(a => a.FullName)))
+                        .Append("}");
+                }
+                else
+                {
+                    parameters.Append(param.ParameterType.FullName);
+                    if (param.IsOut)
+                        parameters.Append("@");
+                }
             }
 
             var signature = parameters.Length > 0 

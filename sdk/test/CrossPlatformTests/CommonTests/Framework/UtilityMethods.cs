@@ -94,6 +94,7 @@ namespace CommonTests.Framework
             };
 
             ListVersionsResponse listVersionsResponse;
+            string lastRequestId = null;
 
             // Iterate through the objects in the bucket and delete them.
             do
@@ -103,6 +104,13 @@ namespace CommonTests.Framework
                 
                 // List all the versions of all the objects in the bucket.
                 listVersionsResponse = await s3Client.ListVersionsAsync(listVersionsRequest);
+
+                // Silverlight uses HTTP caching, so avoid an infinite loop by throwing an exception
+                if (string.Equals(lastRequestId, listVersionsResponse.ResponseMetadata.RequestId, StringComparison.OrdinalIgnoreCase))
+                {
+                    throw new InvalidOperationException();
+                }
+                lastRequestId = listVersionsResponse.ResponseMetadata.RequestId;
 
                 if (listVersionsResponse.Versions.Count == 0)
                 {
@@ -200,7 +208,14 @@ namespace CommonTests.Framework
             //asyncCancelableResult.SignalWaitHandleOnCompleted();
         }
 
-
+        public static AWSCredentials CreateTemporaryCredentials()
+        {
+            using (var sts = TestBase.CreateClient<Amazon.SecurityToken.AmazonSecurityTokenServiceClient>())
+            {
+                var creds = sts.GetSessionTokenAsync().Result.Credentials;
+                return creds;
+            }
+        }
 
         public static T WaitUntilSuccess<T>(Func<T> loadFunction, int sleepSeconds = 5, int maxWaitSeconds = 300)
         {
