@@ -12,12 +12,12 @@ namespace Amazon.Util.Internal.PlatformServices
         public EnvironmentInfo()
         {
             this.Platform = "Windows";
-            this.PlatformVersion = "Unknown";
-            this.PlatformUserAgent = "Unknown";
-            this.Model = "Unknown";
-            this.Make = "Unknown";
+            this.PlatformVersion = InternalSDKUtils.UnknownVersion;
+            this.PlatformUserAgent = InternalSDKUtils.UnknownVersion;
+            this.Model = InternalSDKUtils.UnknownVersion;
+            this.Make = InternalSDKUtils.UnknownVersion;
             this.Locale = CultureInfo.CurrentCulture.DisplayName;
-            this.FrameworkUserAgent = ".NET Runtime/Unknown .NET Framework/Unknown";
+            this.FrameworkUserAgent = InternalSDKUtils.UnknownNetFrameworkVersion;
             this.PclPlatform = "PCL/Windows8";
 
         }

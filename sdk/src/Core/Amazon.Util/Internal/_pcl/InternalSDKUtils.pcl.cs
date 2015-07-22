@@ -28,11 +28,11 @@ namespace Amazon.Util.Internal
 {
     public static partial class InternalSDKUtils
     {
-        static string _userAgentBaseName = "aws-sdk-dotnet-pcl";
-
+        static string _userAgentBaseName = "aws-sdk-dotnet-pcl";        
+        private const string UnknownMonoVersion = "Mono/Unknown";
 #if __IOS__ || __ANDROID__
 
-        private const string UnknownMonoVersion = "Mono/Unknown";
+        
 
         public static string GetMonoRuntimeVersion()
         {
@@ -45,7 +45,7 @@ namespace Amazon.Util.Internal
                     var version = (string)displayName.Invoke(null, null);
                     // Replace "/" from the version string as it's a
                     // seperator in the user agent format
-                    version = version.Replace("/", ":");
+                    version = version.Replace("/", ":").Replace(" ",string.Empty);
                     return "Mono/" + version;
                 }
             }
