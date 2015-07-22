@@ -36,7 +36,7 @@ namespace MobileAnalyticsSample.iOS
 			customEvent.AddMetric("Score", 12345);
 			customEvent.AddMetric("TimeInLevel", 64);
 
-			Manager.RecordEventAsync(customEvent);
+			Manager.RecordEvent(customEvent);
 		}
 
 		partial void UIButton6_TouchUpInside (UIButton sender)
@@ -52,7 +52,7 @@ namespace MobileAnalyticsSample.iOS
 			monetizationEvent.TransactionId = "TransactionId123";
 			monetizationEvent.Currency = "USD";
 
-			Manager.RecordEventAsync(monetizationEvent);
+			Manager.RecordEvent(monetizationEvent);
 		}
 	}
 }

@@ -6,6 +6,7 @@ using System.Text;
 using Foundation;
 using UIKit;
 using System.Reflection;
+using System.Globalization;
 
 namespace Amazon.Util.Internal.PlatformServices
 {
@@ -20,6 +21,8 @@ namespace Amazon.Util.Internal.PlatformServices
             this.Locale = NSLocale.AutoUpdatingCurrentLocale.LocaleIdentifier;
             this.FrameworkUserAgent = InternalSDKUtils.GetMonoRuntimeVersion();
             this.PclPlatform = "PCL/Xamarin.iOS";
+            this.PlatformUserAgent = string.Format(CultureInfo.InstalledUICulture,"{0}_{1}", 
+                this.Platform.Replace(" ",string.Empty), this.PlatformVersion);
         }
 
         public string Platform { get; private set; }

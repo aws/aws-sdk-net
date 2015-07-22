@@ -50,7 +50,7 @@ namespace MobileAnalyticsSample_Android
                 customEvent.AddMetric("Score", 12345);
                 customEvent.AddMetric("TimeInLevel", 64);
 
-                _manager.RecordEventAsync(customEvent);
+                _manager.RecordEvent(customEvent);
             };
 
 
@@ -66,7 +66,7 @@ namespace MobileAnalyticsSample_Android
                 monetizationEvent.TransactionId = "TransactionId123";
                 monetizationEvent.Currency = "USD";
 
-                _manager.RecordEventAsync(monetizationEvent);
+                _manager.RecordEvent(monetizationEvent);
             };
 
 
@@ -74,7 +74,7 @@ namespace MobileAnalyticsSample_Android
 			MobileAnalyticsManagerConfig config = new MobileAnalyticsManagerConfig();
 			config.AllowUseDataNetwork = true;
             
-            _manager = MobileAnalyticsManager.GetOrCreateInstance(new CognitoAWSCredentials(COGNITO_POOL_ID, COGNITO_REGION), RegionEndpoint.USEast1, APP_ID, config);
+            _manager = MobileAnalyticsManager.GetOrCreateInstance(APP_ID, new CognitoAWSCredentials(COGNITO_POOL_ID, COGNITO_REGION), RegionEndpoint.USEast1, config);
         }
 
         protected override void OnResume()

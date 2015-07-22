@@ -9,6 +9,17 @@ namespace CommonTests.Framework
 {
     public static class AssertExtensions
     {
+        public static T VerifyException<T>(AggregateException ae)
+            where T : Exception
+        {
+            Assert.IsNotNull(ae);
+            Assert.IsNotNull(ae.InnerExceptions);
+            Assert.AreEqual(1, ae.InnerExceptions.Count);
+            var inner = ae.InnerExceptions[0] as T;
+            Assert.IsNotNull(inner);
+            return inner;
+        }
+
         public static async Task ExpectExceptionAsync(Task task, string message = null)
         {
             bool gotException = false;

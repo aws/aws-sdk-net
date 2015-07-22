@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Threading;
@@ -91,7 +91,6 @@ namespace CommonTests.IntegrationTests
 
         [Test]
         [Category("CloudWatch")]
-        //[ExpectedException(typeof(InvalidParameterCombinationException))]
         public void CWExceptionTest()
         {
             GetMetricStatisticsRequest getMetricRequest = new GetMetricStatisticsRequest()

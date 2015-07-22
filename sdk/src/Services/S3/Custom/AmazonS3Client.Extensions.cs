@@ -26,10 +26,6 @@ using System.Threading;
 using System.Threading.Tasks;
 #endif
 
-#if STORAGE_FILE
-using Windows.Storage;
-#endif
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -600,36 +596,6 @@ namespace Amazon.S3
 
             return transfer.DownloadAsync(request, cancellationToken);
         }
-#endif
-
-#if STORAGE_FILE
-        Task ICoreAmazonS3.UploadObjectFromStorageAsync(string bucketName, string objectKey, IStorageFile storageFile, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
-        {
-            var request = new Amazon.S3.Transfer.TransferUtilityUploadRequest();
-            request.BucketName = bucketName;
-            request.Key = objectKey;
-            request.StorageFile = storageFile;
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
-
-            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
-            return transfer.UploadAsync(request, cancellationToken);
-        }
-
-        Task ICoreAmazonS3.DownloadToStorageAsync(string bucketName, string objectKey, IStorageFile storageFile, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
-        {
-            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
-
-            var request = new Amazon.S3.Transfer.TransferUtilityDownloadRequest
-            {
-                BucketName = bucketName,
-                Key = objectKey,
-                StorageFile = storageFile
-            };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
-
-            return transfer.DownloadAsync(request, cancellationToken);
-        }
-
 #endif
         #endregion
     }

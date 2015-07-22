@@ -45,7 +45,7 @@ namespace iOSTests
         private void Write(string message, params object[] args)
         {
             var text = string.Format(message, args);
-            _uiRunner(() => _textView.Text += Environment.NewLine + text);
+            _uiRunner(() => _textView.Text = text + Environment.NewLine + _textView.Text);
         }
     }
 }

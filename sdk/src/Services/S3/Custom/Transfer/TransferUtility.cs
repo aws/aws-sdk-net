@@ -57,9 +57,6 @@ namespace Amazon.S3.Transfer
     /// 	you should clean up any multipart uploads that are incomplete.
     /// 	</para>
     /// </remarks>
-#if STORAGE_FILE
-    [CLSCompliant(false)]
-#endif
     public partial class TransferUtility : IDisposable
     {
         TransferUtilityConfig _config;

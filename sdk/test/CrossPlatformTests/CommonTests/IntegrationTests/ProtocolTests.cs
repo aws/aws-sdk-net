@@ -1,4 +1,4 @@
-﻿using Amazon.CloudSearch;
+using Amazon.CloudSearch;
 using Amazon.CloudSearch.Model;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
