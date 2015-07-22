@@ -31,7 +31,7 @@ namespace MobileAnalyticsSample.iOS
 			MobileAnalyticsManagerConfig config = new MobileAnalyticsManagerConfig();
 			config.AllowUseDataNetwork = true;
 
-			ViewController.Manager = MobileAnalyticsManager.GetOrCreateInstance(new CognitoAWSCredentials(COGNITO_POOL_ID, COGNITO_REGION), RegionEndpoint.USEast1, APP_ID, config);
+			ViewController.Manager = MobileAnalyticsManager.GetOrCreateInstance(APP_ID, new CognitoAWSCredentials(COGNITO_POOL_ID, COGNITO_REGION), RegionEndpoint.USEast1, config);
 
 			return true;
 		}

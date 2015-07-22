@@ -74,9 +74,6 @@
     <Compile Include="Custom\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\ClientContext\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Custom\Delivery\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -87,6 +84,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\Session\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Generated\*.cs">
