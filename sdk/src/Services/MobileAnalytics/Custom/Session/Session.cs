@@ -138,7 +138,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             if (this.StopTime.Value < currentTime)
             {
                 // new session 
-                if (Convert.ToInt64((this.StopTime.Value - currentTime).TotalMilliseconds) > _maConfig.SessionTimeout * 1000)
+                if (Convert.ToInt64((currentTime - this.StopTime.Value).TotalMilliseconds) > _maConfig.SessionTimeout * 1000)
                 {
                     StopSessionHelper();
                     NewSessionHelper();
