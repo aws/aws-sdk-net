@@ -125,11 +125,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 #endif
                 string eventString = JsonMapper.ToJson(eventObject);
 
-                if (eventString.Contains("null"))
-                {
-                    _logger.DebugFormat("EnqueueEventsForDeliveryAsync find null in eventString {0}", eventString);
-                }
-
                 try
                 {
                     _eventStore.PutEvent(eventString, _appID);
@@ -190,8 +185,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 submitEventsLength += ((string)eventData["event"]).Length;
                 if (submitEventsLength < _maConfig.MaxRequestSize)
                 {
-                    _logger.InfoFormat("Event string is {0}", (string)eventData["event"]);
-
                     Amazon.MobileAnalytics.Model.Event _analyticsEvent = JsonMapper.ToObject<Amazon.MobileAnalytics.Model.Event>((string)eventData["event"]);
 
                     submitEventsIdList.Add(eventData["id"].ToString());
