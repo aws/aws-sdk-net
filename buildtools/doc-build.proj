@@ -82,7 +82,7 @@
 	</Target>
 	
     <Target Name="create-sitemap" 
-			DependsOnTargets="build-tools"
+			DependsOnTargets="optional-build-tools"
             AfterTargets="doc-build" 
             Condition="Exists('$(InternalBuildTools)\references.targets')">
         <CreateSitemapTask
@@ -91,6 +91,10 @@
             OutputFile="$(DocOutputRoot)\sitemap.xml"
             WaitForDebugger="false"
             />
+	</Target>
+	
+	<Target Name="optional-build-tools" Condition="'$(DocBuildReleaseBuild)'!='True'">
+		<MSBuild Projects ="$(MSBuildProjectFullPath)" Targets="build-tools"/>
 	</Target>
     
     <Target Name="build-docgenerator">
