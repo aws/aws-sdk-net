@@ -97,9 +97,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 {
                     try
                     {
-#if __IOS__
-                        SQLitePCL.CurrentPlatform.Init();
-#endif
                         if (!File.Exists(_dbFileFullPath))
                             SQLiteConnection.CreateFile(_dbFileFullPath);
                         connection.Open();
@@ -122,6 +119,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 #elif PCL
             lock (_lock)
             {
+#if __IOS__
+                SQLitePCL.CurrentPlatform.Init();
+#endif
                 using (var connection = new SQLiteConnection(_dbFileFullPath))
                 {
                     using (var statement = connection.Prepare(vacuumCommand))
