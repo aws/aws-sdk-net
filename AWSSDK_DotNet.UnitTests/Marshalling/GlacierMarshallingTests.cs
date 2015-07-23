@@ -60,6 +60,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Glacier")]
+        public void AbortVaultLockMarshallTest()
+        {
+            var operation = service_model.FindOperation("AbortVaultLock");
+
+            var request = InstantiateClassGenerator.Execute<AbortVaultLockRequest>();
+            var marshaller = new AbortVaultLockRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("AbortVaultLock", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Glacier")]
         public void AddTagsToVaultMarshallTest()
         {
             var operation = service_model.FindOperation("AddTagsToVault");
@@ -105,6 +122,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = unmarshaller.Unmarshall(context)
                 as CompleteMultipartUploadResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Glacier")]
+        public void CompleteVaultLockMarshallTest()
+        {
+            var operation = service_model.FindOperation("CompleteVaultLock");
+
+            var request = InstantiateClassGenerator.Execute<CompleteVaultLockRequest>();
+            var marshaller = new CompleteVaultLockRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("CompleteVaultLock", request, internalRequest, service_model);            
+
         }
 
         
@@ -378,6 +412,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Glacier")]
+        public void GetVaultLockMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVaultLock");
+
+            var request = InstantiateClassGenerator.Execute<GetVaultLockRequest>();
+            var marshaller = new GetVaultLockRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetVaultLock", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetVaultLockResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetVaultLockResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Glacier")]
         public void GetVaultNotificationsMarshallTest()
         {
             var operation = service_model.FindOperation("GetVaultNotifications");
@@ -470,6 +536,39 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as InitiateMultipartUploadResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Glacier")]
+        public void InitiateVaultLockMarshallTest()
+        {
+            var operation = service_model.FindOperation("InitiateVaultLock");
+
+            var request = InstantiateClassGenerator.Execute<InitiateVaultLockRequest>();
+            var marshaller = new InitiateVaultLockRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("InitiateVaultLock", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amz-lock-id","x-amz-lock-id_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = InitiateVaultLockResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as InitiateVaultLockResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

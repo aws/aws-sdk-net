@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     {
         private string _clientToken;
         private string _iamFleetRole;
-        private List<LaunchSpecification> _launchSpecifications = new List<LaunchSpecification>();
+        private List<SpotFleetLaunchSpecification> _launchSpecifications = new List<SpotFleetLaunchSpecification>();
         private string _spotPrice;
         private int? _targetCapacity;
         private bool? _terminateInstancesWithExpiration;
@@ -87,7 +87,7 @@ namespace Amazon.EC2.Model
         /// Information about the launch specifications for the instances.
         /// </para>
         /// </summary>
-        public List<LaunchSpecification> LaunchSpecifications
+        public List<SpotFleetLaunchSpecification> LaunchSpecifications
         {
             get { return this._launchSpecifications; }
             set { this._launchSpecifications = value; }

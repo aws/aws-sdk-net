@@ -68,8 +68,12 @@ namespace Amazon.EC2.Model
         /// <code>iamFleetRoleInvalid</code> - Spot fleet did not have the required permissions
         /// either to launch or terminate an instance.
         /// </para>
-        ///  </li> <li> <para><code>spotFleetRequestConfigurationInvalid</code> - The configuration
-        /// is not valid. For more information, see the description.</para> </li> <li> 
+        ///  </li> <li> 
+        /// <para>
+        /// <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not valid.
+        /// For more information, see the description.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// <code>spotInstanceCountLimitExceeded</code> - You've reached the limit on the number
         /// of Spot Instances that you can launch.

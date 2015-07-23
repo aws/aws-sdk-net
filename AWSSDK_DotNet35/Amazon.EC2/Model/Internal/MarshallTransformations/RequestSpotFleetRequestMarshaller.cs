@@ -67,22 +67,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "AddressingType", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.AddressingType));
                             }
-                            if(publicRequestSpotFleetRequestConfiglistValue.IsSetAllSecurityGroups())
-                            {
-                                int publicRequestSpotFleetRequestConfiglistValuelistValueIndex = 1;
-                                foreach(var publicRequestSpotFleetRequestConfiglistValuelistValue in publicRequestSpotFleetRequestConfiglistValue.AllSecurityGroups)
-                                {
-                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetGroupId())
-                                    {
-                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "GroupSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "GroupId", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.GroupId));
-                                    }
-                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetGroupName())
-                                    {
-                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "GroupSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "GroupName", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.GroupName));
-                                    }
-                                    publicRequestSpotFleetRequestConfiglistValuelistValueIndex++;
-                                }
-                            }
                             if(publicRequestSpotFleetRequestConfiglistValue.IsSetBlockDeviceMappings())
                             {
                                 int publicRequestSpotFleetRequestConfiglistValuelistValueIndex = 1;
@@ -161,9 +145,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "KeyName", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.KeyName));
                             }
-                            if(publicRequestSpotFleetRequestConfiglistValue.IsSetMonitoringEnabled())
+                            if(publicRequestSpotFleetRequestConfiglistValue.IsSetMonitoring())
                             {
-                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Monitoring.Enabled", StringUtils.FromBool(publicRequestSpotFleetRequestConfiglistValue.MonitoringEnabled));
+                                if(publicRequestSpotFleetRequestConfiglistValue.Monitoring.IsSetEnabled())
+                                {
+                                    request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Monitoring" + "." + "Enabled", StringUtils.FromBool(publicRequestSpotFleetRequestConfiglistValue.Monitoring.Enabled));
+                                }
                             }
                             if(publicRequestSpotFleetRequestConfiglistValue.IsSetNetworkInterfaces())
                             {
@@ -250,7 +237,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 int publicRequestSpotFleetRequestConfiglistValuelistValueIndex = 1;
                                 foreach(var publicRequestSpotFleetRequestConfiglistValuelistValue in publicRequestSpotFleetRequestConfiglistValue.SecurityGroups)
                                 {
-                                    request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "SecurityGroup" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex, StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue));
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetGroupId())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "GroupSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "GroupId", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.GroupId));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetGroupName())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "GroupSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "GroupName", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.GroupName));
+                                    }
                                     publicRequestSpotFleetRequestConfiglistValuelistValueIndex++;
                                 }
                             }

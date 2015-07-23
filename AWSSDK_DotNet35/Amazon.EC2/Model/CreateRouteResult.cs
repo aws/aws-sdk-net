@@ -32,26 +32,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateRouteResult : AmazonWebServiceResponse
     {
-        private string _clientToken;
         private bool? _return;
-
-        /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
-        /// </para>
-        /// </summary>
-        public string ClientToken
-        {
-            get { return this._clientToken; }
-            set { this._clientToken = value; }
-        }
-
-        // Check to see if ClientToken property is set
-        internal bool IsSetClientToken()
-        {
-            return this._clientToken != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Return. 

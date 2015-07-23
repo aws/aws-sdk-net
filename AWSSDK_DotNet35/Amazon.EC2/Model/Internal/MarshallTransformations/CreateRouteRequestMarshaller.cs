@@ -48,10 +48,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetClientToken())
-                {
-                    request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
-                }
                 if(publicRequest.IsSetDestinationCidrBlock())
                 {
                     request.Parameters.Add("DestinationCidrBlock", StringUtils.FromString(publicRequest.DestinationCidrBlock));

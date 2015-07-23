@@ -64,33 +64,12 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateRouteRequest : AmazonEC2Request
     {
-        private string _clientToken;
         private string _destinationCidrBlock;
         private string _gatewayId;
         private string _instanceId;
         private string _networkInterfaceId;
         private string _routeTableId;
         private string _vpcPeeringConnectionId;
-
-        /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-        /// to Ensure Idempotency</a>.
-        /// </para>
-        /// </summary>
-        public string ClientToken
-        {
-            get { return this._clientToken; }
-            set { this._clientToken = value; }
-        }
-
-        // Check to see if ClientToken property is set
-        internal bool IsSetClientToken()
-        {
-            return this._clientToken != null;
-        }
 
         /// <summary>
         /// Gets and sets the property DestinationCidrBlock. 

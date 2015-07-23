@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// Instantiates ModifySnapshotAttributeRequest with the parameterized properties
         /// </summary>
         /// <param name="snapshotId">The ID of the snapshot.</param>
-        /// <param name="attribute">The snapshot attribute to modify.</param>
+        /// <param name="attribute">The snapshot attribute to modify. <note> Only volume creation permissions may be modified at the customer level. </note></param>
         /// <param name="operationType">The type of operation to perform to the attribute.</param>
         public ModifySnapshotAttributeRequest(string snapshotId, SnapshotAttributeName attribute, string operationType)
         {
@@ -77,6 +77,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The snapshot attribute to modify.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only volume creation permissions may be modified at the customer level.
+        /// </para>
+        ///  </note>
         /// </summary>
         public SnapshotAttributeName Attribute
         {

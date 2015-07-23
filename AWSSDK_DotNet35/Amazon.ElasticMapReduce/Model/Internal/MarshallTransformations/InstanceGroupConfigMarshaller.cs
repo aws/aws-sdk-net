@@ -45,6 +45,22 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.BidPrice);
             }
 
+            if(requestObject.IsSetConfigurations())
+            {
+                context.Writer.WritePropertyName("Configurations");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectConfigurationsListValue in requestObject.Configurations)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectConfigurationsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetInstanceCount())
             {
                 context.Writer.WritePropertyName("InstanceCount");

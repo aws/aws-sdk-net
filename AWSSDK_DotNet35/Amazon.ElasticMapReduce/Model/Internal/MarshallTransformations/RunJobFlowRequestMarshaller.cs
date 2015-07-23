@@ -69,6 +69,22 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AmiVersion);
                 }
 
+                if(publicRequest.IsSetApplications())
+                {
+                    context.Writer.WritePropertyName("Applications");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestApplicationsListValue in publicRequest.Applications)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ApplicationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestApplicationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetBootstrapActions())
                 {
                     context.Writer.WritePropertyName("BootstrapActions");
@@ -79,6 +95,22 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
                         var marshaller = BootstrapActionConfigMarshaller.Instance;
                         marshaller.Marshall(publicRequestBootstrapActionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetConfigurations())
+                {
+                    context.Writer.WritePropertyName("Configurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestConfigurationsListValue in publicRequest.Configurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestConfigurationsListValue, context);
 
                         context.Writer.WriteObjectEnd();
                     }
@@ -128,6 +160,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetReleaseLabel())
+                {
+                    context.Writer.WritePropertyName("ReleaseLabel");
+                    context.Writer.Write(publicRequest.ReleaseLabel);
                 }
 
                 if(publicRequest.IsSetServiceRole())
