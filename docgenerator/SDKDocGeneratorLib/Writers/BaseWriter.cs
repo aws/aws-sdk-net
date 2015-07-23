@@ -480,8 +480,13 @@ namespace SDKDocGenerator.Writers
         protected void AddNamespace(TextWriter writer, string ns, string moduleName)
         {
             writer.WriteLine("<div id=\"namespaceblock\">");
-                writer.WriteLine("<p><strong>Namespace: </strong>{0}<br/>", ns);
-                writer.WriteLine("<strong>Assembly: </strong>{0}<strong><span id=\"versionData\"><br/>Version: </strong><span id=\"assemblyVersion\">3.x.y.z</span></span></p>", moduleName);
+                writer.Write("<p>");
+                writer.Write("<strong>Namespace: </strong>{0}<br/>", ns);
+                writer.Write("<strong>Assembly: </strong>{0}", moduleName);
+                writer.Write("<span id=\"versionData\">");
+                writer.Write("<br/><strong>Version: </strong><span id=\"assemblyVersion\">3.x.y.z</span>");
+                writer.Write("</span>");
+                writer.Write("</p>");
             writer.WriteLine("</div>");
         }
 
