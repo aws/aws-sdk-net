@@ -1,19 +1,17 @@
-//
-// Copyright 2014-2015 Amazon.com, 
-// Inc. or its affiliates. All Rights Reserved.
-// 
-// Licensed under the Amazon Software License (the "License"). 
-// You may not use this file except in compliance with the 
-// License. A copy of the License is located at
-// 
-//     http://aws.amazon.com/asl/
-// 
-// or in the "license" file accompanying this file. This file is 
-// distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
-// CONDITIONS OF ANY KIND, express or implied. See the License 
-// for the specific language governing permissions and 
-// limitations under the License.
-//
+/*
+ * Copyright 2015-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
 
 using System;
 using System.Collections;
@@ -28,10 +26,10 @@ using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal;
 
-#if BCL35 || BCL45
+#if BCL
 using System.Data.SQLite;
 using System.Globalization;
-#elif PCL 
+#elif PCL
 using PCLStorage;
 using SQLitePCL;
 using System.Globalization;
@@ -71,11 +69,12 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         public SQLiteEventStore(MobileAnalyticsManagerConfig maConfig)
         {
             _maConfig = maConfig;
-#if BCL35 || BCL45
-            _dbFileFullPath = dbFileName;
+#if BCL
+            // TODO: complete app data path on BCL
+            _dbFileFullPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\" + AppDomain.CurrentDomain.DomainManager.EntryAssembly.GetName().Name, dbFileName);
 #elif PCL
             _dbFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, dbFileName);
-#endif     
+#endif
             SetupSQLiteEventStore();
         }
 
@@ -85,66 +84,55 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// </summary>
         private void SetupSQLiteEventStore()
         {
-#if __IOS__
-            SQLitePCL.CurrentPlatform.Init();
-#endif
-
             string vacuumCommand = "PRAGMA auto_vacuum = 1";
             string sqlCommand = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " ("
                 + EVENT_COLUMN_NAME + " TEXT NOT NULL," + EVENT_ID_COLUMN_NAME + " TEXT NOT NULL UNIQUE,"
                 + MA_APP_ID_COLUMN_NAME + " TEXT NOT NULL,"
                 + EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME + " INTEGER NOT NULL DEFAULT 0)";
-#if BCL35 || BCL45
-            if (!File.Exists(_dbFileFullPath))
-                SQLiteConnection.CreateFile(_dbFileFullPath);
-            SQLiteConnection connection = null;
-            try
-            {
-                lock (_lock)
-                {
-                    connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;");
-                    connection.Open();
-                    SQLiteCommand command = new SQLiteCommand(vacuumCommand, connection);
-                    command.ExecuteNonQuery();
-                    
-                    command = new SQLiteCommand(sqlCommand, connection);
-                    command.ExecuteNonQuery();
-                }
+#if BCL
 
-            }
-            catch (Exception e)
+            lock (_lock)
             {
-                _logger.Error(e, "Get exception from SetUpDatabase");
-            }
-            finally
-            {
-                if (null != connection)
-                    connection.Close();
-            }
-#elif PCL 
-            try
-            {
-                lock (_lock)
+                using (var connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;"))
                 {
-                    using (var connection = new SQLiteConnection(_dbFileFullPath))
+                    try
                     {
-                        using (var statement = connection.Prepare(vacuumCommand))
+                        if (!File.Exists(_dbFileFullPath))
+                            SQLiteConnection.CreateFile(_dbFileFullPath);
+                        connection.Open();
+                        using (var command = new SQLiteCommand(vacuumCommand, connection))
                         {
-                            statement.Step();
+                            command.ExecuteNonQuery();
                         }
-
-                        _logger.InfoFormat("run SQL command : {0}", sqlCommand);
-                        using (var createTableStmt = connection.Prepare(sqlCommand))
+                        using (var command = new SQLiteCommand(sqlCommand, connection))
                         {
-                            createTableStmt.Step();
+                            command.ExecuteNonQuery();
                         }
                     }
+                    finally
+                    {
+                        if (null != connection)
+                            connection.Close();
+                    }
                 }
-
             }
-            catch (Exception e)
+#elif PCL
+            lock (_lock)
             {
-                _logger.Error(e, "Get exception from SetUpDatabase");
+#if __IOS__
+                SQLitePCL.CurrentPlatform.Init();
+#endif
+                using (var connection = new SQLiteConnection(_dbFileFullPath))
+                {
+                    using (var statement = connection.Prepare(vacuumCommand))
+                    {
+                        statement.Step();
+                    }
+                    using (var createTableStmt = connection.Prepare(sqlCommand))
+                    {
+                        createTableStmt.Step();
+                    }
+                }
             }
 #endif
         }
@@ -154,13 +142,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// Add an event to the store.
         /// </summary>
         /// <param name="eventString">Amazon Mobile Analytics event in string.</param>
-        /// <param name="appId">Amazon Mobile Analytics App ID.</param>
-        /// <returns><c>true</c>, if event was put, <c>false</c> otherwise.</returns>
+        /// <param name="appID">Amazon Mobile Analytics App ID.</param>
         [System.Security.SecuritySafeCritical]
-        public bool PutEvent(string eventString, string appId)
+        public void PutEvent(string eventString, string appID)
         {
-            
-            bool result = false;
             long currentDatabaseSize = this.DatabaseSize;
 
             if (currentDatabaseSize >= _maConfig.MaxDBSize)
@@ -174,252 +159,212 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             }
             else
             {
-
-#if BCL35 || BCL45
-                string sqlCommand = "INSERT INTO " + TABLE_NAME + " (" + EVENT_COLUMN_NAME + "," + EVENT_ID_COLUMN_NAME + "," + MA_APP_ID_COLUMN_NAME + ") values(@event,@id,@appId)";
-                SQLiteConnection connection = null;
+#if BCL
+                string sqlCommand = "INSERT INTO " + TABLE_NAME + " (" + EVENT_COLUMN_NAME + "," + EVENT_ID_COLUMN_NAME + "," + MA_APP_ID_COLUMN_NAME + ") values(@event,@id,@appID)";
                 lock (_lock)
                 {
-                    try
+                    using (var connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;"))
                     {
-                        connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;");
-                        connection.Open();
-                        SQLiteCommand command = new SQLiteCommand(sqlCommand, connection);
-                        command.Parameters.Add(new SQLiteParameter("@event",eventString));
-                        command.Parameters.Add(new SQLiteParameter("@id", Guid.NewGuid().ToString()));
-                        command.Parameters.Add(new SQLiteParameter("@appId", appId));
-                        command.ExecuteNonQuery();
-                        result = true;
-                    }
-                    catch (Exception e)
-                    {
-                        _logger.Error(e, "Get exception when putting event into local storage.");
-                        result = false;
-                    }
-                    finally 
-                    {
-                        if (null != connection)
-                            connection.Close();
+                        try
+                        {
+                            connection.Open();
+                            using (var command = new SQLiteCommand(sqlCommand, connection))
+                            {
+                                command.Parameters.Add(new SQLiteParameter("@event", eventString));
+                                command.Parameters.Add(new SQLiteParameter("@id", Guid.NewGuid().ToString()));
+                                command.Parameters.Add(new SQLiteParameter("@appID", appID));
+                                command.ExecuteNonQuery();
+                            }
+                        }
+                        finally
+                        {
+                            if (null != connection)
+                                connection.Close();
+                        }
                     }
                 }
-#elif PCL 
+#elif PCL
                 string sqlCommand = "INSERT INTO " + TABLE_NAME + " (" + EVENT_COLUMN_NAME + "," + EVENT_ID_COLUMN_NAME + "," + MA_APP_ID_COLUMN_NAME + ") values(?,?,?)";
                 lock (_lock)
                 {
-                    try
+                    using (var connection = new SQLiteConnection(_dbFileFullPath))
                     {
-                        using (var connection = new SQLiteConnection(_dbFileFullPath))
-                        {  
-                            using (var statement = connection.Prepare(sqlCommand))
-                            {
-                                statement.Bind(1, eventString);
-                                statement.Bind(2, Guid.NewGuid().ToString());
-                                statement.Bind(3, appId);
-                                statement.Step();
-                                result = true;
-                            }
+                        using (var statement = connection.Prepare(sqlCommand))
+                        {
+                            statement.Bind(1, eventString);
+                            statement.Bind(2, Guid.NewGuid().ToString());
+                            statement.Bind(3, appID);
+                            statement.Step();
                         }
-                    }
-                    catch (Exception e)
-                    {
-                        _logger.Error(e, "Get exception when putting event into local storage.");
-                        result = false;
                     }
                 }
 #endif
             }
-
-            return result;
         }
 
         /// <summary>
         /// Deletes a list of events.
         /// </summary>
         /// <param name="rowIds">List of row identifiers.</param>
-        /// <returns><c>true</c>, if events was deleted, <c>false</c> otherwise.</returns>
         [System.Security.SecuritySafeCritical]
-        public bool DeleteEvent(List<string> rowIds)
+        public void DeleteEvent(List<string> rowIds)
         {
-            bool result = false;
             string ids = "'" + String.Join("', '", rowIds.ToArray()) + "'";
             string sqlCommand = String.Format(CultureInfo.InvariantCulture, "DELETE FROM " + TABLE_NAME + " WHERE " + EVENT_ID_COLUMN_NAME + " IN ({0})", ids);
+
+#if BCL
+            SQLiteConnection connection = null;
             lock (_lock)
             {
-#if BCL35 || BCL45
-                SQLiteConnection connection = null;
-                try
+                using (connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;"))
                 {
-                    connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;");
-                    connection.Open();
-                    SQLiteCommand command = new SQLiteCommand(sqlCommand, connection);
-                    command.ExecuteNonQuery();
-                    result = true;
-                }
-                catch (Exception e)
-                {
-                    _logger.Error(e, "Get exception when deleting event from local storage.");
-                    result = false;
-                }
-                finally 
-                {
-                    if (null != connection)
-                        connection.Close();
-                }
-
-#elif PCL           
-                try
-                {
-                    using (var connection = new SQLiteConnection(_dbFileFullPath))
+                    try
                     {
-                        using (var statement = connection.Prepare(sqlCommand))
+                        connection.Open();
+                        using (var command = new SQLiteCommand(sqlCommand, connection))
                         {
-                            statement.Step();
-                            result = true;
+                            command.ExecuteNonQuery();
                         }
                     }
+                    finally
+                    {
+                        if (null != connection)
+                            connection.Close();
+                    }
                 }
-                catch (Exception e)
-                {
-                    _logger.Error(e, "Get exception when deleting event from local storage.");
-                    result = false;
-                }  
-#endif
             }
-            return result;
+#elif PCL
+            lock (_lock)
+            {
+                using (var connection = new SQLiteConnection(_dbFileFullPath))
+                {
+                    using (var statement = connection.Prepare(sqlCommand))
+                    {
+                        statement.Step();
+                    }
+                }
+            }
+#endif
         }
 
         /// <summary>
         /// Get events from the Event Store
         /// </summary>
-        /// <param name="appId">Amazon Mobile Analytics App Id.</param>
+        /// <param name="appID">Amazon Mobile Analytics App Id.</param>
         /// <param name="maxAllowed">Max number of events is allowed to return.</param>
         /// <returns>The events as a List of <see cref="ThirdParty.Json.LitJson.JsonData"/>.</returns>
         [System.Security.SecuritySafeCritical]
-        public List<JsonData> GetEvents(string appId, int maxAllowed)
+        public List<JsonData> GetEvents(string appID, int maxAllowed)
         {
-            
             List<JsonData> eventList = new List<JsonData>();
+#if BCL
+            string sqlCommand = "SELECT * FROM " + TABLE_NAME + " WHERE " + MA_APP_ID_COLUMN_NAME + " = @appID  ORDER BY " + EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME + ",ROWID LIMIT " + maxAllowed;
             lock (_lock)
             {
-#if BCL35 || BCL45
-                string sqlCommand = "SELECT * FROM " + TABLE_NAME + " WHERE " + MA_APP_ID_COLUMN_NAME + " = @appId  ORDER BY " + EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME + ",ROWID LIMIT " + maxAllowed;
-                SQLiteConnection connection = null;
-                try
+                using (var connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;"))
                 {
-                    connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;");
-                    connection.Open();
-                    SQLiteCommand command = new SQLiteCommand(sqlCommand, connection);
-                    command.Parameters.Add(new SQLiteParameter("@appId", appId));
-                    SQLiteDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
+                    try
                     {
-                        JsonData data = new JsonData();
-                        data["id"] = reader[EVENT_ID_COLUMN_NAME].ToString();
-                        data["event"] = reader[EVENT_COLUMN_NAME.ToUpperInvariant()].ToString();
-                        data["appId"] = reader[MA_APP_ID_COLUMN_NAME].ToString();
-
-                        eventList.Add(data);
-                    }
-                }
-                catch (Exception e)
-                {
-                    _logger.Error(e, "Exception happens when getting events.");
-                }
-                finally 
-                {
-                    if (null != connection)
-                        connection.Close();
-                }
-#elif PCL
-                string sqlCommand = "SELECT * FROM " + TABLE_NAME + " WHERE " + MA_APP_ID_COLUMN_NAME + " = ?  ORDER BY " + EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME + ",ROWID LIMIT " + maxAllowed;
-                try
-                {
-                    using (var connection = new SQLiteConnection(_dbFileFullPath))
-                    {
-                        using (var statement = connection.Prepare(sqlCommand))
+                        connection.Open();
+                        using (var command = new SQLiteCommand(sqlCommand, connection))
                         {
-                            statement.Bind(1, appId);
-                            while (statement.Step() == SQLiteResult.ROW)
+                            command.Parameters.Add(new SQLiteParameter("@appID", appID));
+                            using (var reader = command.ExecuteReader())
                             {
-                                JsonData data = new JsonData();
-                                data["id"] = statement.GetText(EVENT_ID_COLUMN_NAME);
-                                data["event"] = statement.GetText(EVENT_COLUMN_NAME.ToLower());
-                                data["appId"] = statement.GetText(MA_APP_ID_COLUMN_NAME);
-
-                                eventList.Add(data);
+                                while (reader.Read())
+                                {
+                                    JsonData data = new JsonData();
+                                    data["id"] = reader[EVENT_ID_COLUMN_NAME].ToString();
+                                    data["event"] = reader[EVENT_COLUMN_NAME.ToUpperInvariant()].ToString();
+                                    data["appID"] = reader[MA_APP_ID_COLUMN_NAME].ToString();
+                                    eventList.Add(data);
+                                }
                             }
                         }
                     }
+                    finally
+                    {
+                        if (null != connection)
+                            connection.Close();
+                    }
                 }
-                catch (Exception e)
-                {
-                    _logger.Error(e, "Exception happens when getting events.");
-                }
-#endif
-            }
 
+            }
+#elif PCL
+            string sqlCommand = "SELECT * FROM " + TABLE_NAME + " WHERE " + MA_APP_ID_COLUMN_NAME + " = ?  ORDER BY " + EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME + ",ROWID LIMIT " + maxAllowed;
+            lock (_lock)
+            {
+                using (var connection = new SQLiteConnection(_dbFileFullPath))
+                {
+                    using (var statement = connection.Prepare(sqlCommand))
+                    {
+                        statement.Bind(1, appID);
+                        while (statement.Step() == SQLiteResult.ROW)
+                        {
+                            JsonData data = new JsonData();
+                            data["id"] = statement.GetText(EVENT_ID_COLUMN_NAME);
+                            data["event"] = statement.GetText(EVENT_COLUMN_NAME.ToLower());
+                            data["appID"] = statement.GetText(MA_APP_ID_COLUMN_NAME);
+                            eventList.Add(data);
+                        }
+                    }
+                }
+            }
+#endif
             return eventList;
         }
 
         /// <summary>
         /// Gets Numbers the of events.
         /// </summary>
-        /// <param name="appId">Amazon Mobile Analytics App Identifier.</param>
+        /// <param name="appID">Amazon Mobile Analytics App Identifier.</param>
         /// <returns>The number of events.</returns>
         [System.Security.SecuritySafeCritical]
-        public long NumberOfEvents(string appId)
+        public long NumberOfEvents(string appID)
         {
-            
             long count = 0;
-            lock (_lock)
+
+#if BCL
+            string sqlCommand = "SELECT COUNT(*) C FROM " + TABLE_NAME + " where " + MA_APP_ID_COLUMN_NAME + " = @appID";
+            using (var connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;"))
             {
-#if BCL35 || BCL45
-                string sqlCommand = "SELECT COUNT(*) C FROM " + TABLE_NAME + " where " + MA_APP_ID_COLUMN_NAME + " = @appId";
-                SQLiteConnection connection = null;
                 try
                 {
-                    connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;");
                     connection.Open();
-                    SQLiteCommand command = new SQLiteCommand(sqlCommand, connection);
-                    command.Parameters.Add(new SQLiteParameter("@appId", appId));
-                    SQLiteDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
+                    using (var command = new SQLiteCommand(sqlCommand, connection))
                     {
-                        count = (long)reader["C"];
+                        command.Parameters.Add(new SQLiteParameter("@appID", appID));
+                        using (var reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                count = (long)reader["C"];
+                            }
+                        }
                     }
-                }
-                catch (Exception e)
-                {
-                    _logger.Error(e, "Exception happens when getting number of events.");
                 }
                 finally
                 {
                     if (null != connection)
                         connection.Close();
-                }                
-#elif PCL             
-                string sqlCommand = "SELECT COUNT(*) C FROM " + TABLE_NAME + " where " + MA_APP_ID_COLUMN_NAME + " = ?";
-                try
+                }
+            }
+
+
+#elif PCL
+            string sqlCommand = "SELECT COUNT(*) C FROM " + TABLE_NAME + " where " + MA_APP_ID_COLUMN_NAME + " = ?";
+            using (var connection = new SQLiteConnection(_dbFileFullPath))
+            {
+                using (var statement = connection.Prepare(sqlCommand))
                 {
-                    using (var connection = new SQLiteConnection(_dbFileFullPath))
+                    statement.Bind(1, appID);
+                    while (statement.Step() == SQLiteResult.ROW)
                     {
-                        using (var statement = connection.Prepare(sqlCommand))
-                        {
-                            statement.Bind(1, appId);
-                            while (statement.Step() == SQLiteResult.ROW)
-                            {
-                                count = statement.GetInteger("C");
-                            }
-                        }
+                        count = statement.GetInteger("C");
                     }
                 }
-                catch (Exception e)
-                {
-                    _logger.Error(e, "Exception happens when getting number of events.");
-                }
-#endif
-
             }
+#endif
             return count;
         }
 
@@ -429,17 +374,17 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <returns>The database size.</returns>
         public long DatabaseSize
         {
-            get {
-#if BCL35 || BCL45
-            FileInfo fileInfo = new FileInfo(_dbFileFullPath);
-            return fileInfo.Length;
+            get
+            {
+#if BCL
+                FileInfo fileInfo = new FileInfo(_dbFileFullPath);
+                return fileInfo.Length;
 #elif PCL
                 string pageCountCommand = "PRAGMA page_count;";
                 string pageSizeCommand = "PRAGMA page_size;";
-
                 long pageCount = 0, pageSize = 0;
 
-                try
+                lock (_lock)
                 {
                     using (var connection = new SQLiteConnection(_dbFileFullPath))
                     {
@@ -460,17 +405,11 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                         }
                     }
                 }
-                catch (Exception e)
-                {
-                    _logger.Error(e, "Exception happens when getting number of events.");
-                    return 0;
-                }
-
                 return pageCount * pageSize;
 #endif
             }
         }
-        
+
         /// <summary>
         /// Get the SQLite Event Store's database file full path.
         /// </summary>

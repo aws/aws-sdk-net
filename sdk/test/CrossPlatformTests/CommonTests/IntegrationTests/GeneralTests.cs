@@ -1,4 +1,4 @@
-﻿using Amazon.Util.Internal;
+using Amazon.Util.Internal;
 using CommonTests.Framework;
 using NUnit.Framework;
 using System.Linq;

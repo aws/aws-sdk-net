@@ -57,9 +57,6 @@
     <Compile Include="Custom\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\ClientContext\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Custom\Delivery\*.cs">
       <SubType>Code</SubType>
     </Compile>

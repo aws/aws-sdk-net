@@ -1,20 +1,17 @@
-#define AWSSDK_UNITY
-//
-// Copyright 2014-2015 Amazon.com, 
-// Inc. or its affiliates. All Rights Reserved.
-// 
-// Licensed under the Amazon Software License (the "License"). 
-// You may not use this file except in compliance with the 
-// License. A copy of the License is located at
-// 
-//     http://aws.amazon.com/asl/
-// 
-// or in the "license" file accompanying this file. This file is 
-// distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
-// CONDITIONS OF ANY KIND, express or implied. See the License 
-// for the specific language governing permissions and 
-// limitations under the License.
-//
+/*
+ * Copyright 2015-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
 
 using System;
 using System.Collections.Generic;
@@ -24,14 +21,10 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 using System.Xml.Linq;
-
-#if BCL
-using System.Configuration;
-#endif
-
 using Amazon.Util;
 using Amazon.Util.Internal;
 using Amazon.MobileAnalytics.MobileAnalyticsManager;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 {
@@ -40,8 +33,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
     /// </summary>
     public class MobileAnalyticsManagerConfig
     {
-        private const string mobileAnalyticsKey = "mobileAnalytics";
-
         private const int defaultSessionTimeout = 5;
         private const int defaultMaxDBSize = 5242880;
         private const double defaultDBWarningThreashold = 0.9;
@@ -58,12 +49,17 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             DBWarningThreshold = defaultDBWarningThreashold;
             MaxRequestSize = defaultMaxRequestSize;
             AllowUseDataNetwork = defaultAllowUseDataNetwork;
+#if BCL
+            ClientContextConfiguration = new ClientContextConfig();
+#endif
         }
 
+#if BCL
         /// <summary>
-        /// Client Context Configuration . <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.ClientContextConfig"/>
+        /// Client Context Configuration . <see cref="Amazon.Runtime.Internal.ClientContextConfig"/>
         /// </summary>
         public ClientContextConfig ClientContextConfiguration { get; set; }
+#endif
 
         /// <summary>
         /// If the app stays in background for a time greater than the SessionTimeout then Mobile Analytics client stops old session and 

@@ -11,26 +11,7 @@
 
     <!-- properties used in documentation generation -->
     <PropertyGroup>
-        <!-- the relative location (to the project file) of the generator executable -->
-        <DocGeneratorPath>$(MSBuildProjectDirectory)\..\docgenerator\SDKDocGenerator\bin\Release</DocGeneratorPath>
-        <DocGenerator>SDKDocGenerator.exe</DocGenerator>
-        
-        <!-- default expected location of SDK assemblies root if not specified -->
-        <SDKAssembliesRoot Condition="'$(SDKAssembliesRoot)'==''">$(MSBuildProjectDirectory)\$(Deployment)\assemblies</SDKAssembliesRoot>
-        
-        <!-- default output path to ..\DocDeployment\docs if not specified -->
-        <DocOutputRoot Condition="'$(DocOutputRoot)'==''">$(MSBuildProjectDirectory)\$(DocDeployment)\docs</DocOutputRoot>
-        
-		<!-- default location of the documentation samples. This should be the folder ABOVE AWSSDKDocSamples -->
-		
-		<DocSamplesFolder>$(MSBuildProjectDirectory)\..\docgenerator</DocSamplesFolder>
-		
-        <!-- use net45 platform as the primary determinant of assemblies to inspect, and generate 
-             for all services 
-        -->
-        <SDKPlatform Condition="'$(SDKPlatform)'==''">net45</SDKPlatform>
-        <SDKServices Condition="'$(SDKServices)'==''">*</SDKServices>
-		
+        		
 		<!-- resources folder where test settings should be placed -->
 		<TestSettingsLocation>..\sdk\test\CrossPlatformTests\CommonTests\Resources</TestSettingsLocation>
         
@@ -47,7 +28,7 @@
 	
 	<Target Name="init" DependsOnTargets="clean;build-custom-tasks"/>
 
-	<Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;doc-build;keyscan;consolidate-docartifacts;save-build"/>
+	<Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;keyscan;consolidate-docartifacts;save-build"/>
 
 	<Target Name="full-build-nodocs" DependsOnTargets="test-sdk;keyscan;copy-assemblies;save-build"/>
 	
@@ -222,43 +203,4 @@
 
     
     <!-- DOCUMENTATION BUILD TARGETS -->
-    
-	<Target Name="doc-build" DependsOnTargets="build-docgenerator">
-		<Message Text="Build documentation for all platforms, all assemblies"/>
-		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(SDKAssembliesRoot) -o $(DocOutputRoot) -sf $(DocSamplesFolder)" />
-    </Target>
-
-    <Target Name="create-sitemap" 
-			DependsOnTargets="build-tools"
-            AfterTargets="doc-build" 
-            Condition="Exists('$(InternalBuildTools)\references.targets')">
-        <CreateSitemapTask
-            SourceFolder="$(DocOutputRoot)"
-            BaseUrl="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/"
-            OutputFile="$(DocOutputRoot)\sitemap.xml"
-            WaitForDebugger="false"
-            />
-	</Target>
-    
-    <Target Name="build-docgenerator">
-		<Message Text="Building documentation generator"/>
-		<MSBuild Projects="..\docgenerator\AWSSDKDocGenerator.sln"
-			Targets="Clean;Build"
-			Properties="Configuration=Release" />
-    </Target>
-    
-	<Target Name="doc-platform-build" DependsOnTargets="build-docgenerator">
-		<Message Text="Build documentation for selected platform, all services"/>
-		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(SDKAssembliesRoot) -o $(DocOutputRoot) -p $(SDKPlatform)" />
-	</Target>
-
-	<Target Name="doc-platform-service-build" DependsOnTargets="build-docgenerator">
-		<Message Text="Build documentation for selected service(s) in platform"/>
-		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(SDKAssembliesRoot) -o $(DocOutputRoot) -p $(SDKPlatform) -svc $(SDKServices)" />
-	</Target>
-    
-	<Target Name="test-doc-build" DependsOnTargets="build-docgenerator">
-		<Message Text="Build documentation in test mode (net45 platform, selected services)"/>
-		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -t  -sdk $(SDKAssembliesRoot) -sf $(DocSamplesFolder) -o $(DocOutputRoot) -v" />
-	</Target>    
 </Project>

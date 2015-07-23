@@ -15,13 +15,13 @@ namespace Amazon.Util.Internal.PlatformServices
         {
             this.Platform = Environment.OSVersion.Platform.ToString();
             this.PlatformVersion = Environment.OSVersion.Version.ToString();
-            this.PlatformUserAgent = Environment.OSVersion.VersionString;
+            this.PlatformUserAgent = Environment.OSVersion.VersionString.Replace(" ", "_");
             this.Model = "Unknown";
             this.Make = "Unknown";
             this.Locale = CultureInfo.CurrentCulture.DisplayName;
             this.FrameworkUserAgent =
                 string.Format(CultureInfo.InvariantCulture,
-                ".NET Runtime/{0}.{1} .NET Framework/{2}",
+                ".NET_Runtime/{0}.{1} .NET_Framework/{2}",
                  Environment.Version.Major,
                  Environment.Version.MajorRevision,
                  InternalSDKUtils.DetermineFramework());

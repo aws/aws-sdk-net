@@ -40,7 +40,7 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.0")]
-[assembly: AssemblyFileVersion("3.0.0.0")]
+[assembly: AssemblyFileVersion("3.0.0.3")]
 
 #if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]
@@ -49,5 +49,5 @@ using System.Runtime.CompilerServices;
 #endif
 
 #if BCL
-[assembly: System.Security.AllowPartiallyTrustedCallers()]
+[assembly: System.Security.AllowPartiallyTrustedCallers]
 #endif

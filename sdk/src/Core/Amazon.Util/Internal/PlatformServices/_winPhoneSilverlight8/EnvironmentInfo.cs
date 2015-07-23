@@ -11,19 +11,19 @@ namespace Amazon.Util.Internal.PlatformServices
     {
         public EnvironmentInfo()
         {
-            this.Platform = "Windows Phone";// Environment.OSVersion.Platform.ToString();
+            this.Platform = "Windows Phone";
             this.PlatformVersion = Environment.OSVersion.Version.ToString();
-            this.Model = "Unknown";
-            this.Make = "Unknown";
+            this.Model = InternalSDKUtils.UnknownVersion;
+            this.Make = InternalSDKUtils.UnknownVersion;
             this.Locale = CultureInfo.CurrentCulture.DisplayName;
             this.FrameworkUserAgent =
                 string.Format(CultureInfo.InvariantCulture,
-                ".NET Runtime/{0}.{1} .NET Framework/{2}",
+                ".NET_Runtime/{0}.{1} .NET_Framework/{2}",
                  Environment.Version.Major,
                  Environment.Version.MajorRevision,
                  DetermineFramework());
             this.PclPlatform = "PCL/WindowsPhoneSilverlight8";
-            this.PlatformUserAgent = "Windows Phone " + this.PlatformVersion;
+            this.PlatformUserAgent = "WindowsPhone_" + this.PlatformVersion;
         }
 
         public string Platform { get; private set; }

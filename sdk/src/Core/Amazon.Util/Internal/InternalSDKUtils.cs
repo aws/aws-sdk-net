@@ -27,6 +27,8 @@ namespace Amazon.Util.Internal
     public static partial class InternalSDKUtils
     {
         #region UserAgent
+        internal const string UnknownVersion = "Unknown";
+        internal const string UnknownNetFrameworkVersion = ".NET_Runtime/Unknown .NET_Framework/Unknown";
 
         static string _versionNumber;
         static string _customSdkUserAgent;

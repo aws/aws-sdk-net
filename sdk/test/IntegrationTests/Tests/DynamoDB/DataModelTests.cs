@@ -393,6 +393,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             products = Context.Scan<Product>();
             Assert.AreEqual(1, products.Count());
 
+            // Scan the table with consistent read
+            products = Context.Scan<Product>(
+                new ScanCondition[] { },
+                new DynamoDBOperationConfig { ConsistentRead = true });
+            Assert.AreEqual(1, products.Count());
+
             // Test a versioned product
             VersionedProduct vp = new VersionedProduct
             {

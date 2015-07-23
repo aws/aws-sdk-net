@@ -1,19 +1,17 @@
-//
-// Copyright 2014-2015 Amazon.com, 
-// Inc. or its affiliates. All Rights Reserved.
-// 
-// Licensed under the Amazon Software License (the "License"). 
-// You may not use this file except in compliance with the 
-// License. A copy of the License is located at
-// 
-//     http://aws.amazon.com/asl/
-// 
-// or in the "license" file accompanying this file. This file is 
-// distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
-// CONDITIONS OF ANY KIND, express or implied. See the License 
-// for the specific language governing permissions and 
-// limitations under the License.
-//
+/*
+ * Copyright 2015-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
 
 using System.Collections;
 using System.Collections.Generic;
@@ -97,29 +95,20 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
 #elif BCL45 || PCL
         private int _startFlag = 0;
-        private Task _deliveryTask = null;
 
         /// <summary>
         /// Starts the Mobile Analytics Manager background thread.
         /// </summary>
-        public async void StartWork()
+        public void StartWork()
         {
-            // Start task again if it's cancelled or faulted
-            if (1 == Interlocked.CompareExchange(ref _startFlag, 1, 1) && _deliveryTask != null && (_deliveryTask.Status == TaskStatus.Canceled || _deliveryTask.Status == TaskStatus.Faulted || _deliveryTask.Status == TaskStatus.RanToCompletion))
-            {
-                _deliveryTask = DoWork(BackgroundSubmissionWaitTime*1000);
-                await _deliveryTask;                
-            }
-
             // Start background task if it is not started yet.
             if (0 == Interlocked.CompareExchange(ref _startFlag, 1, 0))
             {
-                _deliveryTask = DoWork(BackgroundSubmissionWaitTime * 1000);
-                await _deliveryTask;
+                DoWorkAsync(BackgroundSubmissionWaitTime * 1000);
             }
         }
 
-        private async Task DoWork(int millisecondsDelay)
+        private async Task DoWorkAsync(int millisecondsDelay)
         {
             while (true)
             {
@@ -145,7 +134,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 }
                 catch (System.Exception e)
                 {
-                    _logger.Error(e, "An exception occurred in Mobile Analytics Manager : {1}", e.ToString());
+                    _logger.Error(e, "An exception occurred in Mobile Analytics Manager : {0}", e.ToString());
                 }
             }
         }

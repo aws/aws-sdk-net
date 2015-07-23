@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.CloudSearchDomain</id>
     <title>AWSSDK - Amazon CloudSearch Domain</title>
-    <version>3.0.0.5-preview</version> 
+    <version>3.0.0.6-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application.</description> 
     <language>en-US</language>
@@ -13,10 +13,10 @@
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.0.0.6-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.0.0.7-preview, 3.1-preview)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.0.0.6-preview, 3.1-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.0.0.7-preview, 3.1-preview)" />
       </group>
     </dependencies>
   </metadata> 

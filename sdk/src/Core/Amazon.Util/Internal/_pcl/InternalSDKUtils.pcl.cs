@@ -28,22 +28,29 @@ namespace Amazon.Util.Internal
 {
     public static partial class InternalSDKUtils
     {
-        static string _userAgentBaseName = "aws-sdk-dotnet-pcl";
-
+        static string _userAgentBaseName = "aws-sdk-dotnet-pcl";        
+        private const string UnknownMonoVersion = "Mono/Unknown";
 #if __IOS__ || __ANDROID__
+
+        
 
         public static string GetMonoRuntimeVersion()
         {
             Type type = Type.GetType("Mono.Runtime");
             if (type != null)
             {
-                MethodInfo displayName = type.GetMethod("GetDisplayName",
-                    BindingFlags.NonPublic | BindingFlags.Static);
+                MethodInfo displayName = type.GetMethod("GetDisplayName");
                 if (displayName != null)
-                    return (string)displayName.Invoke(null, null);
+                {
+                    var version = (string)displayName.Invoke(null, null);
+                    // Replace "/" from the version string as it's a
+                    // seperator in the user agent format
+                    version = version.Replace("/", ":").Replace(" ",string.Empty);
+                    return "Mono/" + version;
+                }
             }
 
-            return string.Empty;
+            return UnknownMonoVersion;
         }
 #endif
     }

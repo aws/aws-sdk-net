@@ -130,7 +130,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var keys = table.Scan(new ScanOperationConfig
             {
                 AttributesToGet = keyNames,
-                Select = SelectValues.SpecificAttributes
+                Select = SelectValues.SpecificAttributes,
+                ConsistentRead = true
             }).GetRemaining();
 
             // Populate BatchWrite to delete all keys

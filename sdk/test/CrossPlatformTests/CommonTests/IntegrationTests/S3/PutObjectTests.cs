@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,7 +51,6 @@ namespace CommonTests.IntegrationTests.S3
                 try
                 {
                     await UtilityMethods.DeleteBucketWithObjectsAsync(Client, bucketName);
-                    //await Client.DeleteBucketAsync(bucketName);
                 }
                 catch(Exception e)
                 {
@@ -62,6 +61,7 @@ namespace CommonTests.IntegrationTests.S3
             Console.WriteLine("Done cleaning up PutObjectTest");
         }        
 
+        // This test may fail on Silverlight, due to HTTP caching
         [Test]
         public void SimpleTest()
         {
@@ -70,6 +70,10 @@ namespace CommonTests.IntegrationTests.S3
                 var versioning = await Client.GetBucketVersioningAsync(bucketName);
                 var status = versioning.VersioningConfig.Status;
                 Assert.AreEqual(VersionStatus.Off, status);
+
+                var objects = (await Client.ListObjectsAsync(bucketName)).S3Objects;
+                Assert.IsNotNull(objects);
+                var count = objects.Count;
 
                 var key = "test.txt";
                 var contents = "Sample content";
@@ -82,23 +86,22 @@ namespace CommonTests.IntegrationTests.S3
                 var etag = putResult.ETag;
                 Assert.IsNotNull(etag);
 
-                var objects = (await Client.ListObjectsAsync(bucketName)).S3Objects;
+                objects = (await Client.ListObjectsAsync(bucketName)).S3Objects;
                 Assert.IsNotNull(objects);
-                Assert.AreEqual(1, objects.Count);
+                Assert.AreEqual(count + 1, objects.Count);
 
                 var metadataResult = await Client.GetObjectMetadataAsync(bucketName, key);
                 Assert.AreEqual(etag, metadataResult.ETag);
 
                 await Client.DeleteObjectAsync(bucketName, key);
 
-                // this code will fail on Silverlight, due to http caching
-                //objects = (await Client.ListObjectsAsync(bucketName)).S3Objects;
-                //Assert.IsNotNull(objects);
-                //Assert.AreEqual(0, objects.Count);
+                objects = (await Client.ListObjectsAsync(bucketName)).S3Objects;
+                Assert.IsNotNull(objects);
+                Assert.AreEqual(count, objects.Count);
             });
         }
 
-        //[Test]
+        [Test]
         public void TestHttpErrorResponseUnmarshalling()
         {
             RunAsSync(async () =>
@@ -125,7 +128,7 @@ namespace CommonTests.IntegrationTests.S3
             });
         }
 
-        //[Test]
+        [Test]
         public void SimplePutObjectTest()
         {
             RunAsSync(async () =>
@@ -144,7 +147,7 @@ namespace CommonTests.IntegrationTests.S3
             });
         }
 
-        //[Test]
+        [Test]
         public void SimplePathPutObjectTest()
         {
             RunAsSync(async () =>

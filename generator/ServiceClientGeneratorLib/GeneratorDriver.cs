@@ -126,9 +126,13 @@ namespace ServiceClientGenerator
             ExecuteGeneratorMobile(new ServiceClientsMobile(), "Amazon" + Configuration.BaseName + "Client.cs", MobileSubFolder);
             ExecuteGeneratorMobile(new ServiceInterfaceMobile(), "IAmazon" + Configuration.BaseName + ".cs", MobileSubFolder);
 
-            ExecuteGeneratorAssemblyInfo();
-
-            ExecuteNugetFileGenerators();
+            // Do not generate AssemblyInfo.cs and nuspec file for child model.
+            // Use the one generated for the parent model.
+            if (!this.Configuration.IsChildConfig)
+            {
+                ExecuteGeneratorAssemblyInfo();
+                ExecuteNugetFileGenerators();
+            }
 
             // Client config object
             ExecuteGenerator(new ServiceConfig(), "Amazon" + Configuration.BaseName + "Config.cs");

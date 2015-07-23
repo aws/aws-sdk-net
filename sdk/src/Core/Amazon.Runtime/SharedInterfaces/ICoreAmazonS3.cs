@@ -8,11 +8,6 @@ using System.Threading;
 using System.Threading.Tasks;
 #endif
 
-#if STORAGE_FILE
-using Windows.Storage;
-#endif
-
-
 namespace Amazon.Runtime.SharedInterfaces
 {
     /// <summary>
@@ -20,9 +15,6 @@ namespace Amazon.Runtime.SharedInterfaces
     /// and allows other services to be able to use S3 as a runtime dependency. This interface
     /// is implemented by the AmazonS3Client defined in the S3 assembly.
     /// </summary>
-#if STORAGE_FILE
-    [CLSCompliant(false)]
-#endif
     public interface ICoreAmazonS3
     {
         /// <summary>
@@ -272,30 +264,5 @@ namespace Amazon.Runtime.SharedInterfaces
 
 #endif
 
-#if STORAGE_FILE
-
-        /// <summary>
-        /// Upload an object to S3 from an IStorageFile.
-        /// </summary>
-        /// <param name="bucketName"></param>
-        /// <param name="objectKey"></param>
-        /// <param name="storage"></param>
-        /// <param name="additionalProperties"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        Task UploadObjectFromStorageAsync(string bucketName, string objectKey, IStorageFile storage, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken = default(CancellationToken));
-
-        /// <summary>
-        /// Download an object in S3 to an IStorageFile.
-        /// </summary>
-        /// <param name="bucketName"></param>
-        /// <param name="objectKey"></param>
-        /// <param name="storageFile"></param>
-        /// <param name="additionalProperties"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        Task DownloadToStorageAsync(string bucketName, string objectKey, IStorageFile storageFile, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken = default(CancellationToken));
-
-#endif
     }
 }

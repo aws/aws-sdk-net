@@ -354,7 +354,7 @@ namespace SDKDocGenerator.Writers
                         break;
                 }
 
-                sb.AppendFormat("{0}", parameterTypeName);
+                sb.AppendFormat("{0}{1}", info.IsOut ? "out " : "", parameterTypeName);
             }
             return sb.ToString();
         }
@@ -480,8 +480,13 @@ namespace SDKDocGenerator.Writers
         protected void AddNamespace(TextWriter writer, string ns, string moduleName)
         {
             writer.WriteLine("<div id=\"namespaceblock\">");
-                writer.WriteLine("<p><strong>Namespace: </strong>{0}<br/>", ns);
-                writer.WriteLine("<strong>Assembly: </strong>{0}<br/><strong>Version: </strong><span id=\"assemblyVersion\">3.x.y.z</span></p>", moduleName);
+                writer.Write("<p>");
+                writer.Write("<strong>Namespace: </strong>{0}<br/>", ns);
+                writer.Write("<strong>Assembly: </strong>{0}", moduleName);
+                writer.Write("<span id=\"versionData\">");
+                writer.Write("<br/><strong>Version: </strong><span id=\"assemblyVersion\">3.x.y.z</span>");
+                writer.Write("</span>");
+                writer.Write("</p>");
             writer.WriteLine("</div>");
         }
 
@@ -517,7 +522,7 @@ namespace SDKDocGenerator.Writers
                 writer.WriteLine("Supported in: Windows Store Apps<br/>");
                 writer.WriteLine("Supported in: Windows Phone 8.1<br/>");
                 writer.WriteLine("Supported in: Xamarin Android<br/>");
-                writer.WriteLine("Supported in: Xamarin iOS<br/>");
+                writer.WriteLine("Supported in: Xamarin iOS (Unified)<br/>");
                 writer.WriteLine("Supported in: Xamarin.Forms<br/>");
             }
 

@@ -40,3 +40,11 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.BackgroundRunner.#DoWork()")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore.#SetupSQLiteEventStore()")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.DeliveryClient.#SubmitEvents(System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<Amazon.MobileAnalytics.Model.Event>)")]
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope="member", Target="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.DeliveryClient.#EnqueueEventsForDelivery(Amazon.MobileAnalytics.Model.Event)")]
+
+[module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManager.#.cctor()")]
+[module: SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.ConnectivityPolicy.#HasNetworkConnectivity()")]
+
+[module: SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands", Scope = "member", Target = "Amazon.Runtime.Internal.ClientContext.#.ctor(System.String,Amazon.Runtime.Internal.ClientContextConfig)")]
+[module: SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.Session.#.ctor(System.String,Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManagerConfig)")]
+[module: SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands", Scope = "member", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore.#.ctor(Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManagerConfig)")]

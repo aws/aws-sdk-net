@@ -1,4 +1,4 @@
-﻿using CommonTests.Framework;
+using CommonTests.Framework;
 using Amazon;
 using Amazon.DynamoDBv2;
 using Amazon.Util;

@@ -45,6 +45,21 @@ namespace SDKDocGenerator
         public string SDKAssembliesRoot { get; set; }
 
         /// <summary>
+        /// The path to _sdk-versions.json
+        /// </summary>
+        string _sdkVersionFilePath;
+        public string SDKVersionFilePath 
+        {
+            get 
+            {
+                if (string.IsNullOrWhiteSpace(this._sdkVersionFilePath))
+                    return Path.Combine(Directory.GetParent(this.SDKAssembliesRoot).FullName, "_sdk-versions.json");
+                return this._sdkVersionFilePath;
+            }
+            set { this._sdkVersionFilePath = value; }
+        }
+
+        /// <summary>
         /// The platform subfolder considered to be hosting the primary source of
         /// assemblies for doc generation. If not specified, we attempt to use 'net45'.
         /// If that subfolder platform does not exist, we'll use the first subfolder 
