@@ -198,6 +198,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                     await SubmitEvents(submitEventsIdList, submitEventsList);
 #endif
                     submitEventsIdList = new List<string>();
+                    submitEventsList = new List<Amazon.MobileAnalytics.Model.Event>();
                     submitEventsLength = 0L;
                 }
             }
