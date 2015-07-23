@@ -12,13 +12,13 @@ namespace Amazon.Util.Internal.PlatformServices
         public EnvironmentInfo()
         {
             this.Platform = "Windows Phone";
-            this.PlatformVersion = "Unknown";
-            this.Model = "Unknown";
-            this.Make = "Unknown";
+            this.PlatformVersion = InternalSDKUtils.UnknownVersion;
+            this.Model = InternalSDKUtils.UnknownVersion;
+            this.Make = InternalSDKUtils.UnknownVersion;
             this.Locale = CultureInfo.CurrentCulture.DisplayName;
-            this.FrameworkUserAgent = ".NET Runtime/Unknown .NET Framework/Unknown";
+            this.FrameworkUserAgent = InternalSDKUtils.UnknownNetFrameworkVersion;
             this.PclPlatform = "PCL/WindowsPhone8.1";
-            this.PlatformUserAgent = "Unknown";
+            this.PlatformUserAgent = InternalSDKUtils.UnknownVersion;
         }
 
         public string Platform { get; private set; }

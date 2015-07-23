@@ -145,7 +145,6 @@
   <ItemGroup>
     <EmbeddedResource Include="IntegrationTests\CloudTrailBucketPolicy.json" />
     <None Include="packages.config" />
-    <None Include="Resources\settings.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.PCL.csproj">

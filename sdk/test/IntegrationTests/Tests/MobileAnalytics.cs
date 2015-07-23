@@ -55,61 +55,61 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         //[TestCategory("MobileAnalytics")]
         public void TestSessionTimeout()
         {
-            MobileAnalyticsManagerConfig maConfig = new MobileAnalyticsManagerConfig();
-            Console.WriteLine("session delta is " + maConfig.SessionTimeout);
+            //MobileAnalyticsManagerConfig maConfig = new MobileAnalyticsManagerConfig();
+            //Console.WriteLine("session delta is " + maConfig.SessionTimeout);
 
-            string appId = "TestSessionTimeout-dummy-app-id";
+            //string appId = "TestSessionTimeout-dummy-app-id";
 
-            //DateTime startTimstamp;
-            //DateTime? stopTimestamp;
-            //string sessionId;
-            //long duration;
-            Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SessionInfo sessionInfo1 = GetMobileAnalyticsManager(appId).Session.RetrieveSessionInfo();
+            ////DateTime startTimstamp;
+            ////DateTime? stopTimestamp;
+            ////string sessionId;
+            ////long duration;
+            //Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SessionInfo sessionInfo1 = GetMobileAnalyticsManager(appId).Session.RetrieveSessionInfo();
 
-            Console.WriteLine("start time stamp is " + sessionInfo1.StartTimestamp);
-            if (sessionInfo1.StopTimestamp != null)
-                Console.WriteLine("stop time stamp is " + sessionInfo1.StopTimestamp.Value);
-            Console.WriteLine("session id is " + sessionInfo1.SessionId);
-            Console.WriteLine("duration is " + sessionInfo1.Duration);
+            //Console.WriteLine("start time stamp is " + sessionInfo1.StartTimestamp);
+            //if (sessionInfo1.StopTimestamp != null)
+            //    Console.WriteLine("stop time stamp is " + sessionInfo1.StopTimestamp.Value);
+            //Console.WriteLine("session id is " + sessionInfo1.SessionId);
+            //Console.WriteLine("duration is " + sessionInfo1.Duration);
 
-            // sleep for a while but wake up before session expires
-            GetMobileAnalyticsManager(appId).PauseSession();
-            Thread.Sleep(Convert.ToInt32((maConfig.SessionTimeout - 1) * 1000));
-            GetMobileAnalyticsManager(appId).ResumeSession();
+            //// sleep for a while but wake up before session expires
+            //GetMobileAnalyticsManager(appId).PauseSession();
+            //Thread.Sleep(Convert.ToInt32((maConfig.SessionTimeout - 1) * 1000));
+            //GetMobileAnalyticsManager(appId).ResumeSession();
 
-            //DateTime startTimstamp2;
-            //DateTime? stopTimestamp2;
-            //string sessionId2;
-            //long duration2;
-            Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SessionInfo sessionInfo2 = GetMobileAnalyticsManager(appId).Session.RetrieveSessionInfo();
+            ////DateTime startTimstamp2;
+            ////DateTime? stopTimestamp2;
+            ////string sessionId2;
+            ////long duration2;
+            //Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SessionInfo sessionInfo2 = GetMobileAnalyticsManager(appId).Session.RetrieveSessionInfo();
             
-            Console.WriteLine("start time stamp is " + sessionInfo2.StartTimestamp);
-            if (sessionInfo2.StopTimestamp != null)
-                Console.WriteLine("stop time stamp is " + sessionInfo2.StopTimestamp.Value);
-            Console.WriteLine("session id is " + sessionInfo2.SessionId);
-            Console.WriteLine("duration is " + sessionInfo2.Duration);
+            //Console.WriteLine("start time stamp is " + sessionInfo2.StartTimestamp);
+            //if (sessionInfo2.StopTimestamp != null)
+            //    Console.WriteLine("stop time stamp is " + sessionInfo2.StopTimestamp.Value);
+            //Console.WriteLine("session id is " + sessionInfo2.SessionId);
+            //Console.WriteLine("duration is " + sessionInfo2.Duration);
 
-            Assert.IsTrue(sessionInfo1.StartTimestamp == sessionInfo2.StartTimestamp && sessionInfo1.SessionId == sessionInfo2.SessionId);
+            //Assert.IsTrue(sessionInfo1.StartTimestamp == sessionInfo2.StartTimestamp && sessionInfo1.SessionId == sessionInfo2.SessionId);
 
 
-            // sleep longer until session expires
-            GetMobileAnalyticsManager(appId).PauseSession();
-            Thread.Sleep(Convert.ToInt32((maConfig.SessionTimeout + 1) * 1000));
-            GetMobileAnalyticsManager(appId).ResumeSession();
+            //// sleep longer until session expires
+            //GetMobileAnalyticsManager(appId).PauseSession();
+            //Thread.Sleep(Convert.ToInt32((maConfig.SessionTimeout + 1) * 1000));
+            //GetMobileAnalyticsManager(appId).ResumeSession();
 
-            //DateTime startTimstamp3;
-            //DateTime? stopTimestamp3;
-            //string sessionId3;
-            //long duration3;
-            Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SessionInfo sessionInfo3 = GetMobileAnalyticsManager(appId).Session.RetrieveSessionInfo();
+            ////DateTime startTimstamp3;
+            ////DateTime? stopTimestamp3;
+            ////string sessionId3;
+            ////long duration3;
+            //Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SessionInfo sessionInfo3 = GetMobileAnalyticsManager(appId).Session.RetrieveSessionInfo();
 
-            Console.WriteLine("start time stamp is " + sessionInfo3.StartTimestamp);
-            if (sessionInfo3.StopTimestamp != null)
-                Console.WriteLine("stop time stamp is " + sessionInfo3.StopTimestamp.Value);
-            Console.WriteLine("session id is " + sessionInfo3.SessionId);
-            Console.WriteLine("duration is " + sessionInfo3.Duration);
+            //Console.WriteLine("start time stamp is " + sessionInfo3.StartTimestamp);
+            //if (sessionInfo3.StopTimestamp != null)
+            //    Console.WriteLine("stop time stamp is " + sessionInfo3.StopTimestamp.Value);
+            //Console.WriteLine("session id is " + sessionInfo3.SessionId);
+            //Console.WriteLine("duration is " + sessionInfo3.Duration);
 
-            Assert.IsTrue(sessionInfo2.StartTimestamp != sessionInfo3.StartTimestamp && sessionInfo2.SessionId != sessionInfo3.SessionId);
+            //Assert.IsTrue(sessionInfo2.StartTimestamp != sessionInfo3.StartTimestamp && sessionInfo2.SessionId != sessionInfo3.SessionId);
         }
 
 
@@ -117,27 +117,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         //[TestCategory("MobileAnalytics")]
         public void TestManagerAddClientContextCustomAttribute()
         {
-            string KEY1 = "key1";
-            string KEY2 = "key2";
-            string VALUE1 = "value1";
-            string VALUE2 = "value2";
-            string appId = "dummy-id";
+            //string KEY1 = "key1";
+            //string KEY2 = "key2";
+            //string VALUE1 = "value1";
+            //string VALUE2 = "value2";
+            //string appId = "dummy-id";
 
-            MobileAnalyticsManager manager = GetMobileAnalyticsManager(appId);
+            //MobileAnalyticsManager manager = GetMobileAnalyticsManager(appId);
 
-            manager.AddClientContextCustomAttribute(KEY1, VALUE1);
-            manager.AddClientContextCustomAttribute(KEY2, VALUE2);
+            //manager.AddCustomAttributeToClientContext(KEY1, VALUE1);
+            //manager.AddCustomAttributeToClientContext(KEY2, VALUE2);
 
-            string clientContextString = manager.ClientContext.ToJsonString();
+            //string clientContextString = manager.ClientContext.ToJsonString();
 
-            Assert.IsTrue(clientContextString.IndexOf("custom") > 0);
-            Assert.IsTrue(clientContextString.IndexOf(KEY1) > 0);
-            Assert.IsTrue(clientContextString.IndexOf(KEY2) > 0);
+            //Assert.IsTrue(clientContextString.IndexOf("custom") > 0);
+            //Assert.IsTrue(clientContextString.IndexOf(KEY1) > 0);
+            //Assert.IsTrue(clientContextString.IndexOf(KEY2) > 0);
 
-            Assert.IsTrue(clientContextString.IndexOf("custom") < clientContextString.IndexOf(KEY1));
-            Assert.IsTrue(clientContextString.IndexOf("custom") < clientContextString.IndexOf(KEY2));
-            Assert.IsTrue(clientContextString.IndexOf(KEY1) < clientContextString.IndexOf(VALUE1));
-            Assert.IsTrue(clientContextString.IndexOf(KEY2) < clientContextString.IndexOf(VALUE2));
+            //Assert.IsTrue(clientContextString.IndexOf("custom") < clientContextString.IndexOf(KEY1));
+            //Assert.IsTrue(clientContextString.IndexOf("custom") < clientContextString.IndexOf(KEY2));
+            //Assert.IsTrue(clientContextString.IndexOf(KEY1) < clientContextString.IndexOf(VALUE1));
+            //Assert.IsTrue(clientContextString.IndexOf(KEY2) < clientContextString.IndexOf(VALUE2));
         }
 
 
@@ -145,21 +145,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         //[TestCategory("MobileAnalytics")]
         public void TestManagerMultipleInstance()
         {
-            string APP_ID_1 = "TestManagerMultipleInstance-app-id-1";
-            string APP_ID_2 = "TestManagerMultipleInstance-app-id-2";
-            string APP_ID_3 = "TestManagerMultipleInstance-app-id-3";
+            //string APP_ID_1 = "TestManagerMultipleInstance-app-id-1";
+            //string APP_ID_2 = "TestManagerMultipleInstance-app-id-2";
+            //string APP_ID_3 = "TestManagerMultipleInstance-app-id-3";
 
-            MobileAnalyticsManager manager1 = GetMobileAnalyticsManager(APP_ID_1);
-            MobileAnalyticsManager manager2 = GetMobileAnalyticsManager(APP_ID_2);
-            MobileAnalyticsManager manager3 = GetMobileAnalyticsManager(APP_ID_3);
+            //MobileAnalyticsManager manager1 = GetMobileAnalyticsManager(APP_ID_1);
+            //MobileAnalyticsManager manager2 = GetMobileAnalyticsManager(APP_ID_2);
+            //MobileAnalyticsManager manager3 = GetMobileAnalyticsManager(APP_ID_3);
 
-            string clientContextString1 = manager1.ClientContext.ToJsonString();
-            string clientContextString2 = manager2.ClientContext.ToJsonString();
-            string clientContextString3 = manager3.ClientContext.ToJsonString();
+            //string clientContextString1 = manager1.ClientContext.ToJsonString();
+            //string clientContextString2 = manager2.ClientContext.ToJsonString();
+            //string clientContextString3 = manager3.ClientContext.ToJsonString();
 
-            Assert.IsTrue(clientContextString1.IndexOf(APP_ID_1) > 0);
-            Assert.IsTrue(clientContextString2.IndexOf(APP_ID_2) > 0);
-            Assert.IsTrue(clientContextString3.IndexOf(APP_ID_3) > 0);
+            //Assert.IsTrue(clientContextString1.IndexOf(APP_ID_1) > 0);
+            //Assert.IsTrue(clientContextString2.IndexOf(APP_ID_2) > 0);
+            //Assert.IsTrue(clientContextString3.IndexOf(APP_ID_3) > 0);
         }
         #endregion
 
@@ -214,198 +214,198 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         //[TestCategory("MobileAnalytics")]
         public void TestCustomEventConcurrency()
         {
-            // event type
-            const string EVENT_TYPE = "MyEventType";
+//            // event type
+//            const string EVENT_TYPE = "MyEventType";
 
-            // attribute config
-            const string ATTR1 = "ATTR1";
-            const string ATTR1_VAL_T0 = "dshjadfhjdfa132`23jj`23jh1k2h3h21hg3h21j2gh";
-            const string ATTR1_VAL_T1 = "gfhfdhgvkfdkgljfdgjfdsj;l34t43jj4erjerb";
-            const string ATTR1_VAL_T2 = "7t32674tgdfjehkjdksjs;akfdshfjdsafkadsfdsljfa";
+//            // attribute config
+//            const string ATTR1 = "ATTR1";
+//            const string ATTR1_VAL_T0 = "dshjadfhjdfa132`23jj`23jh1k2h3h21hg3h21j2gh";
+//            const string ATTR1_VAL_T1 = "gfhfdhgvkfdkgljfdgjfdsj;l34t43jj4erjerb";
+//            const string ATTR1_VAL_T2 = "7t32674tgdfjehkjdksjs;akfdshfjdsafkadsfdsljfa";
 
-            const string ATTR2 = "ATTR2";
-            const string ATTR2_VAL_T0 = "343hjfdshdfjklsafj0913432jh4";
-            const string ATTR2_VAL_T1 = "378t43y21ggdhsgdahshfdjsfafd";
-            const string ATTR2_VAL_T2 = "48ry42378tfhsfkds;kfl;dsdfk;ldslks";
+//            const string ATTR2 = "ATTR2";
+//            const string ATTR2_VAL_T0 = "343hjfdshdfjklsafj0913432jh4";
+//            const string ATTR2_VAL_T1 = "378t43y21ggdhsgdahshfdjsfafd";
+//            const string ATTR2_VAL_T2 = "48ry42378tfhsfkds;kfl;dsdfk;ldslks";
 
-            const string ATTR3 = "ATTR3";
-            const string ATTR3_VAL_T0 = "321432g4ghjfjshdggfjhsdgfdskgfjdsjgfsd";
-            const string ATTR3_VAL_T1 = "76432tgrsgerhjkfgshdfdssfgjdssaf";
-            const string ATTR3_VAL_T2 = "87549353hjtkgdk;sfgfdgf;kfl;dshfjdsjkhfjs";
+//            const string ATTR3 = "ATTR3";
+//            const string ATTR3_VAL_T0 = "321432g4ghjfjshdggfjhsdgfdskgfjdsjgfsd";
+//            const string ATTR3_VAL_T1 = "76432tgrsgerhjkfgshdfdssfgjdssaf";
+//            const string ATTR3_VAL_T2 = "87549353hjtkgdk;sfgfdgf;kfl;dshfjdsjkhfjs";
 
-            const string ATTR_EMPTY1 = "ATTR_EMPTY1";
-            const string ATTR_EMPTY2 = "ATTR_EMPTY2";
-            const string ATTR_EMPTY3 = "ATTR_EMPTY3";
+//            const string ATTR_EMPTY1 = "ATTR_EMPTY1";
+//            const string ATTR_EMPTY2 = "ATTR_EMPTY2";
+//            const string ATTR_EMPTY3 = "ATTR_EMPTY3";
 
-            // metric config
-            System.Random randObj = new System.Random();
-            const string METRIC1 = "METRIC1";
-            double METRIC1_VAL_T0 = randObj.Next();
-            double METRIC1_VAL_T1 = randObj.Next();
-            double METRIC1_VAL_T2 = randObj.Next();
+//            // metric config
+//            System.Random randObj = new System.Random();
+//            const string METRIC1 = "METRIC1";
+//            double METRIC1_VAL_T0 = randObj.Next();
+//            double METRIC1_VAL_T1 = randObj.Next();
+//            double METRIC1_VAL_T2 = randObj.Next();
 
-            const string METRIC2 = "METRIC2";
-            double METRIC2_VAL_T0 = randObj.Next();
-            double METRIC2_VAL_T1 = randObj.Next();
-            double METRIC2_VAL_T2 = randObj.Next();
+//            const string METRIC2 = "METRIC2";
+//            double METRIC2_VAL_T0 = randObj.Next();
+//            double METRIC2_VAL_T1 = randObj.Next();
+//            double METRIC2_VAL_T2 = randObj.Next();
 
-            const string METRIC3 = "METRIC3";
-            double METRIC3_VAL_T0 = randObj.Next();
-            double METRIC3_VAL_T1 = randObj.Next();
-            double METRIC3_VAL_T2 = randObj.Next();
-
-
-            CustomEvent customEvent = new CustomEvent(EVENT_TYPE);
-            const int LOOP_COUNT = 999;
-
-#if BCL35
-            Thread t0 = new Thread(
-            () =>
-            {
-#elif BCL45
-            Task task0 = new Task(() =>
-            {
-#endif
-                for (int i = 0; i < LOOP_COUNT; i++)
-                {
-                    customEvent.AddAttribute(ATTR1, ATTR1_VAL_T0);
-                    customEvent.AddGlobalAttribute(ATTR2, ATTR2_VAL_T0);
-                    customEvent.AddGlobalAttribute(EVENT_TYPE, ATTR3, ATTR3_VAL_T0);
-
-                    customEvent.AddMetric(METRIC1, METRIC1_VAL_T0);
-                    customEvent.AddGlobalMetric(METRIC2, METRIC2_VAL_T0);
-                    customEvent.AddGlobalMetric(EVENT_TYPE, METRIC3, METRIC3_VAL_T0);
+//            const string METRIC3 = "METRIC3";
+//            double METRIC3_VAL_T0 = randObj.Next();
+//            double METRIC3_VAL_T1 = randObj.Next();
+//            double METRIC3_VAL_T2 = randObj.Next();
 
 
-                    customEvent.AddAttribute(ATTR_EMPTY1, "");
-                    customEvent.AddGlobalAttribute(ATTR_EMPTY2, "");
-                    customEvent.AddGlobalAttribute(EVENT_TYPE, ATTR_EMPTY3, "");
-                }
-            });
+//            CustomEvent customEvent = new CustomEvent(EVENT_TYPE);
+//            const int LOOP_COUNT = 999;
+
+//#if BCL35
+//            Thread t0 = new Thread(
+//            () =>
+//            {
+//#elif BCL45
+//            Task task0 = new Task(() =>
+//            {
+//#endif
+//                for (int i = 0; i < LOOP_COUNT; i++)
+//                {
+//                    customEvent.AddAttribute(ATTR1, ATTR1_VAL_T0);
+//                    customEvent.AddGlobalAttribute(ATTR2, ATTR2_VAL_T0);
+//                    customEvent.AddGlobalAttribute(EVENT_TYPE, ATTR3, ATTR3_VAL_T0);
+
+//                    customEvent.AddMetric(METRIC1, METRIC1_VAL_T0);
+//                    customEvent.AddGlobalMetric(METRIC2, METRIC2_VAL_T0);
+//                    customEvent.AddGlobalMetric(EVENT_TYPE, METRIC3, METRIC3_VAL_T0);
+
+
+//                    customEvent.AddAttribute(ATTR_EMPTY1, "");
+//                    customEvent.AddGlobalAttribute(ATTR_EMPTY2, "");
+//                    customEvent.AddGlobalAttribute(EVENT_TYPE, ATTR_EMPTY3, "");
+//                }
+//            });
 
 
 
 
-#if BCL35
-            Thread t1 = new Thread(
-            () =>
-            {
-#elif BCL45
-            Task task1 = new Task(() =>
-            {
-#endif
+//#if BCL35
+//            Thread t1 = new Thread(
+//            () =>
+//            {
+//#elif BCL45
+//            Task task1 = new Task(() =>
+//            {
+//#endif
 
-                for (int i = 0; i < LOOP_COUNT; i++)
-                {
-                    customEvent.AddAttribute(ATTR1, ATTR1_VAL_T1);
-                    customEvent.AddGlobalAttribute(ATTR2, ATTR2_VAL_T1);
-                    customEvent.AddGlobalAttribute(EVENT_TYPE, ATTR3, ATTR3_VAL_T1);
+//                for (int i = 0; i < LOOP_COUNT; i++)
+//                {
+//                    customEvent.AddAttribute(ATTR1, ATTR1_VAL_T1);
+//                    customEvent.AddGlobalAttribute(ATTR2, ATTR2_VAL_T1);
+//                    customEvent.AddGlobalAttribute(EVENT_TYPE, ATTR3, ATTR3_VAL_T1);
 
-                    customEvent.AddMetric(METRIC1, METRIC1_VAL_T1);
-                    customEvent.AddGlobalMetric(METRIC2, METRIC2_VAL_T1);
-                    customEvent.AddGlobalMetric(EVENT_TYPE, METRIC3, METRIC3_VAL_T1);
-                }
-            });
-
-
-#if BCL35
-            Thread t2 = new Thread(
-            () =>
-            {
-#elif BCL45
-            Task task2 = new Task(() =>
-            {
-#endif
-                for (int i = 0; i < LOOP_COUNT; i++)
-                {
-                    customEvent.AddAttribute(ATTR1, ATTR1_VAL_T1);
-                    customEvent.AddGlobalAttribute(ATTR2, ATTR2_VAL_T1);
-                    customEvent.AddGlobalAttribute(EVENT_TYPE, ATTR3, ATTR3_VAL_T1);
-
-                    customEvent.AddMetric(METRIC1, METRIC1_VAL_T1);
-                    customEvent.AddGlobalMetric(METRIC2, METRIC2_VAL_T1);
-                    customEvent.AddGlobalMetric(EVENT_TYPE, METRIC3, METRIC3_VAL_T1);
-                }
-            });
+//                    customEvent.AddMetric(METRIC1, METRIC1_VAL_T1);
+//                    customEvent.AddGlobalMetric(METRIC2, METRIC2_VAL_T1);
+//                    customEvent.AddGlobalMetric(EVENT_TYPE, METRIC3, METRIC3_VAL_T1);
+//                }
+//            });
 
 
-#if BCL35
-            t0.Start();
-            t1.Start();
-            t2.Start();
+//#if BCL35
+//            Thread t2 = new Thread(
+//            () =>
+//            {
+//#elif BCL45
+//            Task task2 = new Task(() =>
+//            {
+//#endif
+//                for (int i = 0; i < LOOP_COUNT; i++)
+//                {
+//                    customEvent.AddAttribute(ATTR1, ATTR1_VAL_T1);
+//                    customEvent.AddGlobalAttribute(ATTR2, ATTR2_VAL_T1);
+//                    customEvent.AddGlobalAttribute(EVENT_TYPE, ATTR3, ATTR3_VAL_T1);
 
-            t0.Join();
-            t1.Join();
-            t2.Join();
-#elif BCL45
-            task0.Start();
-            task1.Start();
-            task2.Start();
-
-            // wait all task complete 
-            Task.WaitAll(new[] { task0, task1, task2 });
-#endif
-
-
-            // Get Model event.
-            Amazon.MobileAnalytics.Model.Event modelEvent = customEvent.ConvertToMobileAnalyticsModelEvent(GetMobileAnalyticsManager("TestCustomEventConcurrency").Session);
-
-            // check attribute value
-            if (!modelEvent.Attributes.ContainsKey(ATTR1) || !modelEvent.Attributes.ContainsKey(ATTR2) || !modelEvent.Attributes.ContainsKey(ATTR3))
-            {
-                Assert.Fail();
-                return;
-            }
-
-            if (modelEvent.Attributes[ATTR1] != ATTR1_VAL_T0 && modelEvent.Attributes[ATTR1] != ATTR1_VAL_T1 && modelEvent.Attributes[ATTR1] != ATTR1_VAL_T2)
-            {
-                Assert.Fail();
-                return;
-            }
-
-            if (modelEvent.Attributes[ATTR2] != ATTR2_VAL_T0 && modelEvent.Attributes[ATTR2] != ATTR2_VAL_T1 && modelEvent.Attributes[ATTR2] != ATTR2_VAL_T2)
-            {
-                Assert.Fail();
-                return;
-            }
-
-            if (modelEvent.Attributes[ATTR3] != ATTR3_VAL_T0 && modelEvent.Attributes[ATTR3] != ATTR3_VAL_T1 && modelEvent.Attributes[ATTR3] != ATTR3_VAL_T2)
-            {
-                Assert.Fail();
-                return;
-            }
-
-            if (modelEvent.Attributes[ATTR_EMPTY1] != "" || modelEvent.Attributes[ATTR_EMPTY2] != "" || modelEvent.Attributes[ATTR_EMPTY3] != "")
-            {
-                Assert.Fail();
-                return;
-            }
+//                    customEvent.AddMetric(METRIC1, METRIC1_VAL_T1);
+//                    customEvent.AddGlobalMetric(METRIC2, METRIC2_VAL_T1);
+//                    customEvent.AddGlobalMetric(EVENT_TYPE, METRIC3, METRIC3_VAL_T1);
+//                }
+//            });
 
 
-            // check metric value
-            if (!modelEvent.Metrics.ContainsKey(METRIC1) || !modelEvent.Metrics.ContainsKey(METRIC2) || !modelEvent.Metrics.ContainsKey(METRIC3))
-            {
-                Assert.Fail();
-                return;
-            }
+//#if BCL35
+//            t0.Start();
+//            t1.Start();
+//            t2.Start();
 
-            if (modelEvent.Metrics[METRIC1] != METRIC1_VAL_T0 && modelEvent.Metrics[METRIC1] != METRIC1_VAL_T1 && modelEvent.Metrics[METRIC1] != METRIC1_VAL_T2)
-            {
-                Assert.Fail();
-                return;
-            }
+//            t0.Join();
+//            t1.Join();
+//            t2.Join();
+//#elif BCL45
+//            task0.Start();
+//            task1.Start();
+//            task2.Start();
 
-            if (modelEvent.Metrics[METRIC2] != METRIC2_VAL_T0 && modelEvent.Metrics[METRIC2] != METRIC2_VAL_T1 && modelEvent.Metrics[METRIC2] != METRIC2_VAL_T2)
-            {
-                Assert.Fail();
-                return;
-            }
+//            // wait all task complete 
+//            Task.WaitAll(new[] { task0, task1, task2 });
+//#endif
 
-            if (modelEvent.Metrics[METRIC3] != METRIC3_VAL_T0 && modelEvent.Metrics[METRIC3] != METRIC3_VAL_T1 && modelEvent.Metrics[METRIC3] != METRIC3_VAL_T2)
-            {
-                Assert.Fail();
-                return;
-            }
+
+//            // Get Model event.
+//            Amazon.MobileAnalytics.Model.Event modelEvent = customEvent.ConvertToMobileAnalyticsModelEvent(GetMobileAnalyticsManager("TestCustomEventConcurrency").Session);
+
+//            // check attribute value
+//            if (!modelEvent.Attributes.ContainsKey(ATTR1) || !modelEvent.Attributes.ContainsKey(ATTR2) || !modelEvent.Attributes.ContainsKey(ATTR3))
+//            {
+//                Assert.Fail();
+//                return;
+//            }
+
+//            if (modelEvent.Attributes[ATTR1] != ATTR1_VAL_T0 && modelEvent.Attributes[ATTR1] != ATTR1_VAL_T1 && modelEvent.Attributes[ATTR1] != ATTR1_VAL_T2)
+//            {
+//                Assert.Fail();
+//                return;
+//            }
+
+//            if (modelEvent.Attributes[ATTR2] != ATTR2_VAL_T0 && modelEvent.Attributes[ATTR2] != ATTR2_VAL_T1 && modelEvent.Attributes[ATTR2] != ATTR2_VAL_T2)
+//            {
+//                Assert.Fail();
+//                return;
+//            }
+
+//            if (modelEvent.Attributes[ATTR3] != ATTR3_VAL_T0 && modelEvent.Attributes[ATTR3] != ATTR3_VAL_T1 && modelEvent.Attributes[ATTR3] != ATTR3_VAL_T2)
+//            {
+//                Assert.Fail();
+//                return;
+//            }
+
+//            if (modelEvent.Attributes[ATTR_EMPTY1] != "" || modelEvent.Attributes[ATTR_EMPTY2] != "" || modelEvent.Attributes[ATTR_EMPTY3] != "")
+//            {
+//                Assert.Fail();
+//                return;
+//            }
+
+
+//            // check metric value
+//            if (!modelEvent.Metrics.ContainsKey(METRIC1) || !modelEvent.Metrics.ContainsKey(METRIC2) || !modelEvent.Metrics.ContainsKey(METRIC3))
+//            {
+//                Assert.Fail();
+//                return;
+//            }
+
+//            if (modelEvent.Metrics[METRIC1] != METRIC1_VAL_T0 && modelEvent.Metrics[METRIC1] != METRIC1_VAL_T1 && modelEvent.Metrics[METRIC1] != METRIC1_VAL_T2)
+//            {
+//                Assert.Fail();
+//                return;
+//            }
+
+//            if (modelEvent.Metrics[METRIC2] != METRIC2_VAL_T0 && modelEvent.Metrics[METRIC2] != METRIC2_VAL_T1 && modelEvent.Metrics[METRIC2] != METRIC2_VAL_T2)
+//            {
+//                Assert.Fail();
+//                return;
+//            }
+
+//            if (modelEvent.Metrics[METRIC3] != METRIC3_VAL_T0 && modelEvent.Metrics[METRIC3] != METRIC3_VAL_T1 && modelEvent.Metrics[METRIC3] != METRIC3_VAL_T2)
+//            {
+//                Assert.Fail();
+//                return;
+//            }
 
         }
 
@@ -413,227 +413,227 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         //[TestCategory("MobileAnalytics")]
         public void TestMonetizationEventConcurrency()
         {
-            // event type
-            const string EVENT_TYPE = "_monetization.purchase";
+//            // event type
+//            const string EVENT_TYPE = "_monetization.purchase";
 
-            const double QUANTITY = 321321;
-            const double ITEM_PRICE = 854584;
-            const string PRODUCT_ID = "PRODUCT_ID123";
-            const string ITEM_PRICE_FORMATTED = "$1.99";
-            const string STORE = "STORE";
-            const string TRANSACTION_ID = "TRANSACTION_ID123";
-            const string CURRENCY = "2.22";
-
-
-            // attribute config
-            const string ATTR1 = "ATTR1";
-            string ATTR1_VAL_T0 = Guid.NewGuid().ToString();
-            string ATTR1_VAL_T1 = Guid.NewGuid().ToString();
-            string ATTR1_VAL_T2 = Guid.NewGuid().ToString();
-
-            const string ATTR2 = "ATTR2";
-            string ATTR2_VAL_T0 = Guid.NewGuid().ToString();
-            string ATTR2_VAL_T1 = Guid.NewGuid().ToString();
-            string ATTR2_VAL_T2 = Guid.NewGuid().ToString();
-
-            const string ATTR3 = "ATTR3";
-            string ATTR3_VAL_T0 = Guid.NewGuid().ToString();
-            string ATTR3_VAL_T1 = Guid.NewGuid().ToString();
-            string ATTR3_VAL_T2 = Guid.NewGuid().ToString();
+//            const double QUANTITY = 321321;
+//            const double ITEM_PRICE = 854584;
+//            const string PRODUCT_ID = "PRODUCT_ID123";
+//            const string ITEM_PRICE_FORMATTED = "$1.99";
+//            const string STORE = "STORE";
+//            const string TRANSACTION_ID = "TRANSACTION_ID123";
+//            const string CURRENCY = "2.22";
 
 
-            // metric config
-            System.Random randObj = new System.Random();
-            const string METRIC1 = "METRIC1";
-            double METRIC1_VAL_T0 = randObj.Next();
-            double METRIC1_VAL_T1 = randObj.Next();
-            double METRIC1_VAL_T2 = randObj.Next();
+//            // attribute config
+//            const string ATTR1 = "ATTR1";
+//            string ATTR1_VAL_T0 = Guid.NewGuid().ToString();
+//            string ATTR1_VAL_T1 = Guid.NewGuid().ToString();
+//            string ATTR1_VAL_T2 = Guid.NewGuid().ToString();
 
-            const string METRIC2 = "METRIC2";
-            double METRIC2_VAL_T0 = randObj.Next();
-            double METRIC2_VAL_T1 = randObj.Next();
-            double METRIC2_VAL_T2 = randObj.Next();
+//            const string ATTR2 = "ATTR2";
+//            string ATTR2_VAL_T0 = Guid.NewGuid().ToString();
+//            string ATTR2_VAL_T1 = Guid.NewGuid().ToString();
+//            string ATTR2_VAL_T2 = Guid.NewGuid().ToString();
 
-            const string METRIC3 = "METRIC3";
-            double METRIC3_VAL_T0 = randObj.Next();
-            double METRIC3_VAL_T1 = randObj.Next();
-            double METRIC3_VAL_T2 = randObj.Next();
-
-            MonetizationEvent monetizationEvent = new MonetizationEvent();
-
-            const int LOOP_COUNT = 999;
-
-#if BCL35
-            Thread t0 = new Thread(
-            () =>
-            {
-#elif BCL45
-            Task task0 = new Task(() =>
-            {
-#endif
-                int i = 0;
-                for (i = 0; i < LOOP_COUNT; i++)
-                {
-                    monetizationEvent.AddAttribute(ATTR1, ATTR1_VAL_T0);
-                    monetizationEvent.AddGlobalAttribute(ATTR2, ATTR2_VAL_T0);
-                    monetizationEvent.AddGlobalAttribute(EVENT_TYPE, ATTR3, ATTR3_VAL_T0);
-
-                    monetizationEvent.AddMetric(METRIC1, METRIC1_VAL_T0);
-                    monetizationEvent.AddGlobalMetric(METRIC2, METRIC2_VAL_T0);
-                    monetizationEvent.AddGlobalMetric(EVENT_TYPE, METRIC3, METRIC3_VAL_T0);
-                }
-
-                monetizationEvent.Quantity = QUANTITY;
-                monetizationEvent.ItemPrice = ITEM_PRICE;
-            });
+//            const string ATTR3 = "ATTR3";
+//            string ATTR3_VAL_T0 = Guid.NewGuid().ToString();
+//            string ATTR3_VAL_T1 = Guid.NewGuid().ToString();
+//            string ATTR3_VAL_T2 = Guid.NewGuid().ToString();
 
 
-#if BCL35
-            Thread t1 = new Thread(
-            () =>
-            {
-#elif BCL45
-            Task task1 = new Task(() =>
-            {
-#endif
-                int i = 0;
-                for (i = 0; i < LOOP_COUNT; i++)
-                {
-                    monetizationEvent.AddAttribute(ATTR1, ATTR1_VAL_T1);
-                    monetizationEvent.AddGlobalAttribute(ATTR2, ATTR2_VAL_T1);
-                    monetizationEvent.AddGlobalAttribute(EVENT_TYPE, ATTR3, ATTR3_VAL_T1);
+//            // metric config
+//            System.Random randObj = new System.Random();
+//            const string METRIC1 = "METRIC1";
+//            double METRIC1_VAL_T0 = randObj.Next();
+//            double METRIC1_VAL_T1 = randObj.Next();
+//            double METRIC1_VAL_T2 = randObj.Next();
 
-                    monetizationEvent.AddMetric(METRIC1, METRIC1_VAL_T1);
-                    monetizationEvent.AddGlobalMetric(METRIC2, METRIC2_VAL_T1);
-                    monetizationEvent.AddGlobalMetric(EVENT_TYPE, METRIC3, METRIC3_VAL_T1);
-                }
+//            const string METRIC2 = "METRIC2";
+//            double METRIC2_VAL_T0 = randObj.Next();
+//            double METRIC2_VAL_T1 = randObj.Next();
+//            double METRIC2_VAL_T2 = randObj.Next();
 
-                monetizationEvent.ProductId = PRODUCT_ID;
-                monetizationEvent.ItemPriceFormatted = ITEM_PRICE_FORMATTED;
-                monetizationEvent.Store = STORE;
-                monetizationEvent.TransactionId = TRANSACTION_ID;
-                monetizationEvent.Currency = CURRENCY;
-            });
+//            const string METRIC3 = "METRIC3";
+//            double METRIC3_VAL_T0 = randObj.Next();
+//            double METRIC3_VAL_T1 = randObj.Next();
+//            double METRIC3_VAL_T2 = randObj.Next();
 
-#if BCL35
-            Thread t2 = new Thread(
-            () =>
-            {
-#elif BCL45
-            Task task2 = new Task(() =>
-            {
-#endif
-                int i = 0;
-                for (i = 0; i < LOOP_COUNT; i++)
-                {
-                    monetizationEvent.AddAttribute(ATTR1, ATTR1_VAL_T2);
-                    monetizationEvent.AddGlobalAttribute(ATTR2, ATTR2_VAL_T2);
-                    monetizationEvent.AddGlobalAttribute(EVENT_TYPE, ATTR3, ATTR3_VAL_T2);
+//            MonetizationEvent monetizationEvent = new MonetizationEvent();
 
-                    monetizationEvent.AddMetric(METRIC1, METRIC1_VAL_T2);
-                    monetizationEvent.AddGlobalMetric(METRIC2, METRIC2_VAL_T2);
-                    monetizationEvent.AddGlobalMetric(EVENT_TYPE, METRIC3, METRIC3_VAL_T2);
-                }
-            });
+//            const int LOOP_COUNT = 999;
+
+//#if BCL35
+//            Thread t0 = new Thread(
+//            () =>
+//            {
+//#elif BCL45
+//            Task task0 = new Task(() =>
+//            {
+//#endif
+//                int i = 0;
+//                for (i = 0; i < LOOP_COUNT; i++)
+//                {
+//                    monetizationEvent.AddAttribute(ATTR1, ATTR1_VAL_T0);
+//                    monetizationEvent.AddGlobalAttribute(ATTR2, ATTR2_VAL_T0);
+//                    monetizationEvent.AddGlobalAttribute(EVENT_TYPE, ATTR3, ATTR3_VAL_T0);
+
+//                    monetizationEvent.AddMetric(METRIC1, METRIC1_VAL_T0);
+//                    monetizationEvent.AddGlobalMetric(METRIC2, METRIC2_VAL_T0);
+//                    monetizationEvent.AddGlobalMetric(EVENT_TYPE, METRIC3, METRIC3_VAL_T0);
+//                }
+
+//                monetizationEvent.Quantity = QUANTITY;
+//                monetizationEvent.ItemPrice = ITEM_PRICE;
+//            });
 
 
-#if BCL35
-            t0.Start();
-            t1.Start();
-            t2.Start();
+//#if BCL35
+//            Thread t1 = new Thread(
+//            () =>
+//            {
+//#elif BCL45
+//            Task task1 = new Task(() =>
+//            {
+//#endif
+//                int i = 0;
+//                for (i = 0; i < LOOP_COUNT; i++)
+//                {
+//                    monetizationEvent.AddAttribute(ATTR1, ATTR1_VAL_T1);
+//                    monetizationEvent.AddGlobalAttribute(ATTR2, ATTR2_VAL_T1);
+//                    monetizationEvent.AddGlobalAttribute(EVENT_TYPE, ATTR3, ATTR3_VAL_T1);
 
-            t0.Join();
-            t1.Join();
-            t2.Join();
-#elif BCL45
-            task0.Start();
-            task1.Start();
-            task2.Start();
+//                    monetizationEvent.AddMetric(METRIC1, METRIC1_VAL_T1);
+//                    monetizationEvent.AddGlobalMetric(METRIC2, METRIC2_VAL_T1);
+//                    monetizationEvent.AddGlobalMetric(EVENT_TYPE, METRIC3, METRIC3_VAL_T1);
+//                }
 
-            // wait all task complete 
-            Task.WaitAll(new[] { task0, task1, task2 });
-#endif
+//                monetizationEvent.ProductId = PRODUCT_ID;
+//                monetizationEvent.ItemPriceFormatted = ITEM_PRICE_FORMATTED;
+//                monetizationEvent.Store = STORE;
+//                monetizationEvent.TransactionId = TRANSACTION_ID;
+//                monetizationEvent.Currency = CURRENCY;
+//            });
 
-            // Get model event.
-            Amazon.MobileAnalytics.Model.Event modelEvent = monetizationEvent.ConvertToMobileAnalyticsModelEvent(GetMobileAnalyticsManager("TestMonetizationEventConcurrency").Session);
+//#if BCL35
+//            Thread t2 = new Thread(
+//            () =>
+//            {
+//#elif BCL45
+//            Task task2 = new Task(() =>
+//            {
+//#endif
+//                int i = 0;
+//                for (i = 0; i < LOOP_COUNT; i++)
+//                {
+//                    monetizationEvent.AddAttribute(ATTR1, ATTR1_VAL_T2);
+//                    monetizationEvent.AddGlobalAttribute(ATTR2, ATTR2_VAL_T2);
+//                    monetizationEvent.AddGlobalAttribute(EVENT_TYPE, ATTR3, ATTR3_VAL_T2);
 
-            // Check attribute value.
-            if (!modelEvent.Attributes.ContainsKey(ATTR1) || !modelEvent.Attributes.ContainsKey(ATTR2) || !modelEvent.Attributes.ContainsKey(ATTR3))
-            {
-                Assert.Fail();
-                return;
-            }
-
-            if (modelEvent.Attributes[ATTR1] != ATTR1_VAL_T0 && modelEvent.Attributes[ATTR1] != ATTR1_VAL_T1 && modelEvent.Attributes[ATTR1] != ATTR1_VAL_T2)
-            {
-                Assert.Fail();
-                return;
-            }
-
-            if (modelEvent.Attributes[ATTR2] != ATTR2_VAL_T0 && modelEvent.Attributes[ATTR2] != ATTR2_VAL_T1 && modelEvent.Attributes[ATTR2] != ATTR2_VAL_T2)
-            {
-                Assert.Fail();
-                return;
-            }
-
-            if (modelEvent.Attributes[ATTR3] != ATTR3_VAL_T0 && modelEvent.Attributes[ATTR3] != ATTR3_VAL_T1 && modelEvent.Attributes[ATTR3] != ATTR3_VAL_T2)
-            {
-                Assert.Fail();
-                return;
-            }
-
-            // check metric value
-            if (!modelEvent.Metrics.ContainsKey(METRIC1) || !modelEvent.Metrics.ContainsKey(METRIC2) || !modelEvent.Metrics.ContainsKey(METRIC3))
-            {
-                Assert.Fail();
-                return;
-            }
-
-            if (modelEvent.Metrics[METRIC1] != METRIC1_VAL_T0 && modelEvent.Metrics[METRIC1] != METRIC1_VAL_T1 && modelEvent.Metrics[METRIC1] != METRIC1_VAL_T2)
-            {
-                Assert.Fail();
-                return;
-            }
-
-            if (modelEvent.Metrics[METRIC2] != METRIC2_VAL_T0 && modelEvent.Metrics[METRIC2] != METRIC2_VAL_T1 && modelEvent.Metrics[METRIC2] != METRIC2_VAL_T2)
-            {
-                Assert.Fail();
-                return;
-            }
-
-            if (modelEvent.Metrics[METRIC3] != METRIC3_VAL_T0 && modelEvent.Metrics[METRIC3] != METRIC3_VAL_T1 && modelEvent.Metrics[METRIC3] != METRIC3_VAL_T2)
-            {
-                Assert.Fail();
-                return;
-            }
+//                    monetizationEvent.AddMetric(METRIC1, METRIC1_VAL_T2);
+//                    monetizationEvent.AddGlobalMetric(METRIC2, METRIC2_VAL_T2);
+//                    monetizationEvent.AddGlobalMetric(EVENT_TYPE, METRIC3, METRIC3_VAL_T2);
+//                }
+//            });
 
 
-            // metric name
-            const string PURCHASE_EVENT_QUANTITY_METRIC = "_quantity";
-            const string PURCHASE_EVENT_ITEM_PRICE_METRIC = "_item_price";
+//#if BCL35
+//            t0.Start();
+//            t1.Start();
+//            t2.Start();
 
-            // attribute name
-            const string PURCHASE_EVENT_PRODUCT_ID_ATTR = "_product_id";
-            const string PURCHASE_EVENT_ITEM_PRICE_FORMATTED_ATTR = "_item_price_formatted";
-            const string PURCHASE_EVENT_STORE_ATTR = "_store";
-            const string PURCHASE_EVENT_TRANSACTION_ID_ATTR = "_transaction_id";
-            const string PURCHASE_EVENT_CURRENCY_ATTR = "_currency";
+//            t0.Join();
+//            t1.Join();
+//            t2.Join();
+//#elif BCL45
+//            task0.Start();
+//            task1.Start();
+//            task2.Start();
 
-            if (modelEvent.Metrics[PURCHASE_EVENT_QUANTITY_METRIC] != QUANTITY || modelEvent.Metrics[PURCHASE_EVENT_ITEM_PRICE_METRIC] != ITEM_PRICE)
-            {
-                Assert.Fail();
-                return;
-            }
+//            // wait all task complete 
+//            Task.WaitAll(new[] { task0, task1, task2 });
+//#endif
 
-            if (modelEvent.Attributes[PURCHASE_EVENT_PRODUCT_ID_ATTR] != PRODUCT_ID ||
-               modelEvent.Attributes[PURCHASE_EVENT_ITEM_PRICE_FORMATTED_ATTR] != ITEM_PRICE_FORMATTED ||
-               modelEvent.Attributes[PURCHASE_EVENT_STORE_ATTR] != STORE ||
-               modelEvent.Attributes[PURCHASE_EVENT_TRANSACTION_ID_ATTR] != TRANSACTION_ID ||
-               modelEvent.Attributes[PURCHASE_EVENT_CURRENCY_ATTR] != CURRENCY)
-            {
-                Assert.Fail();
-                return;
-            }
+//            // Get model event.
+//            Amazon.MobileAnalytics.Model.Event modelEvent = monetizationEvent.ConvertToMobileAnalyticsModelEvent(GetMobileAnalyticsManager("TestMonetizationEventConcurrency").Session);
+
+//            // Check attribute value.
+//            if (!modelEvent.Attributes.ContainsKey(ATTR1) || !modelEvent.Attributes.ContainsKey(ATTR2) || !modelEvent.Attributes.ContainsKey(ATTR3))
+//            {
+//                Assert.Fail();
+//                return;
+//            }
+
+//            if (modelEvent.Attributes[ATTR1] != ATTR1_VAL_T0 && modelEvent.Attributes[ATTR1] != ATTR1_VAL_T1 && modelEvent.Attributes[ATTR1] != ATTR1_VAL_T2)
+//            {
+//                Assert.Fail();
+//                return;
+//            }
+
+//            if (modelEvent.Attributes[ATTR2] != ATTR2_VAL_T0 && modelEvent.Attributes[ATTR2] != ATTR2_VAL_T1 && modelEvent.Attributes[ATTR2] != ATTR2_VAL_T2)
+//            {
+//                Assert.Fail();
+//                return;
+//            }
+
+//            if (modelEvent.Attributes[ATTR3] != ATTR3_VAL_T0 && modelEvent.Attributes[ATTR3] != ATTR3_VAL_T1 && modelEvent.Attributes[ATTR3] != ATTR3_VAL_T2)
+//            {
+//                Assert.Fail();
+//                return;
+//            }
+
+//            // check metric value
+//            if (!modelEvent.Metrics.ContainsKey(METRIC1) || !modelEvent.Metrics.ContainsKey(METRIC2) || !modelEvent.Metrics.ContainsKey(METRIC3))
+//            {
+//                Assert.Fail();
+//                return;
+//            }
+
+//            if (modelEvent.Metrics[METRIC1] != METRIC1_VAL_T0 && modelEvent.Metrics[METRIC1] != METRIC1_VAL_T1 && modelEvent.Metrics[METRIC1] != METRIC1_VAL_T2)
+//            {
+//                Assert.Fail();
+//                return;
+//            }
+
+//            if (modelEvent.Metrics[METRIC2] != METRIC2_VAL_T0 && modelEvent.Metrics[METRIC2] != METRIC2_VAL_T1 && modelEvent.Metrics[METRIC2] != METRIC2_VAL_T2)
+//            {
+//                Assert.Fail();
+//                return;
+//            }
+
+//            if (modelEvent.Metrics[METRIC3] != METRIC3_VAL_T0 && modelEvent.Metrics[METRIC3] != METRIC3_VAL_T1 && modelEvent.Metrics[METRIC3] != METRIC3_VAL_T2)
+//            {
+//                Assert.Fail();
+//                return;
+//            }
+
+
+//            // metric name
+//            const string PURCHASE_EVENT_QUANTITY_METRIC = "_quantity";
+//            const string PURCHASE_EVENT_ITEM_PRICE_METRIC = "_item_price";
+
+//            // attribute name
+//            const string PURCHASE_EVENT_PRODUCT_ID_ATTR = "_product_id";
+//            const string PURCHASE_EVENT_ITEM_PRICE_FORMATTED_ATTR = "_item_price_formatted";
+//            const string PURCHASE_EVENT_STORE_ATTR = "_store";
+//            const string PURCHASE_EVENT_TRANSACTION_ID_ATTR = "_transaction_id";
+//            const string PURCHASE_EVENT_CURRENCY_ATTR = "_currency";
+
+//            if (modelEvent.Metrics[PURCHASE_EVENT_QUANTITY_METRIC] != QUANTITY || modelEvent.Metrics[PURCHASE_EVENT_ITEM_PRICE_METRIC] != ITEM_PRICE)
+//            {
+//                Assert.Fail();
+//                return;
+//            }
+
+//            if (modelEvent.Attributes[PURCHASE_EVENT_PRODUCT_ID_ATTR] != PRODUCT_ID ||
+//               modelEvent.Attributes[PURCHASE_EVENT_ITEM_PRICE_FORMATTED_ATTR] != ITEM_PRICE_FORMATTED ||
+//               modelEvent.Attributes[PURCHASE_EVENT_STORE_ATTR] != STORE ||
+//               modelEvent.Attributes[PURCHASE_EVENT_TRANSACTION_ID_ATTR] != TRANSACTION_ID ||
+//               modelEvent.Attributes[PURCHASE_EVENT_CURRENCY_ATTR] != CURRENCY)
+//            {
+//                Assert.Fail();
+//                return;
+//            }
         }
 
 
@@ -847,7 +847,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         private MobileAnalyticsManager GetMobileAnalyticsManager(string appId)
         {
-            return MobileAnalyticsManager.GetOrCreateInstance(new StoredProfileAWSCredentials(), RegionEndpoint.USEast1, appId,null);
+            return MobileAnalyticsManager.GetOrCreateInstance(appId,new StoredProfileAWSCredentials(), RegionEndpoint.USEast1,null);
         }
 
     }

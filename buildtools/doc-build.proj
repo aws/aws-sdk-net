@@ -1,0 +1,123 @@
+<Project ToolsVersion="4.0" 
+	DefaultTargets="doc-build"
+	xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	
+
+	<PropertyGroup>
+        <InternalBuildTools Condition="'$(InternalBuildTools)'==''">..\..\AWSDotNetBuildTools</InternalBuildTools>
+	
+        <!-- default expected location of SDK assemblies root if not specified -->
+        <SDKAssembliesRoot Condition="'$(SDKAssembliesRoot)'==''">$(MSBuildProjectDirectory)\$(Deployment)\assemblies</SDKAssembliesRoot>
+	
+        <!-- the relative location (to the project file) of the generator executable -->
+        <DocGeneratorPath>$(MSBuildProjectDirectory)\..\docgenerator\SDKDocGenerator\bin\Release</DocGeneratorPath>
+        <DocGenerator>SDKDocGenerator.exe</DocGenerator>
+
+		<DocBuildReleaseBuild Condition="'$(DocBuildReleaseBuild)'==''">False</DocBuildReleaseBuild>
+		
+        <!-- default output path to ..\DocDeployment\docs if not specified -->
+        <DocOutputRoot Condition="'$(DocOutputRoot)'==''">$(MSBuildProjectDirectory)\..\DocDeployment\docs</DocOutputRoot>
+        
+		<!-- default location of the documentation samples. This should be the folder ABOVE AWSSDKDocSamples -->
+		
+		<DocSamplesFolder>$(MSBuildProjectDirectory)\..\docgenerator</DocSamplesFolder>
+		
+        <!-- use net45 platform as the primary determinant of assemblies to inspect, and generate 
+             for all services 
+        -->
+        <SDKPlatform Condition="'$(SDKPlatform)'==''">net45</SDKPlatform>
+        <SDKServices Condition="'$(SDKServices)'==''">*</SDKServices>
+		
+	</PropertyGroup>
+
+	<Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
+
+	<Choose>
+		<When Condition="'$(DocBuildReleaseBuild)'=='True' ">
+			<PropertyGroup>
+				<DocBuildAssemblies>$(MSBuildProjectDirectory)\..\DocBuildAssemblies</DocBuildAssemblies>
+				<SDKVersionFilePath>$(MSBuildProjectDirectory)\..\Include\sdk\_sdk-versions.json</SDKVersionFilePath>
+			</PropertyGroup>
+		</When>
+		<Otherwise>
+			<PropertyGroup>
+				<DocBuildAssemblies>$(MSBuildProjectDirectory)\..\Deployment\assemblies</DocBuildAssemblies>
+				<SDKVersionFilePath>$(MSBuildProjectDirectory)\..\Deployment\_sdk-versions.json</SDKVersionFilePath>
+			</PropertyGroup>
+		</Otherwise>
+	</Choose>
+	
+	<Target Name="doc-build" DependsOnTargets="setup-production-doc-build;build-docgenerator">
+										
+		<Message Text="Build documentation for all platforms, all assemblies (Release Build: $(DocBuildReleaseBuild))"/>
+		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(DocBuildAssemblies) -sdkversionfile $(SDKVersionFilePath) -o $(DocOutputRoot) -sf $(DocSamplesFolder)" />
+		
+    </Target>
+	
+	<Target Name="setup-production-doc-build" Condition="'$(DocBuildReleaseBuild)'=='True'">
+		<MSBuild Projects ="$(MSBuildProjectFullPath)" Targets="get-reference-syncmanager" Properties="TargetRepository=$(MSBuildProjectDirectory)\.."/>
+		<MSBuild Projects ="$(MSBuildProjectFullPath)" Targets="get-reference-sdk" Properties="TargetRepository=$(MSBuildProjectDirectory)\.."/>
+
+		
+		<ItemGroup>
+			<SyncAssemblies Include="$(MSBuildProjectDirectory)\..\Include\syncmanager\**\*.*"/>
+			<SDKDAssemblies Include="$(MSBuildProjectDirectory)\..\Include\sdk\assemblies\**\*.*"/>
+		</ItemGroup>	
+		
+		<Message Text="Clear directory of assemblies to document"/>
+		<RemoveDir
+            Directories="$(MSBuildProjectDirectory)\..\DocBuildAssemblies" />
+
+		<Message Text="Include SDK assemblies to be run through doc generator"/>
+		<Copy
+            SourceFiles="@(SyncAssemblies)"
+            DestinationFiles="@(SyncAssemblies->'$(MSBuildProjectDirectory)\..\DocBuildAssemblies\%(RecursiveDir)%(Filename)%(Extension)')"
+        />
+			
+		
+		<Message Text="Include SDK assemblies to be run through doc generator"/>		
+		<Copy
+            SourceFiles="@(SDKDAssemblies)"
+            DestinationFiles="@(SDKDAssemblies->'$(MSBuildProjectDirectory)\..\DocBuildAssemblies\%(RecursiveDir)%(Filename)%(Extension)')"
+        />		
+		
+	</Target>
+	
+    <Target Name="create-sitemap" 
+			DependsOnTargets="optional-build-tools"
+            AfterTargets="doc-build" 
+            Condition="Exists('$(InternalBuildTools)\references.targets')">
+        <CreateSitemapTask
+            SourceFolder="$(DocOutputRoot)"
+            BaseUrl="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/"
+            OutputFile="$(DocOutputRoot)\sitemap.xml"
+            WaitForDebugger="false"
+            />
+	</Target>
+	
+	<Target Name="optional-build-tools" Condition="'$(DocBuildReleaseBuild)'!='True'">
+		<MSBuild Projects ="$(MSBuildProjectFullPath)" Targets="build-tools"/>
+	</Target>
+    
+    <Target Name="build-docgenerator">
+		<Message Text="Building documentation generator"/>
+		<MSBuild Projects="..\docgenerator\AWSSDKDocGenerator.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release" />
+    </Target>
+    
+	<Target Name="doc-platform-build" DependsOnTargets="build-docgenerator">
+		<Message Text="Build documentation for selected platform, all services"/>
+		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(SDKAssembliesRoot) -o $(DocOutputRoot) -p $(SDKPlatform)" />
+	</Target>
+
+	<Target Name="doc-platform-service-build" DependsOnTargets="build-docgenerator">
+		<Message Text="Build documentation for selected service(s) in platform"/>
+		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(SDKAssembliesRoot) -o $(DocOutputRoot) -p $(SDKPlatform) -svc $(SDKServices)" />
+	</Target>
+    
+	<Target Name="test-doc-build" DependsOnTargets="build-docgenerator">
+		<Message Text="Build documentation in test mode (net45 platform, selected services)"/>
+		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -t  -sdk $(SDKAssembliesRoot) -sf $(DocSamplesFolder) -o $(DocOutputRoot) -v" />
+	</Target>    
+</Project>

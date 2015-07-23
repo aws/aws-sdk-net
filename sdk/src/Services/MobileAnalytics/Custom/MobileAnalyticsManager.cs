@@ -1,19 +1,17 @@
-//
-// Copyright 2014-2015 Amazon.com, 
-// Inc. or its affiliates. All Rights Reserved.
-// 
-// Licensed under the Amazon Software License (the "License"). 
-// You may not use this file except in compliance with the 
-// License. A copy of the License is located at
-// 
-//     http://aws.amazon.com/asl/
-// 
-// or in the "license" file accompanying this file. This file is 
-// distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
-// CONDITIONS OF ANY KIND, express or implied. See the License 
-// for the specific language governing permissions and 
-// limitations under the License.
-//
+/*
+ * Copyright 2015-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
 
 using System;
 using System.Collections;
@@ -26,115 +24,131 @@ using Amazon.Runtime.Internal;
 using Amazon.MobileAnalytics.MobileAnalyticsManager.Internal;
 using Amazon.Runtime.Internal.Util;
 
-
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 {
-    
+
     /// <summary>
     /// MobileAnalyticsManager in the entry point to recording analytic events for your application
     /// </summary>
     public partial class MobileAnalyticsManager
     {
-        private static object _lock = new object();
+        private static Object _lock = new Object();
         private static IDictionary<string, MobileAnalyticsManager> _instanceDictionary = new Dictionary<string, MobileAnalyticsManager>();
         private Logger _logger = Logger.GetLogger(typeof(MobileAnalyticsManager));
         private static BackgroundRunner _backgroundRunner = new BackgroundRunner();
-        
+
         #region constructor
+
+        static MobileAnalyticsManager()
+        {
+            _backgroundRunner.StartWork();
+        }
 
         /// <summary>
         /// Gets the or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
         /// creates new instance and returns it.
         /// </summary>
-        /// <param name="credential">AWS Credentials.</param>
-        /// <param name="regionEndpoint">Region endpoint.</param>
-        /// <param name="appId">Amazon Mobile Analytics Application ID.</param>
-        /// <param name="maConfig">Amazon Mobile Analytics Manager configuration.</param>
-        /// <returns>Mobile Analytics Manager instance. If it's null, default configuration would be created.</returns>
-        public static MobileAnalyticsManager GetOrCreateInstance(AWSCredentials credential,
-                                                                         RegionEndpoint regionEndpoint,
-                                                                         string appId,
-                                                                         MobileAnalyticsManagerConfig maConfig
-                                                                         )
-        {
-            if (credential == null)
-                throw new ArgumentNullException("credential");
-            if (regionEndpoint == null)
-                throw new ArgumentNullException("regionEndpoint");
-            if (string.IsNullOrEmpty(appId))
-                throw new ArgumentNullException("appId");
-
-
-            MobileAnalyticsManager managerInstance = null;
-            bool isNewInstance = false;
-            lock (_lock)
-            {
-                if (_instanceDictionary.ContainsKey(appId))
-                {
-                    managerInstance = _instanceDictionary[appId];
-                }
-                else
-                {
-                    if (maConfig == null)
-                        maConfig = new MobileAnalyticsManagerConfig();
-                    if (maConfig.ClientContextConfiguration == null)
-                        maConfig.ClientContextConfiguration = new ClientContextConfig(appId);
-
-                    managerInstance = new MobileAnalyticsManager(credential, regionEndpoint, maConfig);
-                    _instanceDictionary[appId] = managerInstance;
-                    isNewInstance = true;
-                }
-            }
-
-            if (isNewInstance)
-                managerInstance.Session.Start();
-
-            _backgroundRunner.StartWork();
-
-            return managerInstance;
-        }
-
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManager"/> class.
-        /// </summary>
+        /// <param name="appID">Amazon Mobile Analytics Application ID.</param>
         /// <param name="credentials">AWS Credentials.</param>
         /// <param name="regionEndpoint">Region endpoint.</param>
-        /// <param name="maConfig">Mobile Ananlytics Manager Config.</param>
-        private MobileAnalyticsManager(AWSCredentials credentials, RegionEndpoint regionEndpoint, MobileAnalyticsManagerConfig maConfig)
+        /// <param name="maConfig">Amazon Mobile Analytics Manager configuration.</param>
+        /// <returns>Mobile Analytics Manager instance. </returns>
+        public static MobileAnalyticsManager GetOrCreateInstance(string appID, AWSCredentials credentials, RegionEndpoint regionEndpoint, MobileAnalyticsManagerConfig maConfig)
         {
-            this.ClientContext = new ClientContext(maConfig.ClientContextConfiguration);
-            this.BackgroundDeliveryClient = new DeliveryClient(maConfig, ClientContext, credentials, regionEndpoint);
-            this.Session = new Session(maConfig.ClientContextConfiguration.AppId, maConfig.SessionTimeout);
+            if (string.IsNullOrEmpty(appID))
+                throw new ArgumentNullException("appID");
+            if (null == credentials)
+                throw new ArgumentNullException("credentials");
+            if (null == regionEndpoint)
+                throw new ArgumentNullException("regionEndpoint");
+            if (null == maConfig)
+                throw new ArgumentNullException("maConfig");
+
+            return GetOrCreateInstanceHelper(appID, credentials, regionEndpoint, maConfig);
+        }
+
+        /// <summary>
+        /// Gets the or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
+        /// creates new instance and returns it.
+        /// </summary>
+        /// <param name="appID">Amazon Mobile Analytics Application ID.</param>
+        /// <param name="credentials">AWS Credentials.</param>
+        /// <param name="regionEndpoint">Region endpoint.</param>
+        /// <returns>Mobile Analytics Manager instance.</returns>
+        public static MobileAnalyticsManager GetOrCreateInstance(string appID, AWSCredentials credentials, RegionEndpoint regionEndpoint)
+        {
+            if (string.IsNullOrEmpty(appID))
+                throw new ArgumentNullException("appID");
+            if (null == credentials)
+                throw new ArgumentNullException("credentials");
+            if (null == regionEndpoint)
+                throw new ArgumentNullException("regionEndpoint");
+
+            MobileAnalyticsManagerConfig maConfig = new MobileAnalyticsManagerConfig();
+            return GetOrCreateInstanceHelper(appID, credentials, regionEndpoint, maConfig);
         }
 
         /// <summary>
         /// Gets Mobile Analytics Manager instance by Application ID. Returns Mobile Analytics Manager instance if it's found.
         /// Throws InvalidOperationException if the instance has not been instantiated.
         /// </summary>
-        /// <param name="appId">Amazon Mobile Analytics Application ID.</param>
+        /// <param name="appID">Amazon Mobile Analytics Application ID.</param>
         /// <returns>The Mobile Analytics Manager instance.</returns>
-        public static MobileAnalyticsManager GetInstance(string appId)
+        public static MobileAnalyticsManager GetInstance(string appID)
         {
-            if (string.IsNullOrEmpty(appId))
-                throw new ArgumentNullException("appId");
-            
+            if (string.IsNullOrEmpty(appID))
+                throw new ArgumentNullException("appID");
+
             lock (_lock)
             {
-                if (_instanceDictionary.ContainsKey(appId))
+                if (_instanceDictionary.ContainsKey(appID))
                 {
-                    return _instanceDictionary[appId];
+                    return _instanceDictionary[appID];
                 }
                 else
                 {
-                    throw new InvalidOperationException("We cannot find MobileAnalyticsManager instance for appId " + appId + ". Please call GetOrCreateInstance() first.");
+                    throw new InvalidOperationException("We cannot find MobileAnalyticsManager instance for appId " + appID + ". Please call GetOrCreateInstance() first.");
                 }
             }
         }
 
+        private static MobileAnalyticsManager GetOrCreateInstanceHelper(string appID, AWSCredentials credentials, RegionEndpoint regionEndpoint, MobileAnalyticsManagerConfig maConfig)
+        {
+            MobileAnalyticsManager managerInstance = null;
+            bool isNewInstance = false;
+            lock (_lock)
+            {
+                if (_instanceDictionary.ContainsKey(appID))
+                {
+                    managerInstance = _instanceDictionary[appID];
+                }
+                else
+                {
+                    managerInstance = new MobileAnalyticsManager(appID, credentials, regionEndpoint, maConfig);
+                    _instanceDictionary[appID] = managerInstance;
+                    isNewInstance = true;
+                }
+            }
 
+            if (isNewInstance)
+            {
+                managerInstance.Session.Start();
+            }
+            return managerInstance;
+        }
+
+        private MobileAnalyticsManager(string appID, AWSCredentials credentials, RegionEndpoint regionEndpoint, MobileAnalyticsManagerConfig maConfig)
+        {
+#if PCL
+            this.ClientContext = new ClientContext(appID);
+#elif BCL
+            this.ClientContext = new ClientContext(appID, maConfig.ClientContextConfiguration);
+#endif
+            this.BackgroundDeliveryClient = new DeliveryClient(maConfig, ClientContext, credentials, regionEndpoint);
+            this.Session = new Session(appID, maConfig);
+        }
         #endregion
-        
+
         #region public
         /// <summary>
         /// Pauses the current session.
@@ -162,35 +176,35 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         ///
         ///    protected override void OnCreate(Bundle bundle)
         ///    {
-        ///        _manager = MobileAnalyticsManager.GetOrCreateInstance(YourCredential, RegionEndpoint.USEast1, YourAppId, YourConfig);
+        ///        _manager = MobileAnalyticsManager.GetOrCreateInstance(YourAppId, YourCredential, RegionEndpoint.USEast1, YourConfig);
         ///        base.OnCreate(bundle);
         ///    }
         ///    protected override void OnResume()
         ///    {
-        ///        _manager.ResumeSession();
+        ///        await _manager.ResumeSession();
         ///        base.OnResume();
         ///    }
         ///    protected override void OnPause()
         ///    {
-        ///        _manager.PauseSession();
+        ///        await _manager.PauseSession();
         ///        base.OnPause();
         ///    }
         ///}
         /// </code>  
         /// </example> 
-        /// </summary>
+        /// </summary>       
         public void PauseSession()
         {
             try
             {
-                Session.Pause();   
+                Session.Pause();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 _logger.Error(e, "An exception occurred when pause session.");
             }
         }
-        
+
         /// <summary>
         /// Resume the current session.
         /// ResumeSession() is the entry point into the Amazon Mobile Analytics SDK where sessions can be resumed. Session is created and started immediately 
@@ -217,17 +231,17 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         ///
         ///    protected override void OnCreate(Bundle bundle)
         ///    {
-        ///        _manager = MobileAnalyticsManager.GetOrCreateInstance(YourCredential, RegionEndpoint.USEast1, YourAppId, YourConfig);
+        ///        _manager = MobileAnalyticsManager.GetOrCreateInstance(YourAppId, YourCredential, RegionEndpoint.USEast1, YourConfig);
         ///        base.OnCreate(bundle);
         ///    }
         ///    protected override void OnResume()
         ///    {
-        ///        _manager.ResumeSession();
+        ///        await _manager.ResumeSession();
         ///        base.OnResume();
         ///    }
         ///    protected override void OnPause()
         ///    {
-        ///        _manager.PauseSession();
+        ///        await _manager.PauseSession();
         ///        base.OnPause();
         ///    }
         ///}
@@ -244,63 +258,67 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             {
                 _logger.Error(e, "An exception occurred when resume session.");
             }
-        }    
-		
-		
-		/// <summary>
+        }
+
+
+        /// <summary>
         /// Records the custom event to the local persistent storage. Background thread will deliver the event later.
         /// </summary>
         /// <param name="customEvent">The Mobile Analytics event.</param>
-        public void RecordEventAsync(CustomEvent customEvent)
+        public void RecordEvent(CustomEvent customEvent)
         {
+            if (null == customEvent)
+                throw new ArgumentNullException("customEvent");
+
             customEvent.Timestamp = DateTime.UtcNow;
-		
             Amazon.MobileAnalytics.Model.Event modelEvent = customEvent.ConvertToMobileAnalyticsModelEvent(this.Session);
-            BackgroundDeliveryClient.EnqueueEventsForDeliveryAsync(modelEvent);
+
+            BackgroundDeliveryClient.EnqueueEventsForDelivery(modelEvent);
         }
-		
-		
+
+
         /// <summary>
         /// Adds client context custom attribute
         /// Refer <a href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html" >Rest API</a> for more information
         /// </summary>
         /// <param name="key">Key.</param>
         /// <param name="value">Value.</param>
-        public void AddClientContextCustomAttribute(string key,string value)
+        public void AddCustomAttributeToClientContext(string key, string value)
         {
-            if(string.IsNullOrEmpty(key))
+            if (string.IsNullOrEmpty(key))
             {
                 throw new ArgumentNullException("key");
             }
-            
-            if(value == null)
+
+            if (null == value)
             {
                 throw new ArgumentNullException("value");
             }
 
-            ClientContext.AddCustomAttributes(key,value);
+            ClientContext.AddCustomAttributes(key, value);
         }
 
-        /// <summary>
-        /// Get the object which represents Mobile Analytics Session.
-        /// </summary>
-        public Session Session { get; private set; }
-
-        /// <summary>
-        /// Get the object which represents Mobile Analytics Client Context header.
-        /// </summary>
-        public ClientContext ClientContext { get; private set; }   
         #endregion
 
 
         #region internal
-        internal IDeliveryClient BackgroundDeliveryClient{get;private set;}
-        
-        internal static IDictionary<string,MobileAnalyticsManager> InstanceDictionary
+        /// <summary>
+        /// Get the object which represents Mobile Analytics Session.
+        /// </summary>
+        internal Session Session { get; set; }
+
+        /// <summary>
+        /// Get the object which represents Mobile Analytics Client Context header.
+        /// </summary>
+        internal ClientContext ClientContext { get; set; }
+
+        internal IDeliveryClient BackgroundDeliveryClient { get; private set; }
+
+        internal static IDictionary<string, MobileAnalyticsManager> InstanceDictionary
         {
             get
             {
-                lock(_lock)
+                lock (_lock)
                 {
                     return new Dictionary<string, MobileAnalyticsManager>(_instanceDictionary);
                 }
@@ -308,6 +326,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         }
 
         #endregion
-        
+
     }
 }
