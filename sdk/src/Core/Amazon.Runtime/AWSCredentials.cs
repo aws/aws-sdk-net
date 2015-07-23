@@ -376,8 +376,8 @@ namespace Amazon.Runtime
             else
             {
                 return Path.Combine(
-                    System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile),
-                    @".aws\credentials");
+                    System.Environment.GetEnvironmentVariable("HOME"),
+                    ".aws/credentials");
             }
         }
 
