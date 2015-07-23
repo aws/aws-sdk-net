@@ -154,15 +154,16 @@ namespace SDKDocGenerator
         /// </summary>
         private void CopyVersionInfoManifest()
         {
-            const string versionInfoFilename = "_sdk-versions.json";
-
             Info("Copying version information manifest...");
 
-            var sourcePath = Path.Combine(Options.SDKAssembliesRoot, versionInfoFilename);
-            if (File.Exists(sourcePath))
+            if (File.Exists(Options.SDKVersionFilePath))
             {
-                var destPath = Path.Combine(Options.ComputedContentFolder, versionInfoFilename);
-                File.Copy(sourcePath, destPath, true);
+                var destPath = Path.Combine(Options.ComputedContentFolder, Path.GetFileName(Options.SDKVersionFilePath));
+                File.Copy(Options.SDKVersionFilePath, destPath, true);
+            }
+            else
+            {
+                throw new Exception(string.Format("Failed to find version file at {0}.", Options.SDKVersionFilePath));
             }
         }
 

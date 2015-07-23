@@ -196,6 +196,14 @@ namespace SDKDocGenerator
             },
             new ArgDeclaration
             {
+                OptionName = "sdkversionfile", 
+                ShortName = "sdkversion", 
+                HasValue = true,
+                Parse = (arguments, argValue) => arguments.ParsedOptions.SDKVersionFilePath = argValue, 
+                HelpText = "The path to the _sdk-versions.json."
+            },
+            new ArgDeclaration
+            {
                 OptionName = "platform", 
                 ShortName = "p", 
                 HasValue = true,

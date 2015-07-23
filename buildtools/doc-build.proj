@@ -36,11 +36,13 @@
 		<When Condition="'$(DocBuildReleaseBuild)'=='True' ">
 			<PropertyGroup>
 				<DocBuildAssemblies>$(MSBuildProjectDirectory)\..\DocBuildAssemblies</DocBuildAssemblies>
+				<SDKVersionFilePath>$(MSBuildProjectDirectory)\..\Include\sdk\_sdk-versions.json</SDKVersionFilePath>
 			</PropertyGroup>
 		</When>
 		<Otherwise>
 			<PropertyGroup>
 				<DocBuildAssemblies>$(MSBuildProjectDirectory)\..\Deployment\assemblies</DocBuildAssemblies>
+				<SDKVersionFilePath>$(MSBuildProjectDirectory)\..\Deployment\_sdk-versions.json</SDKVersionFilePath>
 			</PropertyGroup>
 		</Otherwise>
 	</Choose>
@@ -48,7 +50,7 @@
 	<Target Name="doc-build" DependsOnTargets="setup-production-doc-build;build-docgenerator">
 										
 		<Message Text="Build documentation for all platforms, all assemblies (Release Build: $(DocBuildReleaseBuild))"/>
-		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(DocBuildAssemblies) -o $(DocOutputRoot) -sf $(DocSamplesFolder)" />
+		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(DocBuildAssemblies) -sdkversionfile $(SDKVersionFilePath) -o $(DocOutputRoot) -sf $(DocSamplesFolder)" />
 		
     </Target>
 	
