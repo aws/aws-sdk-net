@@ -16,7 +16,7 @@
 		<DocBuildReleaseBuild Condition="'$(DocBuildReleaseBuild)'==''">False</DocBuildReleaseBuild>
 		
         <!-- default output path to ..\DocDeployment\docs if not specified -->
-        <DocOutputRoot Condition="'$(DocOutputRoot)'==''">$(MSBuildProjectDirectory)\$(DocDeployment)\docs</DocOutputRoot>
+        <DocOutputRoot Condition="'$(DocOutputRoot)'==''">$(MSBuildProjectDirectory)\..\DocDeployment\docs</DocOutputRoot>
         
 		<!-- default location of the documentation samples. This should be the folder ABOVE AWSSDKDocSamples -->
 		
