@@ -20,6 +20,8 @@ sdk/test/PCLTests/AndroidTests/packages/**
 
 Deployment/**
 DocDeployment/**
+DocBuildAssemblies/**
+Include/**
 
 **/*.userprefs
 /sdk/test/CrossPlatformTests/CommonTests/Resources/settings.json
