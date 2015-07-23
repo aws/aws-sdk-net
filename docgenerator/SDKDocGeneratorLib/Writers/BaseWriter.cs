@@ -481,7 +481,7 @@ namespace SDKDocGenerator.Writers
         {
             writer.WriteLine("<div id=\"namespaceblock\">");
                 writer.WriteLine("<p><strong>Namespace: </strong>{0}<br/>", ns);
-                writer.WriteLine("<strong>Assembly: </strong>{0}<br/><strong>Version: </strong><span id=\"assemblyVersion\">3.x.y.z</span></p>", moduleName);
+                writer.WriteLine("<strong>Assembly: </strong>{0}<strong><span id=\"versionData\"><br/>Version: </strong><span id=\"assemblyVersion\">3.x.y.z</span></span></p>", moduleName);
             writer.WriteLine("</div>");
         }
 
