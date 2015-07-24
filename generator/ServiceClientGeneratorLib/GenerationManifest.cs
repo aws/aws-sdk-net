@@ -41,6 +41,7 @@ namespace ServiceClientGenerator
             public const string DependencyVersionKey = "version";
             public const string DependencyHintPathKey = "hint-path";
             public const string ParentBaseNameKey = "parent-base-name";
+            public const string EnableXamarinComponent = "enable-xamarin-component";
         }
 
         abstract class ProjectsSectionKeys
@@ -143,7 +144,8 @@ namespace ServiceClientGenerator
                     AuthenticationServiceName = modelNode[ModelsSectionKeys.AuthenticationServiceNameKey] != null ? modelNode[ModelsSectionKeys.AuthenticationServiceNameKey].ToString() : null,
                     ServiceUrl = modelNode[ModelsSectionKeys.ServiceUrlKey] != null ? modelNode[ModelsSectionKeys.ServiceUrlKey].ToString() : null,
                     DefaultRegion = modelNode[ModelsSectionKeys.DefaultRegionKey] != null ? modelNode[ModelsSectionKeys.DefaultRegionKey].ToString() : null,
-                    GenerateConstructors = modelNode[ModelsSectionKeys.GenerateClientConstructorsKey] == null || (bool)modelNode[ModelsSectionKeys.GenerateClientConstructorsKey] // A way to prevent generating basic constructors
+                    GenerateConstructors = modelNode[ModelsSectionKeys.GenerateClientConstructorsKey] == null || (bool)modelNode[ModelsSectionKeys.GenerateClientConstructorsKey], // A way to prevent generating basic constructors
+                    EnableXamarinComponent = modelNode.PropertyNames.Contains(ModelsSectionKeys.EnableXamarinComponent) && (bool)modelNode[ModelsSectionKeys.EnableXamarinComponent]
                 };
 
                 if (modelNode[ModelsSectionKeys.PclVariantsKey] != null)

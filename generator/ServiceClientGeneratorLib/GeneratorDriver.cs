@@ -9,6 +9,7 @@ using ServiceClientGenerator.Generators.NuGet;
 using ServiceClientGenerator.Generators.SourceFiles;
 using ServiceClientGenerator.Generators.TestFiles;
 using StructureGenerator = ServiceClientGenerator.Generators.SourceFiles.StructureGenerator;
+using ServiceClientGenerator.Generators.Component;
 
 namespace ServiceClientGenerator
 {
@@ -30,7 +31,7 @@ namespace ServiceClientGenerator
         /// against.
         /// </summary>
         public IEnumerable<ProjectFileConfiguration> ProjectFileConfigurations { get; private set; }
- 
+
         /// <summary>
         /// Runtime options for the generation process, as supplied at the command line.
         /// </summary>
@@ -55,6 +56,16 @@ namespace ServiceClientGenerator
         /// </summary>
         public string GeneratedFilesRoot { get; private set; }
 
+        /// <summary>
+        /// The folder where all the xamarin componenets would be present
+        /// </summary>
+        public string ComponentsFilesRoot { get; private set; }
+
+        /// <summary>
+        /// The folder where all the sample files are located
+        /// </summary>
+        public string SampleFilesRoot { get; private set; }
+
         private readonly HashSet<Shape> _structuresToProcess = new HashSet<Shape>();
 
         private readonly HashSet<string> _processedStructures = new HashSet<string>();
@@ -74,13 +85,15 @@ namespace ServiceClientGenerator
         public const string GeneratedCodeFoldername = "Generated";
         public const string UnitTestsSubFoldername = "UnitTests";
         public const string IntegrationTestsSubFolderName = "IntegrationTests";
+        public const string XamarinComponentsSubFolderName = "xamarin-components";
+
 
         public const string NuGetPreviewFlag = "-preview";
 
         // Records any new project files we produce as part of generation. If this collection is
         // not empty when we've processed all source, we must update the solution files to add
         // the new projects.
-        private static readonly Dictionary<string, ProjectFileCreator.ProjectConfigurationData> NewlyCreatedProjectFiles 
+        private static readonly Dictionary<string, ProjectFileCreator.ProjectConfigurationData> NewlyCreatedProjectFiles
             = new Dictionary<string, ProjectFileCreator.ProjectConfigurationData>();
 
         public GeneratorDriver(ServiceConfiguration config, GenerationManifest generationManifest, GeneratorOptions options)
@@ -94,22 +107,27 @@ namespace ServiceClientGenerator
             // is set 'Service' gets appended and in the case of IAM then sends us to the wrong folder.
             // Instead we'll use the namespace and rip off any Amazon. prefix. This also helps us
             // handle versioned namespaces too.
-            var serviceNameRoot = Configuration.Namespace.StartsWith("Amazon.", StringComparison.Ordinal) 
-                ? Configuration.Namespace.Substring(7) 
+            var serviceNameRoot = Configuration.Namespace.StartsWith("Amazon.", StringComparison.Ordinal)
+                ? Configuration.Namespace.Substring(7)
                 : Configuration.Namespace;
 
             ServiceFilesRoot = Path.Combine(Options.SdkRootFolder, SourceSubFoldername, ServicesSubFoldername, serviceNameRoot);
             GeneratedFilesRoot = Path.Combine(ServiceFilesRoot, GeneratedCodeFoldername);
 
             TestFilesRoot = Path.Combine(Options.SdkRootFolder, TestsSubFoldername);
+
+            ComponentsFilesRoot = Path.Combine(Options.SdkRootFolder, XamarinComponentsSubFolderName, serviceNameRoot);
+
+            //TODO: make this configurable
+            SampleFilesRoot = @"..\..\..\..\Aws-sdk-net-samples";
         }
 
         public void Execute()
         {
             if (Options.Clean)
             {
-                Console.WriteLine(@"-clean option set, deleting previously-generated code under .\Generated subfolders"); 
-       
+                Console.WriteLine(@"-clean option set, deleting previously-generated code under .\Generated subfolders");
+
                 Directory.Delete(GeneratedFilesRoot, true);
                 Directory.CreateDirectory(GeneratedFilesRoot);
             }
@@ -132,6 +150,9 @@ namespace ServiceClientGenerator
             {
                 ExecuteGeneratorAssemblyInfo();
                 ExecuteNugetFileGenerators();
+
+                if (this.Configuration.EnableXamarinComponent)
+                    GenerateXamarinComponents();
             }
 
             // Client config object
@@ -148,14 +169,14 @@ namespace ServiceClientGenerator
 
             // Any enumerations for the service
             this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
-            
+
             // Do not generate base exception if this is a child model.
             // We use the base exceptions generated for the parent model.
             if (!this.Configuration.IsChildConfig)
             {
                 this.ExecuteGenerator(new BaseServiceException(), "Amazon" + this.Configuration.BaseName + "Exception.cs");
             }
-            
+
             // Generates the Request, Responce, Marshaller, Unmarshaller, and Exception objects for a given client operation
             foreach (var operation in Configuration.ServiceModel.Operations)
             {
@@ -169,8 +190,8 @@ namespace ServiceClientGenerator
             // Generate any missed structures that are not defined or referenced by a request, response, marshaller, unmarshaller, or exception of an operation
             GenerateStructures();
 
-            var fileName = Configuration.LockedApiVersion != null 
-                ? string.Format("{0}_{1}_MarshallingTests.cs", Configuration.BaseName, Configuration.LockedApiVersion) 
+            var fileName = Configuration.LockedApiVersion != null
+                ? string.Format("{0}_{1}_MarshallingTests.cs", Configuration.BaseName, Configuration.LockedApiVersion)
                 : string.Format("{0}MarshallingTests.cs", Configuration.BaseName);
 
             // Generate tests based on the type of request it is
@@ -224,13 +245,13 @@ namespace ServiceClientGenerator
                 else if (includeContainingShape)
                     this._structuresToProcess.Add(containingShape);
 
-                foreach(var member in containingShape.Members)
+                foreach (var member in containingShape.Members)
                 {
                     if (member.IsStructure)
                     {
                         DetermineStructuresToProcess(member.Shape, true);
                     }
-                    else if(member.IsList)
+                    else if (member.IsList)
                     {
                         DetermineStructuresToProcess(member.Shape.ListShape, true);
                     }
@@ -240,7 +261,7 @@ namespace ServiceClientGenerator
                     }
                 }
             }
-            else if(containingShape.IsList)
+            else if (containingShape.IsList)
             {
                 DetermineStructuresToProcess(containingShape.ListShape, true);
             }
@@ -375,18 +396,18 @@ namespace ServiceClientGenerator
                         {
                             return true;
                         }
-                    }    
+                    }
                 }
                 else if (shape.IsList && shape.ListShape.Name == shapeName)
                 {
                     return true;
                 }
-                else if (shape.IsMap && 
+                else if (shape.IsMap &&
                     (shape.ValueShape.Name == shapeName || shape.KeyShape.Name == shapeName))
                 {
                     return true;
                 }
-                
+
             }
 
             return false;
@@ -553,7 +574,7 @@ namespace ServiceClientGenerator
             var solutionFileCreator = new SolutionFileCreator
             {
                 Options = options,
-                ProjectFileConfigurations = manifest.ProjectFileConfigurations 
+                ProjectFileConfigurations = manifest.ProjectFileConfigurations
             };
             solutionFileCreator.Execute(NewlyCreatedProjectFiles);
         }
@@ -569,7 +590,7 @@ namespace ServiceClientGenerator
         /// </summary>
         class NestedStructureLookup
         {
-            public List<Shape> NestedStructures { get; private set;}
+            public List<Shape> NestedStructures { get; private set; }
 
             public NestedStructureLookup()
             {
@@ -585,7 +606,7 @@ namespace ServiceClientGenerator
                 if (NestedStructures.Contains(structure))
                     return;
 
-                if(structure.IsStructure)
+                if (structure.IsStructure)
                     NestedStructures.Add(structure);
 
                 if (structure.IsList)
@@ -688,7 +709,7 @@ namespace ServiceClientGenerator
             creator.Execute(ServiceFilesRoot, this.Configuration, this.ProjectFileConfigurations);
             foreach (var newProjectKey in creator.CreatedProjectFiles.Keys)
             {
-                NewlyCreatedProjectFiles.Add(newProjectKey, creator.CreatedProjectFiles[newProjectKey]);                
+                NewlyCreatedProjectFiles.Add(newProjectKey, creator.CreatedProjectFiles[newProjectKey]);
             }
         }
 
@@ -710,6 +731,98 @@ namespace ServiceClientGenerator
             WriteFile(ServiceFilesRoot, string.Empty, "packages.config", text);
         }
 
+        void GenerateXamarinComponents()
+        {
+            var coreVersion = GenerationManifest.CoreVersion;
+
+            // we're generating services only, so can automatically add the core runtime
+            // as a dependency
+            var awsDependencies = new Dictionary<string, string>(StringComparer.Ordinal);
+
+            if (Configuration.ServiceDependencies != null)
+            {
+                var dependencies = Configuration.ServiceDependencies;
+                foreach (var kvp in dependencies)
+                {
+                    var service = kvp.Key;
+                    var version = kvp.Value;
+                    var dependentService = GenerationManifest.ServiceConfigurations.FirstOrDefault(x => string.Equals(x.Namespace, "Amazon." + service, StringComparison.InvariantCultureIgnoreCase));
+
+                    string previewFlag;
+                    if (dependentService != null && dependentService.InPreview)
+                    {
+                        previewFlag = GeneratorDriver.NuGetPreviewFlag;
+                    }
+                    else if (string.Equals(service, "Core", StringComparison.InvariantCultureIgnoreCase) && GenerationManifest.DefaultToPreview)
+                    {
+                        previewFlag = GeneratorDriver.NuGetPreviewFlag;
+                    }
+                    else
+                    {
+                        previewFlag = string.Empty;
+                    }
+
+                    var verTokens = version.Split('.');
+                    var versionRange = string.Format("[{0}{3}, {1}.{2}{3})", version, verTokens[0], int.Parse(verTokens[1]) + 1, previewFlag);
+
+                    awsDependencies.Add(string.Format("AWSSDK.{0}", service), string.Format("{0}{1}", version, previewFlag));
+                }
+            }
+
+            var assemblyVersion = Configuration.ServiceFileVersion;
+            var assemblyName = Configuration.Namespace.Replace("Amazon.", "AWSSDK.");
+            var assemblyTitle = "AWSSDK - " + Configuration.ServiceModel.ServiceFullName;
+            var session = new Dictionary<string, object>
+            {
+                { "AssemblyName", assemblyName },
+                { "AssemblyTitle",  assemblyTitle },
+                { "AssemblyDescription", Configuration.AssemblyDescription },
+                { "AssemblyVersion", assemblyVersion },
+                { "AWSDependencies", awsDependencies },
+                { "BaseName", this.Configuration.BaseName },
+                { "ProjectFileConfigurations", this.ProjectFileConfigurations},
+                { "Documentation",string.IsNullOrEmpty(Configuration.ServiceModel.Documentation)?Configuration.Synopsis:Configuration.ServiceModel.Documentation },
+                { "SolutionFilePath", string.IsNullOrEmpty(Configuration.ServiceModel.Customizations.XamarinSolutionSamplePath)?"":Path.Combine(SampleFilesRoot,Configuration.ServiceModel.Customizations.XamarinSolutionSamplePath) },
+                { "Synopsis", Configuration.Synopsis}
+            };
+
+            session["NuGetPreviewFlag"] = Configuration.InPreview ? GeneratorDriver.NuGetPreviewFlag : "";
+
+            var componentGenerator = new Component { Session = session };
+            var text = componentGenerator.TransformText();
+            var yamlFilename = "component.yaml";
+            WriteFile(ComponentsFilesRoot, string.Empty, yamlFilename, text);
+
+            var detailsMarkdownGenerator = new Details { Session = session };
+            text = ConvertHtmlToMarkDown(detailsMarkdownGenerator.TransformText());
+            var detailsFileName = "Details.md";
+            WriteFile(ComponentsFilesRoot, string.Empty, detailsFileName, text);
+
+            var gettingStartedMarkdownGenerator = new GettingStarted { Session = session };
+            text = ConvertHtmlToMarkDown(gettingStartedMarkdownGenerator.TransformText());
+            var gettingStartedFileName = "GettingStarted.md";
+            WriteFile(ComponentsFilesRoot, string.Empty, gettingStartedFileName, text);
+        }
+
+        string ConvertHtmlToMarkDown(string text)
+        {
+            var htmlText = text.Replace("<fullname>", "<h1>").Replace("</fullname>", "</h1>");
+            htmlText = htmlText.Replace("<note>", "<i>").Replace("</note>", "</i>");
+            var converter = new ReverseMarkdown.Converter(new ReverseMarkdown.Config(unknownTagsConverter: "raise", githubFlavored: true));
+            try
+            {
+                var markdownText = converter.Convert(htmlText);
+                return markdownText;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("exception while parsing markdown for the service {0}", Configuration.ServiceModel.ServiceFullName);
+                Console.WriteLine("html text = {0}", text);
+                throw e;
+            }
+
+        }
+
         void GenerateNuspec()
         {
             var coreVersion = GenerationManifest.CoreVersion;
@@ -721,18 +834,18 @@ namespace ServiceClientGenerator
             if (Configuration.ServiceDependencies != null)
             {
                 var dependencies = Configuration.ServiceDependencies;
-                foreach(var kvp in dependencies)
+                foreach (var kvp in dependencies)
                 {
                     var service = kvp.Key;
                     var version = kvp.Value;
                     var dependentService = GenerationManifest.ServiceConfigurations.FirstOrDefault(x => string.Equals(x.Namespace, "Amazon." + service, StringComparison.InvariantCultureIgnoreCase));
 
                     string previewFlag;
-                    if(dependentService != null && dependentService.InPreview)
+                    if (dependentService != null && dependentService.InPreview)
                     {
                         previewFlag = GeneratorDriver.NuGetPreviewFlag;
                     }
-                    else if(string.Equals(service, "Core", StringComparison.InvariantCultureIgnoreCase) && GenerationManifest.DefaultToPreview)
+                    else if (string.Equals(service, "Core", StringComparison.InvariantCultureIgnoreCase) && GenerationManifest.DefaultToPreview)
                     {
                         previewFlag = GeneratorDriver.NuGetPreviewFlag;
                     }
@@ -793,7 +906,7 @@ namespace ServiceClientGenerator
             {
                 var constructorTests = new SimpleConstructorTests()
                 {
-                    Config = this.Configuration                    
+                    Config = this.Configuration
                 };
 
                 ExecuteCustomizationTestGenerator(constructorTests, this.Configuration.BaseName + "ConstructorTests.cs", "Constructors");
@@ -884,7 +997,7 @@ namespace ServiceClientGenerator
 
         void ExecuteGeneratorAssemblyInfo()
         {
-            var generator = new AssemblyInfo {Config = this.Configuration};
+            var generator = new AssemblyInfo { Config = this.Configuration };
             var text = generator.TransformText();
             WriteFile(ServiceFilesRoot, "Properties", "AssemblyInfo.cs", text);
         }
@@ -914,15 +1027,15 @@ namespace ServiceClientGenerator
         /// <param name="trimWhitespace"></param>
         /// <param name="replaceTabs"></param>
         /// <returns>Returns false if the file already exists and has the same content.</returns>
-        internal static bool WriteFile(string baseOutputDir, 
-                                       string subNamespace, 
-                                       string filename, 
-                                       string content, 
-                                       bool trimWhitespace = true, 
+        internal static bool WriteFile(string baseOutputDir,
+                                       string subNamespace,
+                                       string filename,
+                                       string content,
+                                       bool trimWhitespace = true,
                                        bool replaceTabs = true)
         {
-            var outputDir = !string.IsNullOrEmpty(subNamespace) 
-                ? Path.Combine(baseOutputDir, subNamespace.Replace('.', '\\')) 
+            var outputDir = !string.IsNullOrEmpty(subNamespace)
+                ? Path.Combine(baseOutputDir, subNamespace.Replace('.', '\\'))
                 : baseOutputDir;
 
             if (!Directory.Exists(outputDir))
@@ -995,7 +1108,7 @@ namespace ServiceClientGenerator
         {
             switch (this.Configuration.ServiceModel.Type)
             {
-                case ServiceType.Rest_Json:    
+                case ServiceType.Rest_Json:
                 case ServiceType.Json:
                     return new JsonRPCResponseUnmarshaller();
                 case ServiceType.Query:
@@ -1003,7 +1116,7 @@ namespace ServiceClientGenerator
                         return new AWSQueryEC2ResponseUnmarshaller();
                     return new AWSQueryResponseUnmarshaller();
                 case ServiceType.Rest_Xml:
-                    return new RestXmlResponseUnmarshaller();                    
+                    return new RestXmlResponseUnmarshaller();
                 default:
                     throw new Exception("No response unmarshaller for service type: " + this.Configuration.ServiceModel.Type);
             }
@@ -1017,7 +1130,7 @@ namespace ServiceClientGenerator
         {
             switch (this.Configuration.ServiceModel.Type)
             {
-                case ServiceType.Rest_Json:   
+                case ServiceType.Rest_Json:
                 case ServiceType.Json:
                     return new JsonRPCStructureUnmarshaller();
                 case ServiceType.Query:

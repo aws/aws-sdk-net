@@ -90,6 +90,12 @@
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File copy-sdkassemblies.ps1 -PublicKeyTokenToCheck $(CustomSnkPublicKeyToken)" />		
 	</Target>
 	
+	<!-- Xamarin Targets/Tasks -->
+	<Target Name="create-xam-package" DependsOnTargets="" Condition="Exists('$(xpkgexe)')">
+		<Message Text="starting xamarin component generation" />
+		
+	</Target>
+	
 	<!-- TEST TARGETS/TASKS -->
 
 	<Target Name="fxcop" DependsOnTargets="init;copy-assemblies" Condition="Exists('$(fxcopcmdexe)')">

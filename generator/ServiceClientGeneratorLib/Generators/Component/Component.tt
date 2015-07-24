@@ -1,0 +1,68 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+%YAML 1.2
+---
+summary: AWS <#=this.Session["BaseName"]#> SDK for Xamarin
+getting-started: GettingStarted.md
+details: Details.md
+license: ..\License.md
+icons: 
+  - ..\awsmobile_128.png
+  - ..\awsmobile_512.png
+publisher: Amazon Web Services
+name: AWS <#=this.Session["BaseName"]#> SDK
+id: aws-<#=this.Session["BaseName"].ToString().ToLowerInvariant()#>-sdk
+samples: 
+  - name: "<#=this.Session["BaseName"]#>-Sample"
+    path: <#=this.Session["SolutionFilePath"] #>
+publisher-url: http://aws.amazon.com/mobile/sdk/
+packages:
+  android:
+<#
+    foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
+    {
+#>
+  - <#=awsDependencyKVP.Key#>, Version=<#=awsDependencyKVP.Value#>
+<#
+    }
+#>
+  - <#=this.Session["AssemblyName"]#>,Version=<#=this.Session["AssemblyVersion"]#><#=this.Session["NuGetPreviewFlag"]#>
+  ios-unified:
+<#
+    foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
+    {
+#>
+  - <#=awsDependencyKVP.Key#>, Version=<#=awsDependencyKVP.Value#>
+<#
+    }
+#>
+  - <#=this.Session["AssemblyName"]#>,Version=<#=this.Session["AssemblyVersion"]#><#=this.Session["NuGetPreviewFlag"]#>
+  winphone-8.0:
+<#
+    foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
+    {
+#>
+  - <#=awsDependencyKVP.Key#>, Version=<#=awsDependencyKVP.Value#>
+<#
+    }
+#>
+  - <#=this.Session["AssemblyName"]#>,Version=<#=this.Session["AssemblyVersion"]#><#=this.Session["NuGetPreviewFlag"]#>
+  winphone-8.1:
+<#
+    foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
+    {
+#>
+  - <#=awsDependencyKVP.Key#>, Version=<#=awsDependencyKVP.Value#>
+<#
+    }
+#>
+  - <#=this.Session["AssemblyName"]#>,Version=<#=this.Session["AssemblyVersion"]#><#=this.Session["NuGetPreviewFlag"]#>
+<#
+//component doesnot support preview flags like nuget, so we dont add that
+#>
+version: <#=this.Session["AssemblyVersion"]#>
+is-shell: true
+...

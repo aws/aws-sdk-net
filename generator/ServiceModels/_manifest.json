@@ -253,7 +253,8 @@
             "authentication-service-name": "cognito-identity",
             "service-url": "http://cognito-identity.us-east-1.amazonaws.com",
             "synopsis": "Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.",
-            "dependencies": [ "SecurityToken" ]
+            "dependencies": [ "SecurityToken" ],
+            "enable-xamarin-component": true
         },
         {
             "active": true,
@@ -264,7 +265,8 @@
             "authentication-service-name": "cognito-sync",
             "service-url": "http://cognito-sync.us-east-1.amazonaws.com",
             "synopsis": "Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.",
-            "dependencies": [ "CognitoIdentity" ]
+            "dependencies": [ "CognitoIdentity" ],
+            "enable-xamarin-component": true
         },
         {
             "active": true,
@@ -315,7 +317,9 @@
             "authentication-service-name": "dynamodb",
             "service-url": "https://dynamodb.us-east-1.amazonaws.com/",
             "max-retries": 10,
-            "synopsis": "Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale."
+            "synopsis": "Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.",
+            "enable-xamarin-component": true
+		
         },
         {
             "active": true,
@@ -479,9 +483,48 @@
 			"authentication-service-name" : "machinelearning",
             "synopsis": "Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology."
 		},
-        {
+		{
             "active": true,
 
+            "model": "mobileanalytics",
+            "base-name": "MobileAnalytics",
+            "service-url": "https://mobileanalytics.us-east-1.amazonaws.com",
+            "authentication-service-name": "mobileanalytics",
+            "region-lookup-name": "mobileanalytics",
+            "synopsis": "Amazon Mobile Analytics is a service that lets you simply and cost effectively collect and analyze your application usage data. In addition to providing usage summary charts that are available for quick reference, Amazon Mobile Analytics enables you to set up automatic export of your data to Amazon S3 for use with other data analytics tools such as Amazon Redshift, Amazon Elastic MapReduce (EMR), Extract, Transform and Load (ETL) software, or your own data warehouse.",
+            "pcl-variants": [ "iOS" ],
+            "reference-dependencies": {
+                "Net35": [
+                    { "name": "System.Data.SQLite.Core", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.Core.1.0.97.0\\lib\\net20\\System.Data.SQLite.dll" },
+                    { "name": "System.Data.SQLite.Linq", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.Linq.1.0.97.0\\lib\\net20\\System.Data.SQLite.Linq.dll" }
+                ],
+                "Net45": [
+                    { "name": "System.Data.SQLite.Core", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.Core.1.0.97.0\\lib\\net45\\System.Data.SQLite.dll" },
+                    { "name": "System.Data.SQLite.EF6", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.EF6.1.0.97.0\\lib\\net45\\System.Data.SQLite.EF6.dll" }
+                ],
+                "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.dll" } ],
+                "iOS": [
+                    { "name": "SQLitePCL", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.dll" },
+                    { "name": "SQLitePCL.Ext", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.Ext.dll" }
+                ]
+            },
+            "nuget-dependencies": {
+                "Net35": [
+                    { "name": "System.Data.SQLite.Core", "version": "1.0.97.0" },
+                    { "name": "System.Data.SQLite.Linq", "version": "1.0.97.0" }
+                ],
+                "Net45": [
+                    { "name": "System.Data.SQLite.Core", "version": "1.0.97.0" },
+                    { "name": "System.Data.SQLite.EF6", "version": "1.0.97.0" }
+                ],
+                "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ],
+                "iOS": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ]
+            },
+            "enable-xamarin-component": true
+        },
+        {
+            "active": true,
+            "enable-xamarin-component": true,
             "model": "mobileanalytics",
             "base-name": "MobileAnalytics",
             "service-url": "https://mobileanalytics.us-east-1.amazonaws.com",
@@ -567,7 +610,7 @@
         },
         {
             "active": true,
-
+            "enable-xamarin-component": true,
             "model": "s3",
             "base-name": "S3",
             "region-lookup-name": "s3",
@@ -577,7 +620,6 @@
         },
         {
             "active": true,
-
             "model": "sts",
             "namespace": "Amazon.SecurityToken",
             "base-name": "SecurityTokenService",
@@ -608,7 +650,7 @@
         },
         {
             "active": true,
-
+            "enable-xamarin-component": true,
             "model": "sns",
             "base-name": "SimpleNotificationService",
             "region-lookup-name": "sns",
