@@ -864,10 +864,15 @@ namespace ServiceClientGenerator
             var assemblyVersion = Configuration.ServiceFileVersion;
             var assemblyName = Configuration.Namespace.Replace("Amazon.", "AWSSDK.");
             var assemblyTitle = "AWSSDK - " + Configuration.ServiceModel.ServiceFullName;
+            var nugetTitle = assemblyTitle;
+            if (!string.IsNullOrEmpty(Configuration.NugetPackageTitleSuffix))
+                nugetTitle += " " + Configuration.NugetPackageTitleSuffix;
+
             var session = new Dictionary<string, object>
             {
                 { "AssemblyName", assemblyName },
                 { "AssemblyTitle",  assemblyTitle },
+                { "NuGetTitle",  nugetTitle },
                 { "AssemblyDescription", Configuration.AssemblyDescription },
                 { "AssemblyVersion", assemblyVersion },
                 { "AWSDependencies", awsDependencies },

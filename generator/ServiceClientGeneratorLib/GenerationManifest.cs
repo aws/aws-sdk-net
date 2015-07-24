@@ -25,6 +25,7 @@ namespace ServiceClientGenerator
             public const string LockedApiVersionKey = "locked-api-version";
             public const string BaseNameKey = "base-name";
             public const string RegionLookupNameKey = "region-lookup-name";
+            public const string NugetPackageTitleSuffix = "nuget-package-title-suffix";
             public const string AuthenticationServiceNameKey = "authentication-service-name";
             public const string ServiceUrlKey = "service-url";
             public const string DefaultRegionKey = "default-region";
@@ -153,6 +154,9 @@ namespace ServiceClientGenerator
                     config.PclVariants = (from object pcf in modelNode[ModelsSectionKeys.PclVariantsKey]
                      select pcf.ToString()).ToList();
                 }
+
+                if (modelNode[ModelsSectionKeys.NugetPackageTitleSuffix] != null)
+                    config.NugetPackageTitleSuffix = modelNode[ModelsSectionKeys.NugetPackageTitleSuffix].ToString();
                 
 
                 if (modelNode[ModelsSectionKeys.ReferenceDependenciesKey] != null)

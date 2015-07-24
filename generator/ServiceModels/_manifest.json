@@ -261,10 +261,11 @@
 
             "model": "cognito-sync",
             "base-name": "CognitoSync",
+			"nuget-package-title-suffix" : "(Low Level Service Client)"
             "region-lookup-name": "cognito-sync",
             "authentication-service-name": "cognito-sync",
             "service-url": "http://cognito-sync.us-east-1.amazonaws.com",
-            "synopsis": "Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.",
+            "synopsis": "This is the low level service client for Amazon Cognito Sync. Most users of Amazon Cognito Sync should use the high level abstraction AWSSDK.SyncManager to interact with this service.",
             "dependencies": [ "CognitoIdentity" ],
             "enable-xamarin-component": true
         },
