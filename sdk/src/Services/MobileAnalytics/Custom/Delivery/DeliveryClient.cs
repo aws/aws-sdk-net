@@ -247,8 +247,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             }
             catch (Amazon.MobileAnalytics.Model.BadRequestException e)
             {
-
-                _logger.Error(e, "Get BadRequestException from Mobile Analytics client : Error Code is {0}", e.ErrorCode);
+                _logger.Error(e, "Get BadRequestException from Mobile Analytics client : {0}", e.ToString());
 
                 // Delete events in any of the three error types.
                 if (e.ErrorCode.Equals("ValidationException", StringComparison.CurrentCultureIgnoreCase) ||
@@ -275,7 +274,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             {
                 if (resp != null && resp.HttpStatusCode == HttpStatusCode.Accepted)
                 {
-                    _logger.InfoFormat("Mobile Analytics client successfully deliver events to service. Delete those events from local storage.");
+                    _logger.InfoFormat("Mobile Analytics client successfully deliver {0} events to service. Delete those events from local storage.", rowIds.Count);
                     _eventStore.DeleteEvent(rowIds);
                 }
             }
