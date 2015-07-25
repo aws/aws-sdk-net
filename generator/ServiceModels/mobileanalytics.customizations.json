@@ -1,7 +1,4 @@
 {    
-	"unityOverrides":{
-		"handleXAmznErrorTypeHeader" : true
-	}
 	"dataTypeSwap" : {
 		"Session" : {
 			"startTimestamp" : {

@@ -1,0 +1,36 @@
+%YAML 1.2
+---
+summary: AWS CognitoIdentity SDK for Xamarin
+getting-started: GettingStarted.md
+details: Details.md
+license: ..\License.md
+icons: 
+  - ..\awsmobile_128.png
+  - ..\awsmobile_512.png
+publisher: Amazon Web Services
+name: AWS CognitoIdentity SDK
+id: aws-cognitoidentity-sdk
+samples: 
+  - name: "CognitoIdentity-Sample"
+    path: ..\..\..\..\Aws-sdk-net-samples\XamarinSamples\CognitoIdentity\BYOISample.sln
+publisher-url: http://aws.amazon.com/mobile/sdk/
+packages:
+  android:
+  - AWSSDK.SecurityToken, Version=3.0.0.6-preview
+  - AWSSDK.Core, Version=3.0.0.7-preview
+  - AWSSDK.CognitoIdentity,Version=3.0.1.4-preview
+  ios-unified:
+  - AWSSDK.SecurityToken, Version=3.0.0.6-preview
+  - AWSSDK.Core, Version=3.0.0.7-preview
+  - AWSSDK.CognitoIdentity,Version=3.0.1.4-preview
+  winphone-8.0:
+  - AWSSDK.SecurityToken, Version=3.0.0.6-preview
+  - AWSSDK.Core, Version=3.0.0.7-preview
+  - AWSSDK.CognitoIdentity,Version=3.0.1.4-preview
+  winphone-8.1:
+  - AWSSDK.SecurityToken, Version=3.0.0.6-preview
+  - AWSSDK.Core, Version=3.0.0.7-preview
+  - AWSSDK.CognitoIdentity,Version=3.0.1.4-preview
+version: 3.0.1.4
+is-shell: true
+...

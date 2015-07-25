@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReverseMarkdown, Version=0.1.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReverseMarkdown.0.1.12.0\lib\net45\ReverseMarkdown.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,6 +51,21 @@
     <Compile Include="CustomizationCompiler.cs" />
     <Compile Include="Customizations.cs" />
     <Compile Include="GenerationManifest.cs" />
+    <Compile Include="Generators\Component\Component.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Component.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\Component\Details.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Details.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\Component\GettingStarted.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GettingStarted.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generators\NuGet\CoreNuspec.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -317,6 +340,18 @@
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Generators\Component\Component.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Component.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\Component\Details.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Details.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\Component\GettingStarted.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GettingStarted.cs</LastGenOutput>
+    </None>
     <None Include="Generators\NuGet\CoreNuspec.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>CoreNuspec.cs</LastGenOutput>
@@ -513,6 +548,7 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>PackagesConfig.cs</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -7,7 +7,7 @@
 <package> 
   <metadata> 
     <id><#=this.Session["AssemblyName"]#></id>
-    <title><#=this.Session["AssemblyTitle"]#></title>
+    <title><#=this.Session["NuGetTitle"]#></title>
     <version><#=this.Session["AssemblyVersion"]#><#=this.Session["NuGetPreviewFlag"]#></version> 
     <authors>Amazon Web Services</authors>
     <description><#=this.Session["AssemblyDescription"]#></description> 

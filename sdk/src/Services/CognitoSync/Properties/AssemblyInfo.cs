@@ -8,9 +8,9 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CognitoSync")]
 #if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Cognito Sync. Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Cognito Sync. This is the low level service client for Amazon Cognito Sync. Most users of Amazon Cognito Sync should use the high level abstraction AWSSDK.SyncManager to interact with this service.")]
 #elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Cognito Sync. Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Cognito Sync. This is the low level service client for Amazon Cognito Sync. Most users of Amazon Cognito Sync should use the high level abstraction AWSSDK.SyncManager to interact with this service.")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Core Runtime")]
 #else
@@ -39,8 +39,8 @@ using System.Runtime.CompilerServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("3.0")]
-[assembly: AssemblyFileVersion("3.0.0.6")]
+[assembly: AssemblyVersion("3.1")]
+[assembly: AssemblyFileVersion("3.1.0.0")]
 
 #if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]
