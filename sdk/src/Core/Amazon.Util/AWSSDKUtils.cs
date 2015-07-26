@@ -302,13 +302,10 @@ namespace Amazon.Util
             if (queueIndex > 0)
                 return serviceAndRegion.Substring(0, queueIndex - 1);
 
-            char separator;
             if (serviceAndRegion.StartsWith("s3-", StringComparison.Ordinal))
-                separator = '-';
-            else
-                separator = '.';
+                serviceAndRegion = "s3." + serviceAndRegion.Substring(3);
 
-            int separatorIndex = serviceAndRegion.IndexOf(separator);
+            int separatorIndex = serviceAndRegion.LastIndexOf('.');
             if (separatorIndex == -1)
                 return DefaultRegion;
 
