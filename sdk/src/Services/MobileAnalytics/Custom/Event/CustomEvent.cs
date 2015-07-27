@@ -114,15 +114,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         private const int MAX_KEY_SIZE = 50;
         private const int MAX_ATTRIB_VALUE_SIZE = 255;
         
-        #region constructor
-        /// <summary>
-        /// Initializes a new instance of the
-        /// <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.CustomEvent"/> class.
-        /// </summary>
-        public CustomEvent() : this("defaultEventType")
-        {
-        } 
-        
+        #region constructor        
         /// <summary>
         /// Initializes a new instance of the
         /// <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.CustomEvent"/> class.
@@ -130,6 +122,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// <param name="eventType">Event type.</param>
         public CustomEvent(string eventType)
         {
+            if (null == eventType)
+                throw new ArgumentNullException("eventType");
+
             this.EventType = eventType;
         } 
         #endregion
