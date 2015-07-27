@@ -8,7 +8,7 @@ icons:
   - ..\awsmobile_128.png
   - ..\awsmobile_512.png
 publisher: Amazon Web Services
-name: AWS S3 SDK
+name: AWSSDK - Amazon Simple Storage Service
 id: aws-s3-sdk
 samples: 
   - name: "S3-Sample"

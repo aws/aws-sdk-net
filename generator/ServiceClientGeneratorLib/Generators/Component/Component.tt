@@ -13,7 +13,7 @@ icons:
   - ..\awsmobile_128.png
   - ..\awsmobile_512.png
 publisher: Amazon Web Services
-name: AWS <#=this.Session["BaseName"]#> SDK
+name: <#=this.Session["ComponentTitle"]#>
 id: aws-<#=this.Session["BaseName"].ToString().ToLowerInvariant()#>-sdk
 samples: 
   - name: "<#=this.Session["BaseName"]#>-Sample"

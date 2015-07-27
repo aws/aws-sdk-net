@@ -8,7 +8,7 @@ icons:
   - ..\awsmobile_128.png
   - ..\awsmobile_512.png
 publisher: Amazon Web Services
-name: AWS MobileAnalytics SDK
+name: AWSSDK - Amazon Mobile Analytics
 id: aws-mobileanalytics-sdk
 samples: 
   - name: "MobileAnalytics-Sample"

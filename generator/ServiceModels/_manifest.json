@@ -261,7 +261,7 @@
 
             "model": "cognito-sync",
             "base-name": "CognitoSync",
-			"nuget-package-title-suffix" : "(Low Level Service Client)"
+			"nuget-package-title-suffix" : "(Low Level Service Client)",
             "region-lookup-name": "cognito-sync",
             "authentication-service-name": "cognito-sync",
             "service-url": "http://cognito-sync.us-east-1.amazonaws.com",

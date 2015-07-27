@@ -8,7 +8,7 @@ icons:
   - ..\awsmobile_128.png
   - ..\awsmobile_512.png
 publisher: Amazon Web Services
-name: AWS CognitoIdentity SDK
+name: AWSSDK - Amazon Cognito Identity
 id: aws-cognitoidentity-sdk
 samples: 
   - name: "CognitoIdentity-Sample"

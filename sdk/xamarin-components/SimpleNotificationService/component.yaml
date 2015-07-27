@@ -8,7 +8,7 @@ icons:
   - ..\awsmobile_128.png
   - ..\awsmobile_512.png
 publisher: Amazon Web Services
-name: AWS SimpleNotificationService SDK
+name: AWSSDK - Amazon Simple Notification Service
 id: aws-simplenotificationservice-sdk
 samples: 
   - name: "SimpleNotificationService-Sample"

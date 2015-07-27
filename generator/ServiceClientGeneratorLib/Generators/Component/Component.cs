@@ -37,14 +37,14 @@ namespace ServiceClientGenerator.Generators.Component
             #line hidden
             this.Write(" SDK for Xamarin\r\ngetting-started: GettingStarted.md\r\ndetails: Details.md\r\nlicens" +
                     "e: ..\\License.md\r\nicons: \r\n  - ..\\awsmobile_128.png\r\n  - ..\\awsmobile_512.png\r\np" +
-                    "ublisher: Amazon Web Services\r\nname: AWS ");
+                    "ublisher: Amazon Web Services\r\nname: ");
             
             #line 16 "C:\dev\DotNet\xamarin\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Component\Component.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BaseName"]));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["ComponentTitle"]));
             
             #line default
             #line hidden
-            this.Write(" SDK\r\nid: aws-");
+            this.Write("\r\nid: aws-");
             
             #line 17 "C:\dev\DotNet\xamarin\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Component\Component.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BaseName"].ToString().ToLowerInvariant()));

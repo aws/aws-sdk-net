@@ -8,7 +8,7 @@ icons:
   - ..\awsmobile_128.png
   - ..\awsmobile_512.png
 publisher: Amazon Web Services
-name: AWS DynamoDB SDK
+name: AWSSDK - Amazon DynamoDB
 id: aws-dynamodb-sdk
 samples: 
   - name: "DynamoDB-Sample"
