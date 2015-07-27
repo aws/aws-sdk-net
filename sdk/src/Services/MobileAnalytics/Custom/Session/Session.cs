@@ -80,7 +80,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             _appId = appID;
 #if BCL
             // TODO: complete app data path
-            _sessionStorageFileFullPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\" + AppDomain.CurrentDomain.DomainManager.EntryAssembly.GetName().Name, appID + _sessionStorageFileName);
+            _sessionStorageFileName = _sessionStorageFileName;
 #elif PCL
             _sessionStorageFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, appID + _sessionStorageFileName);
 #endif
