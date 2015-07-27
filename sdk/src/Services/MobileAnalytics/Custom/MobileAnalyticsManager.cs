@@ -331,7 +331,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 
         #endregion
 
+
         #region private
+#if BCL
         static void ValidateParameters()
         {
             if (string.IsNullOrEmpty(AWSConfigs.ApplicationName))
@@ -340,6 +342,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
                     "The application name can be configured through app.config/web.config or by setting the Amazon.AWSConfigs.ApplicationName property.");
             }
         }
+#endif
         #endregion
 
     }
