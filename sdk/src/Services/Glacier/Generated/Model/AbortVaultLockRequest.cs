@@ -28,23 +28,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Container for the parameters to the SetDataRetrievalPolicy operation.
-    /// This operation sets and then enacts a data retrieval policy in the region specified
-    /// in the PUT request. You can set one policy per region for an AWS account. The policy
-    /// is enacted within a few minutes of a successful PUT operation. 
+    /// Container for the parameters to the AbortVaultLock operation.
+    /// This operation aborts the vault locking process if the vault lock is not in the <code>Locked</code>
+    /// state. If the vault lock is in the <code>Locked</code> state when this operation is
+    /// requested, the operation returns an <code>AccessDeniedException</code> error. Aborting
+    /// the vault locking process removes the vault lock policy from the specified vault.
+    /// 
     /// 
     ///  
     /// <para>
-    /// The set policy operation does not affect retrieval jobs that were in progress before
-    /// the policy was enacted. For more information about data retrieval policies, see <a
-    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon
-    /// Glacier Data Retrieval Policies</a>. 
+    /// A vault lock is put into the <code>InProgress</code> state by calling <a>InitiateVaultLock</a>.
+    /// A vault lock is put into the <code>Locked</code> state by calling <a>CompleteVaultLock</a>.
+    /// You can get the state of a vault lock by calling <a>GetVaultLock</a>. For more information
+    /// about the vault locking process, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
+    /// Glacier Vault Lock</a>. For more information about vault lock policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
+    /// Glacier Access Control with Vault Lock Policies</a>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// This operation is idempotent. You can successfully invoke this operation multiple
+    /// times, if the vault lock is in the <code>InProgress</code> state or if there is no
+    /// policy associated with the vault.
     /// </para>
     /// </summary>
-    public partial class SetDataRetrievalPolicyRequest : AmazonGlacierRequest
+    public partial class AbortVaultLockRequest : AmazonGlacierRequest
     {
         private string _accountId;
-        private DataRetrievalPolicy _policy;
+        private string _vaultName;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -70,21 +80,21 @@ namespace Amazon.Glacier.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Policy. 
+        /// Gets and sets the property VaultName. 
         /// <para>
-        /// The data retrieval policy in JSON format.
+        /// The name of the vault.
         /// </para>
         /// </summary>
-        public DataRetrievalPolicy Policy
+        public string VaultName
         {
-            get { return this._policy; }
-            set { this._policy = value; }
+            get { return this._vaultName; }
+            set { this._vaultName = value; }
         }
 
-        // Check to see if Policy property is set
-        internal bool IsSetPolicy()
+        // Check to see if VaultName property is set
+        internal bool IsSetVaultName()
         {
-            return this._policy != null;
+            return this._vaultName != null;
         }
 
     }
