@@ -54,6 +54,9 @@ namespace Amazon.Runtime.Internal.Settings
 
             this._encryptedKeys.Add(SettingsConstants.EC2InstanceUserName);
             this._encryptedKeys.Add(SettingsConstants.EC2InstancePassword);
+
+            this._encryptedKeys.Add(SettingsConstants.ProxyUsernameEncrypted);
+            this._encryptedKeys.Add(SettingsConstants.ProxyPasswordEncrypted);
         }
 
         #endregion
