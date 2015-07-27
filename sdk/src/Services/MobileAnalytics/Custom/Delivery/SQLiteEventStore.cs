@@ -71,7 +71,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             _maConfig = maConfig;
 #if BCL
             // TODO: complete app data path on BCL
-            _dbFileFullPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\" + AppDomain.CurrentDomain.DomainManager.EntryAssembly.GetName().Name, dbFileName);
+            _dbFileFullPath = dbFileName;
 #elif PCL
             _dbFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, dbFileName);
 #endif

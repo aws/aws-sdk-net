@@ -1004,5 +1004,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 request.ExclusiveStartKey = result.LastEvaluatedKey;
             } while (result.LastEvaluatedKey != null && result.LastEvaluatedKey.Count > 0);
         }
+
+        [TestMethod]
+        public void TestDynamoDBStreamWithServiceURL()
+        {
+            var config = new AmazonDynamoDBStreamsConfig();
+            config.ServiceURL = "https://streams.dynamodb.us-east-1.amazonaws.com/";
+            using(var client = new AmazonDynamoDBStreamsClient(config))
+            {
+                var response = client.ListStreams();
+                Assert.IsNotNull(response.Streams);
+            }
+        }
     }
 }
