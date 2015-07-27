@@ -120,7 +120,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             ThreadPool.QueueUserWorkItem(new WaitCallback(delegate
             {
 #elif PCL || BCL45
-            Task.Run( () =>
+            Task.Run(() =>
             {
 #endif
                 string eventString = JsonMapper.ToJson(eventObject);
@@ -245,22 +245,19 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 resp = await _mobileAnalyticsLowLevelClient.PutEventsAsync(putRequest);
 #endif
             }
-            catch (Amazon.MobileAnalytics.Model.BadRequestException e)
-            {
-                _logger.Error(e, "Get BadRequestException from Mobile Analytics client : {0}", e.ToString());
-
-                // Delete events in any of the three error types.
-                if (e.ErrorCode.Equals("ValidationException", StringComparison.CurrentCultureIgnoreCase) ||
-                     e.ErrorCode.Equals("SerializationException", StringComparison.CurrentCultureIgnoreCase) ||
-                     e.ErrorCode.Equals("BadRequestException", StringComparison.CurrentCultureIgnoreCase))
-                {
-                    _logger.InfoFormat("Exception is not retriable. So we delete those events from local storage.");
-                    _eventStore.DeleteEvent(rowIds);
-                }
-            }
             catch (AmazonServiceException e)
             {
-                _logger.Error(e, "Get AmazonServiceException from Mobile Analytics client : ", e.ToString());
+                _logger.InfoFormat("Get AmazonServiceException: error code : {0} ; error type : {1} ; request id : {2} ; status code : {3} ", e.ErrorCode, e.ErrorType, e.RequestId, e.StatusCode);
+
+                // Delete events in any of the three error codes.
+                if (e.StatusCode == HttpStatusCode.BadRequest &&
+                     (e.ErrorCode.Equals("ValidationException", StringComparison.CurrentCultureIgnoreCase) ||
+                      e.ErrorCode.Equals("SerializationException", StringComparison.CurrentCultureIgnoreCase) ||
+                      e.ErrorCode.Equals("BadRequestException", StringComparison.CurrentCultureIgnoreCase)))
+                {
+                    _logger.InfoFormat("This error code is not retriable. So we delete those events from local storage.");
+                    _eventStore.DeleteEvent(rowIds);
+                }
             }
             catch (AmazonClientException e)
             {

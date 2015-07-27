@@ -185,6 +185,68 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreEqual(HttpStatusCode.Accepted, PutResponse.HttpStatusCode);
 
         }
+
+
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
+        public void TestLowLevelAPIErrorCaseEmptyEvent()
+        {
+            PutEventsRequest putRequest = new PutEventsRequest();
+            string clientContext = BuildClientContext();
+            Console.WriteLine("client context is {0}", clientContext);
+            putRequest.ClientContext = Convert.ToBase64String(
+                            System.Text.Encoding.UTF8.GetBytes(clientContext));
+            putRequest.ClientContextEncoding = "base64";
+            PutEventsResponse PutResponse = null;
+
+            bool hasCatchException = false;
+            try
+            {
+                PutResponse = Client.PutEvents(putRequest);
+            }
+            catch (AmazonServiceException e) {
+                Console.WriteLine("Get AmazonServiceException: error code : {0} ; error type : {1} ; request id : {2} ; status code : {3} ",e.ErrorCode, e.ErrorType, e.RequestId, e.StatusCode);
+                Assert.AreEqual(e.StatusCode, HttpStatusCode.BadRequest);
+                Assert.AreEqual(true, e.ErrorCode.Equals("ValidationException", StringComparison.InvariantCultureIgnoreCase));
+                hasCatchException = true;
+            }
+
+            if (!hasCatchException)
+                Assert.Fail();
+        }
+
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
+        public void TestLowLevelAPIErrorCaseWrongClientContext()
+        {
+            List<Amazon.MobileAnalytics.Model.Event> listEvent = new List<Amazon.MobileAnalytics.Model.Event>();
+            listEvent.Add(BuildCustomEvent());
+
+            PutEventsRequest putRequest = new PutEventsRequest();
+            putRequest.Events = listEvent;
+            string clientContext = BuildClientContext();
+            Console.WriteLine("client context is {0}", clientContext);
+            putRequest.ClientContext = Convert.ToBase64String(
+                            System.Text.Encoding.UTF8.GetBytes(clientContext));
+            putRequest.ClientContextEncoding = "base32";
+            PutEventsResponse PutResponse = null;
+
+            bool hasCatchException = false;
+            try
+            {
+                PutResponse = Client.PutEvents(putRequest);
+            }
+            catch (AmazonServiceException e)
+            {
+                Console.WriteLine("Get AmazonServiceException: error code : {0} ; error type : {1} ; request id : {2} ; status code : {3} ", e.ErrorCode, e.ErrorType, e.RequestId, e.StatusCode);
+                Assert.AreEqual(e.StatusCode, HttpStatusCode.BadRequest);
+                Assert.AreEqual(true, e.ErrorCode.Equals("BadRequestException", StringComparison.InvariantCultureIgnoreCase));
+                hasCatchException = true;
+            }
+
+            if (!hasCatchException)
+                Assert.Fail();
+        }
         #endregion
 
 
