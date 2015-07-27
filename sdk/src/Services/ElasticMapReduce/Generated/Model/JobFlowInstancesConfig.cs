@@ -178,10 +178,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property HadoopVersion. 
         /// <para>
-        /// The Hadoop version for the job flow. Valid inputs are "0.18", "0.20", "0.20.205",
-        /// "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is
-        /// used, unless the AmiVersion parameter is set in the RunJobFlow call, in which case
-        /// the default version of Hadoop for that AMI version is used.
+        /// The Hadoop version for the job flow. Valid inputs are "0.18" (deprecated), "0.20"
+        /// (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do not
+        /// set this value, the default of 0.18 is used, unless the AmiVersion parameter is set
+        /// in the RunJobFlow call, in which case the default version of Hadoop for that AMI version
+        /// is used.
         /// </para>
         /// </summary>
         public string HadoopVersion
@@ -235,7 +236,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property KeepJobFlowAliveWhenNoSteps. 
         /// <para>
-        /// Specifies whether the job flow should terminate after completing all steps.
+        /// Specifies whether the job flow should be kept alive after completing all steps.
         /// </para>
         /// </summary>
         public bool KeepJobFlowAliveWhenNoSteps

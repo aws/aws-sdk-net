@@ -65,12 +65,15 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private string _additionalInfo;
         private string _amiVersion;
+        private List<Application> _applications = new List<Application>();
         private List<BootstrapActionConfig> _bootstrapActions = new List<BootstrapActionConfig>();
+        private List<Configuration> _configurations = new List<Configuration>();
         private JobFlowInstancesConfig _instances;
         private string _jobFlowRole;
         private string _logUri;
         private string _name;
         private List<SupportedProductConfig> _newSupportedProducts = new List<SupportedProductConfig>();
+        private string _releaseLabel;
         private string _serviceRole;
         private List<StepConfig> _steps = new List<StepConfig>();
         private List<string> _supportedProducts = new List<string>();
@@ -112,13 +115,17 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AmiVersion. 
+        /// Gets and sets the property AmiVersion. <note>
+        /// <para>
+        /// For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use
+        /// ReleaseLabel.
+        /// </para>
+        /// </note> 
         /// <para>
         /// The version of the Amazon Machine Image (AMI) to use when launching Amazon EC2 instances
         /// in the job flow. The following values are valid: 
         /// </para>
-        ///  <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of the AMI to
-        /// use, for example, "2.0"</li> </ul> 
+        ///  <ul> <li>The version number of the AMI to use, for example, "2.0."</li> </ul> 
         /// <para>
         /// If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both
         /// Hadoop 0.18 and 0.20) you can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code>
@@ -145,6 +152,29 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Applications. <note>
+        /// <para>
+        /// Amazon EMR releases 4.x or later.
+        /// </para>
+        /// </note> 
+        /// <para>
+        /// A list of applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout",
+        /// "Pig", and "Spark." They are case insensitive.
+        /// </para>
+        /// </summary>
+        public List<Application> Applications
+        {
+            get { return this._applications; }
+            set { this._applications = value; }
+        }
+
+        // Check to see if Applications property is set
+        internal bool IsSetApplications()
+        {
+            return this._applications != null && this._applications.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property BootstrapActions. 
         /// <para>
         ///  A list of bootstrap actions that will be run before Hadoop is started on the cluster
@@ -161,6 +191,28 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetBootstrapActions()
         {
             return this._bootstrapActions != null && this._bootstrapActions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Configurations. <note>
+        /// <para>
+        /// Amazon EMR releases 4.x or later.
+        /// </para>
+        /// </note> 
+        /// <para>
+        /// The list of configurations supplied for the EMR cluster you are creating.
+        /// </para>
+        /// </summary>
+        public List<Configuration> Configurations
+        {
+            get { return this._configurations; }
+            set { this._configurations = value; }
+        }
+
+        // Check to see if Configurations property is set
+        internal bool IsSetConfigurations()
+        {
+            return this._configurations != null && this._configurations.Count > 0; 
         }
 
         /// <summary>
@@ -240,17 +292,26 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NewSupportedProducts. 
+        /// Gets and sets the property NewSupportedProducts. <note>
+        /// <para>
+        /// For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use
+        /// Applications.
+        /// </para>
+        /// </note> 
         /// <para>
         /// A list of strings that indicates third-party software to use with the job flow that
         /// accepts a user argument list. EMR accepts and forwards the argument list to the corresponding
         /// installation script as bootstrap action arguments. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
         /// a Job Flow on the MapR Distribution for Hadoop</a>. Currently supported values are:
         /// </para>
-        ///  <ul> <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li> <li>"mapr-m5"
-        /// - launch the job flow using MapR M5 Edition.</li> <li>"mapr" with the user arguments
+        ///  <ul> <li>"mapr-m3" - launch the cluster using MapR M3 Edition.</li> <li>"mapr-m5"
+        /// - launch the cluster using MapR M5 Edition.</li> <li>"mapr" with the user arguments
         /// specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or
-        /// M5 Edition respectively.</li> </ul>
+        /// M5 Edition respectively.</li> <li>"mapr-m7" - launch the cluster using MapR M7 Edition.</li>
+        /// <li>"hunk" - launch the cluster with the Hunk Big Data Analtics Platform.</li> <li>"hue"-
+        /// launch the cluster with Hue installed.</li> <li>"spark" - launch the cluster with
+        /// Apache Spark installed.</li> <li>"ganglia" - launch the cluster with the Ganglia Monitoring
+        /// System installed.</li> </ul>
         /// </summary>
         public List<SupportedProductConfig> NewSupportedProducts
         {
@@ -262,6 +323,29 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetNewSupportedProducts()
         {
             return this._newSupportedProducts != null && this._newSupportedProducts.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReleaseLabel. <note>
+        /// <para>
+        /// Amazon EMR releases 4.x or later.
+        /// </para>
+        /// </note> 
+        /// <para>
+        /// The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use
+        /// amiVersion instead instead of ReleaseLabel.
+        /// </para>
+        /// </summary>
+        public string ReleaseLabel
+        {
+            get { return this._releaseLabel; }
+            set { this._releaseLabel = value; }
+        }
+
+        // Check to see if ReleaseLabel property is set
+        internal bool IsSetReleaseLabel()
+        {
+            return this._releaseLabel != null;
         }
 
         /// <summary>
@@ -302,7 +386,12 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SupportedProducts. 
+        /// Gets and sets the property SupportedProducts. <note>
+        /// <para>
+        /// For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use
+        /// Applications.
+        /// </para>
+        /// </note> 
         /// <para>
         /// A list of strings that indicates third-party software to use with the job flow. For
         /// more information, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use

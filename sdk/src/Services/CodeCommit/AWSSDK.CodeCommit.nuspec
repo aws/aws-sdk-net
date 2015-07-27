@@ -5,7 +5,7 @@
     <title>AWSSDK - AWS CodeCommit</title>
     <version>3.1.0.0</version> 
     <authors>Amazon Web Services</authors>
-    <description>AWS CodeCommit</description> 
+    <description>AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories.</description> 
     <language>en-US</language>
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
     <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>

@@ -76,6 +76,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoTerminate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Configurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Configuration, ConfigurationUnmarshaller>(ConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.Configurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Ec2InstanceAttributes", targetDepth))
                 {
                     var unmarshaller = Ec2InstanceAttributesUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.NormalizedInstanceHours = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReleaseLabel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReleaseLabel = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RequestedAmiVersion", targetDepth))

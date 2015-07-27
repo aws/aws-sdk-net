@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InstanceGroupConfig Marshaller
+    /// Configuration Marshaller
     /// </summary>       
-    public class InstanceGroupConfigMarshaller : IRequestMarshaller<InstanceGroupConfig, JsonMarshallerContext> 
+    public class ConfigurationMarshaller : IRequestMarshaller<Configuration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,12 +43,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InstanceGroupConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(Configuration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBidPrice())
+            if(requestObject.IsSetClassification())
             {
-                context.Writer.WritePropertyName("BidPrice");
-                context.Writer.Write(requestObject.BidPrice);
+                context.Writer.WritePropertyName("Classification");
+                context.Writer.Write(requestObject.Classification);
             }
 
             if(requestObject.IsSetConfigurations())
@@ -67,34 +67,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetInstanceCount())
+            if(requestObject.IsSetProperties())
             {
-                context.Writer.WritePropertyName("InstanceCount");
-                context.Writer.Write(requestObject.InstanceCount);
-            }
+                context.Writer.WritePropertyName("Properties");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectPropertiesKvp in requestObject.Properties)
+                {
+                    context.Writer.WritePropertyName(requestObjectPropertiesKvp.Key);
+                    var requestObjectPropertiesValue = requestObjectPropertiesKvp.Value;
 
-            if(requestObject.IsSetInstanceRole())
-            {
-                context.Writer.WritePropertyName("InstanceRole");
-                context.Writer.Write(requestObject.InstanceRole);
-            }
-
-            if(requestObject.IsSetInstanceType())
-            {
-                context.Writer.WritePropertyName("InstanceType");
-                context.Writer.Write(requestObject.InstanceType);
-            }
-
-            if(requestObject.IsSetMarket())
-            {
-                context.Writer.WritePropertyName("Market");
-                context.Writer.Write(requestObject.Market);
-            }
-
-            if(requestObject.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                        context.Writer.Write(requestObjectPropertiesValue);
+                }
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -102,7 +86,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static InstanceGroupConfigMarshaller Instance = new InstanceGroupConfigMarshaller();
+        public readonly static ConfigurationMarshaller Instance = new ConfigurationMarshaller();
 
     }
 }
