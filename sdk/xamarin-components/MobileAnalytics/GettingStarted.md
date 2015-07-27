@@ -1,4 +1,4 @@
-If you’re new to the AWS MobileAnalytics SDK, you’ll probably want to look first at [Getting Started with the AWS MobileAnalytics SDK for .NET/Xamarin](deep link path) which explains how to set up the SDK and how to get started using AWS MobileAnalytics services from an Xamarin application.
+If you’re new to the AWS SDK for .Net/Xamarin, you’ll probably want to look first at [Getting Started with the AWS SDK for .NET/Xamarin](http://docs.aws.amazon.com/mobile/sdkforxamarin/developerguide/) which explains how to set up the SDK and how to get started using AWS Services from an Xamarin application.
 
 After you’ve set up the SDK, you can start working with the mobile clients for Amazon Web Services. The mobile clients are described in the service-specific topics. No matter which services you’re using, you should provide AWS credentials to your app via Amazon Cognito. The Amazon Cognito credentials provider is discussed briefly in the various mobile service topics, and at length in the [Amazon Cognito Developer Guide](http://docs.aws.amazon.com/cognito/devguide/).
 

@@ -28,50 +28,31 @@ namespace ServiceClientGenerator.Generators.Component
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\nIf you’re new to the AWS ");
-            
-            #line 7 "C:\dev\DotNet\xamarin\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Component\GettingStarted.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BaseName"]));
-            
-            #line default
-            #line hidden
-            this.Write(" SDK, you’ll probably want to look first at [Getting Started with the AWS ");
-            
-            #line 7 "C:\dev\DotNet\xamarin\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Component\GettingStarted.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BaseName"]));
-            
-            #line default
-            #line hidden
-            this.Write(" SDK for .NET/Xamarin](deep link path) which explains how to set up the SDK and h" +
-                    "ow to get started using AWS ");
-            
-            #line 7 "C:\dev\DotNet\xamarin\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Component\GettingStarted.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BaseName"]));
-            
-            #line default
-            #line hidden
-            this.Write(" services from an Xamarin application.\r\n\r\nAfter you’ve set up the SDK, you can st" +
-                    "art working with the mobile clients for Amazon Web Services. The mobile clients " +
-                    "are described in the service-specific topics. No matter which services you’re us" +
-                    "ing, you should provide AWS credentials to your app via Amazon Cognito. The Amaz" +
-                    "on Cognito credentials provider is discussed briefly in the various mobile servi" +
-                    "ce topics, and at length in the [Amazon Cognito Developer Guide](http://docs.aws" +
-                    ".amazon.com/cognito/devguide/).\r\n\r\n<h2>Additional Resources</h2>\r\n\r\n<ul>\r\n<li>\r\n" +
-                    "<a href=\"http://docs.aws.amazon.com/mobile/sdkforxamarin/developerguide/\"><b>Xam" +
-                    "arin Developer Guide</b></a> - For in-depth getting started and usage informatio" +
-                    "n\r\n</li>\r\n<li>\r\n<a href=\"https://github.com/awslabs/aws-sdk-net-samples\"><b>Code" +
-                    " Sample</b></a> - Repository of example projects using the SDK.\r\n</li>\r\n<li>\r\n<a" +
-                    " href=\"https://forums.aws.amazon.com/forum.jspa?forumID=88\"><b>AWS Mobile Forum<" +
-                    "/b></a> – Ask questions, get help, and give feedback\r\n</li>\r\n<li>\r\n<a href=\"http" +
-                    "://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html\"><b>API Reference</b>" +
-                    "</a> - For operations, parameters, responses, and examples\r\n</li>\r\n<li>\r\n<a href" +
-                    "=\"http://mobile.awsblog.com/\"><b>AWS Mobile Developer Blog</b></a> - For updates" +
-                    " and guidance on using the AWS SDK for Xamarin\r\n</li>\r\n<li>\r\n<a href=\"https://aw" +
-                    "s.amazon.com/releasenotes/.NET\"><b>Release Notes</b></a> - To see the latest fea" +
-                    "tures, bug fixes, and changes in the SDK\r\n</li>\r\n<li>\r\n<a href=\"https://github.c" +
-                    "om/aws/aws-sdk-net/issues\"><b>Issues</b></a>  - Report issues and submit pull re" +
-                    "quests\r\n</li>\r\n<li>\r\n<a href=\"https://twitter.com/awsformobile\"><b>@awsformobile" +
-                    "</b></a> - Follow us on Twitter\r\n</li>\r\n</ul>");
+            this.Write("\r\nIf you’re new to the AWS SDK for .Net/Xamarin, you’ll probably want to look fir" +
+                    "st at [Getting Started with the AWS SDK for .NET/Xamarin](http://docs.aws.amazon" +
+                    ".com/mobile/sdkforxamarin/developerguide/) which explains how to set up the SDK " +
+                    "and how to get started using AWS Services from an Xamarin application.\r\n\r\nAfter " +
+                    "you’ve set up the SDK, you can start working with the mobile clients for Amazon " +
+                    "Web Services. The mobile clients are described in the service-specific topics. N" +
+                    "o matter which services you’re using, you should provide AWS credentials to your" +
+                    " app via Amazon Cognito. The Amazon Cognito credentials provider is discussed br" +
+                    "iefly in the various mobile service topics, and at length in the [Amazon Cognito" +
+                    " Developer Guide](http://docs.aws.amazon.com/cognito/devguide/).\r\n\r\n<h2>Addition" +
+                    "al Resources</h2>\r\n\r\n<ul>\r\n<li>\r\n<a href=\"http://docs.aws.amazon.com/mobile/sdkf" +
+                    "orxamarin/developerguide/\"><b>Xamarin Developer Guide</b></a> - For in-depth get" +
+                    "ting started and usage information\r\n</li>\r\n<li>\r\n<a href=\"https://github.com/aws" +
+                    "labs/aws-sdk-net-samples\"><b>Code Sample</b></a> - Repository of example project" +
+                    "s using the SDK.\r\n</li>\r\n<li>\r\n<a href=\"https://forums.aws.amazon.com/forum.jspa" +
+                    "?forumID=88\"><b>AWS Mobile Forum</b></a> – Ask questions, get help, and give fee" +
+                    "dback\r\n</li>\r\n<li>\r\n<a href=\"http://docs.aws.amazon.com/sdkfornet/latest/apidocs" +
+                    "/Index.html\"><b>API Reference</b></a> - For operations, parameters, responses, a" +
+                    "nd examples\r\n</li>\r\n<li>\r\n<a href=\"http://mobile.awsblog.com/\"><b>AWS Mobile Dev" +
+                    "eloper Blog</b></a> - For updates and guidance on using the AWS SDK for Xamarin\r" +
+                    "\n</li>\r\n<li>\r\n<a href=\"https://aws.amazon.com/releasenotes/.NET\"><b>Release Note" +
+                    "s</b></a> - To see the latest features, bug fixes, and changes in the SDK\r\n</li>" +
+                    "\r\n<li>\r\n<a href=\"https://github.com/aws/aws-sdk-net/issues\"><b>Issues</b></a>  -" +
+                    " Report issues and submit pull requests\r\n</li>\r\n<li>\r\n<a href=\"https://twitter.c" +
+                    "om/awsformobile\"><b>@awsformobile</b></a> - Follow us on Twitter\r\n</li>\r\n</ul>");
             return this.GenerationEnvironment.ToString();
         }
     }

@@ -266,8 +266,7 @@
             "authentication-service-name": "cognito-sync",
             "service-url": "http://cognito-sync.us-east-1.amazonaws.com",
             "synopsis": "This is the low level service client for Amazon Cognito Sync. Most users of Amazon Cognito Sync should use the high level abstraction AWSSDK.SyncManager to interact with this service.",
-            "dependencies": [ "CognitoIdentity" ],
-            "enable-xamarin-component": true
+            "dependencies": [ "CognitoIdentity" ]
         },
         {
             "active": true,
