@@ -113,7 +113,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// </summary>
         /// <returns>The to mobile analytics model event.</returns>
         /// <param name="session">Session.</param>
-        public override Amazon.MobileAnalytics.Model.Event ConvertToMobileAnalyticsModelEvent(Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.Session session)
+        internal override Amazon.MobileAnalytics.Model.Event ConvertToMobileAnalyticsModelEvent(Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.Session session)
         {
             if(Quantity != null)
             {

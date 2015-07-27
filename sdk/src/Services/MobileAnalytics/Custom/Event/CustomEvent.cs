@@ -44,7 +44,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// <summary>
         /// Event type string that defines event type.
         /// </summary>
-        public string EventType { get; set; }
+        internal string EventType { get; set; }
 
         /// <summary>
         /// Dictionary that stores global attribute for specific event type.
@@ -79,27 +79,27 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// <summary>
         /// Unique Identifier of Session
         /// </summary>
-        public string SessionId {get;set;}
+        internal string SessionId {get;set;}
 
         /// <summary>
         /// Duration of the session in milliseconds.
         /// </summary>
-        public long Duration { get; set; }
+        internal long Duration { get; set; }
 
         /// <summary>
         /// Start time stamp of seesion.
         /// </summary>
-        public DateTime StartTimestamp {get;set;}
+        internal DateTime StartTimestamp {get;set;}
 
         /// <summary>
         /// Stop time stamp of session.
         /// </summary>
-        public DateTime? StopTimestamp { get; set; }
+        internal DateTime? StopTimestamp { get; set; }
 
         /// <summary>
         /// Timestamp of when event is recorded.
         /// </summary>
-        public DateTime Timestamp { get; set; }
+        internal DateTime Timestamp { get; set; }
 
         /// <summary>
         /// Lock that protects global attribute and metric.
@@ -140,7 +140,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// </summary>
         /// <returns>The to mobile analytics model event.</returns>
         /// <param name="session">Session. <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.Session"/></param>
-        public virtual Amazon.MobileAnalytics.Model.Event ConvertToMobileAnalyticsModelEvent(Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.Session session)
+        internal virtual Amazon.MobileAnalytics.Model.Event ConvertToMobileAnalyticsModelEvent(Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.Session session)
         {
 
             Amazon.MobileAnalytics.Model.Event modelEvent = new Amazon.MobileAnalytics.Model.Event();

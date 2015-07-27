@@ -26,42 +26,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
     /// </summary>
     public interface IEvent
     {
-        /// <summary>
-        /// Gets or sets the type of the event.
-        /// </summary>
-        /// <value>The type of the event.</value>
-        string EventType {get;set;}
-        
-        /// <summary>
-        /// Gets or sets the session identifier.
-        /// </summary>
-        /// <value>The session identifier.</value>
-        string SessionId {get;set;}
-        
-        /// <summary>
-        /// Gets or sets the start timestamp.
-        /// </summary>
-        /// <value>The start timestamp.</value>
-        DateTime StartTimestamp {get;set;}
-        
-        /// <summary>
-        /// Gets or sets the stop timestamp.
-        /// </summary>
-        /// <value>The stop timestamp.</value>
-        DateTime? StopTimestamp {get;set;}
-        
-        /// <summary>
-        /// Gets or sets the duration.
-        /// </summary>
-        /// <value>The duration.</value>
-        long Duration {get;set;}
-        
-        /// <summary>
-        /// Gets or sets the timestamp.
-        /// </summary>
-        /// <value>The timestamp.</value>
-        DateTime Timestamp {get;set;}
-
         #region attribute
         /// <summary>
         /// Adds the attribute.
