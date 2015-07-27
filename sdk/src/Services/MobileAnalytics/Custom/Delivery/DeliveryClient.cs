@@ -245,10 +245,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 resp = await _mobileAnalyticsLowLevelClient.PutEventsAsync(putRequest);
 #endif
             }
-            catch (AmazonServiceException e)
+            catch (AmazonMobileAnalyticsException e)
             {
-                _logger.InfoFormat("Get AmazonServiceException: error code : {0} ; error type : {1} ; request id : {2} ; status code : {3} ", e.ErrorCode, e.ErrorType, e.RequestId, e.StatusCode);
-
+                _logger.Error(e, "Get AmazonMobileAnalyticsException: error code : {0} ; error type : {1} ; request id : {2} ; status code : {3} ; error message is {4}", e.ErrorCode, e.ErrorType, e.RequestId, e.StatusCode, e.Message);
                 // Delete events in any of the three error codes.
                 if (e.StatusCode == HttpStatusCode.BadRequest &&
                      (e.ErrorCode.Equals("ValidationException", StringComparison.CurrentCultureIgnoreCase) ||
@@ -258,6 +257,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                     _logger.InfoFormat("This error code is not retriable. So we delete those events from local storage.");
                     _eventStore.DeleteEvent(rowIds);
                 }
+            }
+            catch (AmazonServiceException e)
+            {
+                _logger.Error(e, "Get AmazonServiceException: error code : {0} ; error type : {1} ; request id : {2} ; status code : {3} ; error message is {4} ", e.ErrorCode, e.ErrorType, e.RequestId, e.StatusCode, e.Message);
             }
             catch (AmazonClientException e)
             {
