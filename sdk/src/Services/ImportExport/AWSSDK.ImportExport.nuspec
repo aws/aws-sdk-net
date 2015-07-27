@@ -5,7 +5,7 @@
     <title>AWSSDK - AWS Import/Export</title>
     <version>3.1.0.0</version> 
     <authors>Amazon Web Services</authors>
-    <description>AWS Import/Export</description> 
+    <description>AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.</description> 
     <language>en-US</language>
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
     <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>

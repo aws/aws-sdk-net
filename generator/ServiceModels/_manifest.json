@@ -222,7 +222,7 @@
 			"region-lookup-name" : "codecommit",
 			"authentication-service-name" : "codecommit",
             "service-url": "http://codecommit.us-east-1.amazonaws.com",
-            "mobile-platforms" : []
+            "synopsis" : "AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories."
 		},
         {
             "active": true,
@@ -242,7 +242,7 @@
             "region-lookup-name": "codepipeline",
             "authentication-service-name": "codepipeline",
             "service-url": "http://codepipeline.us-east-1.amazonaws.com",
-            "mobile-platforms": [ ]
+            "synopsis": "AWS CodePipeline is a continuous delivery service for fast and reliable application updates."
         },
         {
             "active": true,
@@ -361,7 +361,7 @@
             "region-lookup-name": "elasticfilesystem",
             "authentication-service-name": "elasticfilesystem",
             "service-url": "https://elasticfilesystem.us-west-2.amazonaws.com",
-            "mobile-platforms": [ "PCL" ]
+            "synopsis": "Amazon Elastic File System (Amazon EFS) is a file storage service for Amazon Elastic Compute Cloud (Amazon EC2) instances."
         },
         {
             "active": true,
@@ -444,7 +444,7 @@
             "base-name": "ImportExport",
             "region-lookup-name": "importexport",
             "service-url": "https://importexport.amazonaws.com/",
-            "synopsis": ""
+            "synopsis": "AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport."
         },
         {
             "active": true,
