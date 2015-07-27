@@ -34,12 +34,14 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private List<Application> _applications = new List<Application>();
         private bool? _autoTerminate;
+        private List<Configuration> _configurations = new List<Configuration>();
         private Ec2InstanceAttributes _ec2InstanceAttributes;
         private string _id;
         private string _logUri;
         private string _masterPublicDnsName;
         private string _name;
         private int? _normalizedInstanceHours;
+        private string _releaseLabel;
         private string _requestedAmiVersion;
         private string _runningAmiVersion;
         private string _serviceRole;
@@ -82,6 +84,28 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetAutoTerminate()
         {
             return this._autoTerminate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Configurations. <note>
+        /// <para>
+        /// Amazon EMR releases 4.x or later.
+        /// </para>
+        /// </note> 
+        /// <para>
+        /// The list of Configurations supplied to the EMR cluster.
+        /// </para>
+        /// </summary>
+        public List<Configuration> Configurations
+        {
+            get { return this._configurations; }
+            set { this._configurations = value; }
+        }
+
+        // Check to see if Configurations property is set
+        internal bool IsSetConfigurations()
+        {
+            return this._configurations != null && this._configurations.Count > 0; 
         }
 
         /// <summary>
@@ -138,7 +162,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property MasterPublicDnsName. 
         /// <para>
-        /// The public DNS name of the master Ec2 instance.
+        /// The public DNS name of the master EC2 instance.
         /// </para>
         /// </summary>
         public string MasterPublicDnsName
@@ -194,6 +218,25 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReleaseLabel. 
+        /// <para>
+        /// The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use
+        /// amiVersion instead instead of ReleaseLabel.
+        /// </para>
+        /// </summary>
+        public string ReleaseLabel
+        {
+            get { return this._releaseLabel; }
+            set { this._releaseLabel = value; }
+        }
+
+        // Check to see if ReleaseLabel property is set
+        internal bool IsSetReleaseLabel()
+        {
+            return this._releaseLabel != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RequestedAmiVersion. 
         /// <para>
         /// The AMI version requested for this cluster.
@@ -214,8 +257,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property RunningAmiVersion. 
         /// <para>
-        /// The AMI version running on this cluster. This differs from the requested version only
-        /// if the requested version is a meta version, such as "latest". 
+        /// The AMI version running on this cluster. 
         /// </para>
         /// </summary>
         public string RunningAmiVersion

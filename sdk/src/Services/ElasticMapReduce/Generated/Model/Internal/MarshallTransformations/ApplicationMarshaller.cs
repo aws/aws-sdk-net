@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InstanceGroupConfig Marshaller
+    /// Application Marshaller
     /// </summary>       
-    public class InstanceGroupConfigMarshaller : IRequestMarshaller<InstanceGroupConfig, JsonMarshallerContext> 
+    public class ApplicationMarshaller : IRequestMarshaller<Application, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,52 +43,31 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InstanceGroupConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(Application requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBidPrice())
+            if(requestObject.IsSetAdditionalInfo())
             {
-                context.Writer.WritePropertyName("BidPrice");
-                context.Writer.Write(requestObject.BidPrice);
+                context.Writer.WritePropertyName("AdditionalInfo");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectAdditionalInfoKvp in requestObject.AdditionalInfo)
+                {
+                    context.Writer.WritePropertyName(requestObjectAdditionalInfoKvp.Key);
+                    var requestObjectAdditionalInfoValue = requestObjectAdditionalInfoKvp.Value;
+
+                        context.Writer.Write(requestObjectAdditionalInfoValue);
+                }
+                context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetConfigurations())
+            if(requestObject.IsSetArgs())
             {
-                context.Writer.WritePropertyName("Configurations");
+                context.Writer.WritePropertyName("Args");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectConfigurationsListValue in requestObject.Configurations)
+                foreach(var requestObjectArgsListValue in requestObject.Args)
                 {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConfigurationMarshaller.Instance;
-                    marshaller.Marshall(requestObjectConfigurationsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.Write(requestObjectArgsListValue);
                 }
                 context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetInstanceCount())
-            {
-                context.Writer.WritePropertyName("InstanceCount");
-                context.Writer.Write(requestObject.InstanceCount);
-            }
-
-            if(requestObject.IsSetInstanceRole())
-            {
-                context.Writer.WritePropertyName("InstanceRole");
-                context.Writer.Write(requestObject.InstanceRole);
-            }
-
-            if(requestObject.IsSetInstanceType())
-            {
-                context.Writer.WritePropertyName("InstanceType");
-                context.Writer.Write(requestObject.InstanceType);
-            }
-
-            if(requestObject.IsSetMarket())
-            {
-                context.Writer.WritePropertyName("Market");
-                context.Writer.Write(requestObject.Market);
             }
 
             if(requestObject.IsSetName())
@@ -97,12 +76,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetVersion())
+            {
+                context.Writer.WritePropertyName("Version");
+                context.Writer.Write(requestObject.Version);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static InstanceGroupConfigMarshaller Instance = new InstanceGroupConfigMarshaller();
+        public readonly static ApplicationMarshaller Instance = new ApplicationMarshaller();
 
     }
 }

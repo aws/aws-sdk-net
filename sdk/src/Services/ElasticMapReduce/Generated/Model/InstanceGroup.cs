@@ -34,6 +34,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class InstanceGroup
     {
         private string _bidPrice;
+        private List<Configuration> _configurations = new List<Configuration>();
         private string _id;
         private InstanceGroupType _instanceGroupType;
         private string _instanceType;
@@ -60,6 +61,29 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetBidPrice()
         {
             return this._bidPrice != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Configurations. <note>
+        /// <para>
+        /// Amazon EMR releases 4.x or later.
+        /// </para>
+        /// </note> 
+        /// <para>
+        /// The list of configurations supplied for an EMR cluster instance group. You can specify
+        /// a separate configuration for each instance group (master, core, and task).
+        /// </para>
+        /// </summary>
+        public List<Configuration> Configurations
+        {
+            get { return this._configurations; }
+            set { this._configurations = value; }
+        }
+
+        // Check to see if Configurations property is set
+        internal bool IsSetConfigurations()
+        {
+            return this._configurations != null && this._configurations.Count > 0; 
         }
 
         /// <summary>
