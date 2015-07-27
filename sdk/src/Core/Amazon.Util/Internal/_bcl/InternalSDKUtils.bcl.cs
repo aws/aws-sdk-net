@@ -31,6 +31,8 @@ namespace Amazon.Util.Internal
 {
     public static partial class InternalSDKUtils
     {
+        private const string MobileServicesFolderName = "AWS Mobile Services";
+
 #if BCL45
         static string _userAgentBaseName = "aws-sdk-dotnet-45";
 #else
@@ -54,6 +56,21 @@ namespace Amazon.Util.Internal
             }
 
             return "Unknown";
+        }
+
+        public static string DetermineAppLocalStoragePath()
+        {
+            if (string.IsNullOrEmpty(AWSConfigs.ApplicationName))
+                throw new InvalidOperationException("AWSConfigs.ApplicationName does not have a valid value.");
+
+            var basePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), MobileServicesFolderName);
+            var basePathForApp = System.IO.Path.Combine(basePath, AWSConfigs.ApplicationName);
+            return basePathForApp;
+        }
+
+        public static string DetermineAppLocalStoragePath(string fileName)
+        {
+            return System.IO.Path.Combine(DetermineAppLocalStoragePath(), fileName);
         }
     }
 }

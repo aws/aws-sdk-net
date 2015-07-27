@@ -40,6 +40,30 @@ namespace Amazon
     /// </summary>
     public static partial class AWSConfigs
     {
+        #region ApplicationName
+
+        /// <summary>
+        /// The unique application name for the current application. This values is currently used 
+        /// by high level APIs (Mobile Analytics Manager and Cognito Sync Manager) to create a unique file
+        /// path to store local database files.
+        /// Changes to this setting will only take effect in newly-constructed objects using this property.
+        /// <code>
+        /// &lt;configSections&gt;
+        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+        /// &lt;/configSections&gt;
+        /// &lt;aws applicationName="" /&gt;
+        /// </code>
+        /// </summary>
+        public static string ApplicationName
+        {
+            get { return _rootConfig.ApplicationName; }
+            set { _rootConfig.ApplicationName = value; }
+        }
+
+        #endregion
+
+        #region Config
+
         public static string GetConfig(string name)
         {
             NameValueCollection appConfig = ConfigurationManager.AppSettings;
@@ -65,6 +89,9 @@ namespace Amazon
             return (element != null);
         }
 
+        #endregion
+
+        #region TraceListeners
         private static Dictionary<string, List<TraceListener>> _traceListeners
             = new Dictionary<string, List<TraceListener>>(StringComparer.OrdinalIgnoreCase);
 
@@ -137,6 +164,8 @@ namespace Amazon
                 return new TraceListener[0];
             }
         }
+
+        #endregion
 
         #region Generate Config Template
 

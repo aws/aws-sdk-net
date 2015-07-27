@@ -49,6 +49,7 @@ namespace Amazon
         private const string profilesLocationKey = "profilesLocation";
         private const string correctForClockSkewKey = "correctForClockSkew";
         private const string useSdkCacheKey = "useSdkCache";
+        private const string applicationNameKey = "applicationName";
 
         [ConfigurationProperty(loggingKey)]
         public LoggingSection Logging
@@ -97,6 +98,13 @@ namespace Amazon
         {
             get { return (bool?)this[correctForClockSkewKey]; }
             set { this[correctForClockSkewKey] = value; }
+        }
+
+        [ConfigurationProperty(applicationNameKey)]
+        public string ApplicationName
+        {
+            get { return (string)this[applicationNameKey]; }
+            set { this[applicationNameKey] = value; }
         }
 
         /// <summary>
