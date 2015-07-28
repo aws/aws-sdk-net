@@ -9,7 +9,7 @@
     <language>en-US</language>
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
     <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
-    <tags>AWS Amazon cloud</tags>
+    <tags>AWS Amazon cloud aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="net45">
@@ -39,18 +39,18 @@
     
     <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.Core.dll" target="lib\Xamarin.iOS10" />
     <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.Core.xml" target="lib\Xamarin.iOS10" />
-    
+
     <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.Core.dll" target="lib\Xamarin.Mac20" />
     <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.Core.xml" target="lib\Xamarin.Mac20" />
-    
+
     <file src=".\bin\Release\monoandroid\AWSSDK.Core.dll" target="lib\monoandroid" />
     <file src=".\bin\Release\monoandroid\AWSSDK.Core.xml" target="lib\monoandroid" />
     <file src=".\bin\Release\monoandroid\AWSSDK.Core.pdb" target="lib\monoandroid" />
-    
+
     <file src=".\bin\Release\windows8\AWSSDK.Core.dll" target="lib\windows8" />
     <file src=".\bin\Release\windows8\AWSSDK.Core.xml" target="lib\windows8" />
     <file src=".\bin\Release\windows8\AWSSDK.Core.pdb" target="lib\windows8" />
-    
+
     <file src=".\bin\Release\wpa81\AWSSDK.Core.dll" target="lib\wpa81" />
     <file src=".\bin\Release\wpa81\AWSSDK.Core.xml" target="lib\wpa81" />
     <file src=".\bin\Release\wpa81\AWSSDK.Core.pdb" target="lib\wpa81" />

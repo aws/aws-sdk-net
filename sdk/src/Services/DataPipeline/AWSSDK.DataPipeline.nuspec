@@ -9,7 +9,7 @@
     <language>en-US</language>
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
     <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
-    <tags>AWS Amazon cloud DataPipeline</tags>
+    <tags>AWS Amazon cloud DataPipeline aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
