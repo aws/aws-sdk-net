@@ -10,10 +10,10 @@
     <title><#=this.Session["NuGetTitle"]#></title>
     <version><#=this.Session["AssemblyVersion"]#><#=this.Session["NuGetPreviewFlag"]#></version> 
     <authors>Amazon Web Services</authors>
-    <description><#=this.Session["AssemblyDescription"]#></description> 
+    <description><#=this.Session["AssemblyDescription"]#></description>
     <language>en-US</language>
-    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
-    <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
+    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>
+    <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
     <tags>AWS Amazon cloud <#=this.Session["BaseName"]#> aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>

@@ -5,10 +5,10 @@
     <title>AWSSDK - AWS Direct Connect</title>
     <version>3.1.0.0</version> 
     <authors>Amazon Web Services</authors>
-    <description>AWS Direct Connect makes it easy to establish a dedicated network connection from your premises to AWS. Using AWS Direct Connect, you can establish private connectivity between AWS and your datacenter, office, or colocation environment, which in many cases can reduce your network costs, increase bandwidth throughput, and provide a more consistent network experience than Internet-based connections.</description> 
+    <description>AWS Direct Connect makes it easy to establish a dedicated network connection from your premises to AWS. Using AWS Direct Connect, you can establish private connectivity between AWS and your datacenter, office, or colocation environment, which in many cases can reduce your network costs, increase bandwidth throughput, and provide a more consistent network experience than Internet-based connections.</description>
     <language>en-US</language>
-    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
-    <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
+    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>
+    <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
     <tags>AWS Amazon cloud DirectConnect aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>

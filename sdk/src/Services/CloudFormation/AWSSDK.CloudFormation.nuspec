@@ -5,10 +5,10 @@
     <title>AWSSDK - AWS CloudFormation</title>
     <version>3.1.0.0</version> 
     <authors>Amazon Web Services</authors>
-    <description>AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.</description> 
+    <description>AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.</description>
     <language>en-US</language>
-    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
-    <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
+    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>
+    <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
     <tags>AWS Amazon cloud CloudFormation aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
