@@ -47,6 +47,7 @@ namespace Amazon.S3.Model
         private HeadersCollection headersCollection = new HeadersCollection();
         private MetadataCollection metadataCollection = new MetadataCollection();
         private ReplicationStatus replicationStatus;
+        private S3StorageClass storageClass;
 
         private string bucketName;
         private string key;
@@ -279,6 +280,22 @@ namespace Amazon.S3.Model
         internal bool IsSetServerSideEncryptionMethod()
         {
             return this.serverSideEncryption != null;
+        }
+
+        /// <summary>
+        /// The class of storage used to store the object.
+        ///  
+        /// </summary>
+        public S3StorageClass StorageClass
+        {
+            get { return this.storageClass; }
+            set { this.storageClass = value; }
+        }
+
+        // Check to see if StorageClass property is set
+        internal bool IsSetStorageClass()
+        {
+            return this.storageClass != null;
         }
 
 

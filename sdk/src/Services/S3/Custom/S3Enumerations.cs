@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -740,6 +740,21 @@ namespace Amazon.S3
         /// </summary>
         public static readonly EventType ObjectCreatedCompleteMultipartUpload = new EventType("s3:ObjectCreated:CompleteMultipartUpload");
 
+        /// <summary>
+        /// This event encapsulates all the object removed events
+        /// </summary>
+        public static readonly EventType ObjectRemovedAll = new EventType("s3:ObjectRemoved:*");
+
+        /// <summary>
+        /// Event for object removed, delete operation.
+        /// </summary>
+        public static readonly EventType ObjectRemovedDelete = new EventType("s3:ObjectRemoved:Delete");
+
+        /// <summary>
+        /// Event for object removed, delete marker created operation.
+        /// </summary>
+        public static readonly EventType ObjectRemovedDeleteMarkerCreated = new EventType("s3:ObjectRemoved:DeleteMarkerCreated");
+		
         /// <summary>
         /// Event for objects stored in reduced redundancy and S3 detects the object is lost
         /// </summary>

@@ -52,6 +52,34 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
+        public void TestStorageClass()
+        {
+            var key = "contentBodyPut" + random.Next();
+            var storageClass = S3StorageClass.ReducedRedundancy;
+            PutObjectRequest request = new PutObjectRequest()
+            {
+                BucketName = bucketName,
+                Key = key,
+                ContentBody = testContent,
+                CannedACL = S3CannedACL.AuthenticatedRead,
+                StorageClass = storageClass
+            };
+            request.Metadata.Add("Subject", "Content-As-Object");
+            PutObjectResponse response = Client.PutObject(request);
+
+            Console.WriteLine("S3 generated ETag: {0}", response.ETag);
+            Assert.IsTrue(response.ETag.Length > 0);
+
+            var metadata = Client.GetObjectMetadata(bucketName, key);
+            Assert.IsNotNull(metadata);
+            Assert.IsNotNull(metadata.StorageClass);
+            Assert.AreEqual(metadata.StorageClass, storageClass);
+
+            VerifyPut(testContent, request);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
         public void TestHttpErrorResponseUnmarshalling()
         {
             try
@@ -1011,8 +1039,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (StreamReader reader = new StreamReader(responseStream))
             {
                 responseData = reader.ReadToEnd();
+
+                Assert.AreEqual(data, responseData);
+                if (putRequest.StorageClass != null && putRequest.StorageClass != S3StorageClass.Standard)
+                {
+                    Assert.IsNotNull(response.StorageClass);
+                    Assert.AreEqual(response.StorageClass, putRequest.StorageClass);
+                }
             }
-            Assert.AreEqual(data, responseData);
         }
 
         [TestMethod]

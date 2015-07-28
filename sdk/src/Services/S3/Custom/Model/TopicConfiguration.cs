@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ namespace Amazon.S3.Model
     /// can be used to help setup the topic policy.
     /// </para>
     /// </summary>
-    public class TopicConfiguration
+    public class TopicConfiguration : NotificationConfiguration
     {
         /// <summary>
         /// Gets and set the Id property. The Id will be provided in the event content and can be used 
@@ -69,29 +69,6 @@ namespace Amazon.S3.Model
                 else
                     this.Events[0] = value;
             }
-        }
-
-
-        List<EventType> _events;
-        /// <summary>
-        /// Gets and sets the Events property. These are the events the configuration will listen to and send to the Amazon SNS topic.
-        /// </summary>
-        public List<EventType> Events 
-        { 
-            get
-            {
-                if (this._events == null)
-                    this._events = new List<EventType>();
-
-                return this._events;
-            }
-            set { this._events = value; } 
-        }
-
-        // Check to see if Event property is set
-        internal bool IsSetEvents()
-        {
-            return this._events != null && this._events.Count > 0;
         }
 
         /// <summary>
