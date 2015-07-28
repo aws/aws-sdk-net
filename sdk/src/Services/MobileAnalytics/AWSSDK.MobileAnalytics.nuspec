@@ -18,18 +18,21 @@
       </group>
             
       <group targetFramework="net35">
-            <dependency id="System.Data.SQLite.Core" version="1.0.97.0" />
-                <dependency id="System.Data.SQLite.Linq" version="1.0.97.0" />
-          </group>
+        <dependency id="System.Data.SQLite.Core" version="1.0.97.0" />
+        <dependency id="System.Data.SQLite.Linq" version="1.0.97.0" />
+        <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
+      </group>
             
       <group targetFramework="net45">
-            <dependency id="System.Data.SQLite.Core" version="1.0.97.0" />
-                <dependency id="System.Data.SQLite.EF6" version="1.0.97.0" />
-          </group>
+        <dependency id="System.Data.SQLite.Core" version="1.0.97.0" />
+        <dependency id="System.Data.SQLite.EF6" version="1.0.97.0" />
+        <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
+      </group>
             
       <group targetFramework="xamarinios10">
-            <dependency id="SQLitePCL" version="3.8.7.2" />
-          </group>
+        <dependency id="SQLitePCL" version="3.8.7.2" />
+        <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
+      </group>
       <group>
         <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
       </group>

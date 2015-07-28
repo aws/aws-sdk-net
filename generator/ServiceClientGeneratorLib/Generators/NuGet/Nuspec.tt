@@ -56,12 +56,20 @@
 #>			
       <group targetFramework="<#=targetFramework#>">
 <#
-				foreach(var dependency in dependencyList.Value)
-				{
-	#>
-			<dependency id="<#=dependency.Name#>" version="<#=dependency.Version#>" />
-	<#		
-				}
+            foreach(var dependency in dependencyList.Value)
+            {
+#>
+        <dependency id="<#=dependency.Name#>" version="<#=dependency.Version#>" />
+<#		
+            }
+#>
+<#
+            foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
+            {
+#>
+		<dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
+<#
+            }
 #>
       </group>
 <#
