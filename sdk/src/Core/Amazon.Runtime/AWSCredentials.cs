@@ -391,12 +391,14 @@ namespace Amazon.Runtime
                     if (File.Exists(envPath))
                         return envPath;
                 }
-#if !BCL35
-                var path = Path.Combine(
+
+                string path = null;
+#if BCL45
+                path = Path.Combine(
                     System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile),
                     ".aws/credentials");
-#else
-                var     path = Path.Combine(
+#elif BCL35
+                path = Path.Combine(
                     Directory.GetParent(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal)).FullName,
                     ".aws/credentials");
 #endif
