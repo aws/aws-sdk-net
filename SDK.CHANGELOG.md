@@ -1,3 +1,13 @@
+### 3.1.1.0 (2015-07-28 23:37 UTC)
+* CloudWatchLogs (3.1.1.0)
+	* Adding 4 new APIs: PutDestination, PutDestinationPolicy, DescribeDestinations and DeleteDestination
+* S3 (3.1.1.0)
+	* Support for new storage class headers on GET/HEAD requests.
+	* Enhancements to S3 event notifications
+		* Support for Deletes.
+		* Support for Bucket Change events like policy changes and lifecycle changes
+		* Support for filtering on object names including prefixes and suffixes.
+
 ### 3.1.0.0 (2015-07-28 20:30 UTC)
 * The Version 3 of AWS SDK for .NET is out of preview and promoted to general availability.
 * All service SDKs and Core assemblies are set to version 3.1.0.0 for this release.
