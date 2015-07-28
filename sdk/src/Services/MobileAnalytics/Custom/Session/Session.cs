@@ -20,6 +20,7 @@ using System.IO;
 using ThirdParty.Json.LitJson;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using Amazon.Util.Internal;
 #if PCL || BCL45
 using System.Threading.Tasks;
 #endif
@@ -79,8 +80,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             _maConfig = maConfig;
             _appId = appID;
 #if BCL
-            // TODO: complete app data path
-            _sessionStorageFileName = _sessionStorageFileName;
+            _sessionStorageFileName = InternalSDKUtils.DetermineAppLocalStoragePath(appID + _sessionStorageFileName);
 #elif PCL
             _sessionStorageFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, appID + _sessionStorageFileName);
 #endif

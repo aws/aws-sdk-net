@@ -16,6 +16,8 @@
 using Amazon.Util.Internal.PlatformServices;
 using System.Collections.Generic;
 using System;
+using Amazon.Util.Internal;
+using System.IO;
 
 namespace Amazon.Runtime.Internal
 {
@@ -35,8 +37,14 @@ namespace Amazon.Runtime.Internal
 
             if (string.IsNullOrEmpty(_clientID))
             {
-                // TODO: complete App data path
-                string fullPath = CLIENT_ID_CACHE_FILENAME;
+                string fullPath = InternalSDKUtils.DetermineAppLocalStoragePath(CLIENT_ID_CACHE_FILENAME);
+
+                var directoryPath = InternalSDKUtils.DetermineAppLocalStoragePath();
+                if (!Directory.Exists(directoryPath))
+                {
+                    Directory.CreateDirectory(directoryPath);
+                }
+
                 if (!System.IO.File.Exists(fullPath) || new System.IO.FileInfo(fullPath).Length == 0)
                 {
                     _clientID = Guid.NewGuid().ToString();
