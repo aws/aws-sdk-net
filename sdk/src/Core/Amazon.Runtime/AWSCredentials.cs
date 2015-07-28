@@ -246,7 +246,7 @@ namespace Amazon.Runtime
 
     }
 
-#if BCL
+#if BCL || DNX
 
     /// <summary>
     /// Credentials that are retrieved using the stored profile. The SDK Store is searched which is the credentials store shared with the SDK, PowerShell CLI and Toolkit. 
@@ -298,14 +298,13 @@ namespace Amazon.Runtime
         /// <param name="profilesLocation">Overrides the location to search for credentials</param>
         public StoredProfileAWSCredentials(string profileName, string profilesLocation)
         {
-            NameValueCollection appConfig = ConfigurationManager.AppSettings;
-
             var lookupName = string.IsNullOrEmpty(profileName) ? DEFAULT_PROFILE_NAME : profileName;
             ProfileName = lookupName;
             ProfilesLocation = null;
 
             // If not overriding the credentials lookup location check the SDK Store for credentials. If an override is being used then
             // assume the intent is to use the credentials file.
+#if BCL
             if (string.IsNullOrEmpty(profilesLocation))
             {
                 AWSCredentials credentials;
@@ -316,7 +315,7 @@ namespace Amazon.Runtime
                     logger.InfoFormat("Credentials found using account name {0} and looking in SDK account store.", lookupName);
                 }
             }
-
+#endif
             // If credentials weren't found in the SDK store then search the shared credentials file.
             if (this._wrappedCredentials == null)
             {
@@ -343,9 +342,18 @@ namespace Amazon.Runtime
             }
         }
 
-        #endregion
+        private string GetConfiguredProfileName()
+        {
+#if BCL
+#elif DNX
+#else
+#error "Unknown platform constant"
+#endif
+            return null;
+        }
+#endregion
 
-        #region Public properties
+            #region Public properties
 
         /// <summary>
         /// Name of the profile being used.
@@ -357,7 +365,7 @@ namespace Amazon.Runtime
         /// </summary>
         public string ProfilesLocation { get; private set; }
 
-        #endregion
+            #endregion
 
         /// <summary>
         /// Determine the location of the shared credentials file.
@@ -501,7 +509,7 @@ namespace Amazon.Runtime
             }
         }
 
-        #region Abstract class overrides
+            #region Abstract class overrides
 
         /// <summary>
         /// Returns an instance of ImmutableCredentials for this instance
@@ -512,7 +520,7 @@ namespace Amazon.Runtime
             return this._wrappedCredentials.Copy();
         }
 
-        #endregion
+            #endregion
     }
 
     /// <summary>
@@ -528,7 +536,7 @@ namespace Amazon.Runtime
 
         private ImmutableCredentials _wrappedCredentials;
 
-        #region Public constructors
+            #region Public constructors
 
         /// <summary>
         /// Constructs an instance of EnvironmentVariablesAWSCredentials. If no credentials are found in the environment variables 
@@ -551,7 +559,7 @@ namespace Amazon.Runtime
             logger.InfoFormat("Credentials found using environment variables.");
         }
 
-        #endregion
+            #endregion
 
         /// <summary>
         /// Returns an instance of ImmutableCredentials for this instance
@@ -562,7 +570,9 @@ namespace Amazon.Runtime
             return this._wrappedCredentials.Copy();
         }
     }
+#endif
 
+#if BCL
     /// <summary>
     /// Credentials that are retrieved from ConfigurationManager.AppSettings
     /// </summary>
@@ -573,7 +583,7 @@ namespace Amazon.Runtime
 
         private ImmutableCredentials _wrappedCredentials;
 
-        #region Public constructors
+            #region Public constructors
 
         /// <summary>
         /// Constructs an instance of EnvironmentAWSCredentials and attempts
@@ -599,10 +609,10 @@ namespace Amazon.Runtime
             }
         }
 
-        #endregion
+            #endregion
 
 
-        #region Abstract class overrides
+            #region Abstract class overrides
 
         /// <summary>
         /// Returns an instance of ImmutableCredentials for this instance
@@ -613,15 +623,15 @@ namespace Amazon.Runtime
             return this._wrappedCredentials.Copy();
         }
 
-        #endregion
+            #endregion
     }
 
 #endif
 
-    /// <summary>
-    /// Abstract class for automatically refreshing AWS credentials
-    /// </summary>
-    public abstract class RefreshingAWSCredentials : AWSCredentials
+            /// <summary>
+            /// Abstract class for automatically refreshing AWS credentials
+            /// </summary>
+        public abstract class RefreshingAWSCredentials : AWSCredentials
     {
         #region Refresh data
 
@@ -1083,6 +1093,8 @@ namespace Amazon.Runtime
             {
 #if BCL
                 () => new EnvironmentAWSCredentials(),
+#endif
+#if BCL || DNX
                 () => new StoredProfileAWSCredentials(),
                 () => new EnvironmentVariablesAWSCredentials(),
 #endif
