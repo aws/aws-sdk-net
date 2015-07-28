@@ -83,10 +83,10 @@ namespace Amazon.S3.Transfer.Internal
             {
                 throw new InvalidOperationException("The Key specified is null or empty!");
             }
-            }
+        }
 
         void OnWriteObjectProgressEvent(object sender, WriteObjectProgressArgs e)
-            {
+        {
             this._request.OnRaiseProgressEvent(e);
         }
 
