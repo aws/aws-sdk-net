@@ -148,6 +148,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 #elif BCL
             this.ClientContext = new ClientContext(appID, maConfig.ClientContextConfiguration);
 #endif
+            if (null == maConfig)
+                maConfig = new MobileAnalyticsManagerConfig();
+            
             this.BackgroundDeliveryClient = new DeliveryClient(maConfig, ClientContext, credentials, regionEndpoint);
             this.Session = new Session(appID, maConfig);
         }
