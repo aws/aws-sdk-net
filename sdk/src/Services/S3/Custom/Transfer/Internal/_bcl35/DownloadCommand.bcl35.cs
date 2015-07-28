@@ -40,12 +40,27 @@ namespace Amazon.S3.Transfer.Internal
             do
             {
                 shouldRetry = false;
+
+                if (retries != 0)
+                {
+                    ByteRange bytesRemaining = ByteRangeRemainingForDownload(this._request.FilePath);
+                    getRequest.ByteRange = bytesRemaining;
+                }
+
                 using (var response = this._s3Client.GetObject(getRequest))
                 {
                     try
                     {
-                        response.WriteObjectProgressEvent += OnWriteObjectProgressEvent;
-                        response.WriteResponseStreamToFile(this._request.FilePath);
+                        if (retries == 0)
+                        {
+                            response.WriteObjectProgressEvent += OnWriteObjectProgressEvent;
+                            response.WriteResponseStreamToFile(this._request.FilePath);
+                        }
+                        else
+                        {
+                            response.WriteObjectProgressEvent += OnWriteObjectProgressEvent;
+                            response.WriteResponseStreamToFile(this._request.FilePath, true);
+                        }
                     }
                     catch (Exception exception)
                     {
@@ -72,6 +87,30 @@ namespace Amazon.S3.Transfer.Internal
                 }
                 WaitBeforeRetry(retries);
             } while (shouldRetry);
-        }        
+        }
+        
+        /// <summary>
+        /// Returns the amount of bytes remaining that need to be pulled down from S3.
+        /// </summary>
+        /// <param name="filepath">The fully qualified path of the file.</param>
+        /// <returns></returns>
+        internal ByteRange ByteRangeRemainingForDownload(string filepath)
+        {
+            /*
+             * Initialize the ByteRange as the whole file.
+             * long.MaxValue works regardless of the size because
+             * S3 will stop sending bits if you specify beyond the
+             * size of the file anyways.
+             */
+            ByteRange byteRange = new ByteRange(0, long.MaxValue);
+
+            if (!File.Exists(filepath))
+                return byteRange;
+
+            FileInfo info = new FileInfo(filepath);
+            byteRange.Start = info.Length;
+
+            return byteRange;
+        }
     }
 }
