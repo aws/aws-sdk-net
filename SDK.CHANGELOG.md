@@ -1,3 +1,11 @@
+### 3.1.0.0 (2015-07-28 20:30 UTC)
+* The Version 3 of AWS SDK for .NET is out of preview and promoted to general availability.
+* All service SDKs and Core assemblies are set to version 3.1.0.0 for this release.
+* Xamarin support added to Portable Class Library (PCL) version of the SDK. The Xamarin and PCL versions of the SDK are available as public preview.
+* Additional Changes
+	* Pull request [222](https://github.com/aws/aws-sdk-net/pull/222) - Fix to code that resolves location of .aws\credentials file.
+	* Fixed issue with setting ServiceURL for DynamoDB Streams client.
+
 ### 3.0.6.0 (2015-07-10 00:22 UTC)
 * AutoScaling (3.0.2.0)
 	* Step scaling policies allow customers to scale their Auto Scaling groups based on the magnitude of the alarm breach.
