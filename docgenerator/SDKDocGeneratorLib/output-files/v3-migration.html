@@ -1,0 +1,72 @@
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link rel="stylesheet" type="text/css" href="./resources/style.css"/>
+<link rel="stylesheet" type="text/css" href="./resources/syntaxhighlighter/shCore.css">
+<link rel="stylesheet" type="text/css" href="./resources/syntaxhighlighter/shThemeDefault.css">
+<link rel="stylesheet" type="text/css" href="./resources/sdkstyle.css"/>
+<meta name="description" content="AWSConfigs.GenerateConfigTemplate Method">
+<title>Migration Guide from V2 to V3 | AWS SDK for .NET V3</title>
+<link rel="canonical" href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html?page=MAWSConfigs_GenerateConfigTemplate_.html&tocid=Amazon_AWSConfigs"/>
+</head>
+<body>
+
+	<h2>Version 3 Migration Guide</h2>
+	<p>
+	Version 3 is the AWS SDK for .NET has a very high compatible with version 2. For most applications you will just need to replace the old reference to version 2 and add the 
+	reference to the services they are using. If you are using NuGet to get the SDK, the reference to our core runtime package will be added automatically. If you 
+	are getting the SDK from the installer on our website, then you will need to add a reference to AWSSDK.Core.
+	</p>
+
+    <table border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                <th valign="top"> <strong>Change</strong> </th>
+                <th valign="top"> <strong>Description</strong> </th>
+            </tr>
+            <tr>
+                <td valign="top">
+                <code>AWSClientFactory</code> is removed
+                </td>
+                <td valign="top">
+				<p>Use service client constructors instead of the AWSClientFactory</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                <code>Amazon.Runtime.AssumeRoleAWSCredentials</code> is removed
+                </td>
+                <td valign="top">
+				<p>Use <code>Amazon.SecurityToken.STSAssumeRoleAWSCredentials</code> instead</p>
+                </td>
+            </tr>
+			<tr>
+                <td valign="top">
+                <code>Amazon.DynamoDBv2.DataModel.S3Link.SetACL</code> is removed
+                </td>
+                <td valign="top">
+				<p>Use <code>Amazon.DynamoDBv2.DataModel.S3Link.MakeS3ObjectPublic</code> instead</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                <code>IStorageFile</code> use is removed
+                </td>
+                <td valign="top">
+				<p>The below properties and methods that utilize <code>IStorageFile</code> in mobile versions are being deprecated. String alternatives like FilePath should be used instead.</p>
+				<ul>
+				<li><code>GetObjectResponse.WriteResponseStreamToFileAsync(IStorageFile, bool, CancellationToken)</code></li>
+				<li><code>PutObjectRequest.StorageFile</code></li>
+				<li><code>UploadPartRequest.StorageFile</code></li>
+				<li><code>TransferUtilityDownloadRequest.StorageFile</code></li>
+				<li><code>TransferUtilityUploadRequest.StorageFile</code></li>
+				<li><code>S3Link.UploadFromAsync(IStorageFile)</code></li>
+				<li><code>S3Link.DownloadToAsync(IStorageFile)</code></li>
+				</ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+	
+</body>
+</html>

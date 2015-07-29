@@ -412,6 +412,7 @@ namespace ServiceClientGenerator
         public const string UnmarshallerKey = "Unmarshaller";
         public const string GenerateComplexExceptionKey = "generateComplexException";
         public const string SuppressSimpleMethodExceptionDocsKey = "suppressSimpleMethodExceptionDocs";
+        public const string XamarinSampleSolutionFileKey = "xamarinSamples";
 
         JsonData _documentRoot;
 
@@ -1168,6 +1169,31 @@ namespace ServiceClientGenerator
 
             return modifiers;
         }
+
+        //review directory separator
+        public string XamarinSolutionSamplePath
+        {
+            get
+            {
+                var xamarinSamples = _documentRoot[XamarinSampleSolutionFileKey];
+                if (xamarinSamples == null)
+                    return null;
+
+                var solutionPath = xamarinSamples[SampleInfo.SolutionPathKey];
+                if (solutionPath == null || !solutionPath.IsString)
+                    return null;
+
+                return solutionPath.ToString().Replace("/","\\");
+            }
+        }
+
+        #region Samples Key
+        public class SampleInfo
+        {
+            public const string SolutionPathKey = "solutionPath";
+
+        }
+        #endregion
 
         #region OperationModifiers
 

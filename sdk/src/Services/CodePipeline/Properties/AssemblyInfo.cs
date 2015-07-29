@@ -8,9 +8,9 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CodePipeline")]
 #if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - CodePipeline Service. CodePipeline Service")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - CodePipeline Service. AWS CodePipeline is a continuous delivery service for fast and reliable application updates.")]
 #elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - CodePipeline Service. CodePipeline Service")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - CodePipeline Service. AWS CodePipeline is a continuous delivery service for fast and reliable application updates.")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- CodePipeline Service. CodePipeline Service")]
 #elif DNX
@@ -41,8 +41,8 @@ using System.Runtime.CompilerServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("3.0")]
-[assembly: AssemblyFileVersion("3.0.0.1")]
+[assembly: AssemblyVersion("3.1")]
+[assembly: AssemblyFileVersion("3.1.0.0")]
 
 #if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]

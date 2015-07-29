@@ -3,20 +3,20 @@
   <metadata> 
     <id>AWSSDK.IdentityManagement</id>
     <title>AWSSDK - AWS Identity and Access Management</title>
-    <version>3.0.1.1-preview</version> 
+    <version>3.1.0.0</version> 
     <authors>Amazon Web Services</authors>
     <description>AWS Identity and Access Management (IAM) enables you to securely control access to AWS services and resources for your users. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.</description> 
     <language>en-US</language>
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
     <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
-    <tags>AWS Amazon cloud IdentityManagementService</tags>
+    <tags>AWS Amazon cloud IdentityManagementService aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.0.0.7-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.0.0.7-preview, 3.1-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 

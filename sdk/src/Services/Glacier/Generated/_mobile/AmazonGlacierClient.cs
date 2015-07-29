@@ -252,6 +252,37 @@ namespace Amazon.Glacier
 
         #endregion
         
+        #region  AbortVaultLock
+
+        internal AbortVaultLockResponse AbortVaultLock(AbortVaultLockRequest request)
+        {
+            var marshaller = new AbortVaultLockRequestMarshaller();
+            var unmarshaller = AbortVaultLockResponseUnmarshaller.Instance;
+
+            return Invoke<AbortVaultLockRequest,AbortVaultLockResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AbortVaultLock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AbortVaultLock operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AbortVaultLockResponse> AbortVaultLockAsync(AbortVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AbortVaultLockRequestMarshaller();
+            var unmarshaller = AbortVaultLockResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AbortVaultLockRequest,AbortVaultLockResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AddTagsToVault
 
         internal AddTagsToVaultResponse AddTagsToVault(AddTagsToVaultRequest request)
@@ -309,6 +340,37 @@ namespace Amazon.Glacier
             var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
 
             return InvokeAsync<CompleteMultipartUploadRequest,CompleteMultipartUploadResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CompleteVaultLock
+
+        internal CompleteVaultLockResponse CompleteVaultLock(CompleteVaultLockRequest request)
+        {
+            var marshaller = new CompleteVaultLockRequestMarshaller();
+            var unmarshaller = CompleteVaultLockResponseUnmarshaller.Instance;
+
+            return Invoke<CompleteVaultLockRequest,CompleteVaultLockResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CompleteVaultLock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CompleteVaultLock operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CompleteVaultLockResponse> CompleteVaultLockAsync(CompleteVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CompleteVaultLockRequestMarshaller();
+            var unmarshaller = CompleteVaultLockResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CompleteVaultLockRequest,CompleteVaultLockResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -624,6 +686,37 @@ namespace Amazon.Glacier
 
         #endregion
         
+        #region  GetVaultLock
+
+        internal GetVaultLockResponse GetVaultLock(GetVaultLockRequest request)
+        {
+            var marshaller = new GetVaultLockRequestMarshaller();
+            var unmarshaller = GetVaultLockResponseUnmarshaller.Instance;
+
+            return Invoke<GetVaultLockRequest,GetVaultLockResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVaultLock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVaultLock operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetVaultLockResponse> GetVaultLockAsync(GetVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetVaultLockRequestMarshaller();
+            var unmarshaller = GetVaultLockResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetVaultLockRequest,GetVaultLockResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetVaultNotifications
 
         internal GetVaultNotificationsResponse GetVaultNotifications(GetVaultNotificationsRequest request)
@@ -712,6 +805,37 @@ namespace Amazon.Glacier
             var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
 
             return InvokeAsync<InitiateMultipartUploadRequest,InitiateMultipartUploadResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  InitiateVaultLock
+
+        internal InitiateVaultLockResponse InitiateVaultLock(InitiateVaultLockRequest request)
+        {
+            var marshaller = new InitiateVaultLockRequestMarshaller();
+            var unmarshaller = InitiateVaultLockResponseUnmarshaller.Instance;
+
+            return Invoke<InitiateVaultLockRequest,InitiateVaultLockResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the InitiateVaultLock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the InitiateVaultLock operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<InitiateVaultLockResponse> InitiateVaultLockAsync(InitiateVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new InitiateVaultLockRequestMarshaller();
+            var unmarshaller = InitiateVaultLockResponseUnmarshaller.Instance;
+
+            return InvokeAsync<InitiateVaultLockRequest,InitiateVaultLockResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

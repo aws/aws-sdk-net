@@ -3,20 +3,20 @@
   <metadata> 
     <id>AWSSDK.RDS</id>
     <title>AWSSDK - Amazon Relational Database Service</title>
-    <version>3.0.0.6-preview</version> 
+    <version>3.1.0.0</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Relational Database Service (Amazon RDS) is a web service that makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while managing time-consuming database management tasks, freeing you up to focus on your applications and business.</description> 
     <language>en-US</language>
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
     <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
-    <tags>AWS Amazon cloud RDS</tags>
+    <tags>AWS Amazon cloud RDS aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.0.0.7-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.0.0.7-preview, 3.1-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 

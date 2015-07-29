@@ -29,3 +29,4 @@ Include/**
 **/*.userprefs
 /sdk/test/CrossPlatformTests/CommonTests/Resources/settings.json
 packages
+/sdk/xamarin-components/SimpleNotificationService/*.xam

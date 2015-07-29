@@ -52,6 +52,7 @@ namespace ServiceClientGenerator
 
 					GeneratorDriver.UpdateSolutionFiles(generationManifest, options);
 					GeneratorDriver.UpdateAssemblyVersionInfo(generationManifest, options);
+                    GeneratorDriver.UpdateNuGetPackagesInReadme(generationManifest, options);
 					GeneratorDriver.UpdateUnitTestProjectReferences(options);
                 }
                 else
@@ -62,10 +63,10 @@ namespace ServiceClientGenerator
                         BaseName = options.SelfServiceBaseName,
                         AuthenticationServiceName = options.SelfServiceSigV4Name ?? options.SelfServiceBaseName.ToLower(),
                         RegionLookupName = options.SelfServiceEndpointPrefix ?? options.SelfServiceBaseName.ToLower(),
-                        ServiceFileVersion = "3.0.0.0"
+                        ServiceFileVersion = "3.1.0.0"
                     };
                     serviceConfig.ModelName = Path.GetFileName(serviceConfig.ModelPath);
-                    serviceConfig.ServiceDependencies = new Dictionary<string, string> { {"Core", "3.0.0.0"} };
+                    serviceConfig.ServiceDependencies = new Dictionary<string, string> { {"Core", "3.1.0.0"} };
                     serviceConfig.GenerateConstructors = true;
 
 

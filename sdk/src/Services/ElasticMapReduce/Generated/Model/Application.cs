@@ -38,7 +38,12 @@ namespace Amazon.ElasticMapReduce.Model
     ///  <ul> <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li> <li>"mapr-m5"
     /// - launch the job flow using MapR M5 Edition.</li> <li>"mapr" with the user arguments
     /// specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or
-    /// M5 Edition, respectively.</li> </ul>
+    /// M5 Edition, respectively.</li> </ul> <note>
+    /// <para>
+    /// In Amazon EMR releases 4.0 and greater, the only accepted parameter is the application
+    /// name. To pass arguments to applications, you supply a configuration for each application.
+    /// </para>
+    /// </note>
     /// </summary>
     public partial class Application
     {

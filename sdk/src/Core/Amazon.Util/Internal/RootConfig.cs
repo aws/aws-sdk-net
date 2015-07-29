@@ -35,7 +35,10 @@ namespace Amazon.Util.Internal
             }
         }
         public bool UseSdkCache { get; set; }
+
         public bool CorrectForClockSkew { get; set; }
+
+        public string ApplicationName { get; set; }
 
         private const string _rootAwsSectionName = "aws";
         public RootConfig()
@@ -64,6 +67,7 @@ namespace Amazon.Util.Internal
             Region = Choose(Region, root.Region);
             ProfileName = Choose(ProfileName, root.ProfileName);
             ProfilesLocation = Choose(ProfilesLocation, root.ProfilesLocation);
+            ApplicationName = Choose(ApplicationName, root.ApplicationName);
             if (root.CorrectForClockSkew.HasValue)
                 CorrectForClockSkew = root.CorrectForClockSkew.Value;
 #endif

@@ -43,6 +43,7 @@ namespace Amazon.S3.Model
         private HeadersCollection headersCollection = new HeadersCollection();
         private MetadataCollection metadataCollection = new MetadataCollection();
         private ReplicationStatus replicationStatus;
+        private S3StorageClass storageClass;
 
         /// <summary>
         /// The collection of headers for the request.
@@ -318,6 +319,22 @@ namespace Amazon.S3.Model
         internal bool IsSetReplicationStatus()
         {
             return ReplicationStatus != null;
+        }
+
+        /// <summary>
+        /// The class of storage used to store the object.
+        ///  
+        /// </summary>
+        public S3StorageClass StorageClass
+        {
+            get { return this.storageClass; }
+            set { this.storageClass = value; }
+        }
+
+        // Check to see if StorageClass property is set
+        internal bool IsSetStorageClass()
+        {
+            return this.storageClass != null;
         }
     }
 }

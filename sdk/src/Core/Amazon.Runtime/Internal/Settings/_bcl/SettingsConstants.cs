@@ -60,7 +60,11 @@ namespace Amazon.Runtime.Internal.Settings
         public const string ProxySettings = "ProxySettings";
         public const string ProxyHost = "ProxyHost";
         public const string ProxyPort = "ProxyPort";
-        public const string ProxyUsername = "ProxyUsername";
-        public const string ProxyPassword = "ProxyPassword";
+
+        public const string ProxyUsernameObsolete = "ProxyUsername";
+        public const string ProxyPasswordObsolete = "ProxyPassword";
+
+        public const string ProxyUsernameEncrypted = "ProxyUsernameEncrypted";
+        public const string ProxyPasswordEncrypted = "ProxyPasswordEncrypted";
     }
 }

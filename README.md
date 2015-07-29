@@ -44,11 +44,117 @@ of these tests, charges can occur. To reduce charges occurred by running the tes
 
 Unit tests can be found in the **AWSSDK.UnitTests** project.
 
+### NuGet Packages
+
+* [AWSSDK.AutoScaling](https://www.nuget.org/packages/AWSSDK.AutoScaling/)
+	* Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.
+* [AWSSDK.AWSSupport](https://www.nuget.org/packages/AWSSDK.AWSSupport/)
+	* The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center.
+* [AWSSDK.CloudFormation](https://www.nuget.org/packages/AWSSDK.CloudFormation/)
+	* AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.
+* [AWSSDK.CloudFront](https://www.nuget.org/packages/AWSSDK.CloudFront/)
+	* Amazon CloudFront is a content delivery web service. It integrates with other Amazon Web Services products to give developers and businesses an easy way to distribute content to end users with low latency, high data transfer speeds, and no minimum usage commitments.
+* [AWSSDK.CloudHSM](https://www.nuget.org/packages/AWSSDK.CloudHSM/)
+	* The AWS CloudHSM service helps you meet corporate, contractual and regulatory compliance requirements for data security by using dedicated Hardware Security Module (HSM) appliances within the AWS cloud. With CloudHSM, you control the encryption keys and cryptographic operations performed by the HSM.
+* [AWSSDK.CloudSearch](https://www.nuget.org/packages/AWSSDK.CloudSearch/)
+	* Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application.
+* [AWSSDK.CloudSearchDomain](https://www.nuget.org/packages/AWSSDK.CloudSearchDomain/)
+	* Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application.
+* [AWSSDK.CloudTrail](https://www.nuget.org/packages/AWSSDK.CloudTrail/)
+	* AWS CloudTrail is a web service that records AWS API calls for your account and delivers log files to you. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, the request parameters, and the response elements returned by the AWS service.
+* [AWSSDK.CloudWatch](https://www.nuget.org/packages/AWSSDK.CloudWatch/)
+	* Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms.
+* [AWSSDK.CloudWatchLogs](https://www.nuget.org/packages/AWSSDK.CloudWatchLogs/)
+	* Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms.
+* [AWSSDK.CodeCommit](https://www.nuget.org/packages/AWSSDK.CodeCommit/)
+	* AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories.
+* [AWSSDK.CodeDeploy](https://www.nuget.org/packages/AWSSDK.CodeDeploy/)
+	* AWS CodeDeploy is a service that automates code deployments. AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during deployment, and handles the complexity of updating your applications.
+* [AWSSDK.CodePipeline](https://www.nuget.org/packages/AWSSDK.CodePipeline/)
+	* AWS CodePipeline is a continuous delivery service for fast and reliable application updates.
+* [AWSSDK.CognitoIdentity](https://www.nuget.org/packages/AWSSDK.CognitoIdentity/)
+	* Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.
+* [AWSSDK.CognitoSync](https://www.nuget.org/packages/AWSSDK.CognitoSync/)
+	* This is the low level service client for Amazon Cognito Sync. Most users of Amazon Cognito Sync should use the high level abstraction AWSSDK.SyncManager to interact with this service.
+* [AWSSDK.ConfigService](https://www.nuget.org/packages/AWSSDK.ConfigService/)
+	* AWS Config is a fully managed service that provides you with an AWS resource inventory, configuration history, and configuration change notifications to enable security and governance.
+* [AWSSDK.DataPipeline](https://www.nuget.org/packages/AWSSDK.DataPipeline/)
+	* AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services.
+* [AWSSDK.DeviceFarm](https://www.nuget.org/packages/AWSSDK.DeviceFarm/)
+	* AWS Device Farm is an app testing service that enables you to test your Android and Fire OS apps on real, physical phones and tablets that are hosted by AWS. The service allows you to upload your own tests or use built-in, script-free compatibility tests.
+* [AWSSDK.DirectConnect](https://www.nuget.org/packages/AWSSDK.DirectConnect/)
+	* AWS Direct Connect makes it easy to establish a dedicated network connection from your premises to AWS. Using AWS Direct Connect, you can establish private connectivity between AWS and your datacenter, office, or colocation environment, which in many cases can reduce your network costs, increase bandwidth throughput, and provide a more consistent network experience than Internet-based connections.
+* [AWSSDK.DirectoryService](https://www.nuget.org/packages/AWSSDK.DirectoryService/)
+	* AWS Directory Service is a managed service that allows you to connect your AWS resources with an existing on-premises Microsoft Active Directory or to set up a new, stand-alone directory in the AWS Cloud.
+* [AWSSDK.DynamoDB](https://www.nuget.org/packages/AWSSDK.DynamoDB/)
+	* Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.
+* [AWSSDK.EC2](https://www.nuget.org/packages/AWSSDK.EC2/)
+	* Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers.
+* [AWSSDK.ECS](https://www.nuget.org/packages/AWSSDK.ECS/)
+	* Amazon EC2 Container Service is a highly scalable, high performance container management service that supports Docker containers and allows you to easily run distributed applications on a managed cluster of Amazon EC2 instances.
+* [AWSSDK.ElastiCache](https://www.nuget.org/packages/AWSSDK.ElastiCache/)
+	* ElastiCache is a web service that makes it easy to deploy, operate, and scale an in-memory cache in the cloud. The service improves the performance of web applications by allowing you to retrieve information from fast, managed, in-memory caches, instead of relying entirely on slower disk-based databases.
+* [AWSSDK.ElasticBeanstalk](https://www.nuget.org/packages/AWSSDK.ElasticBeanstalk/)
+	* AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.
+* [AWSSDK.ElasticFileSystem](https://www.nuget.org/packages/AWSSDK.ElasticFileSystem/)
+	* Amazon Elastic File System (Amazon EFS) is a file storage service for Amazon Elastic Compute Cloud (Amazon EC2) instances.
+* [AWSSDK.ElasticLoadBalancing](https://www.nuget.org/packages/AWSSDK.ElasticLoadBalancing/)
+	* Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.
+* [AWSSDK.ElasticMapReduce](https://www.nuget.org/packages/AWSSDK.ElasticMapReduce/)
+	* Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to quickly and cost-effectively process vast amounts of data.
+* [AWSSDK.ElasticTranscoder](https://www.nuget.org/packages/AWSSDK.ElasticTranscoder/)
+	* Amazon Elastic Transcoder is media transcoding in the cloud. It is designed to be a highly scalable, easy to use and a cost effective way for developers and businesses to convert (or 'transcode') media files from their source format into versions that will playback on devices like smartphones, tablets and PCs.
+* [AWSSDK.Glacier](https://www.nuget.org/packages/AWSSDK.Glacier/)
+	* Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.
+* [AWSSDK.IdentityManagementService](https://www.nuget.org/packages/AWSSDK.IdentityManagementService/)
+	* AWS Identity and Access Management (IAM) enables you to securely control access to AWS services and resources for your users. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.
+* [AWSSDK.ImportExport](https://www.nuget.org/packages/AWSSDK.ImportExport/)
+	* AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.
+* [AWSSDK.KeyManagementService](https://www.nuget.org/packages/AWSSDK.KeyManagementService/)
+	* AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys.
+* [AWSSDK.Kinesis](https://www.nuget.org/packages/AWSSDK.Kinesis/)
+	* Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.
+* [AWSSDK.Lambda](https://www.nuget.org/packages/AWSSDK.Lambda/)
+	* AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you, making it easy to build applications that respond quickly to new information.
+* [AWSSDK.MachineLearning](https://www.nuget.org/packages/AWSSDK.MachineLearning/)
+	* Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.
+* [AWSSDK.MobileAnalytics](https://www.nuget.org/packages/AWSSDK.MobileAnalytics/)
+	* Amazon Mobile Analytics is a service that lets you simply and cost effectively collect and analyze your application usage data. In addition to providing usage summary charts that are available for quick reference, Amazon Mobile Analytics enables you to set up automatic export of your data to Amazon S3 for use with other data analytics tools such as Amazon Redshift, Amazon Elastic MapReduce (EMR), Extract, Transform and Load (ETL) software, or your own data warehouse.
+* [AWSSDK.OpsWorks](https://www.nuget.org/packages/AWSSDK.OpsWorks/)
+	* AWS OpsWorks is an application management service that makes it easy to deploy and operate applications of all shapes and sizes. You can define the application's architecture and the specification of each component including package installation, software configuration and resources such as storage.
+* [AWSSDK.RDS](https://www.nuget.org/packages/AWSSDK.RDS/)
+	* Amazon Relational Database Service (Amazon RDS) is a web service that makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while managing time-consuming database management tasks, freeing you up to focus on your applications and business.
+* [AWSSDK.Redshift](https://www.nuget.org/packages/AWSSDK.Redshift/)
+	* Amazon Redshift is a fast, fully managed, petabyte-scale data warehouse solution that makes it simple and cost-effective to efficiently analyze all your data using your existing business intelligence tools.
+* [AWSSDK.Route53](https://www.nuget.org/packages/AWSSDK.Route53/)
+	* Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.
+* [AWSSDK.Route53Domains](https://www.nuget.org/packages/AWSSDK.Route53Domains/)
+	* Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.
+* [AWSSDK.S3](https://www.nuget.org/packages/AWSSDK.S3/)
+	* Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage.
+* [AWSSDK.SecurityTokenService](https://www.nuget.org/packages/AWSSDK.SecurityTokenService/)
+	* The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.
+* [AWSSDK.SimpleDB](https://www.nuget.org/packages/AWSSDK.SimpleDB/)
+	* Amazon SimpleDB is a highly available, scalable, and flexible non-relational data store that enables you to store and query data items using web services requests.
+* [AWSSDK.SimpleEmailService](https://www.nuget.org/packages/AWSSDK.SimpleEmailService/)
+	* Amazon SES is an outbound-only email-sending service that provides an easy, cost-effective way for you to send email.
+* [AWSSDK.SimpleNotificationService](https://www.nuget.org/packages/AWSSDK.SimpleNotificationService/)
+	* Amazon Simple Notification Service (Amazon SNS) is a fast, flexible, fully managed push messaging service. Amazon SNS makes it simple and cost-effective to push notifications to Apple, Google, Fire OS, and Windows devices, as well as Android devices in China with Baidu Cloud Push.  You can also use SNS to push notifications to internet connected smart devices, as well as other distributed services.
+* [AWSSDK.SimpleSystemsManagement](https://www.nuget.org/packages/AWSSDK.SimpleSystemsManagement/)
+	* Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.
+* [AWSSDK.SimpleWorkflow](https://www.nuget.org/packages/AWSSDK.SimpleWorkflow/)
+	* Amazon SWF helps developers build, run, and scale background jobs that have parallel or sequential steps. You can think of Amazon SWF as a fully-managed state tracker and task coordinator in the Cloud.
+* [AWSSDK.SQS](https://www.nuget.org/packages/AWSSDK.SQS/)
+	* Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service. SQS makes it simple and cost-effective to decouple the components of a cloud application.
+* [AWSSDK.StorageGateway](https://www.nuget.org/packages/AWSSDK.StorageGateway/)
+	* The AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure.
+* [AWSSDK.WorkSpaces](https://www.nuget.org/packages/AWSSDK.WorkSpaces/)
+	* Amazon WorkSpaces is a managed desktop computing service in the cloud.
+
 ### Code Generator
 
 All low-level service clients are created using the code generator found in the **generator** folder. The code generator 
 uses the service models defined in the **generator\ServiceModels** folder.
-
 
 [nuget-info]: https://nuget.org/
 [aws]: http://aws.amazon.com/
@@ -64,3 +170,5 @@ uses the service models defined in the **generator\ServiceModels** folder.
 [credentials-management]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-config-creds.html
 [dotnet-blog]: http://blogs.aws.amazon.com/net/
 [github-aws-sdk-net-v2]: https://github.com/aws/aws-sdk-net/tree/aws-sdk-net-v2
+
+

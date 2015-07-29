@@ -3,20 +3,20 @@
   <metadata> 
     <id>AWSSDK.StorageGateway</id>
     <title>AWSSDK - AWS Storage Gateway</title>
-    <version>3.0.1.4-preview</version> 
+    <version>3.1.0.0</version> 
     <authors>Amazon Web Services</authors>
     <description>The AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure.</description> 
     <language>en-US</language>
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
     <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
-    <tags>AWS Amazon cloud StorageGateway</tags>
+    <tags>AWS Amazon cloud StorageGateway aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.0.0.7-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.0.0.7-preview, 3.1-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 

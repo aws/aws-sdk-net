@@ -154,6 +154,76 @@ namespace Amazon.Glacier
 
         #endregion
         
+        #region  AbortVaultLock
+
+
+        /// <summary>
+        /// This operation aborts the vault locking process if the vault lock is not in the <code>Locked</code>
+        /// state. If the vault lock is in the <code>Locked</code> state when this operation is
+        /// requested, the operation returns an <code>AccessDeniedException</code> error. Aborting
+        /// the vault locking process removes the vault lock policy from the specified vault.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// A vault lock is put into the <code>InProgress</code> state by calling <a>InitiateVaultLock</a>.
+        /// A vault lock is put into the <code>Locked</code> state by calling <a>CompleteVaultLock</a>.
+        /// You can get the state of a vault lock by calling <a>GetVaultLock</a>. For more information
+        /// about the vault locking process, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
+        /// Glacier Vault Lock</a>. For more information about vault lock policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
+        /// Glacier Access Control with Vault Lock Policies</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is idempotent. You can successfully invoke this operation multiple
+        /// times, if the vault lock is in the <code>InProgress</code> state or if there is no
+        /// policy associated with the vault.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AbortVaultLock service method.</param>
+        /// 
+        /// <returns>The response from the AbortVaultLock service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
+        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        AbortVaultLockResponse AbortVaultLock(AbortVaultLockRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AbortVaultLock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AbortVaultLock operation on AmazonGlacierClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAbortVaultLock
+        ///         operation.</returns>
+        IAsyncResult BeginAbortVaultLock(AbortVaultLockRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AbortVaultLock operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAbortVaultLock.</param>
+        /// 
+        /// <returns>Returns a  AbortVaultLockResult from Glacier.</returns>
+        AbortVaultLockResponse EndAbortVaultLock(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AddTagsToVault
 
 
@@ -309,6 +379,76 @@ namespace Amazon.Glacier
         /// 
         /// <returns>Returns a  CompleteMultipartUploadResult from Glacier.</returns>
         CompleteMultipartUploadResponse EndCompleteMultipartUpload(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CompleteVaultLock
+
+
+        /// <summary>
+        /// This operation completes the vault locking process by transitioning the vault lock
+        /// from the <code>InProgress</code> state to the <code>Locked</code> state, which causes
+        /// the vault lock policy to become unchangeable. A vault lock is put into the <code>InProgress</code>
+        /// state by calling <a>InitiateVaultLock</a>. You can obtain the state of the vault lock
+        /// by calling <a>GetVaultLock</a>. For more information about the vault locking process,
+        /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
+        /// Glacier Vault Lock</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation is idempotent. This request is always successful if the vault lock
+        /// is in the <code>Locked</code> state and the provided lock ID matches the lock ID originally
+        /// used to lock the vault.
+        /// </para>
+        ///  
+        /// <para>
+        /// If an invalid lock ID is passed in the request when the vault lock is in the <code>Locked</code>
+        /// state, the operation returns an <code>AccessDeniedException</code> error. If an invalid
+        /// lock ID is passed in the request when the vault lock is in the <code>InProgress</code>
+        /// state, the operation throws an <code>InvalidParameter</code> error.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteVaultLock service method.</param>
+        /// 
+        /// <returns>The response from the CompleteVaultLock service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
+        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        CompleteVaultLockResponse CompleteVaultLock(CompleteVaultLockRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CompleteVaultLock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CompleteVaultLock operation on AmazonGlacierClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompleteVaultLock
+        ///         operation.</returns>
+        IAsyncResult BeginCompleteVaultLock(CompleteVaultLockRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CompleteVaultLock operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteVaultLock.</param>
+        /// 
+        /// <returns>Returns a  CompleteVaultLockResult from Glacier.</returns>
+        CompleteVaultLockResponse EndCompleteVaultLock(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1044,6 +1184,88 @@ namespace Amazon.Glacier
 
         #endregion
         
+        #region  GetVaultLock
+
+
+        /// <summary>
+        /// This operation retrieves the following attributes from the <code>lock-policy</code>
+        /// subresource set on the specified vault: <ul> <li> 
+        /// <para>
+        /// The vault lock policy set on the vault.
+        /// 
+        ///  </li> <li> 
+        /// <para>
+        /// The state of the vault lock, which is either <code>InProgess</code> or <code>Locked</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the lock ID expires. The lock ID is used to complete the vault locking process.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the vault lock was initiated and put into the <code>InProgress</code> state.
+        /// </para>
+        ///  </li> </ul> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A vault lock is put into the <code>InProgress</code> state by calling <a>InitiateVaultLock</a>.
+        /// A vault lock is put into the <code>Locked</code> state by calling <a>CompleteVaultLock</a>.
+        /// You can abort the vault locking process by calling <a>AbortVaultLock</a>. For more
+        /// information about the vault locking process, <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
+        /// Glacier Vault Lock</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If there is no vault lock policy set on the vault, the operation returns a <code>404
+        /// Not found</code> error. For more information about vault lock policies, <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
+        /// Glacier Access Control with Vault Lock Policies</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVaultLock service method.</param>
+        /// 
+        /// <returns>The response from the GetVaultLock service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
+        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        GetVaultLockResponse GetVaultLock(GetVaultLockRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVaultLock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVaultLock operation on AmazonGlacierClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVaultLock
+        ///         operation.</returns>
+        IAsyncResult BeginGetVaultLock(GetVaultLockRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVaultLock operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVaultLock.</param>
+        /// 
+        /// <returns>Returns a  GetVaultLockResult from Glacier.</returns>
+        GetVaultLockResponse EndGetVaultLock(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetVaultNotifications
 
 
@@ -1425,6 +1647,104 @@ namespace Amazon.Glacier
         /// 
         /// <returns>Returns a  InitiateMultipartUploadResult from Glacier.</returns>
         InitiateMultipartUploadResponse EndInitiateMultipartUpload(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  InitiateVaultLock
+
+
+        /// <summary>
+        /// This operation initiates the vault locking process by doing the following: <ul> <li>
+        /// 
+        /// <para>
+        /// Installing a vault lock policy on the specified vault.
+        /// 
+        ///  </li> <li> 
+        /// <para>
+        /// Setting the lock state of vault lock to <code>InProgress</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Returning a lock ID, which is used to complete the vault locking process. 
+        /// </para>
+        ///  </li> </ul> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can set one vault lock policy for each vault and this policy can be up to 20 KB
+        /// in size. For more information about vault lock policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
+        /// Glacier Access Control with Vault Lock Policies</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You must complete the vault locking process within 24 hours after the vault lock enters
+        /// the <code>InProgress</code> state. After the 24 hour window ends, the lock ID expires,
+        /// the vault automatically exits the <code>InProgress</code> state, and the vault lock
+        /// policy is removed from the vault. You call <a>CompleteVaultLock</a> to complete the
+        /// vault locking process by setting the state of the vault lock to <code>Locked</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// After a vault lock is in the <code>Locked</code> state, you cannot initiate a new
+        /// vault lock for the vault.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can abort the vault locking process by calling <a>AbortVaultLock</a>. You can
+        /// get the state of the vault lock by calling <a>GetVaultLock</a>. For more information
+        /// about the vault locking process, <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
+        /// Glacier Vault Lock</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this operation is called when the vault lock is in the <code>InProgress</code>
+        /// state, the operation returns an <code>AccessDeniedException</code> error. When the
+        /// vault lock is in the <code>InProgress</code> state you must call <a>AbortVaultLock</a>
+        /// before you can initiate a new vault lock policy. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InitiateVaultLock service method.</param>
+        /// 
+        /// <returns>The response from the InitiateVaultLock service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
+        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        InitiateVaultLockResponse InitiateVaultLock(InitiateVaultLockRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the InitiateVaultLock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the InitiateVaultLock operation on AmazonGlacierClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInitiateVaultLock
+        ///         operation.</returns>
+        IAsyncResult BeginInitiateVaultLock(InitiateVaultLockRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  InitiateVaultLock operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInitiateVaultLock.</param>
+        /// 
+        /// <returns>Returns a  InitiateVaultLockResult from Glacier.</returns>
+        InitiateVaultLockResponse EndInitiateVaultLock(IAsyncResult asyncResult);
 
         #endregion
         

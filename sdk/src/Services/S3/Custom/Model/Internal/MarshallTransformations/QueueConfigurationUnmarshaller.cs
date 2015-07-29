@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,6 +51,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Queue", targetDepth))
                     {
                         queueConfiguration.Queue = StringUnmarshaller.GetInstance().Unmarshall(context);
+
+                        continue;
+                    }
+                    if (context.TestExpression("Filter", targetDepth))
+                    {
+                        queueConfiguration.Filter = FilterUnmarshaller.Instance.Unmarshall(context);
 
                         continue;
                     }

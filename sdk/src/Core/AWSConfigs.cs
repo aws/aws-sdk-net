@@ -353,12 +353,12 @@ namespace Amazon
         public const string UseSdkCacheKey = "AWSCache";
 
         /// <summary>
-        /// Configures if the SDK Cache should be used.
+        /// Configures if the SDK Cache should be used, the default value is true.
         /// <code>
         /// &lt;configSections&gt;
         ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
         /// &lt;/configSections&gt;
-        /// &lt;aws useSdkCache="c:\config\endpoints.xml" /&gt;
+        /// &lt;aws useSdkCache="true" /&gt;
         /// </code>
         /// </summary>
         public static bool UseSdkCache

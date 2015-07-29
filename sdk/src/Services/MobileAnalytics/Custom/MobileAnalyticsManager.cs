@@ -114,6 +114,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 
         private static MobileAnalyticsManager GetOrCreateInstanceHelper(string appID, AWSCredentials credentials, RegionEndpoint regionEndpoint, MobileAnalyticsManagerConfig maConfig)
         {
+#if BCL
+            ValidateParameters();
+#endif
+
             MobileAnalyticsManager managerInstance = null;
             bool isNewInstance = false;
             lock (_lock)
@@ -144,6 +148,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 #elif BCL
             this.ClientContext = new ClientContext(appID, maConfig.ClientContextConfiguration);
 #endif
+            if (null == maConfig)
+                maConfig = new MobileAnalyticsManagerConfig();
+            
             this.BackgroundDeliveryClient = new DeliveryClient(maConfig, ClientContext, credentials, regionEndpoint);
             this.Session = new Session(appID, maConfig);
         }
@@ -325,6 +332,20 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             }
         }
 
+        #endregion
+
+
+        #region private
+#if BCL
+        static void ValidateParameters()
+        {
+            if (string.IsNullOrEmpty(AWSConfigs.ApplicationName))
+            {
+                throw new ArgumentException("A valid application name needs to configured to use this API." +
+                    "The application name can be configured through app.config/web.config or by setting the Amazon.AWSConfigs.ApplicationName property.");
+            }
+        }
+#endif
         #endregion
 
     }

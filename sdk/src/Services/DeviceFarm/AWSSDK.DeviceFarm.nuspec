@@ -3,20 +3,20 @@
   <metadata> 
     <id>AWSSDK.DeviceFarm</id>
     <title>AWSSDK - AWS Device Farm</title>
-    <version>3.0.0.6-preview</version> 
+    <version>3.1.0.0</version> 
     <authors>Amazon Web Services</authors>
     <description>AWS Device Farm is an app testing service that enables you to test your Android and Fire OS apps on real, physical phones and tablets that are hosted by AWS. The service allows you to upload your own tests or use built-in, script-free compatibility tests.</description> 
     <language>en-US</language>
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
     <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
-    <tags>AWS Amazon cloud DeviceFarm</tags>
+    <tags>AWS Amazon cloud DeviceFarm aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.0.0.7-preview, 3.1-preview)" />
+      <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.0.0.7-preview, 3.1-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 

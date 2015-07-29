@@ -7,14 +7,14 @@
 <package> 
   <metadata> 
     <id><#=this.Session["AssemblyName"]#></id>
-    <title><#=this.Session["AssemblyTitle"]#></title>
+    <title><#=this.Session["NuGetTitle"]#></title>
     <version><#=this.Session["AssemblyVersion"]#><#=this.Session["NuGetPreviewFlag"]#></version> 
     <authors>Amazon Web Services</authors>
     <description><#=this.Session["AssemblyDescription"]#></description> 
     <language>en-US</language>
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>    
     <projectUrl>https://github.com/aws/aws-sdk-net/tree/modularization/</projectUrl>
-    <tags>AWS Amazon cloud <#=this.Session["BaseName"]#></tags>
+    <tags>AWS Amazon cloud <#=this.Session["BaseName"]#> aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
@@ -56,12 +56,20 @@
 #>			
       <group targetFramework="<#=targetFramework#>">
 <#
-				foreach(var dependency in dependencyList.Value)
-				{
-	#>
-			<dependency id="<#=dependency.Name#>" version="<#=dependency.Version#>" />
-	<#		
-				}
+            foreach(var dependency in dependencyList.Value)
+            {
+#>
+        <dependency id="<#=dependency.Name#>" version="<#=dependency.Version#>" />
+<#		
+            }
+#>
+<#
+            foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
+            {
+#>
+        <dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
+<#
+            }
 #>
       </group>
 <#
@@ -73,7 +81,7 @@
     foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
     {
 #>
-		<dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
+        <dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
 <#
     }
 #>
@@ -87,15 +95,15 @@
 
     <file src=".\bin\Release\net35\\<#=this.Session["AssemblyName"]#>.dll" target="lib\net35" />
     <file src=".\bin\Release\net35\\<#=this.Session["AssemblyName"]#>.xml" target="lib\net35" />
-	<file src=".\bin\Release\net35\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\net35" />
+    <file src=".\bin\Release\net35\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\net35" />
 
     <file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.xml" target="lib\net45" />
-	<file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\net45" />
+    <file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\net45" />
 
     <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-	<file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
 <#  
     if(((string)this.Session["AssemblyName"]).Equals("AWSSDK.MobileAnalytics",StringComparison.CurrentCultureIgnoreCase))
     {

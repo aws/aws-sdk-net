@@ -270,6 +270,37 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  DeleteDestination
+
+        internal DeleteDestinationResponse DeleteDestination(DeleteDestinationRequest request)
+        {
+            var marshaller = new DeleteDestinationRequestMarshaller();
+            var unmarshaller = DeleteDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDestinationRequest,DeleteDestinationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDestination operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteDestinationResponse> DeleteDestinationAsync(DeleteDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteDestinationRequestMarshaller();
+            var unmarshaller = DeleteDestinationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDestinationRequest,DeleteDestinationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteLogGroup
 
         internal DeleteLogGroupResponse DeleteLogGroup(DeleteLogGroupRequest request)
@@ -420,6 +451,37 @@ namespace Amazon.CloudWatchLogs
             var unmarshaller = DeleteSubscriptionFilterResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteSubscriptionFilterRequest,DeleteSubscriptionFilterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDestinations
+
+        internal DescribeDestinationsResponse DescribeDestinations(DescribeDestinationsRequest request)
+        {
+            var marshaller = new DescribeDestinationsRequestMarshaller();
+            var unmarshaller = DescribeDestinationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDestinationsRequest,DescribeDestinationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDestinations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDestinations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeDestinationsResponse> DescribeDestinationsAsync(DescribeDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeDestinationsRequestMarshaller();
+            var unmarshaller = DescribeDestinationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDestinationsRequest,DescribeDestinationsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -639,6 +701,68 @@ namespace Amazon.CloudWatchLogs
             var unmarshaller = GetLogEventsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetLogEventsRequest,GetLogEventsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutDestination
+
+        internal PutDestinationResponse PutDestination(PutDestinationRequest request)
+        {
+            var marshaller = new PutDestinationRequestMarshaller();
+            var unmarshaller = PutDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<PutDestinationRequest,PutDestinationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutDestination operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutDestinationResponse> PutDestinationAsync(PutDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutDestinationRequestMarshaller();
+            var unmarshaller = PutDestinationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutDestinationRequest,PutDestinationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutDestinationPolicy
+
+        internal PutDestinationPolicyResponse PutDestinationPolicy(PutDestinationPolicyRequest request)
+        {
+            var marshaller = new PutDestinationPolicyRequestMarshaller();
+            var unmarshaller = PutDestinationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutDestinationPolicyRequest,PutDestinationPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutDestinationPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutDestinationPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutDestinationPolicyResponse> PutDestinationPolicyAsync(PutDestinationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutDestinationPolicyRequestMarshaller();
+            var unmarshaller = PutDestinationPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutDestinationPolicyRequest,PutDestinationPolicyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
