@@ -71,9 +71,16 @@ namespace ServiceClientGenerator.Generators.NuGet
             
             #line default
             #line hidden
-            this.Write(" aws-sdk-v3</tags>\r\n    <iconUrl>http://media.amazonwebservices.com/aws_singlebox" +
-                    "_01.png</iconUrl>\r\n    <dependencies>\r\n      <group targetFramework=\"portable-ne" +
-                    "t45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10\">\r\n");
+            this.Write(" aws-sdk-v3");
+            
+            #line 17 "C:\code\dotnet\v3\master-CLEAN\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["ExtraTags"]));
+            
+            #line default
+            #line hidden
+            this.Write("</tags>\r\n    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</ic" +
+                    "onUrl>\r\n    <dependencies>\r\n      <group targetFramework=\"portable-net45+netcore" +
+                    "45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10\">\r\n");
             
             #line 21 "C:\code\dotnet\v3\master-CLEAN\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 

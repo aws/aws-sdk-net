@@ -29,23 +29,23 @@
             "template": "PCLProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference", "_pcl-sl" ],
             "nugetTargetPlatform": "portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10",
-			
+            
             "extraTestProjects": [
-				"test\\CrossPlatformTests\\CommonTests\\CommonTests.csproj",
-				"test\\CrossPlatformTests\\AndroidApp\\AndroidApp.csproj",
-				"test\\CrossPlatformTests\\iOSTests\\iOSTests.csproj",
+                "test\\CrossPlatformTests\\CommonTests\\CommonTests.csproj",
+                "test\\CrossPlatformTests\\AndroidApp\\AndroidApp.csproj",
+                "test\\CrossPlatformTests\\iOSTests\\iOSTests.csproj",
                 "test\\CrossPlatformTests\\WindowsConsoleApp\\WindowsConsoleApp.csproj",
                 "test\\CrossPlatformTests\\WindowsApp\\WindowsApp.csproj",
                 "test\\CrossPlatformTests\\WindowsPhoneApp\\WindowsPhoneApp.csproj",
                 "test\\CrossPlatformTests\\WindowsPhoneSilverlightApp\\WindowsPhoneSilverlightApp.csproj",
 
-				"test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests\\XFormsPortableTests.csproj",
-				"test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests.Droid\\XFormsPortableTests.Droid.csproj",
-				"test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests.iOS\\XFormsPortableTests.iOS.csproj",
+                "test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests\\XFormsPortableTests.csproj",
+                "test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests.Droid\\XFormsPortableTests.Droid.csproj",
+                "test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests.iOS\\XFormsPortableTests.iOS.csproj",
                 "test\\CrossPlatformTests\\XFormsPortableTests\\XFormsPortableTests.WinPhone\\XFormsPortableTests.WinPhone.csproj"
             ]
         },
-		{
+        {
             "name": "Android",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
@@ -56,7 +56,7 @@
             "parentProfile": "PCL",
             "nugetTargetPlatform": "MonoAndroid10"
         },
-		{
+        {
             "name": "iOS",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
@@ -67,7 +67,7 @@
             "parentProfile": "PCL",
             "nugetTargetPlatform": "xamarinios10"
         },
-		{
+        {
             "name": "Win8",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
@@ -214,16 +214,16 @@
             "service-url": "https://logs.us-east-1.amazonaws.com",
             "synopsis": "Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms."
         },
-		{
-			"active" : true,
-			
-			"model" : "codecommit",
-			"base-name" : "CodeCommit",
-			"region-lookup-name" : "codecommit",
-			"authentication-service-name" : "codecommit",
+        {
+            "active" : true,
+            
+            "model" : "codecommit",
+            "base-name" : "CodeCommit",
+            "region-lookup-name" : "codecommit",
+            "authentication-service-name" : "codecommit",
             "service-url": "http://codecommit.us-east-1.amazonaws.com",
             "synopsis" : "AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories."
-		},
+        },
         {
             "active": true,
 
@@ -234,7 +234,7 @@
             "service-url": "http://codedeploy.us-east-1.amazonaws.com",
             "synopsis": "AWS CodeDeploy is a service that automates code deployments. AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during deployment, and handles the complexity of updating your applications."
         },
-		{
+        {
             "active": true,
 
             "model": "codepipeline",
@@ -261,7 +261,7 @@
 
             "model": "cognito-sync",
             "base-name": "CognitoSync",
-			"nuget-package-title-suffix" : "(Low Level Service Client)",
+            "nuget-package-title-suffix" : "(Low Level Service Client)",
             "region-lookup-name": "cognito-sync",
             "authentication-service-name": "cognito-sync",
             "service-url": "http://cognito-sync.us-east-1.amazonaws.com",
@@ -307,7 +307,7 @@
             "service-url": "https://ds.us-east-1.amazonaws.com",
             "synopsis": "AWS Directory Service is a managed service that allows you to connect your AWS resources with an existing on-premises Microsoft Active Directory or to set up a new, stand-alone directory in the AWS Cloud."
         },        
-		{
+        {
             "active": true,
 
             "model": "dynamodb-",
@@ -319,7 +319,7 @@
             "max-retries": 10,
             "synopsis": "Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.",
             "enable-xamarin-component": true
-		
+        
         },
         {
             "active": true,
@@ -401,7 +401,8 @@
             "region-lookup-name": "elasticmapreduce",
             "authentication-service-name": "elasticmapreduce",
             "service-url": "https://elasticmapreduce.amazonaws.com",
-            "synopsis": "Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to quickly and cost-effectively process vast amounts of data."
+            "synopsis": "Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to quickly and cost-effectively process vast amounts of data.",
+            "tags":  [ "EMR" ]
         },
         {
             "active": true,
@@ -435,7 +436,8 @@
             "append-service": true,
             "authentication-service-name": "iam",
             "default-region": "USEast1",
-            "synopsis": "AWS Identity and Access Management (IAM) enables you to securely control access to AWS services and resources for your users. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources."
+            "synopsis": "AWS Identity and Access Management (IAM) enables you to securely control access to AWS services and resources for your users. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.",
+            "tags":  [ "IAM" ]
         },
         {
             "active": true,
@@ -474,16 +476,16 @@
             "authentication-service-name": "kms",
             "synopsis": "AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys."
         },
-		{
+        {
             "active": true,
 
             "model": "machinelearning",
-			"base-name" : "MachineLearning",
-			"region-lookup-name" : "machinelearning",
-			"authentication-service-name" : "machinelearning",
+            "base-name" : "MachineLearning",
+            "region-lookup-name" : "machinelearning",
+            "authentication-service-name" : "machinelearning",
             "synopsis": "Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology."
-		},
-		{
+        },
+        {
             "active": true,
 
             "model": "mobileanalytics",
@@ -615,7 +617,7 @@
             "base-name": "S3",
             "region-lookup-name": "s3",
             "service-url": "https://s3.amazonaws.com/",
-			"authentication-service-name": "s3",
+            "authentication-service-name": "s3",
             "synopsis": "Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage."
         },
         {
@@ -627,7 +629,8 @@
             "service-url": "https://sts.amazonaws.com",
             "authentication-service-name": "sts",
             "default-region": "USEast1",
-            "synopsis": "The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources."
+            "synopsis": "The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.",
+            "tags":  [ "STS" ]
         },
         {
             "active": true,
@@ -646,7 +649,8 @@
             "base-name": "SimpleEmailService",
             "region-lookup-name": "email",
             "service-url": "https://email.us-east-1.amazonaws.com/",
-            "synopsis": "Amazon SES is an outbound-only email-sending service that provides an easy, cost-effective way for you to send email."
+            "synopsis": "Amazon SES is an outbound-only email-sending service that provides an easy, cost-effective way for you to send email.",
+            "tags":  [ "SES" ]
         },
         {
             "active": true,
@@ -655,7 +659,8 @@
             "base-name": "SimpleNotificationService",
             "region-lookup-name": "sns",
             "authentication-service-name": "sns",
-            "synopsis": "Amazon Simple Notification Service (Amazon SNS) is a fast, flexible, fully managed push messaging service. Amazon SNS makes it simple and cost-effective to push notifications to Apple, Google, Fire OS, and Windows devices, as well as Android devices in China with Baidu Cloud Push.  You can also use SNS to push notifications to internet connected smart devices, as well as other distributed services."
+            "synopsis": "Amazon Simple Notification Service (Amazon SNS) is a fast, flexible, fully managed push messaging service. Amazon SNS makes it simple and cost-effective to push notifications to Apple, Google, Fire OS, and Windows devices, as well as Android devices in China with Baidu Cloud Push.  You can also use SNS to push notifications to internet connected smart devices, as well as other distributed services.",
+            "tags":  [ "SNS" ]
         },
         {
             "active": true,
@@ -693,9 +698,9 @@
             "service-url": "https://storagegateway.us-east-1.amazonaws.com",
             "synopsis": "The AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure."
         },
-		{
-			"active" : true,
-			
+        {
+            "active" : true,
+            
             "model": "workspaces",
             "base-name": "WorkSpaces",
             "region-lookup-name": "workspaces",

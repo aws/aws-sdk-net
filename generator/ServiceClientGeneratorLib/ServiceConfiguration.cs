@@ -146,6 +146,7 @@ namespace ServiceClientGenerator
         public Dictionary<string, List<Dependency>> ReferenceDependencies { get; set; }
         public Dictionary<string, List<Dependency>> NugetDependencies { get; set; }
         public List<string> PclVariants { get; set; }
+        public List<string> Tags { get; set; }
 
         public bool EnableXamarinComponent { get; set; }
 

@@ -43,6 +43,7 @@ namespace ServiceClientGenerator
             public const string DependencyHintPathKey = "hint-path";
             public const string ParentBaseNameKey = "parent-base-name";
             public const string EnableXamarinComponent = "enable-xamarin-component";
+            public const string TagsKey = "tags";
         }
 
         abstract class ProjectsSectionKeys
@@ -198,6 +199,14 @@ namespace ServiceClientGenerator
                     }
                 }
 
+                config.Tags = new List<string>();
+                if (modelNode[ModelsSectionKeys.TagsKey] != null)
+                {
+                    foreach(JsonData tag in modelNode[ModelsSectionKeys.TagsKey])
+                    {
+                        config.Tags.Add(tag.ToString());
+                    }
+                }
 
                 // Provides a way to specify a customizations file rather than using a generated one
                 config.CustomizationsPath = modelNode[ModelsSectionKeys.CustomizationFileKey] == null

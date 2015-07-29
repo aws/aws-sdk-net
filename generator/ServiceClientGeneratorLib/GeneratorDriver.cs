@@ -821,7 +821,8 @@ namespace ServiceClientGenerator
                 { "ProjectFileConfigurations", this.ProjectFileConfigurations},
                 { "Documentation",string.IsNullOrEmpty(Configuration.ServiceModel.Documentation)?Configuration.Synopsis:Configuration.ServiceModel.Documentation },
                 { "SolutionFilePath", string.IsNullOrEmpty(Configuration.ServiceModel.Customizations.XamarinSolutionSamplePath)?"":Path.Combine(SampleFilesRoot,Configuration.ServiceModel.Customizations.XamarinSolutionSamplePath) },
-                { "Synopsis", Configuration.Synopsis}
+                { "Synopsis", Configuration.Synopsis},
+                { "ExtraTags", Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) }
             };
 
             session["NuGetPreviewFlag"] = Configuration.InPreview ? GeneratorDriver.NuGetPreviewFlag : "";
@@ -915,7 +916,8 @@ namespace ServiceClientGenerator
                 { "AssemblyVersion", assemblyVersion },
                 { "AWSDependencies", awsDependencies },
                 { "BaseName", this.Configuration.BaseName },
-                { "ProjectFileConfigurations", this.ProjectFileConfigurations}
+                { "ProjectFileConfigurations", this.ProjectFileConfigurations},
+                { "ExtraTags", Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) }
             };
 
             if (Configuration.NugetDependencies != null)
