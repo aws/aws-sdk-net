@@ -596,8 +596,8 @@ namespace ServiceClientGenerator
 
                 if(string.IsNullOrEmpty(service.Synopsis))
                     throw new Exception(string.Format("{0} is missing a synopsis in the manifest.", service.BaseName));
-                var name = "AWSSDK." + service.BaseName;
-                nugetPackages[name] = service.Synopsis;
+                var assemblyName = service.Namespace.Replace("Amazon.", "AWSSDK.");
+                nugetPackages[assemblyName] = service.Synopsis;
             }
 
             NuGetPackageReadmeSection generator = new NuGetPackageReadmeSection();
