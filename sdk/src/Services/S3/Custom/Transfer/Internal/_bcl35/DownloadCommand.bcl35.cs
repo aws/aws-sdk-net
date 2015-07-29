@@ -53,6 +53,22 @@ namespace Amazon.S3.Transfer.Internal
                     {
                         if (retries == 0)
                         {
+                            /* 
+                             * Wipe the local file, if it exists, to handle edge case where:
+                             * 
+                             * 1. File foo exists
+                             * 2. We start trying to download, but unsuccesfully write any data
+                             * 3. We retry the download, with retires > 0, thus hitting the else statement below
+                             * 4. We will append to file foo, instead of overwriting it
+                             * 
+                             * We counter it with the call below because it's the same call that would be hit
+                             * in WriteResponseStreamToFile. If any exceptions are thrown, they will be the same as before
+                             * to avoid any breaking changes to customers who handle that specific exception in a
+                             * particular manor.
+                             */
+                            FileStream temp = new FileStream(this._request.FilePath, FileMode.Create, FileAccess.ReadWrite, FileShare.Read, Amazon.S3.Util.S3Constants.DefaultBufferSize);
+                            temp.Close();
+
                             response.WriteObjectProgressEvent += OnWriteObjectProgressEvent;
                             response.WriteResponseStreamToFile(this._request.FilePath);
                         }
