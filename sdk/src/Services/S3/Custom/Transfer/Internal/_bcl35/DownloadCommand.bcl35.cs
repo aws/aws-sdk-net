@@ -47,8 +47,15 @@ namespace Amazon.S3.Transfer.Internal
                     getRequest.ByteRange = bytesRemaining;
                 }
 
+                string mostRecentETag = null;
                 using (var response = this._s3Client.GetObject(getRequest))
                 {
+                    if (!string.IsNullOrEmpty(mostRecentETag) && !string.Equals(mostRecentETag, response.ETag))
+                    {
+                        Exception eTagChanged = new Exception("ETag changed during download retry.");
+                    }
+                    mostRecentETag = response.ETag;
+
                     try
                     {
                         if (retries == 0)
@@ -93,7 +100,6 @@ namespace Amazon.S3.Transfer.Internal
                             {
                                 throw;
                             }
-
                             else
                             {
                                 throw new AmazonServiceException(exception);
@@ -103,6 +109,7 @@ namespace Amazon.S3.Transfer.Internal
                 }
                 WaitBeforeRetry(retries);
             } while (shouldRetry);
+
         }
         
         /// <summary>
