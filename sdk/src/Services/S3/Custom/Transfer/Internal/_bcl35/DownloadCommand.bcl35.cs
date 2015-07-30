@@ -37,6 +37,7 @@ namespace Amazon.S3.Transfer.Internal
             var maxRetries = ((AmazonS3Client)_s3Client).Config.MaxErrorRetry;
             var retries = 0;
             bool shouldRetry = false;
+            string mostRecentETag = null;
             do
             {
                 shouldRetry = false;
@@ -47,7 +48,6 @@ namespace Amazon.S3.Transfer.Internal
                     getRequest.ByteRange = bytesRemaining;
                 }
 
-                string mostRecentETag = null;
                 using (var response = this._s3Client.GetObject(getRequest))
                 {
                     if (!string.IsNullOrEmpty(mostRecentETag) && !string.Equals(mostRecentETag, response.ETag))
