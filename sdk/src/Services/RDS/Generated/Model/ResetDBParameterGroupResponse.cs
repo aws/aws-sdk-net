@@ -38,7 +38,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupName. 
         /// <para>
-        ///  The name of the DB parameter group. 
+        ///  Provides the name of the DB parameter group. 
         /// </para>
         /// </summary>
         public string DBParameterGroupName

@@ -40,7 +40,7 @@ namespace Amazon.RDS
     /// <para>
     ///  Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier
     /// to set up, operate, and scale a relational database in the cloud. It provides cost-efficient,
-    /// resizable capacity for an industry-standard relational database and manages common
+    /// resizeable capacity for an industry-standard relational database and manages common
     /// database administration tasks, freeing up developers to focus on what makes their
     /// applications and businesses unique. 
     /// </para>
@@ -59,7 +59,7 @@ namespace Amazon.RDS
     /// <para>
     ///  This is an interface reference for Amazon RDS. It contains documentation for a programming
     /// or command line interface you can use to manage Amazon RDS. Note that Amazon RDS is
-    /// asynchronous, which means that some interfaces may require techniques such as polling
+    /// asynchronous, which means that some interfaces might require techniques such as polling
     /// or callback functions to determine when a command has been applied. In this reference,
     /// the parameter descriptions indicate whether a command is applied immediately, on the
     /// next instance reboot, or during the maintenance window. For a summary of the Amazon
@@ -303,7 +303,7 @@ namespace Amazon.RDS
         /// <summary>
         /// Adds metadata tags to an Amazon RDS resource. These tags can also be used with cost
         /// allocation reporting to track cost associated with Amazon RDS resources, or used in
-        /// Condition statement in IAM policy for Amazon RDS.
+        /// a Condition statement in an IAM policy for Amazon RDS.
         /// 
         ///  
         /// <para>
@@ -352,7 +352,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Applies a pending maintenance action to a resource (for example, a DB instance).
+        /// Applies a pending maintenance action to a resource (for example, to a DB instance).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ApplyPendingMaintenanceAction service method.</param>
         /// 
@@ -399,7 +399,7 @@ namespace Amazon.RDS
         /// for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId
         /// and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). 
         /// 
-        ///  <note> You cannot authorize ingress from an EC2 security group in one Region to an
+        ///  <note> You cannot authorize ingress from an EC2 security group in one region to an
         /// Amazon RDS DB instance in another. You cannot authorize ingress from a VPC security
         /// group in one VPC to an Amazon RDS DB instance in another. </note> 
         /// <para>
@@ -446,6 +446,54 @@ namespace Amazon.RDS
             var unmarshaller = AuthorizeDBSecurityGroupIngressResponseUnmarshaller.Instance;
 
             return InvokeAsync<AuthorizeDBSecurityGroupIngressRequest,AuthorizeDBSecurityGroupIngressResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CopyDBClusterSnapshot
+
+
+        /// <summary>
+        /// Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see <a
+        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the CopyDBClusterSnapshot service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotAlreadyExistsException">
+        /// User already has a DB cluster snapshot with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
+        /// <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The supplied value is not a valid DB cluster state.
+        /// </exception>
+        public CopyDBClusterSnapshotResponse CopyDBClusterSnapshot(CopyDBClusterSnapshotRequest request)
+        {
+            var marshaller = new CopyDBClusterSnapshotRequestMarshaller();
+            var unmarshaller = CopyDBClusterSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<CopyDBClusterSnapshotRequest,CopyDBClusterSnapshotResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyDBClusterSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterSnapshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CopyDBClusterSnapshotResponse> CopyDBClusterSnapshotAsync(CopyDBClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CopyDBClusterSnapshotRequestMarshaller();
+            var unmarshaller = CopyDBClusterSnapshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CopyDBClusterSnapshotRequest,CopyDBClusterSnapshotResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -593,6 +641,211 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  CreateDBCluster
+
+
+        /// <summary>
+        /// Creates a new Amazon Aurora DB cluster. For more information on Amazon Aurora, see
+        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBCluster service method.</param>
+        /// 
+        /// <returns>The response from the CreateDBCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterAlreadyExistsException">
+        /// User already has a DB cluster with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterParameterGroupNotFoundException">
+        /// <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter
+        /// group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
+        /// User attempted to create a new DB cluster and the user has already reached the maximum
+        /// allowed DB cluster quota.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InsufficientStorageClusterCapacityException">
+        /// There is insufficient storage available for the current action. You may be able to
+        /// resolve this error by updating your subnet group to use different Availability Zones
+        /// that have more storage available.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The supplied value is not a valid DB cluster state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
+        /// The DB subnet group cannot be deleted because it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not
+        /// all in a common VPC.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
+        /// DB subnet group does not cover all Availability Zones after it is created because
+        /// users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
+        /// Request would result in user exceeding the allowed amount of storage available across
+        /// all DB instances.
+        /// </exception>
+        public CreateDBClusterResponse CreateDBCluster(CreateDBClusterRequest request)
+        {
+            var marshaller = new CreateDBClusterRequestMarshaller();
+            var unmarshaller = CreateDBClusterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDBClusterRequest,CreateDBClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateDBClusterResponse> CreateDBClusterAsync(CreateDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateDBClusterRequestMarshaller();
+            var unmarshaller = CreateDBClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDBClusterRequest,CreateDBClusterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDBClusterParameterGroup
+
+
+        /// <summary>
+        /// Creates a new DB cluster parameter group. 
+        /// 
+        ///  
+        /// <para>
+        ///  Parameters in a DB cluster parameter group apply to all of the instances in a DB
+        /// cluster. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  A DB cluster parameter group is initially created with the default parameters for
+        /// the database engine used by instances in the DB cluster. To provide custom values
+        /// for any of the parameters, you must modify the group after creating it using <a>ModifyDBClusterParameterGroup</a>.
+        /// Once you've created a DB cluster parameter group, you need to associate it with your
+        /// DB cluster using <a>ModifyDBCluster</a>. When you associate a new DB cluster parameter
+        /// group with a running DB cluster, you need to reboot the DB instances in the DB cluster
+        /// without failover for the new DB cluster parameter group and associated settings to
+        /// take effect. 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// After you create a DB cluster parameter group, you should wait at least 5 minutes
+        /// before creating your first DB cluster that uses that DB cluster parameter group as
+        /// the default parameter group. This allows Amazon RDS to fully complete the create action
+        /// before the DB cluster parameter group is used as the default for a new DB cluster.
+        /// This is especially important for parameters that are critical when creating the default
+        /// database for a DB cluster, such as the character set for the default database defined
+        /// by the <code>character_set_database</code> parameter. You can use the <i>Parameter
+        /// Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon RDS
+        /// console</a> or the <a>DescribeDBClusterParameters</a> command to verify that your
+        /// DB cluster parameter group has been created or modified.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterParameterGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateDBClusterParameterGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupAlreadyExistsException">
+        /// A DB parameter group with the same name exists.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB parameter groups.
+        /// </exception>
+        public CreateDBClusterParameterGroupResponse CreateDBClusterParameterGroup(CreateDBClusterParameterGroupRequest request)
+        {
+            var marshaller = new CreateDBClusterParameterGroupRequestMarshaller();
+            var unmarshaller = CreateDBClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDBClusterParameterGroupRequest,CreateDBClusterParameterGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDBClusterParameterGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterParameterGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateDBClusterParameterGroupResponse> CreateDBClusterParameterGroupAsync(CreateDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateDBClusterParameterGroupRequestMarshaller();
+            var unmarshaller = CreateDBClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDBClusterParameterGroupRequest,CreateDBClusterParameterGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDBClusterSnapshot
+
+
+        /// <summary>
+        /// Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see <a
+        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the CreateDBClusterSnapshot service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotAlreadyExistsException">
+        /// User already has a DB cluster snapshot with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The supplied value is not a valid DB cluster state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB snapshots.
+        /// </exception>
+        public CreateDBClusterSnapshotResponse CreateDBClusterSnapshot(CreateDBClusterSnapshotRequest request)
+        {
+            var marshaller = new CreateDBClusterSnapshotRequestMarshaller();
+            var unmarshaller = CreateDBClusterSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDBClusterSnapshotRequest,CreateDBClusterSnapshotResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDBClusterSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterSnapshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateDBClusterSnapshotResponse> CreateDBClusterSnapshotAsync(CreateDBClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateDBClusterSnapshotRequestMarshaller();
+            var unmarshaller = CreateDBClusterSnapshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDBClusterSnapshotRequest,CreateDBClusterSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDBInstance
 
 
@@ -610,6 +863,9 @@ namespace Amazon.RDS
         /// <para>
         /// RDS may not also be authorized via IAM to perform necessary actions on your behalf.
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// User already has a DB instance with the given identifier.
@@ -632,6 +888,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// Specified DB instance class is not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The supplied value is not a valid DB cluster state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not
@@ -689,7 +948,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a DB instance that acts as a Read Replica of a source DB instance. 
+        /// Creates a DB instance for a DB instance running MySQL or PostgreSQL that acts as
+        /// a Read Replica of a source DB instance. 
         /// 
         ///  
         /// <para>
@@ -1136,6 +1396,160 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DeleteDBCluster
+
+
+        /// <summary>
+        /// The DeleteDBCluster action deletes a previously provisioned DB cluster. A successful
+        /// response from the web service indicates the request was received correctly. When you
+        /// delete a DB cluster, all automated backups for that DB cluster are deleted and cannot
+        /// be recovered. Manual DB cluster snapshots of the DB cluster to be deleted are not
+        /// deleted. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBCluster service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDBCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The supplied value is not a valid DB cluster state.
+        /// </exception>
+        public DeleteDBClusterResponse DeleteDBCluster(DeleteDBClusterRequest request)
+        {
+            var marshaller = new DeleteDBClusterRequestMarshaller();
+            var unmarshaller = DeleteDBClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDBClusterRequest,DeleteDBClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteDBClusterResponse> DeleteDBClusterAsync(DeleteDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteDBClusterRequestMarshaller();
+            var unmarshaller = DeleteDBClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDBClusterRequest,DeleteDBClusterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDBClusterParameterGroup
+
+
+        /// <summary>
+        /// Deletes a specified DB cluster parameter group. The DB cluster parameter group to
+        /// be deleted cannot be associated with any DB clusters. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterParameterGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDBClusterParameterGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
+        /// The DB parameter group cannot be deleted because it is in use.
+        /// </exception>
+        public DeleteDBClusterParameterGroupResponse DeleteDBClusterParameterGroup(DeleteDBClusterParameterGroupRequest request)
+        {
+            var marshaller = new DeleteDBClusterParameterGroupRequestMarshaller();
+            var unmarshaller = DeleteDBClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDBClusterParameterGroupRequest,DeleteDBClusterParameterGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDBClusterParameterGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterParameterGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteDBClusterParameterGroupResponse> DeleteDBClusterParameterGroupAsync(DeleteDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteDBClusterParameterGroupRequestMarshaller();
+            var unmarshaller = DeleteDBClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDBClusterParameterGroupRequest,DeleteDBClusterParameterGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDBClusterSnapshot
+
+
+        /// <summary>
+        /// Deletes a DB cluster snapshot. If the snapshot is being copied, the copy operation
+        /// is terminated. 
+        /// 
+        ///  <note>The DB cluster snapshot must be in the <code>available</code> state to be deleted.</note>
+        /// 
+        /// <para>
+        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDBClusterSnapshot service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
+        /// <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterSnapshotStateException">
+        /// The supplied value is not a valid DB cluster snapshot state.
+        /// </exception>
+        public DeleteDBClusterSnapshotResponse DeleteDBClusterSnapshot(DeleteDBClusterSnapshotRequest request)
+        {
+            var marshaller = new DeleteDBClusterSnapshotRequestMarshaller();
+            var unmarshaller = DeleteDBClusterSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDBClusterSnapshotRequest,DeleteDBClusterSnapshotResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDBClusterSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterSnapshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteDBClusterSnapshotResponse> DeleteDBClusterSnapshotAsync(DeleteDBClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteDBClusterSnapshotRequestMarshaller();
+            var unmarshaller = DeleteDBClusterSnapshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDBClusterSnapshotRequest,DeleteDBClusterSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDBInstance
 
 
@@ -1152,6 +1566,12 @@ namespace Amazon.RDS
         /// until the DB snapshot is created. The API action <code>DescribeDBInstance</code> is
         /// used to monitor the status of this operation. The action cannot be canceled or reverted
         /// once submitted. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore',
+        /// or 'incompatible-network', it can only be deleted when the SkipFinalSnapshot parameter
+        /// is set to "true".
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBInstance service method.</param>
@@ -1587,6 +2007,194 @@ namespace Amazon.RDS
             var unmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeCertificatesRequest,DescribeCertificatesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDBClusterParameterGroups
+
+
+        /// <summary>
+        /// Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a <code>DBClusterParameterGroupName</code>
+        /// parameter is specified, the list will contain only the description of the specified
+        /// DB cluster parameter group. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameterGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBClusterParameterGroups service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        public DescribeDBClusterParameterGroupsResponse DescribeDBClusterParameterGroups(DescribeDBClusterParameterGroupsRequest request)
+        {
+            var marshaller = new DescribeDBClusterParameterGroupsRequestMarshaller();
+            var unmarshaller = DescribeDBClusterParameterGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBClusterParameterGroupsRequest,DescribeDBClusterParameterGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBClusterParameterGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameterGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeDBClusterParameterGroupsResponse> DescribeDBClusterParameterGroupsAsync(DescribeDBClusterParameterGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeDBClusterParameterGroupsRequestMarshaller();
+            var unmarshaller = DescribeDBClusterParameterGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDBClusterParameterGroupsRequest,DescribeDBClusterParameterGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDBClusterParameters
+
+
+        /// <summary>
+        /// Returns the detailed parameter list for a particular DB cluster parameter group.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameters service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBClusterParameters service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        public DescribeDBClusterParametersResponse DescribeDBClusterParameters(DescribeDBClusterParametersRequest request)
+        {
+            var marshaller = new DescribeDBClusterParametersRequestMarshaller();
+            var unmarshaller = DescribeDBClusterParametersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBClusterParametersRequest,DescribeDBClusterParametersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBClusterParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeDBClusterParametersResponse> DescribeDBClusterParametersAsync(DescribeDBClusterParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeDBClusterParametersRequestMarshaller();
+            var unmarshaller = DescribeDBClusterParametersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDBClusterParametersRequest,DescribeDBClusterParametersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDBClusters
+
+
+        /// <summary>
+        /// Returns information about provisioned Aurora DB clusters. This API supports pagination.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusters service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBClusters service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        public DescribeDBClustersResponse DescribeDBClusters(DescribeDBClustersRequest request)
+        {
+            var marshaller = new DescribeDBClustersRequestMarshaller();
+            var unmarshaller = DescribeDBClustersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBClustersRequest,DescribeDBClustersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBClusters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeDBClustersResponse> DescribeDBClustersAsync(DescribeDBClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeDBClustersRequestMarshaller();
+            var unmarshaller = DescribeDBClustersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDBClustersRequest,DescribeDBClustersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDBClusterSnapshots
+
+
+        /// <summary>
+        /// Returns information about DB cluster snapshots. This API supports pagination. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterSnapshots service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBClusterSnapshots service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
+        /// <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
+        /// </exception>
+        public DescribeDBClusterSnapshotsResponse DescribeDBClusterSnapshots(DescribeDBClusterSnapshotsRequest request)
+        {
+            var marshaller = new DescribeDBClusterSnapshotsRequestMarshaller();
+            var unmarshaller = DescribeDBClusterSnapshotsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBClusterSnapshotsRequest,DescribeDBClusterSnapshotsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBClusterSnapshots operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterSnapshots operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeDBClusterSnapshotsResponse> DescribeDBClusterSnapshotsAsync(DescribeDBClusterSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeDBClusterSnapshotsRequestMarshaller();
+            var unmarshaller = DescribeDBClusterSnapshotsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDBClusterSnapshotsRequest,DescribeDBClusterSnapshotsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2116,6 +2724,50 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeEngineDefaultClusterParameters
+
+
+        /// <summary>
+        /// Returns the default engine and system parameter information for the cluster database
+        /// engine. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEngineDefaultClusterParameters service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEngineDefaultClusterParameters service method, as returned by RDS.</returns>
+        public DescribeEngineDefaultClusterParametersResponse DescribeEngineDefaultClusterParameters(DescribeEngineDefaultClusterParametersRequest request)
+        {
+            var marshaller = new DescribeEngineDefaultClusterParametersRequestMarshaller();
+            var unmarshaller = DescribeEngineDefaultClusterParametersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEngineDefaultClusterParametersRequest,DescribeEngineDefaultClusterParametersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEngineDefaultClusterParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEngineDefaultClusterParameters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeEngineDefaultClusterParametersResponse> DescribeEngineDefaultClusterParametersAsync(DescribeEngineDefaultClusterParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeEngineDefaultClusterParametersRequestMarshaller();
+            var unmarshaller = DescribeEngineDefaultClusterParametersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEngineDefaultClusterParametersRequest,DescribeEngineDefaultClusterParametersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeEngineDefaultParameters
 
 
@@ -2161,7 +2813,7 @@ namespace Amazon.RDS
         /// Displays a list of categories for all event source types, or, if specified, for a
         /// specified source type. You can see a list of the event categories and source types
         /// in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-        /// Events</a> topic in the Amazon RDS User Guide.
+        /// Events</a> topic in the <i>Amazon RDS User Guide.</i>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEventCategories service method, as returned by RDS.</returns>
@@ -2175,7 +2827,7 @@ namespace Amazon.RDS
         /// Displays a list of categories for all event source types, or, if specified, for a
         /// specified source type. You can see a list of the event categories and source types
         /// in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-        /// Events</a> topic in the Amazon RDS User Guide.
+        /// Events</a> topic in the <i>Amazon RDS User Guide.</i>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventCategories service method.</param>
         /// 
@@ -2193,7 +2845,7 @@ namespace Amazon.RDS
         /// Displays a list of categories for all event source types, or, if specified, for a
         /// specified source type. You can see a list of the event categories and source types
         /// in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-        /// Events</a> topic in the Amazon RDS User Guide.
+        /// Events</a> topic in the <i>Amazon RDS User Guide.</i>
         /// </summary>
         /// <param name="cancellationToken"> ttd1
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2717,13 +3369,16 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Downloads all or a portion of the specified log file.
+        /// Downloads all or a portion of the specified log file, up to 1 MB in size.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DownloadDBLogFilePortion service method.</param>
         /// 
         /// <returns>The response from the DownloadDBLogFilePortion service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBLogFileNotFoundException">
+        /// <i>LogFileName</i> does not refer to an existing DB log file.
         /// </exception>
         public DownloadDBLogFilePortionResponse DownloadDBLogFilePortion(DownloadDBLogFilePortionRequest request)
         {
@@ -2748,6 +3403,68 @@ namespace Amazon.RDS
             var unmarshaller = DownloadDBLogFilePortionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DownloadDBLogFilePortionRequest,DownloadDBLogFilePortionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  FailoverDBCluster
+
+
+        /// <summary>
+        /// Forces a failover for a DB cluster.
+        /// 
+        ///  
+        /// <para>
+        /// A failover for a DB cluster promotes one of the read-only instances in the DB cluster
+        /// to the master DB instance (the cluster writer) and deletes the current primary instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Aurora will automatically fail over to a read-only instance, if one exists,
+        /// when the primary instance fails. You can force a failover when you want to simulate
+        /// a failure of a DB instance for testing. Because each instance in a DB cluster has
+        /// its own endpoint address, you will need to clean up and re-establish any existing
+        /// connections that use those endpoint addresses when the failover is complete.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FailoverDBCluster service method.</param>
+        /// 
+        /// <returns>The response from the FailoverDBCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The supplied value is not a valid DB cluster state.
+        /// </exception>
+        public FailoverDBClusterResponse FailoverDBCluster(FailoverDBClusterRequest request)
+        {
+            var marshaller = new FailoverDBClusterRequestMarshaller();
+            var unmarshaller = FailoverDBClusterResponseUnmarshaller.Instance;
+
+            return Invoke<FailoverDBClusterRequest,FailoverDBClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the FailoverDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the FailoverDBCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<FailoverDBClusterResponse> FailoverDBClusterAsync(FailoverDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new FailoverDBClusterRequestMarshaller();
+            var unmarshaller = FailoverDBClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<FailoverDBClusterRequest,FailoverDBClusterResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2797,6 +3514,151 @@ namespace Amazon.RDS
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyDBCluster
+
+
+        /// <summary>
+        /// Modify a setting for an Amazon Aurora DB cluster. You can change one or more database
+        /// configuration parameters by specifying these parameters and the new values in the
+        /// request. For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBCluster service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDBCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterParameterGroupNotFoundException">
+        /// <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter
+        /// group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The supplied value is not a valid DB cluster state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSecurityGroupStateException">
+        /// The state of the DB security group does not allow deletion.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
+        /// The DB subnet group cannot be deleted because it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not
+        /// all in a common VPC.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
+        /// DB subnet group does not cover all Availability Zones after it is created because
+        /// users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
+        /// Request would result in user exceeding the allowed amount of storage available across
+        /// all DB instances.
+        /// </exception>
+        public ModifyDBClusterResponse ModifyDBCluster(ModifyDBClusterRequest request)
+        {
+            var marshaller = new ModifyDBClusterRequestMarshaller();
+            var unmarshaller = ModifyDBClusterResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyDBClusterRequest,ModifyDBClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ModifyDBClusterResponse> ModifyDBClusterAsync(ModifyDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyDBClusterRequestMarshaller();
+            var unmarshaller = ModifyDBClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyDBClusterRequest,ModifyDBClusterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyDBClusterParameterGroup
+
+
+        /// <summary>
+        /// Modifies the parameters of a DB cluster parameter group. To modify more than one
+        /// parameter, submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
+        /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
+        /// request. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  Changes to dynamic parameters are applied immediately. Changes to static parameters
+        /// require a reboot without failover to the DB cluster associated with the parameter
+        /// group before the change can take effect. 
+        /// </para>
+        ///  </note> <important> 
+        /// <para>
+        /// After you create a DB cluster parameter group, you should wait at least 5 minutes
+        /// before creating your first DB cluster that uses that DB cluster parameter group as
+        /// the default parameter group. This allows Amazon RDS to fully complete the create action
+        /// before the parameter group is used as the default for a new DB cluster. This is especially
+        /// important for parameters that are critical when creating the default database for
+        /// a DB cluster, such as the character set for the default database defined by the <code>character_set_database</code>
+        /// parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
+        /// RDS console</a> or the <a>DescribeDBClusterParameters</a> command to verify that your
+        /// DB cluster parameter group has been created or modified.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBClusterParameterGroup service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDBClusterParameterGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
+        /// The DB parameter group cannot be deleted because it is in use.
+        /// </exception>
+        public ModifyDBClusterParameterGroupResponse ModifyDBClusterParameterGroup(ModifyDBClusterParameterGroupRequest request)
+        {
+            var marshaller = new ModifyDBClusterParameterGroupRequestMarshaller();
+            var unmarshaller = ModifyDBClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyDBClusterParameterGroupRequest,ModifyDBClusterParameterGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyDBClusterParameterGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBClusterParameterGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ModifyDBClusterParameterGroupResponse> ModifyDBClusterParameterGroupAsync(ModifyDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyDBClusterParameterGroupRequestMarshaller();
+            var unmarshaller = ModifyDBClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyDBClusterParameterGroupRequest,ModifyDBClusterParameterGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3376,6 +4238,67 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  ResetDBClusterParameterGroup
+
+
+        /// <summary>
+        /// Modifies the parameters of a DB cluster parameter group to the default value. To
+        /// reset specific parameters submit a list of the following: <code>ParameterName</code>
+        /// and <code>ApplyMethod</code>. To reset the entire DB cluster parameter group, specify
+        /// the <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code> parameters.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  When resetting the entire group, dynamic parameters are updated immediately and static
+        /// parameters are set to <code>pending-reboot</code> to take effect on the next DB instance
+        /// restart or <a>RebootDBInstance</a> request. You must call <a>RebootDBInstance</a>
+        /// for every DB instance in your DB cluster that you want the updated static parameter
+        /// to apply to.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetDBClusterParameterGroup service method.</param>
+        /// 
+        /// <returns>The response from the ResetDBClusterParameterGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
+        /// The DB parameter group cannot be deleted because it is in use.
+        /// </exception>
+        public ResetDBClusterParameterGroupResponse ResetDBClusterParameterGroup(ResetDBClusterParameterGroupRequest request)
+        {
+            var marshaller = new ResetDBClusterParameterGroupRequestMarshaller();
+            var unmarshaller = ResetDBClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ResetDBClusterParameterGroupRequest,ResetDBClusterParameterGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetDBClusterParameterGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetDBClusterParameterGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ResetDBClusterParameterGroupResponse> ResetDBClusterParameterGroupAsync(ResetDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ResetDBClusterParameterGroupRequestMarshaller();
+            var unmarshaller = ResetDBClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResetDBClusterParameterGroupRequest,ResetDBClusterParameterGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ResetDBParameterGroup
 
 
@@ -3425,14 +4348,215 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  RestoreDBClusterFromSnapshot
+
+
+        /// <summary>
+        /// Creates a new DB cluster from a DB cluster snapshot. The target DB cluster is created
+        /// from the source DB cluster restore point with the same configuration as the original
+        /// source DB cluster, except that the new DB cluster is created with the default security
+        /// group. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the RestoreDBClusterFromSnapshot service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterAlreadyExistsException">
+        /// User already has a DB cluster with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
+        /// User attempted to create a new DB cluster and the user has already reached the maximum
+        /// allowed DB cluster quota.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
+        /// <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
+        /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InsufficientDBClusterCapacityException">
+        /// The DB cluster does not have enough capacity for the current operation.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InsufficientStorageClusterCapacityException">
+        /// There is insufficient storage available for the current action. You may be able to
+        /// resolve this error by updating your subnet group to use different Availability Zones
+        /// that have more storage available.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterSnapshotStateException">
+        /// The supplied value is not a valid DB cluster snapshot state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
+        /// The state of the DB snapshot does not allow deletion.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidRestoreException">
+        /// Cannot restore from vpc backup to non-vpc DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not
+        /// all in a common VPC.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
+        /// DB subnet group does not cover all Availability Zones after it is created because
+        /// users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
+        /// The specified option group could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
+        /// Request would result in user exceeding the allowed amount of storage available across
+        /// all DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
+        /// Request would result in user exceeding the allowed amount of storage available across
+        /// all DB instances.
+        /// </exception>
+        public RestoreDBClusterFromSnapshotResponse RestoreDBClusterFromSnapshot(RestoreDBClusterFromSnapshotRequest request)
+        {
+            var marshaller = new RestoreDBClusterFromSnapshotRequestMarshaller();
+            var unmarshaller = RestoreDBClusterFromSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreDBClusterFromSnapshotRequest,RestoreDBClusterFromSnapshotResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreDBClusterFromSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromSnapshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RestoreDBClusterFromSnapshotResponse> RestoreDBClusterFromSnapshotAsync(RestoreDBClusterFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RestoreDBClusterFromSnapshotRequestMarshaller();
+            var unmarshaller = RestoreDBClusterFromSnapshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreDBClusterFromSnapshotRequest,RestoreDBClusterFromSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RestoreDBClusterToPointInTime
+
+
+        /// <summary>
+        /// Restores a DB cluster to an arbitrary point in time. Users can restore to any point
+        /// in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code>
+        /// days. The target DB cluster is created from the source DB cluster with the same configuration
+        /// as the original DB cluster, except that the new DB cluster is created with the default
+        /// DB security group. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterToPointInTime service method.</param>
+        /// 
+        /// <returns>The response from the RestoreDBClusterToPointInTime service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterAlreadyExistsException">
+        /// User already has a DB cluster with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
+        /// User attempted to create a new DB cluster and the user has already reached the maximum
+        /// allowed DB cluster quota.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
+        /// <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InsufficientDBClusterCapacityException">
+        /// The DB cluster does not have enough capacity for the current operation.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterSnapshotStateException">
+        /// The supplied value is not a valid DB cluster snapshot state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
+        /// The state of the DB snapshot does not allow deletion.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidRestoreException">
+        /// Cannot restore from vpc backup to non-vpc DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not
+        /// all in a common VPC.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
+        /// DB subnet group does not cover all Availability Zones after it is created because
+        /// users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
+        /// The specified option group could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
+        /// Request would result in user exceeding the allowed amount of storage available across
+        /// all DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
+        /// Request would result in user exceeding the allowed amount of storage available across
+        /// all DB instances.
+        /// </exception>
+        public RestoreDBClusterToPointInTimeResponse RestoreDBClusterToPointInTime(RestoreDBClusterToPointInTimeRequest request)
+        {
+            var marshaller = new RestoreDBClusterToPointInTimeRequestMarshaller();
+            var unmarshaller = RestoreDBClusterToPointInTimeResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreDBClusterToPointInTimeRequest,RestoreDBClusterToPointInTimeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreDBClusterToPointInTime operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterToPointInTime operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RestoreDBClusterToPointInTimeResponse> RestoreDBClusterToPointInTimeAsync(RestoreDBClusterToPointInTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RestoreDBClusterToPointInTimeRequestMarshaller();
+            var unmarshaller = RestoreDBClusterToPointInTimeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreDBClusterToPointInTimeRequest,RestoreDBClusterToPointInTimeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RestoreDBInstanceFromDBSnapshot
 
 
         /// <summary>
         /// Creates a new DB instance from a DB snapshot. The target database is created from
-        /// the source database restore point with the same configuration as the original source
-        /// database, except that the new RDS instance is created with the default security group.
-        /// 
+        /// the source database restore point with the most of original configuration, but in
+        /// a system chosen availability zone with the default security group, the default subnet
+        /// group, and the default DB parameter group. By default, the new DB instance is created
+        /// as a single-AZ deployment except when the instance is a SQL Server instance that has
+        /// an option group that is associated with mirroring; in this case, the instance becomes
+        /// a mirrored AZ deployment and not a single-AZ deployment. 
         /// 
         ///  
         /// <para>
@@ -3459,6 +4583,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// User already has a DB instance with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
+        /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
@@ -3540,9 +4667,12 @@ namespace Amazon.RDS
         /// <summary>
         /// Restores a DB instance to an arbitrary point-in-time. Users can restore to any point
         /// in time before the LatestRestorableTime for up to BackupRetentionPeriod days. The
-        /// target database is created from the source database with the same configuration as
-        /// the original database except that the DB instance is created with the default DB security
-        /// group.
+        /// target database is created with the most of original configuration, but in a system
+        /// chosen availability zone with the default security group, the default subnet group,
+        /// and the default DB parameter group. By default, the new DB instance is created as
+        /// a single-AZ deployment except when the instance is a SQL Server instance that has
+        /// an option group that is associated with mirroring; in this case, the instance becomes
+        /// a mirrored deployment and not a single-AZ deployment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceToPointInTime service method.</param>
         /// 
@@ -3561,6 +4691,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
+        /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
         /// Subnets in the DB subnet group should cover at least two Availability Zones unless

@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DownloadDBLogFilePortion operation.
-    /// Downloads all or a portion of the specified log file.
+    /// Downloads all or a portion of the specified log file, up to 1 MB in size.
     /// </summary>
     public partial class DownloadDBLogFilePortionRequest : AmazonRDSRequest
     {
@@ -105,7 +105,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property NumberOfLines. 
         /// <para>
-        ///  The number of lines to download. 
+        ///  The number of lines to download. If the number of lines specified results in a file
+        /// over 1 MB in size, the file will be truncated at 1 MB in size. 
         /// </para>
         ///  
         /// <para>
