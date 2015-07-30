@@ -52,7 +52,8 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     if (!string.IsNullOrEmpty(mostRecentETag) && !string.Equals(mostRecentETag, response.ETag))
                     {
-                        Exception eTagChanged = new Exception("ETag changed during download retry.");
+                        AmazonServiceException eTagChanged = new AmazonServiceException("ETag changed during download retry.");
+                        throw eTagChanged;
                     }
                     mostRecentETag = response.ETag;
 
@@ -117,7 +118,7 @@ namespace Amazon.S3.Transfer.Internal
         /// </summary>
         /// <param name="filepath">The fully qualified path of the file.</param>
         /// <returns></returns>
-        internal ByteRange ByteRangeRemainingForDownload(string filepath)
+        internal static ByteRange ByteRangeRemainingForDownload(string filepath)
         {
             /*
              * Initialize the ByteRange as the whole file.
