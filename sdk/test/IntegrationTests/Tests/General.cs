@@ -20,7 +20,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     public class General
     {
 #if BCL45
-        [TestMethod]
+        //[TestMethod]
         public void TestResponseMocking()
         {
             var rawResponse = @"HTTP/1.1 200 OK
