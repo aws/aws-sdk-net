@@ -18,7 +18,7 @@
 
 	<Target Name="run-generator">
 		<Message Text="Build and run code generator"/>
-		<Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.All.sln"/>
+		<Exec Command="..\sdk\.nuget\NuGet.exe restore ..\generator\AWSSDKGenerator.sln"/>
 		<Exec Command="$(devenv2013) /Rebuild Debug ..\generator\AWSSDKGenerator.sln"/>
 		<Exec Command="ServiceClientGenerator.exe -self.modelpath $(ModelPath) -self.basename $(BaseName) -self.endpoint-prefix $(EndpointPrefix) -self.sig-v4-service-name $(SigV4ServiceName)" 
 			WorkingDirectory="..\generator\ServiceClientGenerator\bin\Debug"/>

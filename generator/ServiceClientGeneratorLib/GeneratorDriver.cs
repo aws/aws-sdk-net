@@ -917,7 +917,7 @@ namespace ServiceClientGenerator
                 { "AWSDependencies", awsDependencies },
                 { "BaseName", this.Configuration.BaseName },
                 { "ProjectFileConfigurations", this.ProjectFileConfigurations},
-                { "ExtraTags", Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) }
+                { "ExtraTags", Configuration.Tags == null || Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) }
             };
 
             if (Configuration.NugetDependencies != null)
