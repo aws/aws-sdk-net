@@ -10,10 +10,9 @@ using System.Net;
 using System.Reflection;
 using System.Text;
 
-namespace AWSSDK_DotNet.IntegrationTests.Utils
+namespace AWSSDK_DotNet.IntegrationTests
 {
-// Reflection to construct HttpWebResponse only works with 4.5 and higher
-#if BCL45
+    // Reflection to construct HttpWebResponse only works with 4.5 and higher
     public class Mocker
     {
         #region Public classes and delegates
@@ -118,6 +117,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             return mockResponse;
         }
 
+        private static void LogHandlers(RuntimePipeline pipeline)
+        {
+            var handlers = pipeline.EnumerateHandlers().ToList();
+            Console.WriteLine("Handlers for pipeline, count = {0}", handlers.Count);
+            for(int i=0;i<handlers.Count;i++)
+            {
+                var handler = handlers[i];
+                Console.WriteLine("Handler {0}: {1}", i, handler.GetType().FullName);
+            }
+        }
+
         #endregion
 
         #region Helper classes
@@ -149,14 +159,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 
                 var requestFactory = new MockHttpRequestFactory(mocker);
                 var httpHandler = new HttpHandler<Stream>(requestFactory, client);
+
+                Console.WriteLine("Pipeline before adding mock");
+                LogHandlers(pipeline);
                 pipeline.ReplaceHandler<HttpHandler<Stream>>(httpHandler);
+                Console.WriteLine("Pipeline after adding mock");
+                LogHandlers(pipeline);
             }
         }
-        private class MockHttpRequest : HttpRequest
+        private class MockHttpRequest : IHttpRequest<Stream>
         {
+            public Uri RequestUri { get; private set; }
+
             public MockHttpRequest(Uri requestUri, Mocker mocker)
-                : base(requestUri)
             {
+                RequestUri = requestUri;
                 IsRetry = false;
                 _mocker = mocker;
             }
@@ -184,31 +201,104 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 return _mocker.CreateMockResponse(CurrentRequestInfo);
             }
 
-            public override Amazon.Runtime.Internal.Transform.IWebResponseData GetResponse()
+            public Amazon.Runtime.Internal.Transform.IWebResponseData GetResponse()
             {
                 return CreateResponse();
             }
 
 #if BCL45
-            public override System.Threading.Tasks.Task<IWebResponseData> GetResponseAsync(System.Threading.CancellationToken cancellationToken)
+            public System.Threading.Tasks.Task<IWebResponseData> GetResponseAsync(System.Threading.CancellationToken cancellationToken)
             {
                 return new System.Threading.Tasks.Task<IWebResponseData>(CreateResponse);
             }
 
 #elif BCL && !BCL45
-            public override IWebResponseData EndGetResponse(IAsyncResult asyncResult)
+            public IWebResponseData EndGetResponse(IAsyncResult asyncResult)
             {
                 return CreateResponse();
             }
 #endif
 
-            public override void ConfigureRequest(IRequestContext requestContext)
+            public void ConfigureRequest(IRequestContext requestContext)
             {
-                base.ConfigureRequest(requestContext);
+                //base.ConfigureRequest(requestContext);
 
                 IsRetry = requestContext.Retries > 0;
                 IsRewindable = requestContext.Request.IsRequestStreamRewindable();
                 RequestContext = requestContext;
+            }
+
+            public string Method { get; set; }
+            public void SetRequestHeaders(IDictionary<string, string> headers)
+            {
+            }
+            public Stream GetRequestContent()
+            {
+                return new MemoryStream();
+            }
+
+            public void WriteToRequestBody(Stream requestContent, Stream contentStream, IDictionary<string, string> contentHeaders, IRequestContext requestContext)
+            {
+                bool gotException = false;
+                try
+                {
+                    var buffer = new byte[requestContext.ClientConfig.BufferSize];
+                    int bytesRead = 0;
+                    int bytesToRead = buffer.Length;
+
+                    while ((bytesRead = contentStream.Read(buffer, 0, bytesToRead)) > 0)
+                    {
+#if AWS_ASYNC_API
+                    requestContext.CancellationToken.ThrowIfCancellationRequested();
+#endif
+                        requestContent.Write(buffer, 0, bytesRead);
+                    }
+                }
+                catch (Exception)
+                {
+                    gotException = true;
+
+                    // If an exception occured while reading the input stream,
+                    // Abort the request to signal failure to the server and prevent
+                    // potentially writing an incomplete stream to the server.
+                    this.Abort();
+                    throw;
+                }
+                finally
+                {
+                    // Only bubble up exception from the close method if we haven't already got an exception
+                    // reading and writing from the streams.
+                    try
+                    {
+                        requestContent.Close();
+                    }
+                    catch (Exception)
+                    {
+                        if (!gotException)
+                            throw;
+                    }
+                }
+            }
+
+            public void WriteToRequestBody(Stream requestContent, byte[] content, IDictionary<string, string> contentHeaders)
+            {
+                using (requestContent)
+                {
+                    requestContent.Write(content, 0, content.Length);
+                }
+            }
+
+            public void Abort()
+            {
+            }
+
+            public System.Threading.Tasks.Task<Stream> GetRequestContentAsync()
+            {
+                return new System.Threading.Tasks.Task<Stream>(GetRequestContent);
+            }
+
+            public void Dispose()
+            {
             }
         }
         private class MockWebResponse
@@ -316,5 +406,4 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 
         #endregion
     }
-#endif
 }
