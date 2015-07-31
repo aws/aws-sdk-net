@@ -30,6 +30,30 @@ namespace Amazon.S3.Transfer.Internal
 {
     internal partial class DownloadCommand : BaseCommand
     {
+        /// <summary>
+        /// Returns the amount of bytes remaining that need to be pulled down from S3.
+        /// </summary>
+        /// <param name="filepath">The fully qualified path of the file.</param>
+        /// <returns></returns>
+        internal static ByteRange ByteRangeRemainingForDownload(string filepath)
+        {
+            /*
+             * Initialize the ByteRange as the whole file.
+             * long.MaxValue works regardless of the size because
+             * S3 will stop sending bits if you specify beyond the
+             * size of the file anyways.
+             */
+            ByteRange byteRange = new ByteRange(0, long.MaxValue);
+
+            if (!File.Exists(filepath))
+                return byteRange;
+
+            FileInfo info = new FileInfo(filepath);
+            byteRange.Start = info.Length;
+
+            return byteRange;
+        }
+        
         public override async Task ExecuteAsync(CancellationToken cancellationToken)
         {
             ValidateRequest();
@@ -38,18 +62,50 @@ namespace Amazon.S3.Transfer.Internal
             var maxRetries = ((AmazonS3Client)_s3Client).Config.MaxErrorRetry;
             var retries = 0;
             bool shouldRetry = false;
+            string mostRecentETag = null;
             do
             {
                 shouldRetry = false;
                 using (var response = await this._s3Client.GetObjectAsync(getRequest, cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false))
                 {
+                    if (!string.IsNullOrEmpty(mostRecentETag) && !string.Equals(mostRecentETag, response.ETag))
+                    {
+                        AmazonServiceException eTagChanged = new AmazonServiceException("ETag changed during download retry.");
+                        throw eTagChanged;
+                    }
+                    mostRecentETag = response.ETag;
 
                     try
                     {
-                        response.WriteObjectProgressEvent += OnWriteObjectProgressEvent;
-                        await response.WriteResponseStreamToFileAsync(this._request.FilePath, false, cancellationToken)
-                            .ConfigureAwait(continueOnCapturedContext: false);
+                        if (retries == 0)
+                        {
+                            /* 
+                             * Wipe the local file, if it exists, to handle edge case where:
+                             * 
+                             * 1. File foo exists
+                             * 2. We start trying to download, but unsuccesfully write any data
+                             * 3. We retry the download, with retires > 0, thus hitting the else statement below
+                             * 4. We will append to file foo, instead of overwriting it
+                             * 
+                             * We counter it with the call below because it's the same call that would be hit
+                             * in WriteResponseStreamToFile. If any exceptions are thrown, they will be the same as before
+                             * to avoid any breaking changes to customers who handle that specific exception in a
+                             * particular manor.
+                             */
+                            FileStream temp = new FileStream(this._request.FilePath, FileMode.Create, FileAccess.ReadWrite, FileShare.Read, Amazon.S3.Util.S3Constants.DefaultBufferSize);
+                            temp.Close();
+
+                            response.WriteObjectProgressEvent += OnWriteObjectProgressEvent;
+                            await response.WriteResponseStreamToFileAsync(this._request.FilePath, false, cancellationToken)
+                                .ConfigureAwait(continueOnCapturedContext: false);
+                        }
+                        else
+                        {
+                            response.WriteObjectProgressEvent += OnWriteObjectProgressEvent;
+                            await response.WriteResponseStreamToFileAsync(this._request.FilePath, true, cancellationToken)
+                                .ConfigureAwait(continueOnCapturedContext: false);
+                        }
                     }
                     catch (Exception exception)
                     {
