@@ -12,9 +12,9 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Import/Export. AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- AWS Import/Export. AWS Import/Export")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- AWS Import/Export. AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.")]
 #elif DNX
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- AWS Import/Export. AWS Import/Export")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- AWS Import/Export. AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

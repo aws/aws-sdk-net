@@ -31,10 +31,14 @@
 	<Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;keyscan;consolidate-docartifacts;save-build"/>
 
 	<Target Name="full-build-nodocs" DependsOnTargets="test-sdk;keyscan;copy-assemblies;save-build"/>
+	
+	<Target Name="dnxcore-full-build" DependsOnTargets="build-sdk-desktop;build-sdk-dnxcore">
+	</Target>
 
 	<Target Name="restore-nuget">
 		<Message Text="Restore nuget packages"/>
-		<Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.All.sln"/>
+		<Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.Desktop.sln"/>
+		<Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.PCL.sln"/>
 		<Exec Command="..\sdk\.nuget\NuGet.exe restore ..\generator\AWSSDKGenerator.sln"/>
 	</Target>
 
@@ -47,7 +51,7 @@
 			WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
 	</Target>
 	
-	<Target Name="build-sdk" DependsOnTargets="restore-nuget;run-generator">
+	<Target Name="build-sdk" DependsOnTargets="build-sdk-desktop;build-sdk-pcl">
 		<Message Text="Compile the SDK"/>
 		<MSBuild Projects="..\sdk\AWSSDK.All.sln"
 			Targets="Clean;Build"
@@ -57,7 +61,28 @@
 			SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
 			DestinationFolder="$(Deployment)" />
 	</Target>
- 
+
+	<Target Name="build-sdk-desktop" DependsOnTargets="restore-nuget;run-generator">
+		<Message Text="Compile the Desktop SDK"/>
+		<MSBuild Projects="..\sdk\AWSSDK.Desktop.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation)" />
+	</Target>
+
+	<Target Name="build-sdk-pcl" DependsOnTargets="restore-nuget;run-generator">
+		<Message Text="Compile the Portable Class Library SDK"/>
+		<MSBuild Projects="..\sdk\AWSSDK.PCL.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation)" />
+	</Target>
+
+	<Target Name="build-sdk-dnxcore" DependsOnTargets="restore-nuget;run-generator">
+		<Message Text="Compile the DNXCore SDK"/>
+		<MSBuild Projects="..\sdk\AWSSDK.DnxCore.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation)" />
+	</Target>
+	
 	<Target Name="test-sdk" DependsOnTargets="init;build-sdk;fxcop;run-unit-tests;run-integ-tests" />
 	<Target Name="run-unit-tests" DependsOnTargets="init;build-sdk">
 		<MSBuild

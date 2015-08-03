@@ -417,7 +417,8 @@ namespace ServiceClientGenerator
                     SelectProjectAndConfigurationsForSolution(projectFile, solutionProjects, buildConfigurations);
                 }
 
-                serviceSolutionFolders.Add(folder);
+                if(folder.Projects.Count > 0)
+                    serviceSolutionFolders.Add(folder);
             }
             session["ServiceSolutionFolders"] = serviceSolutionFolders;
 

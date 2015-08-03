@@ -64,5 +64,9 @@
     <file src=".\bin\Release\wp8\AWSSDK.Core.dll" target="lib\wp8" />
     <file src=".\bin\Release\wp8\AWSSDK.Core.xml" target="lib\wp8" />
     <file src=".\bin\Release\wp8\AWSSDK.Core.pdb" target="lib\wp8" />
+
+	<file src="..\..\artifacts\bin\AWSSDK.Core.Dnx\Release\dnxcore50\Core.dll" target="lib\dnxcore50"/>
+	<file src="..\..\artifacts\bin\AWSSDK.Core.Dnx\Release\dnxcore50\Core.xml" target="lib\dnxcore50"/>
+	<file src="..\..\artifacts\bin\AWSSDK.Core.Dnx\Release\dnxcore50\Core.pdb" target="lib\dnxcore50"/>
   </files>
 </package>

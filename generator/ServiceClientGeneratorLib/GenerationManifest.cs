@@ -34,6 +34,7 @@ namespace ServiceClientGenerator
             public const string AppendServiceKey = "append-service";
             public const string MaxRetriesKey = "max-retries";
             public const string SynopsisKey = "synopsis";
+            public const string DnxSupportKey = "dnx-support";
             public const string DependenciesKey = "dependencies";
             public const string ReferenceDependenciesKey = "reference-dependencies";
             public const string NugetDependenciesKey = "nuget-dependencies";
@@ -213,6 +214,10 @@ namespace ServiceClientGenerator
                 if (modelNode[ModelsSectionKeys.SynopsisKey] != null)
                     config.Synopsis = (string)modelNode[ModelsSectionKeys.SynopsisKey];
 
+                if (modelNode[ModelsSectionKeys.DnxSupportKey] != null)
+                    config.DnxSupport = (bool)modelNode[ModelsSectionKeys.DnxSupportKey];
+                else
+                    config.DnxSupport = true;
 
                 config.ServiceDependencies = new Dictionary<string, string>(StringComparer.Ordinal);
                 if (modelNode[ModelsSectionKeys.DependenciesKey] != null && modelNode[ModelsSectionKeys.DependenciesKey].IsArray)

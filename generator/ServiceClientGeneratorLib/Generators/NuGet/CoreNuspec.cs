@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\code\dotnet\v3\master-NUGET-TAGS\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+    #line 1 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class CoreNuspec : CoreNuspecBase
     {
@@ -31,13 +31,13 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write("\r\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<package> \r\n  <metadata> \r\n    <id>AWSS" +
                     "DK.Core</id>\r\n    <title>AWSSDK - Core Runtime</title>\r\n    <version>");
             
-            #line 12 "C:\code\dotnet\v3\master-NUGET-TAGS\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 12 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default
             #line hidden
             
-            #line 12 "C:\code\dotnet\v3\master-NUGET-TAGS\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 12 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NuGetPreviewFlag"]));
             
             #line default
@@ -81,7 +81,11 @@ namespace ServiceClientGenerator.Generators.NuGet
                     " src=\".\\bin\\Release\\wpa81\\AWSSDK.Core.pdb\" target=\"lib\\wpa81\" />\r\n\r\n    <file sr" +
                     "c=\".\\bin\\Release\\wp8\\AWSSDK.Core.dll\" target=\"lib\\wp8\" />\r\n    <file src=\".\\bin\\" +
                     "Release\\wp8\\AWSSDK.Core.xml\" target=\"lib\\wp8\" />\r\n    <file src=\".\\bin\\Release\\w" +
-                    "p8\\AWSSDK.Core.pdb\" target=\"lib\\wp8\" />\r\n  </files>\r\n</package>");
+                    "p8\\AWSSDK.Core.pdb\" target=\"lib\\wp8\" />\r\n\r\n\t<file src=\"..\\..\\artifacts\\bin\\AWSSD" +
+                    "K.Core.Dnx\\Release\\dnxcore50\\Core.dll\" target=\"lib\\dnxcore50\"/>\r\n\t<file src=\"..\\" +
+                    "..\\artifacts\\bin\\AWSSDK.Core.Dnx\\Release\\dnxcore50\\Core.xml\" target=\"lib\\dnxcore" +
+                    "50\"/>\r\n\t<file src=\"..\\..\\artifacts\\bin\\AWSSDK.Core.Dnx\\Release\\dnxcore50\\Core.pd" +
+                    "b\" target=\"lib\\dnxcore50\"/>\r\n  </files>\r\n</package>");
             return this.GenerationEnvironment.ToString();
         }
     }

@@ -86,6 +86,7 @@ namespace ServiceClientGenerator
         public void Execute(string serviceFilesRoot, ServiceConfiguration serviceConfiguration, IEnumerable<ProjectFileConfiguration> projectFileConfigurations)
         {
             CreatedProjectFiles = new Dictionary<string, ProjectConfigurationData>();
+            var assemblyName = "AWSSDK." + serviceConfiguration.Namespace.Split('.')[1];
 
             foreach (var projectFileConfiguration in projectFileConfigurations)
             {
@@ -98,7 +99,6 @@ namespace ServiceClientGenerator
 
                 var projectType = projectFileConfiguration.Name;
 
-                var assemblyName = "AWSSDK." + serviceConfiguration.Namespace.Split('.')[1];
                 var projectFilename = string.Concat(assemblyName, ".", projectType, ".csproj");
                 bool newProject = false;
                 string projectGuid;
@@ -179,8 +179,12 @@ namespace ServiceClientGenerator
 
                 GenerateProjectFile(projectFileConfiguration, projectConfigurationData, templateSession, serviceFilesRoot, projectFilename);
 
-                GenerateDnxProjectFiles(serviceFilesRoot, serviceConfiguration, assemblyName);
             }
+
+            if (serviceConfiguration.DnxSupport)
+                GenerateDnxProjectFiles(serviceFilesRoot, serviceConfiguration, assemblyName);
+            else
+                Console.WriteLine("Skipping DNX support for {0}", serviceConfiguration.BaseName);
         }
 
         /// <summary>

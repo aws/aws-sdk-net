@@ -83,12 +83,6 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
   },
 
   ""frameworks"": {
-    ""dnx451"": {
-      ""frameworkAssemblies"": {
-        ""System.Xml"": ""4.0.0.0"",
-        ""System.Xml.Linq"": ""4.0.0.0""
-      }
-    },
     ""dnxcore50"": {
       ""compilationOptions"": {
         ""define"": [ ""ADD_SUPPORT_IORDERED_DICTIONARY"", ""ADD_SUPPORT_ICLONEABLE""	 ]

@@ -41,7 +41,7 @@ namespace Amazon.S3.Transfer.Internal
 
 #if !DNX
         // Set of web exception status codes to retry on.
-        private ICollection<WebExceptionStatus> WebExceptionStatusesToRetryOn = new HashSet<WebExceptionStatus>
+        private static ICollection<WebExceptionStatus> WebExceptionStatusesToRetryOn = new HashSet<WebExceptionStatus>
         {
             WebExceptionStatus.ConnectFailure,
 
