@@ -12,6 +12,7 @@
 	* Updated to need new core version 3.1.0.1
 	* Picking up the version of PCL core that fixes SigV4 streaming signature issue.
 * Core 3.1.0.1
+	* Fix PCL SigV4 signing issue where SHA256 hash is not always calculated correctly.
 
 ### 3.1.2.0 (2015-07-31 00:36 UTC)
 * OpsWorks (3.1.1.0)
