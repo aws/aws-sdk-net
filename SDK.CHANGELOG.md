@@ -1,3 +1,7 @@
+### 3.1.3.0 (2015-08-04 21:59 UTC)
+* DeviceFarm (3.1.1.0)
+	* Update DeviceFarm client with latest model, adding support for iOS and retrieving account settings.
+
 ### 3.1.2.1 (2015-08-04 00:50 UTC)
 * CloudSearchDomain (3.1.0.1)
 	* Updated to need new core version 3.1.0.1
