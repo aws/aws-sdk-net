@@ -1,3 +1,9 @@
+### 3.1.2.0 (2015-07-31 00:36 UTC)
+* OpsWorks (3.1.1.0)
+	* Add support for ECS clusters.
+* RDS (3.1.1.0)
+	* Add support for Amazon Aurora.
+
 ### 3.1.1.0 (2015-07-28 23:37 UTC)
 * CloudWatchLogs (3.1.1.0)
 	* Adding 4 new APIs: PutDestination, PutDestinationPolicy, DescribeDestinations and DeleteDestination

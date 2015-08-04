@@ -94,6 +94,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomInstanceProfileArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomJson", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomJson = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CustomRecipes", targetDepth))
                 {
                     var unmarshaller = RecipesUnmarshaller.Instance;

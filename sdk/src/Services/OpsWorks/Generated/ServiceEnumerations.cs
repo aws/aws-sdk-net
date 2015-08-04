@@ -35,6 +35,10 @@ namespace Amazon.OpsWorks
         /// </summary>
         public static readonly AppAttributesKeys AutoBundleOnDeploy = new AppAttributesKeys("AutoBundleOnDeploy");
         /// <summary>
+        /// Constant AwsFlowRubySettings for AppAttributesKeys
+        /// </summary>
+        public static readonly AppAttributesKeys AwsFlowRubySettings = new AppAttributesKeys("AwsFlowRubySettings");
+        /// <summary>
         /// Constant DocumentRoot for AppAttributesKeys
         /// </summary>
         public static readonly AppAttributesKeys DocumentRoot = new AppAttributesKeys("DocumentRoot");
@@ -79,6 +83,10 @@ namespace Amazon.OpsWorks
     public class AppType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AwsFlowRuby for AppType
+        /// </summary>
+        public static readonly AppType AwsFlowRuby = new AppType("aws-flow-ruby");
         /// <summary>
         /// Constant Java for AppType
         /// </summary>
@@ -320,6 +328,10 @@ namespace Amazon.OpsWorks
         /// </summary>
         public static readonly LayerAttributesKeys BundlerVersion = new LayerAttributesKeys("BundlerVersion");
         /// <summary>
+        /// Constant EcsClusterArn for LayerAttributesKeys
+        /// </summary>
+        public static readonly LayerAttributesKeys EcsClusterArn = new LayerAttributesKeys("EcsClusterArn");
+        /// <summary>
         /// Constant EnableHaproxyStats for LayerAttributesKeys
         /// </summary>
         public static readonly LayerAttributesKeys EnableHaproxyStats = new LayerAttributesKeys("EnableHaproxyStats");
@@ -449,6 +461,10 @@ namespace Amazon.OpsWorks
     {
 
         /// <summary>
+        /// Constant AwsFlowRuby for LayerType
+        /// </summary>
+        public static readonly LayerType AwsFlowRuby = new LayerType("aws-flow-ruby");
+        /// <summary>
         /// Constant Custom for LayerType
         /// </summary>
         public static readonly LayerType Custom = new LayerType("custom");
@@ -456,6 +472,10 @@ namespace Amazon.OpsWorks
         /// Constant DbMaster for LayerType
         /// </summary>
         public static readonly LayerType DbMaster = new LayerType("db-master");
+        /// <summary>
+        /// Constant EcsCluster for LayerType
+        /// </summary>
+        public static readonly LayerType EcsCluster = new LayerType("ecs-cluster");
         /// <summary>
         /// Constant JavaApp for LayerType
         /// </summary>

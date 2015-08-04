@@ -37,6 +37,7 @@ namespace Amazon.OpsWorks.Model
         private bool? _autoAssignPublicIps;
         private string _createdAt;
         private string _customInstanceProfileArn;
+        private string _customJson;
         private Recipes _customRecipes;
         private List<string> _customSecurityGroupIds = new List<string>();
         private Recipes _defaultRecipes;
@@ -58,9 +59,17 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The layer attributes.
         /// </para>
-        ///  <note>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>,
-        /// and <code>GangliaPassword</code> attributes, AWS OpsWorks returns <code>*****FILTERED*****</code>
-        /// instead of the actual value</note>
+        ///  
+        /// <para>
+        /// For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
+        /// attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual
+        /// value
+        /// </para>
+        ///  
+        /// <para>
+        /// For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is
+        /// set to the cluster's ARN.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
         {
@@ -150,6 +159,25 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetCustomInstanceProfileArn()
         {
             return this._customInstanceProfileArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomJson. 
+        /// <para>
+        /// A JSON formatted string containing the layer's custom stack configuration and deployment
+        /// attributes.
+        /// </para>
+        /// </summary>
+        public string CustomJson
+        {
+            get { return this._customJson; }
+            set { this._customJson = value; }
+        }
+
+        // Check to see if CustomJson property is set
+        internal bool IsSetCustomJson()
+        {
+            return this._customJson != null;
         }
 
         /// <summary>

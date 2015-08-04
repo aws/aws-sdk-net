@@ -9,19 +9,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 {
     public static class AssertExtensions
     {
-        public static void ExpectException(Action action)
+        public static Exception ExpectException(Action action)
         {
             bool gotException = false;
+            Exception exception = null;
             try
             {
                 action();
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 gotException = true;
+                exception = e;
             }
 
             Assert.IsTrue(gotException, "Failed to get expected exception");
+            return exception;
         }
 
         public static Exception ExpectException(Action action, Type exceptionType)
