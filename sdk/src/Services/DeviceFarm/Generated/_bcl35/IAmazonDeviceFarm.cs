@@ -28,8 +28,8 @@ namespace Amazon.DeviceFarm
     /// <summary>
     /// Interface for accessing DeviceFarm
     ///
-    /// AWS Device Farm is a service that enables mobile app developers to test apps on physical
-    /// phones, tablets, and other devices in the cloud.
+    /// AWS Device Farm is a service that enables mobile app developers to test Android, iOS,
+    /// and Fire OS apps on physical phones, tablets, and other devices in the cloud.
     /// </summary>
     public partial interface IAmazonDeviceFarm : IDisposable
     {
@@ -199,6 +199,76 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  CreateUploadResult from DeviceFarm.</returns>
         CreateUploadResponse EndCreateUpload(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAccountSettings
+
+
+        /// <summary>
+        /// Returns the number of unmetered iOS and/or unmetered Android devices that have been
+        /// purchased by the account.
+        /// </summary>
+        /// 
+        /// <returns>The response from the GetAccountSettings service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        GetAccountSettingsResponse GetAccountSettings();
+
+        /// <summary>
+        /// Returns the number of unmetered iOS and/or unmetered Android devices that have been
+        /// purchased by the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountSettings service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountSettings
+        ///         operation.</returns>
+        IAsyncResult BeginGetAccountSettings(GetAccountSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccountSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountSettings.</param>
+        /// 
+        /// <returns>Returns a  GetAccountSettingsResult from DeviceFarm.</returns>
+        GetAccountSettingsResponse EndGetAccountSettings(IAsyncResult asyncResult);
 
         #endregion
         

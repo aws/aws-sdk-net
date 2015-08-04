@@ -33,6 +33,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class Run
     {
         private string _arn;
+        private BillingMethod _billingMethod;
         private int? _completedJobs;
         private Counters _counters;
         private DateTime? _created;
@@ -62,6 +63,25 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingMethod. 
+        /// <para>
+        /// Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>.
+        /// If the parameter is not specified, the default value is <code>unmetered</code>.
+        /// </para>
+        /// </summary>
+        public BillingMethod BillingMethod
+        {
+            get { return this._billingMethod; }
+            set { this._billingMethod = value; }
+        }
+
+        // Check to see if BillingMethod property is set
+        internal bool IsSetBillingMethod()
+        {
+            return this._billingMethod != null;
         }
 
         /// <summary>
@@ -159,6 +179,19 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// The run's platform.
         /// </para>
+        ///  
+        /// <para>
+        /// Allowed values include:
+        /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// ANDROID: The Android platform.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// IOS: The iOS platform.
+        /// </para>
+        /// </li> </ul>
         /// </summary>
         public DevicePlatform Platform
         {
@@ -268,7 +301,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// SCHEDULED: A scheduled status.
+        /// SCHEDULING: A scheduling status.
         /// </para>
         /// </li> </ul>
         /// </summary>
@@ -331,39 +364,40 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li>
         /// <para>
-        /// ANDROID_APP: An Android app.
+        /// BUILTIN_FUZZ: The built-in fuzz type.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// APPIUM_JAVA_TEST_PACKAGE: An Appium Java test package.
+        /// BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app,
+        /// interacting with it and capturing screenshots at the same time.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// CALABASH_TEST_PACKAGE: A Calabash test package.
+        /// APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// EXTERNAL_DATA: External data.
+        /// APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// INSTRUMENTATION_TEST_PACKAGE: An instrumentation test package.
+        /// CALABASH: The Calabash type.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// IOS_APP: An iOS app.
+        /// INSTRUMENTATION: The Instrumentation type.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// UIAUTOMATION_TEST_PACKAGE: A UI Automation test package.
+        /// UIAUTOMATION: The uiautomation type.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package.
+        /// UIAUTOMATOR: The uiautomator type.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// XCTEST_TEST_PACKAGE: An XCTest test package.
+        /// XCTEST: The XCode test type.
         /// </para>
         /// </li> </ul>
         /// </summary>

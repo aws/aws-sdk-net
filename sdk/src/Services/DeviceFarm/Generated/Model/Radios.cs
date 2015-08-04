@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents the set of radios and their states on a device. Examples or radios include
+    /// Represents the set of radios and their states on a device. Examples of radios include
     /// Wi-Fi, GPS, Bluetooth, and NFC.
     /// </summary>
     public partial class Radios
