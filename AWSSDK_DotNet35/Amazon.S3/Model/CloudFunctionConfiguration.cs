@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ namespace Amazon.S3.Model
     /// </summary>
     [Obsolete("CloudFunctionConfiguration is obsolete and will be removed in the upcoming version 3 of the SDK. " +
         "LambdaFunctionConfiguration should be used instead, along with using IAmazonLambda.AddPermission for setting up permissions.")]
-    public class CloudFunctionConfiguration
+    public class CloudFunctionConfiguration : NotificationConfiguration
     {
         /// <summary>
         /// Gets and set the Id property. The Id will be provided in the event content and can be used 
@@ -39,27 +39,6 @@ namespace Amazon.S3.Model
             return this.Id != null;
         }
 
-        List<EventType> _events;
-        /// <summary>
-        /// Gets and sets the Events property. These are the events the configuration will listen to and send to the Amazon Lambda cloud function.
-        /// </summary>
-        public List<EventType> Events
-        {
-            get
-            {
-                if (this._events == null)
-                    this._events = new List<EventType>();
-
-                return this._events;
-            }
-            set { this._events = value; }
-        }
-
-        // Check to see if Event property is set
-        internal bool IsSetEvents()
-        {
-            return this._events != null && this._events.Count > 0;
-        }
 
         /// <summary>
         /// Gets and sets the CloudFormation property. This is the Amazon Lambda cloud function to which Amazon S3 will invoke with the events.

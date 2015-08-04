@@ -45,7 +45,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates CreateDBSecurityGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbSecurityGroupName"> The name for the DB security group. This value is stored as a lowercase string.  Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>May not contain spaces</li> </ul> Example: <code>mysecuritygroup</code></param>
+        /// <param name="dbSecurityGroupName"> The name for the DB security group. This value is stored as a lowercase string.  Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not be "Default"</li> <li>Cannot contain spaces</li> </ul> Example: <code>mysecuritygroup</code></param>
         /// <param name="dbSecurityGroupDescription"> The description for the DB security group. </param>
         public CreateDBSecurityGroupRequest(string dbSecurityGroupName, string dbSecurityGroupDescription)
         {
@@ -82,7 +82,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
         /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// <li>Must not be "Default"</li> <li>May not contain spaces</li> </ul> 
+        /// <li>Must not be "Default"</li> <li>Cannot contain spaces</li> </ul> 
         /// <para>
         /// Example: <code>mysecuritygroup</code>
         /// </para>

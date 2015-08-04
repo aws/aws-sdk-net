@@ -92,6 +92,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public void SetQueueConfigurationTests()
         {
+            var filterRule = new FilterRule("Prefix", "test/");
             var s3Config = new AmazonS3Config();
             using (var s3Client = new AmazonS3Client(s3Config))
             using (var sqsClient = new AmazonSQSClient())
@@ -111,7 +112,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                             {
                                 Id = "the-queue-test",
                                 Queue = queueArn,
-                                Events = {EventType.ObjectCreatedPut}
+                                Events = {EventType.ObjectCreatedPut},
+                                Filter = new Filter
+                                {
+                                    S3KeyFilter = new S3KeyFilter
+                                    {
+                                        FilterRules = new List<FilterRule> 
+                                        {
+                                            filterRule
+                                        }
+                                    }
+                                }
                             }
                         }
                     };
@@ -124,17 +135,24 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual(1, getResponse.QueueConfigurations[0].Events.Count);
                     Assert.AreEqual(EventType.ObjectCreatedPut, getResponse.QueueConfigurations[0].Events[0]);
 
+                    Assert.IsNotNull(getResponse.QueueConfigurations[0].Filter);
+                    Assert.IsNotNull(getResponse.QueueConfigurations[0].Filter.S3KeyFilter);
+                    Assert.IsNotNull(getResponse.QueueConfigurations[0].Filter.S3KeyFilter.FilterRules);
+                    Assert.AreEqual(1, getResponse.QueueConfigurations[0].Filter.S3KeyFilter.FilterRules.Count);
+                    Assert.AreEqual(filterRule.Name, getResponse.QueueConfigurations[0].Filter.S3KeyFilter.FilterRules[0].Name);
+                    Assert.AreEqual(filterRule.Value, getResponse.QueueConfigurations[0].Filter.S3KeyFilter.FilterRules[0].Value);
+
                     Assert.AreEqual("the-queue-test", getResponse.QueueConfigurations[0].Id);
                     Assert.AreEqual(queueArn, getResponse.QueueConfigurations[0].Queue);
 
                     // Purge queue to remove test message sent configuration was setup.
                     sqsClient.PurgeQueue(createResponse.QueueUrl);
-                    Thread.Sleep(1000);
+                    Thread.Sleep(TimeSpan.FromSeconds(1));
 
                     var putObjectRequest = new PutObjectRequest
                         {
                             BucketName = bucketName,
-                            Key = "data.txt",
+                            Key = "test/data.txt",
                             ContentBody = "Important Data"
                         };
 

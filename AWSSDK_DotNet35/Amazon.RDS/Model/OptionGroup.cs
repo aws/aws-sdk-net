@@ -63,7 +63,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        ///  Engine name that this option group can be applied to. 
+        ///  Indicates the name of the engine that this option group can be applied to. 
         /// </para>
         /// </summary>
         public string EngineName

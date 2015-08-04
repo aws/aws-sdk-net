@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -53,26 +53,22 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                 if (putBucketNotificationRequest.IsSetTopicConfigurations())
                 {
-                    foreach (var topicConfiguartion in putBucketNotificationRequest.TopicConfigurations)
+                    foreach (var topicConfiguration in putBucketNotificationRequest.TopicConfigurations)
                     {
-                        if (topicConfiguartion != null)
+                        if (topicConfiguration != null)
                         {
                             xmlWriter.WriteStartElement("TopicConfiguration", "");
-                            if (topicConfiguartion.IsSetId())
+                            if (topicConfiguration.IsSetId())
                             {
-                                xmlWriter.WriteElementString("Id", "", S3Transforms.ToXmlStringValue(topicConfiguartion.Id));
+                                xmlWriter.WriteElementString("Id", "", S3Transforms.ToXmlStringValue(topicConfiguration.Id));
                             }
-                            if (topicConfiguartion.IsSetEvents())
+                            if (topicConfiguration.IsSetTopic())
                             {
-                                foreach(var evnt in topicConfiguartion.Events)
-                                {
-                                    xmlWriter.WriteElementString("Event", "", S3Transforms.ToXmlStringValue(evnt));
-                                }
+                                xmlWriter.WriteElementString("Topic", "", S3Transforms.ToXmlStringValue(topicConfiguration.Topic));
                             }
-                            if (topicConfiguartion.IsSetTopic())
-                            {
-                                xmlWriter.WriteElementString("Topic", "", S3Transforms.ToXmlStringValue(topicConfiguartion.Topic));
-                            }
+
+                            WriteConfigurationCommon(xmlWriter, topicConfiguration);
+
                             xmlWriter.WriteEndElement();
                         }
                     }
@@ -80,26 +76,22 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                 if (putBucketNotificationRequest.IsSetQueueConfigurations())
                 {
-                    foreach (var queueConfiguartion in putBucketNotificationRequest.QueueConfigurations)
+                    foreach (var queueConfiguration in putBucketNotificationRequest.QueueConfigurations)
                     {
-                        if (queueConfiguartion != null)
+                        if (queueConfiguration != null)
                         {
                             xmlWriter.WriteStartElement("QueueConfiguration", "");
-                            if (queueConfiguartion.IsSetId())
+                            if (queueConfiguration.IsSetId())
                             {
-                                xmlWriter.WriteElementString("Id", "", S3Transforms.ToXmlStringValue(queueConfiguartion.Id));
+                                xmlWriter.WriteElementString("Id", "", S3Transforms.ToXmlStringValue(queueConfiguration.Id));
                             }
-                            if (queueConfiguartion.IsSetEvents())
+                            if (queueConfiguration.IsSetQueue())
                             {
-                                foreach (var evnt in queueConfiguartion.Events)
-                                {
-                                    xmlWriter.WriteElementString("Event", "", S3Transforms.ToXmlStringValue(evnt));
-                                }
+                                xmlWriter.WriteElementString("Queue", "", S3Transforms.ToXmlStringValue(queueConfiguration.Queue));
                             }
-                            if (queueConfiguartion.IsSetQueue())
-                            {
-                                xmlWriter.WriteElementString("Queue", "", S3Transforms.ToXmlStringValue(queueConfiguartion.Queue));
-                            }
+
+                            WriteConfigurationCommon(xmlWriter, queueConfiguration);
+                            
                             xmlWriter.WriteEndElement();
                         }
                     }
@@ -107,30 +99,26 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                 if (putBucketNotificationRequest.IsSetCloudFunctionConfigurations())
                 {
-                    foreach (var cloudFunctionConfiguartion in putBucketNotificationRequest.CloudFunctionConfigurations)
+                    foreach (var cloudFunctionConfiguration in putBucketNotificationRequest.CloudFunctionConfigurations)
                     {
-                        if (cloudFunctionConfiguartion != null)
+                        if (cloudFunctionConfiguration != null)
                         {
                             xmlWriter.WriteStartElement("CloudFunctionConfiguration", "");
-                            if (cloudFunctionConfiguartion.IsSetId())
+                            if (cloudFunctionConfiguration.IsSetId())
                             {
-                                xmlWriter.WriteElementString("Id", "", S3Transforms.ToXmlStringValue(cloudFunctionConfiguartion.Id));
+                                xmlWriter.WriteElementString("Id", "", S3Transforms.ToXmlStringValue(cloudFunctionConfiguration.Id));
                             }
-                            if (cloudFunctionConfiguartion.IsSetEvents())
+                            if (cloudFunctionConfiguration.IsSetCloudFunction())
                             {
-                                foreach (var evnt in cloudFunctionConfiguartion.Events)
-                                {
-                                    xmlWriter.WriteElementString("Event", "", S3Transforms.ToXmlStringValue(evnt));
-                                }
+                                xmlWriter.WriteElementString("CloudFunction", "", S3Transforms.ToXmlStringValue(cloudFunctionConfiguration.CloudFunction));
                             }
-                            if (cloudFunctionConfiguartion.IsSetCloudFunction())
+                            if (cloudFunctionConfiguration.IsSetInvocationRole())
                             {
-                                xmlWriter.WriteElementString("CloudFunction", "", S3Transforms.ToXmlStringValue(cloudFunctionConfiguartion.CloudFunction));
+                                xmlWriter.WriteElementString("InvocationRole", "", S3Transforms.ToXmlStringValue(cloudFunctionConfiguration.InvocationRole));
                             }
-                            if (cloudFunctionConfiguartion.IsSetInvocationRole())
-                            {
-                                xmlWriter.WriteElementString("InvocationRole", "", S3Transforms.ToXmlStringValue(cloudFunctionConfiguartion.InvocationRole));
-                            }
+
+                            WriteConfigurationCommon(xmlWriter, cloudFunctionConfiguration);
+
                             xmlWriter.WriteEndElement();
                         }
                     }
@@ -138,26 +126,22 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                 if (putBucketNotificationRequest.IsSetLambdaFunctionConfigurations())
                 {
-                    foreach (var lambdaFunctionConfiguartion in putBucketNotificationRequest.LambdaFunctionConfigurations)
+                    foreach (var lambdaFunctionConfiguration in putBucketNotificationRequest.LambdaFunctionConfigurations)
                     {
-                        if (lambdaFunctionConfiguartion != null)
+                        if (lambdaFunctionConfiguration != null)
                         {
                             xmlWriter.WriteStartElement("CloudFunctionConfiguration", "");
-                            if (lambdaFunctionConfiguartion.IsSetId())
+                            if (lambdaFunctionConfiguration.IsSetId())
                             {
-                                xmlWriter.WriteElementString("Id", "", S3Transforms.ToXmlStringValue(lambdaFunctionConfiguartion.Id));
+                                xmlWriter.WriteElementString("Id", "", S3Transforms.ToXmlStringValue(lambdaFunctionConfiguration.Id));
                             }
-                            if (lambdaFunctionConfiguartion.IsSetEvents())
+                            if (lambdaFunctionConfiguration.IsSetFunctionArn())
                             {
-                                foreach (var evnt in lambdaFunctionConfiguartion.Events)
-                                {
-                                    xmlWriter.WriteElementString("Event", "", S3Transforms.ToXmlStringValue(evnt));
-                                }
+                                xmlWriter.WriteElementString("CloudFunction", "", S3Transforms.ToXmlStringValue(lambdaFunctionConfiguration.FunctionArn));
                             }
-                            if (lambdaFunctionConfiguartion.IsSetFunctionArn())
-                            {
-                                xmlWriter.WriteElementString("CloudFunction", "", S3Transforms.ToXmlStringValue(lambdaFunctionConfiguartion.FunctionArn));
-                            }
+
+                            WriteConfigurationCommon(xmlWriter, lambdaFunctionConfiguration);
+
                             xmlWriter.WriteEndElement();
                         }
                     }
@@ -182,6 +166,44 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         
             return request;
+        }
+
+        private static void WriteConfigurationCommon(XmlWriter xmlWriter, NotificationConfiguration notificationConfiguration)
+        {
+            if (notificationConfiguration.IsSetEvents())
+            {
+                foreach (var evnt in notificationConfiguration.Events)
+                {
+                    xmlWriter.WriteElementString("Event", "", S3Transforms.ToXmlStringValue(evnt));
+                }
+            }
+
+            if (notificationConfiguration.IsSetFilter())
+            {
+                xmlWriter.WriteStartElement("Filter", "");
+                var filter = notificationConfiguration.Filter;
+                if (filter.IsSetS3KeyFilter())
+                {
+                    xmlWriter.WriteStartElement("S3Key", "");
+                    var s3key = filter.S3KeyFilter;
+                    if (s3key.IsSetFilterRules())
+                    {
+                        var filterRules = s3key.FilterRules;
+                        foreach (var filterRule in filterRules)
+                        {
+                            if (filterRule != null)
+                            {
+                                xmlWriter.WriteStartElement("FilterRule", "");
+                                xmlWriter.WriteElementString("Name", filterRule.Name);
+                                xmlWriter.WriteElementString("Value", filterRule.Value);
+                                xmlWriter.WriteEndElement();
+                            }
+                        }
+                    }
+                    xmlWriter.WriteEndElement();
+                }
+                xmlWriter.WriteEndElement();
+            }
         }
     }
 }

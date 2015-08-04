@@ -375,6 +375,56 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  DeleteDestination
+
+        /// <summary>
+        /// Deletes the destination with the specified name and eventually disables all the subscription
+        /// filters that publish to it. This will not delete the physical resource encapsulated
+        /// by the destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDestination service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDestination service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Returned if multiple requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// Returned if the specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        public DeleteDestinationResponse DeleteDestination(DeleteDestinationRequest request)
+        {
+            var marshaller = new DeleteDestinationRequestMarshaller();
+            var unmarshaller = DeleteDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDestinationRequest,DeleteDestinationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDestination operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteDestinationResponse> DeleteDestinationAsync(DeleteDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteDestinationRequestMarshaller();
+            var unmarshaller = DeleteDestinationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDestinationRequest,DeleteDestinationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteLogGroup
 
         /// <summary>
@@ -613,6 +663,57 @@ namespace Amazon.CloudWatchLogs
             var unmarshaller = DeleteSubscriptionFilterResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteSubscriptionFilterRequest,DeleteSubscriptionFilterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDestinations
+
+        /// <summary>
+        /// Returns all the destinations that are associated with the AWS account making the
+        /// request. The list returned in the response is ASCII-sorted by destination name. 
+        /// 
+        ///  
+        /// <para>
+        ///  By default, this operation returns up to 50 destinations. If there are more destinations
+        /// to list, the response would contain a <code class="code">nextToken</code> value in
+        /// the response body. You can also limit the number of destinations returned in the response
+        /// by specifying the <code class="code">limit</code> parameter in the request. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDestinations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDestinations service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        public DescribeDestinationsResponse DescribeDestinations(DescribeDestinationsRequest request)
+        {
+            var marshaller = new DescribeDestinationsRequestMarshaller();
+            var unmarshaller = DescribeDestinationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDestinationsRequest,DescribeDestinationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDestinations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDestinations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeDestinationsResponse> DescribeDestinationsAsync(DescribeDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeDestinationsRequestMarshaller();
+            var unmarshaller = DescribeDestinationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDestinationsRequest,DescribeDestinationsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -978,6 +1079,112 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  PutDestination
+
+        /// <summary>
+        /// Creates or updates a <code>Destination</code>. A destination encapsulates a physical
+        /// resource (such as a Kinesis stream) and allows you to subscribe to a real-time stream
+        /// of log events of a different account, ingested through <code class="code">PutLogEvents</code>
+        /// requests. Currently, the only supported physical resource is a Amazon Kinesis stream
+        /// belonging to the same account as the destination. 
+        /// 
+        ///  
+        /// <para>
+        ///  A destination controls what is written to its Amazon Kinesis stream through an access
+        /// policy. By default, PutDestination does not set any access policy with the destination,
+        /// which means a cross-account user will not be able to call <code>PutSubscriptionFilter</code>
+        /// against this destination. To enable that, the destination owner must call <code>PutDestinationPolicy</code>
+        /// after PutDestination. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDestination service method.</param>
+        /// 
+        /// <returns>The response from the PutDestination service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Returned if multiple requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        public PutDestinationResponse PutDestination(PutDestinationRequest request)
+        {
+            var marshaller = new PutDestinationRequestMarshaller();
+            var unmarshaller = PutDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<PutDestinationRequest,PutDestinationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutDestination operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutDestinationResponse> PutDestinationAsync(PutDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutDestinationRequestMarshaller();
+            var unmarshaller = PutDestinationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutDestinationRequest,PutDestinationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutDestinationPolicy
+
+        /// <summary>
+        /// Creates or updates an access policy associated with an existing <code>Destination</code>.
+        /// An access policy is an <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM
+        /// policy document</a> that is used to authorize claims to register a subscription filter
+        /// against a given destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDestinationPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutDestinationPolicy service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Returned if multiple requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        public PutDestinationPolicyResponse PutDestinationPolicy(PutDestinationPolicyRequest request)
+        {
+            var marshaller = new PutDestinationPolicyRequestMarshaller();
+            var unmarshaller = PutDestinationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutDestinationPolicyRequest,PutDestinationPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutDestinationPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutDestinationPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutDestinationPolicyResponse> PutDestinationPolicyAsync(PutDestinationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutDestinationPolicyRequestMarshaller();
+            var unmarshaller = PutDestinationPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutDestinationPolicyRequest,PutDestinationPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutLogEvents
 
         /// <summary>
@@ -1163,8 +1370,10 @@ namespace Amazon.CloudWatchLogs
         /// Creates or updates a subscription filter and associates it with the specified log
         /// group. Subscription filters allow you to subscribe to a real-time stream of log events
         /// ingested through <code class="code">PutLogEvents</code> requests and have them delivered
-        /// to a specific destination. Currently the only supported destination is an Amazon Kinesis
-        /// stream belonging to the same account as the subscription filter. 
+        /// to a specific destination. Currently, the supported destinations are: <ul> <li> A
+        /// Amazon Kinesis stream belonging to the same account as the subscription filter, for
+        /// same-account delivery. </li> <li> A logical destination (used via an ARN of <code>Destination</code>)
+        /// belonging to a different account, for cross-account delivery. </li> </ul> 
         /// 
         ///  
         /// <para>

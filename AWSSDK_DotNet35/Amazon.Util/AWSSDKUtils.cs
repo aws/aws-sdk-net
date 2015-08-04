@@ -41,7 +41,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "2.3.48.0";
+        internal const string SDKVersionNumber = "2.3.50.0";
 
         internal const int DefaultMaxRetry = 3;
         private const int DefaultConnectionLimit = 50;
@@ -437,13 +437,10 @@ namespace Amazon.Util
             if (queueIndex > 0)
                 return serviceAndRegion.Substring(0, queueIndex - 1);
 
-            char separator;
             if (serviceAndRegion.StartsWith("s3-", StringComparison.Ordinal))
-                separator = '-';
-            else
-                separator = '.';
+                serviceAndRegion = "s3." + serviceAndRegion.Substring(3);
 
-            int separatorIndex = serviceAndRegion.IndexOf(separator);
+            int separatorIndex = serviceAndRegion.LastIndexOf('.');
             if (separatorIndex == -1)
                 return DefaultRegion;
 
