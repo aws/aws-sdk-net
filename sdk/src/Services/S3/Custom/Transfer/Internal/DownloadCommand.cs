@@ -147,6 +147,41 @@ namespace Amazon.S3.Transfer.Internal
             delay = Math.Min(delay, MAX_BACKOFF_IN_MILLISECONDS);
             AWSSDKUtils.Sleep(delay);
         }
+
+        /// <summary>
+        /// Returns the amount of bytes remaining that need to be pulled down from S3.
+        /// </summary>
+        /// <param name="filepath">The fully qualified path of the file.</param>
+        /// <returns></returns>
+        static ByteRange ByteRangeRemainingForDownload(string filepath)
+        {
+            /*
+             * Initialize the ByteRange as the whole file.
+             * long.MaxValue works regardless of the size because
+             * S3 will stop sending bits if you specify beyond the
+             * size of the file anyways.
+             */
+            ByteRange byteRange = new ByteRange(0, long.MaxValue);
+#if !PCL
+            if (!File.Exists(filepath))
+                return byteRange;
+
+            FileInfo info = new FileInfo(filepath);
+            byteRange.Start = info.Length;
+#else
+            var file = PCLStorage.FileSystem.Current.GetFileFromPathAsync(filepath).Result;
+            if (file == null)
+                return byteRange;
+
+            using (var stream = file.OpenAsync(PCLStorage.FileAccess.Read).Result)
+            {
+                byteRange.Start = stream.Length;
+            }
+#endif
+
+            return byteRange;
+        }
+
     }
 }
 

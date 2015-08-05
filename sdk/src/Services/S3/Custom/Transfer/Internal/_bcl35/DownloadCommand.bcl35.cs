@@ -52,8 +52,12 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     if (!string.IsNullOrEmpty(mostRecentETag) && !string.Equals(mostRecentETag, response.ETag))
                     {
-                        AmazonServiceException eTagChanged = new AmazonServiceException("ETag changed during download retry.");
-                        throw eTagChanged;
+                        //if the eTag changed, we need to retry from the start of the file
+                        mostRecentETag = response.ETag;
+                        getRequest.ByteRange = null;
+                        retries = 0;
+                        WaitBeforeRetry(retries);
+                        continue;
                     }
                     mostRecentETag = response.ETag;
 
@@ -111,30 +115,6 @@ namespace Amazon.S3.Transfer.Internal
                 WaitBeforeRetry(retries);
             } while (shouldRetry);
 
-        }
-        
-        /// <summary>
-        /// Returns the amount of bytes remaining that need to be pulled down from S3.
-        /// </summary>
-        /// <param name="filepath">The fully qualified path of the file.</param>
-        /// <returns></returns>
-        internal static ByteRange ByteRangeRemainingForDownload(string filepath)
-        {
-            /*
-             * Initialize the ByteRange as the whole file.
-             * long.MaxValue works regardless of the size because
-             * S3 will stop sending bits if you specify beyond the
-             * size of the file anyways.
-             */
-            ByteRange byteRange = new ByteRange(0, long.MaxValue);
-
-            if (!File.Exists(filepath))
-                return byteRange;
-
-            FileInfo info = new FileInfo(filepath);
-            byteRange.Start = info.Length;
-
-            return byteRange;
         }
     }
 }
