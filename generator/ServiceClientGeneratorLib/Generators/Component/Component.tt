@@ -3,8 +3,6 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-%YAML 1.2
----
 summary: AWS <#=this.Session["BaseName"]#> SDK for Xamarin
 getting-started: GettingStarted.md
 details: Details.md
@@ -65,4 +63,3 @@ packages:
 #>
 version: <#=this.Session["AssemblyVersion"]#>
 is-shell: true
-...

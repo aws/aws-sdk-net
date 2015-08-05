@@ -27,3 +27,7 @@ Include/**
 /sdk/test/CrossPlatformTests/CommonTests/Resources/settings.json
 packages
 /sdk/xamarin-components/SimpleNotificationService/*.xam
+/sdk/xamarin-components/CognitoIdentity/*.xam
+/sdk/xamarin-components/DynamoDBv2/*.xam
+/sdk/xamarin-components/MobileAnalytics/*.xam
+/sdk/xamarin-components/S3/*.xam

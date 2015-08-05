@@ -65,6 +65,11 @@
         public bool Clean { get; set; }
 
         /// <summary>
+        /// The Root folder beneath which all the samples are present. Samples are used for xamarin components.
+        /// </summary>
+        public string SamplesRootFolder { get; set; }
+
+        /// <summary>
         /// If set the solution files will be rebuilt even if no new projects were added.
         /// </summary>
         public bool ForceSolutionRebuilt { get; set; }
@@ -85,6 +90,7 @@
             Versions = @"..\..\..\ServiceModels\_sdk-versions.json";
             ModelsFolder = @"..\..\..\ServiceModels";
             SdkRootFolder = @"..\..\..\..\sdk";
+            SamplesRootFolder = @"..\..\..\..\Aws-sdk-net-samples";
 
             ServiceModels = string.Empty; // process all services
             CompileCustomizations = true;

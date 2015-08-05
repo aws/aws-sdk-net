@@ -1,5 +1,3 @@
-%YAML 1.2
----
 summary: AWS S3 SDK for Xamarin
 getting-started: GettingStarted.md
 details: Details.md
@@ -29,4 +27,3 @@ packages:
   - AWSSDK.S3,Version=3.1.1.1
 version: 3.1.1.1
 is-shell: true
-...

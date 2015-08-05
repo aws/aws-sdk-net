@@ -118,8 +118,7 @@ namespace ServiceClientGenerator
 
             ComponentsFilesRoot = Path.Combine(Options.SdkRootFolder, XamarinComponentsSubFolderName, serviceNameRoot);
 
-            //TODO: make this configurable
-            SampleFilesRoot = @"..\..\..\..\Aws-sdk-net-samples";
+            SampleFilesRoot = options.SamplesRootFolder;
         }
 
         public void Execute()
@@ -809,6 +808,9 @@ namespace ServiceClientGenerator
             if (!string.IsNullOrEmpty(Configuration.NugetPackageTitleSuffix))
                 componentTitle += " " + Configuration.NugetPackageTitleSuffix;
 
+            if (string.IsNullOrEmpty(Configuration.ServiceModel.Customizations.XamarinSolutionSamplePath))
+                throw new Exception("Xamarin component flag enabled but samples are missing");
+            
             var session = new Dictionary<string, object>
             {
                 { "AssemblyName", assemblyName },
@@ -859,7 +861,6 @@ namespace ServiceClientGenerator
                 Console.WriteLine("html text = {0}", text);
                 throw e;
             }
-
         }
 
         void GenerateNuspec()
