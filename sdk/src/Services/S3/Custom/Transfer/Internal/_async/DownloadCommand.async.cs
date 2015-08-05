@@ -42,6 +42,13 @@ namespace Amazon.S3.Transfer.Internal
             do
             {
                 shouldRetry = false;
+
+                if (retries != 0)
+                {
+                    ByteRange bytesRemaining = ByteRangeRemainingForDownload(this._request.FilePath);
+                    getRequest.ByteRange = bytesRemaining;
+                }
+
                 using (var response = await this._s3Client.GetObjectAsync(getRequest, cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false))
                 {
