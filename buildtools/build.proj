@@ -96,7 +96,7 @@
             DestinationFolder="$(Deployment)\xamain-components"/>
 	</Target>
 	
-	<Target Name="copy-assemblies" DependsOnTargets="nuget-pack">
+	<Target Name="copy-assemblies" DependsOnTargets="nuget-pack;xam-pack">
         <Message Text="Collating assemblies for downstream doc generation" />
 		<PropertyGroup>
 			<CustomSnkPublicKeyToken Condition="'$(CustomSnkPublicKeyToken)' == '' ">71c852f8be1c371d</CustomSnkPublicKeyToken>
