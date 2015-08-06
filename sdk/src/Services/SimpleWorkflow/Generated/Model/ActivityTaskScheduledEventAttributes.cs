@@ -47,7 +47,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ActivityId. 
         /// <para>
-        /// The unique id of the activity task.
+        /// The unique ID of the activity task.
         /// </para>
         /// </summary>
         public string ActivityId
@@ -102,7 +102,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        /// The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
+        /// The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision
         /// that resulted in the scheduling of this activity task. This information can be useful
         /// for diagnosing problems by tracing back the chain of events leading up to this event.
         /// </para>
@@ -233,9 +233,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TaskPriority. 
         /// <para>
-        /// <i>Optional.</i> The priority to assign to the scheduled activity task. This will
-        /// override any default priority that was assigned when the activity type was registered.
-        /// If not set, then the priority set on the activity type is used as the task priority.
+        /// <i>Optional.</i> The priority to assign to the scheduled activity task. If set, this
+        /// will override any default priority value that was assigned when the activity type
+        /// was registered.
         /// </para>
         ///  
         /// <para>

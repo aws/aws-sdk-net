@@ -60,6 +60,7 @@ namespace Amazon.SimpleWorkflow.Model
         private ChildPolicy _childPolicy;
         private string _executionStartToCloseTimeout;
         private string _input;
+        private string _lambdaRole;
         private List<string> _tagList = new List<string>();
         private TaskList _taskList;
         private string _taskPriority;
@@ -144,6 +145,27 @@ namespace Amazon.SimpleWorkflow.Model
         internal bool IsSetInput()
         {
             return this._input != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaRole. 
+        /// <para>
+        /// The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda functions.
+        /// </para>
+        ///  <note>In order for this workflow execution to invoke AWS Lambda functions, an appropriate
+        /// IAM role must be specified either as a default for the workflow type or through this
+        /// field.</note>
+        /// </summary>
+        public string LambdaRole
+        {
+            get { return this._lambdaRole; }
+            set { this._lambdaRole = value; }
+        }
+
+        // Check to see if LambdaRole property is set
+        internal bool IsSetLambdaRole()
+        {
+            return this._lambdaRole != null;
         }
 
         /// <summary>

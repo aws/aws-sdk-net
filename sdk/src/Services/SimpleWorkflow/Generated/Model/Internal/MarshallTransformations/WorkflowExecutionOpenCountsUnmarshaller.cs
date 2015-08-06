@@ -82,6 +82,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.OpenDecisionTasks = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("openLambdaFunctions", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.OpenLambdaFunctions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("openTimers", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

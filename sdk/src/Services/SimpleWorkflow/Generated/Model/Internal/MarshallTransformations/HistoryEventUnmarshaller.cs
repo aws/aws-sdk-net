@@ -226,6 +226,36 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.FailWorkflowExecutionFailedEventAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lambdaFunctionCompletedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = LambdaFunctionCompletedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.LambdaFunctionCompletedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lambdaFunctionFailedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = LambdaFunctionFailedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.LambdaFunctionFailedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lambdaFunctionScheduledEventAttributes", targetDepth))
+                {
+                    var unmarshaller = LambdaFunctionScheduledEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.LambdaFunctionScheduledEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lambdaFunctionStartedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = LambdaFunctionStartedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.LambdaFunctionStartedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lambdaFunctionTimedOutEventAttributes", targetDepth))
+                {
+                    var unmarshaller = LambdaFunctionTimedOutEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.LambdaFunctionTimedOutEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("markerRecordedEventAttributes", targetDepth))
                 {
                     var unmarshaller = MarkerRecordedEventAttributesUnmarshaller.Instance;
@@ -262,6 +292,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScheduleActivityTaskFailedEventAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("scheduleLambdaFunctionFailedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = ScheduleLambdaFunctionFailedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ScheduleLambdaFunctionFailedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("signalExternalWorkflowExecutionFailedEventAttributes", targetDepth))
                 {
                     var unmarshaller = SignalExternalWorkflowExecutionFailedEventAttributesUnmarshaller.Instance;
@@ -284,6 +320,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StartChildWorkflowExecutionInitiatedEventAttributesUnmarshaller.Instance;
                     unmarshalledObject.StartChildWorkflowExecutionInitiatedEventAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startLambdaFunctionFailedEventAttributes", targetDepth))
+                {
+                    var unmarshaller = StartLambdaFunctionFailedEventAttributesUnmarshaller.Instance;
+                    unmarshalledObject.StartLambdaFunctionFailedEventAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startTimerFailedEventAttributes", targetDepth))

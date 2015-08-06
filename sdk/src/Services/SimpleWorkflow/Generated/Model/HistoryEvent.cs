@@ -61,12 +61,12 @@ namespace Amazon.SimpleWorkflow.Model
     /// decision.</li> <li> <b>TimerStarted</b>: A timer was started for the workflow execution
     /// due to a <code>StartTimer</code> decision.</li> <li> <b>StartTimerFailed</b>: Failed
     /// to process StartTimer decision. This happens when the decision is not configured properly,
-    /// for example a timer already exists with the specified timer Id.</li> <li> <b>TimerFired</b>:
+    /// for example a timer already exists with the specified timer ID.</li> <li> <b>TimerFired</b>:
     /// A timer, previously started for this workflow execution, fired.</li> <li> <b>TimerCanceled</b>:
     /// A timer, previously started for this workflow execution, was successfully canceled.</li>
     /// <li> <b>CancelTimerFailed</b>: Failed to process CancelTimer decision. This happens
     /// when the decision is not configured properly, for example no timer exists with the
-    /// specified timer Id.</li> <li> <b>StartChildWorkflowExecutionInitiated</b>: A request
+    /// specified timer ID.</li> <li> <b>StartChildWorkflowExecutionInitiated</b>: A request
     /// was made to start a child workflow execution.</li> <li> <b>StartChildWorkflowExecutionFailed</b>:
     /// Failed to process StartChildWorkflowExecution decision. This happens when the decision
     /// is not configured properly, for example the workflow type specified is not registered.</li>
@@ -87,7 +87,17 @@ namespace Amazon.SimpleWorkflow.Model
     /// A request was made to request the cancellation of an external workflow execution.</li>
     /// <li> <b>ExternalWorkflowExecutionCancelRequested</b>: Request to cancel an external
     /// workflow execution was successfully delivered to the target execution.</li> <li> <b>RequestCancelExternalWorkflowExecutionFailed</b>:
-    /// Request to cancel an external workflow execution failed.</li> </ul>
+    /// Request to cancel an external workflow execution failed.</li> <li> <b>LambdaFunctionScheduled</b>:
+    /// An AWS Lambda function was scheduled for execution.</li> <li> <b>LambdaFunctionStarted</b>:
+    /// The scheduled function was invoked in the AWS Lambda service.</li> <li> <b>LambdaFunctionCompleted</b>:
+    /// The AWS Lambda function successfully completed.</li> <li> <b>LambdaFunctionFailed</b>:
+    /// The AWS Lambda function execution failed.</li> <li> <b>LambdaFunctionTimedOut</b>:
+    /// The AWS Lambda function execution timed out.</li> <li> <b>ScheduleLambdaFunctionFailed</b>:
+    /// Failed to process ScheduleLambdaFunction decision. This happens when the workflow
+    /// execution does not have the proper IAM role attached to invoke AWS Lambda functions.</li>
+    /// <li> <b>StartLambdaFunctionFailed</b>: Failed to invoke the scheduled function in
+    /// the AWS Lambda service. This happens when the AWS Lambda service is not available
+    /// in the current region, or received too many requests.</li> </ul>
     /// </summary>
     public partial class HistoryEvent
     {
@@ -118,16 +128,23 @@ namespace Amazon.SimpleWorkflow.Model
         private ExternalWorkflowExecutionCancelRequestedEventAttributes _externalWorkflowExecutionCancelRequestedEventAttributes;
         private ExternalWorkflowExecutionSignaledEventAttributes _externalWorkflowExecutionSignaledEventAttributes;
         private FailWorkflowExecutionFailedEventAttributes _failWorkflowExecutionFailedEventAttributes;
+        private LambdaFunctionCompletedEventAttributes _lambdaFunctionCompletedEventAttributes;
+        private LambdaFunctionFailedEventAttributes _lambdaFunctionFailedEventAttributes;
+        private LambdaFunctionScheduledEventAttributes _lambdaFunctionScheduledEventAttributes;
+        private LambdaFunctionStartedEventAttributes _lambdaFunctionStartedEventAttributes;
+        private LambdaFunctionTimedOutEventAttributes _lambdaFunctionTimedOutEventAttributes;
         private MarkerRecordedEventAttributes _markerRecordedEventAttributes;
         private RecordMarkerFailedEventAttributes _recordMarkerFailedEventAttributes;
         private RequestCancelActivityTaskFailedEventAttributes _requestCancelActivityTaskFailedEventAttributes;
         private RequestCancelExternalWorkflowExecutionFailedEventAttributes _requestCancelExternalWorkflowExecutionFailedEventAttributes;
         private RequestCancelExternalWorkflowExecutionInitiatedEventAttributes _requestCancelExternalWorkflowExecutionInitiatedEventAttributes;
         private ScheduleActivityTaskFailedEventAttributes _scheduleActivityTaskFailedEventAttributes;
+        private ScheduleLambdaFunctionFailedEventAttributes _scheduleLambdaFunctionFailedEventAttributes;
         private SignalExternalWorkflowExecutionFailedEventAttributes _signalExternalWorkflowExecutionFailedEventAttributes;
         private SignalExternalWorkflowExecutionInitiatedEventAttributes _signalExternalWorkflowExecutionInitiatedEventAttributes;
         private StartChildWorkflowExecutionFailedEventAttributes _startChildWorkflowExecutionFailedEventAttributes;
         private StartChildWorkflowExecutionInitiatedEventAttributes _startChildWorkflowExecutionInitiatedEventAttributes;
+        private StartLambdaFunctionFailedEventAttributes _startLambdaFunctionFailedEventAttributes;
         private StartTimerFailedEventAttributes _startTimerFailedEventAttributes;
         private TimerCanceledEventAttributes _timerCanceledEventAttributes;
         private TimerFiredEventAttributes _timerFiredEventAttributes;
@@ -554,7 +571,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property EventId. 
         /// <para>
-        /// The system generated id of the event. This id uniquely identifies the event with in
+        /// The system generated ID of the event. This ID uniquely identifies the event with in
         /// the workflow execution history.
         /// </para>
         /// </summary>
@@ -665,6 +682,81 @@ namespace Amazon.SimpleWorkflow.Model
         internal bool IsSetFailWorkflowExecutionFailedEventAttributes()
         {
             return this._failWorkflowExecutionFailedEventAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionCompletedEventAttributes.
+        /// </summary>
+        public LambdaFunctionCompletedEventAttributes LambdaFunctionCompletedEventAttributes
+        {
+            get { return this._lambdaFunctionCompletedEventAttributes; }
+            set { this._lambdaFunctionCompletedEventAttributes = value; }
+        }
+
+        // Check to see if LambdaFunctionCompletedEventAttributes property is set
+        internal bool IsSetLambdaFunctionCompletedEventAttributes()
+        {
+            return this._lambdaFunctionCompletedEventAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionFailedEventAttributes.
+        /// </summary>
+        public LambdaFunctionFailedEventAttributes LambdaFunctionFailedEventAttributes
+        {
+            get { return this._lambdaFunctionFailedEventAttributes; }
+            set { this._lambdaFunctionFailedEventAttributes = value; }
+        }
+
+        // Check to see if LambdaFunctionFailedEventAttributes property is set
+        internal bool IsSetLambdaFunctionFailedEventAttributes()
+        {
+            return this._lambdaFunctionFailedEventAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionScheduledEventAttributes.
+        /// </summary>
+        public LambdaFunctionScheduledEventAttributes LambdaFunctionScheduledEventAttributes
+        {
+            get { return this._lambdaFunctionScheduledEventAttributes; }
+            set { this._lambdaFunctionScheduledEventAttributes = value; }
+        }
+
+        // Check to see if LambdaFunctionScheduledEventAttributes property is set
+        internal bool IsSetLambdaFunctionScheduledEventAttributes()
+        {
+            return this._lambdaFunctionScheduledEventAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionStartedEventAttributes.
+        /// </summary>
+        public LambdaFunctionStartedEventAttributes LambdaFunctionStartedEventAttributes
+        {
+            get { return this._lambdaFunctionStartedEventAttributes; }
+            set { this._lambdaFunctionStartedEventAttributes = value; }
+        }
+
+        // Check to see if LambdaFunctionStartedEventAttributes property is set
+        internal bool IsSetLambdaFunctionStartedEventAttributes()
+        {
+            return this._lambdaFunctionStartedEventAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionTimedOutEventAttributes.
+        /// </summary>
+        public LambdaFunctionTimedOutEventAttributes LambdaFunctionTimedOutEventAttributes
+        {
+            get { return this._lambdaFunctionTimedOutEventAttributes; }
+            set { this._lambdaFunctionTimedOutEventAttributes = value; }
+        }
+
+        // Check to see if LambdaFunctionTimedOutEventAttributes property is set
+        internal bool IsSetLambdaFunctionTimedOutEventAttributes()
+        {
+            return this._lambdaFunctionTimedOutEventAttributes != null;
         }
 
         /// <summary>
@@ -788,6 +880,21 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ScheduleLambdaFunctionFailedEventAttributes.
+        /// </summary>
+        public ScheduleLambdaFunctionFailedEventAttributes ScheduleLambdaFunctionFailedEventAttributes
+        {
+            get { return this._scheduleLambdaFunctionFailedEventAttributes; }
+            set { this._scheduleLambdaFunctionFailedEventAttributes = value; }
+        }
+
+        // Check to see if ScheduleLambdaFunctionFailedEventAttributes property is set
+        internal bool IsSetScheduleLambdaFunctionFailedEventAttributes()
+        {
+            return this._scheduleLambdaFunctionFailedEventAttributes != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SignalExternalWorkflowExecutionFailedEventAttributes. 
         /// <para>
         /// If the event is of type <code>SignalExternalWorkflowExecutionFailed</code> then this
@@ -866,6 +973,21 @@ namespace Amazon.SimpleWorkflow.Model
         internal bool IsSetStartChildWorkflowExecutionInitiatedEventAttributes()
         {
             return this._startChildWorkflowExecutionInitiatedEventAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartLambdaFunctionFailedEventAttributes.
+        /// </summary>
+        public StartLambdaFunctionFailedEventAttributes StartLambdaFunctionFailedEventAttributes
+        {
+            get { return this._startLambdaFunctionFailedEventAttributes; }
+            set { this._startLambdaFunctionFailedEventAttributes = value; }
+        }
+
+        // Check to see if StartLambdaFunctionFailedEventAttributes property is set
+        internal bool IsSetStartLambdaFunctionFailedEventAttributes()
+        {
+            return this._startLambdaFunctionFailedEventAttributes != null;
         }
 
         /// <summary>
