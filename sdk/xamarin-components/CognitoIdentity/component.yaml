@@ -10,7 +10,7 @@ name: AWSSDK - Amazon Cognito Identity
 id: aws-cognitoidentity-sdk
 samples: 
   - name: "CognitoIdentity-Sample"
-    path: ..\..\..\..\Aws-sdk-net-samples\XamarinSamples\CognitoIdentity\BYOISample.sln
+    path: ..\..\..\..\aws-sdk-net-samples\XamarinSamples\CognitoIdentity\BYOISample.sln
 publisher-url: http://aws.amazon.com/mobile/sdk/
 packages:
   android:

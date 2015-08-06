@@ -10,7 +10,7 @@ name: AWSSDK - Amazon Mobile Analytics
 id: aws-mobileanalytics-sdk
 samples: 
   - name: "MobileAnalytics-Sample"
-    path: ..\..\..\..\Aws-sdk-net-samples\XamarinSamples\MobileAnalytics\AWSSDK.MobileAnalytics.Sample.sln
+    path: ..\..\..\..\aws-sdk-net-samples\XamarinSamples\MobileAnalytics\AWSSDK.MobileAnalytics.Sample.sln
 publisher-url: http://aws.amazon.com/mobile/sdk/
 packages:
   android:

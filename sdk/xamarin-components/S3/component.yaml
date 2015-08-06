@@ -10,7 +10,7 @@ name: AWSSDK - Amazon Simple Storage Service
 id: aws-s3-sdk
 samples: 
   - name: "S3-Sample"
-    path: ..\..\..\..\Aws-sdk-net-samples\XamarinSamples\S3\AWSSDK.S3.Sample.sln
+    path: ..\..\..\..\aws-sdk-net-samples\XamarinSamples\S3\AWSSDK.S3.Sample.sln
 publisher-url: http://aws.amazon.com/mobile/sdk/
 packages:
   android:

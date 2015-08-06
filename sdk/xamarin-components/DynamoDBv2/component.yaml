@@ -10,7 +10,7 @@ name: AWSSDK - Amazon DynamoDB
 id: aws-dynamodb-sdk
 samples: 
   - name: "DynamoDB-Sample"
-    path: ..\..\..\..\Aws-sdk-net-samples\XamarinSamples\DynamoDB\AWSSDK.DynamoDB.Sample.sln
+    path: ..\..\..\..\aws-sdk-net-samples\XamarinSamples\DynamoDB\AWSSDK.DynamoDB.Sample.sln
 publisher-url: http://aws.amazon.com/mobile/sdk/
 packages:
   android:

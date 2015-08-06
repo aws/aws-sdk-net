@@ -90,7 +90,7 @@
             Versions = @"..\..\..\ServiceModels\_sdk-versions.json";
             ModelsFolder = @"..\..\..\ServiceModels";
             SdkRootFolder = @"..\..\..\..\sdk";
-            SamplesRootFolder = @"..\..\..\..\Aws-sdk-net-samples";
+            SamplesRootFolder = @"..\..\..\..\aws-sdk-net-samples";
 
             ServiceModels = string.Empty; // process all services
             CompileCustomizations = true;
