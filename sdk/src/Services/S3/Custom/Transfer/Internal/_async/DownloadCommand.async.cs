@@ -45,7 +45,11 @@ namespace Amazon.S3.Transfer.Internal
 
                 if (retries != 0)
                 {
+#if PCL
+                    ByteRange bytesRemaining = await ByteRangeRemainingForDownloadAsync(this._request.FilePath);
+#else
                     ByteRange bytesRemaining = ByteRangeRemainingForDownload(this._request.FilePath);
+#endif
                     getRequest.ByteRange = bytesRemaining;
                 }
 
@@ -58,6 +62,7 @@ namespace Amazon.S3.Transfer.Internal
                         mostRecentETag = response.ETag;
                         getRequest.ByteRange = null;
                         retries = 0;
+                        shouldRetry = true;
                         WaitBeforeRetry(retries);
                         continue;
                     }
@@ -80,12 +85,16 @@ namespace Amazon.S3.Transfer.Internal
                              * to avoid any breaking changes to customers who handle that specific exception in a
                              * particular manor.
                              */
-#if !PCL
-                            FileStream temp = new FileStream(this._request.FilePath, FileMode.Create, FileAccess.ReadWrite, FileShare.Read, Amazon.S3.Util.S3Constants.DefaultBufferSize);
-                            temp.Close();
-#else
-                            var file = PCLStorage.FileSystem.Current.GetFileFromPathAsync(this._request.FilePath).Result;
-                            await file.DeleteAsync();
+#if PCL
+                            var file = await PCLStorage.FileSystem.Current.GetFileFromPathAsync(this._request.FilePath).ConfigureAwait(false);
+                            if (file != null)
+                                await file.DeleteAsync().ConfigureAwait(false);
+#endif
+#if BCL
+                            using (FileStream temp = new FileStream(this._request.FilePath, FileMode.Create, FileAccess.ReadWrite, FileShare.Read, Amazon.S3.Util.S3Constants.DefaultBufferSize))
+                            {
+                                //Do nothing. Simply using the "using" statement to create and dispose of FileStream temp in the same call.
+                            };
 #endif
 
                             response.WriteObjectProgressEvent += OnWriteObjectProgressEvent;
@@ -145,5 +154,35 @@ namespace Amazon.S3.Transfer.Internal
             else
                 return HandleException(exception, retries, maxRetries);
         }
+
+#if PCL
+        /// <summary>
+        /// Returns the amount of bytes remaining that need to be pulled down from S3.
+        /// </summary>
+        /// <param name="filepath">The fully qualified path of the file.</param>
+        /// <returns></returns>
+        static async Task<ByteRange> ByteRangeRemainingForDownloadAsync(string filepath)
+        {
+            /*
+             * Initialize the ByteRange as the whole file.
+             * long.MaxValue works regardless of the size because
+             * S3 will stop sending bits if you specify beyond the
+             * size of the file anyways.
+             */
+            ByteRange byteRange = new ByteRange(0, long.MaxValue);
+
+            var file = await PCLStorage.FileSystem.Current.GetFileFromPathAsync(filepath).ConfigureAwait(false);
+            if (file != null)
+            {
+                using (var stream = await file.OpenAsync(PCLStorage.FileAccess.Read).ConfigureAwait(false))
+                {
+                    byteRange.Start = stream.Length;
+                }
+            }
+
+            return byteRange;
+        }
+#endif
+
     }
 }

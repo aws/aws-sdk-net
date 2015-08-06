@@ -56,6 +56,7 @@ namespace Amazon.S3.Transfer.Internal
                         mostRecentETag = response.ETag;
                         getRequest.ByteRange = null;
                         retries = 0;
+                        shouldRetry = true;
                         WaitBeforeRetry(retries);
                         continue;
                     }
@@ -78,8 +79,10 @@ namespace Amazon.S3.Transfer.Internal
                              * to avoid any breaking changes to customers who handle that specific exception in a
                              * particular manor.
                              */
-                            FileStream temp = new FileStream(this._request.FilePath, FileMode.Create, FileAccess.ReadWrite, FileShare.Read, Amazon.S3.Util.S3Constants.DefaultBufferSize);
-                            temp.Close();
+                            using (FileStream temp = new FileStream(this._request.FilePath, FileMode.Create, FileAccess.ReadWrite, FileShare.Read, Amazon.S3.Util.S3Constants.DefaultBufferSize))
+                            {
+                                //Do nothing. Simply using the "using" statement to create and dispose of FileStream temp in the same call.
+                            };
 
                             response.WriteObjectProgressEvent += OnWriteObjectProgressEvent;
                             response.WriteResponseStreamToFile(this._request.FilePath);

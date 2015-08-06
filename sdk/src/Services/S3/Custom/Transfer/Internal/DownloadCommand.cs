@@ -148,6 +148,7 @@ namespace Amazon.S3.Transfer.Internal
             AWSSDKUtils.Sleep(delay);
         }
 
+#if BCL
         /// <summary>
         /// Returns the amount of bytes remaining that need to be pulled down from S3.
         /// </summary>
@@ -162,25 +163,16 @@ namespace Amazon.S3.Transfer.Internal
              * size of the file anyways.
              */
             ByteRange byteRange = new ByteRange(0, long.MaxValue);
-#if !PCL
-            if (!File.Exists(filepath))
-                return byteRange;
 
-            FileInfo info = new FileInfo(filepath);
-            byteRange.Start = info.Length;
-#else
-            var file = PCLStorage.FileSystem.Current.GetFileFromPathAsync(filepath).Result;
-            if (file == null)
-                return byteRange;
-
-            using (var stream = file.OpenAsync(PCLStorage.FileAccess.Read).Result)
+            if (File.Exists(filepath))
             {
-                byteRange.Start = stream.Length;
+                FileInfo info = new FileInfo(filepath);
+                byteRange.Start = info.Length;
             }
-#endif
 
             return byteRange;
         }
+#endif
 
     }
 }
