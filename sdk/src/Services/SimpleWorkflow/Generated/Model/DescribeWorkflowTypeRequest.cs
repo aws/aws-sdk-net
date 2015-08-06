@@ -31,7 +31,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// Container for the parameters to the DescribeWorkflowType operation.
     /// Returns information about the specified <i>workflow type</i>. This includes configuration
     /// settings specified when the type was registered and other information such as creation
-    /// date, current status, etc.
+    /// date, current status, and so on.
     /// 
     ///  
     /// <para>

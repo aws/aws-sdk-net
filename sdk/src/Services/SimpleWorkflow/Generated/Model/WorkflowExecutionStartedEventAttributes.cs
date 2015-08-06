@@ -36,6 +36,7 @@ namespace Amazon.SimpleWorkflow.Model
         private string _continuedExecutionRunId;
         private string _executionStartToCloseTimeout;
         private string _input;
+        private string _lambdaRole;
         private long? _parentInitiatedEventId;
         private WorkflowExecution _parentWorkflowExecution;
         private List<string> _tagList = new List<string>();
@@ -135,13 +136,31 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LambdaRole. 
+        /// <para>
+        /// The IAM role attached to this workflow execution to use when invoking AWS Lambda functions.
+        /// </para>
+        /// </summary>
+        public string LambdaRole
+        {
+            get { return this._lambdaRole; }
+            set { this._lambdaRole = value; }
+        }
+
+        // Check to see if LambdaRole property is set
+        internal bool IsSetLambdaRole()
+        {
+            return this._lambdaRole != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ParentInitiatedEventId. 
         /// <para>
-        /// The id of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding
-        /// to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this workflow
-        /// execution. The source event with this Id can be found in the history of the source
-        /// workflow execution. This information can be useful for diagnosing problems by tracing
-        /// back the chain of events leading up to this event.
+        /// The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding
+        /// to the <code>StartChildWorkflowExecution</code> decision to start this workflow execution.
+        /// The source event with this ID can be found in the history of the source workflow execution.
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.
         /// </para>
         /// </summary>
         public long ParentInitiatedEventId

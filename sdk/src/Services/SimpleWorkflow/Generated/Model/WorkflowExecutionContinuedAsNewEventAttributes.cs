@@ -36,6 +36,7 @@ namespace Amazon.SimpleWorkflow.Model
         private long? _decisionTaskCompletedEventId;
         private string _executionStartToCloseTimeout;
         private string _input;
+        private string _lambdaRole;
         private string _newExecutionRunId;
         private List<string> _tagList = new List<string>();
         private TaskList _taskList;
@@ -75,7 +76,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        /// The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
+        /// The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision
         /// task that resulted in the <code>ContinueAsNewWorkflowExecution</code> decision that
         /// started this execution. This information can be useful for diagnosing problems by
         /// tracing back the chain of events leading up to this event.
@@ -132,6 +133,24 @@ namespace Amazon.SimpleWorkflow.Model
         internal bool IsSetInput()
         {
             return this._input != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaRole. 
+        /// <para>
+        /// The IAM role attached to this workflow execution to use when invoking AWS Lambda functions.
+        /// </para>
+        /// </summary>
+        public string LambdaRole
+        {
+            get { return this._lambdaRole; }
+            set { this._lambdaRole = value; }
+        }
+
+        // Check to see if LambdaRole property is set
+        internal bool IsSetLambdaRole()
+        {
+            return this._lambdaRole != null;
         }
 
         /// <summary>

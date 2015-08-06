@@ -1,3 +1,7 @@
+### 3.1.4.0 (2015-08-06 15:55 UTC)
+* SimpleWorkflow (3.1.1.0)
+	* Update SWF client for Lambda support
+
 ### 3.1.3.0 (2015-08-04 21:59 UTC)
 * DeviceFarm (3.1.1.0)
 	* Update DeviceFarm client with latest model, adding support for iOS and retrieving account settings.

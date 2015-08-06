@@ -40,9 +40,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ExternalInitiatedEventId. 
         /// <para>
-        /// The id of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding
+        /// The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding
         /// to the <code>SignalExternalWorkflow</code> decision to signal this workflow execution.The
-        /// source event with this Id can be found in the history of the source workflow execution.
+        /// source event with this ID can be found in the history of the source workflow execution.
         /// This information can be useful for diagnosing problems by tracing back the chain of
         /// events leading up to this event. This field is set only if the signal was initiated
         /// by another workflow execution.

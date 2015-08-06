@@ -76,6 +76,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionStartToCloseTimeout = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lambdaRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LambdaRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("taskList", targetDepth))
                 {
                     var unmarshaller = TaskListUnmarshaller.Instance;

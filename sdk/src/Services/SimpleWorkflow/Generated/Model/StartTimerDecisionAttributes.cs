@@ -101,7 +101,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TimerId. 
         /// <para>
-        /// <b>Required.</b> The unique Id of the timer.
+        /// <b>Required.</b> The unique ID of the timer.
         /// </para>
         ///  
         /// <para>

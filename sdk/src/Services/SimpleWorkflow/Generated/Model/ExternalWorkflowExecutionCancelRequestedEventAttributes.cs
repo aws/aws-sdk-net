@@ -38,7 +38,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property InitiatedEventId. 
         /// <para>
-        /// The id of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding
+        /// The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding
         /// to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this
         /// external workflow execution. This information can be useful for diagnosing problems
         /// by tracing back the chain of events leading up to this event.
