@@ -31,7 +31,7 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the AddTagsToResource operation.
     /// Adds metadata tags to an Amazon RDS resource. These tags can also be used with cost
     /// allocation reporting to track cost associated with Amazon RDS resources, or used in
-    /// a Condition statement in an IAM policy for Amazon RDS.
+    /// Condition statement in IAM policy for Amazon RDS.
     /// 
     ///  
     /// <para>

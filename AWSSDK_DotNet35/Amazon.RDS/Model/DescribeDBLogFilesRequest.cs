@@ -71,7 +71,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property FileLastWritten. 
         /// <para>
         ///  Filters the available log files for files written since the specified date, in POSIX
-        /// timestamp format with milliseconds. 
+        /// timestamp format. 
         /// </para>
         /// </summary>
         public long FileLastWritten

@@ -45,7 +45,6 @@ namespace Amazon.OpsWorks.Model
         private bool? _autoAssignElasticIps;
         private bool? _autoAssignPublicIps;
         private string _customInstanceProfileArn;
-        private string _customJson;
         private Recipes _customRecipes;
         private List<string> _customSecurityGroupIds = new List<string>();
         private bool? _enableAutoHealing;
@@ -134,26 +133,6 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetCustomInstanceProfileArn()
         {
             return this._customInstanceProfileArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property CustomJson. 
-        /// <para>
-        /// A JSON-formatted string containing custom stack configuration and deployment attributes
-        /// to be installed on the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-        /// Using Custom JSON</a>. 
-        /// </para>
-        /// </summary>
-        public string CustomJson
-        {
-            get { return this._customJson; }
-            set { this._customJson = value; }
-        }
-
-        // Check to see if CustomJson property is set
-        internal bool IsSetCustomJson()
-        {
-            return this._customJson != null;
         }
 
         /// <summary>

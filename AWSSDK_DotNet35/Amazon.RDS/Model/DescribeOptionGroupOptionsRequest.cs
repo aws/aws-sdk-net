@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        ///  A required parameter. Options available for the given engine name will be described.
+        ///  A required parameter. Options available for the given Engine name will be described.
         /// 
         /// </para>
         /// </summary>
@@ -128,7 +128,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Minimum 20, maximum 100.
+        /// Constraints: minimum 20, maximum 100
         /// </para>
         /// </summary>
         public int MaxRecords

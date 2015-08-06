@@ -84,9 +84,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional pagination token provided by a previous <code>DescribeDBSecurityGroups</code>
-        /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by <code>MaxRecords</code>. 
+        ///  An optional pagination token provided by a previous DescribeDBSecurityGroups request.
+        /// If this parameter is specified, the response includes only records beyond the marker,
+        /// up to the value specified by <code>MaxRecords</code>. 
         /// </para>
         /// </summary>
         public string Marker
@@ -106,7 +106,7 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  The maximum number of records to include in the response. If more records exist than
         /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that the remaining results can be retrieved. 
+        /// included in the response so that the remaining results may be retrieved. 
         /// </para>
         ///  
         /// <para>
@@ -114,7 +114,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Minimum 20, maximum 100.
+        /// Constraints: minimum 20, maximum 100
         /// </para>
         /// </summary>
         public int MaxRecords

@@ -77,14 +77,15 @@ namespace Amazon.OpsWorks
     ///  
     /// <para>
     /// When you call <a>CreateStack</a>, <a>CloneStack</a>, or <a>UpdateStack</a> we recommend
-    /// you use the <code>ConfigurationManager</code> parameter to specify the Chef version.
-    /// The recommended value for Linux stacks, which is also the default value, is currently
-    /// 11.10. Windows stacks use Chef 12.2. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
+    /// you use the <code>ConfigurationManager</code> parameter to specify the Chef version,
+    /// 0.9, 11.4, or 11.10. The default value is currently 11.10. For more information, see
+    /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
     /// Versions</a>.
     /// </para>
-    ///  <note>You can also specify Chef 11.4 or Chef 0.9 for your Linux stack. However, Chef
-    /// 0.9 has been deprecated. We do not recommend using Chef 0.9 for new stacks, and we
-    /// recommend migrating your existing Chef 0.9 stacks to Chef 11.10 as soon as possible.</note>
+    ///  <note>You can still specify Chef 0.9 for your stack, but new features are not available
+    /// for Chef 0.9 stacks, and support is scheduled to end on July 24, 2014. We do not recommend
+    /// using Chef 0.9 for new stacks, and we recommend migrating your existing Chef 0.9 stacks
+    /// to Chef 11.10 as soon as possible.</note>
     /// </summary>
     public partial interface IAmazonOpsWorks : IDisposable
     {
@@ -329,21 +330,6 @@ namespace Amazon.OpsWorks
 
         #endregion
                 
-        #region  DeregisterEcsCluster
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeregisterEcsCluster operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeregisterEcsCluster operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeregisterEcsClusterResponse> DeregisterEcsClusterAsync(DeregisterEcsClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
         #region  DeregisterElasticIp
 
         /// <summary>
@@ -461,21 +447,6 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeDeploymentsResponse> DescribeDeploymentsAsync(DescribeDeploymentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
-        #region  DescribeEcsClusters
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DescribeEcsClusters operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeEcsClusters operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeEcsClustersResponse> DescribeEcsClustersAsync(DescribeEcsClustersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -791,21 +762,6 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<RebootInstanceResponse> RebootInstanceAsync(RebootInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
-        #region  RegisterEcsCluster
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the RegisterEcsCluster operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RegisterEcsCluster operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<RegisterEcsClusterResponse> RegisterEcsClusterAsync(RegisterEcsClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

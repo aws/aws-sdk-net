@@ -53,7 +53,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        ///  A list of Availability Zones for the orderable DB instance. 
+        ///  A list of availability zones for the orderable DB instance. 
         /// </para>
         /// </summary>
         public List<AvailabilityZone> AvailabilityZones
@@ -71,7 +71,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        ///  The DB instance class for the orderable DB instance. 
+        ///  The DB instance Class for the orderable DB instance 
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -179,7 +179,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        ///  Indicates the storage type for this orderable DB instance. 
+        ///  The storage type for this orderable DB instance. 
         /// </para>
         /// </summary>
         public string StorageType

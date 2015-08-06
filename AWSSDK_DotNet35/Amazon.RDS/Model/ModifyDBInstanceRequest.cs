@@ -88,7 +88,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: 5-6144
+        /// Valid Values: 5-3072
         /// </para>
         ///  
         /// <para>
@@ -110,7 +110,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: 5-6144
+        /// Valid Values: 5-3072
         /// </para>
         ///  
         /// <para>
@@ -132,7 +132,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: 10-6144
+        /// Valid Values: 10-3072
         /// </para>
         ///  
         /// <para>
@@ -156,7 +156,7 @@ namespace Amazon.RDS.Model
         /// storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned
         /// (if any), and the number of prior scale storage operations. Typical migration times
         /// are under 24 hours, but the process can take up to several days in some cases. During
-        /// the migration, the DB instance will be available for use, but might experience performance
+        /// the migration, the DB instance will be available for use, but may experience performance
         /// degradation. While the migration takes place, nightly backups for the instance will
         /// be suspended. No other Amazon RDS operations can take place for the instance, including
         /// modifying the instance, rebooting the instance, deleting the instance, creating a
@@ -299,7 +299,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CACertificateIdentifier. 
         /// <para>
-        ///  Indicates the certificate that needs to be associated with the instance. 
+        ///  Indicates the certificate which needs to be associated with the instance. 
         /// </para>
         /// </summary>
         public string CACertificateIdentifier
@@ -506,7 +506,7 @@ namespace Amazon.RDS.Model
         /// storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned
         /// (if any), and the number of prior scale storage operations. Typical migration times
         /// are under 24 hours, but the process can take up to several days in some cases. During
-        /// the migration, the DB instance will be available for use, but might experience performance
+        /// the migration, the DB instance will be available for use, but may experience performance
         /// degradation. While the migration takes place, nightly backups for the instance will
         /// be suspended. No other Amazon RDS operations can take place for the instance, including
         /// modifying the instance, rebooting the instance, deleting the instance, creating a
@@ -549,7 +549,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> Amazon RDS API actions never return the password, so this action provides
         /// a way to regain access to a primary instance user if the password is lost. This includes
-        /// restoring privileges that might have been accidentally revoked. </note>
+        /// restoring privileges that may have been accidentally revoked. </note>
         /// </summary>
         public string MasterUserPassword
         {
@@ -573,9 +573,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Cannot be specified if the DB instance is a Read Replica. This parameter
-        /// cannot be used with SQL Server DB instances. Multi-AZ for SQL Server DB instances
-        /// is set using the Mirroring option in an option group associated with the DB instance.
+        /// Constraints: Cannot be specified if the DB instance is a Read Replica.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -653,15 +651,15 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         ///  The daily time range during which automated backups are created if automated backups
-        /// are enabled, as determined by the <code>BackupRetentionPeriod</code> parameter. Changing
-        /// this parameter does not result in an outage and the change is asynchronously applied
-        /// as soon as possible. 
+        /// are enabled, as determined by the <code>BackupRetentionPeriod</code>. Changing this
+        /// parameter does not result in an outage and the change is asynchronously applied as
+        /// soon as possible. 
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be in the format hh24:mi-hh24:mi</li> <li>Times should be in Universal
+        ///  <ul> <li>Must be in the format hh24:mi-hh24:mi</li> <li>Times should be Universal
         /// Time Coordinated (UTC)</li> <li>Must not conflict with the preferred maintenance window</li>
         /// <li>Must be at least 30 minutes</li> </ul>
         /// </summary>
@@ -680,7 +678,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        ///  The weekly time range (in UTC) during which system maintenance can occur, which might
+        ///  The weekly time range (in UTC) during which system maintenance can occur, which may
         /// result in an outage. Changing this parameter does not result in an outage, except
         /// in the following situation, and the change is asynchronously applied as soon as possible.
         /// If there are pending actions that cause a reboot, and the maintenance window is changed

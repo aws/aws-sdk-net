@@ -80,14 +80,15 @@ namespace Amazon.OpsWorks
     ///  
     /// <para>
     /// When you call <a>CreateStack</a>, <a>CloneStack</a>, or <a>UpdateStack</a> we recommend
-    /// you use the <code>ConfigurationManager</code> parameter to specify the Chef version.
-    /// The recommended value for Linux stacks, which is also the default value, is currently
-    /// 11.10. Windows stacks use Chef 12.2. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
+    /// you use the <code>ConfigurationManager</code> parameter to specify the Chef version,
+    /// 0.9, 11.4, or 11.10. The default value is currently 11.10. For more information, see
+    /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
     /// Versions</a>.
     /// </para>
-    ///  <note>You can also specify Chef 11.4 or Chef 0.9 for your Linux stack. However, Chef
-    /// 0.9 has been deprecated. We do not recommend using Chef 0.9 for new stacks, and we
-    /// recommend migrating your existing Chef 0.9 stacks to Chef 11.10 as soon as possible.</note>
+    ///  <note>You can still specify Chef 0.9 for your stack, but new features are not available
+    /// for Chef 0.9 stacks, and support is scheduled to end on July 24, 2014. We do not recommend
+    /// using Chef 0.9 for new stacks, and we recommend migrating your existing Chef 0.9 stacks
+    /// to Chef 11.10 as soon as possible.</note>
     /// </summary>
     public partial class AmazonOpsWorksClient : AmazonServiceClient, IAmazonOpsWorks
     {
@@ -280,10 +281,9 @@ namespace Amazon.OpsWorks
         /// cannot use this action with instances that were created with AWS OpsWorks.</li> </ul>
         /// 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an AWS Identity and Access Management
-        /// (IAM) user must have a Manage permissions level for the stack or an attached policy
-        /// that explicitly grants permissions. For more information on user permissions, see
-        /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        /// level for the stack or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -1332,71 +1332,6 @@ namespace Amazon.OpsWorks
 
         #endregion
         
-        #region  DeregisterEcsCluster
-
-        /// <summary>
-        /// Deregisters a specified Amazon ECS cluster from a stack. For more information, see
-        /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html#workinglayers-ecscluster-delete">
-        /// Resource Management</a>.
-        /// 
-        ///  
-        /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack or an attached policy that explicitly grants permissions. For
-        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"></a>.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeregisterEcsCluster service method.</param>
-        /// 
-        /// <returns>The response from the DeregisterEcsCluster service method, as returned by OpsWorks.</returns>
-        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
-        /// Indicates that a resource was not found.
-        /// </exception>
-        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
-        /// </exception>
-        public DeregisterEcsClusterResponse DeregisterEcsCluster(DeregisterEcsClusterRequest request)
-        {
-            var marshaller = new DeregisterEcsClusterRequestMarshaller();
-            var unmarshaller = DeregisterEcsClusterResponseUnmarshaller.Instance;
-
-            return Invoke<DeregisterEcsClusterRequest,DeregisterEcsClusterResponse>(request, marshaller, unmarshaller);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeregisterEcsCluster operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeregisterEcsCluster operation on AmazonOpsWorksClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterEcsCluster
-        ///         operation.</returns>
-        public IAsyncResult BeginDeregisterEcsCluster(DeregisterEcsClusterRequest request, AsyncCallback callback, object state)
-        {
-            var marshaller = new DeregisterEcsClusterRequestMarshaller();
-            var unmarshaller = DeregisterEcsClusterResponseUnmarshaller.Instance;
-
-            return BeginInvoke<DeregisterEcsClusterRequest>(request, marshaller, unmarshaller,
-                callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  DeregisterEcsCluster operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterEcsCluster.</param>
-        /// 
-        /// <returns>Returns a  DeregisterEcsClusterResult from OpsWorks.</returns>
-        public  DeregisterEcsClusterResponse EndDeregisterEcsCluster(IAsyncResult asyncResult)
-        {
-            return EndInvoke<DeregisterEcsClusterResponse>(asyncResult);
-        }
-
-        #endregion
-        
         #region  DeregisterElasticIp
 
         /// <summary>
@@ -1917,73 +1852,6 @@ namespace Amazon.OpsWorks
         public  DescribeDeploymentsResponse EndDescribeDeployments(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDeploymentsResponse>(asyncResult);
-        }
-
-        #endregion
-        
-        #region  DescribeEcsClusters
-
-        /// <summary>
-        /// Describes Amazon ECS clusters that are registered with a stack. If you specify only
-        /// a stack ID, you can use the <code>MaxResults</code> and <code>NextToken</code> parameters
-        /// to paginate the response. However, AWS OpsWorks currently supports only one cluster
-        /// per layer, so the result set has a maximum of one element.
-        /// 
-        ///  
-        /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-        /// or Manage permissions level for the stack or an attached policy that explicitly grants
-        /// permission. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-        /// User Permissions</a>.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeEcsClusters service method.</param>
-        /// 
-        /// <returns>The response from the DescribeEcsClusters service method, as returned by OpsWorks.</returns>
-        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
-        /// Indicates that a resource was not found.
-        /// </exception>
-        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
-        /// </exception>
-        public DescribeEcsClustersResponse DescribeEcsClusters(DescribeEcsClustersRequest request)
-        {
-            var marshaller = new DescribeEcsClustersRequestMarshaller();
-            var unmarshaller = DescribeEcsClustersResponseUnmarshaller.Instance;
-
-            return Invoke<DescribeEcsClustersRequest,DescribeEcsClustersResponse>(request, marshaller, unmarshaller);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DescribeEcsClusters operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeEcsClusters operation on AmazonOpsWorksClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEcsClusters
-        ///         operation.</returns>
-        public IAsyncResult BeginDescribeEcsClusters(DescribeEcsClustersRequest request, AsyncCallback callback, object state)
-        {
-            var marshaller = new DescribeEcsClustersRequestMarshaller();
-            var unmarshaller = DescribeEcsClustersResponseUnmarshaller.Instance;
-
-            return BeginInvoke<DescribeEcsClustersRequest>(request, marshaller, unmarshaller,
-                callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  DescribeEcsClusters operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEcsClusters.</param>
-        /// 
-        /// <returns>Returns a  DescribeEcsClustersResult from OpsWorks.</returns>
-        public  DescribeEcsClustersResponse EndDescribeEcsClusters(IAsyncResult asyncResult)
-        {
-            return EndInvoke<DescribeEcsClustersResponse>(asyncResult);
         }
 
         #endregion
@@ -3470,73 +3338,6 @@ namespace Amazon.OpsWorks
         public  RebootInstanceResponse EndRebootInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<RebootInstanceResponse>(asyncResult);
-        }
-
-        #endregion
-        
-        #region  RegisterEcsCluster
-
-        /// <summary>
-        /// Registers a specified Amazon ECS cluster with a stack. You can register only one cluster
-        /// with a stack. A cluster can be registered with only one stack. For more information,
-        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html">
-        /// Resource Management</a>.
-        /// 
-        ///  
-        /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack or an attached policy that explicitly grants permissions. For
-        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
-        /// Managing User Permissions</a>.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the RegisterEcsCluster service method.</param>
-        /// 
-        /// <returns>The response from the RegisterEcsCluster service method, as returned by OpsWorks.</returns>
-        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
-        /// Indicates that a resource was not found.
-        /// </exception>
-        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
-        /// </exception>
-        public RegisterEcsClusterResponse RegisterEcsCluster(RegisterEcsClusterRequest request)
-        {
-            var marshaller = new RegisterEcsClusterRequestMarshaller();
-            var unmarshaller = RegisterEcsClusterResponseUnmarshaller.Instance;
-
-            return Invoke<RegisterEcsClusterRequest,RegisterEcsClusterResponse>(request, marshaller, unmarshaller);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the RegisterEcsCluster operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RegisterEcsCluster operation on AmazonOpsWorksClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterEcsCluster
-        ///         operation.</returns>
-        public IAsyncResult BeginRegisterEcsCluster(RegisterEcsClusterRequest request, AsyncCallback callback, object state)
-        {
-            var marshaller = new RegisterEcsClusterRequestMarshaller();
-            var unmarshaller = RegisterEcsClusterResponseUnmarshaller.Instance;
-
-            return BeginInvoke<RegisterEcsClusterRequest>(request, marshaller, unmarshaller,
-                callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  RegisterEcsCluster operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterEcsCluster.</param>
-        /// 
-        /// <returns>Returns a  RegisterEcsClusterResult from OpsWorks.</returns>
-        public  RegisterEcsClusterResponse EndRegisterEcsCluster(IAsyncResult asyncResult)
-        {
-            return EndInvoke<RegisterEcsClusterResponse>(asyncResult);
         }
 
         #endregion

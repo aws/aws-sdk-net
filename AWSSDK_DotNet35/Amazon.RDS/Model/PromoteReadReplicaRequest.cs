@@ -112,17 +112,15 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  Default: A 30-minute window selected at random from an 8-hour block of time per region.
-        /// To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-        /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
-        /// 
+        /// See the Amazon RDS User Guide for the time blocks for each region from which the default
+        /// backup windows are assigned. 
         /// </para>
         ///  
         /// <para>
-        /// Constraints:
+        ///  Constraints: Must be in the format <code>hh24:mi-hh24:mi</code>. Times should be
+        /// Universal Time Coordinated (UTC). Must not conflict with the preferred maintenance
+        /// window. Must be at least 30 minutes. 
         /// </para>
-        ///  <ul> <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li> <li>Times should
-        /// be in Universal Coordinated Time (UTC).</li> <li>Must not conflict with the preferred
-        /// maintenance window.</li> <li>Must be at least 30 minutes.</li> </ul>
         /// </summary>
         public string PreferredBackupWindow
         {

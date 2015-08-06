@@ -55,7 +55,6 @@ namespace Amazon.RDS.Model
         private int? _port;
         private DateTime? _snapshotCreateTime;
         private string _snapshotType;
-        private string _sourceDBSnapshotIdentifier;
         private string _sourceRegion;
         private string _status;
         private string _storageType;
@@ -193,8 +192,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property InstanceCreateTime. 
         /// <para>
-        ///  Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
-        /// 
+        ///  Specifies the time (UTC) when the snapshot was taken. 
         /// </para>
         /// </summary>
         public DateTime InstanceCreateTime
@@ -341,8 +339,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SnapshotCreateTime. 
         /// <para>
-        ///  Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
-        /// 
+        ///  Provides the time (UTC) when the snapshot was taken. 
         /// </para>
         /// </summary>
         public DateTime SnapshotCreateTime
@@ -373,25 +370,6 @@ namespace Amazon.RDS.Model
         internal bool IsSetSnapshotType()
         {
             return this._snapshotType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SourceDBSnapshotIdentifier. 
-        /// <para>
-        ///  The DB snapshot Arn that the DB snapshot was copied from. It only has value in case
-        /// of cross customer or cross region copy. 
-        /// </para>
-        /// </summary>
-        public string SourceDBSnapshotIdentifier
-        {
-            get { return this._sourceDBSnapshotIdentifier; }
-            set { this._sourceDBSnapshotIdentifier = value; }
-        }
-
-        // Check to see if SourceDBSnapshotIdentifier property is set
-        internal bool IsSetSourceDBSnapshotIdentifier()
-        {
-            return this._sourceDBSnapshotIdentifier != null;
         }
 
         /// <summary>
@@ -470,7 +448,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        ///  Provides the VPC ID associated with the DB snapshot. 
+        ///  Provides the Vpc Id associated with the DB snapshot. 
         /// </para>
         /// </summary>
         public string VpcId

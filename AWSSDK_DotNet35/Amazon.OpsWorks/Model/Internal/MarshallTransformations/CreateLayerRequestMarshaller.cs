@@ -89,12 +89,6 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CustomInstanceProfileArn);
                 }
 
-                if(publicRequest.IsSetCustomJson())
-                {
-                    context.Writer.WritePropertyName("CustomJson");
-                    context.Writer.Write(publicRequest.CustomJson);
-                }
-
                 if(publicRequest.IsSetCustomRecipes())
                 {
                     context.Writer.WritePropertyName("CustomRecipes");

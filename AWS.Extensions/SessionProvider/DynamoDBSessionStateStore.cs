@@ -28,6 +28,7 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 
 namespace Amazon.SessionProvider
@@ -118,6 +119,8 @@ namespace Amazon.SessionProvider
 
         private static readonly GetItemOperationConfig CONSISTENT_READ_GET = new GetItemOperationConfig();
         private static readonly UpdateItemOperationConfig LOCK_UPDATE_CONFIG = new UpdateItemOperationConfig();
+
+        private static readonly ILogger _logger = Logger.GetLogger(typeof(DynamoDBSessionStateStore));
 
         static DynamoDBSessionStateStore()
         {
@@ -219,6 +222,8 @@ namespace Amazon.SessionProvider
         /// <param name="config"></param>
         public override void Initialize(string name, NameValueCollection config)
         {
+            _logger.InfoFormat("Initialize : Initializing Session provider {0}", name);
+
             if (config == null)
                 throw new ArgumentNullException("config");
 
@@ -365,6 +370,8 @@ namespace Amazon.SessionProvider
                                                       out object lockId,
                                                       out SessionStateActions actionFlags)
         {
+            LogInfo("GetItem", sessionId, context);
+
             return GetSessionStoreItem(false, context, sessionId, out locked,
               out lockAge, out lockId, out actionFlags);
         }
@@ -386,6 +393,7 @@ namespace Amazon.SessionProvider
                                                               out object lockId,
                                                               out SessionStateActions actionFlags)
         {
+            LogInfo("GetItemExclusive", sessionId, context);
             return GetSessionStoreItem(true, context, sessionId, out locked,
               out lockAge, out lockId, out actionFlags);
         }
@@ -409,6 +417,8 @@ namespace Amazon.SessionProvider
                                                           out object lockId,
                                                           out SessionStateActions actionFlags)
         {
+            LogInfo("GetSessionStoreItem", sessionId, lockRecord, context);
+
             // Initial values for return value and out parameters.
             SessionStateStoreData item = null;
             lockAge = TimeSpan.Zero;
@@ -535,6 +545,8 @@ namespace Amazon.SessionProvider
                                                          object lockId,
                                                          bool newItem)
         {
+            LogInfo("SetAndReleaseItemExclusive", sessionId, lockId, newItem, context);
+
             string serialized = serialize(item.Items as SessionStateItemCollection);
 
             Document newValues = new Document();
@@ -563,7 +575,7 @@ namespace Amazon.SessionProvider
                 {
                     this._table.UpdateItem(newValues, new UpdateItemOperationConfig() { Expected = expected });
                 }
-                catch (ConditionalCheckFailedException) { }
+                catch (ConditionalCheckFailedException) { LogInfo("(SetAndReleaseItemExclusive) Conditional check failed for update.", sessionId, context); }
             }
         }
 
@@ -575,7 +587,15 @@ namespace Amazon.SessionProvider
         /// <param name="lockId">The lock identifier for the current request.</param>
         public override void ReleaseItemExclusive(HttpContext context, string sessionId, object lockId)
         {
-            Document doc = this._table.GetItem(GetHashKey(sessionId));
+            LogInfo("ReleaseItemExclusive", sessionId, lockId, context);
+
+            Document doc = this._table.GetItem(GetHashKey(sessionId), CONSISTENT_READ_GET);
+            if (doc == null)
+            {
+                LogError("ReleaseItemExclusive Failed to retrieve state for session id: " + sessionId, sessionId, lockId, context);
+                return;
+            }
+
             doc[ATTRIBUTE_LOCKED] = false;
             doc[ATTRIBUTE_EXPIRES] = DateTime.Now.Add(this._timeout);
 
@@ -586,7 +606,7 @@ namespace Amazon.SessionProvider
             {
                 this._table.UpdateItem(doc, new UpdateItemOperationConfig() { Expected = expected });
             }
-            catch (ConditionalCheckFailedException) { }
+            catch (ConditionalCheckFailedException) { LogInfo("(ReleaseItemExclusive) Conditional check failed for update.", sessionId, context); }
         }
 
         /// <summary>
@@ -598,6 +618,8 @@ namespace Amazon.SessionProvider
         /// <param name="item"></param>
         public override void RemoveItem(HttpContext context, string sessionId, object lockId, SessionStateStoreData item)
         {
+            LogInfo("RemoveItem", sessionId, lockId, context);
+
             if (lockId == null)
             {
                 deleteItem(sessionId);
@@ -624,6 +646,8 @@ namespace Amazon.SessionProvider
         /// <param name="timeout"></param>
         public override void CreateUninitializedItem(HttpContext context, string sessionId, int timeout)
         {
+            LogInfo("CreateUninitializedItem", sessionId, timeout, context);
+
             Document session = new Document();
             session[ATTRIBUTE_SESSION_ID] = GetHashKey(sessionId);
             session[ATTRIBUTE_LOCKED] = false;
@@ -642,6 +666,8 @@ namespace Amazon.SessionProvider
         /// <returns></returns>
         public override SessionStateStoreData CreateNewStoreData(HttpContext context, int timeout)
         {
+            LogInfo("CreateNewStoreData", timeout, context);
+
             HttpStaticObjectsCollection sessionStatics = null;
             if (context != null)
                 sessionStatics = SessionStateUtility.GetSessionStaticObjects(context);
@@ -655,6 +681,8 @@ namespace Amazon.SessionProvider
         /// <param name="sessionId"></param>
         public override void ResetItemTimeout(HttpContext context, string sessionId)
         {
+            LogInfo("ResetItemTimeout", sessionId, context);
+
             var suppressKeepalive = _strictDisableSession && context.Session == null;
             if (suppressKeepalive)
                 return;
@@ -674,6 +702,7 @@ namespace Amazon.SessionProvider
         /// <param name="dbClient">The AmazonDynamoDB client used to find a delete expired sessions.</param>
         public static void DeleteExpiredSessions(IAmazonDynamoDB dbClient)
         {
+            LogInfo("DeleteExpiredSessions");
             DeleteExpiredSessions(dbClient, DEFAULT_TABLENAME);
         }
 
@@ -686,6 +715,7 @@ namespace Amazon.SessionProvider
         /// <param name="tableName">The table to search.</param>
         public static void DeleteExpiredSessions(IAmazonDynamoDB dbClient, string tableName)
         {
+            LogInfo("DeleteExpiredSessions");
             Table table = Table.LoadTable(dbClient, tableName, Table.DynamoDBConsumer.SessionStateProvider, DynamoDBEntryConversion.V1);
 
 
@@ -867,6 +897,64 @@ namespace Amazon.SessionProvider
                 string currentUserAgent = wsArgs.Headers[AWSSDKUtils.UserAgentHeader];
                 wsArgs.Headers[AWSSDKUtils.UserAgentHeader] = currentUserAgent + " SessionStateProvider";
             }
+        }
+
+        private static void LogInfo(string methodName)
+        {
+            _logger.InfoFormat("{0}", methodName);
+        }
+
+        private static void LogInfo(string methodName, string sessionId, HttpContext context)
+        {
+            _logger.InfoFormat("{0} : SessionId {1}, Context {2}", methodName, sessionId ?? "NULL",
+                context == null ? "NULL" : "HttpContext");
+        }
+
+        private static void LogInfo(string methodName, string sessionId, bool lockRecord, HttpContext context)
+        {
+            _logger.InfoFormat("{0} : SessionId {1}, LockRecord {2}, Context {3} ",
+                methodName, sessionId ?? "NULL", lockRecord,
+                context == null ? "NULL" : "HttpContext");
+        }
+
+        private static void LogInfo(string methodName, string sessionId, object lockId, bool newItem, HttpContext context)
+        {
+            _logger.InfoFormat("{0} : SessionId {1}, LockId {2}, NewItem {3}, Context {4} ",
+                methodName, sessionId ?? "NULL",
+                lockId == null ? "NULL" : lockId.ToString(), newItem,
+                context == null ? "NULL" : "HttpContext");
+        }
+
+        private static void LogInfo(string methodName, string sessionId, object lockId, HttpContext context)
+        {
+            _logger.InfoFormat("{0} : SessionId {1}, LockId {2}, Context {3} ", methodName, sessionId ?? "NULL",
+                lockId == null ? "NULL" : lockId.ToString(),
+                context == null ? "NULL" : "HttpContext");
+        }
+
+        private static void LogInfo(string methodName, string sessionId, int timeout, HttpContext context)
+        {
+            _logger.InfoFormat("{0} : SessionId {1}, Timeout {2}, Context {3} ", methodName, sessionId ?? "NULL",
+                timeout, context == null ? "NULL" : "HttpContext");
+        }
+
+        private static void LogInfo(string methodName, int timeout, HttpContext context)
+        {
+            _logger.InfoFormat("{0} : Timeout {1}, Context {2} ", methodName,
+                timeout, context == null ? "NULL" : "HttpContext");
+        }
+
+        private static void LogError(string methodName, string sessionId, object lockId, HttpContext context)
+        {
+            string message = string.Format("{0} : SessionId {1}, LockId {2}, Context {3} ", methodName, sessionId ?? "NULL",
+                lockId == null ? "NULL" : lockId.ToString(),
+                context == null ? "NULL" : "HttpContext");
+            _logger.Error(new Exception(message), message);
+        }
+
+        private static void LogError(string methodName, Exception exception)
+        {
+            _logger.Error(exception, "{0} : {1}", methodName, exception.Message);
         }
     }
 }

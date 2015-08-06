@@ -31,12 +31,9 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the RestoreDBInstanceToPointInTime operation.
     /// Restores a DB instance to an arbitrary point-in-time. Users can restore to any point
     /// in time before the LatestRestorableTime for up to BackupRetentionPeriod days. The
-    /// target database is created with the most of original configuration, but in a system
-    /// chosen availability zone with the default security group, the default subnet group,
-    /// and the default DB parameter group. By default, the new DB instance is created as
-    /// a single-AZ deployment except when the instance is a SQL Server instance that has
-    /// an option group that is associated with mirroring; in this case, the instance becomes
-    /// a mirrored deployment and not a single-AZ deployment.
+    /// target database is created from the source database with the same configuration as
+    /// the original database except that the DB instance is created with the default DB security
+    /// group.
     /// </summary>
     public partial class RestoreDBInstanceToPointInTimeRequest : AmazonRDSRequest
     {
@@ -400,7 +397,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: Value must be a time in Universal Coordinated Time (UTC) format
+        /// Valid Values: Value must be a UTC time
         /// </para>
         ///  
         /// <para>

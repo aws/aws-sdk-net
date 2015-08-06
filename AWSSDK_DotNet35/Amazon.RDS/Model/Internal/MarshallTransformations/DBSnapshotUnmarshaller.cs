@@ -151,12 +151,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.SnapshotType = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SourceDBSnapshotIdentifier", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SourceDBSnapshotIdentifier = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("SourceRegion", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -85,12 +85,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.CharacterSetName = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("DBClusterIdentifier", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DBClusterIdentifier = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("DBInstanceClass", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -101,12 +95,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.DBInstanceIdentifier = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DbInstancePort", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.DbInstancePort = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DBInstanceStatus", targetDepth))

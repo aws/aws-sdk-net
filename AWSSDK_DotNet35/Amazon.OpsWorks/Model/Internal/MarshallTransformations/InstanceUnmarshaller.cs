@@ -108,18 +108,6 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     unmarshalledObject.Ec2InstanceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EcsClusterArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EcsClusterArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EcsContainerInstanceArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EcsContainerInstanceArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("ElasticIp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

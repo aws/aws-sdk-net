@@ -390,22 +390,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("OpsWorks")]
-        public void DeregisterEcsClusterMarshallTest()
-        {
-            var request = InstantiateClassGenerator.Execute<DeregisterEcsClusterRequest>();
-            var marshaller = new DeregisterEcsClusterRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<DeregisterEcsClusterRequest>(request,jsonRequest);
-
-        }
-
-        
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("OpsWorks")]
         public void DeregisterElasticIpMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DeregisterElasticIpRequest>();
@@ -578,35 +562,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeDeploymentsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeDeploymentsResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("OpsWorks")]
-        public void DescribeEcsClustersMarshallTest()
-        {
-            var request = InstantiateClassGenerator.Execute<DescribeEcsClustersRequest>();
-            var marshaller = new DescribeEcsClustersRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<DescribeEcsClustersRequest>(request,jsonRequest);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeEcsClusters").ResponseStructure).Execute();
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
-            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeEcsClustersResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeEcsClustersResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1175,35 +1130,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
             Comparer.CompareObjectToJson<RebootInstanceRequest>(request,jsonRequest);
 
-        }
-
-        
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("OpsWorks")]
-        public void RegisterEcsClusterMarshallTest()
-        {
-            var request = InstantiateClassGenerator.Execute<RegisterEcsClusterRequest>();
-            var marshaller = new RegisterEcsClusterRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<RegisterEcsClusterRequest>(request,jsonRequest);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("RegisterEcsCluster").ResponseStructure).Execute();
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
-            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = RegisterEcsClusterResponseUnmarshaller.Instance.Unmarshall(context)
-                as RegisterEcsClusterResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         

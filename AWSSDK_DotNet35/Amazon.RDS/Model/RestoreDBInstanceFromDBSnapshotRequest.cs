@@ -30,12 +30,9 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the RestoreDBInstanceFromDBSnapshot operation.
     /// Creates a new DB instance from a DB snapshot. The target database is created from
-    /// the source database restore point with the most of original configuration, but in
-    /// a system chosen availability zone with the default security group, the default subnet
-    /// group, and the default DB parameter group. By default, the new DB instance is created
-    /// as a single-AZ deployment except when the instance is a SQL Server instance that has
-    /// an option group that is associated with mirroring; in this case, the instance becomes
-    /// a mirrored AZ deployment and not a single-AZ deployment. 
+    /// the source database restore point with the same configuration as the original source
+    /// database, except that the new RDS instance is created with the default security group.
+    /// 
     /// 
     ///  
     /// <para>
@@ -77,7 +74,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates RestoreDBInstanceFromDBSnapshotRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbInstanceIdentifier"> Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.  Constraints: <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> Example: <code>my-snapshot-id</code></param>
+        /// <param name="dbInstanceIdentifier"> Name of the DB instance to create from the DB snapshot. This parameter isn't case sensitive.  Constraints: <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> Example: <code>my-snapshot-id</code></param>
         /// <param name="dbSnapshotIdentifier"> The identifier for the DB snapshot to restore from.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
         public RestoreDBInstanceFromDBSnapshotRequest(string dbInstanceIdentifier, string dbSnapshotIdentifier)
         {
@@ -163,8 +160,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        ///  Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.
-        /// 
+        ///  Name of the DB instance to create from the DB snapshot. This parameter isn't case
+        /// sensitive. 
         /// </para>
         ///  
         /// <para>

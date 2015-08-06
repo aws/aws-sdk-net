@@ -42,12 +42,6 @@ namespace Amazon.RDS.Model
     /// used to monitor the status of this operation. The action cannot be canceled or reverted
     /// once submitted. 
     /// </para>
-    ///  
-    /// <para>
-    /// Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore',
-    /// or 'incompatible-network', it can only be deleted when the SkipFinalSnapshot parameter
-    /// is set to "true".
-    /// </para>
     /// </summary>
     public partial class DeleteDBInstanceRequest : AmazonRDSRequest
     {
@@ -63,7 +57,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates DeleteDBInstanceRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbInstanceIdentifier"> The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
+        /// <param name="dbInstanceIdentifier"> The DB instance identifier for the DB instance to be deleted. This parameter isn't case sensitive.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
         public DeleteDBInstanceRequest(string dbInstanceIdentifier)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
@@ -73,7 +67,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
         ///  The DB instance identifier for the DB instance to be deleted. This parameter isn't
-        /// case-sensitive. 
+        /// case sensitive. 
         /// </para>
         ///  
         /// <para>
@@ -128,12 +122,6 @@ namespace Amazon.RDS.Model
         ///  Determines whether a final DB snapshot is created before the DB instance is deleted.
         /// If <code>true</code> is specified, no DBSnapshot is created. If <code>false</code>
         /// is specified, a DB snapshot is created before the DB instance is deleted. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore',
-        /// or 'incompatible-network', it can only be deleted when the SkipFinalSnapshot parameter
-        /// is set to "true".
         /// </para>
         ///  
         /// <para>

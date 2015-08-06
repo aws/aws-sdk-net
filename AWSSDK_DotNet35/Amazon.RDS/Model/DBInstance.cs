@@ -44,10 +44,8 @@ namespace Amazon.RDS.Model
         private int? _backupRetentionPeriod;
         private string _caCertificateIdentifier;
         private string _characterSetName;
-        private string _dbClusterIdentifier;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
-        private int? _dbInstancePort;
         private string _dbInstanceStatus;
         private string _dbiResourceId;
         private string _dbName;
@@ -188,25 +186,6 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DBClusterIdentifier. 
-        /// <para>
-        /// If the DB instance is a member of a DB cluster, contains the name of the DB cluster
-        /// that the DB instance is a member of.
-        /// </para>
-        /// </summary>
-        public string DBClusterIdentifier
-        {
-            get { return this._dbClusterIdentifier; }
-            set { this._dbClusterIdentifier = value; }
-        }
-
-        // Check to see if DBClusterIdentifier property is set
-        internal bool IsSetDBClusterIdentifier()
-        {
-            return this._dbClusterIdentifier != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         ///  Contains the name of the compute and memory capacity class of the DB instance. 
@@ -227,8 +206,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        ///  Contains a user-supplied database identifier. This identifier is the unique key that
-        /// identifies a DB instance. 
+        ///  Contains a user-supplied database identifier. This is the unique key that identifies
+        /// a DB instance. 
         /// </para>
         /// </summary>
         public string DBInstanceIdentifier
@@ -241,25 +220,6 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBInstanceIdentifier()
         {
             return this._dbInstanceIdentifier != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DbInstancePort. 
-        /// <para>
-        ///  Specifies the port that the DB instance listens on. If the DB instance is part of
-        /// a DB cluster, this can be a different port than the DB cluster port. 
-        /// </para>
-        /// </summary>
-        public int DbInstancePort
-        {
-            get { return this._dbInstancePort.GetValueOrDefault(); }
-            set { this._dbInstancePort = value; }
-        }
-
-        // Check to see if DbInstancePort property is set
-        internal bool IsSetDbInstancePort()
-        {
-            return this._dbInstancePort.HasValue; 
         }
 
         /// <summary>
@@ -641,8 +601,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        ///  Specifies the weekly time range during which system maintenance can occur, in Universal
-        /// Coordinated Time (UTC). 
+        ///  Specifies the weekly time range (in UTC) during which system maintenance can occur.
+        /// 
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow

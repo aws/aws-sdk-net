@@ -95,10 +95,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 return new AuthorizationNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterNotFoundFault"))
-            {
-                return new DBClusterNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("DBInstanceAlreadyExists"))
             {
                 return new DBInstanceAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -126,10 +122,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientDBInstanceCapacity"))
             {
                 return new InsufficientDBInstanceCapacityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBClusterStateFault"))
-            {
-                return new InvalidDBClusterStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSubnet"))
             {

@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ApplyPendingMaintenanceAction operation.
-    /// Applies a pending maintenance action to a resource (for example, to a DB instance).
+    /// Applies a pending maintenance action to a resource (for example, a DB instance).
     /// </summary>
     public partial class ApplyPendingMaintenanceActionRequest : AmazonRDSRequest
     {
@@ -85,9 +85,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        /// The RDS Amazon Resource Name (ARN) of the resource that the pending maintenance action
-        /// applies to. For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
-        /// Constructing an RDS Amazon Resource Name (ARN)</a>.
+        /// The ARN of the resource that the pending maintenance action applies to.
         /// </para>
         /// </summary>
         public string ResourceIdentifier

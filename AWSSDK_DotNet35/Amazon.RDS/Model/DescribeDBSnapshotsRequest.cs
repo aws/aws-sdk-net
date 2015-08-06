@@ -48,9 +48,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        ///  A DB instance identifier to retrieve the list of DB snapshots for. This parameter
-        /// cannot be used in conjunction with <code>DBSnapshotIdentifier</code>. This parameter
-        /// is not case-sensitive. 
+        ///  A DB instance identifier to retrieve the list of DB snapshots for. Cannot be used
+        /// in conjunction with <code>DBSnapshotIdentifier</code>. This parameter is not case
+        /// sensitive. 
         /// </para>
         ///  
         /// <para>
@@ -75,16 +75,15 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSnapshotIdentifier. 
         /// <para>
-        ///  A specific DB snapshot identifier to describe. This parameter cannot be used in conjunction
-        /// with <code>DBInstanceIdentifier</code>. This value is stored as a lowercase string.
-        /// 
+        ///  A specific DB snapshot identifier to describe. Cannot be used in conjunction with
+        /// <code>DBInstanceIdentifier</code>. This value is stored as a lowercase string. 
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters.</li> <li>First character must
-        /// be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
+        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
         /// <li>If this is the identifier of an automated snapshot, the <code>SnapshotType</code>
         /// parameter must also be specified.</li> </ul>
         /// </summary>
@@ -143,7 +142,7 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  The maximum number of records to include in the response. If more records exist than
         /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that the remaining results can be retrieved. 
+        /// included in the response so that the remaining results may be retrieved. 
         /// </para>
         ///  
         /// <para>
@@ -151,7 +150,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Minimum 20, maximum 100.
+        /// Constraints: minimum 20, maximum 100
         /// </para>
         /// </summary>
         public int MaxRecords

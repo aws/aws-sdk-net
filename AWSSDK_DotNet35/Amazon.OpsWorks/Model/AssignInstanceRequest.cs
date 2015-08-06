@@ -36,10 +36,9 @@ namespace Amazon.OpsWorks.Model
     /// cannot use this action with instances that were created with AWS OpsWorks.</li> </ul>
     /// 
     /// <para>
-    /// <b>Required Permissions</b>: To use this action, an AWS Identity and Access Management
-    /// (IAM) user must have a Manage permissions level for the stack or an attached policy
-    /// that explicitly grants permissions. For more information on user permissions, see
-    /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    /// level for the stack or an attached policy that explicitly grants permissions. For
+    /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>

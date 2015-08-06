@@ -32,7 +32,7 @@ namespace Amazon.RDS.Model
     /// Displays a list of categories for all event source types, or, if specified, for a
     /// specified source type. You can see a list of the event categories and source types
     /// in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-    /// Events</a> topic in the <i>Amazon RDS User Guide.</i>
+    /// Events</a> topic in the Amazon RDS User Guide.
     /// </summary>
     public partial class DescribeEventCategoriesRequest : AmazonRDSRequest
     {
