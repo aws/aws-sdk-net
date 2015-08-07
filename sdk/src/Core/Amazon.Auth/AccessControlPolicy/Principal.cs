@@ -37,7 +37,7 @@ namespace Amazon.Auth.AccessControlPolicy
     public class Principal
     {
         /// <summary>
-        /// Principal instance that includes all users, including anonymous users.
+        /// Principal instance that includes all authenticated AWS users.
         /// <para>
         /// This is useful when you don't want to restrict access based on the
         /// identity of the requester, but instead on other identifying
@@ -45,6 +45,11 @@ namespace Amazon.Auth.AccessControlPolicy
         /// </para>
         /// </summary>
         public static readonly Principal AllUsers = new Principal("*");
+
+        /// <summary>
+        /// The anonymous Principal.
+        /// </summary>
+        public static readonly Principal Anonymous = new Principal(ANONYNOUS_PROVIDER, "*");
 
         /// <summary>
         /// The default Principal provider for AWS accounts.
@@ -55,6 +60,22 @@ namespace Amazon.Auth.AccessControlPolicy
         /// Principal provider for Canonical User IDs.
         /// </summary>
         public const string CANONICAL_USER_PROVIDER = "CanonicalUser";
+
+        /// <summary>
+        /// Principal provider for federated users (using a SAML identity provider)
+        /// </summary>
+        public const string FEDERATED_PROVIDER = "Federated";
+
+        /// <summary>
+        /// Principal provider for assume role policies that will be assumed by an AWS service
+        /// (e.g. "ec2.amazonaws.com").
+        /// </summary>
+        public const string SERVICE_PROVIDER = "Service";
+
+        /// <summary>
+        /// Dummy principal provider for anonynous.
+        /// </summary>
+        public const string ANONYNOUS_PROVIDER = "__ANONYMOUS__";
 
         private string id;
         private string provider;
@@ -70,7 +91,6 @@ namespace Amazon.Auth.AccessControlPolicy
             {
                 throw new ArgumentNullException("accountId");
             }
-            
             
             this.id = accountId.Replace("-", "");
         }

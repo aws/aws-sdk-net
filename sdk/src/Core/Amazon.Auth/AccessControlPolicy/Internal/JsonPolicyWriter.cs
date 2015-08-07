@@ -110,6 +110,15 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
             if (principals == null || principals.Count == 0) return;
 
             generator.WritePropertyName(JsonDocumentFields.PRINCIPAL);
+
+            if (principals.Count == 1 && 
+                principals[0] != null &&
+                principals[0].Provider.Equals(Principal.ANONYNOUS_PROVIDER))
+            {
+                generator.Write("*");
+                return;
+            }
+
             generator.WriteObjectStart();
             Dictionary<string, List<string>> principalIdsByScheme = new Dictionary<string, List<string>>();
             foreach (Principal p in principals)
