@@ -34,6 +34,8 @@ VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project(""{2150E333-8FDC-42A3-9474-1A3956D46DE8}"") = ""src"", ""src"", ""{A49B31CF-83ED-4FF2-9301-66AB909C4896}""
 EndProject
+Project(""{2150E333-8FDC-42A3-9474-1A3956D46DE8}"") = ""test"", ""test"", ""{04014228-E2FE-4596-ABD2-905404177293}""
+EndProject
 Project(""{2150E333-8FDC-42A3-9474-1A3956D46DE8}"") = ""Solution Items"", ""Solution Items"", ""{9C8582E9-CD47-4721-A94C-1DF7DF6DFCFA}""
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
@@ -45,7 +47,7 @@ Project(""{2150E333-8FDC-42A3-9474-1A3956D46DE8}"") = ""Services"", ""Services""
 EndProject
 ");
             
-            #line 21 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 23 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
 
     foreach(var project in (List<SolutionFileCreator.Project>)this.Session["CoreProjects"])
     {
@@ -55,28 +57,28 @@ EndProject
             #line hidden
             this.Write("Project(\"{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}\") = \"");
             
-            #line 25 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 27 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.Name));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 25 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 27 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectPath));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 25 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 27 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("\"\r\nEndProject\r\n");
             
-            #line 27 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 29 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
 
     }
 
@@ -88,28 +90,28 @@ EndProject
             #line hidden
             this.Write("Project(\"{2150E333-8FDC-42A3-9474-1A3956D46DE8}\") = \"");
             
-            #line 33 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 35 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(folder.Name));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 33 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 35 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(folder.Name));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 33 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 35 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(folder.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("\"\r\nEndProject\r\n");
             
-            #line 35 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 37 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
 
 
         foreach(var project in folder.Projects)
@@ -120,28 +122,28 @@ EndProject
             #line hidden
             this.Write("Project(\"{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}\") = \"");
             
-            #line 40 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 42 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.Name));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 40 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 42 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectPath));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 40 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 42 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("\"\r\nEndProject\r\n");
             
-            #line 42 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 44 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
 
         }
     }
@@ -149,10 +151,16 @@ EndProject
             
             #line default
             #line hidden
-            this.Write("Global\r\n\tGlobalSection(SolutionProperties) = preSolution\r\n\t\tHideSolutionNode = FA" +
-                    "LSE\r\n\tEndGlobalSection\r\n\tGlobalSection(NestedProjects) = preSolution\r\n");
+            this.Write(@"Project(""{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}"") = ""IntegrationTests"", ""test\DNXCore\IntegrationTests\IntegrationTests.xproj"", ""{456D916F-371A-4E73-BA12-73199057C773}""
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+");
             
-            #line 51 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 55 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
 
     foreach(var project in (List<SolutionFileCreator.Project>)this.Session["CoreProjects"])
     {
@@ -162,14 +170,14 @@ EndProject
             #line hidden
             this.Write("\t\t");
             
-            #line 55 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 59 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(" = {1523203C-CD16-4B4A-8F9D-8ECCA3A327AA}\r\n");
             
-            #line 56 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 60 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
 
     }
 
@@ -181,14 +189,14 @@ EndProject
             #line hidden
             this.Write("\t\t");
             
-            #line 62 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 66 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(folder.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(" = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}\r\n");
             
-            #line 63 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 67 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
 
         foreach(var project in folder.Projects)
         { 
@@ -198,21 +206,21 @@ EndProject
             #line hidden
             this.Write("\t\t");
             
-            #line 67 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 71 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 67 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 71 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(folder.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 68 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 72 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
 
         }
     }
@@ -220,9 +228,11 @@ EndProject
             
             #line default
             #line hidden
-            this.Write("\t\t{1523203C-CD16-4B4A-8F9D-8ECCA3A327AA} = {A49B31CF-83ED-4FF2-9301-66AB909C4896}" +
-                    "\r\n\t\t{03245B8D-0A27-4C11-9AAC-7047A9F6DFB0} = {A49B31CF-83ED-4FF2-9301-66AB909C48" +
-                    "96}\r\n\tEndGlobalSection\r\nEndGlobal");
+            this.Write(@"		{1523203C-CD16-4B4A-8F9D-8ECCA3A327AA} = {A49B31CF-83ED-4FF2-9301-66AB909C4896}
+		{03245B8D-0A27-4C11-9AAC-7047A9F6DFB0} = {A49B31CF-83ED-4FF2-9301-66AB909C4896}
+		{456D916F-371A-4E73-BA12-73199057C773} = {04014228-E2FE-4596-ABD2-905404177293}
+	EndGlobalSection
+EndGlobal");
             return this.GenerationEnvironment.ToString();
         }
     }

@@ -9,6 +9,8 @@ VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A49B31CF-83ED-4FF2-9301-66AB909C4896}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{04014228-E2FE-4596-ABD2-905404177293}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9C8582E9-CD47-4721-A94C-1DF7DF6DFCFA}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
@@ -43,6 +45,8 @@ EndProject
         }
     }
 #>
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "IntegrationTests", "test\DNXCore\IntegrationTests\IntegrationTests.xproj", "{456D916F-371A-4E73-BA12-73199057C773}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,5 +75,6 @@ Global
 #>
 		{1523203C-CD16-4B4A-8F9D-8ECCA3A327AA} = {A49B31CF-83ED-4FF2-9301-66AB909C4896}
 		{03245B8D-0A27-4C11-9AAC-7047A9F6DFB0} = {A49B31CF-83ED-4FF2-9301-66AB909C4896}
+		{456D916F-371A-4E73-BA12-73199057C773} = {04014228-E2FE-4596-ABD2-905404177293}
 	EndGlobalSection
 EndGlobal

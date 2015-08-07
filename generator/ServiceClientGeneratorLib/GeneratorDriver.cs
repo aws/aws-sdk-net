@@ -11,6 +11,8 @@ using ServiceClientGenerator.Generators.TestFiles;
 using StructureGenerator = ServiceClientGenerator.Generators.SourceFiles.StructureGenerator;
 using ServiceClientGenerator.Generators.Component;
 
+using Json.LitJson;
+
 namespace ServiceClientGenerator
 {
     public class GeneratorDriver
@@ -103,20 +105,12 @@ namespace ServiceClientGenerator
             ProjectFileConfigurations = GenerationManifest.ProjectFileConfigurations;
             Options = options;
 
-            // Base name in the manifest is not a reliable source of info, as if append-service
-            // is set 'Service' gets appended and in the case of IAM then sends us to the wrong folder.
-            // Instead we'll use the namespace and rip off any Amazon. prefix. This also helps us
-            // handle versioned namespaces too.
-            var serviceNameRoot = Configuration.Namespace.StartsWith("Amazon.", StringComparison.Ordinal)
-                ? Configuration.Namespace.Substring(7)
-                : Configuration.Namespace;
-
-            ServiceFilesRoot = Path.Combine(Options.SdkRootFolder, SourceSubFoldername, ServicesSubFoldername, serviceNameRoot);
+            ServiceFilesRoot = Path.Combine(Options.SdkRootFolder, SourceSubFoldername, ServicesSubFoldername, config.ServiceFolderName);
             GeneratedFilesRoot = Path.Combine(ServiceFilesRoot, GeneratedCodeFoldername);
 
             TestFilesRoot = Path.Combine(Options.SdkRootFolder, TestsSubFoldername);
 
-            ComponentsFilesRoot = Path.Combine(Options.SdkRootFolder, XamarinComponentsSubFolderName, serviceNameRoot);
+            ComponentsFilesRoot = Path.Combine(Options.SdkRootFolder, XamarinComponentsSubFolderName, config.ServiceFolderName);
 
             //TODO: make this configurable
             SampleFilesRoot = @"..\..\..\..\Aws-sdk-net-samples";
@@ -985,6 +979,39 @@ namespace ServiceClientGenerator
 
             command.ProjectFilePath = Path.Combine(testRoot, "AWSSDK.UnitTests.Net45.csproj");
             command.Execute();
+        }
+
+        public static void UpdateDNXCoreTestDependencies(GenerationManifest manifest, GeneratorOptions options)
+        {
+            var projectJsonPath = Path.Combine(options.SdkRootFolder, "test/DNXCore/IntegrationTests/project.json");
+            var originalProjectJson = File.ReadAllText(projectJsonPath);
+
+            var rootData = JsonMapper.ToObject(originalProjectJson);
+            var dependency = rootData["dependencies"] as JsonData;
+
+            bool hasChanged = false;
+
+            foreach (var service in manifest.ServiceConfigurations.OrderBy(x => x.ServiceFolderName))
+            {
+                if (service.ParentConfig != null)
+                    continue;
+
+                if(service.DnxSupport && dependency[service.ServiceFolderName] == null)
+                {
+                    hasChanged = true;
+                    dependency[service.ServiceFolderName] = "1.0.0-*";
+                }
+            }
+
+
+
+            if(hasChanged)
+            {
+                var newContent = new System.Text.StringBuilder();
+                JsonWriter writer = new JsonWriter(newContent) { PrettyPrint = true };
+                rootData.ToJson(writer);
+                File.WriteAllText(projectJsonPath, newContent.ToString().Trim());
+            }
         }
 
         /// <summary>

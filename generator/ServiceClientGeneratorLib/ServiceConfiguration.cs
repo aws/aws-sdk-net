@@ -95,6 +95,18 @@ namespace ServiceClientGenerator
             set { this._namespace = value; } 
         }
 
+        public string ServiceFolderName
+        {
+            get
+            {
+                var serviceNameRoot = this.Namespace.StartsWith("Amazon.", StringComparison.Ordinal)
+                    ? this.Namespace.Substring(7)
+                    : this.Namespace;
+
+                return serviceNameRoot;
+            }
+        }
+
         public string AssemblyTitle
         {
             get
