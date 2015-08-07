@@ -49,7 +49,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <summary>
         /// The anonymous Principal.
         /// </summary>
-        public static readonly Principal Anonymous = new Principal(ANONYNOUS_PROVIDER, "*");
+        public static readonly Principal Anonymous = new Principal(ANONYMOUS_PROVIDER, "*");
 
         /// <summary>
         /// The default Principal provider for AWS accounts.
@@ -75,7 +75,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <summary>
         /// Dummy principal provider for anonynous.
         /// </summary>
-        public const string ANONYNOUS_PROVIDER = "__ANONYMOUS__";
+        public const string ANONYMOUS_PROVIDER = "__ANONYMOUS__";
 
         private string id;
         private string provider;

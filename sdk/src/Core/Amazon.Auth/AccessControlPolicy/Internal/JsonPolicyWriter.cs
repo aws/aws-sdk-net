@@ -113,7 +113,7 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
 
             if (principals.Count == 1 && 
                 principals[0] != null &&
-                principals[0].Provider.Equals(Principal.ANONYNOUS_PROVIDER))
+                principals[0].Provider.Equals(Principal.ANONYMOUS_PROVIDER, StringComparison.Ordinal))
             {
                 generator.Write("*");
                 return;
