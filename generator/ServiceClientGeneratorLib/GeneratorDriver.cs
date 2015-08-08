@@ -905,13 +905,16 @@ namespace ServiceClientGenerator
             {
                 { "AssemblyName", assemblyName },
                 { "AssemblyTitle",  assemblyTitle },
+                { "DnxSupport",  Configuration.DnxSupport },
+                { "DNXCoreAssemblyName",  Configuration.ServiceFolderName },
                 { "NuGetTitle",  nugetTitle },
                 { "AssemblyDescription", Configuration.AssemblyDescription },
                 { "AssemblyVersion", assemblyVersion },
                 { "AWSDependencies", awsDependencies },
                 { "BaseName", this.Configuration.BaseName },
                 { "ProjectFileConfigurations", this.ProjectFileConfigurations},
-                { "ExtraTags", Configuration.Tags == null || Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) }
+                { "ExtraTags", Configuration.Tags == null || Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) },
+                {"EnablePCLSupport", false}
             };
 
             if (Configuration.NugetDependencies != null)

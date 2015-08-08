@@ -77,10 +77,23 @@
 	</Target>
 
 	<Target Name="build-sdk-dnxcore" DependsOnTargets="restore-nuget;run-generator">
+	
+		<!-- depends: restore-nuget;run-generator -->
+	
 		<Message Text="Compile the DNXCore SDK"/>
-		<MSBuild Projects="..\sdk\AWSSDK.DnxCore.sln"
+		<ItemGroup>
+			<DNXCoreProjectFiles Include="..\sdk\**\*.xproj" />
+		</ItemGroup>		
+		
+		<MSBuild Projects="@(DNXCoreProjectFiles)"
 			Targets="Clean;Build"
 			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation)" />
+			
+	</Target>
+	
+	<Target Name="dnxcore-nuget" DependsOnTargets="">
+		<Exec LogStandardErrorAsError="false"
+              Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1" />			
 	</Target>
 	
 	<Target Name="test-sdk" DependsOnTargets="init;build-sdk;fxcop;run-unit-tests;run-integ-tests" />

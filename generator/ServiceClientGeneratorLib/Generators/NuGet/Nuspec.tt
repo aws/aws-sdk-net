@@ -101,18 +101,34 @@
     <file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\net45" />
 
+<#	
+	if(Convert.ToBoolean(this.Session["EnablePCLSupport"]))
+	{
+#>
     <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
 <#  
-    if(((string)this.Session["AssemblyName"]).Equals("AWSSDK.MobileAnalytics",StringComparison.CurrentCultureIgnoreCase))
-    {
+		if(((string)this.Session["AssemblyName"]).Equals("AWSSDK.MobileAnalytics",StringComparison.CurrentCultureIgnoreCase))
+		{
 #>
     <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.MobileAnalytics.dll" target="lib\Xamarin.iOS10" />
     <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.MobileAnalytics.xml" target="lib\Xamarin.iOS10" />
     <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.MobileAnalytics.pdb" target="lib\Xamarin.iOS10" />
 <#
-    }
+		}
+	}
+
+	if(Convert.ToBoolean(this.Session["DnxSupport"]))
+	{
 #>
+
+	<file src="..\..\..\artifacts\bin\\<#=this.Session["AssemblyName"]#>.Dnx\Release\dnxcore50\\<#=this.Session["DNXCoreAssemblyName"]#>.dll" target="lib\dnxcore50"/>
+	<file src="..\..\..\artifacts\bin\\<#=this.Session["AssemblyName"]#>.Dnx\Release\dnxcore50\\<#=this.Session["DNXCoreAssemblyName"]#>.xml" target="lib\dnxcore50"/>
+	<file src="..\..\..\artifacts\bin\\<#=this.Session["AssemblyName"]#>.Dnx\Release\dnxcore50\\<#=this.Session["DNXCoreAssemblyName"]#>.pdb" target="lib\dnxcore50"/>
+<#
+	}
+#>
+
   </files>
 </package>
