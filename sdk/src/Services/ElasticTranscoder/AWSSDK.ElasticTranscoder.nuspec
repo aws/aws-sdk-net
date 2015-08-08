@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.ElasticTranscoder</id>
     <title>AWSSDK - Amazon Elastic Transcoder</title>
-    <version>3.1.0.0</version> 
+    <version>3.2.0.0-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Elastic Transcoder is media transcoding in the cloud. It is designed to be a highly scalable, easy to use and a cost effective way for developers and businesses to convert (or 'transcode') media files from their source format into versions that will playback on devices like smartphones, tablets and PCs.</description>
     <language>en-US</language>
@@ -12,11 +12,8 @@
     <tags>AWS Amazon cloud ElasticTranscoder aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
-      </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.2.0.0-preview, 3.3-preview)" />
       </group>
     </dependencies>
   </metadata> 
@@ -33,8 +30,10 @@
     <file src=".\bin\Release\net45\AWSSDK.ElasticTranscoder.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.ElasticTranscoder.pdb" target="lib\net45" />
 
-    <file src=".\bin\Release\pcl\AWSSDK.ElasticTranscoder.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.ElasticTranscoder.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.ElasticTranscoder.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+
+    <file src="..\..\..\artifacts\bin\AWSSDK.ElasticTranscoder.Dnx\Release\dnxcore50\ElasticTranscoder.dll" target="lib\dnxcore50"/>
+    <file src="..\..\..\artifacts\bin\AWSSDK.ElasticTranscoder.Dnx\Release\dnxcore50\ElasticTranscoder.xml" target="lib\dnxcore50"/>
+    <file src="..\..\..\artifacts\bin\AWSSDK.ElasticTranscoder.Dnx\Release\dnxcore50\ElasticTranscoder.pdb" target="lib\dnxcore50"/>
+
   </files>
 </package>

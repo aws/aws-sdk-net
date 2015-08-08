@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Kinesis</id>
     <title>AWSSDK - Amazon Kinesis</title>
-    <version>3.1.0.0</version> 
+    <version>3.2.0.0-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.</description>
     <language>en-US</language>
@@ -12,11 +12,8 @@
     <tags>AWS Amazon cloud Kinesis aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
-      </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.2.0.0-preview, 3.3-preview)" />
       </group>
     </dependencies>
   </metadata> 
@@ -33,8 +30,10 @@
     <file src=".\bin\Release\net45\AWSSDK.Kinesis.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.Kinesis.pdb" target="lib\net45" />
 
-    <file src=".\bin\Release\pcl\AWSSDK.Kinesis.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.Kinesis.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.Kinesis.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+
+    <file src="..\..\..\artifacts\bin\AWSSDK.Kinesis.Dnx\Release\dnxcore50\Kinesis.dll" target="lib\dnxcore50"/>
+    <file src="..\..\..\artifacts\bin\AWSSDK.Kinesis.Dnx\Release\dnxcore50\Kinesis.xml" target="lib\dnxcore50"/>
+    <file src="..\..\..\artifacts\bin\AWSSDK.Kinesis.Dnx\Release\dnxcore50\Kinesis.pdb" target="lib\dnxcore50"/>
+
   </files>
 </package>

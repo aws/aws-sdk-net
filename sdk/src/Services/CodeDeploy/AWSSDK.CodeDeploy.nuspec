@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.CodeDeploy</id>
     <title>AWSSDK - AWS CodeDeploy</title>
-    <version>3.1.0.0</version> 
+    <version>3.2.0.0-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>AWS CodeDeploy is a service that automates code deployments. AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during deployment, and handles the complexity of updating your applications.</description>
     <language>en-US</language>
@@ -12,11 +12,8 @@
     <tags>AWS Amazon cloud CodeDeploy aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
-      </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.2.0.0-preview, 3.3-preview)" />
       </group>
     </dependencies>
   </metadata> 
@@ -33,8 +30,10 @@
     <file src=".\bin\Release\net45\AWSSDK.CodeDeploy.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.CodeDeploy.pdb" target="lib\net45" />
 
-    <file src=".\bin\Release\pcl\AWSSDK.CodeDeploy.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.CodeDeploy.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.CodeDeploy.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+
+    <file src="..\..\..\artifacts\bin\AWSSDK.CodeDeploy.Dnx\Release\dnxcore50\CodeDeploy.dll" target="lib\dnxcore50"/>
+    <file src="..\..\..\artifacts\bin\AWSSDK.CodeDeploy.Dnx\Release\dnxcore50\CodeDeploy.xml" target="lib\dnxcore50"/>
+    <file src="..\..\..\artifacts\bin\AWSSDK.CodeDeploy.Dnx\Release\dnxcore50\CodeDeploy.pdb" target="lib\dnxcore50"/>
+
   </files>
 </package>

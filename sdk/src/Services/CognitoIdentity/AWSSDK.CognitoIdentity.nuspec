@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.CognitoIdentity</id>
     <title>AWSSDK - Amazon Cognito Identity</title>
-    <version>3.1.0.0</version> 
+    <version>3.2.0.0-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.</description>
     <language>en-US</language>
@@ -12,13 +12,9 @@
     <tags>AWS Amazon cloud CognitoIdentity aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.SecurityToken" version="[3.1.0.0, 3.2)" />
-      <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
-      </group>
       <group>
-        <dependency id="AWSSDK.SecurityToken" version="[3.1.0.0, 3.2)" />
-        <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
+        <dependency id="AWSSDK.SecurityToken" version="[3.2.0.0-preview, 3.3-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.2.0.0-preview, 3.3-preview)" />
       </group>
     </dependencies>
   </metadata> 
@@ -35,8 +31,10 @@
     <file src=".\bin\Release\net45\AWSSDK.CognitoIdentity.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.CognitoIdentity.pdb" target="lib\net45" />
 
-    <file src=".\bin\Release\pcl\AWSSDK.CognitoIdentity.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.CognitoIdentity.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.CognitoIdentity.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+
+    <file src="..\..\..\artifacts\bin\AWSSDK.CognitoIdentity.Dnx\Release\dnxcore50\CognitoIdentity.dll" target="lib\dnxcore50"/>
+    <file src="..\..\..\artifacts\bin\AWSSDK.CognitoIdentity.Dnx\Release\dnxcore50\CognitoIdentity.xml" target="lib\dnxcore50"/>
+    <file src="..\..\..\artifacts\bin\AWSSDK.CognitoIdentity.Dnx\Release\dnxcore50\CognitoIdentity.pdb" target="lib\dnxcore50"/>
+
   </files>
 </package>

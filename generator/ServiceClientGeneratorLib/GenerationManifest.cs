@@ -252,7 +252,10 @@ namespace ServiceClientGenerator
                     var versionText = versionInfoJson["Version"].ToString();
                     config.ServiceFileVersion = versionText;
 
-                    config.InPreview = versionInfoJson["InPreview"] != null ? (bool)versionInfoJson["InPreview"] : this.DefaultToPreview;
+                    if(versionInfoJson["InPreview"] != null && (bool)versionInfoJson["InPreview"])
+                        config.InPreview = true;
+                    else
+                        config.InPreview = this.DefaultToPreview;
                 }
                 else
                 {

@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.SimpleDB</id>
     <title>AWSSDK - Amazon SimpleDB</title>
-    <version>3.1.0.0</version> 
+    <version>3.2.0.0-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon SimpleDB is a highly available, scalable, and flexible non-relational data store that enables you to store and query data items using web services requests.</description>
     <language>en-US</language>
@@ -12,11 +12,8 @@
     <tags>AWS Amazon cloud SimpleDB aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
-      </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.2.0.0-preview, 3.3-preview)" />
       </group>
     </dependencies>
   </metadata> 
@@ -33,8 +30,10 @@
     <file src=".\bin\Release\net45\AWSSDK.SimpleDB.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.SimpleDB.pdb" target="lib\net45" />
 
-    <file src=".\bin\Release\pcl\AWSSDK.SimpleDB.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.SimpleDB.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.SimpleDB.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+
+    <file src="..\..\..\artifacts\bin\AWSSDK.SimpleDB.Dnx\Release\dnxcore50\SimpleDB.dll" target="lib\dnxcore50"/>
+    <file src="..\..\..\artifacts\bin\AWSSDK.SimpleDB.Dnx\Release\dnxcore50\SimpleDB.xml" target="lib\dnxcore50"/>
+    <file src="..\..\..\artifacts\bin\AWSSDK.SimpleDB.Dnx\Release\dnxcore50\SimpleDB.pdb" target="lib\dnxcore50"/>
+
   </files>
 </package>

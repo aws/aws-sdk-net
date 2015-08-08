@@ -92,7 +92,10 @@
 	</Target>
 	
 	<Target Name="dnxcore-nuget" DependsOnTargets="">
-		<Exec LogStandardErrorAsError="false"
+	
+		<!-- build-sdk-dnxcore;build-sdk-desktop -->
+	
+		<Exec LogStandardErrorAsError="true"
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1" />			
 	</Target>
 	

@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.EC2</id>
     <title>AWSSDK - Amazon Elastic Compute Cloud</title>
-    <version>3.1.0.0</version> 
+    <version>3.2.0.0-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers.</description>
     <language>en-US</language>
@@ -12,11 +12,8 @@
     <tags>AWS Amazon cloud EC2 aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
-      </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.2.0.0-preview, 3.3-preview)" />
       </group>
     </dependencies>
   </metadata> 
@@ -33,8 +30,10 @@
     <file src=".\bin\Release\net45\AWSSDK.EC2.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.EC2.pdb" target="lib\net45" />
 
-    <file src=".\bin\Release\pcl\AWSSDK.EC2.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.EC2.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.EC2.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+
+    <file src="..\..\..\artifacts\bin\AWSSDK.EC2.Dnx\Release\dnxcore50\EC2.dll" target="lib\dnxcore50"/>
+    <file src="..\..\..\artifacts\bin\AWSSDK.EC2.Dnx\Release\dnxcore50\EC2.xml" target="lib\dnxcore50"/>
+    <file src="..\..\..\artifacts\bin\AWSSDK.EC2.Dnx\Release\dnxcore50\EC2.pdb" target="lib\dnxcore50"/>
+
   </files>
 </package>

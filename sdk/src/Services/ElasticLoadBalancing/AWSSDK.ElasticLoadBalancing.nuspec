@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.ElasticLoadBalancing</id>
     <title>AWSSDK - Elastic Load Balancing</title>
-    <version>3.1.0.0</version> 
+    <version>3.2.0.0-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.</description>
     <language>en-US</language>
@@ -12,11 +12,8 @@
     <tags>AWS Amazon cloud ElasticLoadBalancing aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
-      </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.2.0.0-preview, 3.3-preview)" />
       </group>
     </dependencies>
   </metadata> 
@@ -33,8 +30,10 @@
     <file src=".\bin\Release\net45\AWSSDK.ElasticLoadBalancing.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.ElasticLoadBalancing.pdb" target="lib\net45" />
 
-    <file src=".\bin\Release\pcl\AWSSDK.ElasticLoadBalancing.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.ElasticLoadBalancing.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.ElasticLoadBalancing.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+
+    <file src="..\..\..\artifacts\bin\AWSSDK.ElasticLoadBalancing.Dnx\Release\dnxcore50\ElasticLoadBalancing.dll" target="lib\dnxcore50"/>
+    <file src="..\..\..\artifacts\bin\AWSSDK.ElasticLoadBalancing.Dnx\Release\dnxcore50\ElasticLoadBalancing.xml" target="lib\dnxcore50"/>
+    <file src="..\..\..\artifacts\bin\AWSSDK.ElasticLoadBalancing.Dnx\Release\dnxcore50\ElasticLoadBalancing.pdb" target="lib\dnxcore50"/>
+
   </files>
 </package>

@@ -12,7 +12,7 @@ If (Test-Path $OutputDirectory)
 
 New-Item $OutputDirectory -type directory
 
-$nuspecs = Get-ChildItem -Recurse ..\*.nuspec
+$nuspecs = Get-ChildItem -Recurse ..\sdk\src\*.nuspec
 foreach($nuspec in $nuspecs) 
 {
 	Write-Output "Create package: " + $nuspec.FullName

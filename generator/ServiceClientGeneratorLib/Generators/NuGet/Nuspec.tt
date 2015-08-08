@@ -17,31 +17,41 @@
     <tags>AWS Amazon cloud <#=this.Session["BaseName"]#> aws-sdk-v3<#=this.Session["ExtraTags"]#></tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
+<#
+	if(Convert.ToBoolean(this.Session["EnablePCLSupport"]))
+	{
+#>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
 <#
-    foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
-    {
+		foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
+		{
 #>
       <dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
 <#
-    }
+		}
 #>
 <#
-	if(this.Session.ContainsKey("NugetDependencies"))
-    {
-		var dependencies = (Dictionary<string,List<Dependency>>)this.Session["NugetDependencies"];
-		if(dependencies.ContainsKey("PCL"))
+		if(this.Session.ContainsKey("NugetDependencies"))
 		{
-			foreach(var dependency in dependencies["PCL"])
+			var dependencies = (Dictionary<string,List<Dependency>>)this.Session["NugetDependencies"];
+			if(Convert.ToBoolean(this.Session["EnablePCLSupport"]))
 			{
+				if(dependencies.ContainsKey("PCL"))
+				{
+					foreach(var dependency in dependencies["PCL"])
+					{
 #>
 		<dependency id="<#=dependency.Name#>" version="<#=dependency.Version#>" />
 <#		
+					}
+				}
 			}
-		}
-	}	
+		}	
 #>
       </group>
+<#
+	}
+#>
 <#
 	if(this.Session.ContainsKey("NugetDependencies"))
     {

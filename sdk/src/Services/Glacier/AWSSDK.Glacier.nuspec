@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Glacier</id>
     <title>AWSSDK - Amazon Glacier</title>
-    <version>3.1.0.0</version> 
+    <version>3.2.0.0-preview</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.</description>
     <language>en-US</language>
@@ -12,15 +12,10 @@
     <tags>AWS Amazon cloud Glacier aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
-      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.SQS" version="[3.1.0.0, 3.2)" />
-      <dependency id="AWSSDK.SimpleNotificationService" version="[3.1.0.0, 3.2)" />
-      <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
-      </group>
       <group>
-        <dependency id="AWSSDK.SQS" version="[3.1.0.0, 3.2)" />
-        <dependency id="AWSSDK.SimpleNotificationService" version="[3.1.0.0, 3.2)" />
-        <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
+        <dependency id="AWSSDK.SQS" version="[3.2.0.0-preview, 3.3-preview)" />
+        <dependency id="AWSSDK.SimpleNotificationService" version="[3.2.0.0-preview, 3.3-preview)" />
+        <dependency id="AWSSDK.Core" version="[3.2.0.0-preview, 3.3-preview)" />
       </group>
     </dependencies>
   </metadata> 
@@ -37,8 +32,10 @@
     <file src=".\bin\Release\net45\AWSSDK.Glacier.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.Glacier.pdb" target="lib\net45" />
 
-    <file src=".\bin\Release\pcl\AWSSDK.Glacier.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.Glacier.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.Glacier.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+
+    <file src="..\..\..\artifacts\bin\AWSSDK.Glacier.Dnx\Release\dnxcore50\Glacier.dll" target="lib\dnxcore50"/>
+    <file src="..\..\..\artifacts\bin\AWSSDK.Glacier.Dnx\Release\dnxcore50\Glacier.xml" target="lib\dnxcore50"/>
+    <file src="..\..\..\artifacts\bin\AWSSDK.Glacier.Dnx\Release\dnxcore50\Glacier.pdb" target="lib\dnxcore50"/>
+
   </files>
 </package>

@@ -41,20 +41,20 @@
         "define": [ "ADD_SUPPORT_IORDERED_DICTIONARY", "ADD_SUPPORT_ICLONEABLE" ]
       },
       "dependencies": {
-        "System.Collections": "4.0.10-beta-23019",
-        "System.Collections.NonGeneric": "4.0.0-beta-23019",
-        "System.Diagnostics.Tools": "4.0.0-beta-23019",
-        "System.Linq": "4.0.0-beta-23019",
-        "System.Net.Http": "4.0.0-beta-23019",
-        "System.Runtime.Extensions": "4.0.10-beta-23019",
-        "System.Security.Cryptography.Hashing": "4.0.0-beta-23019",
-        "System.Security.Cryptography.Hashing.Algorithms": "4.0.0-beta-23019",
-        "System.Text.Encoding.Extensions": "4.0.10-beta-23019",
-        "System.Text.RegularExpressions": "4.0.10-beta-23019",
-        "System.Threading": "4.0.10-beta-23019",
-        "System.Threading.Thread": "4.0.0-beta-23019",
-        "System.Xml.XDocument": "4.0.10-beta-23019",
-        "Microsoft.CSharp": "4.0.0-beta-23019"
+        "System.Collections": "4.0.10",
+        "System.Collections.NonGeneric": "4.0.0",
+        "System.Diagnostics.Tools": "4.0.0",
+        "System.Linq": "4.0.0",
+        "System.Net.Http": "4.0.0",
+        "System.Runtime.Extensions": "4.0.10",
+        "System.Security.Cryptography.Hashing": "4.0.0-beta-23123",
+        "System.Security.Cryptography.Hashing.Algorithms": "4.0.0-beta-23123",
+        "System.Text.Encoding.Extensions": "4.0.10",
+        "System.Text.RegularExpressions": "4.0.10",
+        "System.Threading": "4.0.10",
+        "System.Threading.Thread": "4.0.0-beta-23123",
+        "System.Xml.XDocument": "4.0.10",
+        "Microsoft.CSharp": "4.0.0"
       }
     }
   }
