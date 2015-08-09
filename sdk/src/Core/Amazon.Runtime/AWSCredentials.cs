@@ -391,6 +391,14 @@ namespace Amazon.Runtime
                     if (File.Exists(envPath))
                         return envPath;
                 }
+                if (!string.IsNullOrEmpty(System.Environment.GetEnvironmentVariable("USERPROFILE")))
+                {
+                    var envPath = Path.Combine(
+                        System.Environment.GetEnvironmentVariable("USERPROFILE"),
+                        ".aws/credentials");
+                    if (File.Exists(envPath))
+                        return envPath;
+                }
 
                 string path = null;
 #if BCL45
