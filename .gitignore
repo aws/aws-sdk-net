@@ -17,6 +17,7 @@
 
 sdk/packages/**
 sdk/test/PCLTests/AndroidTests/packages/**
+sdk/.vs/**
 
 Deployment/**
 DocDeployment/**
