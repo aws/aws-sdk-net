@@ -55,10 +55,6 @@
 	</Target>
 	
 	<Target Name="build-sdk" DependsOnTargets="build-sdk-desktop;build-sdk-pcl;build-sdk-dnxcore">
-		<Message Text="Compile the SDK"/>
-		<MSBuild Projects="..\sdk\AWSSDK.All.sln"
-			Targets="Clean;Build"
-			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation)" />
 
 		<Copy
 			SourceFiles="..\generator\ServiceModels\_sdk-versions.json"

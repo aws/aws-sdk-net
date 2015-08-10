@@ -342,15 +342,6 @@ namespace Amazon.Runtime
             }
         }
 
-        private string GetConfiguredProfileName()
-        {
-#if BCL
-#elif DNX
-#else
-#error "Unknown platform constant"
-#endif
-            return null;
-        }
 #endregion
 
             #region Public properties

@@ -77,6 +77,13 @@ Function Copy-SDKAssemblies
 
         foreach ($p in $Platforms)
         {
+            $relativeSourcePath = "bin\$BuildType\$p"
+
+            if (!(Join-Path $dir.FullName $relativeSourcePath | Test-Path))
+            {
+                continue
+            }
+
             $platformDestination = Join-Path $Destination $p
             if (!(Test-Path $platformDestination))
             {
