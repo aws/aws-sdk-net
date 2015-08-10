@@ -18,9 +18,7 @@ namespace Amazon.DNXCore.IntegrationTests
         [Fact]
         public async Task ListQueues()
         {
-            var credentials = FallbackCredentialsFactory.GetCredentials();
-
-            using (var client = new AmazonSQSClient(credentials, RegionEndpoint.USEast1))
+            using (var client = new AmazonSQSClient(RegionEndpoint.USEast1))
             {
                 var request = new ListQueuesRequest();
                 var response = await client.ListQueuesAsync(request);
