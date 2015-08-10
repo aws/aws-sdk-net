@@ -42,41 +42,66 @@ namespace ServiceClientGenerator.Generators.NuGet
             
             #line default
             #line hidden
-            this.Write("</version> \r\n    <authors>Amazon Web Services</authors>\r\n    <description>The Ama" +
-                    "zon Web Services SDK for .NET - Core Runtime</description>\r\n    <language>en-US<" +
-                    "/language>\r\n    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>\r\n    <" +
-                    "projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>\r\n    <tags>AWS Amazo" +
-                    "n cloud aws-sdk-v3</tags>\r\n    <iconUrl>http://media.amazonwebservices.com/aws_s" +
-                    "inglebox_01.png</iconUrl>\r\n    <dependencies>\r\n      <group targetFramework=\"net" +
-                    "45\">\r\n      </group>\r\n      <group targetFramework=\"portable-net45+netcore45+wpa" +
-                    "81+wp8+MonoAndroid10+xamarinios10+MonoTouch10\">\r\n        <dependency id=\"Microso" +
-                    "ft.Net.Http\" version=\"2.2.29\" />\r\n        <dependency id=\"PCLStorage\" version=\"1" +
-                    ".0.2\" />\r\n        <dependency id=\"PCLCrypto\" version=\"1.0.2.15130\" />\r\n      </g" +
-                    "roup>\r\n      <group targetFramework=\"DNXCore5.0\">\r\n        <dependency id=\"Syste" +
-                    "m.Collections\" version=\"4.0.10\" />\r\n        <dependency id=\"System.Collections.N" +
-                    "onGeneric\" version=\"4.0.0\" />\r\n        <dependency id=\"System.Diagnostics.Tools\"" +
-                    " version=\"4.0.0\" />\r\n        <dependency id=\"System.Linq\" version=\"4.0.0\" />\r\n  " +
-                    "      <dependency id=\"System.Net.Http\" version=\"4.0.0\" />\r\n        <dependency i" +
-                    "d=\"System.Runtime.Extensions\" version=\"4.0.10\" />\r\n        <dependency id=\"Syste" +
-                    "m.Security.Cryptography.Hashing\" version=\"4.0.0-beta-23123\" />\r\n        <depende" +
-                    "ncy id=\"System.Security.Cryptography.Hashing.Algorithms\" version=\"4.0.0-beta-231" +
-                    "23\" />\r\n        <dependency id=\"System.Text.Encoding.Extensions\" version=\"4.0.10" +
-                    "\" />\r\n        <dependency id=\"System.Text.RegularExpressions\" version=\"4.0.10\" /" +
-                    ">\r\n        <dependency id=\"System.Threading\" version=\"4.0.10\" />\r\n        <depen" +
-                    "dency id=\"System.Threading.Thread\" version=\"4.0.0-beta-23123\" />\r\n        <depen" +
-                    "dency id=\"System.Xml.XDocument\" version=\"4.0.10\" />\r\n        <dependency id=\"Mic" +
-                    "rosoft.CSharp\" version=\"4.0.0\" />\r\n      </group>\r\n    </dependencies>\r\n  </meta" +
-                    "data> \r\n  <files>\r\n\r\n    <file src=\"..\\..\\nuget-content\\account-management.ps1\" " +
-                    "target=\"tools\" />\r\n\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.dll\" target=" +
-                    "\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.xml\" target=\"lib\\" +
-                    "net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.pdb\" target=\"lib\\net35" +
-                    "\" />\r\n\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.dll\" target=\"lib\\net45\" /" +
-                    ">\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.xml\" target=\"lib\\net45\" />\r\n  " +
-                    "  <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.pdb\" target=\"lib\\net45\" />\r\n\r\n");
+            this.Write(@"</version> 
+    <authors>Amazon Web Services</authors>
+    <description>The Amazon Web Services SDK for .NET - Core Runtime</description>
+    <language>en-US</language>
+    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>
+    <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
+    <tags>AWS Amazon cloud aws-sdk-v3</tags>
+    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+    <dependencies>
+      <group targetFramework=""net45"">
+      </group>
+");
             
-            #line 58 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 23 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
-	if(Convert.ToBoolean(this.Session["EnablePCLSupport"]))
+	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
+	{
+
+            
+            #line default
+            #line hidden
+            this.Write(@"      <group targetFramework=""portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10"">
+        <dependency id=""Microsoft.Net.Http"" version=""2.2.29"" />
+        <dependency id=""PCLStorage"" version=""1.0.2"" />
+        <dependency id=""PCLCrypto"" version=""1.0.2.15130"" />
+      </group>
+");
+            
+            #line 32 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+
+	}
+
+            
+            #line default
+            #line hidden
+            this.Write("      <group targetFramework=\"DNXCore5.0\">\r\n        <dependency id=\"System.Collec" +
+                    "tions\" version=\"4.0.10\" />\r\n        <dependency id=\"System.Collections.NonGeneri" +
+                    "c\" version=\"4.0.0\" />\r\n        <dependency id=\"System.Diagnostics.Tools\" version" +
+                    "=\"4.0.0\" />\r\n        <dependency id=\"System.Linq\" version=\"4.0.0\" />\r\n        <d" +
+                    "ependency id=\"System.Net.Http\" version=\"4.0.0\" />\r\n        <dependency id=\"Syste" +
+                    "m.Runtime.Extensions\" version=\"4.0.10\" />\r\n        <dependency id=\"System.Securi" +
+                    "ty.Cryptography.Hashing\" version=\"4.0.0-beta-23123\" />\r\n        <dependency id=\"" +
+                    "System.Security.Cryptography.Hashing.Algorithms\" version=\"4.0.0-beta-23123\" />\r\n" +
+                    "        <dependency id=\"System.Text.Encoding.Extensions\" version=\"4.0.10\" />\r\n  " +
+                    "      <dependency id=\"System.Text.RegularExpressions\" version=\"4.0.10\" />\r\n     " +
+                    "   <dependency id=\"System.Threading\" version=\"4.0.10\" />\r\n        <dependency id" +
+                    "=\"System.Threading.Thread\" version=\"4.0.0-beta-23123\" />\r\n        <dependency id" +
+                    "=\"System.Xml.XDocument\" version=\"4.0.10\" />\r\n        <dependency id=\"Microsoft.C" +
+                    "Sharp\" version=\"4.0.0\" />\r\n      </group>\r\n    </dependencies>\r\n  </metadata> \r\n" +
+                    "  <files>\r\n\r\n    <file src=\"..\\..\\nuget-content\\account-management.ps1\" target=\"" +
+                    "tools\" />\r\n\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.dll\" target=\"lib\\net" +
+                    "35\" />\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.xml\" target=\"lib\\net35\" /" +
+                    ">\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.pdb\" target=\"lib\\net35\" />\r\n\r\n" +
+                    "    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.dll\" target=\"lib\\net45\" />\r\n    <" +
+                    "file src=\".\\bin\\Release\\net45\\AWSSDK.Core.xml\" target=\"lib\\net45\" />\r\n    <file " +
+                    "src=\".\\bin\\Release\\net45\\AWSSDK.Core.pdb\" target=\"lib\\net45\" />\r\n\r\n");
+            
+            #line 65 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+	
+	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
 
             
@@ -105,7 +130,7 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "\r\n    <file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.xml\" target=\"lib\\wp8\" />\r\n    <fi" +
                     "le src=\".\\bin\\Release\\wp8\\AWSSDK.Core.pdb\" target=\"lib\\wp8\" />\r\n\r\n");
             
-            #line 88 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 95 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
 	}
 

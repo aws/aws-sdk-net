@@ -914,7 +914,7 @@ namespace ServiceClientGenerator
                 { "BaseName", this.Configuration.BaseName },
                 { "ProjectFileConfigurations", this.ProjectFileConfigurations},
                 { "ExtraTags", Configuration.Tags == null || Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) },
-                {"EnablePCLSupport", false}
+                {"DisablePCLSupport", this.Options.DisablePCLSupport}
             };
 
             if (Configuration.NugetDependencies != null)

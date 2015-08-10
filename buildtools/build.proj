@@ -4,6 +4,9 @@
 	
     <PropertyGroup>
         <InternalBuildTools Condition="'$(InternalBuildTools)'==''">..\..\AWSDotNetBuildTools</InternalBuildTools>
+		<DisablePCLSupport Condition="'$(DisablePCLSupport)'==''">false</DisablePCLSupport>
+		
+		<GeneratorDisablePCLSupport Condition="'$(DisablePCLSupport)'=='true'">-disable.pcl-support</GeneratorDisablePCLSupport>
     </PropertyGroup>
     
 	<Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
@@ -47,11 +50,11 @@
 		<MSBuild Projects="..\generator\AWSSDKGenerator.sln"
 			Targets="Clean;Build"
 			Properties="Configuration=Release" />
-		<Exec Command="ServiceClientGenerator.exe" 
+		<Exec Command="ServiceClientGenerator.exe $(GeneratorDisablePCLSupport)" 
 			WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
 	</Target>
 	
-	<Target Name="build-sdk" DependsOnTargets="build-sdk-desktop;build-sdk-pcl">
+	<Target Name="build-sdk" DependsOnTargets="build-sdk-desktop;build-sdk-pcl;build-sdk-dnxcore">
 		<Message Text="Compile the SDK"/>
 		<MSBuild Projects="..\sdk\AWSSDK.All.sln"
 			Targets="Clean;Build"
@@ -69,7 +72,7 @@
 			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation)" />
 	</Target>
 
-	<Target Name="build-sdk-pcl" DependsOnTargets="restore-nuget;run-generator">
+	<Target Name="build-sdk-pcl" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisablePCLSupport)">
 		<Message Text="Compile the Portable Class Library SDK"/>
 		<MSBuild Projects="..\sdk\AWSSDK.PCL.sln"
 			Targets="Clean;Build"

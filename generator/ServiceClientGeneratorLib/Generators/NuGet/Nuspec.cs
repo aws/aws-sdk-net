@@ -83,7 +83,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             
             #line 20 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
-	if(Convert.ToBoolean(this.Session["EnablePCLSupport"]))
+	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
 
             
@@ -129,7 +129,7 @@ namespace ServiceClientGenerator.Generators.NuGet
 		if(this.Session.ContainsKey("NugetDependencies"))
 		{
 			var dependencies = (Dictionary<string,List<Dependency>>)this.Session["NugetDependencies"];
-			if(Convert.ToBoolean(this.Session["EnablePCLSupport"]))
+			if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 			{
 				if(dependencies.ContainsKey("PCL"))
 				{
@@ -355,7 +355,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             
             #line 114 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 	
-	if(Convert.ToBoolean(this.Session["EnablePCLSupport"]))
+	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
 
             

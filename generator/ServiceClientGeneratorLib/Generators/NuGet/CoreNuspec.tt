@@ -20,11 +20,18 @@
     <dependencies>
       <group targetFramework="net45">
       </group>
+<#	
+	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
+	{
+#>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
         <dependency id="PCLStorage" version="1.0.2" />
         <dependency id="PCLCrypto" version="1.0.2.15130" />
       </group>
+<#
+	}
+#>
       <group targetFramework="DNXCore5.0">
         <dependency id="System.Collections" version="4.0.10" />
         <dependency id="System.Collections.NonGeneric" version="4.0.0" />
@@ -56,7 +63,7 @@
     <file src=".\bin\Release\net45\AWSSDK.Core.pdb" target="lib\net45" />
 
 <#	
-	if(Convert.ToBoolean(this.Session["EnablePCLSupport"]))
+	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
 #>
     <file src=".\bin\Release\pcl\AWSSDK.Core.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />

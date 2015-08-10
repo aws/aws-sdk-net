@@ -69,6 +69,11 @@
         /// </summary>
         public bool ForceSolutionRebuilt { get; set; }
 
+        /// <summary>
+        /// If true the nuspec files will be generated without including references to PCL versions.
+        /// </summary>
+        public bool DisablePCLSupport { get; set; }
+
         public string SelfServiceModel { get; set; }
         public string SelfServiceBaseName { get; set; }
         public string SelfServiceEndpointPrefix { get; set; }
@@ -78,6 +83,7 @@
         {
             Verbose = false;
             WaitOnExit = false;
+            DisablePCLSupport = false;
 
             // default paths are relative to executing generator assembly
             // in bin/debug or bin/release

@@ -18,7 +18,7 @@
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
 <#
-	if(Convert.ToBoolean(this.Session["EnablePCLSupport"]))
+	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
 #>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
@@ -34,7 +34,7 @@
 		if(this.Session.ContainsKey("NugetDependencies"))
 		{
 			var dependencies = (Dictionary<string,List<Dependency>>)this.Session["NugetDependencies"];
-			if(Convert.ToBoolean(this.Session["EnablePCLSupport"]))
+			if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 			{
 				if(dependencies.ContainsKey("PCL"))
 				{
@@ -112,7 +112,7 @@
     <file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\net45" />
 
 <#	
-	if(Convert.ToBoolean(this.Session["EnablePCLSupport"]))
+	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
 #>
     <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
