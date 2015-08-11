@@ -38,7 +38,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartedEventId. 
         /// <para>
-        /// The id of the <code>TimerStarted</code> event that was recorded when this timer was
+        /// The ID of the <code>TimerStarted</code> event that was recorded when this timer was
         /// started. This information can be useful for diagnosing problems by tracing back the
         /// chain of events leading up to this event.
         /// </para>
@@ -58,7 +58,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TimerId. 
         /// <para>
-        /// The unique Id of the timer that fired.
+        /// The unique ID of the timer that fired.
         /// </para>
         /// </summary>
         public string TimerId

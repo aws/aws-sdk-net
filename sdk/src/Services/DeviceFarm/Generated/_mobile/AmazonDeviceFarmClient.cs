@@ -36,8 +36,8 @@ namespace Amazon.DeviceFarm
     /// <summary>
     /// Implementation for accessing DeviceFarm
     ///
-    /// AWS Device Farm is a service that enables mobile app developers to test apps on physical
-    /// phones, tablets, and other devices in the cloud.
+    /// AWS Device Farm is a service that enables mobile app developers to test Android, iOS,
+    /// and Fire OS apps on physical phones, tablets, and other devices in the cloud.
     /// </summary>
     public partial class AmazonDeviceFarmClient : AmazonServiceClient, IAmazonDeviceFarm
     {
@@ -348,6 +348,68 @@ namespace Amazon.DeviceFarm
             var unmarshaller = CreateUploadResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateUploadRequest,CreateUploadResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAccountSettings
+
+        internal GetAccountSettingsResponse GetAccountSettings()
+        {
+            return GetAccountSettings(new GetAccountSettingsRequest());
+        }
+        internal GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
+        {
+            var marshaller = new GetAccountSettingsRequestMarshaller();
+            var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountSettingsRequest,GetAccountSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Returns the number of unmetered iOS and/or unmetered Android devices that have been
+        /// purchased by the account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountSettings service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public Task<GetAccountSettingsResponse> GetAccountSettingsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetAccountSettingsAsync(new GetAccountSettingsRequest(), cancellationToken);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetAccountSettingsRequestMarshaller();
+            var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAccountSettingsRequest,GetAccountSettingsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

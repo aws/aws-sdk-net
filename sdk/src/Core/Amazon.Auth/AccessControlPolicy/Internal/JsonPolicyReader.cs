@@ -97,6 +97,10 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
                     convertPrincipalRecord(statement, jPrincipal);
                 }
             }
+            else if (jPrincipals.IsString && jPrincipals.Equals("*"))
+            {
+                statement.Principals.Add(Principal.Anonymous);
+            }
         }
 
         private static void convertPrincipalRecord(Statement statement, JsonData jPrincipal)

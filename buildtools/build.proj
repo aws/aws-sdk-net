@@ -21,13 +21,17 @@
         <RunKeyScan Condition="'$(RunKeyScan)'==''">false</RunKeyScan>
     </PropertyGroup>
     
-	<Target Name="build-custom-tasks">		
+	<Target Name="build-custom-tasks">
+		<Exec Command="..\sdk\.nuget\NuGet.exe restore .\CustomTasks\CustomTasks.sln" />
+		
 		<MSBuild Projects=".\CustomTasks\CustomTasks.sln"
 			Targets="Clean;Build"
 			Properties="Configuration=Release" />
+			
 	</Target>
 	
 	<UsingTask TaskName="CustomTasks.UpdateFxCopProject" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
+	<UsingTask TaskName="CustomTasks.PackageComponents" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
 	
 	<Target Name="init" DependsOnTargets="clean;build-custom-tasks"/>
 
@@ -110,7 +114,6 @@
 			Properties="TestContainer=..\sdk\test\UnitTests\bin\Release\net45\AWSSDK.UnitTests.Net45.dll" />
 	</Target>
 	<Target Name="run-integ-tests" DependsOnTargets="init;build-sdk" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'">
-
 		<MSBuild
 			Projects="$(MSBuildProjectFile)"
 			Targets="run-tests"
@@ -119,10 +122,21 @@
 	
 	<Target Name="nuget-pack" DependsOnTargets="build-sdk">
 		<Exec LogStandardErrorAsError="true"
-              Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1" />		
+              Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1" />
 	</Target>
 
-	<Target Name="copy-assemblies" DependsOnTargets="nuget-pack">
+	<Target Name="xam-pack" DependsOnTargets="build-custom-tasks" Condition="Exists('$(xpkgexe)')">
+		<PackageComponents ComponentRootPath="..\sdk\xamarin-components\" NugetExe="..\sdk\.nuget\NuGet.exe" ComponentsExe="$(xpkg)" /> 
+		
+		<ItemGroup>
+			<XamFiles Include="..\sdk\xamarin-components\**\*.xam"/>
+		</ItemGroup>
+		<Copy
+            SourceFiles="@(XamFiles)"
+            DestinationFolder="$(Deployment)\xamain-components"/>
+	</Target>
+	
+	<Target Name="copy-assemblies" DependsOnTargets="nuget-pack;xam-pack">
         <Message Text="Collating assemblies for downstream doc generation" />
 		<PropertyGroup>
 			<CustomSnkPublicKeyToken Condition="'$(CustomSnkPublicKeyToken)' == '' ">71c852f8be1c371d</CustomSnkPublicKeyToken>

@@ -56,6 +56,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetBillingMethod())
+            {
+                context.Writer.WritePropertyName("billingMethod");
+                context.Writer.Write(requestObject.BillingMethod);
+            }
+
             if(requestObject.IsSetExtraDataPackageArn())
             {
                 context.Writer.WritePropertyName("extraDataPackageArn");

@@ -39,7 +39,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        /// The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
+        /// The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision
         /// task that resulted in the <code>CancelTimer</code> decision to cancel this timer.
         /// This information can be useful for diagnosing problems by tracing back the chain of
         /// events leading up to this event.
@@ -60,7 +60,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartedEventId. 
         /// <para>
-        /// The id of the <code>TimerStarted</code> event that was recorded when this timer was
+        /// The ID of the <code>TimerStarted</code> event that was recorded when this timer was
         /// started. This information can be useful for diagnosing problems by tracing back the
         /// chain of events leading up to this event.
         /// </para>
@@ -80,7 +80,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TimerId. 
         /// <para>
-        ///  The unique Id of the timer that was canceled. 
+        ///  The unique ID of the timer that was canceled. 
         /// </para>
         /// </summary>
         public string TimerId

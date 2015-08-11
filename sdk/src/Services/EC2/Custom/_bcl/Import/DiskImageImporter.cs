@@ -1306,7 +1306,22 @@ namespace Amazon.EC2.Import
                     if (_nextPartForUpload < PartInstances.Count)
                     {
                         nextPart = PartInstances[_nextPartForUpload];
-                        imageFileStream.Read(buffer, 0, (int)nextPart.ByteRange.Extent);
+                        var offset = 0;
+                        var bytesRemaining = (int)nextPart.ByteRange.Extent;
+                        while (bytesRemaining > 0)
+                        {
+                            var bytesRead = imageFileStream.Read(buffer, offset, bytesRemaining);
+                            if (bytesRead > 0)
+                            {
+                                offset += bytesRead;
+                                bytesRemaining -= bytesRead;
+                            }
+                            else
+                            {
+                                throw new InvalidOperationException("Encountered unexpected end of stream");
+                            }
+                        }
+
                         _nextPartForUpload++;
                     }
                 }

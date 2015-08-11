@@ -63,6 +63,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Input);
             }
 
+            if(requestObject.IsSetLambdaRole())
+            {
+                context.Writer.WritePropertyName("lambdaRole");
+                context.Writer.Write(requestObject.LambdaRole);
+            }
+
             if(requestObject.IsSetTagList())
             {
                 context.Writer.WritePropertyName("tagList");

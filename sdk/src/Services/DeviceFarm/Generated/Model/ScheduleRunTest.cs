@@ -102,39 +102,40 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li>
         /// <para>
-        /// ANDROID_APP: An Android app.
+        /// BUILTIN_FUZZ: The built-in fuzz type.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// APPIUM_JAVA_TEST_PACKAGE: An Appium Java test package.
+        /// BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app,
+        /// interacting with it and capturing screenshots at the same time.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// CALABASH_TEST_PACKAGE: A Calabash test package.
+        /// APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// EXTERNAL_DATA: External data.
+        /// APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// INSTRUMENTATION_TEST_PACKAGE: An instrumentation test package.
+        /// CALABASH: The Calabash type.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// IOS_APP: An iOS app.
+        /// INSTRUMENTATION: The Instrumentation type.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// UIAUTOMATION_TEST_PACKAGE: A UI Automation test package.
+        /// UIAUTOMATION: The uiautomation type.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package.
+        /// UIAUTOMATOR: The uiautomator type.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// XCTEST_TEST_PACKAGE: An XCTest test package.
+        /// XCTEST: The XCode test type.
         /// </para>
         /// </li> </ul>
         /// </summary>

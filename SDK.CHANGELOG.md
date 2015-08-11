@@ -1,3 +1,27 @@
+### 3.1.4.0 (2015-08-06 15:55 UTC)
+* SimpleWorkflow (3.1.1.0)
+	* Update SWF client for Lambda support
+
+### 3.1.3.0 (2015-08-04 21:59 UTC)
+* DeviceFarm (3.1.1.0)
+	* Update DeviceFarm client with latest model, adding support for iOS and retrieving account settings.
+
+### 3.1.2.1 (2015-08-04 00:50 UTC)
+* CloudSearchDomain (3.1.0.1)
+	* Updated to need new core version 3.1.0.1
+	* Picking up the version of PCL core that fixes SigV4 streaming signature issue.
+* Glacier (3.1.0.1)
+	* Updated to need new core version 3.1.0.1
+	* Picking up the version of PCL core that fixes SigV4 streaming signature issue.
+* Lambda (3.1.0.1)
+	* Updated to need new core version 3.1.0.1
+	* Picking up the version of PCL core that fixes SigV4 streaming signature issue.
+* S3 (3.1.1.1)
+	* Updated to need new core version 3.1.0.1
+	* Picking up the version of PCL core that fixes SigV4 streaming signature issue.
+* Core 3.1.0.1
+	* Fix PCL SigV4 signing issue where SHA256 hash is not always calculated correctly.
+
 ### 3.1.2.0 (2015-07-31 00:36 UTC)
 * OpsWorks (3.1.1.0)
 	* Add support for ECS clusters.

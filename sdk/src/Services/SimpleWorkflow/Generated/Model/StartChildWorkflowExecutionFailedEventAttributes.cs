@@ -79,10 +79,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        /// The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
-        /// task that resulted in the <code>StartChildWorkflowExecution</code> <a>Decision</a>
-        /// to request this child workflow execution. This information can be useful for diagnosing
-        /// problems by tracing back the cause of events.
+        /// The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision
+        /// task that resulted in the <code>StartChildWorkflowExecution</code> decision to request
+        /// this child workflow execution. This information can be useful for diagnosing problems
+        /// by tracing back the cause of events.
         /// </para>
         /// </summary>
         public long DecisionTaskCompletedEventId
@@ -100,10 +100,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property InitiatedEventId. 
         /// <para>
-        /// The id of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding
-        /// to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child
-        /// workflow execution. This information can be useful for diagnosing problems by tracing
-        /// back the chain of events leading up to this event.
+        /// The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding
+        /// to the <code>StartChildWorkflowExecution</code> decision to start this child workflow
+        /// execution. This information can be useful for diagnosing problems by tracing back
+        /// the chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long InitiatedEventId
@@ -139,7 +139,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowType. 
         /// <para>
-        /// The workflow type provided in the <code>StartChildWorkflowExecution</code> <a>Decision</a>
+        /// The workflow type provided in the <code>StartChildWorkflowExecution</code> decision
         /// that failed.
         /// </para>
         /// </summary>

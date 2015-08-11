@@ -46,7 +46,6 @@ namespace Amazon.Util
 
             public string HMACSign(byte[] data, string key, SigningAlgorithm algorithmName)
             {
-                //var crypt = MacAlgorithmProvider.OpenAlgorithm(ConvertToAlgorithName(algorithmName));
                 var crypt = WinRTCrypto.MacAlgorithmProvider.OpenAlgorithm(Convert(algorithmName));
 
                 if (String.IsNullOrEmpty(key))
@@ -64,22 +63,17 @@ namespace Amazon.Util
                     throw new ArgumentNullException("algorithm", "Please specify a KeyedHashAlgorithm to use.");
                 }
 
-                //IBuffer dataBuffer = CryptographicBuffer.CreateFromByteArray(data);
                 var dataBuffer = WinRTCrypto.CryptographicBuffer.CreateFromByteArray(data);
-                //var keyBuffer = CryptographicBuffer.ConvertStringToBinary(key, BinaryStringEncoding.Utf8);
                 var keyBuffer = WinRTCrypto.CryptographicBuffer.ConvertStringToBinary(key, Encoding.UTF8);
                 var cryptoKey = crypt.CreateKey(keyBuffer);
 
-                //var sigBuffer = CryptographicEngine.Sign(cryptoKey, dataBuffer);
                 var sigBuffer = WinRTCrypto.CryptographicEngine.Sign(cryptoKey, dataBuffer);
-                //string signature = CryptographicBuffer.EncodeToBase64String(sigBuffer);
                 var signature = WinRTCrypto.CryptographicBuffer.EncodeToBase64String(sigBuffer);
                 return signature;
             }
 
             public byte[] HMACSignBinary(byte[] data, byte[] key, SigningAlgorithm algorithmName)
             {
-                //var crypt = MacAlgorithmProvider.OpenAlgorithm(ConvertToAlgorithName(algorithmName));
                 var crypt = WinRTCrypto.MacAlgorithmProvider.OpenAlgorithm(Convert(algorithmName));
 
                 if (key == null || key.Length == 0)
@@ -119,9 +113,28 @@ namespace Amazon.Util
                     int bytesRead = 0;
                     byte[] buffer = new byte[AWSSDKUtils.DefaultBufferSize];
                     while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) != 0)
-                        hash.Append(buffer);
+                    {
+                        Append(hash, bytesRead, buffer);
+                    }
 
                     return hash.GetValueAndReset();
+                }
+            }
+
+            // Appends a given number of bytes to the hash
+            private static void Append(CryptographicHash hash, int bytesRead, byte[] buffer)
+            {
+                if (bytesRead == buffer.Length)
+                {
+                    // append the whole buffer
+                    hash.Append(buffer);
+                }
+                else
+                {
+                    // only a part of the buffer should be appended, so need a smaller buffer
+                    var partialBuffer = new byte[bytesRead];
+                    Array.Copy(buffer, partialBuffer, bytesRead);
+                    hash.Append(partialBuffer);
                 }
             }
 

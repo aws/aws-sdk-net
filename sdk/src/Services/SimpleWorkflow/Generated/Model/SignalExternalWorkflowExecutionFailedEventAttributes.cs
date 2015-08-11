@@ -79,7 +79,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        /// The id of the <code>DecisionTaskCompleted</code> event corresponding to the decision
+        /// The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision
         /// task that resulted in the <code>SignalExternalWorkflowExecution</code> decision for
         /// this signal. This information can be useful for diagnosing problems by tracing back
         /// the chain of events leading up to this event.
@@ -100,7 +100,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property InitiatedEventId. 
         /// <para>
-        /// The id of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding
+        /// The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding
         /// to the <code>SignalExternalWorkflowExecution</code> decision to request this signal.
         /// This information can be useful for diagnosing problems by tracing back the chain of
         /// events leading up to this event.

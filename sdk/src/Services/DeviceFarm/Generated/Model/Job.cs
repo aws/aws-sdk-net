@@ -245,7 +245,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// SCHEDULED: A scheduled status.
+        /// SCHEDULING: A scheduling status.
         /// </para>
         /// </li> </ul>
         /// </summary>
@@ -290,11 +290,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li>
         /// <para>
-        /// APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+        /// BUILTIN_FUZZ: The built-in fuzz type.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -303,7 +299,11 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// BUILTIN_FUZZ: The built-in fuzz type.
+        /// APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -315,7 +315,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// UIAUTOMATION: The UI Automation type.
+        /// UIAUTOMATION: The uiautomation type.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -323,7 +323,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// XCTEST: The XCTest type.
+        /// XCTEST: The XCode test type.
         /// </para>
         /// </li> </ul>
         /// </summary>

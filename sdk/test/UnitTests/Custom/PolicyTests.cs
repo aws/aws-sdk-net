@@ -55,5 +55,28 @@ namespace AWSSDK_DotNet35.UnitTests
             newStatement.Conditions[0].ConditionKey = "new:arn";
             Assert.IsFalse(policy.CheckIfStatementExists(newStatement));
         }
+
+        [TestMethod]
+        public void TestAnonymousPrincipal()
+        {
+            var policy = new Policy 
+            {
+                Statements =
+                {
+                    new Statement(Statement.StatementEffect.Deny)
+                    {
+                         Principals = { Principal.Anonymous }
+                    }
+                }
+            };
+
+            var json = policy.ToJson();
+            Console.WriteLine(json);
+            Assert.IsTrue(json.Contains("\"Principal\" : \"*\""));
+
+            var roundTripPolicy = Policy.FromJson(json);
+
+            Assert.AreEqual(Principal.Anonymous, roundTripPolicy.Statements[0].Principals[0]);
+        }
     }
 }

@@ -138,7 +138,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ExecutionFilter. 
         /// <para>
-        /// If specified, only workflow executions matching the workflow id specified in the filter
+        /// If specified, only workflow executions matching the workflow ID specified in the filter
         /// are returned.
         /// </para>
         ///  <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code>
@@ -161,8 +161,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property MaximumPageSize. 
         /// <para>
         /// The maximum number of results that will be returned per call. <code>nextPageToken</code>
-        /// can be used to obtain futher pages of results. The default is 100, which is the maximum
-        /// allowed page size. You can, however, specify a page size <i>smaller</i> than 100.
+        /// can be used to obtain futher pages of results. The default is 1000, which is the maximum
+        /// allowed page size. You can, however, specify a page size <i>smaller</i> than the maximum.
         /// </para>
         ///  
         /// <para>

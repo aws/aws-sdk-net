@@ -63,7 +63,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property Decisions. 
         /// <para>
         /// The list of decisions (possibly empty) made by the decider while processing this decision
-        /// task. See the docs for the <a>Decision</a> structure for details.
+        /// task. See the docs for the decision structure for details.
         /// </para>
         /// </summary>
         public List<Decision> Decisions

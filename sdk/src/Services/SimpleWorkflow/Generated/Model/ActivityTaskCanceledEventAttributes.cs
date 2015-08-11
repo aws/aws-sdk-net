@@ -58,7 +58,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property LatestCancelRequestedEventId. 
         /// <para>
-        /// If set, contains the Id of the last <code>ActivityTaskCancelRequested</code> event
+        /// If set, contains the ID of the last <code>ActivityTaskCancelRequested</code> event
         /// recorded for this activity task. This information can be useful for diagnosing problems
         /// by tracing back the chain of events leading up to this event.
         /// </para>
@@ -78,7 +78,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ScheduledEventId. 
         /// <para>
-        /// The id of the <code>ActivityTaskScheduled</code> event that was recorded when this
+        /// The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this
         /// activity task was scheduled. This information can be useful for diagnosing problems
         /// by tracing back the chain of events leading up to this event.
         /// </para>
@@ -98,7 +98,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartedEventId. 
         /// <para>
-        /// The Id of the <code>ActivityTaskStarted</code> event recorded when this activity task
+        /// The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task
         /// was started. This information can be useful for diagnosing problems by tracing back
         /// the chain of events leading up to this event.
         /// </para>

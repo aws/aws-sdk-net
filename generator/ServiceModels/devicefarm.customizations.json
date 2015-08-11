@@ -8,6 +8,9 @@
             ]
         }
 	},
+    "noArgOverloads": [ 
+        "GetAccountSettings"
+    ],
     "simpleMethods" : {
         "operations" : {
             "CreateProject" : {

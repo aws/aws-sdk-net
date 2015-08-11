@@ -41,9 +41,9 @@ namespace Amazon.SimpleWorkflow.Model
     /// and responds as soon a task becomes available. If no decision task is available in
     /// the specified task list before the timeout of 60 seconds expires, an empty result
     /// is returned. An empty result, in this context, means that a DecisionTask is returned,
-    /// but that the value of taskToken is an empty string.
+    /// but that the value of <code>taskToken</code> is an empty string.
     /// </para>
-    ///  <important>Deciders should set their client side socket timeout to at least 70 seconds
+    ///  <important>Deciders should set their client-side socket timeout to at least 70 seconds
     /// (10 seconds higher than the timeout).</important> <important>Because the number of
     /// workflow history events for a single workflow execution might be very large, the result
     /// returned might be split up across a number of pages. To retrieve subsequent pages,
@@ -123,8 +123,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property MaximumPageSize. 
         /// <para>
         /// The maximum number of results that will be returned per call. <code>nextPageToken</code>
-        /// can be used to obtain futher pages of results. The default is 100, which is the maximum
-        /// allowed page size. You can, however, specify a page size <i>smaller</i> than 100.
+        /// can be used to obtain futher pages of results. The default is 1000, which is the maximum
+        /// allowed page size. You can, however, specify a page size <i>smaller</i> than the maximum.
         /// </para>
         ///  
         /// <para>
