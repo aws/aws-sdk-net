@@ -31,7 +31,7 @@ namespace Amazon.S3.Transfer.Internal
         /// <summary>
         ///  Waits for all of the tasks to complete or till any task fails.
         /// </summary>        
-        protected async Task<List<T>> WhenAllOrFirstExceptionAsync<T>(List<Task<T>> pendingTasks, CancellationToken cancellationToken)
+        protected static async Task<List<T>> WhenAllOrFirstExceptionAsync<T>(List<Task<T>> pendingTasks, CancellationToken cancellationToken)
         {
             int processed = 0;
             int total = pendingTasks.Count;
@@ -61,7 +61,7 @@ namespace Amazon.S3.Transfer.Internal
         /// <summary>
         /// Waits for all of the tasks to complete or till any task fails.
         /// </summary>        
-        protected async Task WhenAllOrFirstExceptionAsync(List<Task> pendingTasks, CancellationToken cancellationToken)
+        protected static async Task WhenAllOrFirstExceptionAsync(List<Task> pendingTasks, CancellationToken cancellationToken)
         {
             int processed = 0;
             int total = pendingTasks.Count;            
