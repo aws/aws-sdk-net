@@ -48,17 +48,23 @@ namespace Amazon.S3.Transfer.Internal
                     getRequest.ByteRange = bytesRemaining;
                 }
 
-                using (var response = this._s3Client.GetObject(getRequest))
+                try
                 {
-                    if (!string.IsNullOrEmpty(mostRecentETag) && !string.Equals(mostRecentETag, response.ETag))
+                    using (var response = this._s3Client.GetObject(getRequest))
                     {
-                        AmazonServiceException eTagChanged = new AmazonServiceException("ETag changed during download retry.");
-                        throw eTagChanged;
-                    }
-                    mostRecentETag = response.ETag;
+                        if (!string.IsNullOrEmpty(mostRecentETag) && !string.Equals(mostRecentETag, response.ETag))
+                        {
+                            //if the eTag changed, we need to retry from the start of the file
+                            mostRecentETag = response.ETag;
+                            getRequest.ByteRange = null;
+                            retries = 0;
+                            shouldRetry = true;
+                            WaitBeforeRetry(retries);
+                            continue;
+                        }
+                        mostRecentETag = response.ETag;
 
-                    try
-                    {
+
                         if (retries == 0)
                         {
                             /* 
@@ -74,8 +80,10 @@ namespace Amazon.S3.Transfer.Internal
                              * to avoid any breaking changes to customers who handle that specific exception in a
                              * particular manor.
                              */
-                            FileStream temp = new FileStream(this._request.FilePath, FileMode.Create, FileAccess.ReadWrite, FileShare.Read, Amazon.S3.Util.S3Constants.DefaultBufferSize);
-                            temp.Close();
+                            using (FileStream temp = new FileStream(this._request.FilePath, FileMode.Create, FileAccess.ReadWrite, FileShare.Read, Amazon.S3.Util.S3Constants.DefaultBufferSize))
+                            {
+                                //Do nothing. Simply using the "using" statement to create and dispose of FileStream temp in the same call.
+                            };
 
                             response.WriteObjectProgressEvent += OnWriteObjectProgressEvent;
                             response.WriteResponseStreamToFile(this._request.FilePath);
@@ -86,55 +94,30 @@ namespace Amazon.S3.Transfer.Internal
                             response.WriteResponseStreamToFile(this._request.FilePath, true);
                         }
                     }
-                    catch (Exception exception)
+                }
+                catch (Exception exception)
+                {
+                    retries++;
+                    shouldRetry = HandleException(exception, retries, maxRetries);
+                    if (!shouldRetry)
                     {
-                        retries++;
-                        shouldRetry = HandleException(exception, retries, maxRetries);
-                        if (!shouldRetry)
+                        if (exception is IOException)
                         {
-                            if (exception is IOException)
-                            {
-                                throw;
-                            }
-                            else if (exception is AmazonServiceException ||
-                                exception is AmazonClientException)
-                            {
-                                throw;
-                            }
-                            else
-                            {
-                                throw new AmazonServiceException(exception);
-                            }
+                            throw;
+                        }
+                        else if (exception is AmazonServiceException ||
+                            exception is AmazonClientException)
+                        {
+                            throw;
+                        }
+                        else
+                        {
+                            throw new AmazonServiceException(exception);
                         }
                     }
                 }
                 WaitBeforeRetry(retries);
             } while (shouldRetry);
-
-        }
-        
-        /// <summary>
-        /// Returns the amount of bytes remaining that need to be pulled down from S3.
-        /// </summary>
-        /// <param name="filepath">The fully qualified path of the file.</param>
-        /// <returns></returns>
-        internal static ByteRange ByteRangeRemainingForDownload(string filepath)
-        {
-            /*
-             * Initialize the ByteRange as the whole file.
-             * long.MaxValue works regardless of the size because
-             * S3 will stop sending bits if you specify beyond the
-             * size of the file anyways.
-             */
-            ByteRange byteRange = new ByteRange(0, long.MaxValue);
-
-            if (!File.Exists(filepath))
-                return byteRange;
-
-            FileInfo info = new FileInfo(filepath);
-            byteRange.Start = info.Length;
-
-            return byteRange;
         }
     }
 }
