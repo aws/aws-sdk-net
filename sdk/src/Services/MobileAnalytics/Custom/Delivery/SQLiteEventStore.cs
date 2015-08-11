@@ -68,7 +68,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             _maConfig = maConfig;
 #if BCL
             _dbFileFullPath = InternalSDKUtils.DetermineAppLocalStoragePath(dbFileName);
-            //_dbFileFullPath = dbFileName; 
 #elif PCL
             _dbFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, dbFileName);
 #endif
