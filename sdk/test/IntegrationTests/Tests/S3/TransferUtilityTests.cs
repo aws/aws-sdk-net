@@ -28,12 +28,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private static string basePath = @"c:\temp\test\transferutility\";
         private static string bucketName;
         private static string octetStreamContentType = "application/octet-stream";
-
+        private static string fullPath;
+        private const string testContent = "This is the content body!";
+        private const string testFile = "PutObjectFile.txt";
 
         [ClassInitialize()]
         public static void ClassInitialize(TestContext a)
         {
             bucketName = S3TestUtils.CreateBucket(Client);
+            fullPath = Path.GetFullPath(testFile);
+            File.WriteAllText(fullPath, testContent);
         }
 
         [ClassCleanup]
@@ -69,6 +73,47 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             progressValidator.AssertOnCompletion();
         }
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void SimpleUpload()
+        {
+            var client = Client;
+            using (var tu = new Amazon.S3.Transfer.TransferUtility(client))
+            {
+                tu.Upload(fullPath, bucketName);
+
+                var response = client.GetObjectMetadata(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = testFile
+                });
+                Assert.IsTrue(response.ETag.Length > 0);
+
+                var downloadPath = fullPath + ".download";
+                var downloadRequest = new Amazon.S3.Transfer.TransferUtilityDownloadRequest
+                {
+                    BucketName = bucketName,
+                    Key = testFile,
+                    FilePath = downloadPath
+                };
+                tu.Download(downloadRequest);
+                TestDownloadedFile(downloadPath);
+
+                // empty out file, except for 1 byte
+                File.WriteAllText(downloadPath, testContent.Substring(0,1));
+                Assert.IsTrue(File.Exists(downloadPath));
+                tu.Download(downloadRequest);
+                TestDownloadedFile(downloadPath);
+            }
+        }
+
+        private void TestDownloadedFile(string downloadPath)
+        {
+            var fileExists = File.Exists(downloadPath);
+            Assert.IsTrue(fileExists);
+            var fileContent = File.ReadAllText(downloadPath);
+            Assert.AreEqual(testContent, fileContent);
+        }
 
         [TestMethod]
         [TestCategory("S3")]

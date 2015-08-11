@@ -53,23 +53,23 @@ namespace Amazon.S3.Transfer.Internal
                     getRequest.ByteRange = bytesRemaining;
                 }
 
-                using (var response = await this._s3Client.GetObjectAsync(getRequest, cancellationToken)
-                    .ConfigureAwait(continueOnCapturedContext: false))
+                try
                 {
-                    if (!string.IsNullOrEmpty(mostRecentETag) && !string.Equals(mostRecentETag, response.ETag))
+                    using (var response = await this._s3Client.GetObjectAsync(getRequest, cancellationToken)
+                        .ConfigureAwait(continueOnCapturedContext: false))
                     {
-                        //if the eTag changed, we need to retry from the start of the file
+                        if (!string.IsNullOrEmpty(mostRecentETag) && !string.Equals(mostRecentETag, response.ETag))
+                        {
+                            //if the eTag changed, we need to retry from the start of the file
+                            mostRecentETag = response.ETag;
+                            getRequest.ByteRange = null;
+                            retries = 0;
+                            shouldRetry = true;
+                            WaitBeforeRetry(retries);
+                            continue;
+                        }
                         mostRecentETag = response.ETag;
-                        getRequest.ByteRange = null;
-                        retries = 0;
-                        shouldRetry = true;
-                        WaitBeforeRetry(retries);
-                        continue;
-                    }
-                    mostRecentETag = response.ETag;
 
-                    try
-                    {
                         if (retries == 0)
                         {
                             /* 
@@ -108,29 +108,29 @@ namespace Amazon.S3.Transfer.Internal
                                 .ConfigureAwait(continueOnCapturedContext: false);
                         }
                     }
-                    catch (Exception exception)
+                }
+                catch (Exception exception)
+                {
+                    retries++;
+                    shouldRetry = HandleExceptionForHttpClient(exception, retries, maxRetries);
+                    if (!shouldRetry)
                     {
-                        retries++;
-                        shouldRetry = HandleExceptionForHttpClient(exception, retries, maxRetries);
-                        if (!shouldRetry)
+                        if (exception is IOException)
                         {
-                            if (exception is IOException)                                
-                            {
-                                throw;
-                            }
-                            else if(exception.InnerException is IOException)
-                            {
-                                ExceptionDispatchInfo.Capture(exception.InnerException).Throw();
-                            }
-                            else if (exception is AmazonServiceException ||
-                                exception is AmazonClientException)
-                            {
-                                throw;
-                            }
-                            else
-                            {
-                                throw new AmazonServiceException(exception);
-                            }
+                            throw;
+                        }
+                        else if (exception.InnerException is IOException)
+                        {
+                            ExceptionDispatchInfo.Capture(exception.InnerException).Throw();
+                        }
+                        else if (exception is AmazonServiceException ||
+                            exception is AmazonClientException)
+                        {
+                            throw;
+                        }
+                        else
+                        {
+                            throw new AmazonServiceException(exception);
                         }
                     }
                 }

@@ -48,22 +48,23 @@ namespace Amazon.S3.Transfer.Internal
                     getRequest.ByteRange = bytesRemaining;
                 }
 
-                using (var response = this._s3Client.GetObject(getRequest))
+                try
                 {
-                    if (!string.IsNullOrEmpty(mostRecentETag) && !string.Equals(mostRecentETag, response.ETag))
+                    using (var response = this._s3Client.GetObject(getRequest))
                     {
-                        //if the eTag changed, we need to retry from the start of the file
+                        if (!string.IsNullOrEmpty(mostRecentETag) && !string.Equals(mostRecentETag, response.ETag))
+                        {
+                            //if the eTag changed, we need to retry from the start of the file
+                            mostRecentETag = response.ETag;
+                            getRequest.ByteRange = null;
+                            retries = 0;
+                            shouldRetry = true;
+                            WaitBeforeRetry(retries);
+                            continue;
+                        }
                         mostRecentETag = response.ETag;
-                        getRequest.ByteRange = null;
-                        retries = 0;
-                        shouldRetry = true;
-                        WaitBeforeRetry(retries);
-                        continue;
-                    }
-                    mostRecentETag = response.ETag;
 
-                    try
-                    {
+
                         if (retries == 0)
                         {
                             /* 
@@ -93,31 +94,30 @@ namespace Amazon.S3.Transfer.Internal
                             response.WriteResponseStreamToFile(this._request.FilePath, true);
                         }
                     }
-                    catch (Exception exception)
+                }
+                catch (Exception exception)
+                {
+                    retries++;
+                    shouldRetry = HandleException(exception, retries, maxRetries);
+                    if (!shouldRetry)
                     {
-                        retries++;
-                        shouldRetry = HandleException(exception, retries, maxRetries);
-                        if (!shouldRetry)
+                        if (exception is IOException)
                         {
-                            if (exception is IOException)
-                            {
-                                throw;
-                            }
-                            else if (exception is AmazonServiceException ||
-                                exception is AmazonClientException)
-                            {
-                                throw;
-                            }
-                            else
-                            {
-                                throw new AmazonServiceException(exception);
-                            }
+                            throw;
+                        }
+                        else if (exception is AmazonServiceException ||
+                            exception is AmazonClientException)
+                        {
+                            throw;
+                        }
+                        else
+                        {
+                            throw new AmazonServiceException(exception);
                         }
                     }
                 }
                 WaitBeforeRetry(retries);
             } while (shouldRetry);
-
         }
     }
 }
