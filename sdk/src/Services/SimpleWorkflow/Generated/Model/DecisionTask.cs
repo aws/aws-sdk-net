@@ -88,7 +88,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property PreviousStartedEventId. 
         /// <para>
-        /// The id of the DecisionTaskStarted event of the previous decision task of this workflow
+        /// The ID of the DecisionTaskStarted event of the previous decision task of this workflow
         /// execution that was processed by the decider. This can be used to determine the events
         /// in the history new since the last decision task received by the decider.
         /// </para>
@@ -108,7 +108,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartedEventId. 
         /// <para>
-        /// The id of the <code>DecisionTaskStarted</code> event recorded in the history.
+        /// The ID of the <code>DecisionTaskStarted</code> event recorded in the history.
         /// </para>
         /// </summary>
         public long StartedEventId

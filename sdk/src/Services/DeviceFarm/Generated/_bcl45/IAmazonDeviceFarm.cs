@@ -30,8 +30,8 @@ namespace Amazon.DeviceFarm
     /// <summary>
     /// Interface for accessing DeviceFarm
     ///
-    /// AWS Device Farm is a service that enables mobile app developers to test apps on physical
-    /// phones, tablets, and other devices in the cloud.
+    /// AWS Device Farm is a service that enables mobile app developers to test Android, iOS,
+    /// and Fire OS apps on physical phones, tablets, and other devices in the cloud.
     /// </summary>
     public partial interface IAmazonDeviceFarm : IDisposable
     {
@@ -188,6 +188,89 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<CreateUploadResponse> CreateUploadAsync(CreateUploadRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAccountSettings
+
+
+        /// <summary>
+        /// Returns the number of unmetered iOS and/or unmetered Android devices that have been
+        /// purchased by the account.
+        /// </summary>
+        /// 
+        /// <returns>The response from the GetAccountSettings service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        GetAccountSettingsResponse GetAccountSettings();
+
+
+        /// <summary>
+        /// Returns the number of unmetered iOS and/or unmetered Android devices that have been
+        /// purchased by the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountSettings service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request);
+
+
+        /// <summary>
+        /// Returns the number of unmetered iOS and/or unmetered Android devices that have been
+        /// purchased by the account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountSettings service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        Task<GetAccountSettingsResponse> GetAccountSettingsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.1.1.0",
-    "CoreVersion"    : "3.1.0.0",
+    "ProductVersion" : "3.1.4.0",
+    "CoreVersion"    : "3.1.0.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -47,9 +47,9 @@
             "InPreview"    : false
         },
         "CloudSearchDomain" : {
-            "Version" : "3.1.0.0",
+            "Version" : "3.1.0.1",
             "Dependencies" : {
-                "Core" : "3.1.0.0"
+                "Core" : "3.1.0.1"
             },
             "InPreview"    : false
         },
@@ -112,7 +112,7 @@
             "InPreview"    : false
         },
         "DeviceFarm"        : {
-            "Version" : "3.1.0.0",
+            "Version" : "3.1.1.0",
             "Dependencies" : {
                 "Core" : "3.1.0.0"
             },
@@ -182,9 +182,9 @@
             "InPreview"    : false
         },
         "Glacier"              : {
-            "Version" : "3.1.0.0",
+            "Version" : "3.1.0.1",
             "Dependencies" : {
-                "Core" : "3.1.0.0",
+                "Core" : "3.1.0.1",
                 "SQS"  : "3.1.0.0",
                 "SimpleNotificationService" : "3.1.0.0"
             },
@@ -212,9 +212,9 @@
             "InPreview"    : false
         },
         "Lambda"               : {
-            "Version" : "3.1.0.0",
+            "Version" : "3.1.0.1",
             "Dependencies" : {
-                "Core" : "3.1.0.0"
+                "Core" : "3.1.0.1"
             },
             "InPreview"    : false
         },
@@ -240,14 +240,14 @@
             "InPreview"    : true
         },
         "OpsWorks"             : {
-            "Version" : "3.1.0.0",
+            "Version" : "3.1.1.0",
             "Dependencies" : {
                 "Core" : "3.1.0.0"
             },
             "InPreview"    : false
         },
         "RDS"                  : {
-            "Version" : "3.1.0.0",
+            "Version" : "3.1.1.0",
             "Dependencies" : {
                 "Core" : "3.1.0.0"
             },
@@ -275,9 +275,9 @@
             "InPreview"    : false
         },
         "S3"                   : {
-            "Version" : "3.1.1.0",
+            "Version" : "3.1.1.1",
             "Dependencies" : {
-                "Core" : "3.1.0.0"
+                "Core" : "3.1.0.1"
             },
             "InPreview"    : false
         },
@@ -310,7 +310,7 @@
             "InPreview"    : false
         },
         "SimpleWorkflow"            : {
-            "Version" : "3.1.0.0",
+            "Version" : "3.1.1.0",
             "Dependencies" : {
                 "Core" : "3.1.0.0"
             },

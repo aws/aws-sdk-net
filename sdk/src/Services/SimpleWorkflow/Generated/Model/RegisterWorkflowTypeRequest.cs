@@ -67,6 +67,7 @@ namespace Amazon.SimpleWorkflow.Model
     {
         private ChildPolicy _defaultChildPolicy;
         private string _defaultExecutionStartToCloseTimeout;
+        private string _defaultLambdaRole;
         private TaskList _defaultTaskList;
         private string _defaultTaskPriority;
         private string _defaultTaskStartToCloseTimeout;
@@ -82,7 +83,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// a workflow execution of this type is terminated, by calling the <a>TerminateWorkflowExecution</a>
         /// action explicitly or due to an expired timeout. This default can be overridden when
         /// starting a workflow execution using the <a>StartWorkflowExecution</a> action or the
-        /// <code>StartChildWorkflowExecution</code> <a>Decision</a>.
+        /// <code>StartChildWorkflowExecution</code> decision.
         /// </para>
         ///  
         /// <para>
@@ -111,7 +112,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <para>
         /// If set, specifies the default maximum duration for executions of this workflow type.
         /// You can override this default when starting an execution through the <a>StartWorkflowExecution</a>
-        /// Action or <code>StartChildWorkflowExecution</code> <a>Decision</a>.
+        /// action or <code>StartChildWorkflowExecution</code> decision.
         /// </para>
         ///  
         /// <para>
@@ -135,12 +136,37 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DefaultLambdaRole. 
+        /// <para>
+        /// The ARN of the default IAM role to use when a workflow execution of this type invokes
+        /// AWS Lambda functions.
+        /// </para>
+        ///  
+        /// <para>
+        /// This default can be overridden when starting a workflow execution using the <a>StartWorkflowExecution</a>
+        /// action or the <code>StartChildWorkflowExecution</code> and <code>ContinueAsNewWorkflowExecution</code>
+        /// decision.
+        /// </para>
+        /// </summary>
+        public string DefaultLambdaRole
+        {
+            get { return this._defaultLambdaRole; }
+            set { this._defaultLambdaRole = value; }
+        }
+
+        // Check to see if DefaultLambdaRole property is set
+        internal bool IsSetDefaultLambdaRole()
+        {
+            return this._defaultLambdaRole != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DefaultTaskList. 
         /// <para>
         /// If set, specifies the default task list to use for scheduling decision tasks for executions
         /// of this workflow type. This default is used only if a task list is not provided when
-        /// starting the execution through the <a>StartWorkflowExecution</a> Action or <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>.
+        /// starting the execution through the <a>StartWorkflowExecution</a> action or <code>StartChildWorkflowExecution</code>
+        /// decision.
         /// </para>
         /// </summary>
         public TaskList DefaultTaskList
@@ -187,7 +213,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// If set, specifies the default maximum duration of decision tasks for this workflow
         /// type. This default can be overridden when starting a workflow execution using the
         /// <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>.
+        /// decision.
         /// </para>
         ///  
         /// <para>

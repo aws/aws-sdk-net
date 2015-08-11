@@ -150,6 +150,17 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetScheduleLambdaFunctionDecisionAttributes())
+            {
+                context.Writer.WritePropertyName("scheduleLambdaFunctionDecisionAttributes");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ScheduleLambdaFunctionDecisionAttributesMarshaller.Instance;
+                marshaller.Marshall(requestObject.ScheduleLambdaFunctionDecisionAttributes, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSignalExternalWorkflowExecutionDecisionAttributes())
             {
                 context.Writer.WritePropertyName("signalExternalWorkflowExecutionDecisionAttributes");

@@ -103,8 +103,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property MaximumPageSize. 
         /// <para>
         /// The maximum number of results that will be returned per call. <code>nextPageToken</code>
-        /// can be used to obtain futher pages of results. The default is 100, which is the maximum
-        /// allowed page size. You can, however, specify a page size <i>smaller</i> than 100.
+        /// can be used to obtain futher pages of results. The default is 1000, which is the maximum
+        /// allowed page size. You can, however, specify a page size <i>smaller</i> than the maximum.
         /// </para>
         ///  
         /// <para>

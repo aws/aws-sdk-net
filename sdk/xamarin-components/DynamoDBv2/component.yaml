@@ -1,5 +1,3 @@
-%YAML 1.2
----
 summary: AWS DynamoDB SDK for Xamarin
 getting-started: GettingStarted.md
 details: Details.md
@@ -12,7 +10,7 @@ name: AWSSDK - Amazon DynamoDB
 id: aws-dynamodb-sdk
 samples: 
   - name: "DynamoDB-Sample"
-    path: ..\..\..\..\Aws-sdk-net-samples\XamarinSamples\DynamoDB\AWSSDK.DynamoDB.Sample.sln
+    path: ..\..\..\..\aws-sdk-net-samples\XamarinSamples\DynamoDB\AWSSDK.DynamoDB.Sample.sln
 publisher-url: http://aws.amazon.com/mobile/sdk/
 packages:
   android:
@@ -29,4 +27,3 @@ packages:
   - AWSSDK.DynamoDBv2,Version=3.1.0.0
 version: 3.1.0.0
 is-shell: true
-...

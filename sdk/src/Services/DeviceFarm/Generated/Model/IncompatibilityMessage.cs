@@ -68,15 +68,15 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// OS: The operating system type.
+        /// FORM_FACTOR: The form factor (for example, phone or tablet).
         /// </para>
         /// </li> <li>
         /// <para>
-        /// RANK: The rank, as determined by AWS Device Farm.
+        /// MANUFACTURER: The manufacturer.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// STATUS: The status.
+        /// PLATFORM: The platform (for example, Android or iOS).
         /// </para>
         /// </li> </ul>
         /// </summary>

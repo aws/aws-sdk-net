@@ -36,6 +36,7 @@ namespace Amazon.SimpleWorkflow.Model
         private int? _openActivityTasks;
         private int? _openChildWorkflowExecutions;
         private int? _openDecisionTasks;
+        private int? _openLambdaFunctions;
         private int? _openTimers;
 
         /// <summary>
@@ -91,6 +92,24 @@ namespace Amazon.SimpleWorkflow.Model
         internal bool IsSetOpenDecisionTasks()
         {
             return this._openDecisionTasks.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenLambdaFunctions. 
+        /// <para>
+        /// The count of AWS Lambda functions that are currently executing.
+        /// </para>
+        /// </summary>
+        public int OpenLambdaFunctions
+        {
+            get { return this._openLambdaFunctions.GetValueOrDefault(); }
+            set { this._openLambdaFunctions = value; }
+        }
+
+        // Check to see if OpenLambdaFunctions property is set
+        internal bool IsSetOpenLambdaFunctions()
+        {
+            return this._openLambdaFunctions.HasValue; 
         }
 
         /// <summary>

@@ -40,7 +40,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The device pools' ARNs.
+        /// The project ARN.
         /// </para>
         /// </summary>
         public string Arn

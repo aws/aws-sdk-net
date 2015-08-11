@@ -94,6 +94,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.Input = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lambdaRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LambdaRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tagList", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

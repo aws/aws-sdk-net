@@ -82,8 +82,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include=".\Tests\*.cs" />
-    <Compile Include=".\Tests\*\*.cs" />
+    <Compile Include=".\Tests\*.cs" Exclude=".\Tests\35\*.cs" />
+    <Compile Include=".\Tests\*\*.cs" Exclude=".\Tests\35\*.cs" />
     <Compile Include=".\Utils\*.cs" />
   </ItemGroup>
   <ItemGroup>
