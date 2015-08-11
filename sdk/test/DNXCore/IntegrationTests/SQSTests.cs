@@ -26,5 +26,46 @@ namespace Amazon.DNXCore.IntegrationTests
                 Assert.NotNull(response.QueueUrls);
             }
         }
+
+        [Fact]
+        public async Task SendAndReceiveMessage()
+        {
+            using (var client = new AmazonSQSClient(RegionEndpoint.USEast1))
+            {
+                var createQueueRequest = new CreateQueueRequest()
+                {
+                    QueueName = "aws-sdk-net-" + DateTime.Now.Ticks
+                };
+                var createQueueResponse = await client.CreateQueueAsync(createQueueRequest);
+                try
+                {
+                    var sendMessageRequest = new SendMessageRequest
+                    {
+                        QueueUrl = createQueueResponse.QueueUrl,
+                        MessageBody = "Hello"
+                    };
+                    await client.SendMessageAsync(sendMessageRequest);
+
+                    var receiveRequest = new ReceiveMessageRequest { QueueUrl = createQueueResponse.QueueUrl };
+                    var receiveResponse = await client.ReceiveMessageAsync(receiveRequest);
+
+                    Assert.True(receiveResponse.Messages.Count == 1);
+                    Assert.Equal(sendMessageRequest.MessageBody, receiveResponse.Messages[0].Body);
+
+                    await client.DeleteMessageAsync(new DeleteMessageRequest
+                    {
+                        QueueUrl = createQueueResponse.QueueUrl,
+                        ReceiptHandle = receiveResponse.Messages[0].ReceiptHandle
+                    });
+                }
+                finally
+                {
+                    await client.DeleteQueueAsync(new DeleteQueueRequest
+                    {
+                        QueueUrl = createQueueResponse.QueueUrl
+                    });
+                }       
+            }
+        }
     }
 }
