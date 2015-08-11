@@ -233,7 +233,7 @@
             "InPreview"    : false
         },
         "MobileAnalytics"      : {
-            "Version" : "3.1.0.0",
+            "Version" : "3.1.0.1",
             "Dependencies" : {
                 "Core" : "3.1.0.0"
             },

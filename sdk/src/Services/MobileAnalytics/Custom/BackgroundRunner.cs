@@ -71,7 +71,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 {
                     _logger.InfoFormat("Mobile Analytics Manager is trying to deliver events in background thread.");
 
-                    IDictionary<string, MobileAnalyticsManager> instanceDictionary = MobileAnalyticsManager.InstanceDictionary;
+                    IDictionary<string, MobileAnalyticsManager> instanceDictionary = MobileAnalyticsManager.CopyOfInstanceDictionary;
                     foreach (string appId in instanceDictionary.Keys)
                     {
                         try
@@ -118,7 +118,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 {
                     _logger.InfoFormat("Mobile Analytics Manager is trying to deliver events in background thread.");
 
-                    IDictionary<string, MobileAnalyticsManager> instanceDictionary = MobileAnalyticsManager.InstanceDictionary;
+                    IDictionary<string, MobileAnalyticsManager> instanceDictionary = MobileAnalyticsManager.CopyOfInstanceDictionary;
                     foreach (string appId in instanceDictionary.Keys)
                     {
                         try

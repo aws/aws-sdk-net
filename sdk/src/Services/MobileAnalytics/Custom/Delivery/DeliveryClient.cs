@@ -62,7 +62,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <param name="maConfig">Mobile Analytics Manager configuration. <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManagerConfig"/></param>
         /// <param name="clientContext">An instance of ClientContext. <see cref="Amazon.Runtime.Internal.ClientContext"/></param>
         /// <param name="credentials">An instance of Credentials. <see cref="Amazon.Runtime.AWSCredentials"/></param>
-        /// <param name="regionEndPoint">Region end point. <see cref="Amazon.RegionEndpoint"/></param>
+        /// <param name="regionEndPoint">Region endpoint. <see cref="Amazon.RegionEndpoint"/></param>
         public DeliveryClient(MobileAnalyticsManagerConfig maConfig, ClientContext clientContext, AWSCredentials credentials, RegionEndpoint regionEndPoint) :
             this(new DeliveryPolicyFactory(maConfig.AllowUseDataNetwork), maConfig, clientContext, credentials, regionEndPoint)
         {
@@ -75,7 +75,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <param name="maConfig">Mobile Analytics Manager configuration. <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManagerConfig"/></param>
         /// <param name="clientContext">An instance of ClientContext. <see cref="Amazon.Runtime.Internal.ClientContext"/></param>
         /// <param name="credentials">An instance of Credentials. <see cref="Amazon.Runtime.AWSCredentials"/></param>
-        /// <param name="regionEndPoint">Region end point. <see cref="Amazon.RegionEndpoint"/></param>
+        /// <param name="regionEndPoint">Region endpoint. <see cref="Amazon.RegionEndpoint"/></param>
         public DeliveryClient(IDeliveryPolicyFactory policyFactory, MobileAnalyticsManagerConfig maConfig, ClientContext clientContext, AWSCredentials credentials, RegionEndpoint regionEndPoint)
         {
             _policyFactory = policyFactory;
@@ -131,7 +131,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 }
                 catch (Exception e)
                 {
-                    _logger.Error(e, "Event {0} is unable to be stored.", eventObject.EventType);
+                    _logger.Error(e, "Event {0} was not stored.", eventObject.EventType);
                 }
 
                 _logger.DebugFormat("Event {0} is queued for delivery", eventObject.EventType);
@@ -144,7 +144,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
         /// <summary>
         /// Attempts the delivery. 
-        /// Delivery will fail if any of the policies isAllowed() returns false.
+        /// Delivery will fail if any of the policies IsAllowed() returns false.
         /// The delivery are attmpted in batches of fixed size. To increase or decrease the size,
         /// you can override MaxRequestSize in MobileAnalyticsManagerConfig.<see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManagerConfig"/>
         /// </summary>
@@ -154,10 +154,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         public async Task AttemptDeliveryAsync()
 #endif
         {
-            if (_mobileAnalyticsLowLevelClient == null)
-            {
-                throw new InvalidOperationException("You must set Client before attempting delivery");
-            }
 
             //validate all the policies before attempting the delivery
             foreach (IDeliveryPolicy policy in _deliveryPolicies)
@@ -195,7 +191,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 #if BCL35                    
                     SubmitEvents(submitEventsIdList, submitEventsList);
 #elif PCL || BCL45
-                    await SubmitEvents(submitEventsIdList, submitEventsList);
+                    await SubmitEvents(submitEventsIdList, submitEventsList).ConfigureAwait(false);
 #endif
                     submitEventsIdList = new List<string>();
                     submitEventsList = new List<Amazon.MobileAnalytics.Model.Event>();
@@ -207,7 +203,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 #if BCL35
                 SubmitEvents(submitEventsIdList, submitEventsList);
 #elif PCL || BCL45
-                await SubmitEvents(submitEventsIdList, submitEventsList);
+                await SubmitEvents(submitEventsIdList, submitEventsList).ConfigureAwait(false);
 #endif
         }
 
@@ -223,10 +219,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         private async Task SubmitEvents(List<string> rowIds, List<Amazon.MobileAnalytics.Model.Event> eventList)
 #endif
         {
-            if (eventList == null || eventList.Count == 0)
-            {
-                return;
-            }
 
             PutEventsRequest putRequest = new PutEventsRequest();
             putRequest.Events = eventList;
@@ -242,53 +234,42 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 #if BCL35                
                 resp = _mobileAnalyticsLowLevelClient.PutEvents(putRequest);
 #elif PCL || BCL45
-                resp = await _mobileAnalyticsLowLevelClient.PutEventsAsync(putRequest);
+                resp = await _mobileAnalyticsLowLevelClient.PutEventsAsync(putRequest).ConfigureAwait(false);
 #endif
             }
             catch (AmazonMobileAnalyticsException e)
             {
-                _logger.Error(e, "Get AmazonMobileAnalyticsException: error code : {0} ; error type : {1} ; request id : {2} ; status code : {3} ; error message is {4}", e.ErrorCode, e.ErrorType, e.RequestId, e.StatusCode, e.Message);
+                _logger.Error(e, "An AmazonMobileAnalyticsException occurred while sending Amazon Mobile Analytics request: error code is {0} ; error type is {1} ; request id is {2} ; status code is {3} ; error message is {4}", e.ErrorCode, e.ErrorType, e.RequestId, e.StatusCode, e.Message);
                 // Delete events in any of the three error codes.
                 if (e.StatusCode == HttpStatusCode.BadRequest &&
                      (e.ErrorCode.Equals("ValidationException", StringComparison.CurrentCultureIgnoreCase) ||
                       e.ErrorCode.Equals("SerializationException", StringComparison.CurrentCultureIgnoreCase) ||
                       e.ErrorCode.Equals("BadRequestException", StringComparison.CurrentCultureIgnoreCase)))
                 {
-                    _logger.InfoFormat("This error code is not retriable. So we delete those events from local storage.");
+                    _logger.InfoFormat("The error code is not retriable. Delete {0} events from local storage.", rowIds.Count);
                     _eventStore.DeleteEvent(rowIds);
                 }
             }
             catch (AmazonServiceException e)
             {
-                _logger.Error(e, "Get AmazonServiceException: error code : {0} ; error type : {1} ; request id : {2} ; status code : {3} ; error message is {4} ", e.ErrorCode, e.ErrorType, e.RequestId, e.StatusCode, e.Message);
+                _logger.Error(e, "An AmazonServiceException occurred while sending Amazon Mobile Analytics request:  error code is {0} ; error type is {1} ; request id is {2} ; status code is {3} ; error message is {4} ", e.ErrorCode, e.ErrorType, e.RequestId, e.StatusCode, e.Message);
             }
             catch (AmazonClientException e)
             {
-                _logger.Error(e, "Get AmazonClientException from Mobile Analytics client : ", e.ToString());
+                _logger.Error(e, "An AmazonClientException occurred while sending Amazon Mobile Analytics request: ", e.ToString());
             }
             catch (Exception e)
             {
-                _logger.Error(e, "Get Exception from Mobile Analytics client : ", e.ToString());
+                _logger.Error(e, "An Exception occurred while sending Amazon Mobile Analytics request: ", e.ToString());
             }
             finally
             {
                 if (resp != null && resp.HttpStatusCode == HttpStatusCode.Accepted)
                 {
-                    _logger.InfoFormat("Mobile Analytics client successfully deliver {0} events to service. Delete those events from local storage.", rowIds.Count);
+                    _logger.InfoFormat("Mobile Analytics client successfully delivered {0} events to service. Delete those events from local storage.", rowIds.Count);
                     _eventStore.DeleteEvent(rowIds);
                 }
             }
-        }
-
-
-        /// <summary>
-        /// Set custom policies to the delivery client. This will allow you to fine grain control on when an attempt should be made to deliver the events to the service.
-        /// </summary>
-        /// <param name="policy">An instance of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IDeliveryPolicy"/></param>
-        public void AddDeliveryPolicies(IDeliveryPolicy policy)
-        {
-            if (policy != null)
-                _deliveryPolicies.Add(policy);
         }
     }
 }

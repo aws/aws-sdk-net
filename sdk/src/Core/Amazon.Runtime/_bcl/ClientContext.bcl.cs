@@ -38,24 +38,27 @@ namespace Amazon.Runtime.Internal
             if (string.IsNullOrEmpty(_clientID))
             {
                 string fullPath = InternalSDKUtils.DetermineAppLocalStoragePath(CLIENT_ID_CACHE_FILENAME);
-
                 var directoryPath = InternalSDKUtils.DetermineAppLocalStoragePath();
-                if (!Directory.Exists(directoryPath))
-                {
-                    Directory.CreateDirectory(directoryPath);
-                }
 
-                if (!System.IO.File.Exists(fullPath) || new System.IO.FileInfo(fullPath).Length == 0)
+                lock (_lock)
                 {
-                    _clientID = Guid.NewGuid().ToString();
-                    System.IO.File.WriteAllText(fullPath, _clientID);
-                }
-                else
-                {
-                    using (System.IO.StreamReader file = new System.IO.StreamReader(fullPath))
+                    if (!Directory.Exists(directoryPath))
                     {
-                        _clientID = file.ReadToEnd();
-                        file.Close();
+                        Directory.CreateDirectory(directoryPath);
+                    }
+
+                    if (!System.IO.File.Exists(fullPath) || new System.IO.FileInfo(fullPath).Length == 0)
+                    {
+                        _clientID = Guid.NewGuid().ToString();
+                        System.IO.File.WriteAllText(fullPath, _clientID);
+                    }
+                    else
+                    {
+                        using (System.IO.StreamReader file = new System.IO.StreamReader(fullPath))
+                        {
+                            _clientID = file.ReadToEnd();
+                            file.Close();
+                        }
                     }
                 }
             }

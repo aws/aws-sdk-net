@@ -37,12 +37,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// </summary>
         /// <param name="eventObject">Event object. <see cref="Amazon.MobileAnalytics.Model.Event"/></param>
         void EnqueueEventsForDelivery(Amazon.MobileAnalytics.Model.Event eventObject);
-
-        /// <summary>
-        /// Sets custom policies to the delivery client. This will allow you to fine grain control on when an attempt should be made to deliver the events on the service.
-        /// </summary>
-        /// <param name="policy">An instance of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IDeliveryPolicy"/></param>
-        void AddDeliveryPolicies(IDeliveryPolicy policy);
     }
 }
 

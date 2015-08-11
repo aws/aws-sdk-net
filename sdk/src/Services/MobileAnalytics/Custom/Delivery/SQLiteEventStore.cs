@@ -25,17 +25,14 @@ using Amazon.MobileAnalytics.MobileAnalyticsManager;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal;
+using System.Globalization;
 
 #if BCL
 using System.Data.SQLite;
-using System.Globalization;
 #elif PCL
-using PCLStorage;
 using SQLitePCL;
-using System.Globalization;
+using PCLStorage;
 #endif
-
-
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 {
@@ -71,9 +68,11 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             _maConfig = maConfig;
 #if BCL
             _dbFileFullPath = InternalSDKUtils.DetermineAppLocalStoragePath(dbFileName);
+            //_dbFileFullPath = dbFileName; 
 #elif PCL
             _dbFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, dbFileName);
 #endif
+            _logger.InfoFormat("Initialize SQLite event store. The SQLite DB file path is {0}.", _dbFileFullPath);
             SetupSQLiteEventStore();
         }
 
@@ -84,12 +83,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         private void SetupSQLiteEventStore()
         {
             string vacuumCommand = "PRAGMA auto_vacuum = 1";
-            string sqlCommand = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " ("
-                + EVENT_COLUMN_NAME + " TEXT NOT NULL," + EVENT_ID_COLUMN_NAME + " TEXT NOT NULL UNIQUE,"
-                + MA_APP_ID_COLUMN_NAME + " TEXT NOT NULL,"
-                + EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME + " INTEGER NOT NULL DEFAULT 0)";
+            string sqlCommand = string.Format(CultureInfo.InvariantCulture, "CREATE TABLE IF NOT EXISTS {0} ({1} TEXT NOT NULL,{2} TEXT NOT NULL UNIQUE,{3} TEXT NOT NULL, {4}  INTEGER NOT NULL DEFAULT 0 )",
+                TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME);
 #if BCL
-
             lock (_lock)
             {
                 using (var connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;"))
@@ -97,7 +93,15 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                     try
                     {
                         if (!File.Exists(_dbFileFullPath))
+                        {
+                            string directory = Path.GetDirectoryName(_dbFileFullPath);
+                            if (!Directory.Exists(directory))
+                            {
+                                Directory.CreateDirectory(directory);
+                            }
                             SQLiteConnection.CreateFile(_dbFileFullPath);
+                        }
+
                         connection.Open();
                         using (var command = new SQLiteCommand(vacuumCommand, connection))
                         {
@@ -159,7 +163,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             else
             {
 #if BCL
-                string sqlCommand = "INSERT INTO " + TABLE_NAME + " (" + EVENT_COLUMN_NAME + "," + EVENT_ID_COLUMN_NAME + "," + MA_APP_ID_COLUMN_NAME + ") values(@event,@id,@appID)";
+                string sqlCommand = string.Format(CultureInfo.InvariantCulture, "INSERT INTO {0}  ({1},{2},{3}) values(@event,@id,@appID)", TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME);
                 lock (_lock)
                 {
                     using (var connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;"))
@@ -183,7 +187,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                     }
                 }
 #elif PCL
-                string sqlCommand = "INSERT INTO " + TABLE_NAME + " (" + EVENT_COLUMN_NAME + "," + EVENT_ID_COLUMN_NAME + "," + MA_APP_ID_COLUMN_NAME + ") values(?,?,?)";
+                string sqlCommand = string.Format(CultureInfo.InvariantCulture, "INSERT INTO {0}  ({1},{2},{3}) values(?,?,?)", TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME);              
                 lock (_lock)
                 {
                     using (var connection = new SQLiteConnection(_dbFileFullPath))
@@ -208,9 +212,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         [System.Security.SecuritySafeCritical]
         public void DeleteEvent(List<string> rowIds)
         {
-            string ids = "'" + String.Join("', '", rowIds.ToArray()) + "'";
-            string sqlCommand = String.Format(CultureInfo.InvariantCulture, "DELETE FROM " + TABLE_NAME + " WHERE " + EVENT_ID_COLUMN_NAME + " IN ({0})", ids);
-
+            string ids = "'" + string.Join("', '", rowIds.ToArray()) + "'";
+            string sqlCommand = string.Format(CultureInfo.InvariantCulture, "DELETE FROM " + TABLE_NAME + " WHERE " + EVENT_ID_COLUMN_NAME + " IN ({0})", ids);
 #if BCL
             SQLiteConnection connection = null;
             lock (_lock)
@@ -257,7 +260,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         {
             List<JsonData> eventList = new List<JsonData>();
 #if BCL
-            string sqlCommand = "SELECT * FROM " + TABLE_NAME + " WHERE " + MA_APP_ID_COLUMN_NAME + " = @appID  ORDER BY " + EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME + ",ROWID LIMIT " + maxAllowed;
+            string sqlCommand = string.Format(CultureInfo.InvariantCulture, "SELECT * FROM {0} WHERE {1}  = @appID ORDER BY {2},   ROWID LIMIT {3} ", TABLE_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME, maxAllowed);
             lock (_lock)
             {
                 using (var connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;"))
@@ -290,7 +293,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
             }
 #elif PCL
-            string sqlCommand = "SELECT * FROM " + TABLE_NAME + " WHERE " + MA_APP_ID_COLUMN_NAME + " = ?  ORDER BY " + EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME + ",ROWID LIMIT " + maxAllowed;
+            string sqlCommand = string.Format(CultureInfo.InvariantCulture, "SELECT * FROM {0} WHERE {1}  = ? ORDER BY {2},   ROWID LIMIT {3} ", TABLE_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME, maxAllowed);  
             lock (_lock)
             {
                 using (var connection = new SQLiteConnection(_dbFileFullPath))
@@ -322,9 +325,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         public long NumberOfEvents(string appID)
         {
             long count = 0;
-
 #if BCL
-            string sqlCommand = "SELECT COUNT(*) C FROM " + TABLE_NAME + " where " + MA_APP_ID_COLUMN_NAME + " = @appID";
+            string sqlCommand = string.Format(CultureInfo.InvariantCulture, "SELECT COUNT(*) C FROM {0} where {1} = @appID", TABLE_NAME, MA_APP_ID_COLUMN_NAME);
             using (var connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;"))
             {
                 try
@@ -349,9 +351,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 }
             }
 
-
 #elif PCL
-            string sqlCommand = "SELECT COUNT(*) C FROM " + TABLE_NAME + " where " + MA_APP_ID_COLUMN_NAME + " = ?";
+            string sqlCommand = string.Format(CultureInfo.InvariantCulture, "SELECT COUNT(*) C FROM {0} where {1} = ?", TABLE_NAME, MA_APP_ID_COLUMN_NAME);
             using (var connection = new SQLiteConnection(_dbFileFullPath))
             {
                 using (var statement = connection.Prepare(sqlCommand))

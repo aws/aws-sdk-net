@@ -64,7 +64,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
         private MobileAnalyticsManagerConfig _maConfig;
         private volatile SessionStorage _sessionStorage = null;
-        private string _appId = null;
+        private string _appID = null;
         private string _sessionStorageFileName = "_session_storage.json";
         private string _sessionStorageFileFullPath = null;
 
@@ -78,12 +78,13 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         public Session(string appID, MobileAnalyticsManagerConfig maConfig)
         {
             _maConfig = maConfig;
-            _appId = appID;
+            _appID = appID;
 #if BCL
-            _sessionStorageFileName = InternalSDKUtils.DetermineAppLocalStoragePath(appID + _sessionStorageFileName);
+            _sessionStorageFileFullPath = InternalSDKUtils.DetermineAppLocalStoragePath(appID + _sessionStorageFileName);
 #elif PCL
             _sessionStorageFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, appID + _sessionStorageFileName);
 #endif
+            _logger.InfoFormat("Initialize a new session. The session storage file is {0}.", _sessionStorageFileFullPath);
             _sessionStorage = new SessionStorage();
         }
 
@@ -91,7 +92,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <summary>
         /// Start this session.
         /// </summary>
-        internal void Start()
+        public void Start()
         {
             // Read session info from persistent storage, in case app is killed.
             RetrieveSessionStorage();
@@ -152,7 +153,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             else
             {
                 InvalidOperationException e = new InvalidOperationException();
-                _logger.Error(e, "session stop time is earlier than start time !");
+                _logger.Error(e, "Session stop time is earlier than start time !");
             }
         }
         #endregion
@@ -174,7 +175,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 sessionStartEvent.StartTimestamp = StartTime;
                 sessionStartEvent.SessionId = SessionId;
             }
-            MobileAnalyticsManager.GetInstance(_appId).RecordEvent(sessionStartEvent);
+            MobileAnalyticsManager.GetInstance(_appID).RecordEvent(sessionStartEvent);
         }
 
         private void StopSessionHelper()
@@ -198,7 +199,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 stopSessionEvent.SessionId = SessionId;
                 stopSessionEvent.Duration = Duration;
             }
-            MobileAnalyticsManager.GetInstance(_appId).RecordEvent(stopSessionEvent);
+            MobileAnalyticsManager.GetInstance(_appID).RecordEvent(stopSessionEvent);
         }
 
         private void PauseSessionHelper()
@@ -223,7 +224,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 pauseSessionEvent.SessionId = SessionId;
                 pauseSessionEvent.Duration = Duration;
             }
-            MobileAnalyticsManager.GetInstance(_appId).RecordEvent(pauseSessionEvent);
+            MobileAnalyticsManager.GetInstance(_appID).RecordEvent(pauseSessionEvent);
         }
 
         private void ResumeSessionHelper()
@@ -246,7 +247,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 resumeSessionEvent.SessionId = SessionId;
                 resumeSessionEvent.Duration = Duration;
             }
-            MobileAnalyticsManager.GetInstance(_appId).RecordEvent(resumeSessionEvent);
+            MobileAnalyticsManager.GetInstance(_appID).RecordEvent(resumeSessionEvent);
         }
 
 
@@ -272,6 +273,11 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 #elif BCL
             lock (_lock)
             {
+                string directory = Path.GetDirectoryName(_sessionStorageFileFullPath);
+                if (!Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
                 File.WriteAllText(_sessionStorageFileFullPath, JsonMapper.ToJson(_sessionStorage));
             }
 #endif

@@ -28,7 +28,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 {
 
     /// <summary>
-    /// MobileAnalyticsManager in the entry point to recording analytic events for your application
+    /// MobileAnalyticsManager is the entry point to recording analytic events for your application
     /// </summary>
     public partial class MobileAnalyticsManager
     {
@@ -45,7 +45,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         }
 
         /// <summary>
-        /// Gets the or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
+        /// Gets or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
         /// creates new instance and returns it.
         /// </summary>
         /// <param name="appID">Amazon Mobile Analytics Application ID.</param>
@@ -68,7 +68,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         }
 
         /// <summary>
-        /// Gets the or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
+        /// Gets or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
         /// creates new instance and returns it.
         /// </summary>
         /// <param name="appID">Amazon Mobile Analytics Application ID.</param>
@@ -98,16 +98,17 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         {
             if (string.IsNullOrEmpty(appID))
                 throw new ArgumentNullException("appID");
+            MobileAnalyticsManager managerInstance = null;
 
             lock (_lock)
             {
-                if (_instanceDictionary.ContainsKey(appID))
+                if (_instanceDictionary.TryGetValue(appID, out managerInstance))
                 {
-                    return _instanceDictionary[appID];
+                    return managerInstance;
                 }
                 else
                 {
-                    throw new InvalidOperationException("We cannot find MobileAnalyticsManager instance for appId " + appID + ". Please call GetOrCreateInstance() first.");
+                    throw new InvalidOperationException("Cannot find MobileAnalyticsManager instance for appID " + appID + ". Please call GetOrCreateInstance() first.");
                 }
             }
         }
@@ -117,14 +118,14 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 #if BCL
             ValidateParameters();
 #endif
-
             MobileAnalyticsManager managerInstance = null;
             bool isNewInstance = false;
+
             lock (_lock)
             {
-                if (_instanceDictionary.ContainsKey(appID))
+                if (_instanceDictionary.TryGetValue(appID, out managerInstance))
                 {
-                    managerInstance = _instanceDictionary[appID];
+                    return managerInstance;
                 }
                 else
                 {
@@ -146,11 +147,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 #if PCL
             this.ClientContext = new ClientContext(appID);
 #elif BCL
-            this.ClientContext = new ClientContext(appID, maConfig.ClientContextConfiguration);
-#endif
             if (null == maConfig)
                 maConfig = new MobileAnalyticsManagerConfig();
-            
+            this.ClientContext = new ClientContext(appID, maConfig.ClientContextConfiguration);
+#endif
             this.BackgroundDeliveryClient = new DeliveryClient(maConfig, ClientContext, credentials, regionEndpoint);
             this.Session = new Session(appID, maConfig);
         }
@@ -309,19 +309,13 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 
 
         #region internal
-        /// <summary>
-        /// Get the object which represents Mobile Analytics Session.
-        /// </summary>
         internal Session Session { get; set; }
 
-        /// <summary>
-        /// Get the object which represents Mobile Analytics Client Context header.
-        /// </summary>
         internal ClientContext ClientContext { get; set; }
 
         internal IDeliveryClient BackgroundDeliveryClient { get; private set; }
 
-        internal static IDictionary<string, MobileAnalyticsManager> InstanceDictionary
+        internal static IDictionary<string, MobileAnalyticsManager> CopyOfInstanceDictionary
         {
             get
             {

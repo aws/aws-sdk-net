@@ -144,12 +144,12 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             this.SessionId = session.SessionId;
             
 
-            // assign session info from manager event to model event
+            // assign session info from custom event to model event
             modelEvent.EventType = this.EventType;
             modelEvent.Session = new Amazon.MobileAnalytics.Model.Session();
             modelEvent.Session.Id = session.SessionId;
             modelEvent.Session.StartTimestamp = session.StartTime;
-            if (this.StopTimestamp != null)
+            if (session.StopTime != null)
                 modelEvent.Session.StopTimestamp = session.StopTime.Value;
 
 
@@ -209,12 +209,12 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 
             if(attributeName.Length > MAX_KEY_SIZE)
             {
-                throw new ArgumentException("length of attributeName " + attributeName+" is more than " + MAX_KEY_SIZE);
+                throw new ArgumentException("Length of attributeName " + attributeName+" is more than " + MAX_KEY_SIZE);
             }
             
             if(attributeValue.Length > MAX_ATTRIB_VALUE_SIZE)
             {
-                throw new ArgumentException("length of attributeValue is more than " + MAX_ATTRIB_VALUE_SIZE);
+                throw new ArgumentException("Length of attributeValue is more than " + MAX_ATTRIB_VALUE_SIZE);
             }
             
             lock(_lock)
@@ -227,7 +227,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// Determines whether this instance has attribute the specified attributeName.
         /// </summary>
         /// <param name="attributeName">Attribute name.</param>
-        /// <returns><c>true</c>, if the event has the attribute, <c>false</c> otherwise.</returns>
+        /// <returns>Return true if the event has the attribute, else false.</returns>
         public bool HasAttribute(string attributeName)
         {
             if(string.IsNullOrEmpty(attributeName))
@@ -313,7 +313,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// Determines whether this instance has metric the specified metricName.
         /// </summary>
         /// <param name="metricName">Metric name.</param>
-        /// <returns><c>true</c>, if the event has the attribute, <c>false</c> otherwise.</returns>
+        /// <returns>Return true if the event has the attribute, else false.</returns>
         public bool HasMetric(string metricName)
         {
             if(string.IsNullOrEmpty(metricName))
@@ -393,12 +393,12 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             
             if(attributeName.Length > MAX_KEY_SIZE)
             {
-                throw new ArgumentException("length of attributeName " + attributeName+" is more than " + MAX_KEY_SIZE);
+                throw new ArgumentException("Length of attributeName " + attributeName+" is more than " + MAX_KEY_SIZE);
             }
             
             if(attributeValue.Length > MAX_ATTRIB_VALUE_SIZE)
             {
-                throw new ArgumentException("length of attributeValue is more than " + MAX_ATTRIB_VALUE_SIZE);
+                throw new ArgumentException("Length of attributeValue is more than " + MAX_ATTRIB_VALUE_SIZE);
             }
             
             lock(_globalLock)
@@ -433,12 +433,12 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             
             if(attributeName.Length > MAX_KEY_SIZE)
             {
-                throw new ArgumentException("length of attributeName " + attributeName+" is more than " + MAX_KEY_SIZE);
+                throw new ArgumentException("Length of attributeName " + attributeName+" is more than " + MAX_KEY_SIZE);
             }
             
             if(attributeValue.Length > MAX_ATTRIB_VALUE_SIZE)
             {
-                throw new ArgumentException("length of attributeValue is more than " + MAX_ATTRIB_VALUE_SIZE);
+                throw new ArgumentException("Length of attributeValue is more than " + MAX_ATTRIB_VALUE_SIZE);
             }
             
             lock(_globalLock)
@@ -570,7 +570,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             
             if(metricName.Length > MAX_KEY_SIZE)
             {
-                throw new ArgumentException("length of the metricName " + metricName+" is more than " + MAX_KEY_SIZE);
+                throw new ArgumentException("Length of the metricName " + metricName+" is more than " + MAX_KEY_SIZE);
             }
 
             lock(_globalLock)
@@ -600,7 +600,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             
             if(metricName.Length > MAX_KEY_SIZE)
             {
-                throw new ArgumentException("length of the metricName " + metricName+" is more than " + MAX_KEY_SIZE);
+                throw new ArgumentException("Length of the metricName " + metricName+" is more than " + MAX_KEY_SIZE);
             }
             
             lock(_globalLock)
