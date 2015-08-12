@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateEnvironment operation
+    /// Response Unmarshaller for DescribeEnvironmentHealth operation
     /// </summary>  
-    public class CreateEnvironmentResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DescribeEnvironmentHealthResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            CreateEnvironmentResponse response = new CreateEnvironmentResponse();
+            DescribeEnvironmentHealthResponse response = new DescribeEnvironmentHealthResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("CreateEnvironmentResult", 2))
+                    if(context.TestExpression("DescribeEnvironmentHealthResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, CreateEnvironmentResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeEnvironmentHealthResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,52 +81,23 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("AbortableOperationInProgress", targetDepth))
+                    if (context.TestExpression("ApplicationMetrics", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        response.AbortableOperationInProgress = unmarshaller.Unmarshall(context);
+                        var unmarshaller = ApplicationMetricsUnmarshaller.Instance;
+                        response.ApplicationMetrics = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ApplicationName", targetDepth))
+                    if (context.TestExpression("Causes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.ApplicationName = unmarshaller.Unmarshall(context);
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Causes.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("CNAME", targetDepth))
+                    if (context.TestExpression("Color", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.CNAME = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DateCreated", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        response.DateCreated = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DateUpdated", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        response.DateUpdated = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Description", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.Description = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("EndpointURL", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.EndpointURL = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("EnvironmentId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.EnvironmentId = unmarshaller.Unmarshall(context);
+                        response.Color = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("EnvironmentName", targetDepth))
@@ -135,52 +106,28 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         response.EnvironmentName = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Health", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.Health = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("HealthStatus", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         response.HealthStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Resources", targetDepth))
+                    if (context.TestExpression("InstancesHealth", targetDepth))
                     {
-                        var unmarshaller = EnvironmentResourcesDescriptionUnmarshaller.Instance;
-                        response.Resources = unmarshaller.Unmarshall(context);
+                        var unmarshaller = InstanceHealthSummaryUnmarshaller.Instance;
+                        response.InstancesHealth = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SolutionStackName", targetDepth))
+                    if (context.TestExpression("RefreshedAt", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.SolutionStackName = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        response.RefreshedAt = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         response.Status = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TemplateName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.TemplateName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Tier", targetDepth))
-                    {
-                        var unmarshaller = EnvironmentTierUnmarshaller.Instance;
-                        response.Tier = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("VersionLabel", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.VersionLabel = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -200,19 +147,19 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientPrivilegesException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ElasticBeanstalkServiceException"))
             {
-                return new InsufficientPrivilegesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new ElasticBeanstalkServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyEnvironmentsException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
             {
-                return new TooManyEnvironmentsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonElasticBeanstalkException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static CreateEnvironmentResponseUnmarshaller _instance = new CreateEnvironmentResponseUnmarshaller();        
+        private static DescribeEnvironmentHealthResponseUnmarshaller _instance = new DescribeEnvironmentHealthResponseUnmarshaller();        
 
-        internal static CreateEnvironmentResponseUnmarshaller GetInstance()
+        internal static DescribeEnvironmentHealthResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -220,7 +167,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateEnvironmentResponseUnmarshaller Instance
+        public static DescribeEnvironmentHealthResponseUnmarshaller Instance
         {
             get
             {

@@ -379,6 +379,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElasticBeanstalk")]
+        public void DescribeEnvironmentHealthMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeEnvironmentHealth");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentHealthRequest>();
+            var marshaller = new DescribeEnvironmentHealthRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeEnvironmentHealthResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeEnvironmentHealthResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
         public void DescribeEnvironmentResourcesMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeEnvironmentResources");
@@ -442,6 +466,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DescribeEventsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeEventsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DescribeInstancesHealthMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeInstancesHealth");
+
+            var request = InstantiateClassGenerator.Execute<DescribeInstancesHealthRequest>();
+            var marshaller = new DescribeInstancesHealthRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeInstancesHealthResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeInstancesHealthResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

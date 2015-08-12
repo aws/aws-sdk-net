@@ -374,7 +374,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>The response from the DeleteApplication service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
         /// Unable to perform the specified operation because another operation is already in
-        /// progress affecting an an element in this activity.
+        /// progress affecting an element in this activity.
         /// </exception>
         DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request);
 
@@ -410,7 +410,7 @@ namespace Amazon.ElasticBeanstalk
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
         /// Unable to perform the specified operation because another operation is already in
-        /// progress affecting an an element in this activity.
+        /// progress affecting an element in this activity.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.S3LocationNotInServiceRegionException">
         /// The specified S3 bucket does not belong to the S3 region in which the service is running.
@@ -450,7 +450,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>The response from the DeleteConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
         /// Unable to perform the specified operation because another operation is already in
-        /// progress affecting an an element in this activity.
+        /// progress affecting an element in this activity.
         /// </exception>
         DeleteConfigurationTemplateResponse DeleteConfigurationTemplate(DeleteConfigurationTemplateRequest request);
 
@@ -684,6 +684,38 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
         
+        #region  DescribeEnvironmentHealth
+
+
+        /// <summary>
+        /// Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b>
+        /// operation is only available with AWS Elastic Beanstalk Enhanced Health.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentHealth service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEnvironmentHealth service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InvalidRequestException">
+        /// The request is invalid, please check parameters and their values
+        /// </exception>
+        DescribeEnvironmentHealthResponse DescribeEnvironmentHealth(DescribeEnvironmentHealthRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEnvironmentHealth operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentHealth operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeEnvironmentHealthResponse> DescribeEnvironmentHealthAsync(DescribeEnvironmentHealthRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeEnvironmentResources
 
 
@@ -807,6 +839,39 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeInstancesHealth
+
+
+        /// <summary>
+        /// Returns more detailed information about the health of the specified instances (for
+        /// example, CPU utilization, load average, and causes). The <b>DescribeInstancesHealth</b>
+        /// operation is only available with AWS Elastic Beanstalk Enhanced Health.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancesHealth service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstancesHealth service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InvalidRequestException">
+        /// The request is invalid, please check parameters and their values
+        /// </exception>
+        DescribeInstancesHealthResponse DescribeInstancesHealth(DescribeInstancesHealthRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstancesHealth operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancesHealth operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeInstancesHealthResponse> DescribeInstancesHealthAsync(DescribeInstancesHealthRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
