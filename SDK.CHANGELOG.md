@@ -1,3 +1,13 @@
+### 3.1.5.0 (2015-08-12 20:11 UTC)
+* ElasticBeanstalk (3.1.1.0)
+	* Add Elastic Beanstalk client support for environment health.
+* MobileAnalytics (3.1.0.2)
+	* Updated to need new core version 3.1.0.2
+	* Updated documentation
+* S3 (3.1.2.0)
+	* Updated S3 TransferUtility to retry a failed download without discarding the bytes that were already downloaded
+* Core 3.1.0.2
+
 ### 3.1.4.0 (2015-08-06 15:55 UTC)
 * SimpleWorkflow (3.1.1.0)
 	* Update SWF client for Lambda support

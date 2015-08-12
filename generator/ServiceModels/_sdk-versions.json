@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.1.4.0",
-    "CoreVersion"    : "3.1.0.1",
+    "ProductVersion" : "3.1.5.0",
+    "CoreVersion"    : "3.1.0.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -154,7 +154,7 @@
             "InPreview"    : false
         },
         "ElasticBeanstalk"  : {
-            "Version" : "3.1.0.0",
+            "Version" : "3.1.1.0",
             "Dependencies" : {
                 "Core" : "3.1.0.0"
             },
@@ -233,9 +233,9 @@
             "InPreview"    : false
         },
         "MobileAnalytics"      : {
-            "Version" : "3.1.0.1",
+            "Version" : "3.1.0.2",
             "Dependencies" : {
-                "Core" : "3.1.0.0"
+                "Core" : "3.1.0.2"
             },
             "InPreview"    : true
         },
@@ -275,7 +275,7 @@
             "InPreview"    : false
         },
         "S3"                   : {
-            "Version" : "3.1.1.1",
+            "Version" : "3.1.2.0",
             "Dependencies" : {
                 "Core" : "3.1.0.1"
             },
