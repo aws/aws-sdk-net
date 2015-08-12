@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-using Amazon;
-using Amazon.Runtime;
-
 using Amazon.SQS;
 using Amazon.SQS.Model;
 
