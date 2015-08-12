@@ -132,6 +132,9 @@ namespace ServiceClientGenerator
                     }
                 }
 
+                if (member == null)
+                    throw new ArgumentOutOfRangeException("Unable to find matching member");
+
                 if (currentParams == "")
                     currentParams = member.DetermineType() + " " + GeneratorHelpers.CamelCaseParam(member.PropertyName);
                 else
@@ -308,6 +311,9 @@ namespace ServiceClientGenerator
                         break;
                     }
                 }
+
+                if (member == null)
+                    throw new ArgumentOutOfRangeException("Unable to find matching member");
 
                 string type = member.DetermineType();
                 if (type == "Stream")

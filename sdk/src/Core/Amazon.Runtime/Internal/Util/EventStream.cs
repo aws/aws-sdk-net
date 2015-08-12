@@ -163,6 +163,8 @@ namespace Amazon.Runtime.Internal.Util
         public override int EndRead(IAsyncResult asyncResult)
         {
             var result = asyncResult as AsyncResult;
+            if (result == null)
+                throw new ArgumentException("asyncResult");
             if (result.Return is Exception)
                 throw (Exception)result.Return;
 
