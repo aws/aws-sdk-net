@@ -93,7 +93,7 @@
 		</ItemGroup>
 		<Copy
             SourceFiles="@(XamFiles)"
-            DestinationFolder="$(Deployment)\xamain-components"/>
+            DestinationFolder="$(Deployment)\xamarin-components"/>
 	</Target>
 	
 	<Target Name="copy-assemblies" DependsOnTargets="nuget-pack;xam-pack">
