@@ -164,7 +164,7 @@ namespace Amazon.Runtime.Internal.Util
         {
             var result = asyncResult as AsyncResult;
             if (result == null)
-                throw new ArgumentException("asyncResult");
+                throw new ArgumentException("Parameter asyncResult was not of type Amazon.Runtime.Internal.Util.AsyncResult", "asyncResult");
             if (result.Return is Exception)
                 throw (Exception)result.Return;
 
