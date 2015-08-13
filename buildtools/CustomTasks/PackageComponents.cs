@@ -79,9 +79,20 @@ namespace CustomTasks
                     buffer.AppendLine(e.Data);
                 }
             );
+            process.ErrorDataReceived += new DataReceivedEventHandler
+            (
+                delegate(object sender,DataReceivedEventArgs e)
+                {
+                    Console.WriteLine(e.Data);
+                    buffer.AppendLine(e.Data);
+                }
+            );
             process.Start();
             process.BeginOutputReadLine();
             process.WaitForExit();
+
+            
+
         }
 
         private static void PackageComponent(string componentExe, string componentDirectory)
@@ -102,9 +113,24 @@ namespace CustomTasks
                     buffer.AppendLine(e.Data);
                 }
             );
+            
+            process.ErrorDataReceived += new DataReceivedEventHandler
+            (
+                delegate(object sender,DataReceivedEventArgs e)
+                {
+                    Console.WriteLine(e.Data);
+                    buffer.AppendLine(e.Data);
+                }
+            );
+
             process.Start();
             process.BeginOutputReadLine();
             process.WaitForExit();
+
+            if (process.ExitCode != 0)
+            { 
+                throw new Exception(string.Format(@"error packaging {0}",componentDirectory));
+            }
         }
 
     }
