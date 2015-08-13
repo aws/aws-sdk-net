@@ -39,6 +39,12 @@
 
 		<RemoveDir Directories="$(Deployment)" />
 		<MakeDir Directories="$(Deployment)" />
+		
+		<ItemGroup>
+			<XamFiles Include="..\sdk\xamarin-components\**\*.xam"/>
+		</ItemGroup>
+		<Message Text="Deleting previously generated xamarin component @(XamFiles)" />
+		<Delete Files="@(XamFiles)" />		
 	</Target>
 	
 	<Target Name="consolidate-docartifacts">

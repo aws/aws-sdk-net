@@ -42,6 +42,11 @@ namespace CustomTasks
                 if (samples == null)
                     throw new Exception(string.Format("unable to find the samples in component {0}", yamlFile));
 
+                var version = yamlObject["version"] as string;
+                var id = yamlObject["id"] as string;
+
+                var componentName = string.Format(@"{0}-{1}.xam", id, version);
+
                 var currentWorkingDirectory = Directory.GetCurrentDirectory();
 
                 foreach (var sample in samples)
@@ -57,7 +62,7 @@ namespace CustomTasks
                     
                     RestoreNuget(Path.GetFullPath(NugetExe), sampleSolutionFile);
                 }
-                PackageComponent(ComponentsExe, componentPath);
+                PackageComponent(ComponentsExe, componentPath, componentName);
             }
             return true;
         }
@@ -90,12 +95,9 @@ namespace CustomTasks
             process.Start();
             process.BeginOutputReadLine();
             process.WaitForExit();
-
-            
-
         }
 
-        private static void PackageComponent(string componentExe, string componentDirectory)
+        private static void PackageComponent(string componentExe, string componentDirectory, string componentName)
         {
             Console.WriteLine(@"component location {0}", componentExe);
             Process process = new Process();
@@ -131,6 +133,18 @@ namespace CustomTasks
             { 
                 throw new Exception(string.Format(@"error packaging {0}",componentDirectory));
             }
+
+            if (!CheckXamPackage(componentDirectory, componentName))
+            {
+                throw new Exception(string.Format(@"error packaging {0}", componentDirectory));
+            }
+        }
+
+        private static bool CheckXamPackage(string componentDirectory, string componentName)
+        {
+            var componentFullPath = Path.Combine(componentDirectory, componentName);
+            Console.WriteLine(@"checking if the component exists {0}", componentFullPath);
+            return File.Exists(componentFullPath);
         }
 
     }
