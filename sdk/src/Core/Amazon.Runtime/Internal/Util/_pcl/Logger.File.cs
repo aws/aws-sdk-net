@@ -7,21 +7,27 @@ using System.Text;
 using System.Threading.Tasks;
 using PCLStorage;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace Amazon.Runtime.Internal.Util
 {
     internal class InternalFileLogger : InternalLogger
     {
-        private const string DebugMsgFormat = "AWSSDK DEBUG {1} {2} {3}";
-        private const string ErrorMsgFormat = "AWSSDK ERROR {1} {2} {3}";
-        private const string InfoMsgFormat = "AWSSDK INFO {1} {2} {3}";
+        private const string DebugMsgFormat = "AWSSDK DEBUG {0} {1}";
+        private const string ErrorMsgFormat = "AWSSDK ERROR {0} {1}";
+        private const string InfoMsgFormat = "AWSSDK INFO {0} {1}";
 
-        //awssdk, log level, utc timestamp, message
-
-        private const string LOG_FILE_NAME = "awssdk.log";
         private static object _lock = new object();
 
+        private const string LOG_FILE_FORMAT = @"awssdk.{0}.log";
+        private const string LOG_FILE_PATTERN = @"awssdk.[0-9].log";
+        private const string LOGS_FOLDER_NAME = @"aws-logs";
 
+        //default max number of files to 5
+        private const int MAX_FILES_COUNT = 5;
+
+        //max size of file to 1MB
+        private const long MAX_SIZE = 1024 * 1024;
 
         public InternalFileLogger(Type declaringType)
             : base(declaringType)
@@ -101,7 +107,7 @@ namespace Amazon.Runtime.Internal.Util
         {
             string currentTime = DateTime.UtcNow
                          .ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fff'Z'");
-            LogMessage msg = new LogMessage(CultureInfo.InvariantCulture, ErrorMsgFormat, currentTime, string.Format(message, arguments));
+            LogMessage msg = new LogMessage(CultureInfo.InvariantCulture, DebugMsgFormat, currentTime, string.Format(message, arguments));
             LogAsync(msg);
         }
 
@@ -125,7 +131,7 @@ namespace Amazon.Runtime.Internal.Util
         {
             string currentTime = DateTime.UtcNow
                          .ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fff'Z'");
-            LogMessage msg = new LogMessage(CultureInfo.InvariantCulture, ErrorMsgFormat, currentTime, string.Format(message, arguments));
+            LogMessage msg = new LogMessage(CultureInfo.InvariantCulture, InfoMsgFormat, currentTime, string.Format(message, arguments));
             LogAsync(msg);
         }
 
@@ -136,34 +142,76 @@ namespace Amazon.Runtime.Internal.Util
         {
             lock (_lock)
             {
-                FileSystem.Current.LocalStorage.CreateFolderAsync("logs", CreationCollisionOption.OpenIfExists).ContinueWith((folderTask) =>
+                FileSystem.Current.LocalStorage.CreateFolderAsync(LOGS_FOLDER_NAME, CreationCollisionOption.OpenIfExists).ContinueWith(async (folderTask) =>
                 {
                     var folder = folderTask.Result;
-#if __ANDROID__
-                    Android.Util.Log.Debug("LogTag", @"folder created/opened " + folder.Path);
-#endif
-                    folder.CreateFileAsync(LOG_FILE_NAME, CreationCollisionOption.OpenIfExists).ContinueWith((fileTask) =>
+                    var fileName = await RollingLogFileName(folder).ConfigureAwait(false);
+                    var file = await folder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists).ConfigureAwait(false);
+                    var stream = await file.OpenAsync(PCLStorage.FileAccess.ReadAndWrite).ConfigureAwait(false);
+
+                    using (var writer = new StreamWriter(stream))
                     {
-                        var file = fileTask.Result;
-#if __ANDROID__
-                        Android.Util.Log.Debug("LogTag", @"file created/opened " + file.Path);
-#endif
-                        file.OpenAsync(PCLStorage.FileAccess.ReadAndWrite).ContinueWith((streamTask) =>
-                        {
-                            using (var writer = new StreamWriter(streamTask.Result))
-                            {
-                                writer.BaseStream.Seek(0, SeekOrigin.End);
-                                writer.WriteLine(message.ToString());
-#if __ANDROID__
-                                Android.Util.Log.Debug("LogTag", @"wrote to file " + message.ToString());
-#endif
-                            }
-                        });
-
-                    });
+                        writer.BaseStream.Seek(0, SeekOrigin.End);
+                        writer.WriteLine(message.ToString());
+                    }
                 });
-
             }
+        }
+
+
+        private async Task<string> RollingLogFileName(IFolder folder)
+        {
+            var files = await folder.GetFilesAsync().ConfigureAwait(false);
+
+            var counter = 0;
+            if (files.Count > 0)
+            {
+                var logFiles = new List<IFile>();
+                foreach (var f in files)
+                {
+                    var match = Regex.Match(f.Name, LOG_FILE_PATTERN);
+                    if (match.Success)
+                        logFiles.Add(f);
+                }
+
+
+                if (logFiles.Count > 0)
+                {
+                    logFiles.Sort();
+
+                    //if the number of files are greater than the max number of files allowed then,
+                    //delete the oldest file. oldest file is the file with the higest number
+                    if (logFiles.Count > MAX_FILES_COUNT)
+                    {
+                        await logFiles[logFiles.Count - 1].DeleteAsync().ConfigureAwait(false);
+                        for (int i = logFiles.Count - 2; i >= 0; i--)
+                        {
+                            var newPath = logFiles[i].Path.Replace(logFiles[i].Name, string.Format(LOG_FILE_FORMAT, i + 1));
+                            await logFiles[i].MoveAsync(newPath).ConfigureAwait(false);
+                        }
+                        counter--;
+                    }
+
+                    // the current file is the file at the zeroth index.
+                    var currentFile = logFiles[0];
+
+                    var fileData = await currentFile.ReadAllTextAsync().ConfigureAwait(false);
+
+                    //this is not ideal, but is used due to lack of fileinfo api in pcl
+                    var fileSize = System.Text.Encoding.UTF8.GetByteCount(fileData);
+
+                    if (fileSize < MAX_SIZE)
+                    {
+                        return currentFile.Name;
+                    }
+                    else
+                    {
+                        counter++;
+                    }
+                }
+            }
+
+            return string.Format(LOG_FILE_FORMAT, counter);
         }
     }
 }
