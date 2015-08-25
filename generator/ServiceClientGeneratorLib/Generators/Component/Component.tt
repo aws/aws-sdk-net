@@ -63,3 +63,4 @@ packages:
 #>
 version: <#=this.Session["AssemblyVersion"]#>
 is-shell: true
+no_build: true
