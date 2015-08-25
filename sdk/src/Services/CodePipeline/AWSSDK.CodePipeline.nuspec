@@ -2,7 +2,7 @@
 <package> 
   <metadata> 
     <id>AWSSDK.CodePipeline</id>
-    <title>AWSSDK - CodePipeline Service</title>
+    <title>AWSSDK - AWS CodePipeline</title>
     <version>3.1.0.0</version> 
     <authors>Amazon Web Services</authors>
     <description>AWS CodePipeline is a continuous delivery service for fast and reliable application updates.</description>

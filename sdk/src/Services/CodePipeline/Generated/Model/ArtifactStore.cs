@@ -34,8 +34,28 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class ArtifactStore
     {
+        private EncryptionKey _encryptionKey;
         private string _location;
         private ArtifactStoreType _type;
+
+        /// <summary>
+        /// Gets and sets the property EncryptionKey. 
+        /// <para>
+        /// The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact
+        /// store. If this is undefined, the default key for Amazon S3 is used.
+        /// </para>
+        /// </summary>
+        public EncryptionKey EncryptionKey
+        {
+            get { return this._encryptionKey; }
+            set { this._encryptionKey = value; }
+        }
+
+        // Check to see if EncryptionKey property is set
+        internal bool IsSetEncryptionKey()
+        {
+            return this._encryptionKey != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Location. 

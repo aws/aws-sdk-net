@@ -88,6 +88,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContinuationToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("encryptionKey", targetDepth))
+                {
+                    var unmarshaller = EncryptionKeyUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionKey = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inputArtifacts", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Artifact, ArtifactUnmarshaller>(ArtifactUnmarshaller.Instance);
