@@ -1,3 +1,7 @@
+### 3.1.6.0 (2015-08-25 18:01 UTC)
+* CodePipeline (3.1.1.0)
+	* Add support for KMS encryption keys on S3 artifact stores.
+
 ### 3.1.5.0 (2015-08-12 20:11 UTC)
 * ElasticBeanstalk (3.1.1.0)
 	* Add Elastic Beanstalk client support for environment health.
