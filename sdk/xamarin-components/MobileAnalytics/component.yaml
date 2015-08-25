@@ -27,3 +27,4 @@ packages:
   - AWSSDK.MobileAnalytics,Version=3.1.0.2-preview
 version: 3.1.0.2
 is-shell: true
+no_build: true
