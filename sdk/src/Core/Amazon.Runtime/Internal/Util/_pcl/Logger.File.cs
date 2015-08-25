@@ -19,7 +19,6 @@ namespace Amazon.Runtime.Internal.Util
         //awssdk, log level, utc timestamp, message
 
         private const string LOG_FILE_NAME = "awssdk.log";
-        private static string _file;
         private static object _lock = new object();
 
 
@@ -27,11 +26,8 @@ namespace Amazon.Runtime.Internal.Util
         public InternalFileLogger(Type declaringType)
             : base(declaringType)
         {
-            lock (_lock)
-            {
-                _file = Path.Combine(FileSystem.Current.LocalStorage.Path, LOG_FILE_NAME);
-            }
         }
+
 
         #region Overrides
 
@@ -135,22 +131,38 @@ namespace Amazon.Runtime.Internal.Util
 
         #endregion
 
-        
+
         private void LogAsync(LogMessage message)
         {
             lock (_lock)
             {
-                //pcl storage doesnot support file append.
-                FileSystem.Current.GetFileFromPathAsync(_file).ContinueWith(async (fileTask) =>
+                FileSystem.Current.LocalStorage.CreateFolderAsync("logs", CreationCollisionOption.OpenIfExists).ContinueWith((folderTask) =>
                 {
-                    var file = fileTask.Result;
-                    using(var w = await file.OpenAsync(PCLStorage.FileAccess.ReadAndWrite))
+                    var folder = folderTask.Result;
+#if __ANDROID__
+                    Android.Util.Log.Debug("LogTag", @"folder created/opened " + folder.Path);
+#endif
+                    folder.CreateFileAsync(LOG_FILE_NAME, CreationCollisionOption.OpenIfExists).ContinueWith((fileTask) =>
                     {
-                        w.Seek(0, SeekOrigin.End);
-                        var data = System.Text.Encoding.UTF8.GetBytes(message.ToString());
-                        w.Write(data, 0, data.Length);
-                    }
+                        var file = fileTask.Result;
+#if __ANDROID__
+                        Android.Util.Log.Debug("LogTag", @"file created/opened " + file.Path);
+#endif
+                        file.OpenAsync(PCLStorage.FileAccess.ReadAndWrite).ContinueWith((streamTask) =>
+                        {
+                            using (var writer = new StreamWriter(streamTask.Result))
+                            {
+                                writer.BaseStream.Seek(0, SeekOrigin.End);
+                                writer.WriteLine(message.ToString());
+#if __ANDROID__
+                                Android.Util.Log.Debug("LogTag", @"wrote to file " + message.ToString());
+#endif
+                            }
+                        });
+
+                    });
                 });
+
             }
         }
     }
