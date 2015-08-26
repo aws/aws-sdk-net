@@ -18,10 +18,14 @@ namespace Amazon.Runtime.Internal.Util
         private const string InfoMsgFormat = "AWSSDK INFO {0} {1}";
 
         private static object _lock = new object();
+        private static StringBuilder _logBuffer = new StringBuilder();
+        private const long MAX_BUFFER_SIZE = 50 * 1024;
 
         private const string LOG_FILE_FORMAT = @"awssdk.{0}.log";
-        private const string LOG_FILE_PATTERN = @"awssdk.[0-9].log";
+        private const string LOG_FILE_PATTERN = @"awssdk.[0-9]{1,}.log";
         private const string LOGS_FOLDER_NAME = @"aws-logs";
+
+        private const string DATE_FORMAT = @"yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fff'Z'";
 
         //default max number of files to 5
         private const int MAX_FILES_COUNT = 5;
@@ -39,7 +43,11 @@ namespace Amazon.Runtime.Internal.Util
 
         public override void Flush()
         {
-            // not supported for pcl type
+            lock(_lock)
+            {
+                LogAsync(_logBuffer);
+                _logBuffer = new StringBuilder();
+            }
         }
 
         /// <summary>
@@ -54,24 +62,7 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
-        /// Simple wrapper around the Error method.
-        /// </summary>
-        /// <param name="exception"></param>
-        /// <param name="messageFormat"></param>
-        /// <param name="args"></param>
-        public override void Error(Exception exception, string messageFormat, params object[] args)
-        {
-            string error = @"{0} {1}";
-            string message = string.Format(messageFormat, args);
-            string errorMessage = string.Format(error, message, exception != null ? exception.StackTrace : "");
-            string currentTime = DateTime.UtcNow
-                         .ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fff'Z'");
-            LogMessage msg = new LogMessage(CultureInfo.InvariantCulture, ErrorMsgFormat, currentTime, errorMessage);
-            LogAsync(msg);
-        }
-
-        /// <summary>
-        /// Debug is always enabled
+        /// Debug logging is always enabled
         /// </summary>
         public override bool IsDebugEnabled
         {
@@ -82,37 +73,7 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
-        /// Simple wrapper around the log4net Debug method.
-        /// </summary>
-        /// <param name="exception"></param>
-        /// <param name="messageFormat"></param>
-        /// <param name="args"></param>
-        public override void Debug(Exception exception, string messageFormat, params object[] args)
-        {
-            string debug = @"{0} {1}";
-            string message = string.Format(messageFormat, args);
-            string errorMessage = string.Format(debug, message, exception != null ? exception.StackTrace : "");
-            string currentTime = DateTime.UtcNow
-                         .ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fff'Z'");
-            LogMessage msg = new LogMessage(CultureInfo.InvariantCulture, DebugMsgFormat, currentTime, errorMessage);
-            LogAsync(msg);
-        }
-
-        /// <summary>
-        /// Simple wrapper around the log4net DebugFormat method.
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="arguments"></param>
-        public override void DebugFormat(string message, params object[] arguments)
-        {
-            string currentTime = DateTime.UtcNow
-                         .ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fff'Z'");
-            LogMessage msg = new LogMessage(CultureInfo.InvariantCulture, DebugMsgFormat, currentTime, string.Format(message, arguments));
-            LogAsync(msg);
-        }
-
-        /// <summary>
-        /// Simple wrapper around the log4net IsInfoEnabled property.
+        /// Info logging is always enabled
         /// </summary>
         public override bool IsInfoEnabled
         {
@@ -123,82 +84,141 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
-        /// Simple wrapper around the log4net InfoFormat method.
+        /// Prints the Log With Error Level
+        /// </summary>
+        /// <param name="exception"></param>
+        /// <param name="messageFormat"></param>
+        /// <param name="args"></param>
+        public override void Error(Exception exception, string messageFormat, params object[] args)
+        {
+            string debug = @"{0} {1}";
+            string message = string.Format(messageFormat, args);
+            string errorMessage = string.Format(debug, message, exception != null ? exception.ToString() : "");
+            Log(LogLevel.Debug, errorMessage);
+        }
+
+
+
+        /// <summary>
+        /// Prints the Log with Debug Level
+        /// </summary>
+        /// <param name="exception"></param>
+        /// <param name="messageFormat"></param>
+        /// <param name="args"></param>
+        public override void Debug(Exception exception, string messageFormat, params object[] args)
+        {
+            string debug = @"{0} {1}";
+            string message = string.Format(messageFormat, args);
+            string errorMessage = string.Format(debug, message, exception != null ? exception.ToString() : "");
+            Log(LogLevel.Debug, errorMessage);
+        }
+
+        /// <summary>
+        /// Prints the Log with Debug Level
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="arguments"></param>
+        public override void DebugFormat(string message, params object[] arguments)
+        {
+            Log(LogLevel.Debug, string.Format(message, arguments));
+        }
+
+        /// <summary>
+        /// Prints the Log With Info Level
         /// </summary>
         /// <param name="message"></param>
         /// <param name="arguments"></param>
         public override void InfoFormat(string message, params object[] arguments)
         {
-            string currentTime = DateTime.UtcNow
-                         .ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fff'Z'");
-            LogMessage msg = new LogMessage(CultureInfo.InvariantCulture, InfoMsgFormat, currentTime, string.Format(message, arguments));
-            LogAsync(msg);
+            Log(LogLevel.Info,string.Format(message, arguments));
         }
 
         #endregion
 
+        private void Log(LogLevel level, string message)
+        {
 
-        private void LogAsync(LogMessage message)
+            string messageFormat = "";
+            switch(level)
+            {
+                case LogLevel.Error:
+                    messageFormat = ErrorMsgFormat;
+                    break;
+                case LogLevel.Debug:
+                    messageFormat = DebugMsgFormat;
+                    break;
+                case LogLevel.Info:
+                case LogLevel.Verbose:
+                default:
+                    messageFormat = InfoMsgFormat;
+                    break;
+            }
+            string currentTime = DateTime.UtcNow
+                         .ToString(DATE_FORMAT);
+            LogMessage msg = new LogMessage(CultureInfo.InvariantCulture, messageFormat, currentTime, message);
+            Queue(msg);
+        }
+
+        private void Queue(LogMessage message)
         {
             lock (_lock)
             {
-                FileSystem.Current.LocalStorage.CreateFolderAsync(LOGS_FOLDER_NAME, CreationCollisionOption.OpenIfExists).ContinueWith(async (folderTask) =>
+                _logBuffer.AppendLine(message.ToString());
+                if (_logBuffer.Length >= MAX_BUFFER_SIZE)
                 {
-                    var folder = folderTask.Result;
-                    var fileName = await RollingLogFileName(folder).ConfigureAwait(false);
-                    var file = await folder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists).ConfigureAwait(false);
-                    var stream = await file.OpenAsync(PCLStorage.FileAccess.ReadAndWrite).ConfigureAwait(false);
-
-                    using (var writer = new StreamWriter(stream))
-                    {
-                        writer.BaseStream.Seek(0, SeekOrigin.End);
-                        writer.WriteLine(message.ToString());
-                    }
-                });
+                    LogAsync(_logBuffer);
+                    _logBuffer = new StringBuilder();
+                }
             }
         }
 
+        private void LogAsync(StringBuilder buffer)
+        {
+            Task.Run(async () =>
+            {
+                var folder = await FileSystem.Current.LocalStorage.CreateFolderAsync(LOGS_FOLDER_NAME, CreationCollisionOption.OpenIfExists).ConfigureAwait(false);
 
-        private async Task<string> RollingLogFileName(IFolder folder)
+                var fileName = await RollingLogFileNameAsync(folder).ConfigureAwait(false);
+                var file = await folder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists).ConfigureAwait(false);
+                var stream = await file.OpenAsync(PCLStorage.FileAccess.ReadAndWrite).ConfigureAwait(false);
+
+                using (var writer = new StreamWriter(stream))
+                {
+                    writer.BaseStream.Seek(0, SeekOrigin.End);
+                    writer.WriteLine(buffer.ToString());
+                }
+            });
+        }
+
+
+        private async Task<string> RollingLogFileNameAsync(IFolder folder)
         {
             var files = await folder.GetFilesAsync().ConfigureAwait(false);
 
             var counter = 0;
             if (files.Count > 0)
             {
-                var logFiles = new List<IFile>();
-                foreach (var f in files)
-                {
-                    var match = Regex.Match(f.Name, LOG_FILE_PATTERN);
-                    if (match.Success)
-                        logFiles.Add(f);
-                }
-
+                var logFiles = (from f in files where Regex.Match(f.Name, LOG_FILE_PATTERN).Success select f).OrderBy(f => f.Name).ToList();
 
                 if (logFiles.Count > 0)
                 {
-                    logFiles.Sort();
-
                     //if the number of files are greater than the max number of files allowed then,
                     //delete the oldest file. oldest file is the file with the higest number
-                    if (logFiles.Count > MAX_FILES_COUNT)
+                    while (logFiles.Count > MAX_FILES_COUNT)
                     {
-                        await logFiles[logFiles.Count - 1].DeleteAsync().ConfigureAwait(false);
-                        for (int i = logFiles.Count - 2; i >= 0; i--)
-                        {
-                            var newPath = logFiles[i].Path.Replace(logFiles[i].Name, string.Format(LOG_FILE_FORMAT, i + 1));
-                            await logFiles[i].MoveAsync(newPath).ConfigureAwait(false);
-                        }
-                        counter--;
+                        await logFiles[0].DeleteAsync().ConfigureAwait(false);
+
+                        logFiles.RemoveAt(0);
                     }
 
                     // the current file is the file at the zeroth index.
-                    var currentFile = logFiles[0];
+                    var currentFile = logFiles[logFiles.Count - 1];
 
-                    var fileData = await currentFile.ReadAllTextAsync().ConfigureAwait(false);
-
-                    //this is not ideal, but is used due to lack of fileinfo api in pcl
-                    var fileSize = System.Text.Encoding.UTF8.GetByteCount(fileData);
+                    long fileSize = 0;
+                    using (var stream = await currentFile.OpenAsync(PCLStorage.FileAccess.Read).ConfigureAwait(false))
+                    {
+                        fileSize = stream.Length;
+                    }
 
                     if (fileSize < MAX_SIZE)
                     {
@@ -206,6 +226,7 @@ namespace Amazon.Runtime.Internal.Util
                     }
                     else
                     {
+                        int.TryParse(currentFile.Name.Replace("awssdk.", "").Replace(".log", ""), out counter);
                         counter++;
                     }
                 }
@@ -214,4 +235,5 @@ namespace Amazon.Runtime.Internal.Util
             return string.Format(LOG_FILE_FORMAT, counter);
         }
     }
+
 }

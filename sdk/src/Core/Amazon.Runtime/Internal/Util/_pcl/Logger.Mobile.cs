@@ -29,6 +29,7 @@ namespace Amazon.Runtime.Internal.Util
     /// <summary>
     /// Logger wrapper for Console.WriteLine()
     /// </summary>
+    [Obsolete("Use InternalConsoleLogger instead")]
     internal class MobileLogger : InternalLogger
     {
         private const string InfoMsg = "[AWSSDK INFO] {0}";
@@ -72,11 +73,9 @@ namespace Amazon.Runtime.Internal.Util
             Android.Util.Log.Error(DeclaringType.Name, msg.ToString());
             if (exception != null)
             {
-                Android.Util.Log.Error(DeclaringType.Name, exception.Message);
-                Android.Util.Log.Error(DeclaringType.Name, exception.StackTrace);
+                Android.Util.Log.Error(DeclaringType.Name, exception.ToString());
             }
 #else
-            
             Console.WriteLine(string.Format(DebugMsg, "Exception is: " + exception.ToString() + " Message is: " +msg.ToString()));
 #endif
         }
@@ -105,8 +104,7 @@ namespace Amazon.Runtime.Internal.Util
             Android.Util.Log.Debug(DeclaringType.Name, msg.ToString());
             if (exception != null)
             {
-                Android.Util.Log.Debug(DeclaringType.Name, exception.Message);
-                Android.Util.Log.Debug(DeclaringType.Name, exception.StackTrace);
+                Android.Util.Log.Debug(DeclaringType.Name, exception.ToString());
             }
 #else
             Console.WriteLine(string.Format(DebugMsg, "Exception is: " + exception.ToString() + " Message is: " +msg.ToString()));

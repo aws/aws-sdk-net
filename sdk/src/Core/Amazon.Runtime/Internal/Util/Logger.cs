@@ -67,19 +67,13 @@ namespace Amazon.Runtime.Internal.Util
 
             InternalLog4netLogger log4netLogger = new InternalLog4netLogger(type);
             loggers.Add(log4netLogger);
-
-#if __IOS__ || __ANDROID__
-            MobileLogger logger = new MobileLogger(type);
-            loggers.Add(logger);
-#endif
-
 #if BCL
             InternalSystemDiagnosticsLogger sdLogger = new InternalSystemDiagnosticsLogger(type);
             loggers.Add(sdLogger);
 #endif
 #if __ANDROID__ || __IOS__
-            InternalConsoleLogger sdLogger = new InternalConsoleLogger(type);
-            loggers.Add(sdLogger);
+            InternalConsoleLogger consoleLogger = new InternalConsoleLogger(type);
+            loggers.Add(consoleLogger);
 #endif
 #if PCL
             InternalFileLogger fileLogger = new InternalFileLogger(type);

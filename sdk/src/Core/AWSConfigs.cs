@@ -521,7 +521,7 @@ namespace Amazon
         ,
 
         /// <summary>
-        /// Log to a File
+        /// Log to a file
         /// </summary>
         File = 4
 #endif
