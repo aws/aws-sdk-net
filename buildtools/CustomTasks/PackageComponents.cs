@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using YamlDotNet.Serialization;
 using System.Diagnostics;
+using Microsoft.Build.Framework;
+using Microsoft.Build.Tasks;
 
 namespace CustomTasks
 {
@@ -15,6 +17,7 @@ namespace CustomTasks
         public string ComponentRootPath { get; set; }
         public string NugetExe { get; set; }
         public string ComponentsExe { get; set; }
+        public string DevEnvExe { get; set; }
 
         public override bool Execute()
         {
@@ -59,12 +62,49 @@ namespace CustomTasks
                     var sampleSolutionFile = Path.GetFullPath(solutionFile);
                     Log.LogMessage("found solution file {0}", sampleSolutionFile);
                     Directory.SetCurrentDirectory(currentWorkingDirectory);
-                    
+
                     RestoreNuget(Path.GetFullPath(NugetExe), sampleSolutionFile);
+
+                    CompileSample(DevEnvExe,sampleSolutionFile);
                 }
                 PackageComponent(ComponentsExe, componentPath, componentName);
             }
             return true;
+        }
+
+        private static void CompileSample(string devenvExe, string solutionFile)
+        {
+            Process process = new Process();
+            process.StartInfo.FileName = devenvExe;
+            process.StartInfo.Arguments = string.Format(@"/Rebuild Debug {0}", solutionFile);
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.UseShellExecute = false;
+            process.EnableRaisingEvents = true;
+            StringBuilder buffer = new StringBuilder();
+            process.OutputDataReceived += new DataReceivedEventHandler
+            (
+                delegate(object sender, DataReceivedEventArgs e)
+                {
+                    Console.WriteLine(e.Data);
+                    buffer.AppendLine(e.Data);
+                }
+            );
+            process.ErrorDataReceived += new DataReceivedEventHandler
+            (
+                delegate(object sender, DataReceivedEventArgs e)
+                {
+                    Console.WriteLine(e.Data);
+                    buffer.AppendLine(e.Data);
+                }
+            );
+            process.Start();
+            process.BeginOutputReadLine();
+            process.WaitForExit();
+
+            if (process.ExitCode != 0)
+            {
+                throw new Exception(string.Format(@"error building solution {0}", solutionFile));
+            }
         }
 
         private static void RestoreNuget(string nugetExe, string solutionFile)
@@ -86,7 +126,7 @@ namespace CustomTasks
             );
             process.ErrorDataReceived += new DataReceivedEventHandler
             (
-                delegate(object sender,DataReceivedEventArgs e)
+                delegate(object sender, DataReceivedEventArgs e)
                 {
                     Console.WriteLine(e.Data);
                     buffer.AppendLine(e.Data);
@@ -95,6 +135,11 @@ namespace CustomTasks
             process.Start();
             process.BeginOutputReadLine();
             process.WaitForExit();
+
+            if (process.ExitCode != 0)
+            {
+                throw new Exception(string.Format(@"error restoring nuget for {0}", solutionFile));
+            }
         }
 
         private static void PackageComponent(string componentExe, string componentDirectory, string componentName)
@@ -115,10 +160,10 @@ namespace CustomTasks
                     buffer.AppendLine(e.Data);
                 }
             );
-            
+
             process.ErrorDataReceived += new DataReceivedEventHandler
             (
-                delegate(object sender,DataReceivedEventArgs e)
+                delegate(object sender, DataReceivedEventArgs e)
                 {
                     Console.WriteLine(e.Data);
                     buffer.AppendLine(e.Data);
@@ -130,8 +175,8 @@ namespace CustomTasks
             process.WaitForExit();
 
             if (process.ExitCode != 0)
-            { 
-                throw new Exception(string.Format(@"error packaging {0}",componentDirectory));
+            {
+                throw new Exception(string.Format(@"error packaging {0}", componentDirectory));
             }
 
             if (!CheckXamPackage(componentDirectory, componentName))
@@ -146,6 +191,7 @@ namespace CustomTasks
             Console.WriteLine(@"checking if the component exists {0}", componentFullPath);
             return File.Exists(componentFullPath);
         }
+
 
     }
 }

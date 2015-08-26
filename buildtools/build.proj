@@ -86,7 +86,7 @@
 	</Target>
 
 	<Target Name="xam-pack" DependsOnTargets="build-custom-tasks" Condition="Exists('$(xpkgexe)')">
-		<PackageComponents ComponentRootPath="..\sdk\xamarin-components\" NugetExe="..\sdk\.nuget\NuGet.exe" ComponentsExe="$(xpkg)" /> 
+		<PackageComponents ComponentRootPath="..\sdk\xamarin-components\" NugetExe="..\sdk\.nuget\NuGet.exe" ComponentsExe="$(xpkg)" DevEnvExe="$(devenv2013)"  /> 
 		
 		<ItemGroup>
 			<XamFiles Include="..\sdk\xamarin-components\**\*.xam"/>
