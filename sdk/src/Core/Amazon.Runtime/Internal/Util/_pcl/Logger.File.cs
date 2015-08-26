@@ -22,7 +22,7 @@ namespace Amazon.Runtime.Internal.Util
         private const long MAX_BUFFER_SIZE = 50 * 1024;
 
         private const string LOG_FILE_FORMAT = @"awssdk.{0}.log";
-        private const string LOG_FILE_PATTERN = @"awssdk.[0-9]{1,}.log";
+        private const string LOG_FILE_PATTERN = @"awssdk\.(?<counter>[0-9]+)\.log";
         private const string LOGS_FOLDER_NAME = @"aws-logs";
 
         private const string DATE_FORMAT = @"yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fff'Z'";
@@ -43,7 +43,7 @@ namespace Amazon.Runtime.Internal.Util
 
         public override void Flush()
         {
-            lock(_lock)
+            lock (_lock)
             {
                 LogAsync(_logBuffer);
                 _logBuffer = new StringBuilder();
@@ -94,7 +94,7 @@ namespace Amazon.Runtime.Internal.Util
             string debug = @"{0} {1}";
             string message = string.Format(messageFormat, args);
             string errorMessage = string.Format(debug, message, exception != null ? exception.ToString() : "");
-            Log(LogLevel.Debug, errorMessage);
+            Log(LogLevel.Error, errorMessage);
         }
 
 
@@ -109,8 +109,8 @@ namespace Amazon.Runtime.Internal.Util
         {
             string debug = @"{0} {1}";
             string message = string.Format(messageFormat, args);
-            string errorMessage = string.Format(debug, message, exception != null ? exception.ToString() : "");
-            Log(LogLevel.Debug, errorMessage);
+            string debugMessage = string.Format(debug, message, exception != null ? exception.ToString() : "");
+            Log(LogLevel.Debug, debugMessage);
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="arguments"></param>
         public override void InfoFormat(string message, params object[] arguments)
         {
-            Log(LogLevel.Info,string.Format(message, arguments));
+            Log(LogLevel.Info, string.Format(message, arguments));
         }
 
         #endregion
@@ -139,7 +139,7 @@ namespace Amazon.Runtime.Internal.Util
         {
 
             string messageFormat = "";
-            switch(level)
+            switch (level)
             {
                 case LogLevel.Error:
                     messageFormat = ErrorMsgFormat;
@@ -203,7 +203,7 @@ namespace Amazon.Runtime.Internal.Util
                 if (logFiles.Count > 0)
                 {
                     //if the number of files are greater than the max number of files allowed then,
-                    //delete the oldest file. oldest file is the file with the higest number
+                    //delete the oldest file. oldest file is the file with the lowest number
                     while (logFiles.Count > MAX_FILES_COUNT)
                     {
                         await logFiles[0].DeleteAsync().ConfigureAwait(false);
@@ -226,8 +226,14 @@ namespace Amazon.Runtime.Internal.Util
                     }
                     else
                     {
-                        int.TryParse(currentFile.Name.Replace("awssdk.", "").Replace(".log", ""), out counter);
-                        counter++;
+                        var fileName = currentFile.Name;
+                        var regex = new Regex(LOG_FILE_PATTERN);
+                        var match = regex.Match(fileName);
+                        if (match.Success)
+                        {
+                            if (int.TryParse(match.Groups["counter"].Value, out counter))
+                                counter++;
+                        }
                     }
                 }
             }
