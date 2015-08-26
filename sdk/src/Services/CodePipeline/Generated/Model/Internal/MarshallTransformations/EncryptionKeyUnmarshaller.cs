@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ArtifactStore Object
+    /// Response Unmarshaller for EncryptionKey Object
     /// </summary>  
-    public class ArtifactStoreUnmarshaller : IUnmarshaller<ArtifactStore, XmlUnmarshallerContext>, IUnmarshaller<ArtifactStore, JsonUnmarshallerContext>
+    public class EncryptionKeyUnmarshaller : IUnmarshaller<EncryptionKey, XmlUnmarshallerContext>, IUnmarshaller<EncryptionKey, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ArtifactStore IUnmarshaller<ArtifactStore, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EncryptionKey IUnmarshaller<EncryptionKey, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ArtifactStore Unmarshall(JsonUnmarshallerContext context)
+        public EncryptionKey Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ArtifactStore unmarshalledObject = new ArtifactStore();
+            EncryptionKey unmarshalledObject = new EncryptionKey();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("encryptionKey", targetDepth))
-                {
-                    var unmarshaller = EncryptionKeyUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionKey = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("location", targetDepth))
+                if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))
@@ -88,12 +82,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         }
 
 
-        private static ArtifactStoreUnmarshaller _instance = new ArtifactStoreUnmarshaller();        
+        private static EncryptionKeyUnmarshaller _instance = new EncryptionKeyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ArtifactStoreUnmarshaller Instance
+        public static EncryptionKeyUnmarshaller Instance
         {
             get
             {

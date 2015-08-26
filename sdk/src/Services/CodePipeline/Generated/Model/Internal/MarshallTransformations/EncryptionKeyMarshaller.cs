@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ArtifactStore Marshaller
+    /// EncryptionKey Marshaller
     /// </summary>       
-    public class ArtifactStoreMarshaller : IRequestMarshaller<ArtifactStore, JsonMarshallerContext> 
+    public class EncryptionKeyMarshaller : IRequestMarshaller<EncryptionKey, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ArtifactStore requestObject, JsonMarshallerContext context)
+        public void Marshall(EncryptionKey requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEncryptionKey())
+            if(requestObject.IsSetId())
             {
-                context.Writer.WritePropertyName("encryptionKey");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EncryptionKeyMarshaller.Instance;
-                marshaller.Marshall(requestObject.EncryptionKey, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetLocation())
-            {
-                context.Writer.WritePropertyName("location");
-                context.Writer.Write(requestObject.Location);
+                context.Writer.WritePropertyName("id");
+                context.Writer.Write(requestObject.Id);
             }
 
             if(requestObject.IsSetType())
@@ -73,7 +62,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ArtifactStoreMarshaller Instance = new ArtifactStoreMarshaller();
+        public readonly static EncryptionKeyMarshaller Instance = new EncryptionKeyMarshaller();
 
     }
 }
