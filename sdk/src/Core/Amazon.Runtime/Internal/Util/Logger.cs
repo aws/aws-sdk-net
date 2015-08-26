@@ -67,19 +67,17 @@ namespace Amazon.Runtime.Internal.Util
 
             InternalLog4netLogger log4netLogger = new InternalLog4netLogger(type);
             loggers.Add(log4netLogger);
-
-#if __IOS__ || __ANDROID__
-            MobileLogger logger = new MobileLogger(type);
-            loggers.Add(logger);
-#endif
-
 #if BCL
             InternalSystemDiagnosticsLogger sdLogger = new InternalSystemDiagnosticsLogger(type);
             loggers.Add(sdLogger);
 #endif
+#if __ANDROID__ || __IOS__
+            InternalConsoleLogger consoleLogger = new InternalConsoleLogger(type);
+            loggers.Add(consoleLogger);
+#endif
 #if PCL
-            InternalConsoleLogger dbLogger = new InternalConsoleLogger(type);
-            loggers.Add(dbLogger);
+            InternalFileLogger fileLogger = new InternalFileLogger(type);
+            loggers.Add(fileLogger);
 #endif
 
             ConfigureLoggers();
@@ -103,9 +101,13 @@ namespace Amazon.Runtime.Internal.Util
                 if (il is InternalSystemDiagnosticsLogger)
                     il.IsEnabled = (logging & LoggingOptions.SystemDiagnostics) == LoggingOptions.SystemDiagnostics;
 #endif
-#if PCL
+#if __ANDROID__ || __IOS__
                 if (il is InternalConsoleLogger)
                     il.IsEnabled = (logging & LoggingOptions.SystemDiagnostics) == LoggingOptions.SystemDiagnostics;
+#endif
+#if PCL
+                if (il is InternalFileLogger)
+                    il.IsEnabled = (logging & LoggingOptions.File) == LoggingOptions.File;
 #endif
 
             }
