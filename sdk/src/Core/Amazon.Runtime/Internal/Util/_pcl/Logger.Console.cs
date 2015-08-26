@@ -123,7 +123,7 @@ namespace Amazon.Runtime.Internal.Util
             else
                 formatted = string.Format("{0}|{1}|{2}|{3}|{4}", sequence, dt, asString, thread, message);
 
-#if __IOS__ || __ANDROID__ 
+#if __ANDROID__ 
             switch(logLevel)
             {
                 case LogLevel.Warn:
@@ -143,6 +143,9 @@ namespace Amazon.Runtime.Internal.Util
                     Android.Util.Log.Info(DeclaringType.Name, formatted);
                     break;
             }
+#elif __IOS__
+            Console.WriteLine(@"{0} {1}", DeclaringType.Name, formatted);
+
 #else
             System.Diagnostics.Debug.WriteLine(formatted);
 #endif
