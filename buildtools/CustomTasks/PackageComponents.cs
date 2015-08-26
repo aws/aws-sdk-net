@@ -8,7 +8,7 @@ using System.Text;
 using YamlDotNet.Serialization;
 using System.Diagnostics;
 using Microsoft.Build.Framework;
-using Microsoft.Build.Tasks;
+
 
 namespace CustomTasks
 {
