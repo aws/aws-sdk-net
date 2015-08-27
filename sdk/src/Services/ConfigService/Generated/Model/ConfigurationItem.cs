@@ -42,6 +42,7 @@ namespace Amazon.ConfigService.Model
         private string _accountId;
         private string _arn;
         private string _availabilityZone;
+        private string _awsRegion;
         private string _configuration;
         private DateTime? _configurationItemCaptureTime;
         private string _configurationItemMD5Hash;
@@ -51,6 +52,7 @@ namespace Amazon.ConfigService.Model
         private List<Relationship> _relationships = new List<Relationship>();
         private DateTime? _resourceCreationTime;
         private string _resourceId;
+        private string _resourceName;
         private ResourceType _resourceType;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _version;
@@ -107,6 +109,24 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsRegion. 
+        /// <para>
+        /// The region where the resource resides.
+        /// </para>
+        /// </summary>
+        public string AwsRegion
+        {
+            get { return this._awsRegion; }
+            set { this._awsRegion = value; }
+        }
+
+        // Check to see if AwsRegion property is set
+        internal bool IsSetAwsRegion()
+        {
+            return this._awsRegion != null;
         }
 
         /// <summary>
@@ -284,6 +304,24 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetResourceId()
         {
             return this._resourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceName. 
+        /// <para>
+        /// The custom name of the resource, if available.
+        /// </para>
+        /// </summary>
+        public string ResourceName
+        {
+            get { return this._resourceName; }
+            set { this._resourceName = value; }
+        }
+
+        // Check to see if ResourceName property is set
+        internal bool IsSetResourceName()
+        {
+            return this._resourceName != null;
         }
 
         /// <summary>

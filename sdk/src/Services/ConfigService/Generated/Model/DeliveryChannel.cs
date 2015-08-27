@@ -97,8 +97,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property SnsTopicARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role used for accessing the Amazon S3 bucket
-        /// and the Amazon SNS topic.
+        /// The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications
+        /// to.
         /// </para>
         /// </summary>
         public string SnsTopicARN

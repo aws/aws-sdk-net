@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Relationship Object
+    /// Response Unmarshaller for ResourceIdentifier Object
     /// </summary>  
-    public class RelationshipUnmarshaller : IUnmarshaller<Relationship, XmlUnmarshallerContext>, IUnmarshaller<Relationship, JsonUnmarshallerContext>
+    public class ResourceIdentifierUnmarshaller : IUnmarshaller<ResourceIdentifier, XmlUnmarshallerContext>, IUnmarshaller<ResourceIdentifier, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Relationship IUnmarshaller<Relationship, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ResourceIdentifier IUnmarshaller<ResourceIdentifier, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,21 +53,21 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Relationship Unmarshall(JsonUnmarshallerContext context)
+        public ResourceIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Relationship unmarshalledObject = new Relationship();
+            ResourceIdentifier unmarshalledObject = new ResourceIdentifier();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("relationshipName", targetDepth))
+                if (context.TestExpression("resourceDeletionTime", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RelationshipName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ResourceDeletionTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resourceId", targetDepth))
@@ -94,12 +94,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         }
 
 
-        private static RelationshipUnmarshaller _instance = new RelationshipUnmarshaller();        
+        private static ResourceIdentifierUnmarshaller _instance = new ResourceIdentifierUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RelationshipUnmarshaller Instance
+        public static ResourceIdentifierUnmarshaller Instance
         {
             get
             {

@@ -28,30 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The output for the <a>GetResourceConfigHistory</a> action.
+    /// 
     /// </summary>
-    public partial class GetResourceConfigHistoryResponse : AmazonWebServiceResponse
+    public partial class ListDiscoveredResourcesResponse : AmazonWebServiceResponse
     {
-        private List<ConfigurationItem> _configurationItems = new List<ConfigurationItem>();
         private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property ConfigurationItems. 
-        /// <para>
-        /// A list that contains the configuration history of one or more resources.
-        /// </para>
-        /// </summary>
-        public List<ConfigurationItem> ConfigurationItems
-        {
-            get { return this._configurationItems; }
-            set { this._configurationItems = value; }
-        }
-
-        // Check to see if ConfigurationItems property is set
-        internal bool IsSetConfigurationItems()
-        {
-            return this._configurationItems != null && this._configurationItems.Count > 0; 
-        }
+        private List<ResourceIdentifier> _resourceIdentifiers = new List<ResourceIdentifier>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,6 +52,25 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceIdentifiers. 
+        /// <para>
+        /// The details that identify a resource that is discovered by AWS Config, including the
+        /// resource type, ID, and (if available) the custom resource name.
+        /// </para>
+        /// </summary>
+        public List<ResourceIdentifier> ResourceIdentifiers
+        {
+            get { return this._resourceIdentifiers; }
+            set { this._resourceIdentifiers = value; }
+        }
+
+        // Check to see if ResourceIdentifiers property is set
+        internal bool IsSetResourceIdentifiers()
+        {
+            return this._resourceIdentifiers != null && this._resourceIdentifiers.Count > 0; 
         }
 
     }

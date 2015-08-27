@@ -28,37 +28,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The relationship of the related resource to the main resource.
+    /// The details that identify a resource that is discovered by AWS Config, including the
+    /// resource type, ID, and (if available) the custom resource name.
     /// </summary>
-    public partial class Relationship
+    public partial class ResourceIdentifier
     {
-        private string _relationshipName;
+        private DateTime? _resourceDeletionTime;
         private string _resourceId;
         private string _resourceName;
         private ResourceType _resourceType;
 
         /// <summary>
-        /// Gets and sets the property RelationshipName. 
+        /// Gets and sets the property ResourceDeletionTime. 
         /// <para>
-        /// The type of relationship with the related resource.
+        /// The time that the resource was deleted.
         /// </para>
         /// </summary>
-        public string RelationshipName
+        public DateTime ResourceDeletionTime
         {
-            get { return this._relationshipName; }
-            set { this._relationshipName = value; }
+            get { return this._resourceDeletionTime.GetValueOrDefault(); }
+            set { this._resourceDeletionTime = value; }
         }
 
-        // Check to see if RelationshipName property is set
-        internal bool IsSetRelationshipName()
+        // Check to see if ResourceDeletionTime property is set
+        internal bool IsSetResourceDeletionTime()
         {
-            return this._relationshipName != null;
+            return this._resourceDeletionTime.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the related resource (for example, <code>sg-xxxxxx</code>).
+        /// The ID of the resource (for example., <code>sg-xxxxxx</code>).
         /// </para>
         /// </summary>
         public string ResourceId
@@ -76,7 +77,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// The custom name of the related resource, if available.
+        /// The custom name of the resource (if available).
         /// </para>
         /// </summary>
         public string ResourceName
@@ -94,7 +95,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type of the related resource.
+        /// The type of resource.
         /// </para>
         /// </summary>
         public ResourceType ResourceType
