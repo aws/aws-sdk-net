@@ -95,7 +95,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 
         /// <summary>
         /// A value indicating whether service call is allowed over data network
-        /// Turn on this by caution. This may increase customer's data usage.
+        /// Setting this property to true may increase customer's data usage.
         /// </summary>
         /// <value>Default false</value>
         public bool AllowUseDataNetwork { get; set; }

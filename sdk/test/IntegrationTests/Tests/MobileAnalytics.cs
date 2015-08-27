@@ -917,7 +917,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("MobileAnalytics")]
         public void TestEventStore()
         {
-
             // Create table
             SQLiteEventStore eventStore = new SQLiteEventStore(new MobileAnalyticsManagerConfig());
 
@@ -974,6 +973,56 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
         #endregion
 
+        #region Error Handler Test
+        [TestMethod]
+        [TestCategory("MobileAnalytics")]
+        public void TestErrorEventHandler()
+        {
+            lock (_lock)
+            {
+                CatchExpectedError = false;
+            }
+
+            string appID = Guid.NewGuid().ToString();
+            MobileAnalyticsManager manager = MobileAnalyticsManager.GetOrCreateInstance(appID, new CognitoAWSCredentials("wrong-cognito-pool-id", RegionEndpoint.USEast1), RegionEndpoint.USEast1);
+            manager.MobileAnalyticsErrorEvent += errorHandler;
+
+            Thread.Sleep(75 * 1000);
+            lock (_lock)
+            {
+                if (!CatchExpectedError)
+                    Assert.Fail();
+            }
+        }
+        private Boolean CatchExpectedError { get; set; }
+        private object _lock = new object();
+
+        private void errorHandler(object sender, MobileAnalyticsErrorEventArgs args)
+        {
+            Console.WriteLine(args);
+            lock (_lock)
+            {
+                if (args.ClassName != null && args.ErrorMessage != null && args.Exception is AmazonServiceException && args.UndeliveredEvents != null)
+                {
+                    if (args.UndeliveredEvents.Count == 0)
+                    {
+                        CatchExpectedError = true;
+                    }
+                    else
+                    {
+                        CatchExpectedError = false;
+                        Console.WriteLine("The caught low level client events are : ");
+                        foreach (Amazon.MobileAnalytics.Model.Event eventObject in args.UndeliveredEvents)
+                        {
+                            System.Console.WriteLine("Event type is {0}; Event session ID is {1}.", eventObject.EventType, eventObject.Session.Id);
+                        }
+                    }
+                }
+                else
+                    CatchExpectedError = false;
+            }
+        }
+        #endregion
 
         private string BuildClientContext()
         {

@@ -211,8 +211,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         [System.Security.SecuritySafeCritical]
         public void DeleteEvent(List<string> rowIds)
         {
-            string ids = "'" + string.Join("', '", rowIds.ToArray()) + "'";
-            string sqlCommand = string.Format(CultureInfo.InvariantCulture, "DELETE FROM " + TABLE_NAME + " WHERE " + EVENT_ID_COLUMN_NAME + " IN ({0})", ids);
+            string ids = string.Format(CultureInfo.InvariantCulture, "'{0}'", string.Join("', '", rowIds.ToArray()));
+            string sqlCommand = string.Format(CultureInfo.InvariantCulture, "DELETE FROM {0} WHERE {1} IN ({2})", TABLE_NAME, EVENT_ID_COLUMN_NAME, ids);
 #if BCL
             SQLiteConnection connection = null;
             lock (_lock)

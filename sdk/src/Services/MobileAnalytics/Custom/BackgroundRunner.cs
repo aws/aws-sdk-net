@@ -47,12 +47,13 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         {
             lock (_lock)
             {
-                if (!IsAlive()) { 
+                if (!IsAlive())
+                {
                     _thread = new System.Threading.Thread(DoWork);
                     _thread.Start();
-                }    
+                }
             }
-            
+
         }
 
         private bool IsAlive()
@@ -74,14 +75,20 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                     IDictionary<string, MobileAnalyticsManager> instanceDictionary = MobileAnalyticsManager.CopyOfInstanceDictionary;
                     foreach (string appId in instanceDictionary.Keys)
                     {
+                        MobileAnalyticsManager manager = null;
                         try
                         {
-                            MobileAnalyticsManager manager = MobileAnalyticsManager.GetInstance(appId);
+                            manager = MobileAnalyticsManager.GetInstance(appId);
                             manager.BackgroundDeliveryClient.AttemptDelivery();
                         }
                         catch (System.Exception e)
                         {
                             _logger.Error(e, "An exception occurred in Mobile Analytics Delivery Client.");
+                            if (null != manager)
+                            {
+                                MobileAnalyticsErrorEventArgs eventArgs = new MobileAnalyticsErrorEventArgs(this.GetType().Name, "An exception occurred when deliverying events to Amazon Mobile Analytics.", e, new List<Amazon.MobileAnalytics.Model.Event>());
+                                manager.OnRaiseErrorEvent(eventArgs);
+                            }
                         }
                     }
                     Thread.Sleep(BackgroundSubmissionWaitTime * 1000);
@@ -121,14 +128,21 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                     IDictionary<string, MobileAnalyticsManager> instanceDictionary = MobileAnalyticsManager.CopyOfInstanceDictionary;
                     foreach (string appId in instanceDictionary.Keys)
                     {
+                        MobileAnalyticsManager manager = null;
                         try
                         {
-                            MobileAnalyticsManager manager = MobileAnalyticsManager.GetInstance(appId);
+                            manager = MobileAnalyticsManager.GetInstance(appId);
                             await manager.BackgroundDeliveryClient.AttemptDeliveryAsync();
                         }
                         catch (System.Exception e)
                         {
                             _logger.Error(e, "An exception occurred in Mobile Analytics Delivery Client : {0}", e.ToString());
+
+                            if (null != manager)
+                            {
+                                MobileAnalyticsErrorEventArgs eventArgs = new MobileAnalyticsErrorEventArgs(this.GetType().Name, "An exception occurred when deliverying events to Amazon Mobile Analytics.", e, new List<Amazon.MobileAnalytics.Model.Event>());
+                                manager.OnRaiseErrorEvent(eventArgs);
+                            }
                         }
                     }
                 }
