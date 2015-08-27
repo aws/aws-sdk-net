@@ -18,6 +18,7 @@ using AWSSDK_DotNet.IntegrationTests.Tests.S3;
 #if BCL45
 using System.IO.Compression;
 using System.Text;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 #endif
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
@@ -206,9 +207,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 PolicyDocument = policy.ToJson()
             });
 
-            // Wait for the role and policy to propagate
-            Thread.Sleep(5000);
-
             MemoryStream stream = CreateScriptStream();
             var uploadRequest = new CreateFunctionRequest
             {
@@ -223,7 +221,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Role = iamCreateResponse.Role.Arn
             };
 
-            var uploadResponse = Client.CreateFunction(uploadRequest);
+            var uploadResponse = UtilityMethods.WaitUntilSuccess(() => Client.CreateFunction(uploadRequest));
             createdFunctionNames.Add(functionName);
 
             Assert.IsTrue(uploadResponse.CodeSize > 0);
