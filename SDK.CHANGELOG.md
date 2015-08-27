@@ -2,7 +2,7 @@
 * MobileAnalytics (3.1.1.0)
 	* Added MobileAnalyticsErrorEvent to Amazon Mobile Analytics and minor improvements.
 * Core 3.1.1.0
-	* all services packages updated to require new core
+	* Service packages updated to require new core, which includes FileLogger for PCL.
 
 ### 3.1.6.0 (2015-08-25 18:01 UTC)
 * CodePipeline (3.1.1.0)
