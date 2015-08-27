@@ -1,3 +1,9 @@
+### 3.1.7.0 (2015-08-27 00:39 UTC)
+* MobileAnalytics (3.1.1.0)
+	* Added MobileAnalyticsErrorEvent to Amazon Mobile Analytics and minor improvements.
+* Core 3.1.1.0
+	* all services packages updated to require new core
+
 ### 3.1.6.0 (2015-08-25 18:01 UTC)
 * CodePipeline (3.1.1.0)
 	* Add support for KMS encryption keys on S3 artifact stores.

@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.CloudTrail</id>
     <title>AWSSDK - AWS CloudTrail</title>
-    <version>3.1.0.0</version> 
+    <version>3.1.0.1</version> 
     <authors>Amazon Web Services</authors>
     <description>AWS CloudTrail is a web service that records AWS API calls for your account and delivers log files to you. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, the request parameters, and the response elements returned by the AWS service.</description>
     <language>en-US</language>
@@ -13,10 +13,10 @@
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
+      <dependency id="AWSSDK.Core" version="[3.1.1.0, 3.2)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.1.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 

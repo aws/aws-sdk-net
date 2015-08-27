@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.AutoScaling</id>
     <title>AWSSDK - Auto Scaling</title>
-    <version>3.1.0.0</version> 
+    <version>3.1.0.1</version> 
     <authors>Amazon Web Services</authors>
     <description>Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.</description>
     <language>en-US</language>
@@ -13,10 +13,10 @@
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
+      <dependency id="AWSSDK.Core" version="[3.1.1.0, 3.2)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.0.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.1.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 
