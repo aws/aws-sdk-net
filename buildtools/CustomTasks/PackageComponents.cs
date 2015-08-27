@@ -18,6 +18,7 @@ namespace CustomTasks
         public string NugetExe { get; set; }
         public string ComponentsExe { get; set; }
         public string DevEnvExe { get; set; }
+        public string NugetRestoreLocation { get; set; }
 
         public override bool Execute()
         {
@@ -63,9 +64,9 @@ namespace CustomTasks
                     Log.LogMessage("found solution file {0}", sampleSolutionFile);
                     Directory.SetCurrentDirectory(currentWorkingDirectory);
 
-                    RestoreNuget(Path.GetFullPath(NugetExe), sampleSolutionFile);
+                    RestoreNuget(Path.GetFullPath(NugetExe), NugetRestoreLocation, sampleSolutionFile);
 
-                    CompileSample(DevEnvExe,sampleSolutionFile);
+                    CompileSample(DevEnvExe, sampleSolutionFile);
                 }
                 PackageComponent(ComponentsExe, componentPath, componentName);
             }
@@ -107,11 +108,13 @@ namespace CustomTasks
             }
         }
 
-        private static void RestoreNuget(string nugetExe, string solutionFile)
+        private static void RestoreNuget(string nugetExe, string nugetRestoreLocation, string solutionFile)
         {
+            Console.WriteLine("restore location = " + nugetRestoreLocation);
             Process process = new Process();
             process.StartInfo.FileName = nugetExe;
-            process.StartInfo.Arguments = string.Format(@"restore {0}", solutionFile);
+
+            process.StartInfo.Arguments = string.Format(@"restore -Source ""{0}"" {1}", nugetRestoreLocation, solutionFile);
             process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.UseShellExecute = false;
             process.EnableRaisingEvents = true;
