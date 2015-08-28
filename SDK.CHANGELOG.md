@@ -1,3 +1,7 @@
+### 3.1.8.0 (2015-08-27 23:50 UTC)
+* ConfigService (3.1.1.0)
+	* Added support for ListDiscoveredResources.
+
 ### 3.1.7.0 (2015-08-27 00:39 UTC)
 * MobileAnalytics (3.1.1.0)
 	* Added MobileAnalyticsErrorEvent to Amazon Mobile Analytics and minor improvements.
