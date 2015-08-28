@@ -85,6 +85,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Price = 1200,
                 TagSet = new HashSet<string> { "Prod", "1.0" },
                 CurrentStatus = Status.Active,
+                FormerStatus = Status.Upcoming,
+                Supports = Support.Unix | Support.Windows,
+                PreviousSupport = null,
                 InternalId = "T1000",
                 IsPublic = true,
                 AlwaysN = true,
@@ -233,6 +236,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Price = 1200,
                 TagSet = new HashSet<string> { "Prod", "1.0" },
                 CurrentStatus = Status.Active,
+                FormerStatus = Status.Upcoming,
+                Supports = Support.Windows | Support.Abacus,
+                PreviousSupport = null,
                 InternalId = "T1000",
                 IsPublic = true,
                 AlwaysN = true,
@@ -296,6 +302,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(product.Components.Count, retrieved.Components.Count);
             Assert.IsNull(retrieved.InternalId);
             Assert.AreEqual(product.CurrentStatus, retrieved.CurrentStatus);
+            Assert.AreEqual(product.FormerStatus, retrieved.FormerStatus);
+            Assert.AreEqual(product.Supports, retrieved.Supports);
+            Assert.AreEqual(product.PreviousSupport, retrieved.PreviousSupport);
             Assert.AreEqual(product.IsPublic, retrieved.IsPublic);
             Assert.AreEqual(product.Rating, retrieved.Rating);
             Assert.AreEqual(product.KeySizes.Count, retrieved.KeySizes.Count);
@@ -662,7 +671,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         #region OPM definitions
 
-        public enum Status { Active, Inactive, Upcoming, Obsolete, Removed }
+        public enum Status : long
+        {
+            Active =    256,
+            Inactive =  1024,
+            Upcoming =  9999,
+            Obsolete =  -10,
+            Removed =   42
+        }
+
+        [Flags]
+        public enum Support
+        {
+            Windows =   1 << 0,
+            iOS =       1 << 1,
+            Unix =      1 << 2,
+            Abacus =    1 << 3,
+        }
 
         public class StatusConverter : IPropertyConverter
         {
@@ -708,6 +733,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             [DynamoDBProperty(Converter = typeof(StatusConverter))]
             public Status CurrentStatus { get; set; }
+
+            public Status FormerStatus { get; set; }
+
+            public Support Supports { get; set; }
+
+            public Support? PreviousSupport { get; set; }
 
             [DynamoDBIgnore]
             public string InternalId { get; set; }

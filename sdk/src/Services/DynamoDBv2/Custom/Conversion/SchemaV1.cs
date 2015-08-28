@@ -264,6 +264,49 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+    internal class EnumConverterV1 : Converter<Enum>
+    {
+        protected override bool TryTo(Enum value, out Primitive p)
+        {
+            p = null;
+
+            // get enum type
+            var valueType = value.GetType();
+            // get numeric type underlying enum (int, byte, etc.)
+            var underlyingType = Enum.GetUnderlyingType(valueType);
+            // convert enum value to numeric type
+            var numerical = Convert.ChangeType(value, underlyingType);
+
+            // convert numeric type to primitive
+            DynamoDBEntry entry;
+            if (Conversion.TryConvertToEntry(underlyingType, numerical, out entry))
+            {
+                p = entry as Primitive;
+            }
+
+            var succeeded = (p != null);
+            return succeeded;
+        }
+        protected override bool TryFrom(Primitive p, Type targetType, out Enum result)
+        {
+            result = null;
+
+            // get numeric type underlying enum (int, byte, etc.)
+            var underlyingType = Enum.GetUnderlyingType(targetType);
+
+            // convert Primitive to numeric type
+            object numerical;
+            if (Conversion.TryConvertFromEntry(underlyingType, p, out numerical))
+            {
+                // convert numeric to target enum
+                result = Enum.ToObject(targetType, numerical) as Enum;
+            }
+
+            var succeeded = (result != null);
+            return succeeded;
+        }
+    }
+
     #endregion
 
     #region Converters supporting reading V2 DDB items, but writing V1 items
