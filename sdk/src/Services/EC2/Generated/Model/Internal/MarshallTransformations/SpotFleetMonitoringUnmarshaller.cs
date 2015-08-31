@@ -32,70 +32,66 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateRoute operation
+    /// Response Unmarshaller for SpotFleetMonitoring Object
     /// </summary>  
-    public class CreateRouteResponseUnmarshaller : EC2ResponseUnmarshaller
+    public class SpotFleetMonitoringUnmarshaller : IUnmarshaller<SpotFleetMonitoring, XmlUnmarshallerContext>, IUnmarshaller<SpotFleetMonitoring, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        public SpotFleetMonitoring Unmarshall(XmlUnmarshallerContext context)
         {
-            CreateRouteResponse response = new CreateRouteResponse();
-
+            SpotFleetMonitoring unmarshalledObject = new SpotFleetMonitoring();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
-               targetDepth = 2;
-
+               targetDepth += 2;
+            
             while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-
-                    if (context.TestExpression("return", targetDepth))
+                    if (context.TestExpression("enabled", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
-                        response.Return = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                } 
+                }
+                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    return unmarshalledObject;
+                }
             }
 
-            return response;
+            return unmarshalledObject;
         }
 
         /// <summary>
         /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="innerException"></param>
-        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public SpotFleetMonitoring Unmarshall(JsonUnmarshallerContext context)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            return null;
         }
-        private static CreateRouteResponseUnmarshaller _instance = new CreateRouteResponseUnmarshaller();        
 
-        internal static CreateRouteResponseUnmarshaller GetInstance()
-        {
-            return _instance;
-        }
+
+        private static SpotFleetMonitoringUnmarshaller _instance = new SpotFleetMonitoringUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateRouteResponseUnmarshaller Instance
+        public static SpotFleetMonitoringUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
-
     }
 }

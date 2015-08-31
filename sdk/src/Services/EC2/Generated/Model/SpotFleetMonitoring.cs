@@ -28,28 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Describes whether monitoring is enabled.
     /// </summary>
-    public partial class CreateRouteResponse : AmazonWebServiceResponse
+    public partial class SpotFleetMonitoring
     {
-        private bool? _return;
+        private bool? _enabled;
 
         /// <summary>
-        /// Gets and sets the property Return. 
+        /// Gets and sets the property Enabled. 
         /// <para>
-        /// Returns <code>true</code> if the request succeeds; otherwise, it returns an error.
+        /// Enables monitoring for the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code>
         /// </para>
         /// </summary>
-        public bool Return
+        public bool Enabled
         {
-            get { return this._return.GetValueOrDefault(); }
-            set { this._return = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
 
-        // Check to see if Return property is set
-        internal bool IsSetReturn()
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
         {
-            return this._return.HasValue; 
+            return this._enabled.HasValue; 
         }
 
     }

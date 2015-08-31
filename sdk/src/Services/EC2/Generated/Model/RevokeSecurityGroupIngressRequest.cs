@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// The ID of the security group.
+        /// The ID of the security group. Required for a security group in a nondefault VPC.
         /// </para>
         /// </summary>
         public string GroupId

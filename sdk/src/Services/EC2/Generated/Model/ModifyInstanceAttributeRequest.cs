@@ -121,7 +121,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property DisableApiTermination. 
         /// <para>
         /// If the value is <code>true</code>, you can't terminate the instance using the Amazon
-        /// EC2 console, CLI, or API; otherwise, you can.
+        /// EC2 console, CLI, or API; otherwise, you can. You cannot use this paramater for Spot
+        /// Instances.
         /// </para>
         /// </summary>
         public bool DisableApiTermination
@@ -340,7 +341,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// A new value for the attribute. Use only with the <code>kernel</code>, <code>ramdisk</code>,
-        /// <code>userData</code>, <code>disableApiTermination</code>, or <code>intanceInitiateShutdownBehavior</code>
+        /// <code>userData</code>, <code>disableApiTermination</code>, or <code>instanceInitiatedShutdownBehavior</code>
         /// attribute.
         /// </para>
         /// </summary>

@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("launchSpecifications/item", targetDepth))
                     {
-                        var unmarshaller = LaunchSpecificationUnmarshaller.Instance;
+                        var unmarshaller = SpotFleetLaunchSpecificationUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LaunchSpecifications.Add(item);
                         continue;

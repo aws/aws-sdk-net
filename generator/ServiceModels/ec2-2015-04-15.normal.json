@@ -258,7 +258,7 @@
       },
       "input":{"shape":"CopySnapshotRequest"},
       "output":{"shape":"CopySnapshotResult"},
-      "documentation":"<p>Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can copy the snapshot within the same region or from one region to another. You can use the snapshot to create EBS volumes or Amazon Machine Images (AMIs). The snapshot is copied to the regional endpoint that you send the HTTP request to.</p> <p>Copies of encrypted EBS snapshots remain encrypted. Copies of unencrypted snapshots remain unencrypted, unless the <code>Encrypted</code> flag is specified during the snapshot copy operation. By default, encrypted snapshot copies use the default AWS Key Management Service (KMS) master key; however, you can specify a non-default master key with the <code>KmsKeyId</code> parameter.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html\">Copying an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"
+      "documentation":"<p>Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can copy the snapshot within the same region or from one region to another. You can use the snapshot to create EBS volumes or Amazon Machine Images (AMIs). The snapshot is copied to the regional endpoint that you send the HTTP request to.</p> <p>Copies of encrypted EBS snapshots remain encrypted. Copies of unencrypted snapshots remain unencrypted, unless the <code>Encrypted</code> flag is specified during the snapshot copy operation. By default, encrypted snapshot copies use the default AWS Key Management Service (AWS KMS) customer master key (CMK); however, you can specify a non-default CMK with the <code>KmsKeyId</code> parameter.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html\">Copying an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"
     },
     "CreateCustomerGateway":{
       "name":"CreateCustomerGateway",
@@ -1645,7 +1645,7 @@
       },
       "input":{"shape":"RegisterImageRequest"},
       "output":{"shape":"RegisterImageResult"},
-      "documentation":"<p>Registers an AMI. When you're creating an AMI, this is the final step you must complete before you can launch an instance from the AMI. For more information about creating AMIs, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html\">Creating Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <note><p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and registers the AMI in a single request, so you don't have to register the AMI yourself.</p></note> <p>You can also use <code>RegisterImage</code> to create an Amazon EBS-backed AMI from a snapshot of a root device volume. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html\">Launching an Instance from a Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If needed, you can deregister an AMI at any time. Any modifications you make to an AMI backed by an instance store volume invalidates its registration. If you make changes to an image, deregister the previous image and register the new image.</p> <note><p>You can't register an image where a secondary (non-root) snapshot has AWS Marketplace product codes.</p></note>"
+      "documentation":"<p>Registers an AMI. When you're creating an AMI, this is the final step you must complete before you can launch an instance from the AMI. For more information about creating AMIs, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html\">Creating Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <note><p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and registers the AMI in a single request, so you don't have to register the AMI yourself.</p></note> <p>You can also use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI from a snapshot of a root device volume. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html\">Launching an Instance from a Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <important> <p>Some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server (SLES), use the EC2 <code>billingProduct</code> code associated with an AMI to verify subscription status for package updates. Creating an AMI from an EBS snapshot does not maintain this billing code, and subsequent instances launched from such an AMI will not be able to connect to package update infrastructure.</p> <p>Similarly, although you can create a Windows AMI from a snapshot, you can't successfully launch an instance from the AMI.</p> <p>To create Windows AMIs or to create AMIs for Linux operating systems that must retain AMI billing codes to work properly, see <a>CreateImage</a>.</p> </important> <p>If needed, you can deregister an AMI at any time. Any modifications you make to an AMI backed by an instance store volume invalidates its registration. If you make changes to an image, deregister the previous image and register the new image.</p> <note><p>You can't register an image where a secondary (non-root) snapshot has AWS Marketplace product codes.</p></note>"
     },
     "RejectVpcPeeringConnection":{
       "name":"RejectVpcPeeringConnection",
@@ -1727,7 +1727,7 @@
         "shape":"RequestSpotFleetResponse",
         "documentation":"<p>Contains the output of RequestSpotFleet.</p>"
       },
-      "documentation":"<p>Creates a Spot fleet request.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html\">Spot Fleets</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"
+      "documentation":"<p>Creates a Spot fleet request.</p> <p>You can submit a single request that specifies multiple instance types, each with its own instance weighting that reflects its value to your application workload. Amazon EC2 computes the bid price for each launch specification and requests Spot Instances in the Spot pool where the price per unit is the lowest. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html\">Spot Fleets</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"
     },
     "RequestSpotInstances":{
       "name":"RequestSpotInstances",
@@ -1821,7 +1821,7 @@
         "documentation":"<p>One or more reservations.</p>",
         "locationName":"reservation"
       },
-      "documentation":"<p>Launches the specified number of instances using an AMI for which you have permissions.</p> <p>When you launch an instance, it enters the <code>pending</code> state. After the instance is ready for you, it enters the <code>running</code> state. To check the state of your instance, call <a>DescribeInstances</a>.</p> <p>If you don't specify a security group when launching an instance, Amazon EC2 uses the default security group. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html\">Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Linux instances have access to the public key of the key pair at boot. You can use this key to provide secure access to the instance. Amazon EC2 public images use this feature to provide secure access without passwords. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html\">Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>You can provide optional user data when launching an instance. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html\">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If any of the AMIs have a product code attached for which the user has not subscribed, <code>RunInstances</code> fails.</p> <p>T2 instance types can only be launched into a VPC. If you do not have a default VPC, or if you do not specify a subnet ID in the request, <code>RunInstances</code> fails.</p> <p>For more information about troubleshooting, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html\">What To Do If An Instance Immediately Terminates</a>, and <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html\">Troubleshooting Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"
+      "documentation":"<p>Launches the specified number of instances using an AMI for which you have permissions.</p> <p>When you launch an instance, it enters the <code>pending</code> state. After the instance is ready for you, it enters the <code>running</code> state. To check the state of your instance, call <a>DescribeInstances</a>.</p> <p>If you don't specify a security group when launching an instance, Amazon EC2 uses the default security group. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html\">Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>[EC2-VPC only accounts] If you don't specify a subnet in the request, we choose a default subnet from your default VPC for you. </p> <p>[EC2-Classic accounts] If you're launching into EC2-Classic and you don't specify an Availability Zone, we choose one for you.</p> <p>Linux instances have access to the public key of the key pair at boot. You can use this key to provide secure access to the instance. Amazon EC2 public images use this feature to provide secure access without passwords. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html\">Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>You can provide optional user data when launching an instance. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html\">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If any of the AMIs have a product code attached for which the user has not subscribed, <code>RunInstances</code> fails.</p> <p>T2 instance types can only be launched into a VPC. If you do not have a default VPC, or if you do not specify a subnet ID in the request, <code>RunInstances</code> fails.</p> <p>For more information about troubleshooting, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html\">What To Do If An Instance Immediately Terminates</a>, and <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html\">Troubleshooting Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"
     },
     "StartInstances":{
       "name":"StartInstances",
@@ -1851,7 +1851,7 @@
       },
       "input":{"shape":"TerminateInstancesRequest"},
       "output":{"shape":"TerminateInstancesResult"},
-      "documentation":"<p>Shuts down one or more instances. This operation is idempotent; if you terminate an instance more than once, each call succeeds.</p> <p>Terminated instances remain visible after termination (for approximately one hour).</p> <p>By default, Amazon EC2 deletes all EBS volumes that were attached when the instance launched. Volumes attached after instance launch continue running.</p> <p>You can stop, start, and terminate EBS-backed instances. You can only terminate instance store-backed instances. What happens to an instance differs if you stop it or terminate it. For example, when you stop an instance, the root device and any other devices attached to the instance persist. When you terminate an instance, the root device and any other devices attached during the instance launch are automatically deleted. For more information about the differences between stopping and terminating instances, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html\">Instance Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For more information about troubleshooting, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html\">Troubleshooting Terminating Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"
+      "documentation":"<p>Shuts down one or more instances. This operation is idempotent; if you terminate an instance more than once, each call succeeds.</p> <p>Terminated instances remain visible after termination (for approximately one hour).</p> <p>By default, Amazon EC2 deletes all EBS volumes that were attached when the instance launched. Volumes attached after instance launch continue running.</p> <p>You can stop, start, and terminate EBS-backed instances. You can only terminate instance store-backed instances. What happens to an instance differs if you stop it or terminate it. For example, when you stop an instance, the root device and any other devices attached to the instance persist. When you terminate an instance, any attached EBS volumes with the <code>DeleteOnTermination</code> block device mapping parameter set to <code>true</code> are automatically deleted. For more information about the differences between stopping and terminating instances, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html\">Instance Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For more information about troubleshooting, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html\">Troubleshooting Terminating Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"
     },
     "UnassignPrivateIpAddresses":{
       "name":"UnassignPrivateIpAddresses",
@@ -2422,12 +2422,12 @@
         },
         "SourceSecurityGroupName":{
           "shape":"String",
-          "documentation":"<p>[EC2-Classic, default VPC] The name of the destination security group. You can't specify a destination security group and a CIDR IP address range.</p>",
+          "documentation":"<p>The name of a destination security group. To authorize outbound access to a destination security group, we recommend that you use a set of IP permissions instead.</p>",
           "locationName":"sourceSecurityGroupName"
         },
         "SourceSecurityGroupOwnerId":{
           "shape":"String",
-          "documentation":"<p>The ID of the destination security group. You can't specify a destination security group and a CIDR IP address range.</p>",
+          "documentation":"<p>The AWS account number for a destination security group. To authorize outbound access to a destination security group, we recommend that you use a set of IP permissions instead.</p>",
           "locationName":"sourceSecurityGroupOwnerId"
         },
         "IpProtocol":{
@@ -2475,11 +2475,11 @@
         },
         "SourceSecurityGroupName":{
           "shape":"String",
-          "documentation":"<p>[EC2-Classic, default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, and the end of the port range. </p>"
+          "documentation":"<p>[EC2-Classic, default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range. For EC2-VPC, the source security group must be in the same VPC.</p>"
         },
         "SourceSecurityGroupOwnerId":{
           "shape":"String",
-          "documentation":"<p>The ID of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, and the end of the port range. </p>"
+          "documentation":"<p>[EC2-Classic, default VPC] The AWS account number for the source security group. For EC2-VPC, the source security group must be in the same VPC. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP permissions instead.</p>"
         },
         "IpProtocol":{
           "shape":"String",
@@ -3274,12 +3274,12 @@
         },
         "Encrypted":{
           "shape":"Boolean",
-          "documentation":"<p>Specifies whether the destination snapshot should be encrypted. There is no way to create an unencrypted snapshot copy from an encrypted snapshot; however, you can encrypt a copy of an unencrypted snapshot with this flag. The default master key is used unless a non-default AWS Key Management Service (KMS) master key is specified with <code>KmsKeyId</code>. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html\">Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>",
+          "documentation":"<p>Specifies whether the destination snapshot should be encrypted. There is no way to create an unencrypted snapshot copy from an encrypted snapshot; however, you can encrypt a copy of an unencrypted snapshot with this flag. The default CMK for EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html\">Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>",
           "locationName":"encrypted"
         },
         "KmsKeyId":{
           "shape":"String",
-          "documentation":"<p>The full ARN of the AWS Key Management Service (KMS) master key to use when creating the snapshot copy. This parameter is only required if you want to use a non-default master key; if this parameter is not specified, the default master key is used. The ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the master key, the AWS account ID of the master key owner, the <code>key</code> namespace, and then the master key ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The specified key must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be set.</p>",
+          "documentation":"<p>The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when creating the snapshot copy. This parameter is only required if you want to use a non-default CMK; if this parameter is not specified, the default CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The specified CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be set.</p>",
           "locationName":"kmsKeyId"
         }
       }
@@ -3776,11 +3776,6 @@
           "shape":"String",
           "documentation":"<p>The ID of a VPC peering connection.</p>",
           "locationName":"vpcPeeringConnectionId"
-        },
-        "ClientToken":{
-          "shape":"String",
-          "documentation":"<p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">How to Ensure Idempotency</a>.</p>",
-          "locationName":"clientToken"
         }
       }
     },
@@ -3791,11 +3786,6 @@
           "shape":"Boolean",
           "documentation":"<p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>",
           "locationName":"return"
-        },
-        "ClientToken":{
-          "shape":"String",
-          "documentation":"<p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>",
-          "locationName":"clientToken"
         }
       }
     },
@@ -4047,7 +4037,7 @@
         },
         "KmsKeyId":{
           "shape":"String",
-          "documentation":"<p>The full ARN of the AWS Key Management Service (KMS) master key to use when creating the encrypted volume. This parameter is only required if you want to use a non-default master key; if this parameter is not specified, the default master key is used. The ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the master key, the AWS account ID of the master key owner, the <code>key</code> namespace, and then the master key ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be set.</p>"
+          "documentation":"<p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the encrypted volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not specified, the default CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be set.</p>"
         }
       }
     },
@@ -4068,7 +4058,7 @@
         },
         "ServiceName":{
           "shape":"String",
-          "documentation":"The AWS service name, in the form com.amazonaws.&lt;region&gt;.&lt;service&gt;. To get a list of available services, use the DescribeVpcEndpointServices request."
+          "documentation":"<p>The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i></code>. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request.</p>"
         },
         "PolicyDocument":{
           "shape":"String",
@@ -7270,7 +7260,7 @@
         },
         "EventSubType":{
           "shape":"String",
-          "documentation":"<p>The event.</p> <p>The following are the <code>error</code> events.</p> <ul> <li> <p><code>iamFleetRoleInvalid</code> - Spot fleet did not have the required permissions either to launch or terminate an instance.</p> </li> <li> <para><code>spotFleetRequestConfigurationInvalid</code> - The configuration is not valid. For more information, see the description.</para> </li> <li> <p><code>spotInstanceCountLimitExceeded</code> - You've reached the limit on the number of Spot Instances that you can launch.</p> </li> </ul> <p>The following are the <code>fleetRequestChange</code> events.</p> <ul> <li> <p><code>active</code> - The Spot fleet has been validated and Amazon EC2 is attempting to maintain the target number of running Spot Instances.</p> </li> <li> <p><code>cancelled</code> - The Spot fleet is canceled and has no running Spot Instances. The Spot fleet will be deleted two days after its instances were terminated.</p> </li> <li> <p><code>cancelled_running</code> - The Spot fleet is canceled and will not launch additional Spot Instances, but its existing Spot Instances will continue to run until they are interrupted or terminated.</p> </li> <li> <p><code>cancelled_terminating</code> - The Spot fleet is canceled and its Spot Instances are terminating.</p> </li> <li> <p><code>expired</code> - The Spot fleet request has expired. A subsequent event indicates that the instances were terminated, if the request was created with <code>terminateInstancesWithExpiration</code> set.</p> </li> <li> <p><code>price_update</code> - The bid price for a launch configuration was adjusted because it was too high. This change is permanent.</p> </li> <li> <p><code>submitted</code> - The Spot fleet request is being evaluated and Amazon EC2 is preparing to launch the target number of Spot Instances.</p> </li> </ul> <p>The following are the <code>instanceChange</code> events.</p> <ul> <li> <p><code>launched</code> - A bid was fulfilled and a new instance was launched.</p> </li> <li> <p><code>terminated</code> - An instance was terminated by the user.</p> </li> </ul>",
+          "documentation":"<p>The event.</p> <p>The following are the <code>error</code> events.</p> <ul> <li> <p><code>iamFleetRoleInvalid</code> - Spot fleet did not have the required permissions either to launch or terminate an instance.</p> </li> <li> <p><code>spotFleetRequestConfigurationInvalid</code> - The configuration is not valid. For more information, see the description.</p> </li> <li> <p><code>spotInstanceCountLimitExceeded</code> - You've reached the limit on the number of Spot Instances that you can launch.</p> </li> </ul> <p>The following are the <code>fleetRequestChange</code> events.</p> <ul> <li> <p><code>active</code> - The Spot fleet has been validated and Amazon EC2 is attempting to maintain the target number of running Spot Instances.</p> </li> <li> <p><code>cancelled</code> - The Spot fleet is canceled and has no running Spot Instances. The Spot fleet will be deleted two days after its instances were terminated.</p> </li> <li> <p><code>cancelled_running</code> - The Spot fleet is canceled and will not launch additional Spot Instances, but its existing Spot Instances will continue to run until they are interrupted or terminated.</p> </li> <li> <p><code>cancelled_terminating</code> - The Spot fleet is canceled and its Spot Instances are terminating.</p> </li> <li> <p><code>expired</code> - The Spot fleet request has expired. A subsequent event indicates that the instances were terminated, if the request was created with <code>TerminateInstancesWithExpiration</code> set.</p> </li> <li> <p><code>price_update</code> - The bid price for a launch configuration was adjusted because it was too high. This change is permanent.</p> </li> <li> <p><code>submitted</code> - The Spot fleet request is being evaluated and Amazon EC2 is preparing to launch the target number of Spot Instances.</p> </li> </ul> <p>The following are the <code>instanceChange</code> events.</p> <ul> <li> <p><code>launched</code> - A bid was fulfilled and a new instance was launched.</p> </li> <li> <p><code>terminated</code> - An instance was terminated by the user.</p> </li> </ul>",
           "locationName":"eventSubType"
         },
         "EventDescription":{
@@ -9688,7 +9678,7 @@
     "LaunchSpecsList":{
       "type":"list",
       "member":{
-        "shape":"LaunchSpecification",
+        "shape":"SpotFleetLaunchSpecification",
         "locationName":"item"
       },
       "min":1
@@ -9730,7 +9720,7 @@
           "documentation":"<p>The name of the attribute to modify.</p>"
         },
         "OperationType":{
-          "shape":"String",
+          "shape":"OperationType",
           "documentation":"<p>The operation type.</p>"
         },
         "UserIds":{
@@ -9783,7 +9773,7 @@
         },
         "Value":{
           "shape":"String",
-          "documentation":"<p>A new value for the attribute. Use only with the <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>, or <code>intanceInitiateShutdownBehavior</code> attribute.</p>",
+          "documentation":"<p>A new value for the attribute. Use only with the <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>, or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>",
           "locationName":"value"
         },
         "BlockDeviceMappings":{
@@ -9797,7 +9787,7 @@
         },
         "DisableApiTermination":{
           "shape":"AttributeBooleanValue",
-          "documentation":"<p>If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can.</p>",
+          "documentation":"<p>If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this paramater for Spot Instances.</p>",
           "locationName":"disableApiTermination"
         },
         "InstanceType":{
@@ -9927,10 +9917,10 @@
         },
         "Attribute":{
           "shape":"SnapshotAttributeName",
-          "documentation":"<p>The snapshot attribute to modify.</p>"
+          "documentation":"<p>The snapshot attribute to modify.</p> <note> <p>Only volume creation permissions may be modified at the customer level.</p> </note>"
         },
         "OperationType":{
-          "shape":"String",
+          "shape":"OperationType",
           "documentation":"<p>The type of operation to perform to the attribute.</p>"
         },
         "UserIds":{
@@ -10528,6 +10518,13 @@
         "No Upfront",
         "Partial Upfront",
         "All Upfront"
+      ]
+    },
+    "OperationType":{
+      "type":"string",
+      "enum":[
+        "add",
+        "remove"
       ]
     },
     "OwnerStringList":{
@@ -12039,12 +12036,12 @@
         },
         "SourceSecurityGroupName":{
           "shape":"String",
-          "documentation":"<p>[EC2-Classic, default VPC] The name of the destination security group. You can't specify a destination security group and a CIDR IP address range.</p>",
+          "documentation":"<p>The name of a destination security group. To revoke outbound access to a destination security group, we recommend that you use a set of IP permissions instead.</p>",
           "locationName":"sourceSecurityGroupName"
         },
         "SourceSecurityGroupOwnerId":{
           "shape":"String",
-          "documentation":"<p>The ID of the destination security group. You can't specify a destination security group and a CIDR IP address range.</p>",
+          "documentation":"<p>The AWS account number for a destination security group. To revoke outbound access to a destination security group, we recommend that you use a set of IP permissions instead.</p>",
           "locationName":"sourceSecurityGroupOwnerId"
         },
         "IpProtocol":{
@@ -12088,15 +12085,15 @@
         },
         "GroupId":{
           "shape":"String",
-          "documentation":"<p>The ID of the security group.</p>"
+          "documentation":"<p>The ID of the security group. Required for a security group in a nondefault VPC.</p>"
         },
         "SourceSecurityGroupName":{
           "shape":"String",
-          "documentation":"<p>[EC2-Classic, default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, and the end of the port range. </p>"
+          "documentation":"<p>[EC2-Classic, default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range. For EC2-VPC, the source security group must be in the same VPC.</p>"
         },
         "SourceSecurityGroupOwnerId":{
           "shape":"String",
-          "documentation":"<p>The ID of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, and the end of the port range. </p>"
+          "documentation":"<p>[EC2-Classic, default VPC] The AWS account ID of the source security group. For EC2-VPC, the source security group must be in the same VPC. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range. To revoke a specific rule for an IP protocol and port range, use a set of IP permissions instead.</p>"
         },
         "IpProtocol":{
           "shape":"String",
@@ -12566,7 +12563,7 @@
         },
         "KmsKeyId":{
           "shape":"String",
-          "documentation":"<p>The full ARN of the AWS Key Management Service (KMS) master key that was used to protect the volume encryption key for the parent volume.</p>",
+          "documentation":"<p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the volume encryption key for the parent volume.</p>",
           "locationName":"kmsKeyId"
         }
       },
@@ -12764,6 +12761,108 @@
       },
       "documentation":"<p>Describes the data feed for a Spot Instance.</p>"
     },
+    "SpotFleetLaunchSpecification":{
+      "type":"structure",
+      "members":{
+        "ImageId":{
+          "shape":"String",
+          "documentation":"<p>The ID of the AMI.</p>",
+          "locationName":"imageId"
+        },
+        "KeyName":{
+          "shape":"String",
+          "documentation":"<p>The name of the key pair.</p>",
+          "locationName":"keyName"
+        },
+        "SecurityGroups":{
+          "shape":"GroupIdentifierList",
+          "documentation":"<p>One or more security groups. To request an instance in a nondefault VPC, you must specify the ID of the security group. To request an instance in EC2-Classic or a default VPC, you can specify the name or the ID of the security group.</p>",
+          "locationName":"groupSet"
+        },
+        "UserData":{
+          "shape":"String",
+          "documentation":"<p>The Base64-encoded MIME user data to make available to the instances.</p>",
+          "locationName":"userData"
+        },
+        "AddressingType":{
+          "shape":"String",
+          "documentation":"<p>Deprecated.</p>",
+          "locationName":"addressingType"
+        },
+        "InstanceType":{
+          "shape":"InstanceType",
+          "documentation":"<p>The instance type.</p>",
+          "locationName":"instanceType"
+        },
+        "Placement":{
+          "shape":"SpotPlacement",
+          "documentation":"<p>The placement information.</p>",
+          "locationName":"placement"
+        },
+        "KernelId":{
+          "shape":"String",
+          "documentation":"<p>The ID of the kernel.</p>",
+          "locationName":"kernelId"
+        },
+        "RamdiskId":{
+          "shape":"String",
+          "documentation":"<p>The ID of the RAM disk.</p>",
+          "locationName":"ramdiskId"
+        },
+        "BlockDeviceMappings":{
+          "shape":"BlockDeviceMappingList",
+          "documentation":"<p>One or more block device mapping entries.</p>",
+          "locationName":"blockDeviceMapping"
+        },
+        "Monitoring":{
+          "shape":"SpotFleetMonitoring",
+          "documentation":"<p>Enable or disable monitoring for the instances.</p>",
+          "locationName":"monitoring"
+        },
+        "SubnetId":{
+          "shape":"String",
+          "documentation":"<p>The ID of the subnet in which to launch the instances.</p>",
+          "locationName":"subnetId"
+        },
+        "NetworkInterfaces":{
+          "shape":"InstanceNetworkInterfaceSpecificationList",
+          "documentation":"<p>One or more network interfaces.</p>",
+          "locationName":"networkInterfaceSet"
+        },
+        "IamInstanceProfile":{
+          "shape":"IamInstanceProfileSpecification",
+          "documentation":"<p>The IAM instance profile.</p>",
+          "locationName":"iamInstanceProfile"
+        },
+        "EbsOptimized":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p> <p>Default: <code>false</code></p>",
+          "locationName":"ebsOptimized"
+        },
+        "WeightedCapacity":{
+          "shape":"Double",
+          "documentation":"<p>The number of units provided by the specified instance type. These are the same units that you chose to set the target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or I/O).</p> <p>If the target capacity divided by this value is not a whole number, we round the number of instances to the next whole number. If this value is not specified, the default is 1.</p>",
+          "locationName":"weightedCapacity"
+        },
+        "SpotPrice":{
+          "shape":"String",
+          "documentation":"<p>The bid price per unit hour for the specified instance type. If this value is not specified, the default is the Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot bid price by the value of <code>WeightedCapacity</code>.</p>",
+          "locationName":"spotPrice"
+        }
+      },
+      "documentation":"<p>Describes the launch specification for one or more Spot Instances.</p>"
+    },
+    "SpotFleetMonitoring":{
+      "type":"structure",
+      "members":{
+        "Enabled":{
+          "shape":"Boolean",
+          "documentation":"<p>Enables monitoring for the instance.</p> <p>Default: <code>false</code></p>",
+          "locationName":"enabled"
+        }
+      },
+      "documentation":"<p>Describes whether monitoring is enabled.</p>"
+    },
     "SpotFleetRequestConfig":{
       "type":"structure",
       "required":[
@@ -12806,12 +12905,12 @@
         },
         "SpotPrice":{
           "shape":"String",
-          "documentation":"<p>The maximum hourly price (bid) for any Spot Instance launched to fulfill the request.</p>",
+          "documentation":"<p>The bid price per unit hour.</p>",
           "locationName":"spotPrice"
         },
         "TargetCapacity":{
           "shape":"Integer",
-          "documentation":"<p>The maximum number of Spot Instances to launch.</p>",
+          "documentation":"<p>The number of units to request. You can choose to set the target capacity in terms of instances or a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O.</p>",
           "locationName":"targetCapacity"
         },
         "ValidFrom":{
@@ -13442,7 +13541,7 @@
           "locationName":"message"
         }
       },
-      "documentation":"<p>Information about the error that occured. For more information about errors, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html\">Error Codes</a>.</p>"
+      "documentation":"<p>Information about the error that occurred. For more information about errors, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html\">Error Codes</a>.</p>"
     },
     "UnsuccessfulItemSet":{
       "type":"list",
@@ -13646,7 +13745,7 @@
         },
         "KmsKeyId":{
           "shape":"String",
-          "documentation":"<p>The full ARN of the AWS Key Management Service (KMS) master key that was used to protect the volume encryption key for the volume.</p>",
+          "documentation":"<p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the volume encryption key for the volume.</p>",
           "locationName":"kmsKeyId"
         }
       },
@@ -14498,5 +14597,7 @@
       },
       "documentation":"<p>Describes the launch specification for an instance.</p>"
     }
+  },
+  "examples":{
   }
 }
