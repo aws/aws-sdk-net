@@ -1,3 +1,7 @@
+### 3.1.9.0 (2015-08-31 21:22 UTC)
+* EC2 (3.1.1.0)
+	* Add support for spot fleet instance weights.
+
 ### 3.1.8.0 (2015-08-27 23:50 UTC)
 * ConfigService (3.1.1.0)
 	* Added support for ListDiscoveredResources.
