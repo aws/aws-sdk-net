@@ -291,19 +291,48 @@ namespace Amazon.DynamoDBv2
         {
             result = null;
 
-            // get numeric type underlying enum (int, byte, etc.)
-            var underlyingType = Enum.GetUnderlyingType(targetType);
-
-            // convert Primitive to numeric type
-            object numerical;
-            if (Conversion.TryConvertFromEntry(underlyingType, p, out numerical))
+            switch (p.Type)
             {
-                // convert numeric to target enum
-                result = Enum.ToObject(targetType, numerical) as Enum;
+                case DynamoDBEntryType.Numeric:
+                    result = ConvertEnum(p, targetType);
+                    break;
+                case DynamoDBEntryType.String:
+                    result = ConvertEnum(p.StringValue, targetType);
+                    break;
+                default:
+                    break;
             }
 
             var succeeded = (result != null);
             return succeeded;
+        }
+
+        private Enum ConvertEnum(Primitive p, Type targetType)
+        {
+            // get numeric type underlying enum (int, byte, etc.)
+            var enumUnderlyingType = Enum.GetUnderlyingType(targetType);
+
+            object numerical;
+            // convert Primitive to numeric type, using current conversion
+            if (Conversion.TryConvertFromEntry(enumUnderlyingType, p, out numerical))
+            {
+                // convert numeric to target enum
+                return Enum.ToObject(targetType, numerical) as Enum;
+            }
+
+            return null;
+        }
+        private Enum ConvertEnum(string s, Type targetType)
+        {
+            // try to parse enum from string
+            try
+            {
+                return Enum.Parse(targetType, s) as Enum;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 
