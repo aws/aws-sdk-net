@@ -265,6 +265,12 @@ namespace <#=this.Config.Namespace#>
 #>
 <#
         this.FormatOperationDocumentationSync(operation, false);
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete(<#=operation.DeprecationMessage#>)]
+<#		
+		}
 #>
         public <#=operation.Name#>Response <#=operation.Name#>()
         {
@@ -278,6 +284,12 @@ namespace <#=this.Config.Namespace#>
 #>
 <#
         this.FormatOperationDocumentationSync(operation, true);
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete(<#=operation.DeprecationMessage#>)]
+<#		
+		}
 #>
         <#=operation.IsInternal ? "internal" : "public"#> <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
         {
@@ -294,6 +306,12 @@ namespace <#=this.Config.Namespace#>
 #>
 <#
         this.FormatOperationDocumentationAsync(operation, false);
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete(<#=operation.DeprecationMessage#>)]
+<#		
+		}
 #>
         public Task<<#=operation.Name#>Response> <#=operation.Name#>Async(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -306,6 +324,12 @@ namespace <#=this.Config.Namespace#>
         AddSimpleClientMethods(operation, false);
 
         AddAsyncDocumentation(operation.Name);
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete(<#=operation.DeprecationMessage#>)]
+<#		
+		}
 #>
         <#=operation.IsInternal ? "internal" : "public"#> Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=operation.Name#>Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

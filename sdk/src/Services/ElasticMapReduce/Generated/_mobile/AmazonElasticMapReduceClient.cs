@@ -324,10 +324,12 @@ namespace Amazon.ElasticMapReduce
         
         #region  DescribeJobFlows
 
+        [Obsolete(This API is deprecated and will eventually be removed. We recommend you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.)]
         internal DescribeJobFlowsResponse DescribeJobFlows()
         {
             return DescribeJobFlows(new DescribeJobFlowsRequest());
         }
+        [Obsolete(This API is deprecated and will eventually be removed. We recommend you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.)]
         internal DescribeJobFlowsResponse DescribeJobFlows(DescribeJobFlowsRequest request)
         {
             var marshaller = new DescribeJobFlowsRequestMarshaller();
@@ -375,6 +377,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        [Obsolete(This API is deprecated and will eventually be removed. We recommend you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.)]
         public Task<DescribeJobFlowsResponse> DescribeJobFlowsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeJobFlowsAsync(new DescribeJobFlowsRequest(), cancellationToken);
@@ -390,6 +393,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        [Obsolete(This API is deprecated and will eventually be removed. We recommend you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.)]
         public Task<DescribeJobFlowsResponse> DescribeJobFlowsAsync(DescribeJobFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeJobFlowsRequestMarshaller();

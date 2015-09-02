@@ -305,6 +305,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        [Obsolete(This API is deprecated. We recommend you use Invoke API.)]
         Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

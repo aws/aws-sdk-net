@@ -62,5 +62,12 @@
                 ]
             }
         }
+    },
+    "deprecatedOverrides": {
+        "operation": {
+            "InvokeAsync": {
+                "message": "This API is deprecated. We recommend you use Invoke API."
+            }
+        }
     }
 }

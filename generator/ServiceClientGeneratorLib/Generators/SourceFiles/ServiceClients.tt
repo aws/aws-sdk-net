@@ -259,6 +259,12 @@ namespace <#=this.Config.Namespace#>
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
         {
         this.FormatOperationDocumentationSync(operation, false);
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete(<#=operation.DeprecationMessage#>)]
+<#
+		}
 #>
         public <#=operation.Name#>Response <#=operation.Name#>()
         {
@@ -270,6 +276,12 @@ namespace <#=this.Config.Namespace#>
 #>
 <#
         this.FormatOperationDocumentationSync(operation, true);
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete(<#=operation.DeprecationMessage#>)]
+<#		
+		}
 #>
         <#=operation.IsInternal ? "internal" : "public"#> <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
         {
@@ -281,6 +293,12 @@ namespace <#=this.Config.Namespace#>
 
 <#
         AddBeginAsyncDocumentation(operation.Name);
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete(<#=operation.DeprecationMessage#>)]
+<#		
+		}
 #>
         <#=operation.IsInternal ? "internal" : "public"#> IAsyncResult Begin<#=operation.Name#>(<#=operation.Name#>Request request, AsyncCallback callback, object state)
         {
@@ -292,7 +310,13 @@ namespace <#=this.Config.Namespace#>
         }
 
 <#
-        AddEndAsyncDocumentation(operation.Name);
+        AddEndAsyncDocumentation(operation.Name);		
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete(<#=operation.DeprecationMessage#>)]
+<#		
+		}
 #>
         <#=operation.IsInternal ? "internal" : "public"#>  <#=operation.Name#>Response End<#=operation.Name#>(IAsyncResult asyncResult)
         {

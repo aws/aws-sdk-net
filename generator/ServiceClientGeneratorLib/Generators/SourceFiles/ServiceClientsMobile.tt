@@ -207,6 +207,12 @@ namespace <#=this.Config.Namespace#>
 <#
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
         {
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete(<#=operation.DeprecationMessage#>)]
+<#		
+		}
 #>
         internal <#=operation.Name#>Response <#=operation.Name#>()
         {
@@ -214,6 +220,12 @@ namespace <#=this.Config.Namespace#>
         }
 <#
         }
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete(<#=operation.DeprecationMessage#>)]
+<#		
+		}
 #>
         internal <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
         {
@@ -230,6 +242,12 @@ namespace <#=this.Config.Namespace#>
 #>
 <#
         this.FormatOperationDocumentationAsync(operation, false);
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete(<#=operation.DeprecationMessage#>)]
+<#		
+		}
 #>
         public Task<<#=operation.Name#>Response> <#=operation.Name#>Async(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -238,12 +256,18 @@ namespace <#=this.Config.Namespace#>
 
 <#
         }
-// Add async simple methods
-AddSimpleClientMethods(operation, false);
+		// Add async simple methods
+		AddSimpleClientMethods(operation, false);
 #>
 
 <#
-AddAsyncDocumentation(operation.Name);
+		AddAsyncDocumentation(operation.Name);
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete(<#=operation.DeprecationMessage#>)]
+<#		
+		}
 #>
         <#=operation.IsInternal ? "internal" : "public"#> Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=operation.Name#>Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
