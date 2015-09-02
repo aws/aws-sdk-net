@@ -765,7 +765,8 @@ namespace Amazon.DynamoDBv2
                 throw new ArgumentNullException("type");
 
             // all enums use the same converter, one for Enum
-            if (type.IsEnum)
+            var ti = TypeFactory.GetTypeInfo(type);
+            if (ti.IsEnum)
                 type = EnumType;
 
             return Cache.TryGetValue(type, out converter);
