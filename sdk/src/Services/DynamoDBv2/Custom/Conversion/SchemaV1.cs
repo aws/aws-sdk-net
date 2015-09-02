@@ -275,7 +275,7 @@ namespace Amazon.DynamoDBv2
             // get numeric type underlying enum (int, byte, etc.)
             var underlyingType = Enum.GetUnderlyingType(valueType);
             // convert enum value to numeric type
-            var numerical = Convert.ChangeType(value, underlyingType);
+            var numerical = Convert.ChangeType(value, underlyingType, CultureInfo.InvariantCulture);
 
             // convert numeric type to primitive
             DynamoDBEntry entry;
@@ -322,7 +322,7 @@ namespace Amazon.DynamoDBv2
 
             return null;
         }
-        private Enum ConvertEnum(string s, Type targetType)
+        private static Enum ConvertEnum(string s, Type targetType)
         {
             // try to parse enum from string
             try
