@@ -1138,7 +1138,21 @@ this.Write("</param>\r\n");
         #line hidden
         
         #line 407 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write("\t\t[Obsolete]\r\n");
+this.Write("\t\t[Obsolete(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 408 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
+
+        
+        #line default
+        #line hidden
+        
+        #line 408 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("\")]\r\n");
 
         
         #line default
@@ -1216,7 +1230,21 @@ this.Write(")\r\n");
         #line hidden
         
         #line 421 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write("\t\t[Obsolete]\r\n");
+this.Write("\t\t[Obsolete(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 422 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
+
+        
+        #line default
+        #line hidden
+        
+        #line 422 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("\")]\r\n");
 
         
         #line default
@@ -1468,7 +1496,21 @@ this.Write("        }\r\n\r\n");
         #line hidden
         
         #line 481 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write("\t\t[Obsolete]\r\n");
+this.Write("\t\t[Obsolete(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 482 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
+
+        
+        #line default
+        #line hidden
+        
+        #line 482 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("\")]\r\n");
 
         
         #line default
@@ -1546,7 +1588,21 @@ this.Write(");\r\n");
         #line hidden
         
         #line 495 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write("\t\t[Obsolete]\r\n");
+this.Write("\t\t[Obsolete(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 496 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
+
+        
+        #line default
+        #line hidden
+        
+        #line 496 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("\")]\r\n");
 
         
         #line default

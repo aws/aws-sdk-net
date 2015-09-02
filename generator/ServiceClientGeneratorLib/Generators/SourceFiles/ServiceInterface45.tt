@@ -41,7 +41,7 @@ this.FormatOperationDocumentationSync(operation, false);
 		if(operation.IsDeprecated)
 		{
 #>
-		[Obsolete(<#=operation.DeprecationMessage#>)]
+		[Obsolete("<#=operation.DeprecationMessage#>")]
 <#		
 		}
 #>
@@ -57,7 +57,7 @@ this.FormatOperationDocumentationSync(operation, true);
 		if(operation.IsDeprecated)
 		{
 #>
-		[Obsolete(<#=operation.DeprecationMessage#>)]
+		[Obsolete("<#=operation.DeprecationMessage#>")]
 <#		
 		}
 #>
@@ -73,7 +73,7 @@ this.FormatOperationDocumentationSync(operation, true);
 			if(operation.IsDeprecated)
 			{
 #>
-		[Obsolete(<#=operation.DeprecationMessage#>)]
+		[Obsolete("<#=operation.DeprecationMessage#>")]
 <#		
 			}
 #>
@@ -90,7 +90,7 @@ this.FormatOperationDocumentationSync(operation, true);
 			if(operation.IsDeprecated)
 			{
 #>
-		[Obsolete(<#=operation.DeprecationMessage#>)]
+		[Obsolete("<#=operation.DeprecationMessage#>")]
 <#		
 			}
 #>

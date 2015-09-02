@@ -732,7 +732,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
-        [Obsolete(This API is deprecated. We recommend you use Invoke API.)]
+        [Obsolete("This API is deprecated. We recommend you use Invoke API.")]
         InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest request);
 
 
@@ -745,7 +745,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        [Obsolete(This API is deprecated. We recommend you use Invoke API.)]
+        [Obsolete("This API is deprecated. We recommend you use Invoke API.")]
         Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

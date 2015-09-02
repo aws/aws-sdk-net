@@ -106,14 +106,14 @@ this.FormatOperationDocumentationSync(operation, false);
             
             #line default
             #line hidden
-            this.Write("\t\t[Obsolete(");
+            this.Write("\t\t[Obsolete(\"");
             
             #line 44 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
-            this.Write(")]\r\n");
+            this.Write("\")]\r\n");
             
             #line 45 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 		
@@ -157,14 +157,14 @@ this.FormatOperationDocumentationSync(operation, true);
             
             #line default
             #line hidden
-            this.Write("\t\t[Obsolete(");
+            this.Write("\t\t[Obsolete(\"");
             
             #line 60 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
-            this.Write(")]\r\n");
+            this.Write("\")]\r\n");
             
             #line 61 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 		
@@ -215,14 +215,14 @@ this.FormatOperationDocumentationSync(operation, true);
             
             #line default
             #line hidden
-            this.Write("\t\t[Obsolete(");
+            this.Write("\t\t[Obsolete(\"");
             
             #line 76 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
-            this.Write(")]\r\n");
+            this.Write("\")]\r\n");
             
             #line 77 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 		
@@ -268,14 +268,14 @@ this.FormatOperationDocumentationSync(operation, true);
             
             #line default
             #line hidden
-            this.Write("\t\t[Obsolete(");
+            this.Write("\t\t[Obsolete(\"");
             
             #line 93 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
-            this.Write(")]\r\n");
+            this.Write("\")]\r\n");
             
             #line 94 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 		

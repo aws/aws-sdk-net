@@ -1098,7 +1098,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
-        [Obsolete(This API is deprecated. We recommend you use Invoke API.)]
+        [Obsolete("This API is deprecated. We recommend you use Invoke API.")]
         public InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest request)
         {
             var marshaller = new InvokeAsyncRequestMarshaller();
@@ -1118,7 +1118,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInvokeAsync
         ///         operation.</returns>
-        [Obsolete(This API is deprecated. We recommend you use Invoke API.)]
+        [Obsolete("This API is deprecated. We recommend you use Invoke API.")]
         public IAsyncResult BeginInvokeAsync(InvokeAsyncRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new InvokeAsyncRequestMarshaller();
@@ -1135,7 +1135,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInvokeAsync.</param>
         /// 
         /// <returns>Returns a  InvokeAsyncResult from Lambda.</returns>
-        [Obsolete(This API is deprecated. We recommend you use Invoke API.)]
+        [Obsolete("This API is deprecated. We recommend you use Invoke API.")]
         public  InvokeAsyncResponse EndInvokeAsync(IAsyncResult asyncResult)
         {
             return EndInvoke<InvokeAsyncResponse>(asyncResult);

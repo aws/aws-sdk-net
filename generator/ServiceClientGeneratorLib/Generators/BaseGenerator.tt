@@ -405,7 +405,7 @@
 			if(operation.IsDeprecated)
 			{
 #>
-		[Obsolete]
+		[Obsolete("<#=operation.DeprecationMessage#>")]
 <#+		
 			}
 #>
@@ -419,7 +419,7 @@
 			if(operation.IsDeprecated)
 			{
 #>
-		[Obsolete]
+		[Obsolete("<#=operation.DeprecationMessage#>")]
 <#+		
 			}
 #>
@@ -479,7 +479,7 @@ foreach (var member in docMembers)
 					if(operation.IsDeprecated)
 					{
 #>
-		[Obsolete]
+		[Obsolete("<#=operation.DeprecationMessage#>")]
 <#+		
 					}
 #>
@@ -493,7 +493,7 @@ foreach (var member in docMembers)
 				if(operation.IsDeprecated)
 				{
 #>
-		[Obsolete]
+		[Obsolete("<#=operation.DeprecationMessage#>")]
 <#+		
 				}
 #>

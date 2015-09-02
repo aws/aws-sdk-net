@@ -40,7 +40,7 @@ namespace <#=this.Config.Namespace#>
 		if(operation.IsDeprecated)
 		{
 #>
-		[Obsolete(<#=operation.DeprecationMessage#>)]
+		[Obsolete("<#=operation.DeprecationMessage#>")]
 <#		
 		}
 #>
@@ -57,7 +57,7 @@ namespace <#=this.Config.Namespace#>
 		if(operation.IsDeprecated)
 		{
 #>
-		[Obsolete(<#=operation.DeprecationMessage#>)]
+		[Obsolete("<#=operation.DeprecationMessage#>")]
 <#		
 		}
 #>

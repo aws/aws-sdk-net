@@ -106,14 +106,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line default
             #line hidden
-            this.Write("\t\t[Obsolete(");
+            this.Write("\t\t[Obsolete(\"");
             
             #line 43 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
-            this.Write(")]\r\n");
+            this.Write("\")]\r\n");
             
             #line 44 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
 		
@@ -159,14 +159,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line default
             #line hidden
-            this.Write("\t\t[Obsolete(");
+            this.Write("\t\t[Obsolete(\"");
             
             #line 60 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
-            this.Write(")]\r\n");
+            this.Write("\")]\r\n");
             
             #line 61 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
 		
