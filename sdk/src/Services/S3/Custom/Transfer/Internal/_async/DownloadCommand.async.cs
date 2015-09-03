@@ -91,10 +91,13 @@ namespace Amazon.S3.Transfer.Internal
                                 await file.DeleteAsync().ConfigureAwait(false);
 #endif
 #if BCL
-                            using (FileStream temp = new FileStream(this._request.FilePath, FileMode.Create, FileAccess.ReadWrite, FileShare.Read, Amazon.S3.Util.S3Constants.DefaultBufferSize))
+                            if (File.Exists(this._request.FilePath))
                             {
-                                //Do nothing. Simply using the "using" statement to create and dispose of FileStream temp in the same call.
-                            };
+                                using (FileStream temp = new FileStream(this._request.FilePath, FileMode.Create, FileAccess.ReadWrite, FileShare.Read, Amazon.S3.Util.S3Constants.DefaultBufferSize))
+                                {
+                                    //Do nothing. Simply using the "using" statement to create and dispose of FileStream temp in the same call.
+                                };
+                            }
 #endif
 
                             response.WriteObjectProgressEvent += OnWriteObjectProgressEvent;

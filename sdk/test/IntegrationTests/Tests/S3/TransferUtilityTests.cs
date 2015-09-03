@@ -375,7 +375,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
 
             var filename = UtilityMethods.GenerateName(objectKey.Replace('/', '\\'));
-            var filePath = Path.Combine(Path.GetTempPath(), filename);
+            var filePath = Path.Combine(basePath, filename);
             var transferUtility = new TransferUtility(Client);
             transferUtility.Download(new TransferUtilityDownloadRequest
             {
