@@ -1,3 +1,9 @@
+### 3.1.10.0 (2015-09-03 20:56 UTC)
+* DynamoDBv2 (3.1.1.0)
+	* Added enum support for DynamoDB DataModel.
+* StorageGateway (3.1.1.0)
+	* Add support for tagging StorageGateway resources.
+
 ### 3.1.9.0 (2015-08-31 21:22 UTC)
 * EC2 (3.1.1.0)
 	* Add support for spot fleet instance weights.

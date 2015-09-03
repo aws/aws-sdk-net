@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.1.9.0",
+    "ProductVersion" : "3.1.10.0",
     "CoreVersion"    : "3.1.1.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -126,7 +126,7 @@
             "InPreview"    : false
         },
         "DynamoDBv2"        : {
-            "Version" : "3.1.0.1",
+            "Version" : "3.1.1.0",
             "Dependencies" : {
                 "Core" : "3.1.1.0"
             },
@@ -331,7 +331,7 @@
             "InPreview"    : false
         },
         "StorageGateway"            : {
-            "Version" : "3.1.0.1",
+            "Version" : "3.1.1.0",
             "Dependencies" : {
                 "Core" : "3.1.1.0"
             },
