@@ -353,6 +353,40 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             stream.Close();
         }
 
+        /// <summary>
+        /// Partial download resumption support can erroneously trigger retry with
+        /// byte range of 0 to Long.MaxValue if a zero length object is the first object
+        /// to be download to a new folder path - S3 then yields an invalid byte range 
+        /// error on the retry.
+        /// Test ensures the fix, to test that the folder path exists before trying to
+        /// access it, so we don't trigger a retry.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestZeroLengthDownloadToNonExistingPath()
+        {
+            var objectKey = "folder1/folder2/empty_file.txt";
+
+            Client.PutObject(new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = objectKey,
+                ContentBody = ""
+            });
+
+            var filename = UtilityMethods.GenerateName(objectKey.Replace('/', '\\'));
+            var filePath = Path.Combine(Path.GetTempPath(), filename);
+            var transferUtility = new TransferUtility(Client);
+            transferUtility.Download(new TransferUtilityDownloadRequest
+            {
+                BucketName = bucketName,
+                FilePath = filePath,
+                Key = objectKey
+            });
+
+            Assert.IsTrue(File.Exists(filePath));
+        }
+
 #if ASYNC_AWAIT
 
         [TestMethod]
