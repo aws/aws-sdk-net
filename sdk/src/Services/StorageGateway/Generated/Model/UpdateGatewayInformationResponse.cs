@@ -33,6 +33,7 @@ namespace Amazon.StorageGateway.Model
     public partial class UpdateGatewayInformationResponse : AmazonWebServiceResponse
     {
         private string _gatewayARN;
+        private string _gatewayName;
 
         /// <summary>
         /// Gets and sets the property GatewayARN.
@@ -47,6 +48,21 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetGatewayARN()
         {
             return this._gatewayARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GatewayName.
+        /// </summary>
+        public string GatewayName
+        {
+            get { return this._gatewayName; }
+            set { this._gatewayName = value; }
+        }
+
+        // Check to see if GatewayName property is set
+        internal bool IsSetGatewayName()
+        {
+            return this._gatewayName != null;
         }
 
     }

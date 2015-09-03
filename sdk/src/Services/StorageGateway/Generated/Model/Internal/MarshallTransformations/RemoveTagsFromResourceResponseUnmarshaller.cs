@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateGatewayInformation operation
+    /// Response Unmarshaller for RemoveTagsFromResource operation
     /// </summary>  
-    public class UpdateGatewayInformationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class RemoveTagsFromResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,16 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateGatewayInformationResponse response = new UpdateGatewayInformationResponse();
+            RemoveTagsFromResourceResponse response = new RemoveTagsFromResourceResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("GatewayARN", targetDepth))
+                if (context.TestExpression("ResourceARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.GatewayARN = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("GatewayName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.GatewayName = unmarshaller.Unmarshall(context);
+                    response.ResourceARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,9 +83,9 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             return new AmazonStorageGatewayException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UpdateGatewayInformationResponseUnmarshaller _instance = new UpdateGatewayInformationResponseUnmarshaller();        
+        private static RemoveTagsFromResourceResponseUnmarshaller _instance = new RemoveTagsFromResourceResponseUnmarshaller();        
 
-        internal static UpdateGatewayInformationResponseUnmarshaller GetInstance()
+        internal static RemoveTagsFromResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +93,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateGatewayInformationResponseUnmarshaller Instance
+        public static RemoveTagsFromResourceResponseUnmarshaller Instance
         {
             get
             {

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GatewayInfo Object
+    /// Response Unmarshaller for Tag Object
     /// </summary>  
-    public class GatewayInfoUnmarshaller : IUnmarshaller<GatewayInfo, XmlUnmarshallerContext>, IUnmarshaller<GatewayInfo, JsonUnmarshallerContext>
+    public class TagUnmarshaller : IUnmarshaller<Tag, XmlUnmarshallerContext>, IUnmarshaller<Tag, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GatewayInfo IUnmarshaller<GatewayInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Tag IUnmarshaller<Tag, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public GatewayInfo Unmarshall(JsonUnmarshallerContext context)
+        public Tag Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GatewayInfo unmarshalledObject = new GatewayInfo();
+            Tag unmarshalledObject = new Tag();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("GatewayARN", targetDepth))
+                if (context.TestExpression("Key", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Key = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("GatewayName", targetDepth))
+                if (context.TestExpression("Value", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("GatewayOperationalState", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayOperationalState = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("GatewayType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         }
 
 
-        private static GatewayInfoUnmarshaller _instance = new GatewayInfoUnmarshaller();        
+        private static TagUnmarshaller _instance = new TagUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GatewayInfoUnmarshaller Instance
+        public static TagUnmarshaller Instance
         {
             get
             {

@@ -63,6 +63,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     response.GatewayId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GatewayName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.GatewayName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GatewayNetworkInterfaces", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<NetworkInterface, NetworkInterfaceUnmarshaller>(NetworkInterfaceUnmarshaller.Instance);

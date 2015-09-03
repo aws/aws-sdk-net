@@ -28,29 +28,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// CreateTapeOutput
+    /// 
     /// </summary>
-    public partial class CreateTapesResponse : AmazonWebServiceResponse
+    public partial class Tag
     {
-        private List<string> _tapeARNs = new List<string>();
+        private string _key;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property TapeARNs. 
-        /// <para>
-        /// A list of unique Amazon Resource Named (ARN) that represents the virtual tapes that
-        /// were created.
-        /// </para>
+        /// Gets and sets the property Key.
         /// </summary>
-        public List<string> TapeARNs
+        public string Key
         {
-            get { return this._tapeARNs; }
-            set { this._tapeARNs = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if TapeARNs property is set
-        internal bool IsSetTapeARNs()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._tapeARNs != null && this._tapeARNs.Count > 0; 
+            return this._key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value.
+        /// </summary>
+        public string Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
         }
 
     }
