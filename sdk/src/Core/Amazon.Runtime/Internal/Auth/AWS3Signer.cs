@@ -129,9 +129,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
             else
             {
-                Uri url = request.Endpoint;
-                if (!string.IsNullOrEmpty(request.ResourcePath))
-                    url = new Uri(request.Endpoint, request.ResourcePath);
+                Uri url = AmazonServiceClient.ComposeUrl(request);
 
                 stringToSign = request.HttpMethod + "\n"
                     + GetCanonicalizedResourcePath(url) + "\n"
