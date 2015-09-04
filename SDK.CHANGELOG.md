@@ -1,3 +1,6 @@
+### 3.1.10.1 (2015-09-04 20:30 UTC)
+* Core 3.1.1.1
+
 ### 3.1.10.0 (2015-09-03 20:56 UTC)
 * DynamoDBv2 (3.1.1.0)
 	* Added enum support for DynamoDB DataModel.
