@@ -12,7 +12,7 @@
     "deprecatedOverrides": {
         "operation": {
             "DescribeJobFlows":  { 
-                "message": "This API is deprecated and will eventually be removed. We recommend you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead."
+                "message": "This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead."
             }
         }
     }

@@ -534,7 +534,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
-        [Obsolete("This API is deprecated and will eventually be removed. We recommend you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
+        [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         public DescribeJobFlowsResponse DescribeJobFlows()
         {
             return DescribeJobFlows(new DescribeJobFlowsRequest());
@@ -576,7 +576,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
-        [Obsolete("This API is deprecated and will eventually be removed. We recommend you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
+        [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         public DescribeJobFlowsResponse DescribeJobFlows(DescribeJobFlowsRequest request)
         {
             var marshaller = new DescribeJobFlowsRequestMarshaller();
@@ -596,7 +596,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeJobFlows
         ///         operation.</returns>
-        [Obsolete("This API is deprecated and will eventually be removed. We recommend you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
+        [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         public IAsyncResult BeginDescribeJobFlows(DescribeJobFlowsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeJobFlowsRequestMarshaller();
@@ -613,7 +613,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeJobFlows.</param>
         /// 
         /// <returns>Returns a  DescribeJobFlowsResult from ElasticMapReduce.</returns>
-        [Obsolete("This API is deprecated and will eventually be removed. We recommend you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
+        [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         public  DescribeJobFlowsResponse EndDescribeJobFlows(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeJobFlowsResponse>(asyncResult);

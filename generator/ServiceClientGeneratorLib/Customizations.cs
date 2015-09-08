@@ -615,7 +615,7 @@ namespace ServiceClientGenerator
             }
         }
 
-        public string GetDeprecationMessage(string operationName, bool failOnEmptyMessage = true)
+        public string GetDeprecationMessage(string operationName)
         {
             bool fail = false;
             var data = _documentRoot[DeprecatedOverridesKey];
@@ -633,7 +633,7 @@ namespace ServiceClientGenerator
                 fail = true;
             }
 
-            if (fail && failOnEmptyMessage)
+            if (fail)
                 throw new Exception(string.Format(@"Obsolete Message not set for operation {0}", operationName));
             else
                 return (string)message;
