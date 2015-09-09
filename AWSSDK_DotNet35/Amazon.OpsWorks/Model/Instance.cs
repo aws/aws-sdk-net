@@ -41,6 +41,8 @@ namespace Amazon.OpsWorks.Model
         private string _createdAt;
         private bool? _ebsOptimized;
         private string _ec2InstanceId;
+        private string _ecsClusterArn;
+        private string _ecsContainerInstanceArn;
         private string _elasticIp;
         private string _hostname;
         private string _infrastructureClass;
@@ -233,6 +235,42 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetEc2InstanceId()
         {
             return this._ec2InstanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EcsClusterArn. 
+        /// <para>
+        /// For container instances, the Amazon ECS cluster's ARN.
+        /// </para>
+        /// </summary>
+        public string EcsClusterArn
+        {
+            get { return this._ecsClusterArn; }
+            set { this._ecsClusterArn = value; }
+        }
+
+        // Check to see if EcsClusterArn property is set
+        internal bool IsSetEcsClusterArn()
+        {
+            return this._ecsClusterArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EcsContainerInstanceArn. 
+        /// <para>
+        /// For container instances, the instance's ARN.
+        /// </para>
+        /// </summary>
+        public string EcsContainerInstanceArn
+        {
+            get { return this._ecsContainerInstanceArn; }
+            set { this._ecsContainerInstanceArn = value; }
+        }
+
+        // Check to see if EcsContainerInstanceArn property is set
+        internal bool IsSetEcsContainerInstanceArn()
+        {
+            return this._ecsContainerInstanceArn != null;
         }
 
         /// <summary>

@@ -37,6 +37,7 @@ namespace Amazon.CodePipeline.Model
         private ActionTypeId _actionTypeId;
         private AWSSessionCredentials _artifactCredentials;
         private string _continuationToken;
+        private EncryptionKey _encryptionKey;
         private List<Artifact> _inputArtifacts = new List<Artifact>();
         private List<Artifact> _outputArtifacts = new List<Artifact>();
         private PipelineContext _pipelineContext;
@@ -103,6 +104,21 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetContinuationToken()
         {
             return this._continuationToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionKey.
+        /// </summary>
+        public EncryptionKey EncryptionKey
+        {
+            get { return this._encryptionKey; }
+            set { this._encryptionKey = value; }
+        }
+
+        // Check to see if EncryptionKey property is set
+        internal bool IsSetEncryptionKey()
+        {
+            return this._encryptionKey != null;
         }
 
         /// <summary>

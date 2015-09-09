@@ -30,8 +30,8 @@ namespace Amazon.DeviceFarm
     /// <summary>
     /// Interface for accessing DeviceFarm
     ///
-    /// AWS Device Farm is a service that enables mobile app developers to test apps on physical
-    /// phones, tablets, and other devices in the cloud.
+    /// AWS Device Farm is a service that enables mobile app developers to test Android, iOS,
+    /// and Fire OS apps on physical phones, tablets, and other devices in the cloud.
     /// </summary>
     public partial interface IAmazonDeviceFarm : IDisposable
     {
@@ -78,6 +78,21 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<CreateUploadResponse> CreateUploadAsync(CreateUploadRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAccountSettings
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

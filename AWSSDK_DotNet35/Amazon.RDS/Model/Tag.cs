@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// A key is the required name of the tag. The string value can be from 1 to 128 Unicode
-        /// characters in length and cannot be prefixed with "aws:" or "rds:". The string may
+        /// characters in length and cannot be prefixed with "aws:" or "rds:". The string can
         /// only contain only the set of Unicode letters, digits, white-space, '_', '.', '/',
         /// '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
         /// </para>
@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// A value is the optional value of the tag. The string value can be from 1 to 256 Unicode
-        /// characters in length and cannot be prefixed with "aws:" or "rds:". The string may
+        /// characters in length and cannot be prefixed with "aws:" or "rds:". The string can
         /// only contain only the set of Unicode letters, digits, white-space, '_', '.', '/',
         /// '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
         /// </para>

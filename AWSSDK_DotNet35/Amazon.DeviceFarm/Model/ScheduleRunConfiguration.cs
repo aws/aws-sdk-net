@@ -29,11 +29,12 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Represents the settings for a run. Includes things like location, radio states, auxiliary
-    /// apps, network profiles.
+    /// apps, and network profiles.
     /// </summary>
     public partial class ScheduleRunConfiguration
     {
         private List<string> _auxiliaryApps = new List<string>();
+        private BillingMethod _billingMethod;
         private string _extraDataPackageArn;
         private string _locale;
         private Location _location;
@@ -56,6 +57,25 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetAuxiliaryApps()
         {
             return this._auxiliaryApps != null && this._auxiliaryApps.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingMethod. 
+        /// <para>
+        /// Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>.
+        /// If the parameter is not specified, the default value is <code>unmetered</code>.
+        /// </para>
+        /// </summary>
+        public BillingMethod BillingMethod
+        {
+            get { return this._billingMethod; }
+            set { this._billingMethod = value; }
+        }
+
+        // Check to see if BillingMethod property is set
+        internal bool IsSetBillingMethod()
+        {
+            return this._billingMethod != null;
         }
 
         /// <summary>
@@ -116,8 +136,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property NetworkProfileArn. 
         /// <para>
-        /// The ARN of the network profile for the run. A network profile describes network shaping
-        /// parameters that are used to shape a Wi-Fi signal and to simulate various network environments.
+        /// Reserved for internal use.
         /// </para>
         /// </summary>
         public string NetworkProfileArn

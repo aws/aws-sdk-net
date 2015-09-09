@@ -289,6 +289,21 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
                 
+        #region  DescribeEnvironmentHealth
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEnvironmentHealth operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentHealth operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeEnvironmentHealthResponse> DescribeEnvironmentHealthAsync(DescribeEnvironmentHealthRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeEnvironmentResources
 
         /// <summary>
@@ -331,6 +346,21 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeInstancesHealth
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstancesHealth operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancesHealth operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeInstancesHealthResponse> DescribeInstancesHealthAsync(DescribeInstancesHealthRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

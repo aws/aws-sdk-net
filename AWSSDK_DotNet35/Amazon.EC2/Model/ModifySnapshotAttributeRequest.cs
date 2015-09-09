@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         private SnapshotAttributeName _attribute;
         private CreateVolumePermissionModifications _createVolumePermission;
         private List<string> _groupNames = new List<string>();
-        private string _operationType;
+        private OperationType _operationType;
         private string _snapshotId;
         private List<string> _userIds = new List<string>();
 
@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         /// <param name="snapshotId">The ID of the snapshot.</param>
         /// <param name="attribute">The snapshot attribute to modify. <note> Only volume creation permissions may be modified at the customer level. </note></param>
         /// <param name="operationType">The type of operation to perform to the attribute.</param>
-        public ModifySnapshotAttributeRequest(string snapshotId, SnapshotAttributeName attribute, string operationType)
+        public ModifySnapshotAttributeRequest(string snapshotId, SnapshotAttributeName attribute, OperationType operationType)
         {
             _snapshotId = snapshotId;
             _attribute = attribute;
@@ -137,7 +137,7 @@ namespace Amazon.EC2.Model
         /// The type of operation to perform to the attribute.
         /// </para>
         /// </summary>
-        public string OperationType
+        public OperationType OperationType
         {
             get { return this._operationType; }
             set { this._operationType = value; }

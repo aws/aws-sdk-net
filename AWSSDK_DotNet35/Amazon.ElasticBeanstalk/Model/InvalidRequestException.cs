@@ -14,39 +14,39 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
  */
 using System;
 using System.Net;
 using Amazon.Runtime;
 
-namespace Amazon.RDS.Model
+namespace Amazon.ElasticBeanstalk.Model
 {
     ///<summary>
-    /// RDS exception
+    /// ElasticBeanstalk exception
     /// </summary>
-    public class DomainNotFoundException : AmazonRDSException 
+    public class InvalidRequestException : AmazonElasticBeanstalkException 
     {
         /// <summary>
-        /// Constructs a new DomainNotFoundException with the specified error
+        /// Constructs a new InvalidRequestException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public DomainNotFoundException(string message) 
+        public InvalidRequestException(string message) 
             : base(message) {}
           
-        public DomainNotFoundException(string message, Exception innerException) 
+        public InvalidRequestException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        public DomainNotFoundException(Exception innerException) 
+        public InvalidRequestException(Exception innerException) 
             : base(innerException) {}
             
-        public DomainNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidRequestException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        public DomainNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidRequestException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
     }

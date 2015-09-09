@@ -141,7 +141,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: minimum 20, maximum 100
+        /// Constraints: Minimum 20, maximum 100.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -183,8 +183,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy Utilization"
-        /// </code>
+        /// Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
         /// </para>
         /// </summary>
         public string OfferingType

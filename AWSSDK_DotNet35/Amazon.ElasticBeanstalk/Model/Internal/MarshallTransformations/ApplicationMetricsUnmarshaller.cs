@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -24,21 +24,21 @@ using System.Net;
 using System.Text;
 using System.Xml.Serialization;
 
-using Amazon.RDS.Model;
+using Amazon.ElasticBeanstalk.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-namespace Amazon.RDS.Model.Internal.MarshallTransformations
+namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DomainMembership Object
+    /// Response Unmarshaller for ApplicationMetrics Object
     /// </summary>  
-    public class DomainMembershipUnmarshaller : IUnmarshaller<DomainMembership, XmlUnmarshallerContext>, IUnmarshaller<DomainMembership, JsonUnmarshallerContext>
+    public class ApplicationMetricsUnmarshaller : IUnmarshaller<ApplicationMetrics, XmlUnmarshallerContext>, IUnmarshaller<ApplicationMetrics, JsonUnmarshallerContext>
     {
-        public DomainMembership Unmarshall(XmlUnmarshallerContext context)
+        public ApplicationMetrics Unmarshall(XmlUnmarshallerContext context)
         {
-            DomainMembership unmarshalledObject = new DomainMembership();
+            ApplicationMetrics unmarshalledObject = new ApplicationMetrics();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -49,22 +49,28 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Connectivity", targetDepth))
+                    if (context.TestExpression("Duration", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Connectivity = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Domain", targetDepth))
+                    if (context.TestExpression("Latency", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Domain = unmarshaller.Unmarshall(context);
+                        var unmarshaller = LatencyUnmarshaller.Instance;
+                        unmarshalledObject.Latency = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Status", targetDepth))
+                    if (context.TestExpression("RequestCount", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.RequestCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StatusCodes", targetDepth))
+                    {
+                        var unmarshaller = StatusCodesUnmarshaller.Instance;
+                        unmarshalledObject.StatusCodes = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -77,15 +83,15 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        public DomainMembership Unmarshall(JsonUnmarshallerContext context)
+        public ApplicationMetrics Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static DomainMembershipUnmarshaller _instance = new DomainMembershipUnmarshaller();        
+        private static ApplicationMetricsUnmarshaller _instance = new ApplicationMetricsUnmarshaller();        
 
-        public static DomainMembershipUnmarshaller Instance
+        public static ApplicationMetricsUnmarshaller Instance
         {
             get
             {

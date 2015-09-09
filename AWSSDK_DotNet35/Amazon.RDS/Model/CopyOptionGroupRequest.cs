@@ -41,7 +41,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceOptionGroupIdentifier. 
         /// <para>
-        /// The identifier or ARN for the source option group. 
+        /// The identifier or ARN for the source option group. For information about creating
+        /// an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+        /// Constructing an RDS Amazon Resource Name (ARN)</a>. 
         /// </para>
         ///  
         /// <para>

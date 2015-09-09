@@ -106,7 +106,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// <code>expired</code> - The Spot fleet request has expired. A subsequent event indicates
-        /// that the instances were terminated, if the request was created with <code>terminateInstancesWithExpiration</code>
+        /// that the instances were terminated, if the request was created with <code>TerminateInstancesWithExpiration</code>
         /// set.
         /// </para>
         ///  </li> <li> 

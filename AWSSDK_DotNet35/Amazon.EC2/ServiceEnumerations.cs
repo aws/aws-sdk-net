@@ -1917,6 +1917,46 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type OperationType.
+    /// </summary>
+    public class OperationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Add for OperationType
+        /// </summary>
+        public static readonly OperationType Add = new OperationType("add");
+        /// <summary>
+        /// Constant Remove for OperationType
+        /// </summary>
+        public static readonly OperationType Remove = new OperationType("remove");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public OperationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperationType FindValue(string value)
+        {
+            return FindValue<OperationType>(value);
+        }
+
+        public static implicit operator OperationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PermissionGroup.
     /// </summary>
     public class PermissionGroup : ConstantClass

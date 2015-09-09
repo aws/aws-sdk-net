@@ -39,6 +39,17 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     {
         public void Marshall(ArtifactStore requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEncryptionKey())
+            {
+                context.Writer.WritePropertyName("encryptionKey");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EncryptionKeyMarshaller.Instance;
+                marshaller.Marshall(requestObject.EncryptionKey, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("location");

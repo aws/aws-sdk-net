@@ -126,7 +126,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
         [TestMethod]
         [TestCategory("IAM")]
-        [ExpectedException(typeof(NoSuchEntityException))]
         public void TestDeleteLoginProfile()
         {
             string username = IAMUtil.CreateTestUser(Client);
@@ -135,11 +134,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             try
             {
                 Client.CreateLoginProfile(new CreateLoginProfileRequest() { UserName = username, Password = password });
-                Thread.Sleep(3 * 3600);
-                Client.DeleteLoginProfile(new DeleteLoginProfileRequest() { UserName = username });
-                Thread.Sleep(3 * 3600);
-                GetLoginProfileResponse getRes =
-                    Client.GetLoginProfile(new GetLoginProfileRequest() { UserName = username });
+                UtilityMethods.WaitUntilSuccess(() =>
+                    Client.DeleteLoginProfile(new DeleteLoginProfileRequest() { UserName = username }));
+                AssertExtensions.ExpectException<NoSuchEntityException>(() =>
+                    Client.GetLoginProfile(new GetLoginProfileRequest() { UserName = username }));
             }
             finally
             {

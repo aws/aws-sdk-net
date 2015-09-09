@@ -60,6 +60,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("billingMethod", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BillingMethod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("completedJobs", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

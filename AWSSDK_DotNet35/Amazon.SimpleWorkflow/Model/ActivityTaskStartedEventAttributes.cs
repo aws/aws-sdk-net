@@ -57,7 +57,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ScheduledEventId. 
         /// <para>
-        /// The id of the <code>ActivityTaskScheduled</code> event that was recorded when this
+        /// The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this
         /// activity task was scheduled. This information can be useful for diagnosing problems
         /// by tracing back the chain of events leading up to this event.
         /// </para>

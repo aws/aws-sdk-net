@@ -69,6 +69,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DefaultExecutionStartToCloseTimeout);
                 }
 
+                if(publicRequest.IsSetDefaultLambdaRole())
+                {
+                    context.Writer.WritePropertyName("defaultLambdaRole");
+                    context.Writer.Write(publicRequest.DefaultLambdaRole);
+                }
+
                 if(publicRequest.IsSetDefaultTaskList())
                 {
                     context.Writer.WritePropertyName("defaultTaskList");

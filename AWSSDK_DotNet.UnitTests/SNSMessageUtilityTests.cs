@@ -8,36 +8,34 @@ namespace AWSSDK_DotNet35.UnitTests
     [TestClass]
     public class SNSMessageUtilityTests
     {
-        public const string SUBSCRIPTION_EXAMPLE =
-"{" +
-"  \"Type\" : \"SubscriptionConfirmation\"," +
-"  \"MessageId\" : \"8e549c0e-6cc3-45a4-9fba-79c473f91527\"," +
-"  \"Token\" : \"2336412f37fb687f5d51e6e241d638b05983341a95037295695a241455b7aeb274dae3d53d11dc1718cce496fe86b49ec04f9dd5494feec7e0698e6161aa2c6e1e3e31d5a0c8fb99b621551bf07cfa64665e8951e12c0e8917e7f61c35b21bba9fe0aa2447f7bafa0bc41458386b7ec3\"," +
-"  \"TopicArn\" : \"arn:aws:sns:us-west-2:245953695175:snstest1\"," +
-"  \"Message\" : \"You have chosen to subscribe to the topic arn:aws:sns:us-west-2:245953695175:snstest1.\nTo confirm the subscription, visit the SubscribeURL included in this message.\"," +
-"  \"SubscribeURL\" : \"https://sns.us-west-2.amazonaws.com/?Action=ConfirmSubscription&TopicArn=arn:aws:sns:us-west-2:245953695175:snstest1&Token=2336412f37fb687f5d51e6e241d638b05983341a95037295695a241455b7aeb274dae3d53d11dc1718cce496fe86b49ec04f9dd5494feec7e0698e6161aa2c6e1e3e31d5a0c8fb99b621551bf07cfa64665e8951e12c0e8917e7f61c35b21bba9fe0aa2447f7bafa0bc41458386b7ec3\"," +
-"  \"Timestamp\" : \"2014-07-03T21:34:38.100Z\"," +
-"  \"SignatureVersion\" : \"1\"," +
-"  \"Signature\" : \"px/FrK5NvYrMyCoqks7XpXfiPpPwH8dsuISfGWAxIwS9ywV0W98alhusMdjCJpI/n6gGj8EyNNBUNBzRC5gQQ7kX76iJdncdwaD/E1fSEPe0birkia793iQayGNoeAunUEtL3pLUCsTnt5+tm1EFOfEnKdKhOJ4mDpEGhcallMEYz21Dd2eu8kSTltYpI1SmS62le3Bla4PgExalnw6d324p3jdJ2dQbpH9Nexy9R9I+3tSB0bDR+DIcM/f+0FJhnI6X9aEvzwP1uLQfXKgFXHvECpgUoO4VsKrqPLUyOriuES768zq7WgJbJns6nq3WUAbq2Qflj1hxWy2Ri1u25g==\"," +
-"  \"SigningCertURL\" : \"https://sns.us-west-2.amazonaws.com/SimpleNotificationService-e372f8ca30337fdb084e8ac449342c77.pem\"" +
-"}";
+        public const string SUBSCRIPTION_EXAMPLE = @"{
+  ""Type"" : ""SubscriptionConfirmation"",
+  ""MessageId"" : ""b53690f0-ef60-4739-b395-6d5ef4527be1"",
+  ""Token"" : ""2336412f37fb687f5d51e6e241d7700aef3051116e61aa4999170097f4ea414f8c1e18026c13443b7372b77f3d1a959e1b417ea2578177928f79593e09c6df8ec23fdd0bfdfeacae2d6412d6b6969ead83e0f8a5cec9a7829b0c213e4095dc1276d4ae8a29e7652054899b195ef688cf"",
+  ""TopicArn"" : ""arn:aws:sns:us-east-1:246796806071:snsNetTest"",
+  ""Message"" : ""You have chosen to subscribe to the topic arn:aws:sns:us-east-1:246796806071:snsNetTest.\nTo confirm the subscription, visit the SubscribeURL included in this message."",
+  ""SubscribeURL"" : ""https://sns.us-east-1.amazonaws.com/?Action=ConfirmSubscription&TopicArn=arn:aws:sns:us-east-1:246796806071:snsNetTest&Token=2336412f37fb687f5d51e6e241d7700aef3051116e61aa4999170097f4ea414f8c1e18026c13443b7372b77f3d1a959e1b417ea2578177928f79593e09c6df8ec23fdd0bfdfeacae2d6412d6b6969ead83e0f8a5cec9a7829b0c213e4095dc1276d4ae8a29e7652054899b195ef688cf"",
+  ""Timestamp"" : ""2015-08-18T17:34:14.978Z"",
+  ""SignatureVersion"" : ""1"",
+  ""Signature"" : ""jLr5XCdgeh0hI841UFt4/2doUka6i2+QwnW+GfRSP3BMX8GGIy9BPSVgM9+i5RqMifocZtkYqfEIy9xppkyUc47JXi5/IgIj9DAFSOxkVILg+DMlM4gDZXpVrd7BwgLUORrrNoqsucZ7f4Pf/jikFz6myFg1bGKsTabdhP/PRrTa9/Ll1gRXZ4pbdet8wH9lgdRUh3Hu3To/WN91QK3xwTxvzStOKtebuMDCd6u4Zqg/Q8F/4U+PexyRIXWgB5PIXEQPYe0caK/GHizRRPftxG4nGffM1Mieo1RMRDAhIajZtFTHSS1KLmfSWPTdg2vcCNoh7xT5wEO5tQmO4mz/Tw=="",
+  ""SigningCertURL"" : ""https://sns.us-east-1.amazonaws.com/SimpleNotificationService-d6d679a1d18e95c2f9ffcf11f4f9e198.pem""
+}";
 
-        public const string NOTIFICATION_EXAMPLE = 
-"{" +
-"  \"Type\" : \"Notification\"," +
-"  \"MessageId\" : \"0b68823a-c5fd-5da4-b99a-ce15238d3c5d\"," +
-"  \"TopicArn\" : \"arn:aws:sns:us-west-2:245953695175:snstest1\"," +
-"  \"Subject\" : \"Greetings\"," +
-"  \"Message\" : \"Hello\r\nTo\r\nThe\r\nWorld\"," +
-"  \"Timestamp\" : \"2014-07-03T23:16:00.794Z\"," +
-"  \"SignatureVersion\" : \"1\"," +
-"  \"Signature\" : \"Uae26RRYgt3SjQCvyPwSxfjoyb8qmh4LiUr1Hz4YcAVgFjbozxiotCVRlRYmTnUjnRrtUzIP0nEWBv5t6C+lbhIT+jD8c9vK/FrDi5q60ghH0UinUQPSsmeo9iRwTwNT6Z91o8GHwgpIxjB7nM6jKBfsYUC8EjsWZ2eAFNJDvx4ggJZM8wkHiqreqIwy6RBI8xQvo8S8ZQxrhkFYajH+wQF7/CJfgHXBmnENCZlHPsp/t81myRAZW6crk8RAuIUNPAMz2KoiDaSVmQ2beVDXlV1gaudwwfiZgEd49gYV+DyLI5aiiaajQVVHaVEgQ5la/RFGC13oh/KiMhdHHb1AKA==\"," +
-"  \"SigningCertURL\" : \"https://sns.us-west-2.amazonaws.com/SimpleNotificationService-e372f8ca30337fdb084e8ac449342c77.pem\"," +
-"  \"UnsubscribeURL\" : \"https://sns.us-west-2.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-west-2:245953695175:snstest1:2d79be76-0e5a-4073-b000-294bd1f6d04a\"" +
-"}";
+        public const string NOTIFICATION_EXAMPLE = @"{
+  ""Type"" : ""Notification"",
+  ""MessageId"" : ""82833b5c-8d5d-56d0-b0e1-7511f8253eb8"",
+  ""TopicArn"" : ""arn:aws:sns:us-east-1:246796806071:snsNetTest"",
+  ""Subject"" : ""Greetings"",
+  ""Message"" : ""Hello\r\nworld!"",
+  ""Timestamp"" : ""2015-08-18T18:02:32.111Z"",
+  ""SignatureVersion"" : ""1"",
+  ""Signature"" : ""e+khMfZriwAOTkF0OVm3tmdVq9eY6s5Bj6rXZty4B2TYssx7SSSBpvsDCiDuzgeHe++MNsGLDDT+5OpGEFBqCcd/K7iXhofz+KabMEtvM2Ku3aXcFixjOCAY1BF8hH6zU6nKzOy+m7K4UIoVqIOOhqsLWoXNFWgwQseBol1pFQ/MRi9UH84/WGdU8//dH+1/zjLxCud8Lg1vY9Yi/jxMU1HVpZ2JuvzJBdNBFJWc/VYAiw8K1r/J+dxAiLr87P96MgUqyg1wWxYe00HaEXGtjIctCNcd92s3pngOOeGvPYGaTIZEbYhSf2leMYd+CXujUHRqozru5K0Zp+l99fUNTg=="",
+  ""SigningCertURL"" : ""https://sns.us-east-1.amazonaws.com/SimpleNotificationService-d6d679a1d18e95c2f9ffcf11f4f9e198.pem"",
+  ""UnsubscribeURL"" : ""https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-east-1:246796806071:snsNetTest:228cc6c9-dcd8-4c92-9f3a-77f55176b9e3""
+}
+";
 
-
-        public const string UNSUBSCRIBE_EXAMPLE = 
+        public const string UNSUBSCRIBE_EXAMPLE =
 "{" +
 "  \"Type\" : \"UnsubscribeConfirmation\"," +
 "  \"MessageId\" : \"47138184-6831-46b8-8f7c-afc488602d7d\"," +
@@ -57,15 +55,15 @@ namespace AWSSDK_DotNet35.UnitTests
             var message = Message.ParseMessage(SUBSCRIPTION_EXAMPLE);
 
             Assert.AreEqual(Message.MESSAGE_TYPE_SUBSCRIPTION_CONFIRMATION, message.Type);
-            Assert.AreEqual("8e549c0e-6cc3-45a4-9fba-79c473f91527", message.MessageId);
-            Assert.AreEqual("2336412f37fb687f5d51e6e241d638b05983341a95037295695a241455b7aeb274dae3d53d11dc1718cce496fe86b49ec04f9dd5494feec7e0698e6161aa2c6e1e3e31d5a0c8fb99b621551bf07cfa64665e8951e12c0e8917e7f61c35b21bba9fe0aa2447f7bafa0bc41458386b7ec3", message.Token);
-            Assert.AreEqual("arn:aws:sns:us-west-2:245953695175:snstest1", message.TopicArn);
-            Assert.AreEqual("You have chosen to subscribe to the topic arn:aws:sns:us-west-2:245953695175:snstest1.\nTo confirm the subscription, visit the SubscribeURL included in this message.", message.MessageText);
-            Assert.AreEqual("https://sns.us-west-2.amazonaws.com/?Action=ConfirmSubscription&TopicArn=arn:aws:sns:us-west-2:245953695175:snstest1&Token=2336412f37fb687f5d51e6e241d638b05983341a95037295695a241455b7aeb274dae3d53d11dc1718cce496fe86b49ec04f9dd5494feec7e0698e6161aa2c6e1e3e31d5a0c8fb99b621551bf07cfa64665e8951e12c0e8917e7f61c35b21bba9fe0aa2447f7bafa0bc41458386b7ec3", message.SubscribeURL);
-            Assert.AreEqual(2014, message.Timestamp.Year);
+            Assert.AreEqual("b53690f0-ef60-4739-b395-6d5ef4527be1", message.MessageId);
+            Assert.AreEqual("2336412f37fb687f5d51e6e241d7700aef3051116e61aa4999170097f4ea414f8c1e18026c13443b7372b77f3d1a959e1b417ea2578177928f79593e09c6df8ec23fdd0bfdfeacae2d6412d6b6969ead83e0f8a5cec9a7829b0c213e4095dc1276d4ae8a29e7652054899b195ef688cf", message.Token);
+            Assert.AreEqual("arn:aws:sns:us-east-1:246796806071:snsNetTest", message.TopicArn);
+            Assert.AreEqual("You have chosen to subscribe to the topic arn:aws:sns:us-east-1:246796806071:snsNetTest.\nTo confirm the subscription, visit the SubscribeURL included in this message.", message.MessageText);
+            Assert.AreEqual("https://sns.us-east-1.amazonaws.com/?Action=ConfirmSubscription&TopicArn=arn:aws:sns:us-east-1:246796806071:snsNetTest&Token=2336412f37fb687f5d51e6e241d7700aef3051116e61aa4999170097f4ea414f8c1e18026c13443b7372b77f3d1a959e1b417ea2578177928f79593e09c6df8ec23fdd0bfdfeacae2d6412d6b6969ead83e0f8a5cec9a7829b0c213e4095dc1276d4ae8a29e7652054899b195ef688cf", message.SubscribeURL);
+            Assert.AreEqual(2015, message.Timestamp.Year);
             Assert.AreEqual("1", message.SignatureVersion);
-            Assert.AreEqual("px/FrK5NvYrMyCoqks7XpXfiPpPwH8dsuISfGWAxIwS9ywV0W98alhusMdjCJpI/n6gGj8EyNNBUNBzRC5gQQ7kX76iJdncdwaD/E1fSEPe0birkia793iQayGNoeAunUEtL3pLUCsTnt5+tm1EFOfEnKdKhOJ4mDpEGhcallMEYz21Dd2eu8kSTltYpI1SmS62le3Bla4PgExalnw6d324p3jdJ2dQbpH9Nexy9R9I+3tSB0bDR+DIcM/f+0FJhnI6X9aEvzwP1uLQfXKgFXHvECpgUoO4VsKrqPLUyOriuES768zq7WgJbJns6nq3WUAbq2Qflj1hxWy2Ri1u25g==", message.Signature);
-            Assert.AreEqual("https://sns.us-west-2.amazonaws.com/SimpleNotificationService-e372f8ca30337fdb084e8ac449342c77.pem", message.SigningCertURL);
+            Assert.AreEqual("jLr5XCdgeh0hI841UFt4/2doUka6i2+QwnW+GfRSP3BMX8GGIy9BPSVgM9+i5RqMifocZtkYqfEIy9xppkyUc47JXi5/IgIj9DAFSOxkVILg+DMlM4gDZXpVrd7BwgLUORrrNoqsucZ7f4Pf/jikFz6myFg1bGKsTabdhP/PRrTa9/Ll1gRXZ4pbdet8wH9lgdRUh3Hu3To/WN91QK3xwTxvzStOKtebuMDCd6u4Zqg/Q8F/4U+PexyRIXWgB5PIXEQPYe0caK/GHizRRPftxG4nGffM1Mieo1RMRDAhIajZtFTHSS1KLmfSWPTdg2vcCNoh7xT5wEO5tQmO4mz/Tw==", message.Signature);
+            Assert.AreEqual("https://sns.us-east-1.amazonaws.com/SimpleNotificationService-d6d679a1d18e95c2f9ffcf11f4f9e198.pem", message.SigningCertURL);
 
             Assert.IsTrue(message.IsMessageSignatureValid());
         }
@@ -76,20 +74,19 @@ namespace AWSSDK_DotNet35.UnitTests
             var message = Message.ParseMessage(NOTIFICATION_EXAMPLE);
 
             Assert.AreEqual(Message.MESSAGE_TYPE_NOTIFICATION, message.Type);
-            Assert.AreEqual("0b68823a-c5fd-5da4-b99a-ce15238d3c5d", message.MessageId);
-            Assert.AreEqual("arn:aws:sns:us-west-2:245953695175:snstest1", message.TopicArn);
+            Assert.AreEqual("82833b5c-8d5d-56d0-b0e1-7511f8253eb8", message.MessageId);
+            Assert.AreEqual("arn:aws:sns:us-east-1:246796806071:snsNetTest", message.TopicArn);
             Assert.AreEqual("Greetings", message.Subject);
-            Assert.AreEqual("Hello\r\nTo\r\nThe\r\nWorld", message.MessageText);
-            Assert.AreEqual(2014, message.Timestamp.Year);
+            Assert.AreEqual("Hello\r\nworld!", message.MessageText);
+            Assert.AreEqual(2015, message.Timestamp.Year);
             Assert.AreEqual("1", message.SignatureVersion);
-            Assert.AreEqual("Uae26RRYgt3SjQCvyPwSxfjoyb8qmh4LiUr1Hz4YcAVgFjbozxiotCVRlRYmTnUjnRrtUzIP0nEWBv5t6C+lbhIT+jD8c9vK/FrDi5q60ghH0UinUQPSsmeo9iRwTwNT6Z91o8GHwgpIxjB7nM6jKBfsYUC8EjsWZ2eAFNJDvx4ggJZM8wkHiqreqIwy6RBI8xQvo8S8ZQxrhkFYajH+wQF7/CJfgHXBmnENCZlHPsp/t81myRAZW6crk8RAuIUNPAMz2KoiDaSVmQ2beVDXlV1gaudwwfiZgEd49gYV+DyLI5aiiaajQVVHaVEgQ5la/RFGC13oh/KiMhdHHb1AKA==", message.Signature);
-            Assert.AreEqual("https://sns.us-west-2.amazonaws.com/SimpleNotificationService-e372f8ca30337fdb084e8ac449342c77.pem", message.SigningCertURL);
-            Assert.AreEqual("https://sns.us-west-2.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-west-2:245953695175:snstest1:2d79be76-0e5a-4073-b000-294bd1f6d04a", message.UnsubscribeURL);
+            Assert.AreEqual("e+khMfZriwAOTkF0OVm3tmdVq9eY6s5Bj6rXZty4B2TYssx7SSSBpvsDCiDuzgeHe++MNsGLDDT+5OpGEFBqCcd/K7iXhofz+KabMEtvM2Ku3aXcFixjOCAY1BF8hH6zU6nKzOy+m7K4UIoVqIOOhqsLWoXNFWgwQseBol1pFQ/MRi9UH84/WGdU8//dH+1/zjLxCud8Lg1vY9Yi/jxMU1HVpZ2JuvzJBdNBFJWc/VYAiw8K1r/J+dxAiLr87P96MgUqyg1wWxYe00HaEXGtjIctCNcd92s3pngOOeGvPYGaTIZEbYhSf2leMYd+CXujUHRqozru5K0Zp+l99fUNTg==", message.Signature);
+            Assert.AreEqual("https://sns.us-east-1.amazonaws.com/SimpleNotificationService-d6d679a1d18e95c2f9ffcf11f4f9e198.pem", message.SigningCertURL);
+            Assert.AreEqual("https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-east-1:246796806071:snsNetTest:228cc6c9-dcd8-4c92-9f3a-77f55176b9e3", message.UnsubscribeURL);
 
             Assert.IsTrue(message.IsMessageSignatureValid());
         }
 
-        
         [TestMethod]
         public void UnscribeFormatTest()
         {

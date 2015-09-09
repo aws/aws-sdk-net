@@ -77,15 +77,14 @@ namespace Amazon.OpsWorks
     ///  
     /// <para>
     /// When you call <a>CreateStack</a>, <a>CloneStack</a>, or <a>UpdateStack</a> we recommend
-    /// you use the <code>ConfigurationManager</code> parameter to specify the Chef version,
-    /// 0.9, 11.4, or 11.10. The default value is currently 11.10. For more information, see
-    /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
+    /// you use the <code>ConfigurationManager</code> parameter to specify the Chef version.
+    /// The recommended value for Linux stacks, which is also the default value, is currently
+    /// 11.10. Windows stacks use Chef 12.2. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
     /// Versions</a>.
     /// </para>
-    ///  <note>You can still specify Chef 0.9 for your stack, but new features are not available
-    /// for Chef 0.9 stacks, and support is scheduled to end on July 24, 2014. We do not recommend
-    /// using Chef 0.9 for new stacks, and we recommend migrating your existing Chef 0.9 stacks
-    /// to Chef 11.10 as soon as possible.</note>
+    ///  <note>You can also specify Chef 11.4 or Chef 0.9 for your Linux stack. However, Chef
+    /// 0.9 has been deprecated. We do not recommend using Chef 0.9 for new stacks, and we
+    /// recommend migrating your existing Chef 0.9 stacks to Chef 11.10 as soon as possible.</note>
     /// </summary>
     public partial interface IAmazonOpsWorks : IDisposable
     {
@@ -101,9 +100,10 @@ namespace Amazon.OpsWorks
         /// cannot use this action with instances that were created with AWS OpsWorks.</li> </ul>
         /// 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack or an attached policy that explicitly grants permissions. For
-        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// <b>Required Permissions</b>: To use this action, an AWS Identity and Access Management
+        /// (IAM) user must have a Manage permissions level for the stack or an attached policy
+        /// that explicitly grants permissions. For more information on user permissions, see
+        /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -720,6 +720,44 @@ namespace Amazon.OpsWorks
 
         #endregion
         
+        #region  DeregisterEcsCluster
+
+        /// <summary>
+        /// Deregisters a specified Amazon ECS cluster from a stack. For more information, see
+        /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html#workinglayers-ecscluster-delete">
+        /// Resource Management</a>.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        /// level for the stack or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"></a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterEcsCluster service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterEcsCluster service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        DeregisterEcsClusterResponse DeregisterEcsCluster(DeregisterEcsClusterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterEcsCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterEcsCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeregisterEcsClusterResponse> DeregisterEcsClusterAsync(DeregisterEcsClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeregisterElasticIp
 
         /// <summary>
@@ -1025,6 +1063,46 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeDeploymentsResponse> DescribeDeploymentsAsync(DescribeDeploymentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeEcsClusters
+
+        /// <summary>
+        /// Describes Amazon ECS clusters that are registered with a stack. If you specify only
+        /// a stack ID, you can use the <code>MaxResults</code> and <code>NextToken</code> parameters
+        /// to paginate the response. However, AWS OpsWorks currently supports only one cluster
+        /// per layer, so the result set has a maximum of one element.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        /// or Manage permissions level for the stack or an attached policy that explicitly grants
+        /// permission. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEcsClusters service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEcsClusters service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        DescribeEcsClustersResponse DescribeEcsClusters(DescribeEcsClustersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEcsClusters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEcsClusters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeEcsClustersResponse> DescribeEcsClustersAsync(DescribeEcsClustersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1929,6 +2007,46 @@ namespace Amazon.OpsWorks
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<RebootInstanceResponse> RebootInstanceAsync(RebootInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RegisterEcsCluster
+
+        /// <summary>
+        /// Registers a specified Amazon ECS cluster with a stack. You can register only one cluster
+        /// with a stack. A cluster can be registered with only one stack. For more information,
+        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html">
+        /// Resource Management</a>.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        /// level for the stack or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
+        /// Managing User Permissions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterEcsCluster service method.</param>
+        /// 
+        /// <returns>The response from the RegisterEcsCluster service method, as returned by OpsWorks.</returns>
+        /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
+        /// Indicates that a resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
+        /// Indicates that a request was invalid.
+        /// </exception>
+        RegisterEcsClusterResponse RegisterEcsCluster(RegisterEcsClusterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterEcsCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterEcsCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RegisterEcsClusterResponse> RegisterEcsClusterAsync(RegisterEcsClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -36,7 +36,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <li> <b>CompleteWorkflowExecution</b>: closes the workflow execution and records a
     /// <code>WorkflowExecutionCompleted</code> event in the history .</li> <li> <b>ContinueAsNewWorkflowExecution</b>:
     /// closes the workflow execution and starts a new workflow execution of the same type
-    /// using the same workflow id and a unique run Id. A <code>WorkflowExecutionContinuedAsNew</code>
+    /// using the same workflow ID and a unique run ID. A <code>WorkflowExecutionContinuedAsNew</code>
     /// event is recorded in the history.</li> <li> <b>FailWorkflowExecution</b>: closes the
     /// workflow execution and records a <code>WorkflowExecutionFailed</code> event in the
     /// history.</li> <li> <b>RecordMarker</b>: records a <code>MarkerRecorded</code> event
@@ -50,15 +50,15 @@ namespace Amazon.SimpleWorkflow.Model
     /// requests that a request be made to cancel the specified external workflow execution
     /// and records a <code>RequestCancelExternalWorkflowExecutionInitiated</code> event in
     /// the history.</li> <li> <b>ScheduleActivityTask</b>: schedules an activity task.</li>
-    /// <li> <b>SignalExternalWorkflowExecution</b>: requests a signal to be delivered to
-    /// the specified external workflow execution and records a <code>SignalExternalWorkflowExecutionInitiated</code>
-    /// event in the history.</li> <li> <b>StartChildWorkflowExecution</b>: requests that
-    /// a child workflow execution be started and records a <code>StartChildWorkflowExecutionInitiated</code>
-    /// event in the history. The child workflow execution is a separate workflow execution
-    /// with its own history.</li> <li> <b>StartTimer</b>: starts a timer for this workflow
-    /// execution and records a <code>TimerStarted</code> event in the history. This timer
-    /// will fire after the specified delay and record a <code>TimerFired</code> event.</li>
-    /// </ul> 
+    /// <li> <b>ScheduleLambdaFunction</b>: schedules a AWS Lambda function.</li> <li> <b>SignalExternalWorkflowExecution</b>:
+    /// requests a signal to be delivered to the specified external workflow execution and
+    /// records a <code>SignalExternalWorkflowExecutionInitiated</code> event in the history.</li>
+    /// <li> <b>StartChildWorkflowExecution</b>: requests that a child workflow execution
+    /// be started and records a <code>StartChildWorkflowExecutionInitiated</code> event in
+    /// the history. The child workflow execution is a separate workflow execution with its
+    /// own history.</li> <li> <b>StartTimer</b>: starts a timer for this workflow execution
+    /// and records a <code>TimerStarted</code> event in the history. This timer will fire
+    /// after the specified delay and record a <code>TimerFired</code> event.</li> </ul> 
     /// <para>
     /// <b>Access Control</b>
     /// </para>
@@ -92,15 +92,17 @@ namespace Amazon.SimpleWorkflow.Model
     /// </para>
     ///  <ul> <li> <b>ScheduleActivityTaskFailed</b>: a ScheduleActivityTask decision failed.
     /// This could happen if the activity type specified in the decision is not registered,
-    /// is in a deprecated state, or the decision is not properly configured.</li> <li> <b>RequestCancelActivityTaskFailed</b>:
-    /// a RequestCancelActivityTask decision failed. This could happen if there is no open
-    /// activity task with the specified activityId.</li> <li> <b>StartTimerFailed</b>: a
-    /// StartTimer decision failed. This could happen if there is another open timer with
-    /// the same timerId.</li> <li> <b>CancelTimerFailed</b>: a CancelTimer decision failed.
-    /// This could happen if there is no open timer with the specified timerId.</li> <li>
-    /// <b>StartChildWorkflowExecutionFailed</b>: a StartChildWorkflowExecution decision failed.
-    /// This could happen if the workflow type specified is not registered, is deprecated,
-    /// or the decision is not properly configured.</li> <li> <b>SignalExternalWorkflowExecutionFailed</b>:
+    /// is in a deprecated state, or the decision is not properly configured.</li> <li> <b>ScheduleLambdaFunctionFailed</b>:
+    /// a ScheduleLambdaFunctionFailed decision failed. This could happen if the AWS Lambda
+    /// function specified in the decision does not exist, or the AWS Lambda service's limits
+    /// are exceeded.</li> <li> <b>RequestCancelActivityTaskFailed</b>: a RequestCancelActivityTask
+    /// decision failed. This could happen if there is no open activity task with the specified
+    /// activityId.</li> <li> <b>StartTimerFailed</b>: a StartTimer decision failed. This
+    /// could happen if there is another open timer with the same timerId.</li> <li> <b>CancelTimerFailed</b>:
+    /// a CancelTimer decision failed. This could happen if there is no open timer with the
+    /// specified timerId.</li> <li> <b>StartChildWorkflowExecutionFailed</b>: a StartChildWorkflowExecution
+    /// decision failed. This could happen if the workflow type specified is not registered,
+    /// is deprecated, or the decision is not properly configured.</li> <li> <b>SignalExternalWorkflowExecutionFailed</b>:
     /// a SignalExternalWorkflowExecution decision failed. This could happen if the <code>workflowID</code>
     /// specified in the decision was incorrect.</li> <li> <b>RequestCancelExternalWorkflowExecutionFailed</b>:
     /// a RequestCancelExternalWorkflowExecution decision failed. This could happen if the
@@ -131,20 +133,20 @@ namespace Amazon.SimpleWorkflow.Model
     /// The decider should handle the new events and may decide to close the workflow execution.</note>
     /// 
     /// <para>
-    /// <b>How to Code a Decision</b>
+    /// <b>How to code a decision</b>
     /// </para>
     ///  
     /// <para>
     /// You code a decision by first setting the decision type field to one of the above decision
     /// values, and then set the corresponding attributes field shown below:
     /// </para>
-    ///  <ul> <li> <a>ScheduleActivityTaskDecisionAttributes</a> </li> <li> <a>RequestCancelActivityTaskDecisionAttributes</a>
-    /// </li> <li> <a>CompleteWorkflowExecutionDecisionAttributes</a> </li> <li> <a>FailWorkflowExecutionDecisionAttributes</a>
-    /// </li> <li> <a>CancelWorkflowExecutionDecisionAttributes</a> </li> <li> <a>ContinueAsNewWorkflowExecutionDecisionAttributes</a>
-    /// </li> <li> <a>RecordMarkerDecisionAttributes</a> </li> <li> <a>StartTimerDecisionAttributes</a>
-    /// </li> <li> <a>CancelTimerDecisionAttributes</a> </li> <li> <a>SignalExternalWorkflowExecutionDecisionAttributes</a>
-    /// </li> <li> <a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a> </li> <li>
-    /// <a>StartChildWorkflowExecutionDecisionAttributes</a> </li> </ul>
+    ///  <ul> <li> <a>ScheduleActivityTaskDecisionAttributes</a> </li> <li> <a>ScheduleLambdaFunctionDecisionAttributes</a>
+    /// </li> <li> <a>RequestCancelActivityTaskDecisionAttributes</a> </li> <li> <a>CompleteWorkflowExecutionDecisionAttributes</a>
+    /// </li> <li> <a>FailWorkflowExecutionDecisionAttributes</a> </li> <li> <a>CancelWorkflowExecutionDecisionAttributes</a>
+    /// </li> <li> <a>ContinueAsNewWorkflowExecutionDecisionAttributes</a> </li> <li> <a>RecordMarkerDecisionAttributes</a>
+    /// </li> <li> <a>StartTimerDecisionAttributes</a> </li> <li> <a>CancelTimerDecisionAttributes</a>
+    /// </li> <li> <a>SignalExternalWorkflowExecutionDecisionAttributes</a> </li> <li> <a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a>
+    /// </li> <li> <a>StartChildWorkflowExecutionDecisionAttributes</a> </li> </ul>
     /// </summary>
     public partial class Decision
     {
@@ -158,6 +160,7 @@ namespace Amazon.SimpleWorkflow.Model
         private RequestCancelActivityTaskDecisionAttributes _requestCancelActivityTaskDecisionAttributes;
         private RequestCancelExternalWorkflowExecutionDecisionAttributes _requestCancelExternalWorkflowExecutionDecisionAttributes;
         private ScheduleActivityTaskDecisionAttributes _scheduleActivityTaskDecisionAttributes;
+        private ScheduleLambdaFunctionDecisionAttributes _scheduleLambdaFunctionDecisionAttributes;
         private SignalExternalWorkflowExecutionDecisionAttributes _signalExternalWorkflowExecutionDecisionAttributes;
         private StartChildWorkflowExecutionDecisionAttributes _startChildWorkflowExecutionDecisionAttributes;
         private StartTimerDecisionAttributes _startTimerDecisionAttributes;
@@ -350,6 +353,21 @@ namespace Amazon.SimpleWorkflow.Model
         internal bool IsSetScheduleActivityTaskDecisionAttributes()
         {
             return this._scheduleActivityTaskDecisionAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleLambdaFunctionDecisionAttributes.
+        /// </summary>
+        public ScheduleLambdaFunctionDecisionAttributes ScheduleLambdaFunctionDecisionAttributes
+        {
+            get { return this._scheduleLambdaFunctionDecisionAttributes; }
+            set { this._scheduleLambdaFunctionDecisionAttributes = value; }
+        }
+
+        // Check to see if ScheduleLambdaFunctionDecisionAttributes property is set
+        internal bool IsSetScheduleLambdaFunctionDecisionAttributes()
+        {
+            return this._scheduleLambdaFunctionDecisionAttributes != null;
         }
 
         /// <summary>

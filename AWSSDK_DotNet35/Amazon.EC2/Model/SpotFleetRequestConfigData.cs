@@ -102,7 +102,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotPrice. 
         /// <para>
-        /// The maximum hourly price (bid) for any Spot Instance launched to fulfill the request.
+        /// The bid price per unit hour.
         /// </para>
         /// </summary>
         public string SpotPrice
@@ -120,7 +120,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TargetCapacity. 
         /// <para>
-        /// The maximum number of Spot Instances to launch.
+        /// The number of units to request. You can choose to set the target capacity in terms
+        /// of instances or a performance characteristic that is important to your application
+        /// workload, such as vCPUs, memory, or I/O.
         /// </para>
         /// </summary>
         public int TargetCapacity

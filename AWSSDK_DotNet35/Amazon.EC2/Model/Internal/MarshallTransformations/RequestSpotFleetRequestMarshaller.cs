@@ -248,6 +248,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     publicRequestSpotFleetRequestConfiglistValuelistValueIndex++;
                                 }
                             }
+                            if(publicRequestSpotFleetRequestConfiglistValue.IsSetSpotPrice())
+                            {
+                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "SpotPrice", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.SpotPrice));
+                            }
                             if(publicRequestSpotFleetRequestConfiglistValue.IsSetSubnetId())
                             {
                                 request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.SubnetId));
@@ -255,6 +259,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             if(publicRequestSpotFleetRequestConfiglistValue.IsSetUserData())
                             {
                                 request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "UserData", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.UserData));
+                            }
+                            if(publicRequestSpotFleetRequestConfiglistValue.IsSetWeightedCapacity())
+                            {
+                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "WeightedCapacity", StringUtils.FromDouble(publicRequestSpotFleetRequestConfiglistValue.WeightedCapacity));
                             }
                             publicRequestSpotFleetRequestConfiglistValueIndex++;
                         }

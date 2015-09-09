@@ -54,6 +54,7 @@ namespace Amazon.OpsWorks.Model
         private bool? _autoAssignElasticIps;
         private bool? _autoAssignPublicIps;
         private string _customInstanceProfileArn;
+        private string _customJson;
         private Recipes _customRecipes;
         private List<string> _customSecurityGroupIds = new List<string>();
         private bool? _enableAutoHealing;
@@ -70,7 +71,12 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// One or more user-defined key/value pairs to be added to the stack attributes.
+        /// One or more user-defined key-value pairs to be added to the stack attributes.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's
+        /// ARN.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -128,8 +134,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property CustomInstanceProfileArn. 
         /// <para>
-        /// The ARN of an IAM profile that to be used for the layer's EC2 instances. For more
-        /// information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// The ARN of an IAM profile to be used for the layer's EC2 instances. For more information
+        /// about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.
         /// </para>
         /// </summary>
@@ -143,6 +149,26 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetCustomInstanceProfileArn()
         {
             return this._customInstanceProfileArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomJson. 
+        /// <para>
+        /// A JSON-formatted string containing custom stack configuration and deployment attributes
+        /// to be installed on the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+        /// Using Custom JSON</a>. 
+        /// </para>
+        /// </summary>
+        public string CustomJson
+        {
+            get { return this._customJson; }
+            set { this._customJson = value; }
+        }
+
+        // Check to see if CustomJson property is set
+        internal bool IsSetCustomJson()
+        {
+            return this._customJson != null;
         }
 
         /// <summary>
@@ -206,13 +232,13 @@ namespace Amazon.OpsWorks.Model
         /// default value is <code>true</code>. To control when updates are installed, set this
         /// value to <code>false</code>. You must then update your instances manually by using
         /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command
-        /// or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu)
+        /// or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu)
         /// on the instances. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// We strongly recommend using the default value of <code>true</code>, to ensure that
-        /// your instances have the latest security updates.
+        /// To ensure that your instances have the latest security updates, we strongly recommend
+        /// using the default value of <code>true</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -231,9 +257,9 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property LifecycleEventConfiguration. 
         /// <para>
-        /// A LifeCycleEventConfiguration object that you can use to configure the Shutdown event
-        /// to specify an execution timeout and enable or disable Elastic Load Balancer connection
-        /// draining.
+        /// A <code>LifeCycleEventConfiguration</code> object that you can use to configure the
+        /// Shutdown event to specify an execution timeout and enable or disable Elastic Load
+        /// Balancer connection draining.
         /// </para>
         /// </summary>
         public LifecycleEventConfiguration LifecycleEventConfiguration
@@ -269,7 +295,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Packages. 
         /// <para>
-        /// An array of <code>Package</code> objects that describe the layer packages.
+        /// An array of <code>Package</code> objects that describes the layer packages.
         /// </para>
         /// </summary>
         public List<string> Packages
@@ -297,7 +323,7 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The built-in layers' short names are defined by AWS OpsWorks. For more information,
         /// see the <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-        /// Reference</a>
+        /// Reference</a>.
         /// </para>
         /// </summary>
         public string Shortname

@@ -439,6 +439,10 @@ namespace Amazon.SimpleWorkflow
         /// </summary>
         public static readonly DecisionType ScheduleActivityTask = new DecisionType("ScheduleActivityTask");
         /// <summary>
+        /// Constant ScheduleLambdaFunction for DecisionType
+        /// </summary>
+        public static readonly DecisionType ScheduleLambdaFunction = new DecisionType("ScheduleLambdaFunction");
+        /// <summary>
         /// Constant SignalExternalWorkflowExecution for DecisionType
         /// </summary>
         public static readonly DecisionType SignalExternalWorkflowExecution = new DecisionType("SignalExternalWorkflowExecution");
@@ -579,6 +583,26 @@ namespace Amazon.SimpleWorkflow
         /// </summary>
         public static readonly EventType FailWorkflowExecutionFailed = new EventType("FailWorkflowExecutionFailed");
         /// <summary>
+        /// Constant LambdaFunctionCompleted for EventType
+        /// </summary>
+        public static readonly EventType LambdaFunctionCompleted = new EventType("LambdaFunctionCompleted");
+        /// <summary>
+        /// Constant LambdaFunctionFailed for EventType
+        /// </summary>
+        public static readonly EventType LambdaFunctionFailed = new EventType("LambdaFunctionFailed");
+        /// <summary>
+        /// Constant LambdaFunctionScheduled for EventType
+        /// </summary>
+        public static readonly EventType LambdaFunctionScheduled = new EventType("LambdaFunctionScheduled");
+        /// <summary>
+        /// Constant LambdaFunctionStarted for EventType
+        /// </summary>
+        public static readonly EventType LambdaFunctionStarted = new EventType("LambdaFunctionStarted");
+        /// <summary>
+        /// Constant LambdaFunctionTimedOut for EventType
+        /// </summary>
+        public static readonly EventType LambdaFunctionTimedOut = new EventType("LambdaFunctionTimedOut");
+        /// <summary>
         /// Constant MarkerRecorded for EventType
         /// </summary>
         public static readonly EventType MarkerRecorded = new EventType("MarkerRecorded");
@@ -603,6 +627,10 @@ namespace Amazon.SimpleWorkflow
         /// </summary>
         public static readonly EventType ScheduleActivityTaskFailed = new EventType("ScheduleActivityTaskFailed");
         /// <summary>
+        /// Constant ScheduleLambdaFunctionFailed for EventType
+        /// </summary>
+        public static readonly EventType ScheduleLambdaFunctionFailed = new EventType("ScheduleLambdaFunctionFailed");
+        /// <summary>
         /// Constant SignalExternalWorkflowExecutionFailed for EventType
         /// </summary>
         public static readonly EventType SignalExternalWorkflowExecutionFailed = new EventType("SignalExternalWorkflowExecutionFailed");
@@ -618,6 +646,10 @@ namespace Amazon.SimpleWorkflow
         /// Constant StartChildWorkflowExecutionInitiated for EventType
         /// </summary>
         public static readonly EventType StartChildWorkflowExecutionInitiated = new EventType("StartChildWorkflowExecutionInitiated");
+        /// <summary>
+        /// Constant StartLambdaFunctionFailed for EventType
+        /// </summary>
+        public static readonly EventType StartLambdaFunctionFailed = new EventType("StartLambdaFunctionFailed");
         /// <summary>
         /// Constant StartTimerFailed for EventType
         /// </summary>
@@ -770,6 +802,42 @@ namespace Amazon.SimpleWorkflow
         }
 
         public static implicit operator FailWorkflowExecutionFailedCause(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LambdaFunctionTimeoutType.
+    /// </summary>
+    public class LambdaFunctionTimeoutType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant START_TO_CLOSE for LambdaFunctionTimeoutType
+        /// </summary>
+        public static readonly LambdaFunctionTimeoutType START_TO_CLOSE = new LambdaFunctionTimeoutType("START_TO_CLOSE");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public LambdaFunctionTimeoutType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LambdaFunctionTimeoutType FindValue(string value)
+        {
+            return FindValue<LambdaFunctionTimeoutType>(value);
+        }
+
+        public static implicit operator LambdaFunctionTimeoutType(string value)
         {
             return FindValue(value);
         }
@@ -1013,6 +1081,54 @@ namespace Amazon.SimpleWorkflow
 
 
     /// <summary>
+    /// Constants used for properties of type ScheduleLambdaFunctionFailedCause.
+    /// </summary>
+    public class ScheduleLambdaFunctionFailedCause : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ID_ALREADY_IN_USE for ScheduleLambdaFunctionFailedCause
+        /// </summary>
+        public static readonly ScheduleLambdaFunctionFailedCause ID_ALREADY_IN_USE = new ScheduleLambdaFunctionFailedCause("ID_ALREADY_IN_USE");
+        /// <summary>
+        /// Constant LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED for ScheduleLambdaFunctionFailedCause
+        /// </summary>
+        public static readonly ScheduleLambdaFunctionFailedCause LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED = new ScheduleLambdaFunctionFailedCause("LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED");
+        /// <summary>
+        /// Constant LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION for ScheduleLambdaFunctionFailedCause
+        /// </summary>
+        public static readonly ScheduleLambdaFunctionFailedCause LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION = new ScheduleLambdaFunctionFailedCause("LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION");
+        /// <summary>
+        /// Constant OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED for ScheduleLambdaFunctionFailedCause
+        /// </summary>
+        public static readonly ScheduleLambdaFunctionFailedCause OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED = new ScheduleLambdaFunctionFailedCause("OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public ScheduleLambdaFunctionFailedCause(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScheduleLambdaFunctionFailedCause FindValue(string value)
+        {
+            return FindValue<ScheduleLambdaFunctionFailedCause>(value);
+        }
+
+        public static implicit operator ScheduleLambdaFunctionFailedCause(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SignalExternalWorkflowExecutionFailedCause.
     /// </summary>
     public class SignalExternalWorkflowExecutionFailedCause : ConstantClass
@@ -1126,6 +1242,42 @@ namespace Amazon.SimpleWorkflow
         }
 
         public static implicit operator StartChildWorkflowExecutionFailedCause(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StartLambdaFunctionFailedCause.
+    /// </summary>
+    public class StartLambdaFunctionFailedCause : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSUME_ROLE_FAILED for StartLambdaFunctionFailedCause
+        /// </summary>
+        public static readonly StartLambdaFunctionFailedCause ASSUME_ROLE_FAILED = new StartLambdaFunctionFailedCause("ASSUME_ROLE_FAILED");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public StartLambdaFunctionFailedCause(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StartLambdaFunctionFailedCause FindValue(string value)
+        {
+            return FindValue<StartLambdaFunctionFailedCause>(value);
+        }
+
+        public static implicit operator StartLambdaFunctionFailedCause(string value)
         {
             return FindValue(value);
         }

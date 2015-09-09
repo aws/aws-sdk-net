@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         private string _description;
         private string _imageId;
         private LaunchPermissionModifications _launchPermission;
-        private string _operationType;
+        private OperationType _operationType;
         private List<string> _productCodes = new List<string>();
         private List<string> _userGroups = new List<string>();
         private List<string> _userIds = new List<string>();
@@ -145,7 +145,7 @@ namespace Amazon.EC2.Model
         /// The operation type.
         /// </para>
         /// </summary>
-        public string OperationType
+        public OperationType OperationType
         {
             get { return this._operationType; }
             set { this._operationType = value; }

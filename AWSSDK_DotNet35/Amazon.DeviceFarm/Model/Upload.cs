@@ -121,12 +121,6 @@ namespace Amazon.DeviceFarm.Model
         /// parsed from the manifest and is displayed in the AWS Device Farm console after the
         /// associated app is uploaded.
         /// </para>
-        ///  
-        /// <para>
-        /// For example, <code>{\"files\": {}, \"executable\": \"My-Calabash\", \"package_name\":
-        /// \"com.my.app.MyMobileApp\", \"sdk_version\": 700, \"supported_os\": \"7.0\", \"minimum_arm\":
-        /// 7, \"activity_name\": \"\"}</code>.
-        /// </para>
         /// </summary>
         public string Metadata
         {
@@ -208,39 +202,39 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li>
         /// <para>
-        /// ANDROID_APP: An Android app.
+        /// ANDROID_APP: An Android upload.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// APPIUM_JAVA_TEST_PACKAGE: An Appium Java test package.
+        /// IOS_APP: An iOS upload.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// CALABASH_TEST_PACKAGE: A Calabash test package.
+        /// EXTERNAL_DATA: An external data upload.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// EXTERNAL_DATA: External data.
+        /// APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// INSTRUMENTATION_TEST_PACKAGE: An instrumentation test package.
+        /// APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// IOS_APP: An iOS app.
+        /// CALABASH_TEST_PACKAGE: A Calabash test package upload.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// UIAUTOMATION_TEST_PACKAGE: A UI Automation test package.
+        /// INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package.
+        /// UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// XCTEST_TEST_PACKAGE: An XCTest test package.
+        /// XCTEST_TEST_PACKAGE: An XCode test package upload.
         /// </para>
         /// </li> </ul>
         /// </summary>

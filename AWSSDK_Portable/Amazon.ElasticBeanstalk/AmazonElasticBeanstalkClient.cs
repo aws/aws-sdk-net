@@ -659,6 +659,36 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
         
+        #region  DescribeEnvironmentHealth
+
+        internal DescribeEnvironmentHealthResponse DescribeEnvironmentHealth(DescribeEnvironmentHealthRequest request)
+        {
+            var marshaller = new DescribeEnvironmentHealthRequestMarshaller();
+            var unmarshaller = DescribeEnvironmentHealthResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEnvironmentHealthRequest,DescribeEnvironmentHealthResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEnvironmentHealth operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentHealth operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeEnvironmentHealthResponse> DescribeEnvironmentHealthAsync(DescribeEnvironmentHealthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeEnvironmentHealthRequestMarshaller();
+            var unmarshaller = DescribeEnvironmentHealthResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEnvironmentHealthRequest,DescribeEnvironmentHealthResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeEnvironmentResources
 
         internal DescribeEnvironmentResourcesResponse DescribeEnvironmentResources(DescribeEnvironmentResourcesRequest request)
@@ -752,6 +782,36 @@ namespace Amazon.ElasticBeanstalk
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInstancesHealth
+
+        internal DescribeInstancesHealthResponse DescribeInstancesHealth(DescribeInstancesHealthRequest request)
+        {
+            var marshaller = new DescribeInstancesHealthRequestMarshaller();
+            var unmarshaller = DescribeInstancesHealthResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstancesHealthRequest,DescribeInstancesHealthResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstancesHealth operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancesHealth operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeInstancesHealthResponse> DescribeInstancesHealthAsync(DescribeInstancesHealthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeInstancesHealthRequestMarshaller();
+            var unmarshaller = DescribeInstancesHealthResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInstancesHealthRequest,DescribeInstancesHealthResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

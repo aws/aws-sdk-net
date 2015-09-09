@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the launch specification for an instance.
+    /// Describes the launch specification for one or more Spot Instances.
     /// </summary>
     public partial class SpotFleetLaunchSpecification
     {
@@ -45,8 +45,10 @@ namespace Amazon.EC2.Model
         private SpotPlacement _placement;
         private string _ramdiskId;
         private List<GroupIdentifier> _securityGroups = new List<GroupIdentifier>();
+        private string _spotPrice;
         private string _subnetId;
         private string _userData;
+        private double? _weightedCapacity;
 
         /// <summary>
         /// Gets and sets the property AddressingType. 
@@ -87,7 +89,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EbsOptimized. 
         /// <para>
-        /// Indicates whether the instance is optimized for EBS I/O. This optimization provides
+        /// Indicates whether the instances are optimized for EBS I/O. This optimization provides
         /// dedicated throughput to Amazon EBS and an optimized configuration stack to provide
         /// optimal EBS I/O performance. This optimization isn't available with all instance types.
         /// Additional usage charges apply when using an EBS Optimized instance.
@@ -110,7 +112,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IamInstanceProfile.
+        /// Gets and sets the property IamInstanceProfile. 
+        /// <para>
+        /// The IAM instance profile.
+        /// </para>
         /// </summary>
         public IamInstanceProfileSpecification IamInstanceProfile
         {
@@ -199,7 +204,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Monitoring. 
         /// <para>
-        /// Enable or disable monitoring for the instance.
+        /// Enable or disable monitoring for the instances.
         /// </para>
         /// </summary>
         public SpotFleetMonitoring Monitoring
@@ -233,7 +238,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Placement.
+        /// Gets and sets the property Placement. 
+        /// <para>
+        /// The placement information.
+        /// </para>
         /// </summary>
         public SpotPlacement Placement
         {
@@ -286,9 +294,29 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SpotPrice. 
+        /// <para>
+        /// The bid price per unit hour for the specified instance type. If this value is not
+        /// specified, the default is the Spot bid price specified for the fleet. To determine
+        /// the bid price per unit hour, divide the Spot bid price by the value of <code>WeightedCapacity</code>.
+        /// </para>
+        /// </summary>
+        public string SpotPrice
+        {
+            get { return this._spotPrice; }
+            set { this._spotPrice = value; }
+        }
+
+        // Check to see if SpotPrice property is set
+        internal bool IsSetSpotPrice()
+        {
+            return this._spotPrice != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The ID of the subnet in which to launch the instance.
+        /// The ID of the subnet in which to launch the instances.
         /// </para>
         /// </summary>
         public string SubnetId
@@ -319,6 +347,32 @@ namespace Amazon.EC2.Model
         internal bool IsSetUserData()
         {
             return this._userData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WeightedCapacity. 
+        /// <para>
+        /// The number of units provided by the specified instance type. These are the same units
+        /// that you chose to set the target capacity in terms (instances or a performance characteristic
+        /// such as vCPUs, memory, or I/O).
+        /// </para>
+        ///  
+        /// <para>
+        /// If the target capacity divided by this value is not a whole number, we round the number
+        /// of instances to the next whole number. If this value is not specified, the default
+        /// is 1.
+        /// </para>
+        /// </summary>
+        public double WeightedCapacity
+        {
+            get { return this._weightedCapacity.GetValueOrDefault(); }
+            set { this._weightedCapacity = value; }
+        }
+
+        // Check to see if WeightedCapacity property is set
+        internal bool IsSetWeightedCapacity()
+        {
+            return this._weightedCapacity.HasValue; 
         }
 
     }

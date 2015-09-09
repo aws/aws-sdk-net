@@ -107,6 +107,14 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
+        /// IOS_APP: An iOS upload.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// EXTERNAL_DATA: An external data upload.
+        /// </para>
+        /// </li> <li>
+        /// <para>
         /// APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
         /// </para>
         /// </li> <li>
@@ -119,19 +127,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// EXTERNAL_DATA: An external data upload.
-        /// </para>
-        /// </li> <li>
-        /// <para>
         /// INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// IOS_APP: An iOS app upload.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// UIAUTOMATION_TEST_PACKAGE: A UI Automation test package upload.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -139,7 +135,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// XCTEST_TEST_PACKAGE: An XCTest test package upload.
+        /// XCTEST_TEST_PACKAGE: An XCode test package upload.
         /// </para>
         /// </li> </ul>
         /// </summary>

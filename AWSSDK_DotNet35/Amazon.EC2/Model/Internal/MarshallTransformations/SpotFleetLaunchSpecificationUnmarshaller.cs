@@ -130,6 +130,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SecurityGroups.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("spotPrice", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SpotPrice = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("subnetId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -140,6 +146,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.UserData = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("weightedCapacity", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.WeightedCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

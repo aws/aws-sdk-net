@@ -165,6 +165,46 @@ namespace Amazon.DeviceFarm
 
 
     /// <summary>
+    /// Constants used for properties of type BillingMethod.
+    /// </summary>
+    public class BillingMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant METERED for BillingMethod
+        /// </summary>
+        public static readonly BillingMethod METERED = new BillingMethod("METERED");
+        /// <summary>
+        /// Constant UNMETERED for BillingMethod
+        /// </summary>
+        public static readonly BillingMethod UNMETERED = new BillingMethod("UNMETERED");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public BillingMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BillingMethod FindValue(string value)
+        {
+            return FindValue<BillingMethod>(value);
+        }
+
+        public static implicit operator BillingMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeviceAttribute.
     /// </summary>
     public class DeviceAttribute : ConstantClass

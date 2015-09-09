@@ -36,6 +36,7 @@ namespace Amazon.SimpleWorkflow.Model
     {
         private ChildPolicy _childPolicy;
         private string _executionStartToCloseTimeout;
+        private string _lambdaRole;
         private TaskList _taskList;
         private string _taskPriority;
         private string _taskStartToCloseTimeout;
@@ -90,6 +91,24 @@ namespace Amazon.SimpleWorkflow.Model
         internal bool IsSetExecutionStartToCloseTimeout()
         {
             return this._executionStartToCloseTimeout != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaRole. 
+        /// <para>
+        /// The IAM role used by this workflow execution when invoking AWS Lambda functions.
+        /// </para>
+        /// </summary>
+        public string LambdaRole
+        {
+            get { return this._lambdaRole; }
+            set { this._lambdaRole = value; }
+        }
+
+        // Check to see if LambdaRole property is set
+        internal bool IsSetLambdaRole()
+        {
+            return this._lambdaRole != null;
         }
 
         /// <summary>

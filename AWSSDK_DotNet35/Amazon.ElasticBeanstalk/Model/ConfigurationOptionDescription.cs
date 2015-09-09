@@ -305,13 +305,19 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code>
         /// . 
         /// </para>
+        ///  </value> <value name="Json"> 
+        /// <para>
+        ///  <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
+        /// </para>
         ///  </value> </enumValues> 
         /// <para>
         ///  <ul> <li> <code>Scalar</code> : Values for this option are a single selection from
         /// the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code>
         /// constraints. </li> <li> <code>List</code> : Values for this option are multiple selections
         /// from the possible values. </li> <li> <code>Boolean</code> : Values for this option
-        /// are either <code>true</code> or <code>false</code> . </li> </ul> 
+        /// are either <code>true</code> or <code>false</code> . </li> <li> <code>Json</code>
+        /// : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
+        /// </li> </ul> 
         /// </para>
         /// </summary>
         public ConfigurationOptionValueType ValueType

@@ -56,7 +56,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token used for pagination of results. 
+        /// The string that you use in a subsequent request to get the next page of results in
+        /// a paginated response.
         /// </para>
         /// </summary>
         public string NextToken

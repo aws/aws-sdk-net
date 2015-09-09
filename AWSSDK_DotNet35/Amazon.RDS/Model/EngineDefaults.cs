@@ -40,7 +40,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupFamily. 
         /// <para>
-        ///  Specifies the name of the DB parameter group family which the engine default parameters
+        ///  Specifies the name of the DB parameter group family that the engine default parameters
         /// apply to. 
         /// </para>
         /// </summary>

@@ -40,7 +40,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The artifacts' ARNs.
+        /// The Run, Job, Suite, or Test ARN.
         /// </para>
         /// </summary>
         public string Arn

@@ -14,39 +14,39 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticbeanstalk-2010-12-01.normal.json service model.
  */
 using System;
 using System.Net;
 using Amazon.Runtime;
 
-namespace Amazon.RDS.Model
+namespace Amazon.ElasticBeanstalk.Model
 {
     ///<summary>
-    /// RDS exception
+    /// ElasticBeanstalk exception
     /// </summary>
-    public class InsufficientDomainCapacityException : AmazonRDSException 
+    public class ElasticBeanstalkServiceException : AmazonElasticBeanstalkException 
     {
         /// <summary>
-        /// Constructs a new InsufficientDomainCapacityException with the specified error
+        /// Constructs a new ElasticBeanstalkServiceException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public InsufficientDomainCapacityException(string message) 
+        public ElasticBeanstalkServiceException(string message) 
             : base(message) {}
           
-        public InsufficientDomainCapacityException(string message, Exception innerException) 
+        public ElasticBeanstalkServiceException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        public InsufficientDomainCapacityException(Exception innerException) 
+        public ElasticBeanstalkServiceException(Exception innerException) 
             : base(innerException) {}
             
-        public InsufficientDomainCapacityException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ElasticBeanstalkServiceException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        public InsufficientDomainCapacityException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ElasticBeanstalkServiceException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
     }

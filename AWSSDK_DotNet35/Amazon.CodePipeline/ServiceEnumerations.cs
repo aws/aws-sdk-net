@@ -317,6 +317,42 @@ namespace Amazon.CodePipeline
 
 
     /// <summary>
+    /// Constants used for properties of type EncryptionKeyType.
+    /// </summary>
+    public class EncryptionKeyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KMS for EncryptionKeyType
+        /// </summary>
+        public static readonly EncryptionKeyType KMS = new EncryptionKeyType("KMS");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public EncryptionKeyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionKeyType FindValue(string value)
+        {
+            return FindValue<EncryptionKeyType>(value);
+        }
+
+        public static implicit operator EncryptionKeyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FailureType.
     /// </summary>
     public class FailureType : ConstantClass
