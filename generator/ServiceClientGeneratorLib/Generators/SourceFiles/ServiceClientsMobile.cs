@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+    #line 1 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class ServiceClientsMobile : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public override string TransformText()
         {
             
-            #line 6 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 6 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
 
     AddLicenseHeader();
 
@@ -39,14 +39,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\r\n\r\nusing System;\r\nusing System.Runtime.ExceptionServices;\r\nusing System.Threadin" +
                     "g;\r\nusing System.Threading.Tasks;\r\nusing System.Collections.Generic;\r\n\r\nusing ");
             
-            #line 17 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 17 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model;\r\nusing ");
             
-            #line 18 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 18 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -55,35 +55,35 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "time.Internal;\r\nusing Amazon.Runtime.Internal.Auth;\r\nusing Amazon.Runtime.Intern" +
                     "al.Transform;\r\n\r\nnamespace ");
             
-            #line 24 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 24 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n");
             
-            #line 26 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 26 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
     this.FormatServiceClientDocumentation(this.Config.ServiceModel.Documentation); 
             
             #line default
             #line hidden
             this.Write("    public partial class Amazon");
             
-            #line 27 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 27 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client : AmazonServiceClient, IAmazon");
             
-            #line 27 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 27 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("\r\n    {\r\n        \r\n");
             
-            #line 30 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 30 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
 
     // Generates generic constructors for the service if enabled in the model
     if(this.Config.GenerateConstructors)
@@ -95,7 +95,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("        #region Constructors\r\n\r\n        /// <summary>\r\n        /// Constructs Ama" +
                     "zon");
             
-            #line 38 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 38 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -103,14 +103,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Client with AWS Credentials\r\n        /// </summary>\r\n        /// <param name=\"cre" +
                     "dentials\">AWS Credentials</param>\r\n        public Amazon");
             
-            #line 41 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 41 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client(AWSCredentials credentials)\r\n            : this(credentials, new Amazon");
             
-            #line 42 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 42 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -118,7 +118,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config())\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n        /// Constructs " +
                     "Amazon");
             
-            #line 47 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 47 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -127,7 +127,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "dentials\">AWS Credentials</param>\r\n        /// <param name=\"region\">The region t" +
                     "o connect.</param>\r\n        public Amazon");
             
-            #line 51 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 51 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -135,7 +135,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Client(AWSCredentials credentials, RegionEndpoint region)\r\n            : this(cre" +
                     "dentials, new Amazon");
             
-            #line 52 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 52 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -143,14 +143,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config{RegionEndpoint = region})\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n" +
                     "        /// Constructs Amazon");
             
-            #line 57 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 57 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client with AWS Credentials and an\r\n        /// Amazon");
             
-            #line 58 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 58 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -159,21 +159,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "edentials\">AWS Credentials</param>\r\n        /// <param name=\"clientConfig\">The A" +
                     "mazon");
             
-            #line 61 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 61 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client Configuration Object</param>\r\n        public Amazon");
             
-            #line 62 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 62 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client(AWSCredentials credentials, Amazon");
             
-            #line 62 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 62 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -181,7 +181,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config clientConfig)\r\n            : base(credentials, clientConfig)\r\n        {\r\n " +
                     "       }\r\n\r\n        /// <summary>\r\n        /// Constructs Amazon");
             
-            #line 68 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 68 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -190,7 +190,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     " /// <param name=\"awsAccessKeyId\">AWS Access Key ID</param>\r\n        /// <param " +
                     "name=\"awsSecretAccessKey\">AWS Secret Access Key</param>\r\n        public Amazon");
             
-            #line 72 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 72 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -198,7 +198,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Client(string awsAccessKeyId, string awsSecretAccessKey)\r\n            : this(awsA" +
                     "ccessKeyId, awsSecretAccessKey, new Amazon");
             
-            #line 73 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 73 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -206,7 +206,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config())\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n        /// Constructs " +
                     "Amazon");
             
-            #line 78 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 78 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -218,7 +218,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""region"">The region to connect.</param>
         public Amazon");
             
-            #line 83 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 83 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -226,7 +226,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Client(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)\r\n" +
                     "            : this(awsAccessKeyId, awsSecretAccessKey, new Amazon");
             
-            #line 84 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 84 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -234,14 +234,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config() {RegionEndpoint=region})\r\n        {\r\n        }\r\n\r\n        /// <summary>\r" +
                     "\n        /// Constructs Amazon");
             
-            #line 89 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 89 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client with AWS Access Key ID, AWS Secret Key and an\r\n        /// Amazon");
             
-            #line 90 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 90 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -251,21 +251,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "ssKey\">AWS Secret Access Key</param>\r\n        /// <param name=\"clientConfig\">The" +
                     " Amazon");
             
-            #line 94 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 94 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client Configuration Object</param>\r\n        public Amazon");
             
-            #line 95 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 95 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client(string awsAccessKeyId, string awsSecretAccessKey, Amazon");
             
-            #line 95 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 95 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -274,7 +274,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "ntConfig)\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n        /// Constructs" +
                     " Amazon");
             
-            #line 101 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 101 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -286,7 +286,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""awsSessionToken"">AWS Session Token</param>
         public Amazon");
             
-            #line 106 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 106 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -295,7 +295,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "\n            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new Ama" +
                     "zon");
             
-            #line 107 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 107 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -303,7 +303,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config())\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n        /// Constructs " +
                     "Amazon");
             
-            #line 112 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 112 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -316,7 +316,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""region"">The region to connect.</param>
         public Amazon");
             
-            #line 118 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 118 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -325,7 +325,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "RegionEndpoint region)\r\n            : this(awsAccessKeyId, awsSecretAccessKey, a" +
                     "wsSessionToken, new Amazon");
             
-            #line 119 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 119 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -333,14 +333,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config{RegionEndpoint = region})\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n" +
                     "        /// Constructs Amazon");
             
-            #line 124 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 124 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client with AWS Access Key ID, AWS Secret Key and an\r\n        /// Amazon");
             
-            #line 125 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 125 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -352,14 +352,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""awsSessionToken"">AWS Session Token</param>
         /// <param name=""clientConfig"">The Amazon");
             
-            #line 130 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 130 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("Client Configuration Object</param>\r\n        public Amazon");
             
-            #line 131 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 131 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -367,7 +367,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Client(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, " +
                     "Amazon");
             
-            #line 131 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 131 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -375,7 +375,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config clientConfig)\r\n            : base(awsAccessKeyId, awsSecretAccessKey, awsS" +
                     "essionToken, clientConfig)\r\n        {\r\n        }\r\n\r\n        #endregion\r\n");
             
-            #line 137 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 137 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
 
     }
 
@@ -386,14 +386,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "r the service.\r\n        /// </summary>\r\n        protected override AbstractAWSSi" +
                     "gner CreateSigner()\r\n        {\r\n            return new ");
             
-            #line 148 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 148 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.DetermineSigner(this.Config.ServiceModel.SignatureVersion, this.Config.BaseName)));
             
             #line default
             #line hidden
             this.Write("();\r\n        } \r\n\r\n");
             
-            #line 151 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 151 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
 
     // Generates overrides for the pipeline if specified in the customizations file
         if(this.Config.ServiceModel.Customizations.PipelineOverride != null)
@@ -410,7 +410,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         {
 ");
             
-            #line 162 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 162 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
 
             var pipelineOverrides = this.Config.ServiceModel.Customizations.PipelineOverride;
             foreach(var o in pipelineOverrides.Overrides )
@@ -423,14 +423,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            pipeline.");
             
-            #line 169 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 169 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(o.FormattedOverrideMethod));
             
             #line default
             #line hidden
             this.Write("();\r\n");
             
-            #line 170 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 170 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
 
                 }
                 else
@@ -441,28 +441,28 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            pipeline.");
             
-            #line 175 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 175 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(o.FormattedOverrideMethod));
             
             #line default
             #line hidden
             this.Write("(new ");
             
-            #line 175 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 175 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(o.NewType));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 175 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 175 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(o.ConstructorInput));
             
             #line default
             #line hidden
             this.Write("));\r\n");
             
-            #line 176 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 176 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
 
                 }
             }
@@ -472,7 +472,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        }\r\n");
             
-            #line 181 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 181 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
 
         }
 
@@ -496,7 +496,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
 
         ");
             
-            #line 199 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 199 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
 
     // Creates the method code for each operation in the model
         foreach(var operation in this.Config.ServiceModel.Operations)
@@ -507,110 +507,146 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\r\n        #region  ");
             
-            #line 205 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 205 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n");
             
-            #line 207 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 207 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
 
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
         {
+		if(operation.IsDeprecated)
+		{
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t[Obsolete(\"");
+            
+            #line 213 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
+            
+            #line default
+            #line hidden
+            this.Write("\")]\r\n");
+            
+            #line 214 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+		
+		}
 
             
             #line default
             #line hidden
             this.Write("        internal ");
             
-            #line 211 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 217 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response ");
             
-            #line 211 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 217 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("()\r\n        {\r\n            return ");
             
-            #line 213 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 219 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(new ");
             
-            #line 213 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 219 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request());\r\n        }\r\n");
             
-            #line 215 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 221 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
 
         }
+		if(operation.IsDeprecated)
+		{
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t[Obsolete(\"");
+            
+            #line 226 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
+            
+            #line default
+            #line hidden
+            this.Write("\")]\r\n");
+            
+            #line 227 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+		
+		}
 
             
             #line default
             #line hidden
             this.Write("        internal ");
             
-            #line 218 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 230 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response ");
             
-            #line 218 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 230 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 218 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 230 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request request)\r\n        {\r\n            var marshaller = new ");
             
-            #line 220 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 232 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("RequestMarshaller();\r\n            var unmarshaller = ");
             
-            #line 221 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 233 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("ResponseUnmarshaller.Instance;\r\n\r\n            return Invoke<");
             
-            #line 223 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 235 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request,");
             
-            #line 223 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 235 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response>(request, marshaller, unmarshaller);\r\n        }\r\n\r\n");
             
-            #line 226 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 238 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
 
         // Creates a version of the operation that takes no arguments and passes a request with no set members if specified in the customizations
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
@@ -620,23 +656,41 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line default
             #line hidden
             
-            #line 231 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 243 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
 
         this.FormatOperationDocumentationAsync(operation, false);
+		if(operation.IsDeprecated)
+		{
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t[Obsolete(\"");
+            
+            #line 248 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
+            
+            #line default
+            #line hidden
+            this.Write("\")]\r\n");
+            
+            #line 249 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+		
+		}
 
             
             #line default
             #line hidden
             this.Write("        public Task<");
             
-            #line 234 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 252 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> ");
             
-            #line 234 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 252 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -644,62 +698,80 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Async(System.Threading.CancellationToken cancellationToken = default(Cancellation" +
                     "Token))\r\n        {\r\n            return ");
             
-            #line 236 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 254 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Async(new ");
             
-            #line 236 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 254 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request(), cancellationToken);\r\n        }\r\n\r\n");
             
-            #line 239 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 257 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
 
         }
-// Add async simple methods
-AddSimpleClientMethods(operation, false);
+		// Add async simple methods
+		AddSimpleClientMethods(operation, false);
 
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 245 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 263 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
 
-AddAsyncDocumentation(operation.Name);
+		AddAsyncDocumentation(operation.Name);
+		if(operation.IsDeprecated)
+		{
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t[Obsolete(\"");
+            
+            #line 268 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
+            
+            #line default
+            #line hidden
+            this.Write("\")]\r\n");
+            
+            #line 269 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+		
+		}
 
             
             #line default
             #line hidden
             this.Write("        ");
             
-            #line 248 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 272 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.IsInternal ? "internal" : "public"));
             
             #line default
             #line hidden
             this.Write(" Task<");
             
-            #line 248 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 272 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> ");
             
-            #line 248 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 272 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Async(");
             
-            #line 248 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 272 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -707,28 +779,28 @@ AddAsyncDocumentation(operation.Name);
             this.Write("Request request, System.Threading.CancellationToken cancellationToken = default(C" +
                     "ancellationToken))\r\n        {\r\n            var marshaller = new ");
             
-            #line 250 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 274 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("RequestMarshaller();\r\n            var unmarshaller = ");
             
-            #line 251 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 275 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("ResponseUnmarshaller.Instance;\r\n\r\n            return InvokeAsync<");
             
-            #line 253 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 277 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request,");
             
-            #line 253 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 277 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -736,7 +808,7 @@ AddAsyncDocumentation(operation.Name);
             this.Write("Response>(request, marshaller, \r\n                unmarshaller, cancellationToken)" +
                     ";\r\n        }\r\n\r\n        #endregion\r\n        ");
             
-            #line 258 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
+            #line 282 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
 
         }
         

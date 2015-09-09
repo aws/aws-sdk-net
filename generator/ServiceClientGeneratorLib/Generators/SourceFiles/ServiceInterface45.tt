@@ -38,6 +38,12 @@ namespace <#=this.Config.Namespace#>
 #>
 <#
 this.FormatOperationDocumentationSync(operation, false);
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete("<#=operation.DeprecationMessage#>")]
+<#		
+		}
 #>
         <#=operation.Name#>Response <#=operation.Name#>();
 
@@ -48,6 +54,12 @@ this.FormatOperationDocumentationSync(operation, false);
 #>
 <#
 this.FormatOperationDocumentationSync(operation, true);
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete("<#=operation.DeprecationMessage#>")]
+<#		
+		}
 #>
         <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request);
 
@@ -57,18 +69,30 @@ this.FormatOperationDocumentationSync(operation, true);
         {
 #>
 <#
-this.FormatOperationDocumentationAsync(operation, false);
+			this.FormatOperationDocumentationAsync(operation, false);
+			if(operation.IsDeprecated)
+			{
+#>
+		[Obsolete("<#=operation.DeprecationMessage#>")]
+<#		
+			}
 #>
         Task<<#=operation.Name#>Response> <#=operation.Name#>Async(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 <#
         }
 
-        AddSimpleClientMethodInterfaces(operation, false);
+			AddSimpleClientMethodInterfaces(operation, false);
 #>
 
 <#
-        AddAsyncDocumentation(operation.Name);
+			AddAsyncDocumentation(operation.Name);
+			if(operation.IsDeprecated)
+			{
+#>
+		[Obsolete("<#=operation.DeprecationMessage#>")]
+<#		
+			}
 #>
         Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=operation.Name#>Request request, CancellationToken cancellationToken = default(CancellationToken));
 

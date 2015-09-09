@@ -35,6 +35,12 @@ namespace <#=this.Config.Namespace#>
 #>
 <#
         this.FormatOperationDocumentationSync(operation, false);
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete("<#=operation.DeprecationMessage#>")]
+<#		
+		}
 #>
         <#=operation.Name#>Response <#=operation.Name#>();
 <#
@@ -44,15 +50,35 @@ namespace <#=this.Config.Namespace#>
 #>
 <#
         this.FormatOperationDocumentationSync(operation, true);
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete("<#=operation.DeprecationMessage#>")]
+<#		
+		}
 #>
         <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request);
 
-<#AddBeginAsyncDocumentation(operation.Name);#>
+<#AddBeginAsyncDocumentation(operation.Name);
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete("<#=operation.DeprecationMessage#>")]
+<#		
+		}
+#>
         IAsyncResult Begin<#=operation.Name#>(<#=operation.Name#>Request request, AsyncCallback callback, object state);
 
 
 
-<#AddEndAsyncDocumentation(operation.Name);#>
+<#AddEndAsyncDocumentation(operation.Name);
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete("<#=operation.DeprecationMessage#>")]
+<#		
+		}
+#>
         <#=operation.Name#>Response End<#=operation.Name#>(IAsyncResult asyncResult);
 
 		#endregion

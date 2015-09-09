@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceClientGenerator", "ServiceClientGenerator\ServiceClientGenerator.csproj", "{A9222452-4269-4844-BBCC-45874C113745}"
 EndProject
@@ -84,7 +84,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceModels", "ServiceMod
 		ServiceModels\kinesis-2013-12-02.normal.json = ServiceModels\kinesis-2013-12-02.normal.json
 		ServiceModels\kinesis.customizations.json = ServiceModels\kinesis.customizations.json
 		ServiceModels\kms-2014-11-01.normal.json = ServiceModels\kms-2014-11-01.normal.json
-		ServiceModels\lambda-2014-11-11.normal.json = ServiceModels\lambda-2014-11-11.normal.json
+		ServiceModels\lambda-2015-03-31.normal.json = ServiceModels\lambda-2015-03-31.normal.json
 		ServiceModels\lambda.customizations.json = ServiceModels\lambda.customizations.json
 		ServiceModels\logs-2014-03-28.normal.json = ServiceModels\logs-2014-03-28.normal.json
 		ServiceModels\logs.customizations.constructors.json = ServiceModels\logs.customizations.constructors.json

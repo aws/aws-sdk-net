@@ -79,7 +79,7 @@ namespace ServiceClientGenerator
         /// </summary>
         /// <returns>The name of the shape as a string</returns>
         public override string ToString()
-        {
+        {   
             return this.Name;
         }
 

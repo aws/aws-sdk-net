@@ -291,6 +291,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         DescribeJobFlowsResponse DescribeJobFlows();
 
         /// <summary>
@@ -329,6 +330,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         DescribeJobFlowsResponse DescribeJobFlows(DescribeJobFlowsRequest request);
 
         /// <summary>
@@ -342,6 +344,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeJobFlows
         ///         operation.</returns>
+        [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         IAsyncResult BeginDescribeJobFlows(DescribeJobFlowsRequest request, AsyncCallback callback, object state);
 
 
@@ -353,6 +356,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeJobFlows.</param>
         /// 
         /// <returns>Returns a  DescribeJobFlowsResult from ElasticMapReduce.</returns>
+        [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         DescribeJobFlowsResponse EndDescribeJobFlows(IAsyncResult asyncResult);
 
         #endregion
