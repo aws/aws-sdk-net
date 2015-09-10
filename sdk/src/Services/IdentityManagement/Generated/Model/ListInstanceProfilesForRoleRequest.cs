@@ -49,9 +49,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// Use this parameter only when paginating results and only after you have received a
-        /// response where the results are truncated. Set it to the value of the <code>Marker</code>
-        /// element in the response you just received.
+        /// Use this parameter only when paginating results and only after you receive a response
+        /// indicating that the results are truncated. Set it to the value of the <code>Marker</code>
+        /// element in the response you received to inform the next call about where to start.
         /// </para>
         /// </summary>
         public string Marker
