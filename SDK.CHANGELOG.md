@@ -1,3 +1,17 @@
+### 3.1.11.0 (2015-09-10 17:43 UTC)
+* ElasticMapReduce (3.1.1.0)
+	* Deprecated DescribeJobFlows API.
+* IdentityManagement (3.1.1.0)
+	* Add support for IAM policy simulator.
+* ImportExport (3.1.1.0)
+	* Documentation update for ImportExport client.
+* Kinesis (3.1.1.0)
+	* Add timestamp field to Amazon.Kinesis.Model.Record type.
+* Lambda (3.1.1.0)
+	* Deprecated InvokeAsync API
+* MachineLearning (3.1.1.0)
+	* Documentation update for Amazon Machine Learning client.
+
 ### 3.1.10.1 (2015-09-04 20:30 UTC)
 * Core 3.1.1.1
 	* Included pull request https://github.com/aws/aws-sdk-net/pull/242 to fix signing issues for endpoints with a path component.
