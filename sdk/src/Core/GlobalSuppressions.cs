@@ -272,7 +272,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Scope = "member", Target = "Amazon.Runtime.Internal.RuntimePipeline.#AddHandlerBefore`1(Amazon.Runtime.IPipelineHandler)")]
 [module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Scope = "member", Target = "Amazon.Runtime.Internal.DefaultRetryPolicy.#IsInnerException`1(System.Exception)")]
 [module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Scope = "member", Target = "Amazon.Util.PaginatedResourceFactory.#Create`3(Amazon.Util.PaginatedResourceInfo)")]
-[module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTyperameter", Scope = "member", Target = "Amazon.Runtime.Internal.ServiceClientHelpers.#CreateServiceFromAnother`2(Amazon.Runtime.AmazonServiceClient)")]
+[module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Scope = "member", Target = "Amazon.Runtime.Internal.ServiceClientHelpers.#CreateServiceFromAnother`2(Amazon.Runtime.AmazonServiceClient)")]
 [module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Scope = "member", Target = "Amazon.Util.Internal.PlatformServices.ServiceFactory.#RegisterService`1(System.Type)")]
 
 [module: SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", Scope = "member", Target = "Amazon.Runtime.Internal.DefaultRetryPolicy.#IsInnerException`1(System.Exception,!!0&)", MessageId = "1#")]
