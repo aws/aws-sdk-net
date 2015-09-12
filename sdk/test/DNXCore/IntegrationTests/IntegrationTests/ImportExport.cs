@@ -1,0 +1,178 @@
+using System;
+using System.Collections.Generic;
+
+using Amazon.ImportExport;
+using Amazon.ImportExport.Model;
+using Amazon.Runtime;
+
+using Amazon.S3;
+using Amazon.S3.Model;
+using Amazon.S3.Util;
+using Amazon.DNXCore.IntegrationTests;
+using Xunit;
+using System.Threading;
+
+namespace Amazon.DNXCore.IntegrationTests
+{
+    
+    public class ImportExport : TestBase<AmazonImportExportClient>
+    {
+        const string IMPORT_MANIFEST =
+@"bucket: @BUCKET@
+accessKeyId: @ACCESS_KEY_ID@
+manifestVersion: 1.3
+eraseDevice: true
+deviceId: 123
+notificationEmail: john.doe@example.com
+returnAddress:
+   name: Amazon.com ATTN:Joe Random
+   street1: 5555555 5th Ave
+   city: Seattle
+   stateOrProvince: WA
+   postalCode: 98104
+   phoneNumber: 206-555-1000
+   country: USA
+";
+
+        const string EXPORT_MANIFEST =
+@"manifestVersion: 1.2
+accessKeyId: @ACCESS_KEY_ID@
+deviceId: 532404500021
+logBucket: @BUCKET@
+trueCryptPassword: apassword
+logPrefix: logs/
+fileSystem: NTFS
+notificationEmail: john.doe@example.com
+operations:
+    - exportBucket: @BUCKET@
+returnAddress:
+    name: Amazon.com ATTN Joe Random
+    street1: 1200 12th Ave S.
+    city: Seattle
+    stateOrProvince: WA
+    postalCode: 98114
+    phoneNumber: 206-266-0000
+    country: USA
+";
+
+        static AmazonS3Client s3Client;
+
+        static string bucketName;
+
+        public ImportExport()
+        {
+            s3Client = CreateClient<AmazonS3Client>();
+            
+            bucketName = UtilityMethods.CreateBucketAsync(s3Client, "ImportExport").Result;
+            s3Client.PutObjectAsync(new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = "data.txt",
+                ContentBody = "import-export-data"
+            }).Wait();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (s3Client != null)
+            {
+                UtilityMethods.DeleteBucketWithObjectsAsync(s3Client, bucketName).Wait();
+                s3Client.Dispose();
+                s3Client = null;
+            }
+            base.Dispose(disposing);
+        }
+
+        [Fact]
+        [Trait(CategoryAttribute,"ImportExport")]
+        public void TestImportExport()
+        {
+            // CreateJob
+            CreateJobRequest createJobRequest = new CreateJobRequest
+            {
+                JobType = JobType.Import,
+                Manifest = GetSampleManifestText(IMPORT_MANIFEST)
+            };
+            var createJobResponse = Client.CreateJobAsync(createJobRequest).Result;
+            string createdJobId = createJobResponse.JobId;
+            Assert.NotNull(createdJobId);
+            Assert.Equal(JobType.Import, createJobResponse.JobType);
+            Assert.NotNull(createJobResponse.Signature);
+            Assert.NotNull(createJobResponse.SignatureFileContents);
+
+
+            // UpdateJob
+            UpdateJobRequest updateJobRequest = new UpdateJobRequest
+            {
+                JobId = createdJobId,
+                JobType = JobType.Export,
+                Manifest = GetSampleManifestText(EXPORT_MANIFEST)
+            };
+            Client.UpdateJobAsync(updateJobRequest).Wait();
+
+
+            // ListJobs
+            var listJobsResponse = Client.ListJobsAsync(new ListJobsRequest { MaxJobs = 100 }).Result;
+            Assert.NotNull(listJobsResponse.IsTruncated);
+            Job job = FindJob(createdJobId, listJobsResponse.Jobs);
+            Assert.NotNull(job);
+            Assert.True(job.CreationDate > DateTime.MinValue);
+            Assert.False(job.IsCanceled);
+            Assert.Equal(createdJobId, job.JobId);
+            Assert.Equal(JobType.Export, job.JobType);
+            Assert.False(job.IsCanceled);
+
+
+            // GetStatus
+            var getStatusResponse = Client.GetStatusAsync(new GetStatusRequest { JobId = createdJobId }).Result;
+            Assert.NotNull(getStatusResponse.CreationDate);
+            Assert.NotNull(getStatusResponse.CurrentManifest);
+            Assert.Equal(createdJobId, getStatusResponse.JobId);
+            Assert.Equal(JobType.Export, getStatusResponse.JobType);
+            Assert.NotNull(getStatusResponse.ProgressMessage);
+            Assert.NotNull(getStatusResponse.LocationMessage);
+            Assert.NotNull(getStatusResponse.LocationCode);
+            Assert.NotNull(getStatusResponse.Signature);
+            Assert.Equal(0, getStatusResponse.ErrorCount);
+            Assert.NotNull(getStatusResponse.ProgressMessage);
+            Assert.NotNull(getStatusResponse.SignatureFileContents);
+            Assert.Null(getStatusResponse.Carrier);
+            Assert.Null(getStatusResponse.TrackingNumber);
+            Assert.Null(getStatusResponse.LogBucket);
+            Assert.Null(getStatusResponse.LogKey);
+
+
+            // Cancel our test job
+            Client.CancelJobAsync(new CancelJobRequest { JobId = createdJobId }).Wait();
+            AssertJobIsCancelled(createdJobId);
+            createdJobId = null;
+        }
+
+        private Job FindJob(String jobId, List<Job> jobs)
+        {
+            var job = jobs.Find(item => item.JobId == jobId);
+
+            if (job == null)
+                AssertExtensions.Fail("Expected to find a job with ID '" + jobId + "', but didn't");
+            return job;
+        }
+
+        private void AssertJobIsCancelled(string jobId)
+        {
+            Thread.Sleep(5000);
+            Job job = FindJob(jobId, Client.ListJobsAsync(new ListJobsRequest()).Result.Jobs);
+            Assert.True(job.IsCanceled);
+        }
+
+
+
+        private string GetSampleManifestText(string manifest)
+        {
+            manifest = manifest.Replace("@BUCKET@", bucketName);
+            manifest = manifest.Replace("@ACCESS_KEY_ID@", "AAAEXAMPLE");
+
+            return manifest;
+        }
+
+    }
+}
