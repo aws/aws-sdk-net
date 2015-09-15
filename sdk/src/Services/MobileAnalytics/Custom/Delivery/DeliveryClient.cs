@@ -38,7 +38,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     /// Delivery client periodically sends events in local persistent storage to Mobile Analytics server.
     /// Once the events is delivered successfully, those events would be deleted from local storage.
     /// </summary>
-    public class DeliveryClient : IDeliveryClient
+    public partial class DeliveryClient : IDeliveryClient
     {
         private Logger _logger = Logger.GetLogger(typeof(DeliveryClient));
 
@@ -69,50 +69,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             this(new DeliveryPolicyFactory(maConfig.AllowUseDataNetwork), maConfig, clientContext, credentials, regionEndPoint, maManager)
         {
         }
-
-        /// <summary>
-        /// Constructor of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.DeliveryClient"/> class.
-        /// </summary>
-        /// <param name="policyFactory">An instance of IDeliveryPolicyFactory. <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IDeliveryPolicyFactory"/></param>
-        /// <param name="maConfig">Mobile Analytics Manager configuration. <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManagerConfig"/></param>
-        /// <param name="clientContext">An instance of ClientContext. <see cref="Amazon.Runtime.Internal.ClientContext"/></param>
-        /// <param name="credentials">An instance of Credentials. <see cref="Amazon.Runtime.AWSCredentials"/></param>
-        /// <param name="regionEndPoint">Region endpoint. <see cref="Amazon.RegionEndpoint"/></param>
-        /// <param name="maManager">Mobile Analytics Manager instance. <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManager"/></param>
-        public DeliveryClient(IDeliveryPolicyFactory policyFactory, MobileAnalyticsManagerConfig maConfig, ClientContext clientContext, AWSCredentials credentials, RegionEndpoint regionEndPoint, MobileAnalyticsManager maManager)
-        {
-            _policyFactory = policyFactory;
-            _deliveryPolicies = new List<IDeliveryPolicy>();
-            _deliveryPolicies.Add(_policyFactory.NewConnectivityPolicy());
-
-            _clientContext = clientContext;
-            _appID = clientContext.AppID;
-            _maConfig = maConfig;
-            _eventStore = new SQLiteEventStore(maConfig);
-            _maManager = maManager;
-#if PCL
-            _mobileAnalyticsLowLevelClient = new AmazonMobileAnalyticsClient(credentials, regionEndPoint);
-#elif BCL
-            if (null == credentials && null == regionEndPoint)
-            {
-                _mobileAnalyticsLowLevelClient = new AmazonMobileAnalyticsClient();
-            }
-            else if (null == credentials)
-            {
-                _mobileAnalyticsLowLevelClient = new AmazonMobileAnalyticsClient(regionEndPoint);
-            }
-            else if (null == regionEndPoint)
-            {
-                _mobileAnalyticsLowLevelClient = new AmazonMobileAnalyticsClient(credentials);
-            }
-            else
-            {
-                _mobileAnalyticsLowLevelClient = new AmazonMobileAnalyticsClient(credentials, regionEndPoint);
-            }
-#endif
-        }
-
-
+		
+		
         /// <summary>
         /// Enqueues the events for delivery. The event is stored in an instance of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IEventStore"/>.
         /// </summary>

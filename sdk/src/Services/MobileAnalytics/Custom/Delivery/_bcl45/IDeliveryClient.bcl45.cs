@@ -24,10 +24,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     public partial interface IDeliveryClient
     {
         /// <summary>
-        /// Enqueues the events for delivery. The event is stored in an <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IEventStore"/>.
+        /// Attempts the delivery of events from local store to service.
         /// </summary>
-        /// <param name="eventObject">Event object. <see cref="Amazon.MobileAnalytics.Model.Event"/></param>
-        void EnqueueEventsForDelivery(Amazon.MobileAnalytics.Model.Event eventObject);
+        System.Threading.Tasks.Task AttemptDeliveryAsync();
     }
 }
 

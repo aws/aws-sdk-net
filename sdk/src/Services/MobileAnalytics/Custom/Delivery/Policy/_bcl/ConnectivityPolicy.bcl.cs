@@ -14,20 +14,25 @@
  */
 
 using System;
-using Amazon.MobileAnalytics.Model;
+using System.Net;
+using Amazon.Util.Internal.PlatformServices;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 {
     /// <summary>
-    /// The interface for delivery client.
+    /// An object for determining whether the delivery client should send events
+    /// to mobile analytics service by checking the network status.
     /// </summary>
-    public partial interface IDeliveryClient
+    public partial class ConnectivityPolicy : IDeliveryPolicy
     {
         /// <summary>
-        /// Enqueues the events for delivery. The event is stored in an <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IEventStore"/>.
+        /// Determines whether this instance has network connectivity.
         /// </summary>
-        /// <param name="eventObject">Event object. <see cref="Amazon.MobileAnalytics.Model.Event"/></param>
-        void EnqueueEventsForDelivery(Amazon.MobileAnalytics.Model.Event eventObject);
+        /// <returns><c>true</c> if this instance has network connectivity; otherwise, <c>false</c>.</returns>
+        private bool HasNetworkConnectivity()
+        {
+            return System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable();
+        }
     }
 }
-

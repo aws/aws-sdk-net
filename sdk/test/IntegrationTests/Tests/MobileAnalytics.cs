@@ -22,6 +22,10 @@ using Amazon.CognitoIdentity;
 using Amazon.Util.Internal;
 using System.Reflection;
 using Amazon.Runtime.Internal;
+using Amazon.S3;
+using Amazon.S3.Model;
+using System.IO.Compression;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 
 #if BCL45
 using System.Threading.Tasks;
@@ -41,17 +45,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [ClassInitialize()]
         public static void ClassInit(TestContext context)
         {
-#if BCL
             // This attribute must be set in BCL platform
-            AWSConfigs.ApplicationName = "IntegrationTestApp";
+            AWSConfigs.ApplicationName = "MobileAnalyticsIntegrationTestApp";
 
             // clean the session and db files left in last execution
             string appDataPath = InternalSDKUtils.DetermineAppLocalStoragePath("");
             if (Directory.Exists(appDataPath))
             {
-                Directory.Delete(appDataPath, true);
+                try
+                {
+                    Directory.Delete(appDataPath, true);
+                }
+                catch (IOException)
+                {
+                    Directory.Delete(appDataPath, true);
+                }
+                catch (UnauthorizedAccessException)
+                {
+                    Directory.Delete(appDataPath, true);
+                }
             }
-#endif
         }
 
 
@@ -72,91 +85,32 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public void TestConstructor()
         {
             string appID1 = Guid.NewGuid().ToString();
-            try
-            {
-                MobileAnalyticsManager.GetOrCreateInstance(appID1, Credentials, RegionEndpoint.USEast1);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("get exception in constrctor :", e.ToString());
-                Assert.Fail();
-            }
-            Assert.IsTrue(null != MobileAnalyticsManager.GetInstance(appID1));
+            MobileAnalyticsManager.GetOrCreateInstance(appID1, Credentials, RegionEndpoint.USEast1);
+            Assert.IsNotNull(MobileAnalyticsManager.GetInstance(appID1));
 
             string appID2 = Guid.NewGuid().ToString();
-            try
-            {
-                MobileAnalyticsManager.GetOrCreateInstance(appID2, Credentials, RegionEndpoint.USEast1, new MobileAnalyticsManagerConfig());
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("get exception in constrctor :", e.ToString());
-                Assert.Fail();
-            }
-            Assert.IsTrue(null != MobileAnalyticsManager.GetInstance(appID2));
-
+            MobileAnalyticsManager.GetOrCreateInstance(appID2, Credentials, RegionEndpoint.USEast1, new MobileAnalyticsManagerConfig());
+            Assert.IsNotNull(MobileAnalyticsManager.GetInstance(appID2));
 
             string notInstantiatedID = Guid.NewGuid().ToString();
-            try
-            {
-                MobileAnalyticsManager.GetInstance(notInstantiatedID);
-            }
-            catch (InvalidOperationException e)
-            {
-                Console.WriteLine("get exception in constrctor :", e.ToString());
-                Assert.IsTrue(e is InvalidOperationException);
-            }
+            AssertExtensions.ExpectException(() => { MobileAnalyticsManager.GetInstance(notInstantiatedID); }, typeof(InvalidOperationException));
 
 #if BCL
             string appID3 = Guid.NewGuid().ToString();
-            try
-            {
-                MobileAnalyticsManager.GetOrCreateInstance(appID3);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("get exception in constrctor :", e.ToString());
-                Assert.Fail();
-            }
-            Assert.IsTrue(null != MobileAnalyticsManager.GetInstance(appID3));
-
+            MobileAnalyticsManager.GetOrCreateInstance(appID3);
+            Assert.IsNotNull(MobileAnalyticsManager.GetInstance(appID3));
 
             string appID4 = Guid.NewGuid().ToString();
-            try
-            {
-                MobileAnalyticsManager.GetOrCreateInstance(appID4, Credentials);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("get exception in constrctor :", e.ToString());
-                Assert.Fail();
-            }
-            Assert.IsTrue(null != MobileAnalyticsManager.GetInstance(appID4));
+            MobileAnalyticsManager.GetOrCreateInstance(appID4, Credentials);
+            Assert.IsNotNull(MobileAnalyticsManager.GetInstance(appID4));
 
             string appID5 = Guid.NewGuid().ToString();
-            try
-            {
-                MobileAnalyticsManager.GetOrCreateInstance(appID5, RegionEndpoint.USEast1);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("get exception in constrctor :", e.ToString());
-                Assert.Fail();
-            }
-            Assert.IsTrue(null != MobileAnalyticsManager.GetInstance(appID5));
-
+            MobileAnalyticsManager.GetOrCreateInstance(appID5, RegionEndpoint.USEast1);
+            Assert.IsNotNull(MobileAnalyticsManager.GetInstance(appID5));
 
             string appID6 = Guid.NewGuid().ToString();
-            try
-            {
-                MobileAnalyticsManager.GetOrCreateInstance(appID6, new MobileAnalyticsManagerConfig());
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("get exception in constrctor :", e.ToString());
-                Assert.Fail();
-            }
-            Assert.IsTrue(null != MobileAnalyticsManager.GetInstance(appID6));
+            MobileAnalyticsManager.GetOrCreateInstance(appID6, new MobileAnalyticsManagerConfig());
+            Assert.IsNotNull(MobileAnalyticsManager.GetInstance(appID6));
 #endif
         }
 
@@ -168,33 +122,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             MobileAnalyticsManager manager = MobileAnalyticsManager.GetOrCreateInstance(appID, Credentials, RegionEndpoint.USEast1);
             SQLiteEventStore eventStore = new SQLiteEventStore(new MobileAnalyticsManagerConfig());
 
-            try
-            {
-                CustomEvent customEvent = new CustomEvent("TestRecordEvent");
-                customEvent.AddAttribute("LevelName", "Level5");
-                customEvent.AddAttribute("Successful", "True");
-                customEvent.AddMetric("Score", 12345);
-                customEvent.AddMetric("TimeInLevel", 64);
-                manager.RecordEvent(customEvent);
+            CustomEvent customEvent = new CustomEvent("TestRecordEvent");
+            customEvent.AddAttribute("LevelName", "Level5");
+            customEvent.AddAttribute("Successful", "True");
+            customEvent.AddMetric("Score", 12345);
+            customEvent.AddMetric("TimeInLevel", 64);
+            manager.RecordEvent(customEvent);
 
-                MonetizationEvent monetizationEvent = new MonetizationEvent();
-                monetizationEvent.Quantity = 10.0;
-                monetizationEvent.ItemPrice = 2.00;
-                monetizationEvent.ProductId = "ProductId123";
-                monetizationEvent.ItemPriceFormatted = "$2.00";
-                monetizationEvent.Store = "Amazon";
-                monetizationEvent.TransactionId = "TransactionId123";
-                monetizationEvent.Currency = "USD";
-                manager.RecordEvent(monetizationEvent);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Catch exception: " + e.ToString());
-                Assert.Fail();
-            }
+            MonetizationEvent monetizationEvent = new MonetizationEvent();
+            monetizationEvent.Quantity = 10.0;
+            monetizationEvent.ItemPrice = 2.00;
+            monetizationEvent.ProductId = "ProductId123";
+            monetizationEvent.ItemPriceFormatted = "$2.00";
+            monetizationEvent.Store = "Amazon";
+            monetizationEvent.TransactionId = "TransactionId123";
+            monetizationEvent.Currency = "USD";
+            manager.RecordEvent(monetizationEvent);
 
             // sleep a while to make sure event is stored
-            Thread.Sleep(1 * 1000);
+            Thread.Sleep(TimeSpan.FromSeconds(1));
 
             // Event store should have one custom event, one monetization event and one session start event.
             Assert.AreEqual(eventStore.NumberOfEvents(appID), 3);
@@ -219,43 +165,47 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             // sleep for a while but wake up before session expires
             session.Pause();
-            Thread.Sleep(Convert.ToInt32((maConfig.SessionTimeout - 1) * 1000));
+            Thread.Sleep(TimeSpan.FromSeconds((maConfig.SessionTimeout - 1)));
             session.Resume();
 
             // make sure session is not expired
             DateTime startTime2 = session.StartTime;
             string sessionId2 = session.SessionId;
-            Assert.IsTrue(startTime1 == startTime2 && sessionId1 == sessionId2);
+            Assert.IsTrue(startTime1 == startTime2);
+            Assert.IsTrue(sessionId1 == sessionId2);
 
             // sleep longer until session expires
             session.Pause();
-            Thread.Sleep(Convert.ToInt32((maConfig.SessionTimeout + 1) * 1000));
+            Thread.Sleep(TimeSpan.FromSeconds((maConfig.SessionTimeout + 1)));
             session.Resume();
 
             // make sure session is expired
             DateTime startTime3 = session.StartTime;
             string sessionId3 = session.SessionId;
-            Assert.IsTrue(startTime3 > startTime2 && sessionId2 != sessionId3);
+            Assert.IsTrue(startTime3 > startTime2);
+            Assert.IsTrue(sessionId2 != sessionId3);
 
             // sleep for a while but wake up before session expires
             session.Pause();
-            Thread.Sleep(Convert.ToInt32((maConfig.SessionTimeout - 1) * 1000));
+            Thread.Sleep(TimeSpan.FromSeconds((maConfig.SessionTimeout - 1)));
             session.Resume();
 
             // make sure session is not expired
             DateTime startTime4 = session.StartTime;
             string sessionId4 = session.SessionId;
-            Assert.IsTrue(startTime4 == startTime3 && sessionId4 == sessionId3);
+            Assert.IsTrue(startTime4 == startTime3);
+            Assert.IsTrue(sessionId4 == sessionId3);
 
             // sleep longer until session expires
             session.Pause();
-            Thread.Sleep(Convert.ToInt32((maConfig.SessionTimeout + 1) * 1000));
+            Thread.Sleep(TimeSpan.FromSeconds((maConfig.SessionTimeout + 1))); 
             session.Resume();
 
             // make sure session is expired
             DateTime startTime5 = session.StartTime;
             string sessionId5 = session.SessionId;
-            Assert.IsTrue(startTime5 > startTime4 && sessionId5 != sessionId4);
+            Assert.IsTrue(startTime5 > startTime4);
+            Assert.IsTrue(sessionId5 != sessionId4);
         }
 
 
@@ -357,23 +307,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             putRequest.ClientContext = Convert.ToBase64String(
                             System.Text.Encoding.UTF8.GetBytes(clientContext));
             putRequest.ClientContextEncoding = "base64";
-            PutEventsResponse PutResponse = null;
+ 
+            var exception = AssertExtensions.ExpectException(()=>Client.PutEvents(putRequest), typeof(AmazonMobileAnalyticsException));
+            Assert.IsTrue(exception is AmazonMobileAnalyticsException);
+            Assert.AreEqual((exception as AmazonMobileAnalyticsException).StatusCode, HttpStatusCode.BadRequest);
+            Assert.AreEqual((exception as AmazonMobileAnalyticsException).ErrorCode, "ValidationException");
 
-            bool hasCatchException = false;
-            try
-            {
-                PutResponse = Client.PutEvents(putRequest);
-            }
-            catch (AmazonMobileAnalyticsException e)
-            {
-                Console.WriteLine("Get AmazonMobileAnalyticsException: error code : {0} ; error type : {1} ; request id : {2} ; status code : {3} ; error message is {4}", e.ErrorCode, e.ErrorType, e.RequestId, e.StatusCode, e.Message);
-                Assert.AreEqual(e.StatusCode, HttpStatusCode.BadRequest);
-                Assert.AreEqual(true, e.ErrorCode.Equals("ValidationException", StringComparison.InvariantCultureIgnoreCase));
-                hasCatchException = true;
-            }
-
-            if (!hasCatchException)
-                Assert.Fail();
         }
 
         [TestMethod]
@@ -390,41 +329,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             putRequest.ClientContext = Convert.ToBase64String(
                             System.Text.Encoding.UTF8.GetBytes(clientContext));
             putRequest.ClientContextEncoding = "base32";
+            
             PutEventsResponse PutResponse = null;
-
-            bool hasCatchException = false;
-            try
-            {
-                PutResponse = Client.PutEvents(putRequest);
-            }
-            catch (AmazonMobileAnalyticsException e)
-            {
-                Console.WriteLine("Get AmazonMobileAnalyticsException: error code : {0} ; error type : {1} ; request id : {2} ; status code : {3} ; error message is {4}", e.ErrorCode, e.ErrorType, e.RequestId, e.StatusCode, e.Message);
-                Assert.AreEqual(e.StatusCode, HttpStatusCode.BadRequest);
-                Assert.AreEqual(true, e.ErrorCode.Equals("BadRequestException", StringComparison.InvariantCultureIgnoreCase));
-                hasCatchException = true;
-            }
-
-            if (!hasCatchException)
-                Assert.Fail();
-        }
-
-        [TestMethod]
-        [TestCategory("MobileAnalytics")]
-        public void TestLowLevelAPIErrorCaseWrongCognitoCred()
-        {
-            List<Amazon.MobileAnalytics.Model.Event> listEvent = new List<Amazon.MobileAnalytics.Model.Event>();
-            listEvent.Add(BuildCustomEvent());
-
-            PutEventsRequest putRequest = new PutEventsRequest();
-            putRequest.Events = listEvent;
-            string clientContext = BuildClientContext();
-            Console.WriteLine("client context is {0}", clientContext);
-            putRequest.ClientContext = Convert.ToBase64String(
-                            System.Text.Encoding.UTF8.GetBytes(clientContext));
-            putRequest.ClientContextEncoding = "base64";
-            PutEventsResponse PutResponse = null;
-
             bool hasCatchException = false;
             AmazonMobileAnalyticsClient client = new AmazonMobileAnalyticsClient(new CognitoAWSCredentials("wrong-cognito-pool-id", RegionEndpoint.USEast1), RegionEndpoint.USEast1);
             try
@@ -443,9 +349,43 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.AreEqual(true, e.ErrorCode.Equals("ValidationException", StringComparison.InvariantCultureIgnoreCase));
                 hasCatchException = true;
             }
+            Assert.IsTrue(hasCatchException);
+        }
 
-            if (!hasCatchException)
+        [TestMethod]
+        [TestCategory("MobileAnalytics")]
+        public void TestLowLevelAPIErrorCaseWrongCognitoCred()
+        {
+            List<Amazon.MobileAnalytics.Model.Event> listEvent = new List<Amazon.MobileAnalytics.Model.Event>();
+            listEvent.Add(BuildCustomEvent());
+
+            PutEventsRequest putRequest = new PutEventsRequest();
+            putRequest.Events = listEvent;
+            string clientContext = BuildClientContext();
+            Console.WriteLine("client context is {0}", clientContext);
+            putRequest.ClientContext = Convert.ToBase64String(
+                            System.Text.Encoding.UTF8.GetBytes(clientContext));
+            putRequest.ClientContextEncoding = "base64";
+            PutEventsResponse PutResponse = null;
+            bool hasCatchException = false;
+            AmazonMobileAnalyticsClient client = new AmazonMobileAnalyticsClient(new CognitoAWSCredentials("wrong-cognito-pool-id", RegionEndpoint.USEast1), RegionEndpoint.USEast1);
+            try
+            {
+                PutResponse = client.PutEvents(putRequest);
+            }
+            catch (AmazonMobileAnalyticsException e)
+            {
+                Console.WriteLine("Get AmazonMobileAnalyticsException: error code : {0} ; error type : {1} ; request id : {2} ; status code : {3} ; error message is {4}", e.ErrorCode, e.ErrorType, e.RequestId, e.StatusCode, e.Message);
                 Assert.Fail();
+            }
+            catch (AmazonServiceException e)
+            {
+                Console.WriteLine("Get AmazonServiceException: error code : {0} ; error type : {1} ; request id : {2} ; status code : {3} ; error message is {4}", e.ErrorCode, e.ErrorType, e.RequestId, e.StatusCode, e.Message);
+                Assert.AreEqual(e.StatusCode, HttpStatusCode.BadRequest);
+                Assert.AreEqual(true, e.ErrorCode.Equals("ValidationException", StringComparison.InvariantCultureIgnoreCase));
+                hasCatchException = true;
+            }
+            Assert.IsTrue(hasCatchException);
         }
         #endregion
 
@@ -978,39 +918,38 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("MobileAnalytics")]
         public void TestErrorEventHandler()
         {
-            lock (_lock)
-            {
-                CatchExpectedError = false;
-            }
-
             string appID = Guid.NewGuid().ToString();
             MobileAnalyticsManager manager = MobileAnalyticsManager.GetOrCreateInstance(appID, new CognitoAWSCredentials("wrong-cognito-pool-id", RegionEndpoint.USEast1), RegionEndpoint.USEast1);
             manager.MobileAnalyticsErrorEvent += errorHandler;
 
-            Thread.Sleep(75 * 1000);
+            Thread.Sleep(TimeSpan.FromSeconds(75));
             lock (_lock)
             {
-                if (!CatchExpectedError)
-                    Assert.Fail();
+                Assert.IsTrue(resultList.Count > 0);
+                foreach (bool result in resultList)
+                {
+                    Assert.IsTrue(result);
+                }
             }
         }
-        private Boolean CatchExpectedError { get; set; }
         private object _lock = new object();
+        private List<bool> resultList = new List<bool>();
 
         private void errorHandler(object sender, MobileAnalyticsErrorEventArgs args)
         {
             Console.WriteLine(args);
+            bool catchExpectedError = false;
             lock (_lock)
             {
                 if (args.ClassName != null && args.ErrorMessage != null && args.Exception is AmazonServiceException && args.UndeliveredEvents != null)
                 {
                     if (args.UndeliveredEvents.Count == 0)
                     {
-                        CatchExpectedError = true;
+                        catchExpectedError = true;
                     }
                     else
                     {
-                        CatchExpectedError = false;
+                        catchExpectedError = false;
                         Console.WriteLine("The caught low level client events are : ");
                         foreach (Amazon.MobileAnalytics.Model.Event eventObject in args.UndeliveredEvents)
                         {
@@ -1019,11 +958,200 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     }
                 }
                 else
-                    CatchExpectedError = false;
+                    catchExpectedError = false;
+
+                resultList.Add(catchExpectedError);
             }
         }
         #endregion
 
+#if BCL45
+        #region End to end test
+        //[TestMethod]
+        //[TestCategory("MobileAnalytics")]
+        /// <summary>
+        /// This test case polls events from s3 bucket and verify event content.
+        /// To run this test case, enable auto export events to s3 bucket in AWS console.
+        /// Then fill AppID and S3 bucket in below testing code.
+        /// This test case may wait up to 1 hour to wait all events to arrive at s3 bucket.
+        /// </summary>
+        public void TestEventContentFromS3Bucket()
+        {
+            // Fill your App ID and S3 bucket 
+            string appID = "YourAppID";
+            string s3Bucket = "YourS3Bucket";
+
+            string s3keyPrefix = string.Format("awsma/events/{0}", appID);
+            List<S3Object> originalObjList = new List<S3Object>();
+            List<S3Object> newObjList = new List<S3Object>();
+
+            // Get original s3 object list
+            originalObjList = GetS3ObjectList(s3Bucket, s3keyPrefix);
+            Assert.IsTrue(originalObjList != null);
+            // send AMA events
+            MobileAnalyticsManager manager = MobileAnalyticsManager.GetOrCreateInstance(appID, Credentials, RegionEndpoint.USEast1, new MobileAnalyticsManagerConfig());
+            int COUNT = 1000;
+            string eventType = string.Format("TestEndToEnd-{0}-{1}", DateTime.UtcNow.ToLocalTime().ToString(), COUNT.ToString());
+
+            for (int i = 0; i < COUNT; i++)
+            {
+                CustomEvent customEvent = new CustomEvent(eventType);
+                customEvent.AddAttribute(MobileAnalyticsEventAttributeID, i.ToString());
+                customEvent.AddAttribute("LevelName", "Level5");
+                customEvent.AddAttribute("Successful", "True");
+                customEvent.AddMetric("Score", 12345);
+                customEvent.AddMetric("TimeInLevel", 64);
+                manager.RecordEvent(customEvent);
+            }
+
+            // wait until all events arrive at s3 bucket
+            Thread.Sleep(TimeSpan.FromMinutes(35));
+
+            // Get new s3 object list
+            newObjList = GetS3ObjectList(s3Bucket, s3keyPrefix);
+            Assert.IsTrue(newObjList != null);
+
+            // get the delta of two lists
+            newObjList = newObjList.Where(n => n.Key.EndsWith(".gz") && !originalObjList.Any(o => string.Equals(o.Key, n.Key))).ToList();
+            VerifyMobileAnalyticsEvents(s3Bucket, newObjList, eventType, COUNT);
+        }
+
+        private string MobileAnalyticsEventAttributeID = "MobileAnalyticsIntegrationTest-Event-ID";
+        private void VerifyMobileAnalyticsEvents(string s3Bucket, List<S3Object> s3ObjectList, string eventType, int eventCount)
+        {
+            // Make local dir
+            string testDataDir = InternalSDKUtils.DetermineAppLocalStoragePath("MobileAnalyticsTestDataDir");
+            if (Directory.Exists(testDataDir))
+            {
+                Directory.Delete(testDataDir, true);
+            }
+            Directory.CreateDirectory(testDataDir);
+
+            // download all .gz file
+            using (AmazonS3Client client = new AmazonS3Client())
+            {
+                foreach (S3Object entry in s3ObjectList)
+                {
+                    GetObjectRequest request = new GetObjectRequest
+                    {
+                        BucketName = s3Bucket,
+                        Key = entry.Key
+                    };
+
+                    using (GetObjectResponse response = client.GetObject(request))
+                    {
+                        string dest = Path.Combine(testDataDir, entry.Key);
+                        if (!File.Exists(dest))
+                        {
+                            response.WriteResponseStreamToFile(dest);
+                        }
+                    }
+                }
+            }
+
+
+            // unzip gz file and combine it into one unzipped file
+            string rawEventSCombinedFile = Path.Combine(testDataDir, "rawEventSCombinedFile");
+            if (File.Exists(rawEventSCombinedFile))
+            {
+                File.Delete(rawEventSCombinedFile);
+            }
+
+            using (FileStream decompressedFileStream = File.Open(rawEventSCombinedFile, FileMode.Append, FileAccess.Write))
+            {
+                foreach (S3Object entry in s3ObjectList)
+                {
+                    using (FileStream originalFileStream = new FileStream(Path.Combine(testDataDir, entry.Key), FileMode.Open))
+                    {
+
+                        using (GZipStream decompressionStream = new GZipStream(originalFileStream, CompressionMode.Decompress))
+                        {
+                            decompressionStream.CopyTo(decompressedFileStream);
+                            Console.WriteLine("Decompressed: {0}", Path.Combine(testDataDir, entry.Key));
+                        }
+                    }
+                }
+            }
+
+            // read combined decompressed file and verify event type and ID
+            string line = null;
+            Dictionary<int, bool> foundDict = new Dictionary<int, bool>();
+            using (System.IO.StreamReader file = new System.IO.StreamReader(Path.Combine(testDataDir, rawEventSCombinedFile)))
+            {
+                while ((line = file.ReadLine()) != null)
+                {
+                    Console.WriteLine("Parsing the event :" + line);
+                    // find the event type
+                    if (line.Contains(eventType))
+                    {
+                        var jsonData = ThirdParty.Json.LitJson.JsonMapper.ToObject(line);
+
+                        string ID = (string)jsonData["attributes"][MobileAnalyticsEventAttributeID];
+                        int numValue = -1;
+                        bool parsed = Int32.TryParse(ID, out numValue);
+                        Assert.IsTrue(parsed, "Cannot parse attribute {0} value {1}.", MobileAnalyticsEventAttributeID, ID);
+                        Assert.IsTrue(numValue >= 0 && numValue <= eventCount, "Error: attribute {0} value {1} is out of range.", MobileAnalyticsEventAttributeID, numValue);
+                        foundDict[numValue] = true;
+                    }
+                }
+            }
+
+            for (int i = 0; i < eventCount; i++)
+            {
+                Assert.IsTrue(foundDict.ContainsKey(i));
+            }
+        }
+
+        private List<S3Object> GetS3ObjectList(string s3Bucket, string s3KeyPrefix)
+        {
+            var s3Client = new AmazonS3Client();
+            List<S3Object> objList = new List<S3Object>();
+            try
+            {
+                ListObjectsRequest request = new ListObjectsRequest
+                {
+                    BucketName = s3Bucket,
+                    Prefix = s3KeyPrefix
+                };
+
+                do
+                {
+                    ListObjectsResponse response = s3Client.ListObjects(request);
+
+                    // Process response.
+                    foreach (S3Object entry in response.S3Objects)
+                    {
+                        Console.WriteLine("key = {0} size = {1}", entry.Key, entry.Size);
+                        Console.WriteLine("Add this s3 key into original s3 object list.");
+                        objList.Add(entry);
+                    }
+
+                    // If response is truncated, set the marker to get the next 
+                    // set of keys.
+                    if (response.IsTruncated)
+                    {
+                        request.Marker = response.NextMarker;
+                    }
+                    else
+                    {
+                        request = null;
+                    }
+                } while (request != null);
+            }
+            catch (AmazonS3Exception amazonS3Exception)
+            {
+                Console.WriteLine("An AmazonS3Exception occurred when listing s3 bucket. error code is {0}, message is {1}.", amazonS3Exception.ErrorCode, amazonS3Exception.Message);
+                objList = null;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(string.Format("An exception occurred when listing s3 bucket {0}. Exception is : {1}.", s3Bucket, e.ToString()));
+                objList = null;
+            }
+            return objList;
+        }
+        #endregion
+#endif
         private string BuildClientContext()
         {
             Dictionary<string, string> _environment = new Dictionary<string, string>();
@@ -1065,7 +1193,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             session.Id = Guid.NewGuid().ToString();
             session.StartTimestamp = DateTime.UtcNow;
             session.StopTimestamp = DateTime.UtcNow;
-            session.Duration = 30 * 60 * 1000;
+            session.Duration = (long)TimeSpan.FromMinutes(30).TotalMilliseconds;
             customEvent.Session = session;
 
             Dictionary<string, string> attributes = new Dictionary<string, string>();
@@ -1142,7 +1270,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             session.Id = sessionID;
             session.StartTimestamp = DateTime.UtcNow;
             session.StopTimestamp = DateTime.UtcNow;
-            session.Duration = 20 * 1000;
+            session.Duration = (long)TimeSpan.FromSeconds(20).TotalMilliseconds;
             sessionEndEvent.Session = session;
 
             Dictionary<string, string> attributes = new Dictionary<string, string>();

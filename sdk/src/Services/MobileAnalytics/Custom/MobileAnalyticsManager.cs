@@ -361,21 +361,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             AWSSDKUtils.InvokeInBackground(MobileAnalyticsErrorEvent, eventArgs, this);
         }
         #endregion
-
-
-        #region private
-#if BCL
-        static void ValidateParameters()
-        {
-            if (string.IsNullOrEmpty(AWSConfigs.ApplicationName))
-            {
-                throw new ArgumentException("A valid application name needs to configured to use this API." +
-                    "The application name can be configured through app.config/web.config or by setting the Amazon.AWSConfigs.ApplicationName property.");
-            }
-        }
-#endif
-        #endregion
-
     }
 
     /// <summary>

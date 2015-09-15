@@ -63,10 +63,19 @@
     <Compile Include="Custom\Delivery\Policy\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\Delivery\Policy\_pcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\Delivery\_pcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\Event\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\Session\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Generated\*.cs">
