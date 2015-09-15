@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the data feed for a Spot Instance.
+    /// Describes the data feed for a Spot instance.
     /// </summary>
     public partial class SpotDatafeedSubscription
     {
@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The Amazon S3 bucket where the Spot Instance data feed is located.
+        /// The Amazon S3 bucket where the Spot instance data feed is located.
         /// </para>
         /// </summary>
         public string Bucket
@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Fault. 
         /// <para>
-        /// The fault codes for the Spot Instance request, if any.
+        /// The fault codes for the Spot instance request, if any.
         /// </para>
         /// </summary>
         public SpotInstanceStateFault Fault
@@ -113,7 +113,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the Spot Instance data feed subscription.
+        /// The state of the Spot instance data feed subscription.
         /// </para>
         /// </summary>
         public DatafeedSubscriptionState State

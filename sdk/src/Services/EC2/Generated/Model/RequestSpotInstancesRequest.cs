@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RequestSpotInstances operation.
-    /// Creates a Spot Instance request. Spot Instances are instances that Amazon EC2 launches
-    /// when the bid price that you specify exceeds the current Spot Price. Amazon EC2 periodically
-    /// sets the Spot Price based on available Spot Instance capacity and current Spot Instance
+    /// Creates a Spot instance request. Spot instances are instances that Amazon EC2 launches
+    /// when the bid price that you specify exceeds the current Spot price. Amazon EC2 periodically
+    /// sets the Spot price based on available Spot Instance capacity and current Spot instance
     /// requests. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
     /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </summary>
@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates RequestSpotInstancesRequest with the parameterized properties
         /// </summary>
-        /// <param name="spotPrice">The maximum hourly price (bid) for any Spot Instance launched to fulfill the request.</param>
+        /// <param name="spotPrice">The maximum hourly price (bid) for any Spot instance launched to fulfill the request.</param>
         public RequestSpotInstancesRequest(string spotPrice)
         {
             _spotPrice = spotPrice;
@@ -68,10 +68,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// When you specify an Availability Zone group in a Spot Instance request, all Spot Instances
+        /// When you specify an Availability Zone group in a Spot Instance request, all Spot instances
         /// in the request are launched in the same Availability Zone. Instance proximity is maintained
         /// with this parameter, but the choice of Availability Zone is not. The group applies
-        /// only to bids for Spot Instances of the same instance type. Any additional Spot Instance
+        /// only to bids for Spot Instances of the same instance type. Any additional Spot instance
         /// requests that are specified with the same Availability Zone group name are launched
         /// in that same Availability Zone, as long as at least one instance from the group is
         /// still active.
@@ -79,10 +79,10 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// If there is no active instance running in the Availability Zone group that you specify
-        /// for a new Spot Instance request (all instances are terminated, the bid is expired,
+        /// for a new Spot instance request (all instances are terminated, the bid is expired,
         /// or the bid falls below current market), then Amazon EC2 launches the instance in any
         /// Availability Zone where the constraint can be met. Consequently, the subsequent set
-        /// of Spot Instances could be placed in a different zone from the original request, even
+        /// of Spot instances could be placed in a different zone from the original request, even
         /// if you specified the same Availability Zone group.
         /// </para>
         ///  
@@ -125,7 +125,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceCount. 
         /// <para>
-        /// The maximum number of Spot Instances to launch.
+        /// The maximum number of Spot instances to launch.
         /// </para>
         ///  
         /// <para>
@@ -147,7 +147,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchGroup. 
         /// <para>
-        /// The instance launch group. Launch groups are Spot Instances that launch together and
+        /// The instance launch group. Launch groups are Spot instances that launch together and
         /// terminate together.
         /// </para>
         ///  
@@ -185,7 +185,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotPrice. 
         /// <para>
-        /// The maximum hourly price (bid) for any Spot Instance launched to fulfill the request.
+        /// The maximum hourly price (bid) for any Spot instance launched to fulfill the request.
         /// </para>
         /// </summary>
         public string SpotPrice
@@ -203,7 +203,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The Spot Instance request type.
+        /// The Spot instance request type.
         /// </para>
         ///  
         /// <para>

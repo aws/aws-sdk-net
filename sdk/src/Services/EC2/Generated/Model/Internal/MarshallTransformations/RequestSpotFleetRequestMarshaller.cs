@@ -60,6 +60,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetSpotFleetRequestConfig())
                 {
+                    if(publicRequest.SpotFleetRequestConfig.IsSetAllocationStrategy())
+                    {
+                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "AllocationStrategy", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.AllocationStrategy));
+                    }
                     if(publicRequest.SpotFleetRequestConfig.IsSetClientToken())
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "ClientToken", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.ClientToken));

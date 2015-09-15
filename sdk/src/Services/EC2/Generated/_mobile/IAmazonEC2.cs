@@ -1088,8 +1088,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Deletes the data feed for Spot instances.
         /// </summary>
         /// <param name="cancellationToken"> ttd1
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2352,7 +2351,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+        /// Describes the data feed for Spot instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
         /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="cancellationToken"> ttd1
@@ -2428,17 +2427,17 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Spot Instance requests that belong to your account. Spot Instances are
+        /// Describes the Spot instance requests that belong to your account. Spot instances are
         /// instances that Amazon EC2 launches when the bid price that you specify exceeds the
-        /// current Spot Price. Amazon EC2 periodically sets the Spot Price based on available
-        /// Spot Instance capacity and current Spot Instance requests. For more information, see
+        /// current Spot price. Amazon EC2 periodically sets the Spot price based on available
+        /// Spot instance capacity and current Spot instance requests. For more information, see
         /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
         /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
-        /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
+        /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot instance
+        /// by examining the response. If the status of the Spot instance is <code>fulfilled</code>,
         /// the instance ID appears in the response and contains the identifier of the instance.
         /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
         /// where the instance lifecycle is <code>spot</code>.
@@ -2469,7 +2468,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Spot Price history. The prices returned are listed in chronological
+        /// Describes the Spot price history. The prices returned are listed in chronological
         /// order, from the oldest to the most recent, for up to the past 90 days. For more information,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
         /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.

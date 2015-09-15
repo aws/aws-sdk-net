@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the status of a Spot Instance request.
+    /// Describes the status of a Spot instance request.
     /// </summary>
     public partial class SpotInstanceStatus
     {

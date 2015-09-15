@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotInstanceRequestId. 
         /// <para>
-        /// The ID of the Spot Instance request.
+        /// The ID of the Spot instance request.
         /// </para>
         /// </summary>
         public string SpotInstanceRequestId

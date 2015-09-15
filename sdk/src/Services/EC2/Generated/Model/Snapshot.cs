@@ -32,6 +32,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class Snapshot
     {
+        private string _dataEncryptionKeyId;
         private string _description;
         private bool? _encrypted;
         private string _kmsKeyId;
@@ -41,9 +42,33 @@ namespace Amazon.EC2.Model
         private string _snapshotId;
         private DateTime? _startTime;
         private SnapshotState _state;
+        private string _stateMessage;
         private List<Tag> _tags = new List<Tag>();
         private string _volumeId;
         private int? _volumeSize;
+
+        /// <summary>
+        /// Gets and sets the property DataEncryptionKeyId. 
+        /// <para>
+        /// The data encryption key identifier for the snapshot. This value is a unique identifier
+        /// that corresponds to the data encryption key that was used to encrypt the original
+        /// volume or snapshot copy. Because data encryption keys are inherited by volumes created
+        /// from snapshots, and vice versa, if snapshots share the same data encryption key identifier,
+        /// then they belong to the same volume/snapshot lineage. This parameter is only returned
+        /// by the <a>DescribeSnapshots</a> API operation.
+        /// </para>
+        /// </summary>
+        public string DataEncryptionKeyId
+        {
+            get { return this._dataEncryptionKeyId; }
+            set { this._dataEncryptionKeyId = value; }
+        }
+
+        // Check to see if DataEncryptionKeyId property is set
+        internal bool IsSetDataEncryptionKeyId()
+        {
+            return this._dataEncryptionKeyId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -158,7 +183,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SnapshotId. 
         /// <para>
-        /// The ID of the snapshot.
+        /// The ID of the snapshot. Each snapshot receives a unique identifier when it is created.
         /// </para>
         /// </summary>
         public string SnapshotId
@@ -210,6 +235,28 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StateMessage. 
+        /// <para>
+        /// Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation
+        /// fails (for example, if the proper AWS Key Management Service (AWS KMS) permissions
+        /// are not obtained) this field displays error state details to help you diagnose why
+        /// the error occurred. This parameter is only returned by the <a>DescribeSnapshots</a>
+        /// API operation.
+        /// </para>
+        /// </summary>
+        public string StateMessage
+        {
+            get { return this._stateMessage; }
+            set { this._stateMessage = value; }
+        }
+
+        // Check to see if StateMessage property is set
+        internal bool IsSetStateMessage()
+        {
+            return this._stateMessage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// Any tags assigned to the snapshot.
@@ -230,7 +277,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeId. 
         /// <para>
-        /// The ID of the volume.
+        /// The ID of the volume that was used to create the snapshot.
         /// </para>
         /// </summary>
         public string VolumeId

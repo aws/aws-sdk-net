@@ -70,6 +70,51 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type AllocationStrategy.
+    /// </summary>
+    public class AllocationStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Diversified for AllocationStrategy
+        /// </summary>
+        public static readonly AllocationStrategy Diversified = new AllocationStrategy("diversified");
+        /// <summary>
+        /// Constant LowestPrice for AllocationStrategy
+        /// </summary>
+        public static readonly AllocationStrategy LowestPrice = new AllocationStrategy("lowestPrice");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public AllocationStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AllocationStrategy FindValue(string value)
+        {
+            return FindValue<AllocationStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AllocationStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ArchitectureValues.
     /// </summary>
     public class ArchitectureValues : ConstantClass
