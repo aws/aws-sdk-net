@@ -1,3 +1,13 @@
+### 3.1.12.0 (2015-09-15 20:11 UTC)
+* EC2 (3.1.2.0)
+	* Added DataEncryptionKeyId and StateMessage properties to the Amazon.EC2.Model.Snapshot class, this data is returned by the DescribeSnapshots operation. Added AllocationStrategy property to the Amazon.EC2.Model.SpotFleetRequestConfigData class, this data is used by the RequestSpotFleet operation.
+* ElasticFileSystem (3.1.1.0)
+	* Added MountTargetId to Amazon.ElasticFileSystem.Model.DescribeMountTargetsRequest.
+* MobileAnalytics (3.1.1.1)
+	* Fixed FxCop violations, and minor refactoring.
+* Route53 (3.1.1.0)
+	* Added support for calculated and latency health checks.
+
 ### 3.1.11.0 (2015-09-10 17:43 UTC)
 * ElasticMapReduce (3.1.1.0)
 	* Deprecated DescribeJobFlows API.
