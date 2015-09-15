@@ -356,7 +356,7 @@
         {
             "active": true,
 
-            "model": "efs",
+            "model": "elasticfilesystem",
             "base-name": "ElasticFileSystem",
             "region-lookup-name": "elasticfilesystem",
             "authentication-service-name": "elasticfilesystem",

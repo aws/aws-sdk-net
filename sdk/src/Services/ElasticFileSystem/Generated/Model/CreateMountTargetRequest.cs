@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the efs-2015-02-01.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticfilesystem-2015-02-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -63,7 +63,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// file system. The EC2 instance on which you mount the file system via the mount target
     /// can resolve the mount target's DNS name to its IP address. For more information, see
     /// <a href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation">How
-    /// it Works: Implementation Overview</a> 
+    /// it Works: Implementation Overview</a>. 
     /// </para>
     ///  
     /// <para>
@@ -111,19 +111,19 @@ namespace Amazon.ElasticFileSystem.Model
     /// target created in another Availability Zone. For more information, go to <a href="http://aws.amazon.com/efs/">Amazon
     /// EFS</a> product detail page. In addition, by always using a mount target local to
     /// the instance's Availability Zone, you eliminate a partial failure scenario; if the
-    /// Availablity Zone in which your mount target is created goes down, then you won't be
-    /// able to access your file system through that mount target. 
+    /// Availability Zone in which your mount target is created goes down, then you won't
+    /// be able to access your file system through that mount target. 
     /// </para>
     ///  
     /// <para>
     /// This operation requires permission for the following action on the file system:
     /// </para>
-    ///  <ul> <li><code>elasticfilesystem:CreateMountTarget</code></li> </ul> 
+    ///  <ul> <li> <code>elasticfilesystem:CreateMountTarget</code> </li> </ul> 
     /// <para>
     /// This operation also requires permission for the following Amazon EC2 actions:
     /// </para>
-    ///  <ul> <li><code>ec2:DescribeSubnets</code></li> <li><code>ec2:DescribeNetworkInterfaces</code></li>
-    /// <li><code>ec2:CreateNetworkInterface</code></li> </ul>
+    ///  <ul> <li> <code>ec2:DescribeSubnets</code> </li> <li> <code>ec2:DescribeNetworkInterfaces</code>
+    /// </li> <li> <code>ec2:CreateNetworkInterface</code> </li> </ul>
     /// </summary>
     public partial class CreateMountTargetRequest : AmazonElasticFileSystemRequest
     {

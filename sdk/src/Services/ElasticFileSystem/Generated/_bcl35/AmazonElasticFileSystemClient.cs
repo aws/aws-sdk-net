@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the efs-2015-02-01.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticfilesystem-2015-02-01.normal.json service model.
  */
 
 
@@ -440,7 +440,7 @@ namespace Amazon.ElasticFileSystem
         /// file system. The EC2 instance on which you mount the file system via the mount target
         /// can resolve the mount target's DNS name to its IP address. For more information, see
         /// <a href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation">How
-        /// it Works: Implementation Overview</a> 
+        /// it Works: Implementation Overview</a>. 
         /// </para>
         ///  
         /// <para>
@@ -488,19 +488,19 @@ namespace Amazon.ElasticFileSystem
         /// target created in another Availability Zone. For more information, go to <a href="http://aws.amazon.com/efs/">Amazon
         /// EFS</a> product detail page. In addition, by always using a mount target local to
         /// the instance's Availability Zone, you eliminate a partial failure scenario; if the
-        /// Availablity Zone in which your mount target is created goes down, then you won't be
-        /// able to access your file system through that mount target. 
+        /// Availability Zone in which your mount target is created goes down, then you won't
+        /// be able to access your file system through that mount target. 
         /// </para>
         ///  
         /// <para>
         /// This operation requires permission for the following action on the file system:
         /// </para>
-        ///  <ul> <li><code>elasticfilesystem:CreateMountTarget</code></li> </ul> 
+        ///  <ul> <li> <code>elasticfilesystem:CreateMountTarget</code> </li> </ul> 
         /// <para>
         /// This operation also requires permission for the following Amazon EC2 actions:
         /// </para>
-        ///  <ul> <li><code>ec2:DescribeSubnets</code></li> <li><code>ec2:DescribeNetworkInterfaces</code></li>
-        /// <li><code>ec2:CreateNetworkInterface</code></li> </ul>
+        ///  <ul> <li> <code>ec2:DescribeSubnets</code> </li> <li> <code>ec2:DescribeNetworkInterfaces</code>
+        /// </li> <li> <code>ec2:CreateNetworkInterface</code> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMountTarget service method.</param>
         /// 
@@ -811,15 +811,16 @@ namespace Amazon.ElasticFileSystem
         /// <para>
         ///  This operation requires permission for the following action on the file system: 
         /// </para>
-        ///  <ul> <li><code>elasticfilesystem:DeleteMountTarget</code></li> </ul> <note>The <code>DeleteMountTarget</code>
-        /// call returns while the mount target state is still "deleting". You can check the mount
-        /// target deletion by calling the <a>DescribeMountTargets</a> API, which returns a list
-        /// of mount target descriptions for the given file system. </note> 
+        ///  <ul> <li> <code>elasticfilesystem:DeleteMountTarget</code> </li> </ul> <note>The
+        /// <code>DeleteMountTarget</code> call returns while the mount target state is still
+        /// "deleting". You can check the mount target deletion by calling the <a>DescribeMountTargets</a>
+        /// API, which returns a list of mount target descriptions for the given file system.
+        /// </note> 
         /// <para>
         /// The operation also requires permission for the following Amazon EC2 action on the
         /// mount target's network interface:
         /// </para>
-        ///  <ul> <li><code>ec2:DeleteNetworkInterface</code></li> </ul>
+        ///  <ul> <li> <code>ec2:DeleteNetworkInterface</code> </li> </ul>
         /// </summary>
         /// <param name="mountTargetId">String. The ID of the mount target to delete.</param>
         /// 
@@ -836,8 +837,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID is found in the caller's
-        /// account.
+        /// Returned if there is no mount target with the specified ID found in the caller's account.
         /// </exception>
         public DeleteMountTargetResponse DeleteMountTarget(string mountTargetId)
         {
@@ -864,15 +864,16 @@ namespace Amazon.ElasticFileSystem
         /// <para>
         ///  This operation requires permission for the following action on the file system: 
         /// </para>
-        ///  <ul> <li><code>elasticfilesystem:DeleteMountTarget</code></li> </ul> <note>The <code>DeleteMountTarget</code>
-        /// call returns while the mount target state is still "deleting". You can check the mount
-        /// target deletion by calling the <a>DescribeMountTargets</a> API, which returns a list
-        /// of mount target descriptions for the given file system. </note> 
+        ///  <ul> <li> <code>elasticfilesystem:DeleteMountTarget</code> </li> </ul> <note>The
+        /// <code>DeleteMountTarget</code> call returns while the mount target state is still
+        /// "deleting". You can check the mount target deletion by calling the <a>DescribeMountTargets</a>
+        /// API, which returns a list of mount target descriptions for the given file system.
+        /// </note> 
         /// <para>
         /// The operation also requires permission for the following Amazon EC2 action on the
         /// mount target's network interface:
         /// </para>
-        ///  <ul> <li><code>ec2:DeleteNetworkInterface</code></li> </ul>
+        ///  <ul> <li> <code>ec2:DeleteNetworkInterface</code> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMountTarget service method.</param>
         /// 
@@ -889,8 +890,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID is found in the caller's
-        /// account.
+        /// Returned if there is no mount target with the specified ID found in the caller's account.
         /// </exception>
         public DeleteMountTargetResponse DeleteMountTarget(DeleteMountTargetRequest request)
         {
@@ -1104,16 +1104,18 @@ namespace Amazon.ElasticFileSystem
         #region  DescribeMountTargets
 
         /// <summary>
-        /// Returns the descriptions of the current mount targets for a file system. The order
-        /// of mount targets returned in the response is unspecified.
+        /// Returns the descriptions of all the current mount targets, or a specific mount target,
+        /// for a file system. When requesting all of the current mount targets, the order of
+        /// mount targets returned in the response is unspecified.
         /// 
         ///  
         /// <para>
-        ///  This operation requires permission for the <code>elasticfilesystem:DescribeMountTargets</code>
-        /// action on the file system <code>FileSystemId</code>. 
+        /// This operation requires permission for the <code>elasticfilesystem:DescribeMountTargets</code>
+        /// action, on either the file system id that you specify in <code>FileSystemId</code>,
+        /// or on the file system of the mount target that you specify in <code>MountTargetId</code>.
         /// </para>
         /// </summary>
-        /// <param name="fileSystemId">String. The ID of the file system whose mount targets you want to list.</param>
+        /// <param name="fileSystemId">Optional. String. The ID of the file system whose mount targets you want to list. It must be included in your request if <code>MountTargetId</code> is not included.</param>
         /// 
         /// <returns>The response from the DescribeMountTargets service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
@@ -1127,6 +1129,9 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
+        /// Returned if there is no mount target with the specified ID found in the caller's account.
+        /// </exception>
         public DescribeMountTargetsResponse DescribeMountTargets(string fileSystemId)
         {
             var request = new DescribeMountTargetsRequest();
@@ -1136,13 +1141,15 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
-        /// Returns the descriptions of the current mount targets for a file system. The order
-        /// of mount targets returned in the response is unspecified.
+        /// Returns the descriptions of all the current mount targets, or a specific mount target,
+        /// for a file system. When requesting all of the current mount targets, the order of
+        /// mount targets returned in the response is unspecified.
         /// 
         ///  
         /// <para>
-        ///  This operation requires permission for the <code>elasticfilesystem:DescribeMountTargets</code>
-        /// action on the file system <code>FileSystemId</code>. 
+        /// This operation requires permission for the <code>elasticfilesystem:DescribeMountTargets</code>
+        /// action, on either the file system id that you specify in <code>FileSystemId</code>,
+        /// or on the file system of the mount target that you specify in <code>MountTargetId</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMountTargets service method.</param>
@@ -1158,6 +1165,9 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
+        /// Returned if there is no mount target with the specified ID found in the caller's account.
         /// </exception>
         public DescribeMountTargetsResponse DescribeMountTargets(DescribeMountTargetsRequest request)
         {
@@ -1230,8 +1240,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID is found in the caller's
-        /// account.
+        /// Returned if there is no mount target with the specified ID found in the caller's account.
         /// </exception>
         public DescribeMountTargetSecurityGroupsResponse DescribeMountTargetSecurityGroups(string mountTargetId)
         {
@@ -1268,8 +1277,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID is found in the caller's
-        /// account.
+        /// Returned if there is no mount target with the specified ID found in the caller's account.
         /// </exception>
         public DescribeMountTargetSecurityGroupsResponse DescribeMountTargetSecurityGroups(DescribeMountTargetSecurityGroupsRequest request)
         {
@@ -1451,8 +1459,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID is found in the caller's
-        /// account.
+        /// Returned if there is no mount target with the specified ID found in the caller's account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.SecurityGroupLimitExceededException">
         /// Returned if the size of <code>SecurityGroups</code> specified in the request is greater

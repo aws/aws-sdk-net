@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the efs-2015-02-01.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticfilesystem-2015-02-01.normal.json service model.
  */
 
 
@@ -227,15 +227,16 @@ namespace Amazon.ElasticFileSystem
         /// <para>
         ///  This operation requires permission for the following action on the file system: 
         /// </para>
-        ///  <ul> <li><code>elasticfilesystem:DeleteMountTarget</code></li> </ul> <note>The <code>DeleteMountTarget</code>
-        /// call returns while the mount target state is still "deleting". You can check the mount
-        /// target deletion by calling the <a>DescribeMountTargets</a> API, which returns a list
-        /// of mount target descriptions for the given file system. </note> 
+        ///  <ul> <li> <code>elasticfilesystem:DeleteMountTarget</code> </li> </ul> <note>The
+        /// <code>DeleteMountTarget</code> call returns while the mount target state is still
+        /// "deleting". You can check the mount target deletion by calling the <a>DescribeMountTargets</a>
+        /// API, which returns a list of mount target descriptions for the given file system.
+        /// </note> 
         /// <para>
         /// The operation also requires permission for the following Amazon EC2 action on the
         /// mount target's network interface:
         /// </para>
-        ///  <ul> <li><code>ec2:DeleteNetworkInterface</code></li> </ul>
+        ///  <ul> <li> <code>ec2:DeleteNetworkInterface</code> </li> </ul>
         /// </summary>
         /// <param name="mountTargetId">String. The ID of the mount target to delete.</param>
         /// <param name="cancellationToken">
@@ -255,8 +256,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID is found in the caller's
-        /// account.
+        /// Returned if there is no mount target with the specified ID found in the caller's account.
         /// </exception>
         Task<DeleteMountTargetResponse> DeleteMountTargetAsync(string mountTargetId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -309,16 +309,18 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
-        /// Returns the descriptions of the current mount targets for a file system. The order
-        /// of mount targets returned in the response is unspecified.
+        /// Returns the descriptions of all the current mount targets, or a specific mount target,
+        /// for a file system. When requesting all of the current mount targets, the order of
+        /// mount targets returned in the response is unspecified.
         /// 
         ///  
         /// <para>
-        ///  This operation requires permission for the <code>elasticfilesystem:DescribeMountTargets</code>
-        /// action on the file system <code>FileSystemId</code>. 
+        /// This operation requires permission for the <code>elasticfilesystem:DescribeMountTargets</code>
+        /// action, on either the file system id that you specify in <code>FileSystemId</code>,
+        /// or on the file system of the mount target that you specify in <code>MountTargetId</code>.
         /// </para>
         /// </summary>
-        /// <param name="fileSystemId">String. The ID of the file system whose mount targets you want to list.</param>
+        /// <param name="fileSystemId">Optional. String. The ID of the file system whose mount targets you want to list. It must be included in your request if <code>MountTargetId</code> is not included.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -334,6 +336,9 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
+        /// Returned if there is no mount target with the specified ID found in the caller's account.
         /// </exception>
         Task<DescribeMountTargetsResponse> DescribeMountTargetsAsync(string fileSystemId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -383,8 +388,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
-        /// Returned if there is no mount target with the specified ID is found in the caller's
-        /// account.
+        /// Returned if there is no mount target with the specified ID found in the caller's account.
         /// </exception>
         Task<DescribeMountTargetSecurityGroupsResponse> DescribeMountTargetSecurityGroupsAsync(string mountTargetId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 

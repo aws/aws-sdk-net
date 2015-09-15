@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the efs-2015-02-01.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticfilesystem-2015-02-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -45,15 +45,16 @@ namespace Amazon.ElasticFileSystem.Model
     /// <para>
     ///  This operation requires permission for the following action on the file system: 
     /// </para>
-    ///  <ul> <li><code>elasticfilesystem:DeleteMountTarget</code></li> </ul> <note>The <code>DeleteMountTarget</code>
-    /// call returns while the mount target state is still "deleting". You can check the mount
-    /// target deletion by calling the <a>DescribeMountTargets</a> API, which returns a list
-    /// of mount target descriptions for the given file system. </note> 
+    ///  <ul> <li> <code>elasticfilesystem:DeleteMountTarget</code> </li> </ul> <note>The
+    /// <code>DeleteMountTarget</code> call returns while the mount target state is still
+    /// "deleting". You can check the mount target deletion by calling the <a>DescribeMountTargets</a>
+    /// API, which returns a list of mount target descriptions for the given file system.
+    /// </note> 
     /// <para>
     /// The operation also requires permission for the following Amazon EC2 action on the
     /// mount target's network interface:
     /// </para>
-    ///  <ul> <li><code>ec2:DeleteNetworkInterface</code></li> </ul>
+    ///  <ul> <li> <code>ec2:DeleteNetworkInterface</code> </li> </ul>
     /// </summary>
     public partial class DeleteMountTargetRequest : AmazonElasticFileSystemRequest
     {

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the efs-2015-02-01.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticfilesystem-2015-02-01.normal.json service model.
  */
 
 
@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class ElasticFileSystemMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("efs-2015-02-01.normal.json", "efs.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("elasticfilesystem-2015-02-01.normal.json", "elasticfilesystem.customizations.json");
         
         [TestMethod]
         [TestCategory("UnitTest")]
