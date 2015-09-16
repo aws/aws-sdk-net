@@ -87,6 +87,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteElementString("Bucket", "", rule.Destination.BucketArn);
                             }
+                            if (rule.Destination.IsSetStorageClass())
+                            {
+                                xmlWriter.WriteElementString("StorageClass", "", rule.Destination.StorageClass);
+                            }
                             xmlWriter.WriteEndElement();
                         }
                         xmlWriter.WriteEndElement();

@@ -26,6 +26,7 @@ namespace Amazon.S3.Model
     public class ReplicationDestination
     {
         private string bucketArn;
+        private S3StorageClass storageClass;
 
         /// <summary>
         /// The Amazon Resource Name (ARN) of the bucket to which replicas are sent.
@@ -43,6 +44,23 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketArn()
         {
             return !System.String.IsNullOrEmpty(this.bucketArn);
+        }
+
+
+        /// <summary>
+        /// The class of storage used to store the object.
+        ///  
+        /// </summary>
+        public S3StorageClass StorageClass
+        {
+            get { return this.storageClass; }
+            set { this.storageClass = value; }
+        }
+
+        // Check to see if StorageClass property is set
+        internal bool IsSetStorageClass()
+        {
+            return this.storageClass != null;
         }
     }
 }

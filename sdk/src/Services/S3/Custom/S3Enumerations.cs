@@ -382,6 +382,13 @@ namespace Amazon.S3
         public static readonly S3StorageClass Glacier = new S3StorageClass("GLACIER");
 
         /// <summary>
+        /// The STANDARD_IA storage is for infrequently accessed objects.
+        /// This storage class is for objects that are long-lived and less frequently accessed,
+        /// like backups and older data.
+        /// </summary>
+        public static readonly S3StorageClass StandardInfrequentAccess = new S3StorageClass("STANDARD_IA");
+
+        /// <summary>
         /// Construct an instance of S3StorageClass.
         /// </summary>
         /// <param name="value"></param>
