@@ -1,3 +1,7 @@
+### 3.1.13.0 (2015-09-16 19:35 UTC)
+* S3 (3.1.3.0)
+	* Added support for the new STANDARD_IA storage class and for multiple lifecycle transitions.
+
 ### 3.1.12.0 (2015-09-15 20:11 UTC)
 * EC2 (3.1.2.0)
 	* Added DataEncryptionKeyId and StateMessage properties to the Amazon.EC2.Model.Snapshot class, this data is returned by the DescribeSnapshots operation. Added AllocationStrategy property to the Amazon.EC2.Model.SpotFleetRequestConfigData class, this data is used by the RequestSpotFleet operation.
