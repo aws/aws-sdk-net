@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CancelledSpotInstanceRequests. 
         /// <para>
-        /// One or more Spot Instance requests.
+        /// One or more Spot instance requests.
         /// </para>
         /// </summary>
         public List<CancelledSpotInstanceRequest> CancelledSpotInstanceRequests

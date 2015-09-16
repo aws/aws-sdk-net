@@ -49,7 +49,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// One or more filters. If using multiple filters for rules, the results include security
+        /// groups for which any combination of rules - not necessarily a single rule - match
+        /// all filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>

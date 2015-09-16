@@ -142,7 +142,7 @@ namespace Amazon.MachineLearning.Model
         ///  
         /// <para>
         /// Amazon ML needs permissions to store and retrieve the logs on your behalf. For information
-        /// about how to set permissions, see the <a href="http://docs.aws.amazon.com/machinelearning/latest/dg">Amazon
+        /// about how to set permissions, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
         /// Machine Learning Developer Guide</a>.
         /// </para>
         /// </summary>

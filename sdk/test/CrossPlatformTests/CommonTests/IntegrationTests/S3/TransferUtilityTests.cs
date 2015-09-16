@@ -54,30 +54,55 @@ namespace CommonTests.IntegrationTests.S3
             RunAsSync(async () =>
                 await UtilityMethods.DeleteBucketWithObjectsAsync(Client, bucketName));
             this.Dispose();
-        }        
+        }
 
         [Test(TestOf = typeof(AmazonS3Client))]
         public void SimpleUpload()
         {
             RunAsSync(async () =>
             {
-                var fileExists = await this.BaseFolder.CheckExistsAsync(fullPath);
-                Console.WriteLine("File {0} exists = {1}", fullPath, fileExists);
-
-                using(var tu = new Amazon.S3.Transfer.TransferUtility(Client))
+                var client = Client;
+                using (var tu = new Amazon.S3.Transfer.TransferUtility(client))
                 {
                     await tu.UploadAsync(fullPath, bucketName);
+
+                    var response = await client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+                    {
+                        BucketName = bucketName,
+                        Key = testFile
+                    });
+                    Assert.IsTrue(response.ETag.Length > 0);
+
+                    var downloadPath = fullPath + ".download";
+                    var downloadRequest = new Amazon.S3.Transfer.TransferUtilityDownloadRequest
+                    {
+                        BucketName = bucketName,
+                        Key = testFile,
+                        FilePath = downloadPath
+                    };
+                    var fileExists = await this.BaseFolder.CheckExistsAsync(downloadPath);
+                    Assert.IsTrue(fileExists == ExistenceCheckResult.NotFound);
+                    await tu.DownloadAsync(downloadRequest);
+                    await TestDownloadedFile(downloadPath);
+
+                    // empty out file, except for 1 byte
+                    var file = await this.BaseFolder.GetFileAsync(downloadPath);
+                    await file.WriteAllTextAsync(testContent.Substring(0, 1));
+                    await tu.DownloadAsync(downloadRequest);
+                    await TestDownloadedFile(downloadPath);
                 }
-
-                var response = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
-                {
-                    BucketName = bucketName,
-                    Key = testFile
-                });
-
-                Console.WriteLine("S3 generated ETag: {0}", response.ETag);
-                Assert.IsTrue(response.ETag.Length > 0);
             });
+        }
+
+        private async Task TestDownloadedFile(string downloadPath)
+        {
+            ExistenceCheckResult fileExists;
+            fileExists = await this.BaseFolder.CheckExistsAsync(downloadPath);
+            Assert.IsTrue(fileExists == ExistenceCheckResult.FileExists);
+            var file = await this.BaseFolder.GetFileAsync(downloadPath);
+            Assert.IsNotNull(file);
+            var fileContent = await file.ReadAllTextAsync();
+            Assert.AreEqual(testContent, fileContent);
         }
     }
 }

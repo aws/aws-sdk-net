@@ -132,6 +132,9 @@ namespace ServiceClientGenerator
                     }
                 }
 
+                if (member == null)
+                    throw new ArgumentOutOfRangeException("Unable to find matching member");
+
                 if (currentParams == "")
                     currentParams = member.DetermineType() + " " + GeneratorHelpers.CamelCaseParam(member.PropertyName);
                 else
@@ -309,6 +312,9 @@ namespace ServiceClientGenerator
                     }
                 }
 
+                if (member == null)
+                    throw new ArgumentOutOfRangeException("Unable to find matching member");
+
                 string type = member.DetermineType();
                 if (type == "Stream")
                     type = "System.IO.Stream";
@@ -413,6 +419,8 @@ namespace ServiceClientGenerator
         public const string GenerateComplexExceptionKey = "generateComplexException";
         public const string SuppressSimpleMethodExceptionDocsKey = "suppressSimpleMethodExceptionDocs";
         public const string XamarinSampleSolutionFileKey = "xamarinSamples";
+        public const string DeprecatedOverridesKey = "deprecatedOverrides";
+        public const string DeprecationMessageKey = "message";
 
         JsonData _documentRoot;
 
@@ -432,7 +440,8 @@ namespace ServiceClientGenerator
         /// </summary>
         public SimpleConstructorsModel SimpleConstructorsModel
         {
-            get {
+            get
+            {
                 return _simpleConstructorsModel ??
                        (_simpleConstructorsModel = new SimpleConstructorsModel(_documentRoot));
             }
@@ -547,7 +556,7 @@ namespace ServiceClientGenerator
             get
             {
                 var flag = _documentRoot[RetainOriginalMemberOrderingKey];
-                if (flag!=null && flag.IsBoolean)
+                if (flag != null && flag.IsBoolean)
                 {
                     return (bool)flag;
                 }
@@ -605,6 +614,31 @@ namespace ServiceClientGenerator
                 return _resultGenerationSuppressions;
             }
         }
+
+        public string GetDeprecationMessage(string operationName)
+        {
+            bool fail = false;
+            var data = _documentRoot[DeprecatedOverridesKey];
+            if (data == null)
+                fail = true;
+
+            var operations = data[OperationKey];
+            var operation = operations[operationName];
+            if (operation == null)
+                fail = true;
+
+            var message = operation[DeprecationMessageKey];
+            if (!(message.IsString && !string.IsNullOrEmpty((string)message)))
+            {
+                fail = true;
+            }
+
+            if (fail)
+                throw new Exception(string.Format(@"Obsolete Message not set for operation {0}", operationName));
+            else
+                return (string)message;
+        }
+
 
         /// <summary>
         /// Determines if the operation has a customization for creating a no argument method
@@ -684,7 +718,7 @@ namespace ServiceClientGenerator
             if (shape == null || !shape.IsArray)
                 return false;
 
-            foreach(var name in shape)
+            foreach (var name in shape)
             {
                 if (string.Equals(name.ToString(), propertyName))
                     return true;
@@ -710,7 +744,7 @@ namespace ServiceClientGenerator
 
         private string GetRemappedShapeName(string originalShapeName, string key)
         {
-             var substitutionsData = _documentRoot[ShapeSubstitutionsKey];
+            var substitutionsData = _documentRoot[ShapeSubstitutionsKey];
             if (substitutionsData == null)
                 return null;
 
@@ -1149,6 +1183,8 @@ namespace ServiceClientGenerator
                 modifiers.IsExcluded = (bool)operation[OperationModifiers.ExcludeKey];
             if (operation[OperationModifiers.InternalKey] != null && operation[OperationModifiers.InternalKey].IsBoolean)
                 modifiers.IsInternal = (bool)operation[OperationModifiers.InternalKey];
+            if (operation[OperationModifiers.DeprecatedKey] != null && operation[OperationModifiers.DeprecatedKey].IsBoolean)
+                modifiers.IsDeprecated = (bool)operation[OperationModifiers.DeprecatedKey];
             if (operation[OperationModifiers.UseWrappingResultKey] != null && operation[OperationModifiers.UseWrappingResultKey].IsBoolean)
                 modifiers.UseWrappingResult = (bool)operation[OperationModifiers.UseWrappingResultKey];
             if (operation[OperationModifiers.WrappedResultShapeKey] != null && operation[OperationModifiers.WrappedResultShapeKey].IsString)
@@ -1183,7 +1219,7 @@ namespace ServiceClientGenerator
                 if (solutionPath == null || !solutionPath.IsString)
                     return null;
 
-                return solutionPath.ToString().Replace("/","\\");
+                return solutionPath.ToString().Replace("/", "\\");
             }
         }
 
@@ -1210,13 +1246,14 @@ namespace ServiceClientGenerator
             public const string WrappedResultShapeKey = "wrappedResultShape";
             public const string WrappedResultMemberKey = "wrappedResultMember";
             public const string MarshallNameOverrides = "marshallNameOverrides";
+            public const string DeprecatedKey = "deprecated";
 
             // within a marshal override for a shape; one or both may be present
             public const string MarshallLocationName = "marshallLocationName";
             public const string MarshallName = "marshallName";
 
             private Dictionary<string, JsonData> _marshallNameOverrides = null;
- 
+
             /// <summary>
             /// The name of the operation modified
             /// </summary>
@@ -1239,6 +1276,15 @@ namespace ServiceClientGenerator
             /// Indicates if the operation should be marked internal in the client
             /// </summary>
             public bool IsInternal
+            {
+                get;
+                set;
+            }
+
+            /// <summary>
+            /// Indicates if the operation should be marked deprecated in the client
+            /// </summary>
+            public bool IsDeprecated
             {
                 get;
                 set;

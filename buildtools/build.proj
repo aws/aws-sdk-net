@@ -125,15 +125,20 @@
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1" />
 	</Target>
 
-	<Target Name="xam-pack" DependsOnTargets="build-custom-tasks" Condition="Exists('$(xpkgexe)')">
-		<PackageComponents ComponentRootPath="..\sdk\xamarin-components\" NugetExe="..\sdk\.nuget\NuGet.exe" ComponentsExe="$(xpkg)" /> 
+	<Target Name="xam-pack" DependsOnTargets="build-custom-tasks;nuget-pack" Condition="Exists('$(xpkgexe)')">
+		<PackageComponents 
+			ComponentRootPath="..\sdk\xamarin-components\" 
+			NugetExe="..\sdk\.nuget\NuGet.exe" 
+			ComponentsExe="$(xpkg)" 
+			NugetRestoreLocation="$([System.IO.Path]::GetFullPath(..\Deployment\nuget));https://www.nuget.org/api/v2"
+			DevEnvExe="$(devenv2013)"  /> 
 		
 		<ItemGroup>
 			<XamFiles Include="..\sdk\xamarin-components\**\*.xam"/>
 		</ItemGroup>
 		<Copy
             SourceFiles="@(XamFiles)"
-            DestinationFolder="$(Deployment)\xamain-components"/>
+            DestinationFolder="$(Deployment)\xamarin-components"/>
 	</Target>
 	
 	<Target Name="copy-assemblies" DependsOnTargets="nuget-pack;xam-pack">

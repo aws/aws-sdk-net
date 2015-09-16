@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("allocationStrategy", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AllocationStrategy = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("clientToken", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -68,7 +74,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("launchSpecifications/item", targetDepth))
                     {
-                        var unmarshaller = LaunchSpecificationUnmarshaller.Instance;
+                        var unmarshaller = SpotFleetLaunchSpecificationUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LaunchSpecifications.Add(item);
                         continue;

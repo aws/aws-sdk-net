@@ -37,7 +37,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
     {
 
         /// <summary>
-        /// Gets the or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
+        /// Gets or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
         /// creates new instance and returns it.
         /// </summary>
         /// <param name="appID">Amazon Mobile Analytics Application ID.</param>
@@ -51,7 +51,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         }
 
         /// <summary>
-        /// Gets the or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
+        /// Gets or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
         /// creates new instance and returns it.
         /// </summary>
         /// <param name="appID">Amazon Mobile Analytics Application ID.</param>
@@ -68,7 +68,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         }
 
         /// <summary>
-        /// Gets the or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
+        /// Gets or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
         /// creates new instance and returns it.
         /// </summary>
         /// <param name="appID">Amazon Mobile Analytics Application ID.</param>
@@ -85,7 +85,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         }
 
         /// <summary>
-        /// Gets the or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
+        /// Gets or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
         /// creates new instance and returns it.
         /// </summary>
         /// <param name="appID">Amazon Mobile Analytics Application ID.</param>
@@ -100,5 +100,19 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 
             return GetOrCreateInstanceHelper(appID, null, null, maConfig);
         }
+		
+        #region private
+#if BCL
+        static void ValidateParameters()
+        {
+            if (string.IsNullOrEmpty(AWSConfigs.ApplicationName))
+            {
+                throw new ArgumentException("A valid application name needs to configured to use this API." +
+                    "The application name can be configured through app.config/web.config or by setting the Amazon.AWSConfigs.ApplicationName property.");
+            }
+        }
+#endif
+        #endregion
+		
     }
 }

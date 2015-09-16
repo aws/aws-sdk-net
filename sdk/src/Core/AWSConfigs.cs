@@ -516,6 +516,15 @@ namespace Amazon
         /// Log using System.Diagnostics
         /// </summary>
         SystemDiagnostics = 2
+            
+#if PCL    
+        ,
+
+        /// <summary>
+        /// Log to a file
+        /// </summary>
+        File = 4
+#endif
     }
 
     /// <summary>

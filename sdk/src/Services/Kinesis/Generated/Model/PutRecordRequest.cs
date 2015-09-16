@@ -29,11 +29,10 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the PutRecord operation.
-    /// Puts (writes) a single data record from a producer into an Amazon Kinesis stream.
-    /// Call <code>PutRecord</code> to send data from the producer into the Amazon Kinesis
-    /// stream for real-time ingestion and subsequent processing, one record at a time. Each
-    /// shard can support up to 1000 records written per second, up to a maximum total of
-    /// 1 MB data written per second.
+    /// Writes a single data record from a producer into an Amazon Kinesis stream. Call <code>PutRecord</code>
+    /// to send data from the producer into the Amazon Kinesis stream for real-time ingestion
+    /// and subsequent processing, one record at a time. Each shard can support writes up
+    /// to 1,000 records per second, up to a maximum data write total of 1 MB per second.
     /// 
     ///  
     /// <para>
@@ -59,7 +58,7 @@ namespace Amazon.Kinesis.Model
     /// values and to map associated data records to shards using the hash key ranges of the
     /// shards. You can override hashing the partition key to determine the shard by explicitly
     /// specifying a hash value using the <code>ExplicitHashKey</code> parameter. For more
-    /// information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html">Adding
+    /// information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
     /// Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.
     /// </para>
     ///  
@@ -71,7 +70,7 @@ namespace Amazon.Kinesis.Model
     /// <para>
     /// Sequence numbers generally increase over time. To guarantee strictly increasing ordering,
     /// use the <code>SequenceNumberForOrdering</code> parameter. For more information, see
-    /// <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html">Adding
+    /// <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
     /// Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.
     /// </para>
     ///  
@@ -98,8 +97,8 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property Data. 
         /// <para>
         /// The data blob to put into the record, which is base64-encoded when the blob is serialized.
-        /// The maximum size of the data blob (the payload before base64-encoding) is 50 kilobytes
-        /// (KB) 
+        /// When the data blob (the payload before base64-encoding) is added to the partition
+        /// key size, the total size must not exceed the maximum record size (1 MB). 
         /// </para>
         /// </summary>
         public MemoryStream Data

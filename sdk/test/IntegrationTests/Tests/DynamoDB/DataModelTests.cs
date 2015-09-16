@@ -33,6 +33,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 TestContextConversions();
                 TestUnsupportedTypes();
+                TestEnums(conversion);
 
                 TestHashObjects();
                 TestHashRangeObjects();
@@ -85,6 +86,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Price = 1200,
                 TagSet = new HashSet<string> { "Prod", "1.0" },
                 CurrentStatus = Status.Active,
+                FormerStatus = Status.Upcoming,
+                Supports = Support.Unix | Support.Windows,
+                PreviousSupport = null,
                 InternalId = "T1000",
                 IsPublic = true,
                 AlwaysN = true,
@@ -170,7 +174,40 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var prod1 = Context.FromDocument<Product>(docV1, new DynamoDBOperationConfig { Conversion = conversionV1 });
                 var prod2 = Context.FromDocument<Product>(docV2, new DynamoDBOperationConfig { Conversion = conversionV2 });
             }
+        }
 
+        private void TestEnums(DynamoDBEntryConversion conversion)
+        {
+            Product product = new Product
+            {
+                Id = 1,
+                Name = "CloudSpotter",
+                CompanyName = "CloudsAreGrate",
+                Price = 1200,
+                TagSet = new HashSet<string> { "Prod", "1.0" },
+                CurrentStatus = Status.Active,
+                FormerStatus = Status.Upcoming,
+                Supports = Support.Unix | Support.Windows,
+                PreviousSupport = null,
+            };
+
+            // try round-tripping the enums
+            var doc1 = Context.ToDocument(product);
+            var product2 = Context.FromDocument<Product>(doc1);
+            Assert.AreEqual(product.CurrentStatus, product2.CurrentStatus);
+            Assert.AreEqual(product.FormerStatus, product2.FormerStatus);
+            Assert.AreEqual(product.Supports, product2.Supports);
+
+            // try changing underlying enum data to strings
+            var doc2 = Context.ToDocument(product);
+            doc2["CurrentStatus"] = product.CurrentStatus.ToString();
+            doc2["FormerStatus"] = product.FormerStatus.ToString();
+            doc2["Supports"] = product.Supports.ToString();
+            doc2 = doc2.ForceConversion(conversion);
+            var product3 = Context.FromDocument<Product>(doc2);
+            Assert.AreEqual(product.CurrentStatus, product3.CurrentStatus);
+            Assert.AreEqual(product.FormerStatus, product3.FormerStatus);
+            Assert.AreEqual(product.Supports, product3.Supports);
         }
 
         private static void VerifyConversions(Document docV1, Document docV2)
@@ -233,6 +270,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Price = 1200,
                 TagSet = new HashSet<string> { "Prod", "1.0" },
                 CurrentStatus = Status.Active,
+                FormerStatus = Status.Upcoming,
+                Supports = Support.Windows | Support.Abacus,
+                PreviousSupport = null,
                 InternalId = "T1000",
                 IsPublic = true,
                 AlwaysN = true,
@@ -288,6 +328,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 doc["Components"].AsPrimitiveList() != null ||
                 doc["Components"].AsDynamoDBList() != null);
             Assert.IsNotNull(doc["CompanyInfo"].AsDocument());
+            Assert.IsNotNull(doc["Supports"]);
 
             // Load item
             Product retrieved = Context.Load<Product>(1);
@@ -296,6 +337,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(product.Components.Count, retrieved.Components.Count);
             Assert.IsNull(retrieved.InternalId);
             Assert.AreEqual(product.CurrentStatus, retrieved.CurrentStatus);
+            Assert.AreEqual(product.FormerStatus, retrieved.FormerStatus);
+            Assert.AreEqual(product.Supports, retrieved.Supports);
+            Assert.AreEqual(product.PreviousSupport, retrieved.PreviousSupport);
             Assert.AreEqual(product.IsPublic, retrieved.IsPublic);
             Assert.AreEqual(product.Rating, retrieved.Rating);
             Assert.AreEqual(product.KeySizes.Count, retrieved.KeySizes.Count);
@@ -662,7 +706,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         #region OPM definitions
 
-        public enum Status { Active, Inactive, Upcoming, Obsolete, Removed }
+        public enum Status : long
+        {
+            Active =    256,
+            Inactive =  1024,
+            Upcoming =  9999,
+            Obsolete =  -10,
+            Removed =   42
+        }
+
+        [Flags]
+        public enum Support
+        {
+            Windows =   1 << 0,
+            iOS =       1 << 1,
+            Unix =      1 << 2,
+            Abacus =    1 << 3,
+        }
 
         public class StatusConverter : IPropertyConverter
         {
@@ -708,6 +768,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             [DynamoDBProperty(Converter = typeof(StatusConverter))]
             public Status CurrentStatus { get; set; }
+
+            public Status FormerStatus { get; set; }
+
+            public Support Supports { get; set; }
+
+            public Support? PreviousSupport { get; set; }
 
             [DynamoDBIgnore]
             public string InternalId { get; set; }

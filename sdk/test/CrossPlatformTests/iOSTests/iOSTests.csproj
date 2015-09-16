@@ -153,6 +153,10 @@
       <IsAppExtension>false</IsAppExtension>
       <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\CognitoIdentity\AWSSDK.CognitoIdentity.PCL.csproj">
+      <Project>{1c5f7691-6dd8-400b-8ec1-788317af0bfe}</Project>
+      <Name>AWSSDK.CognitoIdentity.PCL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.iOS.csproj">
       <Project>{9a15c363-dc59-45a6-8eac-1fe1b9b5bf4c}</Project>
       <Name>AWSSDK.MobileAnalytics.iOS</Name>

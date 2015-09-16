@@ -49,6 +49,9 @@ namespace Amazon.Route53.Model
         private string _fullyQualifiedDomainName;
         private string _searchString;
         private int? _failureThreshold;
+        private bool? _inverted;
+        private int? _healthThreshold;
+        private List<string> _childHealthChecks = new List<string>();
 
         /// <summary>
         /// Gets and sets the property HealthCheckId. 
@@ -233,6 +236,77 @@ namespace Amazon.Route53.Model
         internal bool IsSetFailureThreshold()
         {
             return this._failureThreshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Inverted. 
+        /// <para>
+        /// A boolean value that indicates whether the status of health check should be inverted.
+        /// For example, if a health check is healthy but <code>Inverted</code> is <code>True</code>,
+        /// then Route 53 considers the health check to be unhealthy.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify this value only if you want to change it.
+        /// </para>
+        /// </summary>
+        public bool Inverted
+        {
+            get { return this._inverted.GetValueOrDefault(); }
+            set { this._inverted = value; }
+        }
+
+        // Check to see if Inverted property is set
+        internal bool IsSetInverted()
+        {
+            return this._inverted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthThreshold. 
+        /// <para>
+        /// The minimum number of child health checks that must be healthy for Route 53 to consider
+        /// the parent health check to be healthy. Valid values are integers between 0 and 256,
+        /// inclusive.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify this value only if you want to change it.
+        /// </para>
+        /// </summary>
+        public int HealthThreshold
+        {
+            get { return this._healthThreshold.GetValueOrDefault(); }
+            set { this._healthThreshold = value; }
+        }
+
+        // Check to see if HealthThreshold property is set
+        internal bool IsSetHealthThreshold()
+        {
+            return this._healthThreshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChildHealthChecks. 
+        /// <para>
+        /// For a specified parent health check, a list of <code>HealthCheckId</code> values for
+        /// the associated child health checks.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify this value only if you want to change it.
+        /// </para>
+        /// </summary>
+        public List<string> ChildHealthChecks
+        {
+            get { return this._childHealthChecks; }
+            set { this._childHealthChecks = value; }
+        }
+
+        // Check to see if ChildHealthChecks property is set
+        internal bool IsSetChildHealthChecks()
+        {
+            return this._childHealthChecks != null && this._childHealthChecks.Count > 0; 
         }
 
     }

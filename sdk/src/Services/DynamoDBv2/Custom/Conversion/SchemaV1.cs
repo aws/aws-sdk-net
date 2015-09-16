@@ -264,6 +264,78 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+    internal class EnumConverterV1 : Converter<Enum>
+    {
+        protected override bool TryTo(Enum value, out Primitive p)
+        {
+            p = null;
+
+            // get enum type
+            var valueType = value.GetType();
+            // get numeric type underlying enum (int, byte, etc.)
+            var underlyingType = Enum.GetUnderlyingType(valueType);
+            // convert enum value to numeric type
+            var numerical = Convert.ChangeType(value, underlyingType, CultureInfo.InvariantCulture);
+
+            // convert numeric type to primitive
+            DynamoDBEntry entry;
+            if (Conversion.TryConvertToEntry(underlyingType, numerical, out entry))
+            {
+                p = entry as Primitive;
+            }
+
+            var succeeded = (p != null);
+            return succeeded;
+        }
+        protected override bool TryFrom(Primitive p, Type targetType, out Enum result)
+        {
+            result = null;
+
+            switch (p.Type)
+            {
+                case DynamoDBEntryType.Numeric:
+                    result = ConvertEnum(p, targetType);
+                    break;
+                case DynamoDBEntryType.String:
+                    result = ConvertEnum(p.StringValue, targetType);
+                    break;
+                default:
+                    break;
+            }
+
+            var succeeded = (result != null);
+            return succeeded;
+        }
+
+        private Enum ConvertEnum(Primitive p, Type targetType)
+        {
+            // get numeric type underlying enum (int, byte, etc.)
+            var enumUnderlyingType = Enum.GetUnderlyingType(targetType);
+
+            object numerical;
+            // convert Primitive to numeric type, using current conversion
+            if (Conversion.TryConvertFromEntry(enumUnderlyingType, p, out numerical))
+            {
+                // convert numeric to target enum
+                return Enum.ToObject(targetType, numerical) as Enum;
+            }
+
+            return null;
+        }
+        private static Enum ConvertEnum(string s, Type targetType)
+        {
+            // try to parse enum from string
+            try
+            {
+                return Enum.Parse(targetType, s) as Enum;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+    }
+
     #endregion
 
     #region Converters supporting reading V2 DDB items, but writing V1 items

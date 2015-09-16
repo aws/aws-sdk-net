@@ -1,5 +1,3 @@
-%YAML 1.2
----
 summary: AWS MobileAnalytics SDK for Xamarin
 getting-started: GettingStarted.md
 details: Details.md
@@ -12,21 +10,21 @@ name: AWSSDK - Amazon Mobile Analytics
 id: aws-mobileanalytics-sdk
 samples: 
   - name: "MobileAnalytics-Sample"
-    path: ..\..\..\..\Aws-sdk-net-samples\XamarinSamples\MobileAnalytics\AWSSDK.MobileAnalytics.Sample.sln
+    path: ..\..\..\..\aws-sdk-net-samples\XamarinSamples\MobileAnalytics\AWSSDK.MobileAnalytics.Sample.sln
 publisher-url: http://aws.amazon.com/mobile/sdk/
 packages:
   android:
-  - AWSSDK.Core, Version=3.1.0.0
-  - AWSSDK.MobileAnalytics,Version=3.1.0.0-preview
+  - AWSSDK.Core, Version=3.1.1.0
+  - AWSSDK.MobileAnalytics,Version=3.1.1.1
   ios-unified:
-  - AWSSDK.Core, Version=3.1.0.0
-  - AWSSDK.MobileAnalytics,Version=3.1.0.0-preview
+  - AWSSDK.Core, Version=3.1.1.0
+  - AWSSDK.MobileAnalytics,Version=3.1.1.1
   winphone-8.0:
-  - AWSSDK.Core, Version=3.1.0.0
-  - AWSSDK.MobileAnalytics,Version=3.1.0.0-preview
+  - AWSSDK.Core, Version=3.1.1.0
+  - AWSSDK.MobileAnalytics,Version=3.1.1.1
   winphone-8.1:
-  - AWSSDK.Core, Version=3.1.0.0
-  - AWSSDK.MobileAnalytics,Version=3.1.0.0-preview
-version: 3.1.0.0
+  - AWSSDK.Core, Version=3.1.1.0
+  - AWSSDK.MobileAnalytics,Version=3.1.1.1
+version: 3.1.1.1
 is-shell: true
-...
+no_build: true

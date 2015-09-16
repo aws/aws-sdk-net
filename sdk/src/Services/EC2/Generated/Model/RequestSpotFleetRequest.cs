@@ -33,8 +33,26 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html">Spot
-    /// Fleets</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// You can submit a single request that includes multiple launch specifications that
+    /// vary by instance type, AMI, Availability Zone, or subnet.
+    /// </para>
+    ///  
+    /// <para>
+    /// By default, the Spot fleet requests Spot instances in the Spot pool where the price
+    /// per unit is the lowest. Each launch specification can include its own instance weighting
+    /// that reflects the value of the instance type to your application workload.
+    /// </para>
+    ///  
+    /// <para>
+    /// Alternatively, you can specify that the Spot fleet distribute the target capacity
+    /// across the Spot pools included in its launch specifications. By ensuring that the
+    /// Spot instances in your Spot fleet are in different Spot pools, you can improve the
+    /// availability of your fleet.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
+    /// Fleet Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class RequestSpotFleetRequest : AmazonEC2Request

@@ -352,7 +352,7 @@ namespace Amazon.ConfigService
         /// <returns>The response from the DeliverConfigSnapshot service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
         /// There are no configuration recorders available to provide the role needed to describe
-        /// your resources.
+        /// your resources. Create a configuration recorder.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoRunningConfigurationRecorderException">
         /// There is no configuration recorder running.
@@ -646,6 +646,37 @@ namespace Amazon.ConfigService
             var unmarshaller = GetResourceConfigHistoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetResourceConfigHistoryRequest,GetResourceConfigHistoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDiscoveredResources
+
+        internal ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request)
+        {
+            var marshaller = new ListDiscoveredResourcesRequestMarshaller();
+            var unmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDiscoveredResourcesRequest,ListDiscoveredResourcesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDiscoveredResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDiscoveredResources operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListDiscoveredResourcesResponse> ListDiscoveredResourcesAsync(ListDiscoveredResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListDiscoveredResourcesRequestMarshaller();
+            var unmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDiscoveredResourcesRequest,ListDiscoveredResourcesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

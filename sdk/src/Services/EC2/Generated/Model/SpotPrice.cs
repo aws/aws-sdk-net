@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the maximum hourly price (bid) for any Spot Instance launched to fulfill
+    /// Describes the maximum hourly price (bid) for any Spot instance launched to fulfill
     /// the request.
     /// </summary>
     public partial class SpotPrice
@@ -78,7 +78,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Price. 
         /// <para>
-        /// The maximum price (bid) that you are willing to pay for a Spot Instance.
+        /// The maximum price (bid) that you are willing to pay for a Spot instance.
         /// </para>
         /// </summary>
         public string Price

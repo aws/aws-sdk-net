@@ -29,6 +29,7 @@ namespace Amazon.Runtime.Internal.Util
     /// <summary>
     /// Logger wrapper for Console.WriteLine()
     /// </summary>
+    [Obsolete("Use InternalConsoleLogger instead")]
     internal class MobileLogger : InternalLogger
     {
         private const string InfoMsg = "[AWSSDK INFO] {0}";
@@ -68,7 +69,15 @@ namespace Amazon.Runtime.Internal.Util
         public override void Error(Exception exception, string messageFormat, params object[] args)
         {
             LogMessage msg = new LogMessage(CultureInfo.InvariantCulture, messageFormat, args);
+#if __ANDROID__
+            Android.Util.Log.Error(DeclaringType.Name, msg.ToString());
+            if (exception != null)
+            {
+                Android.Util.Log.Error(DeclaringType.Name, exception.ToString());
+            }
+#else
             Console.WriteLine(string.Format(DebugMsg, "Exception is: " + exception.ToString() + " Message is: " +msg.ToString()));
+#endif
         }
 
         /// <summary>
@@ -91,7 +100,15 @@ namespace Amazon.Runtime.Internal.Util
         public override void Debug(Exception exception, string messageFormat, params object[] args)
         {
             LogMessage msg = new LogMessage(CultureInfo.InvariantCulture, messageFormat, args);
+#if __ANDROID__
+            Android.Util.Log.Debug(DeclaringType.Name, msg.ToString());
+            if (exception != null)
+            {
+                Android.Util.Log.Debug(DeclaringType.Name, exception.ToString());
+            }
+#else
             Console.WriteLine(string.Format(DebugMsg, "Exception is: " + exception.ToString() + " Message is: " +msg.ToString()));
+#endif
         }
 
         /// <summary>
@@ -102,7 +119,11 @@ namespace Amazon.Runtime.Internal.Util
         public override void DebugFormat(string message, params object[] arguments)
         {
             LogMessage msg = new LogMessage(CultureInfo.InvariantCulture, message, arguments);
+#if __ANDROID__
+            Android.Util.Log.Error(DeclaringType.Name, msg.ToString());
+#else
             Console.WriteLine(string.Format(DebugMsg, " Message is: " + msg.ToString()));
+#endif
         }
 
         /// <summary>
@@ -124,7 +145,11 @@ namespace Amazon.Runtime.Internal.Util
         public override void InfoFormat(string message, params object[] arguments)
         {
             LogMessage msg = new LogMessage(CultureInfo.InvariantCulture, message, arguments);
+#if __ANDROID__
+            Android.Util.Log.Info(DeclaringType.Name, msg.ToString());
+#else
             Console.WriteLine(string.Format(InfoMsg, " Message is: " + msg.ToString()));
+#endif
         }
 
         #endregion

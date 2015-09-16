@@ -428,7 +428,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>The response from the DeleteApplication service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
         /// Unable to perform the specified operation because another operation is already in
-        /// progress affecting an an element in this activity.
+        /// progress affecting an element in this activity.
         /// </exception>
         DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request);
 
@@ -476,7 +476,7 @@ namespace Amazon.ElasticBeanstalk
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
         /// Unable to perform the specified operation because another operation is already in
-        /// progress affecting an an element in this activity.
+        /// progress affecting an element in this activity.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.S3LocationNotInServiceRegionException">
         /// The specified S3 bucket does not belong to the S3 region in which the service is running.
@@ -528,7 +528,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>The response from the DeleteConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
         /// Unable to perform the specified operation because another operation is already in
-        /// progress affecting an an element in this activity.
+        /// progress affecting an element in this activity.
         /// </exception>
         DeleteConfigurationTemplateResponse DeleteConfigurationTemplate(DeleteConfigurationTemplateRequest request);
 
@@ -795,6 +795,50 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
         
+        #region  DescribeEnvironmentHealth
+
+
+        /// <summary>
+        /// Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b>
+        /// operation is only available with AWS Elastic Beanstalk Enhanced Health.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentHealth service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEnvironmentHealth service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InvalidRequestException">
+        /// The request is invalid, please check parameters and their values
+        /// </exception>
+        DescribeEnvironmentHealthResponse DescribeEnvironmentHealth(DescribeEnvironmentHealthRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEnvironmentHealth operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentHealth operation on AmazonElasticBeanstalkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEnvironmentHealth
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeEnvironmentHealth(DescribeEnvironmentHealthRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEnvironmentHealth operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEnvironmentHealth.</param>
+        /// 
+        /// <returns>Returns a  DescribeEnvironmentHealthResult from ElasticBeanstalk.</returns>
+        DescribeEnvironmentHealthResponse EndDescribeEnvironmentHealth(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeEnvironmentResources
 
 
@@ -927,6 +971,51 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>Returns a  DescribeEventsResult from ElasticBeanstalk.</returns>
         DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeInstancesHealth
+
+
+        /// <summary>
+        /// Returns more detailed information about the health of the specified instances (for
+        /// example, CPU utilization, load average, and causes). The <b>DescribeInstancesHealth</b>
+        /// operation is only available with AWS Elastic Beanstalk Enhanced Health.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancesHealth service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstancesHealth service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InvalidRequestException">
+        /// The request is invalid, please check parameters and their values
+        /// </exception>
+        DescribeInstancesHealthResponse DescribeInstancesHealth(DescribeInstancesHealthRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstancesHealth operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancesHealth operation on AmazonElasticBeanstalkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstancesHealth
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeInstancesHealth(DescribeInstancesHealthRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstancesHealth operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstancesHealth.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstancesHealthResult from ElasticBeanstalk.</returns>
+        DescribeInstancesHealthResponse EndDescribeInstancesHealth(IAsyncResult asyncResult);
 
         #endregion
         

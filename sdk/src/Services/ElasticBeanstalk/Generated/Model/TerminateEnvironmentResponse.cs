@@ -42,6 +42,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _environmentId;
         private string _environmentName;
         private EnvironmentHealth _health;
+        private EnvironmentHealthStatus _healthStatus;
         private EnvironmentResourcesDescription _resources;
         private string _solutionStackName;
         private EnvironmentStatus _status;
@@ -262,6 +263,26 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetHealth()
         {
             return this._health != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthStatus. 
+        /// <para>
+        /// Returns the health status of the application running in your environment. For more
+        /// information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+        /// Colors and Statuses</a>.
+        /// </para>
+        /// </summary>
+        public EnvironmentHealthStatus HealthStatus
+        {
+            get { return this._healthStatus; }
+            set { this._healthStatus = value; }
+        }
+
+        // Check to see if HealthStatus property is set
+        internal bool IsSetHealthStatus()
+        {
+            return this._healthStatus != null;
         }
 
         /// <summary>

@@ -55,12 +55,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("clientToken", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.ClientToken = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("return", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

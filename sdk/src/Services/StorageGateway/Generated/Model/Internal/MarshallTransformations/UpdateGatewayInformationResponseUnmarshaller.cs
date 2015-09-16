@@ -57,6 +57,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     response.GatewayARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GatewayName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.GatewayName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

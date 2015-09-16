@@ -35,7 +35,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
     {
         private const int defaultSessionTimeout = 5;
         private const int defaultMaxDBSize = 5242880;
-        private const double defaultDBWarningThreashold = 0.9;
+        private const double defaultDBWarningThreshold = 0.9;
         private const int defaultMaxRequestSize = 102400;
         private const bool defaultAllowUseDataNetwork = false;
 
@@ -46,7 +46,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         {
             SessionTimeout = defaultSessionTimeout;
             MaxDBSize = defaultMaxDBSize;
-            DBWarningThreshold = defaultDBWarningThreashold;
+            DBWarningThreshold = defaultDBWarningThreshold;
             MaxRequestSize = defaultMaxRequestSize;
             AllowUseDataNetwork = defaultAllowUseDataNetwork;
 #if BCL
@@ -66,7 +66,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         /// creates a new session once app comes back to foreground.
         /// We recommend using values ranging from 5 to 10, 
         /// </summary>
-        /// <value>default 5 seconds</value>
+        /// <value>Default 5 seconds</value>
         public int SessionTimeout { get; set; }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 
         /// <summary>
         /// A value indicating whether service call is allowed over data network
-        /// Turn on this by caution. This may increase customer's data usage.
+        /// Setting this property to true may increase customer's data usage.
         /// </summary>
         /// <value>Default false</value>
         public bool AllowUseDataNetwork { get; set; }

@@ -39,10 +39,29 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         private Logger _logger = Logger.GetLogger(typeof(Session));
 
         // session info
+        /// <summary>
+        /// Session start Time.
+        /// </summary>
         public DateTime StartTime { get; set; }
+
+        /// <summary>
+        /// Session stop time.
+        /// </summary>
         public DateTime? StopTime { get; set; }
+
+        /// <summary>
+        /// Session latest resume time.
+        /// </summary>
         public DateTime PreStartTime { get; set; }
+
+        /// <summary>
+        /// Session ID.
+        /// </summary>
         public string SessionId { get; set; }
+
+        /// <summary>
+        /// Session duration in milliseconds.
+        /// </summary>
         public long Duration { get; set; }
 
         // lock to guard session info
@@ -64,7 +83,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
         private MobileAnalyticsManagerConfig _maConfig;
         private volatile SessionStorage _sessionStorage = null;
-        private string _appId = null;
+        private string _appID = null;
         private string _sessionStorageFileName = "_session_storage.json";
         private string _sessionStorageFileFullPath = null;
 
@@ -78,12 +97,13 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         public Session(string appID, MobileAnalyticsManagerConfig maConfig)
         {
             _maConfig = maConfig;
-            _appId = appID;
+            _appID = appID;
 #if BCL
-            _sessionStorageFileName = InternalSDKUtils.DetermineAppLocalStoragePath(appID + _sessionStorageFileName);
+            _sessionStorageFileFullPath = InternalSDKUtils.DetermineAppLocalStoragePath(appID + _sessionStorageFileName);
 #elif PCL
             _sessionStorageFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, appID + _sessionStorageFileName);
 #endif
+            _logger.InfoFormat("Initialize a new session. The session storage file is {0}.", _sessionStorageFileFullPath);
             _sessionStorage = new SessionStorage();
         }
 
@@ -91,25 +111,28 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <summary>
         /// Start this session.
         /// </summary>
-        internal void Start()
+        public void Start()
         {
-            // Read session info from persistent storage, in case app is killed.
-            RetrieveSessionStorage();
-
-            // If session storage is valid, restore session and resume session.
-            if (_sessionStorage != null && !string.IsNullOrEmpty(_sessionStorage._sessionId))
+            lock (_lock)
             {
-                this.StartTime = _sessionStorage._startTime;
-                this.StopTime = _sessionStorage._stopTime;
-                this.SessionId = _sessionStorage._sessionId;
-                this.Duration = _sessionStorage._duration;
+                // Read session info from persistent storage, in case app is killed.
+                RetrieveSessionStorage();
 
-                Resume();
-            }
-            // Otherwise, create a new session.
-            else
-            {
-                NewSessionHelper();
+                // If session storage is valid, restore session and resume session.
+                if (_sessionStorage != null && !string.IsNullOrEmpty(_sessionStorage._sessionId))
+                {
+                    this.StartTime = _sessionStorage._startTime;
+                    this.StopTime = _sessionStorage._stopTime;
+                    this.SessionId = _sessionStorage._sessionId;
+                    this.Duration = _sessionStorage._duration;
+
+                    Resume();
+                }
+                // Otherwise, create a new session.
+                else
+                {
+                    NewSessionHelper();
+                }
             }
         }
 
@@ -118,8 +141,11 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// </summary>
         public void Pause()
         {
-            PauseSessionHelper();
-            SaveSessionStorage();
+            lock (_lock)
+            {
+                PauseSessionHelper();
+                SaveSessionStorage();
+            }
         }
 
         /// <summary>
@@ -127,54 +153,54 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// </summary>       
         public void Resume()
         {
-            if (this.StopTime == null)
+            lock (_lock)
             {
-                //this may sometimes be a valid scenario e.g when the applciation starts
-                _logger.InfoFormat("Call Resume() without calling Pause() first. But this can be valid opertion only when MobileAnalyticsManager instance is created.");
-                return;
-            }
-
-            DateTime currentTime = DateTime.UtcNow;
-            if (this.StopTime.Value < currentTime)
-            {
-                // new session 
-                if (Convert.ToInt64((currentTime - this.StopTime.Value).TotalMilliseconds) > _maConfig.SessionTimeout * 1000)
+                if (this.StopTime == null)
                 {
-                    StopSessionHelper();
-                    NewSessionHelper();
+                    //this may sometimes be a valid scenario e.g when the applciation starts
+                    _logger.InfoFormat("Call Resume() without calling Pause() first. But this can be valid opertion only when MobileAnalyticsManager instance is created.");
+                    return;
                 }
-                // resume old session
+
+                DateTime currentTime = DateTime.UtcNow;
+                if (this.StopTime.Value < currentTime)
+                {
+                    // new session 
+                    if (Convert.ToInt64((currentTime - this.StopTime.Value).TotalMilliseconds) > _maConfig.SessionTimeout * 1000)
+                    {
+                        StopSessionHelper();
+                        NewSessionHelper();
+                    }
+                    // resume old session
+                    else
+                    {
+                        ResumeSessionHelper();
+                    }
+                }
                 else
                 {
-                    ResumeSessionHelper();
+                    InvalidOperationException e = new InvalidOperationException();
+                    _logger.Error(e, "Session stop time is earlier than start time !");
                 }
-            }
-            else
-            {
-                InvalidOperationException e = new InvalidOperationException();
-                _logger.Error(e, "session stop time is earlier than start time !");
             }
         }
         #endregion
 
         private void NewSessionHelper()
         {
-            lock (_lock)
-            {
-                StartTime = DateTime.UtcNow;
-                PreStartTime = DateTime.UtcNow;
-                StopTime = null;
-                SessionId = Guid.NewGuid().ToString();
-                Duration = 0;
-            }
+
+            StartTime = DateTime.UtcNow;
+            PreStartTime = DateTime.UtcNow;
+            StopTime = null;
+            SessionId = Guid.NewGuid().ToString();
+            Duration = 0;
 
             CustomEvent sessionStartEvent = new CustomEvent(Constants.SESSION_START_EVENT_TYPE);
-            lock (_lock)
-            {
-                sessionStartEvent.StartTimestamp = StartTime;
-                sessionStartEvent.SessionId = SessionId;
-            }
-            MobileAnalyticsManager.GetInstance(_appId).RecordEvent(sessionStartEvent);
+
+            sessionStartEvent.StartTimestamp = StartTime;
+            sessionStartEvent.SessionId = SessionId;
+
+            MobileAnalyticsManager.GetInstance(_appID).RecordEvent(sessionStartEvent);
         }
 
         private void StopSessionHelper()
@@ -182,23 +208,19 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             DateTime currentTime = DateTime.UtcNow;
 
             // update session info
-            lock (_lock)
-            {
-                StopTime = currentTime;
-            }
+            StopTime = currentTime;
 
             // record session stop event
             CustomEvent stopSessionEvent = new CustomEvent(Constants.SESSION_STOP_EVENT_TYPE);
-            lock (_lock)
-            {
-                stopSessionEvent.StartTimestamp = StartTime;
 
-                if (StopTime != null)
-                    stopSessionEvent.StopTimestamp = StopTime;
-                stopSessionEvent.SessionId = SessionId;
-                stopSessionEvent.Duration = Duration;
-            }
-            MobileAnalyticsManager.GetInstance(_appId).RecordEvent(stopSessionEvent);
+            stopSessionEvent.StartTimestamp = StartTime;
+
+            if (StopTime != null)
+                stopSessionEvent.StopTimestamp = StopTime;
+            stopSessionEvent.SessionId = SessionId;
+            stopSessionEvent.Duration = Duration;
+
+            MobileAnalyticsManager.GetInstance(_appID).RecordEvent(stopSessionEvent);
         }
 
         private void PauseSessionHelper()
@@ -206,24 +228,18 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             DateTime currentTime = DateTime.UtcNow;
 
             // update session info
-            lock (_lock)
-            {
-                StopTime = currentTime;
-                Duration += Convert.ToInt64((currentTime - PreStartTime).TotalMilliseconds);
-            }
+            StopTime = currentTime;
+            Duration += Convert.ToInt64((currentTime - PreStartTime).TotalMilliseconds);
 
             // record session pause event
             CustomEvent pauseSessionEvent = new CustomEvent(Constants.SESSION_PAUSE_EVENT_TYPE);
-            lock (_lock)
-            {
-                pauseSessionEvent.StartTimestamp = StartTime;
+            pauseSessionEvent.StartTimestamp = StartTime;
 
-                if (StopTime != null)
-                    pauseSessionEvent.StopTimestamp = StopTime;
-                pauseSessionEvent.SessionId = SessionId;
-                pauseSessionEvent.Duration = Duration;
-            }
-            MobileAnalyticsManager.GetInstance(_appId).RecordEvent(pauseSessionEvent);
+            if (StopTime != null)
+                pauseSessionEvent.StopTimestamp = StopTime;
+            pauseSessionEvent.SessionId = SessionId;
+            pauseSessionEvent.Duration = Duration;
+            MobileAnalyticsManager.GetInstance(_appID).RecordEvent(pauseSessionEvent);
         }
 
         private void ResumeSessionHelper()
@@ -231,49 +247,40 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             DateTime currentTime = DateTime.UtcNow;
 
             // update session info
-            lock (_lock)
-            {
-                PreStartTime = currentTime;
-            }
+            PreStartTime = currentTime;
 
             // record session resume event
             CustomEvent resumeSessionEvent = new CustomEvent(Constants.SESSION_RESUME_EVENT_TYPE);
-            lock (_lock)
-            {
-                resumeSessionEvent.StartTimestamp = StartTime;
-                if (StopTime != null)
-                    resumeSessionEvent.StopTimestamp = StopTime;
-                resumeSessionEvent.SessionId = SessionId;
-                resumeSessionEvent.Duration = Duration;
-            }
-            MobileAnalyticsManager.GetInstance(_appId).RecordEvent(resumeSessionEvent);
-        }
+            resumeSessionEvent.StartTimestamp = StartTime;
+            if (StopTime != null)
+                resumeSessionEvent.StopTimestamp = StopTime;
+            resumeSessionEvent.SessionId = SessionId;
+            resumeSessionEvent.Duration = Duration;
 
+            MobileAnalyticsManager.GetInstance(_appID).RecordEvent(resumeSessionEvent);
+        }
 
         private void SaveSessionStorage()
         {
-            lock (_lock)
-            {
-                _sessionStorage._startTime = StartTime;
-                _sessionStorage._stopTime = StopTime;
-                _sessionStorage._preStartTime = PreStartTime;
-                _sessionStorage._sessionId = SessionId;
-                _sessionStorage._duration = Duration;
-            }
+            _sessionStorage._startTime = StartTime;
+            _sessionStorage._stopTime = StopTime;
+            _sessionStorage._preStartTime = PreStartTime;
+            _sessionStorage._sessionId = SessionId;
+            _sessionStorage._duration = Duration;
+
             // store session into file
             _logger.DebugFormat("Mobile Analytics is about to store session info: {0} ", JsonMapper.ToJson(_sessionStorage));
 #if PCL
-            lock (_lock)
-            {
-                IFolder rootFolder = FileSystem.Current.LocalStorage;
-                IFile file = rootFolder.CreateFileAsync(_sessionStorageFileFullPath, CreationCollisionOption.ReplaceExisting).Result;
-                file.WriteAllTextAsync(JsonMapper.ToJson(_sessionStorage)).Wait();
-            }
+            IFolder rootFolder = FileSystem.Current.LocalStorage;
+            IFile file = rootFolder.CreateFileAsync(_sessionStorageFileFullPath, CreationCollisionOption.ReplaceExisting).Result;
+            file.WriteAllTextAsync(JsonMapper.ToJson(_sessionStorage)).Wait();
 #elif BCL
-            lock (_lock)
+            string directory = Path.GetDirectoryName(_sessionStorageFileFullPath);
+            if (!Directory.Exists(directory))
             {
-                File.WriteAllText(_sessionStorageFileFullPath, JsonMapper.ToJson(_sessionStorage));
+                Directory.CreateDirectory(directory);
             }
+            File.WriteAllText(_sessionStorageFileFullPath, JsonMapper.ToJson(_sessionStorage));
 #endif
         }
 
@@ -281,31 +288,25 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         {
             string sessionString = null;
 #if PCL
-            lock (_lock)
+            IFolder rootFolder = FileSystem.Current.LocalStorage;
+            if (ExistenceCheckResult.FileExists == rootFolder.CheckExistsAsync(_sessionStorageFileFullPath).Result)
             {
-                IFolder rootFolder = FileSystem.Current.LocalStorage;
-                if (ExistenceCheckResult.FileExists == rootFolder.CheckExistsAsync(_sessionStorageFileFullPath).Result)
-                {
-                    IFile file = rootFolder.GetFileAsync(_sessionStorageFileFullPath).Result;
-                    sessionString = file.ReadAllTextAsync().Result;
-                }
+                IFile file = rootFolder.GetFileAsync(_sessionStorageFileFullPath).Result;
+                sessionString = file.ReadAllTextAsync().Result;
             }
 #elif BCL
-            lock (_lock)
+            if (File.Exists(_sessionStorageFileFullPath))
             {
-                if (File.Exists(_sessionStorageFileFullPath))
+                using (var sessionFile = new System.IO.StreamReader(_sessionStorageFileFullPath))
                 {
-                    using (var sessionFile = new System.IO.StreamReader(_sessionStorageFileFullPath))
-                    {
-                        sessionString = sessionFile.ReadToEnd();
-                        sessionFile.Close();
-                    }
-                    _logger.DebugFormat("Mobile Analytics retrieves session info: {0}", sessionString);
+                    sessionString = sessionFile.ReadToEnd();
+                    sessionFile.Close();
                 }
-                else
-                {
-                    _logger.DebugFormat("Mobile Analytics session file does not exist.");
-                }
+                _logger.DebugFormat("Mobile Analytics retrieves session info: {0}", sessionString);
+            }
+            else
+            {
+                _logger.DebugFormat("Mobile Analytics session file does not exist.");
             }
 #endif
             if (!string.IsNullOrEmpty(sessionString))

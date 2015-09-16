@@ -24,14 +24,11 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     /// An object for determining whether the delivery client should send events
     /// to mobile analytics service by checking the network status.
     /// </summary>
-    public class ConnectivityPolicy : IDeliveryPolicy
+    public partial class ConnectivityPolicy : IDeliveryPolicy
     {
         private readonly bool IsDataAllowed;
         private Logger _logger = Logger.GetLogger(typeof(ConnectivityPolicy));
-#if PCL
-        private INetworkReachability networkReachability = ServiceFactory.Instance.GetService<INetworkReachability>();
-#endif
-
+		
         /// <summary>
         /// Initializes a new instance of the
         /// <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.ConnectivityPolicy"/> class.
@@ -50,33 +47,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         public bool IsAllowed()
         {
             return this.HasNetworkConnectivity();
-        }
-
-        /// <summary>
-        /// Determines whether this instance has network connectivity.
-        /// </summary>
-        /// <returns><c>true</c> if this instance has network connectivity; otherwise, <c>false</c>.</returns>
-        private bool HasNetworkConnectivity()
-        {
-#if PCL
-            NetworkStatus status = networkReachability.NetworkStatus;
-            bool networkFlag = false;
-            switch (status)
-            {
-                case NetworkStatus.NotReachable:
-                    networkFlag = false;
-                    break;
-                case NetworkStatus.ReachableViaWiFiNetwork:
-                    networkFlag = true;
-                    break;
-                case NetworkStatus.ReachableViaCarrierDataNetwork:
-                    networkFlag = IsDataAllowed;
-                    break;
-            }
-            return networkFlag;
-#elif BCL
-            return System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable();
-#endif
         }
     }
 }

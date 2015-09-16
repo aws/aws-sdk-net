@@ -1936,6 +1936,200 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  GetContextKeysForCustomPolicy
+
+        internal GetContextKeysForCustomPolicyResponse GetContextKeysForCustomPolicy(GetContextKeysForCustomPolicyRequest request)
+        {
+            var marshaller = new GetContextKeysForCustomPolicyRequestMarshaller();
+            var unmarshaller = GetContextKeysForCustomPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetContextKeysForCustomPolicyRequest,GetContextKeysForCustomPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Gets a list of all of the context keys referenced in <code>Condition</code> elements
+        /// in the input policies. The policies are supplied as a list of one or more strings.
+        /// To get the context keys from policies associated with an IAM user, group, or role,
+        /// use <a>GetContextKeysForPrincipalPolicy</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Context keys are variables maintained by AWS and its services that provide details
+        /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
+        /// element of an IAM policy. Use GetContextKeysForCustomPolicy to understand what key
+        /// names and values you must supply when you call <a>SimulateCustomPolicy</a>. Note that
+        /// all parameters are shown in unencoded form here for clarity, but must be URL encoded
+        /// to be included as a part of a real HTML request.
+        /// </para>
+        /// </summary>
+        /// <param name="policyInputList">A list of policies for which you want list of context keys used in <code>Condition</code> elements.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetContextKeysForCustomPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        public Task<GetContextKeysForCustomPolicyResponse> GetContextKeysForCustomPolicyAsync(List<string> policyInputList, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new GetContextKeysForCustomPolicyRequest();
+            request.PolicyInputList = policyInputList;
+            return GetContextKeysForCustomPolicyAsync(request, cancellationToken);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContextKeysForCustomPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContextKeysForCustomPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetContextKeysForCustomPolicyResponse> GetContextKeysForCustomPolicyAsync(GetContextKeysForCustomPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetContextKeysForCustomPolicyRequestMarshaller();
+            var unmarshaller = GetContextKeysForCustomPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetContextKeysForCustomPolicyRequest,GetContextKeysForCustomPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetContextKeysForPrincipalPolicy
+
+        internal GetContextKeysForPrincipalPolicyResponse GetContextKeysForPrincipalPolicy(GetContextKeysForPrincipalPolicyRequest request)
+        {
+            var marshaller = new GetContextKeysForPrincipalPolicyRequestMarshaller();
+            var unmarshaller = GetContextKeysForPrincipalPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetContextKeysForPrincipalPolicyRequest,GetContextKeysForPrincipalPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Gets a list of all of the context keys referenced in <code>Condition</code> elements
+        /// in all of the IAM policies attached to the specified IAM entity. The entity can be
+        /// an IAM user, group, or role. If you specify a user, then the request also includes
+        /// all of the policies attached to groups that the user is a member of.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally include a list of one or more additional policies, specified as
+        /// strings. If you want to include only a list of policies by string, use <a>GetContextKeysForCustomPolicy</a>
+        /// instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>Note:</b> This API discloses information about the permissions granted to other
+        /// users. If you do not want users to see other user's permissions, then consider allowing
+        /// them to use <a>GetContextKeysForCustomPolicy</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Context keys are variables maintained by AWS and its services that provide details
+        /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
+        /// element of an IAM policy. Use GetContextKeysForPrincipalPolicy to understand what
+        /// key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetContextKeysForPrincipalPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public Task<GetContextKeysForPrincipalPolicyResponse> GetContextKeysForPrincipalPolicyAsync(string policySourceArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new GetContextKeysForPrincipalPolicyRequest();
+            request.PolicySourceArn = policySourceArn;
+            return GetContextKeysForPrincipalPolicyAsync(request, cancellationToken);
+        }
+
+
+        /// <summary>
+        /// Gets a list of all of the context keys referenced in <code>Condition</code> elements
+        /// in all of the IAM policies attached to the specified IAM entity. The entity can be
+        /// an IAM user, group, or role. If you specify a user, then the request also includes
+        /// all of the policies attached to groups that the user is a member of.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally include a list of one or more additional policies, specified as
+        /// strings. If you want to include only a list of policies by string, use <a>GetContextKeysForCustomPolicy</a>
+        /// instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>Note:</b> This API discloses information about the permissions granted to other
+        /// users. If you do not want users to see other user's permissions, then consider allowing
+        /// them to use <a>GetContextKeysForCustomPolicy</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Context keys are variables maintained by AWS and its services that provide details
+        /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
+        /// element of an IAM policy. Use GetContextKeysForPrincipalPolicy to understand what
+        /// key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request.</param>
+        /// <param name="policyInputList">A optional list of additional policies for which you want list of context keys used in <code>Condition</code> elements.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetContextKeysForPrincipalPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public Task<GetContextKeysForPrincipalPolicyResponse> GetContextKeysForPrincipalPolicyAsync(string policySourceArn, List<string> policyInputList, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new GetContextKeysForPrincipalPolicyRequest();
+            request.PolicySourceArn = policySourceArn;
+            request.PolicyInputList = policyInputList;
+            return GetContextKeysForPrincipalPolicyAsync(request, cancellationToken);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContextKeysForPrincipalPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContextKeysForPrincipalPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetContextKeysForPrincipalPolicyResponse> GetContextKeysForPrincipalPolicyAsync(GetContextKeysForPrincipalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetContextKeysForPrincipalPolicyRequestMarshaller();
+            var unmarshaller = GetContextKeysForPrincipalPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetContextKeysForPrincipalPolicyRequest,GetContextKeysForPrincipalPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetCredentialReport
 
         internal GetCredentialReportResponse GetCredentialReport()
@@ -3834,6 +4028,68 @@ namespace Amazon.IdentityManagement
             var unmarshaller = SetDefaultPolicyVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetDefaultPolicyVersionRequest,SetDefaultPolicyVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SimulateCustomPolicy
+
+        internal SimulateCustomPolicyResponse SimulateCustomPolicy(SimulateCustomPolicyRequest request)
+        {
+            var marshaller = new SimulateCustomPolicyRequestMarshaller();
+            var unmarshaller = SimulateCustomPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<SimulateCustomPolicyRequest,SimulateCustomPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SimulateCustomPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SimulateCustomPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SimulateCustomPolicyResponse> SimulateCustomPolicyAsync(SimulateCustomPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SimulateCustomPolicyRequestMarshaller();
+            var unmarshaller = SimulateCustomPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SimulateCustomPolicyRequest,SimulateCustomPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SimulatePrincipalPolicy
+
+        internal SimulatePrincipalPolicyResponse SimulatePrincipalPolicy(SimulatePrincipalPolicyRequest request)
+        {
+            var marshaller = new SimulatePrincipalPolicyRequestMarshaller();
+            var unmarshaller = SimulatePrincipalPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<SimulatePrincipalPolicyRequest,SimulatePrincipalPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SimulatePrincipalPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SimulatePrincipalPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SimulatePrincipalPolicyResponse> SimulatePrincipalPolicyAsync(SimulatePrincipalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SimulatePrincipalPolicyRequestMarshaller();
+            var unmarshaller = SimulatePrincipalPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SimulatePrincipalPolicyRequest,SimulatePrincipalPolicyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -425,7 +425,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         [TestCategory("Constructors"), TestCategory("EC2")]
         public void ModifySnapshotAttributeRequestConstructorTests()
         {
-            EnsureConstructorExists(typeof(Amazon.EC2.Model.ModifySnapshotAttributeRequest), new System.Type[] { typeof(string), typeof(SnapshotAttributeName), typeof(string), });
+            EnsureConstructorExists(typeof(Amazon.EC2.Model.ModifySnapshotAttributeRequest), new System.Type[] { typeof(string), typeof(SnapshotAttributeName), typeof(OperationType), });
         }
 
         [TestMethod]

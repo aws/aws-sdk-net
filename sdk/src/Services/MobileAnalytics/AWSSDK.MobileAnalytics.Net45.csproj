@@ -80,6 +80,15 @@
     <Compile Include="Custom\Delivery\Policy\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\Delivery\Policy\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\Delivery\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\Delivery\_bcl45\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\Event\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -87,6 +96,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl45\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Generated\*.cs">

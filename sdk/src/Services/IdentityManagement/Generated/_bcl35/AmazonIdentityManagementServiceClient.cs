@@ -3821,6 +3821,277 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  GetContextKeysForCustomPolicy
+
+        /// <summary>
+        /// Gets a list of all of the context keys referenced in <code>Condition</code> elements
+        /// in the input policies. The policies are supplied as a list of one or more strings.
+        /// To get the context keys from policies associated with an IAM user, group, or role,
+        /// use <a>GetContextKeysForPrincipalPolicy</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Context keys are variables maintained by AWS and its services that provide details
+        /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
+        /// element of an IAM policy. Use GetContextKeysForCustomPolicy to understand what key
+        /// names and values you must supply when you call <a>SimulateCustomPolicy</a>. Note that
+        /// all parameters are shown in unencoded form here for clarity, but must be URL encoded
+        /// to be included as a part of a real HTML request.
+        /// </para>
+        /// </summary>
+        /// <param name="policyInputList">A list of policies for which you want list of context keys used in <code>Condition</code> elements.</param>
+        /// 
+        /// <returns>The response from the GetContextKeysForCustomPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        public GetContextKeysForCustomPolicyResponse GetContextKeysForCustomPolicy(List<string> policyInputList)
+        {
+            var request = new GetContextKeysForCustomPolicyRequest();
+            request.PolicyInputList = policyInputList;
+            return GetContextKeysForCustomPolicy(request);
+        }
+
+
+        /// <summary>
+        /// Gets a list of all of the context keys referenced in <code>Condition</code> elements
+        /// in the input policies. The policies are supplied as a list of one or more strings.
+        /// To get the context keys from policies associated with an IAM user, group, or role,
+        /// use <a>GetContextKeysForPrincipalPolicy</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Context keys are variables maintained by AWS and its services that provide details
+        /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
+        /// element of an IAM policy. Use GetContextKeysForCustomPolicy to understand what key
+        /// names and values you must supply when you call <a>SimulateCustomPolicy</a>. Note that
+        /// all parameters are shown in unencoded form here for clarity, but must be URL encoded
+        /// to be included as a part of a real HTML request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContextKeysForCustomPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetContextKeysForCustomPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        public GetContextKeysForCustomPolicyResponse GetContextKeysForCustomPolicy(GetContextKeysForCustomPolicyRequest request)
+        {
+            var marshaller = new GetContextKeysForCustomPolicyRequestMarshaller();
+            var unmarshaller = GetContextKeysForCustomPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetContextKeysForCustomPolicyRequest,GetContextKeysForCustomPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContextKeysForCustomPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContextKeysForCustomPolicy operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetContextKeysForCustomPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginGetContextKeysForCustomPolicy(GetContextKeysForCustomPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetContextKeysForCustomPolicyRequestMarshaller();
+            var unmarshaller = GetContextKeysForCustomPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetContextKeysForCustomPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetContextKeysForCustomPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetContextKeysForCustomPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetContextKeysForCustomPolicyResult from IdentityManagementService.</returns>
+        public  GetContextKeysForCustomPolicyResponse EndGetContextKeysForCustomPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetContextKeysForCustomPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetContextKeysForPrincipalPolicy
+
+        /// <summary>
+        /// Gets a list of all of the context keys referenced in <code>Condition</code> elements
+        /// in all of the IAM policies attached to the specified IAM entity. The entity can be
+        /// an IAM user, group, or role. If you specify a user, then the request also includes
+        /// all of the policies attached to groups that the user is a member of.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally include a list of one or more additional policies, specified as
+        /// strings. If you want to include only a list of policies by string, use <a>GetContextKeysForCustomPolicy</a>
+        /// instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>Note:</b> This API discloses information about the permissions granted to other
+        /// users. If you do not want users to see other user's permissions, then consider allowing
+        /// them to use <a>GetContextKeysForCustomPolicy</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Context keys are variables maintained by AWS and its services that provide details
+        /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
+        /// element of an IAM policy. Use GetContextKeysForPrincipalPolicy to understand what
+        /// key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request.</param>
+        /// 
+        /// <returns>The response from the GetContextKeysForPrincipalPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public GetContextKeysForPrincipalPolicyResponse GetContextKeysForPrincipalPolicy(string policySourceArn)
+        {
+            var request = new GetContextKeysForPrincipalPolicyRequest();
+            request.PolicySourceArn = policySourceArn;
+            return GetContextKeysForPrincipalPolicy(request);
+        }
+
+
+        /// <summary>
+        /// Gets a list of all of the context keys referenced in <code>Condition</code> elements
+        /// in all of the IAM policies attached to the specified IAM entity. The entity can be
+        /// an IAM user, group, or role. If you specify a user, then the request also includes
+        /// all of the policies attached to groups that the user is a member of.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally include a list of one or more additional policies, specified as
+        /// strings. If you want to include only a list of policies by string, use <a>GetContextKeysForCustomPolicy</a>
+        /// instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>Note:</b> This API discloses information about the permissions granted to other
+        /// users. If you do not want users to see other user's permissions, then consider allowing
+        /// them to use <a>GetContextKeysForCustomPolicy</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Context keys are variables maintained by AWS and its services that provide details
+        /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
+        /// element of an IAM policy. Use GetContextKeysForPrincipalPolicy to understand what
+        /// key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request.</param>
+        /// <param name="policyInputList">A optional list of additional policies for which you want list of context keys used in <code>Condition</code> elements.</param>
+        /// 
+        /// <returns>The response from the GetContextKeysForPrincipalPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public GetContextKeysForPrincipalPolicyResponse GetContextKeysForPrincipalPolicy(string policySourceArn, List<string> policyInputList)
+        {
+            var request = new GetContextKeysForPrincipalPolicyRequest();
+            request.PolicySourceArn = policySourceArn;
+            request.PolicyInputList = policyInputList;
+            return GetContextKeysForPrincipalPolicy(request);
+        }
+
+
+        /// <summary>
+        /// Gets a list of all of the context keys referenced in <code>Condition</code> elements
+        /// in all of the IAM policies attached to the specified IAM entity. The entity can be
+        /// an IAM user, group, or role. If you specify a user, then the request also includes
+        /// all of the policies attached to groups that the user is a member of.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally include a list of one or more additional policies, specified as
+        /// strings. If you want to include only a list of policies by string, use <a>GetContextKeysForCustomPolicy</a>
+        /// instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>Note:</b> This API discloses information about the permissions granted to other
+        /// users. If you do not want users to see other user's permissions, then consider allowing
+        /// them to use <a>GetContextKeysForCustomPolicy</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Context keys are variables maintained by AWS and its services that provide details
+        /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
+        /// element of an IAM policy. Use GetContextKeysForPrincipalPolicy to understand what
+        /// key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContextKeysForPrincipalPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetContextKeysForPrincipalPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public GetContextKeysForPrincipalPolicyResponse GetContextKeysForPrincipalPolicy(GetContextKeysForPrincipalPolicyRequest request)
+        {
+            var marshaller = new GetContextKeysForPrincipalPolicyRequestMarshaller();
+            var unmarshaller = GetContextKeysForPrincipalPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetContextKeysForPrincipalPolicyRequest,GetContextKeysForPrincipalPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContextKeysForPrincipalPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContextKeysForPrincipalPolicy operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetContextKeysForPrincipalPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginGetContextKeysForPrincipalPolicy(GetContextKeysForPrincipalPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetContextKeysForPrincipalPolicyRequestMarshaller();
+            var unmarshaller = GetContextKeysForPrincipalPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetContextKeysForPrincipalPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetContextKeysForPrincipalPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetContextKeysForPrincipalPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetContextKeysForPrincipalPolicyResult from IdentityManagementService.</returns>
+        public  GetContextKeysForPrincipalPolicyResponse EndGetContextKeysForPrincipalPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetContextKeysForPrincipalPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetCredentialReport
 
         /// <summary>
@@ -7353,6 +7624,184 @@ namespace Amazon.IdentityManagement
         public  SetDefaultPolicyVersionResponse EndSetDefaultPolicyVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<SetDefaultPolicyVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SimulateCustomPolicy
+
+        /// <summary>
+        /// Simulate a set of IAM policies against a list of API actions and AWS resources to
+        /// determine the policies' effective permissions. The policies are provided as a list
+        /// of strings.
+        /// 
+        ///  
+        /// <para>
+        /// The simulation does not perform the API actions, it only checks the authorization
+        /// to determine if the simulated policies allow or deny the actions.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to simulate existing policies attached to an IAM user, group, or role,
+        /// use <a>SimulatePrincipalPolicy</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Context keys are variables maintained by AWS and its services that provide details
+        /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
+        /// element of an IAM policy. To get the list of context keys required by the policies
+        /// to simulate them correctly, use <a>GetContextKeysForCustomPolicy</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the output is long, you can paginate the results using the <code>MaxItems</code>
+        /// and <code>Marker</code> parameters.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SimulateCustomPolicy service method.</param>
+        /// 
+        /// <returns>The response from the SimulateCustomPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.PolicyEvaluationException">
+        /// The request failed because a provided policy could not be successfully evaluated.
+        /// An additional detail message indicates the source of the failure.
+        /// </exception>
+        public SimulateCustomPolicyResponse SimulateCustomPolicy(SimulateCustomPolicyRequest request)
+        {
+            var marshaller = new SimulateCustomPolicyRequestMarshaller();
+            var unmarshaller = SimulateCustomPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<SimulateCustomPolicyRequest,SimulateCustomPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SimulateCustomPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SimulateCustomPolicy operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSimulateCustomPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginSimulateCustomPolicy(SimulateCustomPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new SimulateCustomPolicyRequestMarshaller();
+            var unmarshaller = SimulateCustomPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SimulateCustomPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SimulateCustomPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSimulateCustomPolicy.</param>
+        /// 
+        /// <returns>Returns a  SimulateCustomPolicyResult from IdentityManagementService.</returns>
+        public  SimulateCustomPolicyResponse EndSimulateCustomPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SimulateCustomPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SimulatePrincipalPolicy
+
+        /// <summary>
+        /// Simulate the set of IAM policies attached to an IAM entity against a list of API actions
+        /// and AWS resources to determine the policies' effective permissions. The entity can
+        /// be an IAM user, group, or role. If you specify a user, then the simulation also includes
+        /// all of the policies attached to groups that the user is a member of.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally include a list of one or more additional policies specified as
+        /// strings to include in the simulation. If you want to simulate only policies specified
+        /// as strings, use <a>SimulateCustomPolicy</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// The simulation does not perform the API actions, it only checks the authorization
+        /// to determine if the simulated policies allow or deny the actions.
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>Note:</b> This API discloses information about the permissions granted to other
+        /// users. If you do not want users to see other user's permissions, then consider allowing
+        /// them to use <a>SimulateCustomPolicy</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// Context keys are variables maintained by AWS and its services that provide details
+        /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
+        /// element of an IAM policy. To get the list of context keys required by the policies
+        /// to simulate them correctly, use <a>GetContextKeysForPrincipalPolicy</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the output is long, you can paginate the results using the <code>MaxItems</code>
+        /// and <code>Marker</code> parameters.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SimulatePrincipalPolicy service method.</param>
+        /// 
+        /// <returns>The response from the SimulatePrincipalPolicy service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.PolicyEvaluationException">
+        /// The request failed because a provided policy could not be successfully evaluated.
+        /// An additional detail message indicates the source of the failure.
+        /// </exception>
+        public SimulatePrincipalPolicyResponse SimulatePrincipalPolicy(SimulatePrincipalPolicyRequest request)
+        {
+            var marshaller = new SimulatePrincipalPolicyRequestMarshaller();
+            var unmarshaller = SimulatePrincipalPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<SimulatePrincipalPolicyRequest,SimulatePrincipalPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SimulatePrincipalPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SimulatePrincipalPolicy operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSimulatePrincipalPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginSimulatePrincipalPolicy(SimulatePrincipalPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new SimulatePrincipalPolicyRequestMarshaller();
+            var unmarshaller = SimulatePrincipalPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SimulatePrincipalPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SimulatePrincipalPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSimulatePrincipalPolicy.</param>
+        /// 
+        /// <returns>Returns a  SimulatePrincipalPolicyResult from IdentityManagementService.</returns>
+        public  SimulatePrincipalPolicyResponse EndSimulatePrincipalPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SimulatePrincipalPolicyResponse>(asyncResult);
         }
 
         #endregion

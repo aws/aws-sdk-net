@@ -81,6 +81,9 @@ namespace Amazon.DynamoDBv2
     internal class DictionaryConverterV2 : DictionaryConverterV1
     { }
 
+    internal class EnumConverterV2 : EnumConverterV1
+    { }
+
     #endregion
 
     /// <summary>

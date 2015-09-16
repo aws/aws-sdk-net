@@ -34,12 +34,13 @@ namespace Amazon.ConfigService.Model
     {
         private string _relationshipName;
         private string _resourceId;
+        private string _resourceName;
         private ResourceType _resourceType;
 
         /// <summary>
         /// Gets and sets the property RelationshipName. 
         /// <para>
-        /// The name of the related resource.
+        /// The type of relationship with the related resource.
         /// </para>
         /// </summary>
         public string RelationshipName
@@ -57,7 +58,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The resource ID of the related resource (for example, <code>sg-xxxxxx</code>).
+        /// The ID of the related resource (for example, <code>sg-xxxxxx</code>).
         /// </para>
         /// </summary>
         public string ResourceId
@@ -70,6 +71,24 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetResourceId()
         {
             return this._resourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceName. 
+        /// <para>
+        /// The custom name of the related resource, if available.
+        /// </para>
+        /// </summary>
+        public string ResourceName
+        {
+            get { return this._resourceName; }
+            set { this._resourceName = value; }
+        }
+
+        // Check to see if ResourceName property is set
+        internal bool IsSetResourceName()
+        {
+            return this._resourceName != null;
         }
 
         /// <summary>

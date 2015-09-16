@@ -1,3 +1,65 @@
+### 3.1.12.0 (2015-09-15 20:11 UTC)
+* EC2 (3.1.2.0)
+	* Added DataEncryptionKeyId and StateMessage properties to the Amazon.EC2.Model.Snapshot class, this data is returned by the DescribeSnapshots operation. Added AllocationStrategy property to the Amazon.EC2.Model.SpotFleetRequestConfigData class, this data is used by the RequestSpotFleet operation.
+* ElasticFileSystem (3.1.1.0)
+	* Added MountTargetId to Amazon.ElasticFileSystem.Model.DescribeMountTargetsRequest.
+* MobileAnalytics (3.1.1.1)
+	* Fixed FxCop violations, and minor refactoring.
+* Route53 (3.1.1.0)
+	* Added support for calculated and latency health checks.
+
+### 3.1.11.0 (2015-09-10 17:43 UTC)
+* ElasticMapReduce (3.1.1.0)
+	* Deprecated DescribeJobFlows API.
+* IdentityManagement (3.1.1.0)
+	* Add support for IAM policy simulator.
+* ImportExport (3.1.1.0)
+	* Documentation update for ImportExport client.
+* Kinesis (3.1.1.0)
+	* Add timestamp field to Amazon.Kinesis.Model.Record type.
+* Lambda (3.1.1.0)
+	* Deprecated InvokeAsync API
+* MachineLearning (3.1.1.0)
+	* Documentation update for Amazon Machine Learning client.
+
+### 3.1.10.1 (2015-09-04 20:30 UTC)
+* Core 3.1.1.1
+	* Included pull request https://github.com/aws/aws-sdk-net/pull/242 to fix signing issues for endpoints with a path component.
+
+### 3.1.10.0 (2015-09-03 20:56 UTC)
+* DynamoDBv2 (3.1.1.0)
+	* Added enum support for DynamoDB DataModel.
+* StorageGateway (3.1.1.0)
+	* Add support for tagging StorageGateway resources.
+
+### 3.1.9.0 (2015-08-31 21:22 UTC)
+* EC2 (3.1.1.0)
+	* Add support for spot fleet instance weights.
+
+### 3.1.8.0 (2015-08-27 23:50 UTC)
+* ConfigService (3.1.1.0)
+	* Added support for ListDiscoveredResources.
+
+### 3.1.7.0 (2015-08-27 00:39 UTC)
+* MobileAnalytics (3.1.1.0)
+	* Added MobileAnalyticsErrorEvent to Amazon Mobile Analytics and minor improvements.
+* Core 3.1.1.0
+	* Service packages updated to require new core, which includes FileLogger for PCL.
+
+### 3.1.6.0 (2015-08-25 18:01 UTC)
+* CodePipeline (3.1.1.0)
+	* Add support for KMS encryption keys on S3 artifact stores.
+
+### 3.1.5.0 (2015-08-12 20:11 UTC)
+* ElasticBeanstalk (3.1.1.0)
+	* Add Elastic Beanstalk client support for environment health.
+* MobileAnalytics (3.1.0.2)
+	* Updated to need new core version 3.1.0.2
+	* Updated documentation
+* S3 (3.1.2.0)
+	* Updated S3 TransferUtility to retry a failed download without discarding the bytes that were already downloaded
+* Core 3.1.0.2
+
 ### 3.1.4.0 (2015-08-06 15:55 UTC)
 * SimpleWorkflow (3.1.1.0)
 	* Update SWF client for Lambda support

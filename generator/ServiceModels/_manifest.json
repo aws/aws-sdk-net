@@ -356,7 +356,7 @@
         {
             "active": true,
 
-            "model": "efs",
+            "model": "elasticfilesystem",
             "base-name": "ElasticFileSystem",
             "region-lookup-name": "elasticfilesystem",
             "authentication-service-name": "elasticfilesystem",
@@ -512,14 +512,8 @@
                 ]
             },
             "nuget-dependencies": {
-                "Net35": [
-                    { "name": "System.Data.SQLite.Core", "version": "1.0.97.0" },
-                    { "name": "System.Data.SQLite.Linq", "version": "1.0.97.0" }
-                ],
-                "Net45": [
-                    { "name": "System.Data.SQLite.Core", "version": "1.0.97.0" },
-                    { "name": "System.Data.SQLite.EF6", "version": "1.0.97.0" }
-                ],
+                "Net35": [ { "name": "System.Data.SQLite", "version": "1.0.97.0" } ],
+                "Net45": [ { "name": "System.Data.SQLite", "version": "1.0.97.0" } ],
                 "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ],
                 "iOS": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ]
             }

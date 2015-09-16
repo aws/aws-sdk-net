@@ -29,8 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSpotDatafeedSubscription operation.
-    /// Deletes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-    /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Deletes the data feed for Spot instances.
     /// </summary>
     public partial class DeleteSpotDatafeedSubscriptionRequest : AmazonEC2Request
     {

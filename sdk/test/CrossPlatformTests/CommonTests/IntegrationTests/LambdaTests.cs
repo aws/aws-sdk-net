@@ -192,7 +192,8 @@ namespace CommonTests.IntegrationTests
             }).Result;
             iamRoleArn = iamCreateResponse.Role.Arn;
             
-            var statement = new Statement(Statement.StatementEffect.Allow);
+            var statement = new Amazon.Auth.AccessControlPolicy.Statement(
+                Amazon.Auth.AccessControlPolicy.Statement.StatementEffect.Allow);
             statement.Actions.Add(S3ActionIdentifiers.PutObject);
             statement.Actions.Add(S3ActionIdentifiers.GetObject);
             statement.Resources.Add(new Resource("*"));

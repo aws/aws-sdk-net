@@ -36,7 +36,13 @@ namespace <#=this.Config.Namespace#>
         {
 #>
 <#
-this.FormatOperationDocumentationAsync(operation, false);
+		this.FormatOperationDocumentationAsync(operation, false);
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete("<#=operation.DeprecationMessage#>")]
+<#		
+		}
 #>
         Task<<#=operation.Name#>Response> <#=operation.Name#>Async(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -48,6 +54,12 @@ this.FormatOperationDocumentationAsync(operation, false);
 
 <#        
         AddAsyncDocumentation(operation.Name);
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete("<#=operation.DeprecationMessage#>")]
+<#		
+		}
 #>
         Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=operation.Name#>Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 

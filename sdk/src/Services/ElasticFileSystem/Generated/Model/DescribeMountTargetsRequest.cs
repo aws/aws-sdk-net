@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the efs-2015-02-01.normal.json service model.
+ * Do not modify this file. This file is generated from the elasticfilesystem-2015-02-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,13 +29,15 @@ namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMountTargets operation.
-    /// Returns the descriptions of the current mount targets for a file system. The order
-    /// of mount targets returned in the response is unspecified.
+    /// Returns the descriptions of all the current mount targets, or a specific mount target,
+    /// for a file system. When requesting all of the current mount targets, the order of
+    /// mount targets returned in the response is unspecified.
     /// 
     ///  
     /// <para>
-    ///  This operation requires permission for the <code>elasticfilesystem:DescribeMountTargets</code>
-    /// action on the file system <code>FileSystemId</code>. 
+    /// This operation requires permission for the <code>elasticfilesystem:DescribeMountTargets</code>
+    /// action, on either the file system id that you specify in <code>FileSystemId</code>,
+    /// or on the file system of the mount target that you specify in <code>MountTargetId</code>.
     /// </para>
     /// </summary>
     public partial class DescribeMountTargetsRequest : AmazonElasticFileSystemRequest
@@ -43,6 +45,7 @@ namespace Amazon.ElasticFileSystem.Model
         private string _fileSystemId;
         private string _marker;
         private int? _maxItems;
+        private string _mountTargetId;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -52,7 +55,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Instantiates DescribeMountTargetsRequest with the parameterized properties
         /// </summary>
-        /// <param name="fileSystemId">String. The ID of the file system whose mount targets you want to list.</param>
+        /// <param name="fileSystemId">Optional. String. The ID of the file system whose mount targets you want to list. It must be included in your request if <code>MountTargetId</code> is not included.</param>
         public DescribeMountTargetsRequest(string fileSystemId)
         {
             _fileSystemId = fileSystemId;
@@ -61,7 +64,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// String. The ID of the file system whose mount targets you want to list.
+        /// Optional. String. The ID of the file system whose mount targets you want to list.
+        /// It must be included in your request if <code>MountTargetId</code> is not included.
         /// </para>
         /// </summary>
         public string FileSystemId
@@ -113,6 +117,25 @@ namespace Amazon.ElasticFileSystem.Model
         internal bool IsSetMaxItems()
         {
             return this._maxItems.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MountTargetId. 
+        /// <para>
+        /// Optional. String. The ID of the mount target that you want to have described. It must
+        /// be included in your request if <code>FileSystemId</code> is not included.
+        /// </para>
+        /// </summary>
+        public string MountTargetId
+        {
+            get { return this._mountTargetId; }
+            set { this._mountTargetId = value; }
+        }
+
+        // Check to see if MountTargetId property is set
+        internal bool IsSetMountTargetId()
+        {
+            return this._mountTargetId != null;
         }
 
     }

@@ -36,11 +36,10 @@ namespace Amazon.MachineLearning.Model
     /// After using the <code>DeleteDataSource</code> operation, you can use the <a>GetDataSource</a>
     /// operation to verify that the status of the <code>DataSource</code> changed to DELETED.
     /// </para>
-    ///  <caution><title>Caution</title> 
+    ///  
     /// <para>
-    /// The results of the <code>DeleteDataSource</code> operation are irreversible.
+    /// <b>Caution:</b> The results of the <code>DeleteDataSource</code> operation are irreversible.
     /// </para>
-    /// </caution>
     /// </summary>
     public partial class DeleteDataSourceRequest : AmazonMachineLearningRequest
     {

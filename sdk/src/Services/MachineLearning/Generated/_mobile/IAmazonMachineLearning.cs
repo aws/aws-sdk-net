@@ -181,11 +181,11 @@ namespace Amazon.MachineLearning
         /// operation to verify that the status of the <code>BatchPrediction</code> changed to
         /// DELETED.
         /// </para>
-        ///  <caution><title>Caution</title> 
+        ///  
         /// <para>
-        /// The result of the <code>DeleteBatchPrediction</code> operation is irreversible.
+        /// <b>Caution:</b> The result of the <code>DeleteBatchPrediction</code> operation is
+        /// irreversible.
         /// </para>
-        /// </caution>
         /// </summary>
         /// <param name="batchPredictionId">A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</param>
         /// <param name="cancellationToken">
@@ -228,11 +228,10 @@ namespace Amazon.MachineLearning
         /// After using the <code>DeleteDataSource</code> operation, you can use the <a>GetDataSource</a>
         /// operation to verify that the status of the <code>DataSource</code> changed to DELETED.
         /// </para>
-        ///  <caution><title>Caution</title> 
+        ///  
         /// <para>
-        /// The results of the <code>DeleteDataSource</code> operation are irreversible.
+        /// <b>Caution:</b> The results of the <code>DeleteDataSource</code> operation are irreversible.
         /// </para>
-        /// </caution>
         /// </summary>
         /// <param name="dataSourceId">A user-supplied ID that uniquely identifies the <code>DataSource</code>.</param>
         /// <param name="cancellationToken">
@@ -276,11 +275,10 @@ namespace Amazon.MachineLearning
         /// After invoking the <code>DeleteEvaluation</code> operation, you can use the <a>GetEvaluation</a>
         /// operation to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.
         /// </para>
-        ///  <caution><title>Caution</title> 
+        ///  
         /// <para>
-        /// The results of the <code>DeleteEvaluation</code> operation are irreversible.
+        /// <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.
         /// </para>
-        /// </caution>
         /// </summary>
         /// <param name="evaluationId">A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</param>
         /// <param name="cancellationToken">
@@ -323,11 +321,10 @@ namespace Amazon.MachineLearning
         /// After using the <code>DeleteMLModel</code> operation, you can use the <a>GetMLModel</a>
         /// operation to verify that the status of the <code>MLModel</code> changed to DELETED.
         /// </para>
-        ///  <caution><title>Caution</title> 
+        ///  
         /// <para>
-        /// The result of the <code>DeleteMLModel</code> operation is irreversible.
+        /// <b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is irreversible.
         /// </para>
-        /// </caution>
         /// </summary>
         /// <param name="mlModelId">A user-supplied ID that uniquely identifies the <code>MLModel</code>.</param>
         /// <param name="cancellationToken">
@@ -679,12 +676,12 @@ namespace Amazon.MachineLearning
 
 
         /// <summary>
-        /// Generates a prediction for the observation using the specified <code>MLModel</code>.
+        /// Generates a prediction for the observation using the specified <code>ML Model</code>.
         /// 
         ///  <note><title>Note</title> 
         /// <para>
-        /// Not all response parameters will be populated because this is dependent on the type
-        /// of requested model.
+        /// Not all response parameters will be populated. Whether a response parameter is populated
+        /// depends on the type of model requested.
         /// </para>
         /// </note>
         /// </summary>

@@ -39,6 +39,7 @@ namespace ServiceClientGenerator
         public const string ResultWrapperKey = "resultWrapper";
         public const string ErrorsKey = "errors";
         public const string WrapperKey = "wrapper";
+        public const string DeprecatedKey = "deprecated";
 
         /// <summary>
         /// This model contains information about customizations needed during the generation process

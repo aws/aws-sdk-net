@@ -156,7 +156,7 @@ namespace Amazon.ConfigService
         /// <returns>The response from the DeliverConfigSnapshot service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
         /// There are no configuration recorders available to provide the role needed to describe
-        /// your resources.
+        /// your resources. Create a configuration recorder.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoRunningConfigurationRecorderException">
         /// There is no configuration recorder running.
@@ -180,7 +180,7 @@ namespace Amazon.ConfigService
         /// <returns>The response from the DeliverConfigSnapshot service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
         /// There are no configuration recorders available to provide the role needed to describe
-        /// your resources.
+        /// your resources. Create a configuration recorder.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoRunningConfigurationRecorderException">
         /// There is no configuration recorder running.
@@ -469,16 +469,21 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Returns a list of configuration items for the specified resource. The list contains
-        /// details about each state of the resource during the specified time interval. You can
-        /// specify a <code>limit</code> on the number of results returned on the page. If a limit
-        /// is specified, a <code>nextToken</code> is returned as part of the result that you
-        /// can use to continue this request. 
+        /// details about each state of the resource during the specified time interval.
         /// 
+        ///  
+        /// <para>
+        /// The response is paginated, and by default, AWS Config returns a limit of 10 configuration
+        /// items per page. You can customize this number with the <code>limit</code> parameter.
+        /// The response includes a <code>nextToken</code> string, and to get the next page of
+        /// results, run the request again and enter this string for the <code>nextToken</code>
+        /// parameter.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Each call to the API is limited to span a duration of seven days. It is likely that
         /// the number of records returned is smaller than the specified <code>limit</code>. In
-        /// such cases, you can make another call, using the <code>nextToken</code> .
+        /// such cases, you can make another call, using the <code>nextToken</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -486,10 +491,11 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the GetResourceConfigHistory service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
-        /// You have reached the limit on the pagination.
+        /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified nextToken for pagination is not valid.
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidTimeRangeException">
         /// The specified time range is not valid. The earlier time is not chronologically before
@@ -497,7 +503,7 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
         /// There are no configuration recorders available to provide the role needed to describe
-        /// your resources.
+        /// your resources. Create a configuration recorder.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceNotDiscoveredException">
         /// You have specified a resource that is either unknown or has not been discovered.
@@ -530,6 +536,71 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>Returns a  GetResourceConfigHistoryResult from ConfigService.</returns>
         GetResourceConfigHistoryResponse EndGetResourceConfigHistory(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDiscoveredResources
+
+
+        /// <summary>
+        /// Accepts a resource type and returns a list of resource identifiers for the resources
+        /// of that type. A resource identifier includes the resource type, ID, and (if available)
+        /// the custom resource name. The results consist of resources that AWS Config has discovered,
+        /// including those that AWS Config is not currently recording. You can narrow the results
+        /// to include only resources that have specific resource IDs or a resource name.
+        /// 
+        ///  <note>You can specify either resource IDs or a resource name but not both in the
+        /// same request.</note> 
+        /// <para>
+        /// The response is paginated, and by default AWS Config lists 100 resource identifiers
+        /// on each page. You can customize this number with the <code>limit</code> parameter.
+        /// The response includes a <code>nextToken</code> string, and to get the next page of
+        /// results, run the request again and enter this string for the <code>nextToken</code>
+        /// parameter.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDiscoveredResources service method.</param>
+        /// 
+        /// <returns>The response from the ListDiscoveredResources service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
+        /// There are no configuration recorders available to provide the role needed to describe
+        /// your resources. Create a configuration recorder.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDiscoveredResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDiscoveredResources operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDiscoveredResources
+        ///         operation.</returns>
+        IAsyncResult BeginListDiscoveredResources(ListDiscoveredResourcesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDiscoveredResources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDiscoveredResources.</param>
+        /// 
+        /// <returns>Returns a  ListDiscoveredResourcesResult from ConfigService.</returns>
+        ListDiscoveredResourcesResponse EndListDiscoveredResources(IAsyncResult asyncResult);
 
         #endregion
         
@@ -642,7 +713,7 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
         /// There are no configuration recorders available to provide the role needed to describe
-        /// your resources.
+        /// your resources. Create a configuration recorder.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchBucketException">
         /// The specified Amazon S3 bucket does not exist.

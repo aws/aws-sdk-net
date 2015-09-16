@@ -2290,6 +2290,68 @@
       ],
       "documentation":"<p>Retrieves information about IAM entity usage and IAM quotas in the AWS account.</p> <p> For information about limitations on IAM entities, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html\">Limitations on IAM Entities</a> in the <i>Using IAM</i> guide. </p>"
     },
+    "GetContextKeysForCustomPolicy":{
+      "name":"GetContextKeysForCustomPolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetContextKeysForCustomPolicyRequest"},
+      "output":{
+        "shape":"GetContextKeysForPolicyResponse",
+        "documentation":"<p>Contains the response to a successful <a>GetContextKeysForPrincipalPolicy</a> or <a>GetContextKeysForCustomPolicy</a> request. </p>",
+        "resultWrapper":"GetContextKeysForCustomPolicyResult"
+      },
+      "errors":[
+        {
+          "shape":"InvalidInputException",
+          "error":{
+            "code":"InvalidInput",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>"
+        }
+      ],
+      "documentation":"<p>Gets a list of all of the context keys referenced in <code>Condition</code> elements in the input policies. The policies are supplied as a list of one or more strings. To get the context keys from policies associated with an IAM user, group, or role, use <a>GetContextKeysForPrincipalPolicy</a>.</p> <p>Context keys are variables maintained by AWS and its services that provide details about the context of an API query request, and can be evaluated by using the <code>Condition</code> element of an IAM policy. Use GetContextKeysForCustomPolicy to understand what key names and values you must supply when you call <a>SimulateCustomPolicy</a>. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request.</p>"
+    },
+    "GetContextKeysForPrincipalPolicy":{
+      "name":"GetContextKeysForPrincipalPolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetContextKeysForPrincipalPolicyRequest"},
+      "output":{
+        "shape":"GetContextKeysForPolicyResponse",
+        "documentation":"<p>Contains the response to a successful <a>GetContextKeysForPrincipalPolicy</a> or <a>GetContextKeysForCustomPolicy</a> request. </p>",
+        "resultWrapper":"GetContextKeysForPrincipalPolicyResult"
+      },
+      "errors":[
+        {
+          "shape":"NoSuchEntityException",
+          "error":{
+            "code":"NoSuchEntity",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>The request was rejected because it referenced an entity that does not exist. The error message describes the entity. </p>"
+        },
+        {
+          "shape":"InvalidInputException",
+          "error":{
+            "code":"InvalidInput",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>"
+        }
+      ],
+      "documentation":"<p>Gets a list of all of the context keys referenced in <code>Condition</code> elements in all of the IAM policies attached to the specified IAM entity. The entity can be an IAM user, group, or role. If you specify a user, then the request also includes all of the policies attached to groups that the user is a member of.</p> <p>You can optionally include a list of one or more additional policies, specified as strings. If you want to include only a list of policies by string, use <a>GetContextKeysForCustomPolicy</a> instead.</p> <p><b>Note:</b> This API discloses information about the permissions granted to other users. If you do not want users to see other user's permissions, then consider allowing them to use <a>GetContextKeysForCustomPolicy</a> instead.</p> <p>Context keys are variables maintained by AWS and its services that provide details about the context of an API query request, and can be evaluated by using the <code>Condition</code> element of an IAM policy. Use GetContextKeysForPrincipalPolicy to understand what key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.</p>"
+    },
     "GetCredentialReport":{
       "name":"GetCredentialReport",
       "http":{
@@ -4015,6 +4077,86 @@
       ],
       "documentation":"<p>Sets the specified version of the specified policy as the policy's default (operative) version. </p> <p>This action affects all users, groups, and roles that the policy is attached to. To list the users, groups, and roles that the policy is attached to, use the <a>ListEntitiesForPolicy</a> API. </p> <p>For information about managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>"
     },
+    "SimulateCustomPolicy":{
+      "name":"SimulateCustomPolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"SimulateCustomPolicyRequest"},
+      "output":{
+        "shape":"SimulatePolicyResponse",
+        "documentation":"<p>Contains the response to a successful <a>SimulatePrincipalPolicy</a> or <a>SimulateCustomPolicy</a> request.</p>",
+        "resultWrapper":"SimulateCustomPolicyResult"
+      },
+      "errors":[
+        {
+          "shape":"InvalidInputException",
+          "error":{
+            "code":"InvalidInput",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>"
+        },
+        {
+          "shape":"PolicyEvaluationException",
+          "error":{
+            "code":"PolicyEvaluation",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "documentation":"<p>The request failed because a provided policy could not be successfully evaluated. An additional detail message indicates the source of the failure.</p>"
+        }
+      ],
+      "documentation":"<p>Simulate a set of IAM policies against a list of API actions and AWS resources to determine the policies' effective permissions. The policies are provided as a list of strings.</p> <p>The simulation does not perform the API actions, it only checks the authorization to determine if the simulated policies allow or deny the actions.</p> <p>If you want to simulate existing policies attached to an IAM user, group, or role, use <a>SimulatePrincipalPolicy</a> instead.</p> <p>Context keys are variables maintained by AWS and its services that provide details about the context of an API query request, and can be evaluated by using the <code>Condition</code> element of an IAM policy. To get the list of context keys required by the policies to simulate them correctly, use <a>GetContextKeysForCustomPolicy</a>.</p> <p>If the output is long, you can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>"
+    },
+    "SimulatePrincipalPolicy":{
+      "name":"SimulatePrincipalPolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"SimulatePrincipalPolicyRequest"},
+      "output":{
+        "shape":"SimulatePolicyResponse",
+        "documentation":"<p>Contains the response to a successful <a>SimulatePrincipalPolicy</a> or <a>SimulateCustomPolicy</a> request.</p>",
+        "resultWrapper":"SimulatePrincipalPolicyResult"
+      },
+      "errors":[
+        {
+          "shape":"NoSuchEntityException",
+          "error":{
+            "code":"NoSuchEntity",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>The request was rejected because it referenced an entity that does not exist. The error message describes the entity. </p>"
+        },
+        {
+          "shape":"InvalidInputException",
+          "error":{
+            "code":"InvalidInput",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>"
+        },
+        {
+          "shape":"PolicyEvaluationException",
+          "error":{
+            "code":"PolicyEvaluation",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "documentation":"<p>The request failed because a provided policy could not be successfully evaluated. An additional detail message indicates the source of the failure.</p>"
+        }
+      ],
+      "documentation":"<p>Simulate the set of IAM policies attached to an IAM entity against a list of API actions and AWS resources to determine the policies' effective permissions. The entity can be an IAM user, group, or role. If you specify a user, then the simulation also includes all of the policies attached to groups that the user is a member of.</p> <p>You can optionally include a list of one or more additional policies specified as strings to include in the simulation. If you want to simulate only policies specified as strings, use <a>SimulateCustomPolicy</a> instead.</p> <p>The simulation does not perform the API actions, it only checks the authorization to determine if the simulated policies allow or deny the actions.</p> <p><b>Note:</b> This API discloses information about the permissions granted to other users. If you do not want users to see other user's permissions, then consider allowing them to use <a>SimulateCustomPolicy</a> instead.</p> <p>Context keys are variables maintained by AWS and its services that provide details about the context of an API query request, and can be evaluated by using the <code>Condition</code> element of an IAM policy. To get the list of context keys required by the policies to simulate them correctly, use <a>GetContextKeysForPrincipalPolicy</a>.</p> <p>If the output is long, you can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>"
+    },
     "UpdateAccessKey":{
       "name":"UpdateAccessKey",
       "http":{
@@ -4826,6 +4968,15 @@
       },
       "documentation":"<p>Contains information about an AWS access key, without its secret key.</p> <p>This data type is used as a response element in the <a>ListAccessKeys</a> action.</p>"
     },
+    "ActionNameListType":{
+      "type":"list",
+      "member":{"shape":"ActionNameType"}
+    },
+    "ActionNameType":{
+      "type":"string",
+      "min":3,
+      "max":128
+    },
     "AddClientIDToOpenIDConnectProviderRequest":{
       "type":"structure",
       "required":[
@@ -4951,6 +5102,60 @@
         }
       }
     },
+    "ColumnNumber":{"type":"integer"},
+    "ContextEntry":{
+      "type":"structure",
+      "members":{
+        "ContextKeyName":{
+          "shape":"ContextKeyNameType",
+          "documentation":"<p>The full name of a condition context key, including the service prefix. For example, <code>aws:SourceIp</code> or <code>s3:VersionId</code>.</p>"
+        },
+        "ContextKeyValues":{
+          "shape":"ContextKeyValueListType",
+          "documentation":"<p>The value (or values, if the condition context key supports multiple values) to provide to the simulation for use when the key is referenced by a <code>Condition</code> element in an input policy.</p>"
+        },
+        "ContextKeyType":{
+          "shape":"ContextKeyTypeEnum",
+          "documentation":"<p>The data type of the value (or values) specified in the <code>ContextKeyValues</code> parameter.</p>"
+        }
+      },
+      "documentation":"<p>Contains information about a condition context key. It includes the name of the key and specifies the value (or values, if the context key supports multiple values) to use in the simulation. This information is used when evaluating the <code>Condition</code> elements of the input policies.</p> <p>This data type is used as an input parameter to <code><a>SimulatePolicy</a></code>.</p>"
+    },
+    "ContextEntryListType":{
+      "type":"list",
+      "member":{"shape":"ContextEntry"}
+    },
+    "ContextKeyNameType":{
+      "type":"string",
+      "min":5,
+      "max":256
+    },
+    "ContextKeyNamesResultListType":{
+      "type":"list",
+      "member":{"shape":"ContextKeyNameType"}
+    },
+    "ContextKeyTypeEnum":{
+      "type":"string",
+      "enum":[
+        "string",
+        "stringList",
+        "numeric",
+        "numericList",
+        "boolean",
+        "booleanList",
+        "ip",
+        "ipList",
+        "binary",
+        "binaryList",
+        "date",
+        "dateList"
+      ]
+    },
+    "ContextKeyValueListType":{
+      "type":"list",
+      "member":{"shape":"ContextKeyValueType"}
+    },
+    "ContextKeyValueType":{"type":"string"},
     "CreateAccessKeyRequest":{
       "type":"structure",
       "members":{
@@ -5682,6 +5887,41 @@
         "AWSManagedPolicy"
       ]
     },
+    "EvaluationResult":{
+      "type":"structure",
+      "required":[
+        "EvalActionName",
+        "EvalResourceName",
+        "EvalDecision"
+      ],
+      "members":{
+        "EvalActionName":{
+          "shape":"ActionNameType",
+          "documentation":"<p>The name of the API action tested on the indicated resource.</p>"
+        },
+        "EvalResourceName":{
+          "shape":"ResourceNameType",
+          "documentation":"<p>The ARN of the resource that the indicated API action was tested on.</p>"
+        },
+        "EvalDecision":{
+          "shape":"PolicyEvaluationDecisionType",
+          "documentation":"<p>The result of the simulation.</p>"
+        },
+        "MatchedStatements":{
+          "shape":"StatementListType",
+          "documentation":"<p>A list of the statements in the input policies that determine the result for this scenario. Remember that even if multiple statements allow the action on the resource, if only one statement denies that action, then the explicit deny overrides any allow, and the deny statement is the only entry included in the result.</p>"
+        },
+        "MissingContextValues":{
+          "shape":"ContextKeyNamesResultListType",
+          "documentation":"<p>A list of context keys that are required by the included input policies but that were not provided by one of the input parameters. To discover the context keys used by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution> <p>If the response includes any keys in this list, then the reported results might be untrustworthy because the simulation could not completely evaluate all of the conditions specified in the policies that would occur in a real world request.</p> </caution>"
+        }
+      },
+      "documentation":"<p>Contains the results of a simulation.</p> <p>This data type is used by the return parameter of <code><a>SimulatePolicy</a></code>.</p>"
+    },
+    "EvaluationResultsListType":{
+      "type":"list",
+      "member":{"shape":"EvaluationResult"}
+    },
     "GenerateCredentialReportResponse":{
       "type":"structure",
       "members":{
@@ -5733,7 +5973,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         }
       }
     },
@@ -5758,7 +5998,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -5784,6 +6024,40 @@
         }
       },
       "documentation":"<p>Contains the response to a successful <a>GetAccountSummary</a> request. </p>"
+    },
+    "GetContextKeysForCustomPolicyRequest":{
+      "type":"structure",
+      "required":["PolicyInputList"],
+      "members":{
+        "PolicyInputList":{
+          "shape":"SimulationPolicyListType",
+          "documentation":"<p>A list of policies for which you want list of context keys used in <code>Condition</code> elements.</p>"
+        }
+      }
+    },
+    "GetContextKeysForPolicyResponse":{
+      "type":"structure",
+      "members":{
+        "ContextKeyNames":{
+          "shape":"ContextKeyNamesResultListType",
+          "documentation":"<p>The list of context keys that are used in the <code>Condition</code> elements of the input policies.</p>"
+        }
+      },
+      "documentation":"<p>Contains the response to a successful <a>GetContextKeysForPrincipalPolicy</a> or <a>GetContextKeysForCustomPolicy</a> request. </p>"
+    },
+    "GetContextKeysForPrincipalPolicyRequest":{
+      "type":"structure",
+      "required":["PolicySourceArn"],
+      "members":{
+        "PolicySourceArn":{
+          "shape":"arnType",
+          "documentation":"<p>The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request.</p>"
+        },
+        "PolicyInputList":{
+          "shape":"SimulationPolicyListType",
+          "documentation":"<p>A optional list of additional policies for which you want list of context keys used in <code>Condition</code> elements.</p>"
+        }
+      }
     },
     "GetCredentialReportResponse":{
       "type":"structure",
@@ -5853,7 +6127,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -5878,7 +6152,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -6397,6 +6671,7 @@
       "exception":true,
       "documentation":"<p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error message describes the limit exceeded. </p>"
     },
+    "LineNumber":{"type":"integer"},
     "ListAccessKeysRequest":{
       "type":"structure",
       "members":{
@@ -6406,7 +6681,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -6424,7 +6699,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -6438,7 +6713,7 @@
       "members":{
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -6456,7 +6731,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -6479,7 +6754,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -6496,7 +6771,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -6519,7 +6794,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -6536,7 +6811,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -6559,7 +6834,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -6576,7 +6851,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -6600,7 +6875,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -6625,7 +6900,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -6644,7 +6919,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -6662,7 +6937,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -6681,7 +6956,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -6699,7 +6974,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -6717,7 +6992,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -6735,7 +7010,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -6754,7 +7029,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -6772,7 +7047,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -6790,7 +7065,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -6808,7 +7083,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -6826,7 +7101,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -6844,7 +7119,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -6885,7 +7160,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -6902,7 +7177,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -6918,7 +7193,7 @@
         "PolicyArn":{"shape":"arnType"},
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -6935,7 +7210,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -6954,7 +7229,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -6972,7 +7247,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -6990,7 +7265,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -7008,7 +7283,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -7041,7 +7316,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -7058,7 +7333,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -7076,7 +7351,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -7094,7 +7369,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -7112,7 +7387,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -7130,7 +7405,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -7149,7 +7424,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -7167,7 +7442,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -7185,7 +7460,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -7203,7 +7478,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -7221,7 +7496,7 @@
         },
         "Marker":{
           "shape":"markerType",
-          "documentation":"<p>Use this parameter only when paginating results and only after you have received a response where the results are truncated. Set it to the value of the <code>Marker</code> element in the response you just received.</p>"
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
         },
         "MaxItems":{
           "shape":"maxItemsType",
@@ -7239,7 +7514,7 @@
         },
         "IsTruncated":{
           "shape":"booleanType",
-          "documentation":"<p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
         },
         "Marker":{
           "shape":"markerType",
@@ -7517,6 +7792,26 @@
       },
       "documentation":"<p>Contains information about an IAM policy, including the policy document.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.</p>"
     },
+    "PolicyEvaluationDecisionType":{
+      "type":"string",
+      "enum":[
+        "allowed",
+        "explicitDeny",
+        "implicitDeny"
+      ]
+    },
+    "PolicyEvaluationException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"policyEvaluationErrorMessage"}
+      },
+      "error":{
+        "code":"PolicyEvaluation",
+        "httpStatusCode":500
+      },
+      "exception":true,
+      "documentation":"<p>The request failed because a provided policy could not be successfully evaluated. An additional detail message indicates the source of the failure.</p>"
+    },
     "PolicyGroup":{
       "type":"structure",
       "members":{
@@ -7531,6 +7826,7 @@
       "type":"list",
       "member":{"shape":"PolicyGroup"}
     },
+    "PolicyIdentifierType":{"type":"string"},
     "PolicyRole":{
       "type":"structure",
       "members":{
@@ -7544,6 +7840,17 @@
     "PolicyRoleListType":{
       "type":"list",
       "member":{"shape":"PolicyRole"}
+    },
+    "PolicySourceType":{
+      "type":"string",
+      "enum":[
+        "user",
+        "group",
+        "role",
+        "aws-managed",
+        "user-managed",
+        "none"
+      ]
     },
     "PolicyUser":{
       "type":"structure",
@@ -7580,6 +7887,20 @@
         }
       },
       "documentation":"<p>Contains information about a version of a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> actions. </p> <p>For more information about managed policies, refer to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>"
+    },
+    "Position":{
+      "type":"structure",
+      "members":{
+        "Line":{
+          "shape":"LineNumber",
+          "documentation":"<p>The line containing the specified position in the document.</p>"
+        },
+        "Column":{
+          "shape":"ColumnNumber",
+          "documentation":"<p>The column in the line containing the specified position in the document.</p>"
+        }
+      },
+      "documentation":"<p>Contains the row and column of a location of a <code>Statement</code> element in a policy document.</p> <p>This data type is used as a member of the <code><a>Statement</a></code> type.</p>"
     },
     "PutGroupPolicyRequest":{
       "type":"structure",
@@ -7711,6 +8032,15 @@
         "INPROGRESS",
         "COMPLETE"
       ]
+    },
+    "ResourceNameListType":{
+      "type":"list",
+      "member":{"shape":"ResourceNameType"}
+    },
+    "ResourceNameType":{
+      "type":"string",
+      "min":1,
+      "max":2048
     },
     "ResyncMFADeviceRequest":{
       "type":"structure",
@@ -8029,6 +8359,124 @@
         }
       },
       "documentation":"<p>Contains information about an X.509 signing certificate.</p> <p>This data type is used as a response element in the <a>UploadSigningCertificate</a> and <a>ListSigningCertificates</a> actions. </p>"
+    },
+    "SimulateCustomPolicyRequest":{
+      "type":"structure",
+      "required":[
+        "PolicyInputList",
+        "ActionNames"
+      ],
+      "members":{
+        "PolicyInputList":{
+          "shape":"SimulationPolicyListType",
+          "documentation":"<p>A list of policy documents to include in the simulation. Each document is specified as a string containing the complete, valid JSON text of an IAM policy.</p>"
+        },
+        "ActionNames":{
+          "shape":"ActionNameListType",
+          "documentation":"<p>A list of names of API actions to evaluate in the simulation. Each action is evaluated for each resource. Each action must include the service identifier, such as <code>iam:CreateUser</code>.</p>"
+        },
+        "ResourceArns":{
+          "shape":"ResourceNameListType",
+          "documentation":"<p>A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided then the value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for each resource in this list. The simulation determines the access result (allowed or denied) of each combination and reports it in the response.</p>"
+        },
+        "ContextEntries":{
+          "shape":"ContextEntryListType",
+          "documentation":"<p>A list of context keys and corresponding values that are used by the simulation. Whenever a context key is evaluated by a <code>Condition</code> element in one of the simulated IAM permission policies, the corresponding value is supplied.</p>"
+        },
+        "MaxItems":{
+          "shape":"maxItemsType",
+          "documentation":"<p>Use this only when paginating results to indicate the maximum number of items you want in the response. If there are additional items beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>This parameter is optional. If you do not include it, it defaults to 100.</p>"
+        },
+        "Marker":{
+          "shape":"markerType",
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
+        }
+      }
+    },
+    "SimulatePolicyResponse":{
+      "type":"structure",
+      "members":{
+        "EvaluationResults":{
+          "shape":"EvaluationResultsListType",
+          "documentation":"<p>The results of the simulation.</p>"
+        },
+        "IsTruncated":{
+          "shape":"booleanType",
+          "documentation":"<p>A flag that indicates whether there are more items to return. If the returned value is <code>true</code>, then your results are truncated and you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>"
+        },
+        "Marker":{
+          "shape":"markerType",
+          "documentation":"<p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>"
+        }
+      },
+      "documentation":"<p>Contains the response to a successful <a>SimulatePrincipalPolicy</a> or <a>SimulateCustomPolicy</a> request.</p>"
+    },
+    "SimulatePrincipalPolicyRequest":{
+      "type":"structure",
+      "required":[
+        "PolicySourceArn",
+        "ActionNames"
+      ],
+      "members":{
+        "PolicySourceArn":{
+          "shape":"arnType",
+          "documentation":"<p>The Amazon Resource Name (ARN) of a user, group, or role whose policies you want to include in the simulation. If you specify a user, group, or role, the simulation includes all policies associated with that entity. If you specify a user, the simulation also includes all policies attached to any groups the user is a member of.</p>"
+        },
+        "PolicyInputList":{
+          "shape":"SimulationPolicyListType",
+          "documentation":"<p>An optional list of additional policy documents to include in the simulation. Each document is specified as a string containing the complete, valid JSON text of an IAM policy.</p>"
+        },
+        "ActionNames":{
+          "shape":"ActionNameListType",
+          "documentation":"<p>A list of names of API actions to evaluate in the simulation. Each action is evaluated for each resource. Each action must include the service identifier, such as <code>iam:CreateUser</code>.</p>"
+        },
+        "ResourceArns":{
+          "shape":"ResourceNameListType",
+          "documentation":"<p>A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided then the value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for each resource in this list. The simulation determines the access result (allowed or denied) of each combination and reports it in the response.</p>"
+        },
+        "ContextEntries":{
+          "shape":"ContextEntryListType",
+          "documentation":"<p>A list of context keys and corresponding values that are used by the simulation. Whenever a context key is evaluated by a <code>Condition</code> element in one of the simulated IAM permission policies, the corresponding value is supplied.</p>"
+        },
+        "MaxItems":{
+          "shape":"maxItemsType",
+          "documentation":"<p>Use this only when paginating results to indicate the maximum number of items you want in the response. If there are additional items beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>This parameter is optional. If you do not include it, it defaults to 100.</p>"
+        },
+        "Marker":{
+          "shape":"markerType",
+          "documentation":"<p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response you received to inform the next call about where to start.</p>"
+        }
+      }
+    },
+    "SimulationPolicyListType":{
+      "type":"list",
+      "member":{"shape":"policyDocumentType"}
+    },
+    "Statement":{
+      "type":"structure",
+      "members":{
+        "SourcePolicyId":{
+          "shape":"PolicyIdentifierType",
+          "documentation":"<p>The identifier of the policy that was provided as an input.</p>"
+        },
+        "SourcePolicyType":{
+          "shape":"PolicySourceType",
+          "documentation":"<p>The type of the policy.</p>"
+        },
+        "StartPosition":{
+          "shape":"Position",
+          "documentation":"<p>The row and column of the beginning of the <code>Statement</code> in an IAM policy.</p>"
+        },
+        "EndPosition":{
+          "shape":"Position",
+          "documentation":"<p>The row and column of the end of a <code>Statement</code> in an IAM policy.</p>"
+        }
+      },
+      "documentation":"<p>Contains a reference to a <code>Statement</code> element in a policy document that determines the result of the simulation.</p> <p>This data type is used by the <code>MatchedStatements</code> member of the <code><a>EvaluationResult</a></code> type.</p>"
+    },
+    "StatementListType":{
+      "type":"list",
+      "member":{"shape":"Statement"}
     },
     "UnrecognizedPublicKeyEncodingException":{
       "type":"structure",
@@ -8699,6 +9147,7 @@
       "type":"list",
       "member":{"shape":"PolicyVersion"}
     },
+    "policyEvaluationErrorMessage":{"type":"string"},
     "policyListType":{
       "type":"list",
       "member":{"shape":"Policy"}
@@ -8867,5 +9316,7 @@
       "min":1,
       "pattern":"[\\w+=,.@-]+"
     }
+  },
+  "examples":{
   }
 }

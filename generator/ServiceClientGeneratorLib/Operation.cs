@@ -48,6 +48,28 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Determines if the operation is Deprecated.
+        /// </summary>
+        public bool IsDeprecated
+        {
+            get
+            {
+                if (data[ServiceModel.DeprecatedKey] != null && data[ServiceModel.DeprecatedKey].IsBoolean)
+                    return (bool)data[ServiceModel.DeprecatedKey];
+
+                return false;
+            }
+        }
+
+        public string DeprecationMessage
+        {
+            get
+            {
+                return this.model.Customizations.GetDeprecationMessage(this.name);
+            }
+        }
+
+        /// <summary>
         /// Determines if the operation is customized to be only internally accessible.
         /// </summary>
         public bool IsInternal

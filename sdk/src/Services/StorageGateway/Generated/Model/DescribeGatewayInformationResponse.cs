@@ -34,6 +34,7 @@ namespace Amazon.StorageGateway.Model
     {
         private string _gatewayARN;
         private string _gatewayId;
+        private string _gatewayName;
         private List<NetworkInterface> _gatewayNetworkInterfaces = new List<NetworkInterface>();
         private string _gatewayState;
         private string _gatewayTimezone;
@@ -72,6 +73,24 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetGatewayId()
         {
             return this._gatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GatewayName. 
+        /// <para>
+        /// The gateway name.
+        /// </para>
+        /// </summary>
+        public string GatewayName
+        {
+            get { return this._gatewayName; }
+            set { this._gatewayName = value; }
+        }
+
+        // Check to see if GatewayName property is set
+        internal bool IsSetGatewayName()
+        {
+            return this._gatewayName != null;
         }
 
         /// <summary>

@@ -293,7 +293,7 @@ namespace ServiceClientGenerator.Generators.Component
             
             #line default
             #line hidden
-            this.Write("\r\nis-shell: true");
+            this.Write("\r\nis-shell: true\r\nno_build: true\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

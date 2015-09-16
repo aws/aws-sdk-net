@@ -28,7 +28,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 {
 
     /// <summary>
-    /// MobileAnalyticsManager in the entry point to recording analytic events for your application
+    /// MobileAnalyticsManager is the entry point to recording analytic events for your application
     /// </summary>
     public partial class MobileAnalyticsManager
     {
@@ -45,7 +45,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         }
 
         /// <summary>
-        /// Gets the or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
+        /// Gets or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
         /// creates new instance and returns it.
         /// </summary>
         /// <param name="appID">Amazon Mobile Analytics Application ID.</param>
@@ -68,7 +68,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         }
 
         /// <summary>
-        /// Gets the or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
+        /// Gets or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
         /// creates new instance and returns it.
         /// </summary>
         /// <param name="appID">Amazon Mobile Analytics Application ID.</param>
@@ -98,16 +98,17 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         {
             if (string.IsNullOrEmpty(appID))
                 throw new ArgumentNullException("appID");
+            MobileAnalyticsManager managerInstance = null;
 
             lock (_lock)
             {
-                if (_instanceDictionary.ContainsKey(appID))
+                if (_instanceDictionary.TryGetValue(appID, out managerInstance))
                 {
-                    return _instanceDictionary[appID];
+                    return managerInstance;
                 }
                 else
                 {
-                    throw new InvalidOperationException("We cannot find MobileAnalyticsManager instance for appId " + appID + ". Please call GetOrCreateInstance() first.");
+                    throw new InvalidOperationException("Cannot find MobileAnalyticsManager instance for appID " + appID + ". Please call GetOrCreateInstance() first.");
                 }
             }
         }
@@ -117,14 +118,14 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 #if BCL
             ValidateParameters();
 #endif
-
             MobileAnalyticsManager managerInstance = null;
             bool isNewInstance = false;
+
             lock (_lock)
             {
-                if (_instanceDictionary.ContainsKey(appID))
+                if (_instanceDictionary.TryGetValue(appID, out managerInstance))
                 {
-                    managerInstance = _instanceDictionary[appID];
+                    return managerInstance;
                 }
                 else
                 {
@@ -146,12 +147,11 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 #if PCL
             this.ClientContext = new ClientContext(appID);
 #elif BCL
-            this.ClientContext = new ClientContext(appID, maConfig.ClientContextConfiguration);
-#endif
             if (null == maConfig)
                 maConfig = new MobileAnalyticsManagerConfig();
-            
-            this.BackgroundDeliveryClient = new DeliveryClient(maConfig, ClientContext, credentials, regionEndpoint);
+            this.ClientContext = new ClientContext(appID, maConfig.ClientContextConfiguration);
+#endif
+            this.BackgroundDeliveryClient = new DeliveryClient(maConfig, ClientContext, credentials, regionEndpoint, this);
             this.Session = new Session(appID, maConfig);
         }
         #endregion
@@ -209,6 +209,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             catch (Exception e)
             {
                 _logger.Error(e, "An exception occurred when pause session.");
+                MobileAnalyticsErrorEventArgs eventArgs = new MobileAnalyticsErrorEventArgs(this.GetType().Name, "An exception occurred when pausing session.", e, new List<Amazon.MobileAnalytics.Model.Event>());
+                OnRaiseErrorEvent(eventArgs);
             }
         }
 
@@ -264,6 +266,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             catch (Exception e)
             {
                 _logger.Error(e, "An exception occurred when resume session.");
+                MobileAnalyticsErrorEventArgs eventArgs = new MobileAnalyticsErrorEventArgs(this.GetType().Name, "An exception occurred when resuming session.", e, new List<Amazon.MobileAnalytics.Model.Event>());
+                OnRaiseErrorEvent(eventArgs);
             }
         }
 
@@ -305,23 +309,43 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             ClientContext.AddCustomAttributes(key, value);
         }
 
+        /// <summary>
+        /// The event for MobileAnalyticsErrorEvent notifications. All subscribers will be notified 
+        /// when a new Mobile Analytics error event is raised.
+        /// <para>
+        /// The MobileAnalyticsErrorEvent is fired as error happens in Mobile Analytics Manager. 
+        /// The delegates attached to the event will be passed information detailing what is the error.
+        /// For example, the error can be Amazon Mobile Analytics server return error, local event storage error, 
+        /// File I/O error etc.
+        /// </para>
+        /// The example below shows how to subscribe to this event.
+        /// <example>
+        /// 1. Define a method with a signature similar to this one:
+        /// <code>
+        /// private void errorHandler(object sender, MobileAnalyticsErrorEventArgs args)
+        /// {
+        ///     Console.WriteLine(args);
+        /// }
+        /// </code>
+        /// 2. Add this method to the MobileAnalyticsErrorEvent delegate's invocation list
+        /// <code>
+        /// _manager = MobileAnalyticsManager.GetOrCreateInstance(YourAppId, YourCredential, RegionEndpoint.USEast1, YourConfig);
+        /// _manager.MobileAnalyticsErrorEvent += errorHandler;
+        /// </code>
+        /// </example>
+        /// </summary>
+        public event EventHandler<MobileAnalyticsErrorEventArgs> MobileAnalyticsErrorEvent;
         #endregion
 
 
         #region internal
-        /// <summary>
-        /// Get the object which represents Mobile Analytics Session.
-        /// </summary>
         internal Session Session { get; set; }
 
-        /// <summary>
-        /// Get the object which represents Mobile Analytics Client Context header.
-        /// </summary>
         internal ClientContext ClientContext { get; set; }
 
         internal IDeliveryClient BackgroundDeliveryClient { get; private set; }
 
-        internal static IDictionary<string, MobileAnalyticsManager> InstanceDictionary
+        internal static IDictionary<string, MobileAnalyticsManager> CopyOfInstanceDictionary
         {
             get
             {
@@ -332,21 +356,63 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             }
         }
 
-        #endregion
-
-
-        #region private
-#if BCL
-        static void ValidateParameters()
+        internal void OnRaiseErrorEvent(MobileAnalyticsErrorEventArgs eventArgs)
         {
-            if (string.IsNullOrEmpty(AWSConfigs.ApplicationName))
-            {
-                throw new ArgumentException("A valid application name needs to configured to use this API." +
-                    "The application name can be configured through app.config/web.config or by setting the Amazon.AWSConfigs.ApplicationName property.");
-            }
+            AWSSDKUtils.InvokeInBackground(MobileAnalyticsErrorEvent, eventArgs, this);
         }
-#endif
         #endregion
+    }
+
+    /// <summary>
+    /// Encapsulates the information needed to notify
+    /// errors of Mobile Analytics Manager.
+    /// </summary>
+    public class MobileAnalyticsErrorEventArgs : EventArgs
+    {
+        /// <summary>
+        /// The constructor of MobileAnalyticsErrorEventArgs
+        /// </summary>
+        /// <param name="className">The class name where the error is caught.</param>
+        /// <param name="errorMessage">The message that describes reason of the error.</param>
+        /// <param name="exception">The exception thrown in Mobile Analytics Manager.</param>
+        /// <param name="undeliveredEvents">The list of events that caused the error. This is a list of low level event objects. This list might be empty if the error is not caused by mal-formatted events.</param>
+        internal MobileAnalyticsErrorEventArgs(string className, string errorMessage, Exception exception, List<Amazon.MobileAnalytics.Model.Event> undeliveredEvents)
+        {
+            if (null == className)
+                throw new ArgumentNullException("className");
+            if (null == errorMessage)
+                throw new ArgumentNullException("errorMessage");
+            if (null == exception)
+                throw new ArgumentNullException("exception");
+            if (null == undeliveredEvents)
+                throw new ArgumentNullException("undeliveredEvents");
+
+            this.ClassName = className;
+            this.ErrorMessage = errorMessage;
+            this.Exception = exception;
+            this.UndeliveredEvents = undeliveredEvents;
+        }
+
+        /// <summary>
+        /// The class name where the error is caught.
+        /// </summary>
+        public string ClassName { get; set; }
+
+        /// <summary>
+        /// The message that describes reason of the error.
+        /// </summary>
+        public string ErrorMessage { get; set; }
+
+        /// <summary>
+        /// The exception thrown in Mobile Analytics Manager.
+        /// </summary>
+        public Exception Exception { get; set; }
+
+        /// <summary>
+        /// The list of events that caused the error. This is a list of low level event objects.
+        /// This list might be empty if the error is not caused by mal-formatted events.
+        /// </summary>
+        public List<Amazon.MobileAnalytics.Model.Event> UndeliveredEvents { get; set; }
 
     }
 }

@@ -295,7 +295,7 @@ namespace Amazon.MachineLearning
         /// A recipe describes how each input variable will be used in training. Will the variable
         /// be included or excluded from training? Will the variable be manipulated, for example,
         /// combined with another variable, or split apart into word combinations? The recipe
-        /// provides answers to these questions. For more information, see the <a href="http://docs.aws.amazon.com/machinelearning/latest/dg">Amazon
+        /// provides answers to these questions. For more information, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
         /// Machine Learning Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -561,11 +561,11 @@ namespace Amazon.MachineLearning
         /// operation to verify that the status of the <code>BatchPrediction</code> changed to
         /// DELETED.
         /// </para>
-        ///  <caution><title>Caution</title> 
+        ///  
         /// <para>
-        /// The result of the <code>DeleteBatchPrediction</code> operation is irreversible.
+        /// <b>Caution:</b> The result of the <code>DeleteBatchPrediction</code> operation is
+        /// irreversible.
         /// </para>
-        /// </caution>
         /// </summary>
         /// <param name="batchPredictionId">A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</param>
         /// 
@@ -590,11 +590,11 @@ namespace Amazon.MachineLearning
         /// operation to verify that the status of the <code>BatchPrediction</code> changed to
         /// DELETED.
         /// </para>
-        ///  <caution><title>Caution</title> 
+        ///  
         /// <para>
-        /// The result of the <code>DeleteBatchPrediction</code> operation is irreversible.
+        /// <b>Caution:</b> The result of the <code>DeleteBatchPrediction</code> operation is
+        /// irreversible.
         /// </para>
-        /// </caution>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBatchPrediction service method.</param>
         /// 
@@ -647,11 +647,10 @@ namespace Amazon.MachineLearning
         /// After using the <code>DeleteDataSource</code> operation, you can use the <a>GetDataSource</a>
         /// operation to verify that the status of the <code>DataSource</code> changed to DELETED.
         /// </para>
-        ///  <caution><title>Caution</title> 
+        ///  
         /// <para>
-        /// The results of the <code>DeleteDataSource</code> operation are irreversible.
+        /// <b>Caution:</b> The results of the <code>DeleteDataSource</code> operation are irreversible.
         /// </para>
-        /// </caution>
         /// </summary>
         /// <param name="dataSourceId">A user-supplied ID that uniquely identifies the <code>DataSource</code>.</param>
         /// 
@@ -675,11 +674,10 @@ namespace Amazon.MachineLearning
         /// After using the <code>DeleteDataSource</code> operation, you can use the <a>GetDataSource</a>
         /// operation to verify that the status of the <code>DataSource</code> changed to DELETED.
         /// </para>
-        ///  <caution><title>Caution</title> 
+        ///  
         /// <para>
-        /// The results of the <code>DeleteDataSource</code> operation are irreversible.
+        /// <b>Caution:</b> The results of the <code>DeleteDataSource</code> operation are irreversible.
         /// </para>
-        /// </caution>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataSource service method.</param>
         /// 
@@ -733,11 +731,10 @@ namespace Amazon.MachineLearning
         /// After invoking the <code>DeleteEvaluation</code> operation, you can use the <a>GetEvaluation</a>
         /// operation to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.
         /// </para>
-        ///  <caution><title>Caution</title> 
+        ///  
         /// <para>
-        /// The results of the <code>DeleteEvaluation</code> operation are irreversible.
+        /// <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.
         /// </para>
-        /// </caution>
         /// </summary>
         /// <param name="evaluationId">A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</param>
         /// 
@@ -762,11 +759,10 @@ namespace Amazon.MachineLearning
         /// After invoking the <code>DeleteEvaluation</code> operation, you can use the <a>GetEvaluation</a>
         /// operation to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.
         /// </para>
-        ///  <caution><title>Caution</title> 
+        ///  
         /// <para>
-        /// The results of the <code>DeleteEvaluation</code> operation are irreversible.
+        /// <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.
         /// </para>
-        /// </caution>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEvaluation service method.</param>
         /// 
@@ -819,11 +815,10 @@ namespace Amazon.MachineLearning
         /// After using the <code>DeleteMLModel</code> operation, you can use the <a>GetMLModel</a>
         /// operation to verify that the status of the <code>MLModel</code> changed to DELETED.
         /// </para>
-        ///  <caution><title>Caution</title> 
+        ///  
         /// <para>
-        /// The result of the <code>DeleteMLModel</code> operation is irreversible.
+        /// <b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is irreversible.
         /// </para>
-        /// </caution>
         /// </summary>
         /// <param name="mlModelId">A user-supplied ID that uniquely identifies the <code>MLModel</code>.</param>
         /// 
@@ -847,11 +842,10 @@ namespace Amazon.MachineLearning
         /// After using the <code>DeleteMLModel</code> operation, you can use the <a>GetMLModel</a>
         /// operation to verify that the status of the <code>MLModel</code> changed to DELETED.
         /// </para>
-        ///  <caution><title>Caution</title> 
+        ///  
         /// <para>
-        /// The result of the <code>DeleteMLModel</code> operation is irreversible.
+        /// <b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is irreversible.
         /// </para>
-        /// </caution>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMLModel service method.</param>
         /// 
@@ -1468,12 +1462,12 @@ namespace Amazon.MachineLearning
 
 
         /// <summary>
-        /// Generates a prediction for the observation using the specified <code>MLModel</code>.
+        /// Generates a prediction for the observation using the specified <code>ML Model</code>.
         /// 
         ///  <note><title>Note</title> 
         /// <para>
-        /// Not all response parameters will be populated because this is dependent on the type
-        /// of requested model.
+        /// Not all response parameters will be populated. Whether a response parameter is populated
+        /// depends on the type of model requested.
         /// </para>
         /// </note>
         /// </summary>
@@ -1501,12 +1495,12 @@ namespace Amazon.MachineLearning
         PredictResponse Predict(string mlModelId, string predictEndpoint, Dictionary<string, string> record);
 
         /// <summary>
-        /// Generates a prediction for the observation using the specified <code>MLModel</code>.
+        /// Generates a prediction for the observation using the specified <code>ML Model</code>.
         /// 
         ///  <note><title>Note</title> 
         /// <para>
-        /// Not all response parameters will be populated because this is dependent on the type
-        /// of requested model.
+        /// Not all response parameters will be populated. Whether a response parameter is populated
+        /// depends on the type of model requested.
         /// </para>
         /// </note>
         /// </summary>

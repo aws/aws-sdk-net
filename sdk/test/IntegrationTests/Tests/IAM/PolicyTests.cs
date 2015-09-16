@@ -50,12 +50,257 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             BaseClean();
         }
 
-        
-
         [TestInitialize]
         public void TestSetup()
         {
             IAMUtil.DeleteUsersAndGroupsInTestNameSpace(Client);
+        }
+
+
+        [TestMethod]
+        [TestCategory("IAM")]
+        public void TestPrincipalPolicies()
+        {
+            string groupname = "sdk-testgroup-" + DateTime.Now.Ticks;
+            string policyName = "strong-password";
+            string policy = @"{
+  ""Version"": ""2012-10-17"",
+  ""Statement"": [{
+    ""Effect"": ""Allow"",
+    ""Action"": ""dynamodb:*"",
+    ""Resource"": ""arn:aws:dynamodb:us-east-1:123456789012:table/${aws:username}""
+  }]
+}";
+            try
+            {
+                // create group
+                var groupArn = Client.CreateGroup(new CreateGroupRequest() { GroupName = groupname, Path = IAMUtil.TEST_PATH }).Group.Arn;
+
+                // attach policy
+                Client.PutGroupPolicy(
+                    new PutGroupPolicyRequest()
+                    {
+                        GroupName = groupname,
+                        PolicyName = policyName,
+                        PolicyDocument = policy
+                    });
+
+                // test group policy
+                GetGroupPolicyResponse groupInfo =
+                    Client.GetGroupPolicy(new GetGroupPolicyRequest() { GroupName = groupname, PolicyName = policyName });
+                Assert.AreEqual(groupname, groupInfo.GroupName);
+                Assert.AreEqual(policyName, groupInfo.PolicyName);
+                Assert.AreEqual(policy, HttpUtility.UrlDecode(groupInfo.PolicyDocument));
+
+                // get context keys
+                var contextKeyNames = Client.GetContextKeysForPrincipalPolicy(new GetContextKeysForPrincipalPolicyRequest
+                {
+                    PolicySourceArn = groupArn
+                }).ContextKeyNames;
+                Assert.IsNotNull(contextKeyNames);
+                Assert.AreEqual(1, contextKeyNames.Count);
+                Assert.IsTrue(contextKeyNames.Contains("aws:username"));
+
+                
+                // simulate policy
+                var response = Client.SimulatePrincipalPolicy(new SimulatePrincipalPolicyRequest
+                {
+                    PolicySourceArn = groupArn,
+                    ActionNames = new List<string>
+                    {
+                        "dynamodb:PutItem"
+                    },
+                    ResourceArns = new List<string>
+                    {
+                        "arn:aws:dynamodb:us-east-1:123456789012:table/bob"
+                    },
+                    ContextEntries = new List<ContextEntry>
+                    {
+                        new ContextEntry
+                        {
+                            ContextKeyName = "aws:username",
+                            ContextKeyType = ContextKeyTypeEnum.String,
+                            ContextKeyValues = new List<string>
+                            {
+                                "bob"
+                            }
+                        }
+                    }
+                });
+                var results = response.EvaluationResults;
+                Assert.IsNotNull(results);
+                Assert.AreEqual(1, results.Count);
+                var result = results.First();
+                Assert.AreEqual(PolicyEvaluationDecisionType.Allowed, result.EvalDecision);
+
+                response = Client.SimulatePrincipalPolicy(new SimulatePrincipalPolicyRequest
+                {
+                    PolicySourceArn = groupArn,
+                    ActionNames = new List<string>
+                    {
+                        "dynamodb:PutItem"
+                    },
+                    ResourceArns = new List<string>
+                    {
+                        "arn:aws:dynamodb:us-east-1:123456789012:table/bob"
+                    },
+                    ContextEntries = new List<ContextEntry>
+                    {
+                        new ContextEntry
+                        {
+                            ContextKeyName = "aws:username",
+                            ContextKeyType = ContextKeyTypeEnum.String,
+                            ContextKeyValues = new List<string>
+                            {
+                                "alice"
+                            }
+                        }
+                    }
+                });
+                results = response.EvaluationResults;
+                Assert.IsNotNull(results);
+                Assert.AreEqual(1, results.Count);
+                result = results.First();
+                Assert.AreEqual(PolicyEvaluationDecisionType.ImplicitDeny, result.EvalDecision);
+            }
+            finally
+            {
+                Client.DeleteGroupPolicy(new DeleteGroupPolicyRequest() { GroupName = groupname, PolicyName = policyName });
+                Client.DeleteGroup(new DeleteGroupRequest { GroupName = groupname });
+            }
+        }
+
+
+        [TestMethod]
+        [TestCategory("IAM")]
+        public void TestCustomPolicies()
+        {
+            var s3SamplePolicy = @"{
+  ""Version"": ""2012-10-17"",
+  ""Statement"": [
+    {
+      ""Effect"": ""Allow"",
+      ""Action"": [
+        ""s3:ListAllMyBuckets"",
+        ""s3:GetBucketLocation""
+      ],
+      ""Resource"": ""arn:aws:s3:::*""
+    },
+    {
+      ""Effect"": ""Allow"",
+      ""Action"": ""s3:ListBucket"",
+      ""Resource"": ""arn:aws:s3:::test-bucket123"",
+      ""Condition"": {""StringLike"": {""s3:prefix"": [
+        """",
+        ""home/"",
+        ""home/${aws:username}/""
+      ]}}
+    },
+    {
+      ""Effect"": ""Allow"",
+      ""Action"": ""s3:*"",
+      ""Resource"": [
+        ""arn:aws:s3:::test-bucket123/home/${aws:username}"",
+        ""arn:aws:s3:::test-bucket123/home/${aws:username}/*""
+      ]
+    }
+  ]
+}";
+            var contextKeys = Client.GetContextKeysForCustomPolicy(new GetContextKeysForCustomPolicyRequest
+            {
+                PolicyInputList = new List<string>
+                {
+                    s3SamplePolicy
+                }
+            }).ContextKeyNames;
+            Assert.IsNotNull(contextKeys);
+            Assert.AreNotEqual(0, contextKeys.Count);
+            Assert.IsTrue(contextKeys.Contains("s3:prefix"));
+            Assert.IsTrue(contextKeys.Contains("aws:username"));
+
+            var response = Client.SimulateCustomPolicy(new SimulateCustomPolicyRequest
+            {
+                ActionNames = new List<string>
+                {
+                    "s3:ListBucket"
+                },
+                PolicyInputList = new List<string> 
+                {
+                    s3SamplePolicy
+                },
+                ResourceArns = new List<string>
+                {
+                    "arn:aws:s3:::test-bucket123"
+                },
+                ContextEntries = new List<ContextEntry>
+                {
+                    new ContextEntry
+                    {
+                        ContextKeyName = "s3:prefix",
+                        ContextKeyType = ContextKeyTypeEnum.String,
+                        ContextKeyValues = new List<string>
+                        {
+                            "home/bob/"
+                        }
+                    },
+                    new ContextEntry
+                    {
+                        ContextKeyName = "aws:username",
+                        ContextKeyType = ContextKeyTypeEnum.String,
+                        ContextKeyValues = new List<string>
+                        {
+                            "bob"
+                        }
+                    }
+                }
+            });
+            var results = response.EvaluationResults;
+            Assert.AreEqual(1, results.Count);
+            var result = results.First();
+            Assert.IsNotNull(result);
+            Assert.AreEqual(PolicyEvaluationDecisionType.Allowed, result.EvalDecision);
+
+            response = Client.SimulateCustomPolicy(new SimulateCustomPolicyRequest
+            {
+                ActionNames = new List<string>
+                {
+                    "s3:ListBucket"
+                },
+                PolicyInputList = new List<string> 
+                {
+                    s3SamplePolicy
+                },
+                ResourceArns = new List<string>
+                {
+                    "arn:aws:s3:::test-bucket123"
+                },
+                ContextEntries = new List<ContextEntry>
+                {
+                    new ContextEntry
+                    {
+                        ContextKeyName = "s3:prefix",
+                        ContextKeyType = ContextKeyTypeEnum.String,
+                        ContextKeyValues = new List<string>
+                        {
+                            "home/alice/"
+                        }
+                    },
+                    new ContextEntry
+                    {
+                        ContextKeyName = "aws:username",
+                        ContextKeyType = ContextKeyTypeEnum.String,
+                        ContextKeyValues = new List<string>
+                        {
+                            "bob"
+                        }
+                    }
+                }
+            });
+            results = response.EvaluationResults;
+            Assert.AreEqual(1, results.Count);
+            result = results.First();
+            Assert.IsNotNull(result);
+            Assert.AreEqual(PolicyEvaluationDecisionType.ImplicitDeny, result.EvalDecision);
         }
 
         [TestMethod]

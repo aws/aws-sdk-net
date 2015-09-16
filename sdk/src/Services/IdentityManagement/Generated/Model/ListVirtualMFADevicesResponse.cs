@@ -39,9 +39,10 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property IsTruncated. 
         /// <para>
-        /// A flag that indicates whether there are more items to return. If your results were
-        /// truncated, you can make a subsequent pagination request using the <code>Marker</code>
-        /// request parameter to retrieve more items.
+        /// A flag that indicates whether there are more items to return. If the returned value
+        /// is <code>true</code>, then your results are truncated and you can make a subsequent
+        /// pagination request using the <code>Marker</code> request parameter to retrieve more
+        /// items.
         /// </para>
         /// </summary>
         public bool IsTruncated

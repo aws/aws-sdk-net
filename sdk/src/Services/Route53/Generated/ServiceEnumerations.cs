@@ -125,6 +125,10 @@ namespace Amazon.Route53
     {
 
         /// <summary>
+        /// Constant CALCULATED for HealthCheckType
+        /// </summary>
+        public static readonly HealthCheckType CALCULATED = new HealthCheckType("CALCULATED");
+        /// <summary>
         /// Constant HTTP for HealthCheckType
         /// </summary>
         public static readonly HealthCheckType HTTP = new HealthCheckType("HTTP");

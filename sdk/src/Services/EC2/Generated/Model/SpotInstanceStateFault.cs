@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a Spot Instance state change.
+    /// Describes a Spot instance state change.
     /// </summary>
     public partial class SpotInstanceStateFault
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The reason code for the Spot Instance state change.
+        /// The reason code for the Spot instance state change.
         /// </para>
         /// </summary>
         public string Code
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The message for the Spot Instance state change.
+        /// The message for the Spot instance state change.
         /// </para>
         /// </summary>
         public string Message

@@ -36,11 +36,10 @@ namespace Amazon.MachineLearning.Model
     /// After using the <code>DeleteMLModel</code> operation, you can use the <a>GetMLModel</a>
     /// operation to verify that the status of the <code>MLModel</code> changed to DELETED.
     /// </para>
-    ///  <caution><title>Caution</title> 
+    ///  
     /// <para>
-    /// The result of the <code>DeleteMLModel</code> operation is irreversible.
+    /// <b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is irreversible.
     /// </para>
-    /// </caution>
     /// </summary>
     public partial class DeleteMLModelRequest : AmazonMachineLearningRequest
     {

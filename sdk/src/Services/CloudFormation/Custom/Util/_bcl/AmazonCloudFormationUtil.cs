@@ -49,7 +49,7 @@ namespace Amazon.CloudFormation.Util
 
             Uri uri = new Uri(presignedURL);
             AWSSDKUtils.ForceCanonicalPathAndQuery(uri);
-            HttpWebRequest httpRequest = WebRequest.Create(uri) as HttpWebRequest;
+            var httpRequest = WebRequest.Create(uri);
             httpRequest.Method = "PUT";
             httpRequest.ContentType = "";
             httpRequest.ContentLength = requestBody.Length;
@@ -59,8 +59,8 @@ namespace Amazon.CloudFormation.Util
                 stream.Write(requestBody);
             }
 
-            var response = httpRequest.GetResponse();
-            response.Close();
+            using(httpRequest.GetResponse())
+            { }
         }
     }
 }

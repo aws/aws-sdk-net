@@ -102,6 +102,8 @@ namespace Amazon.S3.Internal
                 return;
 
             var s3Config = config as AmazonS3Config;
+            if (s3Config == null)
+                throw new AmazonClientException("Current config object is not of type AmazonS3Config");
 
             // If path style is not forced and the bucket name is DNS
             // compatible modify the endpoint to use virtual host style

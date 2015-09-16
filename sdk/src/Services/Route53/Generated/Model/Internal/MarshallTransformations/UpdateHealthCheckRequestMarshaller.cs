@@ -85,6 +85,24 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFailureThreshold())
                     xmlWriter.WriteElementString("FailureThreshold", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.FailureThreshold));                    
 
+                if(publicRequest.IsSetInverted())
+                    xmlWriter.WriteElementString("Inverted", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.Inverted));                    
+
+                if(publicRequest.IsSetHealthThreshold())
+                    xmlWriter.WriteElementString("HealthThreshold", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.HealthThreshold));                    
+
+                var publicRequestChildHealthChecks = publicRequest.ChildHealthChecks;
+                if (publicRequestChildHealthChecks != null && publicRequestChildHealthChecks.Count > 0) 
+                {                        
+                    xmlWriter.WriteStartElement("ChildHealthChecks", "https://route53.amazonaws.com/doc/2013-04-01/");
+                    foreach (var publicRequestChildHealthChecksValue in publicRequestChildHealthChecks) 
+                    {
+                        xmlWriter.WriteStartElement("ChildHealthCheck", "https://route53.amazonaws.com/doc/2013-04-01/");
+                        xmlWriter.WriteValue(publicRequestChildHealthChecksValue);
+                        xmlWriter.WriteEndElement();
+                    }            
+                    xmlWriter.WriteEndElement();            
+                }
 
                 xmlWriter.WriteEndElement();
             }

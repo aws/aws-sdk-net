@@ -241,7 +241,7 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  For more information about performance metrics, please see the <a href="http://docs.aws.amazon.com/machinelearning/latest/dg">Amazon
+        ///  For more information about performance metrics, please see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
         /// Machine Learning Developer Guide</a>. 
         /// </para>
         /// </summary>
