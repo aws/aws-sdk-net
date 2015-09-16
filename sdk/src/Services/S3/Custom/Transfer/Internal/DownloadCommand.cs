@@ -158,7 +158,7 @@ namespace Amazon.S3.Transfer.Internal
             AWSSDKUtils.Sleep(delay);
         }
 
-#if BCL
+#if BCL || DNX
         /// <summary>
         /// Returns the amount of bytes remaining that need to be pulled down from S3.
         /// </summary>

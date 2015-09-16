@@ -76,8 +76,8 @@
                 "Microsoft.Framework.Runtime.Abstractions": "1.0.0-beta6",
                 "Microsoft.Framework.TestAdapter": "1.0.0-beta6",
                 "Microsoft.Framework.TestHost": "1.0.0-beta6",
-                "xunit": "2.1.0-beta4-build3109",
-                "xunit.runner.dnx": "2.1.0-beta4-build134"
+                "xunit": "2.1.0-rc1-build3168",
+                "xunit.runner.dnx": "2.1.0-beta5-build169"
             }
         }
     }

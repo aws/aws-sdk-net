@@ -18,6 +18,8 @@ using Xunit;
 using System.IO.Compression;
 using System.Text;
 
+using Statement = Amazon.Auth.AccessControlPolicy.Statement;
+
 namespace Amazon.DNXCore.IntegrationTests
 {
     
