@@ -1,3 +1,7 @@
+### 3.1.14.0 (2015-09-17 19:21 UTC)
+* CloudWatchLogs (3.1.2.0)
+	* Added support for exporting log data from Log Groups to Amazon S3 Buckets.
+
 ### 3.1.13.0 (2015-09-16 19:35 UTC)
 * S3 (3.1.3.0)
 	* Added support for the new STANDARD_IA storage class and for multiple lifecycle transitions.
