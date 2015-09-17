@@ -208,6 +208,68 @@ namespace Amazon.CloudWatchLogs
         #endregion
 
         
+        #region  CancelExportTask
+
+        internal CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
+        {
+            var marshaller = new CancelExportTaskRequestMarshaller();
+            var unmarshaller = CancelExportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<CancelExportTaskRequest,CancelExportTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelExportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelExportTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CancelExportTaskResponse> CancelExportTaskAsync(CancelExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CancelExportTaskRequestMarshaller();
+            var unmarshaller = CancelExportTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelExportTaskRequest,CancelExportTaskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateExportTask
+
+        internal CreateExportTaskResponse CreateExportTask(CreateExportTaskRequest request)
+        {
+            var marshaller = new CreateExportTaskRequestMarshaller();
+            var unmarshaller = CreateExportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<CreateExportTaskRequest,CreateExportTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateExportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateExportTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateExportTaskResponse> CreateExportTaskAsync(CreateExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateExportTaskRequestMarshaller();
+            var unmarshaller = CreateExportTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateExportTaskRequest,CreateExportTaskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateLogGroup
 
         internal CreateLogGroupResponse CreateLogGroup(CreateLogGroupRequest request)
@@ -482,6 +544,37 @@ namespace Amazon.CloudWatchLogs
             var unmarshaller = DescribeDestinationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeDestinationsRequest,DescribeDestinationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeExportTasks
+
+        internal DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
+        {
+            var marshaller = new DescribeExportTasksRequestMarshaller();
+            var unmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeExportTasksRequest,DescribeExportTasksResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeExportTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeExportTasksRequestMarshaller();
+            var unmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeExportTasksRequest,DescribeExportTasksResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
