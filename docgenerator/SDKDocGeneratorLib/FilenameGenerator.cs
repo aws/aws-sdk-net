@@ -94,5 +94,10 @@ namespace SDKDocGenerator
         {
             return Fixup(string.Format("N_{0}", namespaceName)) + ".html";
         }
+
+        public static string Escape(string url)
+        {
+            return url.Replace("`", "&#96;");
+        }
     }
 }

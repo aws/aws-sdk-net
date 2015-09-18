@@ -19,6 +19,8 @@ sdk/packages/**
 sdk/test/PCLTests/AndroidTests/packages/**
 sdk/.vs/**
 
+docgenerator/.vs/**
+
 Deployment/**
 DocDeployment/**
 DocBuildAssemblies/**

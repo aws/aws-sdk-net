@@ -127,8 +127,8 @@ namespace SDKDocGenerator.Writers
                 writer.WriteLine("<meta name=\"description\" content=\"{0}\">", GetTitle());
                 writer.WriteLine("<title>{0} | AWS SDK for .NET V3</title>", GetTitle());
                 writer.WriteLine("<link rel=\"canonical\" href=\"http://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html?page={0}&tocid={1}\"/>",
-                                this.GenerateFilename(), 
-                                this.GetTOCID());
+                                FilenameGenerator.Escape(this.GenerateFilename()),
+                                FilenameGenerator.Escape(this.GetTOCID()));
 
                 writer.WriteLine("</head>");
 
@@ -228,8 +228,8 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<div id=\"pageFooter\">");
                 writer.WriteLine("<div class=\"copyright\">&copy; {0}</div>", Copyright);
                 writer.WriteLine("<span class=\"newline linkto\"><a href=\"javascript:void(0)\" onclick=\"AWSHelpObj.displayLink('{0}', '{1}')\">Link to this page</a></span>", 
-                                 this.GenerateFilename(), 
-                                 this.GetTOCID());
+                                 FilenameGenerator.Escape(this.GenerateFilename()), 
+                                 FilenameGenerator.Escape(this.GetTOCID()));
                 writer.WriteLine("<span class=\"divider\">&nbsp;</span>");
                 writer.WriteLine(FeedbackSection, GenerateFeedbackHTML());
             writer.WriteLine("</div>");
@@ -255,10 +255,10 @@ namespace SDKDocGenerator.Writers
 
         private string GenerateFeedbackHTML()
         {
-            var filename = Path.GetFileNameWithoutExtension(GenerateFilename());
+            var filename = FilenameGenerator.Escape(Path.GetFileNameWithoutExtension(GenerateFilename()));
             const string baseUrl = "https://aws-portal.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04";
             var queryString = string.Format("?service_name={0}&amp;file_name={1}",
-                                            "NET-Ref-V2",  // service_name
+                                            "NET-Ref-V3",  // service_name
                                             filename   // guide_name
                                             );
             var fullUrl = baseUrl + queryString;
@@ -270,7 +270,7 @@ namespace SDKDocGenerator.Writers
                                                  "<a href=\"http://docs.aws.amazon.com/sdkfornet/latest/apidocs/feedbackno.html?topic_id={0}\" target=\"_blank\">No</a>&nbsp;&nbsp;&nbsp;" +
                                                  "<a href=\"{1}\" target=\"_blank\">Tell us about it...</a>" +
                                                  "</span>" +
-                                                 "<!-- BEGIN-FEEDBACK-SECTION -->";
+                                                 "<!-- END-FEEDBACK-SECTION -->";
             string feedbackContent = string.Format(feedbackContentFormat, filename, fullUrl);
             return feedbackContent;
         }
