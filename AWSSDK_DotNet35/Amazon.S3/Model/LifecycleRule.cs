@@ -29,9 +29,9 @@ namespace Amazon.S3.Model
         private string prefix;
         private LifecycleRuleExpiration expiration;
         private LifecycleRuleStatus status = LifecycleRuleStatus.Disabled;
-        private LifecycleTransition transition;
-        private LifecycleRuleNoncurrentVersionTransition noncurrentVersionTransition;
         private LifecycleRuleNoncurrentVersionExpiration noncurrentVersionExpiration;
+        private List<LifecycleTransition> transitions;
+        private List<LifecycleRuleNoncurrentVersionTransition> noncurrentVersionTransitions;
 
 
         /// <summary>
@@ -97,18 +97,29 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The transition rule that describes when objects transition to the Glacier storage class.
+        /// The transition rule that describes when objects transition to a different storage class.
+        /// <para>
+        /// Lifecycle rules can now contain multiple transitions. This property is obsolete in favor of the Transitions property.
+        /// This property will aways get or set the the zeroth element in the Transitions collection.
+        /// </para>
         /// </summary>
+        [Obsolete("The Transition property is now obsolete in favor the Transitions property.")]
         public LifecycleTransition Transition
         {
-            get { return this.transition; }
-            set { this.transition = value; }
-        }
+            get
+            {
+                if (!this.IsSetTransitions())
+                    return null;
 
-        // Check to see if Transition property is set
-        internal bool IsSetTransition()
-        {
-            return this.transition != null;
+                return this.Transitions[0];
+            }
+            set
+            {
+                if (this.Transitions.Count == 0)
+                    this.Transitions.Add(value);
+                else
+                    this.Transitions[0] = value;
+        }
         }
 
         /// <summary>
@@ -128,18 +139,76 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// The transition rule that describes when noncurrent versions transition to
-        /// the Glacier storage class.
+        /// a different storage class.
+        /// <para>
+        /// Lifecycle rules can now contain multiple noncurrent version transitions. This property
+        /// is obsolete in favor of the NoncurrentVersionTransitions property.
+        /// This property will aways get or set the the zeroth element in the NoncurrentVersionTransitions collection.
+        /// </para>
         /// </summary>
+        [Obsolete("The NoncurrentVersionTransition property is now obsolete in favor the NoncurrentVersionTransitions property.")]
         public LifecycleRuleNoncurrentVersionTransition NoncurrentVersionTransition
         {
-            get { return this.noncurrentVersionTransition; }
-            set { this.noncurrentVersionTransition = value; }
+            get
+            {
+                if (!this.IsSetNoncurrentVersionTransitions())
+                    return null;
+
+                return this.NoncurrentVersionTransitions[0];
+            }
+            set
+            {
+                if (this.NoncurrentVersionTransitions.Count == 0)
+                    this.NoncurrentVersionTransitions.Add(value);
+                else
+                    this.NoncurrentVersionTransitions[0] = value;
+            }
         }
 
-        // Check to see if Transition property is set
-        internal bool IsSetNoncurrentVersionTransition()
+
+
+        /// <summary>
+        /// The transition rules that describe when objects transition to a different storage class.
+        /// </summary>
+        public List<LifecycleTransition> Transitions
         {
-            return this.noncurrentVersionTransition != null;
+            get
+            {
+                if (this.transitions == null)
+                    this.transitions = new List<LifecycleTransition>();
+
+                return this.transitions;
+            }
+            set { this.transitions = value; }
+        }
+
+        // Check to see if Transitions property is set
+        internal bool IsSetTransitions()
+        {
+            return this.transitions != null && this.transitions.Count > 0;
+        }
+
+
+        /// <summary>
+        /// The transition rules that describe when noncurrent versions transition to
+        /// a different storage class.
+        /// </summary>
+        public List<LifecycleRuleNoncurrentVersionTransition> NoncurrentVersionTransitions
+        {
+            get
+            {
+                if (this.noncurrentVersionTransitions == null)
+                    this.noncurrentVersionTransitions = new List<LifecycleRuleNoncurrentVersionTransition>();
+
+                return this.noncurrentVersionTransitions;
+            }
+            set { this.noncurrentVersionTransitions = value; }
+        }
+
+        // Check to see if Transitions property is set
+        internal bool IsSetNoncurrentVersionTransitions()
+        {
+            return this.noncurrentVersionTransitions != null && this.noncurrentVersionTransitions.Count > 0;
         }
     }
 }

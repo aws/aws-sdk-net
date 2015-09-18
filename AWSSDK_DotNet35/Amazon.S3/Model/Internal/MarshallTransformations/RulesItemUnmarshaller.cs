@@ -63,13 +63,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Transition", targetDepth))
                     {
-                        rulesItem.Transition = TransitionUnmarshaller.Instance.Unmarshall(context);
+                        rulesItem.Transitions.Add(TransitionUnmarshaller.Instance.Unmarshall(context));
                             
                         continue;
                     }
                     if (context.TestExpression("NoncurrentVersionTransition", targetDepth))
                     {
-                        rulesItem.NoncurrentVersionTransition = LifecycleRuleNoncurrentVersionTransitionUnmarshaller.Instance.Unmarshall(context);
+                        rulesItem.NoncurrentVersionTransitions.Add(LifecycleRuleNoncurrentVersionTransitionUnmarshaller.Instance.Unmarshall(context));
 
                         continue;
                     }

@@ -31,6 +31,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private void TestReplicationConfigurationForPrefix(string prefix)
         {
             var bucketName = UtilityMethods.GenerateName();
+            var storageClass = S3StorageClass.ReducedRedundancy;
             var euBucketName = "eu" + UtilityMethods.GenerateName();
             var euS3 = new AmazonS3Client(Amazon.RegionEndpoint.EUWest1);
             euS3.PutBucket(euBucketName);
@@ -73,7 +74,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                                 Status = ReplicationRuleStatus.Enabled,
                                 Destination = new ReplicationDestination
                                 {
-                                    BucketArn = destinationBucketArn
+                                    BucketArn = destinationBucketArn,
+                                    StorageClass = storageClass
                                 }
                                 
                             }
@@ -102,6 +104,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 else
                     Assert.AreEqual(prefix, rule.Prefix);
                 Assert.AreEqual(destinationBucketArn, rule.Destination.BucketArn);
+                Assert.AreEqual(storageClass, rule.Destination.StorageClass);
 
                 Client.PutObject(new PutObjectRequest { 
                     BucketName = bucketName,

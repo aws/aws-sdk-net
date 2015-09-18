@@ -77,7 +77,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteEndElement();
                                     }
 
-                                    var transition = lifecycleConfigurationLifecycleConfigurationrulesListValue.Transition;
+                                    var transitions = lifecycleConfigurationLifecycleConfigurationrulesListValue.Transitions;
+                                    if (transitions != null && transitions.Count > 0)
+                                    {
+                                        foreach (var transition in transitions)
+                                        {
                                     if (transition != null)
                                     {
                                         xmlWriter.WriteStartElement("Transition", "");
@@ -95,6 +99,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                         }
                                         xmlWriter.WriteEndElement();
                                     }
+                                        }
+                                    }
 
                                     var noncurrentVersionExpiration = lifecycleConfigurationLifecycleConfigurationrulesListValue.NoncurrentVersionExpiration;
                                     if (noncurrentVersionExpiration != null)
@@ -107,7 +113,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteEndElement();
                                     }
 
-                                    var noncurrentVersionTransition = lifecycleConfigurationLifecycleConfigurationrulesListValue.NoncurrentVersionTransition;
+                                    var noncurrentVersionTransitions = lifecycleConfigurationLifecycleConfigurationrulesListValue.NoncurrentVersionTransitions;
+                                    if (noncurrentVersionTransitions != null && noncurrentVersionTransitions.Count > 0)
+                                    {
+                                        foreach (var noncurrentVersionTransition in noncurrentVersionTransitions)
+                                        {
                                     if (noncurrentVersionTransition != null)
                                     {
                                         xmlWriter.WriteStartElement("NoncurrentVersionTransition", "");
@@ -120,6 +130,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                             xmlWriter.WriteElementString("StorageClass", "", S3Transforms.ToXmlStringValue(noncurrentVersionTransition.StorageClass));
                                         }
                                         xmlWriter.WriteEndElement();
+                                            }
+                                        }
                                     }
                                 }
                                 if (lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetId())
