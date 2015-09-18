@@ -89,6 +89,12 @@ namespace ServiceClientGenerator
             get;
             private set;
         }
+
+        public string PreviewLabel
+        {
+            get;
+            private set;
+        }
  
         /// <summary>
         /// Processes the control manifest to yield the set of services available to
@@ -108,6 +114,9 @@ namespace ServiceClientGenerator
             var versions = versionsManifest["ServiceVersions"];
 
             generationManifest.DefaultToPreview = (bool)versionsManifest["DefaultToPreview"];
+            generationManifest.PreviewLabel = (string)versionsManifest["PreviewLabel"];
+            if (!string.IsNullOrEmpty(generationManifest.PreviewLabel))
+                generationManifest.PreviewLabel = "-" + generationManifest.PreviewLabel;
 
             generationManifest.LoadServiceConfigurations(manifest, generationManifest.CoreFileVersion, versions, modelsFolder);
             generationManifest.LoadProjectConfigurations(manifest);

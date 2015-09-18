@@ -90,8 +90,6 @@ namespace ServiceClientGenerator
         public const string XamarinComponentsSubFolderName = "xamarin-components";
 
 
-        public const string NuGetPreviewFlag = "-preview";
-
         // Records any new project files we produce as part of generation. If this collection is
         // not empty when we've processed all source, we must update the solution files to add
         // the new projects.
@@ -777,11 +775,11 @@ namespace ServiceClientGenerator
                     string previewFlag;
                     if (dependentService != null && dependentService.InPreview)
                     {
-                        previewFlag = GeneratorDriver.NuGetPreviewFlag;
+                        previewFlag = GenerationManifest.PreviewLabel;
                     }
                     else if (string.Equals(service, "Core", StringComparison.InvariantCultureIgnoreCase) && GenerationManifest.DefaultToPreview)
                     {
-                        previewFlag = GeneratorDriver.NuGetPreviewFlag;
+                        previewFlag = GenerationManifest.PreviewLabel;
                     }
                     else
                     {
@@ -821,7 +819,7 @@ namespace ServiceClientGenerator
                 { "ExtraTags", Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) }
             };
 
-            session["NuGetPreviewFlag"] = Configuration.InPreview ? GeneratorDriver.NuGetPreviewFlag : "";
+            session["NuGetPreviewFlag"] = Configuration.InPreview ? this.GenerationManifest.PreviewLabel : "";
 
             var componentGenerator = new Component { Session = session };
             var text = componentGenerator.TransformText();
@@ -877,11 +875,11 @@ namespace ServiceClientGenerator
                     string previewFlag;
                     if (dependentService != null && dependentService.InPreview)
                     {
-                        previewFlag = GeneratorDriver.NuGetPreviewFlag;
+                        previewFlag = GenerationManifest.PreviewLabel;
                     }
                     else if (string.Equals(service, "Core", StringComparison.InvariantCultureIgnoreCase) && GenerationManifest.DefaultToPreview)
                     {
-                        previewFlag = GeneratorDriver.NuGetPreviewFlag;
+                        previewFlag = GenerationManifest.PreviewLabel;
                     }
                     else
                     {
@@ -921,7 +919,7 @@ namespace ServiceClientGenerator
             if (Configuration.NugetDependencies != null)
                 session.Add("NugetDependencies", Configuration.NugetDependencies);
 
-            session["NuGetPreviewFlag"] = Configuration.InPreview ? GeneratorDriver.NuGetPreviewFlag : "";
+            session["NuGetPreviewFlag"] = Configuration.InPreview ? this.GenerationManifest.PreviewLabel : "";
 
             var nuspecGenerator = new Nuspec { Session = session };
             var text = nuspecGenerator.TransformText();
