@@ -1,16 +1,20 @@
-<Project ToolsVersion="4.0" 
+<Project ToolsVersion="14.0" 
 	DefaultTargets="full-build-nodocs"
 	xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	
     <PropertyGroup>
         <InternalBuildTools Condition="'$(InternalBuildTools)'==''">..\..\AWSDotNetBuildTools</InternalBuildTools>
 		<DisablePCLSupport Condition="'$(DisablePCLSupport)'==''">false</DisablePCLSupport>
+		<VSToolsPath Condition="'$(VSToolsPath)' == ''">C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0</VSToolsPath>
 		
 		<GeneratorDisablePCLSupport Condition="'$(DisablePCLSupport)'=='true'">-disable.pcl-support</GeneratorDisablePCLSupport>
     </PropertyGroup>
     
 	<Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
 	<Import Project="common.targets" />
+	
+	<Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.Props" Condition="'$(VSToolsPath)' != ''" />
+	<Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />
 
     <!-- properties used in documentation generation -->
     <PropertyGroup>
@@ -79,9 +83,12 @@
 			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation)" />
 	</Target>
 
-	<Target Name="build-sdk-dnxcore" DependsOnTargets="restore-nuget;run-generator">
+	<Target Name="build-sdk-dnxcore" DependsOnTargets="GetRuntimeToolingPathTarget">
 	
 		<!-- depends: restore-nuget;run-generator -->
+		
+		<Exec Command="$(RuntimeToolingDirectory)\bin\dnu restore" 
+			WorkingDirectory="..\sdk"/>
 	
 		<Message Text="Compile the DNXCore SDK"/>
 		<ItemGroup>
