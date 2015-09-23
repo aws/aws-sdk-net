@@ -130,7 +130,7 @@ namespace SDKDocGenerator.Writers
                                 FilenameGenerator.Escape(this.GenerateFilename()),
                                 FilenameGenerator.Escape(this.GetTOCID()));
 
-                writer.WriteLine("</head>");
+                writer.WriteLine("</head>");                     
 
                 writer.WriteLine("<body>");
 
@@ -227,7 +227,8 @@ namespace SDKDocGenerator.Writers
         {
             writer.WriteLine("<div id=\"pageFooter\">");
                 writer.WriteLine("<div class=\"copyright\">&copy; {0}</div>", Copyright);
-                writer.WriteLine("<span class=\"newline linkto\"><a href=\"javascript:void(0)\" onclick=\"AWSHelpObj.displayLink('{0}', '{1}')\">Link to this page</a></span>", 
+                writer.WriteLine("<span class=\"newline linkto\"><a href=\"javascript:void(0)\" onclick=\"AWSHelpObj.displayLink('{0}/{1}', '{2}')\">Link to this page</a></span>",
+                                 this.GenerateFilepath(),
                                  FilenameGenerator.Escape(this.GenerateFilename()), 
                                  FilenameGenerator.Escape(this.GetTOCID()));
                 writer.WriteLine("<span class=\"divider\">&nbsp;</span>");
