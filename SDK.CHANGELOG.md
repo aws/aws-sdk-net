@@ -1,3 +1,7 @@
+### 3.1.14.1 (2015-09-24 22:17 UTC)
+* CognitoIdentity (3.1.0.2)
+	* Documentation update.
+
 ### 3.1.14.0 (2015-09-17 19:21 UTC)
 * CloudWatchLogs (3.1.2.0)
 	* Added support for exporting log data from Log Groups to Amazon S3 Buckets.

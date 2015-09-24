@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.1.14.0",
+    "ProductVersion" : "3.1.14.1",
     "CoreVersion"    : "3.1.1.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -89,7 +89,7 @@
             "InPreview"    : false
         },
         "CognitoIdentity"   : {
-            "Version" : "3.1.0.1",
+            "Version" : "3.1.0.2",
             "Dependencies" : {
                 "Core" : "3.1.1.0",
                 "SecurityToken" : "3.1.0.1"
