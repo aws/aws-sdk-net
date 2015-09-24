@@ -33,7 +33,7 @@ namespace Amazon.CognitoIdentity.Model
     /// 
     ///  
     /// <para>
-    /// This is a public API. You do not need any credentials to call this API.
+    /// You must use AWS Developer credentials to call this API.
     /// </para>
     /// </summary>
     public partial class ListIdentityPoolsRequest : AmazonCognitoIdentityRequest

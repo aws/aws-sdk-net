@@ -492,8 +492,8 @@ namespace Amazon.CognitoIdentity
 
 
         /// <summary>
-        /// Returns credentials for the the provided identity ID. Any provided logins will be
-        /// validated against supported login providers. If the token is for cognito-identity.amazonaws.com,
+        /// Returns credentials for the provided identity ID. Any provided logins will be validated
+        /// against supported login providers. If the token is for cognito-identity.amazonaws.com,
         /// it will be passed through to AWS Security Token Service with the appropriate role
         /// for the token.
         /// 
@@ -542,8 +542,8 @@ namespace Amazon.CognitoIdentity
 
 
         /// <summary>
-        /// Returns credentials for the the provided identity ID. Any provided logins will be
-        /// validated against supported login providers. If the token is for cognito-identity.amazonaws.com,
+        /// Returns credentials for the provided identity ID. Any provided logins will be validated
+        /// against supported login providers. If the token is for cognito-identity.amazonaws.com,
         /// it will be passed through to AWS Security Token Service with the appropriate role
         /// for the token.
         /// 
