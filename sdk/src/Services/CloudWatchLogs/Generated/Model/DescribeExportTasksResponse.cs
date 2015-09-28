@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cognito-identity-2014-06-30.normal.json service model.
+ * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -25,39 +25,33 @@ using System.IO;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
-namespace Amazon.CognitoIdentity.Model
+namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListIdentityPools operation.
-    /// Lists all of the Cognito identity pools registered for your account.
     /// 
-    ///  
-    /// <para>
-    /// You must use AWS Developer credentials to call this API.
-    /// </para>
     /// </summary>
-    public partial class ListIdentityPoolsRequest : AmazonCognitoIdentityRequest
+    public partial class DescribeExportTasksResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
+        private List<ExportTask> _exportTasks = new List<ExportTask>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. The maximum number of identities to return.
+        /// Gets and sets the property ExportTasks.
         /// </summary>
-        public int MaxResults
+        public List<ExportTask> ExportTasks
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._exportTasks; }
+            set { this._exportTasks = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if ExportTasks property is set
+        internal bool IsSetExportTasks()
         {
-            return this._maxResults.HasValue; 
+            return this._exportTasks != null && this._exportTasks.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. A pagination token.
+        /// Gets and sets the property NextToken.
         /// </summary>
         public string NextToken
         {
