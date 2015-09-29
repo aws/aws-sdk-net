@@ -1,3 +1,11 @@
+### 3.1.15.0 (2015-09-29 23:12 UTC)
+* CloudFormation (3.1.1.0)
+	* Added new DescribeAccountLimits API and optional ResourceTypes parameter for CreateStack and UpdateStack APIs.
+* EC2 (3.1.3.0)
+	* Added support for the new ModifySpotFleetRequest API.
+* SimpleEmail (3.1.1.0)
+	* Amazon Simple Email Service can now accept incoming emails. You can configure Amazon SES to deliver messages to an Amazon S3 bucket, call an AWS Lambda function, publish notifications to Amazon SNS, drop messages, or bounce messages. Added new cmdlets to support this feature.
+
 ### 3.1.14.1 (2015-09-24 22:17 UTC)
 * CognitoIdentity (3.1.0.2)
 	* Documentation update.
