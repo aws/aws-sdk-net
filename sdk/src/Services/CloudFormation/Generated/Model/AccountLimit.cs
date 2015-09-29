@@ -28,32 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Container for the parameters to the CancelUpdateStack operation.
-    /// Cancels an update on the specified stack. If the call completes successfully, the
-    /// stack rolls back the update and reverts to the previous stack configuration.
-    /// 
-    ///  <note>You can cancel only stacks that are in the UPDATE_IN_PROGRESS state.</note>
+    /// The AccountLimit data type.
     /// </summary>
-    public partial class CancelUpdateStackRequest : AmazonCloudFormationRequest
+    public partial class AccountLimit
     {
-        private string _stackName;
+        private string _name;
+        private int? _value;
 
         /// <summary>
-        /// Gets and sets the property StackName. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The name or the unique stack ID that is associated with the stack.
+        /// The name of the account limit. Currently, the only account limit is <code>StackLimit</code>.
         /// </para>
         /// </summary>
-        public string StackName
+        public string Name
         {
-            get { return this._stackName; }
-            set { this._stackName = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if StackName property is set
-        internal bool IsSetStackName()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._stackName != null;
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The value that is associated with the account limit name.
+        /// </para>
+        /// </summary>
+        public int Value
+        {
+            get { return this._value.GetValueOrDefault(); }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value.HasValue; 
         }
 
     }

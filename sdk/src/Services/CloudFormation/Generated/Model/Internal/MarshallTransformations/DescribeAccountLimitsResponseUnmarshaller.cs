@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetTemplateSummary operation
+    /// Response Unmarshaller for DescribeAccountLimits operation
     /// </summary>  
-    public class GetTemplateSummaryResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DescribeAccountLimitsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            GetTemplateSummaryResponse response = new GetTemplateSummaryResponse();
+            DescribeAccountLimitsResponse response = new DescribeAccountLimitsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("GetTemplateSummaryResult", 2))
+                    if(context.TestExpression("DescribeAccountLimitsResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, GetTemplateSummaryResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeAccountLimitsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,49 +81,17 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("Capabilities/member", targetDepth))
+                    if (context.TestExpression("AccountLimits/member", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
+                        var unmarshaller = AccountLimitUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
-                        response.Capabilities.Add(item);
+                        response.AccountLimits.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("CapabilitiesReason", targetDepth))
+                    if (context.TestExpression("NextToken", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.CapabilitiesReason = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Description", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.Description = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Metadata", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.Metadata = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Parameters/member", targetDepth))
-                    {
-                        var unmarshaller = ParameterDeclarationUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        response.Parameters.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("ResourceTypes/member", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        response.ResourceTypes.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("Version", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.Version = unmarshaller.Unmarshall(context);
+                        response.NextToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -145,9 +113,9 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             return new AmazonCloudFormationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static GetTemplateSummaryResponseUnmarshaller _instance = new GetTemplateSummaryResponseUnmarshaller();        
+        private static DescribeAccountLimitsResponseUnmarshaller _instance = new DescribeAccountLimitsResponseUnmarshaller();        
 
-        internal static GetTemplateSummaryResponseUnmarshaller GetInstance()
+        internal static DescribeAccountLimitsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -155,7 +123,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetTemplateSummaryResponseUnmarshaller Instance
+        public static DescribeAccountLimitsResponseUnmarshaller Instance
         {
             get
             {

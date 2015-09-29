@@ -28,32 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Container for the parameters to the CancelUpdateStack operation.
-    /// Cancels an update on the specified stack. If the call completes successfully, the
-    /// stack rolls back the update and reverts to the previous stack configuration.
-    /// 
-    ///  <note>You can cancel only stacks that are in the UPDATE_IN_PROGRESS state.</note>
+    /// Container for the parameters to the DescribeAccountLimits operation.
+    /// Retrieves your account's AWS CloudFormation limits, such as the maximum number of
+    /// stacks that you can create in your account.
     /// </summary>
-    public partial class CancelUpdateStackRequest : AmazonCloudFormationRequest
+    public partial class DescribeAccountLimitsRequest : AmazonCloudFormationRequest
     {
-        private string _stackName;
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property StackName. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The name or the unique stack ID that is associated with the stack.
+        /// A string that identifies the next page of limits that you want to retrieve.
         /// </para>
         /// </summary>
-        public string StackName
+        public string NextToken
         {
-            get { return this._stackName; }
-            set { this._stackName = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if StackName property is set
-        internal bool IsSetStackName()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._stackName != null;
+            return this._nextToken != null;
         }
 
     }
