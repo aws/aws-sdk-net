@@ -25,6 +25,124 @@ namespace Amazon.SimpleEmail
 {
 
     /// <summary>
+    /// Constants used for properties of type BounceType.
+    /// </summary>
+    public class BounceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ContentRejected for BounceType
+        /// </summary>
+        public static readonly BounceType ContentRejected = new BounceType("ContentRejected");
+        /// <summary>
+        /// Constant DoesNotExist for BounceType
+        /// </summary>
+        public static readonly BounceType DoesNotExist = new BounceType("DoesNotExist");
+        /// <summary>
+        /// Constant ExceededQuota for BounceType
+        /// </summary>
+        public static readonly BounceType ExceededQuota = new BounceType("ExceededQuota");
+        /// <summary>
+        /// Constant MessageTooLarge for BounceType
+        /// </summary>
+        public static readonly BounceType MessageTooLarge = new BounceType("MessageTooLarge");
+        /// <summary>
+        /// Constant TemporaryFailure for BounceType
+        /// </summary>
+        public static readonly BounceType TemporaryFailure = new BounceType("TemporaryFailure");
+        /// <summary>
+        /// Constant Undefined for BounceType
+        /// </summary>
+        public static readonly BounceType Undefined = new BounceType("Undefined");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public BounceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BounceType FindValue(string value)
+        {
+            return FindValue<BounceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BounceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DsnAction.
+    /// </summary>
+    public class DsnAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Delayed for DsnAction
+        /// </summary>
+        public static readonly DsnAction Delayed = new DsnAction("delayed");
+        /// <summary>
+        /// Constant Delivered for DsnAction
+        /// </summary>
+        public static readonly DsnAction Delivered = new DsnAction("delivered");
+        /// <summary>
+        /// Constant Expanded for DsnAction
+        /// </summary>
+        public static readonly DsnAction Expanded = new DsnAction("expanded");
+        /// <summary>
+        /// Constant Failed for DsnAction
+        /// </summary>
+        public static readonly DsnAction Failed = new DsnAction("failed");
+        /// <summary>
+        /// Constant Relayed for DsnAction
+        /// </summary>
+        public static readonly DsnAction Relayed = new DsnAction("relayed");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public DsnAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DsnAction FindValue(string value)
+        {
+            return FindValue<DsnAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DsnAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IdentityType.
     /// </summary>
     public class IdentityType : ConstantClass
@@ -63,6 +181,51 @@ namespace Amazon.SimpleEmail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IdentityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InvocationType.
+    /// </summary>
+    public class InvocationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Event for InvocationType
+        /// </summary>
+        public static readonly InvocationType Event = new InvocationType("Event");
+        /// <summary>
+        /// Constant RequestResponse for InvocationType
+        /// </summary>
+        public static readonly InvocationType RequestResponse = new InvocationType("RequestResponse");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public InvocationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InvocationType FindValue(string value)
+        {
+            return FindValue<InvocationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InvocationType(string value)
         {
             return FindValue(value);
         }
@@ -112,6 +275,137 @@ namespace Amazon.SimpleEmail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NotificationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReceiptFilterPolicy.
+    /// </summary>
+    public class ReceiptFilterPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Allow for ReceiptFilterPolicy
+        /// </summary>
+        public static readonly ReceiptFilterPolicy Allow = new ReceiptFilterPolicy("Allow");
+        /// <summary>
+        /// Constant Block for ReceiptFilterPolicy
+        /// </summary>
+        public static readonly ReceiptFilterPolicy Block = new ReceiptFilterPolicy("Block");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public ReceiptFilterPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReceiptFilterPolicy FindValue(string value)
+        {
+            return FindValue<ReceiptFilterPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReceiptFilterPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StopScope.
+    /// </summary>
+    public class StopScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RuleSet for StopScope
+        /// </summary>
+        public static readonly StopScope RuleSet = new StopScope("RuleSet");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public StopScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StopScope FindValue(string value)
+        {
+            return FindValue<StopScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StopScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TlsPolicy.
+    /// </summary>
+    public class TlsPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Optional for TlsPolicy
+        /// </summary>
+        public static readonly TlsPolicy Optional = new TlsPolicy("Optional");
+        /// <summary>
+        /// Constant Require for TlsPolicy
+        /// </summary>
+        public static readonly TlsPolicy Require = new TlsPolicy("Require");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public TlsPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TlsPolicy FindValue(string value)
+        {
+            return FindValue<TlsPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TlsPolicy(string value)
         {
             return FindValue(value);
         }
