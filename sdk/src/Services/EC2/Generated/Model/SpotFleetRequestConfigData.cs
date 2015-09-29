@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     {
         private AllocationStrategy _allocationStrategy;
         private string _clientToken;
+        private ExcessCapacityTerminationPolicy _excessCapacityTerminationPolicy;
         private string _iamFleetRole;
         private List<SpotFleetLaunchSpecification> _launchSpecifications = new List<SpotFleetLaunchSpecification>();
         private string _spotPrice;
@@ -45,8 +46,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllocationStrategy. 
         /// <para>
-        /// Determines how to allocate the target capacity across the Spot pools specified by
-        /// the Spot fleet request. The default is <code>lowestPrice</code>.
+        /// Indicates how to allocate the target capacity across the Spot pools specified by the
+        /// Spot fleet request. The default is <code>lowestPrice</code>.
         /// </para>
         /// </summary>
         public AllocationStrategy AllocationStrategy
@@ -79,6 +80,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExcessCapacityTerminationPolicy. 
+        /// <para>
+        /// Indicates whether running Spot instances should be terminated if the target capacity
+        /// of the Spot fleet request is decreased below the current size of the Spot fleet.
+        /// </para>
+        /// </summary>
+        public ExcessCapacityTerminationPolicy ExcessCapacityTerminationPolicy
+        {
+            get { return this._excessCapacityTerminationPolicy; }
+            set { this._excessCapacityTerminationPolicy = value; }
+        }
+
+        // Check to see if ExcessCapacityTerminationPolicy property is set
+        internal bool IsSetExcessCapacityTerminationPolicy()
+        {
+            return this._excessCapacityTerminationPolicy != null;
         }
 
         /// <summary>

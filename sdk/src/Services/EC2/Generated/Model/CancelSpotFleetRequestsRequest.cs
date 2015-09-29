@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -30,6 +30,16 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CancelSpotFleetRequests operation.
     /// Cancels the specified Spot fleet requests.
+    /// 
+    ///  
+    /// <para>
+    /// After you cancel a Spot fleet request, the Spot fleet launches no new Spot instances.
+    /// You must specify whether the Spot fleet should also terminate its Spot instances.
+    /// If you terminate the instances, the Spot fleet request enters the <code>cancelled_terminating</code>
+    /// state. Otherwise, the Spot fleet request enters the <code>cancelled_running</code>
+    /// state and the instances continue to run until they are interrupted or you terminate
+    /// them manually.
+    /// </para>
     /// </summary>
     public partial class CancelSpotFleetRequestsRequest : AmazonEC2Request
     {

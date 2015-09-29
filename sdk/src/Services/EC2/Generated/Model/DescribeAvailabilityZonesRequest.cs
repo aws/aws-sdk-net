@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// <code>state</code> - The state of the Availability Zone (<code>available</code> |
-        /// <code>impaired</code> | <code>unavailable</code>).
+        /// <code>information</code> | <code>impaired</code> | <code>unavailable</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 
 
@@ -5939,6 +5939,37 @@ namespace Amazon.EC2
             var unmarshaller = ModifySnapshotAttributeResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifySnapshotAttributeRequest,ModifySnapshotAttributeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifySpotFleetRequest
+
+        internal ModifySpotFleetRequestResponse ModifySpotFleetRequest(ModifySpotFleetRequestRequest request)
+        {
+            var marshaller = new ModifySpotFleetRequestRequestMarshaller();
+            var unmarshaller = ModifySpotFleetRequestResponseUnmarshaller.Instance;
+
+            return Invoke<ModifySpotFleetRequestRequest,ModifySpotFleetRequestResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifySpotFleetRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifySpotFleetRequest operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ModifySpotFleetRequestResponse> ModifySpotFleetRequestAsync(ModifySpotFleetRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifySpotFleetRequestRequestMarshaller();
+            var unmarshaller = ModifySpotFleetRequestResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifySpotFleetRequestRequest,ModifySpotFleetRequestResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

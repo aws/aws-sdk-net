@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 
 
@@ -1199,6 +1199,16 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Cancels the specified Spot fleet requests.
+        /// 
+        ///  
+        /// <para>
+        /// After you cancel a Spot fleet request, the Spot fleet launches no new Spot instances.
+        /// You must specify whether the Spot fleet should also terminate its Spot instances.
+        /// If you terminate the instances, the Spot fleet request enters the <code>cancelled_terminating</code>
+        /// state. Otherwise, the Spot fleet request enters the <code>cancelled_running</code>
+        /// state and the instances continue to run until they are interrupted or you terminate
+        /// them manually.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelSpotFleetRequests service method.</param>
         /// 
@@ -8889,6 +8899,70 @@ namespace Amazon.EC2
             var unmarshaller = ModifySnapshotAttributeResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifySnapshotAttributeRequest,ModifySnapshotAttributeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifySpotFleetRequest
+
+
+        /// <summary>
+        /// Modifies the specified Spot fleet request.
+        /// 
+        ///  
+        /// <para>
+        /// While the Spot fleet request is being modified, it is in the <code>modifying</code>
+        /// state.
+        /// </para>
+        ///  
+        /// <para>
+        /// To scale up your Spot fleet, increase its target capacity. The Spot fleet launches
+        /// the additional Spot instances according to the allocation strategy for the Spot fleet
+        /// request. If the allocation strategy is <code>lowestPrice</code>, the Spot fleet launches
+        /// instances using the Spot pool with the lowest price. If the allocation strategy is
+        /// <code>diversified</code>, the Spot fleet distributes the instances across the Spot
+        /// pools.
+        /// </para>
+        ///  
+        /// <para>
+        /// To scale down your Spot fleet, decrease its target capacity. First, the Spot fleet
+        /// cancels any open bids that exceed the new target capacity. You can request that the
+        /// Spot fleet terminate Spot instances until the size of the fleet no longer exceeds
+        /// the new target capacity. If the allocation strategy is <code>lowestPrice</code>, the
+        /// Spot fleet terminates the instances with the highest price per unit. If the allocation
+        /// strategy is <code>diversified</code>, the Spot fleet terminates instances across the
+        /// Spot pools. Alternatively, you can request that the Spot fleet keep the fleet at its
+        /// current size, but not replace any Spot instances that are interrupted or that you
+        /// terminate manually.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifySpotFleetRequest service method.</param>
+        /// 
+        /// <returns>The response from the ModifySpotFleetRequest service method, as returned by EC2.</returns>
+        public ModifySpotFleetRequestResponse ModifySpotFleetRequest(ModifySpotFleetRequestRequest request)
+        {
+            var marshaller = new ModifySpotFleetRequestRequestMarshaller();
+            var unmarshaller = ModifySpotFleetRequestResponseUnmarshaller.Instance;
+
+            return Invoke<ModifySpotFleetRequestRequest,ModifySpotFleetRequestResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifySpotFleetRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifySpotFleetRequest operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ModifySpotFleetRequestResponse> ModifySpotFleetRequestAsync(ModifySpotFleetRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifySpotFleetRequestRequestMarshaller();
+            var unmarshaller = ModifySpotFleetRequestResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifySpotFleetRequestRequest,ModifySpotFleetRequestResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

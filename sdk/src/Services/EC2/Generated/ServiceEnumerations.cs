@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 
 using System;
@@ -222,6 +222,18 @@ namespace Amazon.EC2
         /// Constant Available for AvailabilityZoneState
         /// </summary>
         public static readonly AvailabilityZoneState Available = new AvailabilityZoneState("available");
+        /// <summary>
+        /// Constant Impaired for AvailabilityZoneState
+        /// </summary>
+        public static readonly AvailabilityZoneState Impaired = new AvailabilityZoneState("impaired");
+        /// <summary>
+        /// Constant Information for AvailabilityZoneState
+        /// </summary>
+        public static readonly AvailabilityZoneState Information = new AvailabilityZoneState("information");
+        /// <summary>
+        /// Constant Unavailable for AvailabilityZoneState
+        /// </summary>
+        public static readonly AvailabilityZoneState Unavailable = new AvailabilityZoneState("unavailable");
 
         /// <summary>
         /// Default Constructor
@@ -279,6 +291,10 @@ namespace Amazon.EC2
         /// Constant Failed for BatchState
         /// </summary>
         public static readonly BatchState Failed = new BatchState("failed");
+        /// <summary>
+        /// Constant Modifying for BatchState
+        /// </summary>
+        public static readonly BatchState Modifying = new BatchState("modifying");
         /// <summary>
         /// Constant Submitted for BatchState
         /// </summary>
@@ -908,6 +924,51 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExcessCapacityTerminationPolicy.
+    /// </summary>
+    public class ExcessCapacityTerminationPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for ExcessCapacityTerminationPolicy
+        /// </summary>
+        public static readonly ExcessCapacityTerminationPolicy Default = new ExcessCapacityTerminationPolicy("default");
+        /// <summary>
+        /// Constant NoTermination for ExcessCapacityTerminationPolicy
+        /// </summary>
+        public static readonly ExcessCapacityTerminationPolicy NoTermination = new ExcessCapacityTerminationPolicy("noTermination");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public ExcessCapacityTerminationPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExcessCapacityTerminationPolicy FindValue(string value)
+        {
+            return FindValue<ExcessCapacityTerminationPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExcessCapacityTerminationPolicy(string value)
         {
             return FindValue(value);
         }
