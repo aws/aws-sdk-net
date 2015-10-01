@@ -34,7 +34,10 @@ namespace Amazon.WorkSpaces.Model
     {
         private string _bundleId;
         private string _directoryId;
+        private bool? _rootVolumeEncryptionEnabled;
         private string _userName;
+        private bool? _userVolumeEncryptionEnabled;
+        private string _volumeEncryptionKey;
 
         /// <summary>
         /// Gets and sets the property BundleId. 
@@ -76,6 +79,24 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RootVolumeEncryptionEnabled. 
+        /// <para>
+        /// Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+        /// </para>
+        /// </summary>
+        public bool RootVolumeEncryptionEnabled
+        {
+            get { return this._rootVolumeEncryptionEnabled.GetValueOrDefault(); }
+            set { this._rootVolumeEncryptionEnabled = value; }
+        }
+
+        // Check to see if RootVolumeEncryptionEnabled property is set
+        internal bool IsSetRootVolumeEncryptionEnabled()
+        {
+            return this._rootVolumeEncryptionEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
         /// The username that the WorkSpace is assigned to. This username must exist in the AWS
@@ -92,6 +113,42 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetUserName()
         {
             return this._userName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserVolumeEncryptionEnabled. 
+        /// <para>
+        /// Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+        /// </para>
+        /// </summary>
+        public bool UserVolumeEncryptionEnabled
+        {
+            get { return this._userVolumeEncryptionEnabled.GetValueOrDefault(); }
+            set { this._userVolumeEncryptionEnabled = value; }
+        }
+
+        // Check to see if UserVolumeEncryptionEnabled property is set
+        internal bool IsSetUserVolumeEncryptionEnabled()
+        {
+            return this._userVolumeEncryptionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeEncryptionKey. 
+        /// <para>
+        /// The KMS key used to encrypt data stored on your WorkSpace.
+        /// </para>
+        /// </summary>
+        public string VolumeEncryptionKey
+        {
+            get { return this._volumeEncryptionKey; }
+            set { this._volumeEncryptionKey = value; }
+        }
+
+        // Check to see if VolumeEncryptionKey property is set
+        internal bool IsSetVolumeEncryptionKey()
+        {
+            return this._volumeEncryptionKey != null;
         }
 
     }

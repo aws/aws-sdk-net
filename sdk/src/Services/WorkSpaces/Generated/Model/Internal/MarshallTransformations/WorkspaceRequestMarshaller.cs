@@ -57,10 +57,28 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DirectoryId);
             }
 
+            if(requestObject.IsSetRootVolumeEncryptionEnabled())
+            {
+                context.Writer.WritePropertyName("RootVolumeEncryptionEnabled");
+                context.Writer.Write(requestObject.RootVolumeEncryptionEnabled);
+            }
+
             if(requestObject.IsSetUserName())
             {
                 context.Writer.WritePropertyName("UserName");
                 context.Writer.Write(requestObject.UserName);
+            }
+
+            if(requestObject.IsSetUserVolumeEncryptionEnabled())
+            {
+                context.Writer.WritePropertyName("UserVolumeEncryptionEnabled");
+                context.Writer.Write(requestObject.UserVolumeEncryptionEnabled);
+            }
+
+            if(requestObject.IsSetVolumeEncryptionKey())
+            {
+                context.Writer.WritePropertyName("VolumeEncryptionKey");
+                context.Writer.Write(requestObject.VolumeEncryptionKey);
             }
 
         }
