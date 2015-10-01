@@ -40,6 +40,7 @@ namespace Amazon.RDS.Model
         private bool? _autoMinorVersionUpgrade;
         private int? _backupRetentionPeriod;
         private string _caCertificateIdentifier;
+        private bool? _copyTagsToSnapshot;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _dbParameterGroupName;
@@ -315,6 +316,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CopyTagsToSnapshot. 
+        /// <para>
+        /// True to copy all tags from the DB instance to snapshots of the DB instance; otherwise
+        /// false. The default is false.
+        /// </para>
+        /// </summary>
+        public bool CopyTagsToSnapshot
+        {
+            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            set { this._copyTagsToSnapshot = value; }
+        }
+
+        // Check to see if CopyTagsToSnapshot property is set
+        internal bool IsSetCopyTagsToSnapshot()
+        {
+            return this._copyTagsToSnapshot.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         ///  The new compute and memory capacity of the DB instance. To determine the instance
@@ -336,7 +356,7 @@ namespace Amazon.RDS.Model
         /// Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge
         /// | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge
         /// | db.m3.2xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge
-        /// | db.t2.micro | db.t2.small | db.t2.medium</code>
+        /// | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -544,8 +564,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric
-        /// characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
+        /// Constraints: Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8
+        /// to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
         /// </para>
         ///  <note> Amazon RDS API actions never return the password, so this action provides
         /// a way to regain access to a primary instance user if the password is lost. This includes

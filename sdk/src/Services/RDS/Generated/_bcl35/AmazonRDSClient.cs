@@ -4027,6 +4027,9 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBCluster service method.</param>
         /// 
         /// <returns>The response from the ModifyDBCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterAlreadyExistsException">
+        /// User already has a DB cluster with the given identifier.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
         /// </exception>

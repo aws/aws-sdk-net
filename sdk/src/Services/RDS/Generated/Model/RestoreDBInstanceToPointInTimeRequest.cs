@@ -42,6 +42,7 @@ namespace Amazon.RDS.Model
     {
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
+        private bool? _copyTagsToSnapshot;
         private string _dbInstanceClass;
         private string _dbName;
         private string _dbSubnetGroupName;
@@ -128,6 +129,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CopyTagsToSnapshot. 
+        /// <para>
+        /// True to copy all tags from the restored DB instance to snapshots of the DB instance;
+        /// otherwise false. The default is false.
+        /// </para>
+        /// </summary>
+        public bool CopyTagsToSnapshot
+        {
+            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            set { this._copyTagsToSnapshot = value; }
+        }
+
+        // Check to see if CopyTagsToSnapshot property is set
+        internal bool IsSetCopyTagsToSnapshot()
+        {
+            return this._copyTagsToSnapshot.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         ///  The compute and memory capacity of the Amazon RDS DB instance. 
@@ -137,7 +157,7 @@ namespace Amazon.RDS.Model
         /// Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge
         /// | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge
         /// | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro
-        /// | db.t2.small | db.t2.medium</code>
+        /// | db.t2.small | db.t2.medium | db.t2.large</code>
         /// </para>
         ///  
         /// <para>

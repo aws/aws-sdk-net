@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DBEngineVersion Object
+    /// Response Unmarshaller for UpgradeTarget Object
     /// </summary>  
-    public class DBEngineVersionUnmarshaller : IUnmarshaller<DBEngineVersion, XmlUnmarshallerContext>, IUnmarshaller<DBEngineVersion, JsonUnmarshallerContext>
+    public class UpgradeTargetUnmarshaller : IUnmarshaller<UpgradeTarget, XmlUnmarshallerContext>, IUnmarshaller<UpgradeTarget, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DBEngineVersion Unmarshall(XmlUnmarshallerContext context)
+        public UpgradeTarget Unmarshall(XmlUnmarshallerContext context)
         {
-            DBEngineVersion unmarshalledObject = new DBEngineVersion();
+            UpgradeTarget unmarshalledObject = new UpgradeTarget();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,28 +54,16 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("DBEngineDescription", targetDepth))
+                    if (context.TestExpression("AutoUpgrade", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DBEngineDescription = unmarshaller.Unmarshall(context);
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.AutoUpgrade = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("DBEngineVersionDescription", targetDepth))
+                    if (context.TestExpression("Description", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DBEngineVersionDescription = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DBParameterGroupFamily", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DBParameterGroupFamily = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DefaultCharacterSet", targetDepth))
-                    {
-                        var unmarshaller = CharacterSetUnmarshaller.Instance;
-                        unmarshalledObject.DefaultCharacterSet = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Engine", targetDepth))
@@ -90,18 +78,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SupportedCharacterSets/CharacterSet", targetDepth))
+                    if (context.TestExpression("IsMajorVersionUpgrade", targetDepth))
                     {
-                        var unmarshaller = CharacterSetUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.SupportedCharacterSets.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("ValidUpgradeTarget/UpgradeTarget", targetDepth))
-                    {
-                        var unmarshaller = UpgradeTargetUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.ValidUpgradeTarget.Add(item);
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IsMajorVersionUpgrade = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -119,18 +99,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DBEngineVersion Unmarshall(JsonUnmarshallerContext context)
+        public UpgradeTarget Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static DBEngineVersionUnmarshaller _instance = new DBEngineVersionUnmarshaller();        
+        private static UpgradeTargetUnmarshaller _instance = new UpgradeTargetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DBEngineVersionUnmarshaller Instance
+        public static UpgradeTargetUnmarshaller Instance
         {
             get
             {

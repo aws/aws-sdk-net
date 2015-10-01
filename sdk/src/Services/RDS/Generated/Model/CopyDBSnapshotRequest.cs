@@ -34,9 +34,29 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class CopyDBSnapshotRequest : AmazonRDSRequest
     {
+        private bool? _copyTags;
         private string _sourceDBSnapshotIdentifier;
         private List<Tag> _tags = new List<Tag>();
         private string _targetDBSnapshotIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property CopyTags. 
+        /// <para>
+        /// True to copy all tags from the source DB snapshot to the target DB snapshot; otherwise
+        /// false. The default is false.
+        /// </para>
+        /// </summary>
+        public bool CopyTags
+        {
+            get { return this._copyTags.GetValueOrDefault(); }
+            set { this._copyTags = value; }
+        }
+
+        // Check to see if CopyTags property is set
+        internal bool IsSetCopyTags()
+        {
+            return this._copyTags.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property SourceDBSnapshotIdentifier. 

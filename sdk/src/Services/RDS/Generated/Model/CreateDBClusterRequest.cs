@@ -220,7 +220,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>MySQL</code>
+        /// Valid Values: <code>aurora</code>
         /// </para>
         /// </summary>
         public string Engine
@@ -246,7 +246,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>5.6.0</code>
+        /// Example: <code>5.6.10a</code>
         /// </para>
         /// </summary>
         public string EngineVersion
