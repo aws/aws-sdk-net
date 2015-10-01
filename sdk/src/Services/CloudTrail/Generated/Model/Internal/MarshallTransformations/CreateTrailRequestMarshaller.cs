@@ -79,10 +79,22 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CloudWatchLogsRoleArn);
                 }
 
+                if(publicRequest.IsSetEnableLogFileValidation())
+                {
+                    context.Writer.WritePropertyName("EnableLogFileValidation");
+                    context.Writer.Write(publicRequest.EnableLogFileValidation);
+                }
+
                 if(publicRequest.IsSetIncludeGlobalServiceEvents())
                 {
                     context.Writer.WritePropertyName("IncludeGlobalServiceEvents");
                     context.Writer.Write(publicRequest.IncludeGlobalServiceEvents);
+                }
+
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("KmsKeyId");
+                    context.Writer.Write(publicRequest.KmsKeyId);
                 }
 
                 if(publicRequest.IsSetName())

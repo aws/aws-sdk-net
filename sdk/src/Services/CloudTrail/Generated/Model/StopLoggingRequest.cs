@@ -40,8 +40,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Communicates to CloudTrail the name of the trail for which to stop logging AWS API
-        /// calls.
+        /// Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop
+        /// logging AWS API calls. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
         /// </para>
         /// </summary>
         public string Name
