@@ -1,3 +1,13 @@
+### 3.1.16.0 (2015-10-01 21:11 UTC)
+* CloudTrail (3.1.1.0)
+	* Added new APIs for AWS CloudTrail: AddTags, ListTags, RemoveTags, and ListPublicKeys. This release of CloudTrail includes support for log file integrity validation, log encryption with AWS KMS–Managed Keys (SSE-KMS), and trail tagging.
+* Elasticsearch (3.0.0.0)
+	* Added support for the new Amazon Elasticsearch Service.
+* RDS (3.1.2.0)
+	* Added support for t2.large DB instance, support for copying tags to snapshot, and other minor updates.
+* WorkSpaces (3.1.1.0)
+	* Added support for user volume encryption.
+
 ### 3.1.15.0 (2015-09-29 23:12 UTC)
 * CloudFormation (3.1.1.0)
 	* Added new DescribeAccountLimits API and optional ResourceTypes parameter for CreateStack and UpdateStack APIs.

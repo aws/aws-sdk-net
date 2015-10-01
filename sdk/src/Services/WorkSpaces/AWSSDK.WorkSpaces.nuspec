@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.WorkSpaces</id>
     <title>AWSSDK - Amazon WorkSpaces</title>
-    <version>3.1.0.1</version> 
+    <version>3.1.1.0</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon WorkSpaces is a managed desktop computing service in the cloud.</description>
     <language>en-US</language>

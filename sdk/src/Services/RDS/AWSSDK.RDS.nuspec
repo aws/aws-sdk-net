@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.RDS</id>
     <title>AWSSDK - Amazon Relational Database Service</title>
-    <version>3.1.1.1</version> 
+    <version>3.1.2.0</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Relational Database Service (Amazon RDS) is a web service that makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while managing time-consuming database management tasks, freeing you up to focus on your applications and business.</description>
     <language>en-US</language>
