@@ -417,6 +417,16 @@
         {
             "active": true,
 
+            "model": "es",
+            "base-name": "Elasticsearch",
+            "region-lookup-name": "es",
+            "authentication-service-name": "es",
+            "service-url": "https://es.us-east-1.amazonaws.com",
+            "synopsis": "Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains."
+        },
+        {
+            "active": true,
+
             "model": "glacier",
             "base-name": "Glacier",
             "region-lookup-name": "glacier",

@@ -268,6 +268,10 @@
       <Project>{24F0A0C5-C22E-425E-8C9D-91694AA36190}</Project>
       <Name>AWSSDK.DeviceFarm.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Elasticsearch\AWSSDK.Elasticsearch.Net35.csproj">
+      <Project>{53D1A7E3-CE00-41E7-AD1A-C1ADB30BEB97}</Project>
+      <Name>AWSSDK.Elasticsearch.Net35</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">

@@ -187,6 +187,10 @@
       <Project>{2B2A9558-058E-4C26-8637-628846329B9A}</Project>
       <Name>AWSSDK.ElasticMapReduce.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Elasticsearch\AWSSDK.Elasticsearch.Net45.csproj">
+      <Project>{4ec8381a-cdb2-4382-a5e0-61ea1c605a25}</Project>
+      <Name>AWSSDK.Elasticsearch.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.Net45.csproj">
       <Project>{FCF20E51-E8E5-46A3-8D7A-BB0E68C8BF4A}</Project>
       <Name>AWSSDK.ElasticTranscoder.Net45</Name>

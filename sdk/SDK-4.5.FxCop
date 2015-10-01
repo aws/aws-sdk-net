@@ -50,6 +50,7 @@
       <Directory>$(ProjectDir)/src/Services/elasticfilesystem/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticloadbalancing/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticmapreduce/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/elasticsearch/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/elastictranscoder/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/glacier/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/identitymanagement/bin/Release/net45/</Directory>
@@ -104,6 +105,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ElasticFileSystem.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ElasticLoadBalancing.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ElasticMapReduce.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Elasticsearch.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ElasticTranscoder.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Glacier.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.IdentityManagement.dll" Analyze="True" AnalyzeAllChildren="True" />
