@@ -150,6 +150,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service. SQS makes it simple and cost-effective to decouple the components of a cloud application.
 * [AWSSDK.StorageGateway](https://www.nuget.org/packages/AWSSDK.StorageGateway/)
 	* The AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure.
+* [AWSSDK.WAF](https://www.nuget.org/packages/AWSSDK.WAF/)
+	* AWS WAF (Web Application Firewall) protects web applications from attack by allowing customers to block bad actors and provides filters against common web exploits like SQL injection.
 * [AWSSDK.WorkSpaces](https://www.nuget.org/packages/AWSSDK.WorkSpaces/)
 	* Amazon WorkSpaces is a managed desktop computing service in the cloud.
 

@@ -274,6 +274,10 @@
       <Project>{4EC8381A-CDB2-4382-A5E0-61EA1C605A25}</Project>
       <Name>AWSSDK.Elasticsearch.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\WAF\AWSSDK.WAF.Net45.csproj">
+      <Project>{70766489-2019-4896-B4DA-0A9FE0D189DB}</Project>
+      <Name>AWSSDK.WAF.Net45</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">

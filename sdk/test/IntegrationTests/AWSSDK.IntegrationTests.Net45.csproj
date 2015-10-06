@@ -283,6 +283,10 @@
       <Project>{1B549AEC-1E3F-4D4A-8404-98A43CAF2FD9}</Project>
       <Name>AWSSDK.StorageGateway.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\WAF\AWSSDK.WAF.Net45.csproj">
+      <Project>{70766489-2019-4896-b4da-0a9fe0d189db}</Project>
+      <Name>AWSSDK.WAF.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\WorkSpaces\AWSSDK.WorkSpaces.Net45.csproj">
       <Project>{60819F67-5CD7-41A4-9E02-BB27E5A3F715}</Project>
       <Name>AWSSDK.WorkSpaces.Net45</Name>

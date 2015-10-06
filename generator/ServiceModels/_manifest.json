@@ -664,6 +664,16 @@
             "synopsis": "The AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure."
         },
         {
+            "active": true,
+
+            "model": "waf",
+            "base-name": "WAF",
+            "region-lookup-name": "waf",
+            "authentication-service-name": "waf",
+            "service-url": "https://waf.amazonaws.com",
+            "synopsis": "AWS WAF (Web Application Firewall) protects web applications from attack by allowing customers to block bad actors and provides filters against common web exploits like SQL injection."
+        },
+        {
             "active" : true,
             
             "model": "workspaces",
