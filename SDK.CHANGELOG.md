@@ -1,3 +1,14 @@
+### 3.1.17.0 (2015-10-06 21:20 UTC)
+* CloudFront (3.1.1.0)
+	* Added support for integrating CloudFront with AWS WAF.
+* EC2 (3.1.4.0)
+	* Added new property BlockDurationMinutes to RequestSpotInstancesRequest. This specifies the duration for which the instance is required.
+* WAF (3.1.0.0)
+	* Updated to use new Core, version 3.1.2.0
+	* Added support for AWS WAF (Web Application Firewall). AWS WAF protects web applications from attack by allowing customers to block bad actors and provides filters against common web exploits like SQL injection.
+* Core 3.1.2.0
+	* Added support for WAF.
+
 ### 3.1.16.0 (2015-10-01 21:11 UTC)
 * CloudTrail (3.1.1.0)
 	* Added new APIs for AWS CloudTrail: AddTags, ListTags, RemoveTags, and ListPublicKeys. This release of CloudTrail includes support for log file integrity validation, log encryption with AWS KMS–Managed Keys (SSE-KMS), and trail tagging.
