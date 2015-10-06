@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2015-04-17.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2015-07-27.normal.json service model.
  */
 
 
@@ -496,6 +496,22 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ListDistributionsResponse> ListDistributionsAsync(ListDistributionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDistributionsByWebACLId
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDistributionsByWebACLId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByWebACLId operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListDistributionsByWebACLIdResponse> ListDistributionsByWebACLIdAsync(ListDistributionsByWebACLIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

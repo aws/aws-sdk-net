@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2015-04-17.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2015-07-27.normal.json service model.
  */
 
 
@@ -946,6 +946,37 @@ namespace Amazon.CloudFront
             var unmarshaller = ListDistributionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDistributionsRequest,ListDistributionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDistributionsByWebACLId
+
+        internal ListDistributionsByWebACLIdResponse ListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request)
+        {
+            var marshaller = new ListDistributionsByWebACLIdRequestMarshaller();
+            var unmarshaller = ListDistributionsByWebACLIdResponseUnmarshaller.Instance;
+
+            return Invoke<ListDistributionsByWebACLIdRequest,ListDistributionsByWebACLIdResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDistributionsByWebACLId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByWebACLId operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListDistributionsByWebACLIdResponse> ListDistributionsByWebACLIdAsync(ListDistributionsByWebACLIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListDistributionsByWebACLIdRequestMarshaller();
+            var unmarshaller = ListDistributionsByWebACLIdResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDistributionsByWebACLIdRequest,ListDistributionsByWebACLIdResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

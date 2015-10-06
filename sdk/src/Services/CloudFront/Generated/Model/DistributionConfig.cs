@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2015-04-17.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2015-07-27.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -45,6 +45,7 @@ namespace Amazon.CloudFront.Model
         private PriceClass _priceClass;
         private Restrictions _restrictions;
         private ViewerCertificate _viewerCertificate;
+        private string _webACLId;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -281,6 +282,22 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetViewerCertificate()
         {
             return this._viewerCertificate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebACLId. (Optional) If you're using AWS WAF to filter
+        /// CloudFront requests, the Id of the AWS WAF web ACL that is associated with the distribution.
+        /// </summary>
+        public string WebACLId
+        {
+            get { return this._webACLId; }
+            set { this._webACLId = value; }
+        }
+
+        // Check to see if WebACLId property is set
+        internal bool IsSetWebACLId()
+        {
+            return this._webACLId != null;
         }
 
     }
