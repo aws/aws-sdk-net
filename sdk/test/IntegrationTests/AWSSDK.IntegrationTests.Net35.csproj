@@ -80,6 +80,10 @@
       <Project>{88F2CD8C-2C47-4E66-A4D4-93B2CF5BDCBC}</Project>
       <Name>AWSSDK.AutoScaling.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\AWSMarketplaceCommerceAnalytics\AWSSDK.AWSMarketplaceCommerceAnalytics.Net35.csproj">
+      <Project>{51d44631-1d3d-4c44-a1f1-0ab86639e682}</Project>
+      <Name>AWSSDK.AWSMarketplaceCommerceAnalytics.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\AWSSupport\AWSSDK.AWSSupport.Net35.csproj">
       <Project>{663AA578-CBBF-4E69-9753-577480DEED1D}</Project>
       <Name>AWSSDK.AWSSupport.Net35</Name>

@@ -282,6 +282,10 @@
       <Project>{70766489-2019-4896-B4DA-0A9FE0D189DB}</Project>
       <Name>AWSSDK.WAF.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\AWSMarketplaceCommerceAnalytics\AWSSDK.AWSMarketplaceCommerceAnalytics.Net45.csproj">
+      <Project>{C33464FA-3089-4A75-8A61-D2AAB8CCD3FD}</Project>
+      <Name>AWSSDK.AWSMarketplaceCommerceAnalytics.Net45</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">

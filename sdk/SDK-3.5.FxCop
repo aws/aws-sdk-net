@@ -23,6 +23,7 @@
   <Targets>
     <AssemblyReferenceDirectories>
       <Directory>$(ProjectDir)/src/Services/autoscaling/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/awsmarketplacecommerceanalytics/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/awssupport/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/cloudformation/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/cloudfront/bin/Release/net35/</Directory>
@@ -80,6 +81,7 @@
       <Directory>$(ProjectDir)/src/Core/bin/Release/net35/</Directory>
     </AssemblyReferenceDirectories>
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AWSMarketplaceCommerceAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AWSSupport.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CloudFormation.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CloudFront.dll" Analyze="True" AnalyzeAllChildren="True" />

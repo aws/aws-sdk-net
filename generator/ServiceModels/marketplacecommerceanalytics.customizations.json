@@ -1,0 +1,56 @@
+{ 
+	"shapeModifiers": {
+        "DataSetType": {
+            "modify": [
+                {
+                    "customer_profile_by_industry": { "emitPropertyName": "CustomerProfileByIndustry" }
+                },
+                {
+                    "customer_profile_by_revenue": { "emitPropertyName": "CustomerProfileByRevenue" }
+                },
+                {
+                    "customer_subscriber_annual_subscriptions": { "emitPropertyName": "CustomerSubscriberAnnualSubscriptions" }
+                },
+                {
+                    "customer_subscriber_hourly_monthly_subscriptions": { "emitPropertyName": "CustomerSubscriberHourlyMonthlySubscriptions" }
+                },
+                {
+                    "daily_business_canceled_product_subscribers": { "emitPropertyName": "DailyBusinessCanceledProductSubscribers" }
+                },
+                {
+                    "daily_business_fees": { "emitPropertyName": "DailyBusinessFees" }
+                },
+                {
+                    "daily_business_free_trial_conversions": { "emitPropertyName": "DailyBusinessFreeTrialConversions" }
+                },
+                {
+                    "daily_business_new_instances": { "emitPropertyName": "DailyBusinessNewInstances" }
+                },
+                {
+                    "daily_business_new_product_subscribers": { "emitPropertyName": "DailyBusinessNewProductSubscribers" }
+                },
+                {
+                    "daily_business_usage_by_instance_type": { "emitPropertyName": "DailyBusinessUsageByInstanceType" }
+                },
+                {
+                    "disbursed_amount_by_age_of_disbursed_funds": { "emitPropertyName": "DisbursedAmountByAgeOfDisbursedFunds" }
+                },
+                {
+                    "disbursed_amount_by_age_of_uncollected_funds": { "emitPropertyName": "DisbursedAmountByAgeOfUncollectedFunds" }
+                },
+                {
+                    "disbursed_amount_by_customer_geo": { "emitPropertyName": "DisbursedAmountByCustomerGeo" }
+                },
+                {
+                    "disbursed_amount_by_product": { "emitPropertyName": "DisbursedAmountByProduct" }
+                },
+                {
+                    "monthly_revenue_annual_subscriptions": { "emitPropertyName": "MonthlyRevenueAnnualSubscriptions" }
+                },
+                {
+                    "monthly_revenue_billing_and_revenue_data": { "emitPropertyName": "MonthlyRevenueBillingAndRevenueData" }
+                }
+            ]
+        }
+	}
+}
