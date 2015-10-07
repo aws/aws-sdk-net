@@ -244,6 +244,10 @@
       <Project>{6fe3798f-2a60-4e26-9b36-fc7e52b232c9}</Project>
       <Name>AWSSDK.Inspector.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\IoT\AWSSDK.IoT.Net35.csproj">
+      <Project>{3a3995fd-9750-4248-943b-a4bac190353d}</Project>
+      <Name>AWSSDK.IoT.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.Net35.csproj">
       <Project>{ADF1A47D-4C05-4DC5-B318-E3E412C2578E}</Project>
       <Name>AWSSDK.KeyManagementService.Net35</Name>

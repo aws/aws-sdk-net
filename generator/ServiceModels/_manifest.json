@@ -478,6 +478,16 @@
             "service-url": "https://importexport.amazonaws.com/",
             "synopsis": "AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport."
         },
+                {
+            "active": true,
+
+            "model": "iot-2015-",
+            "base-name": "IoT",
+            "region-lookup-name": "iot",
+			"authentication-service-name": "execute-api",
+            "service-url": "https://iot.us-east-1.amazonaws.com/",
+            "synopsis": "AWS IoT allows you to leverage AWS to build your Internet of Things."
+        },
         {
             "active": true,
 

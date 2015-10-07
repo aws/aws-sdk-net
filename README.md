@@ -116,6 +116,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.
 * [AWSSDK.Inspector](https://www.nuget.org/packages/AWSSDK.Inspector/)
 	* Amazon Inspector identifies security issues in your application deployments.
+* [AWSSDK.IoT](https://www.nuget.org/packages/AWSSDK.IoT/)
+	* AWS IoT allows you to leverage AWS to build your Internet of Things.
 * [AWSSDK.KeyManagementService](https://www.nuget.org/packages/AWSSDK.KeyManagementService/)
 	* AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys.
 * [AWSSDK.Kinesis](https://www.nuget.org/packages/AWSSDK.Kinesis/)
