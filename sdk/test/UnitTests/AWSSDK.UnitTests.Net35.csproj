@@ -156,6 +156,10 @@
       <Project>{C38A2D2C-E410-4084-9245-F577777E8009}</Project>
       <Name>AWSSDK.Glacier.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\IotData\AWSSDK.IotData.Net35.csproj">
+      <Project>{E928C4C7-63E0-4DDD-A967-AD00BAAF40C8}</Project>
+      <Name>AWSSDK.IotData.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\IdentityManagement\AWSSDK.IdentityManagement.Net35.csproj">
       <Project>{40BA3D89-6B91-4199-AF4B-50ABFBD0C18F}</Project>
       <Name>AWSSDK.IdentityManagement.Net35</Name>

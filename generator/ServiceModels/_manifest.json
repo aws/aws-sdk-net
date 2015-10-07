@@ -458,6 +458,17 @@
         {
             "active": true,
 
+            "model": "iot-data",
+            "base-name": "IotData",
+            "region-lookup-name": "data.iot",
+            "service-url": "https://data.iot.us-east-1.amazonaws.com/",
+			"authentication-service-name": "iotdata",
+			"generate-client-constructors": false,
+            "synopsis": "AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud."
+        },
+        {
+            "active": true,
+
             "model": "iam",
             "base-name": "IdentityManagement",
             "namespace": "Amazon.IdentityManagement",

@@ -207,6 +207,10 @@
       <Project>{02374DF3-D0F8-43DD-A638-8130A604A683}</Project>
       <Name>AWSSDK.IdentityManagement.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\IotData\AWSSDK.IotData.Net45.csproj">
+      <Project>{73e561fe-e0dc-4096-b87f-e614e146abb2}</Project>
+      <Name>AWSSDK.IotData.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ImportExport\AWSSDK.ImportExport.Net45.csproj">
       <Project>{91A3791F-AC18-48FB-B27C-05389B988B75}</Project>
       <Name>AWSSDK.ImportExport.Net45</Name>

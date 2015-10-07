@@ -54,6 +54,7 @@
       <Directory>$(ProjectDir)/src/Services/elasticsearch/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/elastictranscoder/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/glacier/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/iotdata/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/identitymanagement/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/importexport/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/inspector/bin/Release/net35/</Directory>
@@ -114,6 +115,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Elasticsearch.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ElasticTranscoder.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Glacier.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IotData.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IdentityManagement.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ImportExport.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Inspector.dll" Analyze="True" AnalyzeAllChildren="True" />
