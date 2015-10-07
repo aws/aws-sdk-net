@@ -1,3 +1,18 @@
+### 3.1.18.0 (2015-10-07 09:15 UTC)
+* AWSMarketplaceCommerceAnalytics (3.1.0.0)
+	* Updated to use new Core, version 3.1.3.0
+	* The AWS Marketplace Commerce Analytics service allows marketplace partners to programmatically request business intelligence data from AWS Marketplace. This service provides the same data that was previously only available through the AWS Marketplace Management Portal, but offers the data in a fully-machine-readable format and available in fine-grained data sets rather than large reports.
+* ConfigService (3.1.2.0)
+	* Added support for Config Rule and Evaluations.
+* Inspector (3.1.0.0)
+	* Amazon Inspector is a new service from AWS that identifies security issues in your application deployments. Use Inspector with your applications to assess your security posture and identify areas that can be improved. Inspector works with your EC2 Instances to monitor activity in the applications and system.
+* Kinesis (3.1.2.0)
+	* Added two new Amazon Kinesis APIs that allow customers to choose how long their data records are stored in their Amazon Kinesis streams.
+* KinesisFirehose (3.1.0.0)
+	* Amazon Kinesis Firehose is a fully managed service for ingesting data streams directly into AWS data services such as Amazon S3 and Amazon Redshift.
+* Core 3.1.3.0
+	* Updated the set of error codes that are automatically retried.
+
 ### 3.1.17.1 (2015-10-07 00:48 UTC)
 * Core 3.1.2.1
 	* Fixed issue where NullReferenceException could be thrown for certain SDK calls (https://github.com/aws/aws-sdk-net/issues/252).
