@@ -75,6 +75,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Kinesis")]
+        public void DecreaseStreamRetentionPeriodMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DecreaseStreamRetentionPeriodRequest>();
+            var marshaller = new DecreaseStreamRetentionPeriodRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DecreaseStreamRetentionPeriodRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kinesis")]
         public void DeleteStreamMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DeleteStreamRequest>();
@@ -171,6 +187,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = GetShardIteratorResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetShardIteratorResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kinesis")]
+        public void IncreaseStreamRetentionPeriodMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<IncreaseStreamRetentionPeriodRequest>();
+            var marshaller = new IncreaseStreamRetentionPeriodRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<IncreaseStreamRetentionPeriodRequest>(request,jsonRequest);
+
         }
 
         

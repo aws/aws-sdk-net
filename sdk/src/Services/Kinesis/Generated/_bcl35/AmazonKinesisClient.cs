@@ -251,12 +251,12 @@ namespace Amazon.Kinesis
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
-        /// The resource is not available for this operation. For example, you attempted to split
-        /// a shard but the stream is not in the <code>ACTIVE</code> state.
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// needs to be in the <code>ACTIVE</code> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
-        /// The requested resource could not be found. It might not be specified correctly, or
-        /// it might not be in the <code>ACTIVE</code> state.
+        /// The requested resource could not be found. The stream might not be specified correctly,
+        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
         /// </exception>
         public AddTagsToStreamResponse AddTagsToStream(AddTagsToStreamRequest request)
         {
@@ -367,8 +367,8 @@ namespace Amazon.Kinesis
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
-        /// The resource is not available for this operation. For example, you attempted to split
-        /// a shard but the stream is not in the <code>ACTIVE</code> state.
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// needs to be in the <code>ACTIVE</code> state.
         /// </exception>
         public CreateStreamResponse CreateStream(CreateStreamRequest request)
         {
@@ -408,6 +408,122 @@ namespace Amazon.Kinesis
         public  CreateStreamResponse EndCreateStream(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateStreamResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DecreaseStreamRetentionPeriod
+
+        /// <summary>
+        /// Decreases the stream's retention period, which is the length of time data records
+        /// are accessible after they are added to the stream. The minimum value of a stream’s
+        /// retention period is 24 hours. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation may result in lost data. For example, if the stream's retention period
+        /// is 48 hours and is decreased to 24 hours, any data already in the stream that is older
+        /// than 24 hours is inaccessible.
+        /// </para>
+        /// </summary>
+        /// <param name="streamName">The name of the stream to modify.</param>
+        /// <param name="retentionPeriodHours">The new retention period of the stream, in hours. Must be less than the current retention period.</param>
+        /// 
+        /// <returns>The response from the DecreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed (5).
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// needs to be in the <code>ACTIVE</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly,
+        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
+        /// </exception>
+        public DecreaseStreamRetentionPeriodResponse DecreaseStreamRetentionPeriod(string streamName, int retentionPeriodHours)
+        {
+            var request = new DecreaseStreamRetentionPeriodRequest();
+            request.StreamName = streamName;
+            request.RetentionPeriodHours = retentionPeriodHours;
+            return DecreaseStreamRetentionPeriod(request);
+        }
+
+
+        /// <summary>
+        /// Decreases the stream's retention period, which is the length of time data records
+        /// are accessible after they are added to the stream. The minimum value of a stream’s
+        /// retention period is 24 hours. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation may result in lost data. For example, if the stream's retention period
+        /// is 48 hours and is decreased to 24 hours, any data already in the stream that is older
+        /// than 24 hours is inaccessible.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DecreaseStreamRetentionPeriod service method.</param>
+        /// 
+        /// <returns>The response from the DecreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed (5).
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// needs to be in the <code>ACTIVE</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly,
+        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
+        /// </exception>
+        public DecreaseStreamRetentionPeriodResponse DecreaseStreamRetentionPeriod(DecreaseStreamRetentionPeriodRequest request)
+        {
+            var marshaller = new DecreaseStreamRetentionPeriodRequestMarshaller();
+            var unmarshaller = DecreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
+
+            return Invoke<DecreaseStreamRetentionPeriodRequest,DecreaseStreamRetentionPeriodResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DecreaseStreamRetentionPeriod operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DecreaseStreamRetentionPeriod operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDecreaseStreamRetentionPeriod
+        ///         operation.</returns>
+        public IAsyncResult BeginDecreaseStreamRetentionPeriod(DecreaseStreamRetentionPeriodRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DecreaseStreamRetentionPeriodRequestMarshaller();
+            var unmarshaller = DecreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DecreaseStreamRetentionPeriodRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DecreaseStreamRetentionPeriod operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDecreaseStreamRetentionPeriod.</param>
+        /// 
+        /// <returns>Returns a  DecreaseStreamRetentionPeriodResult from Kinesis.</returns>
+        public  DecreaseStreamRetentionPeriodResponse EndDecreaseStreamRetentionPeriod(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DecreaseStreamRetentionPeriodResponse>(asyncResult);
         }
 
         #endregion
@@ -454,8 +570,8 @@ namespace Amazon.Kinesis
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
-        /// The requested resource could not be found. It might not be specified correctly, or
-        /// it might not be in the <code>ACTIVE</code> state.
+        /// The requested resource could not be found. The stream might not be specified correctly,
+        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
         /// </exception>
         public DeleteStreamResponse DeleteStream(DeleteStreamRequest request)
         {
@@ -541,8 +657,8 @@ namespace Amazon.Kinesis
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
-        /// The requested resource could not be found. It might not be specified correctly, or
-        /// it might not be in the <code>ACTIVE</code> state.
+        /// The requested resource could not be found. The stream might not be specified correctly,
+        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
         /// </exception>
         public DescribeStreamResponse DescribeStream(DescribeStreamRequest request)
         {
@@ -668,8 +784,8 @@ namespace Amazon.Kinesis
         /// Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
-        /// The requested resource could not be found. It might not be specified correctly, or
-        /// it might not be in the <code>ACTIVE</code> state.
+        /// The requested resource could not be found. The stream might not be specified correctly,
+        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
         /// </exception>
         public GetRecordsResponse GetRecords(GetRecordsRequest request)
         {
@@ -781,8 +897,8 @@ namespace Amazon.Kinesis
         /// Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
-        /// The requested resource could not be found. It might not be specified correctly, or
-        /// it might not be in the <code>ACTIVE</code> state.
+        /// The requested resource could not be found. The stream might not be specified correctly,
+        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
         /// </exception>
         public GetShardIteratorResponse GetShardIterator(GetShardIteratorRequest request)
         {
@@ -822,6 +938,128 @@ namespace Amazon.Kinesis
         public  GetShardIteratorResponse EndGetShardIterator(IAsyncResult asyncResult)
         {
             return EndInvoke<GetShardIteratorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  IncreaseStreamRetentionPeriod
+
+        /// <summary>
+        /// Increases the stream's retention period, which is the length of time data records
+        /// are accessible after they are added to the stream. The maximum value of a stream’s
+        /// retention period is 168 hours (7 days).
+        /// 
+        ///  
+        /// <para>
+        /// Upon choosing a longer stream retention period, this operation will increase the time
+        /// period records are accessible that have not yet expired. However, it will not make
+        /// previous data that has expired (older than the stream’s previous retention period)
+        /// accessible after the operation has been called. For example, if a stream’s retention
+        /// period is set to 24 hours and is increased to 168 hours, any data that is older than
+        /// 24 hours will remain inaccessible to consumer applications.
+        /// </para>
+        /// </summary>
+        /// <param name="streamName">The name of the stream to modify.</param>
+        /// <param name="retentionPeriodHours">The new retention period of the stream, in hours. Must be more than the current retention period.</param>
+        /// 
+        /// <returns>The response from the IncreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed (5).
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// needs to be in the <code>ACTIVE</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly,
+        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
+        /// </exception>
+        public IncreaseStreamRetentionPeriodResponse IncreaseStreamRetentionPeriod(string streamName, int retentionPeriodHours)
+        {
+            var request = new IncreaseStreamRetentionPeriodRequest();
+            request.StreamName = streamName;
+            request.RetentionPeriodHours = retentionPeriodHours;
+            return IncreaseStreamRetentionPeriod(request);
+        }
+
+
+        /// <summary>
+        /// Increases the stream's retention period, which is the length of time data records
+        /// are accessible after they are added to the stream. The maximum value of a stream’s
+        /// retention period is 168 hours (7 days).
+        /// 
+        ///  
+        /// <para>
+        /// Upon choosing a longer stream retention period, this operation will increase the time
+        /// period records are accessible that have not yet expired. However, it will not make
+        /// previous data that has expired (older than the stream’s previous retention period)
+        /// accessible after the operation has been called. For example, if a stream’s retention
+        /// period is set to 24 hours and is increased to 168 hours, any data that is older than
+        /// 24 hours will remain inaccessible to consumer applications.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the IncreaseStreamRetentionPeriod service method.</param>
+        /// 
+        /// <returns>The response from the IncreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed (5).
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// needs to be in the <code>ACTIVE</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly,
+        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
+        /// </exception>
+        public IncreaseStreamRetentionPeriodResponse IncreaseStreamRetentionPeriod(IncreaseStreamRetentionPeriodRequest request)
+        {
+            var marshaller = new IncreaseStreamRetentionPeriodRequestMarshaller();
+            var unmarshaller = IncreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
+
+            return Invoke<IncreaseStreamRetentionPeriodRequest,IncreaseStreamRetentionPeriodResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the IncreaseStreamRetentionPeriod operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the IncreaseStreamRetentionPeriod operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndIncreaseStreamRetentionPeriod
+        ///         operation.</returns>
+        public IAsyncResult BeginIncreaseStreamRetentionPeriod(IncreaseStreamRetentionPeriodRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new IncreaseStreamRetentionPeriodRequestMarshaller();
+            var unmarshaller = IncreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
+
+            return BeginInvoke<IncreaseStreamRetentionPeriodRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  IncreaseStreamRetentionPeriod operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginIncreaseStreamRetentionPeriod.</param>
+        /// 
+        /// <returns>Returns a  IncreaseStreamRetentionPeriodResult from Kinesis.</returns>
+        public  IncreaseStreamRetentionPeriodResponse EndIncreaseStreamRetentionPeriod(IAsyncResult asyncResult)
+        {
+            return EndInvoke<IncreaseStreamRetentionPeriodResponse>(asyncResult);
         }
 
         #endregion
@@ -955,8 +1193,8 @@ namespace Amazon.Kinesis
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
-        /// The requested resource could not be found. It might not be specified correctly, or
-        /// it might not be in the <code>ACTIVE</code> state.
+        /// The requested resource could not be found. The stream might not be specified correctly,
+        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
         /// </exception>
         public ListTagsForStreamResponse ListTagsForStream(ListTagsForStreamRequest request)
         {
@@ -1069,12 +1307,12 @@ namespace Amazon.Kinesis
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
-        /// The resource is not available for this operation. For example, you attempted to split
-        /// a shard but the stream is not in the <code>ACTIVE</code> state.
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// needs to be in the <code>ACTIVE</code> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
-        /// The requested resource could not be found. It might not be specified correctly, or
-        /// it might not be in the <code>ACTIVE</code> state.
+        /// The requested resource could not be found. The stream might not be specified correctly,
+        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
         /// </exception>
         public MergeShardsResponse MergeShards(MergeShardsRequest request)
         {
@@ -1173,8 +1411,10 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// Data records are accessible for only 24 hours from the time that they are added to
-        /// an Amazon Kinesis stream.
+        /// By default, data records are accessible for only 24 hours from the time that they
+        /// are added to an Amazon Kinesis stream. This retention period can be modified using
+        /// the <a>DecreaseStreamRetentionPeriod</a> and <a>IncreaseStreamRetentionPeriod</a>
+        /// operations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRecord service method.</param>
@@ -1191,8 +1431,8 @@ namespace Amazon.Kinesis
         /// Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
-        /// The requested resource could not be found. It might not be specified correctly, or
-        /// it might not be in the <code>ACTIVE</code> state.
+        /// The requested resource could not be found. The stream might not be specified correctly,
+        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
         /// </exception>
         public PutRecordResponse PutRecord(PutRecordRequest request)
         {
@@ -1313,8 +1553,10 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// Data records are accessible for only 24 hours from the time that they are added to
-        /// an Amazon Kinesis stream.
+        /// By default, data records are accessible for only 24 hours from the time that they
+        /// are added to an Amazon Kinesis stream. This retention period can be modified using
+        /// the <a>DecreaseStreamRetentionPeriod</a> and <a>IncreaseStreamRetentionPeriod</a>
+        /// operations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRecords service method.</param>
@@ -1331,8 +1573,8 @@ namespace Amazon.Kinesis
         /// Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
-        /// The requested resource could not be found. It might not be specified correctly, or
-        /// it might not be in the <code>ACTIVE</code> state.
+        /// The requested resource could not be found. The stream might not be specified correctly,
+        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
         /// </exception>
         public PutRecordsResponse PutRecords(PutRecordsRequest request)
         {
@@ -1398,12 +1640,12 @@ namespace Amazon.Kinesis
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
-        /// The resource is not available for this operation. For example, you attempted to split
-        /// a shard but the stream is not in the <code>ACTIVE</code> state.
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// needs to be in the <code>ACTIVE</code> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
-        /// The requested resource could not be found. It might not be specified correctly, or
-        /// it might not be in the <code>ACTIVE</code> state.
+        /// The requested resource could not be found. The stream might not be specified correctly,
+        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
         /// </exception>
         public RemoveTagsFromStreamResponse RemoveTagsFromStream(RemoveTagsFromStreamRequest request)
         {
@@ -1530,12 +1772,12 @@ namespace Amazon.Kinesis
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
-        /// The resource is not available for this operation. For example, you attempted to split
-        /// a shard but the stream is not in the <code>ACTIVE</code> state.
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// needs to be in the <code>ACTIVE</code> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
-        /// The requested resource could not be found. It might not be specified correctly, or
-        /// it might not be in the <code>ACTIVE</code> state.
+        /// The requested resource could not be found. The stream might not be specified correctly,
+        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
         /// </exception>
         public SplitShardResponse SplitShard(SplitShardRequest request)
         {

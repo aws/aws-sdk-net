@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.Kinesis;
 using Amazon.Kinesis.Model;
 using Amazon.Runtime;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
@@ -46,6 +47,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public void KinesisCRUD()
         {
             var streamName = "dotnet-integ-test-stream-" + DateTime.Now.Ticks;
+            Action waitUntilStreamActive = () => UtilityMethods.WaitUntil(() =>
+                Client.DescribeStream(new DescribeStreamRequest { StreamName = streamName }).StreamDescription.StreamStatus == StreamStatus.ACTIVE);
 
             // Create a stream.
             Client.CreateStream(new CreateStreamRequest
@@ -63,6 +66,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.IsFalse(string.IsNullOrEmpty(stream.StreamARN));
             Assert.AreEqual(stream.StreamName, streamName);
             Assert.IsTrue(stream.StreamStatus == StreamStatus.CREATING);
+
+            waitUntilStreamActive();
+
+            var retentionHours = stream.RetentionPeriodHours;
+            var newRetentionHours = retentionHours * 2;
+
+            Client.IncreaseStreamRetentionPeriod(streamName, newRetentionHours);
+            waitUntilStreamActive();
+            stream = Client.DescribeStream(new DescribeStreamRequest
+            {
+                StreamName = streamName
+            }).StreamDescription;
+            Assert.AreEqual(newRetentionHours, stream.RetentionPeriodHours);
+
+            Client.DecreaseStreamRetentionPeriod(streamName, retentionHours);
+            waitUntilStreamActive();
+            stream = Client.DescribeStream(new DescribeStreamRequest
+            {
+                StreamName = streamName
+            }).StreamDescription;
+            Assert.AreEqual(retentionHours, stream.RetentionPeriodHours);
 
             // List streams.
             var streamNames = Client.ListStreams().StreamNames;

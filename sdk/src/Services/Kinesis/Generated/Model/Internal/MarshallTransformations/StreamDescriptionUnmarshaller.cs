@@ -70,6 +70,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                     unmarshalledObject.HasMoreShards = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RetentionPeriodHours", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RetentionPeriodHours = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Shards", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Shard, ShardUnmarshaller>(ShardUnmarshaller.Instance);
