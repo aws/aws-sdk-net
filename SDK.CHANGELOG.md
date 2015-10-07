@@ -1,3 +1,13 @@
+### 3.1.19.0 (2015-10-07 23:16 UTC)
+* ECS (3.1.1.0)
+	* Task definitions now support more Docker options
+* IoT (3.1.0.0)
+	* AWS IoT offering enables our users to leverage the AWS Cloud for their Internet of things use-cases.
+* IotData (3.1.0.0)
+	* AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud.
+* Lambda (3.1.2.0)
+	* Lambda now supports function versioning.
+
 ### 3.1.18.0 (2015-10-07 09:15 UTC)
 * AWSMarketplaceCommerceAnalytics (3.1.0.0)
 	* Updated to use new Core, version 3.1.3.0
