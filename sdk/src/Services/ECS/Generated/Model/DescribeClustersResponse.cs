@@ -54,7 +54,10 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Failures.
+        /// Gets and sets the property Failures. 
+        /// <para>
+        /// Any failures associated with the call.
+        /// </para>
         /// </summary>
         public List<Failure> Failures
         {

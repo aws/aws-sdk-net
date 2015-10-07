@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// A docker container that is part of a task.
+    /// A Docker container that is part of a task.
     /// </summary>
     public partial class Container
     {

@@ -40,7 +40,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cluster. 
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task
-        /// you want to describe. If you do not specify a cluster, the default cluster is assumed.
+        /// to describe. If you do not specify a cluster, the default cluster is assumed.
         /// </para>
         /// </summary>
         public string Cluster
@@ -58,7 +58,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Tasks. 
         /// <para>
-        /// A space-separated list of task UUIDs or full Amazon Resource Name (ARN) entries.
+        /// A space-separated list of task IDs or full Amazon Resource Name (ARN) entries.
         /// </para>
         /// </summary>
         public List<string> Tasks

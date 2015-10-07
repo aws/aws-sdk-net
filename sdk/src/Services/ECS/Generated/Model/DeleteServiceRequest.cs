@@ -39,7 +39,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// The name of the cluster that hosts the service you want to delete.
+        /// The name of the cluster that hosts the service to delete. If you do not specify a
+        /// cluster, the default cluster is assumed.
         /// </para>
         /// </summary>
         public string Cluster
@@ -57,7 +58,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The name of the service you want to delete.
+        /// The name of the service to delete.
         /// </para>
         /// </summary>
         public string Service

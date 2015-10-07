@@ -29,8 +29,8 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the RunTask operation.
-    /// Start a task using random placement and the default Amazon ECS scheduler. If you want
-    /// to use your own scheduler or place a task on a specific container instance, use <code>StartTask</code>
+    /// Start a task using random placement and the default Amazon ECS scheduler. To use your
+    /// own scheduler or place a task on a specific container instance, use <code>StartTask</code>
     /// instead.
     /// 
     ///  <important> 
@@ -50,8 +50,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// The short name or full Amazon Resource Name (ARN) of the cluster that you want to
-        /// run your task on. If you do not specify a cluster, the default cluster is assumed..
+        /// The short name or full Amazon Resource Name (ARN) of the cluster on which to run your
+        /// task. If you do not specify a cluster, the default cluster is assumed..
         /// </para>
         /// </summary>
         public string Cluster
@@ -69,8 +69,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The number of instantiations of the specified task that you would like to place on
-        /// your cluster.
+        /// The number of instantiations of the specified task to place on your cluster.
         /// </para>
         ///  <important> 
         /// <para>
@@ -150,9 +149,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property TaskDefinition. 
         /// <para>
         /// The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full Amazon Resource Name (ARN) of the task definition that you want to run. If a
-        /// <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
-        /// used.
+        /// full Amazon Resource Name (ARN) of the task definition to run. If a <code>revision</code>
+        /// is not specified, the latest <code>ACTIVE</code> revision is used.
         /// </para>
         /// </summary>
         public string TaskDefinition

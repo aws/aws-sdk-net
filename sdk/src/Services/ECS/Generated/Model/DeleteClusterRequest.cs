@@ -40,8 +40,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// The short name or full Amazon Resource Name (ARN) of the cluster that you want to
-        /// delete.
+        /// The short name or full Amazon Resource Name (ARN) of the cluster to delete.
         /// </para>
         /// </summary>
         public string Cluster

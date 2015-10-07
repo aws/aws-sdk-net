@@ -28,48 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// 
+    /// Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file
+    /// of a container via the <code>extraHosts</code> parameter of its <a>ContainerDefinition</a>.
     /// </summary>
-    public partial class StartTaskResponse : AmazonWebServiceResponse
+    public partial class HostEntry
     {
-        private List<Failure> _failures = new List<Failure>();
-        private List<Task> _tasks = new List<Task>();
+        private string _hostname;
+        private string _ipAddress;
 
         /// <summary>
-        /// Gets and sets the property Failures. 
+        /// Gets and sets the property Hostname. 
         /// <para>
-        /// Any failures associated with the call.
+        /// The hostname to use in the <code>/etc/hosts</code> entry.
         /// </para>
         /// </summary>
-        public List<Failure> Failures
+        public string Hostname
         {
-            get { return this._failures; }
-            set { this._failures = value; }
+            get { return this._hostname; }
+            set { this._hostname = value; }
         }
 
-        // Check to see if Failures property is set
-        internal bool IsSetFailures()
+        // Check to see if Hostname property is set
+        internal bool IsSetHostname()
         {
-            return this._failures != null && this._failures.Count > 0; 
+            return this._hostname != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Tasks. 
+        /// Gets and sets the property IpAddress. 
         /// <para>
-        /// A full description of the tasks that were started. Each task that was successfully
-        /// placed on your container instances are described here.
+        /// The IP address to use in the <code>/etc/hosts</code> entry.
         /// </para>
         /// </summary>
-        public List<Task> Tasks
+        public string IpAddress
         {
-            get { return this._tasks; }
-            set { this._tasks = value; }
+            get { return this._ipAddress; }
+            set { this._ipAddress = value; }
         }
 
-        // Check to see if Tasks property is set
-        internal bool IsSetTasks()
+        // Check to see if IpAddress property is set
+        internal bool IsSetIpAddress()
         {
-            return this._tasks != null && this._tasks.Count > 0; 
+            return this._ipAddress != null;
         }
 
     }

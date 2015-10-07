@@ -39,7 +39,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// The name of the cluster that hosts the service you want to describe.
+        /// The name of the cluster that hosts the service to describe. If you do not specify
+        /// a cluster, the default cluster is assumed.
         /// </para>
         /// </summary>
         public string Cluster
@@ -57,7 +58,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Services. 
         /// <para>
-        /// A list of services you want to describe.
+        /// A list of services to describe.
         /// </para>
         /// </summary>
         public List<string> Services

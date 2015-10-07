@@ -34,6 +34,7 @@ namespace Amazon.ECS.Model
     {
         private List<ContainerDefinition> _containerDefinitions = new List<ContainerDefinition>();
         private string _family;
+        private List<Attribute> _requiresAttributes = new List<Attribute>();
         private int? _revision;
         private TaskDefinitionStatus _status;
         private string _taskDefinitionArn;
@@ -43,8 +44,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ContainerDefinitions. 
         /// <para>
         /// A list of container definitions in JSON format that describe the different containers
-        /// that make up your task. For more information on container definition parameters and
-        /// defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
+        /// that make up your task. For more information about container definition parameters
+        /// and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
         /// ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -63,8 +64,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Family. 
         /// <para>
-        /// The family of your task definition. You can think of the <code>family</code> as the
-        /// name of your task definition.
+        /// The family of your task definition, used as the definition name.
         /// </para>
         /// </summary>
         public string Family
@@ -80,13 +80,31 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RequiresAttributes. 
+        /// <para>
+        /// The container instance attributes required by your task.
+        /// </para>
+        /// </summary>
+        public List<Attribute> RequiresAttributes
+        {
+            get { return this._requiresAttributes; }
+            set { this._requiresAttributes = value; }
+        }
+
+        // Check to see if RequiresAttributes property is set
+        internal bool IsSetRequiresAttributes()
+        {
+            return this._requiresAttributes != null && this._requiresAttributes.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Revision. 
         /// <para>
-        /// The revision of the task in a particular family. You can think of the revision as
-        /// a version number of a task definition in a family. When you register a task definition
-        /// for the first time, the revision is <code>1</code>, and each time you register a new
-        /// revision of a task definition in the same family, the revision value always increases
-        /// by one (even if you have deregistered previous revisions in this family).
+        /// The revision of the task in a particular family. The revision is a version number
+        /// of a task definition in a family. When you register a task definition for the first
+        /// time, the revision is <code>1</code>; each time you register a new revision of a task
+        /// definition in the same family, the revision value always increases by one (even if
+        /// you have deregistered previous revisions in this family).
         /// </para>
         /// </summary>
         public int Revision
@@ -140,7 +158,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Volumes. 
         /// <para>
-        /// The list of volumes in a task. For more information on volume definition parameters
+        /// The list of volumes in a task. For more information about volume definition parameters
         /// and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
         /// ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </para>

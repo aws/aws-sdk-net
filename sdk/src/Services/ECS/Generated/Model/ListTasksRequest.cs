@@ -49,7 +49,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cluster. 
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of the cluster that hosts the tasks
-        /// you want to list. If you do not specify a cluster, the default cluster is assumed..
+        /// to list. If you do not specify a cluster, the default cluster is assumed..
         /// </para>
         /// </summary>
         public string Cluster
@@ -67,9 +67,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerInstance. 
         /// <para>
-        /// The container instance UUID or full Amazon Resource Name (ARN) of the container instance
-        /// that you want to filter the <code>ListTasks</code> results with. Specifying a <code>containerInstance</code>
-        /// will limit the results to tasks that belong to that container instance.
+        /// The container instance ID or full Amazon Resource Name (ARN) of the container instance
+        /// with which to filter the <code>ListTasks</code> results. Specifying a <code>containerInstance</code>
+        /// limits the results to tasks that belong to that container instance.
         /// </para>
         /// </summary>
         public string ContainerInstance
@@ -87,11 +87,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DesiredStatus. 
         /// <para>
-        /// The task status that you want to filter the <code>ListTasks</code> results with. Specifying
-        /// a <code>desiredStatus</code> of <code>STOPPED</code> will limit the results to tasks
-        /// that are in the <code>STOPPED</code> status, which can be useful for debugging tasks
-        /// that are not starting properly or have died or finished. The default status filter
-        /// is <code>RUNNING</code>.
+        /// The task status with which to filter the <code>ListTasks</code> results. Specifying
+        /// a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that
+        /// are in the <code>STOPPED</code> status, which can be useful for debugging tasks that
+        /// are not starting properly or have died or finished. The default status filter is <code>RUNNING</code>.
         /// </para>
         /// </summary>
         public DesiredStatus DesiredStatus
@@ -109,9 +108,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Family. 
         /// <para>
-        /// The name of the family that you want to filter the <code>ListTasks</code> results
-        /// with. Specifying a <code>family</code> will limit the results to tasks that belong
-        /// to that family.
+        /// The name of the family with which to filter the <code>ListTasks</code> results. Specifying
+        /// a <code>family</code> limits the results to tasks that belong to that family.
         /// </para>
         /// </summary>
         public string Family
@@ -175,9 +173,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the service that you want to filter the <code>ListTasks</code> results
-        /// with. Specifying a <code>serviceName</code> will limit the results to tasks that belong
-        /// to that service.
+        /// The name of the service with which to filter the <code>ListTasks</code> results. Specifying
+        /// a <code>serviceName</code> limits the results to tasks that belong to that service.
         /// </para>
         /// </summary>
         public string ServiceName
@@ -195,8 +192,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StartedBy. 
         /// <para>
-        /// The <code>startedBy</code> value that you want to filter the task results with. Specifying
-        /// a <code>startedBy</code> value will limit the results to tasks that were started with
+        /// The <code>startedBy</code> value with which to filter the task results. Specifying
+        /// a <code>startedBy</code> value limits the results to tasks that were started with
         /// that value.
         /// </para>
         /// </summary>

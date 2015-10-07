@@ -28,48 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// 
+    /// The attributes applicable to a container instance when it is registered.
     /// </summary>
-    public partial class StartTaskResponse : AmazonWebServiceResponse
+    public partial class Attribute
     {
-        private List<Failure> _failures = new List<Failure>();
-        private List<Task> _tasks = new List<Task>();
+        private string _name;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property Failures. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// Any failures associated with the call.
+        /// The name of the container instance attribute.
         /// </para>
         /// </summary>
-        public List<Failure> Failures
+        public string Name
         {
-            get { return this._failures; }
-            set { this._failures = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Failures property is set
-        internal bool IsSetFailures()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._failures != null && this._failures.Count > 0; 
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Tasks. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// A full description of the tasks that were started. Each task that was successfully
-        /// placed on your container instances are described here.
+        /// The value of the container instance attribute.
         /// </para>
         /// </summary>
-        public List<Task> Tasks
+        public string Value
         {
-            get { return this._tasks; }
-            set { this._tasks = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if Tasks property is set
-        internal bool IsSetTasks()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._tasks != null && this._tasks.Count > 0; 
+            return this._value != null;
         }
 
     }

@@ -41,7 +41,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cluster. 
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of the cluster that hosts the services
-        /// you want to list. If you do not specify a cluster, the default cluster is assumed..
+        /// to list. If you do not specify a cluster, the default cluster is assumed..
         /// </para>
         /// </summary>
         public string Cluster

@@ -86,7 +86,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// A user-generated string that you can use to identify your cluster.
+        /// A user-generated string that you use to identify your cluster.
         /// </para>
         /// </summary>
         public string ClusterName

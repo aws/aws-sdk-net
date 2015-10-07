@@ -31,7 +31,7 @@ namespace Amazon.ECS.Model
     /// Container for the parameters to the CreateService operation.
     /// Runs and maintains a desired number of tasks from a specified task definition. If
     /// the number of tasks running in a service drops below <code>desiredCount</code>, Amazon
-    /// ECS will spawn another instantiation of the task in the specified cluster.
+    /// ECS spawns another instantiation of the task in the specified cluster.
     /// </summary>
     public partial class CreateServiceRequest : AmazonECSRequest
     {
@@ -65,8 +65,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// The short name or full Amazon Resource Name (ARN) of the cluster that you want to
-        /// run your service on. If you do not specify a cluster, the default cluster is assumed.
+        /// The short name or full Amazon Resource Name (ARN) of the cluster on which to run your
+        /// service. If you do not specify a cluster, the default cluster is assumed.
         /// </para>
         /// </summary>
         public string Cluster
@@ -84,8 +84,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DesiredCount. 
         /// <para>
-        /// The number of instantiations of the specified task definition that you would like
-        /// to place and keep running on your cluster.
+        /// The number of instantiations of the specified task definition to place and keep running
+        /// on your cluster.
         /// </para>
         /// </summary>
         public int DesiredCount
@@ -165,9 +165,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property TaskDefinition. 
         /// <para>
         /// The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full Amazon Resource Name (ARN) of the task definition that you want to run in your
-        /// service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
-        /// revision is used.
+        /// full Amazon Resource Name (ARN) of the task definition to run in your service. If
+        /// a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+        /// is used.
         /// </para>
         /// </summary>
         public string TaskDefinition
