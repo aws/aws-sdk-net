@@ -1,3 +1,8 @@
+### 3.1.17.1 (2015-10-07 00:48 UTC)
+* Core 3.1.2.1
+	* Fixed issue where NullReferenceException could be thrown for certain SDK calls (https://github.com/aws/aws-sdk-net/issues/252).
+	* all services packages updated to require new core
+
 ### 3.1.17.0 (2015-10-06 21:20 UTC)
 * CloudFront (3.1.1.0)
 	* Added support for integrating CloudFront with AWS WAF.
