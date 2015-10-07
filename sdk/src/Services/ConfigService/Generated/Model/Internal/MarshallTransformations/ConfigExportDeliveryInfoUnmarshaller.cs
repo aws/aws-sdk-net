@@ -94,6 +94,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastSuccessfulTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("nextDeliveryTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.NextDeliveryTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

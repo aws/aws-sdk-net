@@ -33,7 +33,7 @@ namespace Amazon.ConfigService.Model
     ///  <note> 
     /// <para>
     /// Currently, the list does not contain information about non-AWS components (for example,
-    /// applications on your Amazon EC2 instances). 
+    /// applications on your Amazon EC2 instances).
     /// </para>
     ///  </note>
     /// </summary>

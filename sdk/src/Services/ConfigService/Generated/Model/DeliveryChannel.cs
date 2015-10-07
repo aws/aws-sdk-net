@@ -32,10 +32,26 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DeliveryChannel
     {
+        private ConfigSnapshotDeliveryProperties _configSnapshotDeliveryProperties;
         private string _name;
         private string _s3BucketName;
         private string _s3KeyPrefix;
         private string _snsTopicARN;
+
+        /// <summary>
+        /// Gets and sets the property ConfigSnapshotDeliveryProperties.
+        /// </summary>
+        public ConfigSnapshotDeliveryProperties ConfigSnapshotDeliveryProperties
+        {
+            get { return this._configSnapshotDeliveryProperties; }
+            set { this._configSnapshotDeliveryProperties = value; }
+        }
+
+        // Check to see if ConfigSnapshotDeliveryProperties property is set
+        internal bool IsSetConfigSnapshotDeliveryProperties()
+        {
+            return this._configSnapshotDeliveryProperties != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

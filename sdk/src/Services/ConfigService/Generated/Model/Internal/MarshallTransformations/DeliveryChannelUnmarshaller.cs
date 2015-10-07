@@ -64,6 +64,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("configSnapshotDeliveryProperties", targetDepth))
+                {
+                    var unmarshaller = ConfigSnapshotDeliveryPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.ConfigSnapshotDeliveryProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
