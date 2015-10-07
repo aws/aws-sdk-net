@@ -114,6 +114,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Identity and Access Management (IAM) enables you to securely control access to AWS services and resources for your users. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.
 * [AWSSDK.ImportExport](https://www.nuget.org/packages/AWSSDK.ImportExport/)
 	* AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.
+* [AWSSDK.Inspector](https://www.nuget.org/packages/AWSSDK.Inspector/)
+	* Amazon Inspector identifies security issues in your application deployments.
 * [AWSSDK.KeyManagementService](https://www.nuget.org/packages/AWSSDK.KeyManagementService/)
 	* AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys.
 * [AWSSDK.Kinesis](https://www.nuget.org/packages/AWSSDK.Kinesis/)

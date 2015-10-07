@@ -56,6 +56,7 @@
       <Directory>$(ProjectDir)/src/Services/glacier/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/identitymanagement/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/importexport/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/inspector/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/keymanagementservice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesis/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesisfirehose/bin/Release/net45/</Directory>
@@ -114,6 +115,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Glacier.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.IdentityManagement.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ImportExport.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Inspector.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.KeyManagementService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Kinesis.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.KinesisFirehose.dll" Analyze="True" AnalyzeAllChildren="True" />

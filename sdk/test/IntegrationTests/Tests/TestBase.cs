@@ -45,7 +45,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             var clientConfig = client
                 .GetType()
-                .GetProperty("Config", BindingFlags.Instance | BindingFlags.NonPublic)
+                .GetProperty("Config", BindingFlags.Instance | BindingFlags.Public)
                 .GetValue(client, null) as ClientConfig;
             clientConfig.ServiceURL = serviceUrl;
             if (region != null)

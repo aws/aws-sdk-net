@@ -166,6 +166,10 @@
       <Project>{91A3791F-AC18-48FB-B27C-05389B988B75}</Project>
       <Name>AWSSDK.ImportExport.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Inspector\AWSSDK.Inspector.Net45.csproj">
+      <Project>{854BF2B4-80FF-4A09-8FDC-5E562217663C}</Project>
+      <Name>AWSSDK.Inspector.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.Net45.csproj">
       <Project>{38C583D8-26EB-4BA0-AEEF-338468E4D8DC}</Project>
       <Name>AWSSDK.KeyManagementService.Net45</Name>

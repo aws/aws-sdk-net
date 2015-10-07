@@ -481,6 +481,15 @@
         {
             "active": true,
 
+            "model": "inspector",
+            "base-name": "Inspector",
+            "region-lookup-name": "inspector",
+            "service-url": "https://inspector.us-east-1.amazonaws.com/",
+            "synopsis": "Amazon Inspector identifies security issues in your application deployments."
+        },
+        {
+            "active": true,
+
             "model": "kinesis",
             "base-name": "Kinesis",
             "region-lookup-name": "kinesis",

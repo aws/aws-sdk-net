@@ -1,0 +1,216 @@
+{
+    "shapeModifiers": {
+        "Finding": {
+            "modify": [
+                {
+                    "finding": { "emitPropertyName": "Title" }
+                }
+            ]
+        }
+	},
+	"simpleMethods": {
+        "operations": {
+            "CreateApplication": {
+                "methodForms": [
+                    [
+                        "ApplicationName",
+                        "ResourceGroupArn"
+                    ]
+                ]
+            },
+            "CreateResourceGroup": {
+                "methodForms": [
+                    [
+                        "ResourceGroupTags"
+                    ]
+                ]
+            },
+            "DeleteApplication": {
+                "methodForms": [
+                    [
+                        "ApplicationArn"
+                    ]
+                ]
+            },
+            "DeleteApplication": {
+                "methodForms": [
+                    [
+                        "ApplicationArn"
+                    ]
+                ]
+            },
+            "DeleteAssessment": {
+                "methodForms": [
+                    [
+                        "AssessmentArn"
+                    ]
+                ]
+            },
+            "DeleteRun": {
+                "methodForms": [
+                    [
+                        "RunArn"
+                    ]
+                ]
+            },
+            "DescribeApplication": {
+                "methodForms": [
+                    [
+                        "ApplicationArn"
+                    ]
+                ]
+            },
+            "DescribeAssessment": {
+                "methodForms": [
+                    [
+                        "AssessmentArn"
+                    ]
+                ]
+            },
+            "DescribeFinding": {
+                "methodForms": [
+                    [
+                        "FindingArn"
+                    ]
+                ]
+            },
+            "DescribeResourceGroup": {
+                "methodForms": [
+                    [
+                        "ResourceGroupArn"
+                    ]
+                ]
+            },
+            "DescribeRulesPackage": {
+                "methodForms": [
+                    [
+                        "RulesPackageArn"
+                    ]
+                ]
+            },
+            "DescribeRun": {
+                "methodForms": [
+                    [
+                        "RunArn"
+                    ]
+                ]
+            },
+            "DetachAssessmentAndRulesPackage": {
+                "methodForms": [
+                    [
+						"AssessmentArn",
+                        "RulesPackageArn"
+                    ]
+                ]
+            },
+            "GetAssessmentTelemetry": {
+                "methodForms": [
+                    [
+                        "AssessmentArn"
+                    ]
+                ]
+            },
+            "ListApplications": {
+                "methodForms": [
+					[
+					],
+                    [
+                        "Filter"
+                    ]
+                ]
+            },
+            "ListAssessmentAgents": {
+                "methodForms": [
+					[
+						"AssessmentArn"
+					],
+                    [
+						"AssessmentArn",
+                        "Filter"
+                    ]
+                ]
+            },
+            "ListAssessments": {
+                "methodForms": [
+					[
+						"ApplicationArns"
+					],
+                    [
+						"ApplicationArns",
+                        "Filter"
+                    ]
+                ]
+            },
+            "ListRuns": {
+                "methodForms": [
+					[
+						"AssessmentArns"
+					],
+                    [
+						"AssessmentArns",
+                        "Filter"
+                    ]
+                ]
+            },
+            "ListTagsForResource": {
+                "methodForms": [
+					[
+						"ResourceArn"
+					]
+                ]
+            },
+            "PreviewAgentsForResourceGroup": {
+                "methodForms": [
+					[
+					]
+                ]
+            },
+            "RegisterCrossAccountAccessRole": {
+                "methodForms": [
+					[
+						"RoleArn"
+					]
+                ]
+            },
+            "RunAssessment": {
+                "methodForms": [
+					[
+						"RunName",
+						"AssessmentArn"
+					]
+                ]
+            },
+            "SetTagsForResource": {
+                "methodForms": [
+					[
+						"ResourceArn",
+						"Tags"
+					]
+                ]
+            },
+            "StartDataCollection": {
+                "methodForms": [
+                    [
+                        "AssessmentArn"
+                    ]
+                ]
+            },
+            "StopDataCollection": {
+                "methodForms": [
+                    [
+                        "AssessmentArn"
+                    ]
+                ]
+            },
+            "UpdateApplication": {
+                "methodForms": [
+                    [
+                        "ApplicationArn",
+						"ApplicationName",
+						"ResourceGroupArn"
+                    ]
+                ]
+            }
+        }
+    }
+}
