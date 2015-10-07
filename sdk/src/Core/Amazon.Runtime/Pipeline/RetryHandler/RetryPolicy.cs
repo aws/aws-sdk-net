@@ -197,9 +197,10 @@ namespace Amazon.Runtime
         }
         private static bool TryParseExceptionMessage(AmazonServiceException ase, out DateTime serverTime)
         {
-            var message = ase.Message;
-            if (!string.IsNullOrEmpty(message))
+            if (ase != null && !string.IsNullOrEmpty(ase.Message))
             {
+                var message = ase.Message;
+
                 // parse server time from exception message, if possible
                 var parenIndex = message.IndexOf(clockSkewMessageParen, StringComparison.Ordinal);
                 if (parenIndex >= 0)
