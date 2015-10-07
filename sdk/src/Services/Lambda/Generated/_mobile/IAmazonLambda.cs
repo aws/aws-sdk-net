@@ -61,6 +61,22 @@ namespace Amazon.Lambda
 
         #endregion
                 
+        #region  CreateAlias
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateEventSourceMapping
 
 
@@ -93,6 +109,22 @@ namespace Amazon.Lambda
 
         #endregion
                 
+        #region  DeleteAlias
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteEventSourceMapping
 
 
@@ -117,8 +149,18 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
-        /// When you delete a function the associated access policy is also deleted. You will
+        /// If you don't specify a function version, AWS Lambda will delete the function, including
+        /// all its versions, and any aliases pointing to the function versions.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete a function the associated resource policy is also deleted. You will
         /// need to delete the event source mappings explicitly.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about function versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+        /// Lambda Function Versioning and Aliases</a>.
         /// </para>
         ///  
         /// <para>
@@ -131,6 +173,14 @@ namespace Amazon.Lambda
         /// </param>
         /// 
         /// <returns>The response from the DeleteFunction service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
         /// in the request does not exist.
@@ -153,6 +203,22 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAlias
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetAliasResponse> GetAliasAsync(GetAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -183,6 +249,14 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
+        /// Using the optional <code>Qualifier</code> parameter, you can specify a specific function
+        /// version for which you want this information. If you don't specify this parameter,
+        /// the API uses unqualified function ARN which return information about the $LATEST version
+        /// of the Lambda function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+        /// Lambda Function Versioning and Aliases</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// This operation requires permission for the <code>lambda:GetFunction</code> action.
         /// </para>
         /// </summary>
@@ -192,6 +266,11 @@ namespace Amazon.Lambda
         /// </param>
         /// 
         /// <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
         /// in the request does not exist.
@@ -226,6 +305,14 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
+        /// You can use the optional <code>Qualifier</code> parameter to retrieve configuration
+        /// information for a specific Lambda function version. If you don't provide it, the API
+        /// returns information about the $LATEST version of the function. For more information
+        /// about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+        /// Lambda Function Versioning and Aliases</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// This operation requires permission for the <code>lambda:GetFunctionConfiguration</code>
         /// operation.
         /// </para>
@@ -236,6 +323,11 @@ namespace Amazon.Lambda
         /// </param>
         /// 
         /// <returns>The response from the GetFunctionConfiguration service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
         /// in the request does not exist.
@@ -310,6 +402,22 @@ namespace Amazon.Lambda
 
         #endregion
                 
+        #region  ListAliases
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAliases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAliases operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListEventSourceMappings
 
 
@@ -365,6 +473,38 @@ namespace Amazon.Lambda
 
         #endregion
                 
+        #region  ListVersionsByFunction
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVersionsByFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVersionsByFunction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListVersionsByFunctionResponse> ListVersionsByFunctionAsync(ListVersionsByFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PublishVersion
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PublishVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PublishVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PublishVersionResponse> PublishVersionAsync(PublishVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RemovePermission
 
 
@@ -378,6 +518,22 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateAlias
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

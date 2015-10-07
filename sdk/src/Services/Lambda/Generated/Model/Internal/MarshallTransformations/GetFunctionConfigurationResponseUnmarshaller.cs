@@ -51,6 +51,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CodeSha256", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CodeSha256 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CodeSize", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -111,6 +117,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.Timeout = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Version", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Version = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
@@ -126,6 +138,10 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
+            {
+                return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
                 return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

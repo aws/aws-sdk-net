@@ -37,7 +37,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The access policy associated with the specified function. The response returns the
+        /// The resource policy associated with the specified function. The response returns the
         /// same as a string using "\" as an escape character in the JSON. 
         /// </para>
         /// </summary>

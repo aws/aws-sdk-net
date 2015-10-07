@@ -180,7 +180,7 @@
         <Rule Name="DeclareEventHandlersCorrectly" Enabled="True" />
         <Rule Name="DeclareTypesInNamespaces" Enabled="True" />
         <Rule Name="DefineAccessorsForAttributeArguments" Enabled="True" />
-        <Rule Name="DoNotCatchGeneralExceptionTypes" Enabled="True" />
+        <Rule Name="DoNotCatchGeneralExceptionTypes" Enabled="False" />
         <Rule Name="DoNotDeclareProtectedMembersInSealedTypes" Enabled="True" />
         <Rule Name="DoNotDeclareStaticMembersOnGenericTypes" Enabled="True" />
         <Rule Name="DoNotDeclareVirtualMembersInSealedTypes" Enabled="True" />

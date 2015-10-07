@@ -32,6 +32,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class UpdateFunctionConfigurationResponse : AmazonWebServiceResponse
     {
+        private string _codeSha256;
         private long? _codeSize;
         private string _description;
         private string _functionArn;
@@ -42,6 +43,25 @@ namespace Amazon.Lambda.Model
         private string _role;
         private Runtime _runtime;
         private int? _timeout;
+        private string _version;
+
+        /// <summary>
+        /// Gets and sets the property CodeSha256. 
+        /// <para>
+        /// It is the SHA256 hash of your function deployment package.
+        /// </para>
+        /// </summary>
+        public string CodeSha256
+        {
+            get { return this._codeSha256; }
+            set { this._codeSha256 = value; }
+        }
+
+        // Check to see if CodeSha256 property is set
+        internal bool IsSetCodeSha256()
+        {
+            return this._codeSha256 != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CodeSize. 
@@ -225,6 +245,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetTimeout()
         {
             return this._timeout.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The version of the Lambda function.
+        /// </para>
+        /// </summary>
+        public string Version
+        {
+            get { return this._version; }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version != null;
         }
 
     }

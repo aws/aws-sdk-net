@@ -177,6 +177,10 @@ namespace Amazon.Lambda
         /// Constant Nodejs for Runtime
         /// </summary>
         public static readonly Runtime Nodejs = new Runtime("nodejs");
+        /// <summary>
+        /// Constant Python27 for Runtime
+        /// </summary>
+        public static readonly Runtime Python27 = new Runtime("python2.7");
 
         /// <summary>
         /// Default Constructor

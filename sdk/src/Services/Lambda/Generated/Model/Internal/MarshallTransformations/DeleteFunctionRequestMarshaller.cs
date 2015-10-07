@@ -59,7 +59,11 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/2015-03-31/functions/{FunctionName}";
             uriResourcePath = uriResourcePath.Replace("{FunctionName}", publicRequest.IsSetFunctionName() ? StringUtils.FromString(publicRequest.FunctionName) : string.Empty);
+            
+            if (publicRequest.IsSetQualifier())
+                request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));
             request.ResourcePath = uriResourcePath;
+            request.UseQueryString = true;
 
             return request;
         }
