@@ -211,6 +211,10 @@
       <Project>{38C583D8-26EB-4BA0-AEEF-338468E4D8DC}</Project>
       <Name>AWSSDK.KeyManagementService.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\KinesisFirehose\AWSSDK.KinesisFirehose.Net45.csproj">
+      <Project>{a1a9f2b7-ac26-4666-9b89-d2465f1c4ee4}</Project>
+      <Name>AWSSDK.KinesisFirehose.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Kinesis\AWSSDK.Kinesis.Net45.csproj">
       <Project>{6698BD46-B68A-4C53-9560-DD21A91E910D}</Project>
       <Name>AWSSDK.Kinesis.Net45</Name>

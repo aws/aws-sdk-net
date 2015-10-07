@@ -272,6 +272,10 @@
       <Project>{53D1A7E3-CE00-41E7-AD1A-C1ADB30BEB97}</Project>
       <Name>AWSSDK.Elasticsearch.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\KinesisFirehose\AWSSDK.KinesisFirehose.Net35.csproj">
+      <Project>{0AC889DB-F5A3-4A8F-B7B0-2334D70341E6}</Project>
+      <Name>AWSSDK.KinesisFirehose.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\WAF\AWSSDK.WAF.Net35.csproj">
       <Project>{756D5D73-16BD-4F8F-AF58-A24CE4000606}</Project>
       <Name>AWSSDK.WAF.Net35</Name>

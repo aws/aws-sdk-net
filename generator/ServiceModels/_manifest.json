@@ -427,6 +427,16 @@
         {
             "active": true,
 
+            "model": "firehose",
+            "base-name": "KinesisFirehose",
+            "region-lookup-name": "firehose",
+            "authentication-service-name": "firehose",
+            "service-url": "https://firehose.us-east-1.amazonaws.com/",
+            "synopsis": "Amazon Kinesis Firehose is a fully managed service for ingesting data streams directly into AWS data services such as Amazon S3 and Amazon Redshift."
+        },
+        {
+            "active": true,
+
             "model": "glacier",
             "base-name": "Glacier",
             "region-lookup-name": "glacier",

@@ -57,6 +57,7 @@
       <Directory>$(ProjectDir)/src/Services/importexport/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/keymanagementservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesis/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/kinesisfirehose/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/lambda/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/machinelearning/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mobileanalytics/bin/Release/net35/</Directory>
@@ -113,6 +114,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ImportExport.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.KeyManagementService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Kinesis.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.KinesisFirehose.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Lambda.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MachineLearning.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MobileAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
