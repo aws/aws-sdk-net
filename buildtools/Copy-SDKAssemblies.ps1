@@ -1,7 +1,12 @@
 ﻿# Script parameters
 Param(
     [string]
-    $PublicKeyTokenToCheck
+    $PublicKeyTokenToCheck,
+
+    # The build type. If not specified defaults to 'release'.
+    [Parameter()]
+    [string]
+    $BuildType = "release"
 )
 
 # Functions
@@ -111,7 +116,7 @@ Function Copy-SDKAssemblies
 #Script code
 #$ErrorActionPreference = "Stop"
 
-Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -Platforms @("net35","net45","pcl","monoandroid","Xamarin.iOS10","windows8","wpa81")
+Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -Platforms @("net35","net45","pcl","monoandroid","Xamarin.iOS10","windows8","wpa81") -BuildType $BuildType
 
 $services = gci ..\sdk\src\services
 foreach ($s in $services)
