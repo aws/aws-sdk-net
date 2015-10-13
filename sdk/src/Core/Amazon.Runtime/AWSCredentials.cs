@@ -296,6 +296,11 @@ namespace Amazon.Runtime
         /// </summary>
         /// <param name="profileName">The profile name to search for credentials for</param>
         /// <param name="profilesLocation">Overrides the location to search for credentials</param>
+        /// <remarks>
+        /// If credential materials cannot be read or are invalid due to missing data 
+        /// an InvalidDataException is thrown. If no credentials can be located, an ArgumentException
+        /// is thrown.
+        /// </remarks>
         public StoredProfileAWSCredentials(string profileName, string profilesLocation)
         {
             NameValueCollection appConfig = ConfigurationManager.AppSettings;
@@ -306,10 +311,11 @@ namespace Amazon.Runtime
 
             // If not overriding the credentials lookup location check the SDK Store for credentials. If an override is being used then
             // assume the intent is to use the credentials file.
-            if (string.IsNullOrEmpty(profilesLocation))
+            if (string.IsNullOrEmpty(profilesLocation) && ProfileManager.IsProfileKnown(lookupName))
             {
+                ProfileManager.Validate(lookupName);
                 AWSCredentials credentials;
-                if (Amazon.Util.ProfileManager.TryGetAWSCredentials(lookupName, out credentials))
+                if (ProfileManager.TryGetAWSCredentials(lookupName, out credentials))
                 {
                     this._wrappedCredentials = credentials.GetCredentials();
                     var logger = Logger.GetLogger(typeof(StoredProfileAWSCredentials));
@@ -325,8 +331,9 @@ namespace Amazon.Runtime
                 {                    
                     var parser = new CredentialsFileParser(credentialsFilePath);
                     var section = parser.FindSection(lookupName);
-                    if (section != null && section.HasValidCredentials)
+                    if (section != null)
                     {
+                        section.Validate();
                         this._wrappedCredentials = section.Credentials;
                         var logger = Logger.GetLogger(typeof(StoredProfileAWSCredentials));
                         logger.InfoFormat("Credentials found using account name {0} and looking in {1}.", lookupName, credentialsFilePath);
@@ -497,6 +504,12 @@ namespace Amazon.Runtime
                 public string AccessKey { get; set; }
                 public string SecretKey { get; set; }
                 public string Token { get; set; }
+
+                public void Validate()
+                {
+                    if (!HasValidCredentials)
+                        throw new InvalidDataException("Credential profile does not contain valid access and/or secret key materials.");
+                }
 
                 public bool HasValidCredentials
                 {

@@ -25,6 +25,7 @@ using System.Text;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Settings;
+using System.IO;
 
 namespace Amazon.Util
 {
@@ -59,8 +60,7 @@ namespace Amazon.Util
         public static void RegisterProfile(string profileName, string accessKeyId, string secretKey)
         {
             var settings = PersistenceManager.Instance.GetSettings(SettingsConstants.RegisteredProfiles);
-            SettingsCollection.ObjectSettings os = null;
-            os = settings.FirstOrDefault(x => string.Equals(x[SettingsConstants.DisplayNameField], profileName, StringComparison.OrdinalIgnoreCase));
+            var os = ReadProfileSettings(settings, profileName);
             if(os == null)
                 os = settings.NewObjectSettings(Guid.NewGuid().ToString());
 
@@ -78,7 +78,7 @@ namespace Amazon.Util
         public static void UnregisterProfile(string profileName)
         {
             var settings = PersistenceManager.Instance.GetSettings(SettingsConstants.RegisteredProfiles);
-            var os = settings.FirstOrDefault(x => string.Equals(x[SettingsConstants.DisplayNameField], profileName, StringComparison.OrdinalIgnoreCase));
+            var os = ReadProfileSettings(settings, profileName);
             if (os != null)
             {
                 settings.Remove(os.UniqueKey);
@@ -104,6 +104,16 @@ namespace Amazon.Util
         }
 
         /// <summary>
+        /// Checks if a given profile is known in the SDK credential store.
+        /// </summary>
+        /// <param name="profileName">The name of the profile to test for existence</param>
+        /// <returns>True if the profile exists.</returns>
+        public static bool IsProfileKnown(string profileName)
+        {
+            return (ReadProfileSettings(profileName) != null);
+        }
+
+        /// <summary>
         /// Tries to get the AWS credentials from the SDK account store.
         /// </summary>
         /// <param name="profileName">The profile to get the credentials for.</param>
@@ -111,8 +121,7 @@ namespace Amazon.Util
         /// <returns>Returns true if the profile exists otherwise false is returned.</returns>
         public static bool TryGetAWSCredentials(string profileName, out AWSCredentials credentials)
         {
-            var settings = PersistenceManager.Instance.GetSettings(SettingsConstants.RegisteredProfiles);
-            var os = settings.FirstOrDefault(x => string.Equals(x[SettingsConstants.DisplayNameField], profileName, StringComparison.OrdinalIgnoreCase));
+            var os = ReadProfileSettings(profileName);
             if (os == null)
             {
                 credentials = null;
@@ -121,6 +130,26 @@ namespace Amazon.Util
 
             credentials = new BasicAWSCredentials(os[SettingsConstants.AccessKeyField], os[SettingsConstants.SecretKeyField]);
             return true;
+        }
+
+        /// <summary>
+        /// Validates that the specified profile contains valid credential materials. Validation
+        /// extends to ensuring that none of the access key and secret key fields are null or empty.
+        /// If the profile fails validation an InvalidDataException is thrown containing the reason
+        /// for the failure. An ArgumentException is thrown if the profile cannot be found.
+        /// </summary>
+        /// <param name="profileName">The profile to test.</param>
+        public static void Validate(string profileName)
+        {
+            var os = ReadProfileSettings(profileName);
+            if (os == null)
+                throw new ArgumentException("Cannot find profile with the specified name.");
+
+            if (string.IsNullOrEmpty(os[SettingsConstants.AccessKeyField]))
+                throw new InvalidDataException("Missing or invalid AWSAccessKey data.");
+
+            if (string.IsNullOrEmpty(os[SettingsConstants.SecretKeyField]))
+                throw new InvalidDataException("Missing or invalid AWSSecretKey data.");
         }
 
         /// <summary>
@@ -137,5 +166,16 @@ namespace Amazon.Util
 
             return credentials;
         }
+        private static SettingsCollection.ObjectSettings ReadProfileSettings(string profileName)
+        {
+            var settings = PersistenceManager.Instance.GetSettings(SettingsConstants.RegisteredProfiles);
+            return ReadProfileSettings(settings, profileName);
+        }
+
+        private static SettingsCollection.ObjectSettings ReadProfileSettings(SettingsCollection settings, string profileName)
+        {
+            return settings.FirstOrDefault(x => string.Equals(x[SettingsConstants.DisplayNameField], profileName, StringComparison.OrdinalIgnoreCase));
+        }
+
     }
 }
