@@ -139,7 +139,7 @@
             "region-lookup-name": "support",
             "authentication-service-name": "support",
             "service-url": "https://support.us-east-1.amazonaws.com",
-            "synopsis": "The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center."
+            "synopsis": "The AWS Support API provides methods for creating and managing AWS Support cases and for retrieving the results of AWS Trusted Advisor checks."
         },
         {
             "active": true,
