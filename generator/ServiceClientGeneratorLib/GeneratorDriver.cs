@@ -836,8 +836,14 @@ namespace ServiceClientGenerator
 
             var detailsMarkdownGenerator = new Details { Session = session };
             text = ConvertHtmlToMarkDown(detailsMarkdownGenerator.TransformText());
+
+            // sanitize the line endings from the markup generation, as we can get
+            // odd combinations of line endings
+            var lines = text.Split(new[] { "\r\n", "\n", "\r" }, StringSplitOptions.None);
+            var normalizedText = string.Join(Environment.NewLine, lines);
+
             var detailsFileName = "Details.md";
-            WriteFile(ComponentsFilesRoot, string.Empty, detailsFileName, text);
+            WriteFile(ComponentsFilesRoot, string.Empty, detailsFileName, normalizedText);
 
             var gettingStartedMarkdownGenerator = new GettingStarted { Session = session };
             text = ConvertHtmlToMarkDown(gettingStartedMarkdownGenerator.TransformText());
