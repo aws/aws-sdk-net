@@ -8,9 +8,9 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.AWSSupport")]
 #if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Support. The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Support. The AWS Support API provides methods for creating and managing AWS Support cases and for retrieving the results of AWS Trusted Advisor checks.")]
 #elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Support. The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Support. The AWS Support API provides methods for creating and managing AWS Support cases and for retrieving the results of AWS Trusted Advisor checks.")]
 #elif PCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Core Runtime")]
 #else

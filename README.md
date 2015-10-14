@@ -51,7 +51,7 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 * [AWSSDK.AWSMarketplaceCommerceAnalytics](https://www.nuget.org/packages/AWSSDK.AWSMarketplaceCommerceAnalytics/)
 	* The AWS Marketplace Commerce Analytics service allows marketplace partners to programmatically request business intelligence data from AWS Marketplace. This service provides the same data that was previously only available through the AWS Marketplace Management Portal, but offers the data in a fully-machine-readable format and available in fine-grained data sets rather than large reports.
 * [AWSSDK.AWSSupport](https://www.nuget.org/packages/AWSSDK.AWSSupport/)
-	* The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center.
+	* The AWS Support API provides methods for creating and managing AWS Support cases and for retrieving the results of AWS Trusted Advisor checks.
 * [AWSSDK.CloudFormation](https://www.nuget.org/packages/AWSSDK.CloudFormation/)
 	* AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.
 * [AWSSDK.CloudFront](https://www.nuget.org/packages/AWSSDK.CloudFront/)

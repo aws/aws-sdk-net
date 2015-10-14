@@ -5,7 +5,7 @@
     <title>AWSSDK - AWS Support</title>
     <version>3.1.0.2</version> 
     <authors>Amazon Web Services</authors>
-    <description>The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center.</description>
+    <description>The AWS Support API provides methods for creating and managing AWS Support cases and for retrieving the results of AWS Trusted Advisor checks.</description>
     <language>en-US</language>
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
