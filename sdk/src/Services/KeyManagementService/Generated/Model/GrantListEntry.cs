@@ -28,22 +28,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Contains information about each entry in the grant list.
+    /// Contains information about an entry in a list of grants.
     /// </summary>
     public partial class GrantListEntry
     {
         private GrantConstraints _constraints;
+        private DateTime? _creationDate;
         private string _granteePrincipal;
         private string _grantId;
         private string _issuingAccount;
+        private string _keyId;
+        private string _name;
         private List<string> _operations = new List<string>();
         private string _retiringPrincipal;
 
         /// <summary>
         /// Gets and sets the property Constraints. 
         /// <para>
-        /// Specifies the conditions under which the actions specified by the <code>Operations</code>
-        /// parameter are allowed. 
+        /// The conditions under which the grant's operations are allowed.
         /// </para>
         /// </summary>
         public GrantConstraints Constraints
@@ -59,9 +61,27 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// The date and time when the grant was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreationDate
+        {
+            get { return this._creationDate.GetValueOrDefault(); }
+            set { this._creationDate = value; }
+        }
+
+        // Check to see if CreationDate property is set
+        internal bool IsSetCreationDate()
+        {
+            return this._creationDate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property GranteePrincipal. 
         /// <para>
-        /// The principal that receives the grant permission.
+        /// The principal that receives the grant's permissions.
         /// </para>
         /// </summary>
         public string GranteePrincipal
@@ -79,7 +99,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property GrantId. 
         /// <para>
-        /// Unique grant identifier.
+        /// The unique identifier for the grant.
         /// </para>
         /// </summary>
         public string GrantId
@@ -97,7 +117,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property IssuingAccount. 
         /// <para>
-        /// The account under which the grant was issued.
+        /// The AWS account under which the grant was issued.
         /// </para>
         /// </summary>
         public string IssuingAccount
@@ -113,12 +133,46 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KeyId. 
+        /// <para>
+        /// The unique identifier for the customer master key (CMK) to which the grant applies.
+        /// </para>
+        /// </summary>
+        public string KeyId
+        {
+            get { return this._keyId; }
+            set { this._keyId = value; }
+        }
+
+        // Check to see if KeyId property is set
+        internal bool IsSetKeyId()
+        {
+            return this._keyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The friendly name that identifies the grant. If a name was provided in the <a>CreateGrant</a>
+        /// request, that name is returned. Otherwise this value is null.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Operations. 
         /// <para>
-        /// List of operations permitted by the grant. This can be any combination of one or more
-        /// of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li>
-        /// <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li>
-        /// <li>CreateGrant</li> </ol>
+        /// The list of operations permitted by the grant.
         /// </para>
         /// </summary>
         public List<string> Operations
@@ -136,7 +190,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property RetiringPrincipal. 
         /// <para>
-        /// The principal that can retire the account.
+        /// The principal that can retire the grant.
         /// </para>
         /// </summary>
         public string RetiringPrincipal

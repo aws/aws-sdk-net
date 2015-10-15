@@ -1,3 +1,11 @@
+### 3.1.20.0 (2015-10-15 19:24 UTC)
+* KeyManagementService (3.1.1.0)
+	* Add support for deleting Customer Master Keys, including two new APIs for scheduling and canceling key deletion.
+
+### 3.1.19.1 (2015-10-14 21:43 UTC)
+* Core 3.1.3.1
+	* Fix issue with LitJson handling of null values in some cases.
+
 ### 3.1.19.0 (2015-10-07 23:16 UTC)
 * ECS (3.1.1.0)
 	* Task definitions now support more Docker options

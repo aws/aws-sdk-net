@@ -93,8 +93,12 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property GrantTokens. 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-        /// Tokens</a>. 
+        /// A list of grant tokens.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+        /// Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<string> GrantTokens

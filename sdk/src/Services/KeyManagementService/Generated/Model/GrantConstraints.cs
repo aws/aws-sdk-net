@@ -28,7 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Contains constraints on the grant.
+    /// A structure for specifying the conditions under which the operations permitted by
+    /// the grant are allowed.
+    /// 
+    ///  
+    /// <para>
+    /// You can use this structure to allow the operations permitted by the grant only when
+    /// a specified encryption context is present. For more information about encryption context,
+    /// see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+    /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class GrantConstraints
     {
@@ -36,8 +45,13 @@ namespace Amazon.KeyManagementService.Model
         private Dictionary<string, string> _encryptionContextSubset = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property EncryptionContextEquals. The constraint contains additional
-        /// key/value pairs that serve to further limit the grant.
+        /// Gets and sets the property EncryptionContextEquals. 
+        /// <para>
+        /// Contains a list of key-value pairs that must be present in the encryption context
+        /// of a subsequent operation permitted by the grant. When a subsequent operation permitted
+        /// by the grant includes an encryption context that matches this list, the grant allows
+        /// the operation. Otherwise, the operation is not allowed.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> EncryptionContextEquals
         {
@@ -52,8 +66,14 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EncryptionContextSubset. The constraint equals the full
-        /// encryption context.
+        /// Gets and sets the property EncryptionContextSubset. 
+        /// <para>
+        /// Contains a list of key-value pairs, a subset of which must be present in the encryption
+        /// context of a subsequent operation permitted by the grant. When a subsequent operation
+        /// permitted by the grant includes an encryption context that matches this list or is
+        /// a subset of this list, the grant allows the operation. Otherwise, the operation is
+        /// not allowed.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> EncryptionContextSubset
         {

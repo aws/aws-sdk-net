@@ -28,22 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Contains metadata associated with a specific key.
+    /// Contains metadata about a customer master key (CMK).
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a>
+    /// operations.
+    /// </para>
     /// </summary>
     public partial class KeyMetadata
     {
         private string _arn;
         private string _awsAccountId;
         private DateTime? _creationDate;
+        private DateTime? _deletionDate;
         private string _description;
         private bool? _enabled;
         private string _keyId;
+        private KeyState _keyState;
         private KeyUsageType _keyUsage;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Key ARN (Amazon Resource Name).
+        /// The Amazon Resource Name (ARN) of the key. For examples, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
+        /// Key Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS General
+        /// Reference</i>.
         /// </para>
         /// </summary>
         public string Arn
@@ -61,7 +71,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property AWSAccountId. 
         /// <para>
-        /// Account ID number.
+        /// The twelve-digit account ID of the AWS account that owns the key.
         /// </para>
         /// </summary>
         public string AWSAccountId
@@ -79,7 +89,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// Date the key was created.
+        /// The date and time when the key was created.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -95,9 +105,29 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeletionDate. 
+        /// <para>
+        /// The date and time after which AWS KMS deletes the customer master key (CMK). This
+        /// value is present only when <code>KeyState</code> is <code>PendingDeletion</code>,
+        /// otherwise this value is null.
+        /// </para>
+        /// </summary>
+        public DateTime DeletionDate
+        {
+            get { return this._deletionDate.GetValueOrDefault(); }
+            set { this._deletionDate = value; }
+        }
+
+        // Check to see if DeletionDate property is set
+        internal bool IsSetDeletionDate()
+        {
+            return this._deletionDate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the key.
+        /// The friendly description of the key.
         /// </para>
         /// </summary>
         public string Description
@@ -115,7 +145,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Value that specifies whether the key is enabled.
+        /// Specifies whether the key is enabled. When <code>KeyState</code> is <code>Enabled</code>
+        /// this value is true, otherwise it is false.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -133,7 +164,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Unique identifier for the key.
+        /// The globally unique identifier for the key.
         /// </para>
         /// </summary>
         public string KeyId
@@ -149,9 +180,35 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KeyState. 
+        /// <para>
+        /// The state of the customer master key (CMK).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a CMK, go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public KeyState KeyState
+        {
+            get { return this._keyState; }
+            set { this._keyState = value; }
+        }
+
+        // Check to see if KeyState property is set
+        internal bool IsSetKeyState()
+        {
+            return this._keyState != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KeyUsage. 
         /// <para>
-        /// A value that specifies what operation(s) the key can perform.
+        /// The cryptographic operations for which you can use the key. Currently the only allowed
+        /// value is <code>ENCRYPT_DECRYPT</code>, which means you can use the key for the <a>Encrypt</a>
+        /// and <a>Decrypt</a> operations.
         /// </para>
         /// </summary>
         public KeyUsageType KeyUsage

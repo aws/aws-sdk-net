@@ -38,7 +38,12 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property GrantId. 
         /// <para>
-        /// Unique grant identifier. You can use the <i>GrantId</i> value to revoke a grant.
+        /// The unique identifier for the grant.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
+        /// operation.
         /// </para>
         /// </summary>
         public string GrantId
@@ -56,8 +61,12 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property GrantToken. 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-        /// Tokens</a>. 
+        /// The grant token.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using grant tokens, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+        /// Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>. 
         /// </para>
         /// </summary>
         public string GrantToken
