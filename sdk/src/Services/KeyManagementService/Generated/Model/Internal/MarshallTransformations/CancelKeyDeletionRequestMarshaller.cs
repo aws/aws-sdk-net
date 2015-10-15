@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeKey Request Marshaller
+    /// CancelKeyDeletion Request Marshaller
     /// </summary>       
-    public class DescribeKeyRequestMarshaller : IMarshaller<IRequest, DescribeKeyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CancelKeyDeletionRequestMarshaller : IMarshaller<IRequest, CancelKeyDeletionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeKeyRequest)input);
+            return this.Marshall((CancelKeyDeletionRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeKeyRequest publicRequest)
+        public IRequest Marshall(CancelKeyDeletionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KeyManagementService");
-            string target = "TrentService.DescribeKey";
+            string target = "TrentService.CancelKeyDeletion";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,17 +67,6 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGrantTokens())
-                {
-                    context.Writer.WritePropertyName("GrantTokens");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGrantTokensListValue in publicRequest.GrantTokens)
-                    {
-                            context.Writer.Write(publicRequestGrantTokensListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
                 if(publicRequest.IsSetKeyId())
                 {
                     context.Writer.WritePropertyName("KeyId");

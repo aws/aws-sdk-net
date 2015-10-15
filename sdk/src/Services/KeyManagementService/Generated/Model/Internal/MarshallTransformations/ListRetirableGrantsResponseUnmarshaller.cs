@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetKeyRotationStatus operation
+    /// Response Unmarshaller for ListRetirableGrants operation
     /// </summary>  
-    public class GetKeyRotationStatusResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListRetirableGrantsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,28 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetKeyRotationStatusResponse response = new GetKeyRotationStatusResponse();
+            ListRetirableGrantsResponse response = new ListRetirableGrantsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("KeyRotationEnabled", targetDepth))
+                if (context.TestExpression("Grants", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<GrantListEntry, GrantListEntryUnmarshaller>(GrantListEntryUnmarshaller.Instance);
+                    response.Grants = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NextMarker", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextMarker = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Truncated", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    response.KeyRotationEnabled = unmarshaller.Unmarshall(context);
+                    response.Truncated = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -80,13 +92,13 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             {
                 return new InvalidArnException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidMarker"))
+            {
+                return new InvalidMarkerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("KMSInternal"))
             {
                 return new KMSInternalException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("KMSInvalidStateException"))
-            {
-                return new KMSInvalidStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("NotFound"))
             {
@@ -95,9 +107,9 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             return new AmazonKeyManagementServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetKeyRotationStatusResponseUnmarshaller _instance = new GetKeyRotationStatusResponseUnmarshaller();        
+        private static ListRetirableGrantsResponseUnmarshaller _instance = new ListRetirableGrantsResponseUnmarshaller();        
 
-        internal static GetKeyRotationStatusResponseUnmarshaller GetInstance()
+        internal static ListRetirableGrantsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -105,7 +117,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetKeyRotationStatusResponseUnmarshaller Instance
+        public static ListRetirableGrantsResponseUnmarshaller Instance
         {
             get
             {

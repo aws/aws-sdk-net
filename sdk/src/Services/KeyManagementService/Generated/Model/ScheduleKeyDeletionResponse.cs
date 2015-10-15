@@ -28,24 +28,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisableKey operation.
-    /// Sets the state of a master key to disabled, thereby preventing its use for cryptographic
-    /// operations. For more information about how key state affects the use of a master key,
-    /// go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-    /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-    /// Service Developer Guide</i>.
+    /// 
     /// </summary>
-    public partial class DisableKeyRequest : AmazonKeyManagementServiceRequest
+    public partial class ScheduleKeyDeletionResponse : AmazonWebServiceResponse
     {
+        private DateTime? _deletionDate;
         private string _keyId;
+
+        /// <summary>
+        /// Gets and sets the property DeletionDate. 
+        /// <para>
+        /// The date and time after which AWS KMS deletes the customer master key (CMK).
+        /// </para>
+        /// </summary>
+        public DateTime DeletionDate
+        {
+            get { return this._deletionDate.GetValueOrDefault(); }
+            set { this._deletionDate = value; }
+        }
+
+        // Check to see if DeletionDate property is set
+        internal bool IsSetDeletionDate()
+        {
+            return this._deletionDate.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// A unique identifier for the customer master key. This value can be a globally unique
-        /// identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-        /// <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul>
-        /// 
+        /// The unique identifier of the customer master key (CMK) for which deletion is scheduled.
         /// </para>
         /// </summary>
         public string KeyId

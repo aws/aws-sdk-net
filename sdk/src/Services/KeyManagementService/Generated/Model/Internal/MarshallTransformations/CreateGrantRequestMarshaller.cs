@@ -101,6 +101,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KeyId);
                 }
 
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
                 if(publicRequest.IsSetOperations())
                 {
                     context.Writer.WritePropertyName("Operations");

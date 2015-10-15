@@ -30,28 +30,28 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// 
     /// </summary>
-    public partial class ListAliasesResponse : AmazonWebServiceResponse
+    public partial class ListRetirableGrantsResponse : AmazonWebServiceResponse
     {
-        private List<AliasListEntry> _aliases = new List<AliasListEntry>();
+        private List<GrantListEntry> _grants = new List<GrantListEntry>();
         private string _nextMarker;
         private bool? _truncated;
 
         /// <summary>
-        /// Gets and sets the property Aliases. 
+        /// Gets and sets the property Grants. 
         /// <para>
-        /// A list of key aliases in the user's account.
+        /// A list of grants.
         /// </para>
         /// </summary>
-        public List<AliasListEntry> Aliases
+        public List<GrantListEntry> Grants
         {
-            get { return this._aliases; }
-            set { this._aliases = value; }
+            get { return this._grants; }
+            set { this._grants = value; }
         }
 
-        // Check to see if Aliases property is set
-        internal bool IsSetAliases()
+        // Check to see if Grants property is set
+        internal bool IsSetGrants()
         {
-            return this._aliases != null && this._aliases.Count > 0; 
+            return this._grants != null && this._grants.Count > 0; 
         }
 
         /// <summary>

@@ -33,7 +33,31 @@ namespace Amazon.KeyManagementService.Model
     /// </summary>
     public partial class DescribeKeyRequest : AmazonKeyManagementServiceRequest
     {
+        private List<string> _grantTokens = new List<string>();
         private string _keyId;
+
+        /// <summary>
+        /// Gets and sets the property GrantTokens. 
+        /// <para>
+        /// A list of grant tokens.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+        /// Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<string> GrantTokens
+        {
+            get { return this._grantTokens; }
+            set { this._grantTokens = value; }
+        }
+
+        // Check to see if GrantTokens property is set
+        internal bool IsSetGrantTokens()
+        {
+            return this._grantTokens != null && this._grantTokens.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property KeyId. 

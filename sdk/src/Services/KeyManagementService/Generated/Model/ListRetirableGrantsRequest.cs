@@ -28,13 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListAliases operation.
-    /// Lists all of the key aliases in the account.
+    /// Container for the parameters to the ListRetirableGrants operation.
+    /// Returns a list of all grants for which the grant's <code>RetiringPrincipal</code>
+    /// matches the one specified.
+    /// 
+    ///  
+    /// <para>
+    /// A typical use is to list all grants that you are able to retire. To retire a grant,
+    /// use <a>RetireGrant</a>.
+    /// </para>
     /// </summary>
-    public partial class ListAliasesRequest : AmazonKeyManagementServiceRequest
+    public partial class ListRetirableGrantsRequest : AmazonKeyManagementServiceRequest
     {
         private int? _limit;
         private string _marker;
+        private string _retiringPrincipal;
 
         /// <summary>
         /// Gets and sets the property Limit. 
@@ -79,6 +87,33 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetMarker()
         {
             return this._marker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetiringPrincipal. 
+        /// <para>
+        /// The retiring principal for which to list grants.
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify the retiring principal, use the <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts
+        /// (root), IAM users, federated users, and assumed role users. For examples of the ARN
+        /// syntax for specifying a principal, go to <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+        /// Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>Amazon
+        /// Web Services General Reference</i>.
+        /// </para>
+        /// </summary>
+        public string RetiringPrincipal
+        {
+            get { return this._retiringPrincipal; }
+            set { this._retiringPrincipal = value; }
+        }
+
+        // Check to see if RetiringPrincipal property is set
+        internal bool IsSetRetiringPrincipal()
+        {
+            return this._retiringPrincipal != null;
         }
 
     }

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetKeyRotationStatus operation
+    /// Response Unmarshaller for ScheduleKeyDeletion operation
     /// </summary>  
-    public class GetKeyRotationStatusResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ScheduleKeyDeletionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetKeyRotationStatusResponse response = new GetKeyRotationStatusResponse();
+            ScheduleKeyDeletionResponse response = new ScheduleKeyDeletionResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("KeyRotationEnabled", targetDepth))
+                if (context.TestExpression("DeletionDate", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.KeyRotationEnabled = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.DeletionDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,9 +101,9 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             return new AmazonKeyManagementServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetKeyRotationStatusResponseUnmarshaller _instance = new GetKeyRotationStatusResponseUnmarshaller();        
+        private static ScheduleKeyDeletionResponseUnmarshaller _instance = new ScheduleKeyDeletionResponseUnmarshaller();        
 
-        internal static GetKeyRotationStatusResponseUnmarshaller GetInstance()
+        internal static ScheduleKeyDeletionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -105,7 +111,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetKeyRotationStatusResponseUnmarshaller Instance
+        public static ScheduleKeyDeletionResponseUnmarshaller Instance
         {
             get
             {

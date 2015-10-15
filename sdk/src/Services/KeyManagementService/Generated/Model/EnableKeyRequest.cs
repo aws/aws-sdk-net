@@ -29,8 +29,7 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableKey operation.
-    /// Marks a key as enabled, thereby permitting its use. You can have up to 25 enabled
-    /// keys at one time.
+    /// Marks a key as enabled, thereby permitting its use.
     /// </summary>
     public partial class EnableKeyRequest : AmazonKeyManagementServiceRequest
     {

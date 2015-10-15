@@ -28,24 +28,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisableKey operation.
-    /// Sets the state of a master key to disabled, thereby preventing its use for cryptographic
-    /// operations. For more information about how key state affects the use of a master key,
-    /// go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-    /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-    /// Service Developer Guide</i>.
+    /// Container for the parameters to the CancelKeyDeletion operation.
+    /// Cancels the deletion of a customer master key (CMK). When this operation is successful,
+    /// the CMK is set to the <code>Disabled</code> state. To enable a CMK, use <a>EnableKey</a>.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about scheduling and canceling deletion of a CMK, go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+    /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// </para>
     /// </summary>
-    public partial class DisableKeyRequest : AmazonKeyManagementServiceRequest
+    public partial class CancelKeyDeletionRequest : AmazonKeyManagementServiceRequest
     {
         private string _keyId;
 
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// A unique identifier for the customer master key. This value can be a globally unique
-        /// identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-        /// <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul>
-        /// 
+        /// The unique identifier for the customer master key (CMK) for which to cancel deletion.
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify this value, use the unique key ID or the Amazon Resource Name (ARN) of
+        /// the CMK. Examples: <ul> <li>Unique key ID: 1234abcd-12ab-34cd-56ef-1234567890ab</li>
+        /// <li>Key ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</li>
+        /// </ul> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To obtain the unique key ID and key ARN for a given CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
         public string KeyId
