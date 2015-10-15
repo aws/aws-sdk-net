@@ -121,7 +121,7 @@ Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemb
 $services = gci ..\sdk\src\services
 foreach ($s in $services)
 {
-    Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck
+    Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -BuildType $BuildType
 }
 
 #Write-Verbose "Copying assembly versions manifest..."
