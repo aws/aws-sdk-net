@@ -52,6 +52,7 @@ namespace Amazon.Util
         public const string XAmzId2Header = "x-amz-id-2";
         public const string XAmzRequestIdHeader = "x-amz-request-id";
         public const string XAmzDateHeader = "X-Amz-Date";
+        public const string XAmzErrorType = "x-amzn-ErrorType";
         public const string XAmzSignedHeadersHeader = "X-Amz-SignedHeaders";
         public const string XAmzContentSha256Header = "X-Amz-Content-SHA256";
         public const string XAmzDecodedContentLengthHeader = "X-Amz-Decoded-Content-Length";

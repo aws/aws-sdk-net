@@ -1,0 +1,9 @@
+HTTP/1.1 400 Bad Request
+content-type: application/json
+content-length: 91
+date: Wed, 14 Oct 2015 21:21:17 GMT
+x-amzn-RequestId: 1fba6cc9-688b-4998-8e32-5fa48420de33
+connection: Keep-Alive
+x-amzn-ErrorType: InvalidRequestException:SomeAdditionalData
+
+{"message":"Missing required node: state","traceId":"416f2a08-7011-4c72-99e7-08f4fa7b09d6"}

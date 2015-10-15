@@ -107,7 +107,7 @@ namespace Amazon.Runtime
             "RequestExpired",
             "RequestInTheFuture",
         };
-        private const string dateHeaderName = "Date";
+        
         private const string clockSkewMessageFormat = "Identified clock skew: local time = {0}, local time with correction = {1}, current clock skew correction = {2}, server time = {3}.";
         private const string clockSkewUpdatedFormat = "Setting clock skew correction: new clock skew correction = {0}.";
         private const string clockSkewMessageParen = "(";
@@ -177,7 +177,7 @@ namespace Amazon.Runtime
             if (webData != null)
             {
                 // parse server time from "Date" header, if possible
-                var dateValue = webData.GetHeaderValue(dateHeaderName);
+                var dateValue = webData.GetHeaderValue(HeaderKeys.DateHeader);
                 if (!string.IsNullOrEmpty(dateValue))
                 {
                     if (DateTime.TryParseExact(

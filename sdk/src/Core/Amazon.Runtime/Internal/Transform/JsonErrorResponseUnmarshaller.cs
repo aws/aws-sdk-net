@@ -15,6 +15,7 @@
 
 using Amazon.Runtime.Internal;
 using System;
+using Amazon.Util;
 using System.Xml;
 
 
@@ -68,6 +69,25 @@ namespace Amazon.Runtime.Internal.Transform
                     {
                         response.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
+                    }
+                }
+                
+                // If an error code was not found, check for the x-amzn-ErrorType header. 
+                // This header is returned by rest-json services.
+                if (string.IsNullOrEmpty(response.Code) &&
+                    context.ResponseData.IsHeaderPresent(HeaderKeys.XAmzErrorType))
+                {
+                    var errorType = context.ResponseData.GetHeaderValue(HeaderKeys.XAmzErrorType);
+                    if (!string.IsNullOrEmpty(errorType))
+                    {
+                        // The error type can contain additional information, with ":" as a delimiter
+                        // We are only interested in the initial part which is the error type
+                        var index = errorType.IndexOf(":");
+                        if(index != -1)
+                        {
+                            errorType = errorType.Substring(0, index);
+                        }
+                        response.Code = errorType;
                     }
                 }
             }
