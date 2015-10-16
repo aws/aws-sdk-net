@@ -44,7 +44,12 @@ namespace Amazon.CloudFront
         public static readonly GeoRestrictionType Whitelist = new GeoRestrictionType("whitelist");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public GeoRestrictionType(string value)
             : base(value)
@@ -93,7 +98,12 @@ namespace Amazon.CloudFront
         public static readonly ItemSelection Whitelist = new ItemSelection("whitelist");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ItemSelection(string value)
             : base(value)
@@ -158,7 +168,12 @@ namespace Amazon.CloudFront
         public static readonly Method PUT = new Method("PUT");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public Method(string value)
             : base(value)
@@ -203,7 +218,12 @@ namespace Amazon.CloudFront
         public static readonly MinimumProtocolVersion TLSv1 = new MinimumProtocolVersion("TLSv1");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public MinimumProtocolVersion(string value)
             : base(value)
@@ -248,7 +268,12 @@ namespace Amazon.CloudFront
         public static readonly OriginProtocolPolicy MatchViewer = new OriginProtocolPolicy("match-viewer");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public OriginProtocolPolicy(string value)
             : base(value)
@@ -297,7 +322,12 @@ namespace Amazon.CloudFront
         public static readonly PriceClass PriceClass_All = new PriceClass("PriceClass_All");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public PriceClass(string value)
             : base(value)
@@ -342,7 +372,12 @@ namespace Amazon.CloudFront
         public static readonly SSLSupportMethod Vip = new SSLSupportMethod("vip");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SSLSupportMethod(string value)
             : base(value)
@@ -391,7 +426,12 @@ namespace Amazon.CloudFront
         public static readonly ViewerProtocolPolicy RedirectToHttps = new ViewerProtocolPolicy("redirect-to-https");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ViewerProtocolPolicy(string value)
             : base(value)

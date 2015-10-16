@@ -44,7 +44,12 @@ namespace Amazon.DynamoDBv2
         public static readonly AttributeAction PUT = new AttributeAction("PUT");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public AttributeAction(string value)
             : base(value)
@@ -133,7 +138,12 @@ namespace Amazon.DynamoDBv2
         public static readonly ComparisonOperator NULL = new ComparisonOperator("NULL");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ComparisonOperator(string value)
             : base(value)
@@ -178,7 +188,12 @@ namespace Amazon.DynamoDBv2
         public static readonly ConditionalOperator OR = new ConditionalOperator("OR");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ConditionalOperator(string value)
             : base(value)
@@ -231,7 +246,12 @@ namespace Amazon.DynamoDBv2
         public static readonly IndexStatus UPDATING = new IndexStatus("UPDATING");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public IndexStatus(string value)
             : base(value)
@@ -276,7 +296,12 @@ namespace Amazon.DynamoDBv2
         public static readonly KeyType RANGE = new KeyType("RANGE");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public KeyType(string value)
             : base(value)
@@ -325,7 +350,12 @@ namespace Amazon.DynamoDBv2
         public static readonly ProjectionType KEYS_ONLY = new ProjectionType("KEYS_ONLY");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ProjectionType(string value)
             : base(value)
@@ -374,7 +404,12 @@ namespace Amazon.DynamoDBv2
         public static readonly ReturnConsumedCapacity TOTAL = new ReturnConsumedCapacity("TOTAL");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ReturnConsumedCapacity(string value)
             : base(value)
@@ -419,7 +454,12 @@ namespace Amazon.DynamoDBv2
         public static readonly ReturnItemCollectionMetrics SIZE = new ReturnItemCollectionMetrics("SIZE");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ReturnItemCollectionMetrics(string value)
             : base(value)
@@ -476,7 +516,12 @@ namespace Amazon.DynamoDBv2
         public static readonly ReturnValue UPDATED_OLD = new ReturnValue("UPDATED_OLD");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ReturnValue(string value)
             : base(value)
@@ -525,7 +570,12 @@ namespace Amazon.DynamoDBv2
         public static readonly ScalarAttributeType S = new ScalarAttributeType("S");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ScalarAttributeType(string value)
             : base(value)
@@ -578,7 +628,12 @@ namespace Amazon.DynamoDBv2
         public static readonly Select SPECIFIC_ATTRIBUTES = new Select("SPECIFIC_ATTRIBUTES");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public Select(string value)
             : base(value)
@@ -631,7 +686,12 @@ namespace Amazon.DynamoDBv2
         public static readonly StreamViewType OLD_IMAGE = new StreamViewType("OLD_IMAGE");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public StreamViewType(string value)
             : base(value)
@@ -684,7 +744,12 @@ namespace Amazon.DynamoDBv2
         public static readonly TableStatus UPDATING = new TableStatus("UPDATING");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public TableStatus(string value)
             : base(value)

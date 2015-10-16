@@ -48,7 +48,12 @@ namespace Amazon.CognitoSync
         public static readonly BulkPublishStatus SUCCEEDED = new BulkPublishStatus("SUCCEEDED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public BulkPublishStatus(string value)
             : base(value)
@@ -93,7 +98,12 @@ namespace Amazon.CognitoSync
         public static readonly Operation Replace = new Operation("replace");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public Operation(string value)
             : base(value)
@@ -146,7 +156,12 @@ namespace Amazon.CognitoSync
         public static readonly Platform GCM = new Platform("GCM");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public Platform(string value)
             : base(value)
@@ -191,7 +206,12 @@ namespace Amazon.CognitoSync
         public static readonly StreamingStatus ENABLED = new StreamingStatus("ENABLED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public StreamingStatus(string value)
             : base(value)

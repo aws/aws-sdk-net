@@ -56,7 +56,12 @@ namespace Amazon.ECS
         public static readonly AgentUpdateStatus UPDATING = new AgentUpdateStatus("UPDATING");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public AgentUpdateStatus(string value)
             : base(value)
@@ -105,7 +110,12 @@ namespace Amazon.ECS
         public static readonly DesiredStatus STOPPED = new DesiredStatus("STOPPED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DesiredStatus(string value)
             : base(value)
@@ -162,7 +172,12 @@ namespace Amazon.ECS
         public static readonly LogDriver Syslog = new LogDriver("syslog");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public LogDriver(string value)
             : base(value)
@@ -207,7 +222,12 @@ namespace Amazon.ECS
         public static readonly SortOrder DESC = new SortOrder("DESC");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SortOrder(string value)
             : base(value)
@@ -252,7 +272,12 @@ namespace Amazon.ECS
         public static readonly TaskDefinitionStatus INACTIVE = new TaskDefinitionStatus("INACTIVE");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public TaskDefinitionStatus(string value)
             : base(value)
@@ -297,7 +322,12 @@ namespace Amazon.ECS
         public static readonly TransportProtocol Udp = new TransportProtocol("udp");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public TransportProtocol(string value)
             : base(value)
@@ -394,7 +424,12 @@ namespace Amazon.ECS
         public static readonly UlimitName Stack = new UlimitName("stack");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public UlimitName(string value)
             : base(value)

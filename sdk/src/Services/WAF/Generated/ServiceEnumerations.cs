@@ -40,7 +40,12 @@ namespace Amazon.WAF
         public static readonly ChangeAction INSERT = new ChangeAction("INSERT");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ChangeAction(string value)
             : base(value)
@@ -89,7 +94,12 @@ namespace Amazon.WAF
         public static readonly ChangeTokenStatus PROVISIONED = new ChangeTokenStatus("PROVISIONED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ChangeTokenStatus(string value)
             : base(value)
@@ -130,7 +140,12 @@ namespace Amazon.WAF
         public static readonly IPSetDescriptorType IPV4 = new IPSetDescriptorType("IPV4");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public IPSetDescriptorType(string value)
             : base(value)
@@ -183,7 +198,12 @@ namespace Amazon.WAF
         public static readonly MatchFieldType URI = new MatchFieldType("URI");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public MatchFieldType(string value)
             : base(value)
@@ -252,7 +272,12 @@ namespace Amazon.WAF
         public static readonly ParameterExceptionField WAF_ACTION = new ParameterExceptionField("WAF_ACTION");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ParameterExceptionField(string value)
             : base(value)
@@ -309,7 +334,12 @@ namespace Amazon.WAF
         public static readonly PositionalConstraint STARTS_WITH = new PositionalConstraint("STARTS_WITH");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public PositionalConstraint(string value)
             : base(value)
@@ -358,7 +388,12 @@ namespace Amazon.WAF
         public static readonly PredicateType SqlInjectionMatch = new PredicateType("SqlInjectionMatch");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public PredicateType(string value)
             : base(value)
@@ -419,7 +454,12 @@ namespace Amazon.WAF
         public static readonly TextTransformation URL_DECODE = new TextTransformation("URL_DECODE");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public TextTransformation(string value)
             : base(value)
@@ -468,7 +508,12 @@ namespace Amazon.WAF
         public static readonly WafActionType COUNT = new WafActionType("COUNT");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public WafActionType(string value)
             : base(value)

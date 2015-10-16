@@ -48,7 +48,12 @@ namespace Amazon.ElastiCache
         public static readonly AutomaticFailoverStatus Enabling = new AutomaticFailoverStatus("enabling");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public AutomaticFailoverStatus(string value)
             : base(value)
@@ -93,7 +98,12 @@ namespace Amazon.ElastiCache
         public static readonly AZMode SingleAz = new AZMode("single-az");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public AZMode(string value)
             : base(value)
@@ -138,7 +148,12 @@ namespace Amazon.ElastiCache
         public static readonly PendingAutomaticFailoverStatus Enabled = new PendingAutomaticFailoverStatus("enabled");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public PendingAutomaticFailoverStatus(string value)
             : base(value)
@@ -191,7 +206,12 @@ namespace Amazon.ElastiCache
         public static readonly SourceType CacheSubnetGroup = new SourceType("cache-subnet-group");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SourceType(string value)
             : base(value)

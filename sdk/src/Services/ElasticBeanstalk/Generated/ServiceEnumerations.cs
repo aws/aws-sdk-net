@@ -44,7 +44,12 @@ namespace Amazon.ElasticBeanstalk
         public static readonly ConfigurationDeploymentStatus Pending = new ConfigurationDeploymentStatus("pending");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ConfigurationDeploymentStatus(string value)
             : base(value)
@@ -89,7 +94,12 @@ namespace Amazon.ElasticBeanstalk
         public static readonly ConfigurationOptionValueType Scalar = new ConfigurationOptionValueType("Scalar");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ConfigurationOptionValueType(string value)
             : base(value)
@@ -142,7 +152,12 @@ namespace Amazon.ElasticBeanstalk
         public static readonly EnvironmentHealth Yellow = new EnvironmentHealth("Yellow");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public EnvironmentHealth(string value)
             : base(value)
@@ -211,7 +226,12 @@ namespace Amazon.ElasticBeanstalk
         public static readonly EnvironmentHealthAttribute Status = new EnvironmentHealthAttribute("Status");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public EnvironmentHealthAttribute(string value)
             : base(value)
@@ -280,7 +300,12 @@ namespace Amazon.ElasticBeanstalk
         public static readonly EnvironmentHealthStatus Warning = new EnvironmentHealthStatus("Warning");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public EnvironmentHealthStatus(string value)
             : base(value)
@@ -325,7 +350,12 @@ namespace Amazon.ElasticBeanstalk
         public static readonly EnvironmentInfoType Tail = new EnvironmentInfoType("tail");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public EnvironmentInfoType(string value)
             : base(value)
@@ -382,7 +412,12 @@ namespace Amazon.ElasticBeanstalk
         public static readonly EnvironmentStatus Updating = new EnvironmentStatus("Updating");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public EnvironmentStatus(string value)
             : base(value)
@@ -443,7 +478,12 @@ namespace Amazon.ElasticBeanstalk
         public static readonly EventSeverity WARN = new EventSeverity("WARN");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public EventSeverity(string value)
             : base(value)
@@ -512,7 +552,12 @@ namespace Amazon.ElasticBeanstalk
         public static readonly InstancesHealthAttribute System = new InstancesHealthAttribute("System");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public InstancesHealthAttribute(string value)
             : base(value)
@@ -557,7 +602,12 @@ namespace Amazon.ElasticBeanstalk
         public static readonly ValidationSeverity Warning = new ValidationSeverity("warning");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ValidationSeverity(string value)
             : base(value)

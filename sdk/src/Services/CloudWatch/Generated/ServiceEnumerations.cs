@@ -48,7 +48,12 @@ namespace Amazon.CloudWatch
         public static readonly ComparisonOperator LessThanThreshold = new ComparisonOperator("LessThanThreshold");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ComparisonOperator(string value)
             : base(value)
@@ -97,7 +102,12 @@ namespace Amazon.CloudWatch
         public static readonly HistoryItemType StateUpdate = new HistoryItemType("StateUpdate");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public HistoryItemType(string value)
             : base(value)
@@ -242,7 +252,12 @@ namespace Amazon.CloudWatch
         public static readonly StandardUnit TerabytesSecond = new StandardUnit("Terabytes/Second");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public StandardUnit(string value)
             : base(value)
@@ -291,7 +306,12 @@ namespace Amazon.CloudWatch
         public static readonly StateValue OK = new StateValue("OK");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public StateValue(string value)
             : base(value)
@@ -348,7 +368,12 @@ namespace Amazon.CloudWatch
         public static readonly Statistic Sum = new Statistic("Sum");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public Statistic(string value)
             : base(value)

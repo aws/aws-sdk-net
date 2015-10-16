@@ -48,7 +48,12 @@ namespace Amazon.IoT
         public static readonly CertificateStatus REVOKED = new CertificateStatus("REVOKED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public CertificateStatus(string value)
             : base(value)
@@ -105,7 +110,12 @@ namespace Amazon.IoT
         public static readonly LogLevel WARN = new LogLevel("WARN");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public LogLevel(string value)
             : base(value)

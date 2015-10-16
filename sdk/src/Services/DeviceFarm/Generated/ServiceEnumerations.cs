@@ -44,7 +44,12 @@ namespace Amazon.DeviceFarm
         public static readonly ArtifactCategory SCREENSHOT = new ArtifactCategory("SCREENSHOT");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ArtifactCategory(string value)
             : base(value)
@@ -145,7 +150,12 @@ namespace Amazon.DeviceFarm
         public static readonly ArtifactType UNKNOWN = new ArtifactType("UNKNOWN");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ArtifactType(string value)
             : base(value)
@@ -190,7 +200,12 @@ namespace Amazon.DeviceFarm
         public static readonly BillingMethod UNMETERED = new BillingMethod("UNMETERED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public BillingMethod(string value)
             : base(value)
@@ -243,7 +258,12 @@ namespace Amazon.DeviceFarm
         public static readonly DeviceAttribute PLATFORM = new DeviceAttribute("PLATFORM");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DeviceAttribute(string value)
             : base(value)
@@ -288,7 +308,12 @@ namespace Amazon.DeviceFarm
         public static readonly DeviceFormFactor TABLET = new DeviceFormFactor("TABLET");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DeviceFormFactor(string value)
             : base(value)
@@ -333,7 +358,12 @@ namespace Amazon.DeviceFarm
         public static readonly DevicePlatform IOS = new DevicePlatform("IOS");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DevicePlatform(string value)
             : base(value)
@@ -378,7 +408,12 @@ namespace Amazon.DeviceFarm
         public static readonly DevicePoolType PRIVATE = new DevicePoolType("PRIVATE");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DevicePoolType(string value)
             : base(value)
@@ -443,7 +478,12 @@ namespace Amazon.DeviceFarm
         public static readonly ExecutionResult WARNED = new ExecutionResult("WARNED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ExecutionResult(string value)
             : base(value)
@@ -500,7 +540,12 @@ namespace Amazon.DeviceFarm
         public static readonly ExecutionStatus SCHEDULING = new ExecutionStatus("SCHEDULING");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ExecutionStatus(string value)
             : base(value)
@@ -557,7 +602,12 @@ namespace Amazon.DeviceFarm
         public static readonly RuleOperator NOT_IN = new RuleOperator("NOT_IN");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RuleOperator(string value)
             : base(value)
@@ -662,7 +712,12 @@ namespace Amazon.DeviceFarm
         public static readonly SampleType TX_RATE = new SampleType("TX_RATE");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SampleType(string value)
             : base(value)
@@ -735,7 +790,12 @@ namespace Amazon.DeviceFarm
         public static readonly TestType XCTEST = new TestType("XCTEST");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public TestType(string value)
             : base(value)
@@ -788,7 +848,12 @@ namespace Amazon.DeviceFarm
         public static readonly UploadStatus SUCCEEDED = new UploadStatus("SUCCEEDED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public UploadStatus(string value)
             : base(value)
@@ -865,7 +930,12 @@ namespace Amazon.DeviceFarm
         public static readonly UploadType XCTEST_TEST_PACKAGE = new UploadType("XCTEST_TEST_PACKAGE");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public UploadType(string value)
             : base(value)

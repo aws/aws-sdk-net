@@ -52,7 +52,12 @@ namespace Amazon.DataPipeline
         public static readonly OperatorType REF_EQ = new OperatorType("REF_EQ");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public OperatorType(string value)
             : base(value)
@@ -101,7 +106,12 @@ namespace Amazon.DataPipeline
         public static readonly TaskStatus FINISHED = new TaskStatus("FINISHED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public TaskStatus(string value)
             : base(value)

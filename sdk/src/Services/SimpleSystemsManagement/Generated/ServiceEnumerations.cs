@@ -40,7 +40,12 @@ namespace Amazon.SimpleSystemsManagement
         public static readonly AssociationFilterKey Name = new AssociationFilterKey("Name");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public AssociationFilterKey(string value)
             : base(value)
@@ -89,7 +94,12 @@ namespace Amazon.SimpleSystemsManagement
         public static readonly AssociationStatusName Success = new AssociationStatusName("Success");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public AssociationStatusName(string value)
             : base(value)
@@ -130,7 +140,12 @@ namespace Amazon.SimpleSystemsManagement
         public static readonly DocumentFilterKey Name = new DocumentFilterKey("Name");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DocumentFilterKey(string value)
             : base(value)
@@ -179,7 +194,12 @@ namespace Amazon.SimpleSystemsManagement
         public static readonly DocumentStatus Deleting = new DocumentStatus("Deleting");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DocumentStatus(string value)
             : base(value)
@@ -228,7 +248,12 @@ namespace Amazon.SimpleSystemsManagement
         public static readonly Fault Unknown = new Fault("Unknown");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public Fault(string value)
             : base(value)

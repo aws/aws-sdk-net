@@ -48,7 +48,12 @@ namespace Amazon.CloudSearch
         public static readonly AlgorithmicStemming None = new AlgorithmicStemming("none");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public AlgorithmicStemming(string value)
             : base(value)
@@ -225,7 +230,12 @@ namespace Amazon.CloudSearch
         public static readonly AnalysisSchemeLanguage ZhHant = new AnalysisSchemeLanguage("zh-Hant");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public AnalysisSchemeLanguage(string value)
             : base(value)
@@ -306,7 +316,12 @@ namespace Amazon.CloudSearch
         public static readonly IndexFieldType TextArray = new IndexFieldType("text-array");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public IndexFieldType(string value)
             : base(value)
@@ -359,7 +374,12 @@ namespace Amazon.CloudSearch
         public static readonly OptionState RequiresIndexDocuments = new OptionState("RequiresIndexDocuments");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public OptionState(string value)
             : base(value)
@@ -428,7 +448,12 @@ namespace Amazon.CloudSearch
         public static readonly PartitionInstanceType SearchM3Xlarge = new PartitionInstanceType("search.m3.xlarge");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public PartitionInstanceType(string value)
             : base(value)
@@ -477,7 +502,12 @@ namespace Amazon.CloudSearch
         public static readonly SuggesterFuzzyMatching None = new SuggesterFuzzyMatching("none");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SuggesterFuzzyMatching(string value)
             : base(value)

@@ -48,7 +48,12 @@ namespace Amazon.OpsWorks
         public static readonly AppAttributesKeys RailsEnv = new AppAttributesKeys("RailsEnv");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public AppAttributesKeys(string value)
             : base(value)
@@ -113,7 +118,12 @@ namespace Amazon.OpsWorks
         public static readonly AppType Static = new AppType("static");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public AppType(string value)
             : base(value)
@@ -158,7 +168,12 @@ namespace Amazon.OpsWorks
         public static readonly Architecture X86_64 = new Architecture("x86_64");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public Architecture(string value)
             : base(value)
@@ -203,7 +218,12 @@ namespace Amazon.OpsWorks
         public static readonly AutoScalingType Timer = new AutoScalingType("timer");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public AutoScalingType(string value)
             : base(value)
@@ -288,7 +308,12 @@ namespace Amazon.OpsWorks
         public static readonly DeploymentCommandName Update_dependencies = new DeploymentCommandName("update_dependencies");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DeploymentCommandName(string value)
             : base(value)
@@ -425,7 +450,12 @@ namespace Amazon.OpsWorks
         public static readonly LayerAttributesKeys RubyVersion = new LayerAttributesKeys("RubyVersion");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public LayerAttributesKeys(string value)
             : base(value)
@@ -510,7 +540,12 @@ namespace Amazon.OpsWorks
         public static readonly LayerType Web = new LayerType("web");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public LayerType(string value)
             : base(value)
@@ -555,7 +590,12 @@ namespace Amazon.OpsWorks
         public static readonly RootDeviceType InstanceStore = new RootDeviceType("instance-store");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RootDeviceType(string value)
             : base(value)
@@ -608,7 +648,12 @@ namespace Amazon.OpsWorks
         public static readonly SourceType Svn = new SourceType("svn");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SourceType(string value)
             : base(value)
@@ -649,7 +694,12 @@ namespace Amazon.OpsWorks
         public static readonly StackAttributesKeys Color = new StackAttributesKeys("Color");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public StackAttributesKeys(string value)
             : base(value)
@@ -694,7 +744,12 @@ namespace Amazon.OpsWorks
         public static readonly VirtualizationType Paravirtual = new VirtualizationType("paravirtual");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public VirtualizationType(string value)
             : base(value)
@@ -743,7 +798,12 @@ namespace Amazon.OpsWorks
         public static readonly VolumeType Standard = new VolumeType("standard");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public VolumeType(string value)
             : base(value)

@@ -40,7 +40,12 @@ namespace Amazon.EC2
         public static readonly AccountAttributeName SupportedPlatforms = new AccountAttributeName("supported-platforms");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public AccountAttributeName(string value)
             : base(value)
@@ -85,7 +90,12 @@ namespace Amazon.EC2
         public static readonly AllocationStrategy LowestPrice = new AllocationStrategy("lowestPrice");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public AllocationStrategy(string value)
             : base(value)
@@ -130,7 +140,12 @@ namespace Amazon.EC2
         public static readonly ArchitectureValues X86_64 = new ArchitectureValues("x86_64");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ArchitectureValues(string value)
             : base(value)
@@ -183,7 +198,12 @@ namespace Amazon.EC2
         public static readonly AttachmentStatus Detaching = new AttachmentStatus("detaching");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public AttachmentStatus(string value)
             : base(value)
@@ -236,7 +256,12 @@ namespace Amazon.EC2
         public static readonly AvailabilityZoneState Unavailable = new AvailabilityZoneState("unavailable");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public AvailabilityZoneState(string value)
             : base(value)
@@ -301,7 +326,12 @@ namespace Amazon.EC2
         public static readonly BatchState Submitted = new BatchState("submitted");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public BatchState(string value)
             : base(value)
@@ -366,7 +396,12 @@ namespace Amazon.EC2
         public static readonly BundleTaskState WaitingForShutdown = new BundleTaskState("waiting-for-shutdown");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public BundleTaskState(string value)
             : base(value)
@@ -419,7 +454,12 @@ namespace Amazon.EC2
         public static readonly CancelBatchErrorCode UnexpectedError = new CancelBatchErrorCode("unexpectedError");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public CancelBatchErrorCode(string value)
             : base(value)
@@ -476,7 +516,12 @@ namespace Amazon.EC2
         public static readonly CancelSpotInstanceRequestState Open = new CancelSpotInstanceRequestState("open");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public CancelSpotInstanceRequestState(string value)
             : base(value)
@@ -517,7 +562,12 @@ namespace Amazon.EC2
         public static readonly ContainerFormat Ova = new ContainerFormat("ova");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ContainerFormat(string value)
             : base(value)
@@ -570,7 +620,12 @@ namespace Amazon.EC2
         public static readonly ConversionTaskState Completed = new ConversionTaskState("completed");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ConversionTaskState(string value)
             : base(value)
@@ -611,7 +666,12 @@ namespace Amazon.EC2
         public static readonly CurrencyCodeValues USD = new CurrencyCodeValues("USD");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public CurrencyCodeValues(string value)
             : base(value)
@@ -656,7 +716,12 @@ namespace Amazon.EC2
         public static readonly DatafeedSubscriptionState Inactive = new DatafeedSubscriptionState("Inactive");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DatafeedSubscriptionState(string value)
             : base(value)
@@ -701,7 +766,12 @@ namespace Amazon.EC2
         public static readonly DeviceType InstanceStore = new DeviceType("instance-store");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DeviceType(string value)
             : base(value)
@@ -750,7 +820,12 @@ namespace Amazon.EC2
         public static readonly DiskImageFormat VMDK = new DiskImageFormat("VMDK");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DiskImageFormat(string value)
             : base(value)
@@ -795,7 +870,12 @@ namespace Amazon.EC2
         public static readonly DomainType Vpc = new DomainType("vpc");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DomainType(string value)
             : base(value)
@@ -852,7 +932,12 @@ namespace Amazon.EC2
         public static readonly EventCode SystemReboot = new EventCode("system-reboot");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public EventCode(string value)
             : base(value)
@@ -901,7 +986,12 @@ namespace Amazon.EC2
         public static readonly EventType InstanceChange = new EventType("instanceChange");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public EventType(string value)
             : base(value)
@@ -946,7 +1036,12 @@ namespace Amazon.EC2
         public static readonly ExcessCapacityTerminationPolicy NoTermination = new ExcessCapacityTerminationPolicy("noTermination");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ExcessCapacityTerminationPolicy(string value)
             : base(value)
@@ -995,7 +1090,12 @@ namespace Amazon.EC2
         public static readonly ExportEnvironment Vmware = new ExportEnvironment("vmware");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ExportEnvironment(string value)
             : base(value)
@@ -1048,7 +1148,12 @@ namespace Amazon.EC2
         public static readonly ExportTaskState Completed = new ExportTaskState("completed");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ExportTaskState(string value)
             : base(value)
@@ -1097,7 +1202,12 @@ namespace Amazon.EC2
         public static readonly FlowLogsResourceType VPC = new FlowLogsResourceType("VPC");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public FlowLogsResourceType(string value)
             : base(value)
@@ -1138,7 +1248,12 @@ namespace Amazon.EC2
         public static readonly GatewayType Ipsec1 = new GatewayType("ipsec.1");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public GatewayType(string value)
             : base(value)
@@ -1183,7 +1298,12 @@ namespace Amazon.EC2
         public static readonly HypervisorType Xen = new HypervisorType("xen");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public HypervisorType(string value)
             : base(value)
@@ -1248,7 +1368,12 @@ namespace Amazon.EC2
         public static readonly ImageAttributeName SriovNetSupport = new ImageAttributeName("sriovNetSupport");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ImageAttributeName(string value)
             : base(value)
@@ -1313,7 +1438,12 @@ namespace Amazon.EC2
         public static readonly ImageState Transient = new ImageState("transient");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ImageState(string value)
             : base(value)
@@ -1362,7 +1492,12 @@ namespace Amazon.EC2
         public static readonly ImageTypeValues Ramdisk = new ImageTypeValues("ramdisk");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ImageTypeValues(string value)
             : base(value)
@@ -1451,7 +1586,12 @@ namespace Amazon.EC2
         public static readonly InstanceAttributeName UserData = new InstanceAttributeName("userData");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public InstanceAttributeName(string value)
             : base(value)
@@ -1492,7 +1632,12 @@ namespace Amazon.EC2
         public static readonly InstanceLifecycleType Spot = new InstanceLifecycleType("spot");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public InstanceLifecycleType(string value)
             : base(value)
@@ -1553,7 +1698,12 @@ namespace Amazon.EC2
         public static readonly InstanceStateName Terminated = new InstanceStateName("terminated");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public InstanceStateName(string value)
             : base(value)
@@ -1802,7 +1952,12 @@ namespace Amazon.EC2
         public static readonly InstanceType T2Small = new InstanceType("t2.small");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public InstanceType(string value)
             : base(value)
@@ -1855,7 +2010,12 @@ namespace Amazon.EC2
         public static readonly ListingState Sold = new ListingState("sold");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ListingState(string value)
             : base(value)
@@ -1908,7 +2068,12 @@ namespace Amazon.EC2
         public static readonly ListingStatus Pending = new ListingStatus("pending");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ListingStatus(string value)
             : base(value)
@@ -1961,7 +2126,12 @@ namespace Amazon.EC2
         public static readonly MonitoringState Pending = new MonitoringState("pending");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public MonitoringState(string value)
             : base(value)
@@ -2006,7 +2176,12 @@ namespace Amazon.EC2
         public static readonly MoveStatus RestoringToClassic = new MoveStatus("restoringToClassic");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public MoveStatus(string value)
             : base(value)
@@ -2059,7 +2234,12 @@ namespace Amazon.EC2
         public static readonly NetworkInterfaceAttribute SourceDestCheck = new NetworkInterfaceAttribute("sourceDestCheck");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public NetworkInterfaceAttribute(string value)
             : base(value)
@@ -2112,7 +2292,12 @@ namespace Amazon.EC2
         public static readonly NetworkInterfaceStatus InUse = new NetworkInterfaceStatus("in-use");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public NetworkInterfaceStatus(string value)
             : base(value)
@@ -2173,7 +2358,12 @@ namespace Amazon.EC2
         public static readonly OfferingTypeValues PartialUpfront = new OfferingTypeValues("Partial Upfront");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public OfferingTypeValues(string value)
             : base(value)
@@ -2218,7 +2408,12 @@ namespace Amazon.EC2
         public static readonly OperationType Remove = new OperationType("remove");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public OperationType(string value)
             : base(value)
@@ -2259,7 +2454,12 @@ namespace Amazon.EC2
         public static readonly PermissionGroup All = new PermissionGroup("all");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public PermissionGroup(string value)
             : base(value)
@@ -2312,7 +2512,12 @@ namespace Amazon.EC2
         public static readonly PlacementGroupState Pending = new PlacementGroupState("pending");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public PlacementGroupState(string value)
             : base(value)
@@ -2353,7 +2558,12 @@ namespace Amazon.EC2
         public static readonly PlacementStrategy Cluster = new PlacementStrategy("cluster");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public PlacementStrategy(string value)
             : base(value)
@@ -2394,7 +2604,12 @@ namespace Amazon.EC2
         public static readonly PlatformValues Windows = new PlatformValues("Windows");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public PlatformValues(string value)
             : base(value)
@@ -2439,7 +2654,12 @@ namespace Amazon.EC2
         public static readonly ProductCodeValues Marketplace = new ProductCodeValues("marketplace");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ProductCodeValues(string value)
             : base(value)
@@ -2480,7 +2700,12 @@ namespace Amazon.EC2
         public static readonly RecurringChargeFrequency Hourly = new RecurringChargeFrequency("Hourly");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RecurringChargeFrequency(string value)
             : base(value)
@@ -2553,7 +2778,12 @@ namespace Amazon.EC2
         public static readonly ReportInstanceReasonCodes Unresponsive = new ReportInstanceReasonCodes("unresponsive");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ReportInstanceReasonCodes(string value)
             : base(value)
@@ -2598,7 +2828,12 @@ namespace Amazon.EC2
         public static readonly ReportStatusType Ok = new ReportStatusType("ok");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ReportStatusType(string value)
             : base(value)
@@ -2651,7 +2886,12 @@ namespace Amazon.EC2
         public static readonly ReservedInstanceState Retired = new ReservedInstanceState("retired");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ReservedInstanceState(string value)
             : base(value)
@@ -2692,7 +2932,12 @@ namespace Amazon.EC2
         public static readonly ResetImageAttributeName LaunchPermission = new ResetImageAttributeName("launchPermission");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ResetImageAttributeName(string value)
             : base(value)
@@ -2797,7 +3042,12 @@ namespace Amazon.EC2
         public static readonly ResourceType VpnGateway = new ResourceType("vpn-gateway");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ResourceType(string value)
             : base(value)
@@ -2850,7 +3100,12 @@ namespace Amazon.EC2
         public static readonly RIProductDescription WindowsAmazonVPC = new RIProductDescription("Windows (Amazon VPC)");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RIProductDescription(string value)
             : base(value)
@@ -2899,7 +3154,12 @@ namespace Amazon.EC2
         public static readonly RouteOrigin EnableVgwRoutePropagation = new RouteOrigin("EnableVgwRoutePropagation");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RouteOrigin(string value)
             : base(value)
@@ -2944,7 +3204,12 @@ namespace Amazon.EC2
         public static readonly RouteState Blackhole = new RouteState("blackhole");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RouteState(string value)
             : base(value)
@@ -2989,7 +3254,12 @@ namespace Amazon.EC2
         public static readonly RuleAction Deny = new RuleAction("deny");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RuleAction(string value)
             : base(value)
@@ -3034,7 +3304,12 @@ namespace Amazon.EC2
         public static readonly ShutdownBehavior Terminate = new ShutdownBehavior("terminate");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ShutdownBehavior(string value)
             : base(value)
@@ -3079,7 +3354,12 @@ namespace Amazon.EC2
         public static readonly SnapshotAttributeName ProductCodes = new SnapshotAttributeName("productCodes");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SnapshotAttributeName(string value)
             : base(value)
@@ -3128,7 +3408,12 @@ namespace Amazon.EC2
         public static readonly SnapshotState Pending = new SnapshotState("pending");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SnapshotState(string value)
             : base(value)
@@ -3185,7 +3470,12 @@ namespace Amazon.EC2
         public static readonly SpotInstanceState Open = new SpotInstanceState("open");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SpotInstanceState(string value)
             : base(value)
@@ -3230,7 +3520,12 @@ namespace Amazon.EC2
         public static readonly SpotInstanceType Persistent = new SpotInstanceType("persistent");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SpotInstanceType(string value)
             : base(value)
@@ -3283,7 +3578,12 @@ namespace Amazon.EC2
         public static readonly State Pending = new State("Pending");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public State(string value)
             : base(value)
@@ -3332,7 +3632,12 @@ namespace Amazon.EC2
         public static readonly Status MoveInProgress = new Status("MoveInProgress");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public Status(string value)
             : base(value)
@@ -3373,7 +3678,12 @@ namespace Amazon.EC2
         public static readonly StatusName Reachability = new StatusName("reachability");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public StatusName(string value)
             : base(value)
@@ -3426,7 +3736,12 @@ namespace Amazon.EC2
         public static readonly StatusType Passed = new StatusType("passed");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public StatusType(string value)
             : base(value)
@@ -3471,7 +3786,12 @@ namespace Amazon.EC2
         public static readonly SubnetState Pending = new SubnetState("pending");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SubnetState(string value)
             : base(value)
@@ -3528,7 +3848,12 @@ namespace Amazon.EC2
         public static readonly SummaryStatus Ok = new SummaryStatus("ok");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SummaryStatus(string value)
             : base(value)
@@ -3573,7 +3898,12 @@ namespace Amazon.EC2
         public static readonly TelemetryStatus UP = new TelemetryStatus("UP");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public TelemetryStatus(string value)
             : base(value)
@@ -3618,7 +3948,12 @@ namespace Amazon.EC2
         public static readonly Tenancy Default = new Tenancy("default");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public Tenancy(string value)
             : base(value)
@@ -3667,7 +4002,12 @@ namespace Amazon.EC2
         public static readonly TrafficType REJECT = new TrafficType("REJECT");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public TrafficType(string value)
             : base(value)
@@ -3712,7 +4052,12 @@ namespace Amazon.EC2
         public static readonly VirtualizationType Paravirtual = new VirtualizationType("paravirtual");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public VirtualizationType(string value)
             : base(value)
@@ -3765,7 +4110,12 @@ namespace Amazon.EC2
         public static readonly VolumeAttachmentState Detaching = new VolumeAttachmentState("detaching");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public VolumeAttachmentState(string value)
             : base(value)
@@ -3810,7 +4160,12 @@ namespace Amazon.EC2
         public static readonly VolumeAttributeName ProductCodes = new VolumeAttributeName("productCodes");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public VolumeAttributeName(string value)
             : base(value)
@@ -3871,7 +4226,12 @@ namespace Amazon.EC2
         public static readonly VolumeState InUse = new VolumeState("in-use");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public VolumeState(string value)
             : base(value)
@@ -3920,7 +4280,12 @@ namespace Amazon.EC2
         public static readonly VolumeStatusInfoStatus Ok = new VolumeStatusInfoStatus("ok");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public VolumeStatusInfoStatus(string value)
             : base(value)
@@ -3965,7 +4330,12 @@ namespace Amazon.EC2
         public static readonly VolumeStatusName IoPerformance = new VolumeStatusName("io-performance");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public VolumeStatusName(string value)
             : base(value)
@@ -4014,7 +4384,12 @@ namespace Amazon.EC2
         public static readonly VolumeType Standard = new VolumeType("standard");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public VolumeType(string value)
             : base(value)
@@ -4059,7 +4434,12 @@ namespace Amazon.EC2
         public static readonly VpcAttributeName EnableDnsSupport = new VpcAttributeName("enableDnsSupport");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public VpcAttributeName(string value)
             : base(value)
@@ -4132,7 +4512,12 @@ namespace Amazon.EC2
         public static readonly VpcPeeringConnectionStateReasonCode Rejected = new VpcPeeringConnectionStateReasonCode("rejected");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public VpcPeeringConnectionStateReasonCode(string value)
             : base(value)
@@ -4177,7 +4562,12 @@ namespace Amazon.EC2
         public static readonly VpcState Pending = new VpcState("pending");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public VpcState(string value)
             : base(value)
@@ -4230,7 +4620,12 @@ namespace Amazon.EC2
         public static readonly VpnState Pending = new VpnState("pending");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public VpnState(string value)
             : base(value)
@@ -4271,7 +4666,12 @@ namespace Amazon.EC2
         public static readonly VpnStaticRouteSource Static = new VpnStaticRouteSource("Static");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public VpnStaticRouteSource(string value)
             : base(value)
