@@ -90,7 +90,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Client.UpdateThingShadow(new UpdateThingShadowRequest());
             });
 
-            exception = AssertExtensions.ExpectException<AmazonIotDataException>(() =>
+            exception = AssertExtensions.ExpectException<InvalidRequestException>(() =>
             {
                 Client.UpdateThingShadow(new UpdateThingShadowRequest
                 {
