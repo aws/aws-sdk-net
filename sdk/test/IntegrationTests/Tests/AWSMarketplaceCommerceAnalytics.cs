@@ -17,6 +17,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     [TestClass]
     public class AWSMarketplaceCommerceAnalytics : TestBase<AmazonAWSMarketplaceCommerceAnalyticsClient>
     {
+        // You need to set the ExternalId provided by the service for your account before you can run the test.
+        const string ExternalId = "";
 
         static string TrustPolicy =
           @"{
@@ -28,7 +30,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                   ""Principal"": {
                     ""AWS"": ""arn:aws:iam::452565589796:root""
                   },
-                  ""Action"": ""sts:AssumeRole""
+                  ""Action"": ""sts:AssumeRole"",
+                  ""Condition"": {
+                    ""StringEquals"": {
+                      ""sts:ExternalId"": """ + ExternalId + @"""
+                    }
+                  }
                 }
               ]
             }";
@@ -72,7 +79,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
               ]
             }";
 
-        [TestMethod]
+        // This test needs account specific details. 
+        // You need to set the ExternalId provided by the service for your account before you can run the test.
+        //[TestMethod]
         [TestCategory("AWSMarketplaceCommerceAnalytics")]
         public void GenerateDatasetTest()
         {
