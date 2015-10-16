@@ -82,7 +82,7 @@ namespace Amazon.Runtime.Internal.Transform
                     {
                         // The error type can contain additional information, with ":" as a delimiter
                         // We are only interested in the initial part which is the error type
-                        var index = errorType.IndexOf(":");
+                        var index = errorType.IndexOf(":", StringComparison.Ordinal);
                         if(index != -1)
                         {
                             errorType = errorType.Substring(0, index);
