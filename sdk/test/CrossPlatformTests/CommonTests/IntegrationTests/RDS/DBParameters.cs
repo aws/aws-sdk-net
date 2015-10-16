@@ -113,17 +113,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
             {
                 if (parameterGroup != null)
                 {
-                    Client.DeleteDBParameterGroupAsync(new DeleteDBParameterGroupRequest
+                    UtilityMethods.WaitUntilSuccess(() => Client.DeleteDBParameterGroupAsync(new DeleteDBParameterGroupRequest
                     {
                         DBParameterGroupName = parameterGroup.DBParameterGroupName
-                    }).Wait();
+                    }).Wait());
                 }
                 if (parameterGroup2 != null)
                 {
-                    Client.DeleteDBParameterGroupAsync(new DeleteDBParameterGroupRequest
+                    UtilityMethods.WaitUntilSuccess(() => Client.DeleteDBParameterGroupAsync(new DeleteDBParameterGroupRequest
                     {
                         DBParameterGroupName = parameterGroup2.DBParameterGroupName
-                    }).Wait();
+                    }).Wait());
                 }
             }
         }

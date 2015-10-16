@@ -84,7 +84,7 @@ namespace CommonTests.IntegrationTests
                 Assert.AreNotEqual(0, presets.Count);
 
                 var fakeId = "1111111111111-abcde1";
-                var aete = await AssertExtensions.ExpectExceptionAsync<AmazonElasticTranscoderException>(client.DeletePipelineAsync(new DeletePipelineRequest
+                var aete = await AssertExtensions.ExpectExceptionAsync<Amazon.ElasticTranscoder.Model.ResourceNotFoundException>(client.DeletePipelineAsync(new DeletePipelineRequest
                 {
                     Id = fakeId
                 }));

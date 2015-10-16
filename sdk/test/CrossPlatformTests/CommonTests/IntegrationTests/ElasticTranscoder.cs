@@ -196,7 +196,7 @@ namespace CommonTests.IntegrationTests
                 Client.DeletePipelineAsync(
                     new DeletePipelineRequest { Id = pipeline.Id }).Wait();
 
-                AssertExtensions.ExpectExceptionAsync < AmazonElasticTranscoderException>(Client.ReadPipelineAsync(
+                AssertExtensions.ExpectExceptionAsync<Amazon.ElasticTranscoder.Model.ResourceNotFoundException>(Client.ReadPipelineAsync(
                         new ReadPipelineRequest() { Id = pipeline.Id })).Wait();
             }
             finally

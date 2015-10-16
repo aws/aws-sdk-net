@@ -47,17 +47,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         static List<string> createdFunctionNames = new List<string>();
         static List<string> createdRoleNames = new List<string>();
 
-        //public LambdaTests()
-        //{
-        //    var config = new AmazonLambdaConfig
-        //    {
-        //        ServiceURL = "https://beta-04-2014-elb-671472083.us-west-2.elb.amazonaws.com",
-        //        AuthenticationRegion = "us-west-2"
-        //    };
-        //    Client = new AmazonLambdaClient(config);
-
-        //}
-
         [ClassCleanup]
         public static void Cleanup()
         {
@@ -95,8 +84,52 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
 // This test depends on functionality that is only in 4.5
 #if BCL45
-        // Commented out since this test won't pass till Function Versioning is released.
-        //[TestMethod]
+
+        [TestMethod]
+        public void Issue256Test()
+        {
+            string functionName;
+            string iamRoleName = null;
+            bool iamRoleCreated = false;
+            try
+            {
+                string iamRoleArn;
+                string functionArn;
+                CreateLambdaFunction(out functionName, out functionArn, out iamRoleName, out iamRoleArn);
+
+                var publishResponse = Client.PublishVersion(new PublishVersionRequest
+                {
+                    FunctionName = functionName
+                });
+                var version = publishResponse.Version;
+
+                var apr = new AddPermissionRequest
+                {
+                    FunctionName = functionName,
+                    SourceAccount = "999999999999",
+                    SourceArn = "arn:aws:s3:::cloudtrail-999999999999",
+                    StatementId = "id1",
+                    Principal = "s3.amazonaws.com",
+                    Action = "lambda:InvokeFunction",
+                    Qualifier = version
+                };
+                var addResponse = Client.AddPermission(apr);
+                var statement = addResponse.Statement;
+
+                // verify that the qualifier (in query string) got sent to the server correctly
+                // by checking that the function with the qualifier (version) is specified in the
+                // statement we get back from the service
+                var expectedFunctionName = functionArn + ":" + version;
+                Assert.IsTrue(statement.IndexOf(expectedFunctionName, StringComparison.Ordinal) >= 0);
+            }
+            finally
+            {
+                if (iamRoleCreated)
+                    iamClient.DeleteRole(new DeleteRoleRequest { RoleName = iamRoleName });
+            }
+        }
+
+        [TestMethod]
         public void LambdaFunctionTest()
         {
             string functionName;

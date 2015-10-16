@@ -78,7 +78,7 @@ namespace CommonTests.Framework
             catch (Exception e)
             {
                 exception = e;
-                Assert.AreEqual(e.GetType(), exceptionType);
+                Assert.AreEqual(exceptionType, e.GetType());
                 if (!string.IsNullOrEmpty(message))
                     Assert.AreEqual(message, e.Message);
                 gotException = true;
@@ -99,7 +99,7 @@ namespace CommonTests.Framework
             catch (Exception e)
             {
                 exception = e;
-                Assert.AreEqual(e.GetType(), exceptionType);
+                Assert.AreEqual(exceptionType, e.GetType());
                 if (!string.IsNullOrEmpty(message))
                     Assert.AreEqual(message, e.Message);
                 gotException = true;

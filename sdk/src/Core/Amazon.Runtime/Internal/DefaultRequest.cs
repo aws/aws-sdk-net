@@ -399,7 +399,7 @@ namespace Amazon.Runtime.Internal
         /// <returns>Returns true if the currect request can contain a request body, else false.</returns>
         public bool MayContainRequestBody()
         {
-            return !this.UseQueryString &&
+            return
                 (this.HttpMethod == "POST" ||
                  this.HttpMethod == "PUT");
         }

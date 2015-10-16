@@ -391,12 +391,6 @@ namespace Amazon.Runtime.Internal
                         request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
                 }
             }
-            else if (request.UseQueryString &&
-                (request.HttpMethod == "POST" ||
-                 request.HttpMethod == "PUT"))
-            {
-                request.Content = new Byte[0];
-            }
 
             if (requestContext.Unmarshaller is JsonResponseUnmarshaller)
             {

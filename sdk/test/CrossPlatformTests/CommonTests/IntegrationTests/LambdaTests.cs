@@ -110,11 +110,13 @@ namespace CommonTests.IntegrationTests
                 Assert.AreEqual("helloworld.handler", getFunctionConfiguration.Handler);
 
                 // Call the function
+#pragma warning disable 618
                 var invokeAsyncResponse = Client.InvokeAsyncAsync(new InvokeAsyncRequest
                 {
                     FunctionName = functionName,
                     InvokeArgs = "{}"
                 }).Result;
+#pragma warning restore 618
                 Assert.AreEqual(invokeAsyncResponse.Status, 202); // Status Code Accepted
 
                 var clientContext = @"{""System"": ""Windows""}";
