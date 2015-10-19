@@ -78,6 +78,81 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(1, Tester.CallCount);
         }
 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void Test400WithErrorTypeHeader()
+        {
+            Tester.Reset();
+            Tester.Action = (int callCount) =>
+            {
+                var errorResponse = (HttpWebResponse)MockWebResponse.CreateFromResource("400WithErrorTypeHeader.txt");
+                throw new HttpErrorResponseException(new HttpWebRequestResponseData(errorResponse));
+            };
+
+            var context = CreateTestContext();
+            ((RequestContext)context.RequestContext).Unmarshaller =
+                Amazon.IotData.Model.Internal.MarshallTransformations.UpdateThingShadowResponseUnmarshaller.Instance;
+
+            var exception = Utils.AssertExceptionExpected<Amazon.IotData.Model.InvalidRequestException>(() =>
+            {
+                RuntimePipeline.InvokeSync(context);
+            });
+            Assert.AreEqual("InvalidRequestException", exception.ErrorCode);
+            Assert.AreEqual(HttpStatusCode.BadRequest, exception.StatusCode);
+            Assert.AreEqual(1, Tester.CallCount);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void Test400WithErrorTypeHeaderAndData()
+        {
+            Tester.Reset();
+            Tester.Action = (int callCount) =>
+            {
+                var errorResponse = (HttpWebResponse)MockWebResponse.CreateFromResource("400WithErrorTypeHeaderAndData.txt");
+                throw new HttpErrorResponseException(new HttpWebRequestResponseData(errorResponse));
+            };
+
+            var context = CreateTestContext();
+            ((RequestContext)context.RequestContext).Unmarshaller =
+                Amazon.IotData.Model.Internal.MarshallTransformations.UpdateThingShadowResponseUnmarshaller.Instance;
+
+            var exception = Utils.AssertExceptionExpected<Amazon.IotData.Model.InvalidRequestException>(() =>
+            {
+                RuntimePipeline.InvokeSync(context);
+            });
+            Assert.AreEqual("InvalidRequestException", exception.ErrorCode);
+            Assert.AreEqual(HttpStatusCode.BadRequest, exception.StatusCode);
+            Assert.AreEqual(1, Tester.CallCount);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void Test404WithErrorTypeHeader()
+        {
+            Tester.Reset();
+            Tester.Action = (int callCount) =>
+            {
+                var errorResponse = (HttpWebResponse)MockWebResponse.CreateFromResource("404WithErrorTypeHeader.txt");
+                throw new HttpErrorResponseException(new HttpWebRequestResponseData(errorResponse));
+            };
+
+            var context = CreateTestContext();
+            ((RequestContext)context.RequestContext).Unmarshaller =
+                Amazon.IotData.Model.Internal.MarshallTransformations.GetThingShadowResponseUnmarshaller.Instance;
+
+            var exception = Utils.AssertExceptionExpected<Amazon.IotData.Model.ResourceNotFoundException>(() =>
+            {
+                RuntimePipeline.InvokeSync(context);
+            });
+            Assert.AreEqual("ResourceNotFoundException", exception.ErrorCode);
+            Assert.AreEqual(HttpStatusCode.NotFound, exception.StatusCode);
+            Assert.AreEqual(1, Tester.CallCount);
+        }
+
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         public void Test304()

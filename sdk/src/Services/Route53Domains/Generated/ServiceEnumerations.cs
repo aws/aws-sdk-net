@@ -52,7 +52,12 @@ namespace Amazon.Route53Domains
         public static readonly ContactType RESELLER = new ContactType("RESELLER");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ContactType(string value)
             : base(value)
@@ -1005,7 +1010,12 @@ namespace Amazon.Route53Domains
         public static readonly CountryCode ZW = new CountryCode("ZW");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public CountryCode(string value)
             : base(value)
@@ -1074,7 +1084,12 @@ namespace Amazon.Route53Domains
         public static readonly DomainAvailability UNAVAILABLE_RESTRICTED = new DomainAvailability("UNAVAILABLE_RESTRICTED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DomainAvailability(string value)
             : base(value)
@@ -1191,7 +1206,12 @@ namespace Amazon.Route53Domains
         public static readonly ExtraParamName VAT_NUMBER = new ExtraParamName("VAT_NUMBER");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ExtraParamName(string value)
             : base(value)
@@ -1248,7 +1268,12 @@ namespace Amazon.Route53Domains
         public static readonly OperationStatus SUCCESSFUL = new OperationStatus("SUCCESSFUL");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public OperationStatus(string value)
             : base(value)
@@ -1313,7 +1338,12 @@ namespace Amazon.Route53Domains
         public static readonly OperationType UPDATE_NAMESERVER = new OperationType("UPDATE_NAMESERVER");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public OperationType(string value)
             : base(value)

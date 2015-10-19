@@ -44,7 +44,12 @@ namespace Amazon.CodeDeploy
         public static readonly ApplicationRevisionSortBy RegisterTime = new ApplicationRevisionSortBy("registerTime");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ApplicationRevisionSortBy(string value)
             : base(value)
@@ -93,7 +98,12 @@ namespace Amazon.CodeDeploy
         public static readonly BundleType Zip = new BundleType("zip");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public BundleType(string value)
             : base(value)
@@ -138,7 +148,12 @@ namespace Amazon.CodeDeploy
         public static readonly DeploymentCreator User = new DeploymentCreator("user");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DeploymentCreator(string value)
             : base(value)
@@ -199,7 +214,12 @@ namespace Amazon.CodeDeploy
         public static readonly DeploymentStatus Succeeded = new DeploymentStatus("Succeeded");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DeploymentStatus(string value)
             : base(value)
@@ -248,7 +268,12 @@ namespace Amazon.CodeDeploy
         public static readonly EC2TagFilterType VALUE_ONLY = new EC2TagFilterType("VALUE_ONLY");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public EC2TagFilterType(string value)
             : base(value)
@@ -337,7 +362,12 @@ namespace Amazon.CodeDeploy
         public static readonly ErrorCode TIMEOUT = new ErrorCode("TIMEOUT");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ErrorCode(string value)
             : base(value)
@@ -398,7 +428,12 @@ namespace Amazon.CodeDeploy
         public static readonly InstanceStatus Unknown = new InstanceStatus("Unknown");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public InstanceStatus(string value)
             : base(value)
@@ -459,7 +494,12 @@ namespace Amazon.CodeDeploy
         public static readonly LifecycleErrorCode UnknownError = new LifecycleErrorCode("UnknownError");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public LifecycleErrorCode(string value)
             : base(value)
@@ -520,7 +560,12 @@ namespace Amazon.CodeDeploy
         public static readonly LifecycleEventStatus Unknown = new LifecycleEventStatus("Unknown");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public LifecycleEventStatus(string value)
             : base(value)
@@ -569,7 +614,12 @@ namespace Amazon.CodeDeploy
         public static readonly ListStateFilterAction Include = new ListStateFilterAction("include");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ListStateFilterAction(string value)
             : base(value)
@@ -614,7 +664,12 @@ namespace Amazon.CodeDeploy
         public static readonly MinimumHealthyHostsType HOST_COUNT = new MinimumHealthyHostsType("HOST_COUNT");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public MinimumHealthyHostsType(string value)
             : base(value)
@@ -659,7 +714,12 @@ namespace Amazon.CodeDeploy
         public static readonly RegistrationStatus Registered = new RegistrationStatus("Registered");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RegistrationStatus(string value)
             : base(value)
@@ -704,7 +764,12 @@ namespace Amazon.CodeDeploy
         public static readonly RevisionLocationType S3 = new RevisionLocationType("S3");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RevisionLocationType(string value)
             : base(value)
@@ -749,7 +814,12 @@ namespace Amazon.CodeDeploy
         public static readonly SortOrder Descending = new SortOrder("descending");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SortOrder(string value)
             : base(value)
@@ -794,7 +864,12 @@ namespace Amazon.CodeDeploy
         public static readonly StopStatus Succeeded = new StopStatus("Succeeded");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public StopStatus(string value)
             : base(value)
@@ -843,7 +918,12 @@ namespace Amazon.CodeDeploy
         public static readonly TagFilterType VALUE_ONLY = new TagFilterType("VALUE_ONLY");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public TagFilterType(string value)
             : base(value)

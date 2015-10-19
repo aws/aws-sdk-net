@@ -44,7 +44,12 @@ namespace Amazon.DynamoDBv2
         public static readonly OperationType REMOVE = new OperationType("REMOVE");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public OperationType(string value)
             : base(value)
@@ -97,7 +102,12 @@ namespace Amazon.DynamoDBv2
         public static readonly ShardIteratorType TRIM_HORIZON = new ShardIteratorType("TRIM_HORIZON");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ShardIteratorType(string value)
             : base(value)
@@ -150,7 +160,12 @@ namespace Amazon.DynamoDBv2
         public static readonly StreamStatus ENABLING = new StreamStatus("ENABLING");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public StreamStatus(string value)
             : base(value)

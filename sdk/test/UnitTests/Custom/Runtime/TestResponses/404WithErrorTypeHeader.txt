@@ -1,0 +1,9 @@
+HTTP/1.1 404 Not Found
+content-type: application/json
+content-length: 71
+date: Mon, 05 Oct 2015 19:13:37 GMT
+x-amzn-RequestId: 41948233-f751-4f8c-816d-8ec405ec973e
+connection: Keep-Alive
+x-amzn-ErrorType: ResourceNotFoundException:
+
+{"message":"Not Found, traceId : 3d30a429-5006-4347-9cd1-9490de0233bd"}

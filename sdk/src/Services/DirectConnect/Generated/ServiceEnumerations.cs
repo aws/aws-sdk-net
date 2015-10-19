@@ -64,7 +64,12 @@ namespace Amazon.DirectConnect
         public static readonly ConnectionState Requested = new ConnectionState("requested");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ConnectionState(string value)
             : base(value)
@@ -125,7 +130,12 @@ namespace Amazon.DirectConnect
         public static readonly InterconnectState Requested = new InterconnectState("requested");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public InterconnectState(string value)
             : base(value)
@@ -190,7 +200,12 @@ namespace Amazon.DirectConnect
         public static readonly VirtualInterfaceState Verifying = new VirtualInterfaceState("verifying");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public VirtualInterfaceState(string value)
             : base(value)

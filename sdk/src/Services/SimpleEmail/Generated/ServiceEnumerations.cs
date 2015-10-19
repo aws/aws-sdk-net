@@ -56,7 +56,12 @@ namespace Amazon.SimpleEmail
         public static readonly BounceType Undefined = new BounceType("Undefined");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public BounceType(string value)
             : base(value)
@@ -113,7 +118,12 @@ namespace Amazon.SimpleEmail
         public static readonly DsnAction Relayed = new DsnAction("relayed");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DsnAction(string value)
             : base(value)
@@ -158,7 +168,12 @@ namespace Amazon.SimpleEmail
         public static readonly IdentityType EmailAddress = new IdentityType("EmailAddress");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public IdentityType(string value)
             : base(value)
@@ -203,7 +218,12 @@ namespace Amazon.SimpleEmail
         public static readonly InvocationType RequestResponse = new InvocationType("RequestResponse");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public InvocationType(string value)
             : base(value)
@@ -252,7 +272,12 @@ namespace Amazon.SimpleEmail
         public static readonly NotificationType Delivery = new NotificationType("Delivery");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public NotificationType(string value)
             : base(value)
@@ -297,7 +322,12 @@ namespace Amazon.SimpleEmail
         public static readonly ReceiptFilterPolicy Block = new ReceiptFilterPolicy("Block");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ReceiptFilterPolicy(string value)
             : base(value)
@@ -338,7 +368,12 @@ namespace Amazon.SimpleEmail
         public static readonly StopScope RuleSet = new StopScope("RuleSet");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public StopScope(string value)
             : base(value)
@@ -383,7 +418,12 @@ namespace Amazon.SimpleEmail
         public static readonly TlsPolicy Require = new TlsPolicy("Require");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public TlsPolicy(string value)
             : base(value)
@@ -440,7 +480,12 @@ namespace Amazon.SimpleEmail
         public static readonly VerificationStatus TemporaryFailure = new VerificationStatus("TemporaryFailure");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public VerificationStatus(string value)
             : base(value)

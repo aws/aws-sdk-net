@@ -40,7 +40,12 @@ namespace Amazon.ConfigService
         public static readonly ChronologicalOrder Reverse = new ChronologicalOrder("Reverse");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ChronologicalOrder(string value)
             : base(value)
@@ -93,7 +98,12 @@ namespace Amazon.ConfigService
         public static readonly ComplianceType NOT_APPLICABLE = new ComplianceType("NOT_APPLICABLE");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ComplianceType(string value)
             : base(value)
@@ -138,7 +148,12 @@ namespace Amazon.ConfigService
         public static readonly ConfigRuleState DELETING = new ConfigRuleState("DELETING");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ConfigRuleState(string value)
             : base(value)
@@ -191,7 +206,12 @@ namespace Amazon.ConfigService
         public static readonly ConfigurationItemStatus Ok = new ConfigurationItemStatus("Ok");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ConfigurationItemStatus(string value)
             : base(value)
@@ -240,7 +260,12 @@ namespace Amazon.ConfigService
         public static readonly DeliveryStatus Success = new DeliveryStatus("Success");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DeliveryStatus(string value)
             : base(value)
@@ -281,7 +306,12 @@ namespace Amazon.ConfigService
         public static readonly EventSource AwsConfig = new EventSource("aws.config");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public EventSource(string value)
             : base(value)
@@ -338,7 +368,12 @@ namespace Amazon.ConfigService
         public static readonly MaximumExecutionFrequency TwentyFour_Hours = new MaximumExecutionFrequency("TwentyFour_Hours");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public MaximumExecutionFrequency(string value)
             : base(value)
@@ -383,7 +418,12 @@ namespace Amazon.ConfigService
         public static readonly MessageType ConfigurationSnapshotDeliveryCompleted = new MessageType("ConfigurationSnapshotDeliveryCompleted");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public MessageType(string value)
             : base(value)
@@ -428,7 +468,12 @@ namespace Amazon.ConfigService
         public static readonly Owner CUSTOM_LAMBDA = new Owner("CUSTOM_LAMBDA");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public Owner(string value)
             : base(value)
@@ -477,7 +522,12 @@ namespace Amazon.ConfigService
         public static readonly RecorderStatus Success = new RecorderStatus("Success");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RecorderStatus(string value)
             : base(value)
@@ -570,7 +620,12 @@ namespace Amazon.ConfigService
         public static readonly ResourceType AWSEC2VPNGateway = new ResourceType("AWS::EC2::VPNGateway");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ResourceType(string value)
             : base(value)

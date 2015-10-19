@@ -44,7 +44,12 @@ namespace Amazon.WorkSpaces
         public static readonly Compute VALUE_TYPE = new Compute("VALUE");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public Compute(string value)
             : base(value)
@@ -101,7 +106,12 @@ namespace Amazon.WorkSpaces
         public static readonly WorkspaceDirectoryState REGISTERING = new WorkspaceDirectoryState("REGISTERING");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public WorkspaceDirectoryState(string value)
             : base(value)
@@ -146,7 +156,12 @@ namespace Amazon.WorkSpaces
         public static readonly WorkspaceDirectoryType SIMPLE_AD = new WorkspaceDirectoryType("SIMPLE_AD");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public WorkspaceDirectoryType(string value)
             : base(value)
@@ -223,7 +238,12 @@ namespace Amazon.WorkSpaces
         public static readonly WorkspaceState UNHEALTHY = new WorkspaceState("UNHEALTHY");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public WorkspaceState(string value)
             : base(value)

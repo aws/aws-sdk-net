@@ -40,7 +40,12 @@ namespace Amazon.RDS
         public static readonly ApplyMethod PendingReboot = new ApplyMethod("pending-reboot");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ApplyMethod(string value)
             : base(value)
@@ -97,7 +102,12 @@ namespace Amazon.RDS
         public static readonly SourceType DbSecurityGroup = new SourceType("db-security-group");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SourceType(string value)
             : base(value)

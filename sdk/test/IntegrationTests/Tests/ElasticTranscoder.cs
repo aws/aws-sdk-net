@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 {
                     readPipelineResult = Client.ReadPipeline(
                         new ReadPipelineRequest() { Id = pipelineId });
-                }, typeof(AmazonElasticTranscoderException));
+                }, typeof(ResourceNotFoundException));
             }
             finally
             {
