@@ -1,3 +1,13 @@
+### 3.1.20.1 (2015-10-20 21:01 UTC)
+* IoT (3.1.0.1)
+	* Updated to use new Core, version 3.1.3.2
+	* Rev version to pick up latest core patch for sending both a query string and a body.
+* Lambda (3.1.2.1)
+	* Updated to use new Core, version 3.1.3.2
+	* Rev version to pick up latest core patch for sending both a query string and a body.
+* Core 3.1.3.2
+	* Fixed issue with operations that contain both a query string and a body.
+
 ### 3.1.20.0 (2015-10-15 19:24 UTC)
 * KeyManagementService (3.1.1.0)
 	* Add support for deleting Customer Master Keys, including two new APIs for scheduling and canceling key deletion.
