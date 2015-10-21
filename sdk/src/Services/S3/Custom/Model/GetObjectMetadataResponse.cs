@@ -18,6 +18,7 @@ using System.Xml.Serialization;
 using System.Text;
 
 using Amazon.Runtime;
+using Amazon.S3.Util;
 
 namespace Amazon.S3.Model
 {
@@ -44,6 +45,13 @@ namespace Amazon.S3.Model
         private MetadataCollection metadataCollection = new MetadataCollection();
         private ReplicationStatus replicationStatus;
         private S3StorageClass storageClass;
+
+        /// <summary>
+        /// Flag which returns true if the Expires property has been unmarshalled
+        /// from the raw value or set by user code.
+        /// </summary>
+        private bool isExpiresUnmarshalled;
+        internal string RawExpires { get; set; }
 
         /// <summary>
         /// The collection of headers for the request.
@@ -213,8 +221,20 @@ namespace Amazon.S3.Model
         /// </summary>
         public DateTime Expires
         {
-            get { return this.expires ?? default(DateTime); }
-            set { this.expires = value; }
+            get
+            {
+                if (this.isExpiresUnmarshalled)
+                {
+                    return this.expires.Value;
+                }
+                else
+                {
+                    this.expires = AmazonS3Util.ParseExpiresHeader(this.RawExpires, this.ResponseMetadata.RequestId);
+                    this.isExpiresUnmarshalled = true;
+                    return this.expires.Value;
+                }
+            }
+            set { this.expires = value; this.isExpiresUnmarshalled = true; }
         }
 
         // Check to see if Expires property is set
