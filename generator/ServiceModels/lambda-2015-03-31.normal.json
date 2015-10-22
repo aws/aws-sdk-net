@@ -1495,6 +1495,8 @@
         },
         "Qualifier":{
           "shape":"Qualifier",
+          "location":"querystring",
+          "locationName":"Qualifier",
           "documentation":"<p>You can specify this optional query parameter to specify function version or alias name in which case this API will return all permissions associated with the specific ARN. If you don't provide this parameter, the API will return permissions that apply to the unqualified function ARN. </p>"
         }
       }

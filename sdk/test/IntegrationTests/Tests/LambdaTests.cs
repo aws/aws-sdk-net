@@ -86,7 +86,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 #if BCL45
 
         [TestMethod]
-        public void Issue256Test()
+        public void PolicyAndPermissionTest()
         {
             string functionName;
             string iamRoleName = null;
@@ -113,14 +113,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     Action = "lambda:InvokeFunction",
                     Qualifier = version
                 };
+
                 var addResponse = Client.AddPermission(apr);
                 var statement = addResponse.Statement;
-
+                var expectedFunctionName = functionArn + ":" + version;
                 // verify that the qualifier (in query string) got sent to the server correctly
                 // by checking that the function with the qualifier (version) is specified in the
                 // statement we get back from the service
-                var expectedFunctionName = functionArn + ":" + version;
                 Assert.IsTrue(statement.IndexOf(expectedFunctionName, StringComparison.Ordinal) >= 0);
+
+                var policy = Client.GetPolicy(new Amazon.Lambda.Model.GetPolicyRequest
+                {
+                    FunctionName = functionName,
+                    Qualifier = version
+                }).Policy;
+                // verify that the function is part of the policy
+                Assert.IsTrue(policy.IndexOf(expectedFunctionName, StringComparison.Ordinal) >= 0);
             }
             finally
             {
