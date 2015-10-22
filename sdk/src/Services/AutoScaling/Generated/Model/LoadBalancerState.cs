@@ -56,7 +56,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the load balancer.
+        /// One of the following load balancer states:
         /// </para>
         ///  <ul> <li>
         /// <para>

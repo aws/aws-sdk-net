@@ -43,7 +43,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ProcessName. 
         /// <para>
-        /// The name of the process.
+        /// One of the following processes:
         /// </para>
         ///  <ul> <li>
         /// <para>

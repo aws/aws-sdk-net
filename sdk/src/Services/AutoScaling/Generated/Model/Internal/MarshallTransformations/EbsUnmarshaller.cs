@@ -60,6 +60,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.DeleteOnTermination = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Encrypted", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Iops", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

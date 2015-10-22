@@ -114,11 +114,11 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HeartbeatTimeout. 
         /// <para>
-        /// Defines the amount of time, in seconds, that can elapse before the lifecycle hook
-        /// times out. When the lifecycle hook times out, Auto Scaling performs the action defined
-        /// in the <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from
-        /// timing out by calling <a>RecordLifecycleActionHeartbeat</a>. The default value for
-        /// this parameter is 3600 seconds (1 hour).
+        /// The amount of time, in seconds, that can elapse before the lifecycle hook times out.
+        /// When the lifecycle hook times out, Auto Scaling performs the action defined in the
+        /// <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing
+        /// out by calling <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds
+        /// (1 hour).
         /// </para>
         /// </summary>
         public int HeartbeatTimeout

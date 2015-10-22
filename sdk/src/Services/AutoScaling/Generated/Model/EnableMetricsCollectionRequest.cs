@@ -83,7 +83,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        /// One or more metrics. If you omit this parameter, all metrics are enabled.
+        /// One or more of the following metrics. If you omit this parameter, all metrics are
+        /// enabled.
         /// </para>
         ///  <ul> <li>
         /// <para>

@@ -313,7 +313,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The name of the placement group into which you'll launch your instances, if any. For
         /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// Groups</a>.
+        /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public string PlacementGroup

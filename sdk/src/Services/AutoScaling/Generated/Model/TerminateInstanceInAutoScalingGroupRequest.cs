@@ -33,7 +33,7 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// This call simply makes a termination request. The instances is not terminated immediately.
+    /// This call simply makes a termination request. The instance is not terminated immediately.
     /// </para>
     /// </summary>
     public partial class TerminateInstanceInAutoScalingGroupRequest : AmazonAutoScalingRequest
@@ -62,7 +62,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ShouldDecrementDesiredCapacity. 
         /// <para>
-        /// If <code>true</code>, terminating this instance also decrements the size of the Auto
+        /// If <code>true</code>, terminating the instance also decrements the size of the Auto
         /// Scaling group.
         /// </para>
         /// </summary>
