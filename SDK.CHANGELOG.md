@@ -1,3 +1,11 @@
+### 3.1.21.0 (2015-10-22 21:40 UTC)
+* AutoScaling (3.1.1.0)
+	* Adding support for EBS encryption in block device mappings.
+* IdentityManagement (3.1.2.0)
+	* Enable Policy Simulator API to do simulation with resource-based policies.
+* Lambda (3.1.2.2)
+	* Fix issue with invoking Lambda GetPolicy operation.
+
 ### 3.1.20.1 (2015-10-20 21:01 UTC)
 * IoT (3.1.0.1)
 	* Updated to use new Core, version 3.1.3.2

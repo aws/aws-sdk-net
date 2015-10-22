@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.IdentityManagement</id>
     <title>AWSSDK - AWS Identity and Access Management</title>
-    <version>3.1.1.1</version> 
+    <version>3.1.2.0</version> 
     <authors>Amazon Web Services</authors>
     <description>AWS Identity and Access Management (IAM) enables you to securely control access to AWS services and resources for your users. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.</description>
     <language>en-US</language>
