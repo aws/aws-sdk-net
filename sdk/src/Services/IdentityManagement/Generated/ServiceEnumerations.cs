@@ -407,6 +407,10 @@ namespace Amazon.IdentityManagement
         /// </summary>
         public static readonly PolicySourceType None = new PolicySourceType("none");
         /// <summary>
+        /// Constant Resource for PolicySourceType
+        /// </summary>
+        public static readonly PolicySourceType Resource = new PolicySourceType("resource");
+        /// <summary>
         /// Constant Role for PolicySourceType
         /// </summary>
         public static readonly PolicySourceType Role = new PolicySourceType("role");

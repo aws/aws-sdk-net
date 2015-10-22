@@ -39,6 +39,7 @@ namespace Amazon.IdentityManagement.Model
     {
         private string _evalActionName;
         private PolicyEvaluationDecisionType _evalDecision;
+        private Dictionary<string, string> _evalDecisionDetails = new Dictionary<string, string>();
         private string _evalResourceName;
         private List<Statement> _matchedStatements = new List<Statement>();
         private List<string> _missingContextValues = new List<string>();
@@ -77,6 +78,29 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetEvalDecision()
         {
             return this._evalDecision != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvalDecisionDetails. 
+        /// <para>
+        /// Additional details about the results of the evaluation decision. When there are both
+        /// IAM policies and resource policies, this parameter explains how each set of policies
+        /// contributes to the final evaluation decision. When simulating cross-account access
+        /// to a resource, both the resource-based policy and the caller's IAM policy must grant
+        /// access. See <ulink href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+        /// IAM Roles Differ from Resource-based Policies</ulink>
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> EvalDecisionDetails
+        {
+            get { return this._evalDecisionDetails; }
+            set { this._evalDecisionDetails = value; }
+        }
+
+        // Check to see if EvalDecisionDetails property is set
+        internal bool IsSetEvalDecisionDetails()
+        {
+            return this._evalDecisionDetails != null && this._evalDecisionDetails.Count > 0; 
         }
 
         /// <summary>

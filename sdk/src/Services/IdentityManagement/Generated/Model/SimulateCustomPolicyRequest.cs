@@ -29,13 +29,13 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the SimulateCustomPolicy operation.
-    /// Simulate a set of IAM policies against a list of API actions and AWS resources to
-    /// determine the policies' effective permissions. The policies are provided as a list
-    /// of strings.
+    /// Simulate how a set of IAM policies and optionally a resource-based policy works with
+    /// a list of API actions and AWS resources to determine the policies' effective permissions.
+    /// The policies are provided as strings.
     /// 
     ///  
     /// <para>
-    /// The simulation does not perform the API actions, it only checks the authorization
+    /// The simulation does not perform the API actions; it only checks the authorization
     /// to determine if the simulated policies allow or deny the actions.
     /// </para>
     ///  
@@ -46,30 +46,33 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// Context keys are variables maintained by AWS and its services that provide details
-    /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
-    /// element of an IAM policy. To get the list of context keys required by the policies
-    /// to simulate them correctly, use <a>GetContextKeysForCustomPolicy</a>.
+    /// about the context of an API query request. You can use the <code>Condition</code>
+    /// element of an IAM policy to evaluate context keys. To get the list of context keys
+    /// that the policies require for correct simulation, use <a>GetContextKeysForCustomPolicy</a>.
     /// </para>
     ///  
     /// <para>
-    /// If the output is long, you can paginate the results using the <code>MaxItems</code>
-    /// and <code>Marker</code> parameters.
+    /// If the output is long, you can use <code>MaxItems</code> and <code>Marker</code> parameters
+    /// to paginate the results.
     /// </para>
     /// </summary>
     public partial class SimulateCustomPolicyRequest : AmazonIdentityManagementServiceRequest
     {
         private List<string> _actionNames = new List<string>();
+        private string _callerArn;
         private List<ContextEntry> _contextEntries = new List<ContextEntry>();
         private string _marker;
         private int? _maxItems;
         private List<string> _policyInputList = new List<string>();
         private List<string> _resourceArns = new List<string>();
+        private string _resourceOwner;
+        private string _resourcePolicy;
 
         /// <summary>
         /// Gets and sets the property ActionNames. 
         /// <para>
         /// A list of names of API actions to evaluate in the simulation. Each action is evaluated
-        /// for each resource. Each action must include the service identifier, such as <code>iam:CreateUser</code>.
+        /// against each resource. Each action must include the service identifier, such as <code>iam:CreateUser</code>.
         /// </para>
         /// </summary>
         public List<string> ActionNames
@@ -85,9 +88,34 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CallerArn. 
+        /// <para>
+        /// The ARN of the user that you want to use as the simulated caller of the APIs. <code>CallerArn</code>
+        /// is required if you include a <code>ResourcePolicy</code> so that the policy's <code>Principal</code>
+        /// element has a value to use in evaluating the policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify only the ARN of an IAM user. You cannot specify the ARN of an assumed
+        /// role, federated user, or a service principal.
+        /// </para>
+        /// </summary>
+        public string CallerArn
+        {
+            get { return this._callerArn; }
+            set { this._callerArn = value; }
+        }
+
+        // Check to see if CallerArn property is set
+        internal bool IsSetCallerArn()
+        {
+            return this._callerArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ContextEntries. 
         /// <para>
-        /// A list of context keys and corresponding values that are used by the simulation. Whenever
+        /// A list of context keys and corresponding values for the simulation to use. Whenever
         /// a context key is evaluated by a <code>Condition</code> element in one of the simulated
         /// IAM permission policies, the corresponding value is supplied.
         /// </para>
@@ -109,7 +137,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// Use this parameter only when paginating results and only after you receive a response
         /// indicating that the results are truncated. Set it to the value of the <code>Marker</code>
-        /// element in the response you received to inform the next call about where to start.
+        /// element in the response that you received to indicate where the next call should start.
         /// </para>
         /// </summary>
         public string Marker
@@ -128,12 +156,16 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property MaxItems. 
         /// <para>
         /// Use this only when paginating results to indicate the maximum number of items you
-        /// want in the response. If there are additional items beyond the maximum you specify,
-        /// the <code>IsTruncated</code> response element is <code>true</code>.
+        /// want in the response. If additional items exist beyond the maximum you specify, the
+        /// <code>IsTruncated</code> response element is <code>true</code>.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is optional. If you do not include it, it defaults to 100.
+        /// This parameter is optional. If you do not include it, it defaults to 100. Note that
+        /// IAM might return fewer results, even when there are more results available. In that
+        /// case, the <code>IsTruncated</code> response element returns <code>true</code> and
+        /// <code>Marker</code> contains a value to include in the subsequent call that tells
+        /// the service where to continue from. 
         /// </para>
         /// </summary>
         public int MaxItems
@@ -152,7 +184,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property PolicyInputList. 
         /// <para>
         /// A list of policy documents to include in the simulation. Each document is specified
-        /// as a string containing the complete, valid JSON text of an IAM policy.
+        /// as a string containing the complete, valid JSON text of an IAM policy. Do not include
+        /// any resource-based policies in this parameter. Any resource-based policy must be submitted
+        /// with the <code>ResourcePolicy</code> parameter. The policies cannot be "scope-down"
+        /// policies, such as you could include in a call to <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+        /// or one of the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+        /// APIs to restrict what a user can do while using the temporary credentials.
         /// </para>
         /// </summary>
         public List<string> PolicyInputList
@@ -176,6 +213,17 @@ namespace Amazon.IdentityManagement.Model
         /// The simulation determines the access result (allowed or denied) of each combination
         /// and reports it in the response.
         /// </para>
+        ///  
+        /// <para>
+        /// The simulation does not automatically retrieve policies for the specified resources.
+        /// If you want to include a resource policy in the simulation, then you must include
+        /// the policy as a string in the <code>ResourcePolicy</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you include a <code>ResourcePolicy</code>, then it must be applicable to all of
+        /// the resources included in the simulation or you receive an invalid input error.
+        /// </para>
         /// </summary>
         public List<string> ResourceArns
         {
@@ -187,6 +235,51 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetResourceArns()
         {
             return this._resourceArns != null && this._resourceArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceOwner. 
+        /// <para>
+        /// An AWS account ID that specifies the owner of any simulated resource that does not
+        /// identify its owner in the resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code>
+        /// is specified, it is also used as the account owner of any <code>ResourcePolicy</code>
+        /// included in the simulation. If the <code>ResourceOwner</code> parameter is not specified,
+        /// then the owner of the resources and the resource policy defaults to the account of
+        /// the identity provided in <code>CallerArn</code>. This parameter is required only if
+        /// you specify a resource-based policy and account that owns the resource is different
+        /// from the account that owns the simulated calling user <code>CallerArn</code>.
+        /// </para>
+        /// </summary>
+        public string ResourceOwner
+        {
+            get { return this._resourceOwner; }
+            set { this._resourceOwner = value; }
+        }
+
+        // Check to see if ResourceOwner property is set
+        internal bool IsSetResourceOwner()
+        {
+            return this._resourceOwner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourcePolicy. 
+        /// <para>
+        /// A resource-based policy to include in the simulation provided as a string. Each resource
+        /// in the simulation is treated as if it had this policy attached. You can include only
+        /// one resource-based policy in a simulation.
+        /// </para>
+        /// </summary>
+        public string ResourcePolicy
+        {
+            get { return this._resourcePolicy; }
+            set { this._resourcePolicy = value; }
+        }
+
+        // Check to see if ResourcePolicy property is set
+        internal bool IsSetResourcePolicy()
+        {
+            return this._resourcePolicy != null;
         }
 
     }

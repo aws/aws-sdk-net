@@ -93,9 +93,7 @@ namespace Amazon.IdentityManagement
     /// Security Credentials</a>. This topic provides general information about the types
     /// of credentials used for accessing AWS. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
     /// Best Practices</a>. This topic presents a list of suggestions for using the IAM service
-    /// to help secure your AWS resources. </li> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/">AWS
-    /// Security Token Service</a>. This guide describes how to create and use temporary security
-    /// credentials. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+    /// to help secure your AWS resources. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
     /// AWS API Requests</a>. This set of topics walk you through the process of signing a
     /// request using an access key ID and secret access key. </li> </ul>
     /// </summary>
@@ -461,7 +459,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachGroupPolicy service method.</param>
@@ -527,7 +525,7 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// Use this API to attach a managed policy to a role. To embed an inline policy in a
         /// role, use <a>PutRolePolicy</a>. For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachRolePolicy service method.</param>
@@ -590,7 +588,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachUserPolicy service method.</param>
@@ -650,7 +648,7 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// To change the password for a different user, see <a>UpdateLoginProfile</a>. For more
         /// information about modifying passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
-        /// Passwords</a> in the <i>Using IAM</i> guide. 
+        /// Passwords</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ChangePassword service method.</param>
@@ -725,7 +723,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         ///  For information about limits on the number of keys you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  <important> To ensure the security of your AWS account, the secret access key is
         /// accessible only during key and user creation. You must save the key (for example,
@@ -765,7 +763,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         ///  For information about limits on the number of keys you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  <important> To ensure the security of your AWS account, the secret access key is
         /// accessible only during key and user creation. You must save the key (for example,
@@ -809,7 +807,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         ///  For information about limits on the number of keys you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  <important> To ensure the security of your AWS account, the secret access key is
         /// accessible only during key and user creation. You must save the key (for example,
@@ -862,7 +860,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Creates an alias for your AWS account. For information about using an AWS account
         /// alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide.
+        /// an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccountAlias service method.</param>
         /// 
@@ -914,7 +912,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         ///  For information about the number of groups you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
@@ -973,7 +971,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         ///  For information about the number of instance profiles you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInstanceProfile service method.</param>
@@ -1156,12 +1154,12 @@ namespace Amazon.IdentityManagement
         /// This operation creates a policy version with a version identifier of <code>v1</code>
         /// and sets v1 as the policy's default version. For more information about policy versions,
         /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-        /// for Managed Policies</a> in the <i>Using IAM</i> guide. 
+        /// for Managed Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  
         /// <para>
         /// For more information about managed policies in general, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePolicy service method.</param>
@@ -1231,7 +1229,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-        /// for Managed Policies</a> in the <i>Using IAM</i> guide. 
+        /// for Managed Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePolicyVersion service method.</param>
@@ -1292,7 +1290,7 @@ namespace Amazon.IdentityManagement
         /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
         /// with Roles</a>. For information about limitations on role names and the number of
         /// roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
         /// 
         ///  
         /// <para>
@@ -1369,10 +1367,9 @@ namespace Amazon.IdentityManagement
         ///  <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
         /// Version 4</a>. </note> 
         /// <para>
-        ///  For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSMgmtConsole-SAML.html">Giving
-        /// Console Access Using SAML</a> and <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
-        /// Temporary Security Credentials for SAML Federation</a> in the <i>Using Temporary Credentials</i>
-        /// guide. 
+        ///  For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling
+        /// SAML 2.0 Federated Users to Access the AWS Management Console</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+        /// SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSAMLProvider service method.</param>
@@ -1429,7 +1426,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         ///  For information about limitations on the number of users you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
@@ -1661,7 +1658,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Deletes the specified AWS account alias. For information about using an AWS account
         /// alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide.
+        /// an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountAlias service method.</param>
         /// 
@@ -1863,7 +1860,7 @@ namespace Amazon.IdentityManagement
         /// A group can also have managed policies attached to it. To detach a managed policy
         /// from a group, use <a>DetachGroupPolicy</a>. For more information about policies, refer
         /// to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroupPolicy service method.</param>
@@ -2114,7 +2111,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
@@ -2182,7 +2179,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For information about versions for managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-        /// for Managed Policies</a> in the <i>Using IAM</i> guide. 
+        /// for Managed Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicyVersion service method.</param>
@@ -2304,7 +2301,7 @@ namespace Amazon.IdentityManagement
         /// A role can also have managed policies attached to it. To detach a managed policy from
         /// a role, use <a>DetachRolePolicy</a>. For more information about policies, refer to
         /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRolePolicy service method.</param>
@@ -2639,7 +2636,7 @@ namespace Amazon.IdentityManagement
         /// A user can also have managed policies attached to it. To detach a managed policy from
         /// a user, use <a>DetachUserPolicy</a>. For more information about policies, refer to
         /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUserPolicy service method.</param>
@@ -2750,7 +2747,7 @@ namespace Amazon.IdentityManagement
         /// A group can also have inline policies embedded with it. To delete an inline policy,
         /// use the <a>DeleteGroupPolicy</a> API. For information about policies, refer to <a
         /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachGroupPolicy service method.</param>
@@ -2809,7 +2806,7 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// A role can also have inline policies embedded with it. To delete an inline policy,
         /// use the <a>DeleteRolePolicy</a> API. For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachRolePolicy service method.</param>
@@ -2868,7 +2865,7 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// A user can also have inline policies embedded with it. To delete an inline policy,
         /// use the <a>DeleteUserPolicy</a> API. For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachUserPolicy service method.</param>
@@ -2986,7 +2983,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Generates a credential report for the AWS account. For more information about the
         /// credential report, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-        /// Credential Reports</a> in the <i>Using IAM</i> guide.
+        /// Credential Reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// 
         /// <returns>The response from the GenerateCredentialReport service method, as returned by IdentityManagementService.</returns>
@@ -3006,7 +3003,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Generates a credential report for the AWS account. For more information about the
         /// credential report, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-        /// Credential Reports</a> in the <i>Using IAM</i> guide.
+        /// Credential Reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateCredentialReport service method.</param>
         /// 
@@ -3030,7 +3027,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Generates a credential report for the AWS account. For more information about the
         /// credential report, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-        /// Credential Reports</a> in the <i>Using IAM</i> guide.
+        /// Credential Reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="cancellationToken"> ttd1
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -3124,6 +3121,7 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// You can optionally filter the results using the <code>Filter</code> parameter. You
         /// can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountAuthorizationDetails service method.</param>
@@ -3257,7 +3255,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         ///  For information about limitations on IAM entities, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// 
@@ -3277,7 +3275,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         ///  For information about limitations on IAM entities, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountSummary service method.</param>
@@ -3301,7 +3299,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         ///  For information about limitations on IAM entities, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="cancellationToken"> ttd1
@@ -3719,7 +3717,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Retrieves a credential report for the AWS account. For more information about the
         /// credential report, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-        /// Credential Reports</a> in the <i>Using IAM</i> guide.
+        /// Credential Reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// 
         /// <returns>The response from the GetCredentialReport service method, as returned by IdentityManagementService.</returns>
@@ -3727,7 +3725,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because the most recent credential report has expired. To
         /// generate a new credential report, use <a>GenerateCredentialReport</a>. For more information
         /// about credential report expiration, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-        /// Credential Reports</a> in the <i>Using IAM</i> guide.
+        /// Credential Reports</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotPresentException">
         /// The request was rejected because the credential report does not exist. To generate
@@ -3748,7 +3746,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Retrieves a credential report for the AWS account. For more information about the
         /// credential report, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-        /// Credential Reports</a> in the <i>Using IAM</i> guide.
+        /// Credential Reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCredentialReport service method.</param>
         /// 
@@ -3757,7 +3755,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because the most recent credential report has expired. To
         /// generate a new credential report, use <a>GenerateCredentialReport</a>. For more information
         /// about credential report expiration, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-        /// Credential Reports</a> in the <i>Using IAM</i> guide.
+        /// Credential Reports</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotPresentException">
         /// The request was rejected because the credential report does not exist. To generate
@@ -3781,7 +3779,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Retrieves a credential report for the AWS account. For more information about the
         /// credential report, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-        /// Credential Reports</a> in the <i>Using IAM</i> guide.
+        /// Credential Reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="cancellationToken"> ttd1
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -3792,7 +3790,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because the most recent credential report has expired. To
         /// generate a new credential report, use <a>GenerateCredentialReport</a>. For more information
         /// about credential report expiration, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-        /// Credential Reports</a> in the <i>Using IAM</i> guide.
+        /// Credential Reports</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotPresentException">
         /// The request was rejected because the credential report does not exist. To generate
@@ -3890,7 +3888,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGroupPolicy service method.</param>
@@ -4092,7 +4090,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
@@ -4157,7 +4155,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about the types of policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPolicyVersion service method.</param>
@@ -4267,7 +4265,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -4582,7 +4580,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUserPolicy service method.</param>
@@ -4759,7 +4757,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account aliases associated with the account. For information about using
         /// an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide. 
+        /// an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>. 
         /// 
         ///  
         /// <para>
@@ -4781,7 +4779,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account aliases associated with the account. For information about using
         /// an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide. 
+        /// an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>. 
         /// 
         ///  
         /// <para>
@@ -4807,7 +4805,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account aliases associated with the account. For information about using
         /// an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide. 
+        /// an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>. 
         /// 
         ///  
         /// <para>
@@ -4858,7 +4856,7 @@ namespace Amazon.IdentityManagement
         /// A group can also have inline policies embedded with it. To list the inline policies
         /// for a group, use the <a>ListGroupPolicies</a> API. For information about policies,
         /// refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -4922,7 +4920,7 @@ namespace Amazon.IdentityManagement
         /// A role can also have inline policies embedded with it. To list the inline policies
         /// for a role, use the <a>ListRolePolicies</a> API. For information about policies, refer
         /// to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -4986,7 +4984,7 @@ namespace Amazon.IdentityManagement
         /// A user can also have inline policies embedded with it. To list the inline policies
         /// for a user, use the <a>ListUserPolicies</a> API. For information about policies, refer
         /// to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -5112,7 +5110,7 @@ namespace Amazon.IdentityManagement
         /// A group can also have managed policies attached to it. To list the managed policies
         /// that are attached to a group, use <a>ListAttachedGroupPolicies</a>. For more information
         /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -5618,7 +5616,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// 
@@ -5651,7 +5649,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicies service method.</param>
@@ -5688,7 +5686,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="cancellationToken"> ttd1
@@ -5733,7 +5731,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicyVersions service method.</param>
@@ -5789,7 +5787,7 @@ namespace Amazon.IdentityManagement
         /// A role can also have managed policies attached to it. To list the managed policies
         /// that are attached to a role, use <a>ListAttachedRolePolicies</a>. For more information
         /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -6293,7 +6291,7 @@ namespace Amazon.IdentityManagement
         /// A user can also have managed policies attached to it. To list the managed policies
         /// that are attached to a user, use <a>ListAttachedUserPolicies</a>. For more information
         /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -6534,13 +6532,13 @@ namespace Amazon.IdentityManagement
         /// A user can also have managed policies attached to it. To attach a managed policy to
         /// a group, use <a>AttachGroupPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>.
         /// For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  
         /// <para>
         /// For information about limits on the number of inline policies that you can embed in
         /// a group, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  <note>Because policy documents can be large, you should use POST rather than GET
         /// when calling <code>PutGroupPolicy</code>. For general information about using the
@@ -6613,13 +6611,13 @@ namespace Amazon.IdentityManagement
         /// A role can also have a managed policy attached to it. To attach a managed policy to
         /// a role, use <a>AttachRolePolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>.
         /// For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  
         /// <para>
         /// For information about limits on the number of inline policies that you can embed with
         /// a role, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  <note>Because policy documents can be large, you should use POST rather than GET
         /// when calling <code>PutRolePolicy</code>. For general information about using the Query
@@ -6684,13 +6682,13 @@ namespace Amazon.IdentityManagement
         /// A user can also have a managed policy attached to it. To attach a managed policy to
         /// a user, use <a>AttachUserPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>.
         /// For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  
         /// <para>
         /// For information about limits on the number of inline policies that you can embed in
         /// a user, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  <note>Because policy documents can be large, you should use POST rather than GET
         /// when calling <code>PutUserPolicy</code>. For general information about using the Query
@@ -6979,7 +6977,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetDefaultPolicyVersion service method.</param>
@@ -7032,13 +7030,13 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Simulate a set of IAM policies against a list of API actions and AWS resources to
-        /// determine the policies' effective permissions. The policies are provided as a list
-        /// of strings.
+        /// Simulate how a set of IAM policies and optionally a resource-based policy works with
+        /// a list of API actions and AWS resources to determine the policies' effective permissions.
+        /// The policies are provided as strings.
         /// 
         ///  
         /// <para>
-        /// The simulation does not perform the API actions, it only checks the authorization
+        /// The simulation does not perform the API actions; it only checks the authorization
         /// to determine if the simulated policies allow or deny the actions.
         /// </para>
         ///  
@@ -7049,14 +7047,14 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// Context keys are variables maintained by AWS and its services that provide details
-        /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
-        /// element of an IAM policy. To get the list of context keys required by the policies
-        /// to simulate them correctly, use <a>GetContextKeysForCustomPolicy</a>.
+        /// about the context of an API query request. You can use the <code>Condition</code>
+        /// element of an IAM policy to evaluate context keys. To get the list of context keys
+        /// that the policies require for correct simulation, use <a>GetContextKeysForCustomPolicy</a>.
         /// </para>
         ///  
         /// <para>
-        /// If the output is long, you can paginate the results using the <code>MaxItems</code>
-        /// and <code>Marker</code> parameters.
+        /// If the output is long, you can use <code>MaxItems</code> and <code>Marker</code> parameters
+        /// to paginate the results.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SimulateCustomPolicy service method.</param>
@@ -7102,16 +7100,22 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Simulate the set of IAM policies attached to an IAM entity against a list of API actions
-        /// and AWS resources to determine the policies' effective permissions. The entity can
-        /// be an IAM user, group, or role. If you specify a user, then the simulation also includes
-        /// all of the policies attached to groups that the user is a member of.
+        /// Simulate how a set of IAM policies attached to an IAM entity works with a list of
+        /// API actions and AWS resources to determine the policies' effective permissions. The
+        /// entity can be an IAM user, group, or role. If you specify a user, then the simulation
+        /// also includes all of the policies that are attached to groups that the user belongs
+        /// to .
         /// 
         ///  
         /// <para>
         /// You can optionally include a list of one or more additional policies specified as
         /// strings to include in the simulation. If you want to simulate only policies specified
         /// as strings, use <a>SimulateCustomPolicy</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also optionally include one resource-based policy to be evaluated with each
+        /// of the resources included in the simulation.
         /// </para>
         ///  
         /// <para>
@@ -7127,14 +7131,14 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// Context keys are variables maintained by AWS and its services that provide details
-        /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
-        /// element of an IAM policy. To get the list of context keys required by the policies
-        /// to simulate them correctly, use <a>GetContextKeysForPrincipalPolicy</a>.
+        /// about the context of an API query request. You can use the <code>Condition</code>
+        /// element of an IAM policy to evaluate context keys. To get the list of context keys
+        /// that the policies require for correct simulation, use <a>GetContextKeysForPrincipalPolicy</a>.
         /// </para>
         ///  
         /// <para>
-        /// If the output is long, you can paginate the results using the <code>MaxItems</code>
-        /// and <code>Marker</code> parameters.
+        /// If the output is long, you can use the <code>MaxItems</code> and <code>Marker</code>
+        /// parameters to paginate the results.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SimulatePrincipalPolicy service method.</param>
@@ -7198,7 +7202,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For information about rotating keys, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
-        /// Keys and Certificates</a> in the <i>Using IAM</i> guide. 
+        /// Keys and Certificates</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccessKey service method.</param>
@@ -7258,7 +7262,7 @@ namespace Amazon.IdentityManagement
         ///  </note> 
         /// <para>
         ///  For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-        /// an IAM Password Policy</a> in the <i>Using IAM</i> guide. 
+        /// an IAM Password Policy</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// 
@@ -7296,7 +7300,7 @@ namespace Amazon.IdentityManagement
         ///  </note> 
         /// <para>
         ///  For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-        /// an IAM Password Policy</a> in the <i>Using IAM</i> guide. 
+        /// an IAM Password Policy</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountPasswordPolicy service method.</param>
@@ -7338,7 +7342,7 @@ namespace Amazon.IdentityManagement
         ///  </note> 
         /// <para>
         ///  For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-        /// an IAM Password Policy</a> in the <i>Using IAM</i> guide. 
+        /// an IAM Password Policy</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="cancellationToken"> ttd1
@@ -7447,7 +7451,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <important> You should understand the implications of changing a group's path or
         /// name. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming
-        /// Users and Groups</a> in the <i>Using IAM</i> guide. </important> <note>To change a
+        /// Users and Groups</a> in the <i>IAM User Guide</i>. </important> <note>To change a
         /// group name the requester must have appropriate permissions on both the source object
         /// and the target object. For example, to change Managers to MGRs, the entity making
         /// the request must have permission on Managers and MGRs, or must have permission on
@@ -7509,7 +7513,7 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// Users can change their own passwords by calling <a>ChangePassword</a>. For more information
         /// about modifying passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
-        /// Passwords</a> in the <i>Using IAM</i> guide. 
+        /// Passwords</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLoginProfile service method.</param>
@@ -7692,7 +7696,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <important> You should understand the implications of changing a server certificate's
         /// path or name. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html">Managing
-        /// Server Certificates</a> in the <i>Using IAM</i> guide. </important> <note>To change
+        /// Server Certificates</a> in the <i>IAM User Guide</i>. </important> <note>To change
         /// a server certificate name the requester must have appropriate permissions on both
         /// the source object and the target object. For example, to change the name from ProductionCert
         /// to ProdCert, the entity making the request must have permission on ProductionCert
@@ -7862,8 +7866,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <important> You should understand the implications of changing a user's path or name.
         /// For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming
-        /// Users and Groups</a> in the <i>Using IAM</i> guide. </important> <note> To change
-        /// a user name the requester must have appropriate permissions on both the source object
+        /// Users and Groups</a> in the <i>IAM User Guide</i>. </important> <note> To change a
+        /// user name the requester must have appropriate permissions on both the source object
         /// and the target object. For example, to change Bob to Robert, the entity making the
         /// request must have permission on Bob and Robert, or must have permission on all (*).
         /// For more information about permissions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
@@ -7931,7 +7935,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For information about the number of server certificates you can upload, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  <note>Because the body of the public key certificate, private key, and the certificate
         /// chain can be large, you should use POST rather than GET when calling <code>UploadServerCertificate</code>.
@@ -7939,7 +7943,7 @@ namespace Amazon.IdentityManagement
         /// to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
         /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
         /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-        /// Query Requests</a> in the <i>Using IAM</i> guide. </note>
+        /// Query Requests</a> in the <i>IAM User Guide</i>. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UploadServerCertificate service method.</param>
         /// 
