@@ -1,3 +1,8 @@
+### 3.1.22.0 (2015-10-26 17:54 UTC)
+* SimpleSystemsManagement (3.1.1.0)
+	* EC2 Run Command
+- A new EC2 feature that enables you to securely and remotely manage the configuration of your Amazon EC2 Windows instances. Run Command provides a simple way of automating common administrative tasks like executing scripts, running PowerShell commands, installing software or patches and more.
+
 ### 3.1.21.0 (2015-10-22 21:40 UTC)
 * AutoScaling (3.1.1.0)
 	* Adding support for EBS encryption in block device mappings.
