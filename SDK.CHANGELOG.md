@@ -1,3 +1,9 @@
+### 3.1.23.0 (2015-10-26 22:44 UTC)
+* APIGateway (3.1.0.0)
+	* Amazon API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale.
+* S3 (3.1.3.2)
+	* Fix to handle responses with invalid values in the expires header for S3 GetObject and GetObjectMetatdata APIs.
+
 ### 3.1.22.0 (2015-10-26 17:54 UTC)
 * SimpleSystemsManagement (3.1.1.0)
 	* EC2 Run Command
