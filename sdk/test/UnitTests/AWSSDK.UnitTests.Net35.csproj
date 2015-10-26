@@ -156,10 +156,6 @@
       <Project>{C38A2D2C-E410-4084-9245-F577777E8009}</Project>
       <Name>AWSSDK.Glacier.Net35</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\IotData\AWSSDK.IotData.Net35.csproj">
-      <Project>{E928C4C7-63E0-4DDD-A967-AD00BAAF40C8}</Project>
-      <Name>AWSSDK.IotData.Net35</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\IdentityManagement\AWSSDK.IdentityManagement.Net35.csproj">
       <Project>{40BA3D89-6B91-4199-AF4B-50ABFBD0C18F}</Project>
       <Name>AWSSDK.IdentityManagement.Net35</Name>
@@ -167,10 +163,6 @@
     <ProjectReference Include="..\..\src\Services\ImportExport\AWSSDK.ImportExport.Net35.csproj">
       <Project>{63BB1FC1-A3B1-463D-A2DB-C631344EA5C8}</Project>
       <Name>AWSSDK.ImportExport.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\Inspector\AWSSDK.Inspector.Net35.csproj">
-      <Project>{6FE3798F-2A60-4E26-9B36-FC7E52B232C9}</Project>
-      <Name>AWSSDK.Inspector.Net35</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.Net35.csproj">
       <Project>{ADF1A47D-4C05-4DC5-B318-E3E412C2578E}</Project>
@@ -276,9 +268,33 @@
       <Project>{24F0A0C5-C22E-425E-8C9D-91694AA36190}</Project>
       <Name>AWSSDK.DeviceFarm.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\APIGateway\AWSSDK.APIGateway.Net35.csproj">
+      <Project>{56EF10E2-B0D1-43EB-BFB6-3DB71FBBD35D}</Project>
+      <Name>AWSSDK.APIGateway.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\APIGateway\AWSSDK.APIGateway.Net35.csproj">
+      <Project>{0432452B-8310-4672-95EB-9491782640F1}</Project>
+      <Name>AWSSDK.APIGateway.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\AWSMarketplaceCommerceAnalytics\AWSSDK.AWSMarketplaceCommerceAnalytics.Net35.csproj">
+      <Project>{51D44631-1D3D-4C44-A1F1-0AB86639E682}</Project>
+      <Name>AWSSDK.AWSMarketplaceCommerceAnalytics.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Elasticsearch\AWSSDK.Elasticsearch.Net35.csproj">
       <Project>{53D1A7E3-CE00-41E7-AD1A-C1ADB30BEB97}</Project>
       <Name>AWSSDK.Elasticsearch.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Inspector\AWSSDK.Inspector.Net35.csproj">
+      <Project>{6FE3798F-2A60-4E26-9B36-FC7E52B232C9}</Project>
+      <Name>AWSSDK.Inspector.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\IoT\AWSSDK.IoT.Net35.csproj">
+      <Project>{3A3995FD-9750-4248-943B-A4BAC190353D}</Project>
+      <Name>AWSSDK.IoT.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\IotData\AWSSDK.IotData.Net35.csproj">
+      <Project>{E928C4C7-63E0-4DDD-A967-AD00BAAF40C8}</Project>
+      <Name>AWSSDK.IotData.Net35</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\KinesisFirehose\AWSSDK.KinesisFirehose.Net35.csproj">
       <Project>{0AC889DB-F5A3-4A8F-B7B0-2334D70341E6}</Project>
@@ -287,14 +303,6 @@
     <ProjectReference Include="..\..\src\Services\WAF\AWSSDK.WAF.Net35.csproj">
       <Project>{756D5D73-16BD-4F8F-AF58-A24CE4000606}</Project>
       <Name>AWSSDK.WAF.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\AWSMarketplaceCommerceAnalytics\AWSSDK.AWSMarketplaceCommerceAnalytics.Net35.csproj">
-      <Project>{51D44631-1D3D-4C44-A1F1-0AB86639E682}</Project>
-      <Name>AWSSDK.AWSMarketplaceCommerceAnalytics.Net35</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Services\IoT\AWSSDK.IoT.Net35.csproj">
-      <Project>{3A3995FD-9750-4248-943B-A4BAC190353D}</Project>
-      <Name>AWSSDK.IoT.Net35</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -91,6 +91,17 @@ using Amazon.Runtime.Internal.Util;
 				request.Parameters.Add("<#=member.MarshallLocationName#>", <#=member.CustomMarshallerTransformation#>(<#=variableName#>.<#=member.PropertyName#>));
 <#+        
                 }
+                else if (member.IsMap)
+                {
+#>
+            {
+                foreach(var kvp in <#=variableName#>.<#=member.PropertyName#>)
+                {
+                    request.Parameters.Add(kvp.Key, kvp.Value);
+                }
+            }
+<#+
+                }
                 else
                 {
 #>

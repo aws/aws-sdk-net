@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package> 
+  <metadata> 
+    <id>AWSSDK.APIGateway</id>
+    <title>AWSSDK - Amazon API Gateway</title>
+    <version>3.1.0.0</version> 
+    <authors>Amazon Web Services</authors>
+    <description>Amazon API Gateway helps developers deliver robust, secure and scalable mobile and web application backends. Amazon API Gateway allows developers to securely connect mobile and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly addressable web services that are hosted outside of AWS.</description>
+    <language>en-US</language>
+    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>
+    <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
+    <tags>AWS Amazon cloud APIGateway aws-sdk-v3</tags>
+    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+    <dependencies>
+      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
+      <dependency id="AWSSDK.Core" version="[3.1.3.2, 3.2)" />
+      </group>
+      <group>
+        <dependency id="AWSSDK.Core" version="[3.1.3.2, 3.2)" />
+      </group>
+    </dependencies>
+  </metadata> 
+  <files>
+
+    <file src="..\..\..\nuget-content\install.ps1" target="tools\net35" />
+    <file src="..\..\..\nuget-content\install.ps1" target="tools\net45" />
+
+    <file src=".\bin\Release\net35\AWSSDK.APIGateway.dll" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.APIGateway.xml" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.APIGateway.pdb" target="lib\net35" />
+
+    <file src=".\bin\Release\net45\AWSSDK.APIGateway.dll" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.APIGateway.xml" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.APIGateway.pdb" target="lib\net45" />
+
+    <file src=".\bin\Release\pcl\AWSSDK.APIGateway.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.APIGateway.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.APIGateway.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+  </files>
+</package>

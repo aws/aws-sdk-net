@@ -105,6 +105,15 @@
         {
             "active": true,
 
+            "model": "apigateway",
+            "base-name": "APIGateway",
+            "region-lookup-name": "apigateway",
+            "authentication-service-name": "apigateway",
+            "synopsis": "Amazon API Gateway helps developers deliver robust, secure and scalable mobile and web application backends. Amazon API Gateway allows developers to securely connect mobile and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly addressable web services that are hosted outside of AWS."
+        },
+        {
+            "active": true,
+
             "model": "cloudhsm",
             "base-name": "CloudHSM",
             "region-lookup-name": "cloudhsm",

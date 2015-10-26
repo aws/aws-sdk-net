@@ -401,7 +401,8 @@ namespace Amazon.Runtime.Internal
         {
             return
                 (this.HttpMethod == "POST" ||
-                 this.HttpMethod == "PUT");
+                 this.HttpMethod == "PUT" ||
+                 this.HttpMethod == "PATCH");
         }
 
         /// <summary>
@@ -410,7 +411,7 @@ namespace Amazon.Runtime.Internal
         /// <returns>Returns true if the request has a body, else false.</returns>
         public bool HasRequestBody()
         {
-            var isPutPost = (this.HttpMethod == "POST" || this.HttpMethod == "PUT");
+            var isPutPost = (this.HttpMethod == "POST" || this.HttpMethod == "PUT" || this.HttpMethod == "PATCH");
             var hasContent = this.HasRequestData();
             return (isPutPost && hasContent);
         }

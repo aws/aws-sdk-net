@@ -226,8 +226,9 @@ namespace ServiceClientGenerator
                 var source = data;
                 if (IsList)
                 {
-                    source = data[MemberKey];
-                    if (source == null) return null;
+                    var member = data[MemberKey];
+                    if (member != null)
+                        source = member;
                 }
 
                 var locationName = source[ServiceModel.LocationNameKey];
