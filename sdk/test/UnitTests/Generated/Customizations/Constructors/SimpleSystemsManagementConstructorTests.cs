@@ -30,6 +30,15 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Constructors"), TestCategory("SimpleSystemsManagement")]
+        public void CancelCommandRequestConstructorTests()
+        {
+            EnsureConstructorExists(typeof(Amazon.SimpleSystemsManagement.Model.CancelCommandRequest), new System.Type[] { typeof(string), });
+            EnsureConstructorExists(typeof(Amazon.SimpleSystemsManagement.Model.CancelCommandRequest), new System.Type[] { typeof(string), typeof(List<string>), });
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Constructors"), TestCategory("SimpleSystemsManagement")]
         public void CreateAssociationRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.SimpleSystemsManagement.Model.CreateAssociationRequest), new System.Type[] { typeof(string), typeof(string), });
@@ -102,9 +111,33 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Constructors"), TestCategory("SimpleSystemsManagement")]
+        public void ListCommandInvocationsRequestConstructorTests()
+        {
+            EnsureConstructorExists(typeof(Amazon.SimpleSystemsManagement.Model.ListCommandInvocationsRequest), new System.Type[] { typeof(string), });
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Constructors"), TestCategory("SimpleSystemsManagement")]
+        public void ListCommandsRequestConstructorTests()
+        {
+            EnsureConstructorExists(typeof(Amazon.SimpleSystemsManagement.Model.ListCommandsRequest), new System.Type[] { typeof(string), });
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Constructors"), TestCategory("SimpleSystemsManagement")]
         public void ListDocumentsRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.SimpleSystemsManagement.Model.ListDocumentsRequest), new System.Type[] { typeof(List<DocumentFilter>), });
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Constructors"), TestCategory("SimpleSystemsManagement")]
+        public void SendCommandRequestConstructorTests()
+        {
+            EnsureConstructorExists(typeof(Amazon.SimpleSystemsManagement.Model.SendCommandRequest), new System.Type[] { typeof(string), typeof(List<string>), });
         }
 
         [TestMethod]

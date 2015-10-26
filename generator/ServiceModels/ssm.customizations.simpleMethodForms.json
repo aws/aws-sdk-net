@@ -1,68 +1,101 @@
 {
-    "simpleMethods": {
-        "operations": {
-            "CreateAssociation": {
-                "methodForms": [
-                    [
-                        "InstanceId",
-                        "Name"
-                    ]
-                ]
-            },
-            "CreateDocument": {
-                "methodForms": [
-                    [
-                        "Content",
-                        "Name"
-                    ]
-                ]
-            },
-            "DeleteAssociation": {
-                "methodForms": [
-                    [
-                        "InstanceId",
-                        "Name"
-                    ]
-                ]
-            },
-            "DeleteDocument": {
-                "methodForms": [
-                    [
-                        "Name"
-                    ]
-                ]
-            },
-            "DescribeAssociation": {
-                "methodForms": [
-                    [
-                        "InstanceId",
-                        "Name"
-                    ]
-                ]
-            },
-            "DescribeDocument": {
-                "methodForms": [
-                    [
-                        "Name"
-                    ]
-                ]
-            },
-            "GetDocument": {
-                "methodForms": [
-                    [
-                        "Name"
-                    ]
-                ]
-            },
-            "UpdateAssociation": {
-                "methodForms": [
-                    [
-                        "AssociationStatus",
-                        "InstanceId",
-                        "Name"
-                    ]
-                ]
-            }
-        }
+  "simpleMethods": {
+    "operations": {
+      "CancelCommand": {
+        "methodForms": [
+          [
+            "CommandId"
+          ],
+          [
+            "CommandId",
+            "InstanceIds"
+          ]
+        ]
+      },
+      "CreateAssociation": {
+        "methodForms": [
+          [
+            "InstanceId",
+            "Name"
+          ]
+        ]
+      },
+      "CreateDocument": {
+        "methodForms": [
+          [
+            "Content",
+            "Name"
+          ]
+        ]
+      },
+      "DeleteAssociation": {
+        "methodForms": [
+          [
+            "InstanceId",
+            "Name"
+          ]
+        ]
+      },
+      "DeleteDocument": {
+        "methodForms": [
+          [
+            "Name"
+          ]
+        ]
+      },
+      "DescribeAssociation": {
+        "methodForms": [
+          [
+            "InstanceId",
+            "Name"
+          ]
+        ]
+      },
+      "DescribeDocument": {
+        "methodForms": [
+          [
+            "Name"
+          ]
+        ]
+      },
+      "GetDocument": {
+        "methodForms": [
+          [
+            "Name"
+          ]
+        ]
+      },
+      "ListCommandInvocations": {
+        "methodForms": [
+          [
+            "CommandId"
+          ]
+        ]
+      },
+      "ListCommands": {
+        "methodForms": [
+          [
+            "CommandId"
+          ]
+        ]
+      },
+      "SendCommand": {
+        "methodForms": [
+          [
+            "DocumentName",
+            "InstanceIds"
+          ]
+        ]
+      },
+      "UpdateAssociation": {
+        "methodForms": [
+          [
+            "AssociationStatus",
+            "InstanceId",
+            "Name"
+          ]
+        ]
+      }
     }
+  }
 }

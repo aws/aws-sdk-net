@@ -28,11 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Describes the name of a configuration document.
+    /// Describes the name of an SSM document.
     /// </summary>
     public partial class DocumentIdentifier
     {
         private string _name;
+        private List<string> _platformTypes = new List<string>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -42,7 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates DocumentIdentifier with the parameterized properties
         /// </summary>
-        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         public DocumentIdentifier(string name)
         {
             _name = name;
@@ -51,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the configuration document.
+        /// The name of the SSM document.
         /// </para>
         /// </summary>
         public string Name
@@ -64,6 +65,21 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformTypes. The operating system platform.
+        /// </summary>
+        public List<string> PlatformTypes
+        {
+            get { return this._platformTypes; }
+            set { this._platformTypes = value; }
+        }
+
+        // Check to see if PlatformTypes property is set
+        internal bool IsSetPlatformTypes()
+        {
+            return this._platformTypes != null && this._platformTypes.Count > 0; 
         }
 
     }

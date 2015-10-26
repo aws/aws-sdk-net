@@ -36,35 +36,94 @@ namespace Amazon.SimpleSystemsManagement
     /// <summary>
     /// Implementation for accessing SimpleSystemsManagement
     ///
-    /// Amazon EC2 Simple Systems Manager (SSM) enables you to configure and manage your EC2
-    /// instances. You can create a configuration document and then associate it with one
-    /// or more running instances.
+    /// Simple Systems Manager (SSM) is a set of capabilities that can help you manage your
+    /// Amazon EC2 instances running on Windows. SSM enables you to run scripts or other common
+    /// administrative tasks on your instances using either SSM Run Command or SSM Config.
+    /// 
     /// 
     ///  
     /// <para>
-    /// You can use a configuration document to automate the following tasks for your Windows
-    /// instances:
+    /// Run Command extends the server administration capabilities of SSM by offering an on-demand
+    /// experience for executing commands. You can use pre-defined Amazon SSM documents (formerly
+    /// called configuration documents) to perform the actions listed later in this section,
+    /// or you can create your own documents. With these document, you can then remotely configure
+    /// your instances by sending commands using the AWS command line interface (CLI), AWS
+    /// Tools for Windows PowerShell, or the <b>Commands</b> page in the Amazon EC2 console.
+    /// Additionally, because Run Command enables you to execute PowerShell commands or scripts,
+    /// you can administer your instances remotely using PowerShell as though you were logged
+    /// on locally to the instance. Run Command reports the status of the command execution
+    /// for each instance targeted by a command. You can also audit the command execution
+    /// to understand who executed commands, when, and what changes were made. By switching
+    /// between different SSM documents, you can quickly configure your instances with different
+    /// types of commands.
     /// </para>
-    ///  <ul> <li>
+    ///  
     /// <para>
-    /// Join an AWS Directory
+    /// SSM Config is a lightweight instance configuration solution. With SSM Config, you
+    /// can specify a setup configuration for your instances. SSM Config is similar to EC2
+    /// User Data, which is another way of running one-time scripts or applying settings during
+    /// instance launch. SSM Config is an extension of this capability. Using SSM documents,
+    /// you can specify which actions the system should perform on your instances, including
+    /// which applications to install, which AWS Directory Service directory to join, which
+    /// Microsoft PowerShell modules to install, etc. If an instance is missing one or more
+    /// of these configurations, the system makes those changes. By default, the system checks
+    /// every five minutes to see if there is a new configuration to apply as defined in a
+    /// new SSM document. If so, the system updates the instances accordingly. In this way,
+    /// you can remotely maintain a consistent configuration baseline on your instances. SSM
+    /// Config is available using the AWS CLI or the AWS Tools for Windows PowerShell.
     /// </para>
-    /// </li> <li>
+    ///  <note> 
     /// <para>
-    /// Install, repair, or uninstall software using an MSI package
+    /// SSM is currently not supported on Linux instances.
     /// </para>
-    /// </li> <li>
+    ///  </note> 
     /// <para>
-    /// Run PowerShell scripts
+    /// You can use Run Command and SSM Config to do the following:
     /// </para>
-    /// </li> <li>
+    ///  <ul> <li> 
     /// <para>
-    /// Configure CloudWatch Logs to monitor applications and systems
+    /// Join an AWS Directory Service directory (SSM Config and Run Command)
     /// </para>
-    /// </li> </ul> 
+    ///  </li> <li> 
     /// <para>
-    /// Note that configuration documents are not supported on Linux instances.
+    /// Install, repair, or uninstall software using an MSI package (SSM Config and Run Command)
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Install PowerShell modules (SSM Config and Run Command)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Configure CloudWatch Logs to monitor applications and systems (SSM Config and Run
+    /// Command)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Run PowerShell commands or scripts (Run Command only)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Update the EC2Config service (Run Command only)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Configure Windows Update settings (Run Command only)
+    /// </para>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// SSM documents run with administrative privilege on Windows instances because the EC2Config
+    /// service runs in the Local System account. If a user has permission to execute any
+    /// of the pre-defined SSM documents (any document that begins with AWS-*) then that user
+    /// also has administrator access to the instance. Delegate access to SSM Config and Run
+    /// Command judiciously. This becomes extremely important if you create your own SSM documents.
+    /// Amazon Web Services does not provide guidance about how to create secure SSM documents.
+    /// You create SSM documents and delegate access to Run Command actions at your own risk.
+    /// As a security best practice, we recommend that you assign access to "AWS-*" documents,
+    /// especially the AWS-RunPowerShellScript document, to trusted administrators only. You
+    /// can create low-level SSM documents for low security tasks and delegate access to non-administrators.
+    /// 
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class AmazonSimpleSystemsManagementClient : AmazonServiceClient, IAmazonSimpleSystemsManagement
     {
@@ -253,27 +312,183 @@ namespace Amazon.SimpleSystemsManagement
         #endregion
 
         
+        #region  CancelCommand
+
+
+        /// <summary>
+        /// Attempts to cancel the command specified by the Command ID. There is no guarantee
+        /// that the command will be terminated and the underlying process stopped.
+        /// </summary>
+        /// <param name="commandId">The ID of the command you want to cancel.</param>
+        /// 
+        /// <returns>The response from the CancelCommand service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
+        /// You cannot specify an instance ID in more than one association.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        public CancelCommandResponse CancelCommand(string commandId)
+        {
+            var request = new CancelCommandRequest();
+            request.CommandId = commandId;
+            return CancelCommand(request);
+        }
+
+
+        /// <summary>
+        /// Attempts to cancel the command specified by the Command ID. There is no guarantee
+        /// that the command will be terminated and the underlying process stopped.
+        /// </summary>
+        /// <param name="commandId">The ID of the command you want to cancel.</param>
+        /// <param name="instanceIds">(Optional) A list of instance IDs on which you want to cancel the command. If not provided, the command is canceled on every instance on which it was requested.</param>
+        /// 
+        /// <returns>The response from the CancelCommand service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
+        /// You cannot specify an instance ID in more than one association.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        public CancelCommandResponse CancelCommand(string commandId, List<string> instanceIds)
+        {
+            var request = new CancelCommandRequest();
+            request.CommandId = commandId;
+            request.InstanceIds = instanceIds;
+            return CancelCommand(request);
+        }
+
+
+        /// <summary>
+        /// Attempts to cancel the command specified by the Command ID. There is no guarantee
+        /// that the command will be terminated and the underlying process stopped.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelCommand service method.</param>
+        /// 
+        /// <returns>The response from the CancelCommand service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
+        /// You cannot specify an instance ID in more than one association.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        public CancelCommandResponse CancelCommand(CancelCommandRequest request)
+        {
+            var marshaller = new CancelCommandRequestMarshaller();
+            var unmarshaller = CancelCommandResponseUnmarshaller.Instance;
+
+            return Invoke<CancelCommandRequest,CancelCommandResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Attempts to cancel the command specified by the Command ID. There is no guarantee
+        /// that the command will be terminated and the underlying process stopped.
+        /// </summary>
+        /// <param name="commandId">The ID of the command you want to cancel.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelCommand service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
+        /// You cannot specify an instance ID in more than one association.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        public Task<CancelCommandResponse> CancelCommandAsync(string commandId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new CancelCommandRequest();
+            request.CommandId = commandId;
+            return CancelCommandAsync(request, cancellationToken);
+        }
+
+
+        /// <summary>
+        /// Attempts to cancel the command specified by the Command ID. There is no guarantee
+        /// that the command will be terminated and the underlying process stopped.
+        /// </summary>
+        /// <param name="commandId">The ID of the command you want to cancel.</param>
+        /// <param name="instanceIds">(Optional) A list of instance IDs on which you want to cancel the command. If not provided, the command is canceled on every instance on which it was requested.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelCommand service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
+        /// You cannot specify an instance ID in more than one association.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        public Task<CancelCommandResponse> CancelCommandAsync(string commandId, List<string> instanceIds, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new CancelCommandRequest();
+            request.CommandId = commandId;
+            request.InstanceIds = instanceIds;
+            return CancelCommandAsync(request, cancellationToken);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelCommand operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelCommand operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CancelCommandResponse> CancelCommandAsync(CancelCommandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CancelCommandRequestMarshaller();
+            var unmarshaller = CancelCommandResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelCommandRequest,CancelCommandResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateAssociation
 
 
         /// <summary>
-        /// Associates the specified configuration document with the specified instance.
+        /// Associates the specified SSM document with the specified instance.
         /// 
         ///  
         /// <para>
-        /// When you associate a configuration document with an instance, the configuration agent
-        /// on the instance processes the configuration document and configures the instance as
-        /// specified.
+        /// When you associate an SSM document with an instance, the configuration agent on the
+        /// instance processes the document and configures the instance as specified.
         /// </para>
         ///  
         /// <para>
-        /// If you associate a configuration document with an instance that already has an associated
-        /// configuration document, we replace the current configuration document with the new
-        /// configuration document.
+        /// If you associate a document with an instance that already has an associated document,
+        /// the system throws the AssociationAlreadyExists exception.
         /// </para>
         /// </summary>
-        /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="instanceId">The instance ID.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// 
         /// <returns>The response from the CreateAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationAlreadyExistsException">
@@ -286,10 +501,18 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
-        /// You must specify the ID of a running instance.
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
+        /// You must specify values for all required parameters in the SSM document. You can only
+        /// supply values to parameters defined in the SSM document.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
+        /// The document does not support the platform type of the given instance ID(s).
         /// </exception>
         public CreateAssociationResponse CreateAssociation(string instanceId, string name)
         {
@@ -301,19 +524,17 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Associates the specified configuration document with the specified instance.
+        /// Associates the specified SSM document with the specified instance.
         /// 
         ///  
         /// <para>
-        /// When you associate a configuration document with an instance, the configuration agent
-        /// on the instance processes the configuration document and configures the instance as
-        /// specified.
+        /// When you associate an SSM document with an instance, the configuration agent on the
+        /// instance processes the document and configures the instance as specified.
         /// </para>
         ///  
         /// <para>
-        /// If you associate a configuration document with an instance that already has an associated
-        /// configuration document, we replace the current configuration document with the new
-        /// configuration document.
+        /// If you associate a document with an instance that already has an associated document,
+        /// the system throws the AssociationAlreadyExists exception.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssociation service method.</param>
@@ -329,10 +550,18 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
-        /// You must specify the ID of a running instance.
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
+        /// You must specify values for all required parameters in the SSM document. You can only
+        /// supply values to parameters defined in the SSM document.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
+        /// The document does not support the platform type of the given instance ID(s).
         /// </exception>
         public CreateAssociationResponse CreateAssociation(CreateAssociationRequest request)
         {
@@ -344,23 +573,21 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Associates the specified configuration document with the specified instance.
+        /// Associates the specified SSM document with the specified instance.
         /// 
         ///  
         /// <para>
-        /// When you associate a configuration document with an instance, the configuration agent
-        /// on the instance processes the configuration document and configures the instance as
-        /// specified.
+        /// When you associate an SSM document with an instance, the configuration agent on the
+        /// instance processes the document and configures the instance as specified.
         /// </para>
         ///  
         /// <para>
-        /// If you associate a configuration document with an instance that already has an associated
-        /// configuration document, we replace the current configuration document with the new
-        /// configuration document.
+        /// If you associate a document with an instance that already has an associated document,
+        /// the system throws the AssociationAlreadyExists exception.
         /// </para>
         /// </summary>
-        /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="instanceId">The instance ID.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -376,10 +603,18 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
-        /// You must specify the ID of a running instance.
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
+        /// You must specify values for all required parameters in the SSM document. You can only
+        /// supply values to parameters defined in the SSM document.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
+        /// The document does not support the platform type of the given instance ID(s).
         /// </exception>
         public Task<CreateAssociationResponse> CreateAssociationAsync(string instanceId, string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -413,19 +648,17 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Associates the specified configuration documents with the specified instances.
+        /// Associates the specified SSM document with the specified instances.
         /// 
         ///  
         /// <para>
-        /// When you associate a configuration document with an instance, the configuration agent
-        /// on the instance processes the configuration document and configures the instance as
-        /// specified.
+        /// When you associate an SSM document with an instance, the configuration agent on the
+        /// instance processes the document and configures the instance as specified.
         /// </para>
         ///  
         /// <para>
-        /// If you associate a configuration document with an instance that already has an associated
-        /// configuration document, we replace the current configuration document with the new
-        /// configuration document.
+        /// If you associate a document with an instance that already has an associated document,
+        /// the system throws the AssociationAlreadyExists exception.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssociationBatch service method.</param>
@@ -441,10 +674,18 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
-        /// You must specify the ID of a running instance.
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
+        /// You must specify values for all required parameters in the SSM document. You can only
+        /// supply values to parameters defined in the SSM document.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
+        /// The document does not support the platform type of the given instance ID(s).
         /// </exception>
         public CreateAssociationBatchResponse CreateAssociationBatch(CreateAssociationBatchRequest request)
         {
@@ -478,32 +719,32 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Creates a configuration document.
+        /// Creates an SSM document.
         /// 
         ///  
         /// <para>
-        /// After you create a configuration document, you can use <a>CreateAssociation</a> to
-        /// associate it with one or more running instances.
+        /// After you create an SSM document, you can use <a>CreateAssociation</a> to associate
+        /// it with one or more running instances.
         /// </para>
         /// </summary>
-        /// <param name="content">A valid JSON file. For more information about the contents of this file, see <a href="http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html">Configuration Document</a>.</param>
-        /// <param name="name">A name for the configuration document.</param>
+        /// <param name="content">A valid JSON string. For more information about the contents of this string, see <a href="http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html">SSM Document</a>.</param>
+        /// <param name="name">A name for the SSM document.</param>
         /// 
         /// <returns>The response from the CreateDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentAlreadyExistsException">
-        /// The specified configuration document already exists.
+        /// The specified SSM document already exists.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentLimitExceededException">
-        /// You can have at most 100 active configuration documents.
+        /// You can have at most 100 active SSM documents.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentContentException">
-        /// The content for the configuration document is not valid.
+        /// The content for the SSM document is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
-        /// The size limit of a configuration document is 64 KB.
+        /// The size limit of an SSM document is 64 KB.
         /// </exception>
         public CreateDocumentResponse CreateDocument(string content, string name)
         {
@@ -515,31 +756,31 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Creates a configuration document.
+        /// Creates an SSM document.
         /// 
         ///  
         /// <para>
-        /// After you create a configuration document, you can use <a>CreateAssociation</a> to
-        /// associate it with one or more running instances.
+        /// After you create an SSM document, you can use <a>CreateAssociation</a> to associate
+        /// it with one or more running instances.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDocument service method.</param>
         /// 
         /// <returns>The response from the CreateDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentAlreadyExistsException">
-        /// The specified configuration document already exists.
+        /// The specified SSM document already exists.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentLimitExceededException">
-        /// You can have at most 100 active configuration documents.
+        /// You can have at most 100 active SSM documents.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentContentException">
-        /// The content for the configuration document is not valid.
+        /// The content for the SSM document is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
-        /// The size limit of a configuration document is 64 KB.
+        /// The size limit of an SSM document is 64 KB.
         /// </exception>
         public CreateDocumentResponse CreateDocument(CreateDocumentRequest request)
         {
@@ -551,35 +792,35 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Creates a configuration document.
+        /// Creates an SSM document.
         /// 
         ///  
         /// <para>
-        /// After you create a configuration document, you can use <a>CreateAssociation</a> to
-        /// associate it with one or more running instances.
+        /// After you create an SSM document, you can use <a>CreateAssociation</a> to associate
+        /// it with one or more running instances.
         /// </para>
         /// </summary>
-        /// <param name="content">A valid JSON file. For more information about the contents of this file, see <a href="http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html">Configuration Document</a>.</param>
-        /// <param name="name">A name for the configuration document.</param>
+        /// <param name="content">A valid JSON string. For more information about the contents of this string, see <a href="http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html">SSM Document</a>.</param>
+        /// <param name="name">A name for the SSM document.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the CreateDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentAlreadyExistsException">
-        /// The specified configuration document already exists.
+        /// The specified SSM document already exists.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentLimitExceededException">
-        /// You can have at most 100 active configuration documents.
+        /// You can have at most 100 active SSM documents.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentContentException">
-        /// The content for the configuration document is not valid.
+        /// The content for the SSM document is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
-        /// The size limit of a configuration document is 64 KB.
+        /// The size limit of an SSM document is 64 KB.
         /// </exception>
         public Task<CreateDocumentResponse> CreateDocumentAsync(string content, string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -613,18 +854,18 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Disassociates the specified configuration document from the specified instance.
+        /// Disassociates the specified SSM document from the specified instance.
         /// 
         ///  
         /// <para>
-        /// When you disassociate a configuration document from an instance, it does not change
-        /// the configuration of the instance. To change the configuration state of an instance
-        /// after you disassociate a configuration document, you must create a new configuration
-        /// document with the desired configuration and associate it with the instance.
+        /// When you disassociate an SSM document from an instance, it does not change the configuration
+        /// of the instance. To change the configuration state of an instance after you disassociate
+        /// a document, you must create a new document with the desired configuration and associate
+        /// it with the instance.
         /// </para>
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// 
         /// <returns>The response from the DeleteAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
@@ -634,10 +875,11 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
-        /// You must specify the ID of a running instance.
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -652,14 +894,14 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Disassociates the specified configuration document from the specified instance.
+        /// Disassociates the specified SSM document from the specified instance.
         /// 
         ///  
         /// <para>
-        /// When you disassociate a configuration document from an instance, it does not change
-        /// the configuration of the instance. To change the configuration state of an instance
-        /// after you disassociate a configuration document, you must create a new configuration
-        /// document with the desired configuration and associate it with the instance.
+        /// When you disassociate an SSM document from an instance, it does not change the configuration
+        /// of the instance. To change the configuration state of an instance after you disassociate
+        /// a document, you must create a new document with the desired configuration and associate
+        /// it with the instance.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAssociation service method.</param>
@@ -672,10 +914,11 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
-        /// You must specify the ID of a running instance.
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -690,18 +933,18 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Disassociates the specified configuration document from the specified instance.
+        /// Disassociates the specified SSM document from the specified instance.
         /// 
         ///  
         /// <para>
-        /// When you disassociate a configuration document from an instance, it does not change
-        /// the configuration of the instance. To change the configuration state of an instance
-        /// after you disassociate a configuration document, you must create a new configuration
-        /// document with the desired configuration and associate it with the instance.
+        /// When you disassociate an SSM document from an instance, it does not change the configuration
+        /// of the instance. To change the configuration state of an instance after you disassociate
+        /// a document, you must create a new document with the desired configuration and associate
+        /// it with the instance.
         /// </para>
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -714,10 +957,11 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
-        /// You must specify the ID of a running instance.
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -754,26 +998,25 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Deletes the specified configuration document.
+        /// Deletes the SSM document and all instance associations to the document.
         /// 
         ///  
         /// <para>
-        /// You must use <a>DeleteAssociation</a> to disassociate all instances that are associated
-        /// with the configuration document before you can delete it.
+        /// Before you delete the SSM document, we recommend that you use DeleteAssociation to
+        /// disassociate all instances that are associated with the document.
         /// </para>
         /// </summary>
-        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// 
         /// <returns>The response from the DeleteDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociatedInstancesException">
-        /// You must disassociate a configuration document from all instances before you can delete
-        /// it.
+        /// You must disassociate an SSM document from all instances before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         public DeleteDocumentResponse DeleteDocument(string name)
         {
@@ -784,26 +1027,25 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Deletes the specified configuration document.
+        /// Deletes the SSM document and all instance associations to the document.
         /// 
         ///  
         /// <para>
-        /// You must use <a>DeleteAssociation</a> to disassociate all instances that are associated
-        /// with the configuration document before you can delete it.
+        /// Before you delete the SSM document, we recommend that you use DeleteAssociation to
+        /// disassociate all instances that are associated with the document.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDocument service method.</param>
         /// 
         /// <returns>The response from the DeleteDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociatedInstancesException">
-        /// You must disassociate a configuration document from all instances before you can delete
-        /// it.
+        /// You must disassociate an SSM document from all instances before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         public DeleteDocumentResponse DeleteDocument(DeleteDocumentRequest request)
         {
@@ -815,29 +1057,28 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Deletes the specified configuration document.
+        /// Deletes the SSM document and all instance associations to the document.
         /// 
         ///  
         /// <para>
-        /// You must use <a>DeleteAssociation</a> to disassociate all instances that are associated
-        /// with the configuration document before you can delete it.
+        /// Before you delete the SSM document, we recommend that you use DeleteAssociation to
+        /// disassociate all instances that are associated with the document.
         /// </para>
         /// </summary>
-        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the DeleteDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociatedInstancesException">
-        /// You must disassociate a configuration document from all instances before you can delete
-        /// it.
+        /// You must disassociate an SSM document from all instances before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         public Task<DeleteDocumentResponse> DeleteDocumentAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -870,10 +1111,10 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes the associations for the specified configuration document or instance.
+        /// Describes the associations for the specified SSM document or instance.
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// 
         /// <returns>The response from the DescribeAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
@@ -883,10 +1124,11 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
-        /// You must specify the ID of a running instance.
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
         /// </exception>
         public DescribeAssociationResponse DescribeAssociation(string instanceId, string name)
         {
@@ -898,7 +1140,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes the associations for the specified configuration document or instance.
+        /// Describes the associations for the specified SSM document or instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAssociation service method.</param>
         /// 
@@ -910,10 +1152,11 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
-        /// You must specify the ID of a running instance.
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
         /// </exception>
         public DescribeAssociationResponse DescribeAssociation(DescribeAssociationRequest request)
         {
@@ -925,10 +1168,10 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes the associations for the specified configuration document or instance.
+        /// Describes the associations for the specified SSM document or instance.
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -941,10 +1184,11 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
-        /// You must specify the ID of a running instance.
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
         /// </exception>
         public Task<DescribeAssociationResponse> DescribeAssociationAsync(string instanceId, string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -978,16 +1222,16 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes the specified configuration document.
+        /// Describes the specified SSM document.
         /// </summary>
-        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// 
         /// <returns>The response from the DescribeDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         public DescribeDocumentResponse DescribeDocument(string name)
         {
@@ -998,7 +1242,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes the specified configuration document.
+        /// Describes the specified SSM document.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDocument service method.</param>
         /// 
@@ -1007,7 +1251,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         public DescribeDocumentResponse DescribeDocument(DescribeDocumentRequest request)
         {
@@ -1019,9 +1263,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes the specified configuration document.
+        /// Describes the specified SSM document.
         /// </summary>
-        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1031,7 +1275,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         public Task<DescribeDocumentResponse> DescribeDocumentAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1060,20 +1304,144 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribeInstanceInformation
+
+
+        /// <summary>
+        /// Describes one or more of your instances. You can use this to get information about
+        /// instances like the operating system platform, the SSM agent version, status etc. If
+        /// you specify one or more instance IDs, it returns information for those instances.
+        /// If you do not specify instance IDs, it returns information for all your instances.
+        /// If you specify an instance ID that is not valid or an instance that you do not own,
+        /// you receive an error.
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeInstanceInformation service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceInformationFilterValueException">
+        /// The specified filter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public DescribeInstanceInformationResponse DescribeInstanceInformation()
+        {
+            return DescribeInstanceInformation(new DescribeInstanceInformationRequest());
+        }
+
+
+        /// <summary>
+        /// Describes one or more of your instances. You can use this to get information about
+        /// instances like the operating system platform, the SSM agent version, status etc. If
+        /// you specify one or more instance IDs, it returns information for those instances.
+        /// If you do not specify instance IDs, it returns information for all your instances.
+        /// If you specify an instance ID that is not valid or an instance that you do not own,
+        /// you receive an error.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceInformation service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceInformation service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceInformationFilterValueException">
+        /// The specified filter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public DescribeInstanceInformationResponse DescribeInstanceInformation(DescribeInstanceInformationRequest request)
+        {
+            var marshaller = new DescribeInstanceInformationRequestMarshaller();
+            var unmarshaller = DescribeInstanceInformationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstanceInformationRequest,DescribeInstanceInformationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Describes one or more of your instances. You can use this to get information about
+        /// instances like the operating system platform, the SSM agent version, status etc. If
+        /// you specify one or more instance IDs, it returns information for those instances.
+        /// If you do not specify instance IDs, it returns information for all your instances.
+        /// If you specify an instance ID that is not valid or an instance that you do not own,
+        /// you receive an error.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInstanceInformation service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceInformationFilterValueException">
+        /// The specified filter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public Task<DescribeInstanceInformationResponse> DescribeInstanceInformationAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DescribeInstanceInformationAsync(new DescribeInstanceInformationRequest(), cancellationToken);
+        }
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceInformation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceInformation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeInstanceInformationResponse> DescribeInstanceInformationAsync(DescribeInstanceInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeInstanceInformationRequestMarshaller();
+            var unmarshaller = DescribeInstanceInformationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInstanceInformationRequest,DescribeInstanceInformationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDocument
 
 
         /// <summary>
-        /// Gets the contents of the specified configuration document.
+        /// Gets the contents of the specified SSM document.
         /// </summary>
-        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// 
         /// <returns>The response from the GetDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         public GetDocumentResponse GetDocument(string name)
         {
@@ -1084,7 +1452,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Gets the contents of the specified configuration document.
+        /// Gets the contents of the specified SSM document.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDocument service method.</param>
         /// 
@@ -1093,7 +1461,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         public GetDocumentResponse GetDocument(GetDocumentRequest request)
         {
@@ -1105,9 +1473,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Gets the contents of the specified configuration document.
+        /// Gets the contents of the specified SSM document.
         /// </summary>
-        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1117,7 +1485,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         public Task<GetDocumentResponse> GetDocumentAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1150,7 +1518,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Lists the associations for the specified configuration document or instance.
+        /// Lists the associations for the specified SSM document or instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociations service method.</param>
         /// 
@@ -1189,16 +1557,353 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ListCommandInvocations
+
+
+        /// <summary>
+        /// An invocation is copy of a command sent to a specific instance. A command can apply
+        /// to one or more instances. A command invocation applies to one instance. For example,
+        /// if a user executes SendCommand against three instances, then a command invocation
+        /// is created for each requested instance ID. ListCommandInvocations provide status about
+        /// command execution.
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListCommandInvocations service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public ListCommandInvocationsResponse ListCommandInvocations()
+        {
+            return ListCommandInvocations(new ListCommandInvocationsRequest());
+        }
+
+
+        /// <summary>
+        /// An invocation is copy of a command sent to a specific instance. A command can apply
+        /// to one or more instances. A command invocation applies to one instance. For example,
+        /// if a user executes SendCommand against three instances, then a command invocation
+        /// is created for each requested instance ID. ListCommandInvocations provide status about
+        /// command execution.
+        /// </summary>
+        /// <param name="commandId">(Optional) The invocations for a specific command ID.</param>
+        /// 
+        /// <returns>The response from the ListCommandInvocations service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public ListCommandInvocationsResponse ListCommandInvocations(string commandId)
+        {
+            var request = new ListCommandInvocationsRequest();
+            request.CommandId = commandId;
+            return ListCommandInvocations(request);
+        }
+
+
+        /// <summary>
+        /// An invocation is copy of a command sent to a specific instance. A command can apply
+        /// to one or more instances. A command invocation applies to one instance. For example,
+        /// if a user executes SendCommand against three instances, then a command invocation
+        /// is created for each requested instance ID. ListCommandInvocations provide status about
+        /// command execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCommandInvocations service method.</param>
+        /// 
+        /// <returns>The response from the ListCommandInvocations service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public ListCommandInvocationsResponse ListCommandInvocations(ListCommandInvocationsRequest request)
+        {
+            var marshaller = new ListCommandInvocationsRequestMarshaller();
+            var unmarshaller = ListCommandInvocationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCommandInvocationsRequest,ListCommandInvocationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// An invocation is copy of a command sent to a specific instance. A command can apply
+        /// to one or more instances. A command invocation applies to one instance. For example,
+        /// if a user executes SendCommand against three instances, then a command invocation
+        /// is created for each requested instance ID. ListCommandInvocations provide status about
+        /// command execution.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCommandInvocations service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public Task<ListCommandInvocationsResponse> ListCommandInvocationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListCommandInvocationsAsync(new ListCommandInvocationsRequest(), cancellationToken);
+        }
+
+        /// <summary>
+        /// An invocation is copy of a command sent to a specific instance. A command can apply
+        /// to one or more instances. A command invocation applies to one instance. For example,
+        /// if a user executes SendCommand against three instances, then a command invocation
+        /// is created for each requested instance ID. ListCommandInvocations provide status about
+        /// command execution.
+        /// </summary>
+        /// <param name="commandId">(Optional) The invocations for a specific command ID.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCommandInvocations service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public Task<ListCommandInvocationsResponse> ListCommandInvocationsAsync(string commandId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new ListCommandInvocationsRequest();
+            request.CommandId = commandId;
+            return ListCommandInvocationsAsync(request, cancellationToken);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCommandInvocations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCommandInvocations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListCommandInvocationsResponse> ListCommandInvocationsAsync(ListCommandInvocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListCommandInvocationsRequestMarshaller();
+            var unmarshaller = ListCommandInvocationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCommandInvocationsRequest,ListCommandInvocationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCommands
+
+
+        /// <summary>
+        /// Lists the commands requested by users of the AWS account.
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListCommands service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public ListCommandsResponse ListCommands()
+        {
+            return ListCommands(new ListCommandsRequest());
+        }
+
+
+        /// <summary>
+        /// Lists the commands requested by users of the AWS account.
+        /// </summary>
+        /// <param name="commandId">(Optional) If provided, lists only the specified command.</param>
+        /// 
+        /// <returns>The response from the ListCommands service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public ListCommandsResponse ListCommands(string commandId)
+        {
+            var request = new ListCommandsRequest();
+            request.CommandId = commandId;
+            return ListCommands(request);
+        }
+
+
+        /// <summary>
+        /// Lists the commands requested by users of the AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCommands service method.</param>
+        /// 
+        /// <returns>The response from the ListCommands service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public ListCommandsResponse ListCommands(ListCommandsRequest request)
+        {
+            var marshaller = new ListCommandsRequestMarshaller();
+            var unmarshaller = ListCommandsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCommandsRequest,ListCommandsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Lists the commands requested by users of the AWS account.
+        /// </summary>
+        /// <param name="cancellationToken"> ttd1
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCommands service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public Task<ListCommandsResponse> ListCommandsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ListCommandsAsync(new ListCommandsRequest(), cancellationToken);
+        }
+
+        /// <summary>
+        /// Lists the commands requested by users of the AWS account.
+        /// </summary>
+        /// <param name="commandId">(Optional) If provided, lists only the specified command.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCommands service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public Task<ListCommandsResponse> ListCommandsAsync(string commandId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new ListCommandsRequest();
+            request.CommandId = commandId;
+            return ListCommandsAsync(request, cancellationToken);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCommands operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCommands operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListCommandsResponse> ListCommandsAsync(ListCommandsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListCommandsRequestMarshaller();
+            var unmarshaller = ListCommandsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCommandsRequest,ListCommandsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDocuments
 
 
         /// <summary>
-        /// Describes one or more of your configuration documents.
+        /// Describes one or more of your SSM documents.
         /// </summary>
         /// 
         /// <returns>The response from the ListDocuments service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -1210,13 +1915,16 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes one or more of your configuration documents.
+        /// Describes one or more of your SSM documents.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDocuments service method.</param>
         /// 
         /// <returns>The response from the ListDocuments service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -1231,7 +1939,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes one or more of your configuration documents.
+        /// Describes one or more of your SSM documents.
         /// </summary>
         /// <param name="cancellationToken"> ttd1
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1240,6 +1948,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the ListDocuments service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -1268,11 +1979,143 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  SendCommand
+
+
+        /// <summary>
+        /// Executes commands on one or more remote instances.
+        /// </summary>
+        /// <param name="documentName">Required. The name of the SSM document to execute. This can be an SSM public document or a custom document.</param>
+        /// <param name="instanceIds">Required. The instance IDs where the command should execute.</param>
+        /// 
+        /// <returns>The response from the SendCommand service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
+        /// You cannot specify an instance ID in more than one association.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputFolderException">
+        /// The S3 bucket does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
+        /// You must specify values for all required parameters in the SSM document. You can only
+        /// supply values to parameters defined in the SSM document.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
+        /// The document does not support the platform type of the given instance ID(s).
+        /// </exception>
+        public SendCommandResponse SendCommand(string documentName, List<string> instanceIds)
+        {
+            var request = new SendCommandRequest();
+            request.DocumentName = documentName;
+            request.InstanceIds = instanceIds;
+            return SendCommand(request);
+        }
+
+
+        /// <summary>
+        /// Executes commands on one or more remote instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendCommand service method.</param>
+        /// 
+        /// <returns>The response from the SendCommand service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
+        /// You cannot specify an instance ID in more than one association.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputFolderException">
+        /// The S3 bucket does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
+        /// You must specify values for all required parameters in the SSM document. You can only
+        /// supply values to parameters defined in the SSM document.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
+        /// The document does not support the platform type of the given instance ID(s).
+        /// </exception>
+        public SendCommandResponse SendCommand(SendCommandRequest request)
+        {
+            var marshaller = new SendCommandRequestMarshaller();
+            var unmarshaller = SendCommandResponseUnmarshaller.Instance;
+
+            return Invoke<SendCommandRequest,SendCommandResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Executes commands on one or more remote instances.
+        /// </summary>
+        /// <param name="documentName">Required. The name of the SSM document to execute. This can be an SSM public document or a custom document.</param>
+        /// <param name="instanceIds">Required. The instance IDs where the command should execute.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendCommand service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
+        /// You cannot specify an instance ID in more than one association.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputFolderException">
+        /// The S3 bucket does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
+        /// You must specify values for all required parameters in the SSM document. You can only
+        /// supply values to parameters defined in the SSM document.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
+        /// The document does not support the platform type of the given instance ID(s).
+        /// </exception>
+        public Task<SendCommandResponse> SendCommandAsync(string documentName, List<string> instanceIds, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new SendCommandRequest();
+            request.DocumentName = documentName;
+            request.InstanceIds = instanceIds;
+            return SendCommandAsync(request, cancellationToken);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendCommand operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendCommand operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SendCommandResponse> SendCommandAsync(SendCommandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SendCommandRequestMarshaller();
+            var unmarshaller = SendCommandResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendCommandRequest,SendCommandResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateAssociationStatus
 
 
         /// <summary>
-        /// Updates the status of the configuration document associated with the specified instance.
+        /// Updates the status of the SSM document associated with the specified instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssociationStatus service method.</param>
         /// 
@@ -1284,10 +2127,11 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
-        /// The configuration document is not valid.
+        /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
-        /// You must specify the ID of a running instance.
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.StatusUnchangedException">
         /// The updated status is the same as the current status.

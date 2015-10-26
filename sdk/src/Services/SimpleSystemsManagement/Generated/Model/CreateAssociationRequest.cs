@@ -29,25 +29,24 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAssociation operation.
-    /// Associates the specified configuration document with the specified instance.
+    /// Associates the specified SSM document with the specified instance.
     /// 
     ///  
     /// <para>
-    /// When you associate a configuration document with an instance, the configuration agent
-    /// on the instance processes the configuration document and configures the instance as
-    /// specified.
+    /// When you associate an SSM document with an instance, the configuration agent on the
+    /// instance processes the document and configures the instance as specified.
     /// </para>
     ///  
     /// <para>
-    /// If you associate a configuration document with an instance that already has an associated
-    /// configuration document, we replace the current configuration document with the new
-    /// configuration document.
+    /// If you associate a document with an instance that already has an associated document,
+    /// the system throws the AssociationAlreadyExists exception.
     /// </para>
     /// </summary>
     public partial class CreateAssociationRequest : AmazonSimpleSystemsManagementRequest
     {
         private string _instanceId;
         private string _name;
+        private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -57,8 +56,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates CreateAssociationRequest with the parameterized properties
         /// </summary>
-        /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="instanceId">The instance ID.</param>
+        /// <param name="name">The name of the SSM document.</param>
         public CreateAssociationRequest(string instanceId, string name)
         {
             _instanceId = instanceId;
@@ -68,7 +67,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the instance.
+        /// The instance ID.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -86,7 +85,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the configuration document.
+        /// The name of the SSM document.
         /// </para>
         /// </summary>
         public string Name
@@ -99,6 +98,21 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. The parameters for the document’s runtime configuration.
+        /// </summary>
+        public Dictionary<string, List<string>> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && this._parameters.Count > 0; 
         }
 
     }

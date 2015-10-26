@@ -29,12 +29,12 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDocument operation.
-    /// Deletes the specified configuration document.
+    /// Deletes the SSM document and all instance associations to the document.
     /// 
     ///  
     /// <para>
-    /// You must use <a>DeleteAssociation</a> to disassociate all instances that are associated
-    /// with the configuration document before you can delete it.
+    /// Before you delete the SSM document, we recommend that you use DeleteAssociation to
+    /// disassociate all instances that are associated with the document.
     /// </para>
     /// </summary>
     public partial class DeleteDocumentRequest : AmazonSimpleSystemsManagementRequest
@@ -49,7 +49,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates DeleteDocumentRequest with the parameterized properties
         /// </summary>
-        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         public DeleteDocumentRequest(string name)
         {
             _name = name;
@@ -58,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the configuration document.
+        /// The name of the SSM document.
         /// </para>
         /// </summary>
         public string Name

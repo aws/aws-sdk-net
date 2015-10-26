@@ -28,18 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Describes the association of a configuration document and an instance.
+    /// Describes the association of an SSM document and an instance.
     /// </summary>
     public partial class CreateAssociationBatchRequestEntry
     {
         private string _instanceId;
         private string _name;
+        private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
 
         /// <summary>
-        /// Gets and sets the property InstanceId. 
-        /// <para>
-        /// The ID of the instance.
-        /// </para>
+        /// Gets and sets the property InstanceId. The ID of the instance.
         /// </summary>
         public string InstanceId
         {
@@ -54,10 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the configuration document.
-        /// </para>
+        /// Gets and sets the property Name. The name of the configuration document.
         /// </summary>
         public string Name
         {
@@ -69,6 +64,21 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. A description of the parameters for a document.
+        /// </summary>
+        public Dictionary<string, List<string>> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && this._parameters.Count > 0; 
         }
 
     }
