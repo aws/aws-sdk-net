@@ -1,3 +1,7 @@
+### 3.1.23.1 (2015-10-27 04:42 UTC)
+* S3 (3.1.3.3)
+	* Fix issue with byte range for CopyPart operation
+
 ### 3.1.23.0 (2015-10-26 22:44 UTC)
 * APIGateway (3.1.0.0)
 	* Amazon API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale.
