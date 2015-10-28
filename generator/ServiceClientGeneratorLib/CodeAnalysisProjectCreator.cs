@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 using ServiceClientGenerator.Generators.CodeAnalysis;
 
@@ -67,8 +68,70 @@ namespace ServiceClientGenerator
 
         private void GenerateProperyValueRules(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
         {
-            var content = "stuff";
+            StringBuilder sb = new StringBuilder();
+            using (var writer = XmlWriter.Create(sb, new XmlWriterSettings {Indent = true }))
+            {
+                writer.WriteStartElement("property-value-rules");
+
+                HashSet<string> requestAndResponseShapes = new HashSet<string>();
+                foreach(var operation in serviceConfiguration.ServiceModel.Operations)
+                {
+                    if(operation.RequestStructure != null)
+                    {
+                        GenerateProperyValueRules(serviceConfiguration, writer, operation.Name + "Request", operation.RequestStructure);
+                        requestAndResponseShapes.Add(operation.RequestStructure.Name);
+                    }
+                    if (operation.ResponseStructure != null)
+                    {
+                        GenerateProperyValueRules(serviceConfiguration, writer, operation.Name + "Response", operation.ResponseStructure);
+                        requestAndResponseShapes.Add(operation.ResponseStructure.Name);
+                    }
+                }
+
+                foreach(var shape in serviceConfiguration.ServiceModel.Shapes.OrderBy(x => x.Name))
+                {
+                    if (requestAndResponseShapes.Contains(shape.Name))
+                        continue;
+
+                    if(shape.IsStructure)
+                    {
+                        GenerateProperyValueRules(serviceConfiguration, writer, shape.Name, shape);
+                    }
+                }
+
+                writer.WriteEndElement();
+            }
+            var content = sb.ToString();
             GeneratorDriver.WriteFile(Path.Combine(codeAnalysisRoot, "Generated"), string.Empty, "PropertyValueRules.xml", content);
+        }
+
+        private void GenerateProperyValueRules(ServiceConfiguration serviceConfiguration, XmlWriter writer, string shapeName, Shape shape)
+        {
+            foreach (var member in shape.Members)
+            {
+                var memberShape = member.Shape;
+                if (!memberShape.IsPrimitiveType)
+                    continue;
+
+                if (memberShape.Min == null && memberShape.Max == null && memberShape.Pattern == null)
+                    continue;
+
+                writer.WriteStartElement("property-value-rule");
+
+                var propertyName = string.Format("{0}.Model.{1}.{2}", serviceConfiguration.Namespace, shapeName, member.PropertyName);
+                writer.WriteElementString("property", propertyName);
+
+                if (memberShape.Min != null)
+                    writer.WriteElementString("min", memberShape.Min.Value.ToString());
+
+                if (memberShape.Max != null)
+                    writer.WriteElementString("max", memberShape.Max.Value.ToString());
+
+                if (memberShape.Pattern != null)
+                    writer.WriteElementString("pattern", memberShape.Pattern);
+
+                writer.WriteEndElement();
+            }
         }
 
         private void GenerateProperyValueAnalyzer(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
