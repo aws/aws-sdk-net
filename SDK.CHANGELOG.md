@@ -1,3 +1,7 @@
+### 3.1.23.2 (2015-10-28 20:27 UTC)
+* APIGateway (3.1.0.1)
+	* Update API Gateway model to fix PutIntegration calls.
+
 ### 3.1.23.1 (2015-10-27 04:42 UTC)
 * S3 (3.1.3.3)
 	* Fix issue with byte range for CopyPart operation
