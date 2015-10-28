@@ -73,6 +73,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreEqual(rootResource.Path + pathPart, resource.Path);
             Assert.AreEqual(2, resources.Count);
 
+            Client.PutMethod(new PutMethodRequest
+            {
+                RestApiId = restApiId,
+                ResourceId = resourceId,
+                AuthorizationType = "AWS_IAM",
+                HttpMethod = "PUT"
+            });
+
+            Client.PutIntegration(new PutIntegrationRequest 
+            {
+                RestApiId = restApiId,
+                ResourceId = resourceId,
+                HttpMethod = "PUT",
+                Type = IntegrationType.MOCK,
+                Uri = "http://foo.bar",
+                IntegrationHttpMethod = "GET"
+            });
         }
 
         private IEnumerable<Resource> GetResources()

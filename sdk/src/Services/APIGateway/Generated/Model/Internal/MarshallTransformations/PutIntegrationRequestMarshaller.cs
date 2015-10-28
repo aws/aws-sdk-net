@@ -59,6 +59,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             string uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/integration";
+            uriResourcePath = uriResourcePath.Replace("{http_method}", publicRequest.IsSetHttpMethod() ? StringUtils.FromString(publicRequest.HttpMethod) : string.Empty);
             uriResourcePath = uriResourcePath.Replace("{resource_id}", publicRequest.IsSetResourceId() ? StringUtils.FromString(publicRequest.ResourceId) : string.Empty);
             uriResourcePath = uriResourcePath.Replace("{restapi_id}", publicRequest.IsSetRestApiId() ? StringUtils.FromString(publicRequest.RestApiId) : string.Empty);
             request.ResourcePath = uriResourcePath;
@@ -90,10 +91,10 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Credentials);
                 }
 
-                if(publicRequest.IsSetHttpMethod())
+                if(publicRequest.IsSetIntegrationHttpMethod())
                 {
                     context.Writer.WritePropertyName("httpMethod");
-                    context.Writer.Write(publicRequest.HttpMethod);
+                    context.Writer.Write(publicRequest.IntegrationHttpMethod);
                 }
 
                 if(publicRequest.IsSetRequestParameters())

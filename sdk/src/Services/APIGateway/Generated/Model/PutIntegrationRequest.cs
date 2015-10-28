@@ -37,6 +37,7 @@ namespace Amazon.APIGateway.Model
         private string _cacheNamespace;
         private string _credentials;
         private string _httpMethod;
+        private string _integrationHttpMethod;
         private Dictionary<string, string> _requestParameters = new Dictionary<string, string>();
         private Dictionary<string, string> _requestTemplates = new Dictionary<string, string>();
         private string _resourceId;
@@ -101,7 +102,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property HttpMethod. 
         /// <para>
-        /// Specifies a put integration HTTP method.
+        /// Specifies a put integration request's HTTP method.
         /// </para>
         /// </summary>
         public string HttpMethod
@@ -114,6 +115,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetHttpMethod()
         {
             return this._httpMethod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntegrationHttpMethod. 
+        /// <para>
+        /// Specifies a put integration HTTP method.
+        /// </para>
+        /// </summary>
+        public string IntegrationHttpMethod
+        {
+            get { return this._integrationHttpMethod; }
+            set { this._integrationHttpMethod = value; }
+        }
+
+        // Check to see if IntegrationHttpMethod property is set
+        internal bool IsSetIntegrationHttpMethod()
+        {
+            return this._integrationHttpMethod != null;
         }
 
         /// <summary>
