@@ -7,6 +7,7 @@ using ServiceClientGenerator.Generators;
 using ServiceClientGenerator.Generators.Marshallers;
 using ServiceClientGenerator.Generators.NuGet;
 using ServiceClientGenerator.Generators.SourceFiles;
+using ServiceClientGenerator.Generators.CodeAnalysis;
 using ServiceClientGenerator.Generators.TestFiles;
 using StructureGenerator = ServiceClientGenerator.Generators.SourceFiles.StructureGenerator;
 using ServiceClientGenerator.Generators.Component;
@@ -42,6 +43,11 @@ namespace ServiceClientGenerator
         /// will exist.
         /// </summary>
         public string ServiceFilesRoot { get; private set; }
+
+        /// <summary>
+        /// The folder under which the code analysis project for the service will exist.
+        /// </summary>
+        public string CodeAnalysisRoot { get; private set; }
 
         /// <summary>
         /// The folder under which all of the test files exist.
@@ -80,6 +86,7 @@ namespace ServiceClientGenerator
 
         public const string SourceSubFoldername = "src";
         public const string TestsSubFoldername = "test";
+        public const string CodeAnalysisFoldername = "code-analysis";
         public const string ServicesSubFoldername = "Services";
         public const string CoreSubFoldername = "Core";
         public const string GeneratedCodeFoldername = "Generated";
@@ -113,6 +120,8 @@ namespace ServiceClientGenerator
 
             ServiceFilesRoot = Path.Combine(Options.SdkRootFolder, SourceSubFoldername, ServicesSubFoldername, serviceNameRoot);
             GeneratedFilesRoot = Path.Combine(ServiceFilesRoot, GeneratedCodeFoldername);
+
+            CodeAnalysisRoot = Path.Combine(Options.SdkRootFolder, CodeAnalysisFoldername,"ServiceAnalysis", serviceNameRoot);
 
             TestFilesRoot = Path.Combine(Options.SdkRootFolder, TestsSubFoldername);
 
@@ -209,6 +218,11 @@ namespace ServiceClientGenerator
             // Test that simple customizations were generated correctly
             GenerateCustomizationTests();
             ExecuteProjectFileGenerators();
+
+            if(!this.Configuration.IsChildConfig)
+            {
+                GenerateCodeAnalysisProject();
+            }
         }
 
         /// <summary>
@@ -576,6 +590,16 @@ namespace ServiceClientGenerator
                 ProjectFileConfigurations = manifest.ProjectFileConfigurations
             };
             solutionFileCreator.Execute(NewlyCreatedProjectFiles);
+        }
+
+        public static void UpdateCodeAnalysisSoltion(GenerationManifest manifest, GeneratorOptions options)
+        {
+            Console.WriteLine("Updating code analysis solution file.");
+            var creator = new CodeAnalysisSolutionCreator
+            {
+                Options = options
+            };
+            creator.Execute();
         }
 
         public static void UpdateAssemblyVersionInfo(GenerationManifest manifest, GeneratorOptions options)
@@ -1192,6 +1216,12 @@ namespace ServiceClientGenerator
                 default:
                     throw new Exception("No structure unmarshaller for service type: " + this.Configuration.ServiceModel.Type);
             }
+        }
+
+        void GenerateCodeAnalysisProject()
+        {
+            var command = new CodeAnalysisProjectCreator();
+            command.Execute(CodeAnalysisRoot, this.Configuration);
         }
     }
 }

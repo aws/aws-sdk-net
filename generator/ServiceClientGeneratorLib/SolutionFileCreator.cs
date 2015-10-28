@@ -139,7 +139,7 @@ namespace ServiceClientGenerator
 
                     var projectConfig = new ProjectFileCreator.ProjectConfigurationData
                     {
-                        ProjectGuid = GetProjectGuid(projectFile),
+                        ProjectGuid = Utils.GetProjectGuid(projectFile),
                         ConfigurationPlatforms = GetProjectPlatforms(projectName)
                     };
 
@@ -153,16 +153,6 @@ namespace ServiceClientGenerator
             var config = ProjectFileConfigurations
                 .Single(pfc => string.Equals(pfc.Name, configType, StringComparison.Ordinal));
             return config;
-        }
-
-        private static string GetProjectGuid(string projectFile)
-        {
-            var content = File.ReadAllText(projectFile);
-
-            var pos = content.IndexOf("<ProjectGuid>", StringComparison.OrdinalIgnoreCase) + "<ProjectGuid>".Length;
-            var lastPos = content.IndexOf("</ProjectGuid>", pos, StringComparison.OrdinalIgnoreCase);
-            var guid = content.Substring(pos, lastPos - pos);
-            return guid;
         }
 
         static IEnumerable<string> GetProjectPlatformsFromFile(string projectFile)
@@ -480,7 +470,7 @@ namespace ServiceClientGenerator
             {
                 var projectPath = @"..\..\..\..\sdk\" + extraTestProject;
 
-                var projectGuid = GetProjectGuid(projectPath);
+                var projectGuid = Utils.GetProjectGuid(projectPath);
                 var testProject = ProjectFromFile(extraTestProject, projectGuid);
 
                 var testProjectConfig = new ProjectFileCreator.ProjectConfigurationData
