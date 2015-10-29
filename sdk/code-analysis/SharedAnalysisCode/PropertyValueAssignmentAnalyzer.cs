@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Diagnostics;
+using System.IO;
 using System.Reflection;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Threading;
 using Microsoft.CodeAnalysis;
@@ -26,33 +29,46 @@ namespace Amazon.CodeAnalysis.Shared
                 if (!name.EndsWith(".PropertyValueRules.xml"))
                     continue;
 
+                string content;
                 using (var stream = typeof(AbstractPropertyValueAssignmentAnalyzer).GetTypeInfo().Assembly.GetManifestResourceStream(name))
+                using (var reader = new StreamReader(stream))
                 {
-                    XDocument doc = XDocument.Load(stream);
-                    IEnumerable<PropertyValueRule> result = from c in doc.Descendants("property-value-rule")
-                                                            select new PropertyValueRule()
-                                                            {
-                                                                PropertyName = c.Element("property").Value,
-                                                                Min = c.Element("property") != null ? int.Parse(c.Element("min").Value) : (int?)null,
-                                                                Max = c.Element("property") != null ? int.Parse(c.Element("max").Value) : (int?)null
-                                                            };
+                    content = reader.ReadToEnd();
+                }
 
-                    foreach (var rule in result)
+                XDocument doc = XDocument.Parse(content);
+                foreach(var element in doc.Descendants("property-value-rule"))
+                {
+                    var rule = new PropertyValueRule()
                     {
-                        _propertyValueRules[rule.PropertyName] = rule;
+                        PropertyName = element.Element("property").Value,
+                        Min = element.Element("min") != null ? int.Parse(element.Element("min").Value) : (int?)null,
+                        Max = element.Element("max") != null ? int.Parse(element.Element("max").Value) : (int?)null,
+                        Pattern = element.Element("pattern") != null ? element.Element("pattern").Value : null
+                    };
+
+                    if (!string.IsNullOrEmpty(rule.Pattern))
+                    {
+                        try
+                        {
+                            rule.CompiledExpression = new Regex(element.Element("pattern").Value);
+                        }
+                        catch { }
                     }
+
+                    _propertyValueRules[rule.PropertyName] = rule;
                 }
             }
         }
 
-        public abstract string GetSerivceName();
+        public abstract string GetServiceName();
 
 
         public string DiagnosticId
         {
             get
             {
-                return string.Format("AWS.{0}.PropertyValues", GetSerivceName());
+                return string.Format("AWS.{0}.PropertyValues", GetServiceName());
             }
         }
 
@@ -70,7 +86,7 @@ namespace Amazon.CodeAnalysis.Shared
                     this._minLengthRule = new DiagnosticDescriptor(
                         DiagnosticId,
                         "Property value too short",
-                        "value \"{0}\" is too short for {1}, it must be at least {2} characters",
+                        "Value \"{0}\" is too short for {1}, it must be at least {2} characters",
                         Category,
                         DiagnosticSeverity.Warning,
                         isEnabledByDefault: true,
@@ -91,13 +107,33 @@ namespace Amazon.CodeAnalysis.Shared
                     this._maxLengthRule = new DiagnosticDescriptor(
                         DiagnosticId,
                         "Property value too long",
-                        "value \"{0}\" is too long for {1}, it must be at least {2} characters",
+                        "Value \"{0}\" is too long for {1}, it must be at least {2} characters",
                         Category,
                         DiagnosticSeverity.Warning,
                         isEnabledByDefault: true,
                         description: "Property value too long");
                 }
                 return this._maxLengthRule;
+            }
+        }
+
+        DiagnosticDescriptor _patternRule;
+        private DiagnosticDescriptor PatternRule
+        {
+            get
+            {
+                if (this._patternRule == null)
+                {
+                    this._patternRule = new DiagnosticDescriptor(
+                        DiagnosticId,
+                        "Property value does match required pattern",
+                        "Value \"{0}\" does not match required pattern {1} for property {2}",
+                        Category,
+                        DiagnosticSeverity.Warning,
+                        isEnabledByDefault: true,
+                        description: "Property value too long");
+                }
+                return this._patternRule;
             }
         }
 
@@ -118,6 +154,11 @@ namespace Amazon.CodeAnalysis.Shared
 
         private void PropertyAssignmentValidation(SyntaxNodeAnalysisContext context)
         {
+            // Call the abstract method to make it easier to debug.
+            // You can set a breakpoint in the override method so you know you are debugging the 
+            // analyzer you care about. 
+            this.GetServiceName();
+
             if (_propertyValueRules.Count == 0)
                 return;
 
@@ -154,6 +195,29 @@ namespace Amazon.CodeAnalysis.Shared
                         context.ReportDiagnostic(diagnostic);
                     }
                 }
+                if (propertyValueRule.Max.HasValue)
+                {
+                    if (value.Length > propertyValueRule.Max.Value)
+                    {
+                        var diagnostic =
+                            Diagnostic.Create(MaxLengthRule,
+                            literal.GetLocation(),
+                            new object[] { value, memberSymbol.Name, propertyValueRule.Max.Value });
+                        context.ReportDiagnostic(diagnostic);
+                    }
+                }
+                if (propertyValueRule.CompiledExpression != null)
+                {
+                    var match = propertyValueRule.CompiledExpression.Match(value);
+                    if (!string.Equals(match.Value, value, StringComparison.Ordinal))
+                    {
+                        var diagnostic =
+                            Diagnostic.Create(PatternRule,
+                            literal.GetLocation(),
+                            new object[] { value, propertyValueRule.Pattern, memberSymbol.Name });
+                        context.ReportDiagnostic(diagnostic);
+                    }
+                }
             }
         }
 
@@ -162,7 +226,8 @@ namespace Amazon.CodeAnalysis.Shared
             public string PropertyName { get; set; }
             public int? Min { get; set; }
             public int? Max { get; set; }
-            public string Regex { get; set; }
+            public Regex CompiledExpression { get; set; }
+            public string Pattern { get; set; }
         }
     }
 }

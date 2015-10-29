@@ -51,7 +51,7 @@ namespace ");
             #line hidden
             this.Write(".CodeAnalysis\r\n{\r\n\t[DiagnosticAnalyzer(LanguageNames.CSharp)]\r\n\tpublic class Prop" +
                     "ertyValueAssignmentAnalyzer : AbstractPropertyValueAssignmentAnalyzer\r\n\t{\r\n\t\tpub" +
-                    "lic override string GetSerivceName()\r\n\t\t{\r\n\t\t\treturn \"");
+                    "lic override string GetServiceName()\r\n\t\t{\r\n\t\t\treturn \"");
             
             #line 27 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\PropertyValueAssignmentAnalyzer.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));

@@ -18,6 +18,13 @@ namespace ServiceClientGenerator
         {
             var codeAnalysisProjects = GetListOfCodeAnalysisProjects();
 
+            GenerateSolutionFile(codeAnalysisProjects);
+            GenerateVsixProject(codeAnalysisProjects);
+            GenerateVsixManifest(codeAnalysisProjects);
+        }
+
+        public void GenerateSolutionFile(List<Project> codeAnalysisProjects)
+        {
             var templateSession = new Dictionary<string, object>();
 
             templateSession["CodeAnalysisProjects"] = codeAnalysisProjects;
@@ -27,7 +34,32 @@ namespace ServiceClientGenerator
             var generatedContent = generator.TransformText();
 
             GeneratorDriver.WriteFile(Options.SdkRootFolder, string.Empty, "AWSSDK.CodeAnalysis.sln", generatedContent, false, false);
+        }
 
+        public void GenerateVsixProject(List<Project> codeAnalysisProjects)
+        {
+            var templateSession = new Dictionary<string, object>();
+
+            templateSession["CodeAnalysisProjects"] = codeAnalysisProjects;
+
+            var generator = new VsixTestProfileFile();
+            generator.Session = templateSession;
+            var generatedContent = generator.TransformText();
+
+            GeneratorDriver.WriteFile(Path.Combine(Options.SdkRootFolder, GeneratorDriver.CodeAnalysisFoldername), "AWSCodeAnalysisTestExtension", "AWSCodeAnalysisTestExtension.Vsix.csproj", generatedContent, false, false);
+        }
+
+        public void GenerateVsixManifest(List<Project> codeAnalysisProjects)
+        {
+            var templateSession = new Dictionary<string, object>();
+
+            templateSession["CodeAnalysisProjects"] = codeAnalysisProjects;
+
+            var generator = new VsixManifest();
+            generator.Session = templateSession;
+            var generatedContent = generator.TransformText();
+
+            GeneratorDriver.WriteFile(Path.Combine(Options.SdkRootFolder, GeneratorDriver.CodeAnalysisFoldername), "AWSCodeAnalysisTestExtension", "source.extension.vsixmanifest", generatedContent, false, false);
         }
 
 
@@ -47,6 +79,7 @@ namespace ServiceClientGenerator
                 var project = new Project
                 {
                     Name =  projectNameInSolution,
+                    ShortName = projectNameInSolution.Replace("AWSSDK.", "").Replace(".CodeAnalysis", ""),
                     ProjectGuid = Utils.GetProjectGuid(projectFile),
                     ProjectPath = relativePath
                 };
@@ -62,6 +95,7 @@ namespace ServiceClientGenerator
             public string ProjectGuid { get; set; }
             public string ProjectPath { get; set; }
             public string Name { get; set; }
+            public string ShortName { get; set; }
         }
     }
 }

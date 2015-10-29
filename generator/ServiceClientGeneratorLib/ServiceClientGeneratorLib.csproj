@@ -73,6 +73,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PropertyValueAssignmentAnalyzer.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generators\CodeAnalysis\VsixManifest.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VsixManifest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\CodeAnalysis\VsixTestProfileFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VsixTestProfileFile.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generators\Component\Component.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -601,6 +611,14 @@
     <Content Include="Generators\CodeAnalysis\PropertyValueAssignmentAnalyzer.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>PropertyValueAssignmentAnalyzer.cs</LastGenOutput>
+    </Content>
+    <Content Include="Generators\CodeAnalysis\VsixManifest.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>VsixManifest.cs</LastGenOutput>
+    </Content>
+    <Content Include="Generators\CodeAnalysis\VsixTestProfileFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>VsixTestProfileFile.cs</LastGenOutput>
     </Content>
     <Content Include="Generators\NuGet\NuGetPackageReadmeSection.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

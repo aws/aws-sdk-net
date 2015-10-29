@@ -17,7 +17,7 @@ namespace Amazon.KeyManagementService.CodeAnalysis
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class PropertyValueAssignmentAnalyzer : AbstractPropertyValueAssignmentAnalyzer
     {
-        public override string GetSerivceName()
+        public override string GetServiceName()
         {
             return "KeyManagementService";
         }

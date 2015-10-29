@@ -22,6 +22,8 @@ EndProject
 #>
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SharedAnalysisCode", "code-analysis\SharedAnalysisCode\SharedAnalysisCode.shproj", "{16E2A13F-F4F6-4774-A2D8-AD8127E7EE4F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoDBAnalyzer.Vsix", "code-analysis\AWSCodeAnalysisTestExtension\AWSCodeAnalysisTestExtension.Vsix.csproj", "{11EAD86F-28B2-4DD6-AA76-72BB3B4AE80C}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		code-analysis\SharedAnalysisCode\SharedAnalysisCode.projitems*{16e2a13f-f4f6-4774-a2d8-ad8127e7ee4f}*SharedItemsImports = 13
@@ -50,6 +52,10 @@ Global
 <#
     }
 #>
+		{11EAD86F-28B2-4DD6-AA76-72BB3B4AE80C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11EAD86F-28B2-4DD6-AA76-72BB3B4AE80C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11EAD86F-28B2-4DD6-AA76-72BB3B4AE80C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11EAD86F-28B2-4DD6-AA76-72BB3B4AE80C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

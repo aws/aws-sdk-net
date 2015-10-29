@@ -17,7 +17,7 @@ namespace Amazon.ConfigService.CodeAnalysis
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class PropertyValueAssignmentAnalyzer : AbstractPropertyValueAssignmentAnalyzer
     {
-        public override string GetSerivceName()
+        public override string GetServiceName()
         {
             return "ConfigService";
         }
