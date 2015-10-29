@@ -1,3 +1,10 @@
+### 3.1.23.3 (2015-10-29 20:24 UTC)
+* S3 (3.1.3.4)
+	* Updated to use new Core, version 3.1.3.3
+	* Fixed the minimum version of Core dependency.
+* Core 3.1.3.3
+	* Added AmazonDateTimeUnmarshallingException type.
+
 ### 3.1.23.2 (2015-10-28 20:27 UTC)
 * APIGateway (3.1.0.1)
 	* Update API Gateway model to fix PutIntegration calls.
