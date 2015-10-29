@@ -9,6 +9,6 @@
     <Import_RootNamespace>Amazon.CodeAnalysis.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)PropertyValueAssignmentAnalyzer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AbstractPropertyValueAssignmentAnalyzer.cs" />
   </ItemGroup>
 </Project>

@@ -128,12 +128,53 @@ namespace Amazon.CodeAnalysis.Shared
             }
         }
 
+        DiagnosticDescriptor _minValueRule;
+        private DiagnosticDescriptor MinValueRule
+        {
+            get
+            {
+                if (this._minValueRule == null)
+                {
+                    this._minValueRule = new DiagnosticDescriptor(
+                        string.Format("AWS.{0}.PropertyValue.MinValue", GetServiceName()),
+                        "Property value less than minimum value",
+                        "Value \"{0}\" is less than minimum of {1} for property {2}",
+                        Category,
+                        DiagnosticSeverity.Warning,
+                        isEnabledByDefault: true,
+                        description: "Property value less than minimum value");
+                }
+
+                return this._minValueRule;
+            }
+        }
+
+        DiagnosticDescriptor _maxValueRule;
+        private DiagnosticDescriptor MaxValueRule
+        {
+            get
+            {
+                if (this._maxValueRule == null)
+                {
+                    this._maxValueRule = new DiagnosticDescriptor(
+                        string.Format("AWS.{0}.PropertyValue.MaxValue", GetServiceName()),
+                        "Property value greater than maximum value",
+                        "Value \"{0}\" is greater than maximum of {1} for property {2}",
+                        Category,
+                        DiagnosticSeverity.Warning,
+                        isEnabledByDefault: true,
+                        description: "Property value greater than maximum value");
+                }
+                return this._maxValueRule;
+            }
+        }
+
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics
         {
             get
             {
-                return ImmutableArray.Create(MinLengthRule, MaxLengthRule, PatternRule);
+                return ImmutableArray.Create(MinLengthRule, MaxLengthRule, PatternRule, MinValueRule, MaxValueRule);
             }
         }
 
@@ -206,6 +247,33 @@ namespace Amazon.CodeAnalysis.Shared
                             Diagnostic.Create(PatternRule,
                             literal.GetLocation(),
                             new object[] { value, propertyValueRule.Pattern, memberSymbol.Name });
+                        context.ReportDiagnostic(diagnostic);
+                    }
+                }
+            }
+            if(literalOpt.Value is int || literalOpt.Value is long)
+            {
+                var value = Convert.ToInt64(literalOpt.Value);
+
+                if (propertyValueRule.Min.HasValue)
+                {
+                    if (value < propertyValueRule.Min.Value)
+                    {
+                        var diagnostic =
+                            Diagnostic.Create(MinValueRule,
+                            literal.GetLocation(),
+                            new object[] { value, propertyValueRule.Min.Value, memberSymbol.Name });
+                        context.ReportDiagnostic(diagnostic);
+                    }
+                }
+                if (propertyValueRule.Max.HasValue)
+                {
+                    if (value > propertyValueRule.Max.Value)
+                    {
+                        var diagnostic =
+                            Diagnostic.Create(MaxValueRule,
+                            literal.GetLocation(),
+                            new object[] { value, propertyValueRule.Max.Value, memberSymbol.Name });
                         context.ReportDiagnostic(diagnostic);
                     }
                 }
