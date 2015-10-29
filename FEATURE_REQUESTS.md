@@ -8,6 +8,14 @@ Please refer to the individual issues to discuss or plus-one them.
 
 [tag]: https://github.com/aws/aws-sdk-net/labels/Feature%20Request
 
+#### Support environment variable config for default region 
+
+Add ability to configure the default region using environment variables. 
+This makes it easier to have the entire AWS config in environment variables 
+instead of mixing application config files and env vars.
+
+See [GitHub Issue #265](https://github.com/aws/aws-sdk-net/issues/265)
+
 #### Support for alternative HTTP clients
 
 For some platforms, it would be useful to have the SDK use a different
