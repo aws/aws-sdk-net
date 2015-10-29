@@ -43,8 +43,9 @@
 
     <Target Name="restore-nuget">
         <Message Text="Restore nuget packages"/>
-        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.All.sln"/>
         <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\generator\AWSSDKGenerator.sln"/>
+        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.All.sln"/>
+        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.CodeAnalysis.sln"/>
     </Target>
 
     <Target Name="run-generator" DependsOnTargets="restore-nuget">
@@ -61,6 +62,11 @@
         <MSBuild Projects="..\sdk\AWSSDK.All.sln"
             Targets="Clean;Build"
             Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation)" />
+			
+        <MSBuild Projects="..\sdk\AWSSDK.CodeAnalysis.sln"
+            Targets="Clean;Build"
+            Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation)" />
+			
 
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"

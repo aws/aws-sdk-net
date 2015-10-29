@@ -161,6 +161,8 @@ namespace ServiceClientGenerator
 
                 if (this.Configuration.EnableXamarinComponent)
                     GenerateXamarinComponents();
+
+                GenerateCodeAnalysisProject();
             }
 
             // Client config object
@@ -218,11 +220,6 @@ namespace ServiceClientGenerator
             // Test that simple customizations were generated correctly
             GenerateCustomizationTests();
             ExecuteProjectFileGenerators();
-
-            if(!this.Configuration.IsChildConfig)
-            {
-                GenerateCodeAnalysisProject();
-            }
         }
 
         /// <summary>
@@ -947,6 +944,7 @@ namespace ServiceClientGenerator
                 { "AssemblyVersion", assemblyVersion },
                 { "AWSDependencies", awsDependencies },
                 { "BaseName", this.Configuration.BaseName },
+                { "CodeAnalysisServiceFolder", this.Configuration.Namespace.Replace("Amazon.", "") },
                 { "ProjectFileConfigurations", this.ProjectFileConfigurations},
                 { "ExtraTags", Configuration.Tags == null || Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) }
             };

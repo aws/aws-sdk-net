@@ -15,7 +15,6 @@ using Microsoft.CodeAnalysis.Diagnostics;
 
 namespace Amazon.CodeAnalysis.Shared
 {
-    [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public abstract class AbstractPropertyValueAssignmentAnalyzer : DiagnosticAnalyzer
     {
         static IDictionary<string, PropertyValueRule> _propertyValueRules;
@@ -64,14 +63,6 @@ namespace Amazon.CodeAnalysis.Shared
         public abstract string GetServiceName();
 
 
-        public string DiagnosticId
-        {
-            get
-            {
-                return string.Format("AWS.{0}.PropertyValues", GetServiceName());
-            }
-        }
-
         // You can change these strings in the Resources.resx file. If you do not want your analyzer to be localize-able, you can use regular strings for Title and MessageFormat.
 
         private const string Category = "Property Values";
@@ -84,7 +75,7 @@ namespace Amazon.CodeAnalysis.Shared
                 if (this._minLengthRule == null)
                 {
                     this._minLengthRule = new DiagnosticDescriptor(
-                        DiagnosticId,
+                        string.Format("AWS.{0}.PropertyValue.TooShort", GetServiceName()),
                         "Property value too short",
                         "Value \"{0}\" is too short for {1}, it must be at least {2} characters",
                         Category,
@@ -105,7 +96,7 @@ namespace Amazon.CodeAnalysis.Shared
                 if (this._maxLengthRule == null)
                 {
                     this._maxLengthRule = new DiagnosticDescriptor(
-                        DiagnosticId,
+                        string.Format("AWS.{0}.PropertyValue.TooLong", GetServiceName()),
                         "Property value too long",
                         "Value \"{0}\" is too long for {1}, it must be at least {2} characters",
                         Category,
@@ -125,13 +116,13 @@ namespace Amazon.CodeAnalysis.Shared
                 if (this._patternRule == null)
                 {
                     this._patternRule = new DiagnosticDescriptor(
-                        DiagnosticId,
+                        string.Format("AWS.{0}.PropertyValue.PatternMatch", GetServiceName()),
                         "Property value does match required pattern",
                         "Value \"{0}\" does not match required pattern {1} for property {2}",
                         Category,
                         DiagnosticSeverity.Warning,
                         isEnabledByDefault: true,
-                        description: "Property value too long");
+                        description: "Property value does match required pattern");
                 }
                 return this._patternRule;
             }
@@ -142,7 +133,7 @@ namespace Amazon.CodeAnalysis.Shared
         {
             get
             {
-                return ImmutableArray.Create(MinLengthRule, MaxLengthRule);
+                return ImmutableArray.Create(MinLengthRule, MaxLengthRule, PatternRule);
             }
         }
 

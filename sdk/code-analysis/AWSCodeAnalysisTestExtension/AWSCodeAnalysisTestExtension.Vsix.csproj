@@ -248,6 +248,10 @@
       <Project>{B4543C79-2B90-4F7E-80E5-1AA21DFE4D76}</Project>
       <Name>AWSSDK.Route53Domains.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/S3/AWSSDK.S3.CodeAnalysis.csproj">
+      <Project>{0C220F39-8A25-4CB2-A379-BCDF01AB0D81}</Project>
+      <Name>AWSSDK.S3.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SecurityToken/AWSSDK.SecurityToken.CodeAnalysis.csproj">
       <Project>{89D04592-47DB-4292-8BEA-78BA2F33954F}</Project>
       <Name>AWSSDK.SecurityToken.CodeAnalysis</Name>

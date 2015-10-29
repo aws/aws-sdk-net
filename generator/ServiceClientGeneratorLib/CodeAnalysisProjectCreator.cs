@@ -73,32 +73,35 @@ namespace ServiceClientGenerator
             {
                 writer.WriteStartElement("property-value-rules");
 
-                HashSet<string> requestAndResponseShapes = new HashSet<string>();
-                foreach(var operation in serviceConfiguration.ServiceModel.Operations)
+                if (!string.Equals(serviceConfiguration.BaseName, "S3", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    if(operation.RequestStructure != null)
+
+                    HashSet<string> requestAndResponseShapes = new HashSet<string>();
+                    foreach (var operation in serviceConfiguration.ServiceModel.Operations)
                     {
-                        GenerateProperyValueRules(serviceConfiguration, writer, operation.Name + "Request", operation.RequestStructure);
-                        requestAndResponseShapes.Add(operation.RequestStructure.Name);
+                        if (operation.RequestStructure != null)
+                        {
+                            GenerateProperyValueRules(serviceConfiguration, writer, operation.Name + "Request", operation.RequestStructure);
+                            requestAndResponseShapes.Add(operation.RequestStructure.Name);
+                        }
+                        if (operation.ResponseStructure != null)
+                        {
+                            GenerateProperyValueRules(serviceConfiguration, writer, operation.Name + "Response", operation.ResponseStructure);
+                            requestAndResponseShapes.Add(operation.ResponseStructure.Name);
+                        }
                     }
-                    if (operation.ResponseStructure != null)
+
+                    foreach (var shape in serviceConfiguration.ServiceModel.Shapes.OrderBy(x => x.Name))
                     {
-                        GenerateProperyValueRules(serviceConfiguration, writer, operation.Name + "Response", operation.ResponseStructure);
-                        requestAndResponseShapes.Add(operation.ResponseStructure.Name);
+                        if (requestAndResponseShapes.Contains(shape.Name))
+                            continue;
+
+                        if (shape.IsStructure)
+                        {
+                            GenerateProperyValueRules(serviceConfiguration, writer, shape.Name, shape);
+                        }
                     }
                 }
-
-                foreach(var shape in serviceConfiguration.ServiceModel.Shapes.OrderBy(x => x.Name))
-                {
-                    if (requestAndResponseShapes.Contains(shape.Name))
-                        continue;
-
-                    if(shape.IsStructure)
-                    {
-                        GenerateProperyValueRules(serviceConfiguration, writer, shape.Name, shape);
-                    }
-                }
-
                 writer.WriteEndElement();
             }
             var content = sb.ToString();

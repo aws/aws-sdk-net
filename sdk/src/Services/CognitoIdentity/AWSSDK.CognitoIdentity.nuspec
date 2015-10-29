@@ -24,8 +24,8 @@
   </metadata> 
   <files>
 
-    <file src="..\..\..\nuget-content\install.ps1" target="tools\net35" />
-    <file src="..\..\..\nuget-content\install.ps1" target="tools\net45" />
+    <file src="..\..\..\code-analysis\ServiceAnalysis\CognitoIdentity\bin\Release\*.dll" target="analyzers\dotnet\cs" exclude="**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*;**\System.Composition.*" />
+    <file src="..\..\..\code-analysis\NuGetInstallScripts\*.ps1" target="tools\" />
 
     <file src=".\bin\Release\net35\AWSSDK.CognitoIdentity.dll" target="lib\net35" />
     <file src=".\bin\Release\net35\AWSSDK.CognitoIdentity.xml" target="lib\net35" />
