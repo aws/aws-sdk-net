@@ -78,14 +78,19 @@ EndProject
             #line hidden
             this.Write(@"Project(""{D954291E-2A0B-460D-934E-DC6B0785DB48}"") = ""SharedAnalysisCode"", ""code-analysis\SharedAnalysisCode\SharedAnalysisCode.shproj"", ""{16E2A13F-F4F6-4774-A2D8-AD8127E7EE4F}""
 EndProject
-Project(""{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"") = ""DynamoDBAnalyzer.Vsix"", ""code-analysis\AWSCodeAnalysisTestExtension\AWSCodeAnalysisTestExtension.Vsix.csproj"", ""{11EAD86F-28B2-4DD6-AA76-72BB3B4AE80C}""
+Project(""{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"") = ""AWSCodeAnalysisTestExtension.Vsix"", ""code-analysis\AWSCodeAnalysisTestExtension\AWSCodeAnalysisTestExtension.Vsix.csproj"", ""{11EAD86F-28B2-4DD6-AA76-72BB3B4AE80C}""
 EndProject
+Project(""{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"") = ""MockAnalyzer"", ""code-analysis\MockAnalyzer\MockAnalyzer.csproj"", ""{9BC3B08B-9F09-444E-AD15-67045FA3AF19}""
+EndProject
+Project(""{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"") = ""AnalyzerUnitTests"", ""code-analysis\AnalyzerUnitTests\AnalyzerUnitTests.csproj"", ""{9F38117D-9F41-44BA-9CB2-0EB42C66D2A0}""
+EndProject
+
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		code-analysis\SharedAnalysisCode\SharedAnalysisCode.projitems*{16e2a13f-f4f6-4774-a2d8-ad8127e7ee4f}*SharedItemsImports = 13
 ");
             
-            #line 30 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 35 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
 
     foreach(var project in (List<CodeAnalysisSolutionCreator.Project>)this.Session["CodeAnalysisProjects"])
     {
@@ -95,25 +100,31 @@ Global
             #line hidden
             this.Write("\t\tcode-analysis\\SharedAnalysisCode\\SharedAnalysisCode.projitems*");
             
-            #line 34 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 39 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid.ToLower()));
             
             #line default
             #line hidden
             this.Write("*SharedItemsImports = 4\r\n");
             
-            #line 35 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 40 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
 
     }
 
             
             #line default
             #line hidden
-            this.Write("\tEndGlobalSection\r\n\tGlobalSection(SolutionConfigurationPlatforms) = preSolution\r\n" +
-                    "\t\tDebug|Any CPU = Debug|Any CPU\r\n\t\tRelease|Any CPU = Release|Any CPU\r\n\tEndGlobal" +
-                    "Section\r\n\tGlobalSection(ProjectConfigurationPlatforms) = postSolution\r\n");
+            this.Write(@"		code-analysis\SharedAnalysisCode\SharedAnalysisCode.projitems*{9bc3b08b-9f09-444e-ad15-67045fa3af19}*SharedItemsImports = 4
+
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+");
             
-            #line 44 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 51 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
 
     foreach(var project in (List<CodeAnalysisSolutionCreator.Project>)this.Session["CodeAnalysisProjects"])
     {
@@ -123,35 +134,35 @@ Global
             #line hidden
             this.Write("\t\t");
             
-            #line 48 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 55 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Debug|Any CPU.ActiveCfg = Debug|Any CPU\r\n\t\t");
             
-            #line 49 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 56 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Debug|Any CPU.Build.0 = Debug|Any CPU\r\n\t\t");
             
-            #line 50 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 57 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Release|Any CPU.ActiveCfg = Release|Any CPU\r\n\t\t");
             
-            #line 51 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 58 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(".Release|Any CPU.Build.0 = Release|Any CPU\r\n");
             
-            #line 52 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 59 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
 
     }
 
@@ -162,6 +173,14 @@ Global
 		{11EAD86F-28B2-4DD6-AA76-72BB3B4AE80C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11EAD86F-28B2-4DD6-AA76-72BB3B4AE80C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11EAD86F-28B2-4DD6-AA76-72BB3B4AE80C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BC3B08B-9F09-444E-AD15-67045FA3AF19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BC3B08B-9F09-444E-AD15-67045FA3AF19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BC3B08B-9F09-444E-AD15-67045FA3AF19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BC3B08B-9F09-444E-AD15-67045FA3AF19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F38117D-9F41-44BA-9CB2-0EB42C66D2A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F38117D-9F41-44BA-9CB2-0EB42C66D2A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F38117D-9F41-44BA-9CB2-0EB42C66D2A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F38117D-9F41-44BA-9CB2-0EB42C66D2A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -169,7 +188,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 ");
             
-            #line 64 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 79 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
 
     foreach(var project in (List<CodeAnalysisSolutionCreator.Project>)this.Session["CodeAnalysisProjects"])
     {
@@ -179,14 +198,14 @@ Global
             #line hidden
             this.Write("\t\t");
             
-            #line 68 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 83 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(" = {1523203C-CD16-4B4A-8F9D-8ECCA3A327AA}\r\n");
             
-            #line 69 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
+            #line 84 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt"
 
     }
 

@@ -127,8 +127,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.WorkSpaces.CodeAnaly
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SharedAnalysisCode", "code-analysis\SharedAnalysisCode\SharedAnalysisCode.shproj", "{16E2A13F-F4F6-4774-A2D8-AD8127E7EE4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoDBAnalyzer.Vsix", "code-analysis\AWSCodeAnalysisTestExtension\AWSCodeAnalysisTestExtension.Vsix.csproj", "{11EAD86F-28B2-4DD6-AA76-72BB3B4AE80C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSCodeAnalysisTestExtension.Vsix", "code-analysis\AWSCodeAnalysisTestExtension\AWSCodeAnalysisTestExtension.Vsix.csproj", "{11EAD86F-28B2-4DD6-AA76-72BB3B4AE80C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockAnalyzer", "code-analysis\MockAnalyzer\MockAnalyzer.csproj", "{9BC3B08B-9F09-444E-AD15-67045FA3AF19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalyzerUnitTests", "code-analysis\AnalyzerUnitTests\AnalyzerUnitTests.csproj", "{9F38117D-9F41-44BA-9CB2-0EB42C66D2A0}"
+EndProject
+
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		code-analysis\SharedAnalysisCode\SharedAnalysisCode.projitems*{16e2a13f-f4f6-4774-a2d8-ad8127e7ee4f}*SharedItemsImports = 13
@@ -192,6 +197,8 @@ Global
 		code-analysis\SharedAnalysisCode\SharedAnalysisCode.projitems*{ecf2d7a1-d543-4290-b0ce-1eaf4e5e64a7}*SharedItemsImports = 4
 		code-analysis\SharedAnalysisCode\SharedAnalysisCode.projitems*{89b0280a-9edf-46ec-9592-500b710d305d}*SharedItemsImports = 4
 		code-analysis\SharedAnalysisCode\SharedAnalysisCode.projitems*{d7b54129-a9f3-47f0-ba76-8fe371315827}*SharedItemsImports = 4
+		code-analysis\SharedAnalysisCode\SharedAnalysisCode.projitems*{9bc3b08b-9f09-444e-ad15-67045fa3af19}*SharedItemsImports = 4
+
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -442,6 +449,14 @@ Global
 		{11EAD86F-28B2-4DD6-AA76-72BB3B4AE80C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11EAD86F-28B2-4DD6-AA76-72BB3B4AE80C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11EAD86F-28B2-4DD6-AA76-72BB3B4AE80C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BC3B08B-9F09-444E-AD15-67045FA3AF19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BC3B08B-9F09-444E-AD15-67045FA3AF19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BC3B08B-9F09-444E-AD15-67045FA3AF19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BC3B08B-9F09-444E-AD15-67045FA3AF19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F38117D-9F41-44BA-9CB2-0EB42C66D2A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F38117D-9F41-44BA-9CB2-0EB42C66D2A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F38117D-9F41-44BA-9CB2-0EB42C66D2A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F38117D-9F41-44BA-9CB2-0EB42C66D2A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
