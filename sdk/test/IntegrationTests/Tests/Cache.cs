@@ -20,7 +20,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     [TestClass]
     public class CacheTests
     {
-        private const string tableName = "cache-test-table";
+        private const string TABLENAME = "cache-test-table";
+        private string testTableName = null;
         private static AmazonDynamoDBClient client = AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests.Client;
         private static bool lastUseSdkCacheValue;
 
@@ -30,6 +31,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             lastUseSdkCacheValue = AWSConfigs.UseSdkCache;
             AWSConfigs.UseSdkCache = true;
             SdkCache.Clear();
+
+            testTableName = UtilityMethods.GenerateName("CacheTest");
+            CreateTable(testTableName, true);
         }
 
         [TestCleanup]
@@ -41,10 +45,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             //tableExists = (status != null);
 
             var allTables = AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests.Client.ListTables().TableNames;
-            tableExists = allTables.Contains(tableName);
+            tableExists = allTables.Contains(TABLENAME);
 
             if (tableExists)
-                DeleteTable();
+                DeleteTable(TABLENAME);
+
+            if (allTables.Contains(testTableName))
+                DeleteTable(testTableName);
 
             AWSConfigs.UseSdkCache = lastUseSdkCacheValue;
             SdkCache.Clear();
@@ -56,7 +63,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             Func<string, TableDescription> creator = tn => client.DescribeTable(tn).Table;
 
-            var tableName = GetTableName();
+            var tableName = testTableName;
             var tableCache = SdkCache.GetCache<string, TableDescription>(client, DynamoDBTests.TableCacheIdentifier, StringComparer.Ordinal);
             Assert.AreEqual(0, tableCache.ItemCount);
 
@@ -89,7 +96,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public void MultipleClientsTest()
         {
             Table.ClearTableCache();
-            var tableName = GetTableName();
+            var tableName = testTableName;
 
             Table table;
             using (var nc = new AmazonDynamoDBClient())
@@ -112,8 +119,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             });
             var tableCache = SdkCache.GetCache<string, TableDescription>(client, DynamoDBTests.TableCacheIdentifier, StringComparer.Ordinal);
 
-            CreateTable(defaultKeys: true);
-            var table = Table.LoadTable(client, tableName);
+            CreateTable(TABLENAME, defaultKeys: true);
+            var table = Table.LoadTable(client, TABLENAME);
             table.PutItem(item);
 
             using (var counter = new ServiceResponseCounter(client))
@@ -124,17 +131,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.AreEqual(1, counter.ResponseCount);
                 AssertExtensions.ExpectException(() => table.GetItem("Floyd", 42));
 
-                var oldTableDescription = tableCache.GetValue(tableName, null);
+                var oldTableDescription = tableCache.GetValue(TABLENAME, null);
 
-                DeleteTable();
-                CreateTable(defaultKeys: false);
+                DeleteTable(TABLENAME);
+                CreateTable(TABLENAME, defaultKeys: false);
 
                 table.PutItem(item);
                 AssertExtensions.ExpectException(() => table.GetItem(42, "Yes"));
 
                 counter.Reset();
                 Table.ClearTableCache();
-                table = Table.LoadTable(client, tableName);
+                table = Table.LoadTable(client, TABLENAME);
                 doc = table.GetItem(42, "Yes");
                 Assert.IsNotNull(doc);
                 Assert.AreNotEqual(0, doc.Count);
@@ -142,11 +149,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
                 counter.Reset();
                 Table.ClearTableCache();
-                PutItem(tableCache, tableName, oldTableDescription);
-                table = Table.LoadTable(client, tableName);
-                doc = tableCache.UseCache(tableName,
+                PutItem(tableCache, TABLENAME, oldTableDescription);
+                table = Table.LoadTable(client, TABLENAME);
+                doc = tableCache.UseCache(TABLENAME,
                     () => table.GetItem(42, "Yes"),
-                    () => table = Table.LoadTable(client, tableName),
+                    () => table = Table.LoadTable(client, TABLENAME),
                     shouldRetryForException: null);
 
                 Assert.IsNotNull(doc);
@@ -155,7 +162,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
-        private void CreateTable(bool defaultKeys)
+        private void CreateTable(string name, bool defaultKeys)
         {
             var keySchema = new List<KeySchemaElement>
             {
@@ -187,7 +194,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             client.CreateTable(new CreateTableRequest
             {
-                TableName = tableName,
+                TableName = name,
                 KeySchema = keySchema,
                 AttributeDefinitions = attributes,
                 ProvisionedThroughput = new ProvisionedThroughput
@@ -197,21 +204,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 }
             });
 
-            AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests.WaitForTableStatus(tableName, TableStatus.ACTIVE);
+            AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests.WaitForTableStatus(name, TableStatus.ACTIVE);
         }
-        private void DeleteTable()
+        private void DeleteTable(string name)
         {
-            client.DeleteTable(tableName);
-            AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests.WaitForTableStatus(tableName, null);
+            client.DeleteTable(name);
+            AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests.WaitForTableStatus(name, null);
         }
-        private static string GetTableName()
-        {
-            var tables = client.ListTables().TableNames;
-            Assert.AreNotEqual(0, tables.Count);
-            var tableName = tables.First();
-
-            return tableName;
-        }
+       
         private void PutItem<TKey,TValue>(ICache<TKey,TValue> cache, TKey key, TValue value)
         {
             cache.Clear(key);
