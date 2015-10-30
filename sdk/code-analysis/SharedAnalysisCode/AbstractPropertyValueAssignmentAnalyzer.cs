@@ -201,6 +201,9 @@ namespace Amazon.CodeAnalysis.Shared
                 return;
 
             var symbol = context.SemanticModel.GetSymbolInfo(assignmentExpr.Left).Symbol;
+            if (symbol == null)
+                return;
+
             var memberSymbol = context.SemanticModel.GetSymbolInfo(assignmentExpr.Left).Symbol as Microsoft.CodeAnalysis.IPropertySymbol;
             if (memberSymbol == null)
                 return;
