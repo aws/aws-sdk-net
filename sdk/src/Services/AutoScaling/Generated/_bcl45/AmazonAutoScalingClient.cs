@@ -952,7 +952,7 @@ namespace Amazon.AutoScaling
         /// Service Limits</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1025,7 +1025,7 @@ namespace Amazon.AutoScaling
         /// <summary>
         /// Describes the policy adjustment types for use with <a>PutScalingPolicy</a>.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1107,7 +1107,7 @@ namespace Amazon.AutoScaling
         /// Describes one or more Auto Scaling groups. If a list of names is not provided, the
         /// call describes all Auto Scaling groups.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1192,7 +1192,7 @@ namespace Amazon.AutoScaling
         /// Describes one or more Auto Scaling instances. If a list is not provided, the call
         /// describes all instances.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1268,7 +1268,7 @@ namespace Amazon.AutoScaling
         /// <summary>
         /// Describes the notification types that are supported by Auto Scaling.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1350,7 +1350,7 @@ namespace Amazon.AutoScaling
         /// Describes one or more launch configurations. If you omit the list of names, then the
         /// call describes all launch configurations.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1567,7 +1567,7 @@ namespace Amazon.AutoScaling
         /// You must explicitly request this metric when calling <a>EnableMetricsCollection</a>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1646,7 +1646,7 @@ namespace Amazon.AutoScaling
         /// <summary>
         /// Describes the notification actions associated with the specified Auto Scaling group.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1728,7 +1728,7 @@ namespace Amazon.AutoScaling
         /// <summary>
         /// Describes the policies for the specified Auto Scaling group.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1819,7 +1819,7 @@ namespace Amazon.AutoScaling
         /// six weeks. Activities are sorted by the start time. Activities still in progress appear
         /// first on the list.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1895,7 +1895,7 @@ namespace Amazon.AutoScaling
         /// <summary>
         /// Describes the scaling process types for use with <a>ResumeProcesses</a> and <a>SuspendProcesses</a>.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1977,7 +1977,7 @@ namespace Amazon.AutoScaling
         /// Describes the actions scheduled for your Auto Scaling group that haven't run. To describe
         /// the actions that have already run, use <a>DescribeScalingActivities</a>.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2098,7 +2098,7 @@ namespace Amazon.AutoScaling
         /// returned.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2174,7 +2174,7 @@ namespace Amazon.AutoScaling
         /// <summary>
         /// Describes the termination policies supported by Auto Scaling.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

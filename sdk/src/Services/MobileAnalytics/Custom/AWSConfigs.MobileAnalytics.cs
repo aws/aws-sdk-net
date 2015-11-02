@@ -31,7 +31,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
     /// <summary>
     /// Represents configuration for Mobile Analytics Manager.
     /// </summary>
-    public class MobileAnalyticsManagerConfig
+    public partial class MobileAnalyticsManagerConfig
     {
         private const int defaultSessionTimeout = 5;
         private const int defaultMaxDBSize = 5242880;
@@ -51,6 +51,19 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             AllowUseDataNetwork = defaultAllowUseDataNetwork;
 #if BCL
             ClientContextConfiguration = new ClientContextConfig();
+#endif
+
+#if UNITY
+            var root = new RootConfig();
+            var section = root.GetServiceSection(mobileAnalyticsKey);
+            if (section == null)
+            {
+                return;
+            }
+
+            var rootSection = new MobileAnalyticsManagerConfigSectionRoot(section);
+            if (rootSection.SectionConfig != null)
+                Configure(rootSection.SectionConfig);
 #endif
         }
 

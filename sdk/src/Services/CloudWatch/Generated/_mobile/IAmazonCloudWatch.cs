@@ -109,7 +109,7 @@ namespace Amazon.CloudWatch
         /// If an alarm name is not specified, Amazon CloudWatch returns histories for all of
         /// the owner's alarms.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -141,7 +141,7 @@ namespace Amazon.CloudWatch
         /// the user are returned. Alarms can be retrieved by using only a prefix for the alarm
         /// name, the alarm state, or a prefix for any action.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -237,7 +237,7 @@ namespace Amazon.CloudWatch
         /// can be used with <a>GetMetricStatistics</a> to obtain statistical data for a given
         /// metric.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

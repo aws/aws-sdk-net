@@ -22,7 +22,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     /// This interface is for delivery policy that determines whether delivery client should send events 
     /// to Mobile Analytics service.
     /// </summary>
-    public interface IDeliveryPolicy
+    public partial interface IDeliveryPolicy
     {
         /// <summary>
         /// Determines whether this policy allows the delivery of the events or not.

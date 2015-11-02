@@ -756,7 +756,7 @@ namespace Amazon.Route53
         /// To retrieve a count of all your hosted zones, send a <code>GET</code> request to
         /// the <code>2013-04-01/hostedzonecount</code> resource.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -854,7 +854,7 @@ namespace Amazon.Route53
         /// 
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -915,7 +915,7 @@ namespace Amazon.Route53
         ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
         /// greater than 100, Amazon Route 53 returns only the first 100.</note>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -980,7 +980,7 @@ namespace Amazon.Route53
         ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
         /// greater than 100, Amazon Route 53 returns only the first 100.</note>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1109,7 +1109,7 @@ namespace Amazon.Route53
         ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
         /// greater than 100, Amazon Route 53 returns only the first 100.</note>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

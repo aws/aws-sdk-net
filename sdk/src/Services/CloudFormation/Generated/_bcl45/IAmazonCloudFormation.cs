@@ -311,7 +311,7 @@ namespace Amazon.CloudFormation
         /// Returns the description for the specified stack; if no stack name was specified, then
         /// it returns the description for all the stacks created.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -521,7 +521,7 @@ namespace Amazon.CloudFormation
         /// stack is deleted. If no StackStatusFilter is specified, summary information for all
         /// stacks is returned (including existing stacks and stacks that have been deleted).
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -668,7 +668,7 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Validates a specified template.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

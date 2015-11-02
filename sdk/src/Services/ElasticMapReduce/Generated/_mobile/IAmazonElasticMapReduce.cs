@@ -93,7 +93,7 @@ namespace Amazon.ElasticMapReduce
         /// Provides cluster-level details including status, hardware and software configuration,
         /// VPC settings, and so on. For information about the cluster steps, see <a>ListSteps</a>.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -152,7 +152,7 @@ namespace Amazon.ElasticMapReduce
         ///  Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions. 
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -185,7 +185,7 @@ namespace Amazon.ElasticMapReduce
         /// <summary>
         /// Provides more detail about the cluster step.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -218,7 +218,7 @@ namespace Amazon.ElasticMapReduce
         /// <summary>
         /// Provides information about the bootstrap actions associated with a cluster.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -255,7 +255,7 @@ namespace Amazon.ElasticMapReduce
         /// call, but returns a marker to track the paging of the cluster list across multiple
         /// ListClusters calls.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -288,7 +288,7 @@ namespace Amazon.ElasticMapReduce
         /// <summary>
         /// Provides all available details about the instance groups in a cluster.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -324,7 +324,7 @@ namespace Amazon.ElasticMapReduce
         /// the EC2 instances reach the Ready state, when instances become available to Amazon
         /// EMR to use for jobs, and the IP addresses for cluster instances, etc.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -357,7 +357,7 @@ namespace Amazon.ElasticMapReduce
         /// <summary>
         /// Provides a list of steps for the cluster.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

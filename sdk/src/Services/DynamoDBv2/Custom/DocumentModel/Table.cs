@@ -51,7 +51,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal Table.DynamoDBConsumer TableConsumer { get; private set; }
         internal DynamoDBEntryConversion Conversion { get; private set; }
 
-#if PCL
+#if PCL ||UNITY
         internal AmazonDynamoDBClient DDBClient { get; private set; }
 #else
         internal IAmazonDynamoDB DDBClient { get; private set; }
@@ -331,7 +331,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private Table(IAmazonDynamoDB ddbClient, string tableName, Table.DynamoDBConsumer consumer, DynamoDBEntryConversion conversion)
         {
-#if PCL
+#if PCL || UNITY
             DDBClient = ddbClient as AmazonDynamoDBClient;
 #else
             DDBClient = ddbClient;
@@ -374,6 +374,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             SdkCache.Clear(TableInfoCacheIdentifier);
         }
 
+        #if !UNITY
         /// <summary>
         /// Creates a Table object with the specified name, using the
         /// passed-in client to load the table definition.
@@ -450,7 +451,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 return false;
             }
         }
-
+        #endif
         #endregion
 
 

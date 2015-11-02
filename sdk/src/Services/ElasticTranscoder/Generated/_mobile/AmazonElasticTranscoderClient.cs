@@ -440,7 +440,7 @@ namespace Amazon.ElasticTranscoder
         /// The ListPipelines operation gets a list of the pipelines associated with the current
         /// AWS account.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -503,7 +503,7 @@ namespace Amazon.ElasticTranscoder
         /// The ListPresets operation gets a list of the default presets included with Elastic
         /// Transcoder and the presets that you've added in an AWS region.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

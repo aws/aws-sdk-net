@@ -198,7 +198,7 @@ namespace Amazon.AWSSupport
         /// have the most recent set of service and category codes.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -230,7 +230,7 @@ namespace Amazon.AWSSupport
         /// severity level for a case is also a field in the <a>CaseDetails</a> data type included
         /// in any <a>CreateCase</a> request.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

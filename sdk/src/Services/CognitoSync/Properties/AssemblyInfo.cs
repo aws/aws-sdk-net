@@ -12,7 +12,9 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Cognito Sync. This is the low level service client for Amazon Cognito Sync. Most users of Amazon Cognito Sync should use the high level abstraction AWSSDK.SyncManager to interact with this service.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Core Runtime")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Cognito Sync. This is the low level service client for Amazon Cognito Sync. Most users of Amazon Cognito Sync should use the high level abstraction AWSSDK.SyncManager to interact with this service.")]
+#elif UNITY
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Cognito Sync. This is the low level service client for Amazon Cognito Sync. Most users of Amazon Cognito Sync should use the high level abstraction AWSSDK.SyncManager to interact with this service.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -72,19 +72,22 @@
     <Compile Include="Custom\Model\_pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\Transfer\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Transfer\Internal\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Transfer\Internal\_async\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Transfer\_async\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Custom\Util\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+pcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+pcl\Transfer\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+pcl\Transfer\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+pcl\Transfer\Internal\_async\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+pcl\Transfer\_async\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Generated\*.cs">
@@ -95,9 +98,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\Core\AWSSDK.Core.PCL.csproj">
-      <Project>{BFC96F19-CADF-41EB-804C-10DBEF3F9126}</Project>
-      <Name>AWSSDK.Core.PCL</Name>
+        <Project>{BFC96F19-CADF-41EB-804C-10DBEF3F9126}</Project>
+        <Name>AWSSDK.Core.PCL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

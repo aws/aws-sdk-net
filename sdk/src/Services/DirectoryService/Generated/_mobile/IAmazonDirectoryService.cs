@@ -175,7 +175,7 @@ namespace Amazon.DirectoryService
         /// You can also specify a maximum number of return results with the <i>Limit</i> parameter.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -297,7 +297,7 @@ namespace Amazon.DirectoryService
         /// <summary>
         /// Obtains directory limit information for the current region.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

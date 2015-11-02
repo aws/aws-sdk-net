@@ -12,7 +12,9 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Elasticsearch Service. Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Core Runtime")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Elasticsearch Service. Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.")]
+#elif UNITY
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Elasticsearch Service. Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

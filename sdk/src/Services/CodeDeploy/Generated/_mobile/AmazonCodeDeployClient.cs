@@ -880,7 +880,7 @@ namespace Amazon.CodeDeploy
         /// <summary>
         /// Lists the applications registered with the applicable IAM user or AWS account.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -932,7 +932,7 @@ namespace Amazon.CodeDeploy
         /// <summary>
         /// Lists the deployment configurations with the applicable IAM user or AWS account.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

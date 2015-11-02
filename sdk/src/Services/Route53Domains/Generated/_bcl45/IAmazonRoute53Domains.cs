@@ -442,7 +442,7 @@ namespace Amazon.Route53Domains
         /// This operation returns all the domain names registered with Amazon Route 53 for the
         /// current AWS account.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -501,7 +501,7 @@ namespace Amazon.Route53Domains
         /// <summary>
         /// This operation returns the operation IDs of operations that are not yet complete.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

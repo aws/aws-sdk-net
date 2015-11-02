@@ -19,12 +19,30 @@ namespace Amazon.CognitoIdentity
     public partial class CognitoAWSCredentials : RefreshingAWSCredentials
     {
         #region Private members
-
+        private static object refreshIdLock = new object();
         private string identityId;
         private static int DefaultDurationSeconds = (int)TimeSpan.FromHours(1).TotalSeconds;
+#if !UNITY
         private IAmazonCognitoIdentity cib;
+#else
+        private AmazonCognitoIdentityClient cib;
+#endif
+#if !UNITY
         private IAmazonSecurityTokenService sts;
-        private bool IsIdentitySet { get { return !string.IsNullOrEmpty(identityId); } }
+#else
+        private AmazonSecurityTokenServiceClient sts;
+#endif
+        private bool IsIdentitySet
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(identityId))
+                {
+                    identityId = GetCachedIdentityId();
+                }
+                return !string.IsNullOrEmpty(identityId);
+            }
+        }
 
         // Updates IdentityId to new value and fires IdentityChangedEvent
         private void UpdateIdentity(string newIdentityId)
@@ -220,6 +238,16 @@ namespace Amazon.CognitoIdentity
         }
 
         /// <summary>
+        /// Returns if the providerName is present in the Logins Collection.
+        /// </summary>
+        /// <param name="providerName">The provider name for the login (i.e. graph.facebook.com)</param>
+        /// <returns>true if the provider name is present in the logins collection, else false</returns>
+        public bool ContainsProvider(string providerName)
+        {
+            return Logins.ContainsKey(providerName);
+        }
+
+        /// <summary>
         /// Removes a provider from the collection of logins.
         /// </summary>
         /// <param name="providerName">The provider name for the login (i.e. graph.facebook.com)</param>
@@ -264,14 +292,20 @@ namespace Amazon.CognitoIdentity
 
         private string GetIdentityId(RefreshIdentityOptions options)
         {
-            if (!IsIdentitySet || options == RefreshIdentityOptions.Refresh)
+            // Locking so that concurrent calls do not make separate network calls,
+            // and instead wait for the first caller to cache the Identity ID.
+            lock (refreshIdLock)
             {
-                _identityState = RefreshIdentity();
-                if (!string.IsNullOrEmpty(_identityState.LoginProvider))
+                if (!IsIdentitySet || options == RefreshIdentityOptions.Refresh)
                 {
-                    Logins[_identityState.LoginProvider] = _identityState.LoginToken;
+                    _identityState = RefreshIdentity();
+
+                    if (!string.IsNullOrEmpty(_identityState.LoginProvider))
+                    {
+                        Logins[_identityState.LoginProvider] = _identityState.LoginToken;
+                    }
+                    UpdateIdentity(_identityState.IdentityId);
                 }
-                UpdateIdentity(_identityState.IdentityId);
             }
             return identityId;
         }
@@ -292,7 +326,7 @@ namespace Amazon.CognitoIdentity
                     IdentityPoolId = IdentityPoolId,
                     Logins = Logins
                 };
-#if BCL
+#if BCL || UNITY
                 var response = cib.GetId(getIdRequest);
 #else
                 var response = Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<GetIdResponse>(() => cib.GetIdAsync(getIdRequest));
@@ -447,9 +481,13 @@ namespace Amazon.CognitoIdentity
             UnAuthRoleArn = unAuthRoleArn;
             AuthRoleArn = authRoleArn;
             Logins = new Dictionary<string, string>(StringComparer.Ordinal);
+#if !UNITY
             cib = cibClient;
             sts = stsClient;
-
+#else
+            cib = (AmazonCognitoIdentityClient)cibClient;
+            sts = (AmazonSecurityTokenServiceClient)stsClient;
+#endif
             //check cache for identity id
             string cachedIdentity = GetCachedIdentityId();
 

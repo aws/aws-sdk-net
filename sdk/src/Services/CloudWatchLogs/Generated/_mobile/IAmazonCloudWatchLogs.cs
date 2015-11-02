@@ -280,7 +280,7 @@ namespace Amazon.CloudWatchLogs
         /// by specifying the <code class="code">limit</code> parameter in the request. 
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

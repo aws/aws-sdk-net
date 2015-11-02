@@ -487,7 +487,7 @@ namespace Amazon.DeviceFarm
         /// Returns the number of unmetered iOS and/or unmetered Android devices that have been
         /// purchased by the account.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

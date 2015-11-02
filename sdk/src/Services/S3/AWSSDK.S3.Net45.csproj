@@ -83,37 +83,43 @@
     <Compile Include="Custom\Model\_bcl45\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\Transfer\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Transfer\Internal\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Transfer\Internal\_async\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Transfer\Internal\_bcl\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Transfer\Internal\_bcl45\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Transfer\_async\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Transfer\_bcl\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Transfer\_bcl45\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Custom\Util\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\Util\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\Util\_bcl+unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+pcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+pcl\Transfer\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+pcl\Transfer\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+pcl\Transfer\Internal\_async\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+pcl\Transfer\Internal\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+pcl\Transfer\Internal\_bcl45\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+pcl\Transfer\_async\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+pcl\Transfer\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+pcl\Transfer\_bcl45\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\_bcl\Encryption\*.cs">
@@ -149,7 +155,6 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

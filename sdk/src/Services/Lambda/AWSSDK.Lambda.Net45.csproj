@@ -67,6 +67,9 @@
     <Compile Include="Custom\Model\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Generated\*.cs">
       <SubType>Code</SubType>
     </Compile>

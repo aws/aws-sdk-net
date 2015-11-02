@@ -610,7 +610,7 @@ namespace Amazon.CloudSearch
         /// target="_blank">Getting Information about a Search Domain</a> in the <i>Amazon CloudSearch
         /// Developer Guide</i>.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -853,7 +853,7 @@ namespace Amazon.CloudSearch
         /// <summary>
         /// Lists all search domains owned by an account.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

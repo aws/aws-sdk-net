@@ -76,6 +76,9 @@
     <Compile Include="Custom\DataModel\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\DataModel\_bcl+pcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\DataModel\_bcl45\*.cs">
       <SubType>Code</SubType>
     </Compile>

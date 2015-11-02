@@ -701,7 +701,7 @@ namespace Amazon.ElastiCache
         /// for the removed nodes is displayed.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -760,7 +760,7 @@ namespace Amazon.ElastiCache
         /// The <i>DescribeCacheEngineVersions</i> action returns a list of the available cache
         /// engines and their versions.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -811,7 +811,7 @@ namespace Amazon.ElastiCache
         /// descriptions. If a cache parameter group name is specified, the list will contain
         /// only the descriptions for that group.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -903,7 +903,7 @@ namespace Amazon.ElastiCache
         /// descriptions. If a cache security group name is specified, the list will contain only
         /// the description of that group.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -964,7 +964,7 @@ namespace Amazon.ElastiCache
         /// If a subnet group name is specified, the list will contain only the description of
         /// that group.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1056,7 +1056,7 @@ namespace Amazon.ElastiCache
         /// you can retrieve up to 14 days' worth of events if necessary.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1113,7 +1113,7 @@ namespace Amazon.ElastiCache
         /// replication group. If no identifier is specified, <i>DescribeReplicationGroups</i>
         /// returns information about all replication groups.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1172,7 +1172,7 @@ namespace Amazon.ElastiCache
         /// The <i>DescribeReservedCacheNodes</i> action returns information about reserved cache
         /// nodes for this account, or about a specified reserved cache node.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1231,7 +1231,7 @@ namespace Amazon.ElastiCache
         /// The <i>DescribeReservedCacheNodesOfferings</i> action lists available reserved cache
         /// node offerings.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1292,7 +1292,7 @@ namespace Amazon.ElastiCache
         /// describe a single snapshot, or just the snapshots associated with a particular cache
         /// cluster.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

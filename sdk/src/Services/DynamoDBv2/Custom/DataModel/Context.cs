@@ -16,6 +16,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DocumentModel;
 
 namespace Amazon.DynamoDBv2.DataModel
@@ -49,7 +50,7 @@ namespace Amazon.DynamoDBv2.DataModel
         
         #region Constructors
 
-#if !PCL
+#if !(PCL || UNITY)
 
         /// <summary>
         /// Constructs a DynamoDBContext object with a default AmazonDynamoDBClient
@@ -106,8 +107,9 @@ namespace Amazon.DynamoDBv2.DataModel
             if (client == null) throw new ArgumentNullException("client");
 
             this.ConverterCache = new Dictionary<Type, IPropertyConverter>();
+#if !UNITY
             this.ConverterCache.Add(typeof(S3Link), new S3Link.S3LinkConverter(this));
-
+#endif
             this.Client = client;
             this.tablesMap = new Dictionary<string, Table>();
             this.ownClient = ownClient;

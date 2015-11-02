@@ -144,7 +144,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 
         private MobileAnalyticsManager(string appID, AWSCredentials credentials, RegionEndpoint regionEndpoint, MobileAnalyticsManagerConfig maConfig)
         {
-#if PCL
+#if PCL||UNITY
             this.ClientContext = new ClientContext(appID);
 #elif BCL
             if (null == maConfig)
