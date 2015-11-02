@@ -28,58 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the results of a simulation.
+    /// Contains the result of the simulation of a single API action call on a single resource.
     /// 
     ///  
     /// <para>
-    /// This data type is used by the return parameter of <code><a>SimulatePolicy</a></code>.
+    /// This data type is used by a member of the <a>EvaluationResult</a> data type.
     /// </para>
     /// </summary>
-    public partial class EvaluationResult
+    public partial class ResourceSpecificResult
     {
-        private string _evalActionName;
-        private PolicyEvaluationDecisionType _evalDecision;
         private Dictionary<string, string> _evalDecisionDetails = new Dictionary<string, string>();
+        private PolicyEvaluationDecisionType _evalResourceDecision;
         private string _evalResourceName;
         private List<Statement> _matchedStatements = new List<Statement>();
         private List<string> _missingContextValues = new List<string>();
-        private List<ResourceSpecificResult> _resourceSpecificResults = new List<ResourceSpecificResult>();
-
-        /// <summary>
-        /// Gets and sets the property EvalActionName. 
-        /// <para>
-        /// The name of the API action tested on the indicated resource.
-        /// </para>
-        /// </summary>
-        public string EvalActionName
-        {
-            get { return this._evalActionName; }
-            set { this._evalActionName = value; }
-        }
-
-        // Check to see if EvalActionName property is set
-        internal bool IsSetEvalActionName()
-        {
-            return this._evalActionName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property EvalDecision. 
-        /// <para>
-        /// The result of the simulation.
-        /// </para>
-        /// </summary>
-        public PolicyEvaluationDecisionType EvalDecision
-        {
-            get { return this._evalDecision; }
-            set { this._evalDecision = value; }
-        }
-
-        // Check to see if EvalDecision property is set
-        internal bool IsSetEvalDecision()
-        {
-            return this._evalDecision != null;
-        }
 
         /// <summary>
         /// Gets and sets the property EvalDecisionDetails. 
@@ -88,8 +50,7 @@ namespace Amazon.IdentityManagement.Model
         /// IAM policies and resource policies, this parameter explains how each set of policies
         /// contributes to the final evaluation decision. When simulating cross-account access
         /// to a resource, both the resource-based policy and the caller's IAM policy must grant
-        /// access. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-        /// IAM Roles Differ from Resource-based Policies</a>
+        /// access.
         /// </para>
         /// </summary>
         public Dictionary<string, string> EvalDecisionDetails
@@ -105,9 +66,28 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EvalResourceDecision. 
+        /// <para>
+        /// The result of the simulation of the simulated API action on the resource specified
+        /// in <code>EvalResourceName</code>.
+        /// </para>
+        /// </summary>
+        public PolicyEvaluationDecisionType EvalResourceDecision
+        {
+            get { return this._evalResourceDecision; }
+            set { this._evalResourceDecision = value; }
+        }
+
+        // Check to see if EvalResourceDecision property is set
+        internal bool IsSetEvalResourceDecision()
+        {
+            return this._evalResourceDecision != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EvalResourceName. 
         /// <para>
-        /// The ARN of the resource that the indicated API action was tested on.
+        /// The name of the simulated resource, in Amazon Resource Name (ARN) format.
         /// </para>
         /// </summary>
         public string EvalResourceName
@@ -126,9 +106,9 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property MatchedStatements. 
         /// <para>
         /// A list of the statements in the input policies that determine the result for this
-        /// scenario. Remember that even if multiple statements allow the action on the resource,
-        /// if only one statement denies that action, then the explicit deny overrides any allow,
-        /// and the deny statement is the only entry included in the result.
+        /// part of the simulation. Remember that even if multiple statements allow the action
+        /// on the resource, if <i>any</i> statement denies that action, then the explicit deny
+        /// overrides any allow, and the deny statement is the only entry included in the result.
         /// </para>
         /// </summary>
         public List<Statement> MatchedStatements
@@ -150,13 +130,6 @@ namespace Amazon.IdentityManagement.Model
         /// not provided by one of the input parameters. To discover the context keys used by
         /// a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or <a>GetContextKeysForPrincipalPolicy</a>.
         /// </para>
-        ///  <caution> 
-        /// <para>
-        /// If the response includes any keys in this list, then the reported results might be
-        /// untrustworthy because the simulation could not completely evaluate all of the conditions
-        /// specified in the policies that would occur in a real world request.
-        /// </para>
-        ///  </caution>
         /// </summary>
         public List<string> MissingContextValues
         {
@@ -168,25 +141,6 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetMissingContextValues()
         {
             return this._missingContextValues != null && this._missingContextValues.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ResourceSpecificResults. 
-        /// <para>
-        /// The individual results of the simulation of the API action specified in EvalActionName
-        /// on each resource.
-        /// </para>
-        /// </summary>
-        public List<ResourceSpecificResult> ResourceSpecificResults
-        {
-            get { return this._resourceSpecificResults; }
-            set { this._resourceSpecificResults = value; }
-        }
-
-        // Check to see if ResourceSpecificResults property is set
-        internal bool IsSetResourceSpecificResults()
-        {
-            return this._resourceSpecificResults != null && this._resourceSpecificResults.Count > 0; 
         }
 
     }

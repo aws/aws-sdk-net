@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EvaluationResult Object
+    /// Response Unmarshaller for ResourceSpecificResult Object
     /// </summary>  
-    public class EvaluationResultUnmarshaller : IUnmarshaller<EvaluationResult, XmlUnmarshallerContext>, IUnmarshaller<EvaluationResult, JsonUnmarshallerContext>
+    public class ResourceSpecificResultUnmarshaller : IUnmarshaller<ResourceSpecificResult, XmlUnmarshallerContext>, IUnmarshaller<ResourceSpecificResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EvaluationResult Unmarshall(XmlUnmarshallerContext context)
+        public ResourceSpecificResult Unmarshall(XmlUnmarshallerContext context)
         {
-            EvaluationResult unmarshalledObject = new EvaluationResult();
+            ResourceSpecificResult unmarshalledObject = new ResourceSpecificResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,23 +54,17 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("EvalActionName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.EvalActionName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("EvalDecision", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.EvalDecision = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("EvalDecisionDetails/entry", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.EvalDecisionDetails.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("EvalResourceDecision", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EvalResourceDecision = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("EvalResourceName", targetDepth))
@@ -93,13 +87,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.MissingContextValues.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("ResourceSpecificResults/member", targetDepth))
-                    {
-                        var unmarshaller = ResourceSpecificResultUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.ResourceSpecificResults.Add(item);
-                        continue;
-                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -115,18 +102,18 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EvaluationResult Unmarshall(JsonUnmarshallerContext context)
+        public ResourceSpecificResult Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static EvaluationResultUnmarshaller _instance = new EvaluationResultUnmarshaller();        
+        private static ResourceSpecificResultUnmarshaller _instance = new ResourceSpecificResultUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EvaluationResultUnmarshaller Instance
+        public static ResourceSpecificResultUnmarshaller Instance
         {
             get
             {

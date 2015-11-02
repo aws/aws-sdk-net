@@ -122,6 +122,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetResourceHandlingOption())
+                {
+                    request.Parameters.Add("ResourceHandlingOption", StringUtils.FromString(publicRequest.ResourceHandlingOption));
+                }
                 if(publicRequest.IsSetResourceOwner())
                 {
                     request.Parameters.Add("ResourceOwner", StringUtils.FromString(publicRequest.ResourceOwner));

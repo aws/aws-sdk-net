@@ -3353,7 +3353,7 @@ namespace Amazon.IdentityManagement
         /// to be included as a part of a real HTML request.
         /// </para>
         /// </summary>
-        /// <param name="policyInputList">A list of policies for which you want list of context keys used in <code>Condition</code> elements.</param>
+        /// <param name="policyInputList">A list of policies for which you want list of context keys used in <code>Condition</code> elements. Each document is specified as a string containing the complete, valid JSON text of an IAM policy.</param>
         /// 
         /// <returns>The response from the GetContextKeysForCustomPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
@@ -3416,7 +3416,7 @@ namespace Amazon.IdentityManagement
         /// to be included as a part of a real HTML request.
         /// </para>
         /// </summary>
-        /// <param name="policyInputList">A list of policies for which you want list of context keys used in <code>Condition</code> elements.</param>
+        /// <param name="policyInputList">A list of policies for which you want list of context keys used in <code>Condition</code> elements. Each document is specified as a string containing the complete, valid JSON text of an IAM policy.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -4755,15 +4755,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists the account aliases associated with the account. For information about using
-        /// an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>. 
-        /// 
-        ///  
-        /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. 
-        /// </para>
+        /// Lists the account alias associated with the account (Note: you can have only one).
+        /// For information about using an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+        /// an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// 
         /// <returns>The response from the ListAccountAliases service method, as returned by IdentityManagementService.</returns>
@@ -4777,15 +4771,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists the account aliases associated with the account. For information about using
-        /// an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>. 
-        /// 
-        ///  
-        /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. 
-        /// </para>
+        /// Lists the account alias associated with the account (Note: you can have only one).
+        /// For information about using an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+        /// an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAliases service method.</param>
         /// 
@@ -4803,15 +4791,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists the account aliases associated with the account. For information about using
-        /// an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>. 
-        /// 
-        ///  
-        /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. 
-        /// </para>
+        /// Lists the account alias associated with the account (Note: you can have only one).
+        /// For information about using an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+        /// an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="cancellationToken"> ttd1
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
