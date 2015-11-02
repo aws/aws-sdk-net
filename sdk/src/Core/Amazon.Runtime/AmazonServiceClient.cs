@@ -131,6 +131,34 @@ namespace Amazon.Runtime
             return response;
         }
 
+#if UNITY
+        protected IAsyncResult BeginInvoke<TRequest>(TRequest request,
+           IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller, AsyncOptions asyncOptions,
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper)
+           where TRequest : AmazonWebServiceRequest
+        {
+            ThrowIfDisposed();
+
+            asyncOptions = asyncOptions ?? new AsyncOptions();
+            var executionContext = new AsyncExecutionContext(
+                new AsyncRequestContext(this.Config.LogMetrics)
+                {
+                    ClientConfig = this.Config,
+                    Marshaller = marshaller,
+                    OriginalRequest = request,
+                    Signer = Signer,
+                    Unmarshaller = unmarshaller,
+                    Action = callbackHelper,
+                    AsyncOptions = asyncOptions,
+                    IsAsync = true
+                },
+                new AsyncResponseContext()
+            );
+
+            return this.RuntimePipeline.InvokeAsync(executionContext);
+        }
+#endif
+
 #if AWS_ASYNC_API 
 
         protected System.Threading.Tasks.Task<TResponse> InvokeAsync<TRequest, TResponse>(TRequest request, 
@@ -307,6 +335,9 @@ namespace Amazon.Runtime
 #if BCL || BCL45
             var httpRequestFactory = new HttpWebRequestFactory();
             var httpHandler = new HttpHandler<Stream>(httpRequestFactory, this);
+#elif UNITY
+            var httpRequestFactory = new UnityWebRequestFactory();
+            var httpHandler = new HttpHandler<string>(httpRequestFactory, this);
 #else
             var httpRequestFactory = new HttpRequestMessageFactory(this.Config);
             var httpHandler = new HttpHandler<System.Net.Http.HttpContent>(httpRequestFactory, this);
@@ -339,6 +370,9 @@ namespace Amazon.Runtime
                     preMarshallHandler,
                     errorCallbackHandler,
                     new MetricsHandler()
+#if UNITY
+                    ,new ThreadPoolExecutionHandler(10)//remove the hardcoded to unity config
+#endif
                 },
                 _logger
             );

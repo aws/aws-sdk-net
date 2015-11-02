@@ -75,10 +75,17 @@ namespace Amazon.Runtime.Internal.Transform
             
             this.WebResponseData = responseData;
             this.MaintainResponseBody = maintainResponseBody;
-
-            long contentLength;
-            if (responseData != null && long.TryParse(responseData.GetHeaderValue("Content-Length"), out contentLength))
-            {
+			
+			long contentLength;
+			bool parsedContentLengthHeader = long.TryParse (responseData.GetHeaderValue ("Content-Length"), out contentLength);
+ 
+			//possible scenario in unity where the content length in header does not match responseData.ContentLength
+			//responseData.ContentLength represents actual bytes downloaded header value represents the length sent from the server.
+			//we will only try to setup crc32 in case the responseData.ContentLenth is same as the content lenght from the header.
+			//failing to do so may result in the stream being cut off in the middle (since the zip stream length is less than the responseData.ContentLength)
+			//or may result in a crc32 exception since the crc32 calcuated value for an unzipped stream will differ from the crc32 values for a zipped stream.
+			if (parsedContentLengthHeader && responseData.ContentLength.Equals (contentLength)) 
+			{
                 base.SetupCRCStream(responseData, responseStream, contentLength);
             }
 

@@ -79,6 +79,9 @@ namespace Amazon.Runtime.Internal
         {
             lock(_lock)
             {
+                if (_custom == null)
+                    _custom = new Dictionary<string, string>();
+
                 _custom.Add(key,value);
             }
         }
@@ -95,7 +98,7 @@ namespace Amazon.Runtime.Internal
                 _env = new Dictionary<string, string>();
                 _services = new Dictionary<string, IDictionary>();
 
-#if PCL
+#if PCL || UNITY
                  // client
                 _client.Add(CLIENT_ID_KEY, _clientID);
                 _client.Add(CLIENT_APP_TITLE_KEY, _appInfo.AppTitle);
@@ -150,10 +153,12 @@ namespace Amazon.Runtime.Internal
                     _env.Add(ENV_MODEL_KEY, _config.Model);
 #endif
                 // services
-                IDictionary mobileAnalyticsService = new Dictionary<string, string>();
-                mobileAnalyticsService.Add(SERVICE_MOBILE_ANALYTICS_APP_ID_KEY, AppID);
-                _services.Add(SERVICE_MOBILE_ANALYTICS_KEY, mobileAnalyticsService);
-
+                if (!string.IsNullOrEmpty(this.AppID))
+                {
+                    IDictionary mobileAnalyticsService = new Dictionary<string, string>();
+                    mobileAnalyticsService.Add(SERVICE_MOBILE_ANALYTICS_APP_ID_KEY, AppID);
+                    _services.Add(SERVICE_MOBILE_ANALYTICS_KEY, mobileAnalyticsService);
+                }
 
                 _clientContext = new Dictionary<string, IDictionary>();
                 _clientContext.Add(CLIENT_KEY, _client);

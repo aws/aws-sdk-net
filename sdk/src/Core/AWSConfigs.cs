@@ -426,11 +426,19 @@ namespace Amazon
 
         #region Internal members
 
-        internal static event PropertyChangedEventHandler PropertyChanged;
         internal const string LoggingDestinationProperty = "LogTo";
+
+        internal static PropertyChangedEventHandler mPropertyChanged;
+
+        internal static event PropertyChangedEventHandler PropertyChanged
+        {
+            add { mPropertyChanged += value; }
+            remove { mPropertyChanged -= value; }
+        }
+
         internal static void OnPropertyChanged(string name)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
+            PropertyChangedEventHandler handler = mPropertyChanged;
             if (handler != null)
             {
                 handler(null, new PropertyChangedEventArgs(name));
@@ -515,16 +523,21 @@ namespace Amazon
         /// <summary>
         /// Log using System.Diagnostics
         /// </summary>
-        SystemDiagnostics = 2
-            
-#if PCL    
+        SystemDiagnostics = 2       
+#if PCL 
         ,
-
         /// <summary>
         /// Log to a file
         /// </summary>
         File = 4
 #endif
+#if UNITY
+        ,
+        /// <summary>
+        /// Log using UnityEngine.Debug.
+        /// </summary>
+        UnityLogger = 8
+#endif  
     }
 
     /// <summary>

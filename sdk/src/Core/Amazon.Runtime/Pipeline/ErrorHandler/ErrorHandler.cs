@@ -41,6 +41,10 @@ namespace Amazon.Runtime.Internal
             {
                 return _exceptionHandlers;
             }
+            protected set
+            {
+                _exceptionHandlers = value;
+            }
         }
 
         /// <summary>
@@ -50,12 +54,18 @@ namespace Amazon.Runtime.Internal
         public ErrorHandler(ILogger logger)
         {
             this.Logger = logger;
-
+#if UNITY
+            this.ExceptionHandlers = new Dictionary<Type, IExceptionHandler>
+            {                
+                {typeof(UnityHttpErrorResponseException), new HttpErrorResponseExceptionHandler(this.Logger)}
+            };
+#else
             _exceptionHandlers = new Dictionary<Type, IExceptionHandler>
             {
                 {typeof(WebException), new WebExceptionHandler(this.Logger)},
                 {typeof(HttpErrorResponseException), new HttpErrorResponseExceptionHandler(this.Logger)}
             };
+#endif
         }
 
         /// <summary>

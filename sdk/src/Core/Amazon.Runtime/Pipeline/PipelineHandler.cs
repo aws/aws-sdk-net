@@ -109,11 +109,7 @@ namespace Amazon.Runtime.Internal
 
                 var asyncResult = executionContext.ResponseContext.AsyncResult;
                 asyncResult.Exception = exception;
-                asyncResult.SignalWaitHandle();
-                if (asyncResult.AsyncCallback != null)
-                {
-                    asyncResult.AsyncCallback(asyncResult);
-                }
+                asyncResult.InvokeCallback();
             }
         }
 
@@ -141,12 +137,8 @@ namespace Amazon.Runtime.Internal
                 executionContext.ResponseContext.AsyncResult.Response =
                     executionContext.ResponseContext.Response;                
                 
-                var asyncResult = executionContext.ResponseContext.AsyncResult;                
-                asyncResult.SignalWaitHandle();
-                if (asyncResult.AsyncCallback != null)
-                {
-                    asyncResult.AsyncCallback(asyncResult);
-                }
+                var asyncResult = executionContext.ResponseContext.AsyncResult;
+                asyncResult.InvokeCallback();
             }
         }
 #endif

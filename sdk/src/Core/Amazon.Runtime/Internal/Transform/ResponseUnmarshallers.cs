@@ -21,6 +21,7 @@ using System.Xml;
 using System.IO;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
+using System.Globalization;
 
 namespace Amazon.Runtime.Internal.Transform
 {
@@ -71,9 +72,14 @@ namespace Amazon.Runtime.Internal.Transform
 
         #endregion
 
+        public static string GetDefaultErrorMessage<T>() where T : Exception
+        {
+            return string.Format(CultureInfo.InvariantCulture, "An exception of type {0}, please check the error log for mode details.", typeof(T).Name);
+        }
+
         protected abstract UnmarshallerContext ConstructUnmarshallerContext(
             Stream responseStream, bool maintainResponseBody, IWebResponseData response);
-        
+
         protected virtual bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse)
         {
             return readEntireResponse;
@@ -195,7 +201,7 @@ namespace Amazon.Runtime.Internal.Transform
         }
 
         public abstract AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext input);
-        
+
         public abstract AmazonServiceException UnmarshallException(JsonUnmarshallerContext input, Exception innerException, HttpStatusCode statusCode);
 
         protected override UnmarshallerContext ConstructUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData response)
