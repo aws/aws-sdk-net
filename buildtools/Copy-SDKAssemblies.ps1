@@ -65,7 +65,12 @@ Function Copy-SDKAssemblies
         # The public key token that all assemblies should have. Optional.
         [Parameter()]
         [string]
-        $PublicKeyToken = ""
+        $PublicKeyToken = "",
+		
+		#added to support unity assemblies
+		[Parameter()]
+		[bool]
+		$ValidatePublicKeyToken = $true
     )
 
     Process
@@ -89,13 +94,23 @@ Function Copy-SDKAssemblies
             }
                         
             $filter = "bin\$BuildType\$p\AWSSDK.$servicename.*"
-            $files = gci -Path $dir.FullName -Filter $filter -ErrorAction Stop
-
+			
+			#unity sdk doesnot support all services currently
+			$sourceDirectory = $null
+			$sourceDirectory = [System.IO.Path]::Combine($dir.FullName, 'bin', $BuildType, $p)
+			Write-Debug "Checking if $sourceDirectory exists"
+			if(!(Test-Path $sourceDirectory))
+			{
+				return
+			}
+			
+			$files = gci -Path $dir.FullName -Filter $filter -ErrorAction Stop
+			
             foreach ($a in $files)
             {
                 $assemblyName = $a.Name
                 $assemblyExtension = [System.IO.Path]::GetExtension($assemblyName).ToLower()
-                if ($assemblyExtension -eq ".dll")
+                if ($assemblyExtension -eq ".dll" -And $ValidatePublicKeyToken)
                 {
                     $aToken = Get-PublicKeyToken -AssemblyPath $a.FullName
                     Write-Debug "File $assemblyName has token = $aToken"
@@ -118,10 +133,14 @@ Function Copy-SDKAssemblies
 
 Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -Platforms @("net35","net45","pcl","monoandroid","Xamarin.iOS10","windows8","wpa81") -BuildType $BuildType
 
+#for unity the assemblies are not signed, so we copy them seperately and override the check
+Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -Platforms @("unity") -BuildType $BuildType -ValidatePublicKeyToken $false
+
 $services = gci ..\sdk\src\services
 foreach ($s in $services)
 {
-    Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -BuildType $BuildType
+    Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck
+	Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -Platforms @("unity") -ValidatePublicKeyToken $false
 }
 
 #Write-Verbose "Copying assembly versions manifest..."

@@ -338,6 +338,23 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// returns if an operation is supported by the unity API or not.
+        /// </summary>
+        public bool AvailableInWWW(Operation operation)
+        {
+            if (Customizations.UnityExclusionApi.Contains(operation.Name))
+                return false;
+
+            if (!Customizations.AllowHttpMethodOverride)
+            {
+                if (!(operation.HttpMethod.ToUpper().Equals("GET") || operation.HttpMethod.ToUpper().Equals("POST")))
+                    return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
         /// Capitalizes the first character of a string, used to create proper naming for services, attributes, and operations
         /// </summary>
         /// <param name="text">The string to capitalize the first character of</param>

@@ -13,6 +13,17 @@
             }
         ]
     },
+	"unityOverrides":{
+		"runtimePipelineOverride":{
+			"overrides":[
+				{ "operation":"remove","targetType":"Amazon.Runtime.Internal.CredentialsRetriever"},
+				{ "operation":"addBefore","newType":"Amazon.CognitoSync.Internal.CognitoCredentialsRetriever","targetType":"Amazon.Runtime.Internal.Marshaller","constructorInput":"this.Credentials"},
+                { "operation": "addAfter", "newType": "Amazon.CognitoSync.Internal.AmazonCognitoSyncPostMarshallHandler", "targetType": "Amazon.Runtime.Internal.Marshaller" },
+                { "operation": "addAfter", "newType": "Amazon.CognitoSync.Internal.AmazonCognitoSyncPostSignHandler", "targetType": "Amazon.Runtime.Internal.Signer" }
+			 ]
+		},
+		"xHttpMethodOverride":true
+	},
     "simpleMethods" : {
         "operations" : {
             "GetIdentityPoolConfiguration" : {

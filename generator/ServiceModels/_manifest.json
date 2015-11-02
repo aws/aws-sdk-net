@@ -7,7 +7,7 @@
             "defineConstants": ";BCL;BCL35;AWS_APM_API;CODE_ANALYSIS;LOCAL_FILE",
             "binSubFolder": "net35",
             "template": "BclProjectFile",
-            "platformCodeFolders": [ "_bcl", "_bcl35", "_bcl+sl" ],
+            "platformCodeFolders": [ "_bcl", "_bcl35", "_bcl+sl", "_bcl+unity", "_bcl+pcl" ],
             "nugetTargetPlatform": "net35"
         },
         {
@@ -17,7 +17,7 @@
             "defineConstants": ";BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE",
             "binSubFolder": "net45",
             "template": "BclProjectFile",
-            "platformCodeFolders": [ "_bcl", "_bcl45", "_async", "_bcl+sl" ],
+            "platformCodeFolders": [ "_bcl", "_bcl45", "_async", "_bcl+sl", "_bcl+unity", "_bcl+pcl" ],
             "nugetTargetPlatform": "net45"
         },
         {
@@ -27,7 +27,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
             "binSubFolder": "pcl",
             "template": "PCLProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference", "_pcl-sl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference", "_pcl-sl", "_bcl+pcl" ],
             "nugetTargetPlatform": "portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10",
             
             "extraTestProjects": [
@@ -52,7 +52,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
             "binSubFolder": "monoandroid",
             "template": "AndroidProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_android", "_pcl-sl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_android", "_pcl-sl", "_bcl+pcl" ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "MonoAndroid10"
         },
@@ -63,7 +63,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
             "binSubFolder": "Xamarin.iOS10",
             "template": "IOSProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_ios", "_pcl-sl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_ios", "_pcl-sl", "_bcl+pcl" ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "xamarinios10"
         },
@@ -74,7 +74,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
             "binSubFolder": "windows8",
             "template": "Win8ProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8", "_pcl-sl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8", "_pcl-sl", "_bcl+pcl" ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "netcore45"
         },
@@ -85,7 +85,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
             "binSubFolder": "wpa81",
             "template": "WinPhone81ProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhone81", "_pcl-sl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhone81", "_pcl-sl", "_bcl+pcl" ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "wpa81"
         },
@@ -96,9 +96,18 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;WP_SL",
             "binSubFolder": "wp8",
             "template": "WinPhoneSilverlight8ProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhoneSilverlight8", "_bcl+sl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhoneSilverlight8", "_bcl+sl", "_bcl+pcl" ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "wp8"
+        },
+        {
+            "name": "Unity",
+            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
+            "targetFramework": "v3.5",
+            "defineConstants": "",
+            "binSubFolder": "unity",
+            "template": "UnityProjectFile",
+            "platformCodeFolders": [ "_unity", "_bcl+unity" ]
         }
     ],
     "models": [
@@ -273,6 +282,7 @@
             "service-url": "http://cognito-identity.us-east-1.amazonaws.com",
             "synopsis": "Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.",
             "dependencies": [ "SecurityToken" ],
+            "platforms": [ "Unity" ],
             "enable-xamarin-component": true
         },
         {
@@ -285,7 +295,8 @@
             "authentication-service-name": "cognito-sync",
             "service-url": "http://cognito-sync.us-east-1.amazonaws.com",
             "synopsis": "This is the low level service client for Amazon Cognito Sync. Most users of Amazon Cognito Sync should use the high level abstraction AWSSDK.SyncManager to interact with this service.",
-            "dependencies": [ "CognitoIdentity" ]
+            "dependencies": [ "CognitoIdentity" ],
+            "platforms": [ "Unity" ]
         },
         {
             "active": true,
@@ -337,8 +348,8 @@
             "service-url": "https://dynamodb.us-east-1.amazonaws.com/",
             "max-retries": 10,
             "synopsis": "Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.",
-            "enable-xamarin-component": true
-        
+            "enable-xamarin-component": true,
+            "platforms": [ "Unity" ]
         },
         {
             "active": true,
@@ -525,7 +536,8 @@
             "region-lookup-name": "kinesis",
             "authentication-service-name": "kinesis",
             "service-url": "https://kinesis.us-east-1.amazonaws.com/",
-            "synopsis": "Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams."
+            "synopsis": "Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.",
+            "platforms": [ "Unity" ]
         },
         {
             "active": true,
@@ -534,7 +546,8 @@
             "base-name": "Lambda",
             "region-lookup-name": "lambda",
             "authentication-service-name": "lambda",
-            "synopsis": "AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you, making it easy to build applications that respond quickly to new information."
+            "synopsis": "AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you, making it easy to build applications that respond quickly to new information.",
+            "platforms": [ "Unity" ]
         },
         {
             "active": true,
@@ -584,7 +597,8 @@
                 "Net45": [ { "name": "System.Data.SQLite", "version": "1.0.97.0" } ],
                 "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ],
                 "iOS": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ]
-            }
+            },
+            "platforms": [ "Unity" ]
         },
         {
             "active": true,
@@ -642,7 +656,8 @@
             "region-lookup-name": "s3",
             "service-url": "https://s3.amazonaws.com/",
             "authentication-service-name": "s3",
-            "synopsis": "Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage."
+            "synopsis": "Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage.",
+            "platforms": [ "Unity" ]
         },
         {
             "active": true,
@@ -654,7 +669,8 @@
             "authentication-service-name": "sts",
             "default-region": "USEast1",
             "synopsis": "The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.",
-            "tags":  [ "STS" ]
+            "tags": [ "STS" ],
+            "platforms": [ "Unity" ]
         },
         {
             "active": true,
@@ -674,7 +690,8 @@
             "region-lookup-name": "email",
             "service-url": "https://email.us-east-1.amazonaws.com/",
             "synopsis": "Amazon SES is an outbound-only email-sending service that provides an easy, cost-effective way for you to send email.",
-            "tags":  [ "SES" ]
+            "tags": [ "SES" ],
+            "platforms": [ "Unity" ]
         },
         {
             "active": true,
@@ -684,7 +701,8 @@
             "region-lookup-name": "sns",
             "authentication-service-name": "sns",
             "synopsis": "Amazon Simple Notification Service (Amazon SNS) is a fast, flexible, fully managed push messaging service. Amazon SNS makes it simple and cost-effective to push notifications to Apple, Google, Fire OS, and Windows devices, as well as Android devices in China with Baidu Cloud Push.  You can also use SNS to push notifications to internet connected smart devices, as well as other distributed services.",
-            "tags":  [ "SNS" ]
+            "platforms": [ "Unity" ],
+            "tags": [ "SNS" ]
         },
         {
             "active": true,
@@ -701,7 +719,8 @@
             "base-name": "SQS",
             "region-lookup-name": "sqs",
             "authentication-service-name": "sqs",
-            "synopsis": "Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service. SQS makes it simple and cost-effective to decouple the components of a cloud application."
+            "synopsis": "Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service. SQS makes it simple and cost-effective to decouple the components of a cloud application.",
+            "platforms": [ "Unity" ]
         },
         {
             "active": true,

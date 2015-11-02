@@ -34,3 +34,5 @@ packages
 /sdk/xamarin-components/DynamoDBv2/*.xam
 /sdk/xamarin-components/MobileAnalytics/*.xam
 /sdk/xamarin-components/S3/*.xam
+/sdk/test/Unity3DTests/Assets/Resources/settings.txt
+/sdk/test/Unity3DTests/Assets/Resources/settings.txt.meta

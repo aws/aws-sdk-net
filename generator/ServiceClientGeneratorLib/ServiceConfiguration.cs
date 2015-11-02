@@ -162,6 +162,29 @@ namespace ServiceClientGenerator
 
         public bool SkipV1 { get; set; }
 
+        public IEnumerable<string> SupportedMobilePlatforms
+        {
+            set
+            {
+                if (value == null)
+                    return;
+
+                foreach (var platform in value)
+                {
+                    if (string.Equals(platform, "Unity", StringComparison.OrdinalIgnoreCase)) 
+                    {
+                        this.SupportedInUnity = true;
+                    }
+                }
+            }
+        }
+
+        public bool SupportedInUnity
+        {
+            get;
+            private set;
+        }
+
         public bool IsChildConfig
         {
             get

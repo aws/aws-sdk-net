@@ -51,6 +51,21 @@
 <#+
     }
 
+	// Generates documentation for async calls for unity based on the operation name
+	public void AddUnityAsyncDocumentation(string operationName)
+    {
+#>
+        /// <summary>
+        /// Initiates the asynchronous execution of the <#=operationName#> operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the <#=operationName#> operation on Amazon<#=this.Config.BaseName#>Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+<#+
+    }
+
     // Adds documentation to the begin operation based on the name
     public void AddBeginAsyncDocumentation(string operationName)
     {
@@ -151,15 +166,26 @@
 
     public void FormatOperationDocumentationSync(Operation operation, bool includeRequest)
     {
-        FormatOperationDocumentationHelper(operation, includeRequest, false);
-    }
-    public void FormatOperationDocumentationAsync(Operation operation, bool includeRequest)
-    {
-        FormatOperationDocumentationHelper(operation, includeRequest, true);
+        FormatOperationDocumentationHelper(operation, includeRequest, false, false);
     }
 
+    public void FormatOperationDocumentationAsync(Operation operation, bool includeRequest)
+    {
+        FormatOperationDocumentationHelper(operation, includeRequest, true, false);
+    }
+
+	public void FormatUnityOperationDocumentationSync(Operation operation, bool includeRequest)
+	{
+		FormatOperationDocumentationHelper(operation, includeRequest, false, false);
+	}
+	
+	public void FormatUnityOperationDocumentationAsync(Operation operation, bool includeRequest)
+	{
+		FormatOperationDocumentationHelper(operation, includeRequest, true, true);
+	}
+
     // Documents the operation in a client or interface and optionally includes request param
-    private void FormatOperationDocumentationHelper(Operation operation, bool includeRequest, bool includeCancellationToken)
+    private void FormatOperationDocumentationHelper(Operation operation, bool includeRequest, bool isAsync, bool isUnity)
     {
         var documentation = CleanupDocumentation(operation.Documentation);
 
@@ -171,14 +197,33 @@
 #>
         /// </summary>
 <#+
-    if (includeCancellationToken)
+    if (isAsync && !isUnity)
     {
+
+	  // follows Async Pattern but is not unity
 #>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 <#+
     }
+	if(isUnity)
+	{
+		if(isAsync)
+		{
+			//is an Asynchronous call and is Unity
+#>
+		/// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+<#+
+		}
+#>
+		 
+		 /// <param name="options">
+		 ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+         ///     procedure using the AsyncState property.
+		 /// </param>
+<#+
+	}
     if (includeRequest)
     {
 #>
@@ -197,6 +242,47 @@
                 this.FormatExceptionDocumentation(exception);
             }
         }
+    }
+
+        // Generates operation documentation with a param tag for each member in the list
+        public void FormatUnityOperationDocumentation(Operation operation, List<Member> members, bool isSync)
+    {
+        var documentation = CleanupDocumentation(operation.Documentation);
+
+#>
+
+        /// <summary>
+<#+
+        WriteCommentBlock("        ", documentation);
+#>
+        /// </summary>
+<#+  foreach(var item in members)
+    {
+#>
+        /// <param name="<#=GeneratorHelpers.CamelCaseParam(item.PropertyName)#>"><#=item.GetParamDocumentationForOperation(operation.Name)#></param>
+<#+
+    }
+    if (!isSync)
+    {
+#>
+		/// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">
+		///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///     procedure using the AsyncState property.
+		/// </param>
+<#+
+    }
+#>
+        /// 
+        /// <returns>The response from the <#=operation.Name#> service method, as returned by <#=this.Config.BaseName#>.</returns>
+<#+
+		if (!this.Config.ServiceModel.Customizations.SuppressSimpleMethodExceptionDocs)
+		{
+			foreach(var exception in operation.Exceptions)
+			{
+				this.FormatExceptionDocumentation(exception);
+			}
+		}
     }
 
         // Generates operation documentation with a param tag for each member in the list
@@ -364,7 +450,7 @@
         }
 		return documentation;
     }
-
+ 
 
     // Generates the comment block for simple constructors, each member is added as a param tag with the shape's documentation or
     // a generic comment if no documentation is found
@@ -457,7 +543,79 @@ foreach (var member in docMembers)
         }
       }
 #>
+<#+
+    // Generates methods for the client that have request members as parameters for easy calls to the operation
+    // Only generates them if they are specified in the customizations of the service
+    public void AddSimpleClientMethodsForUnity(Operation operation, bool isSync)
+    {
+        if (this.Config.ServiceModel.Customizations.SimpleMethodsModel.CreateSimpleMethods(operation.Name))
+        {
+            var forms = this.Config.ServiceModel.Customizations.SimpleMethodsModel.SimpleMethods[operation.Name].Forms;
+            var members = this.Config.ServiceModel.FindShape(operation.RequestStructure.Name).Members;
 
+            foreach (var form in forms)
+            {
+                string currentParams = this.Config.ServiceModel.Customizations.SimpleMethodsModel.GetSimpleParameters(form, members);
+                var docMembers = this.Config.ServiceModel.Customizations.SimpleMethodsModel.GetFormMembers(form, members);
+
+        this.FormatUnityOperationDocumentation(operation, docMembers, isSync);
+        if (isSync)
+        {
+			if(operation.IsDeprecated)
+			{
+#>
+		[Obsolete("<#=operation.DeprecationMessage#>")]
+<#+		
+			}
+#>
+        public <#=operation.Name#>Response <#=operation.Name#>(<#=currentParams#>)
+<#+
+        }
+        else
+        {
+            if (!string.IsNullOrEmpty(currentParams))
+                currentParams += ", ";
+			if(operation.IsDeprecated)
+			{
+#>
+		[Obsolete("<#=operation.DeprecationMessage#>")]
+<#+		
+			}
+#>
+        public void <#=operation.Name#>Async(<#=currentParams#> AmazonServiceCallback<<#=operation.Name#>Request, <#=operation.Name#>Response> callback, AsyncOptions options = null)
+<#+
+        }
+#>
+        {
+            var request = new <#=operation.Name#>Request();
+<#+
+foreach (var member in docMembers)
+{
+#>
+            request.<#=member.PropertyName#> = <#=GeneratorHelpers.CamelCaseParam(member.PropertyName)#>;
+<#+
+        
+}
+        if (isSync)
+        {
+#>
+            return <#=operation.Name#>(request);
+<#+
+        }
+        else
+        {
+#>
+            <#=operation.Name#>Async(request, callback, options);
+<#+
+        }
+#>
+        }
+
+<#+
+          }
+        }
+      }
+#>
 <#+
     // Generates methods for the interface that have request members as parameters for easy calls to the operation
     // Only generates them if they are specified in the customizations of the service
@@ -504,7 +662,52 @@ foreach (var member in docMembers)
         }
       }
 #>
+<#+
+    // Generates methods for the interface that have request members as parameters for easy calls to the operation
+    // Only generates them if they are specified in the customizations of the service
+    public void AddSimpleClientMethodInterfacesForUnity(Operation operation, bool isSync)
+    {
+        if (this.Config.ServiceModel.Customizations.SimpleMethodsModel.CreateSimpleMethods(operation.Name))
+        {
+            var forms = this.Config.ServiceModel.Customizations.SimpleMethodsModel.SimpleMethods[operation.Name].Forms;
+            var members = this.Config.ServiceModel.FindShape(operation.RequestStructure.Name).Members;
 
+            foreach (var form in forms)
+            {
+                string currentParams = this.Config.ServiceModel.Customizations.SimpleMethodsModel.GetSimpleParameters(form, members);
+                var docMembers = this.Config.ServiceModel.Customizations.SimpleMethodsModel.GetFormMembers(form, members);
+
+        this.FormatUnityOperationDocumentation(operation, docMembers, isSync);
+        if (isSync)
+        {
+					if(operation.IsDeprecated)
+					{
+#>
+		[Obsolete("<#=operation.DeprecationMessage#>")]
+<#+		
+					}
+#>
+        <#=operation.Name#>Response <#=operation.Name#>(<#=currentParams#>);
+<#+
+        }
+        else
+        {
+            if (!string.IsNullOrEmpty(currentParams))
+                currentParams += ", ";
+				if(operation.IsDeprecated)
+				{
+#>
+		[Obsolete("<#=operation.DeprecationMessage#>")]
+<#+		
+				}
+#>
+        void <#=operation.Name#>Async(<#=currentParams#> AmazonServiceCallback<<#=operation.Name#>Request, <#=operation.Name#>Response> callback, AsyncOptions options = null);
+<#+
+          }
+                }
+        }
+      }
+#>
 
 <#+
     // Generates constructors for operation requests that have request members in the parameters for easy creation of requests
@@ -545,5 +748,3 @@ foreach (var member in docMembers)
         }
     }
 #>
-
-

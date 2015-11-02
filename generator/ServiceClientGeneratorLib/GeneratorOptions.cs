@@ -1,4 +1,5 @@
-﻿namespace ServiceClientGenerator
+﻿using System.IO;
+namespace ServiceClientGenerator
 {
     /// <summary>
     /// Command line options for the AWS SDK code generator.
@@ -86,12 +87,12 @@
 
             // default paths are relative to executing generator assembly
             // in bin/debug or bin/release
-            Manifest = @"..\..\..\ServiceModels\_manifest.json";
-            Versions = @"..\..\..\ServiceModels\_sdk-versions.json";
-            ModelsFolder = @"..\..\..\ServiceModels";
-            SdkRootFolder = @"..\..\..\..\sdk";
-            SamplesRootFolder = @"..\..\..\..\aws-sdk-net-samples";
-
+			Manifest = Path.Combine("..","..","..","ServiceModels","_manifest.json");
+            Versions = Path.Combine("..","..","..","ServiceModels","_sdk-versions.json");
+			ModelsFolder = Path.Combine ("..", "..", "..", "ServiceModels");
+			SdkRootFolder = Path.Combine ("..", "..", "..", "..", "sdk");
+			SamplesRootFolder = Path.Combine("..","..","..","..","aws-sdk-net-samples");
+			
             ServiceModels = string.Empty; // process all services
             CompileCustomizations = true;
             Clean = false;

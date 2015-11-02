@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+    #line 1 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class BaseGenerator : BaseGeneratorBase
     {
@@ -33,7 +33,7 @@ namespace ServiceClientGenerator.Generators
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 9 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 9 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 	
     // An object that contains all the information about a service
 	public ServiceConfiguration Config { get; set; }
@@ -46,7 +46,7 @@ namespace ServiceClientGenerator.Generators
         #line default
         #line hidden
         
-        #line 16 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 16 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(@"/*
  * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -69,21 +69,21 @@ this.Write(@"/*
         #line default
         #line hidden
         
-        #line 33 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 33 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(Path.GetFileName(this.Config.ModelPath)));
 
         
         #line default
         #line hidden
         
-        #line 33 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 33 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" service model.\r\n */\r\n");
 
         
         #line default
         #line hidden
         
-        #line 35 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 35 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -95,21 +95,21 @@ this.Write(" service model.\r\n */\r\n");
         #line default
         #line hidden
         
-        #line 41 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 41 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Initiates the asynchronous execution of the ");
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 43 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 43 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        /// <param name=\"reque" +
         "st\">Container for the necessary parameters to execute the ");
 
@@ -117,14 +117,14 @@ this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        ///
         #line default
         #line hidden
         
-        #line 46 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 46 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 46 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 46 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(@" operation.</param>
         /// <param name=""cancellationToken"">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -136,7 +136,73 @@ this.Write(@" operation.</param>
         #line default
         #line hidden
         
-        #line 51 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 51 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+    }
+
+	// Generates documentation for async calls for unity based on the operation name
+	public void AddUnityAsyncDocumentation(string operationName)
+    {
+
+        
+        #line default
+        #line hidden
+        
+        #line 57 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("        /// <summary>\r\n        /// Initiates the asynchronous execution of the ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 59 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 59 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        /// <param name=\"reque" +
+        "st\">Container for the necessary parameters to execute the ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 62 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 62 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(" operation on Amazon");
+
+        
+        #line default
+        #line hidden
+        
+        #line 62 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 62 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(@"Client.</param>
+        /// <param name=""callback"">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name=""options"">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+");
+
+        
+        #line default
+        #line hidden
+        
+        #line 66 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -148,21 +214,21 @@ this.Write(@" operation.</param>
         #line default
         #line hidden
         
-        #line 57 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 72 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Initiates the asynchronous execution of the ");
 
         
         #line default
         #line hidden
         
-        #line 59 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 74 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 59 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 74 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        /// <param name=\"reque" +
         "st\">Container for the necessary parameters to execute the ");
 
@@ -170,28 +236,28 @@ this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        ///
         #line default
         #line hidden
         
-        #line 62 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 77 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 77 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" operation on Amazon");
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 77 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 77 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(@"Client.</param>
         /// <param name=""callback"">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name=""state"">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -203,21 +269,21 @@ this.Write(@"Client.</param>
         #line default
         #line hidden
         
-        #line 67 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 82 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 67 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 82 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\r\n        ///         operation.</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 69 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 84 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -229,21 +295,21 @@ this.Write("\r\n        ///         operation.</returns>\r\n");
         #line default
         #line hidden
         
-        #line 75 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 90 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Finishes the asynchronous execution of the  ");
 
         
         #line default
         #line hidden
         
-        #line 77 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 92 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 77 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 92 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        /// <param name=\"async" +
         "Result\">The IAsyncResult returned by the call to Begin");
 
@@ -251,49 +317,49 @@ this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        ///
         #line default
         #line hidden
         
-        #line 80 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 95 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 80 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 95 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(".</param>\r\n        /// \r\n        /// <returns>Returns a  ");
 
         
         #line default
         #line hidden
         
-        #line 82 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 97 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 82 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 97 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Result from ");
 
         
         #line default
         #line hidden
         
-        #line 82 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 97 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 82 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 97 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(".</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 83 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 98 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -306,28 +372,28 @@ this.Write(".</returns>\r\n");
         #line default
         #line hidden
         
-        #line 90 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 105 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// <summary>\r\n    /// Implementation for accessing ");
 
         
         #line default
         #line hidden
         
-        #line 92 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 107 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 92 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 107 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\r\n    ///\r\n");
 
         
         #line default
         #line hidden
         
-        #line 94 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 109 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("    ", documentation);
 
@@ -335,14 +401,14 @@ this.Write("\r\n    ///\r\n");
         #line default
         #line hidden
         
-        #line 96 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 111 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 113 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -355,28 +421,28 @@ this.Write("    /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 105 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 120 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// <summary>\r\n    /// Interface for accessing ");
 
         
         #line default
         #line hidden
         
-        #line 107 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 122 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 107 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 122 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\r\n    ///\r\n");
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 124 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("    ", documentation);
 
@@ -384,14 +450,14 @@ this.Write("\r\n    ///\r\n");
         #line default
         #line hidden
         
-        #line 111 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 126 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 113 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 128 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -405,7 +471,7 @@ this.Write("    /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 121 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 136 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// <summary>\r\n\t/// Empty class reserved for future use.\r\n    /// </summary>\r" +
         "\n");
 
@@ -413,7 +479,7 @@ this.Write("    /// <summary>\r\n\t/// Empty class reserved for future use.\r\n 
         #line default
         #line hidden
         
-        #line 125 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 140 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
             return;
 		}
@@ -423,14 +489,14 @@ this.Write("    /// <summary>\r\n\t/// Empty class reserved for future use.\r\n 
         #line default
         #line hidden
         
-        #line 129 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 144 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 131 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 146 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("    ", documentation);
 
@@ -438,14 +504,14 @@ this.Write("    /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 133 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 148 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 135 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 150 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -459,14 +525,14 @@ this.Write("    /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 143 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 158 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 145 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 160 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -474,28 +540,39 @@ this.Write("        /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 147 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 162 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 149 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 164 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
     public void FormatOperationDocumentationSync(Operation operation, bool includeRequest)
     {
-        FormatOperationDocumentationHelper(operation, includeRequest, false);
-    }
-    public void FormatOperationDocumentationAsync(Operation operation, bool includeRequest)
-    {
-        FormatOperationDocumentationHelper(operation, includeRequest, true);
+        FormatOperationDocumentationHelper(operation, includeRequest, false, false);
     }
 
+    public void FormatOperationDocumentationAsync(Operation operation, bool includeRequest)
+    {
+        FormatOperationDocumentationHelper(operation, includeRequest, true, false);
+    }
+
+	public void FormatUnityOperationDocumentationSync(Operation operation, bool includeRequest)
+	{
+		FormatOperationDocumentationHelper(operation, includeRequest, false, false);
+	}
+	
+	public void FormatUnityOperationDocumentationAsync(Operation operation, bool includeRequest)
+	{
+		FormatOperationDocumentationHelper(operation, includeRequest, true, true);
+	}
+
     // Documents the operation in a client or interface and optionally includes request param
-    private void FormatOperationDocumentationHelper(Operation operation, bool includeRequest, bool includeCancellationToken)
+    private void FormatOperationDocumentationHelper(Operation operation, bool includeRequest, bool isAsync, bool isUnity)
     {
         var documentation = CleanupDocumentation(operation.Documentation);
 
@@ -504,14 +581,14 @@ this.Write("        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 166 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 192 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\r\n        /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 195 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -519,34 +596,74 @@ this.Write("\r\n        /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 171 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 197 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 173 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 199 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
-    if (includeCancellationToken)
+    if (isAsync && !isUnity)
     {
 
-        
-        #line default
-        #line hidden
-        
-        #line 176 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write("        /// <param name=\"cancellationToken\"> ttd1\r\n        ///     A cancellation" +
-        " token that can be used by other objects or threads to receive notice of cancell" +
-        "ation.\r\n        /// </param>\r\n");
+	  // follows Async Pattern but is not unity
 
         
         #line default
         #line hidden
         
-        #line 180 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 204 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("        /// <param name=\"cancellationToken\">\r\n        ///     A cancellation toke" +
+        "n that can be used by other objects or threads to receive notice of cancellation" +
+        ".\r\n        /// </param>\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 208 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
+	if(isUnity)
+	{
+		if(isAsync)
+		{
+			//is an Asynchronous call and is Unity
+
+        
+        #line default
+        #line hidden
+        
+        #line 215 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("\t\t/// <param name=\"callback\">An Action delegate that is invoked when the operatio" +
+        "n completes.</param>\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 217 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+		}
+
+        
+        #line default
+        #line hidden
+        
+        #line 219 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("\t\t \r\n\t\t /// <param name=\"options\">\r\n\t\t ///     A user-defined state object that i" +
+        "s passed to the callback procedure. Retrieve this object from within the callbac" +
+        "k\r\n         ///     procedure using the AsyncState property.\r\n\t\t /// </param>\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 225 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+	}
     if (includeRequest)
     {
 
@@ -554,7 +671,7 @@ this.Write("        /// <param name=\"cancellationToken\"> ttd1\r\n        ///  
         #line default
         #line hidden
         
-        #line 184 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 229 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"request\">Container for the necessary parameters to execu" +
         "te the ");
 
@@ -562,21 +679,21 @@ this.Write("        /// <param name=\"request\">Container for the necessary para
         #line default
         #line hidden
         
-        #line 185 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 230 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 185 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 230 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" service method.</param>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 231 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -584,42 +701,42 @@ this.Write(" service method.</param>\r\n");
         #line default
         #line hidden
         
-        #line 188 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 233 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// \r\n        /// <returns>The response from the ");
 
         
         #line default
         #line hidden
         
-        #line 190 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 235 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 190 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 235 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" service method, as returned by ");
 
         
         #line default
         #line hidden
         
-        #line 190 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 235 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 190 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 235 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(".</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 191 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 236 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         // Skip adding exceptions in the ndoc because we are not generating exceptions from the service model.
         if(this.Config.Namespace != "Amazon.S3")
@@ -632,7 +749,7 @@ this.Write(".</returns>\r\n");
     }
 
         // Generates operation documentation with a param tag for each member in the list
-        public void FormatOperationDocumentation(Operation operation, List<Member> members, bool isSync)
+        public void FormatUnityOperationDocumentation(Operation operation, List<Member> members, bool isSync)
     {
         var documentation = CleanupDocumentation(operation.Documentation);
 
@@ -641,14 +758,14 @@ this.Write(".</returns>\r\n");
         #line default
         #line hidden
         
-        #line 207 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 252 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\r\n        /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 210 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 255 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -656,14 +773,14 @@ this.Write("\r\n        /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 212 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 257 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 214 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 259 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
   foreach(var item in members)
     {
 
@@ -671,42 +788,42 @@ this.Write("        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 216 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 261 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"");
 
         
         #line default
         #line hidden
         
-        #line 217 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 262 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.CamelCaseParam(item.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 217 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 262 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\">");
 
         
         #line default
         #line hidden
         
-        #line 217 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 262 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(item.GetParamDocumentationForOperation(operation.Name)));
 
         
         #line default
         #line hidden
         
-        #line 217 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 262 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("</param>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 218 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 263 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
     if (!isSync)
@@ -716,7 +833,158 @@ this.Write("</param>\r\n");
         #line default
         #line hidden
         
-        #line 222 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 267 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(@"		/// <param name=""callback"">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name=""options"">
+		///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///     procedure using the AsyncState property.
+		/// </param>
+");
+
+        
+        #line default
+        #line hidden
+        
+        #line 273 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+    }
+
+        
+        #line default
+        #line hidden
+        
+        #line 275 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("        /// \r\n        /// <returns>The response from the ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 277 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 277 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(" service method, as returned by ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 277 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 277 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(".</returns>\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 278 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+		if (!this.Config.ServiceModel.Customizations.SuppressSimpleMethodExceptionDocs)
+		{
+			foreach(var exception in operation.Exceptions)
+			{
+				this.FormatExceptionDocumentation(exception);
+			}
+		}
+    }
+
+        // Generates operation documentation with a param tag for each member in the list
+        public void FormatOperationDocumentation(Operation operation, List<Member> members, bool isSync)
+    {
+        var documentation = CleanupDocumentation(operation.Documentation);
+
+
+        
+        #line default
+        #line hidden
+        
+        #line 293 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("\r\n        /// <summary>\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 296 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+        WriteCommentBlock("        ", documentation);
+
+        
+        #line default
+        #line hidden
+        
+        #line 298 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("        /// </summary>\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 300 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+  foreach(var item in members)
+    {
+
+        
+        #line default
+        #line hidden
+        
+        #line 302 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("        /// <param name=\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 303 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.CamelCaseParam(item.PropertyName)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 303 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("\">");
+
+        
+        #line default
+        #line hidden
+        
+        #line 303 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(item.GetParamDocumentationForOperation(operation.Name)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 303 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("</param>\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 304 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+    }
+    if (!isSync)
+    {
+
+        
+        #line default
+        #line hidden
+        
+        #line 308 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"cancellationToken\">\r\n        ///     A cancellation toke" +
         "n that can be used by other objects or threads to receive notice of cancellation" +
         ".\r\n        /// </param>\r\n");
@@ -725,7 +993,7 @@ this.Write("        /// <param name=\"cancellationToken\">\r\n        ///     A 
         #line default
         #line hidden
         
-        #line 226 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 312 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -733,42 +1001,42 @@ this.Write("        /// <param name=\"cancellationToken\">\r\n        ///     A 
         #line default
         #line hidden
         
-        #line 228 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 314 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// \r\n        /// <returns>The response from the ");
 
         
         #line default
         #line hidden
         
-        #line 230 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 316 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 230 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 316 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" service method, as returned by ");
 
         
         #line default
         #line hidden
         
-        #line 230 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 316 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 230 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 316 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(".</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 231 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 317 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
 		if (!this.Config.ServiceModel.Customizations.SuppressSimpleMethodExceptionDocs)
 		{
@@ -787,28 +1055,28 @@ this.Write(".</returns>\r\n");
         #line default
         #line hidden
         
-        #line 244 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 330 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t/// <summary>\r\n\t/// Container for the parameters to the ");
 
         
         #line default
         #line hidden
         
-        #line 246 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 332 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 246 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 332 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n");
 
         
         #line default
         #line hidden
         
-        #line 247 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 333 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     WriteCommentBlock("	", documentation);
 
@@ -816,14 +1084,14 @@ this.Write(" operation.\r\n");
         #line default
         #line hidden
         
-        #line 249 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 335 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t/// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 251 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 337 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
 	}
 
@@ -837,42 +1105,42 @@ this.Write("\t/// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 259 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 345 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <exception cref=\"");
 
         
         #line default
         #line hidden
         
-        #line 260 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 346 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
 
         
         #line default
         #line hidden
         
-        #line 260 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 346 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(".Model.");
 
         
         #line default
         #line hidden
         
-        #line 260 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 346 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
 
         
         #line default
         #line hidden
         
-        #line 260 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 346 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\">\r\n");
 
         
         #line default
         #line hidden
         
-        #line 261 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 347 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -880,14 +1148,14 @@ this.Write("\">\r\n");
         #line default
         #line hidden
         
-        #line 263 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 349 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// </exception>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 265 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 351 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -899,42 +1167,42 @@ this.Write("        /// </exception>\r\n");
         #line default
         #line hidden
         
-        #line 271 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 357 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t/// <summary>\r\n\t///\tReturns information about the ");
 
         
         #line default
         #line hidden
         
-        #line 273 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 359 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 273 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 359 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" response metadata.\r\n\t///\tThe ");
 
         
         #line default
         #line hidden
         
-        #line 274 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 360 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 274 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 360 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" operation has a void result type.\r\n\t/// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 276 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 362 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
 	}
 
@@ -1026,7 +1294,7 @@ this.Write(" operation has a void result type.\r\n\t/// </summary>\r\n");
         }
 		return documentation;
     }
-
+ 
 
     // Generates the comment block for simple constructors, each member is added as a param tag with the shape's documentation or
     // a generic comment if no documentation is found
@@ -1037,28 +1305,28 @@ this.Write(" operation has a void result type.\r\n\t/// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 373 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 459 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Instantiates ");
 
         
         #line default
         #line hidden
         
-        #line 375 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 461 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(className));
 
         
         #line default
         #line hidden
         
-        #line 375 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 461 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" with the parameterized properties\r\n        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 377 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 463 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         foreach (var member in members)
         {
@@ -1067,42 +1335,42 @@ this.Write(" with the parameterized properties\r\n        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 380 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 466 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"");
 
         
         #line default
         #line hidden
         
-        #line 381 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 467 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.CamelCaseParam(member.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 381 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 467 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\">");
 
         
         #line default
         #line hidden
         
-        #line 381 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 467 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.GetParamDocumentationForConstructor(className)));
 
         
         #line default
         #line hidden
         
-        #line 381 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 467 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("</param>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 382 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 468 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
     }
@@ -1111,7 +1379,7 @@ this.Write("</param>\r\n");
         #line default
         #line hidden
         
-        #line 387 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 473 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     // Generates methods for the client that have request members as parameters for easy calls to the operation
     // Only generates them if they are specified in the customizations of the service
@@ -1137,28 +1405,28 @@ this.Write("</param>\r\n");
         #line default
         #line hidden
         
-        #line 407 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 493 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t\t[Obsolete(\"");
 
         
         #line default
         #line hidden
         
-        #line 408 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 494 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
 
         
         #line default
         #line hidden
         
-        #line 408 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 494 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\")]\r\n");
 
         
         #line default
         #line hidden
         
-        #line 409 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 495 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 		
 			}
 
@@ -1166,56 +1434,56 @@ this.Write("\")]\r\n");
         #line default
         #line hidden
         
-        #line 411 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 497 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        public ");
 
         
         #line default
         #line hidden
         
-        #line 412 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 498 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 412 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 498 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Response ");
 
         
         #line default
         #line hidden
         
-        #line 412 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 498 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 412 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 498 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 412 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 498 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 412 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 498 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(")\r\n");
 
         
         #line default
         #line hidden
         
-        #line 413 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 499 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
         else
@@ -1229,28 +1497,28 @@ this.Write(")\r\n");
         #line default
         #line hidden
         
-        #line 421 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 507 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t\t[Obsolete(\"");
 
         
         #line default
         #line hidden
         
-        #line 422 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 508 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
 
         
         #line default
         #line hidden
         
-        #line 422 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 508 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\")]\r\n");
 
         
         #line default
         #line hidden
         
-        #line 423 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 509 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 		
 			}
 
@@ -1258,49 +1526,49 @@ this.Write("\")]\r\n");
         #line default
         #line hidden
         
-        #line 425 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 511 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        public Task<");
 
         
         #line default
         #line hidden
         
-        #line 426 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 512 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 426 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 512 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Response> ");
 
         
         #line default
         #line hidden
         
-        #line 426 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 512 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 426 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 512 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Async(");
 
         
         #line default
         #line hidden
         
-        #line 426 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 512 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 426 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 512 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("System.Threading.CancellationToken cancellationToken = default(CancellationToken)" +
         ")\r\n");
 
@@ -1308,7 +1576,7 @@ this.Write("System.Threading.CancellationToken cancellationToken = default(Cance
         #line default
         #line hidden
         
-        #line 427 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 513 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
 
@@ -1316,28 +1584,28 @@ this.Write("System.Threading.CancellationToken cancellationToken = default(Cance
         #line default
         #line hidden
         
-        #line 429 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 515 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        {\r\n            var request = new ");
 
         
         #line default
         #line hidden
         
-        #line 431 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 517 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 431 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 517 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Request();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 432 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 518 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
 foreach (var member in docMembers)
 {
@@ -1346,42 +1614,42 @@ foreach (var member in docMembers)
         #line default
         #line hidden
         
-        #line 435 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 521 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("            request.");
 
         
         #line default
         #line hidden
         
-        #line 436 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 522 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 436 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 522 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" = ");
 
         
         #line default
         #line hidden
         
-        #line 436 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 522 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.CamelCaseParam(member.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 436 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 522 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 437 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 523 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         
 }
@@ -1392,28 +1660,28 @@ this.Write(";\r\n");
         #line default
         #line hidden
         
-        #line 442 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 528 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("            return ");
 
         
         #line default
         #line hidden
         
-        #line 443 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 529 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 443 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 529 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("(request);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 444 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 530 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
         else
@@ -1423,28 +1691,28 @@ this.Write("(request);\r\n");
         #line default
         #line hidden
         
-        #line 448 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 534 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("            return ");
 
         
         #line default
         #line hidden
         
-        #line 449 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 535 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 449 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 535 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Async(request, cancellationToken);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 450 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 536 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
 
@@ -1452,14 +1720,14 @@ this.Write("Async(request, cancellationToken);\r\n");
         #line default
         #line hidden
         
-        #line 452 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 538 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 455 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 541 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
           }
         }
@@ -1469,7 +1737,378 @@ this.Write("        }\r\n\r\n");
         #line default
         #line hidden
         
-        #line 461 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 546 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+    // Generates methods for the client that have request members as parameters for easy calls to the operation
+    // Only generates them if they are specified in the customizations of the service
+    public void AddSimpleClientMethodsForUnity(Operation operation, bool isSync)
+    {
+        if (this.Config.ServiceModel.Customizations.SimpleMethodsModel.CreateSimpleMethods(operation.Name))
+        {
+            var forms = this.Config.ServiceModel.Customizations.SimpleMethodsModel.SimpleMethods[operation.Name].Forms;
+            var members = this.Config.ServiceModel.FindShape(operation.RequestStructure.Name).Members;
+
+            foreach (var form in forms)
+            {
+                string currentParams = this.Config.ServiceModel.Customizations.SimpleMethodsModel.GetSimpleParameters(form, members);
+                var docMembers = this.Config.ServiceModel.Customizations.SimpleMethodsModel.GetFormMembers(form, members);
+
+        this.FormatUnityOperationDocumentation(operation, docMembers, isSync);
+        if (isSync)
+        {
+			if(operation.IsDeprecated)
+			{
+
+        
+        #line default
+        #line hidden
+        
+        #line 566 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("\t\t[Obsolete(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 567 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
+
+        
+        #line default
+        #line hidden
+        
+        #line 567 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("\")]\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 568 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+		
+			}
+
+        
+        #line default
+        #line hidden
+        
+        #line 570 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("        public ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 571 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 571 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("Response ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 571 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 571 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 571 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
+
+        
+        #line default
+        #line hidden
+        
+        #line 571 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(")\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 572 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+        }
+        else
+        {
+            if (!string.IsNullOrEmpty(currentParams))
+                currentParams += ", ";
+			if(operation.IsDeprecated)
+			{
+
+        
+        #line default
+        #line hidden
+        
+        #line 580 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("\t\t[Obsolete(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 581 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
+
+        
+        #line default
+        #line hidden
+        
+        #line 581 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("\")]\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 582 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+		
+			}
+
+        
+        #line default
+        #line hidden
+        
+        #line 584 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("        public void ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 585 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 585 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("Async(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 585 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
+
+        
+        #line default
+        #line hidden
+        
+        #line 585 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(" AmazonServiceCallback<");
+
+        
+        #line default
+        #line hidden
+        
+        #line 585 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 585 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("Request, ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 585 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 585 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("Response> callback, AsyncOptions options = null)\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 586 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+        }
+
+        
+        #line default
+        #line hidden
+        
+        #line 588 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("        {\r\n            var request = new ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 590 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 590 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("Request();\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 591 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+foreach (var member in docMembers)
+{
+
+        
+        #line default
+        #line hidden
+        
+        #line 594 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("            request.");
+
+        
+        #line default
+        #line hidden
+        
+        #line 595 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 595 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(" = ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 595 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.CamelCaseParam(member.PropertyName)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 595 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(";\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 596 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+        
+}
+        if (isSync)
+        {
+
+        
+        #line default
+        #line hidden
+        
+        #line 601 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("            return ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 602 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 602 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("(request);\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 603 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+        }
+        else
+        {
+
+        
+        #line default
+        #line hidden
+        
+        #line 607 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("            ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 608 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 608 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("Async(request, callback, options);\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 609 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+        }
+
+        
+        #line default
+        #line hidden
+        
+        #line 611 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("        }\r\n\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 614 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+          }
+        }
+      }
+
+        
+        #line default
+        #line hidden
+        
+        #line 619 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     // Generates methods for the interface that have request members as parameters for easy calls to the operation
     // Only generates them if they are specified in the customizations of the service
@@ -1495,28 +2134,28 @@ this.Write("        }\r\n\r\n");
         #line default
         #line hidden
         
-        #line 481 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 639 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t\t[Obsolete(\"");
 
         
         #line default
         #line hidden
         
-        #line 482 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 640 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
 
         
         #line default
         #line hidden
         
-        #line 482 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 640 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\")]\r\n");
 
         
         #line default
         #line hidden
         
-        #line 483 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 641 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 		
 					}
 
@@ -1524,56 +2163,56 @@ this.Write("\")]\r\n");
         #line default
         #line hidden
         
-        #line 485 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 643 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        ");
 
         
         #line default
         #line hidden
         
-        #line 486 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 644 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 486 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 644 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Response ");
 
         
         #line default
         #line hidden
         
-        #line 486 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 644 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 486 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 644 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 486 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 644 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 486 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 644 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 487 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 645 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
         else
@@ -1587,28 +2226,28 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 495 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 653 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t\t[Obsolete(\"");
 
         
         #line default
         #line hidden
         
-        #line 496 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 654 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
 
         
         #line default
         #line hidden
         
-        #line 496 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 654 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\")]\r\n");
 
         
         #line default
         #line hidden
         
-        #line 497 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 655 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 		
 				}
 
@@ -1616,49 +2255,49 @@ this.Write("\")]\r\n");
         #line default
         #line hidden
         
-        #line 499 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 657 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        Task<");
 
         
         #line default
         #line hidden
         
-        #line 500 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 658 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 500 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 658 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Response> ");
 
         
         #line default
         #line hidden
         
-        #line 500 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 658 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 500 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 658 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Async(");
 
         
         #line default
         #line hidden
         
-        #line 500 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 658 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 500 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 658 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("System.Threading.CancellationToken cancellationToken = default(CancellationToken)" +
         ");\r\n");
 
@@ -1666,7 +2305,7 @@ this.Write("System.Threading.CancellationToken cancellationToken = default(Cance
         #line default
         #line hidden
         
-        #line 501 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 659 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
           }
                 }
@@ -1677,7 +2316,228 @@ this.Write("System.Threading.CancellationToken cancellationToken = default(Cance
         #line default
         #line hidden
         
-        #line 509 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 665 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+    // Generates methods for the interface that have request members as parameters for easy calls to the operation
+    // Only generates them if they are specified in the customizations of the service
+    public void AddSimpleClientMethodInterfacesForUnity(Operation operation, bool isSync)
+    {
+        if (this.Config.ServiceModel.Customizations.SimpleMethodsModel.CreateSimpleMethods(operation.Name))
+        {
+            var forms = this.Config.ServiceModel.Customizations.SimpleMethodsModel.SimpleMethods[operation.Name].Forms;
+            var members = this.Config.ServiceModel.FindShape(operation.RequestStructure.Name).Members;
+
+            foreach (var form in forms)
+            {
+                string currentParams = this.Config.ServiceModel.Customizations.SimpleMethodsModel.GetSimpleParameters(form, members);
+                var docMembers = this.Config.ServiceModel.Customizations.SimpleMethodsModel.GetFormMembers(form, members);
+
+        this.FormatUnityOperationDocumentation(operation, docMembers, isSync);
+        if (isSync)
+        {
+					if(operation.IsDeprecated)
+					{
+
+        
+        #line default
+        #line hidden
+        
+        #line 685 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("\t\t[Obsolete(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 686 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
+
+        
+        #line default
+        #line hidden
+        
+        #line 686 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("\")]\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 687 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+		
+					}
+
+        
+        #line default
+        #line hidden
+        
+        #line 689 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("        ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 690 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 690 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("Response ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 690 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 690 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 690 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
+
+        
+        #line default
+        #line hidden
+        
+        #line 690 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(");\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 691 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+        }
+        else
+        {
+            if (!string.IsNullOrEmpty(currentParams))
+                currentParams += ", ";
+				if(operation.IsDeprecated)
+				{
+
+        
+        #line default
+        #line hidden
+        
+        #line 699 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("\t\t[Obsolete(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 700 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
+
+        
+        #line default
+        #line hidden
+        
+        #line 700 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("\")]\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 701 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+		
+				}
+
+        
+        #line default
+        #line hidden
+        
+        #line 703 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("        void ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 704 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 704 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("Async(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 704 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
+
+        
+        #line default
+        #line hidden
+        
+        #line 704 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(" AmazonServiceCallback<");
+
+        
+        #line default
+        #line hidden
+        
+        #line 704 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 704 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("Request, ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 704 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 704 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("Response> callback, AsyncOptions options = null);\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 705 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+          }
+                }
+        }
+      }
+
+        
+        #line default
+        #line hidden
+        
+        #line 712 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     // Generates constructors for operation requests that have request members in the parameters for easy creation of requests
     // Only generates them if they are specified in the customizations of the service
@@ -1692,7 +2552,7 @@ this.Write("System.Threading.CancellationToken cancellationToken = default(Cance
         #line default
         #line hidden
         
-        #line 518 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 721 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Empty constructor used to set  properties inde" +
         "pendently even when a simple constructor is available\r\n        /// </summary>\r\n " +
         "       public ");
@@ -1701,21 +2561,21 @@ this.Write("        /// <summary>\r\n        /// Empty constructor used to set  
         #line default
         #line hidden
         
-        #line 521 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 724 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(className));
 
         
         #line default
         #line hidden
         
-        #line 521 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 724 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("() { }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 523 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 726 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
             foreach (var form in forms)
             {
@@ -1726,48 +2586,48 @@ this.Write("() { }\r\n\r\n");
         #line default
         #line hidden
         
-        #line 529 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 732 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
  FormatSimpleConstructorDocumentation(className, docMembers); 
         
         #line default
         #line hidden
         
-        #line 529 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 732 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        public ");
 
         
         #line default
         #line hidden
         
-        #line 530 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 733 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(className));
 
         
         #line default
         #line hidden
         
-        #line 530 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 733 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 530 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 733 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 530 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 733 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(")\r\n        {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 532 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 735 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
 foreach (var member in docMembers)
 {
@@ -1776,42 +2636,42 @@ foreach (var member in docMembers)
         #line default
         #line hidden
         
-        #line 535 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 738 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("            ");
 
         
         #line default
         #line hidden
         
-        #line 536 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 739 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
 
         
         #line default
         #line hidden
         
-        #line 536 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 739 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" = ");
 
         
         #line default
         #line hidden
         
-        #line 536 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 739 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.CamelCaseParam(member.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 536 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 739 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 537 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 740 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         
 }
@@ -1820,14 +2680,14 @@ this.Write(";\r\n");
         #line default
         #line hidden
         
-        #line 540 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 743 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 543 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 746 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
             }
         }

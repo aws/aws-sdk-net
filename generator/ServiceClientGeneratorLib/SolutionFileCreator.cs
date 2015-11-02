@@ -27,7 +27,7 @@ namespace ServiceClientGenerator
             public const string PCL = "PCL";
             public const string Android = "Android";
             public const string IOS = "iOS";
-
+            public const string Unity = "Unity";
         }
 
         // build configuration platforms used for net 3.5, 4.5 and portable project types
@@ -102,6 +102,12 @@ namespace ServiceClientGenerator
                     GetProjectConfig(ProjectTypes.WinPhone81),
                     GetProjectConfig(ProjectTypes.WinPhoneSilverlight8)
             });
+
+
+            GenerateCombinedSolution("AWSSDK.Unity.sln", false,
+                new List<ProjectFileConfiguration>{
+                    GetProjectConfig(ProjectTypes.Unity)
+                });
 
             // Include solutions that Travis CI can build
             GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net35), false, "AWSSDK.Net35.Travis.sln");
@@ -212,6 +218,7 @@ namespace ServiceClientGenerator
                 case ProjectTypes.PCL:
                 case ProjectTypes.Android:
                 case ProjectTypes.IOS:
+                case ProjectTypes.Unity:
                     return StandardPlatformConfigurations;
             }
 
@@ -336,7 +343,8 @@ namespace ServiceClientGenerator
                     }
                 }
 
-                serviceSolutionFolders.Add(folder);
+                if (folder.Projects.Count > 0)
+                    serviceSolutionFolders.Add(folder);
             }
 
             var testProjects = new List<Project>();

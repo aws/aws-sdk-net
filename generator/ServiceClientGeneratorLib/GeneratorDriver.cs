@@ -75,8 +75,9 @@ namespace ServiceClientGenerator
         private const string Bcl35SubFolder = "_bcl35";
         private const string Bcl45SubFolder = "_bcl45";
         private const string MobileSubFolder = "_mobile";
-        private const string MarshallingTestsSubFolder = @"UnitTests\Generated\Marshalling";
-        private const string CustomizationTestsSubFolder = @"UnitTests\Generated\Customizations";
+        private const string UnitySubFolder = "_unity";
+        private string MarshallingTestsSubFolder = string.Format("UnitTests{0}Generated{0}Marshalling", Path.DirectorySeparatorChar);
+        private string CustomizationTestsSubFolder = string.Format("UnitTests{0}Generated{0}Customizations",Path.DirectorySeparatorChar);
 
         public const string SourceSubFoldername = "src";
         public const string TestsSubFoldername = "test";
@@ -123,7 +124,7 @@ namespace ServiceClientGenerator
 
         public void Execute()
         {
-            if (Options.Clean)
+            if (Options.Clean && !Configuration.IsChildConfig)
             {
                 Console.WriteLine(@"-clean option set, deleting previously-generated code under .\Generated subfolders");
 
@@ -143,6 +144,12 @@ namespace ServiceClientGenerator
             ExecuteGeneratorMobile(new ServiceClientsMobile(), "Amazon" + Configuration.BaseName + "Client.cs", MobileSubFolder);
             ExecuteGeneratorMobile(new ServiceInterfaceMobile(), "IAmazon" + Configuration.BaseName + ".cs", MobileSubFolder);
 
+            //unity version
+            if (Configuration.SupportedInUnity)
+            {
+                ExecuteGeneratorUnity(new ServiceInterfaceUnity(), "IAmazon" + Configuration.BaseName + ".cs", UnitySubFolder);
+                ExecuteGeneratorUnity(new ServiceClientUnity(), "Amazon" + Configuration.BaseName + "Client.cs", UnitySubFolder);
+            }
             // Do not generate AssemblyInfo.cs and nuspec file for child model.
             // Use the one generated for the parent model.
             if (!this.Configuration.IsChildConfig)
@@ -158,7 +165,11 @@ namespace ServiceClientGenerator
             ExecuteGenerator(new ServiceConfig(), "Amazon" + Configuration.BaseName + "Config.cs");
 
             if (Configuration.Namespace == "Amazon.S3")
+            {
+                ExecuteProjectFileGenerators();
                 return;
+            }
+
 
             // The top level request that all operation requests are children of
             ExecuteGenerator(new BaseRequest(), "Amazon" + Configuration.BaseName + "Request.cs", "Model");
@@ -184,6 +195,11 @@ namespace ServiceClientGenerator
                 GenerateRequestMarshaller(operation);
                 GenerateResponseUnmarshaller(operation);
                 GenerateExceptions(operation);
+            }
+
+            if (Configuration.ServiceModel.Customizations.GenerateCustomUnmarshaller)
+            {
+                GenerateUnmarshaller(Configuration.ServiceModel.Customizations.GetCustomUnmarshaller);
             }
 
             // Generate any missed structures that are not defined or referenced by a request, response, marshaller, unmarshaller, or exception of an operation
@@ -549,6 +565,35 @@ namespace ServiceClientGenerator
                     else
                     {
                         //throw new Exception();
+                    }
+                }
+            }
+        }
+
+        void GenerateUnmarshaller(List<string> structures)
+        {
+            foreach (var structure in structures)
+            {
+                var shape = this.Configuration.ServiceModel.FindShape(structure);
+                var lookup = new NestedStructureLookup();
+                lookup.SearchForNestedStructures(shape);
+                foreach (var nestedStructure in lookup.NestedStructures)
+                {
+                    // Skip structure unmarshallers that have already been generated for the parent model
+                    if (IsShapePresentInParentModel(this.Configuration, nestedStructure.Name))
+                        continue;
+
+                    if (this.Configuration.ServiceModel.Customizations.IsSubstitutedShape(nestedStructure.Name))
+                        continue;
+
+                    // Skip already processed unmarshallers. This handles the case of structures being returned in mulitiple requests.
+                    if (!this._processedUnmarshallers.Contains(nestedStructure.Name))
+                    {
+                        var generator = GetStructureUnmarshaller();
+                        generator.Structure = nestedStructure;
+
+                        this.ExecuteGenerator(generator, nestedStructure.Name + "Unmarshaller.cs", "Model.Internal.MarshallTransformations");
+                        this._processedUnmarshallers.Add(nestedStructure.Name);
                     }
                 }
             }
@@ -1034,6 +1079,18 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Runs the generator and saves the content into _unity directory under the generated files root.
+        /// </summary>
+        /// <param name="generator">The generator to use for outputting the text of the cs file</param>
+        /// <param name="fileName">The name of the cs file</param>
+        /// <param name="subNamespace">Adds an additional directory for the namespace</param>
+        void ExecuteGeneratorUnity(BaseGenerator generator, string fileName, string subNamespace = null)
+        {
+            generator.Config = this.Configuration;
+            var text = generator.TransformText();
+            WriteFile(GeneratedFilesRoot, subNamespace, fileName, text);
+        }
+        /// <summary>
         /// Runs the generator and saves the content in the test directory.
         /// </summary>
         /// <param name="generator">The generator to use for outputting the text of the cs file</param>
@@ -1087,7 +1144,7 @@ namespace ServiceClientGenerator
                                        bool replaceTabs = true)
         {
             var outputDir = !string.IsNullOrEmpty(subNamespace)
-                ? Path.Combine(baseOutputDir, subNamespace.Replace('.', '\\'))
+                ? Path.Combine(baseOutputDir, subNamespace.Replace('.', Path.DirectorySeparatorChar))
                 : baseOutputDir;
 
             if (!Directory.Exists(outputDir))

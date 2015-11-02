@@ -97,6 +97,12 @@ namespace ServiceClientGenerator
                 }
 
                 var projectType = projectFileConfiguration.Name;
+                if(projectType.Equals("Unity",StringComparison.InvariantCultureIgnoreCase))
+                {
+                    if (!serviceConfiguration.SupportedInUnity)
+                        continue;
+                }
+
 
                 var assemblyName = "AWSSDK." + serviceConfiguration.Namespace.Split('.')[1];
                 var projectFilename = string.Concat(assemblyName, ".", projectType, ".csproj");

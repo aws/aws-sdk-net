@@ -1,5 +1,8 @@
 {
-  "noArgOverloads": [
-    "GetSessionToken"
-  ]
+	"unityOverrides":{
+		"generateSyncClient" : true
+	},
+	"noArgOverloads": [
+		"GetSessionToken"
+	]
 }

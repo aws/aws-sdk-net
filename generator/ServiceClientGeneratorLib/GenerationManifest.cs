@@ -35,6 +35,7 @@ namespace ServiceClientGenerator
             public const string MaxRetriesKey = "max-retries";
             public const string SynopsisKey = "synopsis";
             public const string DependenciesKey = "dependencies";
+            public const string PlatformsKey = "platforms";
             public const string ReferenceDependenciesKey = "reference-dependencies";
             public const string NugetDependenciesKey = "nuget-dependencies";
             public const string PclVariantsKey = "pcl-variants";
@@ -147,6 +148,8 @@ namespace ServiceClientGenerator
                     ServiceUrl = modelNode[ModelsSectionKeys.ServiceUrlKey] != null ? modelNode[ModelsSectionKeys.ServiceUrlKey].ToString() : null,
                     DefaultRegion = modelNode[ModelsSectionKeys.DefaultRegionKey] != null ? modelNode[ModelsSectionKeys.DefaultRegionKey].ToString() : null,
                     GenerateConstructors = modelNode[ModelsSectionKeys.GenerateClientConstructorsKey] == null || (bool)modelNode[ModelsSectionKeys.GenerateClientConstructorsKey], // A way to prevent generating basic constructors
+                    SupportedMobilePlatforms = modelNode[ModelsSectionKeys.PlatformsKey] == null ? new List<string>() : (from object pcf in modelNode[ModelsSectionKeys.PlatformsKey]
+                                                                                                                         select pcf.ToString()).ToList(),
                     EnableXamarinComponent = modelNode.PropertyNames.Contains(ModelsSectionKeys.EnableXamarinComponent) && (bool)modelNode[ModelsSectionKeys.EnableXamarinComponent]
                 };
 
@@ -305,7 +308,7 @@ namespace ServiceClientGenerator
                     CompilationConstants = projectNode[ProjectsSectionKeys.DefineConstantsKey].ToString(),
                     BinSubFolder = projectNode[ProjectsSectionKeys.BinSubFolderKey].ToString(),
                     Template = projectNode[ProjectsSectionKeys.TemplateKey].ToString(),
-                    NuGetTargetPlatform = projectNode[ProjectsSectionKeys.NuGetTargetFrameworkKey].ToString()
+                    NuGetTargetPlatform = projectNode[ProjectsSectionKeys.NuGetTargetFrameworkKey] == null?string.Empty:projectNode[ProjectsSectionKeys.NuGetTargetFrameworkKey].ToString()
                 };
 
                 config.Configurations = (from object bc in projectNode[ProjectsSectionKeys.ConfigurationsKey] 
