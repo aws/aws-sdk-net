@@ -78,8 +78,9 @@ namespace Amazon.S3.Util
             var conditions = json["conditions"];
             if (conditions != null && conditions.IsArray)
             {
-                foreach (JsonData cond in conditions)
+                for (int i =0;i<conditions.Count;i++)
                 {
+                    JsonData cond = conditions[i];
                     if (cond.IsObject && cond[S3Constants.PostFormDataSecurityToken] != null)
                     {
                         cond[S3Constants.PostFormDataSecurityToken] = token;

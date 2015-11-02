@@ -17,7 +17,6 @@ using System;
 using Amazon.S3;
 using Amazon.S3.Model;
 
-
 namespace Amazon.S3
 {
     public partial interface IAmazonS3 : IDisposable, Amazon.Runtime.SharedInterfaces.ICoreAmazonS3
