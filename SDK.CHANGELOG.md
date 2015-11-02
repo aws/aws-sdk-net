@@ -1,3 +1,7 @@
+### 3.1.24.0 (2015-11-02 18:47 UTC)
+* IdentityManagement (3.1.3.0)
+	* Update IAM policy simulator to help test, verify, and understand resource-level permissions.
+
 ### 3.1.23.3 (2015-10-29 20:24 UTC)
 * S3 (3.1.3.4)
 	* Updated to use new Core, version 3.1.3.3
