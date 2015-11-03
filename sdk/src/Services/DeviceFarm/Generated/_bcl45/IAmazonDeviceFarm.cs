@@ -191,6 +191,165 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  DeleteDevicePool
+
+
+        /// <summary>
+        /// Deletes a device pool given the pool ARN. Does not allow deletion of curated pools
+        /// owned by the system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDevicePool service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDevicePool service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        DeleteDevicePoolResponse DeleteDevicePool(DeleteDevicePoolRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDevicePool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDevicePool operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteDevicePoolResponse> DeleteDevicePoolAsync(DeleteDevicePoolRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteProject
+
+
+        /// <summary>
+        /// Deletes an AWS Device Farm project, given the project ARN.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Note</b> Deleting this resource does not stop an in-progress run.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProject service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        DeleteProjectResponse DeleteProject(DeleteProjectRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProject operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteRun
+
+
+        /// <summary>
+        /// Deletes the run, given the run ARN.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Note</b> Deleting this resource does not stop an in-progress run.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRun service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRun service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        DeleteRunResponse DeleteRun(DeleteRunRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRun operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteRunResponse> DeleteRunAsync(DeleteRunRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteUpload
+
+
+        /// <summary>
+        /// Deletes an upload given the upload ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUpload service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUpload service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        DeleteUploadResponse DeleteUpload(DeleteUploadRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUpload operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteUploadResponse> DeleteUploadAsync(DeleteUploadRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetAccountSettings
 
 
@@ -1395,6 +1554,82 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ScheduleRunResponse> ScheduleRunAsync(ScheduleRunRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateDevicePool
+
+
+        /// <summary>
+        /// Modifies the name, description, and rules in a device pool given the attributes and
+        /// the pool ARN. Rule updates are all-or-nothing, meaning they can only be updated as
+        /// a whole (or not at all).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDevicePool service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDevicePool service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        UpdateDevicePoolResponse UpdateDevicePool(UpdateDevicePoolRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDevicePool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDevicePool operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateDevicePoolResponse> UpdateDevicePoolAsync(UpdateDevicePoolRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateProject
+
+
+        /// <summary>
+        /// Modifies the specified project name, given the project ARN and a new name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProject service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        UpdateProjectResponse UpdateProject(UpdateProjectRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProject operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
