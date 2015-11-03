@@ -1,3 +1,11 @@
+### 3.1.25.0 (2015-11-03 21:41 UTC)
+* DeviceFarm (3.1.2.0)
+	* Added support for AWS Device Farm APIs to manage projects, device pools, runs, and uploads.
+* S3 (3.1.3.5)
+	* Add validation for S3 get object calls to make sure the object key is set. If it's not set, that makes the request the same as ListObject call to S3 giving unexpected results to the caller.
+* Core 3.1.3.4
+	* Fix for disposed instance of web request being used to get header values.
+
 ### 3.1.24.0 (2015-11-02 18:47 UTC)
 * IdentityManagement (3.1.3.0)
 	* Update IAM policy simulator to help test, verify, and understand resource-level permissions.
