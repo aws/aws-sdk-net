@@ -59,9 +59,11 @@ namespace Amazon.Runtime.Internal.Transform
 
         public string GetHeaderValue(string name)
         {
-            string headerValue = string.Empty;
-            _headers.TryGetValue(name, out headerValue);
-            return headerValue;
+            string headerValue;
+            if (_headers.TryGetValue(name, out headerValue))
+                return headerValue;
+
+            return string.Empty;
         }
 
         private void CopyHeaderValues(HttpWebResponse response)

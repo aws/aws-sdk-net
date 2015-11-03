@@ -38,7 +38,7 @@ namespace Amazon.Runtime.Internal.Transform
 
         internal HttpClientResponseData(HttpResponseMessage response, HttpClient httpClient)
         {
-            _response = new HttpResponseMessageBody(response, httpClient); ;
+            _response = new HttpResponseMessageBody(response, httpClient);
 
             this.StatusCode = response.StatusCode;
             this.IsSuccessStatusCode = response.IsSuccessStatusCode;
@@ -61,9 +61,11 @@ namespace Amazon.Runtime.Internal.Transform
 
         public string GetHeaderValue(string headerName)
         {
-            string headerValue = null;
-            _headers.TryGetValue(headerName, out headerValue);
-            return headerValue;
+            string headerValue;
+            if(_headers.TryGetValue(headerName, out headerValue))
+                return headerValue;
+
+            return string.Empty;
         }
 
         public bool IsHeaderPresent(string headerName)
