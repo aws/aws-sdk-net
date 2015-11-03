@@ -43,8 +43,8 @@ namespace Amazon.SecurityToken.Model
     /// using a web identity provider like Login with Amazon, Facebook, Google, or an OpenID
     /// Connect-compatible identity provider, we recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon
     /// Cognito</a> or <code>AssumeRoleWithWebIdentity</code>. For more information, see <a
-    /// href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html">Creating Temporary
-    /// Security Credentials for Mobile Apps Using Identity Providers</a>.
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
+    /// Through a Web-based Identity Provider</a>.
     /// </para>
     ///  </note> 
     /// <para>
@@ -53,8 +53,8 @@ namespace Amazon.SecurityToken.Model
     /// using the security credentials of an AWS account (root), but this is not recommended.
     /// Instead, we recommend that you create an IAM user for the purpose of the proxy application
     /// and then attach a policy to the IAM user that limits federated users to only the actions
-    /// and resources they need access to. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
-    /// Best Practices</a> in <i>Using IAM</i>. 
+    /// and resources they need access to. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">IAM
+    /// Best Practices</a> in the <i>Using IAM</i>. 
     /// </para>
     ///  
     /// <para>
@@ -103,10 +103,10 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about how permissions work, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+    /// For more information about how permissions work, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
     /// for GetFederationToken</a>. For information about using <code>GetFederationToken</code>
-    /// to create temporary security credentials, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingFedTokens.html">Creating
-    /// Temporary Credentials to Enable Access for Federated Users</a>. 
+    /// to create temporary security credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation
+    /// Through a Custom Identity Broker</a>. 
     /// </para>
     /// </summary>
     public partial class GetFederationTokenRequest : AmazonSecurityTokenServiceRequest
@@ -197,7 +197,7 @@ namespace Amazon.SecurityToken.Model
         /// response element indicates by percentage how close to the upper size limit the policy
         /// is, with 100% equaling the maximum allowed size. </note> 
         /// <para>
-        /// For more information about how permissions work, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+        /// For more information about how permissions work, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
         /// for GetFederationToken</a>.
         /// </para>
         /// </summary>

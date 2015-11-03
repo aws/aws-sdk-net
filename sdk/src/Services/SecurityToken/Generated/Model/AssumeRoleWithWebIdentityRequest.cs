@@ -78,8 +78,9 @@ namespace Amazon.SecurityToken.Model
     /// you pass. This gives you a way to further restrict the permissions for the resulting
     /// temporary security credentials. You cannot use the passed policy to grant permissions
     /// that are in excess of those allowed by the access policy of the role that is being
-    /// assumed. For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-    /// for AssumeRoleWithWebIdentity</a>.
+    /// assumed. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+    /// for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>Using
+    /// IAM</i>.
     /// </para>
     ///  
     /// <para>
@@ -94,10 +95,9 @@ namespace Amazon.SecurityToken.Model
     /// For more information about how to use web identity federation and the <code>AssumeRoleWithWebIdentity</code>
     /// API, see the following resources: 
     /// </para>
-    ///  <ul> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html#MobileApplication-KnownProvider">
-    /// Creating a Mobile Application with Third-Party Sign-In</a> and <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html">
-    /// Creating Temporary Security Credentials for Mobile Apps Using Third-Party Identity
-    /// Providers</a>. </li> <li> <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
+    ///  <ul> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using
+    /// Web Identity Federation APIs for Mobile Apps</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
+    /// Through a Web-based Identity Provider</a>. </li> <li> <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
     /// Web Identity Federation Playground</a>. This interactive website lets you walk through
     /// the process of authenticating via Login with Amazon, Facebook, or Google, getting
     /// temporary security credentials, and then using those credentials to make a request
@@ -152,8 +152,8 @@ namespace Amazon.SecurityToken.Model
         /// you pass. This gives you a way to further restrict the permissions for the resulting
         /// temporary security credentials. You cannot use the passed policy to grant permissions
         /// that are in excess of those allowed by the access policy of the role that is being
-        /// assumed. For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-        /// for AssumeRoleWithWebIdentity</a>. 
+        /// assumed. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+        /// for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>. 
         /// </para>
         ///  <note>The policy plain text must be 2048 bytes or shorter. However, an internal conversion
         /// compresses it into a packed binary format with a separate limit. The PackedPolicySize
