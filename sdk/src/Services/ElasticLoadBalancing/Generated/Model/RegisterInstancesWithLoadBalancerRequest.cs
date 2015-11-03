@@ -41,8 +41,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     ///  
     /// <para>
     /// Note that <code>RegisterInstanceWithLoadBalancer</code> completes when the request
-    /// has been registered. Instance registration happens shortly afterwards. To check the
-    /// state of the registered instances, use <a>DescribeLoadBalancers</a> or <a>DescribeInstanceHealth</a>.
+    /// has been registered. Instance registration takes a little time to complete. To check
+    /// the state of the registered instances, use <a>DescribeLoadBalancers</a> or <a>DescribeInstanceHealth</a>.
     /// </para>
     ///  
     /// <para>
