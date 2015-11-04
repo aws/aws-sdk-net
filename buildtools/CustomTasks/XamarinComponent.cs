@@ -12,7 +12,7 @@ using Microsoft.Build.Framework;
 
 namespace CustomTasks
 {
-    public class PackageComponents : Task
+    public class XamarinComponent : Task
     {
         public string ComponentRootPath { get; set; }
         public string NugetExe { get; set; }

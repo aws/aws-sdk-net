@@ -199,7 +199,7 @@ namespace ServiceClientGenerator
 
             if (Configuration.ServiceModel.Customizations.GenerateCustomUnmarshaller)
             {
-                GenerateUnmarshaller(Configuration.ServiceModel.Customizations.GetCustomUnmarshaller);
+                GenerateUnmarshaller(Configuration.ServiceModel.Customizations.CustomUnmarshaller);
             }
 
             // Generate any missed structures that are not defined or referenced by a request, response, marshaller, unmarshaller, or exception of an operation

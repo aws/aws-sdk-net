@@ -756,7 +756,7 @@ namespace ServiceClientGenerator
             }
         }
 
-        public List<string> GetCustomUnmarshaller
+        public List<string> CustomUnmarshaller
         {
             get
             {

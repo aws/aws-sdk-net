@@ -27,6 +27,9 @@
 		<xpkgexe>C:\xpkg\xamarin-component.exe</xpkgexe>
 		<xpkg>&quot;$(xpkgexe)&quot;</xpkg>
 		
+		<unityexe>C:\Program Files\Unity\Editor\Unity.Exe</unityexe>
+		<unity>&quot;$(unityexe)&quot;</unity>
+		
 		<Deployment>..\Deployment</Deployment>
 		<DocDeployment>..\DocDeployment</DocDeployment>
 	</PropertyGroup>

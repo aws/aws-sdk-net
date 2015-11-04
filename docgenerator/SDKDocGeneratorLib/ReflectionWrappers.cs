@@ -604,9 +604,9 @@ namespace SDKDocGenerator
                 if (this._info.GetGetMethod() == null)
                     return false;
 
-                var underlyinType = Nullable.GetUnderlyingType(this._info.GetGetMethod().GetType());
-                if (underlyinType != null)
-                    return underlyinType.IsPublic;
+                var underlyingType = Nullable.GetUnderlyingType(this._info.GetGetMethod().GetType());
+                if (underlyingType != null)
+                    return underlyingType.IsPublic;
 
                 return this._info.GetGetMethod().IsPublic;
             }
