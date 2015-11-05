@@ -87,6 +87,51 @@ namespace AWSSDK.Tests.Framework
             }
         }
 
+        private class SingleClassFilter : ITestFilter
+        {
+            private string ClassName;
+            private string TestName;
+            public SingleClassFilter(string className, string testName)
+            {
+                ClassName = className;
+                TestName = testName;
+            }
+
+            public SingleClassFilter(string className)
+            {
+                ClassName = className;
+            }
+
+            bool ITestFilter.IsExplicitMatch(ITest test)
+            {
+                return false;
+            }
+
+            bool ITestFilter.Pass(ITest test)
+            {
+                if (string.IsNullOrEmpty(ClassName) || test.IsSuite)
+                {
+                    return true;
+                }
+                if (test.TypeInfo.Name == ClassName)
+                {
+                    if (string.IsNullOrEmpty(TestName))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return test.Name == TestName;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+        }
+
         #region ITestListener
 
         public void TestFinished(ITestResult result)

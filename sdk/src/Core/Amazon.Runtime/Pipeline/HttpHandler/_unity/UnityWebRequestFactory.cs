@@ -162,7 +162,7 @@ namespace Amazon.Runtime.Internal
         public IWebResponseData GetResponse()
         {
             if (UnityInitializer.IsMainThread())
-                throw new Exception("Network on game thread");
+                throw new Exception("Cannot execute synchronous calls on game thread");
 
             this.IsSync = true;
             this.WaitHandle = new ManualResetEvent(false);

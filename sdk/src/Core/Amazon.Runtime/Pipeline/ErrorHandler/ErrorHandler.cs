@@ -53,7 +53,7 @@ namespace Amazon.Runtime.Internal
 #if UNITY
             _exceptionHandlers = new Dictionary<Type, IExceptionHandler>
             {                
-                {typeof(UnityHttpErrorResponseException), new HttpErrorResponseExceptionHandler(this.Logger)}
+                {typeof(HttpErrorResponseException), new HttpErrorResponseExceptionHandler(this.Logger)}
             };
 #else
             _exceptionHandlers = new Dictionary<Type, IExceptionHandler>

@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace AWSSDK.Tests
+namespace AWSSDK.IntegrationTests.CognitoIdentity
 {
     [TestFixture]
     public class CognitoIdentityTests : TestBase<AmazonCognitoIdentityClient>

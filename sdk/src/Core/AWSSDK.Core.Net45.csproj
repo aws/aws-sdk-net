@@ -141,6 +141,9 @@
     <Compile Include="Amazon.Runtime\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Runtime\_bcl+unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Util\*.cs">
       <SubType>Code</SubType>
     </Compile>

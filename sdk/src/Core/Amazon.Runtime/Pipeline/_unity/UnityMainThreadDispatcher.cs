@@ -123,15 +123,16 @@ namespace Amazon.Runtime.Internal
                 // so that the calling thread which waits on the wait handle
                 // is unblocked.
                 if (!request.Response.IsSuccessStatusCode)
-                    request.Exception = new UnityHttpErrorResponseException(request);
-
+                {
+                    request.Exception=  new HttpErrorResponseException(request.Response);
+                }
                 request.WaitHandle.Set();
             }
             else
             {
                 if (!request.Response.IsSuccessStatusCode)
                 {
-                    request.Exception = new UnityHttpErrorResponseException(request);
+                    request.Exception = new HttpErrorResponseException(request.Response);
                 }
                 // For asychronous calls invoke the callback method with the
                 // state object that was originally passed in.

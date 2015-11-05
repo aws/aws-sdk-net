@@ -17,7 +17,8 @@ using System;
 namespace Amazon.Runtime
 {
     /// <summary>
-    /// 
+    /// This class  is used to configure the thread on which the callback should 
+    /// be execute for a given request and pass optional state to the callback.
     /// </summary>
     public class AsyncOptions
     {
@@ -27,13 +28,15 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// 
+        /// This property specifies if the callback for the request is executed 
+        /// on the main or background thread. The default value for this property is true.
         /// </summary>
         public bool ExecuteCallbackOnMainThread { get; set; }
 
 
         /// <summary>
-        /// 
+        /// This property gets or sets the user defined state object 
+        /// that is passed to the callback.
         /// </summary>
         public object State { get; set; }
     }

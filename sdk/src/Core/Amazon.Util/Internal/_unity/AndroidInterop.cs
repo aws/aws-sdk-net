@@ -8,6 +8,11 @@ using UnityEngine;
 
 namespace Amazon.Util.Internal
 {
+    /// <summary>
+    /// This class is used to make Android Java calls as an alternative to using Android macro's
+    /// The class uses reflection but doesnto cache the PropertyInfo and MethodInfo, 
+    /// so it should be sparingly used so as not to impact performance.
+    /// </summary>
     public class AndroidInterop
     {
         /// <summary>

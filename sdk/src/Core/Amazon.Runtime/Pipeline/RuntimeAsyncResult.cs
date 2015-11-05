@@ -127,7 +127,7 @@ namespace Amazon.Runtime.Internal
 #endif
                 } catch (Exception e)
                 {
-                    _logger.Error(e, "Exception in user callback");
+                    _logger.Error(e, "An unhandled exception occurred in the user callback.");
                 }
             }
         }

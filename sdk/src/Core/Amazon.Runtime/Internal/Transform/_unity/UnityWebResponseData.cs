@@ -53,23 +53,11 @@ namespace Amazon.Runtime.Internal.Transform
             }
             catch (Exception)
             {
-                _logger.DebugFormat(@"setting response body to null");
                 _responseBody = null;
-            }
-
-            if (wwwRequest.error == null)
-            {
-                _logger.DebugFormat(@"recieved successful response");
-            }
-            else
-            {
-                _logger.DebugFormat(@"recieved error response");
-                _logger.DebugFormat(@"recieved = {0}", wwwRequest.error);
             }
 
             if ((_responseBody != null && _responseBody.Length > 0) || (_responseBody.Length == 0 && wwwRequest.error == null))
             {
-                _logger.DebugFormat(@"{0}", System.Text.UTF8Encoding.UTF8.GetString(_responseBody));
                 _responseStream = new MemoryStream(_responseBody);
             }
 
@@ -110,7 +98,6 @@ namespace Amazon.Runtime.Internal.Transform
             {
                 this.StatusCode = 0;
             }
-            _logger.DebugFormat(@"Status = {0}", StatusCode);
             this.IsSuccessStatusCode = wwwRequest.error == null?true:false;
         }
 

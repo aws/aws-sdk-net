@@ -26,6 +26,8 @@ namespace Amazon.Runtime.SharedInterfaces
         /// <param name="additionalProperties"></param>
         /// <returns></returns>
         string GeneratePreSignedURL(string bucketName, string objectKey, DateTime expiration, IDictionary<string, object> additionalProperties);
+        
+        //below api's are not supported in unity
 #if !UNITY
 #if BCL
         /// <summary>

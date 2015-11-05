@@ -1,16 +1,15 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Diagnostics;
-using System.Collections.Generic;
-using System;
+﻿using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Xml.Linq;
-using Amazon.Util.Internal;
 using System.Reflection;
 using System.Threading;
-using Amazon.Runtime.Internal;
+using System.Xml.Linq;
+using UnityEngine;
 
 
 namespace Amazon
@@ -18,9 +17,9 @@ namespace Amazon
     public static partial class AWSConfigs
     {
         private static List<string> standardConfigs = new List<string>() { "region", "logging", "correctForClockSkew" };
-		private static bool configPresent = true;
+        private static bool configPresent = true;
 
-		#region ApplicationName
+        #region ApplicationName
 
         /// <summary>
         /// The unique application name for the current application. This values is currently used 
@@ -41,7 +40,7 @@ namespace Amazon
         }
 
         #endregion
-		
+
         public static string GetConfig(string name)
         {
             return null;
@@ -60,7 +59,7 @@ namespace Amazon
                     if (xmlDoc == null)
                     {
                         xmlDoc = LoadConfigFromResource();
-                        configPresent = xmlDoc == null;
+                        configPresent = (xmlDoc != null);
                     }
                 }
             }
@@ -172,14 +171,14 @@ namespace Amazon
         private static XDocument LoadConfigFromResource()
         {
             XDocument xDoc = null;
-            TextAsset awsEndpoints = null;
-            
+            TextAsset awsConfig = null;
+
             Action action = () =>
             {
-                awsEndpoints = Resources.Load(CONFIG_FILE) as TextAsset;
-                if (awsEndpoints != null && awsEndpoints.bytes.Count() > 0)
+                awsConfig = Resources.Load(CONFIG_FILE) as TextAsset;
+                if (awsConfig != null && awsConfig.bytes.Count() > 0)
                 {
-                    using (Stream stream = new MemoryStream(awsEndpoints.bytes))
+                    using (Stream stream = new MemoryStream(awsConfig.bytes))
                     {
                         using (StreamReader reader = new StreamReader(stream))
                         {
@@ -188,8 +187,8 @@ namespace Amazon
                     }
                 }
             };
-            
-            if(UnityInitializer.IsMainThread())
+
+            if (UnityInitializer.IsMainThread())
             {
                 action();
             }
@@ -201,7 +200,7 @@ namespace Amazon
                     action();
                     e.Set();
                 });
-                
+
                 e.WaitOne();
             }
             return xDoc;
@@ -218,7 +217,7 @@ namespace Amazon
 
             var propertyInfos = t.GetType().GetProperties();
 
-            rootElement = rootElement.Elements(propertyName).Count() == 0 ? 
+            rootElement = rootElement.Elements(propertyName).Count() == 0 ?
                 rootElement : rootElement.Elements(propertyName).First();
 
             foreach (PropertyInfo propertyInfo in propertyInfos)
@@ -296,7 +295,7 @@ namespace Amazon
         private static IEnumerable GetList(XElement rootElement, Type listType, string propertyName)
         {
             var list = (IList)Activator.CreateInstance(listType);
-            
+
             var itemNamePropInfo = listType.GetProperty("ItemPropertyName");
             var itemName = (string)itemNamePropInfo.GetValue(list, null);
             var itemType = listType.GetProperty("Item").PropertyType;
@@ -305,7 +304,7 @@ namespace Amazon
             {
                 rootElement = rootElement.Elements(propertyName).Count() == 0 ?
                 rootElement : rootElement.Elements(propertyName).First();
-            }        
+            }
 
             // Process list items
             foreach (var childElement in rootElement.Elements())

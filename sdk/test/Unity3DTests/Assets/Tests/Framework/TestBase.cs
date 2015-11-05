@@ -3,6 +3,8 @@ using System.Collections;
 using Amazon;
 using Amazon.Runtime;
 using System;
+using System.Threading;
+using NUnit.Framework;
 
 namespace AWSSDK.Tests.Framework
 {
@@ -25,6 +27,9 @@ namespace AWSSDK.Tests.Framework
 
     public abstract class TestBase<T> : TestBase where T : AmazonServiceClient
     {
+
+        protected static AsyncOptions options = new AsyncOptions() { ExecuteCallbackOnMainThread = false };
+
         private T _client = null;
         public T Client
         {
@@ -54,9 +59,51 @@ namespace AWSSDK.Tests.Framework
             }
         }
 
-        public static void RunAsSync(Action action)
+        public static void WaitUntil(Func<bool> matchFunction, int sleepSeconds = 5, int maxWaitSeconds = 300)
         {
-            
+            if (sleepSeconds < 0) throw new ArgumentOutOfRangeException("sleepSeconds");
+            if (maxWaitSeconds < 0) throw new ArgumentOutOfRangeException("maxWaitSeconds");
+
+            var sleepTime = TimeSpan.FromSeconds(sleepSeconds);
+            var maxTime = TimeSpan.FromSeconds(maxWaitSeconds);
+            var endTime = DateTime.Now + maxTime;
+
+            while (DateTime.Now < endTime)
+            {
+                if (matchFunction())
+                    return;
+                Thread.Sleep(sleepTime);
+            }
+
+            throw new TimeoutException(string.Format("Wait condition was not satisfied for {0} seconds", maxWaitSeconds));
         }
+
+        public static T ExpectException<T>(Action action, string message = null) where T : Exception
+        {
+            return ExpectException_Helper<T>(action, message);
+        }
+
+        private static T ExpectException_Helper<T>(Action action, string message = null) where T : Exception
+        {
+            var exceptionType = typeof(T);
+            bool gotException = false;
+            Exception exception = null;
+            try
+            {
+                action();
+            }
+            catch (Exception e)
+            {
+                exception = e;
+                Assert.AreEqual(exceptionType, e.GetType());
+                if (!string.IsNullOrEmpty(message))
+                    Assert.AreEqual(message, e.Message);
+                gotException = true;
+            }
+
+            Assert.IsTrue(gotException, "Failed to get expected exception: " + exceptionType.FullName);
+            return (T)exception;
+        }
+
     }
 }

@@ -21,6 +21,9 @@ namespace AWSSDK.Tests
 
             UnityInitializer.AttachToGameObject(this.gameObject);
 
+            //set sleep timeout to infinity
+            Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
             //set up logging
             var loggingConfig = AWSConfigs.LoggingConfig;
             loggingConfig.LogTo = LoggingOptions.UnityLogger;
@@ -28,9 +31,10 @@ namespace AWSSDK.Tests
             loggingConfig.LogResponses = ResponseLoggingOption.Always;
             loggingConfig.LogResponsesSizeLimit = 4096;
             loggingConfig.LogMetricsFormat = LogMetricsFormatOption.JSON;
+            var context = AWSConfigsDynamoDB.Context;
 
             var runner = new TestRunner();
-            
+
             ThreadPool.QueueUserWorkItem(new WaitCallback(delegate
             {
                 runner.RunTests();

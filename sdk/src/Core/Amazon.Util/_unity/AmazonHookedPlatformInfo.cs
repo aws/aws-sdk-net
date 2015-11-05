@@ -243,8 +243,6 @@ namespace Amazon.Util.Internal
             else if (InternalSDKUtils.IsiOS)
             {
                 //platform related information
-
-                //platform related information
                 if (!string.IsNullOrEmpty(NSLocale.AutoUpdatingCurrentLocale.Identifier))
                 {
                     Locale = NSLocale.AutoUpdatingCurrentLocale.Identifier;
@@ -276,15 +274,6 @@ namespace Amazon.Util.Internal
                     }
                 }
             }
-
-            _logger.DebugFormat("make = {0}", Make);
-            _logger.DebugFormat("model = {0}", Model);
-            _logger.DebugFormat("platform version = {0}", PlatformVersion);
-            _logger.DebugFormat("Title = {0}", Title);
-            _logger.DebugFormat("locale = {0}", Locale);
-            _logger.DebugFormat("Version Code = {0}", VersionCode);
-            _logger.DebugFormat("Version Name = {0}", VersionName);
-            _logger.DebugFormat("Package Name = {0}", PackageName);
         }
 
     }
