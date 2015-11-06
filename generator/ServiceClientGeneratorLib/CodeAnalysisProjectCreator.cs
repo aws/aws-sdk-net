@@ -131,7 +131,18 @@ namespace ServiceClientGenerator
                     writer.WriteElementString("max", memberShape.Max.Value.ToString());
 
                 if (memberShape.Pattern != null)
-                    writer.WriteElementString("pattern", memberShape.Pattern);
+                {
+                    try
+                    {
+                        // Make sure we can compile the expression
+                        new System.Text.RegularExpressions.Regex(memberShape.Pattern);
+                        writer.WriteElementString("pattern", memberShape.Pattern);
+                    }
+                    catch(Exception e)
+                    {
+                        Console.Error.WriteLine("Failed to compile regex {0} for property {1}: {2}", memberShape.Pattern, propertyName, e.Message);
+                    }
+                }
 
                 writer.WriteEndElement();
             }
@@ -160,17 +171,14 @@ namespace ServiceClientGenerator
             if (Directory.Exists(codeAnalysisRoot))
             {
                 var subFolders = Directory.GetDirectories(codeAnalysisRoot, "*", SearchOption.AllDirectories);
-                if (subFolders.Any())
+                foreach (var folder in subFolders)
                 {
-                    foreach (var folder in subFolders)
-                    {
-                        var serviceRelativeFolder = folder.Substring(codeAnalysisRoot.Length);
+                    var serviceRelativeFolder = folder.Substring(codeAnalysisRoot.Length);
 
-                        if (!serviceRelativeFolder.StartsWith(@"\Custom", StringComparison.OrdinalIgnoreCase))
-                            continue;
+                    if (!serviceRelativeFolder.StartsWith(@"\Custom", StringComparison.OrdinalIgnoreCase))
+                        continue;
 
-                        sourceCodeFolders.Add(serviceRelativeFolder.TrimStart('\\'));
-                    }
+                    sourceCodeFolders.Add(serviceRelativeFolder.TrimStart('\\'));
                 }
             }
 

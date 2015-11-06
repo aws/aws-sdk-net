@@ -69,7 +69,6 @@ namespace ServiceClientGenerator
             var codeAnalysisProjectsRoot = Path.Combine(Options.SdkRootFolder, GeneratorDriver.CodeAnalysisFoldername);
             foreach (var projectFile in Directory.GetFiles(codeAnalysisProjectsRoot, projectTypeWildCard, SearchOption.AllDirectories).OrderBy(x => x))
             {
-                var fi = new FileInfo(projectFile);
                 var fullPath = Path.GetFullPath(projectFile);
                 var relativePath = fullPath.Substring(fullPath.IndexOf("code-analysis"));
 

@@ -66,7 +66,7 @@ namespace Analyzer1.Test
             expected = new DiagnosticResult
             {
                 Id = "AWS.MockAnalyzer.PropertyValue.TooLong",
-                Message = "Value \"aaaaaa\" is too long for Name, it must be at least 5 characters",
+                Message = "Value \"aaaaaa\" is too long for Name, it must be at most 5 characters",
                 Severity = DiagnosticSeverity.Warning,
                 Locations =
                     new[] {

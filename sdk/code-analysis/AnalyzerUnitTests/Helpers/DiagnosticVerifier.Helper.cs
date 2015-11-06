@@ -106,11 +106,6 @@ namespace TestHelper
         /// <returns>A Tuple containing the Documents produced from the sources and their TextSpans if relevant</returns>
         private static Document[] GetDocuments(string[] sources, string language)
         {
-            if (language != LanguageNames.CSharp && language != LanguageNames.VisualBasic)
-            {
-                throw new ArgumentException("Unsupported Language");
-            }
-
             var project = CreateProject(sources, language);
             var documents = project.Documents.ToArray();
 
@@ -128,7 +123,7 @@ namespace TestHelper
         /// <param name="source">Classes in the form of a string</param>
         /// <param name="language">The language the source code is in</param>
         /// <returns>A Document created from the source string</returns>
-        protected static Document CreateDocument(string source, string language = LanguageNames.CSharp)
+        internal static Document CreateDocument(string source, string language = LanguageNames.CSharp)
         {
             return CreateProject(new[] { source }, language).Documents.First();
         }
@@ -141,6 +136,11 @@ namespace TestHelper
         /// <returns>A Project created out of the Documents created from the source strings</returns>
         private static Project CreateProject(string[] sources, string language = LanguageNames.CSharp)
         {
+            if (language != LanguageNames.CSharp && language != LanguageNames.VisualBasic)
+            {
+                throw new ArgumentException("Unsupported Language");
+            }
+
             string fileNamePrefix = DefaultFilePathPrefix;
             string fileExt = language == LanguageNames.CSharp ? CSharpDefaultFileExt : VisualBasicDefaultExt;
 

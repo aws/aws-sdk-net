@@ -449,9 +449,18 @@ namespace ServiceClientGenerator
             get
             {
                 var value = data[MinKey];
-                int min;
-                if (value == null || !int.TryParse(value.ToString(), out min)) return null;
-                return min;
+                
+                if(value != null)
+                {
+                    int min;
+                    if(!int.TryParse(value.ToString(), out min))
+                    {
+                        throw new Exception(string.Format("Failed to parse min value {0} for shape {1}", value, this.Name));
+                    }
+                    return min;
+                }
+
+                return null;
             }
         }
 
@@ -460,9 +469,17 @@ namespace ServiceClientGenerator
             get
             {
                 var value = data[MaxKey];
-                int max;
-                if (value == null || !int.TryParse(value.ToString(), out max)) return null;
-                return max;
+                if (value != null)
+                {
+                    int max;
+                    if (!int.TryParse(value.ToString(), out max))
+                    {
+                        throw new Exception(string.Format("Failed to parse max value {0} for shape {1}", value, this.Name));
+                    }
+                    return max;
+                }
+
+                return null;
             }
         }
 

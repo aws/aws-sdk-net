@@ -21,15 +21,16 @@ namespace Amazon.CodeAnalysis.Shared
 
         static AbstractPropertyValueAssignmentAnalyzer()
         {
-            _propertyValueRules = new Dictionary<string, PropertyValueRule>();
+            _propertyValueRules = new Dictionary<string, PropertyValueRule>(StringComparer.Ordinal);
 
-            foreach (var name in typeof(AbstractPropertyValueAssignmentAnalyzer).GetTypeInfo().Assembly.GetManifestResourceNames())
+            var assembly = typeof(AbstractPropertyValueAssignmentAnalyzer).GetTypeInfo().Assembly;
+            foreach (var name in assembly.GetManifestResourceNames())
             {
                 if (!name.EndsWith(".PropertyValueRules.xml"))
                     continue;
 
                 string content;
-                using (var stream = typeof(AbstractPropertyValueAssignmentAnalyzer).GetTypeInfo().Assembly.GetManifestResourceStream(name))
+                using (var stream = assembly.GetManifestResourceStream(name))
                 using (var reader = new StreamReader(stream))
                 {
                     content = reader.ReadToEnd();
@@ -61,9 +62,6 @@ namespace Amazon.CodeAnalysis.Shared
         }
 
         public abstract string GetServiceName();
-
-
-        // You can change these strings in the Resources.resx file. If you do not want your analyzer to be localize-able, you can use regular strings for Title and MessageFormat.
 
         private const string Category = "Property Values";
 
@@ -98,7 +96,7 @@ namespace Amazon.CodeAnalysis.Shared
                     this._maxLengthRule = new DiagnosticDescriptor(
                         string.Format("AWS.{0}.PropertyValue.TooLong", GetServiceName()),
                         "Property value too long",
-                        "Value \"{0}\" is too long for {1}, it must be at least {2} characters",
+                        "Value \"{0}\" is too long for {1}, it must be at most {2} characters",
                         Category,
                         DiagnosticSeverity.Warning,
                         isEnabledByDefault: true,
@@ -118,7 +116,7 @@ namespace Amazon.CodeAnalysis.Shared
                     this._patternRule = new DiagnosticDescriptor(
                         string.Format("AWS.{0}.PropertyValue.PatternMatch", GetServiceName()),
                         "Property value does match required pattern",
-                        "Value \"{0}\" does not match required pattern {1} for property {2}",
+                        "Value \"{0}\" does not match required pattern \"{1}\" for property {2}",
                         Category,
                         DiagnosticSeverity.Warning,
                         isEnabledByDefault: true,
@@ -200,6 +198,10 @@ namespace Amazon.CodeAnalysis.Shared
             if (literal == null)
                 return;
 
+            var literalOpt = context.SemanticModel.GetConstantValue(literal);
+            if (!literalOpt.HasValue)
+                return;
+
             var symbol = context.SemanticModel.GetSymbolInfo(assignmentExpr.Left).Symbol;
             if (symbol == null)
                 return;
@@ -210,10 +212,6 @@ namespace Amazon.CodeAnalysis.Shared
 
             PropertyValueRule propertyValueRule;
             if (!_propertyValueRules.TryGetValue(memberSymbol.ToString(), out propertyValueRule))
-                return;
-
-            var literalOpt = context.SemanticModel.GetConstantValue(literal);
-            if (!literalOpt.HasValue)
                 return;
 
             if (literalOpt.Value is string)
