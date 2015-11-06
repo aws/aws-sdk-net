@@ -1,3 +1,7 @@
+### 3.1.26.0 (2015-11-06 21:05 UTC)
+* RDS (3.1.3.0)
+	* Add support for sharing manual DB snapshots
+
 ### 3.1.25.0 (2015-11-03 21:41 UTC)
 * DeviceFarm (3.1.2.0)
 	* Added support for AWS Device Farm APIs to manage projects, device pools, runs, and uploads.
