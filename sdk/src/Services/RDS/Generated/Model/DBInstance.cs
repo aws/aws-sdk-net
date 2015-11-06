@@ -323,13 +323,13 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBName. 
         /// <para>
         /// The meaning of this parameter differs according to the database engine you use. For
-        /// example, this value returns either MySQL or PostgreSQL information when returning
+        /// example, this value returns MySQL, MariaDB, or PostgreSQL information when returning
         /// values from CreateDBInstanceReadReplica since Read Replicas are only supported for
-        /// MySQL and PostgreSQL.
+        /// these engines.
         /// </para>
         ///  
         /// <para>
-        ///  <b>MySQL, SQL Server, PostgreSQL, Amazon Aurora</b> 
+        ///  <b>MySQL, MariaDB, SQL Server, PostgreSQL, Amazon Aurora</b> 
         /// </para>
         ///  
         /// <para>

@@ -998,6 +998,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void DescribeDBSnapshotAttributesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDBSnapshotAttributes");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDBSnapshotAttributesRequest>();
+            var marshaller = new DescribeDBSnapshotAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeDBSnapshotAttributesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeDBSnapshotAttributesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void DescribeDBSnapshotsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeDBSnapshots");
@@ -1469,6 +1493,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = ModifyDBParameterGroupResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifyDBParameterGroupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyDBSnapshotAttributeMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDBSnapshotAttribute");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDBSnapshotAttributeRequest>();
+            var marshaller = new ModifyDBSnapshotAttributeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyDBSnapshotAttributeResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyDBSnapshotAttributeResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

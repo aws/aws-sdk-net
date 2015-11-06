@@ -103,6 +103,28 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        ///  <b>MariaDB</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Uses existing setting
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: 5-6144
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Value supplied must be at least 10% greater than the current value. Values
+        /// that are not at least 10% greater than the existing value are rounded up so that they
+        /// are 10% greater than the current value.
+        /// </para>
+        ///  
+        /// <para>
+        /// Type: Integer
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>PostgreSQL</b> 
         /// </para>
         ///  
@@ -564,8 +586,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be 8 to 41 alphanumeric characters (MySQL and Amazon Aurora), 8
-        /// to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
+        /// Constraints: Must be 8 to 41 alphanumeric characters (MySQL, MariaDB, and Amazon Aurora),
+        /// 8 to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
+        /// Server).
         /// </para>
         ///  <note> Amazon RDS API actions never return the password, so this action provides
         /// a way to regain access to a primary instance user if the password is lost. This includes

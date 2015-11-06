@@ -29,8 +29,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBInstanceReadReplica operation.
-    /// Creates a DB instance for a DB instance running MySQL or PostgreSQL that acts as
-    /// a Read Replica of a source DB instance. 
+    /// Creates a DB instance for a DB instance running MySQL, MariaDB, or PostgreSQL that
+    /// acts as a Read Replica of a source DB instance. 
     /// 
     ///  
     /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.RDS.Model
         /// Instantiates CreateDBInstanceReadReplicaRequest with the parameterized properties
         /// </summary>
         /// <param name="dbInstanceIdentifier"> The DB instance identifier of the Read Replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string. </param>
-        /// <param name="sourceDBInstanceIdentifier"> The identifier of the DB instance that will act as the source for the Read Replica. Each DB instance can have up to five Read Replicas.  Constraints: <ul> <li>Must be the identifier of an existing DB instance.</li> <li>Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6.</li> <li>Can specify a DB instance that is a PostgreSQL Read Replica only if the source is running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have automatic backups enabled, its backup retention period must be greater than 0.</li> <li>If the source DB instance is in the same region as the Read Replica, specify a valid DB instance identifier.</li> <li>If the source DB instance is in a different region than the Read Replica, specify a valid DB instance ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul></param>
+        /// <param name="sourceDBInstanceIdentifier"> The identifier of the DB instance that will act as the source for the Read Replica. Each DB instance can have up to five Read Replicas.  Constraints: <ul> <li>Must be the identifier of an existing MySQL, MariaDB, or PostgreSQL DB instance.</li> <li>Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6.</li> <li>Can specify a DB instance that is a PostgreSQL Read Replica only if the source is running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have automatic backups enabled, its backup retention period must be greater than 0.</li> <li>If the source DB instance is in the same region as the Read Replica, specify a valid DB instance identifier.</li> <li>If the source DB instance is in a different region than the Read Replica, specify a valid DB instance ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul></param>
         public CreateDBInstanceReadReplicaRequest(string dbInstanceIdentifier, string sourceDBInstanceIdentifier)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
@@ -330,14 +330,15 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be the identifier of an existing DB instance.</li> <li>Can specify
-        /// a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6.</li>
-        /// <li>Can specify a DB instance that is a PostgreSQL Read Replica only if the source
-        /// is running PostgreSQL 9.3.5.</li> <li>The specified DB instance must have automatic
-        /// backups enabled, its backup retention period must be greater than 0.</li> <li>If the
-        /// source DB instance is in the same region as the Read Replica, specify a valid DB instance
-        /// identifier.</li> <li>If the source DB instance is in a different region than the Read
-        /// Replica, specify a valid DB instance ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+        ///  <ul> <li>Must be the identifier of an existing MySQL, MariaDB, or PostgreSQL DB instance.</li>
+        /// <li>Can specify a DB instance that is a MySQL Read Replica only if the source is running
+        /// MySQL 5.6.</li> <li>Can specify a DB instance that is a PostgreSQL Read Replica only
+        /// if the source is running PostgreSQL 9.3.5.</li> <li>The specified DB instance must
+        /// have automatic backups enabled, its backup retention period must be greater than 0.</li>
+        /// <li>If the source DB instance is in the same region as the Read Replica, specify a
+        /// valid DB instance identifier.</li> <li>If the source DB instance is in a different
+        /// region than the Read Replica, specify a valid DB instance ARN. For more information,
+        /// go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
         /// Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
         /// </summary>
         public string SourceDBInstanceIdentifier

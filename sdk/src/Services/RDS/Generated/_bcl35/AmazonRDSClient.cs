@@ -43,8 +43,8 @@ namespace Amazon.RDS
     /// </para>
     ///  
     /// <para>
-    ///  Amazon RDS gives you access to the capabilities of a MySQL, PostgreSQL, Microsoft
-    /// SQL Server, Oracle, or Aurora database server. This means the code, applications,
+    ///  Amazon RDS gives you access to the capabilities of a MySQL, MariaDB, PostgreSQL,
+    /// Microsoft SQL Server, Oracle, or Aurora database server. This means the code, applications,
     /// and tools you already use today with your existing databases work with Amazon RDS
     /// without modification. Amazon RDS automatically backs up your database and maintains
     /// the database software that powers your DB instance. Amazon RDS is flexible: you can
@@ -624,8 +624,14 @@ namespace Amazon.RDS
         #region  CopyDBSnapshot
 
         /// <summary>
-        /// Copies the specified DBSnapshot. The source DBSnapshot must be in the "available"
-        /// state.
+        /// Copies the specified DBSnapshot. The source DB snapshot must be in the "available"
+        /// state. 
+        /// 
+        ///  
+        /// <para>
+        /// If you are copying from a shared manual DB snapshot, the <code>SourceDBSnapshotIdentifier</code>
+        /// must be the ARN of the shared DB snapshot.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBSnapshot service method.</param>
         /// 
@@ -785,6 +791,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// DB subnet group does not cover all Availability Zones after it is created because
         /// users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// Error accessing KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// Request would result in user exceeding the allowed amount of storage available across
@@ -1101,8 +1110,8 @@ namespace Amazon.RDS
         #region  CreateDBInstanceReadReplica
 
         /// <summary>
-        /// Creates a DB instance for a DB instance running MySQL or PostgreSQL that acts as
-        /// a Read Replica of a source DB instance. 
+        /// Creates a DB instance for a DB instance running MySQL, MariaDB, or PostgreSQL that
+        /// acts as a Read Replica of a source DB instance. 
         /// 
         ///  
         /// <para>
@@ -3003,6 +3012,74 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeDBSnapshotAttributes
+
+        /// <summary>
+        /// Returns a list of DB snapshot attribute names and values for a manual DB snapshot.
+        /// 
+        ///  
+        /// <para>
+        /// When sharing snapshots with other AWS accounts, <code>DescribeDBSnapshotAttributes</code>
+        /// returns the <code>restore</code> attribute and a list of the AWS account ids that
+        /// are authorized to copy or restore the manual DB snapshot. If <code>all</code> is included
+        /// in the list of values for the <code>restore</code> attribute, then the manual DB snapshot
+        /// is public and can be copied or restored by all AWS accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// To add or remove access for an AWS account to copy or restore a manual DB snapshot,
+        /// or to make the manual DB snapshot public or private, use the <a>ModifyDBSnapshotAttribute</a>
+        /// API.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBSnapshotAttributes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBSnapshotAttributes service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
+        /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+        /// </exception>
+        public DescribeDBSnapshotAttributesResponse DescribeDBSnapshotAttributes(DescribeDBSnapshotAttributesRequest request)
+        {
+            var marshaller = new DescribeDBSnapshotAttributesRequestMarshaller();
+            var unmarshaller = DescribeDBSnapshotAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBSnapshotAttributesRequest,DescribeDBSnapshotAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBSnapshotAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBSnapshotAttributes operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBSnapshotAttributes
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeDBSnapshotAttributes(DescribeDBSnapshotAttributesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeDBSnapshotAttributesRequestMarshaller();
+            var unmarshaller = DescribeDBSnapshotAttributesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeDBSnapshotAttributesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDBSnapshotAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBSnapshotAttributes.</param>
+        /// 
+        /// <returns>Returns a  DescribeDBSnapshotAttributesResult from RDS.</returns>
+        public  DescribeDBSnapshotAttributesResponse EndDescribeDBSnapshotAttributes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDBSnapshotAttributesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDBSnapshots
 
         /// <summary>
@@ -4373,6 +4450,88 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  ModifyDBSnapshotAttribute
+
+        /// <summary>
+        /// Adds an attribute and values to, or removes an attibute and values from a manual DB
+        /// snapshot.
+        /// 
+        ///  
+        /// <para>
+        /// To share a manual DB snapshot with other AWS accounts, specify <code>restore</code>
+        /// as the <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to
+        /// add a list of the AWS account ids that are authorized to retore the manual DB snapshot.
+        /// Uses the value <code>all</code> to make the manual DB snapshot public and can by copied
+        /// or restored by all AWS accounts. Do not add the <code>all</code> value for any manual
+        /// DB snapshots that contain private information that you do not want to be available
+        /// to all AWS accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// To view which AWS accounts have access to copy or restore a manual DB snapshot, or
+        /// whether a manual DB snapshot public or private, use the <a>DescribeDBSnapshotAttributes</a>
+        /// API.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the manual DB snapshot is encrypted, it cannot be shared.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshotAttribute service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDBSnapshotAttribute service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
+        /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
+        /// The state of the DB snapshot does not allow deletion.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.SharedSnapshotQuotaExceededException">
+        /// You have exceeded the maximum number of account ids that you can share a manual DB
+        /// snapshot with.
+        /// </exception>
+        public ModifyDBSnapshotAttributeResponse ModifyDBSnapshotAttribute(ModifyDBSnapshotAttributeRequest request)
+        {
+            var marshaller = new ModifyDBSnapshotAttributeRequestMarshaller();
+            var unmarshaller = ModifyDBSnapshotAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyDBSnapshotAttributeRequest,ModifyDBSnapshotAttributeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyDBSnapshotAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshotAttribute operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyDBSnapshotAttribute
+        ///         operation.</returns>
+        public IAsyncResult BeginModifyDBSnapshotAttribute(ModifyDBSnapshotAttributeRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ModifyDBSnapshotAttributeRequestMarshaller();
+            var unmarshaller = ModifyDBSnapshotAttributeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyDBSnapshotAttributeRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyDBSnapshotAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyDBSnapshotAttribute.</param>
+        /// 
+        /// <returns>Returns a  ModifyDBSnapshotAttributeResult from RDS.</returns>
+        public  ModifyDBSnapshotAttributeResponse EndModifyDBSnapshotAttribute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyDBSnapshotAttributeResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifyDBSubnetGroup
 
         /// <summary>
@@ -5091,6 +5250,9 @@ namespace Amazon.RDS
         /// DB subnet group does not cover all Availability Zones after it is created because
         /// users' change.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// Error accessing KMS key.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -5201,6 +5363,9 @@ namespace Amazon.RDS
         /// DB subnet group does not cover all Availability Zones after it is created because
         /// users' change.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// Error accessing KMS key.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -5274,6 +5439,11 @@ namespace Amazon.RDS
         /// name of the DB instance as the DBInstanceIdentifier in the call to the RestoreDBInstanceFromDBSnapshot
         /// action. The result is that you will replace the original DB instance with the DB instance
         /// created from the snapshot.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code>
+        /// must be the ARN of the shared DB snapshot.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceFromDBSnapshot service method.</param>

@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Endpoint Object
+    /// Response Unmarshaller for DBSnapshotAttributesResult Object
     /// </summary>  
-    public class EndpointUnmarshaller : IUnmarshaller<Endpoint, XmlUnmarshallerContext>, IUnmarshaller<Endpoint, JsonUnmarshallerContext>
+    public class DBSnapshotAttributesResultUnmarshaller : IUnmarshaller<DBSnapshotAttributesResult, XmlUnmarshallerContext>, IUnmarshaller<DBSnapshotAttributesResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Endpoint Unmarshall(XmlUnmarshallerContext context)
+        public DBSnapshotAttributesResult Unmarshall(XmlUnmarshallerContext context)
         {
-            Endpoint unmarshalledObject = new Endpoint();
+            DBSnapshotAttributesResult unmarshalledObject = new DBSnapshotAttributesResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,22 +54,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Address", targetDepth))
+                    if (context.TestExpression("DBSnapshotAttributes/DBSnapshotAttribute", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Address = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DBSnapshotAttributeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DBSnapshotAttributes.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("HostedZoneId", targetDepth))
+                    if (context.TestExpression("DBSnapshotIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.HostedZoneId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Port", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.Port = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DBSnapshotIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -87,18 +82,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Endpoint Unmarshall(JsonUnmarshallerContext context)
+        public DBSnapshotAttributesResult Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static EndpointUnmarshaller _instance = new EndpointUnmarshaller();        
+        private static DBSnapshotAttributesResultUnmarshaller _instance = new DBSnapshotAttributesResultUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EndpointUnmarshaller Instance
+        public static DBSnapshotAttributesResultUnmarshaller Instance
         {
             get
             {
