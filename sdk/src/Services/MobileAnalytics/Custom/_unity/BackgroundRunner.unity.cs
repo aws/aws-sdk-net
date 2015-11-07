@@ -64,6 +64,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         public static void AbortBackgroundThread()
         {
             _thread.Abort();
+            _thread = null;
         }
 
         /// <summary>
@@ -108,7 +109,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 {
                     if (Application.isEditor && !Application.isPlaying)
                     {
-                        _thread.Abort();
+                        AbortBackgroundThread();
                     }
                 });
                 

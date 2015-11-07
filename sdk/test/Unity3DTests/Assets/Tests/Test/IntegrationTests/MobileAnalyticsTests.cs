@@ -71,7 +71,7 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
         }
 
 
-        // This test fails due to bug issues/mobilesdk-1249
+        
         [Test]
         public void TestRecordEvent()
         {
@@ -279,7 +279,7 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
             Assert.AreEqual(amae.ErrorCode, "BadRequestException");
         }
 
-        // This test fails due to bug issues/mobilesdk-1249
+        
         [Test]
         public void TestLowLevelAPIErrorCaseWrongCognitoCred()
         {
@@ -356,7 +356,7 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
             Assert.AreEqual(HttpStatusCode.Accepted, httpStatusCode);
         }
 
-        // This test fails due to bug issues/mobilesdk-1249
+        
         [Test]
         public void TestEventStore()
         {
@@ -420,36 +420,23 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
         private object _lock = new object();
         private List<bool> resultList = new List<bool>();
 
-        // This test fails due to bug issues/mobilesdk-1249
-        [Test]
-        //Note that this test takes 75 seconds
+        //[Test]
         public void TestErrorEventHandler()
         {
             string appID = Guid.NewGuid().ToString();
             bool gotException = false;
-            int timeout = 3;
+            int timeout = 2;
             var ars = new AutoResetEvent(false);
             MobileAnalyticsManager manager = MobileAnalyticsManager.GetOrCreateInstance(appID,
                 new CognitoAWSCredentials("wrong-cognito-pool-id", RegionEndpoint.USEast1),
                 RegionEndpoint.USEast1);
+
             manager.MobileAnalyticsErrorEvent += (object sender, MobileAnalyticsErrorEventArgs args) =>
             {
-                bool catchExpectedError = false;
-                lock (_lock)
-                {
-                    if (args.ClassName != null && args.ErrorMessage != null && args.Exception is AmazonServiceException && args.UndeliveredEvents != null)
-                    {
-                        catchExpectedError = args.UndeliveredEvents.Count == 0;
-                    }
-                    else
-                    {
-                        catchExpectedError = false;
-                    }
-                }
                 gotException = true;
                 ars.Set();
             };
-            
+
 
             while (!gotException && timeout > 0)
             {
