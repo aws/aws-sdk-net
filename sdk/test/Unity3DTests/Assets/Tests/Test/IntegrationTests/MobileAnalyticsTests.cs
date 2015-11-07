@@ -15,6 +15,7 @@ using System.Collections;
 using ThirdParty.Json.LitJson;
 using Amazon.CognitoIdentity;
 using AWSSDK.Tests.Framework;
+using Amazon.Util.Internal;
 
 namespace AWSSDK.IntegrationTests.MobileAnalytics
 {
@@ -22,6 +23,26 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
     [Category("Integration")]
     class MobileAnalyticsTests : TestBase<AmazonMobileAnalyticsClient>
     {
+        private const String dbFileName = "mobile_analytic_event.db";
+
+        [OneTimeSetUp]
+        public void Setup()
+        {
+            File.Delete(Path.Combine(AmazonHookedPlatformInfo.Instance.PersistentDataPath, dbFileName));
+        }
+
+        [OneTimeTearDown]
+        public void OneTimeCleanUp()
+        {
+            File.Delete(Path.Combine(AmazonHookedPlatformInfo.Instance.PersistentDataPath, dbFileName));
+        }
+
+        [TearDown]
+        public void Cleanup()
+        {
+            BackgroundRunner.AbortBackgroundThread();
+        }
+
         // This test passes but is related to bug issues/mobilesdk-1249
         [Test]
         public void TestConstructor()
@@ -88,6 +109,9 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
 
             // Event store should have one custom event, one monetization event and one session start event.
             Assert.AreEqual(3, eventStore.NumberOfEvents(appID));
+
+
+            eventStore.Dispose();
         }
 
 
@@ -389,6 +413,8 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
             }
             eventStore.DeleteEvent(deleteEventsIdList);
             Assert.AreEqual(0, eventStore.NumberOfEvents(appId));
+
+            eventStore.Dispose();
         }
 
         private object _lock = new object();
@@ -400,37 +426,40 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
         public void TestErrorEventHandler()
         {
             string appID = Guid.NewGuid().ToString();
-            MobileAnalyticsManager manager = MobileAnalyticsManager.GetOrCreateInstance(appID, new CognitoAWSCredentials("wrong-cognito-pool-id", RegionEndpoint.USEast1), RegionEndpoint.USEast1);
-            manager.MobileAnalyticsErrorEvent += errorHandler;
-
-            Thread.Sleep(TimeSpan.FromSeconds(75));
-            lock (_lock)
+            bool gotException = false;
+            int timeout = 3;
+            var ars = new AutoResetEvent(false);
+            MobileAnalyticsManager manager = MobileAnalyticsManager.GetOrCreateInstance(appID,
+                new CognitoAWSCredentials("wrong-cognito-pool-id", RegionEndpoint.USEast1),
+                RegionEndpoint.USEast1);
+            manager.MobileAnalyticsErrorEvent += (object sender, MobileAnalyticsErrorEventArgs args) =>
             {
-                Assert.IsTrue(resultList.Count > 0);
-                foreach (bool result in resultList)
+                bool catchExpectedError = false;
+                lock (_lock)
                 {
-                    Assert.IsTrue(result);
+                    if (args.ClassName != null && args.ErrorMessage != null && args.Exception is AmazonServiceException && args.UndeliveredEvents != null)
+                    {
+                        catchExpectedError = args.UndeliveredEvents.Count == 0;
+                    }
+                    else
+                    {
+                        catchExpectedError = false;
+                    }
                 }
+                gotException = true;
+                ars.Set();
+            };
+            
+
+            while (!gotException && timeout > 0)
+            {
+                ars.WaitOne(TimeSpan.FromSeconds(75));
+                timeout--;
             }
+
+            Assert.IsTrue(gotException);
         }
 
-
-        private void errorHandler(object sender, MobileAnalyticsErrorEventArgs args)
-        {
-            bool catchExpectedError = false;
-            lock (_lock)
-            {
-                if (args.ClassName != null && args.ErrorMessage != null && args.Exception is AmazonServiceException && args.UndeliveredEvents != null)
-                {
-                    catchExpectedError = args.UndeliveredEvents.Count == 0;
-                }
-                else
-                {
-                    catchExpectedError = false;
-                }
-                resultList.Add(catchExpectedError);
-            }
-        }
 
         private string BuildClientContext()
         {

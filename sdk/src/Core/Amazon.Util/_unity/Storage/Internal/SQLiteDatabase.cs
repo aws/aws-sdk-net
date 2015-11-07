@@ -131,8 +131,6 @@ namespace Amazon.Util.Storage.Internal
             return Marshal.PtrToStringAnsi(ptr);
         }
 
-
-
         private string dbPath;
         internal IntPtr hDb = IntPtr.Zero;
 
@@ -147,22 +145,33 @@ namespace Amazon.Util.Storage.Internal
                 throw new AmazonClientException("Could not open database file: " + dbPath);
         }
 
+        private static List<SQLiteStatement> statements = new List<SQLiteStatement>();
+
 
         public void CloseDatabase()
         {
             if (hDb != IntPtr.Zero)
             {
+                foreach(var stmt in statements)
+                {
+                    stmt.FinalizeStm();
+                }
+                
                 SQLiteDatabase.sqlite3_close(hDb);
+                //release all file handles
+                
                 hDb = IntPtr.Zero;
             }
         }
-
 
         public SQLiteStatement Prepare(string SQL)
         {
             if (hDb == IntPtr.Zero)
                 throw new AmazonClientException("Database closed: " + dbPath);
-            return new SQLiteStatement(this, SQL);
+
+            var stmt = new SQLiteStatement(this, SQL);
+            statements.Add(stmt);
+            return stmt;
         }
 
         public void OpenDatabase()

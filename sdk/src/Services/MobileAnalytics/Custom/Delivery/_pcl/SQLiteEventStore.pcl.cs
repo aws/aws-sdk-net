@@ -38,17 +38,23 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     /// </summary>
     public partial class SQLiteEventStore : IEventStore
     {
-        static SQLiteEventStore()
+
+        /// <summary>
+        /// Implements the Dispose pattern
+        /// </summary>
+        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
+        /// or garbage collected.</param>
+        protected virtual void Dispose(bool disposing)
         {
-            _dbFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, dbFileName);
-            SetupSQLiteEventStore();
+
         }
 
         /// <summary>
         /// Sets up SQLite database.
         /// </summary>
-        private static void SetupSQLiteEventStore()
+        private void SetupSQLiteEventStore()
         {
+            _dbFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, dbFileName);
             string vacuumCommand = "PRAGMA auto_vacuum = 1";
             string sqlCommand = string.Format(CultureInfo.InvariantCulture, "CREATE TABLE IF NOT EXISTS {0} ({1} TEXT NOT NULL,{2} TEXT NOT NULL UNIQUE,{3} TEXT NOT NULL, {4}  INTEGER NOT NULL DEFAULT 0 )",
                 TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME);

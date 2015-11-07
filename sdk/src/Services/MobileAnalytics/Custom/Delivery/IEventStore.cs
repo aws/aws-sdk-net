@@ -25,7 +25,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     /// <summary>
     /// The interface for managing events storage.
     /// </summary>
-    public interface IEventStore
+    public interface IEventStore:IDisposable
     {
         /// <summary>
         /// Add an event to the store.

@@ -30,7 +30,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
     /// <summary>
     /// MobileAnalyticsManager is the entry point to recording analytic events for your application
     /// </summary>
-    public partial class MobileAnalyticsManager
+    public partial class MobileAnalyticsManager:IDisposable
     {
         private static Object _lock = new Object();
         private static IDictionary<string, MobileAnalyticsManager> _instanceDictionary = new Dictionary<string, MobileAnalyticsManager>();
@@ -360,6 +360,25 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         {
             AWSSDKUtils.InvokeInBackground(MobileAnalyticsErrorEvent, eventArgs, this);
         }
+        #endregion
+
+
+        #region Dispose Pattern Implementation
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if(disposing)
+            {
+                this.Session.Dispose();
+                this.BackgroundDeliveryClient.Dispose();
+            }
+        }
+
         #endregion
     }
 

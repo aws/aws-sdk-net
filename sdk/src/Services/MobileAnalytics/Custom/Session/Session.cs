@@ -34,7 +34,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     /// The class controls session start, pause, resume and stop logic.
     /// </summary>
     [System.Security.SecuritySafeCritical]
-    public partial class Session
+    public partial class Session : IDisposable
     {
         private Logger _logger = Logger.GetLogger(typeof(Session));
 
@@ -315,5 +315,20 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             }
 
         }
+
+
+        #region dispose pattern implementation
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+
+        }
+
+        #endregion
     }
 }

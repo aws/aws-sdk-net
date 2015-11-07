@@ -38,28 +38,52 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         private static SQLiteDatabase db;
 
         /// <summary>
-        /// Initializes the <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore"/> class.
+        /// Implements the Dispose pattern
         /// </summary>
-        static SQLiteEventStore()
+        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
+        /// or garbage collected.</param>
+        protected virtual void Dispose(bool disposing)
         {
-            _dbFileFullPath = System.IO.Path.Combine(AmazonHookedPlatformInfo.Instance.PersistentDataPath, dbFileName);
-            SetupSQLiteEventStore();
+            if (!this._isDisposed)
+            {
+                if (disposing)
+                {
+                    lock (_lock)
+                    {
+                        if (!this._isDisposed)
+                        {
+                            db.CloseDatabase();
+                        }
+                    }
+                }
+                this._isDisposed = true;
+            }
+        }
+
+        private void CreateOrOpenDatabase()
+        {
+            if (db == null)
+                db = new SQLiteDatabase(_dbFileFullPath);
+            else
+                db.OpenDatabase();
+
         }
 
         /// <summary>
         /// Sets up database.
         /// </summary>
-        /// <param name="dbPath">Db path.</param>
-        private static void SetupSQLiteEventStore()
+        private void SetupSQLiteEventStore()
         {
             lock (_lock)
             {
+                _dbFileFullPath = System.IO.Path.Combine(AmazonHookedPlatformInfo.Instance.PersistentDataPath, dbFileName);
+
                 SQLiteStatement stmt = null;
                 try
                 {
-                    db = new SQLiteDatabase(_dbFileFullPath);
+                    CreateOrOpenDatabase();
 
-                    //turn on auto vacuuming so that when events are deleted, then we can recover the table space.
+                    //turn on auto vacuuming so that when events are deleted, and we can recover the table space.
                     string vacuumCommand = "PRAGMA auto_vacuum = 1";
                     db.Exec(vacuumCommand);
 
@@ -72,6 +96,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 {
                     if (stmt != null)
                         stmt.FinalizeStm();
+
+                    if (db != null)
+                        db.CloseDatabase();
+
                 }
             }
         }
@@ -114,6 +142,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                     SQLiteStatement stmt = null;
                     try
                     {
+                        CreateOrOpenDatabase();
+
                         string query = string.Format(CultureInfo.InvariantCulture, "INSERT INTO {0}  ({1},{2},{3}) values(?,?,?)", TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME);
                         stmt = db.Prepare(query);
                         stmt.BindText(1, eventString);
@@ -125,6 +155,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                     {
                         if (stmt != null)
                             stmt.FinalizeStm();
+
+                        if (db != null)
+                            db.CloseDatabase();
                     }
                 }
             }
@@ -144,6 +177,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 SQLiteStatement stmt = null;
                 try
                 {
+                    CreateOrOpenDatabase();
+
                     string ids = string.Format(CultureInfo.InvariantCulture, "'{0}'", string.Join("', '", rowIds.ToArray()));
                     string query = string.Format(CultureInfo.InvariantCulture, "DELETE FROM {0} WHERE {1} IN ({2})", TABLE_NAME, EVENT_ID_COLUMN_NAME, ids);
                     stmt = db.Prepare(query);
@@ -153,6 +188,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 {
                     if (stmt != null)
                         stmt.FinalizeStm();
+
+                    if (db != null)
+                        db.CloseDatabase();
                 }
             }
         }
@@ -160,7 +198,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <summary>
         /// Get All event from the Event Store
         /// </summary>
-        /// <param name="appid">Appid.</param>
+        /// <param name="appID">Appid.</param>
+        /// <param name="maxAllowed">maximum number of events to fetch</param>
         /// <returns>All the events as a List of <see cref="ThirdParty.Json.LitJson.JsonData"/>.</returns>
         public List<JsonData> GetEvents(string appID, int maxAllowed)
         {
@@ -170,6 +209,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 SQLiteStatement stmt = null;
                 try
                 {
+                    CreateOrOpenDatabase();
+
                     string query = string.Format(CultureInfo.InvariantCulture, "SELECT * FROM {0} WHERE {1}  = ? ORDER BY {2},   ROWID LIMIT {3} ", TABLE_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME, maxAllowed);
                     stmt = db.Prepare(query);
                     stmt.BindText(1, appID);
@@ -186,6 +227,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 {
                     if (stmt != null)
                         stmt.FinalizeStm();
+
+                    if (db != null)
+                        db.CloseDatabase();
+
                 }
             }
 
@@ -204,6 +249,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 SQLiteStatement stmt = null;
                 try
                 {
+                    CreateOrOpenDatabase();
+
+
                     string query = string.Format(CultureInfo.InvariantCulture, "SELECT COUNT(*) C FROM {0} where {1} = ?", TABLE_NAME, MA_APP_ID_COLUMN_NAME);
                     stmt = db.Prepare(query);
                     stmt.BindText(1, appID);
@@ -216,6 +264,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 {
                     if (stmt != null)
                         stmt.FinalizeStm();
+
+                    if (db != null)
+                        db.CloseDatabase();
                 }
 
             }
@@ -237,6 +288,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 SQLiteStatement stmt = null;
                 try
                 {
+                    CreateOrOpenDatabase();
+
+
                     string ids = "'" + String.Join("', '", rowIds.ToArray()) + "'";
                     string query = String.Format("UPDATE " + TABLE_NAME + " SET " + EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME + "= " + EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME + "+1 WHERE " + EVENT_ID_COLUMN_NAME + " IN ({0})", ids);
                     stmt = db.Prepare(query);
@@ -247,6 +301,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 {
                     if (stmt != null)
                         stmt.FinalizeStm();
+                    if (db != null)
+                        db.CloseDatabase();
                 }
             }
             return success;
@@ -268,17 +324,24 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 {
                     try
                     {
-                        stmt = db.Prepare(pageCountCommand);
+                        CreateOrOpenDatabase();
 
+                        stmt = db.Prepare(pageCountCommand);
+                        stmt.Read();
                         pageCount = stmt.Fields["page_count"].INTEGER;
 
                         stmt = db.Prepare(pageSizeCommand);
+                        stmt.Read();
                         pageSize = stmt.Fields["page_size"].INTEGER;
                     }
                     finally
                     {
                         if (stmt != null)
+                        {
                             stmt.FinalizeStm();
+                        }
+                        if (db != null)
+                            db.CloseDatabase();
                     }
                 }
                 return pageCount * pageSize;

@@ -50,8 +50,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         // platform specific db file path
         private static String _dbFileFullPath;
         private static object _lock = new object();
-        private static Boolean hasSetup = false;
         private MobileAnalyticsManagerConfig _maConfig;
+
+
+        private bool _isDisposed;
 
         /// <summary>
         /// Constructor of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore"/>
@@ -60,6 +62,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         public SQLiteEventStore(MobileAnalyticsManagerConfig maConfig)
         {
             _maConfig = maConfig;
+            SetupSQLiteEventStore();
         }
 
         /// <summary>
@@ -72,6 +75,16 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             {
                 return _dbFileFullPath;
             }
+        }
+
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
     }

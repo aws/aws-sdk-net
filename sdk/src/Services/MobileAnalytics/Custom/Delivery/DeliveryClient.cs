@@ -414,5 +414,25 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 _logger.DebugFormat("Event {0} is queued for delivery", eventObject.EventType);
             }
         }
+
+
+        #region dispose pattern implementation
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if(disposing)
+            {
+                _eventStore.Dispose();
+            }
+        }
+
+        #endregion
+
     }
 }

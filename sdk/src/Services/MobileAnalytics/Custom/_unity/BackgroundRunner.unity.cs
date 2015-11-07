@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Internal;
 
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
@@ -58,6 +59,14 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         }
 
         /// <summary>
+        /// Abort the background worker
+        /// </summary>
+        public static void AbortBackgroundThread()
+        {
+            _thread.Abort();
+        }
+
+        /// <summary>
         /// Sends Mobile Analytics events to server on background thread.
         /// </summary>
         private void DoWork()
@@ -94,6 +103,15 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 {
                     _logger.Error(e, "An exception occurred in Mobile Analytics Manager.");
                 }
+
+                UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+                {
+                    if (Application.isEditor && !Application.isPlaying)
+                    {
+                        _thread.Abort();
+                    }
+                });
+                
             }
         }
     }
