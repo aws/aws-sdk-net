@@ -1,3 +1,10 @@
+### 3.1.26.1 (2015-11-07 01:22 UTC)
+* IoT (3.1.0.2)
+	* Updated to use new Core, version 3.1.3.5
+	* Incremented Core package dependency to fix signature errors when a PUT or POST requests contains only query params (e.g. IOT AcceptCertificateTransfer, CreateKeysAndCertificate).
+* Core 3.1.3.5
+	* Fix for signature errors when a PUT or POST requests contains only query params (e.g. IOT AcceptCertificateTransfer, CreateKeysAndCertificate).
+
 ### 3.1.26.0 (2015-11-06 21:05 UTC)
 * RDS (3.1.3.0)
 	* Add support for sharing manual DB snapshots
