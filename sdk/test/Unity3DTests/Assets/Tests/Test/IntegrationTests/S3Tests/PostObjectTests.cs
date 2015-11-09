@@ -69,7 +69,7 @@ namespace AWSSDK.IntegrationTests.S3
             Assert.AreEqual(count, s3Objects.Count);
         }
 
-        //[Test]
+        [Test]
         // TODO: fix null reference for status code.
         public void TestHttpErrorResponseUnmarshalling()
         {
@@ -77,11 +77,9 @@ namespace AWSSDK.IntegrationTests.S3
             {
                 S3TestUtils.PostObjectHelper(Client, "NonExistentBucket" + DateTime.Now.Ticks, "key");
             }
-            catch (AmazonServiceException exception)
+            catch (Amazon.Runtime.Internal.HttpErrorResponseException exception)
             {
-                Assert.IsTrue(exception.Message.Contains("The specified bucket does not exist"));
-                Assert.AreEqual("NoSuchBucket", exception.ErrorCode);
-                Assert.AreEqual(HttpStatusCode.NotFound, exception.StatusCode);
+                Assert.AreEqual(HttpStatusCode.Forbidden, exception.Response.StatusCode);
                 return;
             };
             Assert.Fail();

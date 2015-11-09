@@ -156,109 +156,57 @@ namespace AWSSDK.IntegrationTests.Lambda
             Assert.AreNotEqual(0, statusCode);
         }
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void CreateLambdaFunctionIfDoesNotExist()
         {
             AutoResetEvent ars = new AutoResetEvent(false);
             Exception responseException = new Exception();
 
-            // Get role arn if it exists.
-            string iamRoleArn = null;
-            iamClient.GetRoleAsync(new GetRoleRequest()
-            {
-                RoleName = IAMRoleName
-            }, (response) =>
-            {
-                responseException = response.Exception;
-                if (responseException == null)
-                {
-                    iamRoleArn = response.Response.Role.Arn;
-                }
-                ars.Set();
-            }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
-            ars.WaitOne();
-            if (responseException == null)
-            {
-                Assert.IsNotNull(iamRoleArn);
-            }
-            else
-            {
-                Assert.IsInstanceOf(typeof(NoSuchEntityException), responseException);
-            }
+            string iamRoleArn = UtilityMethods.CreateRoleIfNotExists(iamClient, IAMRoleName, LAMBDA_ASSUME_ROLE_POLICY);
+            Assert.IsNotNull(iamRoleArn);
 
-            // Get the function if it exists.
-            Client.GetFunctionAsync(new GetFunctionRequest()
-            {
-                FunctionName = FunctionName
-            }, (response) =>
-            {
-                responseException = response.Exception;
-                if (responseException == null)
-                {
-                    FunctionArn = response.Response.Configuration.FunctionArn;
-                }
-                ars.Set();
-            }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
-            ars.WaitOne();
-            if (responseException == null)
-            {
-                Assert.IsNotNull(FunctionArn);
-            }
-            else
-            {
-                Assert.IsInstanceOf(typeof(ResourceNotFoundException), responseException);
-            }
-
-            // Create the role if we couldn't find it.
-            if (iamRoleArn == null)
-            {
-                iamClient.CreateRoleAsync(new CreateRoleRequest
-                {
-                    RoleName = IAMRoleName,
-                    AssumeRolePolicyDocument = LAMBDA_ASSUME_ROLE_POLICY
-                }, (response) =>
-                {
-                    responseException = response.Exception;
-                    if (responseException == null)
-                    {
-                        iamRoleArn = response.Response.Role.Arn;
-                    }
-                    ars.Set();
-                }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
-                ars.WaitOne();
-                Assert.IsNull(responseException);
-                Assert.IsFalse(string.IsNullOrEmpty(iamRoleArn));
-
-                // Wait for role to be fully initialized
-                Thread.Sleep(TimeSpan.FromSeconds(3));
-            }
+            FunctionArn = UtilityMethods.GetFunctionArnIfExists(Client, FunctionName);
 
             if (FunctionArn == null)
             {
+                int retries = 3;
                 long codeSize = -1;
-                Client.CreateFunctionAsync(new CreateFunctionRequest
+                while (retries > 0)
                 {
-                    FunctionName = FunctionName,
-                    Code = new FunctionCode
+                    Client.CreateFunctionAsync(new CreateFunctionRequest
                     {
-                        ZipFile = GetScriptStream()
-                    },
-                    Handler = "helloworld.handler",
-                    Runtime = Runtime.Nodejs,
-                    Description = "Feel free to delete this function. The tests will recreate it when needed.",
-                    Role = iamRoleArn
-                }, (response) =>
-                {
-                    responseException = response.Exception;
+                        FunctionName = FunctionName,
+                        Code = new FunctionCode
+                        {
+                            ZipFile = GetScriptStream()
+                        },
+                        Handler = "helloworld.handler",
+                        Runtime = Runtime.Nodejs,
+                        Description = "Feel free to delete this function. The tests will recreate it when needed.",
+                        Role = iamRoleArn
+                    }, (response) =>
+                    {
+                        responseException = response.Exception;
+                        if (responseException == null)
+                        {
+                            FunctionArn = response.Response.FunctionArn;
+                            codeSize = response.Response.CodeSize;
+                        }
+                        ars.Set();
+                    }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
+                    ars.WaitOne();
                     if (responseException == null)
                     {
-                        FunctionArn = response.Response.FunctionArn;
-                        codeSize = response.Response.CodeSize;
+                        break;
                     }
-                    ars.Set();
-                }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
-                ars.WaitOne();
-                Assert.IsNull(responseException);
+                    else
+                    {
+                        Assert.True(responseException is InvalidParameterValueException);
+                        // Need to wait longer for eventual consistency of role
+                        retries--;
+                        Thread.Sleep(TimeSpan.FromSeconds(10));
+                    }
+                }
                 Assert.IsNotNull(FunctionArn);
                 Assert.IsTrue(codeSize > 0);
             }

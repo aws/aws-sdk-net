@@ -175,6 +175,7 @@ namespace Amazon.S3
         {
             IAsyncExecutionContext executionContext = null;
             UnityWebRequest httpRequest = null;
+            bool isException = false;
             try
             {
                 executionContext = result.AsyncState as IAsyncExecutionContext;
@@ -188,19 +189,20 @@ namespace Amazon.S3
                 // Capture the exception and invoke outer handlers to 
                 // process the exception.
                 executionContext.ResponseContext.AsyncResult.Exception = exception;
+                isException = true;
             }
             finally
             {
                 httpRequest.Dispose();
             }
 
-            PostResponseHelper(result);
+            PostResponseHelper(result, isException);
         }
 
-        private void PostResponseHelper(IAsyncResult result)
+        private void PostResponseHelper(IAsyncResult result,bool isException)
         {
             IAsyncExecutionContext executionContext = result.AsyncState as IAsyncExecutionContext;
-            IWebResponseData response = executionContext.ResponseContext.HttpResponse;
+            IWebResponseData response = isException ? ((HttpErrorResponseException)executionContext.ResponseContext.AsyncResult.Exception).Response : executionContext.ResponseContext.HttpResponse;
             PostObjectResponse postResponse = new PostObjectResponse();
             postResponse.HttpStatusCode = response.StatusCode;
             postResponse.ContentLength = response.ContentLength;
