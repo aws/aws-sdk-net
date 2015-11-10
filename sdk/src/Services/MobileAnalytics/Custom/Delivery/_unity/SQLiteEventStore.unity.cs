@@ -63,7 +63,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         private void CreateOrOpenDatabase()
         {
             if (db == null)
-                db = new SQLiteDatabase(_dbFileFullPath);
+                db = new SQLiteDatabase(this.DBfileFullPath);
             else
                 db.OpenDatabase();
 
@@ -76,7 +76,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         {
             lock (_lock)
             {
-                _dbFileFullPath = System.IO.Path.Combine(AmazonHookedPlatformInfo.Instance.PersistentDataPath, dbFileName);
+                this.DBfileFullPath = System.IO.Path.Combine(AmazonHookedPlatformInfo.Instance.PersistentDataPath, dbFileName);
 
                 SQLiteStatement stmt = null;
                 try
@@ -171,7 +171,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <param name="rowIds">Row identifiers.</param>
         public void DeleteEvent(List<string> rowIds)
         {
-            bool success = false;
             lock (_lock)
             {
                 SQLiteStatement stmt = null;

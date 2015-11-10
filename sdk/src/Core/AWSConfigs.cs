@@ -429,11 +429,27 @@ namespace Amazon
         internal const string LoggingDestinationProperty = "LogTo";
 
         internal static PropertyChangedEventHandler mPropertyChanged;
+        /// <summary>
+        /// Lock for SomeEvent delegate access.
+        /// </summary>
+        internal static readonly object propertyChangedLock = new object();
 
         internal static event PropertyChangedEventHandler PropertyChanged
         {
-            add { mPropertyChanged += value; }
-            remove { mPropertyChanged -= value; }
+            add
+            {
+                lock (propertyChangedLock)
+                {
+                    mPropertyChanged += value;
+                }
+            }
+            remove
+            {
+                lock (propertyChangedLock)
+                {
+                    mPropertyChanged -= value;
+                }
+            }
         }
 
         internal static void OnPropertyChanged(string name)
@@ -514,16 +530,16 @@ namespace Amazon
         /// No logging
         /// </summary>
         None = 0,
-        
+
         /// <summary>
         /// Log using log4net
         /// </summary>
         Log4Net = 1,
-        
+
         /// <summary>
         /// Log using System.Diagnostics
         /// </summary>
-        SystemDiagnostics = 2       
+        SystemDiagnostics = 2
 #if PCL 
         ,
         /// <summary>
@@ -537,7 +553,7 @@ namespace Amazon
         /// Log using UnityEngine.Debug.
         /// </summary>
         UnityLogger = 8
-#endif  
+#endif
     }
 
     /// <summary>

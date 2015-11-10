@@ -429,6 +429,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             if(disposing)
             {
                 _eventStore.Dispose();
+                _mobileAnalyticsLowLevelClient.Dispose();
             }
         }
 

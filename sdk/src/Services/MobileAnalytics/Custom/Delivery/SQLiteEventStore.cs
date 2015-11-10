@@ -48,7 +48,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         private const String dbFileName = "mobile_analytic_event.db";
 
         // platform specific db file path
-        private static String _dbFileFullPath;
         private static object _lock = new object();
         private MobileAnalyticsManagerConfig _maConfig;
 
@@ -71,10 +70,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <returns> The database file full path. </returns>
         public string DBfileFullPath
         {
-            get
-            {
-                return _dbFileFullPath;
-            }
+            get;
+            internal set;
         }
 
 

@@ -165,7 +165,7 @@ namespace Amazon
 
         #region private methods
         const string CONFIG_FILE = "awsconfig";
-        static XDocument xmlDoc = LoadConfigFromResource();
+        static XDocument xmlDoc;
         private static object _lock = new object();
 
         private static XDocument LoadConfigFromResource()

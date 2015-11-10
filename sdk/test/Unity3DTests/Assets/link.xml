@@ -11,4 +11,5 @@
   <assembly fullname="AWSSDK.SimpleEmail" preserve="all"/>
   <assembly fullname="AWSSDK.SimpleNotificationService" preserve="all"/>
   <assembly fullname="AWSSDK.SQS" preserve="all"/>
+  <assembly fullname="AWSSDK.IdentityManagement" preserve="all"/>
 </linker>

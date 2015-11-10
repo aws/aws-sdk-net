@@ -54,7 +54,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// </summary>
         private void SetupSQLiteEventStore()
         {
-            _dbFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, dbFileName);
+            this.DBfileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, dbFileName);
             string vacuumCommand = "PRAGMA auto_vacuum = 1";
             string sqlCommand = string.Format(CultureInfo.InvariantCulture, "CREATE TABLE IF NOT EXISTS {0} ({1} TEXT NOT NULL,{2} TEXT NOT NULL UNIQUE,{3} TEXT NOT NULL, {4}  INTEGER NOT NULL DEFAULT 0 )",
                 TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME);
@@ -64,7 +64,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 #if __IOS__
                 SQLitePCL.CurrentPlatform.Init();
 #endif
-                using (var connection = new SQLiteConnection(_dbFileFullPath))
+                using (var connection = new SQLiteConnection(this.DBfileFullPath))
                 {
                     using (var statement = connection.Prepare(vacuumCommand))
                     {
@@ -100,10 +100,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             }
             else
             {
-                string sqlCommand = string.Format(CultureInfo.InvariantCulture, "INSERT INTO {0}  ({1},{2},{3}) values(?,?,?)", TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME);              
+                string sqlCommand = string.Format(CultureInfo.InvariantCulture, "INSERT INTO {0}  ({1},{2},{3}) values(?,?,?)", TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME);
                 lock (_lock)
                 {
-                    using (var connection = new SQLiteConnection(_dbFileFullPath))
+                    using (var connection = new SQLiteConnection(this.DBfileFullPath))
                     {
                         using (var statement = connection.Prepare(sqlCommand))
                         {
@@ -129,7 +129,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
             lock (_lock)
             {
-                using (var connection = new SQLiteConnection(_dbFileFullPath))
+                using (var connection = new SQLiteConnection(this.DBfileFullPath))
                 {
                     using (var statement = connection.Prepare(sqlCommand))
                     {
@@ -150,10 +150,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         {
             List<JsonData> eventList = new List<JsonData>();
 
-            string sqlCommand = string.Format(CultureInfo.InvariantCulture, "SELECT * FROM {0} WHERE {1}  = ? ORDER BY {2},   ROWID LIMIT {3} ", TABLE_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME, maxAllowed);  
+            string sqlCommand = string.Format(CultureInfo.InvariantCulture, "SELECT * FROM {0} WHERE {1}  = ? ORDER BY {2},   ROWID LIMIT {3} ", TABLE_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME, maxAllowed);
             lock (_lock)
             {
-                using (var connection = new SQLiteConnection(_dbFileFullPath))
+                using (var connection = new SQLiteConnection(this.DBfileFullPath))
                 {
                     using (var statement = connection.Prepare(sqlCommand))
                     {
@@ -183,7 +183,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             long count = 0;
 
             string sqlCommand = string.Format(CultureInfo.InvariantCulture, "SELECT COUNT(*) C FROM {0} where {1} = ?", TABLE_NAME, MA_APP_ID_COLUMN_NAME);
-            using (var connection = new SQLiteConnection(_dbFileFullPath))
+            using (var connection = new SQLiteConnection(this.DBfileFullPath))
             {
                 using (var statement = connection.Prepare(sqlCommand))
                 {
@@ -211,7 +211,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
                 lock (_lock)
                 {
-                    using (var connection = new SQLiteConnection(_dbFileFullPath))
+                    using (var connection = new SQLiteConnection(this.DBfileFullPath))
                     {
                         using (var statement = connection.Prepare(pageCountCommand))
                         {

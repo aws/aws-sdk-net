@@ -24,6 +24,8 @@ namespace AWSSDK.Tests
             //set sleep timeout to infinity
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
+
+
             //set up logging
             var loggingConfig = AWSConfigs.LoggingConfig;
             loggingConfig.LogTo = LoggingOptions.UnityLogger;

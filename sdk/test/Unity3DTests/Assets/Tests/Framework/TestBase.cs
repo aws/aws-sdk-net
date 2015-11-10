@@ -25,9 +25,9 @@ namespace AWSSDK.Tests.Framework
         }
     }
 
-    public abstract class TestBase<T> : TestBase where T : AmazonServiceClient
+    public abstract class TestBase<T> : TestBase where T : AmazonServiceClient,IDisposable
     {
-
+        private bool _disposed = false;
         protected static AsyncOptions options = new AsyncOptions() { ExecuteCallbackOnMainThread = false };
 
         private T _client = null;
@@ -104,6 +104,25 @@ namespace AWSSDK.Tests.Framework
             Assert.IsTrue(gotException, "Failed to get expected exception: " + exceptionType.FullName);
             return (T)exception;
         }
+        #region IDispose implementation
 
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                _disposed = true;
+            }
+        }
+
+        #endregion
     }
 }

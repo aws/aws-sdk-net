@@ -26,9 +26,6 @@ using Amazon.Util;
 using System.Threading;
 using Amazon.Util.Internal;
 
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 namespace Amazon
 {
     /// <summary>
@@ -41,25 +38,33 @@ namespace Amazon
 
         private static UnityInitializer _instance = null;
         private static object _lock = new object();
-        private Logger _logger;
 
         #region constructor
-        private UnityInitializer() { }
+        private UnityInitializer(){}
         #endregion
 
         #region public api
+        /// <summary>
+        /// Attaches the initializer to a game object
+        /// </summary>
+        /// <param name="gameObject">The game object to which you attach the initializer to</param>
         public static void AttachToGameObject(GameObject gameObject)
         {
             if (gameObject != null)
             {
                 gameObject.AddComponent<UnityInitializer>();
+                UnityEngine.Debug.LogFormat(@"Attached unity initializer to {0}", gameObject.name);
             }
             else
             {
                 throw new ArgumentNullException("gameObject");
             }
+         
         }
 
+        /// <summary>
+        /// Returns the Instance of UnityInitializer
+        /// </summary>
         public static UnityInitializer Instance
         {
             get
@@ -92,10 +97,6 @@ namespace Amazon
                     _instance.gameObject.AddComponent<UnityMainThreadDispatcher>();
 
                     // add callback for Editor Mode change
-#if UNITY_EDITOR
-                    IsEditorPlaying = EditorApplication.isPlaying;
-                    EditorApplication.playmodeStateChanged += this.HandleEditorPlayModeChange;
-#endif
                     AmazonHookedPlatformInfo.Instance.Init();
 
                 }
@@ -103,11 +104,14 @@ namespace Amazon
                 {
                     if (this != _instance)
                     {
-#if UNITY_EDITOR
-                        DestroyImmediate(this.gameObject);
-#else
-                        Destroy(this.gameObject);
-#endif
+                        if (Application.isEditor)
+                        {
+                            DestroyImmediate(this.gameObject);
+                        }
+                        else
+                        {
+                            Destroy(this.gameObject);
+                        }
                     }
                 }
 
@@ -129,24 +133,5 @@ namespace Amazon
             return Thread.CurrentThread.Equals(_mainThread);
         }
 
-#if UNITY_EDITOR
-        public static bool IsEditorPlaying
-        {
-            get;
-            private set;
-        }
-
-        public static bool IsEditorPaused
-        {
-            get;
-            private set;
-        }
-
-        private void HandleEditorPlayModeChange()
-        {
-            IsEditorPlaying = EditorApplication.isPlaying;
-            IsEditorPaused = EditorApplication.isPaused;
-        }
-#endif
     }
 }

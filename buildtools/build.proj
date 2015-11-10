@@ -117,7 +117,8 @@
         
     </Target>
 	
-	<Target Name="unity-build-test-project" DependsOnTargets="full-build-nodocs" Condition="Exists('$(unityexe)')">
+	<!-- DependsOnTargets="full-build-nodocs"  -->
+	<Target Name="unity-build-test-project" Condition="Exists('$(unityexe)')">
 		
 		<!-- delete the sdk folder and its contents -->
 		<RemoveDir Directories="..\sdk\test\Unity3DTests\Assets\SDK" />

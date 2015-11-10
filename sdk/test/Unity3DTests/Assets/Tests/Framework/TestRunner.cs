@@ -87,6 +87,39 @@ namespace AWSSDK.Tests.Framework
             }
         }
 
+        private class CategoryFilter : ITestFilter
+        {
+            private string CategoryName;
+            private const string CategoryKey = "Category";
+
+            public CategoryFilter(string categoryName)
+            {
+                this.CategoryName = categoryName;
+            }
+
+            bool ITestFilter.IsExplicitMatch(ITest test)
+            {
+                return false;
+            }
+
+            bool ITestFilter.Pass(ITest test)
+            {
+                if (test.Method == null)
+                    return true;
+
+                if (string.IsNullOrEmpty(CategoryName))
+                    return true;
+
+                var testName = test.Name;
+                var categories = (test.Properties.ContainsKey(CategoryKey)) ?
+                    test.Properties[CategoryKey] : new List<string>();
+
+                var stringCategories = categories.Cast<string>().ToList();
+
+                return stringCategories.Contains(CategoryName);
+            }
+        }
+
         private class SingleClassFilter : ITestFilter
         {
             private string ClassName;

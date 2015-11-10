@@ -650,7 +650,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             FieldInfo fieldInfo = member as FieldInfo;
             PropertyInfo propertyInfo = member as PropertyInfo;
-
+            
             if (fieldInfo != null)
             {
                 value = fieldInfo.GetValue(instance);
@@ -658,7 +658,12 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             else if (propertyInfo != null)
             {
+#if UNITY
+                //unity doesnt work well with propertyInfo.GetValue so we use propertyInfo.GetGetMethod instead
+                value = propertyInfo.GetGetMethod().Invoke(instance, null);
+#else
                 value = propertyInfo.GetValue(instance, null);
+#endif
                 return true;
             }
             else
