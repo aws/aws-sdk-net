@@ -96,6 +96,20 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StageName);
                 }
 
+                if(publicRequest.IsSetVariables())
+                {
+                    context.Writer.WritePropertyName("variables");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestVariablesKvp in publicRequest.Variables)
+                    {
+                        context.Writer.WritePropertyName(publicRequestVariablesKvp.Key);
+                        var publicRequestVariablesValue = publicRequestVariablesKvp.Value;
+
+                            context.Writer.Write(publicRequestVariablesValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

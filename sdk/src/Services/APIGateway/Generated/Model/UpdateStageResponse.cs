@@ -43,6 +43,7 @@ namespace Amazon.APIGateway.Model
         private DateTime? _lastUpdatedDate;
         private Dictionary<string, MethodSetting> _methodSettings = new Dictionary<string, MethodSetting>();
         private string _stageName;
+        private Dictionary<string, string> _variables = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property CacheClusterEnabled. 
@@ -224,6 +225,25 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetStageName()
         {
             return this._stageName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Variables. 
+        /// <para>
+        /// A map that defines the stage variables for a <a>Stage</a> resource. Variable names
+        /// can have alphabetic characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Variables
+        {
+            get { return this._variables; }
+            set { this._variables = value; }
+        }
+
+        // Check to see if Variables property is set
+        internal bool IsSetVariables()
+        {
+            return this._variables != null && this._variables.Count > 0; 
         }
 
     }

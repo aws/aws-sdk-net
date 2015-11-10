@@ -40,6 +40,7 @@ namespace Amazon.APIGateway.Model
         private string _pathWithQueryString;
         private string _resourceId;
         private string _restApiId;
+        private Dictionary<string, string> _stageVariables = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Body.
@@ -144,6 +145,21 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetRestApiId()
         {
             return this._restApiId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StageVariables.
+        /// </summary>
+        public Dictionary<string, string> StageVariables
+        {
+            get { return this._stageVariables; }
+            set { this._stageVariables = value; }
+        }
+
+        // Check to see if StageVariables property is set
+        internal bool IsSetStageVariables()
+        {
+            return this._stageVariables != null && this._stageVariables.Count > 0; 
         }
 
     }
