@@ -1,3 +1,7 @@
+### 3.1.27.0 (2015-11-10 20:21 UTC)
+* APIGateway (3.1.1.0)
+	* Added support for stage variables.
+
 ### 3.1.26.1 (2015-11-07 01:22 UTC)
 * IoT (3.1.0.2)
 	* Updated to use new Core, version 3.1.3.5
