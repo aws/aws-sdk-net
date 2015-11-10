@@ -31,7 +31,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     public partial class BackgroundRunner
     {
         private static System.Threading.Thread _thread = null;
-        private static volatile bool _shouldStop; 
+        private static volatile bool _shouldStop;
         /// <summary>
         /// Determines if background thread is alive.
         /// </summary>
@@ -64,8 +64,11 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         public static void AbortBackgroundThread()
         {
             _shouldStop = true;
-            _thread.Join();
-            _thread = null;
+            if (_thread != null)
+            {
+                _thread.Join();
+                _thread = null;
+            }
         }
 
         /// <summary>
@@ -113,7 +116,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                         AbortBackgroundThread();
                     }
                 });
-                
+
             }
         }
     }

@@ -30,7 +30,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
     /// <summary>
     /// MobileAnalyticsManager is the entry point to recording analytic events for your application
     /// </summary>
-    public partial class MobileAnalyticsManager:IDisposable
+    public partial class MobileAnalyticsManager : IDisposable
     {
         private static Object _lock = new Object();
         private static IDictionary<string, MobileAnalyticsManager> _instanceDictionary = new Dictionary<string, MobileAnalyticsManager>();
@@ -364,15 +364,23 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 
 
         #region Dispose Pattern Implementation
+
+        /// <summary>
+        /// Implement the dispose pattern
+        /// </summary>
         public void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        ///  Implement the dispose pattern
+        /// </summary>
+        /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
         {
-            if(disposing)
+            if (disposing)
             {
                 this.Session.Dispose();
                 this.BackgroundDeliveryClient.Dispose();

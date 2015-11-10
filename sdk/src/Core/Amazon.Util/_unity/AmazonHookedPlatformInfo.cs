@@ -1,13 +1,18 @@
 ﻿/*
- * Copyright 2014-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *
- *
- * Licensed under the AWS Mobile SDK for Unity Developer Preview License Agreement (the "License").
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
- * A copy of the License is located in the "license" file accompanying this file.
- * See the License for the specific language governing permissions and limitations under the License.
- *
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
+
 using UnityEngine;
 using System.Collections;
 using System.Threading;
@@ -23,7 +28,7 @@ namespace Amazon.Util.Internal
 {
 
     /// <summary>
-    /// This class can access hooked platform (iOS, Android etc.) information.
+    /// A Singleton class which hooks onto platform information.
     /// For example, locale, make, application version and title.
     /// </summary>
     public class AmazonHookedPlatformInfo
@@ -60,6 +65,9 @@ namespace Amazon.Util.Internal
 
 
         #region device information
+        /// <summary>
+        /// Platform e.g. "iPhone OS" or "Android"
+        /// </summary>
         public string Platform
         {
             get
@@ -87,6 +95,11 @@ namespace Amazon.Util.Internal
             }
         }
 
+        /// <summary>
+        /// The device model.
+        /// On iOS the device model is value returned by UIDevice.CurrentDevice.Model
+        /// On Android the device mode is value returned by android.os.Build.MODEL
+        /// </summary>
         public string Model
         {
             get
@@ -99,6 +112,11 @@ namespace Amazon.Util.Internal
             }
         }
 
+        /// <summary>
+        /// The Device Make
+        /// On iOS the device make is always "apple"
+        /// On Android the device make is value returned by android.os.Build.MANUFACTURER
+        /// </summary>
         public string Make
         {
             get
@@ -127,9 +145,17 @@ namespace Amazon.Util.Internal
             }
         }
 
-
+        /// <summary>
+        /// Path returned by Application.persistentDataPath
+        /// </summary>
         public string PersistentDataPath { get; set; }
 
+        /// <summary>
+        /// Current Locale for the device.
+        /// 
+        /// On iOS this is the the value returned by NSLocale.AutoUpdatingCurrentLocale
+        /// On Android its the value returned by java.utils.Locale.getDefault();
+        /// </summary>
         public string Locale
         {
             get
@@ -143,6 +169,10 @@ namespace Amazon.Util.Internal
             }
         }
 
+
+        /// <summary>
+        /// gets an instance of this class
+        /// </summary>
         public static AmazonHookedPlatformInfo Instance
         {
             get
@@ -159,6 +189,10 @@ namespace Amazon.Util.Internal
         #endregion
 
         #region application region
+
+        /// <summary>
+        /// The package name for Anroid or the Bundle Identifier in case of iOS
+        /// </summary>
         public string PackageName
         {
             get
@@ -171,6 +205,9 @@ namespace Amazon.Util.Internal
             }
         }
 
+        /// <summary>
+        /// The version Name string for Android and CFBundleShortVersionString for iOS
+        /// </summary>
         public string VersionName
         {
             get
@@ -183,6 +220,10 @@ namespace Amazon.Util.Internal
             }
         }
 
+
+        /// <summary>
+        /// The Version Code or numeric representation for Android and CFBundleVersion for iOS 
+        /// </summary>
         public string VersionCode
         {
             get
@@ -195,6 +236,10 @@ namespace Amazon.Util.Internal
             }
         }
 
+
+        /// <summary>
+        /// The title for the application
+        /// </summary>
         public string Title
         {
             get
@@ -211,7 +256,7 @@ namespace Amazon.Util.Internal
 
 
         /// <summary>
-        /// Init this instance. This methods needs to be called from the main thread, Otherwise the values may not initialize correctly
+        /// Init this instance. This methods needs to be called from the main thread, Otherwise the values may not be initialized correctly
         /// </summary>
         public void Init()
         {

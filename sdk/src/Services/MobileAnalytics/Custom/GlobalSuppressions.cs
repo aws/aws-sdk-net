@@ -22,9 +22,6 @@ using System.Diagnostics.CodeAnalysis;
 // supress warning for implementing ISerializable interface
 [module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope="type", Target="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.EventStoreException")]
 
-// supress warning for implementing IDisposable interface
-[module: SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable", Scope = "type", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.DeliveryClient")]
-
 // Keep MobileAnalyticsManager namespace
 [module: SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Scope = "type", Target = "Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManager")]
 

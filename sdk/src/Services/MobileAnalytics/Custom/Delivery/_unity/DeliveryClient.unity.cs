@@ -53,6 +53,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             _mobileAnalyticsLowLevelClient = new AmazonMobileAnalyticsClient(credentials, regionEndPoint);
             _clientContext = clientContext;
             _appID = clientContext.AppID;
+            _maConfig = maConfig;
+            _maManager = maManager;
             _eventStore = new SQLiteEventStore(maConfig);
             _deliveryPolicies = new List<IDeliveryPolicy>();
             _deliveryPolicies.Add(_policyFactory.NewConnectivityPolicy());

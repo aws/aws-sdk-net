@@ -42,8 +42,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     {
         private Logger _logger = Logger.GetLogger(typeof(DeliveryClient));
 
-        private static object _deliveryLock = new object();
-        private static bool _deliveryInProgress = false;
+        private object _deliveryLock = new object();
+        private bool _deliveryInProgress = false;
 
         private readonly IDeliveryPolicyFactory _policyFactory;
         private List<IDeliveryPolicy> _deliveryPolicies;

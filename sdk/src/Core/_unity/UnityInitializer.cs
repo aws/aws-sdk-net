@@ -73,6 +73,7 @@ namespace Amazon
             }
         }
 
+
         public void Awake()
         {
             lock (_lock)
