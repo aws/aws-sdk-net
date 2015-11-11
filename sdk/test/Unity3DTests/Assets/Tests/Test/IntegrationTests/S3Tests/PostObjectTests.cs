@@ -8,6 +8,7 @@ using System.Net;
 using System.Threading;
 using AWSSDK.Tests.Framework;
 using System.IO;
+using UnityEngine;
 
 namespace AWSSDK.IntegrationTests.S3
 {
@@ -17,10 +18,22 @@ namespace AWSSDK.IntegrationTests.S3
     {
         private static readonly string FileNamePrefix = "UnityTestFile";
         private static readonly string FileNameFormat = FileNamePrefix + "{0}.txt";
-        // TODO: get from settings
-        private static readonly string BucketName = "jonahoff-sample-bucket";
+        private static string BucketName = null;
 
-       // [Test]
+        [OneTimeSetUp]
+        public void SetUp()
+        {
+            BucketName = "unity-test-bucket" + DateTime.Now.Ticks;
+            MissingAPILambdaFunctions.CreateBucket(BucketName, TestRunner.RegionEndpoint);
+        }
+
+        [OneTimeTearDown]
+        public void TearDown()
+        {
+            MissingAPILambdaFunctions.DeleteBucket(BucketName, TestRunner.RegionEndpoint);
+        }
+
+        [Test]
         public void SimpleTest()
         {
             AutoResetEvent ars = new AutoResetEvent(false);
@@ -52,25 +65,14 @@ namespace AWSSDK.IntegrationTests.S3
             Assert.IsNotNull(s3Objects);
             Assert.AreEqual(count + 1, s3Objects.Count);
 
-            Client.DeleteObjectsAsync(new DeleteObjectsRequest()
-            {
-                BucketName = BucketName,
-                Objects = new List<KeyVersion> { new KeyVersion() { Key = key } }
-            }, (response) =>
-            {
-                responseException = response.Exception;
-                ars.Set();
-            }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
-            ars.WaitOne();
-            Assert.IsNull(responseException);
+            S3TestUtils.DeleteObjectHelper(Client, BucketName, key);
 
             s3Objects = S3TestUtils.ListObjectsHelper(Client, BucketName);
             Assert.IsNotNull(s3Objects);
             Assert.AreEqual(count, s3Objects.Count);
         }
 
-        //[Test]
-        // TODO: fix null reference for status code.
+        [Test]
         public void TestHttpErrorResponseUnmarshalling()
         {
             try

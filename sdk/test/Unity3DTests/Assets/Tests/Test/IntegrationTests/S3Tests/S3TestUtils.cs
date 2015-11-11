@@ -1,4 +1,5 @@
-﻿using Amazon.Runtime;
+﻿using Amazon;
+using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using NUnit.Framework;
@@ -29,8 +30,7 @@ namespace AWSSDK.IntegrationTests.S3
                 {
                     Bucket = bucketName,
                     Key = key,
-                    InputStream = stream,
-                    CannedACL = S3CannedACL.Private
+                    InputStream = stream
                 };
                 if (manipulator != null)
                 {
@@ -43,6 +43,10 @@ namespace AWSSDK.IntegrationTests.S3
                     {
                         r = response.Response;
                     }
+                    else
+                    {
+                        Debug.LogWarning(new StreamReader((responseException as Amazon.Runtime.Internal.HttpErrorResponseException).Response.ResponseBody.OpenResponse()).ReadToEnd());
+                    }
                     ars.Set();
                 }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
                 ars.WaitOne();
@@ -54,6 +58,22 @@ namespace AWSSDK.IntegrationTests.S3
             }
         }
 
+        public static void DeleteObjectHelper(AmazonS3Client client, string bucketName, string key)
+        {
+            Exception responseException = null;
+            AutoResetEvent ars = new AutoResetEvent(false);
+            client.DeleteObjectsAsync(new DeleteObjectsRequest()
+            {
+                BucketName = bucketName,
+                Objects = new List<KeyVersion> { new KeyVersion() { Key = key } }
+            }, (response) =>
+            {
+                responseException = response.Exception;
+                ars.Set();
+            }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
+            ars.WaitOne();
+            Assert.IsNull(responseException);
+        }
 
         public static GetObjectResponse GetObjectHelper(AmazonS3Client client, string bucketName, string key)
         {
@@ -72,6 +92,7 @@ namespace AWSSDK.IntegrationTests.S3
                 {
                     r = response.Response;
                 }
+                ars.Set();
             }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
 

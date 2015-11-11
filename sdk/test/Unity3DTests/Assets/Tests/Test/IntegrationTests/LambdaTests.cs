@@ -10,6 +10,7 @@ using System.Threading;
 using Amazon.IdentityManagement;
 using Amazon.IdentityManagement.Model;
 using AWSSDK.Tests.Framework;
+using UnityEngine;
 
 namespace AWSSDK.IntegrationTests.Lambda
 {
@@ -20,26 +21,14 @@ namespace AWSSDK.IntegrationTests.Lambda
         static IAmazonIdentityManagementService iamClient = TestBase.CreateClient<AmazonIdentityManagementServiceClient>();
         static List<string> createdFunctionNames = new List<string>();
 
-        static readonly string FunctionName = "UnityLambdaTestFunction";
-        static readonly string IAMRoleName = "UnityLambdaTestFunctionRole";
-        static readonly string LAMBDA_ASSUME_ROLE_POLICY =
-@"
-{
-  ""Version"": ""2012-10-17"",
-  ""Statement"": [
-    {
-      ""Sid"": """",
-      ""Effect"": ""Allow"",
-      ""Principal"": {
-        ""Service"": ""lambda.amazonaws.com""
-      },
-      ""Action"": ""sts:AssumeRole""
-    }
-  ]
-}
-".Trim();
+        static readonly string FunctionHandleName = "unitytest-helloworld";
+        // The Base64 representation of the Zip file of the Lambda function's code. See the
+        // comments for UtilityMethods.CreateFunctionIfNotExists for more information.
+        static readonly string FunctionScriptBytesBase64 = "UEsDBBQAAAAIALp8akdqGoqboQAAAN4AAAAXAAAAdW5pdHl0ZXN0LWhlbGxvd29ybGQuanNVjEELgkAQRu+C/2HwopKs96STBEHdJDov66TCOBPuakr031MrqO/0Hd57RtgKoSKpovAkumy4AhyQXRhnvofjTTpnVa25JOxgB9eejWuEoxVKwAg7HF0MD9+DeeYnGAyaepylADbvqDritHQ/5GKqUhgj7okSCA5IJHCRjsrtnzT/IFk7X62YrMM2zgDSFIpznu+LAu6Nq6FFa3WFvvd8AVBLAQIUABQAAAAIALp8akdqGoqboQAAAN4AAAAXAAAAAAAAAAAAAAAAAAAAAAB1bml0eXRlc3QtaGVsbG93b3JsZC5qc1BLBQYAAAAAAQABAEUAAADWAAAAAAA=";
 
-        private string FunctionArn = null;
+        static readonly string IAMRoleName = "UnityLambdaTestFunctionRole";
+
+        private string FunctionName = null;
 
         [Test]
         public void ListFunctionsTest()
@@ -76,7 +65,7 @@ namespace AWSSDK.IntegrationTests.Lambda
             {
                 FunctionName = FunctionName,
                 InvocationType = InvocationType.RequestResponse,
-                LogType = LogType.None,
+                LogType = Amazon.Lambda.LogType.None,
                 // TODO: Use client context
                 Payload = @"{""Key"": ""testing""}"
             }, (response) =>
@@ -104,7 +93,7 @@ namespace AWSSDK.IntegrationTests.Lambda
             {
                 FunctionName = FunctionName,
                 InvocationType = InvocationType.DryRun,
-                LogType = LogType.None,
+                LogType = Amazon.Lambda.LogType.None,
                 // TODO: Use client context
                 Payload = @"{""Key"": ""testing""}"
             }, (response) =>
@@ -132,7 +121,7 @@ namespace AWSSDK.IntegrationTests.Lambda
             {
                 FunctionName = FunctionName,
                 InvocationType = InvocationType.RequestResponse,
-                LogType = LogType.None,
+                LogType = Amazon.Lambda.LogType.None,
                 // TODO: Use client context
                 Payload = @"""Key"": ""testing"""
             }, (response) =>
@@ -156,60 +145,23 @@ namespace AWSSDK.IntegrationTests.Lambda
             Assert.AreNotEqual(0, statusCode);
         }
 
+        [OneTimeTearDown]
+        public void TearDown()
+        {
+            MissingAPILambdaFunctions.DeleteLambdaFunction(FunctionName, TestRunner.RegionEndpoint);
+        }
+
         [OneTimeSetUp]
-        public void CreateLambdaFunctionIfDoesNotExist()
+        public void SetUp()
         {
             AutoResetEvent ars = new AutoResetEvent(false);
             Exception responseException = new Exception();
 
-            string iamRoleArn = UtilityMethods.CreateRoleIfNotExists(iamClient, IAMRoleName, LAMBDA_ASSUME_ROLE_POLICY);
+            string iamRoleArn = UtilityMethods.CreateRoleIfNotExists(iamClient, IAMRoleName, UtilityMethods.LambdaAssumeRolePolicyDocument);
             Assert.IsNotNull(iamRoleArn);
 
-            FunctionArn = UtilityMethods.GetFunctionArnIfExists(Client, FunctionName);
-
-            if (FunctionArn == null)
-            {
-                int retries = 3;
-                long codeSize = -1;
-                while (retries > 0)
-                {
-                    Client.CreateFunctionAsync(new CreateFunctionRequest
-                    {
-                        FunctionName = FunctionName,
-                        Code = new FunctionCode
-                        {
-                            ZipFile = GetScriptStream()
-                        },
-                        Handler = "helloworld.handler",
-                        Runtime = Runtime.Nodejs,
-                        Description = "Feel free to delete this function. The tests will recreate it when needed.",
-                        Role = iamRoleArn
-                    }, (response) =>
-                    {
-                        responseException = response.Exception;
-                        if (responseException == null)
-                        {
-                            FunctionArn = response.Response.FunctionArn;
-                            codeSize = response.Response.CodeSize;
-                        }
-                        ars.Set();
-                    }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
-                    ars.WaitOne();
-                    if (responseException == null)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        Assert.True(responseException is InvalidParameterValueException);
-                        // Need to wait longer for eventual consistency of role
-                        retries--;
-                        Thread.Sleep(TimeSpan.FromSeconds(10));
-                    }
-                }
-                Assert.IsNotNull(FunctionArn);
-                Assert.IsTrue(codeSize > 0);
-            }
+            FunctionName = "UnityTestFunction" + DateTime.Now.Ticks;
+            UtilityMethods.CreateFunctionIfNotExists(Client, FunctionName, FunctionHandleName, FunctionScriptBytesBase64, iamRoleArn);
 
             // List all the functions and make sure the newly uploaded function is in the collection
             List<FunctionConfiguration> functions = null;
@@ -235,7 +187,7 @@ namespace AWSSDK.IntegrationTests.Lambda
                 }
             }
             Assert.IsNotNull(function);
-            Assert.AreEqual("helloworld.handler", function.Handler);
+            Assert.AreEqual(FunctionHandleName + ".handler", function.Handler);
             Assert.AreEqual(iamRoleArn, function.Role);
 
             // Get the function with a presigned URL to the uploaded code
@@ -253,7 +205,7 @@ namespace AWSSDK.IntegrationTests.Lambda
             }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
             Assert.IsNull(responseException);
-            Assert.AreEqual("helloworld.handler", configuration.Handler);
+            Assert.AreEqual(FunctionHandleName + ".handler", configuration.Handler);
             Assert.IsNotNull(code.Location);
 
             // Get the function's configuration only
@@ -269,14 +221,7 @@ namespace AWSSDK.IntegrationTests.Lambda
             }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
             Assert.IsNull(responseException);
-            Assert.AreEqual("helloworld.handler", handler);
+            Assert.AreEqual(FunctionHandleName + ".handler", handler);
         }
-
-        private static MemoryStream GetScriptStream()
-        {
-            return new MemoryStream(Convert.FromBase64String(HELLO_SCRIPT_BYTES_BASE64));
-        }
-
-        private static string HELLO_SCRIPT_BYTES_BASE64 = "UEsDBBQAAAAIANZsA0emOtZ2nwAAANoAAAANAAAAaGVsbG93b3JsZC5qc1XMQQuCQBCG4bvgfxj2opKs96STBEHdJDovOqkwzoS7mhL999Qw6DYfzPMWwlYINUkVBhcxZcMV4IDsgij1PRwf0jmra8MlYQcHuPdcuEY4XJ9iKIQdji6Cl+/Bsn45NRjqcSYKdt+kPuO0VGFTuhTGkHuiGNQJiQRu0lG5/yPzreK1srF8sg7bKAVIEsivWXbMc3g2roYWrTUV+t77A1BLAQIUABQAAAAIANZsA0emOtZ2nwAAANoAAAANAAAAAAAAAAAAAAAAAAAAAABoZWxsb3dvcmxkLmpzUEsFBgAAAAABAAEAOwAAAMoAAAAAAA==";
     }
 }

@@ -39,7 +39,7 @@ namespace Amazon.S3.Model
         {
             get
             {
-                if (!name.StartsWith("x-amz-meta-", StringComparison.Ordinal))
+                if (!name.StartsWith("x-amz-meta-", StringComparison.OrdinalIgnoreCase))
                     name = "x-amz-meta-" + name;
 
                 string value;
@@ -50,7 +50,7 @@ namespace Amazon.S3.Model
             }
             set
             {
-                if (!name.StartsWith("x-amz-meta-", StringComparison.Ordinal))
+                if (!name.StartsWith("x-amz-meta-", StringComparison.OrdinalIgnoreCase))
                     name = "x-amz-meta-" + name;
 
                 values[name] = value;

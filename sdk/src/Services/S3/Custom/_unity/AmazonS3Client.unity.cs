@@ -42,18 +42,18 @@ namespace Amazon.S3
         /// For more information, <see href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingHTTPPOST.html"/>
         /// </remarks>
         /// <param name="request">Request object which describes the data to POST</param>
-        public void PostObjectAsync(PostObjectRequest request, AmazonServiceCallback<PostObjectRequest, PostObjectResponse> callback,AsyncOptions options = null)
+        public void PostObjectAsync(PostObjectRequest request, AmazonServiceCallback<PostObjectRequest, PostObjectResponse> callback, AsyncOptions options = null)
         {
-	        options = options == null ? new AsyncOptions() : options;
-           
+            options = options == null ? new AsyncOptions() : options;
+
 
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper
                 = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) =>
                 {
                     AmazonServiceResult<PostObjectRequest, PostObjectResponse> responseObject
-                        = new AmazonServiceResult<PostObjectRequest, PostObjectResponse>((PostObjectRequest)req,(PostObjectResponse)res,ex,ao.State);
-                    if(callback !=null)
-						callback(responseObject);
+                        = new AmazonServiceResult<PostObjectRequest, PostObjectResponse>((PostObjectRequest)req, (PostObjectResponse)res, ex, ao.State);
+                    if (callback != null)
+                        callback(responseObject);
                 };
             ThreadPool.QueueUserWorkItem(new WaitCallback(delegate
             {
@@ -64,7 +64,7 @@ namespace Amazon.S3
                 }
                 PostObject(request, options, callbackHelper);
             }));
-            
+
         }
 
         private void CreateSignedPolicy(PostObjectRequest request)
@@ -84,17 +84,24 @@ namespace Amazon.S3
                 }
             }
 
+            StringBuilder metadataPolicy = new StringBuilder();
+            foreach (var kvp in request.Metadata)
+            {
+                var metakey = kvp.Key.StartsWith(S3Constants.PostFormDataXAmzPrefix, StringComparison.Ordinal) ? kvp.Key : S3Constants.PostFormDataMetaPrefix + kvp.Key;
+                metadataPolicy.Append(string.Format(",{{\"{0}\": \"{1}\"}}", metakey, kvp.Value));
+            }
+
             string policyString = null;
             int position = request.Key.LastIndexOf('/');
             if (position == -1)
             {
                 policyString = "{\"expiration\": \"" + DateTime.UtcNow.AddHours(24).ToString("yyyy-MM-ddTHH:mm:ssZ") + "\",\"conditions\": [{\"bucket\": \"" +
-                    request.Bucket + "\"},[\"starts-with\", \"$key\", \"" + "\"],{\"acl\": \"private\"},[\"eq\", \"$Content-Type\", " + "\"" + request.ContentType + "\"" + "]]}";
+                    request.Bucket + "\"},[\"starts-with\", \"$key\", \"" + "\"],{\"acl\": \"private\"},[\"eq\", \"$Content-Type\", " + "\"" + request.ContentType + "\"" + "]" + metadataPolicy.ToString() + "]}";
             }
             else
             {
                 policyString = "{\"expiration\": \"" + DateTime.UtcNow.AddHours(24).ToString("yyyy-MM-ddTHH:mm:ssZ") + "\",\"conditions\": [{\"bucket\": \"" +
-                    request.Bucket + "\"},[\"starts-with\", \"$key\", \"" + request.Key.Substring(0, position) + "/\"],{\"acl\": \"private\"},[\"eq\", \"$Content-Type\", " + "\"" + request.ContentType + "\"" + "]]}";
+                    request.Bucket + "\"},[\"starts-with\", \"$key\", \"" + request.Key.Substring(0, position) + "/\"],{\"acl\": \"private\"},[\"eq\", \"$Content-Type\", " + "\"" + request.ContentType + "\"" + "]" + metadataPolicy.ToString() + "]}";
             }
             request.SignedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policyString, base.Credentials);
         }
@@ -199,7 +206,7 @@ namespace Amazon.S3
             PostResponseHelper(result, isException);
         }
 
-        private void PostResponseHelper(IAsyncResult result,bool isException)
+        private void PostResponseHelper(IAsyncResult result, bool isException)
         {
             IAsyncExecutionContext executionContext = result.AsyncState as IAsyncExecutionContext;
             IWebResponseData response = isException ? ((HttpErrorResponseException)executionContext.ResponseContext.AsyncResult.Exception).Response : executionContext.ResponseContext.HttpResponse;

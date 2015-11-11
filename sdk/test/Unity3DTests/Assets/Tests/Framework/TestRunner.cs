@@ -42,6 +42,7 @@ namespace AWSSDK.Tests.Framework
 
         public void RunTests()
         {
+            MissingAPILambdaFunctions.Initialize();
             ITestAssemblyRunner runner = null;
             if (IsIL2CPP)
                 runner = new NUnitTestAssemblyRunner(new UnityTestAssemblyBuilder());
