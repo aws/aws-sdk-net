@@ -37,7 +37,6 @@ namespace Amazon.Runtime.Internal
         {
             _logger = Logger.GetLogger(this.GetType());
             // Call the method to process requests at a regular interval.
-            // TODO : Perf testing to figure out appropriate value for interval.
             InvokeRepeating("ProcessRequests", 0.1f, 0.1f);
         }
 
@@ -46,10 +45,6 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         void ProcessRequests()
         {
-            // TODO : The current implementation dequeues a single request and callback per cycle
-            // to reduce the CPU utilization of the main thread by the UnityMainThreadDispatcher.
-            // Need to do perf testing to to verify if this is the best approach.
-
             // Make a network call for queued requests on the main thread
             var request = UnityRequestQueue.Instance.DequeueRequest();
             if (request != null)

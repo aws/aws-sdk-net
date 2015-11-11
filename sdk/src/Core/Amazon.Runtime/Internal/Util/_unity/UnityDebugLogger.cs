@@ -35,60 +35,32 @@ namespace Amazon.Runtime.Internal.Util
 
         public override void Error(Exception exception, string messageFormat, params object[] args)
         {
-            try
-            {
-                if (exception != null)
-                    UnityEngine.Debug.LogException(exception);
+            if (exception != null)
+                UnityEngine.Debug.LogException(exception);
 
-                if (!string.IsNullOrEmpty(messageFormat))
-                    UnityEngine.Debug.LogError(string.Format(messageFormat, args));
-            }
-            catch
-            {
-                //suppress exception for now
-            }
+            if (!string.IsNullOrEmpty(messageFormat))
+                UnityEngine.Debug.LogError(string.Format(messageFormat, args));
         }
 
         public override void Debug(Exception exception, string messageFormat, params object[] args)
         {
-            try
-            {
-                if (exception != null)
-                    UnityEngine.Debug.LogException(exception);
+            if (exception != null)
+                UnityEngine.Debug.LogException(exception);
 
-                if (!string.IsNullOrEmpty(messageFormat))
-                    UnityEngine.Debug.Log(string.Format(messageFormat, args));
-            }
-            catch
-            {
-                //suppress exceptions
-            }
+            if (!string.IsNullOrEmpty(messageFormat))
+                UnityEngine.Debug.Log(string.Format(messageFormat, args));
         }
 
         public override void DebugFormat(string messageFormat, params object[] args)
         {
-            try
-            {
-                if (!string.IsNullOrEmpty(messageFormat))
-                    UnityEngine.Debug.Log(string.Format(messageFormat, args));
-            }
-            catch
-            {
-                //suppress exceptions
-            }
+            if (!string.IsNullOrEmpty(messageFormat))
+                UnityEngine.Debug.Log(string.Format(messageFormat, args));
         }
 
         public override void InfoFormat(string message, params object[] arguments)
         {
-            try
-            {
-                if (!string.IsNullOrEmpty(message))
-                    UnityEngine.Debug.Log(string.Format(message, arguments));
-            }
-            catch
-            {
-                //suppress exceptions
-            }
+            if (!string.IsNullOrEmpty(message))
+                UnityEngine.Debug.Log(string.Format(message, arguments));
         }
 
         public override bool IsDebugEnabled { get { return true; } }
