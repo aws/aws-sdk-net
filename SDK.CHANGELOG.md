@@ -1,3 +1,25 @@
+### 3.1.28.0 (2015-11-12 21:05 UTC)
+* CognitoIdentity (3.1.0.4)
+	* Updated to use new Core, version 3.1.3.6
+	* Updated to use new Core, version 3.1.3.6, to pick up the latest ClientContext.
+* CognitoSync (3.1.0.3)
+	* Updated to use new Core, version 3.1.3.6
+	* Updated to use new Core, version 3.1.3.6, to pick up the latest ClientContext.
+* EC2 (3.1.4.2)
+	* Documentation update
+* Lambda (3.1.2.3)
+	* Updated to use new Core, version 3.1.3.6
+	* Updated to use new Core, version 3.1.3.6, to pick up the latest ClientContext.
+* MobileAnalytics (3.1.1.3)
+	* Updated to use new Core, version 3.1.3.6
+	* Updated to use new Core, version 3.1.3.6, to pick up the latest ClientContext.
+* RDS (3.1.4.0)
+	* Added support for modifying DB instance visibility.
+Updated documentation to note support for M4 types for DB instance class.
+
+* Core 3.1.3.6
+	* Minor fixes to ClientContext.
+
 ### 3.1.27.0 (2015-11-10 20:21 UTC)
 * APIGateway (3.1.1.0)
 	* Added support for stage variables.
