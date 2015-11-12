@@ -119,7 +119,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// Note that you can't specify an Availability Zone group or a launch group if you specify
-        /// a required duration.
+        /// a duration.
         /// </para>
         /// </summary>
         public int BlockDurationMinutes
