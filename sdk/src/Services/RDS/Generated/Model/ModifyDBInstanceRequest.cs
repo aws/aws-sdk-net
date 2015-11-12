@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
         private string _optionGroupName;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
+        private bool? _publiclyAccessible;
         private string _storageType;
         private string _tdeCredentialArn;
         private string _tdeCredentialPassword;
@@ -377,8 +378,9 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge
         /// | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge
-        /// | db.m3.2xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge
-        /// | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+        /// | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge
+        /// | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro
+        /// | db.t2.small | db.t2.medium | db.t2.large</code>
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -759,6 +761,41 @@ namespace Amazon.RDS.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PubliclyAccessible. 
+        /// <para>
+        /// True to make the DB instance Internet-facing with a publicly resolvable DNS name,
+        /// which resolves to a public IP address. False to make the DB instance internal with
+        /// a DNS name that resolves to a private IP address. 
+        /// </para>
+        ///  
+        /// <para>
+        /// <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB instance
+        /// must be part of a public subnet and <code>PubliclyAccessible</code> must be true in
+        /// order for it to be publicly accessible. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless
+        /// of the value of the <code>ApplyImmediately</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: false 
+        /// </para>
+        /// </summary>
+        public bool PubliclyAccessible
+        {
+            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            set { this._publiclyAccessible = value; }
+        }
+
+        // Check to see if PubliclyAccessible property is set
+        internal bool IsSetPubliclyAccessible()
+        {
+            return this._publiclyAccessible.HasValue; 
         }
 
         /// <summary>
