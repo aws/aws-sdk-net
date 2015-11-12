@@ -420,19 +420,30 @@ namespace SDKDocGenerator
         {
             if (!string.IsNullOrEmpty(samplesDir))
             {
-                var extraFile = Path.Combine(samplesDir, DOC_SAMPLES_SUBFOLDER , serviceName + ".extra.xml");
-                if (File.Exists(extraFile))
+                var extraDocNodes = new List<XmlNode>(); 
+                foreach (var pattern in new [] {".extra.xml", "GeneratedSamples.extra.xml"})
                 {
-                    Trace.WriteLine(String.Format("Merging {0} code samples into {1} from {2}", serviceName, filePath, extraFile));
+                    var extraFile = Path.Combine(samplesDir, DOC_SAMPLES_SUBFOLDER, serviceName + pattern);
+                    if (File.Exists(extraFile))
+                    {
+                        var extraDoc = new XmlDocument();
+                        extraDoc.Load(extraFile);
+                        foreach(XmlNode node in extraDoc.SelectNodes("docs/doc"))
+                        {
+                            extraDocNodes.Add(node);
+                        }
+                    }
+                }
+
+                if (extraDocNodes.Any())
+                {
+                    Trace.WriteLine(String.Format("Merging {0} code samples into {1}", serviceName, filePath));
 
                     var sdkDoc = new XmlDocument();
                     sdkDoc.Load(filePath);
 
-                    var extraDoc = new XmlDocument();
-                    extraDoc.Load(extraFile);
-
-                    ProcessReferences(sdkDoc, extraDoc, extraFile);
-                    ProcessExtraDoc(sdkDoc, extraDoc);
+                    //ProcessReferences(sdkDoc, extraDoc, extraFile);
+                    ProcessExtraDoc(sdkDoc, extraDocNodes);
 
                     return XDocument.Load(new XmlNodeReader(sdkDoc), LoadOptions.PreserveWhitespace);
                 }
@@ -441,32 +452,34 @@ namespace SDKDocGenerator
             return XDocument.Load(filePath, LoadOptions.PreserveWhitespace);
         }
 
-        private static void ProcessReferences(XmlDocument sdkDocument, XmlDocument extraDoc, string ExtraXml)
+        //private static void ProcessReferences(XmlDocument sdkDocument, List<XmlNode> refNodes, string ExtraXml)
+        //{
+        //    //var refNodes = extraDoc.SelectNodes("docs/ref");
+            
+        //    Trace.WriteLine(String.Format("Found {0} ref nodes", refNodes.Count), "verbose");
+        //    foreach (XmlNode refNode in refNodes)
+        //    {
+        //        var refAttribute = refNode.Attributes["src"];
+        //        if (refAttribute == null) throw new InvalidDataException("Unable to retrieve 'src' attribute for ref node");
+
+        //        string refSrc = refAttribute.Value;
+        //        Trace.WriteLine(String.Format("Referencing XML from {0}", refSrc), "verbose");
+        //        if (!Path.IsPathRooted(refSrc))
+        //        {
+        //            refSrc = Path.Combine(Path.GetDirectoryName(ExtraXml), refSrc);
+        //        }
+
+        //        Trace.WriteLine(String.Format("Loading referenced Extra XML from {0}", refSrc), "verbose");
+        //        XmlDocument refExtraDoc = new XmlDocument();
+        //        refExtraDoc.Load(refSrc);
+        //        var docNodes = refExtraDoc.SelectNodes("docs/doc");
+        //        ProcessExtraDoc(sdkDocument, docNodes);
+        //    }
+        //}
+
+        private static void ProcessExtraDoc(XmlDocument sdkDocument, List<XmlNode> docNodes)
         {
-            var refNodes = extraDoc.SelectNodes("docs/ref");
-            Trace.WriteLine(String.Format("Found {0} ref nodes", refNodes.Count), "verbose");
-            foreach (XmlNode refNode in refNodes)
-            {
-                var refAttribute = refNode.Attributes["src"];
-                if (refAttribute == null) throw new InvalidDataException("Unable to retrieve 'src' attribute for ref node");
-
-                string refSrc = refAttribute.Value;
-                Trace.WriteLine(String.Format("Referencing XML from {0}", refSrc), "verbose");
-                if (!Path.IsPathRooted(refSrc))
-                {
-                    refSrc = Path.Combine(Path.GetDirectoryName(ExtraXml), refSrc);
-                }
-
-                Trace.WriteLine(String.Format("Loading referenced Extra XML from {0}", refSrc), "verbose");
-                XmlDocument refExtraDoc = new XmlDocument();
-                refExtraDoc.Load(refSrc);
-                ProcessExtraDoc(sdkDocument, refExtraDoc);
-            }
-        }
-
-        private static void ProcessExtraDoc(XmlDocument sdkDocument, XmlDocument extraDoc)
-        {
-            var docNodes = extraDoc.SelectNodes("docs/doc");
+            //var docNodes = extraDoc.SelectNodes("docs/doc");
             Trace.WriteLine(String.Format("Found {0} extra doc nodes", docNodes.Count), "verbose");
             foreach (XmlNode docNode in docNodes)
             {

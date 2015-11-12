@@ -421,6 +421,7 @@ namespace ServiceClientGenerator
         public const string XamarinSampleSolutionFileKey = "xamarinSamples";
         public const string DeprecatedOverridesKey = "deprecatedOverrides";
         public const string DeprecationMessageKey = "message";
+        public const string ExamplesKey = "examples";
 
         JsonData _documentRoot;
 
@@ -1204,6 +1205,21 @@ namespace ServiceClientGenerator
             }
 
             return modifiers;
+        }
+
+        public JsonData GetExamples(string operationName)
+        {
+
+            if (_documentRoot.PropertyNames.Contains(ExamplesKey) &&
+                _documentRoot[ExamplesKey].IsObject &&
+                _documentRoot[ExamplesKey].PropertyNames.Contains(operationName) &&
+                _documentRoot[ExamplesKey][operationName].IsArray)
+                return _documentRoot[ExamplesKey][operationName];
+            
+            var empty = new JsonData();
+            empty.SetJsonType(JsonType.Array);
+            return empty;
+            
         }
 
         //review directory separator

@@ -44,5 +44,46 @@ namespace ServiceClientGenerator
 
             return data;
         }
+
+        public static string SafeGetString(this JsonData self, string propertyName)
+        {
+            var val = self.SafeGet(propertyName);
+            if (null == val || !val.IsString)
+                return null;
+
+            return val.ToString();
+        }
+
+        public static IDictionary<string, JsonData> GetMap(this JsonData self)
+        {
+            var result = new Dictionary<string, JsonData>();
+
+            if (self != null || self.IsObject)
+            {
+                foreach (var key in self.PropertyNames)
+                {
+                    result[key] = self.SafeGet(key);
+                }
+            }
+
+            return result;
+        }
+
+        public static IDictionary<string, string> GetStringMap(this JsonData self)
+        {
+            var result = new Dictionary<string, string>();
+
+            if (self != null || self.IsObject)
+            {
+                foreach (var key in self.PropertyNames)
+                {
+                    var tmp = self.SafeGet(key);
+                    if (tmp.IsString)
+                        result[key] = tmp.ToString();
+                }
+            }
+
+            return result;
+        }
     }
 }

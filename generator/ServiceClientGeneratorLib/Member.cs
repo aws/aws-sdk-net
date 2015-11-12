@@ -769,6 +769,17 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Returns the name of this member as it appears in the model
+        /// </summary>
+        public string ModeledName
+        {
+            get
+            {
+                return this._name;
+            }
+        }
+
+        /// <summary>
         /// Creates a representation of the member as a string using the member name
         /// </summary>
         /// <returns>The member name as a string</returns>

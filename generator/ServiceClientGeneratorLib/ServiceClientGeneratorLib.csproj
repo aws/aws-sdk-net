@@ -50,6 +50,7 @@
     <Compile Include="CoreUpdater.cs" />
     <Compile Include="CustomizationCompiler.cs" />
     <Compile Include="Customizations.cs" />
+    <Compile Include="Example.cs" />
     <Compile Include="GenerationManifest.cs" />
     <Compile Include="Generators\Component\Component.cs">
       <AutoGen>True</AutoGen>
@@ -65,6 +66,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GettingStarted.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\Examples\ExampleMetadata.cs">
+      <DependentUpon>ExampleMetadata.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Generators\Examples\ExampleCode.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExampleCode.tt</DependentUpon>
     </Compile>
     <Compile Include="Generators\NuGet\CoreNuspec.cs">
       <AutoGen>True</AutoGen>
@@ -559,11 +570,20 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Generators\Examples\ExampleMetadata.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExampleMetadata.cs</LastGenOutput>
+    </Content>
+    <Content Include="Generators\Examples\ExampleCode.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExampleCode.cs</LastGenOutput>
+    </Content>
     <Content Include="Generators\NuGet\NuGetPackageReadmeSection.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>NuGetPackageReadmeSection.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

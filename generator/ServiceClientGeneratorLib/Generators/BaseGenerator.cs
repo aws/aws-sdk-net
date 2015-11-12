@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+    #line 1 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class BaseGenerator : BaseGeneratorBase
     {
@@ -33,7 +33,7 @@ namespace ServiceClientGenerator.Generators
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 9 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 9 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 	
     // An object that contains all the information about a service
 	public ServiceConfiguration Config { get; set; }
@@ -46,7 +46,7 @@ namespace ServiceClientGenerator.Generators
         #line default
         #line hidden
         
-        #line 16 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 16 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(@"/*
  * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -69,21 +69,21 @@ this.Write(@"/*
         #line default
         #line hidden
         
-        #line 33 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 33 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(Path.GetFileName(this.Config.ModelPath)));
 
         
         #line default
         #line hidden
         
-        #line 33 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 33 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" service model.\r\n */\r\n");
 
         
         #line default
         #line hidden
         
-        #line 35 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 35 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -95,21 +95,21 @@ this.Write(" service model.\r\n */\r\n");
         #line default
         #line hidden
         
-        #line 41 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 41 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Initiates the asynchronous execution of the ");
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 43 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 43 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        /// <param name=\"reque" +
         "st\">Container for the necessary parameters to execute the ");
 
@@ -117,14 +117,14 @@ this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        ///
         #line default
         #line hidden
         
-        #line 46 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 46 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 46 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 46 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(@" operation.</param>
         /// <param name=""cancellationToken"">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -136,7 +136,7 @@ this.Write(@" operation.</param>
         #line default
         #line hidden
         
-        #line 51 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 51 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -148,21 +148,21 @@ this.Write(@" operation.</param>
         #line default
         #line hidden
         
-        #line 57 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 57 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Initiates the asynchronous execution of the ");
 
         
         #line default
         #line hidden
         
-        #line 59 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 59 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 59 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 59 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        /// <param name=\"reque" +
         "st\">Container for the necessary parameters to execute the ");
 
@@ -170,28 +170,28 @@ this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        ///
         #line default
         #line hidden
         
-        #line 62 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 62 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 62 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" operation on Amazon");
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 62 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 62 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(@"Client.</param>
         /// <param name=""callback"">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name=""state"">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -203,21 +203,21 @@ this.Write(@"Client.</param>
         #line default
         #line hidden
         
-        #line 67 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 67 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 67 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 67 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\r\n        ///         operation.</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 69 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 69 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -229,21 +229,21 @@ this.Write("\r\n        ///         operation.</returns>\r\n");
         #line default
         #line hidden
         
-        #line 75 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 75 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Finishes the asynchronous execution of the  ");
 
         
         #line default
         #line hidden
         
-        #line 77 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 77 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 77 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 77 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        /// <param name=\"async" +
         "Result\">The IAsyncResult returned by the call to Begin");
 
@@ -251,49 +251,49 @@ this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        ///
         #line default
         #line hidden
         
-        #line 80 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 80 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 80 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 80 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(".</param>\r\n        /// \r\n        /// <returns>Returns a  ");
 
         
         #line default
         #line hidden
         
-        #line 82 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 82 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 82 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 82 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Result from ");
 
         
         #line default
         #line hidden
         
-        #line 82 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 82 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 82 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 82 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(".</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 83 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 83 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -306,28 +306,28 @@ this.Write(".</returns>\r\n");
         #line default
         #line hidden
         
-        #line 90 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 90 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// <summary>\r\n    /// Implementation for accessing ");
 
         
         #line default
         #line hidden
         
-        #line 92 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 92 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 92 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 92 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\r\n    ///\r\n");
 
         
         #line default
         #line hidden
         
-        #line 94 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 94 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("    ", documentation);
 
@@ -335,14 +335,14 @@ this.Write("\r\n    ///\r\n");
         #line default
         #line hidden
         
-        #line 96 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 96 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 98 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -355,28 +355,28 @@ this.Write("    /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 105 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 105 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// <summary>\r\n    /// Interface for accessing ");
 
         
         #line default
         #line hidden
         
-        #line 107 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 107 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 107 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 107 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\r\n    ///\r\n");
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 109 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("    ", documentation);
 
@@ -384,14 +384,14 @@ this.Write("\r\n    ///\r\n");
         #line default
         #line hidden
         
-        #line 111 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 111 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 113 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 113 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -405,7 +405,7 @@ this.Write("    /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 121 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 121 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// <summary>\r\n\t/// Empty class reserved for future use.\r\n    /// </summary>\r" +
         "\n");
 
@@ -413,7 +413,7 @@ this.Write("    /// <summary>\r\n\t/// Empty class reserved for future use.\r\n 
         #line default
         #line hidden
         
-        #line 125 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 125 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
             return;
 		}
@@ -423,14 +423,14 @@ this.Write("    /// <summary>\r\n\t/// Empty class reserved for future use.\r\n 
         #line default
         #line hidden
         
-        #line 129 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 129 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 131 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 131 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("    ", documentation);
 
@@ -438,14 +438,14 @@ this.Write("    /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 133 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 133 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 135 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 135 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -459,14 +459,14 @@ this.Write("    /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 143 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 143 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 145 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 145 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -474,14 +474,14 @@ this.Write("        /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 147 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 147 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 149 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 149 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -504,14 +504,14 @@ this.Write("        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 166 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 166 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\r\n        /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 169 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -519,14 +519,14 @@ this.Write("\r\n        /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 171 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 171 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 173 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 173 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     if (includeCancellationToken)
     {
@@ -535,7 +535,7 @@ this.Write("        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 176 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 176 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"cancellationToken\"> ttd1\r\n        ///     A cancellation" +
         " token that can be used by other objects or threads to receive notice of cancell" +
         "ation.\r\n        /// </param>\r\n");
@@ -544,7 +544,7 @@ this.Write("        /// <param name=\"cancellationToken\"> ttd1\r\n        ///  
         #line default
         #line hidden
         
-        #line 180 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 180 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
     if (includeRequest)
@@ -554,7 +554,7 @@ this.Write("        /// <param name=\"cancellationToken\"> ttd1\r\n        ///  
         #line default
         #line hidden
         
-        #line 184 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 184 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"request\">Container for the necessary parameters to execu" +
         "te the ");
 
@@ -562,21 +562,21 @@ this.Write("        /// <param name=\"request\">Container for the necessary para
         #line default
         #line hidden
         
-        #line 185 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 185 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 185 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 185 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" service method.</param>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 186 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -584,42 +584,42 @@ this.Write(" service method.</param>\r\n");
         #line default
         #line hidden
         
-        #line 188 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 188 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// \r\n        /// <returns>The response from the ");
 
         
         #line default
         #line hidden
         
-        #line 190 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 190 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 190 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 190 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" service method, as returned by ");
 
         
         #line default
         #line hidden
         
-        #line 190 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 190 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 190 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 190 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(".</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 191 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 191 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         // Skip adding exceptions in the ndoc because we are not generating exceptions from the service model.
         if(this.Config.Namespace != "Amazon.S3")
@@ -641,14 +641,14 @@ this.Write(".</returns>\r\n");
         #line default
         #line hidden
         
-        #line 207 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 207 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\r\n        /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 210 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 210 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -656,14 +656,14 @@ this.Write("\r\n        /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 212 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 212 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 214 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 214 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
   foreach(var item in members)
     {
 
@@ -671,42 +671,42 @@ this.Write("        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 216 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 216 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"");
 
         
         #line default
         #line hidden
         
-        #line 217 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 217 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.CamelCaseParam(item.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 217 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 217 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\">");
 
         
         #line default
         #line hidden
         
-        #line 217 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 217 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(item.GetParamDocumentationForOperation(operation.Name)));
 
         
         #line default
         #line hidden
         
-        #line 217 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 217 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("</param>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 218 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 218 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
     if (!isSync)
@@ -716,7 +716,7 @@ this.Write("</param>\r\n");
         #line default
         #line hidden
         
-        #line 222 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 222 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"cancellationToken\">\r\n        ///     A cancellation toke" +
         "n that can be used by other objects or threads to receive notice of cancellation" +
         ".\r\n        /// </param>\r\n");
@@ -725,7 +725,7 @@ this.Write("        /// <param name=\"cancellationToken\">\r\n        ///     A 
         #line default
         #line hidden
         
-        #line 226 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 226 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -733,42 +733,42 @@ this.Write("        /// <param name=\"cancellationToken\">\r\n        ///     A 
         #line default
         #line hidden
         
-        #line 228 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 228 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// \r\n        /// <returns>The response from the ");
 
         
         #line default
         #line hidden
         
-        #line 230 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 230 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 230 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 230 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" service method, as returned by ");
 
         
         #line default
         #line hidden
         
-        #line 230 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 230 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 230 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 230 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(".</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 231 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 231 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
 		if (!this.Config.ServiceModel.Customizations.SuppressSimpleMethodExceptionDocs)
 		{
@@ -787,28 +787,28 @@ this.Write(".</returns>\r\n");
         #line default
         #line hidden
         
-        #line 244 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 244 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t/// <summary>\r\n\t/// Container for the parameters to the ");
 
         
         #line default
         #line hidden
         
-        #line 246 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 246 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 246 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 246 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n");
 
         
         #line default
         #line hidden
         
-        #line 247 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 247 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     WriteCommentBlock("	", documentation);
 
@@ -816,14 +816,14 @@ this.Write(" operation.\r\n");
         #line default
         #line hidden
         
-        #line 249 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 249 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t/// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 251 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 251 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
 	}
 
@@ -837,42 +837,42 @@ this.Write("\t/// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 259 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 259 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <exception cref=\"");
 
         
         #line default
         #line hidden
         
-        #line 260 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 260 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
 
         
         #line default
         #line hidden
         
-        #line 260 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 260 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(".Model.");
 
         
         #line default
         #line hidden
         
-        #line 260 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 260 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
 
         
         #line default
         #line hidden
         
-        #line 260 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 260 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\">\r\n");
 
         
         #line default
         #line hidden
         
-        #line 261 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 261 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -880,14 +880,14 @@ this.Write("\">\r\n");
         #line default
         #line hidden
         
-        #line 263 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 263 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// </exception>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 265 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 265 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -899,42 +899,42 @@ this.Write("        /// </exception>\r\n");
         #line default
         #line hidden
         
-        #line 271 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 271 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t/// <summary>\r\n\t///\tReturns information about the ");
 
         
         #line default
         #line hidden
         
-        #line 273 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 273 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 273 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 273 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" response metadata.\r\n\t///\tThe ");
 
         
         #line default
         #line hidden
         
-        #line 274 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 274 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 274 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 274 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" operation has a void result type.\r\n\t/// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 276 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 276 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
 	}
 
@@ -1037,28 +1037,28 @@ this.Write(" operation has a void result type.\r\n\t/// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 373 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 373 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Instantiates ");
 
         
         #line default
         #line hidden
         
-        #line 375 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 375 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(className));
 
         
         #line default
         #line hidden
         
-        #line 375 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 375 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" with the parameterized properties\r\n        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 377 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 377 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         foreach (var member in members)
         {
@@ -1067,42 +1067,42 @@ this.Write(" with the parameterized properties\r\n        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 380 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 380 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"");
 
         
         #line default
         #line hidden
         
-        #line 381 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 381 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.CamelCaseParam(member.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 381 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 381 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\">");
 
         
         #line default
         #line hidden
         
-        #line 381 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 381 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.GetParamDocumentationForConstructor(className)));
 
         
         #line default
         #line hidden
         
-        #line 381 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 381 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("</param>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 382 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 382 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
     }
@@ -1111,7 +1111,7 @@ this.Write("</param>\r\n");
         #line default
         #line hidden
         
-        #line 387 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 387 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     // Generates methods for the client that have request members as parameters for easy calls to the operation
     // Only generates them if they are specified in the customizations of the service
@@ -1137,28 +1137,28 @@ this.Write("</param>\r\n");
         #line default
         #line hidden
         
-        #line 407 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 407 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t\t[Obsolete(\"");
 
         
         #line default
         #line hidden
         
-        #line 408 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 408 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
 
         
         #line default
         #line hidden
         
-        #line 408 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 408 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\")]\r\n");
 
         
         #line default
         #line hidden
         
-        #line 409 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 409 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 		
 			}
 
@@ -1166,56 +1166,56 @@ this.Write("\")]\r\n");
         #line default
         #line hidden
         
-        #line 411 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 411 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        public ");
 
         
         #line default
         #line hidden
         
-        #line 412 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 412 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 412 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 412 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Response ");
 
         
         #line default
         #line hidden
         
-        #line 412 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 412 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 412 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 412 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 412 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 412 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 412 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 412 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(")\r\n");
 
         
         #line default
         #line hidden
         
-        #line 413 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 413 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
         else
@@ -1229,28 +1229,28 @@ this.Write(")\r\n");
         #line default
         #line hidden
         
-        #line 421 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 421 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t\t[Obsolete(\"");
 
         
         #line default
         #line hidden
         
-        #line 422 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 422 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
 
         
         #line default
         #line hidden
         
-        #line 422 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 422 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\")]\r\n");
 
         
         #line default
         #line hidden
         
-        #line 423 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 423 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 		
 			}
 
@@ -1258,49 +1258,49 @@ this.Write("\")]\r\n");
         #line default
         #line hidden
         
-        #line 425 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 425 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        public Task<");
 
         
         #line default
         #line hidden
         
-        #line 426 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 426 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 426 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 426 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Response> ");
 
         
         #line default
         #line hidden
         
-        #line 426 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 426 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 426 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 426 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Async(");
 
         
         #line default
         #line hidden
         
-        #line 426 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 426 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 426 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 426 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("System.Threading.CancellationToken cancellationToken = default(CancellationToken)" +
         ")\r\n");
 
@@ -1308,7 +1308,7 @@ this.Write("System.Threading.CancellationToken cancellationToken = default(Cance
         #line default
         #line hidden
         
-        #line 427 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 427 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
 
@@ -1316,28 +1316,28 @@ this.Write("System.Threading.CancellationToken cancellationToken = default(Cance
         #line default
         #line hidden
         
-        #line 429 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 429 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        {\r\n            var request = new ");
 
         
         #line default
         #line hidden
         
-        #line 431 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 431 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 431 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 431 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Request();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 432 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 432 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
 foreach (var member in docMembers)
 {
@@ -1346,42 +1346,42 @@ foreach (var member in docMembers)
         #line default
         #line hidden
         
-        #line 435 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 435 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("            request.");
 
         
         #line default
         #line hidden
         
-        #line 436 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 436 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 436 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 436 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" = ");
 
         
         #line default
         #line hidden
         
-        #line 436 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 436 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.CamelCaseParam(member.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 436 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 436 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 437 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 437 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         
 }
@@ -1392,28 +1392,28 @@ this.Write(";\r\n");
         #line default
         #line hidden
         
-        #line 442 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 442 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("            return ");
 
         
         #line default
         #line hidden
         
-        #line 443 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 443 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 443 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 443 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("(request);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 444 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 444 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
         else
@@ -1423,28 +1423,28 @@ this.Write("(request);\r\n");
         #line default
         #line hidden
         
-        #line 448 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 448 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("            return ");
 
         
         #line default
         #line hidden
         
-        #line 449 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 449 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 449 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 449 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Async(request, cancellationToken);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 450 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 450 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
 
@@ -1452,14 +1452,14 @@ this.Write("Async(request, cancellationToken);\r\n");
         #line default
         #line hidden
         
-        #line 452 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 452 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 455 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 455 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
           }
         }
@@ -1469,7 +1469,7 @@ this.Write("        }\r\n\r\n");
         #line default
         #line hidden
         
-        #line 461 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 461 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     // Generates methods for the interface that have request members as parameters for easy calls to the operation
     // Only generates them if they are specified in the customizations of the service
@@ -1495,28 +1495,28 @@ this.Write("        }\r\n\r\n");
         #line default
         #line hidden
         
-        #line 481 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 481 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t\t[Obsolete(\"");
 
         
         #line default
         #line hidden
         
-        #line 482 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 482 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
 
         
         #line default
         #line hidden
         
-        #line 482 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 482 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\")]\r\n");
 
         
         #line default
         #line hidden
         
-        #line 483 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 483 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 		
 					}
 
@@ -1524,56 +1524,56 @@ this.Write("\")]\r\n");
         #line default
         #line hidden
         
-        #line 485 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 485 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        ");
 
         
         #line default
         #line hidden
         
-        #line 486 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 486 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 486 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 486 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Response ");
 
         
         #line default
         #line hidden
         
-        #line 486 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 486 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 486 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 486 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 486 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 486 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 486 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 486 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 487 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 487 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
         else
@@ -1587,28 +1587,28 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 495 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 495 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t\t[Obsolete(\"");
 
         
         #line default
         #line hidden
         
-        #line 496 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 496 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
 
         
         #line default
         #line hidden
         
-        #line 496 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 496 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\")]\r\n");
 
         
         #line default
         #line hidden
         
-        #line 497 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 497 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 		
 				}
 
@@ -1616,49 +1616,49 @@ this.Write("\")]\r\n");
         #line default
         #line hidden
         
-        #line 499 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 499 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        Task<");
 
         
         #line default
         #line hidden
         
-        #line 500 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 500 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 500 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 500 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Response> ");
 
         
         #line default
         #line hidden
         
-        #line 500 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 500 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 500 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 500 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Async(");
 
         
         #line default
         #line hidden
         
-        #line 500 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 500 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 500 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 500 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("System.Threading.CancellationToken cancellationToken = default(CancellationToken)" +
         ");\r\n");
 
@@ -1666,7 +1666,7 @@ this.Write("System.Threading.CancellationToken cancellationToken = default(Cance
         #line default
         #line hidden
         
-        #line 501 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 501 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
           }
                 }
@@ -1677,7 +1677,7 @@ this.Write("System.Threading.CancellationToken cancellationToken = default(Cance
         #line default
         #line hidden
         
-        #line 509 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 509 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     // Generates constructors for operation requests that have request members in the parameters for easy creation of requests
     // Only generates them if they are specified in the customizations of the service
@@ -1692,7 +1692,7 @@ this.Write("System.Threading.CancellationToken cancellationToken = default(Cance
         #line default
         #line hidden
         
-        #line 518 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 518 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Empty constructor used to set  properties inde" +
         "pendently even when a simple constructor is available\r\n        /// </summary>\r\n " +
         "       public ");
@@ -1701,21 +1701,21 @@ this.Write("        /// <summary>\r\n        /// Empty constructor used to set  
         #line default
         #line hidden
         
-        #line 521 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 521 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(className));
 
         
         #line default
         #line hidden
         
-        #line 521 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 521 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("() { }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 523 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 523 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
             foreach (var form in forms)
             {
@@ -1726,48 +1726,48 @@ this.Write("() { }\r\n\r\n");
         #line default
         #line hidden
         
-        #line 529 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 529 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
  FormatSimpleConstructorDocumentation(className, docMembers); 
         
         #line default
         #line hidden
         
-        #line 529 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 529 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        public ");
 
         
         #line default
         #line hidden
         
-        #line 530 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 530 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(className));
 
         
         #line default
         #line hidden
         
-        #line 530 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 530 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 530 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 530 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 530 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 530 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(")\r\n        {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 532 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 532 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
 foreach (var member in docMembers)
 {
@@ -1776,42 +1776,42 @@ foreach (var member in docMembers)
         #line default
         #line hidden
         
-        #line 535 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 535 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("            ");
 
         
         #line default
         #line hidden
         
-        #line 536 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 536 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
 
         
         #line default
         #line hidden
         
-        #line 536 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 536 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" = ");
 
         
         #line default
         #line hidden
         
-        #line 536 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 536 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.CamelCaseParam(member.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 536 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 536 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 537 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 537 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         
 }
@@ -1820,14 +1820,14 @@ this.Write(";\r\n");
         #line default
         #line hidden
         
-        #line 540 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 540 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 543 "C:\dev\dotnet\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 543 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
             }
         }
