@@ -14,12 +14,25 @@ namespace CustomTasks
         public string UnityExe { get; set; }
         public string DeploymentPath { get; set; }
         public string ToolsPath { get; set; }
-
+        public string SamplesPath { get; set; }
 
         public string ServiceName { get; set; }
         private string UnityTempProjectPath { get; set; }
         private string SdkVersionFile { get; set; }
         private static List<String> StandardAssemblies = new List<string>() { @"CognitoIdentity", @"SecurityToken", @"Core" };
+
+        private static IDictionary<string, string> SampleMappings = new Dictionary<string, string>()
+        {
+            {"CognitoSync",  "Cognito Sync"},
+            {"DynamoDBv2","DynamoDB"},
+            {"Kinesis","Kinesis"},
+            {"SQS","SQS"},
+            {"SimpleEmail","SES"},
+            {"SimpleNotificationService","SNS"},
+            {"MobileAnalytics","Mobile Analytics"},
+            {"Lambda","Lambda"},
+            {"S3","S3"}
+        };
 
         public override bool Execute()
         {
@@ -31,6 +44,17 @@ namespace CustomTasks
                 throw new ArgumentNullException("DeploymentPath");
 
             Log.LogMessage(@"Deployment path = {0}", DeploymentPath);
+
+
+            if (string.IsNullOrEmpty(SamplesPath))
+            {
+                SamplesPath = @"..\..\aws-sdk-unity-samples";
+            }
+
+            if(!Directory.Exists(SamplesPath))
+            {
+                new ArgumentException(@"Directory {0} does not exist",SamplesPath);
+            }
 
             string unityAssemblies = Path.Combine(DeploymentPath, "assemblies", "unity");
             if (!Directory.Exists(unityAssemblies))
@@ -73,6 +97,18 @@ namespace CustomTasks
 
                 Directory.CreateDirectory(awssdkDirectory);
 
+                //create sample directory & copy samples
+                var samplesSourceDirectory = GetSampleDirectoryForService(ServiceName);
+                if (!string.IsNullOrEmpty(samplesSourceDirectory))
+                {
+                    var samplesDestinationDirectory = Path.Combine(assetsFolder, @"Examples");
+                    Directory.CreateDirectory(samplesDestinationDirectory);
+                    CopyDirectory(samplesSourceDirectory, samplesDestinationDirectory);
+
+                    //copy the license for samples
+                    File.Copy(Path.Combine(SamplesPath, @"License.txt"), samplesDestinationDirectory);
+                }
+
                 //copy assembly files
                 CopyAssemblies(unityAssemblies, awssdkDirectory);
 
@@ -84,6 +120,19 @@ namespace CustomTasks
             }
             return true;
         }
+
+        private string GetSampleDirectoryForService(string serviceName)
+        {
+            if (!SampleMappings.ContainsKey(serviceName))
+                return null;
+
+            var sampleDirectoryName = SampleMappings[serviceName];
+
+            return Path.Combine(SamplesPath, sampleDirectoryName);
+        }
+
+
+
 
         public static void DeleteDirectory(string target_dir)
         {
