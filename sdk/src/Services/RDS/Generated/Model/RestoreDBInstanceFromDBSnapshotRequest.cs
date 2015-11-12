@@ -47,6 +47,11 @@ namespace Amazon.RDS.Model
     /// action. The result is that you will replace the original DB instance with the DB instance
     /// created from the snapshot.
     /// </para>
+    ///  
+    /// <para>
+    /// If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code>
+    /// must be the ARN of the shared DB snapshot.
+    /// </para>
     /// </summary>
     public partial class RestoreDBInstanceFromDBSnapshotRequest : AmazonRDSRequest
     {
@@ -79,7 +84,7 @@ namespace Amazon.RDS.Model
         /// Instantiates RestoreDBInstanceFromDBSnapshotRequest with the parameterized properties
         /// </summary>
         /// <param name="dbInstanceIdentifier"> Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server)</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> Example: <code>my-snapshot-id</code></param>
-        /// <param name="dbSnapshotIdentifier"> The identifier for the DB snapshot to restore from.  Constraints: <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
+        /// <param name="dbSnapshotIdentifier"> The identifier for the DB snapshot to restore from.  Constraints: <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</param>
         public RestoreDBInstanceFromDBSnapshotRequest(string dbInstanceIdentifier, string dbSnapshotIdentifier)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
@@ -164,8 +169,9 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge
         /// | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge
-        /// | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro
-        /// | db.t2.small | db.t2.medium | db.t2.large</code>
+        /// | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large
+        /// | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small
+        /// | db.t2.medium | db.t2.large</code>
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -216,7 +222,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter doesn't apply to the MySQL engine.
+        /// This parameter doesn't apply to the MySQL or MariaDB engines.
         /// </para>
         ///  </note>
         /// </summary>
@@ -243,7 +249,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First
         /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens</li> </ul>
+        /// hyphens</li> </ul> 
+        /// <para>
+        /// If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code>
+        /// must be the ARN of the shared DB snapshot.
+        /// </para>
         /// </summary>
         public string DBSnapshotIdentifier
         {
@@ -290,9 +300,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>MySQL</code> | <code>oracle-se1</code> | <code>oracle-se</code>
-        /// | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-        /// <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>
+        ///  Valid Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code>
+        /// | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code>
+        /// | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>
         /// </para>
         /// </summary>
         public string Engine

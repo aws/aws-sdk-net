@@ -43,6 +43,7 @@ namespace Amazon.IdentityManagement.Model
         private string _evalResourceName;
         private List<Statement> _matchedStatements = new List<Statement>();
         private List<string> _missingContextValues = new List<string>();
+        private List<ResourceSpecificResult> _resourceSpecificResults = new List<ResourceSpecificResult>();
 
         /// <summary>
         /// Gets and sets the property EvalActionName. 
@@ -87,8 +88,8 @@ namespace Amazon.IdentityManagement.Model
         /// IAM policies and resource policies, this parameter explains how each set of policies
         /// contributes to the final evaluation decision. When simulating cross-account access
         /// to a resource, both the resource-based policy and the caller's IAM policy must grant
-        /// access. See <ulink href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-        /// IAM Roles Differ from Resource-based Policies</ulink>
+        /// access. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+        /// IAM Roles Differ from Resource-based Policies</a>
         /// </para>
         /// </summary>
         public Dictionary<string, string> EvalDecisionDetails
@@ -167,6 +168,25 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetMissingContextValues()
         {
             return this._missingContextValues != null && this._missingContextValues.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceSpecificResults. 
+        /// <para>
+        /// The individual results of the simulation of the API action specified in EvalActionName
+        /// on each resource.
+        /// </para>
+        /// </summary>
+        public List<ResourceSpecificResult> ResourceSpecificResults
+        {
+            get { return this._resourceSpecificResults; }
+            set { this._resourceSpecificResults = value; }
+        }
+
+        // Check to see if ResourceSpecificResults property is set
+        internal bool IsSetResourceSpecificResults()
+        {
+            return this._resourceSpecificResults != null && this._resourceSpecificResults.Count > 0; 
         }
 
     }

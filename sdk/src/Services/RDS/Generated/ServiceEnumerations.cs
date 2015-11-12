@@ -100,6 +100,10 @@ namespace Amazon.RDS
         /// Constant DbSecurityGroup for SourceType
         /// </summary>
         public static readonly SourceType DbSecurityGroup = new SourceType("db-security-group");
+        /// <summary>
+        /// Constant DbSnapshot for SourceType
+        /// </summary>
+        public static readonly SourceType DbSnapshot = new SourceType("db-snapshot");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

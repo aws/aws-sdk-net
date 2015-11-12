@@ -94,7 +94,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: Amazon EC2 selects one for you (recommended).
+        /// Default: AWS selects one for you. If you create more than one subnet in your VPC,
+        /// we may not necessarily select a different zone for each subnet. 
         /// </para>
         /// </summary>
         public string AvailabilityZone

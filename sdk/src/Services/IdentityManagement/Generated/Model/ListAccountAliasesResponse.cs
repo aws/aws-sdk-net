@@ -39,7 +39,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property AccountAliases. 
         /// <para>
-        /// A list of aliases associated with the account.
+        /// A list of aliases associated with the account. AWS supports only one alias per account.
         /// </para>
         /// </summary>
         public List<string> AccountAliases

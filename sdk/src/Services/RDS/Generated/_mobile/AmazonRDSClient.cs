@@ -46,8 +46,8 @@ namespace Amazon.RDS
     /// </para>
     ///  
     /// <para>
-    ///  Amazon RDS gives you access to the capabilities of a MySQL, PostgreSQL, Microsoft
-    /// SQL Server, Oracle, or Aurora database server. This means the code, applications,
+    ///  Amazon RDS gives you access to the capabilities of a MySQL, MariaDB, PostgreSQL,
+    /// Microsoft SQL Server, Oracle, or Aurora database server. This means the code, applications,
     /// and tools you already use today with your existing databases work with Amazon RDS
     /// without modification. Amazon RDS automatically backs up your database and maintains
     /// the database software that powers your DB instance. Amazon RDS is flexible: you can
@@ -1581,6 +1581,37 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeDBSnapshotAttributes
+
+        internal DescribeDBSnapshotAttributesResponse DescribeDBSnapshotAttributes(DescribeDBSnapshotAttributesRequest request)
+        {
+            var marshaller = new DescribeDBSnapshotAttributesRequestMarshaller();
+            var unmarshaller = DescribeDBSnapshotAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBSnapshotAttributesRequest,DescribeDBSnapshotAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBSnapshotAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBSnapshotAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeDBSnapshotAttributesResponse> DescribeDBSnapshotAttributesAsync(DescribeDBSnapshotAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeDBSnapshotAttributesRequestMarshaller();
+            var unmarshaller = DescribeDBSnapshotAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDBSnapshotAttributesRequest,DescribeDBSnapshotAttributesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDBSnapshots
 
         internal DescribeDBSnapshotsResponse DescribeDBSnapshots()
@@ -2379,6 +2410,37 @@ namespace Amazon.RDS
             var unmarshaller = ModifyDBParameterGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyDBParameterGroupRequest,ModifyDBParameterGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyDBSnapshotAttribute
+
+        internal ModifyDBSnapshotAttributeResponse ModifyDBSnapshotAttribute(ModifyDBSnapshotAttributeRequest request)
+        {
+            var marshaller = new ModifyDBSnapshotAttributeRequestMarshaller();
+            var unmarshaller = ModifyDBSnapshotAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyDBSnapshotAttributeRequest,ModifyDBSnapshotAttributeResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyDBSnapshotAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshotAttribute operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ModifyDBSnapshotAttributeResponse> ModifyDBSnapshotAttributeAsync(ModifyDBSnapshotAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyDBSnapshotAttributeRequestMarshaller();
+            var unmarshaller = ModifyDBSnapshotAttributeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyDBSnapshotAttributeRequest,ModifyDBSnapshotAttributeResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

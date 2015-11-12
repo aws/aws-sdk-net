@@ -34,16 +34,9 @@ namespace Amazon.ElasticLoadBalancing.Model
     ///  
     /// <para>
     /// If the call completes successfully, a new load balancer is created with a unique Domain
-    /// Name Service (DNS) name. The DNS name includes the name of the AWS region in which
-    /// the load balancer was created. For example, the DNS name might end with either of
-    /// the following:
-    /// </para>
-    ///  <ul> <li> <code>us-east-1.elb.amazonaws.com</code> </li> <li> <code>us-west-2.elb.amazonaws.com</code>
-    /// </li> </ul> 
-    /// <para>
-    /// For information about the AWS regions supported by Elastic Load Balancing, see <a
-    /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Regions
-    /// and Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
+    /// Name Service (DNS) name. The load balancer receives incoming traffic and routes it
+    /// to the registered instances. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/how-elb-works.html">How
+    /// Elastic Load Balancing Works</a> in the <i>Elastic Load Balancing Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -51,13 +44,6 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// increase for the number of load balancers for your account. For more information,
     /// see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-limits.html">Elastic
     /// Load Balancing Limits</a> in the <i>Elastic Load Balancing Developer Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// Elastic Load Balancing supports load balancing your EC2 instances launched in either
-    /// the EC2-Classic or EC2-VPC platform. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html">Elastic
-    /// Load Balancing in EC2-Classic</a> or <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html">Elastic
-    /// Load Balancing in a VPC</a> in the <i>Elastic Load Balancing Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateLoadBalancerRequest : AmazonElasticLoadBalancingRequest
@@ -78,7 +64,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates CreateLoadBalancerRequest with the parameterized properties
         /// </summary>
-        /// <param name="loadBalancerName">The name of the load balancer. This name must be unique within your AWS account, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</param>
+        /// <param name="loadBalancerName">The name of the load balancer. This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</param>
         public CreateLoadBalancerRequest(string loadBalancerName)
         {
             _loadBalancerName = loadBalancerName;
@@ -87,8 +73,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates CreateLoadBalancerRequest with the parameterized properties
         /// </summary>
-        /// <param name="loadBalancerName">The name of the load balancer. This name must be unique within your AWS account, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</param>
-        /// <param name="listeners">The listeners. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener Configurations for Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.</param>
+        /// <param name="loadBalancerName">The name of the load balancer. This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</param>
+        /// <param name="listeners">The listeners. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listeners for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i>.</param>
         /// <param name="availabilityZones">One or more Availability Zones from the same region as the load balancer. Traffic is equally distributed across all specified Availability Zones. You must specify at least one Availability Zone. You can add more Availability Zones after you create the load balancer using <a>EnableAvailabilityZonesForLoadBalancer</a>.</param>
         public CreateLoadBalancerRequest(string loadBalancerName, List<Listener> listeners, List<string> availabilityZones)
         {
@@ -131,9 +117,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
-        /// Configurations for Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer
-        /// Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listeners
+        /// for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<Listener> Listeners
@@ -155,9 +140,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         ///  
         /// <para>
-        /// This name must be unique within your AWS account, must have a maximum of 32 characters,
-        /// must contain only alphanumeric characters or hyphens, and cannot begin or end with
-        /// a hyphen.
+        /// This name must be unique within your set of load balancers for the region, must have
+        /// a maximum of 32 characters, must contain only alphanumeric characters or hyphens,
+        /// and cannot begin or end with a hyphen.
         /// </para>
         /// </summary>
         public string LoadBalancerName

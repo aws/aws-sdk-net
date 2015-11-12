@@ -315,7 +315,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.network-interface.id</code> - The ID of the network interface.
+        /// <code>network-interface.network-interface-id</code> - The ID of the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>

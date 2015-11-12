@@ -62,6 +62,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.IsNotNull(response.KeyPair.PublicKey);
             Assert.IsNotNull(response.KeyPair.PrivateKey);
 
+            
+            Client.CreateKeysAndCertificate(false);
+
             Utils.UtilityMethods.WaitUntilSuccess(() =>
                 Client.DeleteCertificate(new DeleteCertificateRequest { CertificateId = response.CertificateId })
             );

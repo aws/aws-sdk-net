@@ -80,6 +80,7 @@ namespace Amazon.IdentityManagement.Model
         private List<string> _policyInputList = new List<string>();
         private string _policySourceArn;
         private List<string> _resourceArns = new List<string>();
+        private string _resourceHandlingOption;
         private string _resourceOwner;
         private string _resourcePolicy;
 
@@ -272,6 +273,88 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetResourceArns()
         {
             return this._resourceArns != null && this._resourceArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceHandlingOption. 
+        /// <para>
+        /// Specifies the type of simulation to run. Different APIs that support resource-based
+        /// policies require different combinations of resources. By specifying the type of simulation
+        /// to run, you enable the policy simulator to enforce the presence of the required resources
+        /// to ensure reliable simulation results. If your simulation does not match one of the
+        /// following scenarios, then you can omit this parameter. The following list shows each
+        /// of the supported scenario values and the resources that you must define to run the
+        /// simulation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each of the EC2 scenarios requires that you specify instance, image, and security-group
+        /// resources. If your scenario includes an EBS volume, then you must specify that volume
+        /// as a resource. If the EC2 scenario includes VPC, then you must supply the network-interface
+        /// resource. If it includes an IP subnet, then you must specify the subnet resource.
+        /// For more information on the EC2 scenario options, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+        /// Platforms</a> in the <i>AWS EC2 User Guide</i>.
+        /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// <b>EC2-Classic-InstanceStore</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// instance, image, security-group
+        /// </para>
+        ///  </li> <li>
+        /// <para>
+        /// <b>EC2-Classic-EBS</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// instance, image, security-group, volume
+        /// </para>
+        ///  </li> <li>
+        /// <para>
+        /// <b>EC2-VPC-InstanceStore</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// instance, image, security-group, network-interface
+        /// </para>
+        ///  </li> <li>
+        /// <para>
+        /// <b>EC2-VPC-InstanceStore-Subnet</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// instance, image, security-group, network-interface, subnet
+        /// </para>
+        ///  </li> <li>
+        /// <para>
+        /// <b>EC2-VPC-EBS</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// instance, image, security-group, network-interface, volume
+        /// </para>
+        ///  </li> <li>
+        /// <para>
+        /// <b>EC2-VPC-EBS-Subnet</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// instance, image, security-group, network-interface, subnet, volume
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string ResourceHandlingOption
+        {
+            get { return this._resourceHandlingOption; }
+            set { this._resourceHandlingOption = value; }
+        }
+
+        // Check to see if ResourceHandlingOption property is set
+        internal bool IsSetResourceHandlingOption()
+        {
+            return this._resourceHandlingOption != null;
         }
 
         /// <summary>

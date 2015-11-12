@@ -127,7 +127,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The idempotency token you provided when you launched the instance.
+        /// The idempotency token you provided when you launched the instance, if applicable.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -184,7 +184,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IamInstanceProfile. 
         /// <para>
-        /// The IAM instance profile associated with the instance.
+        /// The IAM instance profile associated with the instance, if applicable.
         /// </para>
         /// </summary>
         public IamInstanceProfile IamInstanceProfile
@@ -274,7 +274,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KernelId. 
         /// <para>
-        /// The kernel associated with this instance.
+        /// The kernel associated with this instance, if applicable.
         /// </para>
         /// </summary>
         public string KernelId
@@ -364,7 +364,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Placement. 
         /// <para>
-        /// The location where the instance launched.
+        /// The location where the instance launched, if applicable.
         /// </para>
         /// </summary>
         public Placement Placement
@@ -402,7 +402,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The private DNS name assigned to the instance. This DNS name can only be used inside
         /// the Amazon EC2 network. This name is not available until the instance enters the <code>running</code>
-        /// state.
+        /// state. For EC2-VPC, this name is only available if you've enabled DNS hostnames for
+        /// your VPC.
         /// </para>
         /// </summary>
         public string PrivateDnsName
@@ -438,7 +439,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ProductCodes. 
         /// <para>
-        /// The product codes attached to this instance.
+        /// The product codes attached to this instance, if applicable.
         /// </para>
         /// </summary>
         public List<ProductCode> ProductCodes
@@ -457,7 +458,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PublicDnsName. 
         /// <para>
         /// The public DNS name assigned to the instance. This name is not available until the
-        /// instance enters the <code>running</code> state.
+        /// instance enters the <code>running</code> state. For EC2-VPC, this name is only available
+        /// if you've enabled DNS hostnames for your VPC.
         /// </para>
         /// </summary>
         public string PublicDnsName
@@ -475,7 +477,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PublicIpAddress. 
         /// <para>
-        /// The public IP address assigned to the instance.
+        /// The public IP address assigned to the instance, if applicable.
         /// </para>
         /// </summary>
         public string PublicIpAddress
@@ -493,7 +495,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RamdiskId. 
         /// <para>
-        /// The RAM disk associated with this instance.
+        /// The RAM disk associated with this instance, if applicable.
         /// </para>
         /// </summary>
         public string RamdiskId
@@ -589,7 +591,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotInstanceRequestId. 
         /// <para>
-        /// The ID of the Spot Instance request.
+        /// If the request is a Spot instance request, the ID of the request.
         /// </para>
         /// </summary>
         public string SpotInstanceRequestId
@@ -679,7 +681,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The ID of the subnet in which the instance is running.
+        /// [EC2-VPC] The ID of the subnet in which the instance is running.
         /// </para>
         /// </summary>
         public string SubnetId
@@ -733,7 +735,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The ID of the VPC in which the instance is running.
+        /// [EC2-VPC] The ID of the VPC in which the instance is running.
         /// </para>
         /// </summary>
         public string VpcId

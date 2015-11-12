@@ -29,8 +29,14 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CopyDBSnapshot operation.
-    /// Copies the specified DBSnapshot. The source DBSnapshot must be in the "available"
-    /// state.
+    /// Copies the specified DBSnapshot. The source DB snapshot must be in the "available"
+    /// state. 
+    /// 
+    ///  
+    /// <para>
+    /// If you are copying from a shared manual DB snapshot, the <code>SourceDBSnapshotIdentifier</code>
+    /// must be the ARN of the shared DB snapshot.
+    /// </para>
     /// </summary>
     public partial class CopyDBSnapshotRequest : AmazonRDSRequest
     {
@@ -62,6 +68,11 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SourceDBSnapshotIdentifier. 
         /// <para>
         ///  The identifier for the source DB snapshot. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are copying from a shared manual DB snapshot, this must be the ARN of the shared
+        /// DB snapshot.
         /// </para>
         ///  
         /// <para>

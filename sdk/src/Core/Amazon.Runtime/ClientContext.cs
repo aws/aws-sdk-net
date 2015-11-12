@@ -137,7 +137,7 @@ namespace Amazon.Runtime.Internal
                     _env.Add(ENV_PLATFORM_KEY, Environment.OSVersion.Platform.ToString());
 
                 if (!string.IsNullOrEmpty(_config.PlatformVersion))
-                    _env.Add(ENV_PLATFORM_KEY, _config.PlatformVersion);
+                    _env.Add(ENV_PLATFORM_VERSION_KEY, _config.PlatformVersion);
                 else
                     _env.Add(ENV_PLATFORM_VERSION_KEY, Environment.OSVersion.Version.ToString());
 

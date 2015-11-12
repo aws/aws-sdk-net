@@ -1,3 +1,52 @@
+### 3.1.28.0 (2015-11-12 21:05 UTC)
+* CognitoIdentity (3.1.0.4)
+	* Updated to use new Core, version 3.1.3.6
+	* Updated to use new Core, version 3.1.3.6, to pick up the latest ClientContext.
+* CognitoSync (3.1.0.3)
+	* Updated to use new Core, version 3.1.3.6
+	* Updated to use new Core, version 3.1.3.6, to pick up the latest ClientContext.
+* EC2 (3.1.4.2)
+	* Documentation update
+* Lambda (3.1.2.3)
+	* Updated to use new Core, version 3.1.3.6
+	* Updated to use new Core, version 3.1.3.6, to pick up the latest ClientContext.
+* MobileAnalytics (3.1.1.3)
+	* Updated to use new Core, version 3.1.3.6
+	* Updated to use new Core, version 3.1.3.6, to pick up the latest ClientContext.
+* RDS (3.1.4.0)
+	* Added support for modifying DB instance visibility.
+Updated documentation to note support for M4 types for DB instance class.
+
+* Core 3.1.3.6
+	* Minor fixes to ClientContext.
+
+### 3.1.27.0 (2015-11-10 20:21 UTC)
+* APIGateway (3.1.1.0)
+	* Added support for stage variables.
+
+### 3.1.26.1 (2015-11-07 01:22 UTC)
+* IoT (3.1.0.2)
+	* Updated to use new Core, version 3.1.3.5
+	* Incremented Core package dependency to fix signature errors when a PUT or POST requests contains only query params (e.g. IOT AcceptCertificateTransfer, CreateKeysAndCertificate).
+* Core 3.1.3.5
+	* Fix for signature errors when a PUT or POST requests contains only query params (e.g. IOT AcceptCertificateTransfer, CreateKeysAndCertificate).
+
+### 3.1.26.0 (2015-11-06 21:05 UTC)
+* RDS (3.1.3.0)
+	* Add support for sharing manual DB snapshots
+
+### 3.1.25.0 (2015-11-03 21:41 UTC)
+* DeviceFarm (3.1.2.0)
+	* Added support for AWS Device Farm APIs to manage projects, device pools, runs, and uploads.
+* S3 (3.1.3.5)
+	* Add validation for S3 get object calls to make sure the object key is set. If it's not set, that makes the request the same as ListObject call to S3 giving unexpected results to the caller.
+* Core 3.1.3.4
+	* Fix for disposed instance of web request being used to get header values.
+
+### 3.1.24.0 (2015-11-02 18:47 UTC)
+* IdentityManagement (3.1.3.0)
+	* Update IAM policy simulator to help test, verify, and understand resource-level permissions.
+
 ### 3.1.23.3 (2015-10-29 20:24 UTC)
 * S3 (3.1.3.4)
 	* Updated to use new Core, version 3.1.3.3

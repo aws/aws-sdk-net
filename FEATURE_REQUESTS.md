@@ -8,6 +8,15 @@ Please refer to the individual issues to discuss or plus-one them.
 
 [tag]: https://github.com/aws/aws-sdk-net/labels/Feature%20Request
 
+#### Expose ConsumedCapacity and pagination within DynamoDB OPM
+
+Add support to DynamoDB Object Persistence Model to retrieve ConsumedCapacity
+for operations, as well as support for manually paginating Query and Scan results.
+Current API does not support these natively and users must call the low-level
+client to do this.
+
+See [GitHub Issue #271](https://github.com/aws/aws-sdk-net/issues/271)
+
 #### Support environment variable config for default region 
 
 Add ability to configure the default region using environment variables. 

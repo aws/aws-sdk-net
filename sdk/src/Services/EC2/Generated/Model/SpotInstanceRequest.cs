@@ -54,8 +54,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ActualBlockHourlyPrice. 
         /// <para>
-        /// If you specified a required duration and your request was fulfilled, this is the fixed
-        /// hourly price in effect for the Spot instance while it runs.
+        /// If you specified a duration and your Spot instance request was fulfilled, this is
+        /// the fixed hourly price in effect for the Spot instance while it runs.
         /// </para>
         /// </summary>
         public string ActualBlockHourlyPrice
@@ -92,7 +92,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BlockDurationMinutes. 
         /// <para>
-        /// The required duration for the Spot instance, in minutes.
+        /// The duration for the Spot instance, in minutes.
         /// </para>
         /// </summary>
         public int BlockDurationMinutes

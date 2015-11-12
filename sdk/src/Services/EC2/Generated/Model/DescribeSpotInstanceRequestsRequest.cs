@@ -114,7 +114,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>launch.instance-type</code> - The type of instance (for example, <code>m1.small</code>).
+        /// <code>launch.instance-type</code> - The type of instance (for example, <code>m3.medium</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

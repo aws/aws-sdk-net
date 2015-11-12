@@ -97,6 +97,10 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly ArtifactType APPIUM_SERVER_OUTPUT = new ArtifactType("APPIUM_SERVER_OUTPUT");
         /// <summary>
+        /// Constant APPLICATION_CRASH_REPORT for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType APPLICATION_CRASH_REPORT = new ArtifactType("APPLICATION_CRASH_REPORT");
+        /// <summary>
         /// Constant AUTOMATION_OUTPUT for ArtifactType
         /// </summary>
         public static readonly ArtifactType AUTOMATION_OUTPUT = new ArtifactType("AUTOMATION_OUTPUT");
@@ -124,6 +128,14 @@ namespace Amazon.DeviceFarm
         /// Constant EXERCISER_MONKEY_OUTPUT for ArtifactType
         /// </summary>
         public static readonly ArtifactType EXERCISER_MONKEY_OUTPUT = new ArtifactType("EXERCISER_MONKEY_OUTPUT");
+        /// <summary>
+        /// Constant EXPLORER_EVENT_LOG for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType EXPLORER_EVENT_LOG = new ArtifactType("EXPLORER_EVENT_LOG");
+        /// <summary>
+        /// Constant EXPLORER_SUMMARY_LOG for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType EXPLORER_SUMMARY_LOG = new ArtifactType("EXPLORER_SUMMARY_LOG");
         /// <summary>
         /// Constant INSTRUMENTATION_OUTPUT for ArtifactType
         /// </summary>
