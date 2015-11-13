@@ -226,6 +226,7 @@ namespace CustomTasks
 
             process.StartInfo.Arguments = command;
             process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardError = true;
             process.StartInfo.UseShellExecute = false;
             process.EnableRaisingEvents = true;
             StringBuilder buffer = new StringBuilder();
