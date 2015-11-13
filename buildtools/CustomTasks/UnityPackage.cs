@@ -23,16 +23,17 @@ namespace CustomTasks
 
         private static IDictionary<string, string> SampleMappings = new Dictionary<string, string>()
         {
-            {"CognitoSync",  "Cognito Sync"},
             {"DynamoDBv2","DynamoDB"},
             {"Kinesis","Kinesis"},
             {"SQS","SQS"},
-            {"SimpleEmail","SES"},
+            {"SimpleEmail","SimpleEmail"},
             {"SimpleNotificationService","SNS"},
             {"MobileAnalytics","Mobile Analytics"},
             {"Lambda","Lambda"},
             {"S3","S3"}
         };
+
+        //We Will not include cognito sync sample untill we can have sync manager as well
 
         public override bool Execute()
         {
@@ -96,6 +97,9 @@ namespace CustomTasks
                 var awssdkDirectory = Path.Combine(assetsFolder, @"AWSSDK");
 
                 Directory.CreateDirectory(awssdkDirectory);
+               
+                //copy assembly files
+                CopyAssemblies(ServiceName, unityAssemblies, awssdkDirectory);
 
                 //create sample directory & copy samples
                 var samplesSourceDirectory = GetSampleDirectoryForService(ServiceName);
@@ -106,11 +110,8 @@ namespace CustomTasks
                     CopyDirectory(samplesSourceDirectory, samplesDestinationDirectory);
 
                     //copy the license for samples
-                    File.Copy(Path.Combine(SamplesPath, @"License.txt"), samplesDestinationDirectory);
+                    File.Copy(Path.Combine(SamplesPath, @"License.txt"), Path.Combine(samplesDestinationDirectory,@"License.txt"));
                 }
-
-                //copy assembly files
-                CopyAssemblies(unityAssemblies, awssdkDirectory);
 
                 //create unitypackage
                 CreateUnityPackage(unityFiles);
@@ -130,9 +131,6 @@ namespace CustomTasks
 
             return Path.Combine(SamplesPath, sampleDirectoryName);
         }
-
-
-
 
         public static void DeleteDirectory(string target_dir)
         {
@@ -161,18 +159,25 @@ namespace CustomTasks
             ExecuteUnityCommand(UnityExe, command);
         }
 
-        private void CopyAssemblies(string unityFiles, string destination)
+        private void CopyAssemblies(string serviceName, string unityFilesDirectory, string destination)
         {
             var dependencies = new List<string>(DependantServices);
             dependencies.AddRange(StandardAssemblies);
 
+            //first copy the dependencies
             foreach (var d in dependencies)
             {
                 var searchString = string.Format(@"*.{0}.*", d);
-                foreach (string newPath in Directory.EnumerateFiles(unityFiles, searchString, SearchOption.TopDirectoryOnly)
+                foreach (string newPath in Directory.EnumerateFiles(unityFilesDirectory, searchString, SearchOption.TopDirectoryOnly)
                     .Where(s => s.EndsWith(".dll") || s.EndsWith(".pdb")))
-                    File.Copy(newPath, newPath.Replace(unityFiles, destination), true);
+                    File.Copy(newPath, newPath.Replace(unityFilesDirectory, destination), true);
             }
+
+            var serviceSearchString = string.Format(@"AWSSDK.{0}.*", serviceName);
+            foreach (string newPath in Directory.EnumerateFiles(unityFilesDirectory, serviceSearchString, SearchOption.TopDirectoryOnly)
+                    .Where(s => s.EndsWith(".dll") || s.EndsWith(".pdb")))
+                File.Copy(newPath, newPath.Replace(unityFilesDirectory, destination), true);
+
         }
 
         private static void CopyDirectory(string sourcePath, string destinationPath)

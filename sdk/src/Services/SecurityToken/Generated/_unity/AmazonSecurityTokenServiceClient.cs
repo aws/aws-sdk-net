@@ -38,8 +38,8 @@ namespace Amazon.SecurityToken
     /// The AWS Security Token Service (STS) is a web service that enables you to request
     /// temporary, limited-privilege credentials for AWS Identity and Access Management (IAM)
     /// users or for users that you authenticate (federated users). This guide provides descriptions
-    /// of the STS API. For more detailed information about using this service, go to <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/Welcome.html"
-    /// target="_blank">Using Temporary Security Credentials</a>. 
+    /// of the STS API. For more detailed information about using this service, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary
+    /// Security Credentials</a>. 
     /// </para>
     ///  <note> As an alternative to using the API, you can use one of the AWS SDKs, which
     /// consist of libraries and sample code for various programming languages and platforms
@@ -54,9 +54,8 @@ namespace Amazon.SecurityToken
     /// target="_blank">Signing AWS API Requests</a> in the <i>AWS General Reference</i>.
     /// For general information about the Query API, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"
     /// target="_blank">Making Query Requests</a> in <i>Using IAM</i>. For information about
-    /// using security tokens with other AWS products, go to <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html">Using
-    /// Temporary Security Credentials to Access AWS</a> in <i>Using Temporary Security Credentials</i>.
-    /// 
+    /// using security tokens with other AWS products, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
+    /// Services That Work with IAM</a> in the <i>Using IAM</i>. 
     /// </para>
     ///  
     /// <para>
@@ -73,9 +72,8 @@ namespace Amazon.SecurityToken
     /// The AWS Security Token Service (STS) has a default endpoint of https://sts.amazonaws.com
     /// that maps to the US East (N. Virginia) region. Additional regions are available, but
     /// must first be activated in the AWS Management Console before you can use a different
-    /// region's endpoint. For more information about activating a region for STS see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-enableregions.html">Activating
-    /// STS in a New Region</a> in the <i>Using Temporary Security Credentials</i> guide.
-    /// 
+    /// region's endpoint. For more information about activating a region for STS see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+    /// STS in a New Region</a> in the <i>Using IAM</i>.
     /// </para>
     ///  
     /// <para>
@@ -246,7 +244,7 @@ namespace Amazon.SecurityToken
         /// one set of long-term credentials in one account and then use temporary security credentials
         /// to access all the other accounts by assuming roles in those accounts. For more information
         /// about roles, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM
-        /// Roles (Delegation and Federation)</a> in <i>Using IAM</i>. 
+        /// Roles (Delegation and Federation)</a> in the <i>Using IAM</i>. 
         /// </para>
         ///  
         /// <para>
@@ -257,9 +255,8 @@ namespace Amazon.SecurityToken
         /// <code>AssumeRole</code> (and specify the role with the appropriate permissions) to
         /// get temporary security credentials for that user. With those temporary security credentials,
         /// you construct a sign-in URL that users can use to access the console. For more information,
-        /// see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html">Scenarios
-        /// for Granting Temporary Access</a> in <i>Using Temporary Security Credentials</i>.
-        /// 
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html#sts-introduction">Common
+        /// Scenarios for Temporary Credentials</a> in the <i>Using IAM</i>.
         /// </para>
         ///  
         /// <para>
@@ -278,9 +275,9 @@ namespace Amazon.SecurityToken
         /// you pass. This gives you a way to further restrict the permissions for the resulting
         /// temporary security credentials. You cannot use the passed policy to grant permissions
         /// that are in excess of those allowed by the access policy of the role that is being
-        /// assumed. For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-        /// for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in <i>Using
-        /// Temporary Security Credentials</i>.
+        /// assumed. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+        /// for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>Using
+        /// IAM</i>.
         /// </para>
         ///  
         /// <para>
@@ -309,7 +306,7 @@ namespace Amazon.SecurityToken
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/MFAProtectedAPI.html">Configuring
-        /// MFA-Protected API Access</a> in <i>Using IAM</i> guide.
+        /// MFA-Protected API Access</a> in the <i>Using IAM</i> guide.
         /// </para>
         ///  
         /// <para>
@@ -396,8 +393,9 @@ namespace Amazon.SecurityToken
         /// you pass. This gives you a way to further restrict the permissions for the resulting
         /// temporary security credentials. You cannot use the passed policy to grant permissions
         /// that are in excess of those allowed by the access policy of the role that is being
-        /// assumed. For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-        /// for AssumeRoleWithSAML</a> in <i>Using Temporary Security Credentials</i>.
+        /// assumed. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+        /// for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>Using
+        /// IAM</i>.
         /// </para>
         ///  
         /// <para>
@@ -417,11 +415,11 @@ namespace Amazon.SecurityToken
         /// <para>
         /// For more information, see the following resources:
         /// </para>
-        ///  <ul> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
-        /// Temporary Security Credentials for SAML Federation</a>. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/idp-managing-identityproviders.html">SAML
-        /// Providers</a> in <i>Using IAM</i>. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring
-        /// a Relying Party and Claims</a> in <i>Using IAM</i>. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml.html">Creating
-        /// a Role for SAML-Based Federation</a> in <i>Using IAM</i>. </li> </ul> <member name="RoleArn"
+        ///  <ul> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+        /// SAML 2.0-based Federation</a> in the <i>Using IAM</i>. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml.html">Creating
+        /// SAML Identity Providers</a> in the <i>Using IAM</i>. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_relying-party.html">Configuring
+        /// a Relying Party and Claims</a> in the <i>Using IAM</i>. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html">Creating
+        /// a Role for SAML 2.0 Federation</a> in the <i>Using IAM</i>. </li> </ul> <member name="RoleArn"
         /// target="arnType"></member> <member name="SAMLAssertion" target="SAMLAssertionType"></member>
         /// <member name="Policy" target="sessionPolicyDocumentType"></member> <member name="DurationSeconds"
         /// target="roleDurationSecondsType"></member>
@@ -540,8 +538,9 @@ namespace Amazon.SecurityToken
         /// you pass. This gives you a way to further restrict the permissions for the resulting
         /// temporary security credentials. You cannot use the passed policy to grant permissions
         /// that are in excess of those allowed by the access policy of the role that is being
-        /// assumed. For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-        /// for AssumeRoleWithWebIdentity</a>.
+        /// assumed. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+        /// for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>Using
+        /// IAM</i>.
         /// </para>
         ///  
         /// <para>
@@ -556,10 +555,9 @@ namespace Amazon.SecurityToken
         /// For more information about how to use web identity federation and the <code>AssumeRoleWithWebIdentity</code>
         /// API, see the following resources: 
         /// </para>
-        ///  <ul> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html#MobileApplication-KnownProvider">
-        /// Creating a Mobile Application with Third-Party Sign-In</a> and <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html">
-        /// Creating Temporary Security Credentials for Mobile Apps Using Third-Party Identity
-        /// Providers</a>. </li> <li> <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
+        ///  <ul> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using
+        /// Web Identity Federation APIs for Mobile Apps</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
+        /// Through a Web-based Identity Provider</a>. </li> <li> <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
         /// Web Identity Federation Playground</a>. This interactive website lets you walk through
         /// the process of authenticating via Login with Amazon, Facebook, or Google, getting
         /// temporary security credentials, and then using those credentials to make a request
@@ -669,10 +667,11 @@ namespace Amazon.SecurityToken
         /// The decoded message includes the following type of information: 
         /// </para>
         ///  <ul> <li>Whether the request was denied due to an explicit deny or due to the absence
-        /// of an explicit allow. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_EvaluationLogic.html#policy-eval-denyallow">Determining
-        /// Whether a Request is Allowed or Denied</a> in <i>Using IAM</i>. </li> <li>The principal
-        /// who made the request.</li> <li>The requested action.</li> <li>The requested resource.</li>
-        /// <li>The values of condition keys in the context of the user's request.</li> </ul>
+        /// of an explicit allow. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-denyallow">Determining
+        /// Whether a Request is Allowed or Denied</a> in the <i>Using IAM</i>. </li> <li>The
+        /// principal who made the request.</li> <li>The requested action.</li> <li>The requested
+        /// resource.</li> <li>The values of condition keys in the context of the user's request.</li>
+        /// </ul>
         /// </summary>
         /// 
         /// <returns>The response from the DecodeAuthorizationMessage service method, as returned by SecurityTokenService.</returns>
@@ -730,8 +729,8 @@ namespace Amazon.SecurityToken
         /// using a web identity provider like Login with Amazon, Facebook, Google, or an OpenID
         /// Connect-compatible identity provider, we recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon
         /// Cognito</a> or <code>AssumeRoleWithWebIdentity</code>. For more information, see <a
-        /// href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html">Creating Temporary
-        /// Security Credentials for Mobile Apps Using Identity Providers</a>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
+        /// Through a Web-based Identity Provider</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -740,8 +739,8 @@ namespace Amazon.SecurityToken
         /// using the security credentials of an AWS account (root), but this is not recommended.
         /// Instead, we recommend that you create an IAM user for the purpose of the proxy application
         /// and then attach a policy to the IAM user that limits federated users to only the actions
-        /// and resources they need access to. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
-        /// Best Practices</a> in <i>Using IAM</i>. 
+        /// and resources they need access to. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">IAM
+        /// Best Practices</a> in the <i>Using IAM</i>. 
         /// </para>
         ///  
         /// <para>
@@ -790,10 +789,10 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  
         /// <para>
-        /// For more information about how permissions work, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+        /// For more information about how permissions work, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
         /// for GetFederationToken</a>. For information about using <code>GetFederationToken</code>
-        /// to create temporary security credentials, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingFedTokens.html">Creating
-        /// Temporary Credentials to Enable Access for Federated Users</a>. 
+        /// to create temporary security credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation
+        /// Through a Custom Identity Broker</a>. 
         /// </para>
         /// </summary>
         /// 
@@ -850,7 +849,8 @@ namespace Amazon.SecurityToken
         /// IAM users would need to call <code>GetSessionToken</code> and submit an MFA code that
         /// is associated with their MFA device. Using the temporary security credentials that
         /// are returned from the call, IAM users can then make programmatic calls to APIs that
-        /// require MFA authentication. 
+        /// require MFA authentication. If you do not supply a correct MFA code, then the API
+        /// returns an access denied error.
         /// 
         ///  
         /// <para>
@@ -863,7 +863,7 @@ namespace Amazon.SecurityToken
         ///  <note> 
         /// <para>
         /// We recommend that you do not call <code>GetSessionToken</code> with root account credentials.
-        /// Instead, follow our <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html#create-iam-users">best
+        /// Instead, follow our <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
         /// practices</a> by creating one or more IAM users, giving them the necessary permissions,
         /// and using IAM users for everyday interaction with AWS. 
         /// </para>
@@ -879,9 +879,8 @@ namespace Amazon.SecurityToken
         ///  
         /// <para>
         /// For more information about using <code>GetSessionToken</code> to create temporary
-        /// credentials, go to <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSessionTokens.html"
-        /// target="_blank">Creating Temporary Credentials to Enable Access for IAM Users</a>.
-        /// 
+        /// credentials, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
+        /// Credentials for Users in Untrusted Environments</a> in the <i>Using IAM</i>. 
         /// </para>
         /// </summary>
         /// 
@@ -899,7 +898,8 @@ namespace Amazon.SecurityToken
         /// IAM users would need to call <code>GetSessionToken</code> and submit an MFA code that
         /// is associated with their MFA device. Using the temporary security credentials that
         /// are returned from the call, IAM users can then make programmatic calls to APIs that
-        /// require MFA authentication. 
+        /// require MFA authentication. If you do not supply a correct MFA code, then the API
+        /// returns an access denied error.
         /// 
         ///  
         /// <para>
@@ -912,7 +912,7 @@ namespace Amazon.SecurityToken
         ///  <note> 
         /// <para>
         /// We recommend that you do not call <code>GetSessionToken</code> with root account credentials.
-        /// Instead, follow our <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html#create-iam-users">best
+        /// Instead, follow our <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
         /// practices</a> by creating one or more IAM users, giving them the necessary permissions,
         /// and using IAM users for everyday interaction with AWS. 
         /// </para>
@@ -928,9 +928,8 @@ namespace Amazon.SecurityToken
         ///  
         /// <para>
         /// For more information about using <code>GetSessionToken</code> to create temporary
-        /// credentials, go to <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSessionTokens.html"
-        /// target="_blank">Creating Temporary Credentials to Enable Access for IAM Users</a>.
-        /// 
+        /// credentials, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
+        /// Credentials for Users in Untrusted Environments</a> in the <i>Using IAM</i>. 
         /// </para>
         /// </summary>
         /// 
@@ -951,7 +950,8 @@ namespace Amazon.SecurityToken
         /// IAM users would need to call <code>GetSessionToken</code> and submit an MFA code that
         /// is associated with their MFA device. Using the temporary security credentials that
         /// are returned from the call, IAM users can then make programmatic calls to APIs that
-        /// require MFA authentication. 
+        /// require MFA authentication. If you do not supply a correct MFA code, then the API
+        /// returns an access denied error.
         /// 
         ///  
         /// <para>
@@ -964,7 +964,7 @@ namespace Amazon.SecurityToken
         ///  <note> 
         /// <para>
         /// We recommend that you do not call <code>GetSessionToken</code> with root account credentials.
-        /// Instead, follow our <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html#create-iam-users">best
+        /// Instead, follow our <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
         /// practices</a> by creating one or more IAM users, giving them the necessary permissions,
         /// and using IAM users for everyday interaction with AWS. 
         /// </para>
@@ -980,9 +980,8 @@ namespace Amazon.SecurityToken
         ///  
         /// <para>
         /// For more information about using <code>GetSessionToken</code> to create temporary
-        /// credentials, go to <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSessionTokens.html"
-        /// target="_blank">Creating Temporary Credentials to Enable Access for IAM Users</a>.
-        /// 
+        /// credentials, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
+        /// Credentials for Users in Untrusted Environments</a> in the <i>Using IAM</i>. 
         /// </para>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>

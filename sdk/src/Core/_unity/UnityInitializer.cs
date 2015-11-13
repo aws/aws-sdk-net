@@ -105,14 +105,8 @@ namespace Amazon
                 {
                     if (this != _instance)
                     {
-                        if (Application.isEditor)
-                        {
-                            DestroyImmediate(this.gameObject);
-                        }
-                        else
-                        {
-                            Destroy(this.gameObject);
-                        }
+                        //destroy the new instance
+                        DestroyObject(this);
                     }
                 }
 
