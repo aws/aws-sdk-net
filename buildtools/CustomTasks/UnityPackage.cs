@@ -247,6 +247,7 @@ namespace CustomTasks
             );
             process.Start();
             process.BeginOutputReadLine();
+            process.BeginErrorReadLine();
             process.WaitForExit();
 
             if (process.ExitCode != 0)
