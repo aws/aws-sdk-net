@@ -12,7 +12,6 @@
 **/obj/
 **/TestResults/
 **/Temp/
-**/NuGet.exe
 **/buildlogs/
 
 sdk/packages/**
