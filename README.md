@@ -27,6 +27,10 @@ With version 3 of the AWS SDK for .NET the SDK has been modularized. This means 
 
 This release of the AWS SDK for .NET adds support for Portable Class Library projects, which allow you to target multiple platforms including Windows Store, Windows Phone, and Xamarin on iOS and Android. More information on this can be found [here](http://docs.aws.amazon.com/mobile/sdkforxamarin/developerguide/index.html).
 
+## Unity Support
+
+This release of AWS SDK for .NET adds support for generating Assemblies for Unity.More information can be found [here](Unity.README.md)
+
 ### Silverlight support
 
 Due to Silverlight HTTP Caching, AWS SDK for .NET is not fully supported on Silverlight-based platforms such as Windows Phone 8.0. Some HTTP GET calls (such as S3's ListBuckets or ListObjects) will return the same results when called multiple times.

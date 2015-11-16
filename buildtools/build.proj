@@ -178,7 +178,7 @@
     
     <!-- TEST TARGETS/TASKS -->
 
-    <Target Name="fxcop" DependsOnTargets="init;copy-assemblies" Condition="Exists('$(fxcopcmdexe)') And ($(Configuration) == 'Release')">
+    <Target Name="fxcop" DependsOnTargets="init;copy-assemblies;unity-pack" Condition="Exists('$(fxcopcmdexe)') And ($(Configuration) == 'Release')">
         <!-- Update FxCop project files -->
         <UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net35" FxCopProject="..\sdk\SDK-3.5.FxCop" BinSuffix="net35"/>
         <UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net45" FxCopProject="..\sdk\SDK-4.5.FxCop" BinSuffix="net45"/>
