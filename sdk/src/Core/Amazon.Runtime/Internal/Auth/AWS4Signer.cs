@@ -134,10 +134,8 @@ namespace Amazon.Runtime.Internal.Auth
             var canonicalParameters = CanonicalizeQueryParameters(parametersToCanonicalize);
             var bodyHash = SetRequestBodyHash(request);
             var sortedHeaders = SortHeaders(request.Headers);
-
-            var requestUrl = AmazonServiceClient.ComposeUrl(request);
-
-            var canonicalRequest = CanonicalizeRequest(requestUrl,
+            
+            var canonicalRequest = CanonicalizeRequest(request.ResourcePath,
                                                        request.HttpMethod,
                                                        sortedHeaders,
                                                        canonicalParameters,
@@ -524,7 +522,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Computes and returns the canonical request
         /// </summary>
-        /// <param name="requestUrl">The composed request URL of the resource being operated on</param>
+        /// <param name="resourcePath">the path of the resource being operated on</param>
         /// <param name="httpMethod">The http method used for the request</param>
         /// <param name="sortedHeaders">The full request headers, sorted into canonical order</param>
         /// <param name="canonicalQueryString">The query parameters for the request</param>
@@ -533,7 +531,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// will look for the hash as a header on the request.
         /// </param>
         /// <returns>Canonicalised request as a string</returns>
-        protected static string CanonicalizeRequest(Uri requestUrl,
+        protected static string CanonicalizeRequest(string resourcePath,
                                                     string httpMethod,
                                                     IDictionary<string, string> sortedHeaders,
                                                     string canonicalQueryString,
@@ -541,7 +539,7 @@ namespace Amazon.Runtime.Internal.Auth
         {
             var canonicalRequest = new StringBuilder();
             canonicalRequest.AppendFormat("{0}\n", httpMethod);
-            canonicalRequest.AppendFormat("{0}\n", CanonicalizeRequestUrl(requestUrl));
+            canonicalRequest.AppendFormat("{0}\n", CanonicalizeResourcePath(resourcePath));
             canonicalRequest.AppendFormat("{0}\n", canonicalQueryString);
 
             canonicalRequest.AppendFormat("{0}\n", CanonicalizeHeaders(sortedHeaders));
@@ -564,22 +562,19 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Returns the canonicalized resource path for the service endpoint
         /// </summary>
-        /// <param name="requestUrl">The composed request URL</param>
+        /// <param name="resourcePath">Resource path for the request</param>
         /// <remarks>
         /// If resourcePath begins or ends with slash, the resulting canonicalized
         /// path will follow suit.
         /// </remarks>
         /// <returns>Canonicalized resource path for the endpoint</returns>
-        protected static string CanonicalizeRequestUrl(Uri requestUrl)
+        protected static string CanonicalizeResourcePath(string resourcePath)
         {
-            var path = requestUrl.GetComponents(UriComponents.Path | UriComponents.KeepDelimiter, UriFormat.Unescaped);
-            if (path == "/")
-            {
-                return path;
-            }
+            if (string.IsNullOrEmpty(resourcePath))
+                return "/";
 
             // split path at / into segments
-            var pathSegments = path.Split(new[] { '/' }, StringSplitOptions.None);
+            var pathSegments = resourcePath.Split(new char[] { '/' }, StringSplitOptions.None);
             
             // url encode the segments
             var encodedSegments = pathSegments
@@ -975,9 +970,7 @@ namespace Amazon.Runtime.Internal.Auth
 
             var canonicalQueryParams = CanonicalizeQueryParameters(parametersToCanonicalize);
 
-            var requestUrl = AmazonServiceClient.ComposeUrl(request);
-
-            var canonicalRequest = CanonicalizeRequest(requestUrl,
+            var canonicalRequest = CanonicalizeRequest(request.ResourcePath,
                                                        request.HttpMethod,
                                                        sortedHeaders,
                                                        canonicalQueryParams,
