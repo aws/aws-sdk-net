@@ -15,8 +15,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Linq;
 using System.Globalization;
 using Amazon.Util;
 using Amazon.Runtime;
@@ -153,7 +153,7 @@ namespace Amazon.S3.Internal
                 "response-cache-control",
                 "response-content-disposition",
                 "response-content-encoding"
-            }, 
+            },
             StringComparer.OrdinalIgnoreCase
         );
 
@@ -180,11 +180,10 @@ namespace Amazon.S3.Internal
 
             if (request.Parameters.Count > 0)
             {
-                var parameters 
-                    = request.Parameters.Where(kvp => SignableParameters.Contains(kvp.Key) 
+                var parameters
+                    = request.Parameters.Where(kvp => SignableParameters.Contains(kvp.Key)
                                                         && kvp.Value != null)
                                         .ToList();
-
                 foreach (var kvp in parameters)
                 {
                     resourcesToSign.Add(kvp.Key, kvp.Value);
@@ -192,14 +191,20 @@ namespace Amazon.S3.Internal
             }
 
             var delim = "?";
-            foreach (var resourceToSign in resourcesToSign.OrderBy(r => r.Key))
+            var resources = resourcesToSign.ToList();
+
+            resources.Sort((firstPair, nextPair) =>
+            {
+                return firstPair.Key.CompareTo(nextPair.Key);
+            });
+
+            foreach (var resourceToSign in resources)
             {
                 sb.AppendFormat("{0}{1}", delim, resourceToSign.Key);
                 if (resourceToSign.Value != null)
                     sb.AppendFormat("={0}", resourceToSign.Value);
                 delim = "&";
             }
-
             return sb.ToString();
         }
     }

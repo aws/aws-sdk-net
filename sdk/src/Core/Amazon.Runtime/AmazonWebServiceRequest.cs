@@ -23,7 +23,26 @@ namespace Amazon.Runtime
     /// </summary>
     public abstract partial class AmazonWebServiceRequest : Amazon.Runtime.Internal.IAmazonWebServiceRequest
     {
-        internal event RequestEventHandler BeforeRequestEvent;
+        internal RequestEventHandler mBeforeRequestEvent;
+
+        internal event RequestEventHandler BeforeRequestEvent
+        {
+            add
+            {
+                lock (this)
+                {
+                    mBeforeRequestEvent += value;
+                }
+            }
+            remove
+            {
+                lock (this)
+                {
+                    mBeforeRequestEvent -= value;
+                }
+            }
+        }
+
         EventHandler<StreamTransferProgressArgs> Amazon.Runtime.Internal.IAmazonWebServiceRequest.StreamUploadProgressCallback { get; set; }
 
         private Dictionary<string, object> requestState = null;
@@ -55,8 +74,8 @@ namespace Amazon.Runtime
 
         internal void FireBeforeRequestEvent(object sender, RequestEventArgs args)
         {
-            if (BeforeRequestEvent != null)
-                BeforeRequestEvent(sender, args);
+            if (mBeforeRequestEvent != null)
+                mBeforeRequestEvent(sender, args);
         }
     }
 }

@@ -29,7 +29,7 @@ This release of the AWS SDK for .NET adds support for Portable Class Library pro
 
 ## Unity Support
 
-This release of AWS SDK for .NET adds support for generating Assemblies for Unity.More information can be found [here](Unity.README.md)
+This release of AWS SDK for .NET adds support for generating Assemblies for Unity. More information can be found [here](Unity.README.md)
 
 ### Silverlight support
 

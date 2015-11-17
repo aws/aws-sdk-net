@@ -21,15 +21,17 @@ At the moment Unity Solution only supports the following services
 
 With this release we are only supporting Unity versions > 4.6
 
+## Supported Platforms
+
+The AWS SDK for .NET (Unity) is currently only supported on Android, iOS and on Standalone platforms.
+
 ## Unity SDK Fundamentals
 
 There are only a few fundamentals that are helpful to know when developing against the AWS SDK for .NET on Unity
 
 * To enable logging you need to create a config file called awsconfig.xml in a `Resources` directory add add the following
 
-	```
-	
-		<aws
+		<aws 
 			<logging
 	    		logTo="UnityLogger"
 	    		logResponses="Always"
@@ -38,12 +40,19 @@ There are only a few fundamentals that are helpful to know when developing again
 			/>
 		/>
 	
-	```
+You can also do this configuration in a script
+
+		var loggingConfig = AWSConfigs.LoggingConfig;
+	    loggingConfig.LogTo = LoggingOptions.UnityLogger;
+	    loggingConfig.LogMetrics = true;
+	    loggingConfig.LogResponses = ResponseLoggingOption.Always;
+	    loggingConfig.LogResponsesSizeLimit = 4096;
+	    loggingConfig.LogMetricsFormat = LogMetricsFormatOption.JSON;
+
 
 * To Build the SDK from the `AWSSDK.Unity.sln` solution file you will need Unity 5 installed in the standard location (we reference the UnityEngine runtime from standard installation location)
 * The SDK uses reflection for platform specific components. In case of IL2CPP since `strip bytecode` is always enabled on iOS you need to have a `link.xml` in your assembly root with the following entries
 
-	```
 
 		<linker>
        		<assembly fullname="AWSSDK.Core" preserve="all"/>
@@ -53,5 +62,7 @@ There are only a few fundamentals that are helpful to know when developing again
 		</linker>
 
 
-	```
+## Known Issues
 
+* Sync Manager is Currently not Supported.
+* Crypto Issues - When running on device with .NET 2.0 subset you get an error saying `System.TypeLoadException: Could not load type 'System.Security.Cryptography.SHA256CryptoServiceProvider' from assembly 'AWSSDK.Core'`. We recommend using .NET 2.0 instead.
