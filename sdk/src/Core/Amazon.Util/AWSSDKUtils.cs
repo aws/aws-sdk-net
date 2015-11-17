@@ -247,6 +247,34 @@ namespace Amazon.Util
         }
 
         /// <summary>
+        /// Returns the canonicalized resource path for the service endpoint
+        /// </summary>
+        /// <param name="resourcePath">Resource path for the request</param>
+        /// <remarks>
+        /// If resourcePath begins or ends with slash, the resulting canonicalized
+        /// path will follow suit.
+        /// </remarks>
+        /// <returns>Canonicalized resource path for the endpoint</returns>
+        public static string CanonicalizeResourcePath(string resourcePath)
+        {
+            if (string.IsNullOrEmpty(resourcePath))
+                return "/";
+
+            // split path at / into segments
+            var pathSegments = resourcePath.Split(new char[] { '/' }, StringSplitOptions.None);
+
+            // url encode the segments
+            var encodedSegments = pathSegments
+                .Select(segment => AWSSDKUtils.UrlEncode(segment, false))
+                .ToArray();
+
+            // join the encoded segments with /
+            var canonicalizedResourcePath = string.Join("/", encodedSegments);
+
+            return canonicalizedResourcePath;
+        }
+
+        /// <summary>
         /// Returns a new string created by joining each of the strings in the
         /// specified list together, with a comma between them.
         /// </summary>

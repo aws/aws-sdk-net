@@ -539,7 +539,7 @@ namespace Amazon.Runtime.Internal.Auth
         {
             var canonicalRequest = new StringBuilder();
             canonicalRequest.AppendFormat("{0}\n", httpMethod);
-            canonicalRequest.AppendFormat("{0}\n", CanonicalizeResourcePath(resourcePath));
+            canonicalRequest.AppendFormat("{0}\n", AWSSDKUtils.CanonicalizeResourcePath(resourcePath));
             canonicalRequest.AppendFormat("{0}\n", canonicalQueryString);
 
             canonicalRequest.AppendFormat("{0}\n", CanonicalizeHeaders(sortedHeaders));
@@ -557,34 +557,6 @@ namespace Amazon.Runtime.Internal.Auth
             }
 
             return canonicalRequest.ToString();
-        }
-
-        /// <summary>
-        /// Returns the canonicalized resource path for the service endpoint
-        /// </summary>
-        /// <param name="resourcePath">Resource path for the request</param>
-        /// <remarks>
-        /// If resourcePath begins or ends with slash, the resulting canonicalized
-        /// path will follow suit.
-        /// </remarks>
-        /// <returns>Canonicalized resource path for the endpoint</returns>
-        protected static string CanonicalizeResourcePath(string resourcePath)
-        {
-            if (string.IsNullOrEmpty(resourcePath))
-                return "/";
-
-            // split path at / into segments
-            var pathSegments = resourcePath.Split(new char[] { '/' }, StringSplitOptions.None);
-            
-            // url encode the segments
-            var encodedSegments = pathSegments
-                .Select(segment => AWSSDKUtils.UrlEncode(segment, false))
-                .ToArray();
-            
-            // join the encoded segments with /
-            var canonicalizedResourcePath = string.Join("/", encodedSegments);
-
-            return canonicalizedResourcePath;
         }
 
         /// <summary>
