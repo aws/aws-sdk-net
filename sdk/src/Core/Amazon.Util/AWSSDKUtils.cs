@@ -41,6 +41,9 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
+        private const char SlashChar = '/';
+        private const string Slash = "/";
+
         internal const int DefaultMaxRetry = 3;
         private const int DefaultConnectionLimit = 50;
         private const int DefaultMaxIdleTime = 50 * 1000; // 50 seconds
@@ -249,19 +252,35 @@ namespace Amazon.Util
         /// <summary>
         /// Returns the canonicalized resource path for the service endpoint
         /// </summary>
+        /// <param name="endpoint">Endpoint URL for the request</param>
         /// <param name="resourcePath">Resource path for the request</param>
         /// <remarks>
         /// If resourcePath begins or ends with slash, the resulting canonicalized
         /// path will follow suit.
         /// </remarks>
         /// <returns>Canonicalized resource path for the endpoint</returns>
-        public static string CanonicalizeResourcePath(string resourcePath)
+        public static string CanonicalizeResourcePath(Uri endpoint, string resourcePath)
         {
+            if (endpoint != null)
+            {
+                var path = endpoint.AbsolutePath;
+                if (string.IsNullOrEmpty(path) || string.Equals(path, Slash, StringComparison.Ordinal))
+                    path = string.Empty;
+
+                if (!string.IsNullOrEmpty(resourcePath) && resourcePath.StartsWith(Slash, StringComparison.Ordinal))
+                    resourcePath = resourcePath.Substring(1);
+
+                if (!string.IsNullOrEmpty(resourcePath))
+                    path = path + Slash + resourcePath;
+
+                resourcePath = path;
+            }
+
             if (string.IsNullOrEmpty(resourcePath))
-                return "/";
+                return Slash;
 
             // split path at / into segments
-            var pathSegments = resourcePath.Split(new char[] { '/' }, StringSplitOptions.None);
+            var pathSegments = resourcePath.Split(new char[] { SlashChar }, StringSplitOptions.None);
 
             // url encode the segments
             var encodedSegments = pathSegments
@@ -269,7 +288,7 @@ namespace Amazon.Util
                 .ToArray();
 
             // join the encoded segments with /
-            var canonicalizedResourcePath = string.Join("/", encodedSegments);
+            var canonicalizedResourcePath = string.Join(Slash, encodedSegments);
 
             return canonicalizedResourcePath;
         }

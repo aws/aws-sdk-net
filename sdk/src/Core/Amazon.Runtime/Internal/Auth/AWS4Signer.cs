@@ -135,7 +135,8 @@ namespace Amazon.Runtime.Internal.Auth
             var bodyHash = SetRequestBodyHash(request);
             var sortedHeaders = SortHeaders(request.Headers);
             
-            var canonicalRequest = CanonicalizeRequest(request.ResourcePath,
+            var canonicalRequest = CanonicalizeRequest(request.Endpoint,
+                                                       request.ResourcePath,
                                                        request.HttpMethod,
                                                        sortedHeaders,
                                                        canonicalParameters,
@@ -522,6 +523,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Computes and returns the canonical request
         /// </summary>
+        /// <param name="endpoint">The endpoint URL</param>
         /// <param name="resourcePath">the path of the resource being operated on</param>
         /// <param name="httpMethod">The http method used for the request</param>
         /// <param name="sortedHeaders">The full request headers, sorted into canonical order</param>
@@ -531,7 +533,8 @@ namespace Amazon.Runtime.Internal.Auth
         /// will look for the hash as a header on the request.
         /// </param>
         /// <returns>Canonicalised request as a string</returns>
-        protected static string CanonicalizeRequest(string resourcePath,
+        protected static string CanonicalizeRequest(Uri endpoint,
+                                                    string resourcePath,
                                                     string httpMethod,
                                                     IDictionary<string, string> sortedHeaders,
                                                     string canonicalQueryString,
@@ -539,7 +542,7 @@ namespace Amazon.Runtime.Internal.Auth
         {
             var canonicalRequest = new StringBuilder();
             canonicalRequest.AppendFormat("{0}\n", httpMethod);
-            canonicalRequest.AppendFormat("{0}\n", AWSSDKUtils.CanonicalizeResourcePath(resourcePath));
+            canonicalRequest.AppendFormat("{0}\n", AWSSDKUtils.CanonicalizeResourcePath(endpoint, resourcePath));
             canonicalRequest.AppendFormat("{0}\n", canonicalQueryString);
 
             canonicalRequest.AppendFormat("{0}\n", CanonicalizeHeaders(sortedHeaders));
@@ -942,7 +945,8 @@ namespace Amazon.Runtime.Internal.Auth
 
             var canonicalQueryParams = CanonicalizeQueryParameters(parametersToCanonicalize);
 
-            var canonicalRequest = CanonicalizeRequest(request.ResourcePath,
+            var canonicalRequest = CanonicalizeRequest(request.Endpoint,
+                                                       request.ResourcePath,
                                                        request.HttpMethod,
                                                        sortedHeaders,
                                                        canonicalQueryParams,
