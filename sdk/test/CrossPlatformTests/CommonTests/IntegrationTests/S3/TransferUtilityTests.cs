@@ -27,6 +27,7 @@ namespace CommonTests.IntegrationTests.S3
         private const string testContent = "This is the content body!";
         private const string testFile = "PutObjectFile.txt";
         private string fullPath;
+        private string relativePath;
 
         [OneTimeSetUp]
         public void Initialize()
@@ -39,6 +40,7 @@ namespace CommonTests.IntegrationTests.S3
                         (testFile, CreationCollisionOption.ReplaceExisting);
                     await file.WriteAllTextAsync(testContent);
                     fullPath = file.Path;
+                    relativePath = UtilityMethods.GetRelativePath(fullPath);
                     bucketName = await UtilityMethods.CreateBucketAsync(Client);
                 }
                 catch(Exception e)
@@ -57,6 +59,7 @@ namespace CommonTests.IntegrationTests.S3
         }
 
         [Test(TestOf = typeof(AmazonS3Client))]
+        [Category("S3")]
         public void SimpleUpload()
         {
             RunAsSync(async () =>
@@ -64,7 +67,7 @@ namespace CommonTests.IntegrationTests.S3
                 var client = Client;
                 using (var tu = new Amazon.S3.Transfer.TransferUtility(client))
                 {
-                    await tu.UploadAsync(fullPath, bucketName);
+                    await tu.UploadAsync(relativePath, bucketName);
 
                     var response = await client.GetObjectMetadataAsync(new GetObjectMetadataRequest
                     {
@@ -73,7 +76,7 @@ namespace CommonTests.IntegrationTests.S3
                     });
                     Assert.IsTrue(response.ETag.Length > 0);
 
-                    var downloadPath = fullPath + ".download";
+                    var downloadPath = relativePath + ".download";
                     var downloadRequest = new Amazon.S3.Transfer.TransferUtilityDownloadRequest
                     {
                         BucketName = bucketName,

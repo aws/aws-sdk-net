@@ -14,6 +14,7 @@ using System.IO;
 using System.Reflection;
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
+using NUnit.Framework;
 
 namespace CommonTests.Framework
 {
@@ -320,6 +321,19 @@ namespace CommonTests.Framework
             var client = (T)Activator.CreateInstance(typeof(T),
                 new object[] { TestRunner.Credentials, TestRunner.RegionEndpoint });
             return client;
+        }
+
+        public static string GetRelativePath(string fullPath)
+        {
+            var localPath = PCLStorage.FileSystem.Current.LocalStorage.Path;
+            var localPathIndex = fullPath.IndexOf(localPath, StringComparison.Ordinal);
+            Assert.IsTrue(localPathIndex >= 0, "Verify that localPathIndex ({0}) is non-negative", localPathIndex);
+
+            var relativePath = fullPath
+                .Substring(localPathIndex + localPath.Length)
+                .Trim('\\', '/');
+
+            return relativePath;
         }
     }
 }

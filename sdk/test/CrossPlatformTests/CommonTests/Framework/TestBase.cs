@@ -41,10 +41,15 @@ namespace CommonTests.Framework
             {
                 if (_client == null)
                 {
-                    _client = CreateClient<T>(endpoint: ActualEndpoint);
+                    _client = CreateNewClient();
                 }
                 return _client;
             }
+        }
+
+        public T CreateNewClient()
+        {
+            return CreateClient<T>(endpoint: ActualEndpoint);
         }
 
         /// <summary>
@@ -122,6 +127,4 @@ namespace CommonTests.Framework
             return new ServiceResponseCounter(client);
         }
     }
-
-
 }

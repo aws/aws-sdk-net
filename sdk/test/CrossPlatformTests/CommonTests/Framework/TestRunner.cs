@@ -80,6 +80,7 @@ namespace CommonTests.Framework
             get;
         }
 
+        private List<TestMethod> FailedTestMethods { get; set; }
     
         public TestRunner()
         {
@@ -106,36 +107,49 @@ namespace CommonTests.Framework
 
         private bool Execute()
         {
-            if (!IsInternetAvailable())
+            try
             {
-                WriteInfo("Internet is not available, exiting");
+                FailedTestMethods = new List<TestMethod>();
+
+                if (!IsInternetAvailable())
+                {
+                    WriteInfo("Internet is not available, exiting");
+                    return false;
+                }
+
+                WriteInfo("Setting up runner...");
+                var runner = new NUnitTestAssemblyRunner(new DefaultTestAssemblyBuilder());
+                var currentAssembly = typeof(TestRunner).GetTypeInfo().Assembly;
+                var options = new Dictionary<string, string>();
+                var tests = runner.Load(currentAssembly, options);
+
+                WriteInfo("Running tests...");
+                var result = runner.Run(this, this.Filter);
+                runner.WaitForCompletion(int.MaxValue);
+
+                var success = result.HasTestSucceeded();
+
+                WriteInfo("All tests executed");
+                WriteInfo("Time elapsed: {0}", TimeSpan.FromSeconds(result.Duration));
+
+                if (!success)
+                {
+                    var failedMethodNames = FailedTestMethods.Select(tm => tm.Name).ToList();
+                    WriteInfo("Failed methods: {0}", string.Join(", ", failedMethodNames));
+                }
+
+                // optionally, write result as xml
+                //WriteInfo("Test results as XML: {0}", result.ToXml(true).OuterXml);
+
+                PushLog(success);
+
+                return success;
+            }
+            catch(Exception e)
+            {
+                WriteError("Encountered catastrophic error during test execution: {0}", e.ToString());
                 return false;
             }
-            
-            WriteInfo("Setting up runner...");
-            var runner = new NUnitTestAssemblyRunner(new DefaultTestAssemblyBuilder());
-            var currentAssembly = typeof(TestRunner).GetTypeInfo().Assembly;
-            var options = new Dictionary<string, string>();
-            var tests = runner.Load(currentAssembly, options);
-
-            WriteInfo("Running tests...");
-            var result = runner.Run(this, this.Filter);
-            runner.WaitForCompletion(int.MaxValue);
-
-            var success =
-                result.FailCount == 0 &&
-                result.InconclusiveCount == 0 &&
-                result.SkipCount == 0;
-
-            WriteInfo("All tests executed");
-            WriteInfo("Time elapsed: {0}", TimeSpan.FromSeconds(result.Duration));
-
-            // optionally, write result as xml
-            //WriteInfo("Test results as XML: {0}", result.ToXml(true).OuterXml);
-
-            PushLog(success);
-
-            return success;
         }
 
         private bool IsInternetAvailable()
@@ -359,13 +373,10 @@ namespace CommonTests.Framework
                 }
 
                 TestCompleted(testMethod);
-
-                var testSucceeded =
-                    result.FailCount == 0 &&
-                    result.InconclusiveCount == 0 &&
-                    result.SkipCount == 0;
-
+                var testSucceeded = result.HasTestSucceeded();
                 TestCompleted(testMethod.Name, testSucceeded);
+                if (!testSucceeded)
+                    FailedTestMethods.Add(testMethod);
             }
         }
 
