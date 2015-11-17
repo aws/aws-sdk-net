@@ -192,10 +192,10 @@ namespace Amazon.S3.Internal
 
             var delim = "?";
             var resources = resourcesToSign.ToList();
-
+            
             resources.Sort((firstPair, nextPair) =>
             {
-                return firstPair.Key.CompareTo(nextPair.Key);
+                return string.Compare(firstPair.Key, nextPair.Key, StringComparison.InvariantCultureIgnoreCase);
             });
 
             foreach (var resourceToSign in resources)
