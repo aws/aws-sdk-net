@@ -267,7 +267,8 @@ namespace Amazon.Util.Internal
             {
                 //device related information
                 PlatformVersion = AndroidInterop.GetStaticJavaField<string>("android.os.Build$VERSION", "RELEASE");
-                Model = AndroidInterop.GetStaticJavaField<string>("android.os.Build", "MODEL");
+		Platform = ANDROID_OS;
+		Model = AndroidInterop.GetStaticJavaField<string>("android.os.Build", "MODEL");
 
                 Make = AndroidInterop.GetStaticJavaField<string>("android.os.Build", "MANUFACTURER");
 
