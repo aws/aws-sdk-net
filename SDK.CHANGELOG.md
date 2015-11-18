@@ -1,3 +1,12 @@
+### 3.1.28.1 (2015-11-18 00:02 UTC)
+* Inspector (3.1.0.1)
+	* Documentation update.
+* S3 (3.1.3.6)
+	* Updated to use new Core, version 3.1.3.7
+	* Increment version to pick up latest core patch for dealing with key edge cases.
+* Core 3.1.3.7
+	* Fix issue with AWS4Signer.
+
 ### 3.1.28.0 (2015-11-12 21:05 UTC)
 * CognitoIdentity (3.1.0.4)
 	* Updated to use new Core, version 3.1.3.6
