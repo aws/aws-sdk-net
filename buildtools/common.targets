@@ -30,6 +30,9 @@
 		<unityexe>C:\Program Files\Unity\Editor\Unity.Exe</unityexe>
 		<unity>&quot;$(unityexe)&quot;</unity>
 		
+		<pdb2mdbexe>C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\4.5\pdb2mdb.exe</pdb2mdbexe>
+		<pdb2mdb>&quot;$(pdb2mdbexe)&quot;</pdb2mdb>
+		
 		<Deployment>..\Deployment</Deployment>
 		<DocDeployment>..\DocDeployment</DocDeployment>
 	</PropertyGroup>

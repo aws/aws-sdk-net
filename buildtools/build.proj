@@ -107,7 +107,7 @@
             DestinationFolder="$(Deployment)\xamarin-components"/>
     </Target>
 	
-	<Target Name="unity-pack" DependsOnTargets="build-custom-tasks;nuget-pack;copy-assemblies" Condition="Exists('$(unityexe)')">
+	<Target Name="unity-pack" DependsOnTargets="build-custom-tasks;nuget-pack;copy-assemblies;pdb-mdb" Condition="Exists('$(unityexe)')">
         
 		<UnityPackage 
             DeploymentPath="$([System.IO.Path]::GetFullPath(..\Deployment\))" 
@@ -117,6 +117,15 @@
         
     </Target>
 	
+	<!-- DependsOnTargets="copy-assemblies" -->
+	
+	<Target Name="pdb-mdb"  DependsOnTargets="copy-assemblies"  Condition="Exists('$(pdb2mdbexe)')">
+		<ItemGroup>
+			<DllFiles Include="$(Deployment)\assemblies\unity\*.dll"/>
+		</ItemGroup>
+		
+		<Exec LogStandardErrorAsError="true" Command="mono $(pdb2mdb) %(DllFiles.Identity)" /> 
+	</Target>
 	
 	<Target Name="unity-build-test-project" DependsOnTargets="full-build-nodocs" Condition="Exists('$(unityexe)')">
 		
@@ -127,7 +136,7 @@
 		<!-- copy all new assemblies to the test project -->
 		<ItemGroup>
 			<DllFiles Include="$(Deployment)\assemblies\unity\*.dll"/>
-			<PdbFiles Include="$(Deployment)\assemblies\unity\*.pdb"/>
+			<PdbFiles Include="$(Deployment)\assemblies\unity\*.mdb"/>
 		</ItemGroup>
 		
 		<Copy
