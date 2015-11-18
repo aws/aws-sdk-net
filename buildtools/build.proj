@@ -124,7 +124,7 @@
 			<DllFiles Include="$(Deployment)\assemblies\unity\*.dll"/>
 		</ItemGroup>
 		
-		<Exec LogStandardErrorAsError="true" Command="mono $(pdb2mdb) %(DllFiles.Identity)" /> 
+		<Exec LogStandardErrorAsError="true" Command="$(mono) $(pdb2mdb) %(DllFiles.Identity)" /> 
 	</Target>
 	
 	<Target Name="unity-build-test-project" DependsOnTargets="full-build-nodocs" Condition="Exists('$(unityexe)')">
