@@ -181,19 +181,19 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DescribeDirectories service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// 
+        /// The <i>NextToken</i> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         Task<DescribeDirectoriesResponse> DescribeDirectoriesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -303,13 +303,13 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the GetDirectoryLimits service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         Task<GetDirectoryLimitsResponse> GetDirectoryLimitsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
