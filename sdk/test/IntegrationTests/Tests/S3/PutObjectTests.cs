@@ -50,6 +50,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             BaseClean();
         }
 
+#if AWS_APM_API        
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestAsyncExceptionHandling()
+        {
+                GetObjectRequest request = new GetObjectRequest
+                {
+                    BucketName = "NonExistentBucket",
+                    Key = "NonExistentKey",
+                };
+                
+                IAsyncResult result = Client.BeginGetObject(request, null, null);
+
+                var exception = AssertExtensions.ExpectException<AmazonS3Exception>(
+                    () => Client.EndGetObject(result));
+                Assert.AreEqual("NoSuchBucket", exception.ErrorCode);
+                Assert.AreEqual(HttpStatusCode.NotFound, exception.StatusCode);
+        }
+#endif
+
+
         [TestMethod]
         [TestCategory("S3")]
         public void TestPutAndGetWithInvalidExpires()

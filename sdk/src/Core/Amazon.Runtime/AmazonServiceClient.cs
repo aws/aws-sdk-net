@@ -243,8 +243,6 @@ namespace Amazon.Runtime
 
         protected void ProcessResponseHandlers(IExecutionContext executionContext)
         {
-            //if (request == null)
-            //    return;
             if (AfterResponseEvent == null)
                 return;
 
@@ -258,8 +256,6 @@ namespace Amazon.Runtime
 
         protected virtual void ProcessExceptionHandlers(IExecutionContext executionContext, Exception exception)
         {
-            //if (request == null)
-            //    return;
             if (ExceptionEvent == null)
                 return;
 
