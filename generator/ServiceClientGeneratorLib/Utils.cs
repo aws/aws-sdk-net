@@ -49,7 +49,7 @@ namespace ServiceClientGenerator
         {
             var val = self.SafeGet(propertyName);
             if (null == val || !val.IsString)
-                return null;
+                return String.Empty;
 
             return val.ToString();
         }

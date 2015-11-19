@@ -1222,6 +1222,16 @@ namespace ServiceClientGenerator
             
         }
 
+        public bool HasExamples
+        {
+            get
+            {
+                return _documentRoot.PropertyNames.Contains(ExamplesKey) &&
+                       _documentRoot[ExamplesKey].IsObject &&
+                       _documentRoot[ExamplesKey].PropertyNames.Any();
+            }
+        }
+
         //review directory separator
         public string XamarinSolutionSamplePath
         {

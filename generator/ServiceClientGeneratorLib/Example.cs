@@ -116,34 +116,206 @@ namespace ServiceClientGenerator
                 if (null == member)
                     continue;
 
-                result.Add(string.Format("{0} = {1}{2}{3}", member.PropertyName, GetSampleLiteral(member, param.Value),
-                    param.Key != last ? "," : "",
-                    InputComments.ContainsKey(param.Key) ? " // " + InputComments[param.Key] : ""));
+                var sb = new StringBuilder();
+                var cb = new CodeBuilder(sb, 16);
+
+                cb.Append(member.PropertyName).Append(" = ");
+                GetSampleLiteral(member, param.Value, cb);
+                if (param.Key != last)
+                    cb.Append(",");
+                if (InputComments.ContainsKey(param.Key))
+                    cb.Append(" // ").Append(InputComments[param.Key]);
+
+                result.Add(sb.ToString());
             }
 
             return result;
         }
 
-        private string GetSampleLiteral(Member member, JsonData data)
+        public void GetSampleLiteral(Member member, JsonData data, CodeBuilder cb)
         {
-            var typeName = member.DetermineType();
-
-            if (data.IsString)
-            {
-                if (typeName == "string")
-                    return string.Format("\"{0}\"", data.ToString());
-                if (typeName == "bool")
-                    return data.ToString().ToLower();
-                if (typeName == "float" || typeName == "int" || typeName == "double" || typeName == "long")
-                    return data.ToString();
-
-                return member.VariableName;
-            }
-            else 
-                return string.Format("new {0}{1}", typeName, "{...}");
-
+            GetSampleLiteral(member.Shape, data, cb);
         }
 
-        
+        public void GetSampleLiteral(Shape shape, JsonData data, CodeBuilder cb)
+        {
+            if (shape.IsString && data.IsString)
+                cb.AppendQuote(data.ToString());
+            if (shape.IsBoolean)
+                cb.Append(data.ToString().ToLower());
+            if (shape.IsFloat || shape.IsInt || shape.IsDouble || shape.IsLong)
+                cb.Append(data.ToString());
+
+            if (shape.IsList && data.IsArray)
+            {
+                var itemType = shape.ListShape;
+
+                cb.AppendFormat("new List<{0}> ", itemType.Type).OpenBlock();
+
+                for (int i = 0; i < data.Count; i++)
+                { 
+                    GetSampleLiteral(itemType, data[i], cb);
+                    if (i < (data.Count - 1))
+                        cb.AppendLine(",");
+                }
+
+                cb.CloseBlock();
+            }
+
+            if (shape.IsMap && data.IsObject)
+            {
+                var keyType = shape.KeyShape;
+                var valType = shape.ValueShape;
+
+                cb.AppendFormat("new Dictionary<{0}, {1}> ", keyType.Type, valType.ToString());
+
+                cb.OpenBlock();
+
+                foreach (var k in data.PropertyNames)
+                {
+                    cb.Append("{ ");
+
+                    GetSampleLiteral(keyType, k, cb);
+                    cb.Append(", ");
+                    GetSampleLiteral(valType, data[k], cb);
+
+                    cb.Append(" }");
+                    if (k != data.PropertyNames.Last())
+                        cb.AppendLine(",");
+                }
+
+                cb.CloseBlock();
+
+            }
+
+            if (shape.IsStructure && data.IsObject)
+            {
+                cb.AppendFormat("new {0} ", shape.Name);
+
+                if (data.PropertyNames.Count() > 1)
+                    cb.OpenBlock();
+                else
+                    cb.Append("{ ");
+
+                foreach (var field in data.PropertyNames)
+                {
+                    var property = shape.Members
+                        .Where(m => m.ModeledName.Equals(field, StringComparison.OrdinalIgnoreCase))
+                        .SingleOrDefault();
+                    if (null == property)
+                        continue;
+
+                    cb.AppendFormat("{0} = ", property.PropertyName);
+                    GetSampleLiteral(property, data[field], cb);
+
+                    if (field != data.PropertyNames.Last())
+                        cb.AppendLine(",");
+
+                }
+
+                if (data.PropertyNames.Count() > 1)
+                    cb.CloseBlock();
+                else
+                    cb.Append(" }");
+            }
+        }
+
+        private string ShapeType(Shape shape)
+        {
+            if (shape.IsPrimitiveType)
+                return shape.Type;
+            if (shape.IsMap)
+                return string.Format("Dictionary<{0}, {1}>", ShapeType(shape.KeyShape), ShapeType(shape.ValueShape));
+            if (shape.IsList)
+                return string.Format("List<0>", shape.ListShape);
+            if (shape.IsStructure)
+                return shape.Name;
+            return "object";
+        }
+    }
+
+    public class CodeBuilder
+    {
+        StringBuilder sb;
+
+        int tabWidth;
+        int currentIndent;
+
+        string indentSpaces;
+
+        public CodeBuilder(StringBuilder sb, int startingIndent, int tabWidth = 4)
+        {
+            this.sb = sb;
+            this.tabWidth = tabWidth;
+            this.currentIndent = startingIndent;
+            this.indentSpaces = new string(' ', currentIndent);
+        }
+
+        public CodeBuilder AppendFormat(string format, params object[] p)
+        {
+            sb.AppendFormat(format, p);
+            return this;
+        }
+
+        public CodeBuilder Append(string s)
+        {
+            sb.Append(s);
+            return this;
+        }
+
+
+        public CodeBuilder AppendLine(string line)
+        {
+            sb.AppendLine(line);
+            sb.Append(indentSpaces);
+            return this;
+        }
+
+        public CodeBuilder AppendLine()
+        {
+            return this.AppendLine("");
+        }
+
+        public CodeBuilder AppendLines(IEnumerable<string> lines, string lineSeparator = "")
+        {
+            foreach(var line in lines)
+            {
+                sb.Append(indentSpaces);
+                sb.Append(line);
+                if (!line.Equals(lines.Last()))
+                    sb.Append(",");
+                sb.AppendLine();
+            }
+            return this;
+        }
+
+        public CodeBuilder OpenBlock()
+        {
+            this.currentIndent += this.tabWidth;
+            this.indentSpaces = new string(' ', currentIndent);
+            this.AppendLine("{");
+            
+            return this;
+        }
+
+        public CodeBuilder CloseBlock()
+        {
+            this.currentIndent -= this.tabWidth;
+            if (currentIndent < 0)
+                currentIndent = 0;
+            this.indentSpaces = new string(' ', currentIndent);
+            this.AppendLine();
+            this.Append("}");
+            return this;
+        }
+
+        public CodeBuilder AppendQuote(string s, string open = @"""", string close = null)
+        {
+            sb.Append(open).Append(s).Append(null == close ? open : close);
+            return this;
+        }
+
+    
+
     }
 }

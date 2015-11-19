@@ -7,7 +7,7 @@
 				"description" : "The following operation creates an SQS queue named MyQueue.",
 				"input" : {
 					"QueueName" : "MyQueue",
-					"attributes" : {}
+					"attributes" : { "foo": "bar", "ghoti" : "fish" }
 				},
 				"output" : {
 					"QueueUrl" : "https://queue.amazonaws.com/123456789101112/MyQueue"

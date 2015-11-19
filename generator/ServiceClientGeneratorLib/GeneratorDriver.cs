@@ -210,9 +210,11 @@ namespace ServiceClientGenerator
             // Test that simple customizations were generated correctly
             GenerateCustomizationTests();
             ExecuteProjectFileGenerators();
-            ExecuteExampleGenerator(new ExampleCode(), this.Configuration.BaseName + "GeneratedSamples.cs", this.Configuration.BaseName);
-            ExecuteExampleGenerator(new ExampleMetadata(), this.Configuration.BaseName + "GeneratedSamples.extra.xml");
-
+            if (this.Configuration.ServiceModel.Customizations.HasExamples)
+            {
+                ExecuteExampleGenerator(new ExampleCode(), this.Configuration.BaseName + "GeneratedSamples.cs", this.Configuration.BaseName);
+                ExecuteExampleGenerator(new ExampleMetadata(), this.Configuration.BaseName + "GeneratedSamples.extra.xml");
+            }
         }
 
         /// <summary>
