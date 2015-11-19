@@ -1,3 +1,7 @@
+### 3.1.29.0 (2015-11-19 18:42 UTC)
+* DeviceFarm (3.1.3.0)
+	* Added support for new test and upload types.
+
 ### 3.1.28.1 (2015-11-18 00:02 UTC)
 * Inspector (3.1.0.1)
 	* Documentation update.
