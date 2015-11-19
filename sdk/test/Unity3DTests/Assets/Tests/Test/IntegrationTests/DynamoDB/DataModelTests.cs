@@ -345,7 +345,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             //    Assert.IsNotNull(doc["Components"].AsPrimitiveList());
             //else
             //    Assert.IsNotNull(doc["Components"].AsDynamoDBList());
-            Assert.IsTrue(
+            Utils.AssertTrue(
                 doc["Components"].AsPrimitiveList() != null ||
                 doc["Components"].AsDynamoDBList() != null);
             Assert.IsNotNull(doc["CompanyInfo"].AsDocument());
@@ -974,7 +974,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             Assert.AreEqual(employee1.Name, doc["Name"].AsString());
             Assert.AreEqual(employee1.Data.Length, doc["Data"].AsByteArray().Length);
             // Ignored properties are not propagated to the Document
-            Assert.IsFalse(doc.ContainsKey("InternalId"));
+            Utils.AssertFalse(doc.ContainsKey("InternalId"));
 
             Employee roundtrip = Context.FromDocument<Employee>(doc);
             Assert.AreEqual(employee1.Name, roundtrip.Name);

@@ -154,8 +154,8 @@ namespace Amazon.SQS.Internal
         /// <returns></returns>
         public static string CalculateMD5(Dictionary<string, MessageAttributeValue> attributes)
         {
-            var sorted = attributes.OrderBy(kvp => kvp.Key, StringComparer.Ordinal);
-
+            //var sorted = attributes.OrderBy(kvp => kvp.Key, StringComparer.Ordinal);
+            SortedDictionary<string, MessageAttributeValue> sorted = new SortedDictionary<string, MessageAttributeValue>(attributes, StringComparer.Ordinal);
             var ms = new MemoryStream();
             using (var writer = new SQSWriter(ms))
             {

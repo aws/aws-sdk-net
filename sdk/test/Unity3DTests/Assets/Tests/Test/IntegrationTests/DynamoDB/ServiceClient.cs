@@ -242,9 +242,9 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             Assert.AreEqual(0, emptyListAV.L.Count);
 
             var boolAV = new AttributeValue();
-            Assert.IsFalse(boolAV.IsBOOLSet);
+            Utils.AssertFalse(boolAV.IsBOOLSet);
             boolAV.BOOL = false;
-            Assert.IsTrue(boolAV.IsBOOLSet);
+            Utils.AssertTrue(boolAV.IsBOOLSet);
 
             Client.PutItem(
                 new PutItemRequest()
@@ -274,13 +274,13 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             var item = (Client.GetItem(new GetItemRequest() { TableName = hashTableName, Key = key1 })).Item;
 
             // Verify empty collections and value type
-            Assert.IsTrue(item["EmptyList"].IsLSet);
-            Assert.IsFalse(item["EmptyList"].IsMSet);
-            Assert.IsTrue(item["EmptyMap"].IsMSet);
-            Assert.IsFalse(item["EmptyMap"].IsLSet);
-            Assert.IsTrue(item["BoolFalse"].IsBOOLSet);
-            Assert.IsFalse(item["BoolFalse"].BOOL);
-            Assert.IsTrue(item["NonEmptyList"].IsLSet);
+            Utils.AssertTrue(item["EmptyList"].IsLSet);
+            Utils.AssertFalse(item["EmptyList"].IsMSet);
+            Utils.AssertTrue(item["EmptyMap"].IsMSet);
+            Utils.AssertFalse(item["EmptyMap"].IsLSet);
+            Utils.AssertTrue(item["BoolFalse"].IsBOOLSet);
+            Utils.AssertFalse(item["BoolFalse"].BOOL);
+            Utils.AssertTrue(item["NonEmptyList"].IsLSet);
             Assert.AreEqual(nonEmptyListAV.L.Count, item["NonEmptyList"].L.Count);
 
             // Get nonexistent item
@@ -289,7 +289,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                 { "Id", new AttributeValue { N = "999" } }
             };
             var getItemResult = Client.GetItem(new GetItemRequest() { TableName = hashTableName, Key = key2 });
-            Assert.IsFalse(getItemResult.IsItemSet);
+            Utils.AssertFalse(getItemResult.IsItemSet);
 
             // Get empty item
             getItemResult = Client.GetItem(new GetItemRequest
@@ -298,7 +298,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                 Key = key1,
                 ProjectionExpression = "Coffee"
             });
-            Assert.IsTrue(getItemResult.IsItemSet);
+            Utils.AssertTrue(getItemResult.IsItemSet);
             Assert.AreEqual(0, getItemResult.Item.Count);
 
             // Update item
@@ -316,9 +316,9 @@ namespace AWSSDK.IntegrationTests.DynamoDB
 
             // Get updated item
             item = (Client.GetItem(new GetItemRequest() { TableName = hashTableName, Key = key1 })).Item;
-            Assert.IsTrue(item["Product"].S.IndexOf("2.0") >= 0);
+            Utils.AssertTrue(item["Product"].S.IndexOf("2.0") >= 0);
             Assert.AreEqual(3, item["Tags"].SS.Count);
-            Assert.IsFalse(item.ContainsKey("Seller"));
+            Utils.AssertFalse(item.ContainsKey("Seller"));
 
             // Scan all items
             var scanConditions = new Dictionary<string, Condition>
@@ -358,9 +358,9 @@ namespace AWSSDK.IntegrationTests.DynamoDB
 
             // Get updated item
             item = (Client.GetItem(new GetItemRequest() { TableName = hashTableName, Key = key2 })).Item;
-            Assert.IsTrue(item["Product"].S.IndexOf("Debugger") >= 0);
+            Utils.AssertTrue(item["Product"].S.IndexOf("Debugger") >= 0);
             Assert.AreEqual(1, item["Tags"].SS.Count);
-            Assert.IsFalse(item.ContainsKey("Seller"));
+            Utils.AssertFalse(item.ContainsKey("Seller"));
 
             // Scan all items
             items = Scan(hashTableName, scanConditions);
@@ -906,7 +906,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
         private void TestLargeBatches(string hashTableName)
         {
             int itemSize = 60 * 1024;
-            Assert.IsTrue(itemSize < MaxItemSize);
+            Utils.AssertTrue(itemSize < MaxItemSize);
             int itemCount = 25;
 
             // DynamoDB allows 1MB of data per operation, so itemSize * writeBatchSize < 1MB

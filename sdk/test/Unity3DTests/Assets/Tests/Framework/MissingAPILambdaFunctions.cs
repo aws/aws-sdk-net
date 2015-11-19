@@ -118,7 +118,7 @@ namespace AWSSDK.Tests.Framework
                 }
                 Thread.Sleep(TimeSpan.FromSeconds(30));
             }
-            Assert.IsTrue(string.IsNullOrEmpty(functionError), functionError);
+            Utils.AssertStringIsNullOrEmpty(functionError);
         }
 
         public static void DeleteBucket(string bucketName, RegionEndpoint region)
@@ -146,7 +146,7 @@ namespace AWSSDK.Tests.Framework
             {
                 throw responseException;
             }
-            Assert.IsTrue(string.IsNullOrEmpty(functionError), functionError);
+            Utils.AssertStringIsNullOrEmpty(functionError);
         }
 
         public static void DeleteLambdaFunction(string functionName, RegionEndpoint region)
@@ -174,7 +174,7 @@ namespace AWSSDK.Tests.Framework
             {
                 throw responseException;
             }
-            Assert.IsTrue(string.IsNullOrEmpty(functionError), functionError);
+            Utils.AssertStringIsNullOrEmpty(functionError);
         }
     }
 }

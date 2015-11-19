@@ -171,7 +171,7 @@ namespace AWSSDK.IntegrationTests.IdentityManagement
             }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
             Assert.IsNotNull(responseException);
-            Assert.True(responseException is NoSuchEntityException);
+            Utils.AssertTrue(responseException is NoSuchEntityException);
 
 
             Role gotRole = null;
@@ -219,7 +219,7 @@ namespace AWSSDK.IntegrationTests.IdentityManagement
             }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
             Assert.IsNotNull(responseException);
-            Assert.True(responseException is NoSuchEntityException);
+            Utils.AssertTrue(responseException is NoSuchEntityException);
 
             roles = GetRoles();
             Assert.IsNotNull(roles);
@@ -250,7 +250,7 @@ namespace AWSSDK.IntegrationTests.IdentityManagement
             }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
             Assert.IsNotNull(responseException);
-            Assert.True(responseException is NoSuchEntityException);
+            Utils.AssertTrue(responseException is NoSuchEntityException);
         }
 
         [Test]
@@ -300,7 +300,7 @@ namespace AWSSDK.IntegrationTests.IdentityManagement
             }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
             Assert.IsNotNull(responseException);
-            Assert.True(responseException is NoSuchEntityException);
+            Utils.AssertTrue(responseException is NoSuchEntityException);
 
             Client.DeleteRolePolicyAsync(new DeleteRolePolicyRequest
             {
@@ -313,7 +313,7 @@ namespace AWSSDK.IntegrationTests.IdentityManagement
             }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
             Assert.IsNotNull(responseException);
-            Assert.True(responseException is NoSuchEntityException);
+            Utils.AssertTrue(responseException is NoSuchEntityException);
 
             Client.PutRolePolicyAsync(new PutRolePolicyRequest
             {
@@ -411,7 +411,7 @@ namespace AWSSDK.IntegrationTests.IdentityManagement
             }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
             Assert.IsNotNull(responseException);
-            Assert.True(responseException is NoSuchEntityException);
+            Utils.AssertTrue(responseException is NoSuchEntityException);
 
             Client.DeleteRolePolicyAsync(new DeleteRolePolicyRequest
             {
@@ -424,7 +424,7 @@ namespace AWSSDK.IntegrationTests.IdentityManagement
             }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
             Assert.IsNotNull(responseException);
-            Assert.True(responseException is NoSuchEntityException);
+            Utils.AssertTrue(responseException is NoSuchEntityException);
 
             Client.ListRolePoliciesAsync(new ListRolePoliciesRequest
             {
@@ -473,7 +473,7 @@ namespace AWSSDK.IntegrationTests.IdentityManagement
             }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
             Assert.IsNotNull(responseException);
-            Assert.True(responseException is NoSuchEntityException);
+            Utils.AssertTrue(responseException is NoSuchEntityException);
 
             InstanceProfile newProfile = null;
             Client.CreateInstanceProfileAsync(new CreateInstanceProfileRequest
@@ -533,7 +533,7 @@ namespace AWSSDK.IntegrationTests.IdentityManagement
             }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
             Assert.IsNotNull(responseException);
-            Assert.True(responseException is NoSuchEntityException);
+            Utils.AssertTrue(responseException is NoSuchEntityException);
 
             // add role to profile
             Role newRole = null;
@@ -633,7 +633,7 @@ namespace AWSSDK.IntegrationTests.IdentityManagement
             }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
             Assert.IsNotNull(responseException);
-            Assert.IsTrue(responseException is NoSuchEntityException);
+            Utils.AssertTrue(responseException is NoSuchEntityException);
 
             Client.ListInstanceProfilesAsync((response) =>
             {

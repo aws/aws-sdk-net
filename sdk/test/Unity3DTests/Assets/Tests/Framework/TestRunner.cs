@@ -119,6 +119,16 @@ namespace AWSSDK.Tests.Framework
 
                 return stringCategories.Contains(CategoryName);
             }
+
+            public TNode ToXml(bool b)
+            {
+                return null;
+            }
+
+            public TNode AddToXml(TNode n, bool b)
+            {
+                return null;
+            }
         }
 
         private class SingleClassFilter : ITestFilter
@@ -163,7 +173,15 @@ namespace AWSSDK.Tests.Framework
                     return false;
                 }
             }
+            public TNode ToXml(bool b)
+            {
+                return null;
+            }
 
+            public TNode AddToXml(TNode n, bool b)
+            {
+                return null;
+            }
         }
 
         #region ITestListener

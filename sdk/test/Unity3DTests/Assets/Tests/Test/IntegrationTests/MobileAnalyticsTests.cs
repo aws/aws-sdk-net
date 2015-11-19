@@ -66,7 +66,7 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
             }
             catch (InvalidOperationException e)
             {
-                Assert.IsTrue(e is InvalidOperationException);
+                Utils.AssertTrue(e is InvalidOperationException);
             }
         }
 
@@ -139,8 +139,8 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
             // make sure session is not expired
             DateTime startTime2 = session.StartTime;
             string sessionId2 = session.SessionId;
-            Assert.IsTrue(startTime1 == startTime2);
-            Assert.IsTrue(sessionId1 == sessionId2);
+            Utils.AssertTrue(startTime1 == startTime2);
+            Utils.AssertTrue(sessionId1 == sessionId2);
 
             // sleep longer until session expires
             session.Pause();
@@ -150,8 +150,8 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
             // make sure session is expired
             DateTime startTime3 = session.StartTime;
             string sessionId3 = session.SessionId;
-            Assert.IsTrue(startTime3 > startTime2);
-            Assert.IsTrue(sessionId2 != sessionId3);
+            Utils.AssertTrue(startTime3 > startTime2);
+            Utils.AssertTrue(sessionId2 != sessionId3);
 
             // sleep for a while but wake up before session expires
             session.Pause();
@@ -161,8 +161,8 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
             // make sure session is not expired
             DateTime startTime4 = session.StartTime;
             string sessionId4 = session.SessionId;
-            Assert.IsTrue(startTime4 == startTime3);
-            Assert.IsTrue(sessionId4 == sessionId3);
+            Utils.AssertTrue(startTime4 == startTime3);
+            Utils.AssertTrue(sessionId4 == sessionId3);
 
             // sleep longer until session expires
             session.Pause();
@@ -172,8 +172,8 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
             // make sure session is expired
             DateTime startTime5 = session.StartTime;
             string sessionId5 = session.SessionId;
-            Assert.IsTrue(startTime5 > startTime4);
-            Assert.IsTrue(sessionId5 != sessionId4);
+            Utils.AssertTrue(startTime5 > startTime4);
+            Utils.AssertTrue(sessionId5 != sessionId4);
         }
 
 
@@ -380,7 +380,7 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
                 eventStore.PutEvent(eventString, appId);
             }
             long dbFileSizeBigger = eventStore.DatabaseSize;
-            Assert.IsTrue(dbFileSizeBigger > dbFileSizeSmall);
+            Utils.AssertTrue(dbFileSizeBigger > dbFileSizeSmall);
 
             Console.WriteLine("The num of events are {0}", eventStore.NumberOfEvents(appId));
             Assert.AreEqual(EVENT_COUNT, eventStore.NumberOfEvents(appId));
@@ -444,7 +444,7 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
                 timeout--;
             }
 
-            Assert.IsTrue(gotException);
+            Utils.AssertTrue(gotException);
         }
 
 

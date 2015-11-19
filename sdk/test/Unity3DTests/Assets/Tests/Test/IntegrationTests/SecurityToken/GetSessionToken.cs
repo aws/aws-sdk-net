@@ -45,8 +45,8 @@ namespace AWSSDK.IntegrationTests.SecurityToken
             var expiresBefore = approximateExpires.AddMinutes(5);
             var expires = gstResult.Credentials.Expiration;
 
-            Assert.IsTrue(expires > expiresAfter);
-            Assert.IsTrue(expires < expiresBefore);
+            Utils.AssertTrue(expires > expiresAfter);
+            Utils.AssertTrue(expires < expiresBefore);
         }
 
         [Test]
@@ -82,8 +82,8 @@ namespace AWSSDK.IntegrationTests.SecurityToken
                 var expiresBefore = approximateExpires.AddMinutes(5);
                 var expires = gstResult.Credentials.Expiration;
 
-                Assert.IsTrue(expires > expiresAfter);
-                Assert.IsTrue(expires < expiresBefore);
+                Utils.AssertTrue(expires > expiresAfter);
+                Utils.AssertTrue(expires < expiresBefore);
             }
         }
 
@@ -120,8 +120,8 @@ namespace AWSSDK.IntegrationTests.SecurityToken
             var expiresBefore = approximateExpires.AddMinutes(5);
             var expires = gstResult.Credentials.Expiration;
 
-            Assert.IsTrue(expires > expiresAfter);
-            Assert.IsTrue(expires < expiresBefore);
+            Utils.AssertTrue(expires > expiresAfter);
+            Utils.AssertTrue(expires < expiresBefore);
         }
     }
 }

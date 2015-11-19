@@ -9,6 +9,38 @@ namespace AWSSDK.Tests.Framework
 {
     public class Utils
     {
+        public static void AssertTrue(bool value, string message = "")
+        {
+            if (!value)
+            {
+                Assert.Fail(message);
+            }
+        }
+
+        public static void AssertFalse(bool value, string message = "")
+        {
+            if (value)
+            {
+                Assert.Fail(message);
+            }
+        }
+
+        public static void AssertExceptionIsNull(Exception e)
+        {
+            if (e != null)
+            {
+                Assert.Fail(string.Format("Expected null exception, got Exception with message: {0}", e.Message));
+            }
+        }
+
+        public static void AssertStringIsNullOrEmpty(string s)
+        {
+            if (!string.IsNullOrEmpty(s))
+            {
+                Assert.Fail(string.Format("Expected null or empty string, got: {0}", s));
+            }
+        }
+
         public static void AssertExceptionExpected(Action action)
         {
             AssertExceptionExpected(action, typeof(Exception));
