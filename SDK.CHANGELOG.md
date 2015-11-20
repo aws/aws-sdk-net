@@ -1,3 +1,20 @@
+### 3.1.29.1 (2015-11-20 21:46 UTC)
+* CloudSearchDomain (3.1.0.4)
+	* Updated to use new Core, version 3.1.3.8
+	* Fix for https://github.com/aws/aws-sdk-net/issues/274
+* EC2 (3.1.4.3)
+	* Updated to use new Core, version 3.1.3.8
+	* Fix for https://github.com/aws/aws-sdk-net/issues/274
+* S3 (3.1.3.7)
+	* Updated to use new Core, version 3.1.3.8
+	* Fix for https://github.com/aws/aws-sdk-net/issues/274
+* SQS (3.1.0.3)
+	* Updated to use new Core, version 3.1.3.8
+	* Fix for https://github.com/aws/aws-sdk-net/issues/274
+* Core 3.1.3.8
+	* Fix for https://github.com/aws/aws-sdk-net/issues/274 , response handler logic being called instead of skipped for .NET 3.5 async, when an exception is thrown in the pipeline.
+
+
 ### 3.1.29.0 (2015-11-19 18:42 UTC)
 * DeviceFarm (3.1.3.0)
 	* Added support for new test and upload types.
