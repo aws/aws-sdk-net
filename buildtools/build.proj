@@ -127,7 +127,11 @@
 		<Exec LogStandardErrorAsError="true" Command="$(mono) $(pdb2mdb) %(DllFiles.Identity)" /> 
 	</Target>
 	
-	<Target Name="unity-build-test-project" DependsOnTargets="full-build-nodocs" Condition="Exists('$(unityexe)')">
+	<Target Name="unity-build-test-project" Condition="Exists('$(unityexe)')">
+		
+		<MSBuild Projects="..\sdk\AWSSDK.Unity.sln"
+            Targets="Clean;Build"
+            Properties="Configuration=Release" />
 		
 		<!-- delete the sdk folder and its contents -->
 		<RemoveDir Directories="..\sdk\test\Unity3DTests\Assets\SDK" />
@@ -135,8 +139,11 @@
 		
 		<!-- copy all new assemblies to the test project -->
 		<ItemGroup>
-			<DllFiles Include="$(Deployment)\assemblies\unity\*.dll"/>
-			<PdbFiles Include="$(Deployment)\assemblies\unity\*.mdb"/>
+			<DllFiles Include="..\sdk\src\Core\bin\Release\unity\*.dll"/>
+			<PdbFiles Include="..\sdk\src\Core\bin\Release\unity\*.pdb"/>
+			
+			<DllFiles Include="..\sdk\src\Services\**\bin\Release\unity\*.dll"/>
+			<PdbFiles Include="..\sdk\src\Services\**\bin\Release\unity\*.pdb"/>
 		</ItemGroup>
 		
 		<Copy
@@ -148,8 +155,9 @@
 		
 		<!-- need to copy credentials as well -->
 		
-		<!-- build the projects -->
-		
+		<!-- build the projects 
+		<MakeDir Directories="$(Deployment)" />
+		<MakeDir Directories="$(Deployment)\unity" /> -->
 		<MakeDir Directories="$(Deployment)\unity\build" />
 		
 		<UnityBuild
