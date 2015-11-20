@@ -13,18 +13,14 @@
 
 ### 3.1.28.0 (2015-11-12 21:05 UTC)
 * CognitoIdentity (3.1.0.4)
-	* Updated to use new Core, version 3.1.3.6
 	* Updated to use new Core, version 3.1.3.6, to pick up the latest ClientContext.
 * CognitoSync (3.1.0.3)
-	* Updated to use new Core, version 3.1.3.6
 	* Updated to use new Core, version 3.1.3.6, to pick up the latest ClientContext.
 * EC2 (3.1.4.2)
 	* Documentation update
 * Lambda (3.1.2.3)
-	* Updated to use new Core, version 3.1.3.6
 	* Updated to use new Core, version 3.1.3.6, to pick up the latest ClientContext.
 * MobileAnalytics (3.1.1.3)
-	* Updated to use new Core, version 3.1.3.6
 	* Updated to use new Core, version 3.1.3.6, to pick up the latest ClientContext.
 * RDS (3.1.4.0)
 	* Added support for modifying DB instance visibility.
