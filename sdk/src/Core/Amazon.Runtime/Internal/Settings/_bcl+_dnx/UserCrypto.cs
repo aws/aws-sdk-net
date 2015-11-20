@@ -24,6 +24,9 @@ using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Text;
 
+using Amazon.Util;
+using Amazon.Runtime.Internal.Util;
+
 namespace Amazon.Runtime.Internal.Settings
 {
     public static class UserCrypto
@@ -194,6 +197,31 @@ namespace Amazon.Runtime.Internal.Settings
             CryptProtectFlags dwFlags,
             ref DATA_BLOB pDataOut
         );
+
+
+        static bool? _isUserCryptAvailable;
+        public static bool IsUserCryptAvailable
+        {
+            get
+            {
+                if(!_isUserCryptAvailable.HasValue)
+                {
+                    try
+                    {
+                        Encrypt("test");
+                        _isUserCryptAvailable = true;
+                    }
+                    catch(Exception e)
+                    {
+                        var logger = Logger.GetLogger(typeof(UserCrypto));
+                        logger.InfoFormat("UserCrypto not support on this platform, you will need to use the shared credentials file: {0}", e.Message);
+                        _isUserCryptAvailable = false;
+                    }
+                }
+                return _isUserCryptAvailable.Value;
+            }
+        }
+
         #endregion
     }
 }

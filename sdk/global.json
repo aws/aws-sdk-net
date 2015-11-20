@@ -1,6 +1,6 @@
 {
   "projects": [ "src/Core", "src/Services", "src", "test/DNXCore" ],
   "sdk": {
-    "version": "1.0.0-beta7"
+    "version": "1.0.0-rc1-final"
   }
 }

@@ -49,6 +49,11 @@ namespace Amazon.Util
     /// </summary>
     public static class ProfileManager
     {
+        public static bool IsAvailable
+        {
+            get { return UserCrypto.IsUserCryptAvailable; }
+        }
+
         /// <summary>
         /// Register a profile that can later be referenced by the profileName.
         /// This profile will only be visible for the current user.

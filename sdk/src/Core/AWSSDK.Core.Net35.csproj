@@ -93,7 +93,7 @@
     <Compile Include="Amazon.Runtime\Internal\Settings\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.Runtime\Internal\Settings\_bcl\*.cs">
+    <Compile Include="Amazon.Runtime\Internal\Settings\_bcl+_dnx\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\Internal\Transform\*.cs">
@@ -157,6 +157,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Util\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Util\_bcl+_dnx\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ThirdParty\*.cs">

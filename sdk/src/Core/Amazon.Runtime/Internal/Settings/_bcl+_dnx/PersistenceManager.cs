@@ -97,7 +97,15 @@ namespace Amazon.Runtime.Internal.Settings
 
         public static string GetSettingsStoreFolder()
         {
+#if BCL
             string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData) + "/AWSToolkit";
+#else
+            string folder = System.Environment.GetEnvironmentVariable("HOME");
+            if (string.IsNullOrEmpty(folder))
+                folder = System.Environment.GetEnvironmentVariable("USERPROFILE");
+
+            folder = Path.Combine(folder, "AppData/Local/AWSToolkit");
+#endif
             if (!Directory.Exists(folder))
                 Directory.CreateDirectory(folder);
             return folder;
@@ -133,10 +141,10 @@ namespace Amazon.Runtime.Internal.Settings
             return this._encryptedKeys.Contains(key);
         }
 
-        #endregion
+#endregion
 
 
-        #region Private methods
+#region Private methods
 
         void saveSettingsType(string type, SettingsCollection settings)
         {
@@ -161,7 +169,8 @@ namespace Amazon.Runtime.Internal.Settings
                 {
                     try
                     {
-                        using (var writer = new StreamWriter(filePath))
+                        using (var stream = File.OpenWrite(filePath))
+                        using (var writer = new StreamWriter(stream))
                         {
                             settings.Persist(writer);
                             break;
@@ -201,7 +210,8 @@ namespace Amazon.Runtime.Internal.Settings
                 try
                 {
                     string content;
-                    using (var reader = new StreamReader(filePath))
+                    using (var stream = File.OpenRead(filePath))
+                    using (var reader = new StreamReader(stream))
                     {
                         content = reader.ReadToEnd();
                     }
@@ -262,21 +272,23 @@ namespace Amazon.Runtime.Internal.Settings
             return string.Format(CultureInfo.InvariantCulture, @"{0}\{1}.json", GetSettingsStoreFolder(), type);
         }
 
-        #endregion
+#endregion
     }
+
 
     public class SettingsWatcher : IDisposable
     {
-        #region Private members
-
+#region Private members
+#if BCL
         private static ICollection<FileSystemWatcher> watchers = new List<FileSystemWatcher>();
         private FileSystemWatcher watcher;
+#endif
         private string type;
 
-        #endregion
+#endregion
 
 
-        #region Constructors
+#region Constructors
 
         private SettingsWatcher()
         {
@@ -287,6 +299,9 @@ namespace Amazon.Runtime.Internal.Settings
         {
             string dirPath = Path.GetDirectoryName(filePath);
             string fileName = Path.GetFileName(filePath);
+            this.type = type;
+
+#if BCL
             this.watcher = new FileSystemWatcher(dirPath, fileName)
             {
                 EnableRaisingEvents = true
@@ -294,15 +309,15 @@ namespace Amazon.Runtime.Internal.Settings
             this.watcher.Changed += new FileSystemEventHandler(SettingsFileChanged);
             this.watcher.Created += new FileSystemEventHandler(SettingsFileChanged);
 
-            this.type = type;
 
             watchers.Add(watcher);
+#endif
         }
 
-        #endregion
+#endregion
 
 
-        #region Public methods
+#region Public methods
 
         public SettingsCollection GetSettings()
         {
@@ -311,21 +326,27 @@ namespace Amazon.Runtime.Internal.Settings
 
         public bool Enable
         {
+#if BCL
             get { return this.watcher.EnableRaisingEvents; }
             set { this.watcher.EnableRaisingEvents = value; }
+#else
+            get; set;
+#endif
         }
 
-        #endregion
 
 
-        #region Events
+#endregion
+
+
+#region Events
 
         public event EventHandler SettingsChanged;
 
-        #endregion
+#endregion
 
 
-        #region IDisposable Members
+#region IDisposable Members
 
         public void Dispose()
         {
@@ -337,25 +358,29 @@ namespace Amazon.Runtime.Internal.Settings
         {
             if (disposing)
             {
+#if BCL
                 if (watcher != null)
                 {
                     watchers.Remove(watcher);
                     watcher = null;
                 }
+#endif
             }
         }
 
 
-        #endregion
+#endregion
 
 
-        #region Private methods
+#region Private methods
 
+#if BCL
         private void SettingsFileChanged(object sender, FileSystemEventArgs e)
         {
             if (SettingsChanged != null)
                 SettingsChanged(this, null);
         }
-        #endregion
+#endif
+#endregion
     }
 }

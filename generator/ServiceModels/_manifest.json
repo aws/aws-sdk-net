@@ -7,7 +7,7 @@
             "defineConstants": ";BCL;BCL35;AWS_APM_API;CODE_ANALYSIS;LOCAL_FILE",
             "binSubFolder": "net35",
             "template": "BclProjectFile",
-            "platformCodeFolders": [ "_bcl", "_bcl35", "_bcl+sl" ],
+            "platformCodeFolders": [ "_bcl", "_bcl35", "_bcl+sl", "_bcl+_dnx" ],
             "nugetTargetPlatform": "net35"
         },
         {
@@ -17,7 +17,7 @@
             "defineConstants": ";BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE",
             "binSubFolder": "net45",
             "template": "BclProjectFile",
-            "platformCodeFolders": [ "_bcl", "_bcl45", "_async", "_bcl+sl" ],
+            "platformCodeFolders": [ "_bcl", "_bcl45", "_async", "_bcl+sl", "_bcl+_dnx" ],
             "nugetTargetPlatform": "net45"
         },
         {

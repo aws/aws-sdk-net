@@ -304,8 +304,8 @@ namespace Amazon.Runtime
 
             // If not overriding the credentials lookup location check the SDK Store for credentials. If an override is being used then
             // assume the intent is to use the credentials file.
-#if BCL
-            if (string.IsNullOrEmpty(profilesLocation))
+#if BCL || DNX
+            if (string.IsNullOrEmpty(profilesLocation) && ProfileManager.IsAvailable)
             {
                 AWSCredentials credentials;
                 if (Amazon.Util.ProfileManager.TryGetAWSCredentials(lookupName, out credentials))
