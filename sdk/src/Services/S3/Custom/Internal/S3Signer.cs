@@ -198,7 +198,7 @@ namespace Amazon.S3.Internal
 
             resources.Sort((firstPair, nextPair) =>
             {
-                return firstPair.Key.CompareTo(nextPair.Key);
+                return string.CompareOrdinal(firstPair.Key, nextPair.Key);
             });
 
             foreach (var resourceToSign in resources)

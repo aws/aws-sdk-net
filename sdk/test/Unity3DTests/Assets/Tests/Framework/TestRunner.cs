@@ -131,19 +131,33 @@ namespace AWSSDK.Tests.Framework
             }
         }
 
-        private class SingleClassFilter : ITestFilter
+        private class FixtureAndCaseFilter : ITestFilter
         {
-            private string ClassName;
-            private string TestName;
-            public SingleClassFilter(string className, string testName)
+            private HashSet<String> FixtureNames;
+            private HashSet<String> TestCaseNames;
+
+            public FixtureAndCaseFilter(HashSet<String> fixtureNames, HashSet<String> testCaseNames)
             {
-                ClassName = className;
-                TestName = testName;
+                FixtureNames = fixtureNames;
+                TestCaseNames = testCaseNames;
             }
 
-            public SingleClassFilter(string className)
+            public FixtureAndCaseFilter(HashSet<String> fixtureNames)
             {
-                ClassName = className;
+                FixtureNames = fixtureNames;
+                TestCaseNames = new HashSet<string>();
+            }
+
+            public FixtureAndCaseFilter(string fixtureName, string testCaseName)
+            {
+                FixtureNames = new HashSet<string> { fixtureName };
+                TestCaseNames = new HashSet<string> { testCaseName };
+            }
+
+            public FixtureAndCaseFilter(string fixtureName)
+            {
+                FixtureNames = new HashSet<string> { fixtureName };
+                TestCaseNames = new HashSet<string>();
             }
 
             bool ITestFilter.IsExplicitMatch(ITest test)
@@ -153,19 +167,19 @@ namespace AWSSDK.Tests.Framework
 
             bool ITestFilter.Pass(ITest test)
             {
-                if (string.IsNullOrEmpty(ClassName) || test.IsSuite)
+                if (FixtureNames.Count == 0 || test.IsSuite)
                 {
                     return true;
                 }
-                if (test.TypeInfo.Name == ClassName)
+                if (FixtureNames.Contains(test.TypeInfo.Name))
                 {
-                    if (string.IsNullOrEmpty(TestName))
+                    if (TestCaseNames.Count == 0)
                     {
                         return true;
                     }
                     else
                     {
-                        return test.Name == TestName;
+                        return TestCaseNames.Contains(test.Name);
                     }
                 }
                 else
