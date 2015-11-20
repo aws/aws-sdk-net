@@ -167,7 +167,7 @@ namespace AWSSDK.IntegrationTests.SNS
                 Assert.IsNotNull(responseException);
                 var invalidParameterResponse = responseException as InvalidParameterException;
                 Assert.AreEqual("InvalidParameter", invalidParameterResponse.ErrorCode);
-                Assert.IsTrue(invalidParameterResponse.Message.Contains("parse"));
+                Utils.AssertTrue(invalidParameterResponse.Message.Contains("parse"));
             }
             finally
             {

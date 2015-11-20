@@ -76,7 +76,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             });
             ars.WaitOne();
             Assert.IsNull(ex);
-            Assert.IsTrue(doc.Equals(retrievedDoc));
+            Utils.AssertTrue(doc.Equals(retrievedDoc));
 
             // JSON as nested data
             var nestedDoc = Document.FromJson(sampleJson);
@@ -103,7 +103,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             });
             ars.WaitOne();
             Assert.IsNull(ex);
-            Assert.IsTrue(doc.ForceConversion(DynamoDBEntryConversion.V2).Equals(retrievedDoc));
+            Utils.AssertTrue(doc.ForceConversion(DynamoDBEntryConversion.V2).Equals(retrievedDoc));
         }
 
         private static void TestJsonConversions()
@@ -112,11 +112,11 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             var doc = Document.FromJson(sampleJson);
 
             // Verify types
-            Assert.IsTrue(doc["Name"] is Primitive);
-            Assert.IsTrue(doc["CompanyInfo"] is Document);
-            Assert.IsTrue(doc["Aliases"] is DynamoDBList);
-            Assert.IsTrue(doc["IsActive"] is DynamoDBBool);
-            Assert.IsTrue(doc["RetirementInfo"] is DynamoDBNull);
+            Utils.AssertTrue(doc["Name"] is Primitive);
+            Utils.AssertTrue(doc["CompanyInfo"] is Document);
+            Utils.AssertTrue(doc["Aliases"] is DynamoDBList);
+            Utils.AssertTrue(doc["IsActive"] is DynamoDBBool);
+            Utils.AssertTrue(doc["RetirementInfo"] is DynamoDBNull);
 
             // Verify conversions produce identical JSON
             var json = doc.ToJson();
@@ -186,7 +186,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             for (int i = 0; i < s.Entries.Count; i++)
             {
                 var entry = s.Entries[i];
-                Assert.IsTrue(entry is Primitive);
+                Utils.AssertTrue(entry is Primitive);
                 Assert.AreEqual(DynamoDBEntryType.String, (entry as Primitive).Type);
                 Assert.AreEqual(base64SetContents[i], entry.AsString());
             }
@@ -197,7 +197,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             for (int i = 0; i < l.Entries.Count; i++)
             {
                 var entry = l.Entries[i];
-                Assert.IsTrue(entry is Primitive);
+                Utils.AssertTrue(entry is Primitive);
                 Assert.AreEqual(DynamoDBEntryType.String, (entry as Primitive).Type);
                 Assert.AreEqual(base64SetContents[i], entry.AsString());
             }
@@ -225,7 +225,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             for (int i = 0; i < dl.Entries.Count; i++)
             {
                 var entry = dl.Entries[i];
-                Assert.IsTrue(entry is Primitive);
+                Utils.AssertTrue(entry is Primitive);
                 Assert.AreEqual(DynamoDBEntryType.Binary, (entry as Primitive).Type);
                 CollectionAssert.AreEqual(entry.AsByteArray(), binarySetContents[i]);
             }
@@ -236,7 +236,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             for (int i = 0; i < dl.Entries.Count; i++)
             {
                 var entry = dl.Entries[i];
-                Assert.IsTrue(entry is Primitive);
+                Utils.AssertTrue(entry is Primitive);
                 Assert.AreEqual(DynamoDBEntryType.Binary, (entry as Primitive).Type);
                 CollectionAssert.AreEqual(entry.AsByteArray(), binarySetContents[i]);
             }
@@ -248,7 +248,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             for (int i = 0; i < ds.Entries.Count; i++)
             {
                 var entry = ds.Entries[i];
-                Assert.IsTrue(entry is Primitive);
+                Utils.AssertTrue(entry is Primitive);
                 Assert.AreEqual(DynamoDBEntryType.Binary, (entry as Primitive).Type);
                 CollectionAssert.AreEqual(entry.AsByteArray(), binarySetContents[i]);
             }

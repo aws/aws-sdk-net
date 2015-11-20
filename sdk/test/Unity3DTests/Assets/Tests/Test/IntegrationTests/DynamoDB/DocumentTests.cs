@@ -94,13 +94,13 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             Assert.IsNull(ex);
 
             DynamoDBEntry mapEntry;
-            Assert.IsTrue(retrieved.TryGetValue("EmptyMap", out mapEntry));
+            Utils.AssertTrue(retrieved.TryGetValue("EmptyMap", out mapEntry));
             Assert.IsNotNull(mapEntry);
             Assert.IsNotNull(mapEntry.AsDocument());
             Assert.AreEqual(0, mapEntry.AsDocument().Count);
 
             DynamoDBEntry listEntry;
-            Assert.IsTrue(retrieved.TryGetValue("EmptyList", out listEntry));
+            Utils.AssertTrue(retrieved.TryGetValue("EmptyList", out listEntry));
             Assert.IsNotNull(listEntry);
             Assert.IsNotNull(listEntry.AsDynamoDBList());
             Assert.AreEqual(0, listEntry.AsDynamoDBList().Entries.Count);
@@ -156,9 +156,9 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             ars.WaitOne();
             Assert.IsNull(ex);
 
-            Assert.IsFalse(AreValuesEqual(doc, retrieved));
+            Utils.AssertFalse(AreValuesEqual(doc, retrieved));
             var convertedDoc = doc.ForceConversion(conversion);
-            Assert.IsTrue(AreValuesEqual(convertedDoc, retrieved));
+            Utils.AssertTrue(AreValuesEqual(convertedDoc, retrieved));
 
             // Get the item by document
             ex = new Exception();
@@ -172,16 +172,16 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             Assert.IsNull(ex);
 
             // Verify retrieved document
-            Assert.IsTrue(AreValuesEqual(convertedDoc, retrieved, conversion));
+            Utils.AssertTrue(AreValuesEqual(convertedDoc, retrieved, conversion));
             var tagsRetrieved = retrieved["Tags"];
-            Assert.IsTrue(tagsRetrieved is PrimitiveList);
+            Utils.AssertTrue(tagsRetrieved is PrimitiveList);
             Assert.AreEqual(2, tagsRetrieved.AsPrimitiveList().Entries.Count);
             // Test bool storage for different conversions
             var isPublicRetrieved = retrieved["IsPublic"];
             if (conversion == DynamoDBEntryConversion.V1)
                 Assert.AreEqual("1", isPublicRetrieved.AsPrimitive().Value as string);
             else
-                Assert.IsTrue(isPublicRetrieved is DynamoDBBool);
+                Utils.AssertTrue(isPublicRetrieved is DynamoDBBool);
             // Test HashSet<string> storage for different conversions
             var aliasesRetrieved = retrieved["Aliases"];
             if (conversion == DynamoDBEntryConversion.V1)
@@ -224,9 +224,9 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             ars.WaitOne();
             Assert.IsNull(ex);
 
-            Assert.IsFalse(AreValuesEqual(doc, retrieved, conversion));
+            Utils.AssertFalse(AreValuesEqual(doc, retrieved, conversion));
             doc.Remove("Garbage");
-            Assert.IsTrue(AreValuesEqual(doc, retrieved, conversion));
+            Utils.AssertTrue(AreValuesEqual(doc, retrieved, conversion));
             developers = retrieved["Developers"].AsListOfDocument();
             Assert.AreEqual(1, developers.Count);
 
@@ -531,16 +531,16 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             ars.WaitOne();
             Assert.IsNull(ex);
             // Verify retrieved document
-            Assert.IsTrue(AreValuesEqual(doc1, retrieved, conversion));
+            Utils.AssertTrue(AreValuesEqual(doc1, retrieved, conversion));
             var tagsRetrieved = retrieved["Aliases"];
-            Assert.IsTrue(tagsRetrieved is PrimitiveList);
+            Utils.AssertTrue(tagsRetrieved is PrimitiveList);
             Assert.AreEqual(2, tagsRetrieved.AsPrimitiveList().Entries.Count);
             // Test bool storage for different conversions
             var isTesterRetrieved = retrieved["IsTester"];
             if (conversion == DynamoDBEntryConversion.V1)
                 Assert.AreEqual("1", isTesterRetrieved.AsPrimitive().Value as string);
             else
-                Assert.IsTrue(isTesterRetrieved is DynamoDBBool);
+                Utils.AssertTrue(isTesterRetrieved is DynamoDBBool);
             // Test HashSet<string> storage for different conversions
             var pastManagersRetrieved = retrieved["PastManagers"];
             if (conversion == DynamoDBEntryConversion.V1)
@@ -559,7 +559,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             ars.WaitOne();
             Assert.IsNull(ex);
 
-            Assert.IsTrue(AreValuesEqual(doc2, retrieved, conversion));
+            Utils.AssertTrue(AreValuesEqual(doc2, retrieved, conversion));
             ex = new Exception();
             hashRangeTable.GetItemAsync(oldDoc3, new GetItemOperationConfig { ConsistentRead = true }, (result) =>
             {
@@ -569,7 +569,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             }, options);
             ars.WaitOne();
             Assert.IsNull(ex);
-            Assert.IsTrue(AreValuesEqual(oldDoc3, retrieved, conversion));
+            Utils.AssertTrue(AreValuesEqual(oldDoc3, retrieved, conversion));
             ex = new Exception();
             hashRangeTable.GetItemAsync("Diane", 24, new GetItemOperationConfig { ConsistentRead = true }, (result) =>
             {
@@ -579,7 +579,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             }, options);
             ars.WaitOne();
             Assert.IsNull(ex);
-            Assert.IsTrue(AreValuesEqual(doc3, retrieved, conversion));
+            Utils.AssertTrue(AreValuesEqual(doc3, retrieved, conversion));
 
             // Scan the hash-and-range-key table
             ex = new Exception();
@@ -943,7 +943,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             DeleteItemOperationConfig config = new DeleteItemOperationConfig();
             config.ConditionalExpression = expression;
 
-            //Assert.IsFalse(hashTable.TryDeleteItem(doc1, config));
+            //Utils.AssertFalse(hashTable.TryDeleteItem(doc1, config));
             hashTable.DeleteItemAsync(doc1, config, (result) =>
             {
                 ex = result.Exception;
@@ -953,7 +953,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             Assert.IsNotNull(ex);
 
             expression.ExpressionAttributeValues[":price"] = 4;
-            //Assert.IsTrue(hashTable.TryDeleteItem(doc1, config));
+            //Utils.AssertTrue(hashTable.TryDeleteItem(doc1, config));
             hashTable.DeleteItemAsync(doc1, config, (result) =>
             {
                 ex = result.Exception;
@@ -1172,7 +1172,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             };
 
             doc["update-test"] = 1;
-            //Assert.IsTrue(hashTable.TryPutItem(doc, config));
+            //Utils.AssertTrue(hashTable.TryPutItem(doc, config));
             ex = new Exception();
             hashTable.PutItemAsync(doc, config, (result) =>
             {
@@ -1212,7 +1212,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             }, options);
             ars.WaitOne();
             Assert.IsNull(ex);
-            Assert.IsFalse(doc.Contains("update-test"));
+            Utils.AssertFalse(doc.Contains("update-test"));
 
             doc["referencecounter"] = 1;
             ex = new Exception();
@@ -1225,7 +1225,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             Assert.IsNull(ex);
 
             doc["update-test"] = 3;
-            //Assert.IsFalse(hashTable.TryPutItem(doc, config));
+            //Utils.AssertFalse(hashTable.TryPutItem(doc, config));
             ex = null;
             hashTable.PutItemAsync(doc, config, (result) =>
             {
@@ -1276,7 +1276,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             };
 
             doc["update-test"] = 1;
-            //Assert.IsTrue(hashTable.TryUpdateItem(doc, config));
+            //Utils.AssertTrue(hashTable.TryUpdateItem(doc, config));
             hashTable.UpdateItemAsync(doc, config, (result) =>
             {
                 ex = result.Exception;
@@ -1296,7 +1296,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             Assert.IsNull(ex);
 
             doc["update-test"] = null;
-            //Assert.IsTrue(hashTable.TryUpdateItem(doc, config));
+            //Utils.AssertTrue(hashTable.TryUpdateItem(doc, config));
             ex = new Exception();
             hashTable.UpdateItemAsync(doc, config, (result) =>
             {
@@ -1315,7 +1315,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
              }, options);
             ars.WaitOne();
             Assert.IsNull(ex);
-            Assert.IsFalse(doc.Contains("update-test"));
+            Utils.AssertFalse(doc.Contains("update-test"));
 
             doc["referencecounter"] = 1;
             ex = new Exception();
@@ -1328,7 +1328,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             Assert.IsNull(ex);
 
             doc["update-test"] = 3;
-            //Assert.IsFalse(hashTable.TryUpdateItem(doc, config));
+            //Utils.AssertFalse(hashTable.TryUpdateItem(doc, config));
             ex = null;
             hashTable.UpdateItemAsync(doc, config, (result) =>
             {
@@ -1348,7 +1348,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             ars.WaitOne();
             Assert.IsNull(ex);
 
-            Assert.IsFalse(doc.Contains("update-test"));
+            Utils.AssertFalse(doc.Contains("update-test"));
 
             ex = new Exception();
             hashTable.DeleteItemAsync(doc, (result) =>

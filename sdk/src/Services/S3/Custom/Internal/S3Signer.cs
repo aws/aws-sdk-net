@@ -180,19 +180,22 @@ namespace Amazon.S3.Internal
 
             if (request.Parameters.Count > 0)
             {
-                var parameters
-                    = request.Parameters.Where(kvp => SignableParameters.Contains(kvp.Key)
-                                                        && kvp.Value != null)
-                                        .ToList();
-                foreach (var kvp in parameters)
+                foreach (var parameter in request.Parameters)
                 {
-                    resourcesToSign.Add(kvp.Key, kvp.Value);
+                    if (parameter.Value != null && SignableParameters.Contains(parameter.Key))
+                    {
+                        resourcesToSign.Add(parameter.Key, parameter.Value);
+                    }
                 }
             }
 
             var delim = "?";
-            var resources = resourcesToSign.ToList();
-            
+            List<KeyValuePair<string, string>> resources = new List<KeyValuePair<string, string>>();
+            foreach (var kvp in resourcesToSign)
+            {
+                resources.Add(kvp);
+            }
+
             resources.Sort((firstPair, nextPair) =>
             {
                 return firstPair.Key.CompareTo(nextPair.Key);

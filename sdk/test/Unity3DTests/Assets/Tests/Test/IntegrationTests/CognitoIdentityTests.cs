@@ -44,7 +44,7 @@ namespace AWSSDK.IntegrationTests.CognitoIdentity
             }, new Amazon.Runtime.AsyncOptions() { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
             Assert.IsNotNull(poolId);
-            Assert.IsFalse(string.IsNullOrEmpty(poolId));
+            Utils.AssertFalse(string.IsNullOrEmpty(poolId));
             CollectionAssert.IsNotEmpty(allPoolIds);
             Assert.AreEqual(poolName, responsePoolName);
         }
@@ -65,7 +65,7 @@ namespace AWSSDK.IntegrationTests.CognitoIdentity
 
             mrs.WaitOne();
 
-            Assert.IsFalse(string.IsNullOrEmpty(identityId));
+            Utils.AssertFalse(string.IsNullOrEmpty(identityId));
         }
 
         [Test]
@@ -81,7 +81,7 @@ namespace AWSSDK.IntegrationTests.CognitoIdentity
             }, new Amazon.Runtime.AsyncOptions() { ExecuteCallbackOnMainThread = false });
 
             ars.WaitOne();
-            Assert.IsFalse(string.IsNullOrEmpty(id1));
+            Utils.AssertFalse(string.IsNullOrEmpty(id1));
             var cred2 = new CognitoAWSCredentials(poolId, ActualEndpoint);
             cred2.GetIdentityIdAsync((result) =>
             {
@@ -89,13 +89,13 @@ namespace AWSSDK.IntegrationTests.CognitoIdentity
                 ars.Set();
             }, new Amazon.Runtime.AsyncOptions() { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
-            Assert.IsFalse(string.IsNullOrEmpty(id2));
+            Utils.AssertFalse(string.IsNullOrEmpty(id2));
 
             Assert.AreEqual(id1, id2);
 
             cred1.Clear();
 
-            Assert.IsTrue(string.IsNullOrEmpty(cred1.GetCachedIdentityId()));
+            Utils.AssertStringIsNullOrEmpty(cred1.GetCachedIdentityId());
 
             cred1.GetIdentityIdAsync((result) =>
             {
@@ -117,7 +117,7 @@ namespace AWSSDK.IntegrationTests.CognitoIdentity
         public void MultipleIdentityPoolTests()
         {
             CreatePool();
-            Assert.IsTrue(allPoolIds.Count == 2);
+            Utils.AssertTrue(allPoolIds.Count == 2);
             var pool1 = allPoolIds[0];
             var pool2 = allPoolIds[1];
 
@@ -134,7 +134,7 @@ namespace AWSSDK.IntegrationTests.CognitoIdentity
             }, new Amazon.Runtime.AsyncOptions() { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
 
-            Assert.IsFalse(string.IsNullOrEmpty(id1));
+            Utils.AssertFalse(string.IsNullOrEmpty(id1));
             cred2.GetIdentityIdAsync((result) =>
             {
                 id2 = result.Response;
@@ -142,10 +142,10 @@ namespace AWSSDK.IntegrationTests.CognitoIdentity
             }, new Amazon.Runtime.AsyncOptions() { ExecuteCallbackOnMainThread = false });
 
             ars.WaitOne();
-            Assert.IsFalse(string.IsNullOrEmpty(id2));
+            Utils.AssertFalse(string.IsNullOrEmpty(id2));
             Assert.AreNotEqual(id1, id2);
             cred1.Clear();
-            Assert.IsTrue(string.IsNullOrEmpty(cred1.GetCachedIdentityId()));
+            Utils.AssertStringIsNullOrEmpty(cred1.GetCachedIdentityId());
 
             cred2.Clear();
             cred1.Clear();
@@ -177,7 +177,7 @@ namespace AWSSDK.IntegrationTests.CognitoIdentity
             }, new Amazon.Runtime.AsyncOptions() { ExecuteCallbackOnMainThread = false });
 
             mrs.WaitOne();
-            Assert.IsTrue(statusCode < 300);
+            Utils.AssertTrue(statusCode < 300);
         }
 
 

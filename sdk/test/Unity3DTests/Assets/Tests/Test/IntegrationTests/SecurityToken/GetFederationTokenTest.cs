@@ -46,14 +46,14 @@ namespace AWSSDK.IntegrationTests.SecurityToken
             var expiresBefore = approximateExpires.AddMinutes(5);
             var expires = gftResult.Credentials.Expiration;
 
-            Assert.IsTrue(expires > expiresAfter);
-            Assert.IsTrue(expires < expiresBefore);
+            Utils.AssertTrue(expires > expiresAfter);
+            Utils.AssertTrue(expires < expiresBefore);
 
             Assert.IsNotNull(gftResult.FederatedUser.FederatedUserId);
             Assert.IsNotNull(gftResult.FederatedUser.Arn);
 
-            Assert.IsTrue(gftResult.FederatedUser.FederatedUserId.EndsWith(gftRequest.Name, StringComparison.OrdinalIgnoreCase));
-            Assert.IsTrue(gftResult.FederatedUser.Arn.EndsWith(gftRequest.Name, StringComparison.OrdinalIgnoreCase));
+            Utils.AssertTrue(gftResult.FederatedUser.FederatedUserId.EndsWith(gftRequest.Name, StringComparison.OrdinalIgnoreCase));
+            Utils.AssertTrue(gftResult.FederatedUser.Arn.EndsWith(gftRequest.Name, StringComparison.OrdinalIgnoreCase));
         }
 
         [Test]
@@ -91,14 +91,14 @@ namespace AWSSDK.IntegrationTests.SecurityToken
             var expiresBefore = approximateExpires.AddMinutes(5);
             var expires = gftResult.Credentials.Expiration;
 
-            Assert.IsTrue(expires > expiresAfter);
-            Assert.IsTrue(expires < expiresBefore);
+            Utils.AssertTrue(expires > expiresAfter);
+            Utils.AssertTrue(expires < expiresBefore);
 
             Assert.IsNotNull(gftResult.FederatedUser.FederatedUserId);
             Assert.IsNotNull(gftResult.FederatedUser.Arn);
 
-            Assert.IsTrue(gftResult.FederatedUser.FederatedUserId.EndsWith(gftRequest.Name, StringComparison.OrdinalIgnoreCase));
-            Assert.IsTrue(gftResult.FederatedUser.Arn.EndsWith(gftRequest.Name, StringComparison.OrdinalIgnoreCase));
+            Utils.AssertTrue(gftResult.FederatedUser.FederatedUserId.EndsWith(gftRequest.Name, StringComparison.OrdinalIgnoreCase));
+            Utils.AssertTrue(gftResult.FederatedUser.Arn.EndsWith(gftRequest.Name, StringComparison.OrdinalIgnoreCase));
         }
     }
 }

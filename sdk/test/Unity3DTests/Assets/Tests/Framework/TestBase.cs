@@ -101,7 +101,7 @@ namespace AWSSDK.Tests.Framework
                 gotException = true;
             }
 
-            Assert.IsTrue(gotException, "Failed to get expected exception: " + exceptionType.FullName);
+            Utils.AssertTrue(gotException, "Failed to get expected exception: " + exceptionType.FullName);
             return (T)exception;
         }
         #region IDispose implementation

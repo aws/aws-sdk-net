@@ -51,10 +51,10 @@ namespace AWSSDK.IntegrationTests.Kinesis
             {
                 Assert.Fail();
             }
-            Assert.IsFalse(streamDescription.HasMoreShards);
-            Assert.IsFalse(string.IsNullOrEmpty(streamDescription.StreamARN));
+            Utils.AssertFalse(streamDescription.HasMoreShards);
+            Utils.AssertFalse(string.IsNullOrEmpty(streamDescription.StreamARN));
             Assert.AreEqual(StreamName, streamDescription.StreamName);
-            Assert.IsTrue(streamDescription.StreamStatus == StreamStatus.CREATING || streamDescription.StreamStatus == StreamStatus.ACTIVE);
+            Utils.AssertTrue(streamDescription.StreamStatus == StreamStatus.CREATING || streamDescription.StreamStatus == StreamStatus.ACTIVE);
         }
 
         [Test]
@@ -144,8 +144,8 @@ namespace AWSSDK.IntegrationTests.Kinesis
         public void ListStreamsTest()
         {
             List<string> streamNames = ListStreamsHelper();
-            Assert.IsTrue(streamNames.Count > 0);
-            Assert.IsTrue(streamNames.Contains(StreamName));
+            Utils.AssertTrue(streamNames.Count > 0);
+            Utils.AssertTrue(streamNames.Contains(StreamName));
         }
 
         [TestFixtureTearDown]

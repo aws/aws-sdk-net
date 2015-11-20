@@ -205,14 +205,14 @@ namespace AWSSDK.Tests.Framework
                     }
                     else
                     {
-                        Assert.True(responseException is InvalidParameterValueException);
+                        Utils.AssertTrue(responseException is InvalidParameterValueException);
                         // Need to wait longer for eventual consistency of role
                         retries--;
                         Thread.Sleep(TimeSpan.FromSeconds(10));
                     }
                 }
                 Assert.IsNotNull(functionArn);
-                Assert.IsTrue(codeSize > 0);
+                Utils.AssertTrue(codeSize > 0);
             }
             return functionArn;
         }
