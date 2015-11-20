@@ -180,7 +180,6 @@ namespace Amazon.S3.Internal
 
             if (request.Parameters.Count > 0)
             {
-                List<KeyValuePair<string, string>> parameters = new List<KeyValuePair<string, string>>();
                 foreach (var parameter in request.Parameters)
                 {
                     if (parameter.Value != null && SignableParameters.Contains(parameter.Key))
