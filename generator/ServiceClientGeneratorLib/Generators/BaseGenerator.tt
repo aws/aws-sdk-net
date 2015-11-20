@@ -568,7 +568,7 @@ foreach (var member in docMembers)
 <#+		
 			}
 #>
-        public <#=operation.Name#>Response <#=operation.Name#>(<#=currentParams#>)
+        internal <#=operation.Name#>Response <#=operation.Name#>(<#=currentParams#>)
 <#+
         }
         else

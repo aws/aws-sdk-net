@@ -331,7 +331,7 @@ namespace Amazon.SecurityToken
         /// describes how big the policy document is, in packed form, as a percentage of what
         /// the API allows.
         /// </exception>
-        public AssumeRoleResponse AssumeRole(AssumeRoleRequest request)
+        internal AssumeRoleResponse AssumeRole(AssumeRoleRequest request)
         {
             var marshaller = new AssumeRoleRequestMarshaller();
             var unmarshaller = AssumeRoleResponseUnmarshaller.Instance;
@@ -453,7 +453,7 @@ namespace Amazon.SecurityToken
         /// describes how big the policy document is, in packed form, as a percentage of what
         /// the API allows.
         /// </exception>
-        public AssumeRoleWithSAMLResponse AssumeRoleWithSAML(AssumeRoleWithSAMLRequest request)
+        internal AssumeRoleWithSAMLResponse AssumeRoleWithSAML(AssumeRoleWithSAMLRequest request)
         {
             var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
             var unmarshaller = AssumeRoleWithSAMLResponseUnmarshaller.Instance;
@@ -606,7 +606,7 @@ namespace Amazon.SecurityToken
         /// describes how big the policy document is, in packed form, as a percentage of what
         /// the API allows.
         /// </exception>
-        public AssumeRoleWithWebIdentityResponse AssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request)
+        internal AssumeRoleWithWebIdentityResponse AssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request)
         {
             var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
             var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.Instance;
@@ -679,7 +679,7 @@ namespace Amazon.SecurityToken
         /// The error returned if the message passed to <code>DecodeAuthorizationMessage</code>
         /// was invalid. This can happen if the token contains invalid characters, such as linebreaks.
         /// </exception>
-        public DecodeAuthorizationMessageResponse DecodeAuthorizationMessage(DecodeAuthorizationMessageRequest request)
+        internal DecodeAuthorizationMessageResponse DecodeAuthorizationMessage(DecodeAuthorizationMessageRequest request)
         {
             var marshaller = new DecodeAuthorizationMessageRequestMarshaller();
             var unmarshaller = DecodeAuthorizationMessageResponseUnmarshaller.Instance;
@@ -806,7 +806,7 @@ namespace Amazon.SecurityToken
         /// describes how big the policy document is, in packed form, as a percentage of what
         /// the API allows.
         /// </exception>
-        public GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
+        internal GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
         {
             var marshaller = new GetFederationTokenRequestMarshaller();
             var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
@@ -934,7 +934,7 @@ namespace Amazon.SecurityToken
         /// </summary>
         /// 
         /// <returns>The response from the GetSessionToken service method, as returned by SecurityTokenService.</returns>
-        public GetSessionTokenResponse GetSessionToken(GetSessionTokenRequest request)
+        internal GetSessionTokenResponse GetSessionToken(GetSessionTokenRequest request)
         {
             var marshaller = new GetSessionTokenRequestMarshaller();
             var unmarshaller = GetSessionTokenResponseUnmarshaller.Instance;

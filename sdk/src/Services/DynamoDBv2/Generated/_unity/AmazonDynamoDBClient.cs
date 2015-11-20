@@ -402,7 +402,7 @@ namespace Amazon.DynamoDBv2
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
-        public BatchGetItemResponse BatchGetItem(BatchGetItemRequest request)
+        internal BatchGetItemResponse BatchGetItem(BatchGetItemRequest request)
         {
             var marshaller = new BatchGetItemRequestMarshaller();
             var unmarshaller = BatchGetItemResponseUnmarshaller.Instance;
@@ -761,7 +761,7 @@ namespace Amazon.DynamoDBv2
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
-        public BatchWriteItemResponse BatchWriteItem(BatchWriteItemRequest request)
+        internal BatchWriteItemResponse BatchWriteItem(BatchWriteItemRequest request)
         {
             var marshaller = new BatchWriteItemRequestMarshaller();
             var unmarshaller = BatchWriteItemResponseUnmarshaller.Instance;
@@ -979,7 +979,7 @@ namespace Amazon.DynamoDBv2
         /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
         /// state.
         /// </exception>
-        public CreateTableResponse CreateTable(CreateTableRequest request)
+        internal CreateTableResponse CreateTable(CreateTableRequest request)
         {
             var marshaller = new CreateTableRequestMarshaller();
             var unmarshaller = CreateTableResponseUnmarshaller.Instance;
@@ -1128,7 +1128,7 @@ namespace Amazon.DynamoDBv2
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
-        public DeleteItemResponse DeleteItem(DeleteItemRequest request)
+        internal DeleteItemResponse DeleteItem(DeleteItemRequest request)
         {
             var marshaller = new DeleteItemRequestMarshaller();
             var unmarshaller = DeleteItemResponseUnmarshaller.Instance;
@@ -1346,7 +1346,7 @@ namespace Amazon.DynamoDBv2
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
-        public DeleteTableResponse DeleteTable(DeleteTableRequest request)
+        internal DeleteTableResponse DeleteTable(DeleteTableRequest request)
         {
             var marshaller = new DeleteTableRequestMarshaller();
             var unmarshaller = DeleteTableResponseUnmarshaller.Instance;
@@ -1476,7 +1476,7 @@ namespace Amazon.DynamoDBv2
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
-        public DescribeTableResponse DescribeTable(DescribeTableRequest request)
+        internal DescribeTableResponse DescribeTable(DescribeTableRequest request)
         {
             var marshaller = new DescribeTableRequestMarshaller();
             var unmarshaller = DescribeTableResponseUnmarshaller.Instance;
@@ -1575,7 +1575,7 @@ namespace Amazon.DynamoDBv2
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
-        public GetItemResponse GetItem(GetItemRequest request)
+        internal GetItemResponse GetItem(GetItemRequest request)
         {
             var marshaller = new GetItemRequestMarshaller();
             var unmarshaller = GetItemResponseUnmarshaller.Instance;
@@ -1725,7 +1725,7 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
-        public ListTablesResponse ListTables(ListTablesRequest request)
+        internal ListTablesResponse ListTables(ListTablesRequest request)
         {
             var marshaller = new ListTablesRequestMarshaller();
             var unmarshaller = ListTablesResponseUnmarshaller.Instance;
@@ -1916,7 +1916,7 @@ namespace Amazon.DynamoDBv2
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
-        public PutItemResponse PutItem(PutItemRequest request)
+        internal PutItemResponse PutItem(PutItemRequest request)
         {
             var marshaller = new PutItemRequestMarshaller();
             var unmarshaller = PutItemResponseUnmarshaller.Instance;
@@ -2157,7 +2157,7 @@ namespace Amazon.DynamoDBv2
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
-        public QueryResponse Query(QueryRequest request)
+        internal QueryResponse Query(QueryRequest request)
         {
             var marshaller = new QueryRequestMarshaller();
             var unmarshaller = QueryResponseUnmarshaller.Instance;
@@ -2236,7 +2236,7 @@ namespace Amazon.DynamoDBv2
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
-        public ScanResponse Scan(ScanRequest request)
+        internal ScanResponse Scan(ScanRequest request)
         {
             var marshaller = new ScanRequestMarshaller();
             var unmarshaller = ScanResponseUnmarshaller.Instance;
@@ -2490,7 +2490,7 @@ namespace Amazon.DynamoDBv2
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
-        public UpdateItemResponse UpdateItem(UpdateItemRequest request)
+        internal UpdateItemResponse UpdateItem(UpdateItemRequest request)
         {
             var marshaller = new UpdateItemRequestMarshaller();
             var unmarshaller = UpdateItemResponseUnmarshaller.Instance;
@@ -2699,7 +2699,7 @@ namespace Amazon.DynamoDBv2
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
         /// </exception>
-        public UpdateTableResponse UpdateTable(UpdateTableRequest request)
+        internal UpdateTableResponse UpdateTable(UpdateTableRequest request)
         {
             var marshaller = new UpdateTableRequestMarshaller();
             var unmarshaller = UpdateTableResponseUnmarshaller.Instance;
