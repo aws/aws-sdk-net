@@ -11,6 +11,7 @@ using Amazon.CognitoIdentity.Model;
 using Amazon.Util.Storage;
 using Amazon.Util.Storage.Internal;
 using Amazon.Util.Internal.PlatformServices;
+using System.Threading;
 
 namespace Amazon.CognitoIdentity
 {
@@ -29,8 +30,23 @@ namespace Amazon.CognitoIdentity
         #region private methods
         private Amazon.SecurityToken.Model.Credentials GetStsCredentials(AssumeRoleWithWebIdentityRequest assumeRequest)
         {
-            var assumeResult = sts.AssumeRoleWithWebIdentity(assumeRequest);
-            var credentials = assumeResult.Credentials;
+            var ars = new AutoResetEvent(false);
+            Amazon.SecurityToken.Model.Credentials credentials = null;
+            Exception exception = null;
+            sts.AssumeRoleWithWebIdentityAsync(assumeRequest, (assumeResult) =>
+            {
+                if (assumeResult.Exception != null)
+                    exception = assumeResult.Exception;
+                else
+                    credentials = assumeResult.Response.Credentials;
+                
+                ars.Set();
+            });
+            ars.WaitOne();
+
+            if (exception != null)
+                throw exception;
+
             return credentials;
         }
 

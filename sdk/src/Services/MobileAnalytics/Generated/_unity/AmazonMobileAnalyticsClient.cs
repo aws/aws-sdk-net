@@ -175,7 +175,7 @@ namespace Amazon.MobileAnalytics
         /// <exception cref="Amazon.MobileAnalytics.Model.BadRequestException">
         /// An exception object returned when a request fails.
         /// </exception>
-        public PutEventsResponse PutEvents(PutEventsRequest request)
+        internal PutEventsResponse PutEvents(PutEventsRequest request)
         {
             var marshaller = new PutEventsRequestMarshaller();
             var unmarshaller = PutEventsResponseUnmarshaller.Instance;

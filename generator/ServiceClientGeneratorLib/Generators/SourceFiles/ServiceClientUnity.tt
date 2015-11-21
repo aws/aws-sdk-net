@@ -228,7 +228,7 @@ namespace <#=this.Config.Namespace#>
 <#		
 			}
 #>
-		public <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
+		internal <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
         {
             var marshaller = new <#=operation.Name#>RequestMarshaller();
             var unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;

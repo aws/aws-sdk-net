@@ -234,7 +234,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-        public CreateIdentityPoolResponse CreateIdentityPool(CreateIdentityPoolRequest request)
+        internal CreateIdentityPoolResponse CreateIdentityPool(CreateIdentityPoolRequest request)
         {
             var marshaller = new CreateIdentityPoolRequestMarshaller();
             var unmarshaller = CreateIdentityPoolResponseUnmarshaller.Instance;
@@ -289,7 +289,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-        public DeleteIdentitiesResponse DeleteIdentities(DeleteIdentitiesRequest request)
+        internal DeleteIdentitiesResponse DeleteIdentities(DeleteIdentitiesRequest request)
         {
             var marshaller = new DeleteIdentitiesRequestMarshaller();
             var unmarshaller = DeleteIdentitiesResponseUnmarshaller.Instance;
@@ -350,7 +350,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-        public DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request)
+        internal DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request)
         {
             var marshaller = new DeleteIdentityPoolRequestMarshaller();
             var unmarshaller = DeleteIdentityPoolResponseUnmarshaller.Instance;
@@ -451,7 +451,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-        public DescribeIdentityResponse DescribeIdentity(DescribeIdentityRequest request)
+        internal DescribeIdentityResponse DescribeIdentity(DescribeIdentityRequest request)
         {
             var marshaller = new DescribeIdentityRequestMarshaller();
             var unmarshaller = DescribeIdentityResponseUnmarshaller.Instance;
@@ -552,7 +552,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-        public DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request)
+        internal DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request)
         {
             var marshaller = new DescribeIdentityPoolRequestMarshaller();
             var unmarshaller = DescribeIdentityPoolResponseUnmarshaller.Instance;
@@ -665,7 +665,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-        public GetCredentialsForIdentityResponse GetCredentialsForIdentity(GetCredentialsForIdentityRequest request)
+        internal GetCredentialsForIdentityResponse GetCredentialsForIdentity(GetCredentialsForIdentityRequest request)
         {
             var marshaller = new GetCredentialsForIdentityRequestMarshaller();
             var unmarshaller = GetCredentialsForIdentityResponseUnmarshaller.Instance;
@@ -841,7 +841,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-        public GetIdResponse GetId(GetIdRequest request)
+        internal GetIdResponse GetId(GetIdRequest request)
         {
             var marshaller = new GetIdRequestMarshaller();
             var unmarshaller = GetIdResponseUnmarshaller.Instance;
@@ -904,7 +904,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-        public GetIdentityPoolRolesResponse GetIdentityPoolRoles(GetIdentityPoolRolesRequest request)
+        internal GetIdentityPoolRolesResponse GetIdentityPoolRoles(GetIdentityPoolRolesRequest request)
         {
             var marshaller = new GetIdentityPoolRolesRequestMarshaller();
             var unmarshaller = GetIdentityPoolRolesResponseUnmarshaller.Instance;
@@ -1018,7 +1018,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-        public GetOpenIdTokenResponse GetOpenIdToken(GetOpenIdTokenRequest request)
+        internal GetOpenIdTokenResponse GetOpenIdToken(GetOpenIdTokenRequest request)
         {
             var marshaller = new GetOpenIdTokenRequestMarshaller();
             var unmarshaller = GetOpenIdTokenResponseUnmarshaller.Instance;
@@ -1149,7 +1149,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-        public GetOpenIdTokenForDeveloperIdentityResponse GetOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest request)
+        internal GetOpenIdTokenForDeveloperIdentityResponse GetOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest request)
         {
             var marshaller = new GetOpenIdTokenForDeveloperIdentityRequestMarshaller();
             var unmarshaller = GetOpenIdTokenForDeveloperIdentityResponseUnmarshaller.Instance;
@@ -1209,7 +1209,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-        public ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
+        internal ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
         {
             var marshaller = new ListIdentitiesRequestMarshaller();
             var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
@@ -1266,7 +1266,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-        public ListIdentityPoolsResponse ListIdentityPools(ListIdentityPoolsRequest request)
+        internal ListIdentityPoolsResponse ListIdentityPools(ListIdentityPoolsRequest request)
         {
             var marshaller = new ListIdentityPoolsRequestMarshaller();
             var unmarshaller = ListIdentityPoolsResponseUnmarshaller.Instance;
@@ -1337,7 +1337,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-        public LookupDeveloperIdentityResponse LookupDeveloperIdentity(LookupDeveloperIdentityRequest request)
+        internal LookupDeveloperIdentityResponse LookupDeveloperIdentity(LookupDeveloperIdentityRequest request)
         {
             var marshaller = new LookupDeveloperIdentityRequestMarshaller();
             var unmarshaller = LookupDeveloperIdentityResponseUnmarshaller.Instance;
@@ -1406,7 +1406,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-        public MergeDeveloperIdentitiesResponse MergeDeveloperIdentities(MergeDeveloperIdentitiesRequest request)
+        internal MergeDeveloperIdentitiesResponse MergeDeveloperIdentities(MergeDeveloperIdentitiesRequest request)
         {
             var marshaller = new MergeDeveloperIdentitiesRequestMarshaller();
             var unmarshaller = MergeDeveloperIdentitiesResponseUnmarshaller.Instance;
@@ -1473,7 +1473,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-        public SetIdentityPoolRolesResponse SetIdentityPoolRoles(SetIdentityPoolRolesRequest request)
+        internal SetIdentityPoolRolesResponse SetIdentityPoolRoles(SetIdentityPoolRolesRequest request)
         {
             var marshaller = new SetIdentityPoolRolesRequestMarshaller();
             var unmarshaller = SetIdentityPoolRolesResponseUnmarshaller.Instance;
@@ -1587,7 +1587,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-        public UnlinkDeveloperIdentityResponse UnlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request)
+        internal UnlinkDeveloperIdentityResponse UnlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request)
         {
             var marshaller = new UnlinkDeveloperIdentityRequestMarshaller();
             var unmarshaller = UnlinkDeveloperIdentityResponseUnmarshaller.Instance;
@@ -1655,7 +1655,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-        public UnlinkIdentityResponse UnlinkIdentity(UnlinkIdentityRequest request)
+        internal UnlinkIdentityResponse UnlinkIdentity(UnlinkIdentityRequest request)
         {
             var marshaller = new UnlinkIdentityRequestMarshaller();
             var unmarshaller = UnlinkIdentityResponseUnmarshaller.Instance;
@@ -1721,7 +1721,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
-        public UpdateIdentityPoolResponse UpdateIdentityPool(UpdateIdentityPoolRequest request)
+        internal UpdateIdentityPoolResponse UpdateIdentityPool(UpdateIdentityPoolRequest request)
         {
             var marshaller = new UpdateIdentityPoolRequestMarshaller();
             var unmarshaller = UpdateIdentityPoolResponseUnmarshaller.Instance;

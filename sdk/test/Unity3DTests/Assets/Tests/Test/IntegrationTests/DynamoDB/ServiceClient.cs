@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace AWSSDK.IntegrationTests.DynamoDB
 {
@@ -30,10 +31,11 @@ namespace AWSSDK.IntegrationTests.DynamoDB
         {
             var tables = GetTableNames();
             int tableCount = tables.Count;
-
+            var ars = new AutoResetEvent(false);
+            var exception = new Exception();
             // Create hash-key table
             var table1Name = TableNamePrefix + "Table1";
-            Client.CreateTable(
+            Client.CreateTableAsync(
                 new CreateTableRequest()
                 {
                     TableName = table1Name,
@@ -46,12 +48,20 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                         new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N }
                     },
                     ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity }
-                });
+                }, (result) =>
+                {
+                    exception = result.Exception;
+                    ars.Set();
+                }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
+
             CreatedTables.Add(table1Name);
 
             // Create hash-and-range-key table
             var table2Name = TableNamePrefix + "Table2";
-            Client.CreateTable(new CreateTableRequest()
+            Client.CreateTableAsync(new CreateTableRequest()
             {
 
 
@@ -67,14 +77,20 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                         new AttributeDefinition { AttributeName = "Name", AttributeType = ScalarAttributeType.S }
                     },
                 ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity }
-            });
+            }, (result) =>
+            {
+                exception = result.Exception;
+                ars.Set();
+            }, options);
 
+            ars.WaitOne();
+            Assert.IsNull(exception);
 
             CreatedTables.Add(table2Name);
 
             // Create hash-key table with global index
             var table3Name = TableNamePrefix + "Table3";
-            Client.CreateTable(new CreateTableRequest
+            Client.CreateTableAsync(new CreateTableRequest
            {
                TableName = table3Name,
                AttributeDefinitions = new List<AttributeDefinition>
@@ -102,7 +118,15 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                         }
                     },
                ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
-           });
+           }, (result) =>
+           {
+               exception = result.Exception;
+               ars.Set();
+           }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
+
             CreatedTables.Add(table3Name);
 
             // Wait for tables to be ready before creating another table with an index
@@ -110,7 +134,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
 
             // Create hash-and-range-key table with local and global indexes
             var table4Name = TableNamePrefix + "Table4";
-            Client.CreateTable(new CreateTableRequest
+            Client.CreateTableAsync(new CreateTableRequest
            {
                TableName = table4Name,
                AttributeDefinitions = new List<AttributeDefinition>
@@ -158,7 +182,15 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                         }
                     },
                ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
-           });
+           }, (result) =>
+           {
+               exception = result.Exception;
+               ars.Set();
+           }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
+
             CreatedTables.Add(table4Name);
 
             tables = GetTableNames();
@@ -168,7 +200,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             WaitForTableStatus(Client, CreatedTables, TableStatus.ACTIVE);
 
             // Update throughput for a table
-            Client.UpdateTable(new UpdateTableRequest()
+            Client.UpdateTableAsync(new UpdateTableRequest()
             {
                 TableName = table2Name,
                 ProvisionedThroughput = new ProvisionedThroughput
@@ -176,16 +208,53 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                     ReadCapacityUnits = DefaultReadCapacity * 2,
                     WriteCapacityUnits = DefaultWriteCapacity * 2
                 }
-            });
+            }, (result) =>
+            {
+                exception = result.Exception;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
 
             // Wait for tables to be ready
             WaitForTableStatus(Client, CreatedTables, TableStatus.ACTIVE);
 
             // Delete new tables
-            Client.DeleteTable(new DeleteTableRequest() { TableName = table1Name });
-            Client.DeleteTable(new DeleteTableRequest() { TableName = table2Name });
-            Client.DeleteTable(new DeleteTableRequest() { TableName = table3Name });
-            Client.DeleteTable(new DeleteTableRequest() { TableName = table4Name });
+            Client.DeleteTableAsync(new DeleteTableRequest() { TableName = table1Name }, (result) =>
+            {
+                exception = result.Exception;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Client.DeleteTableAsync(new DeleteTableRequest() { TableName = table2Name }, (result) =>
+            {
+                exception = result.Exception;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
+
+            Client.DeleteTableAsync(new DeleteTableRequest() { TableName = table3Name }, (result) =>
+            {
+                exception = result.Exception;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
+
+            Client.DeleteTableAsync(new DeleteTableRequest() { TableName = table4Name }, (result) =>
+            {
+                exception = result.Exception;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
 
             // Wait for tables to be deleted
             WaitForTableStatus(Client, new string[] { table1Name, table2Name, table3Name, table4Name }, null);
@@ -221,6 +290,9 @@ namespace AWSSDK.IntegrationTests.DynamoDB
         private void TestHashTable(string hashTableName)
         {
             // Put item
+            var ars = new AutoResetEvent(false);
+            var exception = new Exception();
+
             var nonEmptyListAV = new AttributeValue();
             nonEmptyListAV.L = new List<AttributeValue>
             {
@@ -246,7 +318,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             boolAV.BOOL = false;
             Utils.AssertTrue(boolAV.IsBOOLSet);
 
-            Client.PutItem(
+            Client.PutItemAsync(
                 new PutItemRequest()
                 {
                     TableName = hashTableName,
@@ -264,14 +336,33 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                 { "EmptyMap", new AttributeValue { IsMSet = true } },
                 { "BoolFalse", boolAV }
             }
-                });
+                }, (result) =>
+                {
+                    exception = result.Exception;
+                    ars.Set();
+                }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
 
             // Get item
             var key1 = new Dictionary<string, AttributeValue>
             {
                 { "Id", new AttributeValue { N = "1" } }
             };
-            var item = (Client.GetItem(new GetItemRequest() { TableName = hashTableName, Key = key1 })).Item;
+
+            Dictionary<string, AttributeValue> item = null;
+
+            Client.GetItemAsync(new GetItemRequest() { TableName = hashTableName, Key = key1 }, (result) =>
+            {
+                exception = result.Exception;
+                item = result.Response.Item;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(item);
 
             // Verify empty collections and value type
             Utils.AssertTrue(item["EmptyList"].IsLSet);
@@ -288,21 +379,43 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             {
                 { "Id", new AttributeValue { N = "999" } }
             };
-            var getItemResult = Client.GetItem(new GetItemRequest() { TableName = hashTableName, Key = key2 });
+            GetItemResponse getItemResult = null;
+
+            Client.GetItemAsync(new GetItemRequest() { TableName = hashTableName, Key = key2 }, (result) =>
+            {
+                exception = result.Exception;
+                getItemResult = result.Response;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(getItemResult);
+
             Utils.AssertFalse(getItemResult.IsItemSet);
 
             // Get empty item
-            getItemResult = Client.GetItem(new GetItemRequest
-            {
-                TableName = hashTableName,
-                Key = key1,
-                ProjectionExpression = "Coffee"
-            });
+            Client.GetItemAsync(new GetItemRequest
+           {
+               TableName = hashTableName,
+               Key = key1,
+               ProjectionExpression = "Coffee"
+           }, (result) =>
+           {
+               exception = result.Exception;
+               getItemResult = result.Response;
+               ars.Set();
+           }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(getItemResult);
+
             Utils.AssertTrue(getItemResult.IsItemSet);
             Assert.AreEqual(0, getItemResult.Item.Count);
 
             // Update item
-            Client.UpdateItem(new UpdateItemRequest()
+            Client.UpdateItemAsync(new UpdateItemRequest()
             {
                 TableName = hashTableName,
                 Key = key1,
@@ -312,10 +425,26 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                 { "Seller", new AttributeValueUpdate { Action = AttributeAction.DELETE } },
                 { "Tags", new AttributeValueUpdate { Action = AttributeAction.ADD, Value = new AttributeValue { SS = new List<string> { "2.0" } } } }
             }
-            });
+            }, (result) =>
+            {
+                exception = result.Exception;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
 
             // Get updated item
-            item = (Client.GetItem(new GetItemRequest() { TableName = hashTableName, Key = key1 })).Item;
+            Client.GetItemAsync(new GetItemRequest() { TableName = hashTableName, Key = key1 }, (result) =>
+            {
+                exception = result.Exception;
+                item = result.Response.Item;
+                ars.Set();
+            }, options);
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(item);
+
             Utils.AssertTrue(item["Product"].S.IndexOf("2.0") >= 0);
             Assert.AreEqual(3, item["Tags"].SS.Count);
             Utils.AssertFalse(item.ContainsKey("Seller"));
@@ -343,7 +472,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             {
                 { "Id", new AttributeValue { N = "2" } }
             };
-            Client.UpdateItem(new UpdateItemRequest()
+            Client.UpdateItemAsync(new UpdateItemRequest()
             {
                 TableName = hashTableName,
                 Key = key2,
@@ -354,10 +483,27 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                     { "Tags", new AttributeValueUpdate { Action = AttributeAction.PUT, Value = new AttributeValue { SS = new List<string> { "Test" } } } },
                     { "Price", new AttributeValueUpdate { Action = AttributeAction.PUT, Value = new AttributeValue { N = "42" } } }
                 }
-            });
+            }, (result) =>
+            {
+                exception = result.Exception;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
 
             // Get updated item
-            item = (Client.GetItem(new GetItemRequest() { TableName = hashTableName, Key = key2 })).Item;
+            Client.GetItemAsync(new GetItemRequest() { TableName = hashTableName, Key = key2 }, (result) =>
+            {
+                exception = result.Exception;
+                item = result.Response.Item;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(item);
+
             Utils.AssertTrue(item["Product"].S.IndexOf("Debugger") >= 0);
             Assert.AreEqual(1, item["Tags"].SS.Count);
             Utils.AssertFalse(item.ContainsKey("Seller"));
@@ -367,7 +513,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             Assert.AreEqual(2, items.Count);
 
             // Query global index
-            items = (Client.Query(new QueryRequest
+            Client.QueryAsync(new QueryRequest
             {
                 TableName = hashTableName,
                 IndexName = "GlobalIndex",
@@ -392,11 +538,21 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                         }
                     }
                 }
-            })).Items;
+            }, (result) =>
+            {
+                exception = result.Exception;
+                items = result.Response.Items;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(items);
+
             Assert.AreEqual(1, items.Count);
 
             // Scan global index
-            items = (Client.Scan(new ScanRequest
+            Client.ScanAsync(new ScanRequest
             {
                 TableName = hashTableName,
                 IndexName = "GlobalIndex",
@@ -421,27 +577,46 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                         }
                     }
                 }
-            })).Items;
+            }, (result) =>
+            {
+                exception = result.Exception;
+                items = result.Response.Items;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(items);
+
             Assert.AreEqual(1, items.Count);
 
         }
         private void TestHashRangeTable(string hashRangeTableName)
         {
+            var ars = new AutoResetEvent(false);
+            var exception = new Exception();
             // Put items
-            Client.PutItem(new PutItemRequest()
+            Client.PutItemAsync(new PutItemRequest()
             {
                 TableName = hashRangeTableName,
                 Item = new Dictionary<string, AttributeValue>
+                {
+                    { "Name", new AttributeValue { S = "Alan" } },
+                    { "Age", new AttributeValue { N = "31" } },
+                    { "Company", new AttributeValue { S = "Big River" } },
+                    { "Score", new AttributeValue { N = "120" } },
+                    { "Manager", new AttributeValue { S = "Barbara"} }
+                }
+            }, (result) =>
             {
-                { "Name", new AttributeValue { S = "Alan" } },
-                { "Age", new AttributeValue { N = "31" } },
-                { "Company", new AttributeValue { S = "Big River" } },
-                { "Score", new AttributeValue { N = "120" } },
-                { "Manager", new AttributeValue { S = "Barbara"} }
-            }
-            });
+                exception = result.Exception;
+                ars.Set();
+            }, options);
 
-            Client.PutItem(new PutItemRequest()
+            ars.WaitOne();
+            Assert.IsNull(exception);
+
+            Client.PutItemAsync(new PutItemRequest()
             {
                 TableName = hashRangeTableName,
                 Item = new Dictionary<string, AttributeValue>
@@ -452,8 +627,16 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                 { "Score", new AttributeValue { N = "94" } },
                 { "Manager", new AttributeValue { S = "Barbara"} }
             }
-            });
-            Client.PutItem(new PutItemRequest()
+            }, (result) =>
+            {
+                exception = result.Exception;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
+
+            Client.PutItemAsync(new PutItemRequest()
             {
                 TableName = hashRangeTableName,
                 Item = new Dictionary<string, AttributeValue>
@@ -464,8 +647,16 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                 { "Score", new AttributeValue { N = "140" } },
                 { "Manager", new AttributeValue { S = "Eva"} }
             }
-            });
-            Client.PutItem(new PutItemRequest()
+            }, (result) =>
+            {
+                exception = result.Exception;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
+
+            Client.PutItemAsync(new PutItemRequest()
             {
                 TableName = hashRangeTableName,
                 Item = new Dictionary<string, AttributeValue>
@@ -476,7 +667,14 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                 { "Score", new AttributeValue { N = "101" } },
                 { "Manager", new AttributeValue { S = "Francis"} }
             }
-            });
+            }, (result) =>
+            {
+                exception = result.Exception;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
 
             // Scan all items
             var scanConditions = new Dictionary<string, Condition>
@@ -501,7 +699,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             Assert.AreEqual(4, items.Count);
 
             // Query table with no range-key condition
-            items = (Client.Query(new QueryRequest
+            Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 KeyConditions = new Dictionary<string, Condition> 
@@ -516,11 +714,21 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                         }
                     },
                 }
-            })).Items;
+            }, (result) =>
+            {
+                exception = result.Exception;
+                items = result.Response.Items;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(items);
+
             Assert.AreEqual(2, items.Count);
 
             // Query table with no range-key condition and no returned attributes
-            items = (Client.Query(new QueryRequest
+            Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 KeyConditions = new Dictionary<string, Condition> 
@@ -536,13 +744,22 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                     },
                 },
                 ProjectionExpression = "Coffee"
-            })).Items;
+            }, (result) =>
+            {
+                exception = result.Exception;
+                items = result.Response.Items;
+                ars.Set();
+            }, options);
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(items);
+
             Assert.AreEqual(2, items.Count);
             Assert.AreEqual(0, items[0].Count);
             Assert.AreEqual(0, items[1].Count);
 
             // Query table with hash-key condition expression
-            items = (Client.Query(new QueryRequest
+            Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 KeyConditionExpression = "#H = :val",
@@ -554,11 +771,20 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                 {
                     { ":val", new AttributeValue { S = "Diane" } }
                 }
-            })).Items;
+            }, (result) =>
+            {
+                exception = result.Exception;
+                items = result.Response.Items;
+                ars.Set();
+            }, options);
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(items);
+
             Assert.AreEqual(2, items.Count);
 
             // Query table with key condition expression
-            items = (Client.Query(new QueryRequest
+            Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 KeyConditionExpression = "#H = :name and #R > :age",
@@ -572,11 +798,20 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                     { ":name", new AttributeValue { S = "Diane" } },
                     { ":age", new AttributeValue { N = "30" } }
                 }
-            })).Items;
+            }, (result) =>
+            {
+                exception = result.Exception;
+                items = result.Response.Items;
+                ars.Set();
+            }, options);
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(items);
+
             Assert.AreEqual(1, items.Count);
 
             // Query global index
-            items = (Client.Query(new QueryRequest
+            Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "GlobalIndex",
@@ -601,11 +836,20 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                         }
                     }
                 }
-            })).Items;
+            }, (result) =>
+            {
+                exception = result.Exception;
+                items = result.Response.Items;
+                ars.Set();
+            }, options);
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(items);
+
             Assert.AreEqual(1, items.Count);
 
             // Query local index with no range-key condition
-            items = (Client.Query(new QueryRequest
+            Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "LocalIndex",
@@ -621,11 +865,20 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                         }
                     },
                 }
-            })).Items;
+            }, (result) =>
+            {
+                exception = result.Exception;
+                items = result.Response.Items;
+                ars.Set();
+            }, options);
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(items);
+
             Assert.AreEqual(2, items.Count);
 
             // Query local index with range-key condition
-            items = (Client.Query(new QueryRequest
+            Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "LocalIndex",
@@ -650,10 +903,18 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                         }
                     }
                 }
-            })).Items;
+            }, (result) =>
+            {
+                exception = result.Exception;
+                items = result.Response.Items;
+                ars.Set();
+            }, options);
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(items);
 
             // Query local index with a query filter
-            items = (Client.Query(new QueryRequest
+            Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "LocalIndex",
@@ -681,11 +942,20 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                         }
                     }
                 }
-            })).Items;
+            }, (result) =>
+            {
+                exception = result.Exception;
+                items = result.Response.Items;
+                ars.Set();
+            }, options);
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(items);
+
             Assert.AreEqual(1, items.Count);
 
             // Scan global index
-            items = (Client.Scan(new ScanRequest
+            Client.ScanAsync(new ScanRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "GlobalIndex",
@@ -710,11 +980,20 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                         }
                     }
                 }
-            })).Items;
+            }, (result) =>
+            {
+                exception = result.Exception;
+                items = result.Response.Items;
+                ars.Set();
+            }, options);
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(items);
+
             Assert.AreEqual(1, items.Count);
 
             // Scan local index with no range-key condition
-            items = (Client.Scan(new ScanRequest
+            Client.ScanAsync(new ScanRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "LocalIndex",
@@ -730,11 +1009,20 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                         }
                     },
                 }
-            })).Items;
+            }, (result) =>
+            {
+                exception = result.Exception;
+                items = result.Response.Items;
+                ars.Set();
+            }, options);
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(items);
+
             Assert.AreEqual(2, items.Count);
 
             // Scan local index with range-key condition
-            items = (Client.Scan(new ScanRequest
+            Client.ScanAsync(new ScanRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "LocalIndex",
@@ -759,10 +1047,18 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                         }
                     }
                 }
-            })).Items;
+            }, (result) =>
+            {
+                exception = result.Exception;
+                items = result.Response.Items;
+                ars.Set();
+            }, options);
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(items);
 
             // Scan local index with a non-key condition
-            items = (Client.Scan(new ScanRequest
+            Client.ScanAsync(new ScanRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "LocalIndex",
@@ -787,14 +1083,25 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                         }
                     }
                 }
-            })).Items;
+            }, (result) =>
+            {
+                exception = result.Exception;
+                items = result.Response.Items;
+                ars.Set();
+            }, options);
+            ars.WaitOne();
+            Assert.IsNull(exception);
+            Assert.IsNotNull(items);
+
             Assert.AreEqual(1, items.Count);
 
         }
         private void TestBatchWriteGet(string hashTableName, string hashRangeTableName)
         {
+            var ars = new AutoResetEvent(false);
+            var exception = new Exception();
             // Put 1 item and delete 2 items across 2 tables
-            Client.BatchWriteItem(new BatchWriteItemRequest()
+            Client.BatchWriteItemAsync(new BatchWriteItemRequest()
             {
                 RequestItems = new Dictionary<string, List<WriteRequest>>
             {
@@ -844,10 +1151,18 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                     }
                 }
             }
-            });
+            }, (result) =>
+            {
+                exception = result.Exception;
+                ars.Set();
+            }, options);
+            ars.WaitOne();
+            Assert.IsNull(exception);
 
             // Get 5 items across 2 tables
-            var batchGetResult = Client.BatchGetItem(new BatchGetItemRequest()
+
+            BatchGetItemResponse batchGetResult = null;
+            Client.BatchGetItemAsync(new BatchGetItemRequest()
             {
                 RequestItems = new Dictionary<string, KeysAndAttributes>
             {
@@ -893,7 +1208,15 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                     }
                 }
             }
-            });
+            }, (result) =>
+            {
+                exception = result.Exception;
+                batchGetResult = result.Response;
+                ars.Set();
+            }, options);
+            ars.WaitOne();
+            Assert.IsNull(exception);
+
 
             var tableItems = batchGetResult.Responses;
             var hashItems = tableItems[hashTableName];
@@ -934,6 +1257,9 @@ namespace AWSSDK.IntegrationTests.DynamoDB
 
         private List<string> WriteBigBatch(string hashTableName, int items, int itemsStartingIndex, int itemSize)
         {
+            var exception = new Exception();
+            var ars = new AutoResetEvent(false);
+
             List<string> itemIds = new List<string>();
             string itemData = new string('@', itemSize);
 
@@ -964,11 +1290,19 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                     { hashTableName, writeRequests }
                 }
             };
-            BatchWriteItemResponse result;
+            BatchWriteItemResponse result = null;
 
             do
             {
-                result = Client.BatchWriteItem(request);
+                Client.BatchWriteItemAsync(request, (r) =>
+                {
+                    exception = r.Exception;
+                    result = r.Response;
+                    ars.Set();
+                }, options);
+                ars.WaitOne();
+                Assert.IsNull(exception);
+
                 request.RequestItems = result.UnprocessedItems;
             } while (result.UnprocessedItems != null && result.UnprocessedItems.Count > 0);
 
@@ -976,6 +1310,9 @@ namespace AWSSDK.IntegrationTests.DynamoDB
         }
         private int GetBigBatch(string hashTableName, List<string> idsToGet)
         {
+            var exception = new Exception();
+            var ars = new AutoResetEvent(false);
+
             var keys = new List<Dictionary<string, AttributeValue>>();
             foreach (var id in idsToGet)
             {
@@ -992,12 +1329,20 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                     { hashTableName, new KeysAndAttributes { Keys = keys } }
                 }
             };
-            BatchGetItemResponse result;
+            BatchGetItemResponse result = null;
 
             int itemsRetrieved = 0;
             do
             {
-                result = Client.BatchGetItem(request);
+                Client.BatchGetItemAsync(request, (r) =>
+                {
+                    exception = r.Exception;
+                    result = r.Response;
+                    ars.Set();
+                }, options);
+                ars.WaitOne();
+                Assert.IsNull(exception);
+
                 itemsRetrieved += result.Responses[hashTableName].Count;
 
                 request.RequestItems = result.UnprocessedKeys;
@@ -1012,11 +1357,22 @@ namespace AWSSDK.IntegrationTests.DynamoDB
         }
         private IEnumerable<string> GetTableNamesHelper()
         {
+            var exception = new Exception();
+            var ars = new AutoResetEvent(false);
+
             var request = new ListTablesRequest();
-            ListTablesResponse response;
+            ListTablesResponse response = null;
             do
             {
-                response = Client.ListTables(request);
+                Client.ListTablesAsync(request, (r) =>
+                {
+                    exception = r.Exception;
+                    response = r.Response;
+                    ars.Set();
+                }, options);
+                ars.WaitOne();
+                Assert.IsNull(exception);
+
                 foreach (var tableName in response.TableNames)
                     yield return tableName;
 
@@ -1041,6 +1397,9 @@ namespace AWSSDK.IntegrationTests.DynamoDB
         }
         private List<Dictionary<string, AttributeValue>> ScanHelper(string tableName, Dictionary<string, Condition> conditions, int? segment = null, int? totalSegments = null)
         {
+            var exception = new Exception();
+            var ars = new AutoResetEvent(false);
+
             var items = new List<Dictionary<string, AttributeValue>>();
 
             var request = new ScanRequest
@@ -1055,10 +1414,18 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                 request.TotalSegments = totalSegments.Value;
             }
 
-            ScanResponse result;
+            ScanResponse result = null;
             do
             {
-                result = Client.Scan(request);
+                Client.ScanAsync(request, (r) =>
+               {
+                   exception = r.Exception;
+                   result = r.Response;
+                   ars.Set();
+               }, options);
+                ars.WaitOne();
+                Assert.IsNull(exception);
+
                 foreach (var item in result.Items)
                     items.Add(item);
                 request.ExclusiveStartKey = result.LastEvaluatedKey;
