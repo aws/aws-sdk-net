@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ApplicationVersionDescription Object
+    /// Response Unmarshaller for EnvironmentLink Object
     /// </summary>  
-    public class ApplicationVersionDescriptionUnmarshaller : IUnmarshaller<ApplicationVersionDescription, XmlUnmarshallerContext>, IUnmarshaller<ApplicationVersionDescription, JsonUnmarshallerContext>
+    public class EnvironmentLinkUnmarshaller : IUnmarshaller<EnvironmentLink, XmlUnmarshallerContext>, IUnmarshaller<EnvironmentLink, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ApplicationVersionDescription Unmarshall(XmlUnmarshallerContext context)
+        public EnvironmentLink Unmarshall(XmlUnmarshallerContext context)
         {
-            ApplicationVersionDescription unmarshalledObject = new ApplicationVersionDescription();
+            EnvironmentLink unmarshalledObject = new EnvironmentLink();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,46 +54,16 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ApplicationName", targetDepth))
+                    if (context.TestExpression("EnvironmentName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ApplicationName = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.EnvironmentName = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("DateCreated", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.DateCreated = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DateUpdated", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.DateUpdated = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Description", targetDepth))
+                    if (context.TestExpression("LinkName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SourceBundle", targetDepth))
-                    {
-                        var unmarshaller = S3LocationUnmarshaller.Instance;
-                        unmarshalledObject.SourceBundle = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("VersionLabel", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.VersionLabel = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LinkName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -111,18 +81,18 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ApplicationVersionDescription Unmarshall(JsonUnmarshallerContext context)
+        public EnvironmentLink Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static ApplicationVersionDescriptionUnmarshaller _instance = new ApplicationVersionDescriptionUnmarshaller();        
+        private static EnvironmentLinkUnmarshaller _instance = new EnvironmentLinkUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ApplicationVersionDescriptionUnmarshaller Instance
+        public static EnvironmentLinkUnmarshaller Instance
         {
             get
             {

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteApplication operation
+    /// Response Unmarshaller for ComposeEnvironments operation
     /// </summary>  
-    public class DeleteApplicationResponseUnmarshaller : XmlResponseUnmarshaller
+    public class ComposeEnvironmentsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            DeleteApplicationResponse response = new DeleteApplicationResponse();
+            ComposeEnvironmentsResponse response = new ComposeEnvironmentsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("DeleteApplicationResult", 2))
+                    if(context.TestExpression("ComposeEnvironmentsResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,8 +67,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             return response;
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
-        private static void UnmarshallResult(XmlUnmarshallerContext context, DeleteApplicationResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, ComposeEnvironmentsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -82,6 +81,13 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("Environments/member", targetDepth))
+                    {
+                        var unmarshaller = EnvironmentDescriptionUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Environments.Add(item);
+                        continue;
+                    }
                 } 
            }
 
@@ -99,15 +105,19 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationInProgressException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientPrivilegesException"))
             {
-                return new OperationInProgressException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InsufficientPrivilegesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyEnvironmentsException"))
+            {
+                return new TooManyEnvironmentsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonElasticBeanstalkException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static DeleteApplicationResponseUnmarshaller _instance = new DeleteApplicationResponseUnmarshaller();        
+        private static ComposeEnvironmentsResponseUnmarshaller _instance = new ComposeEnvironmentsResponseUnmarshaller();        
 
-        internal static DeleteApplicationResponseUnmarshaller GetInstance()
+        internal static ComposeEnvironmentsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -115,7 +125,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteApplicationResponseUnmarshaller Instance
+        public static ComposeEnvironmentsResponseUnmarshaller Instance
         {
             get
             {

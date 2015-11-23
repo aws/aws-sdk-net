@@ -35,6 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model
     {
         private string _environmentId;
         private string _environmentName;
+        private bool? _forceTerminate;
         private bool? _terminateResources;
 
         /// <summary>
@@ -91,26 +92,34 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ForceTerminate. 
+        /// <para>
+        /// Terminates the target environment even if another environment in the same group is
+        /// dependent on it.
+        /// </para>
+        /// </summary>
+        public bool ForceTerminate
+        {
+            get { return this._forceTerminate.GetValueOrDefault(); }
+            set { this._forceTerminate = value; }
+        }
+
+        // Check to see if ForceTerminate property is set
+        internal bool IsSetForceTerminate()
+        {
+            return this._forceTerminate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TerminateResources. 
         /// <para>
         ///  Indicates whether the associated AWS resources should shut down when the environment
         /// is terminated: 
         /// </para>
-        ///  <enumValues> <value name="true"> 
-        /// <para>
-        ///  <code>true</code>: (default) The user AWS resources (for example, the Auto Scaling
-        /// group, LoadBalancer, etc.) are terminated along with the environment. 
-        /// </para>
-        ///  </value> <value name="false"> 
-        /// <para>
-        ///  <code>false</code>: The environment is removed from the AWS Elastic Beanstalk but
-        /// the AWS resources continue to operate. 
-        /// </para>
-        ///  </value> </enumValues> <ul> <li> <code>true</code>: The specified environment as
-        /// well as the associated AWS resources, such as Auto Scaling group and LoadBalancer,
-        /// are terminated. </li> <li> <code>false</code>: AWS Elastic Beanstalk resource management
-        /// is removed from the environment, but the AWS resources continue to operate. </li>
-        /// </ul> 
+        ///  <ul> <li> <code>true</code>: The specified environment as well as the associated
+        /// AWS resources, such as Auto Scaling group and LoadBalancer, are terminated. </li>
+        /// <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from
+        /// the environment, but the AWS resources continue to operate. </li> </ul> 
         /// <para>
         ///  For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/">
         /// AWS Elastic Beanstalk User Guide. </a> 

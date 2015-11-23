@@ -28,25 +28,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeApplicationVersions operation.
-    /// Retrieve a list of application versions stored in your AWS Elastic Beanstalk storage
-    /// bucket.
+    /// Container for the parameters to the ComposeEnvironments operation.
+    /// Create or update a group of environments that each run a separate component of a single
+    /// application. Takes a list of version labels that specify application source bundles
+    /// for each of the environments to create or update. The name of each environment and
+    /// other required information must be included in the source bundles in an environment
+    /// manifest named <code>env.yaml</code>. See <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
+    /// Environments</a> for details.
     /// </summary>
-    public partial class DescribeApplicationVersionsRequest : AmazonElasticBeanstalkRequest
+    public partial class ComposeEnvironmentsRequest : AmazonElasticBeanstalkRequest
     {
         private string _applicationName;
+        private string _groupName;
         private List<string> _versionLabels = new List<string>();
-
-        /// <summary>
-        /// Empty constructor used to set  properties independently even when a simple constructor is available
-        /// </summary>
-        public DescribeApplicationVersionsRequest() { }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include
-        /// ones that are associated with the specified application.
+        /// The name of the application to which the specified source bundles belong.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -62,10 +61,33 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GroupName. 
+        /// <para>
+        /// The name of the group to which the target environments belong. Specify a group name
+        /// only if the environment name defined in each target environment's manifest ends with
+        /// a + (plus) character. See <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+        /// Manifest (env.yaml)</a> for details.
+        /// </para>
+        /// </summary>
+        public string GroupName
+        {
+            get { return this._groupName; }
+            set { this._groupName = value; }
+        }
+
+        // Check to see if GroupName property is set
+        internal bool IsSetGroupName()
+        {
+            return this._groupName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VersionLabels. 
         /// <para>
-        /// If specified, restricts the returned descriptions to only include ones that have the
-        /// specified version labels.
+        /// A list of version labels, specifying one or more application source bundles that belong
+        /// to the target application. Each source bundle must include an environment manifest
+        /// that specifies the name of the environment and the name of the solution stack to use,
+        /// and optionally can specify environment links to create.
         /// </para>
         /// </summary>
         public List<string> VersionLabels

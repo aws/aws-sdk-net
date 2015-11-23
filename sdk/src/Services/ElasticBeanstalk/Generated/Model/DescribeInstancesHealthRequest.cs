@@ -44,7 +44,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Gets and sets the property AttributeNames. 
         /// <para>
         /// Specifies the response elements you wish to receive. If no attribute names are specified,
-        /// AWS Elastic Beanstalk returns all response elements.
+        /// AWS Elastic Beanstalk only returns a list of instances.
         /// </para>
         /// </summary>
         public List<string> AttributeNames

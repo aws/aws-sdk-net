@@ -48,9 +48,11 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class UpdateEnvironmentRequest : AmazonElasticBeanstalkRequest
     {
+        private string _applicationName;
         private string _description;
         private string _environmentId;
         private string _environmentName;
+        private string _groupName;
         private List<ConfigurationOptionSetting> _optionSettings = new List<ConfigurationOptionSetting>();
         private List<OptionSpecification> _optionsToRemove = new List<OptionSpecification>();
         private string _solutionStackName;
@@ -64,10 +66,28 @@ namespace Amazon.ElasticBeanstalk.Model
         public UpdateEnvironmentRequest() { }
 
         /// <summary>
+        /// Gets and sets the property ApplicationName. 
+        /// <para>
+        /// The name of the application with which the environment is associated.
+        /// </para>
+        /// </summary>
+        public string ApplicationName
+        {
+            get { return this._applicationName; }
+            set { this._applicationName = value; }
+        }
+
+        // Check to see if ApplicationName property is set
+        internal bool IsSetApplicationName()
+        {
+            return this._applicationName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  If this parameter is specified, AWS Elastic Beanstalk updates the description of
-        /// this environment. 
+        /// If this parameter is specified, AWS Elastic Beanstalk updates the description of this
+        /// environment. 
         /// </para>
         /// </summary>
         public string Description
@@ -94,7 +114,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  Condition: You must specify either this or an EnvironmentName, or both. If you do
+        /// Condition: You must specify either this or an EnvironmentName, or both. If you do
         /// not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
         /// error. 
         /// </para>
@@ -119,7 +139,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  Condition: You must specify either this or an EnvironmentId, or both. If you do not
+        /// Condition: You must specify either this or an EnvironmentId, or both. If you do not
         /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
         /// error. 
         /// </para>
@@ -137,9 +157,30 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GroupName. 
+        /// <para>
+        /// The name of the group to which the target environment belongs. Specify a group name
+        /// only if the environment's name is specified in an environment manifest and not with
+        /// the environment name or environment ID parameters. See <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+        /// Manifest (env.yaml)</a> for details.
+        /// </para>
+        /// </summary>
+        public string GroupName
+        {
+            get { return this._groupName; }
+            set { this._groupName = value; }
+        }
+
+        // Check to see if GroupName property is set
+        internal bool IsSetGroupName()
+        {
+            return this._groupName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OptionSettings. 
         /// <para>
-        ///  If specified, AWS Elastic Beanstalk updates the configuration set associated with
+        /// If specified, AWS Elastic Beanstalk updates the configuration set associated with
         /// the running environment and sets the specified configuration options to the requested
         /// value. 
         /// </para>
@@ -159,7 +200,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property OptionsToRemove. 
         /// <para>
-        ///  A list of custom user-defined configuration options to remove from the configuration
+        /// A list of custom user-defined configuration options to remove from the configuration
         /// set for this environment. 
         /// </para>
         /// </summary>
@@ -178,7 +219,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SolutionStackName. 
         /// <para>
-        ///  This specifies the platform version that the environment will run after the environment
+        /// This specifies the platform version that the environment will run after the environment
         /// is updated. 
         /// </para>
         /// </summary>
@@ -197,9 +238,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        ///  If this parameter is specified, AWS Elastic Beanstalk deploys this configuration
-        /// template to the environment. If no such configuration template is found, AWS Elastic
-        /// Beanstalk returns an <code>InvalidParameterValue</code> error. 
+        /// If this parameter is specified, AWS Elastic Beanstalk deploys this configuration template
+        /// to the environment. If no such configuration template is found, AWS Elastic Beanstalk
+        /// returns an <code>InvalidParameterValue</code> error. 
         /// </para>
         /// </summary>
         public string TemplateName
@@ -217,11 +258,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Tier. 
         /// <para>
-        ///  This specifies the tier to use to update the environment. 
+        /// This specifies the tier to use to update the environment. 
         /// </para>
         ///  
         /// <para>
-        ///  Condition: At this time, if you change the tier version, name, or type, AWS Elastic
+        /// Condition: At this time, if you change the tier version, name, or type, AWS Elastic
         /// Beanstalk returns <code>InvalidParameterValue</code> error. 
         /// </para>
         /// </summary>
@@ -240,7 +281,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property VersionLabel. 
         /// <para>
-        ///  If this parameter is specified, AWS Elastic Beanstalk deploys the named application
+        /// If this parameter is specified, AWS Elastic Beanstalk deploys the named application
         /// version to the environment. If no such application version is found, returns an <code>InvalidParameterValue</code>
         /// error. 
         /// </para>

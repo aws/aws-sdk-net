@@ -61,10 +61,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Namespace. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property Namespace. <p/>
         /// </summary>
         public string Namespace
         {
@@ -79,10 +76,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OptionName. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property OptionName. <p/>
         /// </summary>
         public string OptionName
         {
@@ -101,16 +95,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         ///  An indication of the severity of this message: 
         /// </para>
-        ///  <enumValues> <value name="error"> 
-        /// <para>
-        ///  error: This message indicates that this is not a valid setting for an option. 
-        /// </para>
-        ///  </value> <value name="warning"> 
-        /// <para>
-        ///  warning: This message is providing information you should take into account. 
-        /// </para>
-        ///  </value> </enumValues> <ul> <li> error: This message indicates that this is not a
-        /// valid setting for an option. </li> <li> warning: This message is providing information
+        ///  <ul> <li> <code>error</code>: This message indicates that this is not a valid setting
+        /// for an option. </li> <li> <code>warning</code>: This message is providing information
         /// you should take into account. </li> </ul>
         /// </summary>
         public ValidationSeverity Severity

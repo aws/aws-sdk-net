@@ -102,31 +102,11 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  If this configuration set is associated with an environment, the <code>DeploymentStatus</code>
         /// parameter indicates the deployment status of this configuration set: 
         /// </para>
-        ///  <enumValues> <value name="null"> 
-        /// <para>
-        ///  <code>null</code>: This configuration is not associated with a running environment.
-        /// 
-        /// </para>
-        ///  </value> <value name="pending"> 
-        /// <para>
-        ///  <code>pending</code>: This is a draft configuration that is not deployed to the associated
-        /// environment but is in the process of deploying. 
-        /// </para>
-        ///  </value> <value name="deployed"> 
-        /// <para>
-        ///  <code>deployed</code>: This is the configuration that is currently deployed to the
-        /// associated running environment. 
-        /// </para>
-        ///  </value> <value name="failed"> 
-        /// <para>
-        ///  <code>failed</code>: This is a draft configuration, that failed to successfully deploy.
-        /// 
-        /// </para>
-        ///  </value> </enumValues> <ul> <li> <code>null</code>: This configuration is not associated
-        /// with a running environment. </li> <li> <code>pending</code>: This is a draft configuration
-        /// that is not deployed to the associated environment but is in the process of deploying.
-        /// </li> <li> <code>deployed</code>: This is the configuration that is currently deployed
-        /// to the associated running environment. </li> <li> <code>failed</code>: This is a draft
+        ///  <ul> <li> <code>null</code>: This configuration is not associated with a running
+        /// environment. </li> <li> <code>pending</code>: This is a draft configuration that is
+        /// not deployed to the associated environment but is in the process of deploying. </li>
+        /// <li> <code>deployed</code>: This is the configuration that is currently deployed to
+        /// the associated running environment. </li> <li> <code>failed</code>: This is a draft
         /// configuration that failed to successfully deploy. </li> </ul>
         /// </summary>
         public ConfigurationDeploymentStatus DeploymentStatus

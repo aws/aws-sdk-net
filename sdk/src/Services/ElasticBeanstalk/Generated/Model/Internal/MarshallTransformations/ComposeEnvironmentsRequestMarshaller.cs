@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TerminateEnvironment Request Marshaller
+    /// ComposeEnvironments Request Marshaller
     /// </summary>       
-    public class TerminateEnvironmentRequestMarshaller : IMarshaller<IRequest, TerminateEnvironmentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ComposeEnvironmentsRequestMarshaller : IMarshaller<IRequest, ComposeEnvironmentsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((TerminateEnvironmentRequest)input);
+            return this.Marshall((ComposeEnvironmentsRequest)input);
         }
     
         /// <summary>
@@ -50,29 +50,30 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(TerminateEnvironmentRequest publicRequest)
+        public IRequest Marshall(ComposeEnvironmentsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticBeanstalk");
-            request.Parameters.Add("Action", "TerminateEnvironment");
+            request.Parameters.Add("Action", "ComposeEnvironments");
             request.Parameters.Add("Version", "2010-12-01");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetEnvironmentId())
+                if(publicRequest.IsSetApplicationName())
                 {
-                    request.Parameters.Add("EnvironmentId", StringUtils.FromString(publicRequest.EnvironmentId));
+                    request.Parameters.Add("ApplicationName", StringUtils.FromString(publicRequest.ApplicationName));
                 }
-                if(publicRequest.IsSetEnvironmentName())
+                if(publicRequest.IsSetGroupName())
                 {
-                    request.Parameters.Add("EnvironmentName", StringUtils.FromString(publicRequest.EnvironmentName));
+                    request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
                 }
-                if(publicRequest.IsSetForceTerminate())
+                if(publicRequest.IsSetVersionLabels())
                 {
-                    request.Parameters.Add("ForceTerminate", StringUtils.FromBool(publicRequest.ForceTerminate));
-                }
-                if(publicRequest.IsSetTerminateResources())
-                {
-                    request.Parameters.Add("TerminateResources", StringUtils.FromBool(publicRequest.TerminateResources));
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.VersionLabels)
+                    {
+                        request.Parameters.Add("VersionLabels" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
             return request;

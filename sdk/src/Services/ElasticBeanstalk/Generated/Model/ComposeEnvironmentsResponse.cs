@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Result message wrapping a list of application version descriptions.
+    /// Result message containing a list of environment descriptions.
     /// </summary>
-    public partial class DescribeApplicationVersionsResponse : AmazonWebServiceResponse
+    public partial class ComposeEnvironmentsResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationVersionDescription> _applicationVersions = new List<ApplicationVersionDescription>();
+        private List<EnvironmentDescription> _environments = new List<EnvironmentDescription>();
 
         /// <summary>
-        /// Gets and sets the property ApplicationVersions. 
+        /// Gets and sets the property Environments. 
         /// <para>
-        /// List of <code>ApplicationVersionDescription</code> objects sorted by order of creation.
+        ///  Returns an <a>EnvironmentDescription</a> list. 
         /// </para>
         /// </summary>
-        public List<ApplicationVersionDescription> ApplicationVersions
+        public List<EnvironmentDescription> Environments
         {
-            get { return this._applicationVersions; }
-            set { this._applicationVersions = value; }
+            get { return this._environments; }
+            set { this._environments = value; }
         }
 
-        // Check to see if ApplicationVersions property is set
-        internal bool IsSetApplicationVersions()
+        // Check to see if Environments property is set
+        internal bool IsSetEnvironments()
         {
-            return this._applicationVersions != null && this._applicationVersions.Count > 0; 
+            return this._environments != null && this._environments.Count > 0; 
         }
 
     }
