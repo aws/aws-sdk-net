@@ -6,6 +6,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <docs>
 <#
+	var servicename = this.Config.Namespace.Split('.').Last();
 	foreach(var operation in this.Config.ServiceModel.Operations)
 	{
 		foreach(var example in operation.Examples)
@@ -13,10 +14,10 @@
 #>
 	<doc>
 		<members>
-			<member name="M:Amazon.<#=this.Config.BaseName#>.IAmazon<#=this.Config.BaseName#>.<#=operation.Name#>(Amazon.<#=this.Config.BaseName#>.Model.<#=operation.Name#>Request)" />
-			<member name="M:Amazon.<#=this.Config.BaseName#>.Amazon<#=this.Config.BaseName#>Client.<#=operation.Name#>(Amazon.<#=this.Config.BaseName#>.Model.<#=operation.Name#>Request)" />
-			<member name="T:Amazon.<#=this.Config.BaseName#>.Model.<#=operation.Name#>Request" />
-			<member name="T:Amazon.<#=this.Config.BaseName#>.Model.<#=operation.Name#>Response" />
+			<member name="M:<#=this.Config.Namespace#>.IAmazon<#=this.Config.BaseName#>.<#=operation.Name#>(<#=this.Config.Namespace#>.Model.<#=operation.Name#>Request)" />
+			<member name="M:<#=this.Config.Namespace#>.Amazon<#=this.Config.BaseName#>Client.<#=operation.Name#>(<#=this.Config.Namespace#>.Model.<#=operation.Name#>Request)" />
+			<member name="T:<#=this.Config.Namespace#>.Model.<#=operation.Name#>Request" />
+			<member name="T:<#=this.Config.Namespace#>.Model.<#=operation.Name#>Response" />
 		</members>
 		<value>
 			<example>
@@ -25,7 +26,7 @@
 				</para>
 				<code
 					title="<#=example.Title#>"
-					source=".\AWSSDKDocSamples\\<#=this.Config.BaseName#>\\<#=this.Config.BaseName#>GeneratedSamples.cs"
+					source=".\AWSSDKDocSamples\\<#=servicename#>\\<#=servicename#>GeneratedSamples.cs"
 					region="<#=example.Id#>" />
 			</example>
 		</value>

@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 using <#=this.Config.Namespace#>;
 using <#=this.Config.Namespace#>.Model;
 
-namespace AWSSDKDocSamples.<#=this.Config.BaseName#>.Generated
+namespace AWSSDKDocSamples.<#=this.Config.Namespace#>.Generated
 {
-	class <#=this.Config.Namespace#>Samples : ISample
+	class <#=this.Config.BaseName#>Samples : ISample
 	{
 <#
 	foreach(var operation in this.Config.ServiceModel.Operations)
@@ -39,6 +39,17 @@ namespace AWSSDKDocSamples.<#=this.Config.BaseName#>.Generated
 			}
 #>
 			});
+
+<#
+			var responses = example.GetResponseAssignments();
+			foreach(var resp in responses)
+			{
+#>
+			<#=resp#>
+<#		
+			}
+#>
+
 			#endregion
 		}
 

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using Amazon.SQS;
 using Amazon.SQS.Model;
 
-namespace AWSSDKDocSamples.SQS.Generated
+namespace AWSSDKDocSamples.Amazon.SQS.Generated
 {
-    class Amazon.SQSSamples : ISample
+    class SQSSamples : ISample
     {
         public void SQSCreateQueue()
         {
@@ -19,11 +19,14 @@ namespace AWSSDKDocSamples.SQS.Generated
             var response = client.CreateQueue(new CreateQueueRequest 
             {
                 QueueName = "MyQueue", // The Name for the new queue
-                Attributes = new Dictionary<string, String> {
+                Attributes = new Dictionary<string, string> {
                     { "foo", "bar" },
                     { "ghoti", "fish" }
                 }
             });
+
+            string queueUrl = response.QueueUrl; // The URL of the new queue
+
             #endregion
         }
 
@@ -37,6 +40,9 @@ namespace AWSSDKDocSamples.SQS.Generated
                 QueueName = "MyQueue",
                 QueueOwnerAWSAccountId = "12345678910"
             });
+
+            string queueUrl = response.QueueUrl;
+
             #endregion
         }
 

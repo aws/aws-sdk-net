@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 
-namespace AWSSDKDocSamples.DynamoDB.Generated
+namespace AWSSDKDocSamples.Amazon.DynamoDBv2.Generated
 {
-    class Amazon.DynamoDBv2Samples : ISample
+    class DynamoDBSamples : ISample
     {
         public void DynamoDBBatchGetItem()
         {
@@ -20,7 +20,7 @@ namespace AWSSDKDocSamples.DynamoDB.Generated
             {
                 RequestItems = new Dictionary<string, KeysAndAttributes> {
                     { "tablename1", new KeysAndAttributes {
-                        Keys = new List<map> {
+                        Keys = new List<Dictionary<string, AttributeValue>> {
                             new Dictionary<string, AttributeValue> {
                                 { "key1", new AttributeValue { N = "NumberAttributeValue" } }
                             }
@@ -31,13 +31,13 @@ namespace AWSSDKDocSamples.DynamoDB.Generated
                         },
                         ConsistentRead = true,
                         ProjectionExpression = "str1",
-                        ExpressionAttributeNames = new Dictionary<string, AttributeName> {
+                        ExpressionAttributeNames = new Dictionary<string, string> {
                             { "name1", "attr3" },
                             { "name2", "attr4" }
                         }
                     } },
                     { "tablename2", new KeysAndAttributes {
-                        Keys = new List<map> {
+                        Keys = new List<Dictionary<string, AttributeValue>> {
                             new Dictionary<string, AttributeValue> {
                                 { "key2", new AttributeValue { BOOL = true } }
                             }
@@ -48,7 +48,7 @@ namespace AWSSDKDocSamples.DynamoDB.Generated
                         },
                         ConsistentRead = false,
                         ProjectionExpression = "str2",
-                        ExpressionAttributeNames = new Dictionary<string, AttributeName> {
+                        ExpressionAttributeNames = new Dictionary<string, string> {
                             { "name1", "attr3" },
                             { "name2", "attr4" }
                         }
@@ -56,6 +56,10 @@ namespace AWSSDKDocSamples.DynamoDB.Generated
                 },
                 ReturnConsumedCapacity = "NONE"
             });
+
+            Dictionary<string, List<Dictionary<string, AttributeValue>>> responses = response.Responses;
+            List<ConsumedCapacity> consumedCapacity = response.ConsumedCapacity;
+
             #endregion
         }
 

@@ -212,8 +212,9 @@ namespace ServiceClientGenerator
             ExecuteProjectFileGenerators();
             if (this.Configuration.ServiceModel.Customizations.HasExamples)
             {
-                ExecuteExampleGenerator(new ExampleCode(), this.Configuration.BaseName + "GeneratedSamples.cs", this.Configuration.BaseName);
-                ExecuteExampleGenerator(new ExampleMetadata(), this.Configuration.BaseName + "GeneratedSamples.extra.xml");
+                var servicename = Configuration.Namespace.Split('.').Last();
+                ExecuteExampleGenerator(new ExampleCode(), servicename + "GeneratedSamples.cs", servicename);
+                ExecuteExampleGenerator(new ExampleMetadata(), servicename + "GeneratedSamples.extra.xml");
             }
         }
 

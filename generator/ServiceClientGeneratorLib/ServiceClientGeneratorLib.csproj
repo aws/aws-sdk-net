@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeBuilder.cs" />
     <Compile Include="CoreUpdater.cs" />
     <Compile Include="CustomizationCompiler.cs" />
     <Compile Include="Customizations.cs" />
