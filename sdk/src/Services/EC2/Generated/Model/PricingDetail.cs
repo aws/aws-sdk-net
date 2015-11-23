@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a Reserved Instance offering.
+    /// Describes a Reserved instance offering.
     /// </summary>
     public partial class PricingDetail
     {

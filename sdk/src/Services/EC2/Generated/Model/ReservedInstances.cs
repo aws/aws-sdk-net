@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a Reserved Instance.
+    /// Describes a Reserved instance.
     /// </summary>
     public partial class ReservedInstances
     {
@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone in which the Reserved Instance can be used.
+        /// The Availability Zone in which the Reserved instance can be used.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The currency of the Reserved Instance. It's specified using ISO 4217 standard currency
+        /// The currency of the Reserved instance. It's specified using ISO 4217 standard currency
         /// codes. At this time, the only supported currency is <code>USD</code>.
         /// </para>
         /// </summary>
@@ -89,7 +89,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        /// The duration of the Reserved Instance, in seconds.
+        /// The duration of the Reserved instance, in seconds.
         /// </para>
         /// </summary>
         public long Duration
@@ -107,7 +107,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property End. 
         /// <para>
-        /// The time when the Reserved Instance expires.
+        /// The time when the Reserved instance expires.
         /// </para>
         /// </summary>
         public DateTime End
@@ -125,7 +125,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property FixedPrice. 
         /// <para>
-        /// The purchase price of the Reserved Instance.
+        /// The purchase price of the Reserved instance.
         /// </para>
         /// </summary>
         public float FixedPrice
@@ -143,7 +143,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceCount. 
         /// <para>
-        /// The number of Reserved Instances purchased.
+        /// The number of Reserved instances purchased.
         /// </para>
         /// </summary>
         public int InstanceCount
@@ -179,7 +179,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type on which the Reserved Instance can be used.
+        /// The instance type on which the Reserved instance can be used.
         /// </para>
         /// </summary>
         public InstanceType InstanceType
@@ -197,7 +197,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OfferingType. 
         /// <para>
-        /// The Reserved Instance offering type.
+        /// The Reserved instance offering type.
         /// </para>
         /// </summary>
         public OfferingTypeValues OfferingType
@@ -215,7 +215,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ProductDescription. 
         /// <para>
-        /// The Reserved Instance product platform description.
+        /// The Reserved instance product platform description.
         /// </para>
         /// </summary>
         public RIProductDescription ProductDescription
@@ -251,7 +251,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesId. 
         /// <para>
-        /// The ID of the Reserved Instance.
+        /// The ID of the Reserved instance.
         /// </para>
         /// </summary>
         public string ReservedInstancesId
@@ -269,7 +269,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Start. 
         /// <para>
-        /// The date and time the Reserved Instance started.
+        /// The date and time the Reserved instance started.
         /// </para>
         /// </summary>
         public DateTime Start
@@ -287,7 +287,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the Reserved Instance purchase.
+        /// The state of the Reserved instance purchase.
         /// </para>
         /// </summary>
         public ReservedInstanceState State
@@ -323,7 +323,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UsagePrice. 
         /// <para>
-        /// The usage price of the Reserved Instance, per hour.
+        /// The usage price of the Reserved instance, per hour.
         /// </para>
         /// </summary>
         public float UsagePrice

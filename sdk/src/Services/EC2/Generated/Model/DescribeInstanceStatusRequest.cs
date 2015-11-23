@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
     /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
     /// Guide</i>.
     /// </para>
-    ///  </li> <li> 
+    /// </li> <li> 
     /// <para>
     /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
     /// terminate) for your instances related to hardware issues, software updates, or system

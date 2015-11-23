@@ -29,16 +29,16 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the PurchaseReservedInstancesOffering operation.
-    /// Purchases a Reserved Instance for use with your account. With Amazon EC2 Reserved
-    /// Instances, you obtain a capacity reservation for a certain instance configuration
-    /// over a specified period of time and pay a lower hourly rate compared to on-Demand
+    /// Purchases a Reserved instance for use with your account. With Amazon EC2 Reserved
+    /// instances, you obtain a capacity reservation for a certain instance configuration
+    /// over a specified period of time and pay a lower hourly rate compared to On-Demand
     /// Instance pricing.
     /// 
     ///  
     /// <para>
-    /// Use <a>DescribeReservedInstancesOfferings</a> to get a list of Reserved Instance offerings
-    /// that match your specifications. After you've purchased a Reserved Instance, you can
-    /// check for your new Reserved Instance with <a>DescribeReservedInstances</a>.
+    /// Use <a>DescribeReservedInstancesOfferings</a> to get a list of Reserved instance offerings
+    /// that match your specifications. After you've purchased a Reserved instance, you can
+    /// check for your new Reserved instance with <a>DescribeReservedInstances</a>.
     /// </para>
     ///  
     /// <para>
@@ -61,8 +61,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates PurchaseReservedInstancesOfferingRequest with the parameterized properties
         /// </summary>
-        /// <param name="reservedInstancesOfferingId">The ID of the Reserved Instance offering to purchase.</param>
-        /// <param name="instanceCount">The number of Reserved Instances to purchase.</param>
+        /// <param name="reservedInstancesOfferingId">The ID of the Reserved instance offering to purchase.</param>
+        /// <param name="instanceCount">The number of Reserved instances to purchase.</param>
         public PurchaseReservedInstancesOfferingRequest(string reservedInstancesOfferingId, int instanceCount)
         {
             _reservedInstancesOfferingId = reservedInstancesOfferingId;
@@ -72,7 +72,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceCount. 
         /// <para>
-        /// The number of Reserved Instances to purchase.
+        /// The number of Reserved instances to purchase.
         /// </para>
         /// </summary>
         public int InstanceCount
@@ -91,7 +91,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property LimitPrice. 
         /// <para>
         /// Specified for Reserved Instance Marketplace offerings to limit the total order and
-        /// ensure that the Reserved Instances are not purchased at unexpected prices.
+        /// ensure that the Reserved instances are not purchased at unexpected prices.
         /// </para>
         /// </summary>
         public ReservedInstanceLimitPrice LimitPrice
@@ -109,7 +109,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesOfferingId. 
         /// <para>
-        /// The ID of the Reserved Instance offering to purchase.
+        /// The ID of the Reserved instance offering to purchase.
         /// </para>
         /// </summary>
         public string ReservedInstancesOfferingId

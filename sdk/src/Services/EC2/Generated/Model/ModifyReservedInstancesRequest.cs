@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesIds. 
         /// <para>
-        /// The IDs of the Reserved Instances to modify.
+        /// The IDs of the Reserved instances to modify.
         /// </para>
         /// </summary>
         public List<string> ReservedInstancesIds
@@ -87,7 +87,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TargetConfigurations. 
         /// <para>
-        /// The configuration settings for the Reserved Instances to modify.
+        /// The configuration settings for the Reserved instances to modify.
         /// </para>
         /// </summary>
         public List<ReservedInstancesConfiguration> TargetConfigurations

@@ -255,7 +255,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>spot-instance-request-id</code> - The ID of the Spot Instance request.
+        /// <code>spot-instance-request-id</code> - The ID of the Spot instance request.
         /// </para>
         ///  </li> <li> 
         /// <para>

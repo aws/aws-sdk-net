@@ -238,7 +238,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceLifecycle. 
         /// <para>
-        /// Indicates whether this is a Spot Instance.
+        /// Indicates whether this is a Spot instance.
         /// </para>
         /// </summary>
         public InstanceLifecycleType InstanceLifecycle

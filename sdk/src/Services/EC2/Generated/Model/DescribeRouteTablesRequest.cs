@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// <code>association.main</code> - Indicates whether the route table is the main route
-        /// table for the VPC.
+        /// table for the VPC (<code>true</code> | <code>false</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -94,6 +94,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
+        /// <b>Important:</b> The <code>host</code> value cannot be used with this parameter.
+        /// Use the <code>default</code> or <code>dedicated</code> values only.
+        /// </para>
+        ///  
+        /// <para>
         /// Default: <code>default</code>
         /// </para>
         /// </summary>

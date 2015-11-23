@@ -75,6 +75,118 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type Affinity.
+    /// </summary>
+    public class Affinity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for Affinity
+        /// </summary>
+        public static readonly Affinity Default = new Affinity("default");
+        /// <summary>
+        /// Constant Host for Affinity
+        /// </summary>
+        public static readonly Affinity Host = new Affinity("host");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Affinity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Affinity FindValue(string value)
+        {
+            return FindValue<Affinity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Affinity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AllocationState.
+    /// </summary>
+    public class AllocationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for AllocationState
+        /// </summary>
+        public static readonly AllocationState Available = new AllocationState("available");
+        /// <summary>
+        /// Constant PermanentFailure for AllocationState
+        /// </summary>
+        public static readonly AllocationState PermanentFailure = new AllocationState("permanent-failure");
+        /// <summary>
+        /// Constant Released for AllocationState
+        /// </summary>
+        public static readonly AllocationState Released = new AllocationState("released");
+        /// <summary>
+        /// Constant ReleasedPermanentFailure for AllocationState
+        /// </summary>
+        public static readonly AllocationState ReleasedPermanentFailure = new AllocationState("released-permanent-failure");
+        /// <summary>
+        /// Constant UnderAssessment for AllocationState
+        /// </summary>
+        public static readonly AllocationState UnderAssessment = new AllocationState("under-assessment");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AllocationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AllocationState FindValue(string value)
+        {
+            return FindValue<AllocationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AllocationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AllocationStrategy.
     /// </summary>
     public class AllocationStrategy : ConstantClass
@@ -226,6 +338,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AttachmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutoPlacement.
+    /// </summary>
+    public class AutoPlacement : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Off for AutoPlacement
+        /// </summary>
+        public static readonly AutoPlacement Off = new AutoPlacement("off");
+        /// <summary>
+        /// Constant On for AutoPlacement
+        /// </summary>
+        public static readonly AutoPlacement On = new AutoPlacement("on");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoPlacement(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoPlacement FindValue(string value)
+        {
+            return FindValue<AutoPlacement>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoPlacement(string value)
         {
             return FindValue(value);
         }
@@ -1276,6 +1438,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GatewayType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HostTenancy.
+    /// </summary>
+    public class HostTenancy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dedicated for HostTenancy
+        /// </summary>
+        public static readonly HostTenancy Dedicated = new HostTenancy("dedicated");
+        /// <summary>
+        /// Constant Host for HostTenancy
+        /// </summary>
+        public static readonly HostTenancy Host = new HostTenancy("host");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HostTenancy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HostTenancy FindValue(string value)
+        {
+            return FindValue<HostTenancy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HostTenancy(string value)
         {
             return FindValue(value);
         }
@@ -3946,6 +4158,10 @@ namespace Amazon.EC2
         /// Constant Default for Tenancy
         /// </summary>
         public static readonly Tenancy Default = new Tenancy("default");
+        /// <summary>
+        /// Constant Host for Tenancy
+        /// </summary>
+        public static readonly Tenancy Host = new Tenancy("host");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

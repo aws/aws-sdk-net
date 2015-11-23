@@ -60,7 +60,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>requester-vpc-info.cidr-block</code> - The CIDR block of the requester's VPC.
+        /// <code>requester-vpc-info.cidr-block</code> - The CIDR block of the requester&apos;s
+        /// VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>

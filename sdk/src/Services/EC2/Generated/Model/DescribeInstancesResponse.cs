@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Reservations. 
         /// <para>
-        /// One or more reservations.
+        /// Zero or more reservations.
         /// </para>
         /// </summary>
         public List<Reservation> Reservations

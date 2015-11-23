@@ -29,26 +29,26 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedInstancesListings operation.
-    /// Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
+    /// Describes your account's Reserved instance listings in the Reserved Instance Marketplace.
     /// 
     ///  
     /// <para>
-    /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
+    /// The Reserved Instance Marketplace matches sellers who want to resell Reserved instance
     /// capacity that they no longer need with buyers who want to purchase additional capacity.
-    /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
+    /// Reserved instances bought and sold through the Reserved Instance Marketplace work
     /// like any other Reserved Instances. 
     /// </para>
     ///  
     /// <para>
-    /// As a seller, you choose to list some or all of your Reserved Instances, and you specify
-    /// the upfront price to receive for them. Your Reserved Instances are then listed in
+    /// As a seller, you choose to list some or all of your Reserved instances, and you specify
+    /// the upfront price to receive for them. Your Reserved instances are then listed in
     /// the Reserved Instance Marketplace and are available for purchase. 
     /// </para>
     ///  
     /// <para>
-    /// As a buyer, you specify the configuration of the Reserved Instance to purchase, and
+    /// As a buyer, you specify the configuration of the Reserved instance to purchase, and
     /// the Marketplace matches what you're searching for with what's available. The Marketplace
-    /// first sells the lowest priced Reserved Instances to you, and continues to sell available
+    /// first sells the lowest priced Reserved instances to you, and continues to sell available
     /// Reserved Instance listings to you until your demand is met. You are charged based
     /// on the total price of all of the listings that you purchase.
     /// </para>
@@ -71,15 +71,15 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>reserved-instances-id</code> - The ID of the Reserved Instances.
+        /// <code>reserved-instances-id</code> - The ID of the Reserved instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.
+        /// <code>reserved-instances-listing-id</code> - The ID of the Reserved instances listing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>status</code> - The status of the Reserved Instance listing (<code>pending</code>
+        /// <code>status</code> - The status of the Reserved instance listing (<code>pending</code>
         /// | <code>active</code> | <code>cancelled</code> | <code>closed</code>).
         /// </para>
         ///  </li> <li> 
@@ -103,7 +103,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesId. 
         /// <para>
-        /// One or more Reserved Instance IDs.
+        /// One or more Reserved instance IDs.
         /// </para>
         /// </summary>
         public string ReservedInstancesId
@@ -121,7 +121,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesListingId. 
         /// <para>
-        /// One or more Reserved Instance Listing IDs.
+        /// One or more Reserved instance Listing IDs.
         /// </para>
         /// </summary>
         public string ReservedInstancesListingId

@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesId. 
         /// <para>
-        /// The IDs of the purchased Reserved Instances.
+        /// The IDs of the purchased Reserved instances.
         /// </para>
         /// </summary>
         public string ReservedInstancesId

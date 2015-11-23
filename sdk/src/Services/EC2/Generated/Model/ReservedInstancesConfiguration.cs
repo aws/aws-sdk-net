@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the configuration settings for the modified Reserved Instances.
+    /// Describes the configuration settings for the modified Reserved instances.
     /// </summary>
     public partial class ReservedInstancesConfiguration
     {
@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone for the modified Reserved Instances.
+        /// The Availability Zone for the modified Reserved instances.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceCount. 
         /// <para>
-        /// The number of modified Reserved Instances.
+        /// The number of modified Reserved instances.
         /// </para>
         /// </summary>
         public int InstanceCount
@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type for the modified Reserved Instances.
+        /// The instance type for the modified Reserved instances.
         /// </para>
         /// </summary>
         public InstanceType InstanceType
@@ -94,7 +94,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The network platform of the modified Reserved Instances, which is either EC2-Classic
+        /// The network platform of the modified Reserved instances, which is either EC2-Classic
         /// or EC2-VPC.
         /// </para>
         /// </summary>

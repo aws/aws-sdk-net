@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the limit price of a Reserved Instance offering.
+    /// Describes the limit price of a Reserved instance offering.
     /// </summary>
     public partial class ReservedInstanceLimitPrice
     {
