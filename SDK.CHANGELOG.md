@@ -1,3 +1,13 @@
+### 3.1.30.0 (2015-11-23 23:14 UTC)
+* EC2 (3.1.5.0)
+	* This release includes support for EC2 Dedicated Hosts. This feature enables the use of your own per-socket and per-core OS licenses in EC2. This release also supports two new APIs, ModifyIdFormat and DescribeIdFormat, that will be used to manage the transition to longer EC2 and EBS resource IDs. These APIs are reserved for future use.
+* ECS (3.1.2.0)
+	* Add support for Amazon ECS task stopped reasons and task start and stop times. You can now see if a task was stopped by a user or stopped due to other reasons such as a failing Elastic Load Balancing health check, as well as the time the task was started and stopped. Service scheduler error messages have additional information that describe why tasks cannot be placed in the cluster.
+* ElasticBeanstalk (3.1.2.0)
+	* Add support for AWS Elastic Beanstalk for composable web applications. Customers whose applications consists of several linked modules (micro services architecture) can now deploy, manage, and scale their applications using EB.
+* S3 (3.1.3.8)
+	* Added missing canned ACL.
+
 ### 3.1.29.1 (2015-11-20 21:46 UTC)
 * CloudSearchDomain (3.1.0.4)
 	* Updated to use new Core, version 3.1.3.8
