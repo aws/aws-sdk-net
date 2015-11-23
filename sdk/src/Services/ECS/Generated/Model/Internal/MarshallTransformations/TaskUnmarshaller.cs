@@ -82,6 +82,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Containers = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("createdAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("desiredStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -100,10 +106,28 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Overrides = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("startedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startedBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StartedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stoppedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StoppedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stoppedReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StoppedReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("taskArn", targetDepth))

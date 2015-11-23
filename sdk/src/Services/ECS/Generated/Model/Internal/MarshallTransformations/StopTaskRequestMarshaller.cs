@@ -73,6 +73,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Cluster);
                 }
 
+                if(publicRequest.IsSetReason())
+                {
+                    context.Writer.WritePropertyName("reason");
+                    context.Writer.Write(publicRequest.Reason);
+                }
+
                 if(publicRequest.IsSetTask())
                 {
                     context.Writer.WritePropertyName("task");
