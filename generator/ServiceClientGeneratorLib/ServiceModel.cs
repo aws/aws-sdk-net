@@ -317,11 +317,6 @@ namespace ServiceClientGenerator
             }         
         }
 
-        public List<Example> GetExamplesForOperation(string OperationName)
-        {
-            throw new NotImplementedException();
-        }
-
         /// <summary>
         /// Search the model for shape.
         /// </summary>
