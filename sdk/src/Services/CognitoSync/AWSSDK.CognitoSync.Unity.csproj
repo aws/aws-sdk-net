@@ -77,6 +77,24 @@
     <Compile Include="Custom\Internal\_unity\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\SyncManager\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\Exceptions\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\Model\_unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\Storage\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\Util\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Generated\*.cs">
       <SubType>Code</SubType>
     </Compile>

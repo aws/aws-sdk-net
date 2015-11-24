@@ -200,6 +200,48 @@ namespace Amazon.CognitoSync
         #region  BulkPublish
 
         /// <summary>
+        /// Initiates a bulk publish of all existing datasets for an Identity Pool to the configured
+        /// stream. Customers are limited to one successful bulk publish per 24 hours. Bulk publish
+        /// is an asynchronous request, customers can see the status of the request via the GetBulkPublishDetails
+        /// operation.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the BulkPublish service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.AlreadyStreamedException">
+        /// An exception thrown when a bulk publish operation is requested less than 24 hours
+        /// after a previous bulk publish operation completed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.DuplicateRequestException">
+        /// An exception thrown when there is an IN_PROGRESS bulk publish operation for the given
+        /// identity pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        internal BulkPublishResponse BulkPublish(BulkPublishRequest request)
+        {
+            var marshaller = new BulkPublishRequestMarshaller();
+            var unmarshaller = BulkPublishResponseUnmarshaller.Instance;
+
+            return Invoke<BulkPublishRequest,BulkPublishResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
         /// Initiates the asynchronous execution of the BulkPublish operation.
         /// </summary>
         /// 
@@ -225,6 +267,46 @@ namespace Amazon.CognitoSync
         #endregion
         
         #region  DeleteDataset
+
+        /// <summary>
+        /// Deletes the specific dataset. The dataset will be deleted permanently, and the action
+        /// can't be undone. Datasets that this dataset was merged with will no longer report
+        /// the merge. Any subsequent operation on this dataset will result in a ResourceNotFoundException.
+        /// 
+        ///  
+        /// <para>
+        /// This API can be called with temporary user credentials provided by Cognito Identity
+        /// or with developer credentials.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DeleteDataset service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceConflictException">
+        /// Thrown if an update can't be applied because the resource was changed by another call
+        /// and this would result in a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        internal DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
+        {
+            var marshaller = new DeleteDatasetRequestMarshaller();
+            var unmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDatasetRequest,DeleteDatasetResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDataset operation.
@@ -254,6 +336,43 @@ namespace Amazon.CognitoSync
         #region  DescribeDataset
 
         /// <summary>
+        /// Gets meta data about a dataset by identity and dataset name. With Amazon Cognito Sync,
+        /// each identity has access only to its own data. Thus, the credentials used to make
+        /// this API call need to have access to the identity data.
+        /// 
+        ///  
+        /// <para>
+        /// This API can be called with temporary user credentials provided by Cognito Identity
+        /// or with developer credentials. You should use Cognito Identity credentials to make
+        /// this API call.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeDataset service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        internal DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
+        {
+            var marshaller = new DescribeDatasetRequestMarshaller();
+            var unmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDatasetRequest,DescribeDatasetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
         /// Initiates the asynchronous execution of the DescribeDataset operation.
         /// </summary>
         /// 
@@ -279,6 +398,40 @@ namespace Amazon.CognitoSync
         #endregion
         
         #region  DescribeIdentityPoolUsage
+
+        /// <summary>
+        /// Gets usage details (for example, data storage) about a particular identity pool.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeIdentityPoolUsage service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        internal DescribeIdentityPoolUsageResponse DescribeIdentityPoolUsage(DescribeIdentityPoolUsageRequest request)
+        {
+            var marshaller = new DescribeIdentityPoolUsageRequestMarshaller();
+            var unmarshaller = DescribeIdentityPoolUsageResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIdentityPoolUsageRequest,DescribeIdentityPoolUsageResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Gets usage details (for example, data storage) about a particular identity pool.
@@ -348,6 +501,40 @@ namespace Amazon.CognitoSync
         #region  DescribeIdentityUsage
 
         /// <summary>
+        /// Gets usage information for an identity, including number of datasets and data usage.
+        /// 
+        ///  
+        /// <para>
+        /// This API can be called with temporary user credentials provided by Cognito Identity
+        /// or with developer credentials.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeIdentityUsage service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        internal DescribeIdentityUsageResponse DescribeIdentityUsage(DescribeIdentityUsageRequest request)
+        {
+            var marshaller = new DescribeIdentityUsageRequestMarshaller();
+            var unmarshaller = DescribeIdentityUsageResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIdentityUsageRequest,DescribeIdentityUsageResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
         /// Initiates the asynchronous execution of the DescribeIdentityUsage operation.
         /// </summary>
         /// 
@@ -373,6 +560,37 @@ namespace Amazon.CognitoSync
         #endregion
         
         #region  GetBulkPublishDetails
+
+        /// <summary>
+        /// Get the status of the last BulkPublish operation for an identity pool.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the GetBulkPublishDetails service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        internal GetBulkPublishDetailsResponse GetBulkPublishDetails(GetBulkPublishDetailsRequest request)
+        {
+            var marshaller = new GetBulkPublishDetailsRequestMarshaller();
+            var unmarshaller = GetBulkPublishDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetBulkPublishDetailsRequest,GetBulkPublishDetailsResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBulkPublishDetails operation.
@@ -402,6 +620,41 @@ namespace Amazon.CognitoSync
         #region  GetCognitoEvents
 
         /// <summary>
+        /// Gets the events and the corresponding Lambda functions associated with an identity
+        /// pool.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the GetCognitoEvents service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        internal GetCognitoEventsResponse GetCognitoEvents(GetCognitoEventsRequest request)
+        {
+            var marshaller = new GetCognitoEventsRequestMarshaller();
+            var unmarshaller = GetCognitoEventsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCognitoEventsRequest,GetCognitoEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
         /// Initiates the asynchronous execution of the GetCognitoEvents operation.
         /// </summary>
         /// 
@@ -427,6 +680,40 @@ namespace Amazon.CognitoSync
         #endregion
         
         #region  GetIdentityPoolConfiguration
+
+        /// <summary>
+        /// Gets the configuration settings of an identity pool.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the GetIdentityPoolConfiguration service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        internal GetIdentityPoolConfigurationResponse GetIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest request)
+        {
+            var marshaller = new GetIdentityPoolConfigurationRequestMarshaller();
+            var unmarshaller = GetIdentityPoolConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdentityPoolConfigurationRequest,GetIdentityPoolConfigurationResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Gets the configuration settings of an identity pool.
@@ -496,6 +783,40 @@ namespace Amazon.CognitoSync
         #region  ListDatasets
 
         /// <summary>
+        /// Lists datasets for an identity. With Amazon Cognito Sync, each identity has access
+        /// only to its own data. Thus, the credentials used to make this API call need to have
+        /// access to the identity data.
+        /// 
+        ///  
+        /// <para>
+        /// ListDatasets can be called with temporary user credentials provided by Cognito Identity
+        /// or with developer credentials. You should use the Cognito Identity credentials to
+        /// make this API call.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListDatasets service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        internal ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
+        {
+            var marshaller = new ListDatasetsRequestMarshaller();
+            var unmarshaller = ListDatasetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatasetsRequest,ListDatasetsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
         /// Initiates the asynchronous execution of the ListDatasets operation.
         /// </summary>
         /// 
@@ -521,6 +842,37 @@ namespace Amazon.CognitoSync
         #endregion
         
         #region  ListIdentityPoolUsage
+
+        /// <summary>
+        /// Gets a list of identity pools registered with Cognito.
+        /// 
+        ///  
+        /// <para>
+        /// ListIdentityPoolUsage can only be called with developer credentials. You cannot make
+        /// this API call with the temporary user credentials provided by Cognito Identity.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListIdentityPoolUsage service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        internal ListIdentityPoolUsageResponse ListIdentityPoolUsage(ListIdentityPoolUsageRequest request)
+        {
+            var marshaller = new ListIdentityPoolUsageRequestMarshaller();
+            var unmarshaller = ListIdentityPoolUsageResponseUnmarshaller.Instance;
+
+            return Invoke<ListIdentityPoolUsageRequest,ListIdentityPoolUsageResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListIdentityPoolUsage operation.
@@ -550,6 +902,41 @@ namespace Amazon.CognitoSync
         #region  ListRecords
 
         /// <summary>
+        /// Gets paginated records, optionally changed after a particular sync count for a dataset
+        /// and identity. With Amazon Cognito Sync, each identity has access only to its own data.
+        /// Thus, the credentials used to make this API call need to have access to the identity
+        /// data.
+        /// 
+        ///  
+        /// <para>
+        /// ListRecords can be called with temporary user credentials provided by Cognito Identity
+        /// or with developer credentials. You should use Cognito Identity credentials to make
+        /// this API call.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListRecords service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        internal ListRecordsResponse ListRecords(ListRecordsRequest request)
+        {
+            var marshaller = new ListRecordsRequestMarshaller();
+            var unmarshaller = ListRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRecordsRequest,ListRecordsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
         /// Initiates the asynchronous execution of the ListRecords operation.
         /// </summary>
         /// 
@@ -575,6 +962,43 @@ namespace Amazon.CognitoSync
         #endregion
         
         #region  RegisterDevice
+
+        /// <summary>
+        /// Registers a device to receive push sync notifications.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with temporary credentials provided by Cognito Identity.
+        /// You cannot call this API with developer credentials.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the RegisterDevice service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidConfigurationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        internal RegisterDeviceResponse RegisterDevice(RegisterDeviceRequest request)
+        {
+            var marshaller = new RegisterDeviceRequestMarshaller();
+            var unmarshaller = RegisterDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterDeviceRequest,RegisterDeviceResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the RegisterDevice operation.
@@ -604,6 +1028,42 @@ namespace Amazon.CognitoSync
         #region  SetCognitoEvents
 
         /// <summary>
+        /// Sets the AWS Lambda function for a given event type for an identity pool. This request
+        /// only updates the key/value pair specified. Other key/values pairs are not updated.
+        /// To remove a key value pair, pass a empty value for the particular key.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the SetCognitoEvents service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        internal SetCognitoEventsResponse SetCognitoEvents(SetCognitoEventsRequest request)
+        {
+            var marshaller = new SetCognitoEventsRequestMarshaller();
+            var unmarshaller = SetCognitoEventsResponseUnmarshaller.Instance;
+
+            return Invoke<SetCognitoEventsRequest,SetCognitoEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
         /// Initiates the asynchronous execution of the SetCognitoEvents operation.
         /// </summary>
         /// 
@@ -629,6 +1089,43 @@ namespace Amazon.CognitoSync
         #endregion
         
         #region  SetIdentityPoolConfiguration
+
+        /// <summary>
+        /// Sets the necessary configuration for push sync.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with developer credentials. You cannot call this API with
+        /// the temporary user credentials provided by Cognito Identity.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the SetIdentityPoolConfiguration service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.ConcurrentModificationException">
+        /// Thrown if there are parallel requests to modify a resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        internal SetIdentityPoolConfigurationResponse SetIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest request)
+        {
+            var marshaller = new SetIdentityPoolConfigurationRequestMarshaller();
+            var unmarshaller = SetIdentityPoolConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<SetIdentityPoolConfigurationRequest,SetIdentityPoolConfigurationResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityPoolConfiguration operation.
@@ -658,6 +1155,43 @@ namespace Amazon.CognitoSync
         #region  SubscribeToDataset
 
         /// <summary>
+        /// Subscribes to receive notifications when a dataset is modified by another device.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with temporary credentials provided by Cognito Identity.
+        /// You cannot call this API with developer credentials.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the SubscribeToDataset service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidConfigurationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        internal SubscribeToDatasetResponse SubscribeToDataset(SubscribeToDatasetRequest request)
+        {
+            var marshaller = new SubscribeToDatasetRequestMarshaller();
+            var unmarshaller = SubscribeToDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<SubscribeToDatasetRequest,SubscribeToDatasetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
         /// Initiates the asynchronous execution of the SubscribeToDataset operation.
         /// </summary>
         /// 
@@ -685,6 +1219,43 @@ namespace Amazon.CognitoSync
         #region  UnsubscribeFromDataset
 
         /// <summary>
+        /// Unsubscribes from receiving notifications when a dataset is modified by another device.
+        /// 
+        ///  
+        /// <para>
+        /// This API can only be called with temporary credentials provided by Cognito Identity.
+        /// You cannot call this API with developer credentials.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the UnsubscribeFromDataset service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidConfigurationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        internal UnsubscribeFromDatasetResponse UnsubscribeFromDataset(UnsubscribeFromDatasetRequest request)
+        {
+            var marshaller = new UnsubscribeFromDatasetRequestMarshaller();
+            var unmarshaller = UnsubscribeFromDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<UnsubscribeFromDatasetRequest,UnsubscribeFromDatasetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
         /// Initiates the asynchronous execution of the UnsubscribeFromDataset operation.
         /// </summary>
         /// 
@@ -710,6 +1281,68 @@ namespace Amazon.CognitoSync
         #endregion
         
         #region  UpdateRecords
+
+        /// <summary>
+        /// Posts updates to records and adds and deletes records for a dataset and user.
+        /// 
+        ///  
+        /// <para>
+        /// The sync count in the record patch is your last known sync count for that record.
+        /// The server will reject an UpdateRecords request with a ResourceConflictException if
+        /// you try to patch a record with a new value but a stale sync count.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if the sync count on the server is 5 for a key called highScore and you
+        /// try and submit a new highScore with sync count of 4, the request will be rejected.
+        /// To obtain the current sync count for a record, call ListRecords. On a successful update
+        /// of the record, the response returns the new sync count for that record. You should
+        /// present that sync count the next time you try to update that same record. When the
+        /// record does not exist, specify the sync count as 0.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API can be called with temporary user credentials provided by Cognito Identity
+        /// or with developer credentials.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the UpdateRecords service method, as returned by CognitoSync.</returns>
+        /// <exception cref="Amazon.CognitoSync.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidLambdaFunctionOutputException">
+        /// The AWS Lambda function returned invalid output or an exception.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.InvalidParameterException">
+        /// Thrown when a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.LambdaThrottledException">
+        /// AWS Lambda throttled your account, please contact AWS Support
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.LimitExceededException">
+        /// Thrown when the limit on the number of objects or operations has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceConflictException">
+        /// Thrown if an update can't be applied because the resource was changed by another call
+        /// and this would result in a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.ResourceNotFoundException">
+        /// Thrown if the resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoSync.Model.TooManyRequestsException">
+        /// Thrown if the request is throttled.
+        /// </exception>
+        internal UpdateRecordsResponse UpdateRecords(UpdateRecordsRequest request)
+        {
+            var marshaller = new UpdateRecordsRequestMarshaller();
+            var unmarshaller = UpdateRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRecordsRequest,UpdateRecordsResponse>(request, marshaller, unmarshaller);
+        }
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateRecords operation.
