@@ -73,14 +73,14 @@
 		<Message Text="Compile the Desktop SDK"/>
 		<MSBuild Projects="..\sdk\AWSSDK.Desktop.sln"
 			Targets="Clean;Build"
-			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation)" />
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
 	</Target>
 
 	<Target Name="build-sdk-pcl" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisablePCLSupport)">
 		<Message Text="Compile the Portable Class Library SDK"/>
 		<MSBuild Projects="..\sdk\AWSSDK.PCL.sln"
 			Targets="Clean;Build"
-			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation)" />
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
 	</Target>
 
 	<Target Name="build-sdk-dnxcore" DependsOnTargets="GetRuntimeToolingPathTarget">
