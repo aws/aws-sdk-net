@@ -115,6 +115,23 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public Dictionary<string, AttributeValue> NextKey { get; private set; }
 
         /// <summary>
+        /// Pagination token corresponding to the item where the search operation stopped,
+        /// inclusive of the previous result set. Use this value to start a new
+        /// operation to resume search from the next item.
+        /// </summary>
+        public string PaginationToken
+        {
+            get
+            {
+                return Common.ToPaginationToken(NextKey);
+            }
+            internal set
+            {
+                NextKey = Common.FromPaginationToken(value);
+            }
+        }
+
+        /// <summary>
         /// List of currently found items
         /// </summary>
         public List<Document> Matches { get; private set; }
