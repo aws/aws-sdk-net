@@ -35,6 +35,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution to get the next set of results from DynamoDB.
+        /// 
+        /// If there are more items in the Scan/Query, PaginationToken will be
+        /// set and can be consumed in a new Scan/Query operation to resume
+        /// retrieving items from this point.
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>

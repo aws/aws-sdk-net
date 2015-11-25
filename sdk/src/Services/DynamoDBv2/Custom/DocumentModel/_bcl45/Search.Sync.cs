@@ -30,6 +30,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Retrieves the next set (page) of results
+        /// 
+        /// If there are more items in the Scan/Query, PaginationToken will be
+        /// set and can be consumed in a new Scan/Query operation to resume
+        /// retrieving items from this point.
         /// </summary>
         /// <returns>Next set of Documents matching the search parameters</returns>
         public List<Document> GetNextSet()

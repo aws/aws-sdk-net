@@ -199,7 +199,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #endregion
 
 
-        #region Public methods
+        #region Private/internal members
 
         internal List<Document> GetNextSetHelper(bool isAsync)
         {
@@ -321,11 +321,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             return ret;
         }
-
-        #endregion
-
-
-        #region Private/internal properties
 
         private int count;
 
