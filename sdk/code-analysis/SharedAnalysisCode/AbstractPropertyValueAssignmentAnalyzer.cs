@@ -73,7 +73,7 @@ namespace Amazon.CodeAnalysis.Shared
                 if (this._minLengthRule == null)
                 {
                     this._minLengthRule = new DiagnosticDescriptor(
-                        string.Format("AWS.{0}.PropertyValue.TooShort", GetServiceName()),
+                        string.Format("{0}1000", GetServiceName()),
                         "Property value too short",
                         "Value \"{0}\" is too short for {1}, it must be at least {2} characters",
                         Category,
@@ -94,7 +94,7 @@ namespace Amazon.CodeAnalysis.Shared
                 if (this._maxLengthRule == null)
                 {
                     this._maxLengthRule = new DiagnosticDescriptor(
-                        string.Format("AWS.{0}.PropertyValue.TooLong", GetServiceName()),
+                        string.Format("{0}1001", GetServiceName()),
                         "Property value too long",
                         "Value \"{0}\" is too long for {1}, it must be at most {2} characters",
                         Category,
@@ -114,7 +114,7 @@ namespace Amazon.CodeAnalysis.Shared
                 if (this._patternRule == null)
                 {
                     this._patternRule = new DiagnosticDescriptor(
-                        string.Format("AWS.{0}.PropertyValue.PatternMatch", GetServiceName()),
+                        string.Format("{0}1002", GetServiceName()),
                         "Property value does match required pattern",
                         "Value \"{0}\" does not match required pattern \"{1}\" for property {2}",
                         Category,
@@ -134,7 +134,7 @@ namespace Amazon.CodeAnalysis.Shared
                 if (this._minValueRule == null)
                 {
                     this._minValueRule = new DiagnosticDescriptor(
-                        string.Format("AWS.{0}.PropertyValue.MinValue", GetServiceName()),
+                        string.Format("{0}1003", GetServiceName()),
                         "Property value less than minimum value",
                         "Value \"{0}\" is less than minimum of {1} for property {2}",
                         Category,
@@ -155,7 +155,7 @@ namespace Amazon.CodeAnalysis.Shared
                 if (this._maxValueRule == null)
                 {
                     this._maxValueRule = new DiagnosticDescriptor(
-                        string.Format("AWS.{0}.PropertyValue.MaxValue", GetServiceName()),
+                        string.Format("{0}1004", GetServiceName()),
                         "Property value greater than maximum value",
                         "Value \"{0}\" is greater than maximum of {1} for property {2}",
                         Category,

@@ -44,6 +44,7 @@ namespace ServiceClientGenerator
             templateSession["RootNamespace"] = serviceConfiguration.Namespace + ".CodeAnalysis";
             templateSession["AssemblyName"] = assemblyName;
             templateSession["SourceDirectories"] = GetProjectSourceFolders(codeAnalysisRoot);
+            templateSession["EmbeddedResources"] = GetEmbeddedResources(codeAnalysisRoot);
 
             CodeAnalysisProjectFile generator = new CodeAnalysisProjectFile();
             generator.Session = templateSession;
@@ -156,7 +157,21 @@ namespace ServiceClientGenerator
         }
 
 
+        private IList<string> GetEmbeddedResources(string codeAnalysisRoot)
+        {
+            var embeddedResources = new List<string>();
 
+            foreach(var file in Directory.GetFiles(codeAnalysisRoot, "*.xml", SearchOption.AllDirectories))
+            {
+                var relativePath = file.Substring(codeAnalysisRoot.Length);
+                if (!relativePath.StartsWith(@"\Custom", StringComparison.OrdinalIgnoreCase))
+                    continue;
+
+                embeddedResources.Add(relativePath.TrimStart('\\'));
+            }
+
+            return embeddedResources;
+        }
 
         private IList<string> GetProjectSourceFolders(string codeAnalysisRoot)
         {
@@ -166,8 +181,6 @@ namespace ServiceClientGenerator
                 "Generated"
             };
 
-            // Augment the returned folders with any custom subfolders already in existence. If the custom folder 
-            // ends with a recognised platform, only add it to the set if it matches the platform being generated
             if (Directory.Exists(codeAnalysisRoot))
             {
                 var subFolders = Directory.GetDirectories(codeAnalysisRoot, "*", SearchOption.AllDirectories);

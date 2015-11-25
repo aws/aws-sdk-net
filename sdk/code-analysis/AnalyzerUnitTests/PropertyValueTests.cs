@@ -82,7 +82,7 @@ namespace Analyzer1.Test
             expected = new DiagnosticResult
             {
                 Id = "AWS.MockAnalyzer.PropertyValue.PatternMatch",
-                Message = "Value \"#aaa\" does not match required pattern [0-9a-z\\-_]+ for property Name",
+                Message = "Value \"#aaa\" does not match required pattern \"[0-9a-z\\-_]+\" for property Name",
                 Severity = DiagnosticSeverity.Warning,
                 Locations =
                     new[] {

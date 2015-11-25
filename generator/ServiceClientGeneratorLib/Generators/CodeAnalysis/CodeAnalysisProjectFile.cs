@@ -164,10 +164,35 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
                     "..\\packages\\System.Reflection.Metadata.1.0.21\\lib\\portable-net45+win8\\System.Ref" +
                     "lection.Metadata.dll</HintPath>\r\n      <Private>False</Private>\r\n    </Reference" +
                     ">\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <EmbeddedResource Include=\"Generated\\Prope" +
-                    "rtyValueRules.xml\" />\r\n  </ItemGroup>\r\n  <Import Project=\"..\\..\\SharedAnalysisCo" +
-                    "de\\SharedAnalysisCode.projitems\" Label=\"Shared\" />\r\n  <Import Project=\"$(MSBuild" +
-                    "ExtensionsPath32)\\Microsoft\\Portable\\v4.6\\Microsoft.Portable.CSharp.targets\" />\r" +
-                    "\n</Project>");
+                    "rtyValueRules.xml\" />\r\n");
+            
+            #line 110 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+
+    foreach(string resource in ((IList<string>)this.Session["EmbeddedResources"]))
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t<EmbeddedResource Include=\"");
+            
+            #line 114 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(resource));
+            
+            #line default
+            #line hidden
+            this.Write("\" />\r\n");
+            
+            #line 115 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisProjectFile.tt"
+
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("  </ItemGroup>\r\n  <Import Project=\"..\\..\\SharedAnalysisCode\\SharedAnalysisCode.pr" +
+                    "ojitems\" Label=\"Shared\" />\r\n  <Import Project=\"$(MSBuildExtensionsPath32)\\Micros" +
+                    "oft\\Portable\\v4.6\\Microsoft.Portable.CSharp.targets\" />\r\n</Project>");
             return this.GenerationEnvironment.ToString();
         }
     }

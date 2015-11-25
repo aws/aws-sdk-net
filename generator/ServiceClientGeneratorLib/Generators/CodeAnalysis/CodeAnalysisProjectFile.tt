@@ -107,6 +107,14 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Generated\PropertyValueRules.xml" />
+<#
+    foreach(string resource in ((IList<string>)this.Session["EmbeddedResources"]))
+    {
+#>
+	<EmbeddedResource Include="<#=resource#>" />
+<#
+    }
+#>
   </ItemGroup>
   <Import Project="..\..\SharedAnalysisCode\SharedAnalysisCode.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\v4.6\Microsoft.Portable.CSharp.targets" />
