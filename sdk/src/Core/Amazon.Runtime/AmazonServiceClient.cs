@@ -20,9 +20,10 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
-using System.Text;
 using System.Reflection;
+using System.Text;
 
 namespace Amazon.Runtime
 {
@@ -378,6 +379,12 @@ namespace Amazon.Runtime
                 var queryString = AWSSDKUtils.GetParametersAsString(iRequest.Parameters);
                 sb.AppendFormat("{0}{1}", delim, queryString);
             }
+
+
+            if (AWSSDKUtils.HasBidiControlCharacters(resourcePath))
+                throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture,
+                    "Target resource path [{0}] has bidirectional characters, which are not supported" +
+                    "by System.Uri and thus cannot be handled by the .NET SDK.", resourcePath));
 
             var parameterizedPath = string.Concat(AWSSDKUtils.UrlEncode(resourcePath, true), sb);
             var uri = new Uri(url.AbsoluteUri + parameterizedPath);

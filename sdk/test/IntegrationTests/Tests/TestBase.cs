@@ -20,8 +20,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 if(client == null)
                 {
-                    client = new T();
-
+                    client = CreateClient();
                     RetryUtilities.ConfigureClient(client);
                 }
                 return client;
@@ -50,6 +49,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             clientConfig.ServiceURL = serviceUrl;
             if (region != null)
                 clientConfig.AuthenticationRegion = region;
+        }
+
+        public static T CreateClient()
+        {
+            return new T();
         }
 
         public static ServiceResponseCounter CountServiceResponses()

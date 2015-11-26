@@ -809,6 +809,33 @@ namespace Amazon.Util
             }
         }
 
+        /// <summary>
+        /// Returns true if the string has any bidirectional control characters.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public static bool HasBidiControlCharacters(string input)
+        {
+            return (input.Any(IsBidiControlChar));
+        }
+        private static bool IsBidiControlChar(char c)
+        {
+            // check general range
+            if (c < '\u200E' || c > '\u202E')
+                return false;
+
+            // check specific characters
+            return (
+                c == '\u200E' || // LRM
+                c == '\u200F' || // RLM
+                c == '\u202A' || // LRE
+                c == '\u202B' || // RLE
+                c == '\u202C' || // PDF
+                c == '\u202D' || // LRO
+                c == '\u202E'    // RLO
+            );
+        }
+
         #endregion
     }
 }
