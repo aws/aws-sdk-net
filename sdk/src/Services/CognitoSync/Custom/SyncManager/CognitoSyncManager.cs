@@ -247,11 +247,6 @@ namespace Amazon.CognitoSync.SyncManager
         }
 #endif
 
-        //TODO: Choose between these two
-        protected string GetIdentityId()
-        {
-            return DatasetUtils.GetIdentityId(CognitoCredentials);
-        }
         /// <summary>
         /// Returns the IdentityId, if the application is not online then an 
         /// Unknown Identity Will be returned
@@ -292,7 +287,7 @@ namespace Amazon.CognitoSync.SyncManager
                 }
                 else
                 {
-                    Local.UpdateDatasetMetadata(GetIdentityId(), res);
+                    Local.UpdateDatasetMetadata(IdentityId, res);
                     InternalSDKUtils.AsyncExecutor(() => callback(cognitoResult), options);
                 }
             }, options);

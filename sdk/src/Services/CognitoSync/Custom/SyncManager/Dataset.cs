@@ -146,9 +146,7 @@ namespace Amazon.CognitoSync.SyncManager
         public void Dispose()
         {
             // TODO: what to do for 35?
-#if UNITY
             Dispose(true);
-#endif
             GC.SuppressFinalize(this);
         }
 
@@ -162,6 +160,20 @@ namespace Amazon.CognitoSync.SyncManager
             {
                 ClearAllDelegates();
                 UnityMainThreadDispatcher.OnRefresh -= HandleConnectivityRefresh;
+                _disposed = true;
+            }
+        }
+#endif
+
+#if BCL35
+        public virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                ClearAllDelegates();
                 _disposed = true;
             }
         }
@@ -250,7 +262,6 @@ namespace Amazon.CognitoSync.SyncManager
             }
         }
 
-        //TODO: Choose between these two
         /// <summary>
         /// Retrieves all raw records, including those marked as deleted, from local storage.
         /// </summary>
@@ -261,14 +272,6 @@ namespace Amazon.CognitoSync.SyncManager
             {
                 return Local.GetRecords(IdentityId, DatasetName);
             }
-        }
-        /// <summary>
-        /// Retrieves all raw records, including those marked as deleted, from local storage.
-        /// </summary>
-        /// <returns>List of all raw records</returns>
-        public virtual IList<Record> GetAllRecords()
-        {
-            return _local.GetRecords(GetIdentityId(), _datasetName);
         }
 
         /// <summary>
@@ -284,7 +287,6 @@ namespace Amazon.CognitoSync.SyncManager
                 DatasetName, DatasetUtils.ValidateRecordKey(key)));
         }
 
-        //TODO: Choose between these two
         /// <summary>
         /// Gets the total size in bytes of this dataset. Records that are marked as
         /// deleted don't contribute to the total size.
@@ -302,21 +304,6 @@ namespace Amazon.CognitoSync.SyncManager
                 }
                 return size;
             }
-        }
-        /// <summary>
-        /// Gets the total size in bytes of this dataset. Records that are marked as
-        /// deleted don't contribute to the total size.
-        /// The size is calculated as sum of UTF-8 string length of key and value for all the records
-        /// </summary>
-        /// <returns>The total size in bytes</returns>
-        public long GetTotalSizeInBytes()
-        {
-            long size = 0;
-            foreach (Record record in _local.GetRecords(GetIdentityId(), _datasetName))
-            {
-                size += DatasetUtils.ComputeRecordSize(record);
-            }
-            return size;
         }
 
         /// <summary>
@@ -397,7 +384,7 @@ namespace Amazon.CognitoSync.SyncManager
             if (queuedSync)
             {
                 queuedSync = false;
-//TODO: BCL35
+                //TODO: BCL35
 #if UNITY
                 SynchronizeInternalAsync();
 #endif
@@ -455,7 +442,7 @@ namespace Amazon.CognitoSync.SyncManager
         }
 
 
-        
+
         private async Task RunSyncOperationAsync(int retry, CancellationToken cancellationToken)
         {
 
