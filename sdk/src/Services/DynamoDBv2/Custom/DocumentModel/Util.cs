@@ -473,7 +473,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
         private static string SerializeClearString(Dictionary<string, AttributeValue> nextKey)
         {
-            using (var writer = new StringWriter())
+            using (var writer = new StringWriter(CultureInfo.InvariantCulture))
             {
                 WriteNextKey(nextKey, writer);
 
