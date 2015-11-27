@@ -143,7 +143,7 @@ namespace Amazon.CognitoSync.SyncManager
         /// <summary>
         /// Releases the resources consumed by this object
         /// </summary>
-        public void Dispose()
+        protected override void Dispose()
         {
             // TODO: what to do for 35?
             Dispose(true);
@@ -151,7 +151,7 @@ namespace Amazon.CognitoSync.SyncManager
         }
 
 #if UNITY
-        public virtual void Dispose(bool disposing)
+        protected virtual void Dispose(bool disposing)
         {
             if (_disposed)
                 return;
@@ -166,7 +166,7 @@ namespace Amazon.CognitoSync.SyncManager
 #endif
 
 #if BCL35
-        public virtual void Dispose(bool disposing)
+        protected virtual void Dispose(bool disposing)
         {
             if (_disposed)
                 return;
@@ -195,21 +195,23 @@ namespace Amazon.CognitoSync.SyncManager
             }
         }
 
-#if UNITY || BCL35
-        protected List<string> GetLocalMergedDatasets()
+        internal List<string> LocalMergedDatasets
         {
-            List<string> mergedDatasets = new List<string>();
-            string prefix = _datasetName + ".";
-            foreach (DatasetMetadata dataset in _local.GetDatasetMetadata(GetIdentityId()))
+            get
             {
-                if (dataset.DatasetName.StartsWith(prefix, StringComparison.InvariantCulture))
+                List<string> mergedDatasets = new List<string>();
+                string prefix = DatasetName + ".";
+                foreach (DatasetMetadata dataset in Local.GetDatasetMetadata(IdentityId))
                 {
-                    mergedDatasets.Add(dataset.DatasetName);
+                    if (dataset.DatasetName.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+                    {
+                        mergedDatasets.Add(dataset.DatasetName);
+                    }
                 }
+                return mergedDatasets;
             }
-            return mergedDatasets;
         }
-#endif
+
         /// <summary>
         /// Delete this <see cref="Amazon.CognitoSync.SyncManager.Dataset"/>. You cannot do any more operations
         /// on this dataset.
@@ -928,22 +930,6 @@ namespace Amazon.CognitoSync.SyncManager
             });
         }
 #endif
-        internal List<string> LocalMergedDatasets
-        {
-            get
-            {
-                List<string> mergedDatasets = new List<string>();
-                string prefix = DatasetName + ".";
-                foreach (DatasetMetadata dataset in Local.GetDatasetMetadata(IdentityId))
-                {
-                    if (dataset.DatasetName.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
-                    {
-                        mergedDatasets.Add(dataset.DatasetName);
-                    }
-                }
-                return mergedDatasets;
-            }
-        }
 
         // TODO have only one of the two following methods
         internal String IdentityId
@@ -1195,7 +1181,7 @@ namespace Amazon.CognitoSync.SyncManager
                 waitingForConnectivity = false;
 
                 bool resume = true;
-                List<string> mergedDatasets = GetLocalMergedDatasets();
+                List<string> mergedDatasets = LocalMergedDatasets;
                 if (mergedDatasets.Count > 0)
                 {
                     _logger.InfoFormat("Detected merge datasets - {0}", _datasetName);

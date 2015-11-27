@@ -29,6 +29,13 @@ namespace Amazon.CognitoSync.SyncManager
     public interface IRemoteDataStorage
     {
 //TODO add BCL35
+#if BCL35
+        /// <summary>
+        /// Gets a list of <see cref="DatasetMetadata"/>. Temporary Placeholder.
+        /// </summary>
+        /// <exception cref="Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
+        void GetDatasetMetadataAsync();
+#endif
 #if UNITY
         #region GetDatasets
 
