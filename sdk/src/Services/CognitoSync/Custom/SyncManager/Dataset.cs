@@ -676,7 +676,6 @@ namespace Amazon.CognitoSync.SyncManager
                 FireSyncSuccessEvent(remoteRecords);
                 return;
             }
-
         }
 #endif
 
@@ -1068,7 +1067,7 @@ namespace Amazon.CognitoSync.SyncManager
         /// <summary>
         /// Clears all the delegates
         /// </summary>
-        internal void ClearAllDelegates()
+        public void ClearAllDelegates()
         {
             if (OnSyncSuccess != null)
                 foreach (Delegate d in OnSyncSuccess.GetInvocationList())

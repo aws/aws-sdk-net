@@ -58,7 +58,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
         {
-            if(disposing)
+            if (disposing)
             {
                 if (client != null)
                     client.Dispose();
@@ -87,7 +87,14 @@ namespace Amazon.CognitoSync.SyncManager.Internal
 
         #endregion
 
-//TODO add BCL35
+        //TODO add BCL35
+#if BCL35
+        /// <summary>
+        /// Gets a list of <see cref="DatasetMetadata"/>. Temporary Placeholder.
+        /// </summary>
+        /// <exception cref="Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
+        public void GetDatasetMetadataAsync() { }
+#endif
 #if UNITY
         #region GetDataset
         /// <summary>
