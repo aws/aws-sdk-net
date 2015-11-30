@@ -20,6 +20,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDB")]
         public void TestContext()
         {
+            // It is a known bug that this test currently fails due to an AOT-compilation
+            // issue, on iOS using mono2x.
             foreach (var conversion in new DynamoDBEntryConversion [] { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
             {
                 TableCache.Clear();
