@@ -240,7 +240,8 @@ namespace TestHelper
                         else
                         {
                             Assert.IsTrue(location.IsInSource,
-                                $"Test base does not currently handle diagnostics in metadata locations. Diagnostic in metadata: {diagnostics[i]}\r\n");
+                                string.Format("Test base does not currently handle diagnostics in metadata locations. Diagnostic in metadata: {0}\r\n",
+								              diagnostics[i]);
 
                             string resultMethodName = diagnostics[i].Location.SourceTree.FilePath.EndsWith(".cs") ? "GetCSharpResultAt" : "GetBasicResultAt";
                             var linePosition = diagnostics[i].Location.GetLineSpan().StartLinePosition;
