@@ -29,6 +29,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // Recreate context
                 CreateContext(conversion);
 
+                TestEnumHashKeyObjects();
+
                 TestEmptyCollections(conversion);
 
                 TestContextConversions();
@@ -258,6 +260,33 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
             Assert.IsNotNull(retrieved.Map);
             Assert.AreEqual(0, retrieved.Map.Count);
+        }
+        private void TestEnumHashKeyObjects()
+        {
+            // Create and save item
+            EnumProduct1 product1 = new EnumProduct1
+            {
+                Id = Status.Upcoming,
+                Name = "CloudSpotter"
+            };
+            Context.Save(product1);
+
+            EnumProduct2 product2 = new EnumProduct2
+            {
+                Id = Status.Removed,
+                Name = "CloudSpotter"
+            };
+            Context.Save(product2);
+
+            var rt1 = Context.Load(product1);
+            Assert.AreEqual(product1.Id, rt1.Id);
+            Assert.AreEqual(product1.IdAsInt, rt1.IdAsInt);
+
+            var rt2 = Context.Load(product2);
+            Assert.AreEqual(product2.Id, rt2.Id);
+
+            Context.Delete(product1);
+            Context.Delete(product2);
         }
         private void TestHashObjects()
         {
@@ -815,6 +844,42 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             [DynamoDBVersion]
             public int? Version { get; set; }
         }
+
+
+        /// <summary>
+        /// Class representing items in the table [TableNamePrefix]HashTable,
+        /// with the Id field being an Enum, with hidden int conversion
+        /// </summary>
+        [DynamoDBTable("HashTable")]
+        public class EnumProduct1
+        {
+            [DynamoDBIgnore]
+            public Status Id { get; set; }
+
+            [DynamoDBHashKey("Id")]
+            public int IdAsInt
+            {
+                get { return (int)Id; }
+                set { Id = (Status)value; }
+            }
+
+            [DynamoDBProperty("Product")]
+            public string Name { get; set; }
+        }
+
+        /// <summary>
+        /// Class representing items in the table [TableNamePrefix]HashTable,
+        /// with the Id field being an Enum
+        /// </summary>
+        [DynamoDBTable("HashTable")]
+        public class EnumProduct2
+        {
+            public Status Id { get; set; }
+
+            [DynamoDBProperty("Product")]
+            public string Name { get; set; }
+        }
+
 
         /// <summary>
         /// Class representing items in the table [TableNamePrefix]HashRangeTable
