@@ -18,8 +18,6 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Runtime.InteropServices;
-using System.Security;
 
 #if BCL
 using System.Configuration;
@@ -127,7 +125,7 @@ namespace Amazon.Runtime
                 new object[] { AccessKey, SecretKey, Token },
                 new object[] { ic.AccessKey, ic.SecretKey, ic.Token });
         }
-        
+
         #endregion
     }
 
@@ -141,6 +139,12 @@ namespace Amazon.Runtime
         /// </summary>
         /// <returns></returns>
         public abstract ImmutableCredentials GetCredentials();
+
+        /// <summary>
+        /// Called by AmazonServiceClient to validate the credential state
+        /// on client construction.
+        /// </summary>
+        protected virtual void Validate() { }
 
 #if AWS_ASYNC_API
         public virtual System.Threading.Tasks.Task<ImmutableCredentials> GetCredentialsAsync()
@@ -261,9 +265,9 @@ namespace Amazon.Runtime
     /// </summary>
     public class StoredProfileAWSCredentials : AWSCredentials
     {
-        #region Private members
+        public const string DEFAULT_PROFILE_NAME = "default";
 
-        private const string DEFAULT_PROFILE_NAME = "default";
+        #region Private members
 
         private ImmutableCredentials _wrappedCredentials;
 
@@ -313,7 +317,7 @@ namespace Amazon.Runtime
             // assume the intent is to use the credentials file.
             if (string.IsNullOrEmpty(profilesLocation) && ProfileManager.IsProfileKnown(lookupName))
             {
-                ProfileManager.Validate(lookupName);
+                AWSCredentialsProfile.Validate(lookupName);
                 AWSCredentials credentials;
                 if (ProfileManager.TryGetAWSCredentials(lookupName, out credentials))
                 {
@@ -328,7 +332,7 @@ namespace Amazon.Runtime
             {
                 var credentialsFilePath = DetermineCredentialsFilePath(profilesLocation);
                 if (File.Exists(credentialsFilePath))
-                {                    
+                {
                     var parser = new CredentialsFileParser(credentialsFilePath);
                     var section = parser.FindSection(lookupName);
                     if (section != null)
@@ -346,7 +350,7 @@ namespace Amazon.Runtime
             // No credentials found so error out.
             if (this._wrappedCredentials == null)
             {
-                throw new ArgumentException("App.config does not contain credentials information. Either add the AWSAccessKey and AWSSecretKey or AWSProfileName.");
+                throw new ArgumentException("App.config does not contain credentials information. Either add the AWSAccessKey and AWSSecretKey properties or the AWSProfileName property.");
             }
         }
 
@@ -395,7 +399,7 @@ namespace Amazon.Runtime
                     System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile),
                     ".aws/credentials");
 #else
-                var     path = Path.Combine(
+                var path = Path.Combine(
                     Directory.GetParent(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal)).FullName,
                     ".aws/credentials");
 #endif
@@ -557,7 +561,7 @@ namespace Amazon.Runtime
 
         private ImmutableCredentials _wrappedCredentials;
 
-        #region Public constructors
+    #region Public constructors
 
         /// <summary>
         /// Constructs an instance of EnvironmentVariablesAWSCredentials. If no credentials are found in the environment variables 
@@ -580,7 +584,7 @@ namespace Amazon.Runtime
             logger.InfoFormat("Credentials found using environment variables.");
         }
 
-        #endregion
+    #endregion
 
         /// <summary>
         /// Returns an instance of ImmutableCredentials for this instance
@@ -602,7 +606,7 @@ namespace Amazon.Runtime
 
         private ImmutableCredentials _wrappedCredentials;
 
-        #region Public constructors
+    #region Public constructors
 
         /// <summary>
         /// Constructs an instance of EnvironmentAWSCredentials and attempts
@@ -628,10 +632,10 @@ namespace Amazon.Runtime
             }
         }
 
-        #endregion
+    #endregion
 
 
-        #region Abstract class overrides
+    #region Abstract class overrides
 
         /// <summary>
         /// Returns an instance of ImmutableCredentials for this instance
@@ -642,7 +646,7 @@ namespace Amazon.Runtime
             return this._wrappedCredentials.Copy();
         }
 
-        #endregion
+    #endregion
     }
 
 #endif
@@ -751,9 +755,13 @@ namespace Amazon.Runtime
             // Check if the new credentials are already expired
             if (ShouldUpdate)
             {
-                var errorMessage = string.Format(CultureInfo.InvariantCulture,
-                    "The retrieved credentials have already expired: Now = {0}, Credentials expiration = {1}",
-                    DateTime.Now, state.Expiration);
+                string errorMessage;
+                if (state == null)
+                    errorMessage = "Unable to generate temporary credentials";
+                else
+                    errorMessage = string.Format(CultureInfo.InvariantCulture,
+                        "The retrieved credentials have already expired: Now = {0}, Credentials expiration = {1}",
+                        DateTime.Now, state.Expiration);
                 throw new AmazonClientException(errorMessage);
             }
 

@@ -30,13 +30,27 @@ namespace Amazon.Runtime.Internal.Settings
         public const string MiscSettings = "MiscSettings";
 
         public const string RegisteredProfiles = "RegisteredAccounts";
+        public const string RegisteredSAMLEndpoints = "SAMLEndpoints";
+
         public const string RecentUsages = "RecentUsages";
 
+        public const string ProfileTypeField = "ProfileType";
         public const string DisplayNameField = "DisplayName";
-        public const string AccessKeyField = "AWSAccessKey";
-        public const string SecretKeyField = "AWSSecretKey";
         public const string AccountNumberField = "AccountNumber";
         public const string Restrictions = "Restrictions";
+
+        // present in profiles for AWS credentials
+        public const string AccessKeyField = "AWSAccessKey";
+        public const string SecretKeyField = "AWSSecretKey";
+
+        // present in profiles used with SAML role authentication
+        public const string EndpointNameField = "EndpointName";
+        public const string RoleArnField = "RoleArn";
+        public const string UserIdentityField = "UserIdentity";
+        public const string AuthenticationType = "AuthenticationType";
+
+        // present in endpoint definitions in SAMLEndpoints.json file
+        public const string EndpointField = "Endpoint";
 
         public const string SecretKeyRepository = "SecretKeyRepository";
 
