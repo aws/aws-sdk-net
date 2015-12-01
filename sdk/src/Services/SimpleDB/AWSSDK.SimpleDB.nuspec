@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.SimpleDB</id>
     <title>AWSSDK - Amazon SimpleDB</title>
-    <version>3.1.0.2</version> 
+    <version>3.1.0.3</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon SimpleDB is a highly available, scalable, and flexible non-relational data store that enables you to store and query data items using web services requests.</description>
     <language>en-US</language>
@@ -13,10 +13,10 @@
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.2.1, 3.2)" />
+      <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.2.1, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 

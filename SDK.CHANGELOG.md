@@ -1,3 +1,15 @@
+### 3.1.31.0 (2015-12-01 23:16 UTC)
+* CognitoIdentity (3.1.0.5)
+	* Add api to clone logins dictionary
+* ConfigService (3.1.2.1)
+	* Support for new resource type - dedicated host.
+* SecurityToken (3.1.1.0)
+	* Implement support for SAML-based identity federation to vend temporary AWS credentials.
+* Core 3.1.4.0
+	* * Added new role credential and endpoint profile types to support SAML identity federation.
+* Added Roslyn code analyzers to all NuGet service packages.
+	* all services packages updated to require new core
+
 ### 3.1.30.0 (2015-11-23 23:14 UTC)
 * EC2 (3.1.5.0)
 	* This release includes support for EC2 Dedicated Hosts. This feature enables the use of your own per-socket and per-core OS licenses in EC2. This release also supports two new APIs, ModifyIdFormat and DescribeIdFormat, that will be used to manage the transition to longer EC2 and EBS resource IDs. These APIs are reserved for future use.
