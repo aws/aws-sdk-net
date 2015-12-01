@@ -25,9 +25,9 @@ namespace TestHelper
             this.Column = column;
         }
 
-        public string Path { get; }
-        public int Line { get; }
-        public int Column { get; }
+        public string Path { get; private set; }
+        public int Line { get; private set; }
+        public int Column { get; private set; }
     }
 
     /// <summary>
