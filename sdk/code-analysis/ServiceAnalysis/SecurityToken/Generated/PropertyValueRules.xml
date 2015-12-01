@@ -25,7 +25,7 @@
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleRequest.RoleSessionName</property>
     <min>2</min>
-    <max>32</max>
+    <max>64</max>
     <pattern>[\w+=,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -98,7 +98,7 @@
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest.RoleSessionName</property>
     <min>2</min>
-    <max>32</max>
+    <max>64</max>
     <pattern>[\w+=,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>

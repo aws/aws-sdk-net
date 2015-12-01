@@ -1307,6 +1307,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.SimulateCustomPolicyRequest.ResourceHandlingOption</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.SimulateCustomPolicyRequest.ResourceOwner</property>
     <min>1</min>
     <max>2048</max>
@@ -1343,6 +1348,11 @@
     <property>Amazon.IdentityManagement.Model.SimulatePrincipalPolicyRequest.PolicySourceArn</property>
     <min>20</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.SimulatePrincipalPolicyRequest.ResourceHandlingOption</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.SimulatePrincipalPolicyRequest.ResourceOwner</property>
@@ -1818,6 +1828,11 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyVersion.VersionId</property>
     <pattern>v[1-9][0-9]*(\.[A-Za-z0-9-]*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ResourceSpecificResult.EvalResourceName</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.Role.Arn</property>

@@ -16,6 +16,16 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.ComposeEnvironmentsRequest.ApplicationName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.ComposeEnvironmentsRequest.GroupName</property>
+    <min>1</min>
+    <max>19</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateApplicationRequest.ApplicationName</property>
     <min>1</min>
     <max>100</max>
@@ -97,6 +107,11 @@
     <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentRequest.EnvironmentName</property>
     <min>4</min>
     <max>23</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentRequest.GroupName</property>
+    <min>1</min>
+    <max>19</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentRequest.SolutionStackName</property>
@@ -421,6 +436,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentRequest.ApplicationName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentRequest.Description</property>
     <max>200</max>
   </property-value-rule>
@@ -428,6 +448,11 @@
     <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentRequest.EnvironmentName</property>
     <min>4</min>
     <max>23</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentRequest.GroupName</property>
+    <min>1</min>
+    <max>19</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentRequest.SolutionStackName</property>

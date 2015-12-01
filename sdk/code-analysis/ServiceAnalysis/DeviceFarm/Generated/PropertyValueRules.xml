@@ -34,6 +34,22 @@
     <min>32</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.DeleteDevicePoolRequest.Arn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.DeleteProjectRequest.Arn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.DeleteRunRequest.Arn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.DeleteUploadRequest.Arn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetDeviceRequest.Arn</property>
     <min>32</min>
   </property-value-rule>
@@ -243,6 +259,29 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ScheduleRunRequest.ProjectArn</property>
     <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.UpdateDevicePoolRequest.Arn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.UpdateDevicePoolRequest.Description</property>
+    <min>0</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.UpdateDevicePoolRequest.Name</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.UpdateProjectRequest.Arn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.UpdateProjectRequest.Name</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.AccountSettings.AwsAccountNumber</property>
