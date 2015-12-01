@@ -575,6 +575,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSEC2EIP = new ResourceType("AWS::EC2::EIP");
         /// <summary>
+        /// Constant AWSEC2Host for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEC2Host = new ResourceType("AWS::EC2::Host");
+        /// <summary>
         /// Constant AWSEC2Instance for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2Instance = new ResourceType("AWS::EC2::Instance");

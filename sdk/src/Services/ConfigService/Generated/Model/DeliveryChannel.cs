@@ -57,8 +57,8 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the delivery channel. By default, AWS Config automatically assigns the
-        /// name "default" when creating the delivery channel. You cannot change the assigned
-        /// name. 
+        /// name &quot;default&quot; when creating the delivery channel. You cannot change the
+        /// assigned name. 
         /// </para>
         /// </summary>
         public string Name

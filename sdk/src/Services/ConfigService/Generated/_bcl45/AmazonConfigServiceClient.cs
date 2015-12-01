@@ -559,7 +559,7 @@ namespace Amazon.ConfigService
         /// verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
         /// permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code>
         /// for all evaluation results. This can occur if the resources were deleted or removed
-        /// from the rule's scope.</li> </ul>
+        /// from the rule's scope.</li></ul>
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByConfigRule service method.</param>
@@ -627,7 +627,7 @@ namespace Amazon.ConfigService
         /// verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
         /// permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code>
         /// for all evaluation results. This can occur if the resources were deleted or removed
-        /// from the rule's scope.</li> </ul>
+        /// from the rule's scope.</li></ul>
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByResource service method.</param>
@@ -1471,10 +1471,7 @@ namespace Amazon.ConfigService
         /// For more information about developing and using AWS Config rules, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
         /// AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.
         /// </para>
-        ///  
-        /// <para>
-        /// 
-        /// </para>
+        ///  <p/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutConfigRule service method.</param>
         /// 
