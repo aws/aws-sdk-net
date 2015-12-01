@@ -816,7 +816,15 @@ namespace Amazon.Util
         /// <returns></returns>
         public static bool HasBidiControlCharacters(string input)
         {
-            return (input.Any(IsBidiControlChar));
+            if (string.IsNullOrEmpty(input))
+                return false;
+
+            foreach(var c in input)
+            {
+                if (IsBidiControlChar(c))
+                    return true;
+            }
+            return false;
         }
         private static bool IsBidiControlChar(char c)
         {
