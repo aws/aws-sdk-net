@@ -1,16 +1,24 @@
-﻿using Amazon.CognitoSync;
-using Amazon.CognitoSync.Model;
+﻿//#define INCLUDE_FACEBOOK_TESTS
+using Amazon.CognitoIdentity;
+using Amazon.CognitoIdentity.Model;
+using Amazon.CognitoSync;
 using Amazon.CognitoSync.SyncManager;
+using Amazon.Runtime;
+using Amazon.Util.Internal;
 using AWSSDK.Tests.Framework;
+using AWSSDK.IntegrationTests.Utilities;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using UnityEngine;
 
 namespace AWSSDK.IntegrationTests.SyncManager
 {
-    [TestFixture]
-    public class SyncManagerTests : TestBase<AmazonCognitoSyncClient>
+    [TestFixture(TestOf = typeof(SyncManagerTests))]
+    [Category("SyncManager")]
+    [Category("Integration")]
+    public class SyncManagerTests : TestBase<AmazonCognitoIdentityClient>
     {
 
         //tests that require facebook app id and secret are currently disabled.
@@ -36,8 +44,9 @@ namespace AWSSDK.IntegrationTests.SyncManager
         public const string FacebookAppSecret = "";
         private const string FacebookProvider = "graph.facebook.com";
         FacebookUtilities.FacebookCreateUserResponse facebookUser = null;
+        string authPoolid = null;
+        string authPoolName = null;
 #endif
-        private static RegionEndpoint TEST_REGION = RegionEndpoint.USEast1;
 
         private List<string> roleNames = new List<string>();
         private const string policyName = "TestPolicy";
@@ -47,85 +56,101 @@ namespace AWSSDK.IntegrationTests.SyncManager
 
         internal const string DB_FILE_NAME = "aws_cognito_sync.db";
 
-        protected static void RunAsSync(Func<Task> asyncFunc)
+        [OneTimeSetUp]
+        public void Setup()
         {
-            try
-            {
-                asyncFunc().Wait();
-            }
-            finally
-            {
-
-            }
+            // Initialize these now instead of attemping to create them on the main thread when creating a sync mananger
+            _UnauthCredentials = UnAuthCredentials;
+#if INCLUDE_FACEBOOK_TESTS
+            _AuthCredentials = AuthCredentials;
+#endif
         }
 
-        [TestCleanup]
+        [OneTimeTearDown]
         public void Cleanup()
         {
             if (poolid != null)
+            {
                 DeleteIdentityPool(poolid);
-
+            }
             CleanupCreatedRoles();
 
 #if INCLUDE_FACEBOOK_TESTS
             if (facebookUser != null)
                 FacebookUtilities.DeleteFacebookUser(facebookUser);
 #endif
-            //drop all the tables from the db
-            var filePath = InternalSDKUtils.DetermineAppLocalStoragePath(DB_FILE_NAME);
-            if (File.Exists(filePath))
-            {
-                using (SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};Version=3;", filePath)))
-                {
-                    connection.Open();
+            // TODO:
+            //    //drop all the tables from the db
+            //    var filePath = InternalSDKUtils.DetermineAppLocalStoragePath(DB_FILE_NAME);
+            //    if (File.Exists(filePath))
+            //    {
+            //        using (SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};Version=3;", filePath)))
+            //        {
+            //            connection.Open();
 
-                    SQLiteCommand cmd = connection.CreateCommand();
+            //            SQLiteCommand cmd = connection.CreateCommand();
 
-                    cmd.CommandText = "DROP TABLE IF EXISTS records";
-                    cmd.ExecuteNonQuery();
+            //            cmd.CommandText = "DROP TABLE IF EXISTS records";
+            //            cmd.ExecuteNonQuery();
 
-                    cmd = connection.CreateCommand();
-                    cmd.CommandText = "DROP TABLE IF EXISTS datasets";
-                    cmd.ExecuteNonQuery();
+            //            cmd = connection.CreateCommand();
+            //            cmd.CommandText = "DROP TABLE IF EXISTS datasets";
+            //            cmd.ExecuteNonQuery();
 
-                    cmd = connection.CreateCommand();
-                    cmd.CommandText = "DROP TABLE IF EXISTS kvstore";
-                    cmd.ExecuteNonQuery();
-                }
-            }
+            //            cmd = connection.CreateCommand();
+            //            cmd.CommandText = "DROP TABLE IF EXISTS kvstore";
+            //            cmd.ExecuteNonQuery();
+            //        }
+            //    }
         }
 
 #if INCLUDE_FACEBOOK_TESTS
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        [Test]
         public void AuthenticatedCredentialsTest()
         {
             CognitoAWSCredentials authCred = AuthCredentials;
 
             string identityId = authCred.GetIdentityId();
-            Assert.IsTrue(!string.IsNullOrEmpty(identityId));
+            Utils.AssertStringIsNotNullOrEmpty(identityId);
             ImmutableCredentials cred = authCred.GetCredentials();
-            Assert.IsNotNull(cred);
+            Utils.AssertFalse(cred == null);
         }
 #endif
 
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        [Test]
         public void DatasetLocalStorageTest()
         {
             {
-                using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials))
+                CognitoSyncManager syncManager = null;
+                AutoResetEvent mainThreadArs = new AutoResetEvent(false);
+                Amazon.Runtime.Internal.UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
                 {
-                    syncManager.WipeData(false);
-                    Dataset d = syncManager.OpenOrCreateDataset("testDataset");
-                    d.Put("testKey", "testValue");
-                }
+                    syncManager = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint);
+                    mainThreadArs.Set();
+                });
+                mainThreadArs.WaitOne();
+                syncManager.WipeData(false);
+                Dataset d = syncManager.OpenOrCreateDataset("testDataset");
+                d.Put("testKey", "testValue");
+                syncManager.Dispose();
             }
             {
-                using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials))
+                CognitoSyncManager syncManager = null;
+                AutoResetEvent mainThreadArs = new AutoResetEvent(false);
+                Amazon.Runtime.Internal.UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+                {
+                    syncManager = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint);
+                    mainThreadArs.Set();
+                });
+                mainThreadArs.WaitOne();
+                try
                 {
                     Dataset d = syncManager.OpenOrCreateDataset("testDataset");
-                    Assert.AreEqual("testValue", d.Get("testKey"));
+                    Utils.AssertTrue("testValue" == d.Get("testKey"));
+                }
+                finally
+                {
+                    syncManager.Dispose();
                 }
             }
         }
@@ -134,77 +159,88 @@ namespace AWSSDK.IntegrationTests.SyncManager
         /// Test case: Store a value in a dataset and sync it. Wipe all local data.
         /// After synchronizing the dataset we should have our stored value back.
         /// </summary>
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        [Test]
         public void DatasetCloudStorageTest()
         {
+            AutoResetEvent ars = new AutoResetEvent(false);
             string failureMessage = string.Empty;
-            using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials))
+            CognitoSyncManager syncManager = null;
+            AutoResetEvent mainThreadArs = new AutoResetEvent(false);
+            Amazon.Runtime.Internal.UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
             {
+                syncManager = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint);
+                mainThreadArs.Set();
+            });
+            mainThreadArs.WaitOne();
+            syncManager.WipeData(false);
+            Thread.Sleep(2000);
+            Dataset d = syncManager.OpenOrCreateDataset("testDataset2");
+
+            d.Put("key", "he who must not be named");
+
+            d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
+            {
+                d.ClearAllDelegates();
+                string erasedValue = d.Get("key");
                 syncManager.WipeData(false);
-                Thread.Sleep(2000);
-                using (Dataset d = syncManager.OpenOrCreateDataset("testDataset2"))
+                d.OnSyncSuccess += delegate(object sender2, SyncSuccessEventArgs e2)
                 {
-                    d.Put("key", "he who must not be named");
-
-                    d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
+                    string restoredValues = d.Get("key");
+                    if (erasedValue == null)
                     {
-                        d.ClearAllDelegates();
-                        string erasedValue = d.Get("key");
-                        syncManager.WipeData(false);
-                        d.OnSyncSuccess += delegate(object sender2, SyncSuccessEventArgs e2)
-                        {
-                            string restoredValues = d.Get("key");
-                            if (erasedValue == null)
-                            {
-                                failureMessage = "erasedValue should not be null";
-                            }
-                            if (restoredValues == null)
-                            {
-                                failureMessage = "restoredValues should not be null";
-                            }
-                            if (erasedValue != restoredValues)
-                            {
-                                failureMessage = "erasedValue should equal restoredValues";
-                            }
-                        };
-
-                        RunAsSync(async () => await d.SynchronizeAsync());
-                    };
-                    d.OnSyncFailure += delegate(object sender, SyncFailureEventArgs e)
+                        failureMessage += "erasedValue should not be null\n";
+                    }
+                    if (restoredValues == null)
                     {
-                        failureMessage = "sync failed";
-                    };
-                    d.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
+                        failureMessage += "restoredValues should not be null\n";
+                    }
+                    if (erasedValue != restoredValues)
                     {
-                        failureMessage = "Expected SyncSuccess instead of SyncConflict";
-                        return false;
-                    };
-                    d.OnDatasetMerged += (Dataset dataset, List<string> datasetNames) =>
-                    {
-                        failureMessage = "Did not expect DatasetMerged";
-                        return false;
-                    };
-                    d.OnDatasetDeleted += (Dataset dataset) =>
-                    {
-                        failureMessage = "Did not expect DatasetDeleted";
-                        return false;
-                    };
-                    RunAsSync(async () => await d.SynchronizeAsync());
-                }
-            }
-            if (!string.IsNullOrEmpty(failureMessage))
+                        failureMessage += "erasedValue should equal restoredValues\n";
+                    }
+                    ars.Set();
+                };
+                d.OnSyncFailure += delegate(object sender2, SyncFailureEventArgs e2)
+                {
+                    failureMessage += "sync failed\n";
+                    ars.Set();
+                };
+                d.Synchronize();
+            };
+            d.OnSyncFailure += delegate(object sender, SyncFailureEventArgs e)
             {
-                Assert.Fail(failureMessage);
-            }
+                failureMessage += "sync failed\n";
+                ars.Set();
+            };
+            d.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
+            {
+                failureMessage += "Expected SyncSuccess instead of SyncConflict\n";
+                return false;
+            };
+            d.OnDatasetMerged += (Dataset dataset, List<string> datasetNames) =>
+            {
+                failureMessage += "Did not expect DatasetMerged\n";
+                return false;
+            };
+            d.OnDatasetDeleted += (Dataset dataset) =>
+            {
+                failureMessage += "Did not expect DatasetDeleted\n";
+                return false;
+            };
+            d.Synchronize();
+            ars.WaitOne();
+
+            d.Dispose();
+            syncManager.Dispose();
+
+            Utils.AssertStringIsNullOrEmpty(failureMessage);
         }
 
 #if INCLUDE_FACEBOOK_TESTS
         /// <summary>
         /// Test Case: 
         /// </summary>
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        [Test]
         public void MergeTest()
         {
             var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
@@ -213,113 +249,160 @@ namespace AWSSDK.IntegrationTests.SyncManager
 
             UnAuthCredentials.Clear();
 
-            using (CognitoSyncManager sm1 = new CognitoSyncManager(AuthCredentials))
-            {
-                sm1.WipeData();
-                Thread.Sleep(2000);
-                using (Dataset d = sm1.OpenOrCreateDataset("test"))
-                {
-                    d.Put(uniqueName, uniqueName);
-                    d.OnSyncSuccess += delegate(object s1, SyncSuccessEventArgs e1)
-                    {
-                        UnAuthCredentials.Clear();
+            AutoResetEvent ars = new AutoResetEvent(false);
+            string failureMessage = string.Empty;
 
-                        using (CognitoSyncManager sm2 = new CognitoSyncManager(UnAuthCredentials))
-                        {
-                            Thread.Sleep(2000);
-                            using (Dataset d2 = sm2.OpenOrCreateDataset("test"))
-                            {
-                                d2.Put(uniqueName2, uniqueName2);
-                                d2.OnSyncSuccess += delegate(object s2, SyncSuccessEventArgs e2)
-                                {
-                                    AuthCredentials.Clear();
-                                    UnAuthCredentials.Clear();
-                                    //now we will use auth credentials.
-                                    using (CognitoSyncManager sm3 = new CognitoSyncManager(AuthCredentials))
-                                    {
-                                        Thread.Sleep(2000);
-                                        using (Dataset d3 = sm3.OpenOrCreateDataset("test"))
-                                        {
-                                            bool mergeTriggered = false;
-                                            d3.OnSyncSuccess += (object sender, SyncSuccessEventArgs e) =>
-                                            {
-                                                if (!mergeTriggered)
-                                                    Assert.Fail("Expecting DatasetMerged instead of OnSyncSuccess");
-                                            };
-                                            d3.OnSyncConflict += (Dataset dataset, List<SyncConflict> syncConflicts) =>
-                                            {
-                                                Assert.Fail();
-                                                return false;
-                                            };
-                                            d3.OnDatasetDeleted += (Dataset dataset) =>
-                                            {
-                                                Assert.Fail();
-                                                return false;
-                                            };
-                                            d3.OnDatasetMerged += (Dataset ds, List<string> datasetNames) =>
-                                            {
-                                                mergeTriggered = true;
-                                                datasetNames.ForEach((mergeds) =>
-                                                {
-                                                    Dataset mergedDataset = sm3.OpenOrCreateDataset(mergeds);
-                                                    mergedDataset.Delete();
-                                                    RunAsSync(async () => await mergedDataset.SynchronizeAsync());
-                                                });
-                                                return true;
-                                            };
-                                            RunAsSync(async () => await d3.SynchronizeAsync());
-                                        }
-                                    }
-                                };
-                                d2.OnSyncFailure += (object sender, SyncFailureEventArgs e) =>
-                                {
-                                    Console.WriteLine(e.Exception.Message);
-                                    Console.WriteLine(e.Exception.StackTrace);
-                                    Assert.Fail();
-                                };
-                                d2.OnSyncConflict += (Dataset dataset, List<SyncConflict> conflicts) =>
-                                {
-                                    Assert.Fail();
-                                    return false;
-                                };
-                                d2.OnDatasetDeleted += (Dataset dataset) =>
-                                {
-                                    Assert.Fail();
-                                    return false;
-                                };
-                                d2.OnDatasetMerged += (Dataset dataset, List<string> datasetNames) =>
-                                {
-                                    Assert.Fail();
-                                    return false;
-                                };
-                                RunAsSync(async () => await d2.SynchronizeAsync());
-                            }
-                        }
-                    };
-                    d.OnSyncFailure += delegate(object s, SyncFailureEventArgs e)
-                    {
-                        Console.WriteLine(e.Exception.Message);
-                        Console.WriteLine(e.Exception.StackTrace);
-                        Assert.Fail("Sync Failed");
-                    };
-                    d.OnSyncConflict += (Dataset dataset, List<SyncConflict> syncConflicts) =>
-                    {
-                        Assert.Fail();
-                        return false;
-                    };
-                    d.OnDatasetDeleted += (Dataset dataset) =>
-                    {
-                        Assert.Fail();
-                        return false;
-                    };
-                    d.OnDatasetMerged += (Dataset dataset, List<string> datasetNames) =>
-                    {
-                        Assert.Fail();
-                        return false;
-                    };
-                    RunAsSync(async () => await d.SynchronizeAsync());
+            CognitoSyncManager sm1 = null;
+            AutoResetEvent mainThreadArs = new AutoResetEvent(false);
+            Amazon.Runtime.Internal.UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+            {
+                sm1 = new CognitoSyncManager(AuthCredentials, TestRunner.RegionEndpoint);
+                mainThreadArs.Set();
+            });
+            mainThreadArs.WaitOne();
+            sm1.WipeData(false);
+            Thread.Sleep(2000);
+            Dataset d = sm1.OpenOrCreateDataset("test");
+            d.Put(uniqueName, uniqueName);
+            d.OnSyncSuccess += delegate(object s1, SyncSuccessEventArgs e1)
+            {
+                ars.Set();
+            };
+            d.OnSyncFailure += delegate(object s, SyncFailureEventArgs e)
+            {
+                failureMessage += string.Format("Not expecting OnSyncFailure Got exception {0}\n", e.Exception.Message);
+                ars.Set();
+            };
+            d.OnSyncConflict += (Dataset dataset, List<SyncConflict> syncConflicts) =>
+            {
+                failureMessage += "Not expecting OnSyncConflict\n";
+                return false;
+            };
+            d.OnDatasetDeleted += (Dataset dataset) =>
+            {
+                failureMessage += "Not expecting OnDatasetDeleted\n";
+                return false;
+            };
+            d.OnDatasetMerged += (Dataset dataset, List<string> datasetNames) =>
+            {
+                failureMessage += "Not expecting OnDatasetMerged\n";
+                return false;
+            };
+            d.Synchronize();
+            ars.WaitOne();
+
+            d.Dispose();
+            sm1.Dispose();
+            Utils.AssertStringIsNullOrEmpty(failureMessage);
+
+            UnAuthCredentials.Clear();
+
+            CognitoSyncManager sm2 = null;
+            Amazon.Runtime.Internal.UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+            {
+                sm2 = new CognitoSyncManager(AuthCredentials, TestRunner.RegionEndpoint);
+                mainThreadArs.Set();
+            });
+            mainThreadArs.WaitOne();
+            Thread.Sleep(2000);
+
+            Dataset d2 = sm2.OpenOrCreateDataset("test");
+            d2.Put(uniqueName2, uniqueName2);
+            d2.OnSyncSuccess += delegate(object s2, SyncSuccessEventArgs e2)
+            {
+                ars.Set();
+            };
+            d2.OnSyncFailure += (object sender, SyncFailureEventArgs e) =>
+            {
+                failureMessage += string.Format("Not expecting OnSyncFailure Got exception {0}\n", e.Exception.Message);
+                ars.Set();
+            };
+            d2.OnSyncConflict += (Dataset dataset, List<SyncConflict> conflicts) =>
+            {
+                failureMessage += "Not expecting OnSyncConflict\n";
+                return false;
+            };
+            d2.OnDatasetDeleted += (Dataset dataset) =>
+            {
+                failureMessage += "Not expecting OnDatasetDeleted\n";
+                return false;
+            };
+            d2.OnDatasetMerged += (Dataset dataset, List<string> datasetNames) =>
+            {
+                failureMessage += "Not expecting OnDatasetMerged\n";
+                return false;
+            };
+            d2.Synchronize();
+            ars.WaitOne();
+
+            d2.Dispose();
+            sm2.Dispose();
+            Utils.AssertStringIsNullOrEmpty(failureMessage);
+
+            AuthCredentials.Clear();
+            UnAuthCredentials.Clear();
+
+            CognitoSyncManager sm3 = null;
+            Amazon.Runtime.Internal.UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+            {
+                sm3 = new CognitoSyncManager(AuthCredentials, TestRunner.RegionEndpoint);
+                mainThreadArs.Set();
+            });
+            mainThreadArs.WaitOne();
+
+            Thread.Sleep(2000);
+
+            Dataset d3 = sm3.OpenOrCreateDataset("test");
+            bool mergeTriggered = false;
+            d3.OnSyncSuccess += (object sender, SyncSuccessEventArgs e) =>
+            {
+                if (!mergeTriggered)
+                {
+                    failureMessage += "Expecting DatasetMerged instead of OnSyncSuccess\n";
                 }
-            }
+                ars.Set();
+            };
+            d3.OnSyncFailure += (object sender, SyncFailureEventArgs e) =>
+            {
+                failureMessage += string.Format("Not expecting OnSyncFailure Got exception {0}\n", e.Exception.Message);
+                ars.Set();
+            };
+            d3.OnSyncConflict += (Dataset dataset, List<SyncConflict> syncConflicts) =>
+            {
+                failureMessage += "Not expecting OnSyncConflict\n";
+                return false;
+            };
+            d3.OnDatasetDeleted += (Dataset dataset) =>
+            {
+                failureMessage += "Not expecting OnDatasetDeleted\n";
+                return false;
+            };
+            d3.OnDatasetMerged += delegate(Dataset ds, List<string> datasetNames)
+            {
+                mergeTriggered = true;
+                AutoResetEvent mergeArs = new AutoResetEvent(false);
+                datasetNames.ForEach((mergeds) =>
+                {
+                    Dataset mergedDataset = sm3.OpenOrCreateDataset(mergeds);
+                    mergedDataset.OnSyncFailure += (object sender, SyncFailureEventArgs e) =>
+                    {
+                        failureMessage += string.Format("Not expecting OnSyncFailure Got exception {0}\n", e.Exception.Message);
+                        ars.Set();
+                    };
+                    mergedDataset.OnSyncSuccess += (object sender, SyncSuccessEventArgs e) =>
+                    {
+                        ars.Set();
+                    };
+                    mergedDataset.Delete();
+                    mergedDataset.Synchronize();
+                    mergeArs.WaitOne();
+                });
+                return true;
+            };
+            d3.Synchronize();
+
+            ars.WaitOne();
+            Utils.AssertStringIsNullOrEmpty(failureMessage);
         }
 #endif
 
@@ -327,57 +410,87 @@ namespace AWSSDK.IntegrationTests.SyncManager
         /// Test case: Check that the dataset metadata is modified appropriately when calling Synchronize.
         /// We test for the dirty bit, the sync count and the last modified timmestamp.
         /// </summary>
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        [Test]
         public void MetadataTest()
         {
-            using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials))
+            AutoResetEvent ars = new AutoResetEvent(false);
+            string failureMessage = string.Empty;
+            CognitoSyncManager syncManager = null;
+            AutoResetEvent mainThreadArs = new AutoResetEvent(false);
+            Amazon.Runtime.Internal.UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
             {
-                syncManager.WipeData(false);
-                using (Dataset d = syncManager.OpenOrCreateDataset("testDataset3"))
+                syncManager = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint);
+                mainThreadArs.Set();
+            });
+            mainThreadArs.WaitOne();
+            syncManager.WipeData(false);
+            using (Dataset d = syncManager.OpenOrCreateDataset("testDataset3"))
+            {
+                d.Put("testKey3", "the initial value");
+
+                //Initial properties
+                var records = d.Records;
+                Record r = d.Records[records.Count - 1];
+                long initialSyncCount = r.SyncCount;
+                bool initialDirty = r.IsModified;
+                DateTime initialDate = r.DeviceLastModifiedDate.Value;
+
+                d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
                 {
-                    d.Put("testKey3", "the initial value");
+                    //Properties after Synchronize
+                    Record r2 = d.Records[records.Count - 1];
+                    long synchronizedSyncCount = r2.SyncCount;
+                    bool synchronizedDirty = r2.IsModified;
+                    DateTime synchronizedDate = r2.DeviceLastModifiedDate.Value;
 
-                    //Initial properties
-                    var records = d.Records;
-                    Record r = d.Records[records.Count - 1];
-                    long initialSyncCount = r.SyncCount;
-                    bool initialDirty = r.IsModified;
-                    DateTime initialDate = r.DeviceLastModifiedDate.Value;
+                    d.Put("testKey3", "a new value");
 
-                    d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
+                    //Properties after changing the content again
+                    Record r3 = d.Records[records.Count - 1];
+                    long finalSyncCount = r3.SyncCount;
+                    bool finalDirty = r3.IsModified;
+                    DateTime finalDate = r3.DeviceLastModifiedDate.Value;
+
+                    if (!initialDirty)
                     {
-                        //Properties after Synchronize
-                        Record r2 = d.Records[records.Count - 1];
-                        long synchronizedSyncCount = r2.SyncCount;
-                        bool synchronizedDirty = r2.IsModified;
-                        DateTime synchronizedDate = r2.DeviceLastModifiedDate.Value;
-
-                        d.Put("testKey3", "a new value");
-
-                        //Properties after changing the content again
-                        Record r3 = d.Records[records.Count - 1];
-                        long finalSyncCount = r3.SyncCount;
-                        bool finalDirty = r3.IsModified;
-                        DateTime finalDate = r3.DeviceLastModifiedDate.Value;
-
-                        Assert.IsTrue(initialDirty);
-                        Assert.IsTrue(!synchronizedDirty);
-                        Assert.IsTrue(finalDirty);
-
-                        Assert.IsTrue(synchronizedSyncCount > initialSyncCount);
-                        Assert.IsTrue(synchronizedSyncCount == finalSyncCount);
-
-                        Assert.IsTrue(finalDate > initialDate);
-                        Assert.IsTrue(initialDate == synchronizedDate);
-                    };
-                    d.OnSyncFailure += (object sender, SyncFailureEventArgs e) =>
+                        failureMessage += "Expected 'initialDirty' to be true\n";
+                    }
+                    if (synchronizedDirty)
                     {
-                        Assert.Fail(e.Exception.ToString());
-                    };
-                    RunAsSync(async () => await d.SynchronizeAsync());
-                }
+                        failureMessage += "Expected 'synchronizedDirty' to be false\n";
+                    }
+                    if (!finalDirty)
+                    {
+                        failureMessage += "Expected 'finalDirty' to be true\n";
+                    }
+                    if (synchronizedSyncCount <= initialSyncCount)
+                    {
+                        failureMessage += "Expected synchronizedSyncCount > initialSyncCount\n";
+                    }
+                    if (synchronizedSyncCount != finalSyncCount)
+                    {
+                        failureMessage += "Expected synchronizedSyncCount == finalSyncCount\n";
+                    }
+                    if (finalDate <= initialDate)
+                    {
+                        failureMessage += "Expected finalDate > initialDate\n";
+                    }
+                    if (initialDate != synchronizedDate)
+                    {
+                        failureMessage += "Expected initialDate == synchronizedDate\n";
+                    }
+                    ars.Set();
+                };
+                d.OnSyncFailure += (object sender, SyncFailureEventArgs e) =>
+                {
+                    failureMessage += e.Exception.ToString() + "\n";
+                    ars.Set();
+                };
+                d.Synchronize();
+                ars.WaitOne();
             }
+            syncManager.Dispose();
+            Utils.AssertStringIsNullOrEmpty(failureMessage);
         }
 
 
@@ -386,52 +499,68 @@ namespace AWSSDK.IntegrationTests.SyncManager
         /// Also check that by returning false in SyncConflict, the Synchronize operation
         /// is aborted and nothing else gets called. 
         /// </summary>
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        [Test]
         public void ConflictTest()
         {
+            AutoResetEvent ars = new AutoResetEvent(false);
             string failureMessage = string.Empty;
-            using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials))
+            CognitoSyncManager syncManager = null;
+            AutoResetEvent mainThreadArs = new AutoResetEvent(false);
+            Amazon.Runtime.Internal.UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
             {
+                syncManager = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint);
+                mainThreadArs.Set();
+            });
+            mainThreadArs.WaitOne();
+            syncManager.WipeData(false);
+            Dataset d = syncManager.OpenOrCreateDataset("testDataset3");
+            Dataset d2 = null;
+            d.Put("testKey3", "the initial value");
+            d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
+            {
+                d.ClearAllDelegates();
                 syncManager.WipeData(false);
-                using (Dataset d = syncManager.OpenOrCreateDataset("testDataset3"))
-                {
-                    d.Put("testKey3", "the initial value");
-                    d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
-                    {
-                        d.ClearAllDelegates();
-                        syncManager.WipeData(false);
-                        using (Dataset d2 = syncManager.OpenOrCreateDataset("testDataset3"))
-                        {
-                            bool conflictTriggered = false;
-                            d2.Put("testKey3", "a different value");
+                d2 = syncManager.OpenOrCreateDataset("testDataset3");
 
-                            d2.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
-                            {
-                                conflictTriggered = true;
-                                return false;
-                            };
-                            d2.OnSyncSuccess += delegate(object sender4, SyncSuccessEventArgs e4)
-                            {
-                                failureMessage = "Expecting OnSyncConflict instead of OnSyncSuccess";
-                            };
-                            d2.OnSyncFailure += delegate(object sender4, SyncFailureEventArgs e4)
-                            {
-                                if (!conflictTriggered)
-                                {
-                                    failureMessage = "Expecting OnSyncConflict instead of OnSyncFailure";
-                                }
-                            };
-                            RunAsSync(async () => await d2.SynchronizeAsync());
-                        }
-                    };
-                    RunAsSync(async () => await d.SynchronizeAsync());
-                }
-            }
-            if (!string.IsNullOrEmpty(failureMessage))
+                bool conflictTriggered = false;
+                d2.Put("testKey3", "a different value");
+
+                d2.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
+                {
+                    conflictTriggered = true;
+                    return false;
+                };
+                d2.OnSyncSuccess += delegate(object sender4, SyncSuccessEventArgs e4)
+                {
+                    failureMessage += "Expecting OnSyncConflict instead of OnSyncSuccess\n";
+                    ars.Set();
+                };
+                d2.OnSyncFailure += delegate(object sender4, SyncFailureEventArgs e4)
+                {
+                    if (!conflictTriggered)
+                    {
+                        failureMessage += "Expecting OnSyncConflict instead of OnSyncFailure\n";
+                    }
+                    ars.Set();
+                };
+                d2.Synchronize();
+            };
+            d.OnSyncFailure += delegate(object sender4, SyncFailureEventArgs e4)
             {
-                Assert.Fail(failureMessage);
+                failureMessage += "Expecting OnSyncSuccess instead of OnSyncFailure\n";
+                ars.Set();
+            };
+            d.Synchronize();
+            ars.WaitOne();
+
+            if (d2 != null)
+            {
+                d2.Dispose();
             }
+            d.Dispose();
+            syncManager.Dispose();
+
+            Utils.AssertStringIsNullOrEmpty(failureMessage);
         }
 
         /// <summary>
@@ -439,82 +568,94 @@ namespace AWSSDK.IntegrationTests.SyncManager
         /// for resolving a conflict (local wins, remote wins, and override) work. We also check
         /// that returning true in SyncConflict allows the Synchronization operationn to continue.
         /// </summary>
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        [Test]
         public void ResolveConflictTest()
         {
+            AutoResetEvent ars = new AutoResetEvent(false);
             string failureMessage = string.Empty;
-            using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials))
+            CognitoSyncManager syncManager = null;
+            AutoResetEvent mainThreadArs = new AutoResetEvent(false);
+            Amazon.Runtime.Internal.UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
             {
+                syncManager = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint);
+                mainThreadArs.Set();
+            });
+            mainThreadArs.WaitOne();
+            syncManager.WipeData(false);
+            Dataset d = syncManager.OpenOrCreateDataset("testDataset4");
+            Dataset d2 = null;
+            d.Put("a", "1");
+            d.Put("b", "2");
+            d.Put("c", "3");
+            d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
+            {
+                d.ClearAllDelegates();
                 syncManager.WipeData(false);
-                using (Dataset d = syncManager.OpenOrCreateDataset("testDataset4"))
+                d2 = syncManager.OpenOrCreateDataset("testDataset4");
+                d2.Put("a", "10");
+                d2.Put("b", "20");
+                d2.Put("c", "30");
+
+                bool resolved = false;
+                d2.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
                 {
-                    d.Put("a", "1");
-                    d.Put("b", "2");
-                    d.Put("c", "3");
-                    d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
+                    List<Amazon.CognitoSync.SyncManager.Record> resolvedRecords = new List<Amazon.CognitoSync.SyncManager.Record>();
+                    int i = 0;
+                    foreach (SyncConflict conflictRecord in conflicts)
                     {
-                        d.ClearAllDelegates();
-                        syncManager.WipeData(false);
-                        using (Dataset d2 = syncManager.OpenOrCreateDataset("testDataset4"))
+                        if (i == 0) resolvedRecords.Add(conflictRecord.ResolveWithLocalRecord());
+                        else if (i == 1) resolvedRecords.Add(conflictRecord.ResolveWithValue("42"));
+                        else resolvedRecords.Add(conflictRecord.ResolveWithRemoteRecord());
+                        i++;
+                    }
+                    dataset.Resolve(resolvedRecords);
+                    resolved = true;
+                    return true;
+                };
+                d2.OnSyncSuccess += delegate(object sender4, SyncSuccessEventArgs e4)
+                {
+                    if (resolved)
+                    {
+                        if (d2.Get("a") != "10")
                         {
-                            d2.Put("a", "10");
-                            d2.Put("b", "20");
-                            d2.Put("c", "30");
-
-                            bool resolved = false;
-                            d2.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
-                            {
-                                List<Amazon.CognitoSync.SyncManager.Record> resolvedRecords = new List<Amazon.CognitoSync.SyncManager.Record>();
-                                int i = 0;
-                                foreach (SyncConflict conflictRecord in conflicts)
-                                {
-                                    if (i == 0) resolvedRecords.Add(conflictRecord.ResolveWithLocalRecord());
-                                    else if (i == 1) resolvedRecords.Add(conflictRecord.ResolveWithValue("42"));
-                                    else resolvedRecords.Add(conflictRecord.ResolveWithRemoteRecord());
-                                    i++;
-                                }
-                                dataset.Resolve(resolvedRecords);
-                                resolved = true;
-                                return true;
-                            };
-                            d2.OnSyncSuccess += delegate(object sender4, SyncSuccessEventArgs e4)
-                            {
-                                if (resolved)
-                                {
-                                    if (d2.Get("a") != "10")
-                                    {
-                                        failureMessage = "Value for key 'a' should be '10'";
-                                    }
-                                    if (d2.Get("b") != "42")
-                                    {
-                                        failureMessage = "Value for key 'b' should be '42'";
-                                    }
-                                    if (d2.Get("c") != "3")
-                                    {
-                                        failureMessage = "Value for key 'c' should be '3'";
-                                    }
-                                }
-                                else
-                                {
-                                    failureMessage = "Expecting SyncConflict instead of SyncSuccess";
-                                }
-
-                            };
-                            d2.OnSyncFailure += delegate(object sender4, SyncFailureEventArgs e4)
-                            {
-                                failureMessage = "Expecting SyncConflict instead of SyncFailure";
-                            };
-                            RunAsSync(async () => await d2.SynchronizeAsync());
+                            failureMessage += "Value for key 'a' should be '10'\n";
                         }
-                    };
-                    RunAsSync(async () => await d.SynchronizeAsync());
-                }
-            }
-            if (!string.IsNullOrEmpty(failureMessage))
+                        if (d2.Get("b") != "42")
+                        {
+                            failureMessage += "Value for key 'b' should be '42'\n";
+                        }
+                        if (d2.Get("c") != "3")
+                        {
+                            failureMessage += "Value for key 'c' should be '3'\n";
+                        }
+                    }
+                    else
+                    {
+                        failureMessage += "Expecting SyncConflict instead of SyncSuccess\n";
+                    }
+                    ars.Set();
+                };
+                d2.OnSyncFailure += delegate(object sender4, SyncFailureEventArgs e4)
+                {
+                    failureMessage += "Expecting SyncConflict instead of SyncFailure\n";
+                    ars.Set();
+                };
+                d2.Synchronize();
+            };
+            d.OnSyncFailure += delegate(object sender4, SyncFailureEventArgs e4)
             {
-                Assert.Fail(failureMessage);
+                failureMessage += "Expecting SyncConflict instead of SyncFailure\n";
+                ars.Set();
+            };
+            d.Synchronize();
+            ars.WaitOne();
+            d.Dispose();
+            if (d2 != null)
+            {
+                d2.Dispose();
             }
+            syncManager.Dispose();
+            Utils.AssertStringIsNullOrEmpty(failureMessage);
         }
 
 
@@ -525,57 +666,72 @@ namespace AWSSDK.IntegrationTests.SyncManager
         /// Check that the dataset is no longer in local memory and that syncing a
         /// dataset with the same record key does not cause a conflict.
         /// </summary>
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        [Test]
         public void WipeDataTest()
         {
+            AutoResetEvent ars = new AutoResetEvent(false);
             string failureMessage = string.Empty;
-            CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials);
+            CognitoSyncManager syncManager = null;
+            AutoResetEvent mainThreadArs = new AutoResetEvent(false);
+            Amazon.Runtime.Internal.UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+            {
+                syncManager = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint);
+                mainThreadArs.Set();
+            });
+            mainThreadArs.WaitOne();
             syncManager.WipeData(false);
             Dataset d = syncManager.OpenOrCreateDataset("testDataset5");
+            Dataset d2 = null;
             d.Put("testKey", "testValue");
             d.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
             {
-                failureMessage = "Expecting SyncSuccess instead of SyncConflict";
+                failureMessage += "Expecting SyncSuccess instead of SyncConflict\n";
                 return false;
             };
             d.OnSyncFailure += delegate(object sender, SyncFailureEventArgs e)
             {
-                failureMessage = "Expecting SyncSuccess instead of SyncFailure";
+                failureMessage += "Expecting SyncSuccess instead of SyncFailure\n";
+                ars.Set();
             };
 
             d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
             {
                 syncManager.WipeData();
-                Dataset d2 = syncManager.OpenOrCreateDataset("testDataset5");
+                d2 = syncManager.OpenOrCreateDataset("testDataset5");
                 if (d2.Records.Count != 0)
                 {
-                    failureMessage = "Expecting dataset to be empty due to local data wipe.";
+                    failureMessage += "Expecting dataset to be empty due to local data wipe.\n";
                 }
                 d2.Put("testKey", "newTestValue");
                 d2.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
                 {
-                    failureMessage = "Expecting SyncSuccess instead of SyncConflict";
+                    failureMessage += "Expecting SyncSuccess instead of SyncConflict\n";
                     return false;
                 };
                 d2.OnSyncFailure += delegate(object sender2, SyncFailureEventArgs e2)
                 {
-                    failureMessage = "Expecting SyncSuccess instead of SyncFailure";
+                    failureMessage += "Expecting SyncSuccess instead of SyncFailure\n";
+                    ars.Set();
                 };
                 d2.OnSyncSuccess += delegate(object sender2, SyncSuccessEventArgs e2)
                 {
                     if (d2.Get("testKey") != "newTestValue")
                     {
-                        failureMessage = "Value for key 'testKey' should be 'newTestValue'";
+                        failureMessage += "Value for key 'testKey' should be 'newTestValue'\n";
                     }
+                    ars.Set();
                 };
-                RunAsSync(async () => await d2.SynchronizeAsync());
+                d2.Synchronize();
             };
-            RunAsSync(async () => await d.SynchronizeAsync());
-            if (!string.IsNullOrEmpty(failureMessage))
+            d.Synchronize();
+            ars.WaitOne();
+            syncManager.Dispose();
+            d.Dispose();
+            if (d2 != null)
             {
-                Assert.Fail(failureMessage);
+                d2.Dispose();
             }
+            Utils.AssertStringIsNullOrEmpty(failureMessage);
         }
 
 #if INCLUDE_FACEBOOK_TESTS
@@ -594,7 +750,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
                 }
                 facebookUser = FacebookUtilities.CreateFacebookUser(FacebookAppId, FacebookAppSecret);
 
-                _AuthCredentials = new SQLiteCognitoAWSCredentials(poolid, TEST_REGION);
+                _AuthCredentials = new CognitoAWSCredentials(poolid, TestRunner.RegionEndpoint);
                 _AuthCredentials.AddLogin(FacebookProvider, facebookUser.AccessToken);
                 //create facebook token
                 return _AuthCredentials;
@@ -614,148 +770,247 @@ namespace AWSSDK.IntegrationTests.SyncManager
                 if (poolid == null)
                     CreateIdentityPool(out poolid, out poolName);
 
-                _UnauthCredentials = new SQLiteCognitoAWSCredentials(poolid, TEST_REGION);
+                _UnauthCredentials = new CognitoAWSCredentials(poolid, TestRunner.RegionEndpoint);
                 return _UnauthCredentials;
-            }
-        }
-
-        IAmazonCognitoIdentity _client;
-
-        private IAmazonCognitoIdentity Client
-        {
-            get
-            {
-                if (_client == null) _client = new AmazonCognitoIdentityClient();
-                return _client;
             }
         }
 
         private void CreateIdentityPool(out string poolId, out string poolName)
         {
-            poolName = "netTestPool" + DateTime.Now.ToFileTime();
+            AutoResetEvent ars = new AutoResetEvent(false);
+            Exception responseException = new Exception();
+
+            poolName = "unityTestPool" + DateTime.Now.ToFileTime();
             var request = new CreateIdentityPoolRequest
             {
                 IdentityPoolName = poolName,
                 AllowUnauthenticatedIdentities = true
 #if INCLUDE_FACEBOOK_TESTS
-                ,
+,
                 SupportedLoginProviders = new Dictionary<string, string>() { { FacebookProvider, FacebookAppId } }
 #endif
             };
-
-            var createPoolResult = Client.CreateIdentityPool(request);
-            Assert.IsNotNull(createPoolResult.IdentityPoolId);
-            Assert.IsNotNull(createPoolResult.IdentityPoolName);
-            Assert.AreEqual(request.AllowUnauthenticatedIdentities, createPoolResult.AllowUnauthenticatedIdentities);
-            poolId = createPoolResult.IdentityPoolId;
+            string identityPoolId = null;
+            string identityPoolName = null;
+            bool allowUnauthenticatedIdentities = false;
+            Client.CreateIdentityPoolAsync(request, (response) =>
+            {
+                responseException = response.Exception;
+                if (response.Exception == null)
+                {
+                    identityPoolId = response.Response.IdentityPoolId;
+                    identityPoolName = response.Response.IdentityPoolName;
+                    allowUnauthenticatedIdentities = response.Response.AllowUnauthenticatedIdentities;
+                }
+                ars.Set();
+            }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
+            ars.WaitOne();
+            Utils.AssertExceptionIsNull(responseException);
+            Utils.AssertStringIsNotNullOrEmpty(identityPoolId);
+            Utils.AssertStringIsNotNullOrEmpty(identityPoolName);
+            Utils.AssertTrue(request.AllowUnauthenticatedIdentities == allowUnauthenticatedIdentities);
+            poolId = identityPoolId;
             allPoolIds.Add(poolId);
 
-            var describePoolResult = Client.DescribeIdentityPool(new DescribeIdentityPoolRequest
+            Client.DescribeIdentityPoolAsync(new DescribeIdentityPoolRequest
             {
                 IdentityPoolId = poolId
-            });
-            Assert.AreEqual(poolId, describePoolResult.IdentityPoolId);
-            Assert.AreEqual(poolName, describePoolResult.IdentityPoolName);
+            }, (response) =>
+            {
+                responseException = response.Exception;
+                if (response.Exception == null)
+                {
+                    identityPoolId = response.Response.IdentityPoolId;
+                    identityPoolName = response.Response.IdentityPoolName;
+                }
+                ars.Set();
+            }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
+            ars.WaitOne();
+            Utils.AssertExceptionIsNull(responseException);
+            Utils.AssertTrue(poolId == identityPoolId);
+            Utils.AssertTrue(poolName == identityPoolName);
 
-            var getIdentityPoolRolesResult = Client.GetIdentityPoolRoles(poolId);
-            Assert.AreEqual(poolId, getIdentityPoolRolesResult.IdentityPoolId);
-            Assert.AreEqual(0, getIdentityPoolRolesResult.Roles.Count);
+            Dictionary<string, string> roles = null;
+            Client.GetIdentityPoolRolesAsync(poolId, (response) =>
+            {
+                responseException = response.Exception;
+                if (response.Exception == null)
+                {
+                    identityPoolId = response.Response.IdentityPoolId;
+                    roles = response.Response.Roles;
+                }
+                ars.Set();
+            }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
+            ars.WaitOne();
+            Utils.AssertExceptionIsNull(responseException);
+            Utils.AssertTrue(poolId == identityPoolId);
+            Utils.AssertFalse(roles == null);
+            Utils.AssertTrue(0 == roles.Count);
 
-            var roles = new Dictionary<string, string>(StringComparer.Ordinal);
+            roles = new Dictionary<string, string>(StringComparer.Ordinal);
             if ((poolRoles & PoolRoles.Unauthenticated) == PoolRoles.Unauthenticated)
                 roles["unauthenticated"] = PrepareRole();
             if ((poolRoles & PoolRoles.Authenticated) == PoolRoles.Authenticated)
                 roles["authenticated"] = PrepareRole();
 
-            Client.SetIdentityPoolRoles(new SetIdentityPoolRolesRequest
+            Client.SetIdentityPoolRolesAsync(new SetIdentityPoolRolesRequest
             {
                 IdentityPoolId = poolId,
                 Roles = roles
-            });
+            }, (response) =>
+            {
+                responseException = response.Exception;
+                ars.Set();
+            }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
+            ars.WaitOne();
+            Utils.AssertExceptionIsNull(responseException);
 
-            getIdentityPoolRolesResult = Client.GetIdentityPoolRoles(poolId);
-            Assert.AreEqual(poolId, getIdentityPoolRolesResult.IdentityPoolId);
-            Assert.AreEqual(NumberOfPoolRoles, getIdentityPoolRolesResult.Roles.Count);
+            Client.GetIdentityPoolRolesAsync(poolId, (response) =>
+            {
+                responseException = response.Exception;
+                if (response.Exception == null)
+                {
+                    identityPoolId = response.Response.IdentityPoolId;
+                    roles = response.Response.Roles;
+                }
+                ars.Set();
+            }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
+            ars.WaitOne();
+            Utils.AssertExceptionIsNull(responseException);
+            Utils.AssertTrue(poolId == identityPoolId);
+            Utils.AssertTrue(NumberOfPoolRoles == roles.Count);
 
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
         }
 
 
         private IEnumerable<IdentityPoolShortDescription> GetAllPoolsHelper()
         {
+            AutoResetEvent ars = new AutoResetEvent(false);
+            Exception responseException = new Exception();
+
             var request = new ListIdentityPoolsRequest { MaxResults = MaxResults };
-            ListIdentityPoolsResponse result;
+
+            string nextToken = null;
             do
             {
-                result = Client.ListIdentityPools(request);
-                foreach (var pool in result.IdentityPools)
+                List<IdentityPoolShortDescription> identityPools = null;
+                Client.ListIdentityPoolsAsync(request, (response) =>
                 {
-                    Assert.IsNotNull(pool);
-                    Assert.IsFalse(string.IsNullOrEmpty(pool.IdentityPoolId));
-                    Assert.IsFalse(string.IsNullOrEmpty(pool.IdentityPoolName));
+                    responseException = response.Exception;
+                    if (response.Exception == null)
+                    {
+                        identityPools = response.Response.IdentityPools;
+                        nextToken = response.Response.NextToken;
+                    }
+                    ars.Set();
+                }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
+                ars.WaitOne();
+                Utils.AssertExceptionIsNull(responseException); ;
+                foreach (var pool in identityPools)
+                {
+                    Utils.AssertFalse(pool == null);
+                    Utils.AssertStringIsNotNullOrEmpty(pool.IdentityPoolId);
+                    Utils.AssertStringIsNotNullOrEmpty(pool.IdentityPoolName);
                     yield return pool;
                 }
 
-                request.NextToken = result.NextToken;
-            } while (!string.IsNullOrEmpty(result.NextToken));
+                request.NextToken = nextToken;
+            } while (!string.IsNullOrEmpty(nextToken));
         }
 
         private IEnumerable<IdentityDescription> GetAllIdentitiesHelper(string poolId)
         {
+            AutoResetEvent ars = new AutoResetEvent(false);
+            Exception responseException = new Exception();
+
             var request = new ListIdentitiesRequest
             {
                 MaxResults = MaxResults,
                 IdentityPoolId = poolId
             };
-            ListIdentitiesResponse result;
+            string nextToken = null;
             do
             {
-                result = Client.ListIdentities(request);
-                foreach (var ident in result.Identities)
+                List<IdentityDescription> identities = null;
+                Client.ListIdentitiesAsync(request, (response) =>
                 {
-                    Assert.IsNotNull(ident);
-                    Assert.IsFalse(string.IsNullOrEmpty(ident.IdentityId));
-                    Assert.IsNotNull(ident.Logins);
+                    responseException = response.Exception;
+                    if (response.Exception == null)
+                    {
+                        identities = response.Response.Identities;
+                        nextToken = response.Response.NextToken;
+                    }
+                    ars.Set();
+                }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
+                ars.WaitOne();
+                Utils.AssertExceptionIsNull(responseException);
+                foreach (var ident in identities)
+                {
+                    Utils.AssertFalse(ident == null);
+                    Utils.AssertStringIsNotNullOrEmpty(ident.IdentityId);
+                    Utils.AssertFalse(ident.Logins == null);
                     yield return ident;
                 }
-                request.NextToken = result.NextToken;
-            } while (!string.IsNullOrEmpty(result.NextToken));
+                request.NextToken = nextToken;
+            } while (!string.IsNullOrEmpty(nextToken));
         }
 
 
         public List<IdentityPoolShortDescription> GetAllPools()
         {
-            return GetAllPoolsHelper().ToList();
+            var pools = new List<IdentityPoolShortDescription>();
+            foreach (var pool in GetAllPoolsHelper())
+            {
+                pools.Add(pool);
+            }
+            return pools;
         }
 
         public List<IdentityDescription> GetAllIdentities(string poolId)
         {
-            return GetAllIdentitiesHelper(poolId).ToList();
+            var identities = new List<IdentityDescription>();
+            foreach (var idenitity in GetAllIdentitiesHelper(poolId))
+            {
+                identities.Add(idenitity);
+            }
+            return identities;
         }
 
         public void DeleteIdentityPool(string poolId)
         {
             if (!string.IsNullOrEmpty(poolId))
             {
-                var allPools = GetAllPools();
-                var pool = allPools.SingleOrDefault(p => string.Equals(poolId, p.IdentityPoolId, StringComparison.Ordinal));
+                IdentityPoolShortDescription pool = null;
+                foreach (var p in GetAllPoolsHelper())
+                {
+                    if (string.Equals(poolId, p.IdentityPoolId, StringComparison.Ordinal))
+                    {
+                        pool = p;
+                        break;
+                    }
+                }
 
                 if (pool != null)
                 {
                     Console.WriteLine("Found pool with id [{0}], deleting", poolId);
 
-                    try
+                    AutoResetEvent ars = new AutoResetEvent(false);
+                    Exception responseException = new Exception();
+
+                    Client.DeleteIdentityPoolAsync(new DeleteIdentityPoolRequest
                     {
-                        Client.DeleteIdentityPool(new DeleteIdentityPoolRequest
-                        {
-                            IdentityPoolId = poolId
-                        });
-                    }
-                    catch (Exception e)
+                        IdentityPoolId = poolId
+                    }, (response) =>
                     {
-                        Console.WriteLine("failed to delete [{0}]", poolId);
-                        Console.WriteLine("exception e" + e.Message);
-                        Console.WriteLine(e.StackTrace);
+                        responseException = response.Exception;
+                        ars.Set();
+                    }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
+                    ars.WaitOne();
+                    if (responseException != null)
+                    {
+                        Debug.LogWarningFormat("failed to delete [{0}]", poolId);
+                        Debug.LogException(responseException);
                     }
                 }
             }
@@ -774,19 +1029,19 @@ namespace AWSSDK.IntegrationTests.SyncManager
             }
         }
 
-        public void UpdateIdentityPool(string poolId, string poolName, Dictionary<string, string> providers)
-        {
-            var updateRequest = new UpdateIdentityPoolRequest
-            {
-                IdentityPoolName = poolName,
-                IdentityPoolId = poolId,
-                AllowUnauthenticatedIdentities = true,
-            };
-            if (providers != null && providers.Count > 0)
-                updateRequest.SupportedLoginProviders = providers;
+        //        public void UpdateIdentityPool(string poolId, string poolName, Dictionary<string, string> providers)
+        //        {
+        //            var updateRequest = new UpdateIdentityPoolRequest
+        //            {
+        //                IdentityPoolName = poolName,
+        //                IdentityPoolId = poolId,
+        //                AllowUnauthenticatedIdentities = true,
+        //            };
+        //            if (providers != null && providers.Count > 0)
+        //                updateRequest.SupportedLoginProviders = providers;
 
-            Client.UpdateIdentityPool(updateRequest);
-        }
+        //            Client.UpdateIdentityPool(updateRequest);
+        //        }
 
 
         public string PrepareRole()
@@ -822,28 +1077,44 @@ namespace AWSSDK.IntegrationTests.SyncManager
         }
     ]
 }";
-            string roleArn;
-            using (var identityClient = new Amazon.IdentityManagement.AmazonIdentityManagementServiceClient())
+            string roleArn = null;
+            using (var identityClient = new Amazon.IdentityManagement.AmazonIdentityManagementServiceClient(TestRunner.Credentials))
             {
-                string roleName = "NetWebIdentityRole" + new Random().Next();
-                var response = identityClient.CreateRole(new Amazon.IdentityManagement.Model.CreateRoleRequest
+                AutoResetEvent ars = new AutoResetEvent(false);
+                Exception responseException = new Exception();
+
+                string roleName = "UnityWebIdentityRole" + DateTime.Now.Ticks;
+                identityClient.CreateRoleAsync(new Amazon.IdentityManagement.Model.CreateRoleRequest
                 {
                     AssumeRolePolicyDocument = assumeRolePolicy,
                     RoleName = roleName
-                });
+                }, (response) =>
+                {
+                    responseException = response.Exception;
+                    if (responseException == null)
+                    {
+                        roleArn = response.Response.Role.Arn;
+                    }
+                    ars.Set();
+                }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
+                ars.WaitOne();
+                Utils.AssertExceptionIsNull(responseException);
 
                 Thread.Sleep(2000);
-
-                identityClient.PutRolePolicy(new Amazon.IdentityManagement.Model.PutRolePolicyRequest
+                identityClient.PutRolePolicyAsync(new Amazon.IdentityManagement.Model.PutRolePolicyRequest
                 {
                     PolicyDocument = allowPolicy,
                     PolicyName = policyName,
-                    RoleName = response.Role.RoleName
-                });
+                    RoleName = roleName
+                }, (response) =>
+                {
+                    responseException = response.Exception;
+                    ars.Set();
+                }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
+                ars.WaitOne();
+                Utils.AssertExceptionIsNull(responseException);
 
                 Thread.Sleep(2000);
-
-                roleArn = response.Role.Arn;
                 roleNames.Add(roleName);
             }
 
@@ -861,18 +1132,33 @@ namespace AWSSDK.IntegrationTests.SyncManager
 
         private void DeleteRole(string roleName)
         {
-            using (var identityClient = new Amazon.IdentityManagement.AmazonIdentityManagementServiceClient())
+            AutoResetEvent ars = new AutoResetEvent(false);
+            Exception responseException = new Exception();
+
+            using (var identityClient = new Amazon.IdentityManagement.AmazonIdentityManagementServiceClient(TestRunner.Credentials))
             {
-                identityClient.DeleteRolePolicy(new Amazon.IdentityManagement.Model.DeleteRolePolicyRequest
+                identityClient.DeleteRolePolicyAsync(new Amazon.IdentityManagement.Model.DeleteRolePolicyRequest
                 {
                     PolicyName = policyName,
                     RoleName = roleName
-                });
+                }, (response) =>
+                {
+                    responseException = response.Exception;
+                    ars.Set();
+                }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
+                ars.WaitOne();
+                Utils.AssertExceptionIsNull(responseException);
                 Thread.Sleep(2000);
-                identityClient.DeleteRole(new Amazon.IdentityManagement.Model.DeleteRoleRequest
+                identityClient.DeleteRoleAsync(new Amazon.IdentityManagement.Model.DeleteRoleRequest
                 {
                     RoleName = roleName
-                });
+                }, (response) =>
+                {
+                    responseException = response.Exception;
+                    ars.Set();
+                }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
+                ars.WaitOne();
+                Utils.AssertExceptionIsNull(responseException);
                 Thread.Sleep(2000);
             }
         }

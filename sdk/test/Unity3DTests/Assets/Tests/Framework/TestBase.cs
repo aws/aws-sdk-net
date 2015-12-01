@@ -25,7 +25,7 @@ namespace AWSSDK.Tests.Framework
         }
     }
 
-    public abstract class TestBase<T> : TestBase where T : AmazonServiceClient,IDisposable
+    public abstract class TestBase<T> : TestBase where T : AmazonServiceClient, IDisposable
     {
         private bool _disposed = false;
         protected static AsyncOptions options = new AsyncOptions() { ExecuteCallbackOnMainThread = false };

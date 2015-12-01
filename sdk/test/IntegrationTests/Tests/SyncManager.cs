@@ -14,7 +14,7 @@ using Amazon.Runtime;
 using System.IO;
 using System.Data.SQLite;
 using System.Threading;
-//using System.Threading.Tasks;
+using System.Threading.Tasks;
 using Amazon.Util.Internal;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
@@ -166,36 +166,40 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                             string restoredValues = d.Get("key");
                             if (erasedValue == null)
                             {
-                                failureMessage = "erasedValue should not be null";
+                                failureMessage += "erasedValue should not be null\n";
                             }
                             if (restoredValues == null)
                             {
-                                failureMessage = "restoredValues should not be null";
+                                failureMessage += "restoredValues should not be null\n";
                             }
                             if (erasedValue != restoredValues)
                             {
-                                failureMessage = "erasedValue should equal restoredValues";
+                                failureMessage += "erasedValue should equal restoredValues\n";
                             }
                         };
-                        RunAsSync(async () => await d.SynchronizeAsyn());
+                        d.OnSyncFailure += delegate(object sender2, SyncFailureEventArgs e2)
+                        {
+                            failureMessage += "sync failed\n";
+                        };
+                        RunAsSync(async () => await d.SynchronizeAsync());
                     };
                     d.OnSyncFailure += delegate(object sender, SyncFailureEventArgs e)
                     {
-                        failureMessage = "sync failed";
+                        failureMessage += "sync failed\n";
                     };
                     d.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
                     {
-                        failureMessage = "Expected SyncSuccess instead of SyncConflict";
+                        failureMessage += "Expected SyncSuccess instead of SyncConflict\n";
                         return false;
                     };
                     d.OnDatasetMerged += (Dataset dataset, List<string> datasetNames) =>
                     {
-                        failureMessage = "Did not expect DatasetMerged";
+                        failureMessage += "Did not expect DatasetMerged\n";
                         return false;
                     };
                     d.OnDatasetDeleted += (Dataset dataset) =>
                     {
-                        failureMessage = "Did not expect DatasetDeleted";
+                        failureMessage += "Did not expect DatasetDeleted\n";
                         return false;
                     };
                     RunAsSync(async () => await d.SynchronizeAsync());
@@ -339,6 +343,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("SyncManager")]
         public void MetadataTest()
         {
+            string failureMessage = string.Empty;
             using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials))
             {
                 syncManager.WipeData(false);
@@ -369,21 +374,44 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                         bool finalDirty = r3.IsModified;
                         DateTime finalDate = r3.DeviceLastModifiedDate.Value;
 
-                        Assert.IsTrue(initialDirty);
-                        Assert.IsTrue(!synchronizedDirty);
-                        Assert.IsTrue(finalDirty);
-
-                        Assert.IsTrue(synchronizedSyncCount > initialSyncCount);
-                        Assert.IsTrue(synchronizedSyncCount == finalSyncCount);
-
-                        Assert.IsTrue(finalDate > initialDate);
-                        Assert.IsTrue(initialDate == synchronizedDate);
+                        if (!initialDirty)
+                        {
+                            failureMessage += "Expected 'initialDirty' to be true\n";
+                        }
+                        if (synchronizedDirty)
+                        {
+                            failureMessage += "Expected 'synchronizedDirty' to be false\n";
+                        }
+                        if (!finalDirty)
+                        {
+                            failureMessage += "Expected 'finalDirty' to be true\n";
+                        }
+                        if (synchronizedSyncCount <= initialSyncCount)
+                        {
+                            failureMessage += "Expected synchronizedSyncCount > initialSyncCount\n";
+                        }
+                        if (synchronizedSyncCount != finalSyncCount)
+                        {
+                            failureMessage += "Expected synchronizedSyncCount == finalSyncCount\n";
+                        }
+                        if (finalDate <= initialDate)
+                        {
+                            failureMessage += "Expected finalDate > initialDate\n";
+                        }
+                        if (initialDate != synchronizedDate)
+                        {
+                            failureMessage += "Expected initialDate == synchronizedDate\n";
+                        }
                     };
                     d.OnSyncFailure += (object sender, SyncFailureEventArgs e) =>
                     {
-                        Assert.Fail(e.Exception.ToString());
+                        failureMessage += e.Exception.ToString() + "\n";
                     };
                     RunAsSync(async () => await d.SynchronizeAsync());
+                    if (!string.IsNullOrEmpty(failureMessage))
+                    {
+                        Assert.Fail(failureMessage);
+                    }
                 }
             }
         }
@@ -421,17 +449,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                             };
                             d2.OnSyncSuccess += delegate(object sender4, SyncSuccessEventArgs e4)
                             {
-                                failureMessage = "Expecting OnSyncConflict instead of OnSyncSuccess";
+                                failureMessage += "Expecting OnSyncConflict instead of OnSyncSuccess\n";
                             };
                             d2.OnSyncFailure += delegate(object sender4, SyncFailureEventArgs e4)
                             {
                                 if (!conflictTriggered)
                                 {
-                                    failureMessage = "Expecting OnSyncConflict instead of OnSyncFailure";
+                                    failureMessage += "Expecting OnSyncConflict instead of OnSyncFailure\n";
                                 }
                             };
                             RunAsSync(async () => await d2.SynchronizeAsync());
                         }
+                    };
+                    d.OnSyncFailure += delegate(object sender, SyncFailureEventArgs e)
+                    {
+                        failureMessage += "Expecting OnSyncSuccess instead of OnSyncFailure\n";
                     };
                     RunAsSync(async () => await d.SynchronizeAsync());
                 }
@@ -492,29 +524,33 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                                 {
                                     if (d2.Get("a") != "10")
                                     {
-                                        failureMessage = "Value for key 'a' should be '10'";
+                                        failureMessage += "Value for key 'a' should be '10'\n";
                                     }
                                     if (d2.Get("b") != "42")
                                     {
-                                        failureMessage = "Value for key 'b' should be '42'";
+                                        failureMessage += "Value for key 'b' should be '42'\n";
                                     }
                                     if (d2.Get("c") != "3")
                                     {
-                                        failureMessage = "Value for key 'c' should be '3'";
+                                        failureMessage += "Value for key 'c' should be '3'\n";
                                     }
                                 }
                                 else
                                 {
-                                    failureMessage = "Expecting SyncConflict instead of SyncSuccess";
+                                    failureMessage += "Expecting SyncConflict instead of SyncSuccess\n";
                                 }
 
                             };
                             d2.OnSyncFailure += delegate(object sender4, SyncFailureEventArgs e4)
                             {
-                                failureMessage = "Expecting SyncConflict instead of SyncFailure";
+                                failureMessage += "Expecting SyncConflict instead of SyncFailure\n";
                             };
                             RunAsSync(async () => await d2.SynchronizeAsync());
                         }
+                    };
+                    d.OnSyncFailure += delegate(object sender, SyncFailureEventArgs e)
+                    {
+                        failureMessage += "Expecting OnSyncSuccess instead of OnSyncFailure\n";
                     };
                     RunAsSync(async () => await d.SynchronizeAsync());
                 }
@@ -544,12 +580,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             d.Put("testKey", "testValue");
             d.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
             {
-                failureMessage = "Expecting SyncSuccess instead of SyncConflict";
+                failureMessage += "Expecting SyncSuccess instead of SyncConflict\n";
                 return false;
             };
             d.OnSyncFailure += delegate(object sender, SyncFailureEventArgs e)
             {
-                failureMessage = "Expecting SyncSuccess instead of SyncFailure";
+                failureMessage += "Expecting SyncSuccess instead of SyncFailure\n";
             };
 
             d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
@@ -558,23 +594,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Dataset d2 = syncManager.OpenOrCreateDataset("testDataset5");
                 if (d2.Records.Count != 0)
                 {
-                    failureMessage = "Expecting dataset to be empty due to local data wipe.";
+                    failureMessage += "Expecting dataset to be empty due to local data wipe.\n";
                 }
                 d2.Put("testKey", "newTestValue");
                 d2.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
                 {
-                    failureMessage = "Expecting SyncSuccess instead of SyncConflict";
+                    failureMessage += "Expecting SyncSuccess instead of SyncConflict\n";
                     return false;
                 };
                 d2.OnSyncFailure += delegate(object sender2, SyncFailureEventArgs e2)
                 {
-                    failureMessage = "Expecting SyncSuccess instead of SyncFailure";
+                    failureMessage += "Expecting SyncSuccess instead of SyncFailure\n";
                 };
                 d2.OnSyncSuccess += delegate(object sender2, SyncSuccessEventArgs e2)
                 {
                     if (d2.Get("testKey") != "newTestValue")
                     {
-                        failureMessage = "Value for key 'testKey' should be 'newTestValue'";
+                        failureMessage += "Value for key 'testKey' should be 'newTestValue'\n";
                     }
                 };
                 RunAsSync(async () => await d2.SynchronizeAsync());
