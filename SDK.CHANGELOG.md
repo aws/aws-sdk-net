@@ -3,12 +3,17 @@
 	* Add api to clone logins dictionary
 * ConfigService (3.1.2.1)
 	* Support for new resource type - dedicated host.
+* DynamoDBv2 (3.1.1.2)
+	* Add PaginationToken support to DocumentModel Query and Scan operations.
+	* Fix issue where ignored properties in DataModel were not being properly ignored.
 * SecurityToken (3.1.1.0)
 	* Implement support for SAML-based identity federation to vend temporary AWS credentials.
 * Core 3.1.4.0
 	* * Added new role credential and endpoint profile types to support SAML identity federation.
 * Added Roslyn code analyzers to all NuGet service packages.
 	* all services packages updated to require new core
+* Throwing exceptions if constructing a request with bidirectional control characters
+	* Fix for https://github.com/aws/aws-sdk-net/issues/212
 
 ### 3.1.30.0 (2015-11-23 23:14 UTC)
 * EC2 (3.1.5.0)
