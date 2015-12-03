@@ -28,33 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeSnapshots operation.
-    /// Obtains information about the directory snapshots that belong to this account.
+    /// Container for the parameters to the DescribeTrusts operation.
+    /// Obtains information about the trust relationships for this account.
     /// 
     ///  
     /// <para>
-    /// This operation supports pagination with the use of the <i>NextToken</i> request and
-    /// response parameters. If more results are available, the <i>DescribeSnapshots.NextToken</i>
-    /// member contains a token that you pass in the next call to <a>DescribeSnapshots</a>
-    /// to retrieve the next set of items.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can also specify a maximum number of return results with the <i>Limit</i> parameter.
+    /// If no input parameters are provided, such as DirectoryId or TrustIds, this request
+    /// describes all the trust relationships belonging to the account.
     /// </para>
     /// </summary>
-    public partial class DescribeSnapshotsRequest : AmazonDirectoryServiceRequest
+    public partial class DescribeTrustsRequest : AmazonDirectoryServiceRequest
     {
         private string _directoryId;
         private int? _limit;
         private string _nextToken;
-        private List<string> _snapshotIds = new List<string>();
+        private List<string> _trustIds = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property DirectoryId. 
-        /// <para>
-        /// The identifier of the directory for which to retrieve snapshot information.
-        /// </para>
+        /// Gets and sets the property DirectoryId. The Directory ID of the AWS directory that
+        /// is a part of the requested trust relationship.
         /// </summary>
         public string DirectoryId
         {
@@ -69,10 +61,7 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Limit. 
-        /// <para>
-        /// The maximum number of objects to return.
-        /// </para>
+        /// Gets and sets the property Limit. The maximum number of objects to return.
         /// </summary>
         public int Limit
         {
@@ -89,7 +78,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <a>DescribeSnapshots</a>.
+        /// The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <a>DescribeTrusts</a>.
         /// Pass null if this is the first call.
         /// </para>
         /// </summary>
@@ -106,23 +95,27 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SnapshotIds. 
+        /// Gets and sets the property TrustIds. 
         /// <para>
-        /// A list of identifiers of the snapshots to obtain the information for. If this member
-        /// is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i>
-        /// members.
+        /// A list of identifiers of the trust relationships for which to obtain the information.
+        /// If this member is null, all trust relationships that belong to the current account
+        /// are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// An empty list results in an <code>InvalidParameterException</code> being thrown.
         /// </para>
         /// </summary>
-        public List<string> SnapshotIds
+        public List<string> TrustIds
         {
-            get { return this._snapshotIds; }
-            set { this._snapshotIds = value; }
+            get { return this._trustIds; }
+            set { this._trustIds = value; }
         }
 
-        // Check to see if SnapshotIds property is set
-        internal bool IsSetSnapshotIds()
+        // Check to see if TrustIds property is set
+        internal bool IsSetTrustIds()
         {
-            return this._snapshotIds != null && this._snapshotIds.Count > 0; 
+            return this._trustIds != null && this._trustIds.Count > 0; 
         }
 
     }

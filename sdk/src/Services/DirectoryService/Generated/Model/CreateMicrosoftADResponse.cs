@@ -28,28 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Contains the results for the <a>CreateComputer</a> operation.
+    /// 
     /// </summary>
-    public partial class CreateComputerResponse : AmazonWebServiceResponse
+    public partial class CreateMicrosoftADResponse : AmazonWebServiceResponse
     {
-        private Computer _computer;
+        private string _directoryId;
 
         /// <summary>
-        /// Gets and sets the property Computer. 
-        /// <para>
-        /// A <a>Computer</a> object that represents the computer account.
-        /// </para>
+        /// Gets and sets the property DirectoryId. The identifier of the directory that was created.
         /// </summary>
-        public Computer Computer
+        public string DirectoryId
         {
-            get { return this._computer; }
-            set { this._computer = value; }
+            get { return this._directoryId; }
+            set { this._directoryId = value; }
         }
 
-        // Check to see if Computer property is set
-        internal bool IsSetComputer()
+        // Check to see if DirectoryId property is set
+        internal bool IsSetDirectoryId()
         {
-            return this._computer != null;
+            return this._directoryId != null;
         }
 
     }

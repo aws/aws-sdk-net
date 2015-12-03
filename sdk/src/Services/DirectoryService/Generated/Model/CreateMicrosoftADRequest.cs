@@ -28,41 +28,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the ConnectDirectory operation.
-    /// Creates an AD Connector to connect to an on-premises directory.
+    /// Container for the parameters to the CreateMicrosoftAD operation.
+    /// Creates a Microsoft AD in the AWS cloud.
     /// </summary>
-    public partial class ConnectDirectoryRequest : AmazonDirectoryServiceRequest
+    public partial class CreateMicrosoftADRequest : AmazonDirectoryServiceRequest
     {
-        private DirectoryConnectSettings _connectSettings;
         private string _description;
         private string _name;
         private string _password;
         private string _shortName;
-        private DirectorySize _size;
-
-        /// <summary>
-        /// Gets and sets the property ConnectSettings. 
-        /// <para>
-        /// A <a>DirectoryConnectSettings</a> object that contains additional information for
-        /// the operation.
-        /// </para>
-        /// </summary>
-        public DirectoryConnectSettings ConnectSettings
-        {
-            get { return this._connectSettings; }
-            set { this._connectSettings = value; }
-        }
-
-        // Check to see if ConnectSettings property is set
-        internal bool IsSetConnectSettings()
-        {
-            return this._connectSettings != null;
-        }
+        private DirectoryVpcSettings _vpcSettings;
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A textual description for the directory.
+        /// A textual description for the directory. This label will appear on the AWS console
+        /// <code>Directory Details</code> page after the directory is created.
         /// </para>
         /// </summary>
         public string Description
@@ -80,7 +61,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The fully-qualified name of the on-premises directory, such as <code>corp.example.com</code>.
+        /// The fully qualified domain name for the directory, such as <code>corp.example.com</code>.
+        /// This name will resolve inside your VPC only. It does not need to be publicly resolvable.
         /// </para>
         /// </summary>
         public string Name
@@ -98,7 +80,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The password for the on-premises user account.
+        /// The password for the default administrative user named <code>Admin</code>.
         /// </para>
         /// </summary>
         public string Password
@@ -116,7 +98,10 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property ShortName. 
         /// <para>
-        /// The NetBIOS name of the on-premises directory, such as <code>CORP</code>.
+        /// The NetBIOS name for your domain. A short identifier for your domain, such as <code>CORP</code>.
+        /// If you don't specify a NetBIOS name, it will default to the first part of your directory
+        /// DNS. For example, <code>CORP</code> for the directory DNS <code>corp.example.com</code>.
+        /// 
         /// </para>
         /// </summary>
         public string ShortName
@@ -132,21 +117,18 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Size. 
-        /// <para>
-        /// The size of the directory.
-        /// </para>
+        /// Gets and sets the property VpcSettings.
         /// </summary>
-        public DirectorySize Size
+        public DirectoryVpcSettings VpcSettings
         {
-            get { return this._size; }
-            set { this._size = value; }
+            get { return this._vpcSettings; }
+            set { this._vpcSettings = value; }
         }
 
-        // Check to see if Size property is set
-        internal bool IsSetSize()
+        // Check to see if VpcSettings property is set
+        internal bool IsSetVpcSettings()
         {
-            return this._size != null;
+            return this._vpcSettings != null;
         }
 
     }

@@ -28,28 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Contains the results for the <a>CreateComputer</a> operation.
+    /// 
     /// </summary>
-    public partial class CreateComputerResponse : AmazonWebServiceResponse
+    public partial class DeleteTrustResponse : AmazonWebServiceResponse
     {
-        private Computer _computer;
+        private string _trustId;
 
         /// <summary>
-        /// Gets and sets the property Computer. 
-        /// <para>
-        /// A <a>Computer</a> object that represents the computer account.
-        /// </para>
+        /// Gets and sets the property TrustId. The Trust ID of the trust relationship that was
+        /// deleted.
         /// </summary>
-        public Computer Computer
+        public string TrustId
         {
-            get { return this._computer; }
-            set { this._computer = value; }
+            get { return this._trustId; }
+            set { this._trustId = value; }
         }
 
-        // Check to see if Computer property is set
-        internal bool IsSetComputer()
+        // Check to see if TrustId property is set
+        internal bool IsSetTrustId()
         {
-            return this._computer != null;
+            return this._trustId != null;
         }
 
     }

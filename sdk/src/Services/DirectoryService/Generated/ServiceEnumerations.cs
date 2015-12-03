@@ -171,6 +171,10 @@ namespace Amazon.DirectoryService
         /// </summary>
         public static readonly DirectoryType ADConnector = new DirectoryType("ADConnector");
         /// <summary>
+        /// Constant MicrosoftAD for DirectoryType
+        /// </summary>
+        public static readonly DirectoryType MicrosoftAD = new DirectoryType("MicrosoftAD");
+        /// <summary>
         /// Constant SimpleAD for DirectoryType
         /// </summary>
         public static readonly DirectoryType SimpleAD = new DirectoryType("SimpleAD");
@@ -420,6 +424,180 @@ namespace Amazon.DirectoryService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SnapshotType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrustDirection.
+    /// </summary>
+    public class TrustDirection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OneWayIncoming for TrustDirection
+        /// </summary>
+        public static readonly TrustDirection OneWayIncoming = new TrustDirection("One-Way: Incoming");
+        /// <summary>
+        /// Constant OneWayOutgoing for TrustDirection
+        /// </summary>
+        public static readonly TrustDirection OneWayOutgoing = new TrustDirection("One-Way: Outgoing");
+        /// <summary>
+        /// Constant TwoWay for TrustDirection
+        /// </summary>
+        public static readonly TrustDirection TwoWay = new TrustDirection("Two-Way");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrustDirection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrustDirection FindValue(string value)
+        {
+            return FindValue<TrustDirection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrustDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrustState.
+    /// </summary>
+    public class TrustState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Created for TrustState
+        /// </summary>
+        public static readonly TrustState Created = new TrustState("Created");
+        /// <summary>
+        /// Constant Creating for TrustState
+        /// </summary>
+        public static readonly TrustState Creating = new TrustState("Creating");
+        /// <summary>
+        /// Constant Deleted for TrustState
+        /// </summary>
+        public static readonly TrustState Deleted = new TrustState("Deleted");
+        /// <summary>
+        /// Constant Deleting for TrustState
+        /// </summary>
+        public static readonly TrustState Deleting = new TrustState("Deleting");
+        /// <summary>
+        /// Constant Failed for TrustState
+        /// </summary>
+        public static readonly TrustState Failed = new TrustState("Failed");
+        /// <summary>
+        /// Constant Verified for TrustState
+        /// </summary>
+        public static readonly TrustState Verified = new TrustState("Verified");
+        /// <summary>
+        /// Constant VerifyFailed for TrustState
+        /// </summary>
+        public static readonly TrustState VerifyFailed = new TrustState("VerifyFailed");
+        /// <summary>
+        /// Constant Verifying for TrustState
+        /// </summary>
+        public static readonly TrustState Verifying = new TrustState("Verifying");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrustState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrustState FindValue(string value)
+        {
+            return FindValue<TrustState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrustState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrustType.
+    /// </summary>
+    public class TrustType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Forest for TrustType
+        /// </summary>
+        public static readonly TrustType Forest = new TrustType("Forest");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrustType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrustType FindValue(string value)
+        {
+            return FindValue<TrustType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrustType(string value)
         {
             return FindValue(value);
         }

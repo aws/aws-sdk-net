@@ -80,7 +80,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the directory to create the computer account in.
+        /// The identifier of the directory in which to create the computer account.
         /// </para>
         /// </summary>
         public string DirectoryId

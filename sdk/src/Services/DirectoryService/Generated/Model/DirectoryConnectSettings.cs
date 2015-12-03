@@ -81,7 +81,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// A list of subnet identifiers in the VPC that the AD Connector is created in.
+        /// A list of subnet identifiers in the VPC in which the AD Connector is created.
         /// </para>
         /// </summary>
         public List<string> SubnetIds
@@ -99,7 +99,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The identifier of the VPC that the AD Connector is created in.
+        /// The identifier of the VPC in which the AD Connector is created.
         /// </para>
         /// </summary>
         public string VpcId
