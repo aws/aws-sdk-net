@@ -140,12 +140,17 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// The error code for the exception, returns the name if one is not specified in the json model
+        /// The error code for the exception, returns the name if one is not specified in the json model.
+        /// We first check in any referenced structure, then fall back to the exception shape to discover
+        /// the code.
         /// </summary>
         public string Code
         {
             get
             {
+                if (Structure != null && Structure.HasErrorCode)
+                    return Structure.ErrorCode;
+
                 var error = _data[ErrorKey];
                 if (error == null) return this._name;
                 var code = error[CodeKey];

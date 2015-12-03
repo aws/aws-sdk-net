@@ -98,6 +98,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBParameterGroupName", StringUtils.FromString(publicRequest.DBParameterGroupName));
                 }
+                if(publicRequest.IsSetDBPortNumber())
+                {
+                    request.Parameters.Add("DBPortNumber", StringUtils.FromInt(publicRequest.DBPortNumber));
+                }
                 if(publicRequest.IsSetDBSecurityGroups())
                 {
                     int publicRequestlistValueIndex = 1;

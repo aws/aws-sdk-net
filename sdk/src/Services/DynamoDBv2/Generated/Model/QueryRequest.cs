@@ -652,7 +652,7 @@ namespace Amazon.DynamoDBv2.Model
         /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
         /// Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
         /// </para>
-        ///  <p/> </li> <li> 
+        ///   </li> <li> 
         /// <para>
         /// <code>LT</code> : Less than. 
         /// </para>
@@ -664,7 +664,7 @@ namespace Amazon.DynamoDBv2.Model
         /// For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
         /// does not compare to <code>{"NS":["6", "2", "1"]}</code>.
         /// </para>
-        ///  <p/> </li> <li> 
+        ///   </li> <li> 
         /// <para>
         /// <code>GE</code> : Greater than or equal. 
         /// </para>
@@ -676,7 +676,7 @@ namespace Amazon.DynamoDBv2.Model
         /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
         /// Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
         /// </para>
-        ///  <p/> </li> <li> 
+        ///   </li> <li> 
         /// <para>
         /// <code>GT</code> : Greater than. 
         /// </para>
@@ -688,7 +688,7 @@ namespace Amazon.DynamoDBv2.Model
         /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
         /// Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
         /// </para>
-        ///  <p/> </li> <li> 
+        ///   </li> <li> 
         /// <para>
         /// <code>BEGINS_WITH</code> : Checks for a prefix. 
         /// </para>
@@ -698,7 +698,7 @@ namespace Amazon.DynamoDBv2.Model
         /// or Binary (not a Number or a set type). The target attribute of the comparison must
         /// be of type String or Binary (not a Number or a set type).
         /// </para>
-        ///  <p/> </li> <li> 
+        ///   </li> <li> 
         /// <para>
         /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than or
         /// equal to the second value. 

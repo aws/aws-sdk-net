@@ -28,27 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the following actions: 
     /// 
-    ///  <ul> <li> <a>CreateDBSubnetGroup</a> </li> <li> <a>ModifyDBSubnetGroup</a> </li>
-    /// <li> <a>DescribeDBSubnetGroups</a> </li> <li> <a>DeleteDBSubnetGroup</a> </li> </ul>
-    /// 
-    /// <para>
-    /// This data type is used as a response element in the <a>DescribeDBSubnetGroups</a>
-    /// action.
-    /// </para>
     /// </summary>
     public partial class CreateDBSubnetGroupResponse : AmazonWebServiceResponse
     {
-        private DBSubnetGroup _response;
+        private DBSubnetGroup _dbSubnetGroup;
 
         /// <summary>
-        /// Gets and sets the DBSubnetGroup property.
+        /// Gets and sets the property DBSubnetGroup.
         /// </summary>
         public DBSubnetGroup DBSubnetGroup
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._dbSubnetGroup; }
+            set { this._dbSubnetGroup = value; }
         }
+
+        // Check to see if DBSubnetGroup property is set
+        internal bool IsSetDBSubnetGroup()
+        {
+            return this._dbSubnetGroup != null;
+        }
+
     }
 }

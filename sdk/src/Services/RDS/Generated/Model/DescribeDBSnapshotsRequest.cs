@@ -222,12 +222,11 @@ namespace Amazon.RDS.Model
         /// The type of snapshots that will be returned. You can specify one of the following
         /// values:
         /// </para>
-        ///  <ul> <li> <code>automated</code> - Return all DB snapshots that have been automatically
-        /// taken by Amazon RDS for my AWS account.</li> <li> <code>manual</code> - Return all
-        /// DB snapshots that have been taken by my AWS account.</li> <li> <code>shared</code>
-        /// - Return all manual DB snapshots that have been shared to my AWS account.</li> <li>
-        /// <code>public</code> - Return all DB snapshots that have been marked as public.</li>
-        /// </ul> 
+        ///  <ul> <li><code>automated</code> - Return all DB snapshots that have been automatically
+        /// taken by Amazon RDS for my AWS account.</li> <li><code>manual</code> - Return all
+        /// DB snapshots that have been taken by my AWS account.</li> <li><code>shared</code>
+        /// - Return all manual DB snapshots that have been shared to my AWS account.</li> <li><code>public</code>
+        /// - Return all DB snapshots that have been marked as public.</li> </ul> 
         /// <para>
         /// If you do not specify a <code>SnapshotType</code>, then both automated and manual
         /// snapshots are returned. You can include shared snapshots with these results by setting
@@ -239,7 +238,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The <code>IncludeShared</code> and <code>IncludePublic</code> parameters do not apply
         /// for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>.
-        /// The <code>IncludePublic</code> paramter does not apply when <code>SnapshotType</code>
+        /// The <code>IncludePublic</code> parameter does not apply when <code>SnapshotType</code>
         /// is set to <code>shared</code>. the <code>IncludeShared</code> parameter does not apply
         /// when <code>SnapshotType</code> is set to <code>public</code>.
         /// </para>

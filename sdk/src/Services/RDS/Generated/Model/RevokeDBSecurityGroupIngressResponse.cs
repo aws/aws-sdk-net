@@ -28,27 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the following actions: 
     /// 
-    ///  <ul> <li> <a>DescribeDBSecurityGroups</a> </li> <li> <a>AuthorizeDBSecurityGroupIngress</a>
-    /// </li> <li> <a>CreateDBSecurityGroup</a> </li> <li> <a>RevokeDBSecurityGroupIngress</a>
-    /// </li> </ul> 
-    /// <para>
-    /// This data type is used as a response element in the <a>DescribeDBSecurityGroups</a>
-    /// action.
-    /// </para>
     /// </summary>
     public partial class RevokeDBSecurityGroupIngressResponse : AmazonWebServiceResponse
     {
-        private DBSecurityGroup _response;
+        private DBSecurityGroup _dbSecurityGroup;
 
         /// <summary>
-        /// Gets and sets the DBSecurityGroup property.
+        /// Gets and sets the property DBSecurityGroup.
         /// </summary>
         public DBSecurityGroup DBSecurityGroup
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._dbSecurityGroup; }
+            set { this._dbSecurityGroup = value; }
         }
+
+        // Check to see if DBSecurityGroup property is set
+        internal bool IsSetDBSecurityGroup()
+        {
+            return this._dbSecurityGroup != null;
+        }
+
     }
 }

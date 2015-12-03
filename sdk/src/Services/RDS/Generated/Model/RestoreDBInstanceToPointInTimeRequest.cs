@@ -235,7 +235,8 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  Valid Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code>
         /// | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code>
-        /// | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>
+        /// | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>|
+        /// <code>aurora</code>
         /// </para>
         /// </summary>
         public string Engine
