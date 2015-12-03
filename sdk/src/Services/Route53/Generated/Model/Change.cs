@@ -43,7 +43,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Instantiates Change with the parameterized properties
         /// </summary>
-        /// <param name="action">The action to perform. Valid values: <code>CREATE</code> | <code>DELETE</code> | <code>UPSERT</code></param>
+        /// <param name="action">The action to perform: <ul> <li><code>CREATE</code>: Creates a resource record set that has the specified values.</li> <li><CODE>DELETE</CODE>: Deletes a existing resource record set that has the specified values for <code>Name</code>, <code>Type</code>, <code>SetIdentifier</code> (for latency, weighted, geolocation, and failover resource record sets), and <code>TTL</code> (except alias resource record sets, for which the TTL is determined by the AWS resource that you're routing DNS queries to).</li> <li><code>UPSERT</code>: If a resource record set does not already exist, Amazon Route 53 creates it. If a resource record set does exist, Amazon Route 53 updates it with the values in the request. Amazon Route 53 can update an existing resource record set only when all of the following values match: <code>Name</code>, <code>Type</code>, and <code>SetIdentifier</code> (for weighted, latency, geolocation, and failover resource record sets).</li> </ul></param>
         /// <param name="resourceRecordSet">Information about the resource record set to create or delete.</param>
         public Change(ChangeAction action, ResourceRecordSet resourceRecordSet)
         {
@@ -54,12 +54,19 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action to perform.
+        /// The action to perform:
         /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>CREATE</code> | <code>DELETE</code> | <code>UPSERT</code>
-        /// </para>
+        ///  <ul> <li><code>CREATE</code>: Creates a resource record set that has the specified
+        /// values.</li> <li><CODE>DELETE</CODE>: Deletes a existing resource record set that
+        /// has the specified values for <code>Name</code>, <code>Type</code>, <code>SetIdentifier</code>
+        /// (for latency, weighted, geolocation, and failover resource record sets), and <code>TTL</code>
+        /// (except alias resource record sets, for which the TTL is determined by the AWS resource
+        /// that you're routing DNS queries to).</li> <li><code>UPSERT</code>: If a resource record
+        /// set does not already exist, Amazon Route 53 creates it. If a resource record set does
+        /// exist, Amazon Route 53 updates it with the values in the request. Amazon Route 53
+        /// can update an existing resource record set only when all of the following values match:
+        /// <code>Name</code>, <code>Type</code>, and <code>SetIdentifier</code> (for weighted,
+        /// latency, geolocation, and failover resource record sets).</li> </ul>
         /// </summary>
         public ChangeAction Action
         {

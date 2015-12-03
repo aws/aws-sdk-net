@@ -121,6 +121,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.HealthCheckId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("TrafficPolicyInstanceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TrafficPolicyInstanceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

@@ -92,7 +92,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Instantiates ListResourceRecordSetsRequest with the parameterized properties
         /// </summary>
-        /// <param name="hostedZoneId"> The ID of the hosted zone that contains the resource record sets that you want to get.</param>
+        /// <param name="hostedZoneId">The ID of the hosted zone that contains the resource record sets that you want to get.</param>
         public ListResourceRecordSetsRequest(string hostedZoneId)
         {
             _hostedZoneId = hostedZoneId;
@@ -101,7 +101,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HostedZoneId. 
         /// <para>
-        ///  The ID of the hosted zone that contains the resource record sets that you want to
+        /// The ID of the hosted zone that contains the resource record sets that you want to
         /// get.
         /// </para>
         /// </summary>
@@ -154,7 +154,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        ///  Values for Regional Resource Record Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code>
+        /// Values for Regional Resource Record Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code>
         /// | <code>TXT</code>
         /// </para>
         ///  
