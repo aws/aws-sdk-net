@@ -36,7 +36,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// For information about the number of server certificates you can upload, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-    /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+    /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
     /// </para>
     ///  <note>Because the body of the public key certificate, private key, and the certificate
     /// chain can be large, you should use POST rather than GET when calling <code>UploadServerCertificate</code>.
@@ -44,7 +44,7 @@ namespace Amazon.IdentityManagement.Model
     /// to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
     /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
     /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-    /// Query Requests</a> in the <i>Using IAM</i> guide. </note>
+    /// Query Requests</a> in the <i>IAM User Guide</i>. </note>
     /// </summary>
     public partial class UploadServerCertificateRequest : AmazonIdentityManagementServiceRequest
     {

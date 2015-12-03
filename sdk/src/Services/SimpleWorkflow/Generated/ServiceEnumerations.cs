@@ -48,7 +48,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly ActivityTaskTimeoutType START_TO_CLOSE = new ActivityTaskTimeoutType("START_TO_CLOSE");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ActivityTaskTimeoutType(string value)
             : base(value)
@@ -93,7 +98,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly CancelTimerFailedCause TIMER_ID_UNKNOWN = new CancelTimerFailedCause("TIMER_ID_UNKNOWN");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public CancelTimerFailedCause(string value)
             : base(value)
@@ -138,7 +148,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly CancelWorkflowExecutionFailedCause UNHANDLED_DECISION = new CancelWorkflowExecutionFailedCause("UNHANDLED_DECISION");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public CancelWorkflowExecutionFailedCause(string value)
             : base(value)
@@ -187,7 +202,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly ChildPolicy TERMINATE = new ChildPolicy("TERMINATE");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ChildPolicy(string value)
             : base(value)
@@ -248,7 +268,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly CloseStatus TIMED_OUT = new CloseStatus("TIMED_OUT");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public CloseStatus(string value)
             : base(value)
@@ -293,7 +318,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly CompleteWorkflowExecutionFailedCause UNHANDLED_DECISION = new CompleteWorkflowExecutionFailedCause("UNHANDLED_DECISION");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public CompleteWorkflowExecutionFailedCause(string value)
             : base(value)
@@ -366,7 +396,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly ContinueAsNewWorkflowExecutionFailedCause WORKFLOW_TYPE_DOES_NOT_EXIST = new ContinueAsNewWorkflowExecutionFailedCause("WORKFLOW_TYPE_DOES_NOT_EXIST");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ContinueAsNewWorkflowExecutionFailedCause(string value)
             : base(value)
@@ -407,7 +442,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly DecisionTaskTimeoutType START_TO_CLOSE = new DecisionTaskTimeoutType("START_TO_CLOSE");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DecisionTaskTimeoutType(string value)
             : base(value)
@@ -496,7 +536,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly DecisionType StartTimer = new DecisionType("StartTimer");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DecisionType(string value)
             : base(value)
@@ -749,7 +794,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly EventType WorkflowExecutionTimedOut = new EventType("WorkflowExecutionTimedOut");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public EventType(string value)
             : base(value)
@@ -794,7 +844,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly ExecutionStatus OPEN = new ExecutionStatus("OPEN");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ExecutionStatus(string value)
             : base(value)
@@ -839,7 +894,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly FailWorkflowExecutionFailedCause UNHANDLED_DECISION = new FailWorkflowExecutionFailedCause("UNHANDLED_DECISION");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public FailWorkflowExecutionFailedCause(string value)
             : base(value)
@@ -880,7 +940,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly LambdaFunctionTimeoutType START_TO_CLOSE = new LambdaFunctionTimeoutType("START_TO_CLOSE");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public LambdaFunctionTimeoutType(string value)
             : base(value)
@@ -921,7 +986,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly RecordMarkerFailedCause OPERATION_NOT_PERMITTED = new RecordMarkerFailedCause("OPERATION_NOT_PERMITTED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RecordMarkerFailedCause(string value)
             : base(value)
@@ -966,7 +1036,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly RegistrationStatus REGISTERED = new RegistrationStatus("REGISTERED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RegistrationStatus(string value)
             : base(value)
@@ -1011,7 +1086,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly RequestCancelActivityTaskFailedCause OPERATION_NOT_PERMITTED = new RequestCancelActivityTaskFailedCause("OPERATION_NOT_PERMITTED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RequestCancelActivityTaskFailedCause(string value)
             : base(value)
@@ -1060,7 +1140,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly RequestCancelExternalWorkflowExecutionFailedCause UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION = new RequestCancelExternalWorkflowExecutionFailedCause("UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RequestCancelExternalWorkflowExecutionFailedCause(string value)
             : base(value)
@@ -1141,7 +1226,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly ScheduleActivityTaskFailedCause OPERATION_NOT_PERMITTED = new ScheduleActivityTaskFailedCause("OPERATION_NOT_PERMITTED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ScheduleActivityTaskFailedCause(string value)
             : base(value)
@@ -1194,7 +1284,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly ScheduleLambdaFunctionFailedCause OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED = new ScheduleLambdaFunctionFailedCause("OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ScheduleLambdaFunctionFailedCause(string value)
             : base(value)
@@ -1243,7 +1338,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly SignalExternalWorkflowExecutionFailedCause UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION = new SignalExternalWorkflowExecutionFailedCause("UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SignalExternalWorkflowExecutionFailedCause(string value)
             : base(value)
@@ -1324,7 +1424,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly StartChildWorkflowExecutionFailedCause WORKFLOW_TYPE_DOES_NOT_EXIST = new StartChildWorkflowExecutionFailedCause("WORKFLOW_TYPE_DOES_NOT_EXIST");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public StartChildWorkflowExecutionFailedCause(string value)
             : base(value)
@@ -1365,7 +1470,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly StartLambdaFunctionFailedCause ASSUME_ROLE_FAILED = new StartLambdaFunctionFailedCause("ASSUME_ROLE_FAILED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public StartLambdaFunctionFailedCause(string value)
             : base(value)
@@ -1418,7 +1528,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly StartTimerFailedCause TIMER_ID_ALREADY_IN_USE = new StartTimerFailedCause("TIMER_ID_ALREADY_IN_USE");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public StartTimerFailedCause(string value)
             : base(value)
@@ -1459,7 +1574,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly WorkflowExecutionCancelRequestedCause CHILD_POLICY_APPLIED = new WorkflowExecutionCancelRequestedCause("CHILD_POLICY_APPLIED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public WorkflowExecutionCancelRequestedCause(string value)
             : base(value)
@@ -1508,7 +1628,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly WorkflowExecutionTerminatedCause OPERATOR_INITIATED = new WorkflowExecutionTerminatedCause("OPERATOR_INITIATED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public WorkflowExecutionTerminatedCause(string value)
             : base(value)
@@ -1549,7 +1674,12 @@ namespace Amazon.SimpleWorkflow
         public static readonly WorkflowExecutionTimeoutType START_TO_CLOSE = new WorkflowExecutionTimeoutType("START_TO_CLOSE");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public WorkflowExecutionTimeoutType(string value)
             : base(value)

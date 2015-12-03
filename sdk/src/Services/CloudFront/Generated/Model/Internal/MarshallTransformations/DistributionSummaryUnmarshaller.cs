@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2015-04-17.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2015-07-27.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -137,6 +137,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = ViewerCertificateUnmarshaller.Instance;
                         unmarshalledObject.ViewerCertificate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("WebACLId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.WebACLId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

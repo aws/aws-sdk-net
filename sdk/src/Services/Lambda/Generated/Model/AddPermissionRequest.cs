@@ -29,14 +29,25 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the AddPermission operation.
-    /// Adds a permission to the access policy associated with the specified AWS Lambda function.
-    /// In a "push event" model, the access policy attached to the Lambda function grants
-    /// Amazon S3 or a user application permission for the Lambda <code>lambda:Invoke</code>
-    /// action. For information about the push model, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-    /// Lambda: How it Works</a>. Each Lambda function has one access policy associated with
-    /// it. You can use the <code>AddPermission</code> API to add a permission to the policy.
-    /// You have one access policy but it can have multiple permission statements.
+    /// Adds a permission to the resource policy associated with the specified AWS Lambda
+    /// function. You use resource policies to grant permissions to event sources that use
+    /// "push" model. In "push" model, event sources (such as Amazon S3 and custom applications)
+    /// invoke your Lambda function. Each permission you add to the resource policy allows
+    /// an event source, permission to invoke the Lambda function. 
     /// 
+    ///  
+    /// <para>
+    /// For information about the push model, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
+    /// Lambda: How it Works</a>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If you are using versioning feature (see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+    /// Lambda Function Versioning and Aliases</a>), a Lambda function can have multiple ARNs
+    /// that can be used to invoke the function. Note that, each permission you add to resource
+    /// policy using this API is specific to an ARN, specified using the <code>Qualifier</code>
+    /// parameter
+    /// </para>
     ///  
     /// <para>
     /// This operation requires permission for the <code>lambda:AddPermission</code> action.
@@ -47,6 +58,7 @@ namespace Amazon.Lambda.Model
         private string _action;
         private string _functionName;
         private string _principal;
+        private string _qualifier;
         private string _sourceAccount;
         private string _sourceArn;
         private string _statementId;
@@ -75,7 +87,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// Name of the Lambda function whose access policy you are updating by adding a new permission.
+        /// Name of the Lambda function whose resource policy you are updating by adding a new
+        /// permission.
         /// </para>
         ///  
         /// <para>
@@ -118,6 +131,49 @@ namespace Amazon.Lambda.Model
         internal bool IsSetPrincipal()
         {
             return this._principal != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Qualifier. 
+        /// <para>
+        /// You can specify this optional query parameter to specify function version or alias
+        /// name. The permission will then apply to the specific qualified ARN. For example, if
+        /// you specify function version 2 as the qualifier, then permission applies only when
+        /// request is made using qualified function ARN: 
+        /// </para>
+        ///  
+        /// <para>
+        /// <code>arn:aws:lambda:aws-region:acct-id:function:function-name:2</code>
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify alias name, for example "PROD", then the permission is valid only for
+        /// requests made using the alias ARN:
+        /// </para>
+        ///  
+        /// <para>
+        /// <code>arn:aws:lambda:aws-region:acct-id:function:function-name:PROD</code>
+        /// </para>
+        ///  
+        /// <para>
+        /// If the qualifier is not specified, the permission is valid only when requests is made
+        /// using unqualified function ARN. 
+        /// </para>
+        ///  
+        /// <para>
+        /// <code>arn:aws:lambda:aws-region:acct-id:function:function-name</code>
+        /// </para>
+        /// </summary>
+        public string Qualifier
+        {
+            get { return this._qualifier; }
+            set { this._qualifier = value; }
+        }
+
+        // Check to see if Qualifier property is set
+        internal bool IsSetQualifier()
+        {
+            return this._qualifier != null;
         }
 
         /// <summary>

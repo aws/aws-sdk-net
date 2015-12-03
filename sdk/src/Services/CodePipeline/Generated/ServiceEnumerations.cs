@@ -52,7 +52,12 @@ namespace Amazon.CodePipeline
         public static readonly ActionCategory Test = new ActionCategory("Test");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ActionCategory(string value)
             : base(value)
@@ -101,7 +106,12 @@ namespace Amazon.CodePipeline
         public static readonly ActionConfigurationPropertyType String = new ActionConfigurationPropertyType("String");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ActionConfigurationPropertyType(string value)
             : base(value)
@@ -150,7 +160,12 @@ namespace Amazon.CodePipeline
         public static readonly ActionExecutionStatus Succeeded = new ActionExecutionStatus("Succeeded");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ActionExecutionStatus(string value)
             : base(value)
@@ -199,7 +214,12 @@ namespace Amazon.CodePipeline
         public static readonly ActionOwner ThirdParty = new ActionOwner("ThirdParty");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ActionOwner(string value)
             : base(value)
@@ -240,7 +260,12 @@ namespace Amazon.CodePipeline
         public static readonly ArtifactLocationType S3 = new ArtifactLocationType("S3");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ArtifactLocationType(string value)
             : base(value)
@@ -281,7 +306,12 @@ namespace Amazon.CodePipeline
         public static readonly ArtifactStoreType S3 = new ArtifactStoreType("S3");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ArtifactStoreType(string value)
             : base(value)
@@ -322,7 +352,12 @@ namespace Amazon.CodePipeline
         public static readonly BlockerType Schedule = new BlockerType("Schedule");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public BlockerType(string value)
             : base(value)
@@ -363,7 +398,12 @@ namespace Amazon.CodePipeline
         public static readonly EncryptionKeyType KMS = new EncryptionKeyType("KMS");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public EncryptionKeyType(string value)
             : base(value)
@@ -424,7 +464,12 @@ namespace Amazon.CodePipeline
         public static readonly FailureType SystemUnavailable = new FailureType("SystemUnavailable");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public FailureType(string value)
             : base(value)
@@ -489,7 +534,12 @@ namespace Amazon.CodePipeline
         public static readonly JobStatus TimedOut = new JobStatus("TimedOut");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public JobStatus(string value)
             : base(value)
@@ -534,7 +584,12 @@ namespace Amazon.CodePipeline
         public static readonly StageTransitionType Outbound = new StageTransitionType("Outbound");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public StageTransitionType(string value)
             : base(value)

@@ -41,6 +41,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _applicationName;
         private bool? _autoCreateApplication;
         private string _description;
+        private bool? _process;
         private S3Location _sourceBundle;
         private string _versionLabel;
 
@@ -85,20 +86,10 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  Determines how the system behaves if the specified application for this version does
         /// not already exist: 
         /// </para>
-        ///  <enumValues> <value name="true"> 
-        /// <para>
-        ///  <code>true</code>: Automatically creates the specified application for this version
-        /// if it does not already exist. 
-        /// </para>
-        ///  </value> <value name="false"> 
-        /// <para>
-        ///  <code>false</code>: Returns an <code>InvalidParameterValue</code> if the specified
-        /// application for this version does not already exist. 
-        /// </para>
-        ///  </value> </enumValues> <ul> <li> <code>true</code> : Automatically creates the specified
-        /// application for this release if it does not already exist. </li> <li> <code>false</code>
-        /// : Throws an <code>InvalidParameterValue</code> if the specified application for this
-        /// release does not already exist. </li> </ul> 
+        ///  <ul> <li> <code>true</code> : Automatically creates the specified application for
+        /// this release if it does not already exist. </li> <li> <code>false</code> : Throws
+        /// an <code>InvalidParameterValue</code> if the specified application for this release
+        /// does not already exist. </li> </ul> 
         /// <para>
         ///  Default: <code>false</code> 
         /// </para>
@@ -135,6 +126,26 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Process. 
+        /// <para>
+        /// Preprocesses and validates the environment manifest and configuration files in the
+        /// source bundle. Validating configuration files can identify issues prior to deploying
+        /// the application version to an environment.
+        /// </para>
+        /// </summary>
+        public bool Process
+        {
+            get { return this._process.GetValueOrDefault(); }
+            set { this._process = value; }
+        }
+
+        // Check to see if Process property is set
+        internal bool IsSetProcess()
+        {
+            return this._process.HasValue; 
         }
 
         /// <summary>

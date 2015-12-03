@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0-*",
+  "description": "",
+  "authors": [ "" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "dependencies": {
+    "Core": "1.0.0-*"
+  },
+
+  "exclude": [
+    "**/_pcl/*",
+    "**/_pcl-sl/*",
+    "**/_bcl35/*",
+    "**/_bcl45/*",
+    "**/_bcl/*",
+    "**/_bcl+sl/*",
+    "**/_android/*",
+    "**/_ios/*",
+    "**/_pclReference/*",
+    "**/_win8/*",
+    "**/_winPhone81/*",
+    "**/_winPhoneSilverlight8/*",
+    "**/_winstorage/*"
+
+  ],
+
+  "compilationOptions": {
+    "define": [ "DNX", "AWS_ASYNC_API" ]
+  },
+
+  "frameworks": {
+    "dnxcore50": {
+      "compilationOptions": {
+        "define": [ "ADD_SUPPORT_IORDERED_DICTIONARY", "ADD_SUPPORT_ICLONEABLE"     ]
+      },
+      "dependencies": {
+        "System.Collections": "4.0.10",
+        "System.Linq": "4.0.0",
+        "Microsoft.CSharp": "4.0.0"
+      }
+    }
+  }
+}

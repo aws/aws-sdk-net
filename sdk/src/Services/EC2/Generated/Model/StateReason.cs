@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li>
         /// <para>
-        /// <code>Server.SpotInstanceTermination</code>: A Spot Instance was terminated due to
+        /// <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to
         /// an increase in the market price.
         /// </para>
         /// </li> <li>

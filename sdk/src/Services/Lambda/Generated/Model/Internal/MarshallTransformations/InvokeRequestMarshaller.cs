@@ -60,6 +60,9 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/2015-03-31/functions/{FunctionName}/invocations";
             uriResourcePath = uriResourcePath.Replace("{FunctionName}", publicRequest.IsSetFunctionName() ? StringUtils.FromString(publicRequest.FunctionName) : string.Empty);
+            
+            if (publicRequest.IsSetQualifier())
+                request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));
             request.ResourcePath = uriResourcePath;
             request.ContentStream =  publicRequest.PayloadStream ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
@@ -74,6 +77,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         
             if(publicRequest.IsSetLogType())
                 request.Headers["X-Amz-Log-Type"] = publicRequest.LogType;
+            request.UseQueryString = true;
 
             return request;
         }

@@ -44,7 +44,12 @@ namespace Amazon.IdentityManagement
         public static readonly AssignmentStatusType Unassigned = new AssignmentStatusType("Unassigned");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public AssignmentStatusType(string value)
             : base(value)
@@ -129,7 +134,12 @@ namespace Amazon.IdentityManagement
         public static readonly ContextKeyTypeEnum StringList = new ContextKeyTypeEnum("stringList");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ContextKeyTypeEnum(string value)
             : base(value)
@@ -174,7 +184,12 @@ namespace Amazon.IdentityManagement
         public static readonly EncodingType SSH = new EncodingType("SSH");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public EncodingType(string value)
             : base(value)
@@ -231,7 +246,12 @@ namespace Amazon.IdentityManagement
         public static readonly EntityType User = new EntityType("User");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public EntityType(string value)
             : base(value)
@@ -280,7 +300,12 @@ namespace Amazon.IdentityManagement
         public static readonly PolicyEvaluationDecisionType ImplicitDeny = new PolicyEvaluationDecisionType("implicitDeny");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public PolicyEvaluationDecisionType(string value)
             : base(value)
@@ -329,7 +354,12 @@ namespace Amazon.IdentityManagement
         public static readonly PolicyScopeType Local = new PolicyScopeType("Local");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public PolicyScopeType(string value)
             : base(value)
@@ -377,6 +407,10 @@ namespace Amazon.IdentityManagement
         /// </summary>
         public static readonly PolicySourceType None = new PolicySourceType("none");
         /// <summary>
+        /// Constant Resource for PolicySourceType
+        /// </summary>
+        public static readonly PolicySourceType Resource = new PolicySourceType("resource");
+        /// <summary>
         /// Constant Role for PolicySourceType
         /// </summary>
         public static readonly PolicySourceType Role = new PolicySourceType("role");
@@ -390,7 +424,12 @@ namespace Amazon.IdentityManagement
         public static readonly PolicySourceType UserManaged = new PolicySourceType("user-managed");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public PolicySourceType(string value)
             : base(value)
@@ -431,7 +470,12 @@ namespace Amazon.IdentityManagement
         public static readonly ReportFormatType TextCsv = new ReportFormatType("text/csv");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ReportFormatType(string value)
             : base(value)
@@ -480,7 +524,12 @@ namespace Amazon.IdentityManagement
         public static readonly ReportStateType STARTED = new ReportStateType("STARTED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ReportStateType(string value)
             : base(value)
@@ -525,7 +574,12 @@ namespace Amazon.IdentityManagement
         public static readonly StatusType Inactive = new StatusType("Inactive");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public StatusType(string value)
             : base(value)
@@ -662,7 +716,12 @@ namespace Amazon.IdentityManagement
         public static readonly SummaryKeyType VersionsPerPolicyQuota = new SummaryKeyType("VersionsPerPolicyQuota");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SummaryKeyType(string value)
             : base(value)

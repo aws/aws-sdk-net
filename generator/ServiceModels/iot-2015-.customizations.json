@@ -1,0 +1,278 @@
+{
+	"shapeModifiers": {
+        "ListPrincipleThingsResponse": {
+            "modify": [
+                {
+                    "nextToken": { "emitPropertyName": "nextMarker" }
+                }
+            ]
+        },"ListThingsRequest": {
+            "modify": [
+                {
+                    "nextToken": { "emitPropertyName": "marker" }
+                }
+            ]
+        },"ListThingsResponse": {
+            "modify": [
+                {
+                    "nextToken": { "emitPropertyName": "nextMarker" }
+                }
+            ]
+        },"ListTopicRulesRequest": {
+            "modify": [
+                {
+                    "nextToken": { "emitPropertyName": "marker" }
+                }
+            ]
+        },"ListTopicRulesResponse": {
+            "modify": [
+                {
+                    "nextToken": { "emitPropertyName": "nextMarker" }
+                }
+            ]
+        }
+	},
+    "simpleMethods" : {
+		"operations" : {
+			"AttachPrincipalPolicy" : {
+				"methodForms" : [
+					[
+						"PolicyName",
+						"Principal"
+					]
+				]
+			},
+			"AttachThingPrincipal" : {
+				"methodForms" : [
+					[
+						"ThingName",
+						"Principal"
+					]
+				]
+			},
+			"CancelCertificateTransfer" : {
+				"methodForms" : [
+					[
+						"CertificateId"
+					]
+				]
+			},
+			"CreateCertificateFromCsr" : {
+				"methodForms" : [
+					[
+						"CertificateSigningRequest"
+					],
+					[
+						"CertificateSigningRequest",
+						"SetAsActive"
+					]
+				]
+			},
+			"CreateKeysAndCertificate" : {
+				"methodForms" : [
+					[],
+					[
+						"SetAsActive"
+					]
+				]
+			},
+			"CreatePolicy" : {
+				"methodForms" : [
+					[
+						"PolicyName",
+						"PolicyDocument"
+					]
+				]
+			},
+			"CreatePolicyVersion" : {
+				"methodForms" : [
+					[
+						"PolicyName",
+						"PolicyDocument"
+					],
+					[
+						"PolicyName",
+						"PolicyDocument",
+						"SetAsDefault"
+					]
+				]
+			},
+			"DeleteCertificate" : {
+				"methodForms" : [
+					[
+						"CertificateId"
+					]
+				]
+			},
+			"DeletePolicy" : {
+				"methodForms" : [
+					[
+						"PolicyName"
+					]
+				]
+			},
+			"DeletePolicyVersion" : {
+				"methodForms" : [
+					[
+						"PolicyName",
+						"PolicyVersionId"
+					]
+				]
+			},
+			"DeleteThing" : {
+				"methodForms" : [
+					[
+						"ThingName"
+					]
+				]
+			},
+			"DeleteTopicRule" : {
+				"methodForms" : [
+					[
+						"RuleName"
+					]
+				]
+			},
+			"DescribeCertificate" : {
+				"methodForms" : [
+					[
+						"CertificateId"
+					]
+				]
+			},
+			"DescribeEndpoint" : {
+				"methodForms" : [
+					[
+					]
+				]
+			},
+			"DescribeThing" : {
+				"methodForms" : [
+					[
+						"ThingName"
+					]
+				]
+			},
+			"DetachPrincipalPolicy" : {
+				"methodForms" : [
+					[
+						"PolicyName",
+						"Principal"
+					]
+				]
+			},
+			"DetachThingPrincipal" : {
+				"methodForms" : [
+					[
+						"ThingName",
+						"Principal"
+					]
+				]
+			},
+			"GetPolicy" : {
+				"methodForms" : [
+					[
+						"PolicyName"
+					]
+				]
+			},
+			"GetPolicyVersion" : {
+				"methodForms" : [
+					[
+						"PolicyName",
+						"PolicyVersionId"
+					]
+				]
+			},
+			"GetTopicRule" : {
+				"methodForms" : [
+					[
+						"RuleName"
+					]
+				]
+			},
+			"ListCertificates" : {
+				"methodForms" : [
+					[]
+				]
+			},
+			"ListPolicies" : {
+				"methodForms" : [
+					[]
+				]
+			},
+			"ListPolicyVersions" : {
+				"methodForms" : [
+					[
+						"PolicyName"
+					]
+				]
+			},
+			"ListPrincipalPolicies" : {
+				"methodForms" : [
+					[
+						"Principal"
+					]
+				]
+			},
+			"ListPrincipalThings" : {
+				"methodForms" : [
+					[
+						"Principal"
+					]
+				]
+			},
+			"ListThingPrincipals" : {
+				"methodForms" : [
+					[
+						"ThingName"
+					]
+				]
+			},
+			"ListThings" : {
+				"methodForms" : [
+					[]
+				]
+			},
+			"ListTopicRules" : {
+				"methodForms" : [
+					[
+						"Topic"
+					]
+				]
+			},
+			"RejectCertificateTransfer" : {
+				"methodForms" : [
+					[
+						"CertificateId"
+					]
+				]
+			},
+			"SetDefaultPolicyVersion" : {
+				"methodForms" : [
+					[
+						"PolicyName",
+						"PolicyVersionId"
+					]
+				]
+			},
+			"TransferCertificate" : {
+				"methodForms" : [
+					[
+						"CertificateId",
+						"TargetAwsAccount"
+					]
+				]
+			},
+			"UpdateCertificate" : {
+				"methodForms" : [
+					[
+						"CertificateId",
+						"NewStatus"
+					]
+				]
+			}
+
+		}
+	}
+}

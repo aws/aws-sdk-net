@@ -388,10 +388,18 @@ namespace Amazon.Runtime.Internal
                 var content = request.Content;
                 if (request.SetContentFromParameters || (content == null && request.ContentStream == null))
                 {
-                    string queryString = AWSSDKUtils.GetParametersAsString(request.Parameters);
-                    content = Encoding.UTF8.GetBytes(queryString);
-                    request.Content = content;
-                    request.SetContentFromParameters = true;
+                    // Mapping parameters to query string or body are mutually exclusive.
+                    if (!request.UseQueryString)
+                    {
+                        string queryString = AWSSDKUtils.GetParametersAsString(request.Parameters);
+                        content = Encoding.UTF8.GetBytes(queryString);
+                        request.Content = content;
+                        request.SetContentFromParameters = true;
+                    }
+                    else
+                    {
+                        request.Content = new Byte[0];
+                    }
                 }
 
                 if (content != null)
@@ -404,12 +412,6 @@ namespace Amazon.Runtime.Internal
                     request.Headers[HeaderKeys.ContentLengthHeader] =
                         request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
                 }
-            }
-            else if (request.UseQueryString &&
-                (request.HttpMethod == "POST" ||
-                 request.HttpMethod == "PUT"))
-            {
-                request.Content = new Byte[0];
             }
 
             if (requestContext.Unmarshaller is JsonResponseUnmarshaller)

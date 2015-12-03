@@ -66,6 +66,13 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.EvalDecision = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("EvalDecisionDetails/entry", targetDepth))
+                    {
+                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.EvalDecisionDetails.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("EvalResourceName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -84,6 +91,13 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         var unmarshaller = StringUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.MissingContextValues.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ResourceSpecificResults/member", targetDepth))
+                    {
+                        var unmarshaller = ResourceSpecificResultUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ResourceSpecificResults.Add(item);
                         continue;
                     }
                 }

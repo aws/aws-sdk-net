@@ -18,6 +18,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,9 +26,9 @@ namespace Amazon.Runtime.Internal.Transform
 {
     public class HttpClientResponseData : IWebResponseData
     {
-        HttpClient _httpClient;
-        HttpResponseMessage _response;
+        HttpResponseMessageBody _response;
         string[] _headerNames;
+        Dictionary<string, string> _headers;
         HashSet<string> _headerNamesSet;
 
         internal HttpClientResponseData(HttpResponseMessage response)
@@ -37,17 +38,17 @@ namespace Amazon.Runtime.Internal.Transform
 
         internal HttpClientResponseData(HttpResponseMessage response, HttpClient httpClient)
         {
-            _httpClient = httpClient;
-            this._response = response;
+            _response = new HttpResponseMessageBody(response, httpClient);
 
-            this.StatusCode = _response.StatusCode;
-            this.IsSuccessStatusCode = _response.IsSuccessStatusCode;
-            this.ContentLength = _response.Content.Headers.ContentLength ?? 0;
+            this.StatusCode = response.StatusCode;
+            this.IsSuccessStatusCode = response.IsSuccessStatusCode;
+            this.ContentLength = response.Content.Headers.ContentLength ?? 0;
 
-            if (_response.Content.Headers.ContentType != null)
+            if (response.Content.Headers.ContentType != null)
             {
-                this.ContentType = _response.Content.Headers.ContentType.MediaType;
+                this.ContentType = response.Content.Headers.ContentType.MediaType;
             }
+            CopyHeaderValues(response);
         }
 
         public HttpStatusCode StatusCode { get; private set; }
@@ -60,54 +61,63 @@ namespace Amazon.Runtime.Internal.Transform
 
         public string GetHeaderValue(string headerName)
         {
-            IEnumerable<string> headerValues;
+            string headerValue;
+            if(_headers.TryGetValue(headerName, out headerValue))
+                return headerValue;
 
-            if(this._response.Content != null && this._response.Content.Headers.TryGetValues(headerName, out headerValues))
-                return headerValues.FirstOrDefault();
-            if(this._response.Headers.TryGetValues(headerName, out headerValues))
-                return headerValues.FirstOrDefault();
-
-            return null;
+            return string.Empty;
         }
 
         public bool IsHeaderPresent(string headerName)
         {
-            if (_headerNamesSet == null)
-                SetHeaderNames();
             return _headerNamesSet.Contains(headerName);
         }
 
         public string[] GetHeaderNames()
         {
-            if (_headerNames == null)
-            {
-                SetHeaderNames();
-            }
             return _headerNames;
         }
 
-        private void SetHeaderNames()
+        private void CopyHeaderValues(HttpResponseMessage response)
         {
             List<string> headerNames = new List<string>();
-            foreach (KeyValuePair<string,IEnumerable<string>> kvp in this._response.Headers)
+            _headers = new Dictionary<string, string>(10, StringComparer.OrdinalIgnoreCase);
+
+            foreach (KeyValuePair<string, IEnumerable<string>> kvp in response.Headers)
             {
                 headerNames.Add(kvp.Key);
+                var headerValue = GetFirstHeaderValue(response.Headers, kvp.Key);
+                _headers.Add(kvp.Key, headerValue);
             }
-            if (this._response.Content != null)
+
+            if (response.Content != null)
             {
-                foreach (var kvp in this._response.Content.Headers)
+                foreach (var kvp in response.Content.Headers)
                 {
-                    if(!headerNames.Contains(kvp.Key))
+                    if (!headerNames.Contains(kvp.Key))
+                    {
                         headerNames.Add(kvp.Key);
+                        var headerValue = GetFirstHeaderValue(response.Content.Headers, kvp.Key);
+                        _headers.Add(kvp.Key, headerValue);
+                    }
                 }
             }
             _headerNames = headerNames.ToArray();
             _headerNamesSet = new HashSet<string>(_headerNames, StringComparer.OrdinalIgnoreCase);
         }
 
+        private string GetFirstHeaderValue(HttpHeaders headers, string key)
+        {
+            IEnumerable<string> headerValues = null;
+            if (headers.TryGetValues(key, out headerValues))
+                return headerValues.FirstOrDefault();
+
+            return string.Empty;
+        }
+
         public IHttpResponseBody ResponseBody
         {
-            get { return new HttpResponseMessageBody(_response, _httpClient); }
+            get { return _response; }
         }
     }
 

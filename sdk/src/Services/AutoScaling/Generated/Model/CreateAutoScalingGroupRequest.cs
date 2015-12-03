@@ -106,8 +106,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// If this parameter is not specified, the default value is 300. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+        /// The default is 300. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
         /// Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -186,7 +185,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// By default, health checks use Amazon EC2 instance status checks to determine the health
         /// of an instance. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
-        /// Checks</a>.
+        /// Checks</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public string HealthCheckType

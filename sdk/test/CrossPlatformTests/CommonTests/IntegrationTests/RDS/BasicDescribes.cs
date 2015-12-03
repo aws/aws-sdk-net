@@ -568,12 +568,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
         }
 
         [Test]
+        [Category("RDS")]
         public void TestDescribeDBInstanceException()
         {
             var nfe = AssertExtensions.ExpectExceptionAsync<DBInstanceNotFoundException>(
                 Client.DescribeDBInstancesAsync(new DescribeDBInstancesRequest
                 {
-                    DBInstanceIdentifier = Guid.NewGuid().ToString("N")
+                    DBInstanceIdentifier = "fake-identifier"
                 })).Result;
 
             Assert.IsFalse(string.IsNullOrEmpty(nfe.ErrorCode));

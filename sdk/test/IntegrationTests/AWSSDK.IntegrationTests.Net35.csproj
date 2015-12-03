@@ -67,7 +67,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include=".\Tests\*.cs" Exclude=".\Tests\45\*.cs" />
+    <Compile Include=".\Tests\*.cs" />    
     <Compile Include=".\Tests\*\*.cs" Exclude=".\Tests\45\*.cs" />
     <Compile Include=".\Utils\*.cs" />
   </ItemGroup>
@@ -76,9 +76,17 @@
       <Project>{FCDD969A-7DB7-4FFB-B3C1-F637F475C093}</Project>
       <Name>AWSSDK.Core.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\APIGateway\AWSSDK.APIGateway.Net35.csproj">
+      <Project>{56ef10e2-b0d1-43eb-bfb6-3db71fbbd35d}</Project>
+      <Name>AWSSDK.APIGateway.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\AutoScaling\AWSSDK.AutoScaling.Net35.csproj">
       <Project>{88F2CD8C-2C47-4E66-A4D4-93B2CF5BDCBC}</Project>
       <Name>AWSSDK.AutoScaling.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\AWSMarketplaceCommerceAnalytics\AWSSDK.AWSMarketplaceCommerceAnalytics.Net35.csproj">
+      <Project>{51d44631-1d3d-4c44-a1f1-0ab86639e682}</Project>
+      <Name>AWSSDK.AWSMarketplaceCommerceAnalytics.Net35</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\AWSSupport\AWSSDK.AWSSupport.Net35.csproj">
       <Project>{663AA578-CBBF-4E69-9753-577480DEED1D}</Project>
@@ -172,6 +180,10 @@
       <Project>{09BAE709-4F25-4B39-B1F8-0BCE91800D6E}</Project>
       <Name>AWSSDK.ElasticMapReduce.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Elasticsearch\AWSSDK.Elasticsearch.Net35.csproj">
+      <Project>{53d1a7e3-ce00-41e7-ad1a-c1adb30beb97}</Project>
+      <Name>AWSSDK.Elasticsearch.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.Net35.csproj">
       <Project>{E3BFF825-F2A1-4F7D-B08A-6CD34EB28990}</Project>
       <Name>AWSSDK.ElasticTranscoder.Net35</Name>
@@ -179,6 +191,10 @@
     <ProjectReference Include="..\..\src\Services\Glacier\AWSSDK.Glacier.Net35.csproj">
       <Project>{C38A2D2C-E410-4084-9245-F577777E8009}</Project>
       <Name>AWSSDK.Glacier.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\IotData\AWSSDK.IotData.Net35.csproj">
+      <Project>{e928c4c7-63e0-4ddd-a967-ad00baaf40c8}</Project>
+      <Name>AWSSDK.IotData.Net35</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\IdentityManagement\AWSSDK.IdentityManagement.Net35.csproj">
       <Project>{40BA3D89-6B91-4199-AF4B-50ABFBD0C18F}</Project>
@@ -188,9 +204,21 @@
       <Project>{63BB1FC1-A3B1-463D-A2DB-C631344EA5C8}</Project>
       <Name>AWSSDK.ImportExport.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Inspector\AWSSDK.Inspector.Net35.csproj">
+      <Project>{6fe3798f-2a60-4e26-9b36-fc7e52b232c9}</Project>
+      <Name>AWSSDK.Inspector.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\IoT\AWSSDK.IoT.Net35.csproj">
+      <Project>{3a3995fd-9750-4248-943b-a4bac190353d}</Project>
+      <Name>AWSSDK.IoT.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.Net35.csproj">
       <Project>{ADF1A47D-4C05-4DC5-B318-E3E412C2578E}</Project>
       <Name>AWSSDK.KeyManagementService.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\KinesisFirehose\AWSSDK.KinesisFirehose.Net35.csproj">
+      <Project>{0ac889db-f5a3-4a8f-b7b0-2334d70341e6}</Project>
+      <Name>AWSSDK.KinesisFirehose.Net35</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Kinesis\AWSSDK.Kinesis.Net35.csproj">
       <Project>{602515A5-333A-4B51-BE61-43DDD05B2048}</Project>
@@ -263,6 +291,10 @@
     <ProjectReference Include="..\..\src\Services\StorageGateway\AWSSDK.StorageGateway.Net35.csproj">
       <Project>{E5D769F1-F0F0-4CA4-B2D6-3DE560DCE248}</Project>
       <Name>AWSSDK.StorageGateway.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\WAF\AWSSDK.WAF.Net35.csproj">
+      <Project>{756d5d73-16bd-4f8f-af58-a24ce4000606}</Project>
+      <Name>AWSSDK.WAF.Net35</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\WorkSpaces\AWSSDK.WorkSpaces.Net35.csproj">
       <Project>{63422F3B-8FAC-4E5F-A27C-07FB8742E8BD}</Project>

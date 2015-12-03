@@ -230,6 +230,307 @@ namespace Amazon.SimpleEmail
         #endregion
 
         
+        #region  CloneReceiptRuleSet
+
+        /// <summary>
+        /// Creates a receipt rule set by cloning an existing one. All receipt rules and configurations
+        /// are copied to the new receipt rule set and are completely independent of the source
+        /// rule set.
+        /// 
+        ///  
+        /// <para>
+        /// For information about setting up rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CloneReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the CloneReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.AlreadyExistsException">
+        /// Indicates that a resource could not be created due to a naming conflict.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created due to service limits. For a list of
+        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        public CloneReceiptRuleSetResponse CloneReceiptRuleSet(CloneReceiptRuleSetRequest request)
+        {
+            var marshaller = new CloneReceiptRuleSetRequestMarshaller();
+            var unmarshaller = CloneReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return Invoke<CloneReceiptRuleSetRequest,CloneReceiptRuleSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CloneReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CloneReceiptRuleSet operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCloneReceiptRuleSet
+        ///         operation.</returns>
+        public IAsyncResult BeginCloneReceiptRuleSet(CloneReceiptRuleSetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CloneReceiptRuleSetRequestMarshaller();
+            var unmarshaller = CloneReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CloneReceiptRuleSetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CloneReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCloneReceiptRuleSet.</param>
+        /// 
+        /// <returns>Returns a  CloneReceiptRuleSetResult from SimpleEmailService.</returns>
+        public  CloneReceiptRuleSetResponse EndCloneReceiptRuleSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CloneReceiptRuleSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateReceiptFilter
+
+        /// <summary>
+        /// Creates a new IP address filter.
+        /// 
+        ///  
+        /// <para>
+        /// For information about setting up IP address filters, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptFilter service method.</param>
+        /// 
+        /// <returns>The response from the CreateReceiptFilter service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.AlreadyExistsException">
+        /// Indicates that a resource could not be created due to a naming conflict.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created due to service limits. For a list of
+        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        public CreateReceiptFilterResponse CreateReceiptFilter(CreateReceiptFilterRequest request)
+        {
+            var marshaller = new CreateReceiptFilterRequestMarshaller();
+            var unmarshaller = CreateReceiptFilterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateReceiptFilterRequest,CreateReceiptFilterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReceiptFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptFilter operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReceiptFilter
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateReceiptFilter(CreateReceiptFilterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateReceiptFilterRequestMarshaller();
+            var unmarshaller = CreateReceiptFilterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateReceiptFilterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateReceiptFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReceiptFilter.</param>
+        /// 
+        /// <returns>Returns a  CreateReceiptFilterResult from SimpleEmailService.</returns>
+        public  CreateReceiptFilterResponse EndCreateReceiptFilter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateReceiptFilterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateReceiptRule
+
+        /// <summary>
+        /// Creates a receipt rule.
+        /// 
+        ///  
+        /// <para>
+        /// For information about setting up receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptRule service method.</param>
+        /// 
+        /// <returns>The response from the CreateReceiptRule service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.AlreadyExistsException">
+        /// Indicates that a resource could not be created due to a naming conflict.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidLambdaFunctionException">
+        /// Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could
+        /// not execute the provided function, possibly due to permissions issues. For information
+        /// about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidS3ConfigurationException">
+        /// Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid,
+        /// or that Amazon SES could not publish to the bucket, possibly due to permissions issues.
+        /// For information about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidSnsTopicException">
+        /// Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could
+        /// not publish to the topic, possibly due to permissions issues. For information about
+        /// giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created due to service limits. For a list of
+        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
+        /// Indicates that the provided receipt rule does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        public CreateReceiptRuleResponse CreateReceiptRule(CreateReceiptRuleRequest request)
+        {
+            var marshaller = new CreateReceiptRuleRequestMarshaller();
+            var unmarshaller = CreateReceiptRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateReceiptRuleRequest,CreateReceiptRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptRule operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReceiptRule
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateReceiptRule(CreateReceiptRuleRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateReceiptRuleRequestMarshaller();
+            var unmarshaller = CreateReceiptRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateReceiptRuleRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReceiptRule.</param>
+        /// 
+        /// <returns>Returns a  CreateReceiptRuleResult from SimpleEmailService.</returns>
+        public  CreateReceiptRuleResponse EndCreateReceiptRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateReceiptRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateReceiptRuleSet
+
+        /// <summary>
+        /// Creates an empty receipt rule set.
+        /// 
+        ///  
+        /// <para>
+        /// For information about setting up receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the CreateReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.AlreadyExistsException">
+        /// Indicates that a resource could not be created due to a naming conflict.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created due to service limits. For a list of
+        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        public CreateReceiptRuleSetResponse CreateReceiptRuleSet(CreateReceiptRuleSetRequest request)
+        {
+            var marshaller = new CreateReceiptRuleSetRequestMarshaller();
+            var unmarshaller = CreateReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateReceiptRuleSetRequest,CreateReceiptRuleSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptRuleSet operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReceiptRuleSet
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateReceiptRuleSet(CreateReceiptRuleSetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateReceiptRuleSetRequestMarshaller();
+            var unmarshaller = CreateReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateReceiptRuleSetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReceiptRuleSet.</param>
+        /// 
+        /// <returns>Returns a  CreateReceiptRuleSetResult from SimpleEmailService.</returns>
+        public  CreateReceiptRuleSetResponse EndCreateReceiptRuleSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateReceiptRuleSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteIdentity
 
         /// <summary>
@@ -351,6 +652,192 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  DeleteReceiptFilter
+
+        /// <summary>
+        /// Deletes the specified IP address filter.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing IP address filters, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptFilter service method.</param>
+        /// 
+        /// <returns>The response from the DeleteReceiptFilter service method, as returned by SimpleEmailService.</returns>
+        public DeleteReceiptFilterResponse DeleteReceiptFilter(DeleteReceiptFilterRequest request)
+        {
+            var marshaller = new DeleteReceiptFilterRequestMarshaller();
+            var unmarshaller = DeleteReceiptFilterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteReceiptFilterRequest,DeleteReceiptFilterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReceiptFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptFilter operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReceiptFilter
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteReceiptFilter(DeleteReceiptFilterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteReceiptFilterRequestMarshaller();
+            var unmarshaller = DeleteReceiptFilterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteReceiptFilterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteReceiptFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteReceiptFilter.</param>
+        /// 
+        /// <returns>Returns a  DeleteReceiptFilterResult from SimpleEmailService.</returns>
+        public  DeleteReceiptFilterResponse EndDeleteReceiptFilter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteReceiptFilterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteReceiptRule
+
+        /// <summary>
+        /// Deletes the specified receipt rule.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteReceiptRule service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        public DeleteReceiptRuleResponse DeleteReceiptRule(DeleteReceiptRuleRequest request)
+        {
+            var marshaller = new DeleteReceiptRuleRequestMarshaller();
+            var unmarshaller = DeleteReceiptRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteReceiptRuleRequest,DeleteReceiptRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptRule operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReceiptRule
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteReceiptRule(DeleteReceiptRuleRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteReceiptRuleRequestMarshaller();
+            var unmarshaller = DeleteReceiptRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteReceiptRuleRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteReceiptRule.</param>
+        /// 
+        /// <returns>Returns a  DeleteReceiptRuleResult from SimpleEmailService.</returns>
+        public  DeleteReceiptRuleResponse EndDeleteReceiptRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteReceiptRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteReceiptRuleSet
+
+        /// <summary>
+        /// Deletes the specified receipt rule set and all of the receipt rules it contains.
+        /// 
+        ///  <note>The currently active rule set cannot be deleted.</note> 
+        /// <para>
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.CannotDeleteException">
+        /// Indicates that the delete operation could not be completed.
+        /// </exception>
+        public DeleteReceiptRuleSetResponse DeleteReceiptRuleSet(DeleteReceiptRuleSetRequest request)
+        {
+            var marshaller = new DeleteReceiptRuleSetRequestMarshaller();
+            var unmarshaller = DeleteReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteReceiptRuleSetRequest,DeleteReceiptRuleSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptRuleSet operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReceiptRuleSet
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteReceiptRuleSet(DeleteReceiptRuleSetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteReceiptRuleSetRequestMarshaller();
+            var unmarshaller = DeleteReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteReceiptRuleSetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteReceiptRuleSet.</param>
+        /// 
+        /// <returns>Returns a  DeleteReceiptRuleSetResult from SimpleEmailService.</returns>
+        public  DeleteReceiptRuleSetResponse EndDeleteReceiptRuleSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteReceiptRuleSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteVerifiedEmailAddress
 
         /// <summary>
@@ -404,6 +891,196 @@ namespace Amazon.SimpleEmail
         public  DeleteVerifiedEmailAddressResponse EndDeleteVerifiedEmailAddress(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVerifiedEmailAddressResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeActiveReceiptRuleSet
+
+        /// <summary>
+        /// Returns the metadata and receipt rules for the receipt rule set that is currently
+        /// active.
+        /// 
+        ///  
+        /// <para>
+        /// For information about setting up receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActiveReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the DescribeActiveReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        public DescribeActiveReceiptRuleSetResponse DescribeActiveReceiptRuleSet(DescribeActiveReceiptRuleSetRequest request)
+        {
+            var marshaller = new DescribeActiveReceiptRuleSetRequestMarshaller();
+            var unmarshaller = DescribeActiveReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeActiveReceiptRuleSetRequest,DescribeActiveReceiptRuleSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeActiveReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActiveReceiptRuleSet operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeActiveReceiptRuleSet
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeActiveReceiptRuleSet(DescribeActiveReceiptRuleSetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeActiveReceiptRuleSetRequestMarshaller();
+            var unmarshaller = DescribeActiveReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeActiveReceiptRuleSetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeActiveReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeActiveReceiptRuleSet.</param>
+        /// 
+        /// <returns>Returns a  DescribeActiveReceiptRuleSetResult from SimpleEmailService.</returns>
+        public  DescribeActiveReceiptRuleSetResponse EndDescribeActiveReceiptRuleSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeActiveReceiptRuleSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeReceiptRule
+
+        /// <summary>
+        /// Returns the details of the specified receipt rule.
+        /// 
+        ///  
+        /// <para>
+        /// For information about setting up receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReceiptRule service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReceiptRule service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
+        /// Indicates that the provided receipt rule does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        public DescribeReceiptRuleResponse DescribeReceiptRule(DescribeReceiptRuleRequest request)
+        {
+            var marshaller = new DescribeReceiptRuleRequestMarshaller();
+            var unmarshaller = DescribeReceiptRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReceiptRuleRequest,DescribeReceiptRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReceiptRule operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReceiptRule
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeReceiptRule(DescribeReceiptRuleRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeReceiptRuleRequestMarshaller();
+            var unmarshaller = DescribeReceiptRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeReceiptRuleRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReceiptRule.</param>
+        /// 
+        /// <returns>Returns a  DescribeReceiptRuleResult from SimpleEmailService.</returns>
+        public  DescribeReceiptRuleResponse EndDescribeReceiptRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeReceiptRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeReceiptRuleSet
+
+        /// <summary>
+        /// Returns the details of the specified receipt rule set.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        public DescribeReceiptRuleSetResponse DescribeReceiptRuleSet(DescribeReceiptRuleSetRequest request)
+        {
+            var marshaller = new DescribeReceiptRuleSetRequestMarshaller();
+            var unmarshaller = DescribeReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReceiptRuleSetRequest,DescribeReceiptRuleSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReceiptRuleSet operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReceiptRuleSet
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeReceiptRuleSet(DescribeReceiptRuleSetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeReceiptRuleSetRequestMarshaller();
+            var unmarshaller = DescribeReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeReceiptRuleSetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReceiptRuleSet.</param>
+        /// 
+        /// <returns>Returns a  DescribeReceiptRuleSetResult from SimpleEmailService.</returns>
+        public  DescribeReceiptRuleSetResponse EndDescribeReceiptRuleSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeReceiptRuleSetResponse>(asyncResult);
         }
 
         #endregion
@@ -951,6 +1628,129 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  ListReceiptFilters
+
+        /// <summary>
+        /// Lists the IP address filters associated with your account.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing IP address filters, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceiptFilters service method.</param>
+        /// 
+        /// <returns>The response from the ListReceiptFilters service method, as returned by SimpleEmailService.</returns>
+        public ListReceiptFiltersResponse ListReceiptFilters(ListReceiptFiltersRequest request)
+        {
+            var marshaller = new ListReceiptFiltersRequestMarshaller();
+            var unmarshaller = ListReceiptFiltersResponseUnmarshaller.Instance;
+
+            return Invoke<ListReceiptFiltersRequest,ListReceiptFiltersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReceiptFilters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReceiptFilters operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReceiptFilters
+        ///         operation.</returns>
+        public IAsyncResult BeginListReceiptFilters(ListReceiptFiltersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListReceiptFiltersRequestMarshaller();
+            var unmarshaller = ListReceiptFiltersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListReceiptFiltersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListReceiptFilters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReceiptFilters.</param>
+        /// 
+        /// <returns>Returns a  ListReceiptFiltersResult from SimpleEmailService.</returns>
+        public  ListReceiptFiltersResponse EndListReceiptFilters(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListReceiptFiltersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListReceiptRuleSets
+
+        /// <summary>
+        /// Lists the receipt rule sets that exist under your AWS account. If there are additional
+        /// receipt rule sets to be retrieved, you will receive a <code>NextToken</code> that
+        /// you can provide to the next call to <code>ListReceiptRuleSets</code> to retrieve the
+        /// additional entries.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceiptRuleSets service method.</param>
+        /// 
+        /// <returns>The response from the ListReceiptRuleSets service method, as returned by SimpleEmailService.</returns>
+        public ListReceiptRuleSetsResponse ListReceiptRuleSets(ListReceiptRuleSetsRequest request)
+        {
+            var marshaller = new ListReceiptRuleSetsRequestMarshaller();
+            var unmarshaller = ListReceiptRuleSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListReceiptRuleSetsRequest,ListReceiptRuleSetsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReceiptRuleSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReceiptRuleSets operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReceiptRuleSets
+        ///         operation.</returns>
+        public IAsyncResult BeginListReceiptRuleSets(ListReceiptRuleSetsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListReceiptRuleSetsRequestMarshaller();
+            var unmarshaller = ListReceiptRuleSetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListReceiptRuleSetsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListReceiptRuleSets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReceiptRuleSets.</param>
+        /// 
+        /// <returns>Returns a  ListReceiptRuleSetsResult from SimpleEmailService.</returns>
+        public  ListReceiptRuleSetsResponse EndListReceiptRuleSets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListReceiptRuleSetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListVerifiedEmailAddresses
 
         /// <summary>
@@ -1089,6 +1889,141 @@ namespace Amazon.SimpleEmail
         public  PutIdentityPolicyResponse EndPutIdentityPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutIdentityPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ReorderReceiptRuleSet
+
+        /// <summary>
+        /// Reorders the receipt rules within a receipt rule set.
+        /// 
+        ///  <note>All of the rules in the rule set must be represented in this request. That
+        /// is, this API will return an error if the reorder request doesn’t explicitly position
+        /// all of the rules.</note> 
+        /// <para>
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReorderReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the ReorderReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
+        /// Indicates that the provided receipt rule does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        public ReorderReceiptRuleSetResponse ReorderReceiptRuleSet(ReorderReceiptRuleSetRequest request)
+        {
+            var marshaller = new ReorderReceiptRuleSetRequestMarshaller();
+            var unmarshaller = ReorderReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return Invoke<ReorderReceiptRuleSetRequest,ReorderReceiptRuleSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReorderReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReorderReceiptRuleSet operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReorderReceiptRuleSet
+        ///         operation.</returns>
+        public IAsyncResult BeginReorderReceiptRuleSet(ReorderReceiptRuleSetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ReorderReceiptRuleSetRequestMarshaller();
+            var unmarshaller = ReorderReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ReorderReceiptRuleSetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ReorderReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReorderReceiptRuleSet.</param>
+        /// 
+        /// <returns>Returns a  ReorderReceiptRuleSetResult from SimpleEmailService.</returns>
+        public  ReorderReceiptRuleSetResponse EndReorderReceiptRuleSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ReorderReceiptRuleSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SendBounce
+
+        /// <summary>
+        /// Generates and sends a bounce message to the sender of an email you received through
+        /// Amazon SES. You can only use this API on an email up to 24 hours after you receive
+        /// it.
+        /// 
+        ///  <note>You cannot use this API to send generic bounces for mail that was not received
+        /// by Amazon SES.</note> 
+        /// <para>
+        /// For information about receiving email through Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendBounce service method.</param>
+        /// 
+        /// <returns>The response from the SendBounce service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
+        /// Indicates that the action failed, and the message could not be sent. Check the error
+        /// stack for more information about what caused the error.
+        /// </exception>
+        public SendBounceResponse SendBounce(SendBounceRequest request)
+        {
+            var marshaller = new SendBounceRequestMarshaller();
+            var unmarshaller = SendBounceResponseUnmarshaller.Instance;
+
+            return Invoke<SendBounceRequest,SendBounceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendBounce operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendBounce operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendBounce
+        ///         operation.</returns>
+        public IAsyncResult BeginSendBounce(SendBounceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new SendBounceRequestMarshaller();
+            var unmarshaller = SendBounceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SendBounceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendBounce operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendBounce.</param>
+        /// 
+        /// <returns>Returns a  SendBounceResult from SimpleEmailService.</returns>
+        public  SendBounceResponse EndSendBounce(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SendBounceResponse>(asyncResult);
         }
 
         #endregion
@@ -1257,6 +2192,70 @@ namespace Amazon.SimpleEmail
         public  SendRawEmailResponse EndSendRawEmail(IAsyncResult asyncResult)
         {
             return EndInvoke<SendRawEmailResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SetActiveReceiptRuleSet
+
+        /// <summary>
+        /// Sets the specified receipt rule set as the active receipt rule set.
+        /// 
+        ///  <note>To disable your email-receiving through Amazon SES completely, you can call
+        /// this API with RuleSetName set to null.</note> 
+        /// <para>
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetActiveReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the SetActiveReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        public SetActiveReceiptRuleSetResponse SetActiveReceiptRuleSet(SetActiveReceiptRuleSetRequest request)
+        {
+            var marshaller = new SetActiveReceiptRuleSetRequestMarshaller();
+            var unmarshaller = SetActiveReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return Invoke<SetActiveReceiptRuleSetRequest,SetActiveReceiptRuleSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetActiveReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetActiveReceiptRuleSet operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetActiveReceiptRuleSet
+        ///         operation.</returns>
+        public IAsyncResult BeginSetActiveReceiptRuleSet(SetActiveReceiptRuleSetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new SetActiveReceiptRuleSetRequestMarshaller();
+            var unmarshaller = SetActiveReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SetActiveReceiptRuleSetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetActiveReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetActiveReceiptRuleSet.</param>
+        /// 
+        /// <returns>Returns a  SetActiveReceiptRuleSetResult from SimpleEmailService.</returns>
+        public  SetActiveReceiptRuleSetResponse EndSetActiveReceiptRuleSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SetActiveReceiptRuleSetResponse>(asyncResult);
         }
 
         #endregion
@@ -1455,6 +2454,161 @@ namespace Amazon.SimpleEmail
         public  SetIdentityNotificationTopicResponse EndSetIdentityNotificationTopic(IAsyncResult asyncResult)
         {
             return EndInvoke<SetIdentityNotificationTopicResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SetReceiptRulePosition
+
+        /// <summary>
+        /// Sets the position of the specified receipt rule in the receipt rule set.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetReceiptRulePosition service method.</param>
+        /// 
+        /// <returns>The response from the SetReceiptRulePosition service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
+        /// Indicates that the provided receipt rule does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        public SetReceiptRulePositionResponse SetReceiptRulePosition(SetReceiptRulePositionRequest request)
+        {
+            var marshaller = new SetReceiptRulePositionRequestMarshaller();
+            var unmarshaller = SetReceiptRulePositionResponseUnmarshaller.Instance;
+
+            return Invoke<SetReceiptRulePositionRequest,SetReceiptRulePositionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetReceiptRulePosition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetReceiptRulePosition operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetReceiptRulePosition
+        ///         operation.</returns>
+        public IAsyncResult BeginSetReceiptRulePosition(SetReceiptRulePositionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new SetReceiptRulePositionRequestMarshaller();
+            var unmarshaller = SetReceiptRulePositionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SetReceiptRulePositionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetReceiptRulePosition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetReceiptRulePosition.</param>
+        /// 
+        /// <returns>Returns a  SetReceiptRulePositionResult from SimpleEmailService.</returns>
+        public  SetReceiptRulePositionResponse EndSetReceiptRulePosition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SetReceiptRulePositionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateReceiptRule
+
+        /// <summary>
+        /// Updates a receipt rule.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReceiptRule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateReceiptRule service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidLambdaFunctionException">
+        /// Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could
+        /// not execute the provided function, possibly due to permissions issues. For information
+        /// about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidS3ConfigurationException">
+        /// Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid,
+        /// or that Amazon SES could not publish to the bucket, possibly due to permissions issues.
+        /// For information about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidSnsTopicException">
+        /// Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could
+        /// not publish to the topic, possibly due to permissions issues. For information about
+        /// giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created due to service limits. For a list of
+        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
+        /// Indicates that the provided receipt rule does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        public UpdateReceiptRuleResponse UpdateReceiptRule(UpdateReceiptRuleRequest request)
+        {
+            var marshaller = new UpdateReceiptRuleRequestMarshaller();
+            var unmarshaller = UpdateReceiptRuleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateReceiptRuleRequest,UpdateReceiptRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReceiptRule operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateReceiptRule
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateReceiptRule(UpdateReceiptRuleRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateReceiptRuleRequestMarshaller();
+            var unmarshaller = UpdateReceiptRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateReceiptRuleRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateReceiptRule.</param>
+        /// 
+        /// <returns>Returns a  UpdateReceiptRuleResult from SimpleEmailService.</returns>
+        public  UpdateReceiptRuleResponse EndUpdateReceiptRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateReceiptRuleResponse>(asyncResult);
         }
 
         #endregion

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -255,7 +255,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>spot-instance-request-id</code> - The ID of the Spot Instance request.
+        /// <code>spot-instance-request-id</code> - The ID of the Spot instance request.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -315,7 +315,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.network-interface.id</code> - The ID of the network interface.
+        /// <code>network-interface.network-interface-id</code> - The ID of the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>

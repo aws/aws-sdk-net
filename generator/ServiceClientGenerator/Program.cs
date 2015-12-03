@@ -34,6 +34,7 @@ namespace ServiceClientGenerator
                     CustomizationCompiler.CompileServiceCustomizations(options.ModelsFolder);
 
                 var generationManifest = GenerationManifest.Load(options.Manifest, options.Versions, options.ModelsFolder);
+
                 if (string.IsNullOrEmpty(options.SelfServiceModel))
                 {
 					GeneratorDriver.GenerateCoreProjects(generationManifest, options);
@@ -55,6 +56,7 @@ namespace ServiceClientGenerator
                     GeneratorDriver.UpdateNuGetPackagesInReadme(generationManifest, options);
 					GeneratorDriver.UpdateUnitTestProjectReferences(options);
                     GeneratorDriver.UpdateDNXCoreTestDependencies(generationManifest, options);
+                    GeneratorDriver.UpdateCodeAnalysisSoltion(generationManifest, options);
                 }
                 else
                 {

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a Reserved Instance listing state.
+    /// Describes a Reserved instance listing state.
     /// </summary>
     public partial class InstanceCount
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The number of listed Reserved Instances in the state specified by the <code>state</code>.
+        /// The number of listed Reserved instances in the state specified by the <code>state</code>.
         /// </para>
         /// </summary>
         public int Count
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The states of the listed Reserved Instances.
+        /// The states of the listed Reserved instances.
         /// </para>
         /// </summary>
         public ListingState State

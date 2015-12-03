@@ -40,7 +40,12 @@ namespace Amazon.SimpleSystemsManagement
         public static readonly AssociationFilterKey Name = new AssociationFilterKey("Name");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public AssociationFilterKey(string value)
             : base(value)
@@ -89,7 +94,12 @@ namespace Amazon.SimpleSystemsManagement
         public static readonly AssociationStatusName Success = new AssociationStatusName("Success");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public AssociationStatusName(string value)
             : base(value)
@@ -119,6 +129,266 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type CommandFilterKey.
+    /// </summary>
+    public class CommandFilterKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InvokedAfter for CommandFilterKey
+        /// </summary>
+        public static readonly CommandFilterKey InvokedAfter = new CommandFilterKey("InvokedAfter");
+        /// <summary>
+        /// Constant InvokedBefore for CommandFilterKey
+        /// </summary>
+        public static readonly CommandFilterKey InvokedBefore = new CommandFilterKey("InvokedBefore");
+        /// <summary>
+        /// Constant Status for CommandFilterKey
+        /// </summary>
+        public static readonly CommandFilterKey Status = new CommandFilterKey("Status");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CommandFilterKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CommandFilterKey FindValue(string value)
+        {
+            return FindValue<CommandFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CommandFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CommandInvocationStatus.
+    /// </summary>
+    public class CommandInvocationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Cancelled for CommandInvocationStatus
+        /// </summary>
+        public static readonly CommandInvocationStatus Cancelled = new CommandInvocationStatus("Cancelled");
+        /// <summary>
+        /// Constant Cancelling for CommandInvocationStatus
+        /// </summary>
+        public static readonly CommandInvocationStatus Cancelling = new CommandInvocationStatus("Cancelling");
+        /// <summary>
+        /// Constant Failed for CommandInvocationStatus
+        /// </summary>
+        public static readonly CommandInvocationStatus Failed = new CommandInvocationStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for CommandInvocationStatus
+        /// </summary>
+        public static readonly CommandInvocationStatus InProgress = new CommandInvocationStatus("InProgress");
+        /// <summary>
+        /// Constant Pending for CommandInvocationStatus
+        /// </summary>
+        public static readonly CommandInvocationStatus Pending = new CommandInvocationStatus("Pending");
+        /// <summary>
+        /// Constant Success for CommandInvocationStatus
+        /// </summary>
+        public static readonly CommandInvocationStatus Success = new CommandInvocationStatus("Success");
+        /// <summary>
+        /// Constant TimedOut for CommandInvocationStatus
+        /// </summary>
+        public static readonly CommandInvocationStatus TimedOut = new CommandInvocationStatus("TimedOut");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CommandInvocationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CommandInvocationStatus FindValue(string value)
+        {
+            return FindValue<CommandInvocationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CommandInvocationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CommandPluginStatus.
+    /// </summary>
+    public class CommandPluginStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Cancelled for CommandPluginStatus
+        /// </summary>
+        public static readonly CommandPluginStatus Cancelled = new CommandPluginStatus("Cancelled");
+        /// <summary>
+        /// Constant Failed for CommandPluginStatus
+        /// </summary>
+        public static readonly CommandPluginStatus Failed = new CommandPluginStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for CommandPluginStatus
+        /// </summary>
+        public static readonly CommandPluginStatus InProgress = new CommandPluginStatus("InProgress");
+        /// <summary>
+        /// Constant Pending for CommandPluginStatus
+        /// </summary>
+        public static readonly CommandPluginStatus Pending = new CommandPluginStatus("Pending");
+        /// <summary>
+        /// Constant Success for CommandPluginStatus
+        /// </summary>
+        public static readonly CommandPluginStatus Success = new CommandPluginStatus("Success");
+        /// <summary>
+        /// Constant TimedOut for CommandPluginStatus
+        /// </summary>
+        public static readonly CommandPluginStatus TimedOut = new CommandPluginStatus("TimedOut");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CommandPluginStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CommandPluginStatus FindValue(string value)
+        {
+            return FindValue<CommandPluginStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CommandPluginStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CommandStatus.
+    /// </summary>
+    public class CommandStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Cancelled for CommandStatus
+        /// </summary>
+        public static readonly CommandStatus Cancelled = new CommandStatus("Cancelled");
+        /// <summary>
+        /// Constant Cancelling for CommandStatus
+        /// </summary>
+        public static readonly CommandStatus Cancelling = new CommandStatus("Cancelling");
+        /// <summary>
+        /// Constant Failed for CommandStatus
+        /// </summary>
+        public static readonly CommandStatus Failed = new CommandStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for CommandStatus
+        /// </summary>
+        public static readonly CommandStatus InProgress = new CommandStatus("InProgress");
+        /// <summary>
+        /// Constant Pending for CommandStatus
+        /// </summary>
+        public static readonly CommandStatus Pending = new CommandStatus("Pending");
+        /// <summary>
+        /// Constant Success for CommandStatus
+        /// </summary>
+        public static readonly CommandStatus Success = new CommandStatus("Success");
+        /// <summary>
+        /// Constant TimedOut for CommandStatus
+        /// </summary>
+        public static readonly CommandStatus TimedOut = new CommandStatus("TimedOut");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CommandStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CommandStatus FindValue(string value)
+        {
+            return FindValue<CommandStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CommandStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DocumentFilterKey.
     /// </summary>
     public class DocumentFilterKey : ConstantClass
@@ -128,9 +398,22 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant Name for DocumentFilterKey
         /// </summary>
         public static readonly DocumentFilterKey Name = new DocumentFilterKey("Name");
+        /// <summary>
+        /// Constant Owner for DocumentFilterKey
+        /// </summary>
+        public static readonly DocumentFilterKey Owner = new DocumentFilterKey("Owner");
+        /// <summary>
+        /// Constant PlatformTypes for DocumentFilterKey
+        /// </summary>
+        public static readonly DocumentFilterKey PlatformTypes = new DocumentFilterKey("PlatformTypes");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DocumentFilterKey(string value)
             : base(value)
@@ -160,6 +443,56 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type DocumentParameterType.
+    /// </summary>
+    public class DocumentParameterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant String for DocumentParameterType
+        /// </summary>
+        public static readonly DocumentParameterType String = new DocumentParameterType("String");
+        /// <summary>
+        /// Constant StringList for DocumentParameterType
+        /// </summary>
+        public static readonly DocumentParameterType StringList = new DocumentParameterType("StringList");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentParameterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentParameterType FindValue(string value)
+        {
+            return FindValue<DocumentParameterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentParameterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DocumentStatus.
     /// </summary>
     public class DocumentStatus : ConstantClass
@@ -179,7 +512,12 @@ namespace Amazon.SimpleSystemsManagement
         public static readonly DocumentStatus Deleting = new DocumentStatus("Deleting");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DocumentStatus(string value)
             : base(value)
@@ -228,7 +566,12 @@ namespace Amazon.SimpleSystemsManagement
         public static readonly Fault Unknown = new Fault("Unknown");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public Fault(string value)
             : base(value)
@@ -251,6 +594,168 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Fault(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceInformationFilterKey.
+    /// </summary>
+    public class InstanceInformationFilterKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AgentVersion for InstanceInformationFilterKey
+        /// </summary>
+        public static readonly InstanceInformationFilterKey AgentVersion = new InstanceInformationFilterKey("AgentVersion");
+        /// <summary>
+        /// Constant InstanceIds for InstanceInformationFilterKey
+        /// </summary>
+        public static readonly InstanceInformationFilterKey InstanceIds = new InstanceInformationFilterKey("InstanceIds");
+        /// <summary>
+        /// Constant PingStatus for InstanceInformationFilterKey
+        /// </summary>
+        public static readonly InstanceInformationFilterKey PingStatus = new InstanceInformationFilterKey("PingStatus");
+        /// <summary>
+        /// Constant PlatformTypes for InstanceInformationFilterKey
+        /// </summary>
+        public static readonly InstanceInformationFilterKey PlatformTypes = new InstanceInformationFilterKey("PlatformTypes");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceInformationFilterKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceInformationFilterKey FindValue(string value)
+        {
+            return FindValue<InstanceInformationFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceInformationFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PingStatus.
+    /// </summary>
+    public class PingStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ConnectionLost for PingStatus
+        /// </summary>
+        public static readonly PingStatus ConnectionLost = new PingStatus("ConnectionLost");
+        /// <summary>
+        /// Constant Inactive for PingStatus
+        /// </summary>
+        public static readonly PingStatus Inactive = new PingStatus("Inactive");
+        /// <summary>
+        /// Constant Online for PingStatus
+        /// </summary>
+        public static readonly PingStatus Online = new PingStatus("Online");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PingStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PingStatus FindValue(string value)
+        {
+            return FindValue<PingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PlatformType.
+    /// </summary>
+    public class PlatformType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Linux for PlatformType
+        /// </summary>
+        public static readonly PlatformType Linux = new PlatformType("Linux");
+        /// <summary>
+        /// Constant Windows for PlatformType
+        /// </summary>
+        public static readonly PlatformType Windows = new PlatformType("Windows");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PlatformType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PlatformType FindValue(string value)
+        {
+            return FindValue<PlatformType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PlatformType(string value)
         {
             return FindValue(value);
         }

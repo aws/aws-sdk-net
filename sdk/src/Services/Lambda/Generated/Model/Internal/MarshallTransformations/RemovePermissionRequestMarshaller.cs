@@ -57,10 +57,14 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lambda");
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/2015-03-31/functions/{FunctionName}/versions/HEAD/policy/{StatementId}";
+            string uriResourcePath = "/2015-03-31/functions/{FunctionName}/policy/{StatementId}";
             uriResourcePath = uriResourcePath.Replace("{FunctionName}", publicRequest.IsSetFunctionName() ? StringUtils.FromString(publicRequest.FunctionName) : string.Empty);
             uriResourcePath = uriResourcePath.Replace("{StatementId}", publicRequest.IsSetStatementId() ? StringUtils.FromString(publicRequest.StatementId) : string.Empty);
+            
+            if (publicRequest.IsSetQualifier())
+                request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));
             request.ResourcePath = uriResourcePath;
+            request.UseQueryString = true;
 
             return request;
         }

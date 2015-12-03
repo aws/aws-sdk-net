@@ -23,62 +23,61 @@ namespace Amazon.Runtime.Internal.Transform
 {
     public class HttpWebRequestResponseData : IWebResponseData
     {
-        HttpWebResponse _response;
         string[] _headerNames;
+        Dictionary<string, string> _headers;
         HashSet<string> _headerNamesSet;
         HttpWebResponseBody _responseBody;
 
         public HttpWebRequestResponseData(HttpWebResponse response)
         {
-            this._response = response;
             _responseBody = new HttpWebResponseBody(response);
 
             this.StatusCode = response.StatusCode;
             this.IsSuccessStatusCode = this.StatusCode >= HttpStatusCode.OK && this.StatusCode <= (HttpStatusCode)299;
             this.ContentType = response.ContentType;            
             this.ContentLength = response.ContentLength;
+            CopyHeaderValues(response);
         }
 
         public HttpStatusCode StatusCode { get; private set; }
 
         public bool IsSuccessStatusCode { get; private set; }
 
-        public string ContentType { get; private set; }        
+        public string ContentType { get; private set; }
 
         public long ContentLength { get; private set; }
         
-        //public Stream OpenResponse()
-        //{
-        //    return this._response.GetResponseStream();
-        //}
-
         public bool IsHeaderPresent(string headerName)
         {
-            if (_headerNamesSet == null)
-                SetHeaderNames();
             return _headerNamesSet.Contains(headerName);
         }
 
         public string[] GetHeaderNames()
         {
-            if (_headerNames == null)
-            {
-                SetHeaderNames();
-            }
             return _headerNames;            
         }
 
         public string GetHeaderValue(string name)
         {
-            return this._response.GetResponseHeader(name);
+            string headerValue;
+            if (_headers.TryGetValue(name, out headerValue))
+                return headerValue;
+
+            return string.Empty;
         }
 
-        private void SetHeaderNames()
+        private void CopyHeaderValues(HttpWebResponse response)
         {
-            var keys = this._response.Headers.Keys;
+            var keys = response.Headers.Keys;
             _headerNames = new string[keys.Count];
+            _headers = new Dictionary<string, string>(keys.Count, StringComparer.OrdinalIgnoreCase);
             for (int i = 0; i < keys.Count; i++)
-                _headerNames[i] = keys[i];
+            {
+                var key = keys[i];
+                var headerValue = response.GetResponseHeader(key);
+                _headerNames[i] = key;
+                _headers.Add(key, headerValue);
+            }
             _headerNamesSet = new HashSet<string>(_headerNames, StringComparer.OrdinalIgnoreCase);
         }
 

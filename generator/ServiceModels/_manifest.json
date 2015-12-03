@@ -105,6 +105,15 @@
         {
             "active": true,
 
+            "model": "apigateway",
+            "base-name": "APIGateway",
+            "region-lookup-name": "apigateway",
+            "authentication-service-name": "apigateway",
+            "synopsis": "Amazon API Gateway helps developers deliver robust, secure and scalable mobile and web application backends. Amazon API Gateway allows developers to securely connect mobile and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly addressable web services that are hosted outside of AWS."
+        },
+        {
+            "active": true,
+
             "model": "cloudhsm",
             "base-name": "CloudHSM",
             "region-lookup-name": "cloudhsm",
@@ -124,12 +133,22 @@
         {
             "active": true,
 
+            "model": "marketplacecommerceanalytics",
+            "base-name": "AWSMarketplaceCommerceAnalytics",
+            "region-lookup-name": "marketplacecommerceanalytics",
+            "authentication-service-name": "marketplacecommerceanalytics",
+            "service-url": " https://marketplacecommerceanalytics.us-east-1.amazonaws.com",
+            "synopsis": "The AWS Marketplace Commerce Analytics service allows marketplace partners to programmatically request business intelligence data from AWS Marketplace. This service provides the same data that was previously only available through the AWS Marketplace Management Portal, but offers the data in a fully-machine-readable format and available in fine-grained data sets rather than large reports."
+        },
+        {
+            "active": true,
+
             "model": "support",
             "base-name": "AWSSupport",
             "region-lookup-name": "support",
             "authentication-service-name": "support",
             "service-url": "https://support.us-east-1.amazonaws.com",
-            "synopsis": "The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center."
+            "synopsis": "The AWS Support API provides methods for creating and managing AWS Support cases and for retrieving the results of AWS Trusted Advisor checks."
         },
         {
             "active": true,
@@ -417,6 +436,26 @@
         {
             "active": true,
 
+            "model": "es",
+            "base-name": "Elasticsearch",
+            "region-lookup-name": "es",
+            "authentication-service-name": "es",
+            "service-url": "https://es.us-east-1.amazonaws.com",
+            "synopsis": "Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains."
+        },
+        {
+            "active": true,
+
+            "model": "firehose",
+            "base-name": "KinesisFirehose",
+            "region-lookup-name": "firehose",
+            "authentication-service-name": "firehose",
+            "service-url": "https://firehose.us-east-1.amazonaws.com/",
+            "synopsis": "Amazon Kinesis Firehose is a fully managed service for ingesting data streams directly into AWS data services such as Amazon S3 and Amazon Redshift."
+        },
+        {
+            "active": true,
+
             "model": "glacier",
             "base-name": "Glacier",
             "region-lookup-name": "glacier",
@@ -424,6 +463,17 @@
             "service-url": "https://glacier.us-east-1.amazonaws.com",
             "synopsis": "Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.",
             "dependencies": [ "SQS", "SimpleNotificationService" ]
+        },
+        {
+            "active": true,
+
+            "model": "iot-data",
+            "base-name": "IotData",
+            "region-lookup-name": "data.iot",
+            "service-url": "https://data.iot.us-east-1.amazonaws.com/",
+			"authentication-service-name": "iotdata",
+			"generate-client-constructors": false,
+            "synopsis": "AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud."
         },
         {
             "active": true,
@@ -447,6 +497,25 @@
             "region-lookup-name": "importexport",
             "service-url": "https://importexport.amazonaws.com/",
             "synopsis": "AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport."
+        },
+                {
+            "active": true,
+
+            "model": "iot-2015-",
+            "base-name": "IoT",
+            "region-lookup-name": "iot",
+			"authentication-service-name": "execute-api",
+            "service-url": "https://iot.us-east-1.amazonaws.com/",
+            "synopsis": "AWS IoT allows you to leverage AWS to build your Internet of Things."
+        },
+        {
+            "active": true,
+
+            "model": "inspector",
+            "base-name": "Inspector",
+            "region-lookup-name": "inspector",
+            "service-url": "https://inspector.us-east-1.amazonaws.com/",
+            "synopsis": "Amazon Inspector identifies security issues in your application deployments."
         },
         {
             "active": true,
@@ -653,6 +722,16 @@
             "region-lookup-name": "storagegateway",
             "service-url": "https://storagegateway.us-east-1.amazonaws.com",
             "synopsis": "The AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure."
+        },
+        {
+            "active": true,
+
+            "model": "waf",
+            "base-name": "WAF",
+            "region-lookup-name": "waf",
+            "authentication-service-name": "waf",
+            "service-url": "https://waf.amazonaws.com",
+            "synopsis": "AWS WAF (Web Application Firewall) protects web applications from attack by allowing customers to block bad actors and provides filters against common web exploits like SQL injection."
         },
         {
             "active" : true,

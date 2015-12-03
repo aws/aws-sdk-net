@@ -38,19 +38,24 @@ namespace Amazon.ElasticLoadBalancing
     ///
     /// Elastic Load Balancing 
     /// <para>
-    /// Elastic Load Balancing automatically distributes incoming web traffic across multiple
-    /// Amazon EC2 instances.
+    /// Elastic Load Balancing distributes incoming traffic across your EC2 instances.
     /// </para>
     ///  
     /// <para>
-    /// All Elastic Load Balancing actions and commands are <i>idempotent</i>, which means
-    /// that they complete no more than one time. If you repeat a request or a command, the
-    /// action succeeds with a 200 OK response code.
+    /// For information about the features of Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elastic-load-balancing.html">What
+    /// Is Elastic Load Balancing?</a> in the <i>Elastic Load Balancing Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// For detailed information about the features of Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html">Managing
-    /// Load Balancers</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+    /// For information about the AWS regions supported by Elastic Load Balancing, see <a
+    /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Regions
+    /// and Endpoints - Elastic Load Balancing</a> in the <i>Amazon Web Services General Reference</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// All Elastic Load Balancing operations are <i>idempotent</i>, which means that they
+    /// complete at most one time. If you repeat an operation, it succeeds with a 200 OK response
+    /// code.
     /// </para>
     /// </summary>
     public partial class AmazonElasticLoadBalancingClient : AmazonServiceClient, IAmazonElasticLoadBalancing

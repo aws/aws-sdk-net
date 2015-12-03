@@ -59,7 +59,102 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Test expressions for scan
                 TestExpressionsOnScan(hashRangeTable);
+
+                // Test Query and Scan manual pagination
+                TestPagination(hashRangeTable);
             }
+        }
+
+        private void TestPagination(Table hashRangeTable)
+        {
+            var itemCount = 10;
+            var batchWrite = hashRangeTable.CreateBatchWrite();
+            var name = "Borg";
+            // Put items
+            for (int i = 0; i < itemCount; i++)
+            {
+                Document doc = new Document();
+                doc["Name"] = name;
+                doc["Age"] = 1 + i;
+                doc["Company"] = "Big River";
+                doc["Score"] = 120 + i;
+                doc["IsTester"] = true;
+                doc["Manager"] = "Kirk";
+                batchWrite.AddDocumentToPut(doc);
+            }
+            batchWrite.Execute();
+
+            // Paginated scan
+            {
+                var request = new ScanOperationConfig
+                {
+                    Limit = 1
+                };
+                var search = hashRangeTable.Scan(request);
+                var tokens = new List<string>();
+                var retrievedCount = VerifyPagination(search, tokens);
+                Assert.AreEqual(retrievedCount, itemCount);
+                Assert.AreEqual(itemCount, tokens.Count);
+
+                var token4 = tokens[4];
+                var token5 = tokens[5];
+                search = hashRangeTable.Scan(new ScanOperationConfig
+                {
+                    Limit = 1,
+                    PaginationToken = token4
+                });
+                search.GetNextSet();
+                Assert.AreNotEqual(token4, search.PaginationToken);
+                Assert.AreEqual(token5, search.PaginationToken);
+            }
+
+            // Paginated query
+            {
+                var filter = new QueryFilter("Name", QueryOperator.Equal, name);
+                var request = new QueryOperationConfig
+                {
+                    Limit = 1,
+                    Filter = filter
+                };
+                var search = hashRangeTable.Query(request);
+
+                var tokens = new List<string>();
+                var retrievedCount = VerifyPagination(search, tokens);
+                Assert.AreEqual(retrievedCount, itemCount);
+                Assert.AreEqual(itemCount, tokens.Count);
+
+                var token4 = tokens[4];
+                var token5 = tokens[5];
+                search = hashRangeTable.Query(new QueryOperationConfig
+                {
+                    Limit = 1,
+                    Filter = filter,
+                    PaginationToken = token4
+                });
+                search.GetNextSet();
+                Assert.AreNotEqual(token4, search.PaginationToken);
+                Assert.AreEqual(token5, search.PaginationToken);
+            }
+        }
+
+        private static int VerifyPagination(Search search, List<string> tokens)
+        {
+            int count = 0;
+            do
+            {
+                var items = search.GetNextSet();
+                var token = search.PaginationToken;
+                count += items.Count;
+
+                if (!search.IsDone)
+                {
+                    tokens.Add(token);
+                    Assert.AreNotEqual(0, items.Count);
+                    Assert.IsFalse(string.IsNullOrEmpty(token));
+                }
+            } while (!search.IsDone);
+
+            return count;
         }
 
         private void TestEmptyCollections(Table hashTable)

@@ -28,20 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Describes a configuration document.
+    /// Describes an SSM document.
     /// </summary>
     public partial class DocumentDescription
     {
         private DateTime? _createdDate;
+        private string _description;
         private string _name;
+        private List<DocumentParameter> _parameters = new List<DocumentParameter>();
+        private List<string> _platformTypes = new List<string>();
         private string _sha1;
         private DocumentStatus _status;
 
         /// <summary>
-        /// Gets and sets the property CreatedDate. 
-        /// <para>
-        /// The date when the configuration document was created.
-        /// </para>
+        /// Gets and sets the property CreatedDate. The date when the SSM document was created.
         /// </summary>
         public DateTime CreatedDate
         {
@@ -56,9 +56,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Description. A description of the document.
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the configuration document.
+        /// The name of the SSM document.
         /// </para>
         /// </summary>
         public string Name
@@ -71,6 +86,40 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// A description of the parameters for a document.
+        /// </para>
+        /// </summary>
+        public List<DocumentParameter> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformTypes. The list of OS platforms compatible with
+        /// this SSM document.
+        /// </summary>
+        public List<string> PlatformTypes
+        {
+            get { return this._platformTypes; }
+            set { this._platformTypes = value; }
+        }
+
+        // Check to see if PlatformTypes property is set
+        internal bool IsSetPlatformTypes()
+        {
+            return this._platformTypes != null && this._platformTypes.Count > 0; 
         }
 
         /// <summary>
@@ -94,7 +143,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the configuration document.
+        /// The status of the SSM document.
         /// </para>
         /// </summary>
         public DocumentStatus Status

@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDocuments operation.
-    /// Describes one or more of your configuration documents.
+    /// Describes one or more of your SSM documents.
     /// </summary>
     public partial class ListDocumentsRequest : AmazonSimpleSystemsManagementRequest
     {

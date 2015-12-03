@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelReservedInstancesListing operation.
-    /// Cancels the specified Reserved Instance listing in the Reserved Instance Marketplace.
+    /// Cancels the specified Reserved instance listing in the Reserved Instance Marketplace.
     /// 
     ///  
     /// <para>
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesListingId. 
         /// <para>
-        /// The ID of the Reserved Instance listing.
+        /// The ID of the Reserved instance listing.
         /// </para>
         /// </summary>
         public string ReservedInstancesListingId

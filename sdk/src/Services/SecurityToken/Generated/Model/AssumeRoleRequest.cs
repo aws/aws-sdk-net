@@ -49,7 +49,7 @@ namespace Amazon.SecurityToken.Model
     /// one set of long-term credentials in one account and then use temporary security credentials
     /// to access all the other accounts by assuming roles in those accounts. For more information
     /// about roles, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM
-    /// Roles (Delegation and Federation)</a> in <i>Using IAM</i>. 
+    /// Roles (Delegation and Federation)</a> in the <i>Using IAM</i>. 
     /// </para>
     ///  
     /// <para>
@@ -60,9 +60,8 @@ namespace Amazon.SecurityToken.Model
     /// <code>AssumeRole</code> (and specify the role with the appropriate permissions) to
     /// get temporary security credentials for that user. With those temporary security credentials,
     /// you construct a sign-in URL that users can use to access the console. For more information,
-    /// see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html">Scenarios
-    /// for Granting Temporary Access</a> in <i>Using Temporary Security Credentials</i>.
-    /// 
+    /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html#sts-introduction">Common
+    /// Scenarios for Temporary Credentials</a> in the <i>Using IAM</i>.
     /// </para>
     ///  
     /// <para>
@@ -81,9 +80,9 @@ namespace Amazon.SecurityToken.Model
     /// you pass. This gives you a way to further restrict the permissions for the resulting
     /// temporary security credentials. You cannot use the passed policy to grant permissions
     /// that are in excess of those allowed by the access policy of the role that is being
-    /// assumed. For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-    /// for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in <i>Using
-    /// Temporary Security Credentials</i>.
+    /// assumed. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+    /// for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>Using
+    /// IAM</i>.
     /// </para>
     ///  
     /// <para>
@@ -112,7 +111,7 @@ namespace Amazon.SecurityToken.Model
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/MFAProtectedAPI.html">Configuring
-    /// MFA-Protected API Access</a> in <i>Using IAM</i> guide.
+    /// MFA-Protected API Access</a> in the <i>Using IAM</i> guide.
     /// </para>
     ///  
     /// <para>
@@ -165,9 +164,9 @@ namespace Amazon.SecurityToken.Model
         /// party generated. Each time the third party assumes the role, they should pass the
         /// customer's external ID. The external ID is useful in order to help third parties bind
         /// a role to the customer who created it. For more information about the external ID,
-        /// see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html">How
-        /// to Use External ID When Granting Access to Your AWS Resources</a> in <i>Using Temporary
-        /// Security Credentials</i>.
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+        /// to Use an External ID When Granting Access to Your AWS Resources to a Third Party</a>
+        /// in the <i>Using IAM</i>.
         /// </para>
         /// </summary>
         public string ExternalId
@@ -195,14 +194,14 @@ namespace Amazon.SecurityToken.Model
         /// policy that you pass. This gives you a way to further restrict the permissions for
         /// the resulting temporary security credentials. You cannot use the passed policy to
         /// grant permissions that are in excess of those allowed by the access policy of the
-        /// role that is being assumed. For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-        /// for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in <i>Using
-        /// Temporary Security Credentials</i>. 
+        /// role that is being assumed. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+        /// for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>Using
+        /// IAM</i>.
         /// </para>
         ///  <note>The policy plain text must be 2048 bytes or shorter. However, an internal conversion
         /// compresses it into a packed binary format with a separate limit. The PackedPolicySize
         /// response element indicates by percentage how close to the upper size limit the policy
-        /// is, with 100% equaling the maximum allowed size. </note>
+        /// is, with 100% equaling the maximum allowed size.</note>
         /// </summary>
         public string Policy
         {

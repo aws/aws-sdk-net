@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDocument operation.
-    /// Describes the specified configuration document.
+    /// Describes the specified SSM document.
     /// </summary>
     public partial class DescribeDocumentRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates DescribeDocumentRequest with the parameterized properties
         /// </summary>
-        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         public DescribeDocumentRequest(string name)
         {
             _name = name;
@@ -52,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the configuration document.
+        /// The name of the SSM document.
         /// </para>
         /// </summary>
         public string Name

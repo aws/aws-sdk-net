@@ -236,16 +236,17 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the ConnectDirectory service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryLimitExceededException">
-        /// 
+        /// The maximum number of directories in the region has been reached. You can use the
+        /// <a>GetDirectoryLimits</a> operation to determine your directory limits in the region.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public ConnectDirectoryResponse ConnectDirectory(ConnectDirectoryRequest request)
         {
@@ -306,19 +307,19 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the CreateAlias service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
-        /// 
+        /// The specified entity already exists.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
@@ -372,28 +373,28 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the CreateComputer service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AuthenticationFailedException">
-        /// 
+        /// An authentication error occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// 
+        /// The specified directory is unavailable or could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
-        /// 
+        /// The specified entity already exists.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
-        /// 
+        /// The operation is not supported.
         /// </exception>
         public CreateComputerResponse CreateComputer(CreateComputerRequest request)
         {
@@ -446,16 +447,17 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the CreateDirectory service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryLimitExceededException">
-        /// 
+        /// The maximum number of directories in the region has been reached. You can use the
+        /// <a>GetDirectoryLimits</a> operation to determine your directory limits in the region.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request)
         {
@@ -513,19 +515,21 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the CreateSnapshot service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.SnapshotLimitExceededException">
-        /// 
+        /// The maximum number of manual snapshots for the directory has been reached. You can
+        /// use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a
+        /// directory.
         /// </exception>
         public CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
@@ -578,13 +582,13 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DeleteDirectory service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
         {
@@ -637,16 +641,16 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DeleteSnapshot service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
         {
@@ -716,19 +720,19 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DescribeDirectories service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// 
+        /// The <i>NextToken</i> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public DescribeDirectoriesResponse DescribeDirectories()
         {
@@ -760,19 +764,19 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DescribeDirectories service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// 
+        /// The <i>NextToken</i> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public DescribeDirectoriesResponse DescribeDirectories(DescribeDirectoriesRequest request)
         {
@@ -837,19 +841,19 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// 
+        /// The <i>NextToken</i> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
         {
@@ -903,13 +907,13 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DisableRadius service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public DisableRadiusResponse DisableRadius(DisableRadiusRequest request)
         {
@@ -962,19 +966,19 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DisableSso service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AuthenticationFailedException">
-        /// 
+        /// An authentication error occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InsufficientPermissionsException">
-        /// 
+        /// The account does not have sufficient permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public DisableSsoResponse DisableSso(DisableSsoRequest request)
         {
@@ -1028,19 +1032,19 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the EnableRadius service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
-        /// 
+        /// The specified entity already exists.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public EnableRadiusResponse EnableRadius(EnableRadiusRequest request)
         {
@@ -1093,19 +1097,19 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the EnableSso service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AuthenticationFailedException">
-        /// 
+        /// An authentication error occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InsufficientPermissionsException">
-        /// 
+        /// The account does not have sufficient permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public EnableSsoResponse EnableSso(EnableSsoRequest request)
         {
@@ -1157,13 +1161,13 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the GetDirectoryLimits service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public GetDirectoryLimitsResponse GetDirectoryLimits()
         {
@@ -1177,13 +1181,13 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the GetDirectoryLimits service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public GetDirectoryLimitsResponse GetDirectoryLimits(GetDirectoryLimitsRequest request)
         {
@@ -1236,13 +1240,13 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the GetSnapshotLimits service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public GetSnapshotLimitsResponse GetSnapshotLimits(GetSnapshotLimitsRequest request)
         {
@@ -1308,16 +1312,16 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the RestoreFromSnapshot service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public RestoreFromSnapshotResponse RestoreFromSnapshot(RestoreFromSnapshotRequest request)
         {
@@ -1371,16 +1375,16 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the UpdateRadius service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public UpdateRadiusResponse UpdateRadius(UpdateRadiusRequest request)
         {

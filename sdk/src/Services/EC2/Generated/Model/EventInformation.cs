@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -65,13 +65,19 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>iamFleetRoleInvalid</code> - Spot fleet did not have the required permissions
+        /// <code>iamFleetRoleInvalid</code> - The Spot fleet did not have the required permissions
         /// either to launch or terminate an instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and
+        /// several attempts to launch instances have failed. For more information, see the description
+        /// of the event.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not valid.
-        /// For more information, see the description.
+        /// For more information, see the description of the event.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -108,6 +114,15 @@ namespace Amazon.EC2.Model
         /// <code>expired</code> - The Spot fleet request has expired. A subsequent event indicates
         /// that the instances were terminated, if the request was created with <code>TerminateInstancesWithExpiration</code>
         /// set.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>modify_in_progress</code> - A request to modify the Spot fleet request was accepted
+        /// and is in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>modify_successful</code> - The Spot fleet request was modified.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -85,7 +85,11 @@ namespace Amazon.Runtime.Internal
         /// request and response context.</param>
         protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
         {
-            PostInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
+            // Process the response if an exception hasn't occured
+            if (executionContext.ResponseContext.AsyncResult.Exception == null)
+            {
+                PostInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
+            }
             base.InvokeAsyncCallback(executionContext);
         }
 #endif

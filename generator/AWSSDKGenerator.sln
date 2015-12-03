@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceClientGenerator", "ServiceClientGenerator\ServiceClientGenerator.csproj", "{A9222452-4269-4844-BBCC-45874C113745}"
 EndProject
@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceManifest", "ServiceM
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceModels", "ServiceModels", "{5F17DF97-1091-405B-A60A-AB4186CE35A5}"
 	ProjectSection(SolutionItems) = preProject
+		ServiceModels\apigateway-2015-07-09.normal.json = ServiceModels\apigateway-2015-07-09.normal.json
+		ServiceModels\apigateway.customizations.json = ServiceModels\apigateway.customizations.json
 		ServiceModels\autoscaling-2011-01-01.normal.json = ServiceModels\autoscaling-2011-01-01.normal.json
 		ServiceModels\autoscaling.customizations.json = ServiceModels\autoscaling.customizations.json
 		ServiceModels\canal-2013-09-01.normal.json = ServiceModels\canal-2013-09-01.normal.json

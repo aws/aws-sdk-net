@@ -58,6 +58,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetApplicationName())
+                {
+                    request.Parameters.Add("ApplicationName", StringUtils.FromString(publicRequest.ApplicationName));
+                }
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
@@ -69,6 +73,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnvironmentName())
                 {
                     request.Parameters.Add("EnvironmentName", StringUtils.FromString(publicRequest.EnvironmentName));
+                }
+                if(publicRequest.IsSetGroupName())
+                {
+                    request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
                 }
                 if(publicRequest.IsSetOptionSettings())
                 {

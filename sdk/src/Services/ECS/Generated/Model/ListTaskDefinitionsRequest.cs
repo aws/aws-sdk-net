@@ -44,9 +44,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property FamilyPrefix. 
         /// <para>
-        /// The full family name that you want to filter the <code>ListTaskDefinitions</code>
-        /// results with. Specifying a <code>familyPrefix</code> will limit the listed task definitions
-        /// to task definition revisions that belong to that family.
+        /// The full family name with which to filter the <code>ListTaskDefinitions</code> results.
+        /// Specifying a <code>familyPrefix</code> limits the listed task definitions to task
+        /// definition revisions that belong to that family.
         /// </para>
         /// </summary>
         public string FamilyPrefix
@@ -133,12 +133,12 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The task definition status that you want to filter the <code>ListTaskDefinitions</code>
-        /// results with. By default, only <code>ACTIVE</code> task definitions are listed. By
-        /// setting this parameter to <code>INACTIVE</code>, you can view task definitions that
-        /// are <code>INACTIVE</code> as long as an active task or service still references them.
-        /// If you paginate the resulting output, be sure to keep the <code>status</code> value
-        /// constant in each subsequent request.
+        /// The task definition status with which to filter the <code>ListTaskDefinitions</code>
+        /// results. By default, only <code>ACTIVE</code> task definitions are listed. By setting
+        /// this parameter to <code>INACTIVE</code>, you can view task definitions that are <code>INACTIVE</code>
+        /// as long as an active task or service still references them. If you paginate the resulting
+        /// output, be sure to keep the <code>status</code> value constant in each subsequent
+        /// request.
         /// </para>
         /// </summary>
         public TaskDefinitionStatus Status

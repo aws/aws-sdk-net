@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "ImportInstance");
-            request.Parameters.Add("Version", "2015-04-15");
+            request.Parameters.Add("Version", "2015-10-01");
 
             if(publicRequest != null)
             {
@@ -138,6 +138,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.LaunchSpecification.IsSetPlacement())
                     {
+                        if(publicRequest.LaunchSpecification.Placement.IsSetAffinity())
+                        {
+                            request.Parameters.Add("LaunchSpecification" + "." + "Placement" + "." + "Affinity", StringUtils.FromString(publicRequest.LaunchSpecification.Placement.Affinity));
+                        }
                         if(publicRequest.LaunchSpecification.Placement.IsSetAvailabilityZone())
                         {
                             request.Parameters.Add("LaunchSpecification" + "." + "Placement" + "." + "AvailabilityZone", StringUtils.FromString(publicRequest.LaunchSpecification.Placement.AvailabilityZone));
@@ -145,6 +149,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         if(publicRequest.LaunchSpecification.Placement.IsSetGroupName())
                         {
                             request.Parameters.Add("LaunchSpecification" + "." + "Placement" + "." + "GroupName", StringUtils.FromString(publicRequest.LaunchSpecification.Placement.GroupName));
+                        }
+                        if(publicRequest.LaunchSpecification.Placement.IsSetHostId())
+                        {
+                            request.Parameters.Add("LaunchSpecification" + "." + "Placement" + "." + "HostId", StringUtils.FromString(publicRequest.LaunchSpecification.Placement.HostId));
                         }
                         if(publicRequest.LaunchSpecification.Placement.IsSetTenancy())
                         {

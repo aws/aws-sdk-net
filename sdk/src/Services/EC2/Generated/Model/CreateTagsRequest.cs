@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,7 +36,11 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-    /// Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more
+    /// information about creating IAM policies that control users' access to resources based
+    /// on tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-iam-actions-resources.html">Supported
+    /// Resource-Level Permissions for Amazon EC2 API Actions</a> in the <i>Amazon Elastic
+    /// Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateTagsRequest : AmazonEC2Request

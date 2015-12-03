@@ -26,7 +26,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\net45</OutputPath>
-    <DefineConstants>DEBUG;TRACE;;BCL;BCL45;ASYNC_AWAIT;AWS_APM_API;LOCAL_FILE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;BCL;BCL45;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -36,7 +36,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\net45</OutputPath>
-    <DefineConstants>TRACE;;BCL;BCL45;ASYNC_AWAIT;AWS_APM_API;LOCAL_FILE</DefineConstants>
+    <DefineConstants>TRACE;;BCL;BCL45;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -91,9 +91,17 @@
       <Project>{25ED6BD4-A32A-4EAA-ACBF-AB4FCD343E8E}</Project>
       <Name>AWSSDK.Core.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\APIGateway\AWSSDK.APIGateway.Net45.csproj">
+      <Project>{7e43d1ba-4fb3-4c3b-ba02-70fa51390995}</Project>
+      <Name>AWSSDK.APIGateway.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\AutoScaling\AWSSDK.AutoScaling.Net45.csproj">
       <Project>{47B1F84B-C7FD-4F38-A0F5-FF4383752AF4}</Project>
       <Name>AWSSDK.AutoScaling.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\AWSMarketplaceCommerceAnalytics\AWSSDK.AWSMarketplaceCommerceAnalytics.Net45.csproj">
+      <Project>{c33464fa-3089-4a75-8a61-d2aab8ccd3fd}</Project>
+      <Name>AWSSDK.AWSMarketplaceCommerceAnalytics.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\AWSSupport\AWSSDK.AWSSupport.Net45.csproj">
       <Project>{7AFB6468-FE81-4A38-8446-3DFF539B2CFC}</Project>
@@ -187,6 +195,10 @@
       <Project>{2B2A9558-058E-4C26-8637-628846329B9A}</Project>
       <Name>AWSSDK.ElasticMapReduce.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Elasticsearch\AWSSDK.Elasticsearch.Net45.csproj">
+      <Project>{4ec8381a-cdb2-4382-a5e0-61ea1c605a25}</Project>
+      <Name>AWSSDK.Elasticsearch.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.Net45.csproj">
       <Project>{FCF20E51-E8E5-46A3-8D7A-BB0E68C8BF4A}</Project>
       <Name>AWSSDK.ElasticTranscoder.Net45</Name>
@@ -199,13 +211,29 @@
       <Project>{02374DF3-D0F8-43DD-A638-8130A604A683}</Project>
       <Name>AWSSDK.IdentityManagement.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\IotData\AWSSDK.IotData.Net45.csproj">
+      <Project>{73e561fe-e0dc-4096-b87f-e614e146abb2}</Project>
+      <Name>AWSSDK.IotData.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ImportExport\AWSSDK.ImportExport.Net45.csproj">
       <Project>{91A3791F-AC18-48FB-B27C-05389B988B75}</Project>
       <Name>AWSSDK.ImportExport.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Inspector\AWSSDK.Inspector.Net45.csproj">
+      <Project>{854bf2b4-80ff-4a09-8fdc-5e562217663c}</Project>
+      <Name>AWSSDK.Inspector.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\IoT\AWSSDK.IoT.Net45.csproj">
+      <Project>{707f31d1-f861-41d2-86b2-c809455637fd}</Project>
+      <Name>AWSSDK.IoT.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.Net45.csproj">
       <Project>{38C583D8-26EB-4BA0-AEEF-338468E4D8DC}</Project>
       <Name>AWSSDK.KeyManagementService.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\KinesisFirehose\AWSSDK.KinesisFirehose.Net45.csproj">
+      <Project>{a1a9f2b7-ac26-4666-9b89-d2465f1c4ee4}</Project>
+      <Name>AWSSDK.KinesisFirehose.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Kinesis\AWSSDK.Kinesis.Net45.csproj">
       <Project>{6698BD46-B68A-4C53-9560-DD21A91E910D}</Project>
@@ -278,6 +306,10 @@
     <ProjectReference Include="..\..\src\Services\StorageGateway\AWSSDK.StorageGateway.Net45.csproj">
       <Project>{1B549AEC-1E3F-4D4A-8404-98A43CAF2FD9}</Project>
       <Name>AWSSDK.StorageGateway.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\WAF\AWSSDK.WAF.Net45.csproj">
+      <Project>{70766489-2019-4896-b4da-0a9fe0d189db}</Project>
+      <Name>AWSSDK.WAF.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\WorkSpaces\AWSSDK.WorkSpaces.Net45.csproj">
       <Project>{60819F67-5CD7-41A4-9E02-BB27E5A3F715}</Project>

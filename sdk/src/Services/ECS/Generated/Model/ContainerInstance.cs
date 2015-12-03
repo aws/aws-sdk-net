@@ -28,13 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// An Amazon EC2 instance that is running the Amazon ECS agent and has been registered
-    /// with a cluster.
+    /// An EC2 instance that is running the Amazon ECS agent and has been registered with
+    /// a cluster.
     /// </summary>
     public partial class ContainerInstance
     {
         private bool? _agentConnected;
         private AgentUpdateStatus _agentUpdateStatus;
+        private List<Attribute> _attributes = new List<Attribute>();
         private string _containerInstanceArn;
         private string _ec2InstanceId;
         private int? _pendingTasksCount;
@@ -48,9 +49,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property AgentConnected. 
         /// <para>
         /// This parameter returns <code>true</code> if the agent is actually connected to Amazon
-        /// ECS. Registered instances with an agent that may be unhealthy or stopped will return
-        /// <code>false</code>, and instances without a connected agent cannot accept placement
-        /// request.
+        /// ECS. Registered instances with an agent that may be unhealthy or stopped return <code>false</code>,
+        /// and instances without a connected agent cannot accept placement requests.
         /// </para>
         /// </summary>
         public bool AgentConnected
@@ -85,12 +85,31 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// The attributes set for the container instance by the Amazon ECS container agent at
+        /// instance registration.
+        /// </para>
+        /// </summary>
+        public List<Attribute> Attributes
+        {
+            get { return this._attributes; }
+            set { this._attributes = value; }
+        }
+
+        // Check to see if Attributes property is set
+        internal bool IsSetAttributes()
+        {
+            return this._attributes != null && this._attributes.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ContainerInstanceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
         /// namespace, followed by the region of the container instance, the AWS account ID of
         /// the container instance owner, the <code>container-instance</code> namespace, and then
-        /// the container instance UUID. For example, arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+        /// the container instance ID. For example, arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
         /// </para>
         /// </summary>
         public string ContainerInstanceArn
@@ -108,7 +127,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Ec2InstanceId. 
         /// <para>
-        /// The Amazon EC2 instance ID of the container instance.
+        /// The EC2 instance ID of the container instance.
         /// </para>
         /// </summary>
         public string Ec2InstanceId

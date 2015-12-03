@@ -1,0 +1,152 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the iot-2015-05-28.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.IoT.Model
+{
+    /// <summary>
+    /// Describes a rule.
+    /// </summary>
+    public partial class TopicRule
+    {
+        private List<Action> _actions = new List<Action>();
+        private DateTime? _createdAt;
+        private string _description;
+        private bool? _ruleDisabled;
+        private string _ruleName;
+        private string _sql;
+
+        /// <summary>
+        /// Gets and sets the property Actions. 
+        /// <para>
+        /// The actions associated with the rule.
+        /// </para>
+        /// </summary>
+        public List<Action> Actions
+        {
+            get { return this._actions; }
+            set { this._actions = value; }
+        }
+
+        // Check to see if Actions property is set
+        internal bool IsSetActions()
+        {
+            return this._actions != null && this._actions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The date and time the rule was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreatedAt
+        {
+            get { return this._createdAt.GetValueOrDefault(); }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the rule.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleDisabled. 
+        /// <para>
+        /// Specifies whether the rule is disabled.
+        /// </para>
+        /// </summary>
+        public bool RuleDisabled
+        {
+            get { return this._ruleDisabled.GetValueOrDefault(); }
+            set { this._ruleDisabled = value; }
+        }
+
+        // Check to see if RuleDisabled property is set
+        internal bool IsSetRuleDisabled()
+        {
+            return this._ruleDisabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleName. 
+        /// <para>
+        /// The name of the rule.
+        /// </para>
+        /// </summary>
+        public string RuleName
+        {
+            get { return this._ruleName; }
+            set { this._ruleName = value; }
+        }
+
+        // Check to see if RuleName property is set
+        internal bool IsSetRuleName()
+        {
+            return this._ruleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sql. 
+        /// <para>
+        /// The SQL statement used to query the topic. When using a SQL query with multiple lines,
+        /// be sure to escape the newline characters properly.
+        /// </para>
+        /// </summary>
+        public string Sql
+        {
+            get { return this._sql; }
+            set { this._sql = value; }
+        }
+
+        // Check to see if Sql property is set
+        internal bool IsSetSql()
+        {
+            return this._sql != null;
+        }
+
+    }
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package> 
+  <metadata> 
+    <id>AWSSDK.AWSMarketplaceCommerceAnalytics</id>
+    <title>AWSSDK - AWS Marketplace Commerce Analytics</title>
+    <version>3.2.0.0</version> 
+    <authors>Amazon Web Services</authors>
+    <description>The AWS Marketplace Commerce Analytics service allows marketplace partners to programmatically request business intelligence data from AWS Marketplace. This service provides the same data that was previously only available through the AWS Marketplace Management Portal, but offers the data in a fully-machine-readable format and available in fine-grained data sets rather than large reports.</description>
+    <language>en-US</language>
+    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>
+    <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
+    <tags>AWS Amazon cloud AWSMarketplaceCommerceAnalytics aws-sdk-v3</tags>
+    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+    <dependencies>
+      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
+      <dependency id="AWSSDK.Core" version="[3.2.1.0-beta, 3.3-beta)" />
+      </group>
+      <group>
+        <dependency id="AWSSDK.Core" version="[3.2.1.0-beta, 3.3-beta)" />
+      </group>
+    </dependencies>
+  </metadata> 
+  <files>
+
+    <file src="..\..\..\code-analysis\ServiceAnalysis\AWSMarketplaceCommerceAnalytics\bin\Release\*.dll" target="analyzers\dotnet\cs" exclude="**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*;**\System.Composition.*" />
+    <file src="..\..\..\code-analysis\NuGetInstallScripts\*.ps1" target="tools\" />
+
+    <file src=".\bin\Release\net35\AWSSDK.AWSMarketplaceCommerceAnalytics.dll" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.AWSMarketplaceCommerceAnalytics.xml" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.AWSMarketplaceCommerceAnalytics.pdb" target="lib\net35" />
+
+    <file src=".\bin\Release\net45\AWSSDK.AWSMarketplaceCommerceAnalytics.dll" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.AWSMarketplaceCommerceAnalytics.xml" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.AWSMarketplaceCommerceAnalytics.pdb" target="lib\net45" />
+
+    <file src=".\bin\Release\pcl\AWSSDK.AWSMarketplaceCommerceAnalytics.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.AWSMarketplaceCommerceAnalytics.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.AWSMarketplaceCommerceAnalytics.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+
+    <file src="..\..\..\artifacts\bin\AWSSDK.AWSMarketplaceCommerceAnalytics.Dnx\Release\dnxcore50\AWSMarketplaceCommerceAnalytics.dll" target="lib\dnxcore50"/>
+    <file src="..\..\..\artifacts\bin\AWSSDK.AWSMarketplaceCommerceAnalytics.Dnx\Release\dnxcore50\AWSMarketplaceCommerceAnalytics.xml" target="lib\dnxcore50"/>
+    <file src="..\..\..\artifacts\bin\AWSSDK.AWSMarketplaceCommerceAnalytics.Dnx\Release\dnxcore50\AWSMarketplaceCommerceAnalytics.pdb" target="lib\dnxcore50"/>
+
+  </files>
+</package>

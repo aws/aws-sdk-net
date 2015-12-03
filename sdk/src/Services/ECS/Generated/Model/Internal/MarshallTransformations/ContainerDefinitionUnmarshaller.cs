@@ -76,6 +76,36 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Cpu = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("disableNetworking", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DisableNetworking = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dnsSearchDomains", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DnsSearchDomains = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dnsServers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DnsServers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dockerLabels", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.DockerLabels = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dockerSecurityOptions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DockerSecurityOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("entryPoint", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -94,6 +124,18 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Essential = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("extraHosts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HostEntry, HostEntryUnmarshaller>(HostEntryUnmarshaller.Instance);
+                    unmarshalledObject.ExtraHosts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("hostname", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Hostname = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("image", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -104,6 +146,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Links = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("logConfiguration", targetDepth))
+                {
+                    var unmarshaller = LogConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LogConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("memory", targetDepth))
@@ -130,10 +178,40 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.PortMappings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("privileged", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Privileged = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("readonlyRootFilesystem", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ReadonlyRootFilesystem = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ulimits", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Ulimit, UlimitUnmarshaller>(UlimitUnmarshaller.Instance);
+                    unmarshalledObject.Ulimits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("user", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.User = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("volumesFrom", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<VolumeFrom, VolumeFromUnmarshaller>(VolumeFromUnmarshaller.Instance);
                     unmarshalledObject.VolumesFrom = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workingDirectory", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WorkingDirectory = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

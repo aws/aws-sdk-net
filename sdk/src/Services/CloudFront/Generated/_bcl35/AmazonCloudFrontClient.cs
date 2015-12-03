@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2015-04-17.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2015-07-27.normal.json service model.
  */
 
 
@@ -364,6 +364,9 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
@@ -1498,6 +1501,62 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListDistributionsByWebACLId
+
+        /// <summary>
+        /// List the distributions that are associated with a specified AWS WAF web ACL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByWebACLId service method.</param>
+        /// 
+        /// <returns>The response from the ListDistributionsByWebACLId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// 
+        /// </exception>
+        public ListDistributionsByWebACLIdResponse ListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request)
+        {
+            var marshaller = new ListDistributionsByWebACLIdRequestMarshaller();
+            var unmarshaller = ListDistributionsByWebACLIdResponseUnmarshaller.Instance;
+
+            return Invoke<ListDistributionsByWebACLIdRequest,ListDistributionsByWebACLIdResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDistributionsByWebACLId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByWebACLId operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDistributionsByWebACLId
+        ///         operation.</returns>
+        public IAsyncResult BeginListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListDistributionsByWebACLIdRequestMarshaller();
+            var unmarshaller = ListDistributionsByWebACLIdResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListDistributionsByWebACLIdRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDistributionsByWebACLId operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDistributionsByWebACLId.</param>
+        /// 
+        /// <returns>Returns a  ListDistributionsByWebACLIdResult from CloudFront.</returns>
+        public  ListDistributionsByWebACLIdResponse EndListDistributionsByWebACLId(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDistributionsByWebACLIdResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListInvalidations
 
         /// <summary>
@@ -1764,6 +1823,9 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">

@@ -169,6 +169,16 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                         reader.Read();
                         childObj = ParseMemoryStream(reader, propInfo.PropertyType);
                     }
+                    else if (
+                        propInfo.DeclaringType.FullName == "Amazon.WAF.Model.ByteMatchTuple" &&
+                        propInfo.Name == "TargetString")
+                    {
+                        reader.Read();
+                        if (reader.Token == JsonToken.String)
+                            childObj = Encoding.UTF8.GetString(Convert.FromBase64String((string)reader.Value));
+                        else
+                            throw new InvalidOperationException("Expecting a string");
+                    }
                     else if (propInfo.PropertyType.BaseType.FullName == "Amazon.Runtime.ConstantClass")
                     {
                         reader.Read();

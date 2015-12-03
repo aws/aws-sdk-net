@@ -84,10 +84,12 @@ namespace AWSSDK.UnitTests
                         break;
                     }
 
-                    var headerContent = currentLine.Split(':');
-                    if (headerContent.Count() > 0)
+                    var index = currentLine.IndexOf(":");
+                    if (index != -1)
                     {
-                        response.Headers.Add(headerContent[0].Trim(), headerContent[1].Trim());
+                        var headerKey = currentLine.Substring(0, index);
+                        var headerValue = currentLine.Substring(index + 1);
+                        response.Headers.Add(headerKey.Trim(), headerValue.Trim());
                     }
                 }
             }

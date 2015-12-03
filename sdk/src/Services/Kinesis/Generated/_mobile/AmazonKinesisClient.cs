@@ -296,6 +296,81 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  DecreaseStreamRetentionPeriod
+
+        internal DecreaseStreamRetentionPeriodResponse DecreaseStreamRetentionPeriod(DecreaseStreamRetentionPeriodRequest request)
+        {
+            var marshaller = new DecreaseStreamRetentionPeriodRequestMarshaller();
+            var unmarshaller = DecreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
+
+            return Invoke<DecreaseStreamRetentionPeriodRequest,DecreaseStreamRetentionPeriodResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Decreases the stream's retention period, which is the length of time data records
+        /// are accessible after they are added to the stream. The minimum value of a stream’s
+        /// retention period is 24 hours. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation may result in lost data. For example, if the stream's retention period
+        /// is 48 hours and is decreased to 24 hours, any data already in the stream that is older
+        /// than 24 hours is inaccessible.
+        /// </para>
+        /// </summary>
+        /// <param name="streamName">The name of the stream to modify.</param>
+        /// <param name="retentionPeriodHours">The new retention period of the stream, in hours. Must be less than the current retention period.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DecreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed (5).
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// needs to be in the <code>ACTIVE</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly,
+        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
+        /// </exception>
+        public Task<DecreaseStreamRetentionPeriodResponse> DecreaseStreamRetentionPeriodAsync(string streamName, int retentionPeriodHours, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new DecreaseStreamRetentionPeriodRequest();
+            request.StreamName = streamName;
+            request.RetentionPeriodHours = retentionPeriodHours;
+            return DecreaseStreamRetentionPeriodAsync(request, cancellationToken);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DecreaseStreamRetentionPeriod operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DecreaseStreamRetentionPeriod operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DecreaseStreamRetentionPeriodResponse> DecreaseStreamRetentionPeriodAsync(DecreaseStreamRetentionPeriodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DecreaseStreamRetentionPeriodRequestMarshaller();
+            var unmarshaller = DecreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DecreaseStreamRetentionPeriodRequest,DecreaseStreamRetentionPeriodResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteStream
 
         internal DeleteStreamResponse DeleteStream(DeleteStreamRequest request)
@@ -415,6 +490,84 @@ namespace Amazon.Kinesis
             var unmarshaller = GetShardIteratorResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetShardIteratorRequest,GetShardIteratorResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  IncreaseStreamRetentionPeriod
+
+        internal IncreaseStreamRetentionPeriodResponse IncreaseStreamRetentionPeriod(IncreaseStreamRetentionPeriodRequest request)
+        {
+            var marshaller = new IncreaseStreamRetentionPeriodRequestMarshaller();
+            var unmarshaller = IncreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
+
+            return Invoke<IncreaseStreamRetentionPeriodRequest,IncreaseStreamRetentionPeriodResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Increases the stream's retention period, which is the length of time data records
+        /// are accessible after they are added to the stream. The maximum value of a stream’s
+        /// retention period is 168 hours (7 days).
+        /// 
+        ///  
+        /// <para>
+        /// Upon choosing a longer stream retention period, this operation will increase the time
+        /// period records are accessible that have not yet expired. However, it will not make
+        /// previous data that has expired (older than the stream’s previous retention period)
+        /// accessible after the operation has been called. For example, if a stream’s retention
+        /// period is set to 24 hours and is increased to 168 hours, any data that is older than
+        /// 24 hours will remain inaccessible to consumer applications.
+        /// </para>
+        /// </summary>
+        /// <param name="streamName">The name of the stream to modify.</param>
+        /// <param name="retentionPeriodHours">The new retention period of the stream, in hours. Must be more than the current retention period.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the IncreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed (5).
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// needs to be in the <code>ACTIVE</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly,
+        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
+        /// </exception>
+        public Task<IncreaseStreamRetentionPeriodResponse> IncreaseStreamRetentionPeriodAsync(string streamName, int retentionPeriodHours, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new IncreaseStreamRetentionPeriodRequest();
+            request.StreamName = streamName;
+            request.RetentionPeriodHours = retentionPeriodHours;
+            return IncreaseStreamRetentionPeriodAsync(request, cancellationToken);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the IncreaseStreamRetentionPeriod operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the IncreaseStreamRetentionPeriod operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<IncreaseStreamRetentionPeriodResponse> IncreaseStreamRetentionPeriodAsync(IncreaseStreamRetentionPeriodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new IncreaseStreamRetentionPeriodRequestMarshaller();
+            var unmarshaller = IncreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
+
+            return InvokeAsync<IncreaseStreamRetentionPeriodRequest,IncreaseStreamRetentionPeriodResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

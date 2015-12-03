@@ -24,6 +24,9 @@ namespace ServiceClientGenerator
         public const string TypeKey = "type";
         public const string FlattenedKey = "flattened";
         public const string RequiredKey = "required";
+        public const string MinKey = "min";
+        public const string MaxKey = "max";
+        public const string PatternKey = "pattern";
 
         readonly string _name;
 
@@ -438,6 +441,55 @@ namespace ServiceClientGenerator
                     return false;
 
                 return bool.Parse(streamingNode.ToString());
+            }
+        }
+
+        public int? Min
+        {
+            get
+            {
+                var value = data[MinKey];
+                
+                if(value != null)
+                {
+                    int min;
+                    if(!int.TryParse(value.ToString(), out min))
+                    {
+                        throw new Exception(string.Format("Failed to parse min value {0} for shape {1}", value, this.Name));
+                    }
+                    return min;
+                }
+
+                return null;
+            }
+        }
+
+        public int? Max
+        {
+            get
+            {
+                var value = data[MaxKey];
+                if (value != null)
+                {
+                    int max;
+                    if (!int.TryParse(value.ToString(), out max))
+                    {
+                        throw new Exception(string.Format("Failed to parse max value {0} for shape {1}", value, this.Name));
+                    }
+                    return max;
+                }
+
+                return null;
+            }
+        }
+
+        public string Pattern
+        {
+            get
+            {
+                var value = data[PatternKey];
+                if (value == null) return null;
+                return value.ToString();
             }
         }
 

@@ -48,7 +48,12 @@ namespace Amazon.ElasticMapReduce
         public static readonly ActionOnFailure TERMINATE_JOB_FLOW = new ActionOnFailure("TERMINATE_JOB_FLOW");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ActionOnFailure(string value)
             : base(value)
@@ -113,7 +118,12 @@ namespace Amazon.ElasticMapReduce
         public static readonly ClusterState WAITING = new ClusterState("WAITING");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ClusterState(string value)
             : base(value)
@@ -178,7 +188,12 @@ namespace Amazon.ElasticMapReduce
         public static readonly ClusterStateChangeReasonCode VALIDATION_ERROR = new ClusterStateChangeReasonCode("VALIDATION_ERROR");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ClusterStateChangeReasonCode(string value)
             : base(value)
@@ -255,7 +270,12 @@ namespace Amazon.ElasticMapReduce
         public static readonly InstanceGroupState TERMINATING = new InstanceGroupState("TERMINATING");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public InstanceGroupState(string value)
             : base(value)
@@ -308,7 +328,12 @@ namespace Amazon.ElasticMapReduce
         public static readonly InstanceGroupStateChangeReasonCode VALIDATION_ERROR = new InstanceGroupStateChangeReasonCode("VALIDATION_ERROR");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public InstanceGroupStateChangeReasonCode(string value)
             : base(value)
@@ -357,7 +382,12 @@ namespace Amazon.ElasticMapReduce
         public static readonly InstanceGroupType TASK = new InstanceGroupType("TASK");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public InstanceGroupType(string value)
             : base(value)
@@ -406,7 +436,12 @@ namespace Amazon.ElasticMapReduce
         public static readonly InstanceRoleType TASK = new InstanceRoleType("TASK");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public InstanceRoleType(string value)
             : base(value)
@@ -463,7 +498,12 @@ namespace Amazon.ElasticMapReduce
         public static readonly InstanceState TERMINATED = new InstanceState("TERMINATED");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public InstanceState(string value)
             : base(value)
@@ -520,7 +560,12 @@ namespace Amazon.ElasticMapReduce
         public static readonly InstanceStateChangeReasonCode VALIDATION_ERROR = new InstanceStateChangeReasonCode("VALIDATION_ERROR");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public InstanceStateChangeReasonCode(string value)
             : base(value)
@@ -589,7 +634,12 @@ namespace Amazon.ElasticMapReduce
         public static readonly JobFlowExecutionState WAITING = new JobFlowExecutionState("WAITING");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public JobFlowExecutionState(string value)
             : base(value)
@@ -634,7 +684,12 @@ namespace Amazon.ElasticMapReduce
         public static readonly MarketType SPOT = new MarketType("SPOT");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public MarketType(string value)
             : base(value)
@@ -699,7 +754,12 @@ namespace Amazon.ElasticMapReduce
         public static readonly StepExecutionState RUNNING = new StepExecutionState("RUNNING");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public StepExecutionState(string value)
             : base(value)
@@ -760,7 +820,12 @@ namespace Amazon.ElasticMapReduce
         public static readonly StepState RUNNING = new StepState("RUNNING");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public StepState(string value)
             : base(value)
@@ -801,7 +866,12 @@ namespace Amazon.ElasticMapReduce
         public static readonly StepStateChangeReasonCode NONE = new StepStateChangeReasonCode("NONE");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public StepStateChangeReasonCode(string value)
             : base(value)

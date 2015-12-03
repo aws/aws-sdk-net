@@ -1,0 +1,39 @@
+{
+    "shapeModifiers": {
+        "DomainName": {
+            "modify": [
+                {
+                    "domainName": { "emitPropertyName": "Name" }
+                }
+            ]
+        },
+        "CacheClusterSize": {
+            "modify": [
+                {
+                    "0.5": { "emitPropertyName": "GB_0_5" }
+                },
+                {
+                    "1.6": { "emitPropertyName": "GB_1_6" }
+                },
+                {
+                    "6.1": { "emitPropertyName": "GB_6_1" }
+                },
+                {
+                    "13.5": { "emitPropertyName": "GB_13_5" }
+                },
+                {
+                    "28.4": { "emitPropertyName": "GB_28_4" }
+                },
+                {
+                    "58.2": { "emitPropertyName": "GB_58_2" }
+                },
+                {
+                    "118": { "emitPropertyName": "GB_118" }
+                },
+                {
+                    "237": { "emitPropertyName": "GB_237" }
+                }
+            ]
+        },
+    }
+}

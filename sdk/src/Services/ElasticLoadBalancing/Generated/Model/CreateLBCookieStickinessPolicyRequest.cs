@@ -50,7 +50,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies">Duration-Based
+    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
     /// Session Stickiness</a> in the <i>Elastic Load Balancing Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -69,7 +69,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Instantiates CreateLBCookieStickinessPolicyRequest with the parameterized properties
         /// </summary>
         /// <param name="loadBalancerName">The name of the load balancer.</param>
-        /// <param name="policyName">The name of the policy being created. This name must be unique within the set of policies for this load balancer.</param>
+        /// <param name="policyName">The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</param>
         public CreateLBCookieStickinessPolicyRequest(string loadBalancerName, string policyName)
         {
             _loadBalancerName = loadBalancerName;
@@ -117,8 +117,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// The name of the policy being created. This name must be unique within the set of policies
-        /// for this load balancer.
+        /// The name of the policy being created. Policy names must consist of alphanumeric characters
+        /// and dashes (-). This name must be unique within the set of policies for this load
+        /// balancer.
         /// </para>
         /// </summary>
         public string PolicyName

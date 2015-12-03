@@ -76,9 +76,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property BackupRetentionPeriod. 
         /// <para>
-        /// The number of days for which automated backups are retained. Setting this parameter
-        /// to a positive number enables backups. Setting this parameter to 0 disables automated
-        /// backups. 
+        /// The number of days for which automated backups are retained. You must specify a minimum
+        /// value of 1. 
         /// </para>
         ///  
         /// <para>
@@ -88,7 +87,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be a value from 0 to 35</li> </ul>
+        ///  <ul> <li>Must be a value from 1 to 35</li> </ul>
         /// </summary>
         public int BackupRetentionPeriod
         {
@@ -220,7 +219,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>MySQL</code>
+        /// Valid Values: <code>aurora</code>
         /// </para>
         /// </summary>
         public string Engine
@@ -246,7 +245,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>5.6.0</code>
+        /// Example: <code>5.6.10a</code>
         /// </para>
         /// </summary>
         public string EngineVersion

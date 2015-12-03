@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -45,7 +45,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// You can only enable DNS hostnames if you also enable DNS support.
+        /// You cannot modify the DNS resolution and DNS hostnames attributes in the same request.
+        /// Use separate requests for each attribute. You can only enable DNS hostnames if you've
+        /// enabled DNS support.
         /// </para>
         /// </summary>
         public bool EnableDnsHostnames
@@ -67,7 +69,12 @@ namespace Amazon.EC2.Model
         /// to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved
         /// IP address at the base of the VPC network range "plus two" will succeed. If disabled,
         /// the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP
-        /// addresses is not enabled.
+        /// addresses is not enabled. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot modify the DNS resolution and DNS hostnames attributes in the same request.
+        /// Use separate requests for each attribute.
         /// </para>
         /// </summary>
         public bool EnableDnsSupport

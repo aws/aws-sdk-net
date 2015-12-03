@@ -39,6 +39,15 @@ namespace Amazon.Runtime
             this.ResponseBody = responseBody;
         }
 
+        public AmazonUnmarshallingException(string requestId, string lastKnownLocation, 
+            string responseBody, string message, Exception innerException)
+            : base("Error unmarshalling response back from AWS. " + message, innerException)
+        {
+            this.RequestId = requestId;
+            this.LastKnownLocation = lastKnownLocation;
+            this.ResponseBody = responseBody;
+        }
+
         #endregion
 
         #region Public properties

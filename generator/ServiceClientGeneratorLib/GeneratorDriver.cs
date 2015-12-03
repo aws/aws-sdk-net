@@ -7,6 +7,7 @@ using ServiceClientGenerator.Generators;
 using ServiceClientGenerator.Generators.Marshallers;
 using ServiceClientGenerator.Generators.NuGet;
 using ServiceClientGenerator.Generators.SourceFiles;
+using ServiceClientGenerator.Generators.CodeAnalysis;
 using ServiceClientGenerator.Generators.TestFiles;
 using StructureGenerator = ServiceClientGenerator.Generators.SourceFiles.StructureGenerator;
 using ServiceClientGenerator.Generators.Component;
@@ -46,6 +47,11 @@ namespace ServiceClientGenerator
         public string ServiceFilesRoot { get; private set; }
 
         /// <summary>
+        /// The folder under which the code analysis project for the service will exist.
+        /// </summary>
+        public string CodeAnalysisRoot { get; private set; }
+
+        /// <summary>
         /// The folder under which all of the test files exist.
         /// </summary>
         public string TestFilesRoot { get; private set; }
@@ -82,6 +88,7 @@ namespace ServiceClientGenerator
 
         public const string SourceSubFoldername = "src";
         public const string TestsSubFoldername = "test";
+        public const string CodeAnalysisFoldername = "code-analysis";
         public const string ServicesSubFoldername = "Services";
         public const string CoreSubFoldername = "Core";
         public const string GeneratedCodeFoldername = "Generated";
@@ -103,8 +110,18 @@ namespace ServiceClientGenerator
             ProjectFileConfigurations = GenerationManifest.ProjectFileConfigurations;
             Options = options;
 
+            // Base name in the manifest is not a reliable source of info, as if append-service
+            // is set 'Service' gets appended and in the case of IAM then sends us to the wrong folder.
+            // Instead we'll use the namespace and rip off any Amazon. prefix. This also helps us
+            // handle versioned namespaces too.
+            var serviceNameRoot = Configuration.Namespace.StartsWith("Amazon.", StringComparison.Ordinal)
+                ? Configuration.Namespace.Substring(7)
+                : Configuration.Namespace;
+
             ServiceFilesRoot = Path.Combine(Options.SdkRootFolder, SourceSubFoldername, ServicesSubFoldername, config.ServiceFolderName);
             GeneratedFilesRoot = Path.Combine(ServiceFilesRoot, GeneratedCodeFoldername);
+
+            CodeAnalysisRoot = Path.Combine(Options.SdkRootFolder, CodeAnalysisFoldername,"ServiceAnalysis", serviceNameRoot);
 
             TestFilesRoot = Path.Combine(Options.SdkRootFolder, TestsSubFoldername);
 
@@ -144,6 +161,8 @@ namespace ServiceClientGenerator
 
                 if (this.Configuration.EnableXamarinComponent)
                     GenerateXamarinComponents();
+
+                GenerateCodeAnalysisProject();
             }
 
             // Client config object
@@ -570,6 +589,16 @@ namespace ServiceClientGenerator
             solutionFileCreator.Execute(NewlyCreatedProjectFiles);
         }
 
+        public static void UpdateCodeAnalysisSoltion(GenerationManifest manifest, GeneratorOptions options)
+        {
+            Console.WriteLine("Updating code analysis solution file.");
+            var creator = new CodeAnalysisSolutionCreator
+            {
+                Options = options
+            };
+            creator.Execute();
+        }
+
         public static void UpdateAssemblyVersionInfo(GenerationManifest manifest, GeneratorOptions options)
         {
             var updater = new CoreAssemblyInfoUpdater(options, manifest);
@@ -828,8 +857,14 @@ namespace ServiceClientGenerator
 
             var detailsMarkdownGenerator = new Details { Session = session };
             text = ConvertHtmlToMarkDown(detailsMarkdownGenerator.TransformText());
+
+            // sanitize the line endings from the markup generation, as we can get
+            // odd combinations of line endings
+            var lines = text.Split(new[] { "\r\n", "\n", "\r" }, StringSplitOptions.None);
+            var normalizedText = string.Join(Environment.NewLine, lines);
+
             var detailsFileName = "Details.md";
-            WriteFile(ComponentsFilesRoot, string.Empty, detailsFileName, text);
+            WriteFile(ComponentsFilesRoot, string.Empty, detailsFileName, normalizedText);
 
             var gettingStartedMarkdownGenerator = new GettingStarted { Session = session };
             text = ConvertHtmlToMarkDown(gettingStartedMarkdownGenerator.TransformText());
@@ -911,6 +946,7 @@ namespace ServiceClientGenerator
                 { "AssemblyVersion", assemblyVersion },
                 { "AWSDependencies", awsDependencies },
                 { "BaseName", this.Configuration.BaseName },
+                { "CodeAnalysisServiceFolder", this.Configuration.Namespace.Replace("Amazon.", "") },
                 { "ProjectFileConfigurations", this.ProjectFileConfigurations},
                 { "ExtraTags", Configuration.Tags == null || Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) },
                 {"DisablePCLSupport", this.Options.DisablePCLSupport}
@@ -1214,6 +1250,12 @@ namespace ServiceClientGenerator
                 default:
                     throw new Exception("No structure unmarshaller for service type: " + this.Configuration.ServiceModel.Type);
             }
+        }
+
+        void GenerateCodeAnalysisProject()
+        {
+            var command = new CodeAnalysisProjectCreator();
+            command.Execute(CodeAnalysisRoot, this.Configuration);
         }
     }
 }

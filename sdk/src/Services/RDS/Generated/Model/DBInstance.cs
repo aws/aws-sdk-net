@@ -44,6 +44,7 @@ namespace Amazon.RDS.Model
         private int? _backupRetentionPeriod;
         private string _caCertificateIdentifier;
         private string _characterSetName;
+        private bool? _copyTagsToSnapshot;
         private string _dbClusterIdentifier;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
@@ -188,6 +189,24 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CopyTagsToSnapshot. 
+        /// <para>
+        /// Specifies whether tags are copied from the DB instance to snapshots of the DB instance.
+        /// </para>
+        /// </summary>
+        public bool CopyTagsToSnapshot
+        {
+            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            set { this._copyTagsToSnapshot = value; }
+        }
+
+        // Check to see if CopyTagsToSnapshot property is set
+        internal bool IsSetCopyTagsToSnapshot()
+        {
+            return this._copyTagsToSnapshot.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// If the DB instance is a member of a DB cluster, contains the name of the DB cluster
@@ -304,13 +323,13 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBName. 
         /// <para>
         /// The meaning of this parameter differs according to the database engine you use. For
-        /// example, this value returns either MySQL or PostgreSQL information when returning
+        /// example, this value returns MySQL, MariaDB, or PostgreSQL information when returning
         /// values from CreateDBInstanceReadReplica since Read Replicas are only supported for
-        /// MySQL and PostgreSQL.
+        /// these engines.
         /// </para>
         ///  
         /// <para>
-        ///  <b>MySQL, SQL Server, PostgreSQL</b> 
+        ///  <b>MySQL, MariaDB, SQL Server, PostgreSQL, Amazon Aurora</b> 
         /// </para>
         ///  
         /// <para>

@@ -42,6 +42,7 @@ namespace Amazon.Lambda.Model
     public partial class UpdateFunctionCodeRequest : AmazonLambdaRequest
     {
         private string _functionName;
+        private bool? _publish;
         private string _s3Bucket;
         private string _s3Key;
         private string _s3ObjectVersion;
@@ -71,6 +72,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFunctionName()
         {
             return this._functionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Publish. 
+        /// <para>
+        /// This boolean parameter can be used to request AWS Lambda to update the Lambda function
+        /// and publish a version as an atomic operation. 
+        /// </para>
+        /// </summary>
+        public bool Publish
+        {
+            get { return this._publish.GetValueOrDefault(); }
+            set { this._publish = value; }
+        }
+
+        // Check to see if Publish property is set
+        internal bool IsSetPublish()
+        {
+            return this._publish.HasValue; 
         }
 
         /// <summary>

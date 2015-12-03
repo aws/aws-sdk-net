@@ -55,6 +55,7 @@ namespace Amazon.CloudFormation.Model
         private List<string> _capabilities = new List<string>();
         private List<string> _notificationARNs = new List<string>();
         private List<Parameter> _parameters = new List<Parameter>();
+        private List<string> _resourceTypes = new List<string>();
         private string _stackName;
         private string _stackPolicyBody;
         private string _stackPolicyDuringUpdateBody;
@@ -131,6 +132,34 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceTypes. 
+        /// <para>
+        /// The template resource types that you have permissions to work with for this update
+        /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+        /// <code>Custom::MyCustomInstance</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the list of resource types doesn't include a resource that you're updating, the
+        /// stack update fails. By default, AWS CloudFormation grants permissions to all resource
+        /// types. AWS Identity and Access Management (IAM) uses this parameter for AWS CloudFormation-specific
+        /// condition keys in IAM policies. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+        /// Access with AWS Identity and Access Management</a>
+        /// </para>
+        /// </summary>
+        public List<string> ResourceTypes
+        {
+            get { return this._resourceTypes; }
+            set { this._resourceTypes = value; }
+        }
+
+        // Check to see if ResourceTypes property is set
+        internal bool IsSetResourceTypes()
+        {
+            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
         }
 
         /// <summary>
@@ -284,8 +313,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TemplateURL. 
         /// <para>
-        /// Location of file containing the template body. The URL must point to a template located
-        /// in an S3 bucket in the same region as the stack. For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+        /// Location of file containing the template body. The URL must point to a template that
+        /// is located in an Amazon S3 bucket. For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
         /// Anatomy</a> in the AWS CloudFormation User Guide.
         /// </para>
         ///  

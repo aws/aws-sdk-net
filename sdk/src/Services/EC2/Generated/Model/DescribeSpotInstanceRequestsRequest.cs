@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -114,7 +114,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>launch.instance-type</code> - The type of instance (for example, <code>m1.small</code>).
+        /// <code>launch.instance-type</code> - The type of instance (for example, <code>m3.medium</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

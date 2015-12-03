@@ -255,6 +255,71 @@ namespace Amazon.ConfigService
         #endregion
 
         
+        #region  DeleteConfigRule
+
+        /// <summary>
+        /// Deletes the specified AWS Config rule and all of its evaluation results.
+        /// 
+        ///  
+        /// <para>
+        /// AWS Config sets the state of a rule to <code>DELETING</code> until the deletion is
+        /// complete. You cannot update a rule while it is in this state. If you make a <code>PutConfigRule</code>
+        /// request for the rule, you will receive a <code>ResourceInUseException</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can check the state of a rule by using the <code>DescribeConfigRules</code> request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConfigRule service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
+        /// are correct and try again.
+        /// </exception>
+        public DeleteConfigRuleResponse DeleteConfigRule(DeleteConfigRuleRequest request)
+        {
+            var marshaller = new DeleteConfigRuleRequestMarshaller();
+            var unmarshaller = DeleteConfigRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConfigRuleRequest,DeleteConfigRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigRule operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConfigRule
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteConfigRule(DeleteConfigRuleRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteConfigRuleRequestMarshaller();
+            var unmarshaller = DeleteConfigRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteConfigRuleRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConfigRule.</param>
+        /// 
+        /// <returns>Returns a  DeleteConfigRuleResult from ConfigService.</returns>
+        public  DeleteConfigRuleResponse EndDeleteConfigRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteConfigRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteDeliveryChannel
 
         /// <summary>
@@ -443,6 +508,276 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DescribeComplianceByConfigRule
+
+        /// <summary>
+        /// Indicates whether the specified AWS Config rules are compliant. If a rule is noncompliant,
+        /// this action returns the number of AWS resources that do not comply with the rule.
+        /// 
+        ///  
+        /// <para>
+        /// A rule is compliant if all of the evaluated resources comply with it, and it is noncompliant
+        /// if any of these resources do not comply. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If AWS Config has no current evaluation results for the rule, it returns <code>InsufficientData</code>.
+        /// This result might indicate one of the following conditions: <ul> <li>AWS Config has
+        /// never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code>
+        /// action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li>
+        /// <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config.
+        /// Verify that the role that you assigned to your configuration recorder includes the
+        /// <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule,
+        /// verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
+        /// permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code>
+        /// for all evaluation results. This can occur if the resources were deleted or removed
+        /// from the rule's scope.</li></ul>
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByConfigRule service method.</param>
+        /// 
+        /// <returns>The response from the DescribeComplianceByConfigRule service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
+        /// are correct and try again.
+        /// </exception>
+        public DescribeComplianceByConfigRuleResponse DescribeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest request)
+        {
+            var marshaller = new DescribeComplianceByConfigRuleRequestMarshaller();
+            var unmarshaller = DescribeComplianceByConfigRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeComplianceByConfigRuleRequest,DescribeComplianceByConfigRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeComplianceByConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByConfigRule operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeComplianceByConfigRule
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeComplianceByConfigRuleRequestMarshaller();
+            var unmarshaller = DescribeComplianceByConfigRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeComplianceByConfigRuleRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeComplianceByConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeComplianceByConfigRule.</param>
+        /// 
+        /// <returns>Returns a  DescribeComplianceByConfigRuleResult from ConfigService.</returns>
+        public  DescribeComplianceByConfigRuleResponse EndDescribeComplianceByConfigRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeComplianceByConfigRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeComplianceByResource
+
+        /// <summary>
+        /// Indicates whether the specified AWS resources are compliant. If a resource is noncompliant,
+        /// this action returns the number of AWS Config rules that the resource does not comply
+        /// with. 
+        /// 
+        ///  
+        /// <para>
+        /// A resource is compliant if it complies with all the AWS Config rules that evaluate
+        /// it. It is noncompliant if it does not comply with one or more of these rules.
+        /// </para>
+        ///  
+        /// <para>
+        /// If AWS Config has no current evaluation results for the resource, it returns <code>InsufficientData</code>.
+        /// This result might indicate one of the following conditions about the rules that evaluate
+        /// the resource: <ul> <li>AWS Config has never invoked an evaluation for the rule. To
+        /// check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action
+        /// to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li>
+        /// <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config.
+        /// Verify that the role that you assigned to your configuration recorder includes the
+        /// <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule,
+        /// verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
+        /// permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code>
+        /// for all evaluation results. This can occur if the resources were deleted or removed
+        /// from the rule's scope.</li></ul>
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByResource service method.</param>
+        /// 
+        /// <returns>The response from the DescribeComplianceByResource service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        public DescribeComplianceByResourceResponse DescribeComplianceByResource(DescribeComplianceByResourceRequest request)
+        {
+            var marshaller = new DescribeComplianceByResourceRequestMarshaller();
+            var unmarshaller = DescribeComplianceByResourceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeComplianceByResourceRequest,DescribeComplianceByResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeComplianceByResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByResource operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeComplianceByResource
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeComplianceByResource(DescribeComplianceByResourceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeComplianceByResourceRequestMarshaller();
+            var unmarshaller = DescribeComplianceByResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeComplianceByResourceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeComplianceByResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeComplianceByResource.</param>
+        /// 
+        /// <returns>Returns a  DescribeComplianceByResourceResult from ConfigService.</returns>
+        public  DescribeComplianceByResourceResponse EndDescribeComplianceByResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeComplianceByResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeConfigRuleEvaluationStatus
+
+        /// <summary>
+        /// Returns status information for each of your AWS managed Config rules. The status includes
+        /// information such as the last time AWS Config invoked the rule, the last time AWS Config
+        /// failed to invoke the rule, and the related error for the last failure.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigRuleEvaluationStatus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConfigRuleEvaluationStatus service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
+        /// are correct and try again.
+        /// </exception>
+        public DescribeConfigRuleEvaluationStatusResponse DescribeConfigRuleEvaluationStatus(DescribeConfigRuleEvaluationStatusRequest request)
+        {
+            var marshaller = new DescribeConfigRuleEvaluationStatusRequestMarshaller();
+            var unmarshaller = DescribeConfigRuleEvaluationStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConfigRuleEvaluationStatusRequest,DescribeConfigRuleEvaluationStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConfigRuleEvaluationStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigRuleEvaluationStatus operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConfigRuleEvaluationStatus
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeConfigRuleEvaluationStatus(DescribeConfigRuleEvaluationStatusRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeConfigRuleEvaluationStatusRequestMarshaller();
+            var unmarshaller = DescribeConfigRuleEvaluationStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeConfigRuleEvaluationStatusRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConfigRuleEvaluationStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConfigRuleEvaluationStatus.</param>
+        /// 
+        /// <returns>Returns a  DescribeConfigRuleEvaluationStatusResult from ConfigService.</returns>
+        public  DescribeConfigRuleEvaluationStatusResponse EndDescribeConfigRuleEvaluationStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeConfigRuleEvaluationStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeConfigRules
+
+        /// <summary>
+        /// Returns details about your AWS Config rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigRules service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConfigRules service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
+        /// are correct and try again.
+        /// </exception>
+        public DescribeConfigRulesResponse DescribeConfigRules(DescribeConfigRulesRequest request)
+        {
+            var marshaller = new DescribeConfigRulesRequestMarshaller();
+            var unmarshaller = DescribeConfigRulesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConfigRulesRequest,DescribeConfigRulesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConfigRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigRules operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConfigRules
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeConfigRules(DescribeConfigRulesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeConfigRulesRequestMarshaller();
+            var unmarshaller = DescribeConfigRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeConfigRulesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConfigRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConfigRules.</param>
+        /// 
+        /// <returns>Returns a  DescribeConfigRulesResult from ConfigService.</returns>
+        public  DescribeConfigRulesResponse EndDescribeConfigRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeConfigRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeConfigurationRecorders
 
         /// <summary>
@@ -610,7 +945,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// Currently, you can specify only one delivery channel per account.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeDeliveryChannels service method, as returned by ConfigService.</returns>
@@ -631,7 +966,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// Currently, you can specify only one delivery channel per account.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDeliveryChannels service method.</param>
         /// 
@@ -751,6 +1086,233 @@ namespace Amazon.ConfigService
         public  DescribeDeliveryChannelStatusResponse EndDescribeDeliveryChannelStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDeliveryChannelStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetComplianceDetailsByConfigRule
+
+        /// <summary>
+        /// Returns the evaluation results for the specified AWS Config rule. The results indicate
+        /// which AWS resources were evaluated by the rule, when each resource was last evaluated,
+        /// and whether each resource complies with the rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetailsByConfigRule service method.</param>
+        /// 
+        /// <returns>The response from the GetComplianceDetailsByConfigRule service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
+        /// are correct and try again.
+        /// </exception>
+        public GetComplianceDetailsByConfigRuleResponse GetComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest request)
+        {
+            var marshaller = new GetComplianceDetailsByConfigRuleRequestMarshaller();
+            var unmarshaller = GetComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
+
+            return Invoke<GetComplianceDetailsByConfigRuleRequest,GetComplianceDetailsByConfigRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetComplianceDetailsByConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetailsByConfigRule operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetComplianceDetailsByConfigRule
+        ///         operation.</returns>
+        public IAsyncResult BeginGetComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetComplianceDetailsByConfigRuleRequestMarshaller();
+            var unmarshaller = GetComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetComplianceDetailsByConfigRuleRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetComplianceDetailsByConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetComplianceDetailsByConfigRule.</param>
+        /// 
+        /// <returns>Returns a  GetComplianceDetailsByConfigRuleResult from ConfigService.</returns>
+        public  GetComplianceDetailsByConfigRuleResponse EndGetComplianceDetailsByConfigRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetComplianceDetailsByConfigRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetComplianceDetailsByResource
+
+        /// <summary>
+        /// Returns the evaluation results for the specified AWS resource. The results indicate
+        /// which AWS Config rules were used to evaluate the resource, when each rule was last
+        /// used, and whether the resource complies with each rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetailsByResource service method.</param>
+        /// 
+        /// <returns>The response from the GetComplianceDetailsByResource service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        public GetComplianceDetailsByResourceResponse GetComplianceDetailsByResource(GetComplianceDetailsByResourceRequest request)
+        {
+            var marshaller = new GetComplianceDetailsByResourceRequestMarshaller();
+            var unmarshaller = GetComplianceDetailsByResourceResponseUnmarshaller.Instance;
+
+            return Invoke<GetComplianceDetailsByResourceRequest,GetComplianceDetailsByResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetComplianceDetailsByResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetailsByResource operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetComplianceDetailsByResource
+        ///         operation.</returns>
+        public IAsyncResult BeginGetComplianceDetailsByResource(GetComplianceDetailsByResourceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetComplianceDetailsByResourceRequestMarshaller();
+            var unmarshaller = GetComplianceDetailsByResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetComplianceDetailsByResourceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetComplianceDetailsByResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetComplianceDetailsByResource.</param>
+        /// 
+        /// <returns>Returns a  GetComplianceDetailsByResourceResult from ConfigService.</returns>
+        public  GetComplianceDetailsByResourceResponse EndGetComplianceDetailsByResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetComplianceDetailsByResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetComplianceSummaryByConfigRule
+
+        /// <summary>
+        /// Returns the number of AWS Config rules that are compliant and noncompliant, up to
+        /// a maximum of 25 for each.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceSummaryByConfigRule service method.</param>
+        /// 
+        /// <returns>The response from the GetComplianceSummaryByConfigRule service method, as returned by ConfigService.</returns>
+        public GetComplianceSummaryByConfigRuleResponse GetComplianceSummaryByConfigRule(GetComplianceSummaryByConfigRuleRequest request)
+        {
+            var marshaller = new GetComplianceSummaryByConfigRuleRequestMarshaller();
+            var unmarshaller = GetComplianceSummaryByConfigRuleResponseUnmarshaller.Instance;
+
+            return Invoke<GetComplianceSummaryByConfigRuleRequest,GetComplianceSummaryByConfigRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetComplianceSummaryByConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceSummaryByConfigRule operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetComplianceSummaryByConfigRule
+        ///         operation.</returns>
+        public IAsyncResult BeginGetComplianceSummaryByConfigRule(GetComplianceSummaryByConfigRuleRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetComplianceSummaryByConfigRuleRequestMarshaller();
+            var unmarshaller = GetComplianceSummaryByConfigRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetComplianceSummaryByConfigRuleRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetComplianceSummaryByConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetComplianceSummaryByConfigRule.</param>
+        /// 
+        /// <returns>Returns a  GetComplianceSummaryByConfigRuleResult from ConfigService.</returns>
+        public  GetComplianceSummaryByConfigRuleResponse EndGetComplianceSummaryByConfigRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetComplianceSummaryByConfigRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetComplianceSummaryByResourceType
+
+        /// <summary>
+        /// Returns the number of resources that are compliant and the number that are noncompliant.
+        /// You can specify one or more resource types to get these numbers for each resource
+        /// type. The maximum number returned is 100.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceSummaryByResourceType service method.</param>
+        /// 
+        /// <returns>The response from the GetComplianceSummaryByResourceType service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        public GetComplianceSummaryByResourceTypeResponse GetComplianceSummaryByResourceType(GetComplianceSummaryByResourceTypeRequest request)
+        {
+            var marshaller = new GetComplianceSummaryByResourceTypeRequestMarshaller();
+            var unmarshaller = GetComplianceSummaryByResourceTypeResponseUnmarshaller.Instance;
+
+            return Invoke<GetComplianceSummaryByResourceTypeRequest,GetComplianceSummaryByResourceTypeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetComplianceSummaryByResourceType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceSummaryByResourceType operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetComplianceSummaryByResourceType
+        ///         operation.</returns>
+        public IAsyncResult BeginGetComplianceSummaryByResourceType(GetComplianceSummaryByResourceTypeRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetComplianceSummaryByResourceTypeRequestMarshaller();
+            var unmarshaller = GetComplianceSummaryByResourceTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetComplianceSummaryByResourceTypeRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetComplianceSummaryByResourceType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetComplianceSummaryByResourceType.</param>
+        /// 
+        /// <returns>Returns a  GetComplianceSummaryByResourceTypeResult from ConfigService.</returns>
+        public  GetComplianceSummaryByResourceTypeResponse EndGetComplianceSummaryByResourceType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetComplianceSummaryByResourceTypeResponse>(asyncResult);
         }
 
         #endregion
@@ -921,11 +1483,118 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  PutConfigRule
+
+        /// <summary>
+        /// Adds or updates an AWS Config rule for evaluating whether your AWS resources comply
+        /// with your desired configurations. 
+        /// 
+        ///  
+        /// <para>
+        /// You can use this action for customer managed Config rules and AWS managed Config rules.
+        /// A customer managed Config rule is a custom rule that you develop and maintain. An
+        /// AWS managed Config rule is a customizable, predefined rule that is provided by AWS
+        /// Config.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are adding a new customer managed Config rule, you must first create the AWS
+        /// Lambda function that the rule invokes to evaluate your resources. When you use the
+        /// <code>PutConfigRule</code> action to add the rule to AWS Config, you must specify
+        /// the Amazon Resource Name (ARN) that AWS Lambda assigns to the function. Specify the
+        /// ARN for the <code>SourceIdentifier</code> key. This key is part of the <code>Source</code>
+        /// object, which is part of the <code>ConfigRule</code> object. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are adding a new AWS managed Config rule, specify the rule's identifier for
+        /// the <code>SourceIdentifier</code> key. To reference AWS managed Config rule identifiers,
+        /// see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
+        /// AWS Managed Config Rules</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For any new rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code>
+        /// object. Do not specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>.
+        /// These values are generated by AWS Config for new rules.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are updating a rule that you have added previously, specify the rule's <code>ConfigRuleName</code>,
+        /// <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code> in the <code>ConfigRule</code>
+        /// data type that you use in this request.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of rules that AWS Config supports is 25.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about developing and using AWS Config rules, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
+        /// AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.
+        /// </para>
+        ///  <p/>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigRule service method.</param>
+        /// 
+        /// <returns>The response from the PutConfigRule service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConfigRulesExceededException">
+        /// Failed to add the AWS Config rule because the account already contains the maximum
+        /// number of 25 rules. Consider deleting any deactivated rules before adding new rules.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
+        /// The rule is currently being deleted. Wait for a while and try again.
+        /// </exception>
+        public PutConfigRuleResponse PutConfigRule(PutConfigRuleRequest request)
+        {
+            var marshaller = new PutConfigRuleRequestMarshaller();
+            var unmarshaller = PutConfigRuleResponseUnmarshaller.Instance;
+
+            return Invoke<PutConfigRuleRequest,PutConfigRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigRule operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutConfigRule
+        ///         operation.</returns>
+        public IAsyncResult BeginPutConfigRule(PutConfigRuleRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new PutConfigRuleRequestMarshaller();
+            var unmarshaller = PutConfigRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutConfigRuleRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutConfigRule.</param>
+        /// 
+        /// <returns>Returns a  PutConfigRuleResult from ConfigService.</returns>
+        public  PutConfigRuleResponse EndPutConfigRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutConfigRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutConfigurationRecorder
 
         /// <summary>
         /// Creates a new configuration recorder to record the selected resource configurations.
-        /// 
         /// 
         ///  
         /// <para>
@@ -1085,6 +1754,68 @@ namespace Amazon.ConfigService
         public  PutDeliveryChannelResponse EndPutDeliveryChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<PutDeliveryChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutEvaluations
+
+        /// <summary>
+        /// Used by an AWS Lambda function to deliver evaluation results to AWS Config. This action
+        /// is required in every AWS Lambda function that is invoked by an AWS Config rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEvaluations service method.</param>
+        /// 
+        /// <returns>The response from the PutEvaluations service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidResultTokenException">
+        /// The result token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
+        /// are correct and try again.
+        /// </exception>
+        public PutEvaluationsResponse PutEvaluations(PutEvaluationsRequest request)
+        {
+            var marshaller = new PutEvaluationsRequestMarshaller();
+            var unmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
+
+            return Invoke<PutEvaluationsRequest,PutEvaluationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEvaluations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEvaluations operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEvaluations
+        ///         operation.</returns>
+        public IAsyncResult BeginPutEvaluations(PutEvaluationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new PutEvaluationsRequestMarshaller();
+            var unmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutEvaluationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutEvaluations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEvaluations.</param>
+        /// 
+        /// <returns>Returns a  PutEvaluationsResult from ConfigService.</returns>
+        public  PutEvaluationsResponse EndPutEvaluations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutEvaluationsResponse>(asyncResult);
         }
 
         #endregion

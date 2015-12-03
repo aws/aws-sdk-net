@@ -44,7 +44,12 @@ namespace Amazon.Route53
         public static readonly ChangeAction UPSERT = new ChangeAction("UPSERT");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ChangeAction(string value)
             : base(value)
@@ -89,7 +94,12 @@ namespace Amazon.Route53
         public static readonly ChangeStatus PENDING = new ChangeStatus("PENDING");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ChangeStatus(string value)
             : base(value)
@@ -150,7 +160,12 @@ namespace Amazon.Route53
         public static readonly HealthCheckType TCP = new HealthCheckType("TCP");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public HealthCheckType(string value)
             : base(value)
@@ -195,7 +210,12 @@ namespace Amazon.Route53
         public static readonly ResourceRecordSetFailover SECONDARY = new ResourceRecordSetFailover("SECONDARY");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ResourceRecordSetFailover(string value)
             : base(value)
@@ -272,7 +292,12 @@ namespace Amazon.Route53
         public static readonly ResourceRecordSetRegion UsWest2 = new ResourceRecordSetRegion("us-west-2");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ResourceRecordSetRegion(string value)
             : base(value)
@@ -349,7 +374,12 @@ namespace Amazon.Route53
         public static readonly RRType TXT = new RRType("TXT");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RRType(string value)
             : base(value)
@@ -394,7 +424,12 @@ namespace Amazon.Route53
         public static readonly TagResourceType Hostedzone = new TagResourceType("hostedzone");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public TagResourceType(string value)
             : base(value)
@@ -471,7 +506,12 @@ namespace Amazon.Route53
         public static readonly VPCRegion UsWest2 = new VPCRegion("us-west-2");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public VPCRegion(string value)
             : base(value)

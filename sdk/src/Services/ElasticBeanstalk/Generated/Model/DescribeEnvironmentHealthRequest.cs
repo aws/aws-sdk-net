@@ -42,7 +42,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Gets and sets the property AttributeNames. 
         /// <para>
         /// Specifies the response elements you wish to receive. If no attribute names are specified,
-        /// AWS Elastic Beanstalk returns all response elements.
+        /// AWS Elastic Beanstalk only returns the name of the environment.
         /// </para>
         /// </summary>
         public List<string> AttributeNames
@@ -62,6 +62,12 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// Specifies the AWS Elastic Beanstalk environment ID.
         /// </para>
+        ///  
+        /// <para>
+        /// Condition: You must specify either this or an EnvironmentName, or both. If you do
+        /// not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+        /// error. 
+        /// </para>
         /// </summary>
         public string EnvironmentId
         {
@@ -79,6 +85,12 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Gets and sets the property EnvironmentName. 
         /// <para>
         /// Specifies the AWS Elastic Beanstalk environment name.
+        /// </para>
+        ///  
+        /// <para>
+        /// Condition: You must specify either this or an EnvironmentId, or both. If you do not
+        /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+        /// error. 
         /// </para>
         /// </summary>
         public string EnvironmentName

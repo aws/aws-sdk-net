@@ -47,10 +47,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeAnalysisProjectCreator.cs" />
+    <Compile Include="CodeAnalysisSolutionCreator.cs" />
     <Compile Include="CoreUpdater.cs" />
     <Compile Include="CustomizationCompiler.cs" />
     <Compile Include="Customizations.cs" />
     <Compile Include="GenerationManifest.cs" />
+    <Compile Include="Generators\CodeAnalysis\CodeAnalysisAssemblyInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CodeAnalysisAssemblyInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\CodeAnalysis\CodeAnalysisPackages.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CodeAnalysisPackages.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\CodeAnalysis\CodeAnalysisSolutionFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CodeAnalysisSolutionFile.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\CodeAnalysis\PropertyValueAssignmentAnalyzer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PropertyValueAssignmentAnalyzer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\CodeAnalysis\VsixManifest.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VsixManifest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\CodeAnalysis\VsixTestProfileFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VsixTestProfileFile.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generators\Component\Component.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -95,6 +127,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DnxSolutionFile.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\CodeAnalysis\CodeAnalysisProjectFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CodeAnalysisProjectFile.tt</DependentUpon>
     </Compile>
     <Compile Include="Generators\ProjectFiles\IOSProjectFile.cs">
       <AutoGen>True</AutoGen>
@@ -574,9 +611,37 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Generators\CodeAnalysis\CodeAnalysisAssemblyInfo.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CodeAnalysisAssemblyInfo.cs</LastGenOutput>
+    </Content>
+    <Content Include="Generators\CodeAnalysis\CodeAnalysisPackages.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CodeAnalysisPackages.cs</LastGenOutput>
+    </Content>
+    <Content Include="Generators\CodeAnalysis\CodeAnalysisSolutionFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CodeAnalysisSolutionFile.cs</LastGenOutput>
+    </Content>
+    <Content Include="Generators\CodeAnalysis\PropertyValueAssignmentAnalyzer.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PropertyValueAssignmentAnalyzer.cs</LastGenOutput>
+    </Content>
+    <Content Include="Generators\CodeAnalysis\VsixManifest.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>VsixManifest.cs</LastGenOutput>
+    </Content>
+    <Content Include="Generators\CodeAnalysis\VsixTestProfileFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>VsixTestProfileFile.cs</LastGenOutput>
+    </Content>
     <Content Include="Generators\NuGet\NuGetPackageReadmeSection.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>NuGetPackageReadmeSection.cs</LastGenOutput>
+    </Content>
+    <Content Include="Generators\CodeAnalysis\CodeAnalysisProjectFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CodeAnalysisProjectFile.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

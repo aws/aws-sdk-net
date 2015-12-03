@@ -42,7 +42,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     ///  For information about limits on the number of keys you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-    /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+    /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
     /// </para>
     ///  <important> To ensure the security of your AWS account, the secret access key is
     /// accessible only during key and user creation. You must save the key (for example,

@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// A role can also have inline policies embedded with it. To delete an inline policy,
     /// use the <a>DeleteRolePolicy</a> API. For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class DetachRolePolicyRequest : AmazonIdentityManagementServiceRequest

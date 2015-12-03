@@ -1,7 +1,9 @@
 ﻿using Json.LitJson;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Xml;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,6 +45,36 @@ namespace ServiceClientGenerator
             }
 
             return data;
+        }
+
+
+        public static string NewProjectGuid
+        {
+            get
+            {
+                return Guid.NewGuid().ToString("B").ToUpper();
+            }
+        }
+
+        public static string GetProjectGuid(string projectPath)
+        {
+            var xdoc = new XmlDocument();
+            xdoc.Load(projectPath);
+            var propertyGroups = xdoc.GetElementsByTagName("PropertyGroup");
+
+            int propertyGroupIndex;
+            if (string.Equals(Path.GetExtension(projectPath), ".xproj", StringComparison.CurrentCultureIgnoreCase))
+                propertyGroupIndex = 1;
+            else
+                propertyGroupIndex = 0;
+
+            var element = ((XmlElement)propertyGroups[propertyGroupIndex]).GetElementsByTagName("ProjectGuid")[0];
+
+            if (element == null)
+                throw new ApplicationException("Failed to find project guid for existing project: " + projectPath);
+
+            var projectGuid = element.InnerText;
+            return projectGuid;
         }
     }
 }

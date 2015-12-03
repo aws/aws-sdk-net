@@ -253,6 +253,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Default value is AND.
         /// </summary>
         public ConditionalOperatorValues ConditionalOperator { get; set; }
+
+        /// <summary>
+        /// Pagination token corresponding to the item where the last Scan operation
+        /// stopped, inclusive of the previous result set. Set this value to resume
+        /// Scan operation from the next item.
+        /// This token should be retrieved from a Search object.
+        /// </summary>
+        public string PaginationToken { get; set; }
     }
 
     /// <summary>
@@ -341,6 +349,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Default value is AND.
         /// </summary>
         public ConditionalOperatorValues ConditionalOperator { get; set; }
+
+        /// <summary>
+        /// Pagination token corresponding to the item where the last Query operation
+        /// stopped, inclusive of the previous result set. Set this value to resume
+        /// Query operation from the next item.
+        /// This token should be retrieved from a Search object.
+        /// </summary>
+        public string PaginationToken { get; set; }
     }
 
     /// <summary>

@@ -29,16 +29,22 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the SimulatePrincipalPolicy operation.
-    /// Simulate the set of IAM policies attached to an IAM entity against a list of API actions
-    /// and AWS resources to determine the policies' effective permissions. The entity can
-    /// be an IAM user, group, or role. If you specify a user, then the simulation also includes
-    /// all of the policies attached to groups that the user is a member of.
+    /// Simulate how a set of IAM policies attached to an IAM entity works with a list of
+    /// API actions and AWS resources to determine the policies' effective permissions. The
+    /// entity can be an IAM user, group, or role. If you specify a user, then the simulation
+    /// also includes all of the policies that are attached to groups that the user belongs
+    /// to .
     /// 
     ///  
     /// <para>
     /// You can optionally include a list of one or more additional policies specified as
     /// strings to include in the simulation. If you want to simulate only policies specified
     /// as strings, use <a>SimulateCustomPolicy</a> instead.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can also optionally include one resource-based policy to be evaluated with each
+    /// of the resources included in the simulation.
     /// </para>
     ///  
     /// <para>
@@ -54,25 +60,29 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// Context keys are variables maintained by AWS and its services that provide details
-    /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
-    /// element of an IAM policy. To get the list of context keys required by the policies
-    /// to simulate them correctly, use <a>GetContextKeysForPrincipalPolicy</a>.
+    /// about the context of an API query request. You can use the <code>Condition</code>
+    /// element of an IAM policy to evaluate context keys. To get the list of context keys
+    /// that the policies require for correct simulation, use <a>GetContextKeysForPrincipalPolicy</a>.
     /// </para>
     ///  
     /// <para>
-    /// If the output is long, you can paginate the results using the <code>MaxItems</code>
-    /// and <code>Marker</code> parameters.
+    /// If the output is long, you can use the <code>MaxItems</code> and <code>Marker</code>
+    /// parameters to paginate the results.
     /// </para>
     /// </summary>
     public partial class SimulatePrincipalPolicyRequest : AmazonIdentityManagementServiceRequest
     {
         private List<string> _actionNames = new List<string>();
+        private string _callerArn;
         private List<ContextEntry> _contextEntries = new List<ContextEntry>();
         private string _marker;
         private int? _maxItems;
         private List<string> _policyInputList = new List<string>();
         private string _policySourceArn;
         private List<string> _resourceArns = new List<string>();
+        private string _resourceHandlingOption;
+        private string _resourceOwner;
+        private string _resourcePolicy;
 
         /// <summary>
         /// Gets and sets the property ActionNames. 
@@ -94,11 +104,46 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CallerArn. 
+        /// <para>
+        /// The ARN of the user that you want to specify as the simulated caller of the APIs.
+        /// If you do not specify a <code>CallerArn</code>, it defaults to the ARN of the user
+        /// that you specify in <code>PolicySourceArn</code>, if you specified a user. If you
+        /// include both a <code>PolicySourceArn</code> (for example, <code>arn:aws:iam::123456789012:user/David</code>)
+        /// and a <code>CallerArn</code> (for example, <code>arn:aws:iam::123456789012:user/Bob</code>),
+        /// the result is that you simulate calling the APIs as Bob, as if Bob had David's policies.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify only the ARN of an IAM user. You cannot specify the ARN of an assumed
+        /// role, federated user, or a service principal.
+        /// </para>
+        ///  
+        /// <para>
+        /// <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> and
+        /// the <code>PolicySourceArn</code> is not the ARN for an IAM user. This is required
+        /// so that the resource-based policy's <code>Principal</code> element has a value to
+        /// use in evaluating the policy.
+        /// </para>
+        /// </summary>
+        public string CallerArn
+        {
+            get { return this._callerArn; }
+            set { this._callerArn = value; }
+        }
+
+        // Check to see if CallerArn property is set
+        internal bool IsSetCallerArn()
+        {
+            return this._callerArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ContextEntries. 
         /// <para>
-        /// A list of context keys and corresponding values that are used by the simulation. Whenever
+        /// A list of context keys and corresponding values for the simulation to use. Whenever
         /// a context key is evaluated by a <code>Condition</code> element in one of the simulated
-        /// IAM permission policies, the corresponding value is supplied.
+        /// policies, the corresponding value is supplied.
         /// </para>
         /// </summary>
         public List<ContextEntry> ContextEntries
@@ -118,7 +163,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// Use this parameter only when paginating results and only after you receive a response
         /// indicating that the results are truncated. Set it to the value of the <code>Marker</code>
-        /// element in the response you received to inform the next call about where to start.
+        /// element in the response that you received to indicate where the next call should start.
         /// </para>
         /// </summary>
         public string Marker
@@ -137,12 +182,16 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property MaxItems. 
         /// <para>
         /// Use this only when paginating results to indicate the maximum number of items you
-        /// want in the response. If there are additional items beyond the maximum you specify,
-        /// the <code>IsTruncated</code> response element is <code>true</code>.
+        /// want in the response. If additional items exist beyond the maximum you specify, the
+        /// <code>IsTruncated</code> response element is <code>true</code>.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is optional. If you do not include it, it defaults to 100.
+        /// This parameter is optional. If you do not include it, it defaults to 100. Note that
+        /// IAM might return fewer results, even when there are more results available. In that
+        /// case, the <code>IsTruncated</code> response element returns <code>true</code> and
+        /// <code>Marker</code> contains a value to include in the subsequent call that tells
+        /// the service where to continue from. 
         /// </para>
         /// </summary>
         public int MaxItems
@@ -182,8 +231,8 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of a user, group, or role whose policies you want to
         /// include in the simulation. If you specify a user, group, or role, the simulation includes
-        /// all policies associated with that entity. If you specify a user, the simulation also
-        /// includes all policies attached to any groups the user is a member of.
+        /// all policies that are associated with that entity. If you specify a user, the simulation
+        /// also includes all policies that are attached to any groups the user belongs to.
         /// </para>
         /// </summary>
         public string PolicySourceArn
@@ -207,6 +256,12 @@ namespace Amazon.IdentityManagement.Model
         /// The simulation determines the access result (allowed or denied) of each combination
         /// and reports it in the response.
         /// </para>
+        ///  
+        /// <para>
+        /// The simulation does not automatically retrieve policies for the specified resources.
+        /// If you want to include a resource policy in the simulation, then you must include
+        /// the policy as a string in the <code>ResourcePolicy</code> parameter.
+        /// </para>
         /// </summary>
         public List<string> ResourceArns
         {
@@ -218,6 +273,133 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetResourceArns()
         {
             return this._resourceArns != null && this._resourceArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceHandlingOption. 
+        /// <para>
+        /// Specifies the type of simulation to run. Different APIs that support resource-based
+        /// policies require different combinations of resources. By specifying the type of simulation
+        /// to run, you enable the policy simulator to enforce the presence of the required resources
+        /// to ensure reliable simulation results. If your simulation does not match one of the
+        /// following scenarios, then you can omit this parameter. The following list shows each
+        /// of the supported scenario values and the resources that you must define to run the
+        /// simulation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each of the EC2 scenarios requires that you specify instance, image, and security-group
+        /// resources. If your scenario includes an EBS volume, then you must specify that volume
+        /// as a resource. If the EC2 scenario includes VPC, then you must supply the network-interface
+        /// resource. If it includes an IP subnet, then you must specify the subnet resource.
+        /// For more information on the EC2 scenario options, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+        /// Platforms</a> in the <i>AWS EC2 User Guide</i>.
+        /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// <b>EC2-Classic-InstanceStore</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// instance, image, security-group
+        /// </para>
+        ///  </li> <li>
+        /// <para>
+        /// <b>EC2-Classic-EBS</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// instance, image, security-group, volume
+        /// </para>
+        ///  </li> <li>
+        /// <para>
+        /// <b>EC2-VPC-InstanceStore</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// instance, image, security-group, network-interface
+        /// </para>
+        ///  </li> <li>
+        /// <para>
+        /// <b>EC2-VPC-InstanceStore-Subnet</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// instance, image, security-group, network-interface, subnet
+        /// </para>
+        ///  </li> <li>
+        /// <para>
+        /// <b>EC2-VPC-EBS</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// instance, image, security-group, network-interface, volume
+        /// </para>
+        ///  </li> <li>
+        /// <para>
+        /// <b>EC2-VPC-EBS-Subnet</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// instance, image, security-group, network-interface, subnet, volume
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string ResourceHandlingOption
+        {
+            get { return this._resourceHandlingOption; }
+            set { this._resourceHandlingOption = value; }
+        }
+
+        // Check to see if ResourceHandlingOption property is set
+        internal bool IsSetResourceHandlingOption()
+        {
+            return this._resourceHandlingOption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceOwner. 
+        /// <para>
+        /// An AWS account ID that specifies the owner of any simulated resource that does not
+        /// identify its owner in the resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code>
+        /// is specified, it is also used as the account owner of any <code>ResourcePolicy</code>
+        /// included in the simulation. If the <code>ResourceOwner</code> parameter is not specified,
+        /// then the owner of the resources and the resource policy defaults to the account of
+        /// the identity provided in <code>CallerArn</code>. This parameter is required only if
+        /// you specify a resource-based policy and account that owns the resource is different
+        /// from the account that owns the simulated calling user <code>CallerArn</code>.
+        /// </para>
+        /// </summary>
+        public string ResourceOwner
+        {
+            get { return this._resourceOwner; }
+            set { this._resourceOwner = value; }
+        }
+
+        // Check to see if ResourceOwner property is set
+        internal bool IsSetResourceOwner()
+        {
+            return this._resourceOwner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourcePolicy. 
+        /// <para>
+        /// A resource-based policy to include in the simulation provided as a string. Each resource
+        /// in the simulation is treated as if it had this policy attached. You can include only
+        /// one resource-based policy in a simulation.
+        /// </para>
+        /// </summary>
+        public string ResourcePolicy
+        {
+            get { return this._resourcePolicy; }
+            set { this._resourcePolicy = value; }
+        }
+
+        // Check to see if ResourcePolicy property is set
+        internal bool IsSetResourcePolicy()
+        {
+            return this._resourcePolicy != null;
         }
 
     }

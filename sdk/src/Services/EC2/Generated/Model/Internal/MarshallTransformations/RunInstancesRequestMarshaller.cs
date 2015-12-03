@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "RunInstances");
-            request.Parameters.Add("Version", "2015-04-15");
+            request.Parameters.Add("Version", "2015-10-01");
 
             if(publicRequest != null)
             {
@@ -231,6 +231,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetPlacement())
                 {
+                    if(publicRequest.Placement.IsSetAffinity())
+                    {
+                        request.Parameters.Add("Placement" + "." + "Affinity", StringUtils.FromString(publicRequest.Placement.Affinity));
+                    }
                     if(publicRequest.Placement.IsSetAvailabilityZone())
                     {
                         request.Parameters.Add("Placement" + "." + "AvailabilityZone", StringUtils.FromString(publicRequest.Placement.AvailabilityZone));
@@ -238,6 +242,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.Placement.IsSetGroupName())
                     {
                         request.Parameters.Add("Placement" + "." + "GroupName", StringUtils.FromString(publicRequest.Placement.GroupName));
+                    }
+                    if(publicRequest.Placement.IsSetHostId())
+                    {
+                        request.Parameters.Add("Placement" + "." + "HostId", StringUtils.FromString(publicRequest.Placement.HostId));
                     }
                     if(publicRequest.Placement.IsSetTenancy())
                     {

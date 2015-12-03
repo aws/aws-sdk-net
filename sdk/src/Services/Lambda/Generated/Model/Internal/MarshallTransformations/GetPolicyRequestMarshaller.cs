@@ -57,9 +57,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lambda");
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/2015-03-31/functions/{FunctionName}/versions/HEAD/policy";
+            string uriResourcePath = "/2015-03-31/functions/{FunctionName}/policy";
             uriResourcePath = uriResourcePath.Replace("{FunctionName}", publicRequest.IsSetFunctionName() ? StringUtils.FromString(publicRequest.FunctionName) : string.Empty);
+            
+            if (publicRequest.IsSetQualifier())
+                request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));
             request.ResourcePath = uriResourcePath;
+            request.UseQueryString = true;
 
             return request;
         }

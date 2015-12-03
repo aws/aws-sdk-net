@@ -329,8 +329,8 @@ namespace ThirdParty.Json.LitJson
             Type value_type = underlying_type ?? inst_type;
             
             if (reader.Token == JsonToken.Null) {
-                
-                if (underlying_type != null)
+
+                if (inst_typeInfo.IsClass || underlying_type != null)
                 {
                     return null;
                 }
@@ -338,8 +338,6 @@ namespace ThirdParty.Json.LitJson
                 throw new JsonException (String.Format (
                             "Can't assign null to an instance of type {0}",
                             inst_type));
-
-                return null;
             }
 
             if (reader.Token == JsonToken.Double ||

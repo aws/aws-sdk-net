@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class Nuspec : NuspecBase
     {
@@ -30,34 +30,34 @@ namespace ServiceClientGenerator.Generators.NuGet
         {
             this.Write("<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<package> \r\n  <metadata> \r\n    <id>");
             
-            #line 9 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 9 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write("</id>\r\n    <title>");
             
-            #line 10 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 10 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NuGetTitle"]));
             
             #line default
             #line hidden
             this.Write("</title>\r\n    <version>");
             
-            #line 11 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 11 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyVersion"]));
             
             #line default
             #line hidden
             
-            #line 11 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 11 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NuGetPreviewFlag"]));
             
             #line default
             #line hidden
             this.Write("</version> \r\n    <authors>Amazon Web Services</authors>\r\n    <description>");
             
-            #line 13 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 13 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyDescription"]));
             
             #line default
@@ -66,14 +66,14 @@ namespace ServiceClientGenerator.Generators.NuGet
                     ".com/apache2.0/</licenseUrl>\r\n    <projectUrl>https://github.com/aws/aws-sdk-net" +
                     "/</projectUrl>\r\n    <tags>AWS Amazon cloud ");
             
-            #line 17 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 17 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BaseName"]));
             
             #line default
             #line hidden
             this.Write(" aws-sdk-v3");
             
-            #line 17 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 17 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["ExtraTags"]));
             
             #line default
@@ -81,7 +81,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write("</tags>\r\n    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</ic" +
                     "onUrl>\r\n    <dependencies>\r\n");
             
-            #line 20 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 20 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
@@ -92,7 +92,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write("      <group targetFramework=\"portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xa" +
                     "marinios10+MonoTouch10\">\r\n");
             
-            #line 25 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 25 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
 		foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
 		{
@@ -102,21 +102,21 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("      <dependency id=\"");
             
-            #line 29 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 29 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(awsDependencyKVP.Key));
             
             #line default
             #line hidden
             this.Write("\" version=\"");
             
-            #line 29 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 29 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(awsDependencyKVP.Value));
             
             #line default
             #line hidden
             this.Write("\" />\r\n");
             
-            #line 30 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 30 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
 		}
 
@@ -124,7 +124,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line default
             #line hidden
             
-            #line 33 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 33 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
 		if(this.Session.ContainsKey("NugetDependencies"))
 		{
@@ -141,21 +141,21 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("\t\t<dependency id=\"");
             
-            #line 44 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 44 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(dependency.Name));
             
             #line default
             #line hidden
             this.Write("\" version=\"");
             
-            #line 44 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 44 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(dependency.Version));
             
             #line default
             #line hidden
             this.Write("\" />\r\n");
             
-            #line 45 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 45 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 		
 					}
 				}
@@ -167,7 +167,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("      </group>\r\n");
             
-            #line 52 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 52 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
 	}
 
@@ -175,7 +175,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line default
             #line hidden
             
-            #line 55 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 55 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
 	if(this.Session.ContainsKey("NugetDependencies"))
     {
@@ -193,14 +193,14 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("\t\t\t\r\n      <group targetFramework=\"");
             
-            #line 67 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 67 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(targetFramework));
             
             #line default
             #line hidden
             this.Write("\">\r\n");
             
-            #line 68 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 68 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
             foreach(var dependency in dependencyList.Value)
             {
@@ -210,21 +210,21 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("        <dependency id=\"");
             
-            #line 72 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 72 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(dependency.Name));
             
             #line default
             #line hidden
             this.Write("\" version=\"");
             
-            #line 72 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 72 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(dependency.Version));
             
             #line default
             #line hidden
             this.Write("\" />\r\n");
             
-            #line 73 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 73 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 		
             }
 
@@ -232,7 +232,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line default
             #line hidden
             
-            #line 76 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 76 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
             foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
             {
@@ -242,21 +242,21 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("        <dependency id=\"");
             
-            #line 80 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 80 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(awsDependencyKVP.Key));
             
             #line default
             #line hidden
             this.Write("\" version=\"");
             
-            #line 80 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 80 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(awsDependencyKVP.Value));
             
             #line default
             #line hidden
             this.Write("\" />\r\n");
             
-            #line 81 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 81 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
             }
 
@@ -265,7 +265,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("      </group>\r\n");
             
-            #line 85 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 85 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
 		}
 	}	
@@ -275,7 +275,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("      <group>\r\n");
             
-            #line 90 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 90 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
     foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
     {
@@ -285,21 +285,21 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("        <dependency id=\"");
             
-            #line 94 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 94 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(awsDependencyKVP.Key));
             
             #line default
             #line hidden
             this.Write("\" version=\"");
             
-            #line 94 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 94 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(awsDependencyKVP.Value));
             
             #line default
             #line hidden
             this.Write("\" />\r\n");
             
-            #line 95 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 95 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
     }
 
@@ -307,53 +307,61 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line default
             #line hidden
             this.Write("      </group>\r\n    </dependencies>\r\n  </metadata> \r\n  <files>\r\n\r\n    <file src=\"" +
-                    "..\\..\\..\\nuget-content\\install.ps1\" target=\"tools\\net35\" />\r\n    <file src=\"..\\." +
-                    ".\\..\\nuget-content\\install.ps1\" target=\"tools\\net45\" />\r\n\r\n    <file src=\".\\bin\\" +
-                    "Release\\net35\\");
+                    "..\\..\\..\\code-analysis\\ServiceAnalysis\\");
             
-            #line 106 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 103 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["CodeAnalysisServiceFolder"]));
+            
+            #line default
+            #line hidden
+            this.Write(@"\bin\Release\*.dll"" target=""analyzers\dotnet\cs"" exclude=""**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*;**\System.Composition.*"" />
+    <file src=""..\..\..\code-analysis\NuGetInstallScripts\*.ps1"" target=""tools\"" />
+
+    <file src="".\bin\Release\net35\");
+            
+            #line 106 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".dll\" target=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\");
             
-            #line 107 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 107 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".xml\" target=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\");
             
-            #line 108 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 108 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".pdb\" target=\"lib\\net35\" />\r\n\r\n    <file src=\".\\bin\\Release\\net45\\");
             
-            #line 110 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 110 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".dll\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\");
             
-            #line 111 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 111 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".xml\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\");
             
-            #line 112 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 112 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".pdb\" target=\"lib\\net45\" />\r\n\r\n");
             
-            #line 114 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 114 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 	
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
@@ -363,7 +371,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("    <file src=\".\\bin\\Release\\pcl\\");
             
-            #line 118 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 118 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -371,7 +379,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write(".dll\" target=\"lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+M" +
                     "onoTouch10\" />\r\n    <file src=\".\\bin\\Release\\pcl\\");
             
-            #line 119 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 119 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -379,7 +387,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write(".xml\" target=\"lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+M" +
                     "onoTouch10\" />\r\n    <file src=\".\\bin\\Release\\pcl\\");
             
-            #line 120 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 120 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -387,7 +395,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write(".pdb\" target=\"lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+M" +
                     "onoTouch10\" />\r\n");
             
-            #line 121 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 121 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
   
 		if(((string)this.Session["AssemblyName"]).Equals("AWSSDK.MobileAnalytics",StringComparison.CurrentCultureIgnoreCase))
 		{
@@ -400,7 +408,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     <file src="".\bin\Release\Xamarin.iOS10\AWSSDK.MobileAnalytics.pdb"" target=""lib\Xamarin.iOS10"" />
 ");
             
-            #line 128 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 128 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
 		}
 	}
@@ -413,49 +421,49 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("\r\n\t<file src=\"..\\..\\..\\artifacts\\bin\\");
             
-            #line 136 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 136 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".Dnx\\Release\\dnxcore50\\");
             
-            #line 136 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 136 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DNXCoreAssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".dll\" target=\"lib\\dnxcore50\"/>\r\n\t<file src=\"..\\..\\..\\artifacts\\bin\\");
             
-            #line 137 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 137 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".Dnx\\Release\\dnxcore50\\");
             
-            #line 137 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 137 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DNXCoreAssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".xml\" target=\"lib\\dnxcore50\"/>\r\n\t<file src=\"..\\..\\..\\artifacts\\bin\\");
             
-            #line 138 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 138 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".Dnx\\Release\\dnxcore50\\");
             
-            #line 138 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 138 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DNXCoreAssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".pdb\" target=\"lib\\dnxcore50\"/>\r\n");
             
-            #line 139 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 139 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
 	}
 

@@ -50,6 +50,78 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             BaseClean();
         }
 
+#if AWS_APM_API        
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestAsyncExceptionHandling()
+        {
+                GetObjectRequest request = new GetObjectRequest
+                {
+                    BucketName = "NonExistentBucket",
+                    Key = "NonExistentKey",
+                };
+                
+                IAsyncResult result = Client.BeginGetObject(request, null, null);
+
+                var exception = AssertExtensions.ExpectException<AmazonS3Exception>(
+                    () => Client.EndGetObject(result));
+                Assert.AreEqual("NoSuchBucket", exception.ErrorCode);
+                Assert.AreEqual(HttpStatusCode.NotFound, exception.StatusCode);
+        }
+#endif
+
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestPutAndGetWithInvalidExpires()
+        {
+            var content = "TestInvalidExpiresHeader";
+            var key = UtilityMethods.GenerateName("TestPutAndGetWithInvalidExpires");
+            var putObjectRequest = new PutObjectRequest
+            {
+               BucketName = bucketName,               
+               Key = key,
+               ContentBody = content
+            };
+
+            var invalidValue = "InvalidHeaderValue";
+            putObjectRequest.Headers["Expires"] = invalidValue;           
+            Client.PutObject(putObjectRequest);
+
+            AmazonDateTimeUnmarshallingException exception = null;
+            var newExpires = DateTime.Now.AddDays(1);
+            var getObjectResponse = Client.GetObject(bucketName, key);
+            using (getObjectResponse)
+            {
+                var reader = new StreamReader(getObjectResponse.ResponseStream);
+                var contentRead = reader.ReadToEnd();
+                Assert.IsTrue(content.Equals(contentRead));
+
+                exception = AssertExtensions.ExpectException<AmazonDateTimeUnmarshallingException>(() =>
+                { var expires = getObjectResponse.Expires; });
+                Assert.IsTrue(exception.RequestId.Equals(getObjectResponse.ResponseMetadata.RequestId));
+                Assert.IsFalse(string.IsNullOrEmpty(exception.Message));
+                Assert.IsTrue(exception.Message.Contains(invalidValue));
+                Assert.IsTrue(invalidValue.Equals(exception.InvalidDateTimeToken));
+
+                // Test getObjectResponse.Expires being overwritten by user code                
+                getObjectResponse.Expires = newExpires;
+                Assert.AreEqual(newExpires, getObjectResponse.Expires);
+            }
+
+            var getObjectMetadataResponse = Client.GetObjectMetadata(bucketName, key);
+            exception = AssertExtensions.ExpectException<AmazonDateTimeUnmarshallingException>(() =>
+            { var expires = getObjectMetadataResponse.Expires; });
+            Assert.IsTrue(exception.RequestId.Equals(getObjectMetadataResponse.ResponseMetadata.RequestId));
+            Assert.IsFalse(string.IsNullOrEmpty(exception.Message));
+            Assert.IsTrue(exception.Message.Contains(invalidValue));
+            Assert.IsTrue(invalidValue.Equals(exception.InvalidDateTimeToken));
+
+            // Test getObjectMetadataResponse.Expires being overwritten by user code
+            getObjectMetadataResponse.Expires = newExpires;
+            Assert.AreEqual(newExpires, getObjectMetadataResponse.Expires);
+        }
+
         [TestMethod]
         [TestCategory("S3")]
         public void TestStorageClass()

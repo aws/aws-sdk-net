@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -54,13 +54,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "RequestSpotInstances");
-            request.Parameters.Add("Version", "2015-04-15");
+            request.Parameters.Add("Version", "2015-10-01");
 
             if(publicRequest != null)
             {
                 if(publicRequest.IsSetAvailabilityZoneGroup())
                 {
                     request.Parameters.Add("AvailabilityZoneGroup", StringUtils.FromString(publicRequest.AvailabilityZoneGroup));
+                }
+                if(publicRequest.IsSetBlockDurationMinutes())
+                {
+                    request.Parameters.Add("BlockDurationMinutes", StringUtils.FromInt(publicRequest.BlockDurationMinutes));
                 }
                 if(publicRequest.IsSetClientToken())
                 {

@@ -57,6 +57,22 @@ namespace Amazon.CloudTrail
     public partial interface IAmazonCloudTrail : IDisposable
     {
                 
+        #region  AddTags
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateTrail
 
 
@@ -100,6 +116,14 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the DescribeTrails service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported. For example,
+        /// this exception will occur if an attempt is made to tag a trail and tagging is not
+        /// supported in the current region.
+        /// </exception>
         Task<DescribeTrailsResponse> DescribeTrailsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -132,6 +156,38 @@ namespace Amazon.CloudTrail
 
         #endregion
                 
+        #region  ListPublicKeys
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPublicKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPublicKeys operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListPublicKeysResponse> ListPublicKeysAsync(ListPublicKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTags
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  LookupEvents
 
 
@@ -145,6 +201,22 @@ namespace Amazon.CloudTrail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<LookupEventsResponse> LookupEventsAsync(LookupEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RemoveTags
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

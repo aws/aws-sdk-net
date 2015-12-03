@@ -30,8 +30,8 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Container for the parameters to the StartTask operation.
     /// Starts a new task from the specified task definition on the specified container instance
-    /// or instances. If you want to use the default Amazon ECS scheduler to place your task,
-    /// use <code>RunTask</code> instead.
+    /// or instances. To use the default Amazon ECS scheduler to place your task, use <code>RunTask</code>
+    /// instead.
     /// 
     ///  <important> 
     /// <para>
@@ -50,8 +50,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// The short name or full Amazon Resource Name (ARN) of the cluster that you want to
-        /// start your task on. If you do not specify a cluster, the default cluster is assumed..
+        /// The short name or full Amazon Resource Name (ARN) of the cluster on which to start
+        /// your task. If you do not specify a cluster, the default cluster is assumed..
         /// </para>
         /// </summary>
         public string Cluster
@@ -69,7 +69,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerInstances. 
         /// <para>
-        /// The container instance UUIDs or full Amazon Resource Name (ARN) entries for the container
+        /// The container instance IDs or full Amazon Resource Name (ARN) entries for the container
         /// instances on which you would like to place your task.
         /// </para>
         ///  <important> 
@@ -150,9 +150,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property TaskDefinition. 
         /// <para>
         /// The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full Amazon Resource Name (ARN) of the task definition that you want to start. If
-        /// a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-        /// is used.
+        /// full Amazon Resource Name (ARN) of the task definition to start. If a <code>revision</code>
+        /// is not specified, the latest <code>ACTIVE</code> revision is used.
         /// </para>
         /// </summary>
         public string TaskDefinition

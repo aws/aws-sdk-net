@@ -34,9 +34,9 @@ namespace Amazon.Runtime.Internal.Settings
     {
         #region Private members
 
-        static PersistenceManager INSTANCE = new PersistenceManager();
-        HashSet<string> _encryptedKeys;
-        Dictionary<string, SettingsWatcher> _watchers = new Dictionary<string, SettingsWatcher>();
+        static readonly PersistenceManager INSTANCE = new PersistenceManager();
+        readonly HashSet<string> _encryptedKeys;
+        readonly Dictionary<string, SettingsWatcher> _watchers = new Dictionary<string, SettingsWatcher>();
 
         #endregion
 
@@ -45,18 +45,18 @@ namespace Amazon.Runtime.Internal.Settings
 
         private PersistenceManager()
         {
-            this._encryptedKeys = new HashSet<string>();
-            this._encryptedKeys.Add(SettingsConstants.AccessKeyField);
-            this._encryptedKeys.Add(SettingsConstants.SecretKeyField);
-            this._encryptedKeys.Add(SettingsConstants.SecretKeyRepository);
-
-            this._encryptedKeys.Add(SettingsConstants.SecretKeyRepository);
-
-            this._encryptedKeys.Add(SettingsConstants.EC2InstanceUserName);
-            this._encryptedKeys.Add(SettingsConstants.EC2InstancePassword);
-
-            this._encryptedKeys.Add(SettingsConstants.ProxyUsernameEncrypted);
-            this._encryptedKeys.Add(SettingsConstants.ProxyPasswordEncrypted);
+            this._encryptedKeys = new HashSet<string>
+            {
+                SettingsConstants.AccessKeyField,
+                SettingsConstants.SecretKeyField,
+                SettingsConstants.SecretKeyRepository,
+                SettingsConstants.SecretKeyRepository,
+                SettingsConstants.EC2InstanceUserName,
+                SettingsConstants.EC2InstancePassword,
+                SettingsConstants.ProxyUsernameEncrypted,
+                SettingsConstants.ProxyPasswordEncrypted,
+                SettingsConstants.UserIdentityField
+            };
         }
 
         #endregion

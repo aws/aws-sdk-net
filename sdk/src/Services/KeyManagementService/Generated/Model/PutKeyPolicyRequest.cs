@@ -61,7 +61,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The policy, in JSON format, to be attached to the key.
+        /// The policy to attach to the key. This is required and delegates back to the account.
+        /// The key is the root of trust. The policy size limit is 32 KiB (32768 bytes). 
         /// </para>
         /// </summary>
         public string Policy

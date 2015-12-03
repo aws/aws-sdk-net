@@ -69,6 +69,18 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     response.IncludeGlobalServiceEvents = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LogFileValidationEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.LogFileValidationEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -93,6 +105,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     response.SnsTopicName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TrailARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TrailARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
@@ -112,6 +130,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             {
                 return new CloudWatchLogsDeliveryUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientEncryptionPolicy"))
+            {
+                return new InsufficientEncryptionPolicyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientS3BucketPolicy"))
             {
                 return new InsufficientS3BucketPolicyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -127,6 +149,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCloudWatchLogsRoleArn"))
             {
                 return new InvalidCloudWatchLogsRoleArnException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidKmsKeyId"))
+            {
+                return new InvalidKmsKeyIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidS3BucketName"))
             {
@@ -144,6 +170,18 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             {
                 return new InvalidTrailNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("KmsKeyDisabled"))
+            {
+                return new KmsKeyDisabledException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("KmsKeyNotFound"))
+            {
+                return new KmsKeyNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermitted"))
+            {
+                return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("S3BucketDoesNotExist"))
             {
                 return new S3BucketDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -151,6 +189,14 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("TrailNotFound"))
             {
                 return new TrailNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TrailNotProvided"))
+            {
+                return new TrailNotProvidedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperation"))
+            {
+                return new UnsupportedOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonCloudTrailException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }

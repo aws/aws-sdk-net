@@ -262,6 +262,37 @@ namespace Amazon.ConfigService
         #endregion
 
         
+        #region  DeleteConfigRule
+
+        internal DeleteConfigRuleResponse DeleteConfigRule(DeleteConfigRuleRequest request)
+        {
+            var marshaller = new DeleteConfigRuleRequestMarshaller();
+            var unmarshaller = DeleteConfigRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConfigRuleRequest,DeleteConfigRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteConfigRuleResponse> DeleteConfigRuleAsync(DeleteConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteConfigRuleRequestMarshaller();
+            var unmarshaller = DeleteConfigRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConfigRuleRequest,DeleteConfigRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDeliveryChannel
 
         internal DeleteDeliveryChannelResponse DeleteDeliveryChannel(DeleteDeliveryChannelRequest request)
@@ -383,6 +414,130 @@ namespace Amazon.ConfigService
             var unmarshaller = DeliverConfigSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeliverConfigSnapshotRequest,DeliverConfigSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeComplianceByConfigRule
+
+        internal DescribeComplianceByConfigRuleResponse DescribeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest request)
+        {
+            var marshaller = new DescribeComplianceByConfigRuleRequestMarshaller();
+            var unmarshaller = DescribeComplianceByConfigRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeComplianceByConfigRuleRequest,DescribeComplianceByConfigRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeComplianceByConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByConfigRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeComplianceByConfigRuleResponse> DescribeComplianceByConfigRuleAsync(DescribeComplianceByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeComplianceByConfigRuleRequestMarshaller();
+            var unmarshaller = DescribeComplianceByConfigRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeComplianceByConfigRuleRequest,DescribeComplianceByConfigRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeComplianceByResource
+
+        internal DescribeComplianceByResourceResponse DescribeComplianceByResource(DescribeComplianceByResourceRequest request)
+        {
+            var marshaller = new DescribeComplianceByResourceRequestMarshaller();
+            var unmarshaller = DescribeComplianceByResourceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeComplianceByResourceRequest,DescribeComplianceByResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeComplianceByResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeComplianceByResourceResponse> DescribeComplianceByResourceAsync(DescribeComplianceByResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeComplianceByResourceRequestMarshaller();
+            var unmarshaller = DescribeComplianceByResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeComplianceByResourceRequest,DescribeComplianceByResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeConfigRuleEvaluationStatus
+
+        internal DescribeConfigRuleEvaluationStatusResponse DescribeConfigRuleEvaluationStatus(DescribeConfigRuleEvaluationStatusRequest request)
+        {
+            var marshaller = new DescribeConfigRuleEvaluationStatusRequestMarshaller();
+            var unmarshaller = DescribeConfigRuleEvaluationStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConfigRuleEvaluationStatusRequest,DescribeConfigRuleEvaluationStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConfigRuleEvaluationStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigRuleEvaluationStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeConfigRuleEvaluationStatusResponse> DescribeConfigRuleEvaluationStatusAsync(DescribeConfigRuleEvaluationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeConfigRuleEvaluationStatusRequestMarshaller();
+            var unmarshaller = DescribeConfigRuleEvaluationStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeConfigRuleEvaluationStatusRequest,DescribeConfigRuleEvaluationStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeConfigRules
+
+        internal DescribeConfigRulesResponse DescribeConfigRules(DescribeConfigRulesRequest request)
+        {
+            var marshaller = new DescribeConfigRulesRequestMarshaller();
+            var unmarshaller = DescribeConfigRulesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConfigRulesRequest,DescribeConfigRulesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConfigRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigRules operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeConfigRulesResponse> DescribeConfigRulesAsync(DescribeConfigRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeConfigRulesRequestMarshaller();
+            var unmarshaller = DescribeConfigRulesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeConfigRulesRequest,DescribeConfigRulesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -528,7 +683,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// Currently, you can specify only one delivery channel per account.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken"> ttd1
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -620,6 +775,130 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  GetComplianceDetailsByConfigRule
+
+        internal GetComplianceDetailsByConfigRuleResponse GetComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest request)
+        {
+            var marshaller = new GetComplianceDetailsByConfigRuleRequestMarshaller();
+            var unmarshaller = GetComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
+
+            return Invoke<GetComplianceDetailsByConfigRuleRequest,GetComplianceDetailsByConfigRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetComplianceDetailsByConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetailsByConfigRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetComplianceDetailsByConfigRuleResponse> GetComplianceDetailsByConfigRuleAsync(GetComplianceDetailsByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetComplianceDetailsByConfigRuleRequestMarshaller();
+            var unmarshaller = GetComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetComplianceDetailsByConfigRuleRequest,GetComplianceDetailsByConfigRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetComplianceDetailsByResource
+
+        internal GetComplianceDetailsByResourceResponse GetComplianceDetailsByResource(GetComplianceDetailsByResourceRequest request)
+        {
+            var marshaller = new GetComplianceDetailsByResourceRequestMarshaller();
+            var unmarshaller = GetComplianceDetailsByResourceResponseUnmarshaller.Instance;
+
+            return Invoke<GetComplianceDetailsByResourceRequest,GetComplianceDetailsByResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetComplianceDetailsByResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetailsByResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetComplianceDetailsByResourceResponse> GetComplianceDetailsByResourceAsync(GetComplianceDetailsByResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetComplianceDetailsByResourceRequestMarshaller();
+            var unmarshaller = GetComplianceDetailsByResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetComplianceDetailsByResourceRequest,GetComplianceDetailsByResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetComplianceSummaryByConfigRule
+
+        internal GetComplianceSummaryByConfigRuleResponse GetComplianceSummaryByConfigRule(GetComplianceSummaryByConfigRuleRequest request)
+        {
+            var marshaller = new GetComplianceSummaryByConfigRuleRequestMarshaller();
+            var unmarshaller = GetComplianceSummaryByConfigRuleResponseUnmarshaller.Instance;
+
+            return Invoke<GetComplianceSummaryByConfigRuleRequest,GetComplianceSummaryByConfigRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetComplianceSummaryByConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceSummaryByConfigRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetComplianceSummaryByConfigRuleResponse> GetComplianceSummaryByConfigRuleAsync(GetComplianceSummaryByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetComplianceSummaryByConfigRuleRequestMarshaller();
+            var unmarshaller = GetComplianceSummaryByConfigRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetComplianceSummaryByConfigRuleRequest,GetComplianceSummaryByConfigRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetComplianceSummaryByResourceType
+
+        internal GetComplianceSummaryByResourceTypeResponse GetComplianceSummaryByResourceType(GetComplianceSummaryByResourceTypeRequest request)
+        {
+            var marshaller = new GetComplianceSummaryByResourceTypeRequestMarshaller();
+            var unmarshaller = GetComplianceSummaryByResourceTypeResponseUnmarshaller.Instance;
+
+            return Invoke<GetComplianceSummaryByResourceTypeRequest,GetComplianceSummaryByResourceTypeResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetComplianceSummaryByResourceType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceSummaryByResourceType operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetComplianceSummaryByResourceTypeResponse> GetComplianceSummaryByResourceTypeAsync(GetComplianceSummaryByResourceTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetComplianceSummaryByResourceTypeRequestMarshaller();
+            var unmarshaller = GetComplianceSummaryByResourceTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetComplianceSummaryByResourceTypeRequest,GetComplianceSummaryByResourceTypeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetResourceConfigHistory
 
         internal GetResourceConfigHistoryResponse GetResourceConfigHistory(GetResourceConfigHistoryRequest request)
@@ -682,6 +961,37 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  PutConfigRule
+
+        internal PutConfigRuleResponse PutConfigRule(PutConfigRuleRequest request)
+        {
+            var marshaller = new PutConfigRuleRequestMarshaller();
+            var unmarshaller = PutConfigRuleResponseUnmarshaller.Instance;
+
+            return Invoke<PutConfigRuleRequest,PutConfigRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutConfigRuleResponse> PutConfigRuleAsync(PutConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutConfigRuleRequestMarshaller();
+            var unmarshaller = PutConfigRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutConfigRuleRequest,PutConfigRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutConfigurationRecorder
 
         internal PutConfigurationRecorderResponse PutConfigurationRecorder(PutConfigurationRecorderRequest request)
@@ -739,6 +1049,37 @@ namespace Amazon.ConfigService
             var unmarshaller = PutDeliveryChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutDeliveryChannelRequest,PutDeliveryChannelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutEvaluations
+
+        internal PutEvaluationsResponse PutEvaluations(PutEvaluationsRequest request)
+        {
+            var marshaller = new PutEvaluationsRequestMarshaller();
+            var unmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
+
+            return Invoke<PutEvaluationsRequest,PutEvaluationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEvaluations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEvaluations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutEvaluationsResponse> PutEvaluationsAsync(PutEvaluationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutEvaluationsRequestMarshaller();
+            var unmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutEvaluationsRequest,PutEvaluationsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -84,7 +84,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Gets and sets the property ConnectionDraining. 
         /// <para>
         /// If enabled, the load balancer allows existing requests to complete before the load
-        /// balancer shifts traffic away from a deregistered or unhealthy back-end instance. 
+        /// balancer shifts traffic away from a deregistered or unhealthy back-end instance.
         /// </para>
         ///  
         /// <para>

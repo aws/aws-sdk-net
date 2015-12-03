@@ -58,8 +58,11 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/2015-03-31/functions/{FunctionName}/versions/HEAD/policy";
+            string uriResourcePath = "/2015-03-31/functions/{FunctionName}/policy";
             uriResourcePath = uriResourcePath.Replace("{FunctionName}", publicRequest.IsSetFunctionName() ? StringUtils.FromString(publicRequest.FunctionName) : string.Empty);
+            
+            if (publicRequest.IsSetQualifier())
+                request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -102,6 +105,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+            request.UseQueryString = true;
 
             return request;
         }

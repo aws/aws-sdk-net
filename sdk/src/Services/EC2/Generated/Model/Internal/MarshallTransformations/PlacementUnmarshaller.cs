@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("affinity", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Affinity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("availabilityZone", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -64,6 +70,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("hostId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HostId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("tenancy", targetDepth))

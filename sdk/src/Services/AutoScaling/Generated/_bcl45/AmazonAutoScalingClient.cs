@@ -3050,7 +3050,7 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// This call simply makes a termination request. The instances is not terminated immediately.
+        /// This call simply makes a termination request. The instance is not terminated immediately.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateInstanceInAutoScalingGroup service method.</param>

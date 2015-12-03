@@ -38,20 +38,24 @@ namespace Amazon.KeyManagementService
     ///
     /// AWS Key Management Service 
     /// <para>
-    ///  AWS Key Management Service (KMS) is an encryption and key management web service.
-    /// This guide describes the KMS actions that you can call programmatically. For general
-    /// information about KMS, see the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/overview.html">
-    /// AWS Key Management Service Developer Guide </a> 
+    /// AWS Key Management Service (AWS KMS) is an encryption and key management web service.
+    /// This guide describes the AWS KMS operations that you can call programmatically. For
+    /// general information about AWS KMS, see the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/">AWS
+    /// Key Management Service Developer Guide</a>.
     /// </para>
-    ///  <note> AWS provides SDKs that consist of libraries and sample code for various programming
-    /// languages and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a
-    /// convenient way to create programmatic access to KMS and AWS. For example, the SDKs
-    /// take care of tasks such as signing requests (see below), managing errors, and retrying
-    /// requests automatically. For more information about the AWS SDKs, including how to
-    /// download and install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon
-    /// Web Services</a>. </note> 
+    ///  <note> 
     /// <para>
-    ///  We recommend that you use the AWS SDKs to make programmatic API calls to KMS. 
+    /// AWS provides SDKs that consist of libraries and sample code for various programming
+    /// languages and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a
+    /// convenient way to create programmatic access to AWS KMS and other AWS services. For
+    /// example, the SDKs take care of tasks such as signing requests (see below), managing
+    /// errors, and retrying requests automatically. For more information about the AWS SDKs,
+    /// including how to download and install them, see <a href="http://aws.amazon.com/tools/">Tools
+    /// for Amazon Web Services</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// We recommend that you use the AWS SDKs to make programmatic API calls to AWS KMS.
     /// </para>
     ///  
     /// <para>
@@ -66,29 +70,30 @@ namespace Amazon.KeyManagementService
     /// </para>
     ///  
     /// <para>
-    ///  Requests must be signed by using an access key ID and a secret access key. We strongly
-    /// recommend that you do not use your AWS account access key ID and secret key for everyday
-    /// work with KMS. Instead, use the access key ID and secret access key for an IAM user,
-    /// or you can use the AWS Security Token Service to generate temporary security credentials
-    /// that you can use to sign requests. 
+    /// Requests must be signed by using an access key ID and a secret access key. We strongly
+    /// recommend that you <i>do not</i> use your AWS account access key ID and secret key
+    /// for everyday work with AWS KMS. Instead, use the access key ID and secret access key
+    /// for an IAM user, or you can use the AWS Security Token Service to generate temporary
+    /// security credentials that you can use to sign requests.
     /// </para>
     ///  
     /// <para>
-    ///  All KMS operations require <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-    /// Version 4</a>. 
+    /// All AWS KMS operations require <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version 4</a>.
     /// </para>
     ///  
     /// <para>
-    /// <b>Recording API Requests</b>
+    /// <b>Logging API Requests</b>
     /// </para>
     ///  
     /// <para>
-    ///  KMS supports AWS CloudTrail, a service that records AWS API calls and related events
+    /// AWS KMS supports AWS CloudTrail, a service that logs AWS API calls and related events
     /// for your AWS account and delivers them to an Amazon S3 bucket that you specify. By
     /// using the information collected by CloudTrail, you can determine what requests were
-    /// made to KMS, who made the request, when it was made, and so on. To learn more about
-    /// CloudTrail, including how to turn it on and find your log files, see the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/whatiscloudtrail.html">AWS
-    /// CloudTrail User Guide</a> 
+    /// made to AWS KMS, who made the request, when it was made, and so on. To learn more
+    /// about CloudTrail, including how to turn it on and find your log files, see the <a
+    /// href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/">AWS CloudTrail User
+    /// Guide</a>.
     /// </para>
     ///  
     /// <para>
@@ -99,11 +104,11 @@ namespace Amazon.KeyManagementService
     /// For more information about credentials and request signing, see the following:
     /// </para>
     ///  <ul> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS
-    /// Security Credentials</a>. This topic provides general information about the types
+    /// Security Credentials</a> - This topic provides general information about the types
     /// of credentials used for accessing AWS. </li> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/">AWS
-    /// Security Token Service</a>. This guide describes how to create and use temporary security
-    /// credentials. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
-    /// AWS API Requests</a>. This set of topics walks you through the process of signing
+    /// Security Token Service</a> - This guide describes how to create and use temporary
+    /// security credentials. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+    /// AWS API Requests</a> - This set of topics walks you through the process of signing
     /// a request using an access key ID and a secret access key. </li> </ul> 
     /// <para>
     /// <b>Commonly Used APIs</b>
@@ -112,10 +117,10 @@ namespace Amazon.KeyManagementService
     /// <para>
     ///  Of the APIs discussed in this guide, the following will prove the most useful for
     /// most applications. You will likely perform actions other than these, such as creating
-    /// keys and assigning policies, by using the console. <ul> <li><a>Encrypt</a></li> <li><a>Decrypt</a></li>
-    /// <li><a>GenerateDataKey</a></li> <li><a>GenerateDataKeyWithoutPlaintext</a></li> </ul>
-    /// 
+    /// keys and assigning policies, by using the console.
     /// </para>
+    ///  <ul> <li><a>Encrypt</a></li> <li><a>Decrypt</a></li> <li><a>GenerateDataKey</a></li>
+    /// <li><a>GenerateDataKeyWithoutPlaintext</a></li> </ul>
     /// </summary>
     public partial class AmazonKeyManagementServiceClient : AmazonServiceClient, IAmazonKeyManagementService
     {
@@ -304,6 +309,170 @@ namespace Amazon.KeyManagementService
         #endregion
 
         
+        #region  CancelKeyDeletion
+
+
+        /// <summary>
+        /// Cancels the deletion of a customer master key (CMK). When this operation is successful,
+        /// the CMK is set to the <code>Disabled</code> state. To enable a CMK, use <a>EnableKey</a>.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about scheduling and canceling deletion of a CMK, go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+        /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="keyId">The unique identifier for the customer master key (CMK) for which to cancel deletion. To specify this value, use the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples: <ul> <li>Unique key ID: 1234abcd-12ab-34cd-56ef-1234567890ab</li> <li>Key ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</li> </ul>  To obtain the unique key ID and key ARN for a given CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// 
+        /// <returns>The response from the CancelKeyDeletion service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public CancelKeyDeletionResponse CancelKeyDeletion(string keyId)
+        {
+            var request = new CancelKeyDeletionRequest();
+            request.KeyId = keyId;
+            return CancelKeyDeletion(request);
+        }
+
+
+        /// <summary>
+        /// Cancels the deletion of a customer master key (CMK). When this operation is successful,
+        /// the CMK is set to the <code>Disabled</code> state. To enable a CMK, use <a>EnableKey</a>.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about scheduling and canceling deletion of a CMK, go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+        /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelKeyDeletion service method.</param>
+        /// 
+        /// <returns>The response from the CancelKeyDeletion service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public CancelKeyDeletionResponse CancelKeyDeletion(CancelKeyDeletionRequest request)
+        {
+            var marshaller = new CancelKeyDeletionRequestMarshaller();
+            var unmarshaller = CancelKeyDeletionResponseUnmarshaller.Instance;
+
+            return Invoke<CancelKeyDeletionRequest,CancelKeyDeletionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Cancels the deletion of a customer master key (CMK). When this operation is successful,
+        /// the CMK is set to the <code>Disabled</code> state. To enable a CMK, use <a>EnableKey</a>.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about scheduling and canceling deletion of a CMK, go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+        /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="keyId">The unique identifier for the customer master key (CMK) for which to cancel deletion. To specify this value, use the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples: <ul> <li>Unique key ID: 1234abcd-12ab-34cd-56ef-1234567890ab</li> <li>Key ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</li> </ul>  To obtain the unique key ID and key ARN for a given CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelKeyDeletion service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public Task<CancelKeyDeletionResponse> CancelKeyDeletionAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new CancelKeyDeletionRequest();
+            request.KeyId = keyId;
+            return CancelKeyDeletionAsync(request, cancellationToken);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelKeyDeletion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelKeyDeletion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CancelKeyDeletionResponse> CancelKeyDeletionAsync(CancelKeyDeletionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CancelKeyDeletionRequestMarshaller();
+            var unmarshaller = CancelKeyDeletionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelKeyDeletionRequest,CancelKeyDeletionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateAlias
 
 
@@ -317,11 +486,12 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// To associate an alias with a different key, call <a>UpdateAlias</a>.
+        /// The alias and the key it is mapped to must be in the same AWS account and the same
+        /// region.
         /// </para>
         ///  
         /// <para>
-        /// Note that you cannot create or update an alias that represents a key in another account.
+        /// To map an alias to a different key, call <a>UpdateAlias</a>.
         /// </para>
         /// </summary>
         /// <param name="aliasName">String that contains the display name. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved. </param>
@@ -332,17 +502,31 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidAliasNameException">
         /// The request was rejected because the specified alias name is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a quota was exceeded.
+        /// The request was rejected because a limit was exceeded. For more information, see <a
+        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -366,11 +550,12 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// To associate an alias with a different key, call <a>UpdateAlias</a>.
+        /// The alias and the key it is mapped to must be in the same AWS account and the same
+        /// region.
         /// </para>
         ///  
         /// <para>
-        /// Note that you cannot create or update an alias that represents a key in another account.
+        /// To map an alias to a different key, call <a>UpdateAlias</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAlias service method.</param>
@@ -380,17 +565,31 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidAliasNameException">
         /// The request was rejected because the specified alias name is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a quota was exceeded.
+        /// The request was rejected because a limit was exceeded. For more information, see <a
+        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -414,11 +613,12 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// To associate an alias with a different key, call <a>UpdateAlias</a>.
+        /// The alias and the key it is mapped to must be in the same AWS account and the same
+        /// region.
         /// </para>
         ///  
         /// <para>
-        /// Note that you cannot create or update an alias that represents a key in another account.
+        /// To map an alias to a different key, call <a>UpdateAlias</a>.
         /// </para>
         /// </summary>
         /// <param name="aliasName">String that contains the display name. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved. </param>
@@ -432,17 +632,31 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidAliasNameException">
         /// The request was rejected because the specified alias name is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a quota was exceeded.
+        /// The request was rejected because a limit was exceeded. For more information, see <a
+        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -479,34 +693,51 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Adds a grant to a key to specify who can access the key and under what conditions.
-        /// Grants are alternate permission mechanisms to key policies. For more information about
-        /// grants, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
-        /// in the developer guide. If a grant is absent, access to the key is evaluated based
-        /// on IAM policies attached to the user. <ol> <li><a>ListGrants</a></li> <li><a>RetireGrant</a></li>
-        /// <li><a>RevokeGrant</a></li> </ol>
+        /// Adds a grant to a key to specify who can use the key and under what conditions. Grants
+        /// are alternate permission mechanisms to key policies.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about grants, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGrant service method.</param>
         /// 
         /// <returns>The response from the CreateGrant service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// A request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified key was marked as disabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// A grant token provided as part of the request is invalid.
+        /// The request was rejected because a grant token provided as part of the request is
+        /// invalid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a quota was exceeded.
+        /// The request was rejected because a limit was exceeded. For more information, see <a
+        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -552,17 +783,19 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the CreateKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a quota was exceeded.
+        /// The request was rejected because a limit was exceeded. For more information, see <a
+        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the specified policy is not syntactically or semantically
@@ -623,25 +856,37 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the Decrypt service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// A request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified key was marked as disabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidCiphertextException">
         /// The request was rejected because the specified ciphertext has been corrupted or is
         /// otherwise invalid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// A grant token provided as part of the request is invalid.
+        /// The request was rejected because a grant token provided as part of the request is
+        /// invalid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KeyUnavailableException">
-        /// The request was rejected because the key was disabled, not found, or otherwise not
-        /// available.
+        /// The request was rejected because the key was not available. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -678,17 +923,29 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Deletes the specified alias. To associate an alias with a different key, call <a>UpdateAlias</a>.
+        /// Deletes the specified alias. To map an alias to a different key, call <a>UpdateAlias</a>.
         /// </summary>
         /// <param name="aliasName">The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</param>
         /// 
         /// <returns>The response from the DeleteAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -702,17 +959,29 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Deletes the specified alias. To associate an alias with a different key, call <a>UpdateAlias</a>.
+        /// Deletes the specified alias. To map an alias to a different key, call <a>UpdateAlias</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlias service method.</param>
         /// 
         /// <returns>The response from the DeleteAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -727,7 +996,7 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Deletes the specified alias. To associate an alias with a different key, call <a>UpdateAlias</a>.
+        /// Deletes the specified alias. To map an alias to a different key, call <a>UpdateAlias</a>.
         /// </summary>
         /// <param name="aliasName">The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</param>
         /// <param name="cancellationToken">
@@ -736,11 +1005,23 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the DeleteAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -782,13 +1063,13 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the DescribeKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -809,13 +1090,13 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the DescribeKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -840,13 +1121,13 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the DescribeKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -883,20 +1164,36 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Marks a key as disabled, thereby preventing its use.
+        /// Sets the state of a master key to disabled, thereby preventing its use for cryptographic
+        /// operations. For more information about how key state affects the use of a master key,
+        /// go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
         /// 
         /// <returns>The response from the DisableKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -910,20 +1207,36 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Marks a key as disabled, thereby preventing its use.
+        /// Sets the state of a master key to disabled, thereby preventing its use for cryptographic
+        /// operations. For more information about how key state affects the use of a master key,
+        /// go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableKey service method.</param>
         /// 
         /// <returns>The response from the DisableKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -938,7 +1251,11 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Marks a key as disabled, thereby preventing its use.
+        /// Sets the state of a master key to disabled, thereby preventing its use for cryptographic
+        /// operations. For more information about how key state affects the use of a master key,
+        /// go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
         /// <param name="cancellationToken">
@@ -947,14 +1264,26 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the DisableKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -996,17 +1325,29 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the DisableKeyRotation service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// A request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified key was marked as disabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1026,17 +1367,29 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the DisableKeyRotation service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// A request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified key was marked as disabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1060,17 +1413,29 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the DisableKeyRotation service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// A request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified key was marked as disabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1106,24 +1471,37 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Marks a key as enabled, thereby permitting its use. You can have up to 25 enabled
-        /// keys at one time.
+        /// Marks a key as enabled, thereby permitting its use.
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
         /// 
         /// <returns>The response from the EnableKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a quota was exceeded.
+        /// The request was rejected because a limit was exceeded. For more information, see <a
+        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1137,24 +1515,37 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Marks a key as enabled, thereby permitting its use. You can have up to 25 enabled
-        /// keys at one time.
+        /// Marks a key as enabled, thereby permitting its use.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableKey service method.</param>
         /// 
         /// <returns>The response from the EnableKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a quota was exceeded.
+        /// The request was rejected because a limit was exceeded. For more information, see <a
+        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1169,8 +1560,7 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Marks a key as enabled, thereby permitting its use. You can have up to 25 enabled
-        /// keys at one time.
+        /// Marks a key as enabled, thereby permitting its use.
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
         /// <param name="cancellationToken">
@@ -1179,17 +1569,31 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the EnableKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a quota was exceeded.
+        /// The request was rejected because a limit was exceeded. For more information, see <a
+        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1231,17 +1635,29 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the EnableKeyRotation service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// A request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified key was marked as disabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1261,17 +1677,29 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the EnableKeyRotation service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// A request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified key was marked as disabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1295,17 +1723,29 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the EnableKeyRotation service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// A request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified key was marked as disabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1369,25 +1809,37 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the Encrypt service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// A request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified key was marked as disabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// A grant token provided as part of the request is invalid.
+        /// The request was rejected because a grant token provided as part of the request is
+        /// invalid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidKeyUsageException">
         /// The request was rejected because the specified KeySpec parameter is not valid. The
         /// currently supported value is ENCRYPT/DECRYPT.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KeyUnavailableException">
-        /// The request was rejected because the key was disabled, not found, or otherwise not
-        /// available.
+        /// The request was rejected because the key was not available. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1465,25 +1917,37 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GenerateDataKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// A request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified key was marked as disabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// A grant token provided as part of the request is invalid.
+        /// The request was rejected because a grant token provided as part of the request is
+        /// invalid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidKeyUsageException">
         /// The request was rejected because the specified KeySpec parameter is not valid. The
         /// currently supported value is ENCRYPT/DECRYPT.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KeyUnavailableException">
-        /// The request was rejected because the key was disabled, not found, or otherwise not
-        /// available.
+        /// The request was rejected because the key was not available. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1529,25 +1993,37 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GenerateDataKeyWithoutPlaintext service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// A request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified key was marked as disabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// A grant token provided as part of the request is invalid.
+        /// The request was rejected because a grant token provided as part of the request is
+        /// invalid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidKeyUsageException">
         /// The request was rejected because the specified KeySpec parameter is not valid. The
         /// currently supported value is ENCRYPT/DECRYPT.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KeyUnavailableException">
-        /// The request was rejected because the key was disabled, not found, or otherwise not
-        /// available.
+        /// The request was rejected because the key was not available. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1590,10 +2066,10 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GenerateRandom service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
         public GenerateRandomResponse GenerateRandom(int numberOfBytes)
@@ -1611,10 +2087,10 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GenerateRandom service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
         public GenerateRandomResponse GenerateRandom(GenerateRandomRequest request)
@@ -1636,10 +2112,10 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GenerateRandom service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
         public Task<GenerateRandomResponse> GenerateRandomAsync(int numberOfBytes, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1680,14 +2156,26 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GetKeyPolicy service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1708,14 +2196,26 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GetKeyPolicy service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1740,14 +2240,26 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GetKeyPolicy service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1791,14 +2303,26 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GetKeyRotationStatus service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1819,14 +2343,26 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GetKeyRotationStatus service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1851,14 +2387,26 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the GetKeyRotationStatus service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -1900,14 +2448,14 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the ListAliases service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
         /// The request was rejected because the marker that specifies where pagination should
         /// next begin is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
         public ListAliasesResponse ListAliases(ListAliasesRequest request)
@@ -1948,7 +2496,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the ListGrants service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
@@ -1958,8 +2506,23 @@ namespace Amazon.KeyManagementService
         /// next begin is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         public ListGrantsResponse ListGrants(ListGrantsRequest request)
         {
@@ -1999,14 +2562,26 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the ListKeyPolicies service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2049,10 +2624,10 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the ListKeys service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
         public ListKeysResponse ListKeys(ListKeysRequest request)
@@ -2083,6 +2658,221 @@ namespace Amazon.KeyManagementService
 
         #endregion
         
+        #region  ListRetirableGrants
+
+
+        /// <summary>
+        /// Returns a list of all grants for which the grant's <code>RetiringPrincipal</code>
+        /// matches the one specified.
+        /// 
+        ///  
+        /// <para>
+        /// A typical use is to list all grants that you are able to retire. To retire a grant,
+        /// use <a>RetireGrant</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="retiringPrincipal">The retiring principal for which to list grants. To specify the retiring principal, use the <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, federated users, and assumed role users. For examples of the ARN syntax for specifying a principal, go to <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</param>
+        /// 
+        /// <returns>The response from the ListRetirableGrants service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
+        /// The request was rejected because the marker that specifies where pagination should
+        /// next begin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public ListRetirableGrantsResponse ListRetirableGrants(string retiringPrincipal)
+        {
+            var request = new ListRetirableGrantsRequest();
+            request.RetiringPrincipal = retiringPrincipal;
+            return ListRetirableGrants(request);
+        }
+
+
+        /// <summary>
+        /// Returns a list of all grants for which the grant's <code>RetiringPrincipal</code>
+        /// matches the one specified.
+        /// 
+        ///  
+        /// <para>
+        /// A typical use is to list all grants that you are able to retire. To retire a grant,
+        /// use <a>RetireGrant</a>.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListRetirableGrants service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
+        /// The request was rejected because the marker that specifies where pagination should
+        /// next begin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public ListRetirableGrantsResponse ListRetirableGrants()
+        {
+            var request = new ListRetirableGrantsRequest();
+            return ListRetirableGrants(request);
+        }
+
+
+        /// <summary>
+        /// Returns a list of all grants for which the grant's <code>RetiringPrincipal</code>
+        /// matches the one specified.
+        /// 
+        ///  
+        /// <para>
+        /// A typical use is to list all grants that you are able to retire. To retire a grant,
+        /// use <a>RetireGrant</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRetirableGrants service method.</param>
+        /// 
+        /// <returns>The response from the ListRetirableGrants service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
+        /// The request was rejected because the marker that specifies where pagination should
+        /// next begin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public ListRetirableGrantsResponse ListRetirableGrants(ListRetirableGrantsRequest request)
+        {
+            var marshaller = new ListRetirableGrantsRequestMarshaller();
+            var unmarshaller = ListRetirableGrantsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRetirableGrantsRequest,ListRetirableGrantsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Returns a list of all grants for which the grant's <code>RetiringPrincipal</code>
+        /// matches the one specified.
+        /// 
+        ///  
+        /// <para>
+        /// A typical use is to list all grants that you are able to retire. To retire a grant,
+        /// use <a>RetireGrant</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="retiringPrincipal">The retiring principal for which to list grants. To specify the retiring principal, use the <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, federated users, and assumed role users. For examples of the ARN syntax for specifying a principal, go to <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRetirableGrants service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
+        /// The request was rejected because the marker that specifies where pagination should
+        /// next begin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public Task<ListRetirableGrantsResponse> ListRetirableGrantsAsync(string retiringPrincipal, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new ListRetirableGrantsRequest();
+            request.RetiringPrincipal = retiringPrincipal;
+            return ListRetirableGrantsAsync(request, cancellationToken);
+        }
+
+
+        /// <summary>
+        /// Returns a list of all grants for which the grant's <code>RetiringPrincipal</code>
+        /// matches the one specified.
+        /// 
+        ///  
+        /// <para>
+        /// A typical use is to list all grants that you are able to retire. To retire a grant,
+        /// use <a>RetireGrant</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRetirableGrants service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
+        /// The request was rejected because the marker that specifies where pagination should
+        /// next begin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public Task<ListRetirableGrantsResponse> ListRetirableGrantsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new ListRetirableGrantsRequest();
+            return ListRetirableGrantsAsync(request, cancellationToken);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRetirableGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRetirableGrants operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListRetirableGrantsResponse> ListRetirableGrantsAsync(ListRetirableGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListRetirableGrantsRequestMarshaller();
+            var unmarshaller = ListRetirableGrantsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRetirableGrantsRequest,ListRetirableGrantsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutKeyPolicy
 
 
@@ -2090,12 +2880,12 @@ namespace Amazon.KeyManagementService
         /// Attaches a policy to the specified key.
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
-        /// <param name="policy">The policy, in JSON format, to be attached to the key.</param>
+        /// <param name="policy">The policy to attach to the key. This is required and delegates back to the account. The key is the root of trust. The policy size limit is 32 KiB (32768 bytes). </param>
         /// <param name="policyName">Name of the policy to be attached. Currently, the only supported name is "default".</param>
         /// 
         /// <returns>The response from the PutKeyPolicy service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
@@ -2104,11 +2894,25 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a quota was exceeded.
+        /// The request was rejected because a limit was exceeded. For more information, see <a
+        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the specified policy is not syntactically or semantically
@@ -2137,7 +2941,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the PutKeyPolicy service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
@@ -2146,11 +2950,25 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a quota was exceeded.
+        /// The request was rejected because a limit was exceeded. For more information, see <a
+        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the specified policy is not syntactically or semantically
@@ -2175,7 +2993,7 @@ namespace Amazon.KeyManagementService
         /// Attaches a policy to the specified key.
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
-        /// <param name="policy">The policy, in JSON format, to be attached to the key.</param>
+        /// <param name="policy">The policy to attach to the key. This is required and delegates back to the account. The key is the root of trust. The policy size limit is 32 KiB (32768 bytes). </param>
         /// <param name="policyName">Name of the policy to be attached. Currently, the only supported name is "default".</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2183,7 +3001,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the PutKeyPolicy service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
@@ -2192,11 +3010,25 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
-        /// The request was rejected because a quota was exceeded.
+        /// The request was rejected because a limit was exceeded. For more information, see <a
+        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the specified policy is not syntactically or semantically
@@ -2261,29 +3093,41 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the ReEncrypt service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// A request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified key was marked as disabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidCiphertextException">
         /// The request was rejected because the specified ciphertext has been corrupted or is
         /// otherwise invalid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// A grant token provided as part of the request is invalid.
+        /// The request was rejected because a grant token provided as part of the request is
+        /// invalid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidKeyUsageException">
         /// The request was rejected because the specified KeySpec parameter is not valid. The
         /// currently supported value is ENCRYPT/DECRYPT.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KeyUnavailableException">
-        /// The request was rejected because the key was disabled, not found, or otherwise not
-        /// available.
+        /// The request was rejected because the key was not available. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2334,14 +3178,30 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the RetireGrant service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantIdException">
+        /// The request was rejected because the specified <code>GrantId</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// A grant token provided as part of the request is invalid.
+        /// The request was rejected because a grant token provided as part of the request is
+        /// invalid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2369,14 +3229,30 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the RetireGrant service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantIdException">
+        /// The request was rejected because the specified <code>GrantId</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// A grant token provided as part of the request is invalid.
+        /// The request was rejected because a grant token provided as part of the request is
+        /// invalid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2408,14 +3284,30 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the RetireGrant service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantIdException">
+        /// The request was rejected because the specified <code>GrantId</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// A grant token provided as part of the request is invalid.
+        /// The request was rejected because a grant token provided as part of the request is
+        /// invalid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2459,14 +3351,29 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the RevokeGrant service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantIdException">
+        /// The request was rejected because the specified <code>GrantId</code> is not valid.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2488,14 +3395,29 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the RevokeGrant service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantIdException">
+        /// The request was rejected because the specified <code>GrantId</code> is not valid.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2521,14 +3443,29 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the RevokeGrant service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantIdException">
+        /// The request was rejected because the specified <code>GrantId</code> is not valid.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2561,12 +3498,335 @@ namespace Amazon.KeyManagementService
 
         #endregion
         
+        #region  ScheduleKeyDeletion
+
+
+        /// <summary>
+        /// Schedules the deletion of a customer master key (CMK). You may provide a waiting period,
+        /// specified in days, before deletion occurs. If you do not provide a waiting period,
+        /// the default period of 30 days is used. When this operation is successful, the state
+        /// of the CMK changes to <code>PendingDeletion</code>. Before the waiting period ends,
+        /// you can use <a>CancelKeyDeletion</a> to cancel the deletion of the CMK. After the
+        /// waiting period ends, AWS KMS deletes the CMK and all AWS KMS data associated with
+        /// it, including all aliases that point to it.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Deleting a CMK is a destructive and potentially dangerous operation. When a CMK is
+        /// deleted, all data that was encrypted under the CMK is rendered unrecoverable. To restrict
+        /// the use of a CMK without deleting it, use <a>DisableKey</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For more information about scheduling a CMK for deletion, go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+        /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="keyId">The unique identifier for the customer master key (CMK) to delete. To specify this value, use the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples: <ul> <li>Unique key ID: 1234abcd-12ab-34cd-56ef-1234567890ab</li> <li>Key ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</li> </ul>  To obtain the unique key ID and key ARN for a given CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// 
+        /// <returns>The response from the ScheduleKeyDeletion service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public ScheduleKeyDeletionResponse ScheduleKeyDeletion(string keyId)
+        {
+            var request = new ScheduleKeyDeletionRequest();
+            request.KeyId = keyId;
+            return ScheduleKeyDeletion(request);
+        }
+
+
+        /// <summary>
+        /// Schedules the deletion of a customer master key (CMK). You may provide a waiting period,
+        /// specified in days, before deletion occurs. If you do not provide a waiting period,
+        /// the default period of 30 days is used. When this operation is successful, the state
+        /// of the CMK changes to <code>PendingDeletion</code>. Before the waiting period ends,
+        /// you can use <a>CancelKeyDeletion</a> to cancel the deletion of the CMK. After the
+        /// waiting period ends, AWS KMS deletes the CMK and all AWS KMS data associated with
+        /// it, including all aliases that point to it.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Deleting a CMK is a destructive and potentially dangerous operation. When a CMK is
+        /// deleted, all data that was encrypted under the CMK is rendered unrecoverable. To restrict
+        /// the use of a CMK without deleting it, use <a>DisableKey</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For more information about scheduling a CMK for deletion, go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+        /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="keyId">The unique identifier for the customer master key (CMK) to delete. To specify this value, use the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples: <ul> <li>Unique key ID: 1234abcd-12ab-34cd-56ef-1234567890ab</li> <li>Key ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</li> </ul>  To obtain the unique key ID and key ARN for a given CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, AWS KMS deletes the customer master key (CMK). This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30.</param>
+        /// 
+        /// <returns>The response from the ScheduleKeyDeletion service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public ScheduleKeyDeletionResponse ScheduleKeyDeletion(string keyId, int pendingWindowInDays)
+        {
+            var request = new ScheduleKeyDeletionRequest();
+            request.KeyId = keyId;
+            request.PendingWindowInDays = pendingWindowInDays;
+            return ScheduleKeyDeletion(request);
+        }
+
+
+        /// <summary>
+        /// Schedules the deletion of a customer master key (CMK). You may provide a waiting period,
+        /// specified in days, before deletion occurs. If you do not provide a waiting period,
+        /// the default period of 30 days is used. When this operation is successful, the state
+        /// of the CMK changes to <code>PendingDeletion</code>. Before the waiting period ends,
+        /// you can use <a>CancelKeyDeletion</a> to cancel the deletion of the CMK. After the
+        /// waiting period ends, AWS KMS deletes the CMK and all AWS KMS data associated with
+        /// it, including all aliases that point to it.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Deleting a CMK is a destructive and potentially dangerous operation. When a CMK is
+        /// deleted, all data that was encrypted under the CMK is rendered unrecoverable. To restrict
+        /// the use of a CMK without deleting it, use <a>DisableKey</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For more information about scheduling a CMK for deletion, go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+        /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ScheduleKeyDeletion service method.</param>
+        /// 
+        /// <returns>The response from the ScheduleKeyDeletion service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public ScheduleKeyDeletionResponse ScheduleKeyDeletion(ScheduleKeyDeletionRequest request)
+        {
+            var marshaller = new ScheduleKeyDeletionRequestMarshaller();
+            var unmarshaller = ScheduleKeyDeletionResponseUnmarshaller.Instance;
+
+            return Invoke<ScheduleKeyDeletionRequest,ScheduleKeyDeletionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Schedules the deletion of a customer master key (CMK). You may provide a waiting period,
+        /// specified in days, before deletion occurs. If you do not provide a waiting period,
+        /// the default period of 30 days is used. When this operation is successful, the state
+        /// of the CMK changes to <code>PendingDeletion</code>. Before the waiting period ends,
+        /// you can use <a>CancelKeyDeletion</a> to cancel the deletion of the CMK. After the
+        /// waiting period ends, AWS KMS deletes the CMK and all AWS KMS data associated with
+        /// it, including all aliases that point to it.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Deleting a CMK is a destructive and potentially dangerous operation. When a CMK is
+        /// deleted, all data that was encrypted under the CMK is rendered unrecoverable. To restrict
+        /// the use of a CMK without deleting it, use <a>DisableKey</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For more information about scheduling a CMK for deletion, go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+        /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="keyId">The unique identifier for the customer master key (CMK) to delete. To specify this value, use the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples: <ul> <li>Unique key ID: 1234abcd-12ab-34cd-56ef-1234567890ab</li> <li>Key ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</li> </ul>  To obtain the unique key ID and key ARN for a given CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ScheduleKeyDeletion service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public Task<ScheduleKeyDeletionResponse> ScheduleKeyDeletionAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new ScheduleKeyDeletionRequest();
+            request.KeyId = keyId;
+            return ScheduleKeyDeletionAsync(request, cancellationToken);
+        }
+
+
+        /// <summary>
+        /// Schedules the deletion of a customer master key (CMK). You may provide a waiting period,
+        /// specified in days, before deletion occurs. If you do not provide a waiting period,
+        /// the default period of 30 days is used. When this operation is successful, the state
+        /// of the CMK changes to <code>PendingDeletion</code>. Before the waiting period ends,
+        /// you can use <a>CancelKeyDeletion</a> to cancel the deletion of the CMK. After the
+        /// waiting period ends, AWS KMS deletes the CMK and all AWS KMS data associated with
+        /// it, including all aliases that point to it.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Deleting a CMK is a destructive and potentially dangerous operation. When a CMK is
+        /// deleted, all data that was encrypted under the CMK is rendered unrecoverable. To restrict
+        /// the use of a CMK without deleting it, use <a>DisableKey</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For more information about scheduling a CMK for deletion, go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+        /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="keyId">The unique identifier for the customer master key (CMK) to delete. To specify this value, use the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples: <ul> <li>Unique key ID: 1234abcd-12ab-34cd-56ef-1234567890ab</li> <li>Key ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</li> </ul>  To obtain the unique key ID and key ARN for a given CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, AWS KMS deletes the customer master key (CMK). This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ScheduleKeyDeletion service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        public Task<ScheduleKeyDeletionResponse> ScheduleKeyDeletionAsync(string keyId, int pendingWindowInDays, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = new ScheduleKeyDeletionRequest();
+            request.KeyId = keyId;
+            request.PendingWindowInDays = pendingWindowInDays;
+            return ScheduleKeyDeletionAsync(request, cancellationToken);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ScheduleKeyDeletion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ScheduleKeyDeletion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ScheduleKeyDeletionResponse> ScheduleKeyDeletionAsync(ScheduleKeyDeletionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ScheduleKeyDeletionRequestMarshaller();
+            var unmarshaller = ScheduleKeyDeletionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ScheduleKeyDeletionRequest,ScheduleKeyDeletionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateAlias
 
 
         /// <summary>
-        /// Updates an alias to associate it with a different key.
+        /// Updates an alias to map it to a different key.
         /// 
+        ///  
+        /// <para>
+        /// An alias is not a property of a key. Therefore, an alias can be mapped to and unmapped
+        /// from an existing key without changing the properties of the key. 
+        /// </para>
         ///  
         /// <para>
         /// An alias name can contain only alphanumeric characters, forward slashes (/), underscores
@@ -2576,24 +3836,32 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// An alias is not a property of a key. Therefore, an alias can be associated with and
-        /// disassociated from an existing key without changing the properties of the key. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Note that you cannot create or update an alias that represents a key in another account.
+        /// The alias and the key it is mapped to must be in the same AWS account and the same
+        /// region.
         /// </para>
         /// </summary>
-        /// <param name="aliasName">String that contains the name of the alias to be modifed. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</param>
-        /// <param name="targetKeyId">Unique identifier of the customer master key to be associated with the alias. This value can be a globally unique identifier or the fully specified ARN of a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
+        /// <param name="aliasName">String that contains the name of the alias to be modified. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.</param>
+        /// <param name="targetKeyId">Unique identifier of the customer master key to be mapped to the alias. This value can be a globally unique identifier or the fully specified ARN of a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul>  You can call <a>ListAliases</a> to verify that the alias is mapped to the correct <code>TargetKeyId</code>.</param>
         /// 
         /// <returns>The response from the UpdateAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2608,8 +3876,13 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Updates an alias to associate it with a different key.
+        /// Updates an alias to map it to a different key.
         /// 
+        ///  
+        /// <para>
+        /// An alias is not a property of a key. Therefore, an alias can be mapped to and unmapped
+        /// from an existing key without changing the properties of the key. 
+        /// </para>
         ///  
         /// <para>
         /// An alias name can contain only alphanumeric characters, forward slashes (/), underscores
@@ -2619,23 +3892,31 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// An alias is not a property of a key. Therefore, an alias can be associated with and
-        /// disassociated from an existing key without changing the properties of the key. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Note that you cannot create or update an alias that represents a key in another account.
+        /// The alias and the key it is mapped to must be in the same AWS account and the same
+        /// region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAlias service method.</param>
         /// 
         /// <returns>The response from the UpdateAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2650,8 +3931,13 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Updates an alias to associate it with a different key.
+        /// Updates an alias to map it to a different key.
         /// 
+        ///  
+        /// <para>
+        /// An alias is not a property of a key. Therefore, an alias can be mapped to and unmapped
+        /// from an existing key without changing the properties of the key. 
+        /// </para>
         ///  
         /// <para>
         /// An alias name can contain only alphanumeric characters, forward slashes (/), underscores
@@ -2661,27 +3947,35 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// An alias is not a property of a key. Therefore, an alias can be associated with and
-        /// disassociated from an existing key without changing the properties of the key. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Note that you cannot create or update an alias that represents a key in another account.
+        /// The alias and the key it is mapped to must be in the same AWS account and the same
+        /// region.
         /// </para>
         /// </summary>
-        /// <param name="aliasName">String that contains the name of the alias to be modifed. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</param>
-        /// <param name="targetKeyId">Unique identifier of the customer master key to be associated with the alias. This value can be a globally unique identifier or the fully specified ARN of a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </param>
+        /// <param name="aliasName">String that contains the name of the alias to be modified. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.</param>
+        /// <param name="targetKeyId">Unique identifier of the customer master key to be mapped to the alias. This value can be a globally unique identifier or the fully specified ARN of a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul>  You can call <a>ListAliases</a> to verify that the alias is mapped to the correct <code>TargetKeyId</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the UpdateAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2725,14 +4019,26 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the UpdateKeyDescription service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2753,14 +4059,26 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the UpdateKeyDescription service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
@@ -2785,14 +4103,26 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the UpdateKeyDescription service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
-        /// The system timed out while trying to fulfill the request.
+        /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
-        /// The request was rejected because an internal exception occurred. This error can be
+        /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.

@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectFile.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectFile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class DnxProjectFile : DnxProjectFileBase
     {
@@ -38,14 +38,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
   <PropertyGroup Label=""Globals"">
     <ProjectGuid>");
             
-            #line 14 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectFile.tt"
+            #line 14 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["ProjectGuid"]));
             
             #line default
             #line hidden
             this.Write("</ProjectGuid>\r\n    <RootNamespace>");
             
-            #line 15 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectFile.tt"
+            #line 15 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["RootNamespace"]));
             
             #line default
@@ -57,7 +57,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
   <PropertyGroup Label=""Configuration"" Condition=""'$(Configuration)|$(Platform)'=='Debug|AnyCPU'"">
     <AssemblyName>");
             
-            #line 20 "C:\git-repros\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectFile.tt"
+            #line 20 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// is the appliance at your end of the VPN connection. (The device on the AWS side of
     /// the VPN connection is the virtual private gateway.) You must provide the Internet-routable
     /// IP address of the customer gateway's external interface. The IP address must be static
-    /// and can't be behind a device performing network address translation (NAT).
+    /// and may be behind a device performing network address translation (NAT).
     /// 
     ///  
     /// <para>

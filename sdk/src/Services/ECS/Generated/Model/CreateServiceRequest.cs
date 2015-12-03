@@ -31,7 +31,34 @@ namespace Amazon.ECS.Model
     /// Container for the parameters to the CreateService operation.
     /// Runs and maintains a desired number of tasks from a specified task definition. If
     /// the number of tasks running in a service drops below <code>desiredCount</code>, Amazon
-    /// ECS will spawn another instantiation of the task in the specified cluster.
+    /// ECS spawns another instantiation of the task in the specified cluster. To update an
+    /// existing service, see <a>UpdateService</a>.
+    /// 
+    ///  
+    /// <para>
+    /// When the service scheduler launches new tasks, it attempts to balance them across
+    /// the Availability Zones in your cluster with the following logic:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Determine which of the container instances in your cluster can support your service's
+    /// task definition (for example, they have the required CPU, memory, ports, and container
+    /// instance attributes).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Sort the valid container instances by the fewest number of running tasks for this
+    /// service in the same Availability Zone as the instance. For example, if zone A has
+    /// one running service task and zones B and C each have zero, valid container instances
+    /// in either zone B or C are considered optimal for placement.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Place the new service task on a valid container instance in an optimal Availability
+    /// Zone (based on the previous steps), favoring container instances with the fewest number
+    /// of running tasks for this service.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateServiceRequest : AmazonECSRequest
     {
@@ -65,8 +92,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// The short name or full Amazon Resource Name (ARN) of the cluster that you want to
-        /// run your service on. If you do not specify a cluster, the default cluster is assumed.
+        /// The short name or full Amazon Resource Name (ARN) of the cluster on which to run your
+        /// service. If you do not specify a cluster, the default cluster is assumed.
         /// </para>
         /// </summary>
         public string Cluster
@@ -84,8 +111,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DesiredCount. 
         /// <para>
-        /// The number of instantiations of the specified task definition that you would like
-        /// to place and keep running on your cluster.
+        /// The number of instantiations of the specified task definition to place and keep running
+        /// on your cluster.
         /// </para>
         /// </summary>
         public int DesiredCount
@@ -165,9 +192,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property TaskDefinition. 
         /// <para>
         /// The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full Amazon Resource Name (ARN) of the task definition that you want to run in your
-        /// service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
-        /// revision is used.
+        /// full Amazon Resource Name (ARN) of the task definition to run in your service. If
+        /// a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+        /// is used.
         /// </para>
         /// </summary>
         public string TaskDefinition

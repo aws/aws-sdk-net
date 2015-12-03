@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -54,10 +54,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("actualBlockHourlyPrice", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ActualBlockHourlyPrice = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("availabilityZoneGroup", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.AvailabilityZoneGroup = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("blockDurationMinutes", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.BlockDurationMinutes = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("createTime", targetDepth))

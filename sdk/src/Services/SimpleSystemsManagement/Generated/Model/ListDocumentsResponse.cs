@@ -38,7 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentIdentifiers. 
         /// <para>
-        /// The names of the configuration documents.
+        /// The names of the SSM documents.
         /// </para>
         /// </summary>
         public List<DocumentIdentifier> DocumentIdentifiers

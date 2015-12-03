@@ -33,7 +33,7 @@ namespace Amazon.ConfigService.Model
     ///  <note> 
     /// <para>
     /// Currently, the list does not contain information about non-AWS components (for example,
-    /// applications on your Amazon EC2 instances). 
+    /// applications on your Amazon EC2 instances).
     /// </para>
     ///  </note>
     /// </summary>
@@ -168,7 +168,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigurationItemMD5Hash. 
         /// <para>
-        /// Unique MD5 hash that represents the configuration item's state.
+        /// Unique MD5 hash that represents the configuration item&apos;s state.
         /// </para>
         ///  
         /// <para>

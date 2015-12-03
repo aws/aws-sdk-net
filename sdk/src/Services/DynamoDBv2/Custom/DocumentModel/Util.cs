@@ -16,10 +16,12 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Text;
 
 using Amazon.DynamoDBv2.Model;
-using Amazon.Util;
+using Amazon.DynamoDBv2.Model.Internal.MarshallTransformations;
+using Amazon.Runtime.Internal.Transform;
 using Amazon.Util.Internal;
 
 #pragma warning disable 1591
@@ -119,6 +121,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
     {
         None,
         All
+    }
+
+    internal enum SearchType
+    {
+        Scan,
+        Query
     }
 
     public class KeyDescription
@@ -454,11 +462,65 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             return result;
         }
+
+        public static string ToPaginationToken(Dictionary<string, AttributeValue> nextKey)
+        {
+            if (nextKey == null)
+                return null;
+
+            var clearToken = SerializeClearString(nextKey);
+            return clearToken;
+        }
+        private static string SerializeClearString(Dictionary<string, AttributeValue> nextKey)
+        {
+            using (var writer = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                WriteNextKey(nextKey, writer);
+
+                return writer.ToString();
+            }
+        }
+
+        public static Dictionary<string, AttributeValue> FromPaginationToken(string token)
+        {
+            if (token == null)
+                return null;
+
+            return DeserializeClearString(token);
+        }
+        private static Dictionary<string, AttributeValue> DeserializeClearString(string token)
+        {
+            var bytes = Encoding.UTF8.GetBytes(token);
+            using (var stream = new MemoryStream(bytes))
+            {
+                return ReadNextKey(stream);
+            }
+        }
+
+        private static Dictionary<string, AttributeValue> ReadNextKey(Stream stream)
+        {
+            JsonUnmarshallerContext context = new JsonUnmarshallerContext(stream, false, null);
+            var unmarshaller = new DictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.Instance, AttributeValueUnmarshaller.Instance);
+            var nextKey = unmarshaller.Unmarshall(context);
+            return nextKey;
+        }
+        private static void WriteNextKey(Dictionary<string, AttributeValue> nextKey, TextWriter writer)
+        {
+            var marshaller = Amazon.DynamoDBv2.Model.Internal.MarshallTransformations.AttributeValueMarshaller.Instance;
+            var jsonWriter = new ThirdParty.Json.LitJson.JsonWriter(writer);
+            var context = new Runtime.Internal.Transform.JsonMarshallerContext(null, jsonWriter);
+
+            context.Writer.WriteObjectStart();
+            foreach (var kvp in nextKey)
+            {
+                context.Writer.WritePropertyName(kvp.Key);
+                context.Writer.WriteObjectStart();
+                {
+                    marshaller.Marshall(kvp.Value, context);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+            context.Writer.WriteObjectEnd();
+        }
     }
- 
-    internal enum SearchType
-    {
-        Scan,
-        Query
-    }
-}
+ }

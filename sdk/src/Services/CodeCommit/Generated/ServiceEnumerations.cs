@@ -40,7 +40,12 @@ namespace Amazon.CodeCommit
         public static readonly OrderEnum Descending = new OrderEnum("descending");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public OrderEnum(string value)
             : base(value)
@@ -85,7 +90,12 @@ namespace Amazon.CodeCommit
         public static readonly SortByEnum RepositoryName = new SortByEnum("repositoryName");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SortByEnum(string value)
             : base(value)

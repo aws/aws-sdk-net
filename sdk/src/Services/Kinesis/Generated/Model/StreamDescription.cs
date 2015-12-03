@@ -28,11 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Represents the output for <code>DescribeStream</code>.
+    /// Represents the output for <a>DescribeStream</a>.
     /// </summary>
     public partial class StreamDescription
     {
         private bool? _hasMoreShards;
+        private int? _retentionPeriodHours;
         private List<Shard> _shards = new List<Shard>();
         private string _streamARN;
         private string _streamName;
@@ -54,6 +55,24 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetHasMoreShards()
         {
             return this._hasMoreShards.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetentionPeriodHours. 
+        /// <para>
+        /// The current retention period, in hours.
+        /// </para>
+        /// </summary>
+        public int RetentionPeriodHours
+        {
+            get { return this._retentionPeriodHours.GetValueOrDefault(); }
+            set { this._retentionPeriodHours = value; }
+        }
+
+        // Check to see if RetentionPeriodHours property is set
+        internal bool IsSetRetentionPeriodHours()
+        {
+            return this._retentionPeriodHours.HasValue; 
         }
 
         /// <summary>

@@ -40,7 +40,12 @@ namespace Amazon.RDS
         public static readonly ApplyMethod PendingReboot = new ApplyMethod("pending-reboot");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ApplyMethod(string value)
             : base(value)
@@ -76,6 +81,14 @@ namespace Amazon.RDS
     {
 
         /// <summary>
+        /// Constant DbCluster for SourceType
+        /// </summary>
+        public static readonly SourceType DbCluster = new SourceType("db-cluster");
+        /// <summary>
+        /// Constant DbClusterSnapshot for SourceType
+        /// </summary>
+        public static readonly SourceType DbClusterSnapshot = new SourceType("db-cluster-snapshot");
+        /// <summary>
         /// Constant DbInstance for SourceType
         /// </summary>
         public static readonly SourceType DbInstance = new SourceType("db-instance");
@@ -93,7 +106,12 @@ namespace Amazon.RDS
         public static readonly SourceType DbSnapshot = new SourceType("db-snapshot");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SourceType(string value)
             : base(value)

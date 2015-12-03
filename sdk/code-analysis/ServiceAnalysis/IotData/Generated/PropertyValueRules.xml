@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.IotData.Model.DeleteThingShadowRequest.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IotData.Model.GetThingShadowRequest.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IotData.Model.PublishRequest.Qos</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IotData.Model.UpdateThingShadowRequest.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+</property-value-rules>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,11 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describe a Spot instance request.
+    /// Describes a Spot instance request.
     /// </summary>
     public partial class SpotInstanceRequest
     {
+        private string _actualBlockHourlyPrice;
         private string _availabilityZoneGroup;
+        private int? _blockDurationMinutes;
         private DateTime? _createTime;
         private SpotInstanceStateFault _fault;
         private string _instanceId;
@@ -48,6 +50,25 @@ namespace Amazon.EC2.Model
         private SpotInstanceType _type;
         private DateTime? _validFrom;
         private DateTime? _validUntil;
+
+        /// <summary>
+        /// Gets and sets the property ActualBlockHourlyPrice. 
+        /// <para>
+        /// If you specified a duration and your Spot instance request was fulfilled, this is
+        /// the fixed hourly price in effect for the Spot instance while it runs.
+        /// </para>
+        /// </summary>
+        public string ActualBlockHourlyPrice
+        {
+            get { return this._actualBlockHourlyPrice; }
+            set { this._actualBlockHourlyPrice = value; }
+        }
+
+        // Check to see if ActualBlockHourlyPrice property is set
+        internal bool IsSetActualBlockHourlyPrice()
+        {
+            return this._actualBlockHourlyPrice != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityZoneGroup. 
@@ -66,6 +87,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZoneGroup()
         {
             return this._availabilityZoneGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BlockDurationMinutes. 
+        /// <para>
+        /// The duration for the Spot instance, in minutes.
+        /// </para>
+        /// </summary>
+        public int BlockDurationMinutes
+        {
+            get { return this._blockDurationMinutes.GetValueOrDefault(); }
+            set { this._blockDurationMinutes = value; }
+        }
+
+        // Check to see if BlockDurationMinutes property is set
+        internal bool IsSetBlockDurationMinutes()
+        {
+            return this._blockDurationMinutes.HasValue; 
         }
 
         /// <summary>
@@ -217,7 +256,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotPrice. 
         /// <para>
-        /// The maximum hourly price (bid) for any Spot instance launched to fulfill the request.
+        /// The maximum hourly price (bid) for the Spot instance launched to fulfill the request.
         /// </para>
         /// </summary>
         public string SpotPrice
@@ -310,10 +349,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ValidFrom. 
         /// <para>
         /// The start date of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// If this is a one-time request, the request becomes active at this date and time and
-        /// remains active until all instances launch, the request expires, or the request is
-        /// canceled. If the request is persistent, the request becomes active at this date and
-        /// time and remains active until it expires or is canceled.
+        /// The request becomes active at this date and time.
         /// </para>
         /// </summary>
         public DateTime ValidFrom
@@ -332,9 +368,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ValidUntil. 
         /// <para>
         /// The end date of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// If this is a one-time request, the request remains active until all instances launch,
-        /// the request is canceled, or this date is reached. If the request is persistent, it
-        /// remains active until it is canceled or this date is reached.
+        /// If this is a one-time request, it remains active until all instances launch, the request
+        /// is canceled, or this date is reached. If the request is persistent, it remains active
+        /// until it is canceled or this date is reached.
         /// </para>
         /// </summary>
         public DateTime ValidUntil

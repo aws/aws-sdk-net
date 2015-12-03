@@ -38,63 +38,141 @@ namespace Amazon.EC2.Util
     /// </summary>
     public static class ImageUtilities
     {
+        #region ImageKeys
+
+        public const string WINDOWS_2012R2_BASE_KEY = "WINDOWS_2012R2_BASE";
+
+        public const string WINDOWS_2012R2_SQL_SERVER_EXPRESS_2014_KEY = "WINDOWS_2012R2_SQL_SERVER_EXPRESS_2014";
+        public const string WINDOWS_2012R2_SQL_SERVER_STANDARD_2014_KEY = "WINDOWS_2012R2_SQL_SERVER_STANDARD_2014";
+        public const string WINDOWS_2012R2_SQL_SERVER_WEB_2014_KEY = "WINDOWS_2012R2_SQL_SERVER_WEB_2014";
+
+        public const string WINDOWS_2012_BASE_KEY = "WINDOWS_2012_BASE";
+
+        public const string WINDOWS_2012_SQL_SERVER_EXPRESS_2014_KEY = "WINDOWS_2012_SQL_SERVER_EXPRESS_2014";
+        public const string WINDOWS_2012_SQL_SERVER_STANDARD_2014_KEY = "WINDOWS_2012_SQL_SERVER_STANDARD_2014";
+        public const string WINDOWS_2012_SQL_SERVER_WEB_2014_KEY = "WINDOWS_2012_SQL_SERVER_WEB_2014";
+
+        public const string WINDOWS_2012_SQL_SERVER_EXPRESS_2012_KEY = "WINDOWS_2012_SQL_SERVER_EXPRESS_2012";
+        public const string WINDOWS_2012_SQL_SERVER_STANDARD_2012_KEY = "WINDOWS_2012_SQL_SERVER_STANDARD_2012";
+        public const string WINDOWS_2012_SQL_SERVER_WEB_2012_KEY = "WINDOWS_2012_SQL_SERVER_WEB_2012";
+
+        public const string WINDOWS_2012_SQL_SERVER_EXPRESS_2008_KEY = "WINDOWS_2012_SQL_SERVER_EXPRESS_2008";
+        public const string WINDOWS_2012_SQL_SERVER_STANDARD_2008_KEY = "WINDOWS_2012_SQL_SERVER_STANDARD_2008";
+        public const string WINDOWS_2012_SQL_SERVER_WEB_2008_KEY = "WINDOWS_2012_SQL_SERVER_WEB_2008";
+
+        public const string WINDOWS_2008R2_BASE_KEY = "WINDOWS_2008R2_BASE";
+
+        public const string WINDOWS_2008R2_SQL_SERVER_EXPRESS_2012_KEY = "WINDOWS_2008R2_SQL_SERVER_EXPRESS_2012";
+        public const string WINDOWS_2008R2_SQL_SERVER_STANDARD_2012_KEY = "WINDOWS_2008R2_SQL_SERVER_STANDARD_2012";
+        public const string WINDOWS_2008R2_SQL_SERVER_WEB_2012_KEY = "WINDOWS_2008R2_SQL_SERVER_WEB_2012";
+
+        public const string WINDOWS_2008R2_SQL_SERVER_EXPRESS_2008_KEY = "WINDOWS_2008R2_SQL_SERVER_EXPRESS_2008";
+        public const string WINDOWS_2008R2_SQL_SERVER_STANDARD_2008_KEY = "WINDOWS_2008R2_SQL_SERVER_STANDARD_2008";
+        public const string WINDOWS_2008R2_SQL_SERVER_WEB_2008_KEY = "WINDOWS_2008R2_SQL_SERVER_WEB_2008";
+
+        public const string WINDOWS_2008RTM_BASE_KEY = "WINDOWS_2008RTM_BASE";
+
+        public const string WINDOWS_2008RTM_SQL_SERVER_EXPRESS_2008_KEY = "WINDOWS_2008RTM_SQL_SERVER_EXPRESS_2008";
+        public const string WINDOWS_2008RTM_SQL_SERVER_STANDARD_2008_KEY = "WINDOWS_2008RTM_SQL_SERVER_STANDARD_2008";
+
+        public const string WINDOWS_2008_BEANSTALK_IIS75_KEY = "WINDOWS_2008_BEANSTALK_IIS75";
+        public const string WINDOWS_2012_BEANSTALK_IIS8_KEY = "WINDOWS_2012_BEANSTALK_IIS8";
+
+        public const string VPC_NAT_KEY = "VPC_NAT";
+
+        /// <summary>
+        /// The collection of keys that can be used to address images.
+        /// </summary>
+        public static readonly IEnumerable<string> ImageKeys = new string[]
+        {
+            WINDOWS_2012R2_BASE_KEY,
+            WINDOWS_2012R2_SQL_SERVER_EXPRESS_2014_KEY,
+            WINDOWS_2012R2_SQL_SERVER_STANDARD_2014_KEY,
+            WINDOWS_2012R2_SQL_SERVER_WEB_2014_KEY,
+            WINDOWS_2012_BASE_KEY,
+            WINDOWS_2012_SQL_SERVER_EXPRESS_2014_KEY,
+            WINDOWS_2012_SQL_SERVER_STANDARD_2014_KEY,
+            WINDOWS_2012_SQL_SERVER_WEB_2014_KEY,
+            WINDOWS_2012_SQL_SERVER_EXPRESS_2012_KEY,
+            WINDOWS_2012_SQL_SERVER_STANDARD_2012_KEY,
+            WINDOWS_2012_SQL_SERVER_WEB_2012_KEY,
+            WINDOWS_2012_SQL_SERVER_EXPRESS_2008_KEY,
+            WINDOWS_2012_SQL_SERVER_STANDARD_2008_KEY,
+            WINDOWS_2012_SQL_SERVER_WEB_2008_KEY,
+            WINDOWS_2008R2_BASE_KEY,
+            WINDOWS_2008R2_SQL_SERVER_EXPRESS_2012_KEY,
+            WINDOWS_2008R2_SQL_SERVER_STANDARD_2012_KEY,
+            WINDOWS_2008R2_SQL_SERVER_WEB_2012_KEY,
+            WINDOWS_2008R2_SQL_SERVER_EXPRESS_2008_KEY,
+            WINDOWS_2008R2_SQL_SERVER_STANDARD_2008_KEY,
+            WINDOWS_2008R2_SQL_SERVER_WEB_2008_KEY,
+            WINDOWS_2008RTM_BASE_KEY,
+            WINDOWS_2008RTM_SQL_SERVER_EXPRESS_2008_KEY,
+            WINDOWS_2008RTM_SQL_SERVER_STANDARD_2008_KEY,
+            WINDOWS_2008_BEANSTALK_IIS75_KEY,
+            WINDOWS_2012_BEANSTALK_IIS8_KEY,
+            VPC_NAT_KEY 
+        };
+
+        #endregion
+
         #region Windows 2012 R2 Images
 
-        public static readonly ImageDescriptor WINDOWS_2012R2_BASE = new ImageDescriptor("WINDOWS_2012R2_BASE");
+        public static readonly ImageDescriptor WINDOWS_2012R2_BASE = new ImageDescriptor(WINDOWS_2012R2_BASE_KEY);
 
-        public static readonly ImageDescriptor WINDOWS_2012R2_SQL_SERVER_EXPRESS_2014 = new ImageDescriptor("WINDOWS_2012R2_SQL_SERVER_EXPRESS_2014");
-        public static readonly ImageDescriptor WINDOWS_2012R2_SQL_SERVER_STANDARD_2014 = new ImageDescriptor("WINDOWS_2012R2_SQL_SERVER_STANDARD_2014");
-        public static readonly ImageDescriptor WINDOWS_2012R2_SQL_SERVER_WEB_2014 = new ImageDescriptor("WINDOWS_2012R2_SQL_SERVER_WEB_2014");
+        public static readonly ImageDescriptor WINDOWS_2012R2_SQL_SERVER_EXPRESS_2014 = new ImageDescriptor(WINDOWS_2012R2_SQL_SERVER_EXPRESS_2014_KEY);
+        public static readonly ImageDescriptor WINDOWS_2012R2_SQL_SERVER_STANDARD_2014 = new ImageDescriptor(WINDOWS_2012R2_SQL_SERVER_STANDARD_2014_KEY);
+        public static readonly ImageDescriptor WINDOWS_2012R2_SQL_SERVER_WEB_2014 = new ImageDescriptor(WINDOWS_2012R2_SQL_SERVER_WEB_2014_KEY);
 
         #endregion
 
         #region Windows 2012 (Original RTM) Images
 
-        public static readonly ImageDescriptor WINDOWS_2012_BASE = new ImageDescriptor("WINDOWS_2012_BASE");
+        public static readonly ImageDescriptor WINDOWS_2012_BASE = new ImageDescriptor(WINDOWS_2012_BASE_KEY);
 
-        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_EXPRESS_2014 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_EXPRESS_2014");
-        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_STANDARD_2014 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_STANDARD_2014");
-        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_WEB_2014 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_WEB_2014");
+        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_EXPRESS_2014 = new ImageDescriptor(WINDOWS_2012_SQL_SERVER_EXPRESS_2014_KEY);
+        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_STANDARD_2014 = new ImageDescriptor(WINDOWS_2012_SQL_SERVER_STANDARD_2014_KEY);
+        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_WEB_2014 = new ImageDescriptor(WINDOWS_2012_SQL_SERVER_WEB_2014_KEY);
 
-        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_EXPRESS_2012 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_EXPRESS_2012");
-        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_STANDARD_2012 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_STANDARD_2012");
-        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_WEB_2012 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_WEB_2012");
+        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_EXPRESS_2012 = new ImageDescriptor(WINDOWS_2012_SQL_SERVER_EXPRESS_2012_KEY);
+        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_STANDARD_2012 = new ImageDescriptor(WINDOWS_2012_SQL_SERVER_STANDARD_2012_KEY);
+        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_WEB_2012 = new ImageDescriptor(WINDOWS_2012_SQL_SERVER_WEB_2012_KEY);
         
-        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_EXPRESS_2008 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_EXPRESS_2008");
-        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_STANDARD_2008 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_STANDARD_2008");
-        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_WEB_2008 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_WEB_2008");
+        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_EXPRESS_2008 = new ImageDescriptor(WINDOWS_2012_SQL_SERVER_EXPRESS_2008_KEY);
+        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_STANDARD_2008 = new ImageDescriptor(WINDOWS_2012_SQL_SERVER_STANDARD_2008_KEY);
+        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_WEB_2008 = new ImageDescriptor(WINDOWS_2012_SQL_SERVER_WEB_2008_KEY);
 
         #endregion
 
         #region Windows 2008 R2 Images
 
-        public static readonly ImageDescriptor WINDOWS_2008R2_BASE = new ImageDescriptor("WINDOWS_2008R2_BASE");
+        public static readonly ImageDescriptor WINDOWS_2008R2_BASE = new ImageDescriptor(WINDOWS_2008R2_BASE_KEY);
 
-        public static readonly ImageDescriptor WINDOWS_2008R2_SQL_SERVER_EXPRESS_2012 = new ImageDescriptor("WINDOWS_2008R2_SQL_SERVER_EXPRESS_2012");
-        public static readonly ImageDescriptor WINDOWS_2008R2_SQL_SERVER_STANDARD_2012 = new ImageDescriptor("WINDOWS_2008R2_SQL_SERVER_STANDARD_2012");
-        public static readonly ImageDescriptor WINDOWS_2008R2_SQL_SERVER_WEB_2012 = new ImageDescriptor("WINDOWS_2008R2_SQL_SERVER_WEB_2012");
+        public static readonly ImageDescriptor WINDOWS_2008R2_SQL_SERVER_EXPRESS_2012 = new ImageDescriptor(WINDOWS_2008R2_SQL_SERVER_EXPRESS_2012_KEY);
+        public static readonly ImageDescriptor WINDOWS_2008R2_SQL_SERVER_STANDARD_2012 = new ImageDescriptor(WINDOWS_2008R2_SQL_SERVER_STANDARD_2012_KEY);
+        public static readonly ImageDescriptor WINDOWS_2008R2_SQL_SERVER_WEB_2012 = new ImageDescriptor(WINDOWS_2008R2_SQL_SERVER_WEB_2012_KEY);
 
-        public static readonly ImageDescriptor WINDOWS_2008R2_SQL_SERVER_EXPRESS_2008 = new ImageDescriptor("WINDOWS_2008R2_SQL_SERVER_EXPRESS_2008");
-        public static readonly ImageDescriptor WINDOWS_2008R2_SQL_SERVER_STANDARD_2008 = new ImageDescriptor("WINDOWS_2008R2_SQL_SERVER_STANDARD_2008");
-        public static readonly ImageDescriptor WINDOWS_2008R2_SQL_SERVER_WEB_2008 = new ImageDescriptor("WINDOWS_2008R2_SQL_SERVER_WEB_2008");
+        public static readonly ImageDescriptor WINDOWS_2008R2_SQL_SERVER_EXPRESS_2008 = new ImageDescriptor(WINDOWS_2008R2_SQL_SERVER_EXPRESS_2008_KEY);
+        public static readonly ImageDescriptor WINDOWS_2008R2_SQL_SERVER_STANDARD_2008 = new ImageDescriptor(WINDOWS_2008R2_SQL_SERVER_STANDARD_2008_KEY);
+        public static readonly ImageDescriptor WINDOWS_2008R2_SQL_SERVER_WEB_2008 = new ImageDescriptor(WINDOWS_2008R2_SQL_SERVER_WEB_2008_KEY);
 
         #endregion
 
         #region Windows 2008 (Original RTM) Images
 
-        public static readonly ImageDescriptor WINDOWS_2008RTM_BASE = new ImageDescriptor("WINDOWS_2008RTM_BASE");
+        public static readonly ImageDescriptor WINDOWS_2008RTM_BASE = new ImageDescriptor(WINDOWS_2008RTM_BASE_KEY);
 
-        public static readonly ImageDescriptor WINDOWS_2008RTM_SQL_SERVER_EXPRESS_2008 = new ImageDescriptor("WINDOWS_2008RTM_SQL_SERVER_EXPRESS_2008");
-        public static readonly ImageDescriptor WINDOWS_2008RTM_SQL_SERVER_STANDARD_2008 = new ImageDescriptor("WINDOWS_2008RTM_SQL_SERVER_STANDARD_2008");
+        public static readonly ImageDescriptor WINDOWS_2008RTM_SQL_SERVER_EXPRESS_2008 = new ImageDescriptor(WINDOWS_2008RTM_SQL_SERVER_EXPRESS_2008_KEY);
+        public static readonly ImageDescriptor WINDOWS_2008RTM_SQL_SERVER_STANDARD_2008 = new ImageDescriptor(WINDOWS_2008RTM_SQL_SERVER_STANDARD_2008_KEY);
 
         #endregion
 
         #region Misc Images
 
-        public static readonly ImageDescriptor WINDOWS_2008_BEANSTALK_IIS75 = new ImageDescriptor("WINDOWS_2008_BEANSTALK_IIS75");
-        public static readonly ImageDescriptor WINDOWS_2012_BEANSTALK_IIS8 = new ImageDescriptor("WINDOWS_2012_BEANSTALK_IIS8");
+        public static readonly ImageDescriptor WINDOWS_2008_BEANSTALK_IIS75 = new ImageDescriptor(WINDOWS_2008_BEANSTALK_IIS75_KEY);
+        public static readonly ImageDescriptor WINDOWS_2012_BEANSTALK_IIS8 = new ImageDescriptor(WINDOWS_2012_BEANSTALK_IIS8_KEY);
 
-        public static readonly ImageDescriptor VPC_NAT = new ImageDescriptor("VPC_NAT");
+        public static readonly ImageDescriptor VPC_NAT = new ImageDescriptor(VPC_NAT_KEY);
 
         #endregion
 
@@ -346,6 +424,44 @@ namespace Amazon.EC2.Util
         }
 
         #endregion
+
+        /// <summary>
+        /// Returns the ImageDescriptor instance for a known key.
+        /// </summary>
+        /// <param name="key">The version-independent key identifying the descriptor</param>
+        /// <returns>Matching descriptor containing the name filter to search on</returns>
+        public static ImageDescriptor DescriptorFromKey(string key)
+        {
+            foreach (var d in WindowsDescriptors)
+            {
+                if (d.DefinitionKey.Equals(key, StringComparison.OrdinalIgnoreCase))
+                    return d;
+            }
+
+            foreach (var d in LinuxDescriptors)
+            {
+                if (d.DefinitionKey.Equals(key, StringComparison.OrdinalIgnoreCase))
+                    return d;
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Find the Amazon machine image identified by the version-independent key name.
+        /// </summary>
+        /// <param name="ec2Client">The EC2 client used to search for the image.</param>
+        /// <param name="imageKey">The keyname used to identify the image.</param>
+        /// <returns>The Amazon machine image.</returns>
+        public static Image FindImage(IAmazonEC2 ec2Client, string imageKey)
+        {
+            ImageDescriptor descriptor = DescriptorFromKey(imageKey);
+
+            if (descriptor != null)
+                return FindImage(ec2Client, descriptor);
+            else
+                throw new ArgumentException("Image key '{ 0}' is not recognized.", imageKey);
+        }
 
         /// <summary>
         /// Find the Amazon machine image identified by the ImageDescriptor.

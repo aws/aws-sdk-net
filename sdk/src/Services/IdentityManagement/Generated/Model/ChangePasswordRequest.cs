@@ -36,7 +36,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// To change the password for a different user, see <a>UpdateLoginProfile</a>. For more
     /// information about modifying passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
-    /// Passwords</a> in the <i>Using IAM</i> guide. 
+    /// Passwords</a> in the <i>IAM User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class ChangePasswordRequest : AmazonIdentityManagementServiceRequest

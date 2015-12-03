@@ -40,19 +40,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         ///  Indicates if the specified CNAME is available: 
         /// </para>
-        ///  <enumValues> <value name="true"> 
-        /// <para>
-        ///  <code>true</code> : The CNAME is available. 
-        /// </para>
-        ///  </value> <value name="false"> 
-        /// <para>
-        ///  <code>true</code> : The CNAME is not available. 
-        /// </para>
-        ///  </value> </enumValues> 
-        /// <para>
         ///  <ul> <li> <code>true</code> : The CNAME is available. </li> <li> <code>false</code>
-        /// : The CNAME is not available. </li> </ul> 
-        /// </para>
+        /// : The CNAME is not available. </li> </ul>
         /// </summary>
         public bool Available
         {

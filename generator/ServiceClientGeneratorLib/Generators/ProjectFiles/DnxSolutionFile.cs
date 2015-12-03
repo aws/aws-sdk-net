@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class DnxSolutionFile : DnxSolutionFileBase
     {
@@ -47,7 +47,7 @@ Project(""{2150E333-8FDC-42A3-9474-1A3956D46DE8}"") = ""Services"", ""Services""
 EndProject
 ");
             
-            #line 23 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 23 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
 
     foreach(var project in (List<SolutionFileCreator.Project>)this.Session["CoreProjects"])
     {
@@ -57,28 +57,28 @@ EndProject
             #line hidden
             this.Write("Project(\"{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}\") = \"");
             
-            #line 27 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 27 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.Name));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 27 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 27 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectPath));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 27 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 27 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("\"\r\nEndProject\r\n");
             
-            #line 29 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 29 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
 
     }
 
@@ -90,28 +90,28 @@ EndProject
             #line hidden
             this.Write("Project(\"{2150E333-8FDC-42A3-9474-1A3956D46DE8}\") = \"");
             
-            #line 35 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 35 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(folder.Name));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 35 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 35 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(folder.Name));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 35 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 35 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(folder.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("\"\r\nEndProject\r\n");
             
-            #line 37 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 37 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
 
 
         foreach(var project in folder.Projects)
@@ -122,28 +122,28 @@ EndProject
             #line hidden
             this.Write("Project(\"{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}\") = \"");
             
-            #line 42 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 42 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.Name));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 42 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 42 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectPath));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 42 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 42 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("\"\r\nEndProject\r\n");
             
-            #line 44 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 44 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
 
         }
     }
@@ -160,7 +160,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 ");
             
-            #line 55 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 55 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
 
     foreach(var project in (List<SolutionFileCreator.Project>)this.Session["CoreProjects"])
     {
@@ -170,14 +170,14 @@ Global
             #line hidden
             this.Write("\t\t");
             
-            #line 59 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 59 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(" = {1523203C-CD16-4B4A-8F9D-8ECCA3A327AA}\r\n");
             
-            #line 60 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 60 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
 
     }
 
@@ -189,14 +189,14 @@ Global
             #line hidden
             this.Write("\t\t");
             
-            #line 66 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 66 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(folder.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(" = {03245B8D-0A27-4C11-9AAC-7047A9F6DFB0}\r\n");
             
-            #line 67 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 67 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
 
         foreach(var project in folder.Projects)
         { 
@@ -206,21 +206,21 @@ Global
             #line hidden
             this.Write("\t\t");
             
-            #line 71 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 71 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 71 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 71 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(folder.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 72 "C:\codebase\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
+            #line 72 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\DnxSolutionFile.tt"
 
         }
     }

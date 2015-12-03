@@ -84,6 +84,59 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
 // This test depends on functionality that is only in 4.5
 #if BCL45
+
+        [TestMethod]
+        public void PolicyAndPermissionTest()
+        {
+            string functionName;
+            string iamRoleName = null;
+            bool iamRoleCreated = false;
+            try
+            {
+                string iamRoleArn;
+                string functionArn;
+                CreateLambdaFunction(out functionName, out functionArn, out iamRoleName, out iamRoleArn);
+
+                var publishResponse = Client.PublishVersion(new PublishVersionRequest
+                {
+                    FunctionName = functionName
+                });
+                var version = publishResponse.Version;
+
+                var apr = new AddPermissionRequest
+                {
+                    FunctionName = functionName,
+                    SourceAccount = "999999999999",
+                    SourceArn = "arn:aws:s3:::cloudtrail-999999999999",
+                    StatementId = "id1",
+                    Principal = "s3.amazonaws.com",
+                    Action = "lambda:InvokeFunction",
+                    Qualifier = version
+                };
+
+                var addResponse = Client.AddPermission(apr);
+                var statement = addResponse.Statement;
+                var expectedFunctionName = functionArn + ":" + version;
+                // verify that the qualifier (in query string) got sent to the server correctly
+                // by checking that the function with the qualifier (version) is specified in the
+                // statement we get back from the service
+                Assert.IsTrue(statement.IndexOf(expectedFunctionName, StringComparison.Ordinal) >= 0);
+
+                var policy = Client.GetPolicy(new Amazon.Lambda.Model.GetPolicyRequest
+                {
+                    FunctionName = functionName,
+                    Qualifier = version
+                }).Policy;
+                // verify that the function is part of the policy
+                Assert.IsTrue(policy.IndexOf(expectedFunctionName, StringComparison.Ordinal) >= 0);
+            }
+            finally
+            {
+                if (iamRoleCreated)
+                    iamClient.DeleteRole(new DeleteRoleRequest { RoleName = iamRoleName });
+            }
+        }
+
         [TestMethod]
         public void LambdaFunctionTest()
         {

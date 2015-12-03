@@ -97,6 +97,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.SupportedCharacterSets.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ValidUpgradeTarget/UpgradeTarget", targetDepth))
+                    {
+                        var unmarshaller = UpgradeTargetUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ValidUpgradeTarget.Add(item);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

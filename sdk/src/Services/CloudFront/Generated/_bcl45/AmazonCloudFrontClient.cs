@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2015-04-17.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2015-07-27.normal.json service model.
  */
 
 
@@ -354,6 +354,9 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
@@ -1533,6 +1536,49 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListDistributionsByWebACLId
+
+
+        /// <summary>
+        /// List the distributions that are associated with a specified AWS WAF web ACL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByWebACLId service method.</param>
+        /// 
+        /// <returns>The response from the ListDistributionsByWebACLId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// 
+        /// </exception>
+        public ListDistributionsByWebACLIdResponse ListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request)
+        {
+            var marshaller = new ListDistributionsByWebACLIdRequestMarshaller();
+            var unmarshaller = ListDistributionsByWebACLIdResponseUnmarshaller.Instance;
+
+            return Invoke<ListDistributionsByWebACLIdRequest,ListDistributionsByWebACLIdResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDistributionsByWebACLId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByWebACLId operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListDistributionsByWebACLIdResponse> ListDistributionsByWebACLIdAsync(ListDistributionsByWebACLIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListDistributionsByWebACLIdRequestMarshaller();
+            var unmarshaller = ListDistributionsByWebACLIdResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDistributionsByWebACLIdRequest,ListDistributionsByWebACLIdResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListInvalidations
 
 
@@ -1778,6 +1824,9 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">

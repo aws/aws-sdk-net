@@ -58,7 +58,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/2015-03-31/functions/{FunctionName}/versions/HEAD/code";
+            string uriResourcePath = "/2015-03-31/functions/{FunctionName}/code";
             uriResourcePath = uriResourcePath.Replace("{FunctionName}", publicRequest.IsSetFunctionName() ? StringUtils.FromString(publicRequest.FunctionName) : string.Empty);
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
@@ -66,6 +66,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetPublish())
+                {
+                    context.Writer.WritePropertyName("Publish");
+                    context.Writer.Write(publicRequest.Publish);
+                }
+
                 if(publicRequest.IsSetS3Bucket())
                 {
                     context.Writer.WritePropertyName("S3Bucket");

@@ -66,6 +66,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EnvironmentName", StringUtils.FromString(publicRequest.EnvironmentName));
                 }
+                if(publicRequest.IsSetForceTerminate())
+                {
+                    request.Parameters.Add("ForceTerminate", StringUtils.FromBool(publicRequest.ForceTerminate));
+                }
                 if(publicRequest.IsSetTerminateResources())
                 {
                     request.Parameters.Add("TerminateResources", StringUtils.FromBool(publicRequest.TerminateResources));

@@ -36,7 +36,7 @@ namespace Amazon.IdentityManagement.Model
     /// A group can also have managed policies attached to it. To detach a managed policy
     /// from a group, use <a>DetachGroupPolicy</a>. For more information about policies, refer
     /// to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class DeleteGroupPolicyRequest : AmazonIdentityManagementServiceRequest

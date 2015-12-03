@@ -113,7 +113,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about obtaining the OIDC provider's thumbprint, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-        /// the Thumbprint for an OpenID Connect Provider</a> in the <i>Using IAM</i> guide. 
+        /// the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         public List<string> ThumbprintList

@@ -87,9 +87,7 @@ namespace Amazon.IdentityManagement
     /// Security Credentials</a>. This topic provides general information about the types
     /// of credentials used for accessing AWS. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
     /// Best Practices</a>. This topic presents a list of suggestions for using the IAM service
-    /// to help secure your AWS resources. </li> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/">AWS
-    /// Security Token Service</a>. This guide describes how to create and use temporary security
-    /// credentials. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+    /// to help secure your AWS resources. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
     /// AWS API Requests</a>. This set of topics walk you through the process of signing a
     /// request using an access key ID and secret access key. </li> </ul>
     /// </summary>
@@ -225,7 +223,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         ///  For information about limits on the number of keys you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  <important> To ensure the security of your AWS account, the secret access key is
         /// accessible only during key and user creation. You must save the key (for example,
@@ -852,7 +850,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Generates a credential report for the AWS account. For more information about the
         /// credential report, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-        /// Credential Reports</a> in the <i>Using IAM</i> guide.
+        /// Credential Reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="cancellationToken"> ttd1
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -959,7 +957,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         ///  For information about limitations on IAM entities, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="cancellationToken"> ttd1
@@ -1005,7 +1003,7 @@ namespace Amazon.IdentityManagement
         /// to be included as a part of a real HTML request.
         /// </para>
         /// </summary>
-        /// <param name="policyInputList">A list of policies for which you want list of context keys used in <code>Condition</code> elements.</param>
+        /// <param name="policyInputList">A list of policies for which you want list of context keys used in <code>Condition</code> elements. Each document is specified as a string containing the complete, valid JSON text of an IAM policy.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1137,7 +1135,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Retrieves a credential report for the AWS account. For more information about the
         /// credential report, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-        /// Credential Reports</a> in the <i>Using IAM</i> guide.
+        /// Credential Reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="cancellationToken"> ttd1
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1148,7 +1146,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because the most recent credential report has expired. To
         /// generate a new credential report, use <a>GenerateCredentialReport</a>. For more information
         /// about credential report expiration, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-        /// Credential Reports</a> in the <i>Using IAM</i> guide.
+        /// Credential Reports</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.CredentialReportNotPresentException">
         /// The request was rejected because the credential report does not exist. To generate
@@ -1479,15 +1477,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists the account aliases associated with the account. For information about using
-        /// an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide. 
-        /// 
-        ///  
-        /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. 
-        /// </para>
+        /// Lists the account alias associated with the account (Note: you can have only one).
+        /// For information about using an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+        /// an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="cancellationToken"> ttd1
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1781,7 +1773,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="cancellationToken"> ttd1
@@ -2294,7 +2286,7 @@ namespace Amazon.IdentityManagement
         ///  </note> 
         /// <para>
         ///  For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-        /// an IAM Password Policy</a> in the <i>Using IAM</i> guide. 
+        /// an IAM Password Policy</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="cancellationToken"> ttd1

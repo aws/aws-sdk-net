@@ -70,6 +70,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Constraints = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CreationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GranteePrincipal", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +92,18 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IssuingAccount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Operations", targetDepth))

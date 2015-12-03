@@ -41,8 +41,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cluster. 
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container
-        /// instances you want to describe. If you do not specify a cluster, the default cluster
-        /// is assumed.
+        /// instances to describe. If you do not specify a cluster, the default cluster is assumed.
         /// </para>
         /// </summary>
         public string Cluster
@@ -60,7 +59,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerInstances. 
         /// <para>
-        /// A space-separated list of container instance UUIDs or full Amazon Resource Name (ARN)
+        /// A space-separated list of container instance IDs or full Amazon Resource Name (ARN)
         /// entries.
         /// </para>
         /// </summary>

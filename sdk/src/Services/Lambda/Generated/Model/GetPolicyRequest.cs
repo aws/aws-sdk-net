@@ -29,9 +29,13 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPolicy operation.
-    /// Returns the access policy, containing a list of permissions granted via the <code>AddPermission</code>
-    /// API, associated with the specified bucket.
+    /// Returns the resource policy, containing a list of permissions that apply to a specific
+    /// to an ARN that you specify via the <code>Qualifier</code> paramter. 
     /// 
+    ///  
+    /// <para>
+    /// For informration about adding permissions, see <a>AddPermission</a>.
+    /// </para>
     ///  
     /// <para>
     /// You need permission for the <code>lambda:GetPolicy action.</code>
@@ -40,11 +44,12 @@ namespace Amazon.Lambda.Model
     public partial class GetPolicyRequest : AmazonLambdaRequest
     {
         private string _functionName;
+        private string _qualifier;
 
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// Function name whose access policy you want to retrieve. 
+        /// Function name whose resource policy you want to retrieve. 
         /// </para>
         ///  
         /// <para>
@@ -65,6 +70,27 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFunctionName()
         {
             return this._functionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Qualifier. 
+        /// <para>
+        /// You can specify this optional query parameter to specify function version or alias
+        /// name in which case this API will return all permissions associated with the specific
+        /// ARN. If you don't provide this parameter, the API will return permissions that apply
+        /// to the unqualified function ARN. 
+        /// </para>
+        /// </summary>
+        public string Qualifier
+        {
+            get { return this._qualifier; }
+            set { this._qualifier = value; }
+        }
+
+        // Check to see if Qualifier property is set
+        internal bool IsSetQualifier()
+        {
+            return this._qualifier != null;
         }
 
     }

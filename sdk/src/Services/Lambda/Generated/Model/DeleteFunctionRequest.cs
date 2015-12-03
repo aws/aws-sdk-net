@@ -33,8 +33,18 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
-    /// When you delete a function the associated access policy is also deleted. You will
+    /// If you don't specify a function version, AWS Lambda will delete the function, including
+    /// all its versions, and any aliases pointing to the function versions.
+    /// </para>
+    ///  
+    /// <para>
+    /// When you delete a function the associated resource policy is also deleted. You will
     /// need to delete the event source mappings explicitly.
+    /// </para>
+    ///  
+    /// <para>
+    /// For information about function versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+    /// Lambda Function Versioning and Aliases</a>.
     /// </para>
     ///  
     /// <para>
@@ -44,6 +54,7 @@ namespace Amazon.Lambda.Model
     public partial class DeleteFunctionRequest : AmazonLambdaRequest
     {
         private string _functionName;
+        private string _qualifier;
 
         /// <summary>
         /// Gets and sets the property FunctionName. 
@@ -69,6 +80,40 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFunctionName()
         {
             return this._functionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Qualifier. 
+        /// <para>
+        /// Using this optional parameter you can specify a function version (but not the $LATEST
+        /// version) to direct AWS Lambda to delete a specific function version. If the function
+        /// version has one or more aliases pointing to it, you will get an error because you
+        /// cannot have aliases pointing to it. You can delete any function version but not the
+        /// $LATEST, that is, you cannot specify $LATEST as the value of this parameter. The $LATEST
+        /// version can be deleted only when you want to delete all the function versions and
+        /// aliases.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only specify a function version and not alias name using this parameter. You
+        /// cannot delete a function version using its alias.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify this parameter, AWS Lambda will delete the function, including
+        /// all its versions and aliases.
+        /// </para>
+        /// </summary>
+        public string Qualifier
+        {
+            get { return this._qualifier; }
+            set { this._qualifier = value; }
+        }
+
+        // Check to see if Qualifier property is set
+        internal bool IsSetQualifier()
+        {
+            return this._qualifier != null;
         }
 
     }

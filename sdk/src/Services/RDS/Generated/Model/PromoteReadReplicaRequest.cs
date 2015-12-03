@@ -88,7 +88,7 @@ namespace Amazon.RDS.Model
         /// be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
         /// </ul> 
         /// <para>
-        /// Example: <copy>mydbinstance</copy>
+        /// Example: <code>mydbinstance</code>
         /// </para>
         /// </summary>
         public string DBInstanceIdentifier

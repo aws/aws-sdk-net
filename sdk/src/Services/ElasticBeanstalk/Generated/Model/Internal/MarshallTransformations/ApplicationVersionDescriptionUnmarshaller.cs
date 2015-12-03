@@ -84,6 +84,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         unmarshalledObject.SourceBundle = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("VersionLabel", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

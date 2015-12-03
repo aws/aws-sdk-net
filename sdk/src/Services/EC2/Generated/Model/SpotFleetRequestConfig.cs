@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class SpotFleetRequestConfig
     {
         private SpotFleetRequestConfigData _configData;
+        private DateTime? _createTime;
         private string _spotFleetRequestId;
         private BatchState _spotFleetRequestState;
 
@@ -52,6 +53,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetConfigData()
         {
             return this._configData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateTime. 
+        /// <para>
+        /// The creation date and time of the request.
+        /// </para>
+        /// </summary>
+        public DateTime CreateTime
+        {
+            get { return this._createTime.GetValueOrDefault(); }
+            set { this._createTime = value; }
+        }
+
+        // Check to see if CreateTime property is set
+        internal bool IsSetCreateTime()
+        {
+            return this._createTime.HasValue; 
         }
 
         /// <summary>

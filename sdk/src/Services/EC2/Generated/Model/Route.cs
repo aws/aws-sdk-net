@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -155,9 +155,9 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Describes how the route was created.
         /// </para>
-        ///  <ul> <li> <code>CreateRouteTable</code> indicates that route was automatically created
-        /// when the route table was created.</li> <li> <code>CreateRoute</code> indicates that
-        /// the route was manually added to the route table.</li> <li> <code>EnableVgwRoutePropagation</code>
+        ///  <ul> <li><code>CreateRouteTable</code> indicates that route was automatically created
+        /// when the route table was created.</li> <li><code>CreateRoute</code> indicates that
+        /// the route was manually added to the route table.</li> <li><code>EnableVgwRoutePropagation</code>
         /// indicates that the route was propagated by route propagation.</li> </ul>
         /// </summary>
         public RouteOrigin Origin

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// <code>association.main</code> - Indicates whether the route table is the main route
-        /// table for the VPC.
+        /// table for the VPC (<code>true</code> | <code>false</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

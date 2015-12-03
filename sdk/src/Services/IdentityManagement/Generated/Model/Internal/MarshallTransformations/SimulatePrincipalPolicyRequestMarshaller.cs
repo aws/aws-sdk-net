@@ -67,6 +67,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetCallerArn())
+                {
+                    request.Parameters.Add("CallerArn", StringUtils.FromString(publicRequest.CallerArn));
+                }
                 if(publicRequest.IsSetContextEntries())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -121,6 +125,18 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         request.Parameters.Add("ResourceArns" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
+                }
+                if(publicRequest.IsSetResourceHandlingOption())
+                {
+                    request.Parameters.Add("ResourceHandlingOption", StringUtils.FromString(publicRequest.ResourceHandlingOption));
+                }
+                if(publicRequest.IsSetResourceOwner())
+                {
+                    request.Parameters.Add("ResourceOwner", StringUtils.FromString(publicRequest.ResourceOwner));
+                }
+                if(publicRequest.IsSetResourcePolicy())
+                {
+                    request.Parameters.Add("ResourcePolicy", StringUtils.FromString(publicRequest.ResourcePolicy));
                 }
             }
             return request;

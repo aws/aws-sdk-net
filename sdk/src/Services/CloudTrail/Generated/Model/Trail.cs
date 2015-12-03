@@ -35,10 +35,13 @@ namespace Amazon.CloudTrail.Model
         private string _cloudWatchLogsLogGroupArn;
         private string _cloudWatchLogsRoleArn;
         private bool? _includeGlobalServiceEvents;
+        private string _kmsKeyId;
+        private bool? _logFileValidationEnabled;
         private string _name;
         private string _s3BucketName;
         private string _s3KeyPrefix;
         private string _snsTopicName;
+        private string _trailARN;
 
         /// <summary>
         /// Gets and sets the property CloudWatchLogsLogGroupArn. 
@@ -62,7 +65,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogsRoleArn. 
         /// <para>
-        /// Specifies the role for the CloudWatch Logs endpoint to assume to write to a user’s
+        /// Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's
         /// log group.
         /// </para>
         /// </summary>
@@ -98,9 +101,47 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value
+        /// is a fully specified ARN to a KMS key in the format:
+        /// </para>
+        ///  <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogFileValidationEnabled. 
+        /// <para>
+        /// Specifies whether log file validation is enabled.
+        /// </para>
+        /// </summary>
+        public bool LogFileValidationEnabled
+        {
+            get { return this._logFileValidationEnabled.GetValueOrDefault(); }
+            set { this._logFileValidationEnabled = value; }
+        }
+
+        // Check to see if LogFileValidationEnabled property is set
+        internal bool IsSetLogFileValidationEnabled()
+        {
+            return this._logFileValidationEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the trail set by calling <a>CreateTrail</a>.
+        /// Name of the trail set by calling <a>CreateTrail</a>. The maximum length is 128 characters.
         /// </para>
         /// </summary>
         public string Name
@@ -118,7 +159,9 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property S3BucketName. 
         /// <para>
-        /// Name of the Amazon S3 bucket into which CloudTrail delivers your trail files. 
+        /// Name of the Amazon S3 bucket into which CloudTrail delivers your trail files. See
+        /// <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
+        /// S3 Bucket Naming Requirements</a>.
         /// </para>
         /// </summary>
         public string S3BucketName
@@ -136,7 +179,9 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property S3KeyPrefix. 
         /// <para>
-        /// Value of the Amazon S3 prefix.
+        /// Specifies the Amazon S3 key prefix that comes after the name of the bucket you have
+        /// designated for log file delivery. For more information, see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+        /// Your CloudTrail Log Files</a>.The maximum length is 200 characters.
         /// </para>
         /// </summary>
         public string S3KeyPrefix
@@ -155,7 +200,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property SnsTopicName. 
         /// <para>
         /// Name of the existing Amazon SNS topic that CloudTrail uses to notify the account owner
-        /// when new CloudTrail log files have been delivered. 
+        /// when new CloudTrail log files have been delivered. The maximum length is 256 characters.
         /// </para>
         /// </summary>
         public string SnsTopicName
@@ -168,6 +213,24 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetSnsTopicName()
         {
             return this._snsTopicName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrailARN. 
+        /// <para>
+        /// The Amazon Resource Name of the trail. The <code>TrailARN</code> format is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+        /// </para>
+        /// </summary>
+        public string TrailARN
+        {
+            get { return this._trailARN; }
+            set { this._trailARN = value; }
+        }
+
+        // Check to see if TrailARN property is set
+        internal bool IsSetTrailARN()
+        {
+            return this._trailARN != null;
         }
 
     }

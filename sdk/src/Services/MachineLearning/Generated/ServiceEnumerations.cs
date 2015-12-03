@@ -36,7 +36,12 @@ namespace Amazon.MachineLearning
         public static readonly Algorithm Sgd = new Algorithm("sgd");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public Algorithm(string value)
             : base(value)
@@ -105,7 +110,12 @@ namespace Amazon.MachineLearning
         public static readonly BatchPredictionFilterVariable Status = new BatchPredictionFilterVariable("Status");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public BatchPredictionFilterVariable(string value)
             : base(value)
@@ -166,7 +176,12 @@ namespace Amazon.MachineLearning
         public static readonly DataSourceFilterVariable Status = new DataSourceFilterVariable("Status");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DataSourceFilterVariable(string value)
             : base(value)
@@ -211,7 +226,12 @@ namespace Amazon.MachineLearning
         public static readonly DetailsAttributes PredictiveModelType = new DetailsAttributes("PredictiveModelType");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DetailsAttributes(string value)
             : base(value)
@@ -268,7 +288,12 @@ namespace Amazon.MachineLearning
         public static readonly EntityStatus PENDING = new EntityStatus("PENDING");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public EntityStatus(string value)
             : base(value)
@@ -337,7 +362,12 @@ namespace Amazon.MachineLearning
         public static readonly EvaluationFilterVariable Status = new EvaluationFilterVariable("Status");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public EvaluationFilterVariable(string value)
             : base(value)
@@ -414,7 +444,12 @@ namespace Amazon.MachineLearning
         public static readonly MLModelFilterVariable TrainingDataURI = new MLModelFilterVariable("TrainingDataURI");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public MLModelFilterVariable(string value)
             : base(value)
@@ -463,7 +498,12 @@ namespace Amazon.MachineLearning
         public static readonly MLModelType REGRESSION = new MLModelType("REGRESSION");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public MLModelType(string value)
             : base(value)
@@ -516,7 +556,12 @@ namespace Amazon.MachineLearning
         public static readonly RealtimeEndpointStatus UPDATING = new RealtimeEndpointStatus("UPDATING");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RealtimeEndpointStatus(string value)
             : base(value)
@@ -561,7 +606,12 @@ namespace Amazon.MachineLearning
         public static readonly SortOrder Dsc = new SortOrder("dsc");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SortOrder(string value)
             : base(value)

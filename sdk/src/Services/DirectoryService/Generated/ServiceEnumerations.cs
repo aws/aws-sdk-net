@@ -40,7 +40,12 @@ namespace Amazon.DirectoryService
         public static readonly DirectorySize Small = new DirectorySize("Small");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DirectorySize(string value)
             : base(value)
@@ -121,7 +126,12 @@ namespace Amazon.DirectoryService
         public static readonly DirectoryStage Restoring = new DirectoryStage("Restoring");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DirectoryStage(string value)
             : base(value)
@@ -166,7 +176,12 @@ namespace Amazon.DirectoryService
         public static readonly DirectoryType SimpleAD = new DirectoryType("SimpleAD");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DirectoryType(string value)
             : base(value)
@@ -219,7 +234,12 @@ namespace Amazon.DirectoryService
         public static readonly RadiusAuthenticationProtocol PAP = new RadiusAuthenticationProtocol("PAP");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RadiusAuthenticationProtocol(string value)
             : base(value)
@@ -268,7 +288,12 @@ namespace Amazon.DirectoryService
         public static readonly RadiusStatus Failed = new RadiusStatus("Failed");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RadiusStatus(string value)
             : base(value)
@@ -317,7 +342,12 @@ namespace Amazon.DirectoryService
         public static readonly SnapshotStatus Failed = new SnapshotStatus("Failed");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SnapshotStatus(string value)
             : base(value)
@@ -362,7 +392,12 @@ namespace Amazon.DirectoryService
         public static readonly SnapshotType Manual = new SnapshotType("Manual");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SnapshotType(string value)
             : base(value)

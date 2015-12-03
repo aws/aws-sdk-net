@@ -52,7 +52,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property PolicyInputList. 
         /// <para>
         /// A list of policies for which you want list of context keys used in <code>Condition</code>
-        /// elements.
+        /// elements. Each document is specified as a string containing the complete, valid JSON
+        /// text of an IAM policy.
         /// </para>
         /// </summary>
         public List<string> PolicyInputList

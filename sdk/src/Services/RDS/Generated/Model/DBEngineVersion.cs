@@ -39,6 +39,7 @@ namespace Amazon.RDS.Model
         private string _engine;
         private string _engineVersion;
         private List<CharacterSet> _supportedCharacterSets = new List<CharacterSet>();
+        private List<UpgradeTarget> _validUpgradeTarget = new List<UpgradeTarget>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -171,6 +172,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportedCharacterSets()
         {
             return this._supportedCharacterSets != null && this._supportedCharacterSets.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidUpgradeTarget. 
+        /// <para>
+        /// A list of engine versions that this database engine version can be upgraded to.
+        /// </para>
+        /// </summary>
+        public List<UpgradeTarget> ValidUpgradeTarget
+        {
+            get { return this._validUpgradeTarget; }
+            set { this._validUpgradeTarget = value; }
+        }
+
+        // Check to see if ValidUpgradeTarget property is set
+        internal bool IsSetValidUpgradeTarget()
+        {
+            return this._validUpgradeTarget != null && this._validUpgradeTarget.Count > 0; 
         }
 
     }

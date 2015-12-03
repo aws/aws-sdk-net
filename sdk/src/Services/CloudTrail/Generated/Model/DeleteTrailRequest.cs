@@ -29,7 +29,8 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTrail operation.
-    /// Deletes a trail.
+    /// Deletes a trail. This operation must be called from the region in which the trail
+    /// was created.
     /// </summary>
     public partial class DeleteTrailRequest : AmazonCloudTrailRequest
     {
@@ -38,7 +39,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of a trail to be deleted.
+        /// Specifies the name or the CloudTrail ARN of the trail to be deleted. The format of
+        /// a trail ARN is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
         /// </para>
         /// </summary>
         public string Name

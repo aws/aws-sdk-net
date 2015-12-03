@@ -38,6 +38,7 @@ namespace Amazon.ConfigService.Model
         private string _lastErrorMessage;
         private DeliveryStatus _lastStatus;
         private DateTime? _lastSuccessfulTime;
+        private DateTime? _nextDeliveryTime;
 
         /// <summary>
         /// Gets and sets the property LastAttemptTime. 
@@ -127,6 +128,24 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetLastSuccessfulTime()
         {
             return this._lastSuccessfulTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextDeliveryTime. 
+        /// <para>
+        /// The time that the next delivery occurs.
+        /// </para>
+        /// </summary>
+        public DateTime NextDeliveryTime
+        {
+            get { return this._nextDeliveryTime.GetValueOrDefault(); }
+            set { this._nextDeliveryTime = value; }
+        }
+
+        // Check to see if NextDeliveryTime property is set
+        internal bool IsSetNextDeliveryTime()
+        {
+            return this._nextDeliveryTime.HasValue; 
         }
 
     }

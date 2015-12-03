@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2015-04-17.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2015-07-27.normal.json service model.
  */
 
 
@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class CloudFrontMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("cloudfront-2015-04-17.normal.json", "cloudfront.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("cloudfront-2015-07-27.normal.json", "cloudfront.customizations.json");
         
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -502,6 +502,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListDistributionsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListDistributionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void ListDistributionsByWebACLIdMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListDistributionsByWebACLId");
+
+            var request = InstantiateClassGenerator.Execute<ListDistributionsByWebACLIdRequest>();
+            var marshaller = new ListDistributionsByWebACLIdRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("ListDistributionsByWebACLId", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListDistributionsByWebACLIdResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListDistributionsByWebACLIdResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

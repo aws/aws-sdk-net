@@ -39,7 +39,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property AccountAliases. 
         /// <para>
-        /// A list of aliases associated with the account.
+        /// A list of aliases associated with the account. AWS supports only one alias per account.
         /// </para>
         /// </summary>
         public List<string> AccountAliases
@@ -57,10 +57,12 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property IsTruncated. 
         /// <para>
-        /// A flag that indicates whether there are more items to return. If the returned value
-        /// is <code>true</code>, then your results are truncated and you can make a subsequent
-        /// pagination request using the <code>Marker</code> request parameter to retrieve more
-        /// items.
+        /// A flag that indicates whether there are more items to return. If your results were
+        /// truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available.
+        /// We recommend that you check <code>IsTruncated</code> after every call to ensure that
+        /// you receive all of your results.
         /// </para>
         /// </summary>
         public bool IsTruncated

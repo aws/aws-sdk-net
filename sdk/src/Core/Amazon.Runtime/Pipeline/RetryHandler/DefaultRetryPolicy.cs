@@ -53,6 +53,7 @@ namespace Amazon.Runtime.Internal
         private ICollection<string> _errorCodesToRetryOn = new HashSet<string>
         {
             "Throttling",
+            "ThrottlingException",
             "ProvisionedThroughputExceededException",
             "RequestTimeout"
         };

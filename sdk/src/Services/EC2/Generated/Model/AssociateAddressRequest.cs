@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -102,13 +102,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllowReassociation. 
         /// <para>
-        /// [EC2-VPC] Allows an Elastic IP address that is already associated with an instance
-        /// or network interface to be re-associated with the specified instance or network interface.
-        /// Otherwise, the operation fails.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>false</code>
+        /// [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP
+        /// address that is already associated with an instance or network interface to be reassociated
+        /// with the specified instance or network interface. Otherwise, the operation fails.
+        /// In a VPC in an EC2-VPC-only account, reassociation is automatic, therefore you can
+        /// specify false to ensure the operation fails if the Elastic IP address is already associated
+        /// with another resource.
         /// </para>
         /// </summary>
         public bool AllowReassociation

@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class ServiceEnumerations : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public override string TransformText()
         {
             
-            #line 6 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+            #line 6 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
 
 	AddLicenseHeader();
 
@@ -38,14 +38,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\r\nusing System;\r\n\r\nusing Amazon.Runtime;\r\n\r\nnamespace ");
             
-            #line 14 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+            #line 14 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n");
             
-            #line 16 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+            #line 16 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
 
 foreach(var enumeration in this.Config.ServiceModel.Enumerations(false))
 {
@@ -55,21 +55,21 @@ foreach(var enumeration in this.Config.ServiceModel.Enumerations(false))
             #line hidden
             this.Write("\r\n    /// <summary>\r\n    /// Constants used for properties of type ");
             
-            #line 22 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+            #line 22 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumeration.Name));
             
             #line default
             #line hidden
             this.Write(".\r\n    /// </summary>\r\n    public class ");
             
-            #line 24 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+            #line 24 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumeration.Name));
             
             #line default
             #line hidden
             this.Write(" : ConstantClass\r\n    {\r\n\r\n");
             
-            #line 27 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+            #line 27 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
 
     foreach(var enumValue in enumeration.EnumerationValues)
     {
@@ -79,59 +79,67 @@ foreach(var enumeration in this.Config.ServiceModel.Enumerations(false))
             #line hidden
             this.Write("        /// <summary>\r\n        /// Constant ");
             
-            #line 32 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+            #line 32 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumValue.PropertyName));
             
             #line default
             #line hidden
             this.Write(" for ");
             
-            #line 32 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+            #line 32 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumeration.Name));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        public static readonly ");
             
-            #line 34 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+            #line 34 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumeration.Name));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 34 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+            #line 34 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumValue.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = new ");
             
-            #line 34 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+            #line 34 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumeration.Name));
             
             #line default
             #line hidden
             this.Write("(\"");
             
-            #line 34 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+            #line 34 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumValue.MarshallName));
             
             #line default
             #line hidden
             this.Write("\");\r\n");
             
-            #line 35 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+            #line 35 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
 
     }
 
             
             #line default
             #line hidden
-            this.Write("\r\n        /// <summary>\r\n        /// Default Constructor\r\n        /// </summary>\r" +
-                    "\n        public ");
+            this.Write(@"
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ");
             
-            #line 42 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+            #line 47 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumeration.Name));
             
             #line default
@@ -148,14 +156,14 @@ foreach(var enumeration in this.Config.ServiceModel.Enumerations(false))
         /// <returns>The constant for the unique value</returns>
         public static ");
             
-            #line 52 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+            #line 57 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumeration.Name));
             
             #line default
             #line hidden
             this.Write(" FindValue(string value)\r\n        {\r\n            return FindValue<");
             
-            #line 54 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+            #line 59 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumeration.Name));
             
             #line default
@@ -170,7 +178,7 @@ foreach(var enumeration in this.Config.ServiceModel.Enumerations(false))
         /// <returns></returns>
         public static implicit operator ");
             
-            #line 62 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+            #line 67 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumeration.Name));
             
             #line default
@@ -178,7 +186,7 @@ foreach(var enumeration in this.Config.ServiceModel.Enumerations(false))
             this.Write("(string value)\r\n        {\r\n            return FindValue(value);\r\n        }\r\n    }" +
                     "\r\n\r\n");
             
-            #line 68 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
+            #line 73 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceEnumerations.tt"
 
 }
 

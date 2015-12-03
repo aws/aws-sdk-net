@@ -40,7 +40,12 @@ namespace Amazon.KeyManagementService
         public static readonly DataKeySpec AES_256 = new DataKeySpec("AES_256");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DataKeySpec(string value)
             : base(value)
@@ -84,6 +89,10 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly GrantOperation Decrypt = new GrantOperation("Decrypt");
         /// <summary>
+        /// Constant DescribeKey for GrantOperation
+        /// </summary>
+        public static readonly GrantOperation DescribeKey = new GrantOperation("DescribeKey");
+        /// <summary>
         /// Constant Encrypt for GrantOperation
         /// </summary>
         public static readonly GrantOperation Encrypt = new GrantOperation("Encrypt");
@@ -109,7 +118,12 @@ namespace Amazon.KeyManagementService
         public static readonly GrantOperation RetireGrant = new GrantOperation("RetireGrant");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public GrantOperation(string value)
             : base(value)
@@ -139,6 +153,60 @@ namespace Amazon.KeyManagementService
 
 
     /// <summary>
+    /// Constants used for properties of type KeyState.
+    /// </summary>
+    public class KeyState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for KeyState
+        /// </summary>
+        public static readonly KeyState Disabled = new KeyState("Disabled");
+        /// <summary>
+        /// Constant Enabled for KeyState
+        /// </summary>
+        public static readonly KeyState Enabled = new KeyState("Enabled");
+        /// <summary>
+        /// Constant PendingDeletion for KeyState
+        /// </summary>
+        public static readonly KeyState PendingDeletion = new KeyState("PendingDeletion");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KeyState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KeyState FindValue(string value)
+        {
+            return FindValue<KeyState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KeyState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KeyUsageType.
     /// </summary>
     public class KeyUsageType : ConstantClass
@@ -150,7 +218,12 @@ namespace Amazon.KeyManagementService
         public static readonly KeyUsageType ENCRYPT_DECRYPT = new KeyUsageType("ENCRYPT_DECRYPT");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public KeyUsageType(string value)
             : base(value)

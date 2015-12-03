@@ -94,6 +94,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.Created = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deviceMinutes", targetDepth))
+                {
+                    var unmarshaller = DeviceMinutesUnmarshaller.Instance;
+                    unmarshalledObject.DeviceMinutes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

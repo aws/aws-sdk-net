@@ -34,6 +34,14 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
+    /// You can use the optional <code>Qualifier</code> parameter to retrieve configuration
+    /// information for a specific Lambda function version. If you don't provide it, the API
+    /// returns information about the $LATEST version of the function. For more information
+    /// about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+    /// Lambda Function Versioning and Aliases</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// This operation requires permission for the <code>lambda:GetFunctionConfiguration</code>
     /// operation.
     /// </para>
@@ -41,6 +49,7 @@ namespace Amazon.Lambda.Model
     public partial class GetFunctionConfigurationRequest : AmazonLambdaRequest
     {
         private string _functionName;
+        private string _qualifier;
 
         /// <summary>
         /// Gets and sets the property FunctionName. 
@@ -66,6 +75,32 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFunctionName()
         {
             return this._functionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Qualifier. 
+        /// <para>
+        /// Using this optional parameter you can specify function version or alias name. If you
+        /// specify function version, the API uses qualified function ARN and returns information
+        /// about the specific function version. if you specify alias name, the API uses alias
+        /// ARN and returns information about the function version to which the alias points.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify this parameter, the API uses unqualified function ARN, and returns
+        /// information about the $LATEST function version.
+        /// </para>
+        /// </summary>
+        public string Qualifier
+        {
+            get { return this._qualifier; }
+            set { this._qualifier = value; }
+        }
+
+        // Check to see if Qualifier property is set
+        internal bool IsSetQualifier()
+        {
+            return this._qualifier != null;
         }
 
     }

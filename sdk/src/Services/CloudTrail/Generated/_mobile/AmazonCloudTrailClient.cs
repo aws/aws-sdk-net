@@ -252,6 +252,37 @@ namespace Amazon.CloudTrail
         #endregion
 
         
+        #region  AddTags
+
+        internal AddTagsResponse AddTags(AddTagsRequest request)
+        {
+            var marshaller = new AddTagsRequestMarshaller();
+            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+
+            return Invoke<AddTagsRequest,AddTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AddTagsRequestMarshaller();
+            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddTagsRequest,AddTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTrail
 
         internal CreateTrailResponse CreateTrail(CreateTrailRequest request)
@@ -337,6 +368,14 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the DescribeTrails service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported. For example,
+        /// this exception will occur if an attempt is made to tag a trail and tagging is not
+        /// supported in the current region.
+        /// </exception>
         public Task<DescribeTrailsResponse> DescribeTrailsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeTrailsAsync(new DescribeTrailsRequest(), cancellationToken);
@@ -394,6 +433,68 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  ListPublicKeys
+
+        internal ListPublicKeysResponse ListPublicKeys(ListPublicKeysRequest request)
+        {
+            var marshaller = new ListPublicKeysRequestMarshaller();
+            var unmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
+
+            return Invoke<ListPublicKeysRequest,ListPublicKeysResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPublicKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPublicKeys operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListPublicKeysResponse> ListPublicKeysAsync(ListPublicKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListPublicKeysRequestMarshaller();
+            var unmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPublicKeysRequest,ListPublicKeysResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTags
+
+        internal ListTagsResponse ListTags(ListTagsRequest request)
+        {
+            var marshaller = new ListTagsRequestMarshaller();
+            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsRequest,ListTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTagsRequestMarshaller();
+            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsRequest,ListTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  LookupEvents
 
         internal LookupEventsResponse LookupEvents(LookupEventsRequest request)
@@ -420,6 +521,37 @@ namespace Amazon.CloudTrail
             var unmarshaller = LookupEventsResponseUnmarshaller.Instance;
 
             return InvokeAsync<LookupEventsRequest,LookupEventsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveTags
+
+        internal RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
+        {
+            var marshaller = new RemoveTagsRequestMarshaller();
+            var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveTagsRequest,RemoveTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemoveTagsRequestMarshaller();
+            var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveTagsRequest,RemoveTagsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -54,7 +54,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("BinaryListValues/BinaryListValue", targetDepth))
+                    if (context.TestExpression("BinaryListValue/BinaryListValue", targetDepth))
                     {
                         var unmarshaller = MemoryStreamUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
@@ -73,7 +73,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DataType = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("StringListValues/StringListValue", targetDepth))
+                    if (context.TestExpression("StringListValue/StringListValue", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);

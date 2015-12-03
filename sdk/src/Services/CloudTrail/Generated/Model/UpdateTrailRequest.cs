@@ -29,21 +29,18 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTrail operation.
-    /// From the command line, use <code>update-subscription</code>.
-    /// 
-    ///  
-    /// <para>
     /// Updates the settings that specify delivery of log files. Changes to a trail do not
     /// require stopping the CloudTrail service. Use this action to designate an existing
     /// bucket for log delivery. If the existing bucket has previously been a target for CloudTrail
-    /// log files, an IAM policy exists for the bucket. 
-    /// </para>
+    /// log files, an IAM policy exists for the bucket.
     /// </summary>
     public partial class UpdateTrailRequest : AmazonCloudTrailRequest
     {
         private string _cloudWatchLogsLogGroupArn;
         private string _cloudWatchLogsRoleArn;
+        private bool? _enableLogFileValidation;
         private bool? _includeGlobalServiceEvents;
+        private string _kmsKeyId;
         private string _name;
         private string _s3BucketName;
         private string _s3KeyPrefix;
@@ -72,7 +69,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogsRoleArn. 
         /// <para>
-        /// Specifies the role for the CloudWatch Logs endpoint to assume to write to a user’s
+        /// Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's
         /// log group.
         /// </para>
         /// </summary>
@@ -86,6 +83,31 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetCloudWatchLogsRoleArn()
         {
             return this._cloudWatchLogsRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableLogFileValidation. 
+        /// <para>
+        /// Specifies whether log file validation is enabled. The default is false.
+        /// </para>
+        ///  <note>When you disable log file integrity validation, the chain of digest files is
+        /// broken after one hour. CloudTrail will not create digest files for log files that
+        /// were delivered during a period in which log file integrity validation was disabled.
+        /// For example, if you enable log file integrity validation at noon on January 1, disable
+        /// it at noon on January 2, and re-enable it at noon on January 10, digest files will
+        /// not be created for the log files delivered from noon on January 2 to noon on January
+        /// 10. The same applies whenever you stop CloudTrail logging or delete a trail.</note>
+        /// </summary>
+        public bool EnableLogFileValidation
+        {
+            get { return this._enableLogFileValidation.GetValueOrDefault(); }
+            set { this._enableLogFileValidation = value; }
+        }
+
+        // Check to see if EnableLogFileValidation property is set
+        internal bool IsSetEnableLogFileValidation()
+        {
+            return this._enableLogFileValidation.HasValue; 
         }
 
         /// <summary>
@@ -108,9 +130,46 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value
+        /// can be a an alias name prefixed by "alias/", a fully specified ARN to an alias, a
+        /// fully specified ARN to a key, or a globally unique identifier.
+        /// </para>
+        ///  
+        /// <para>
+        /// Examples:
+        /// </para>
+        ///  <ul> <li>alias/MyAliasName</li> <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
+        /// <li>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+        /// <li>12345678-1234-1234-1234-123456789012</li> </ul>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Specifies the name of the trail.
+        /// Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name,
+        /// the string must meet the following requirements:
+        /// </para>
+        ///  <ul> <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores
+        /// (_), or dashes (-)</li> <li>Start with a letter or number, and end with a letter or
+        /// number</li> <li>Be between 3 and 128 characters</li> <li>Have no adjacent periods,
+        /// underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code>
+        /// are invalid.</li> <li>Not be in IP address format (for example, 192.168.5.4)</li>
+        /// </ul> 
+        /// <para>
+        /// If <code>Name</code> is a trail ARN, it must be in the format <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
         /// </para>
         /// </summary>
         public string Name
@@ -128,7 +187,9 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property S3BucketName. 
         /// <para>
-        /// Specifies the name of the Amazon S3 bucket designated for publishing log files.
+        /// Specifies the name of the Amazon S3 bucket designated for publishing log files. See
+        /// <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
+        /// S3 Bucket Naming Requirements</a>.
         /// </para>
         /// </summary>
         public string S3BucketName
@@ -146,8 +207,9 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property S3KeyPrefix. 
         /// <para>
-        /// Specifies the Amazon S3 key prefix that precedes the name of the bucket you have designated
-        /// for log file delivery.
+        /// Specifies the Amazon S3 key prefix that comes after the name of the bucket you have
+        /// designated for log file delivery. For more information, see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+        /// Your CloudTrail Log Files</a>. The maximum length is 200 characters.
         /// </para>
         /// </summary>
         public string S3KeyPrefix
@@ -166,6 +228,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property SnsTopicName. 
         /// <para>
         /// Specifies the name of the Amazon SNS topic defined for notification of log file delivery.
+        /// The maximum length is 256 characters.
         /// </para>
         /// </summary>
         public string SnsTopicName

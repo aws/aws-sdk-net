@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -70,9 +70,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllSecurityGroups. 
         /// <para>
-        /// One or more security groups. To request an instance in a nondefault VPC, you must
-        /// specify the ID of the security group. To request an instance in EC2-Classic or a default
-        /// VPC, you can specify the name or the ID of the security group.
+        /// One or more security groups. When requesting instances in a VPC, you must specify
+        /// the IDs of the security groups. When requesting instances in EC2-Classic, you can
+        /// specify the names or the IDs of the security groups.
         /// </para>
         /// </summary>
         public List<GroupIdentifier> AllSecurityGroups

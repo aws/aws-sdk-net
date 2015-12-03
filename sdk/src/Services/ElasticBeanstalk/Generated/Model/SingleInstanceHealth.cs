@@ -99,7 +99,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Gets and sets the property HealthStatus. 
         /// <para>
         /// Returns the health status of the specified instance. For more information, see <a
-        /// href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"></a>.
+        /// href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+        /// Colors and Statuses</a>.
         /// </para>
         /// </summary>
         public string HealthStatus

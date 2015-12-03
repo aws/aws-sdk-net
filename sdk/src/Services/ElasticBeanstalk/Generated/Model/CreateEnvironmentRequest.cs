@@ -37,6 +37,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _cnamePrefix;
         private string _description;
         private string _environmentName;
+        private string _groupName;
         private List<ConfigurationOptionSetting> _optionSettings = new List<ConfigurationOptionSetting>();
         private List<OptionSpecification> _optionsToRemove = new List<OptionSpecification>();
         private string _solutionStackName;
@@ -153,6 +154,27 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GroupName. 
+        /// <para>
+        /// The name of the group to which the target environment belongs. Specify a group name
+        /// only if the environment's name is specified in an environment manifest and not with
+        /// the environment name parameter. See <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+        /// Manifest (env.yaml)</a> for details.
+        /// </para>
+        /// </summary>
+        public string GroupName
+        {
+            get { return this._groupName; }
+            set { this._groupName = value; }
+        }
+
+        // Check to see if GroupName property is set
+        internal bool IsSetGroupName()
+        {
+            return this._groupName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OptionSettings. 
         /// <para>
         ///  If specified, AWS Elastic Beanstalk sets the specified configuration options to the
@@ -194,9 +216,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SolutionStackName. 
         /// <para>
-        ///  This is an alternative to specifying a configuration name. If specified, AWS Elastic
-        /// Beanstalk sets the configuration values to the default values associated with the
-        /// specified solution stack. 
+        ///  This is an alternative to specifying a template name. If specified, AWS Elastic Beanstalk
+        /// sets the configuration values to the default values associated with the specified
+        /// solution stack. 
         /// </para>
         ///  
         /// <para>

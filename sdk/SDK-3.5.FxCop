@@ -22,7 +22,9 @@
   </ProjectOptions>
   <Targets>
     <AssemblyReferenceDirectories>
+      <Directory>$(ProjectDir)/src/Services/apigateway/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/autoscaling/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/awsmarketplacecommerceanalytics/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/awssupport/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/cloudformation/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/cloudfront/bin/Release/net35/</Directory>
@@ -50,12 +52,17 @@
       <Directory>$(ProjectDir)/src/Services/elasticfilesystem/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticloadbalancing/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticmapreduce/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/elasticsearch/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/elastictranscoder/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/glacier/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/identitymanagement/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/importexport/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/inspector/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/iot/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/iotdata/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/keymanagementservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesis/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/kinesisfirehose/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/lambda/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/machinelearning/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mobileanalytics/bin/Release/net35/</Directory>
@@ -73,10 +80,13 @@
       <Directory>$(ProjectDir)/src/Services/simpleworkflow/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/sqs/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/storagegateway/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/waf/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/workspaces/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Core/bin/Release/net35/</Directory>
     </AssemblyReferenceDirectories>
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.APIGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AWSMarketplaceCommerceAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AWSSupport.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CloudFormation.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CloudFront.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -104,12 +114,17 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ElasticFileSystem.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ElasticLoadBalancing.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ElasticMapReduce.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Elasticsearch.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ElasticTranscoder.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Glacier.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IdentityManagement.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ImportExport.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Inspector.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IoT.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IotData.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.KeyManagementService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Kinesis.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.KinesisFirehose.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Lambda.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MachineLearning.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MobileAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -127,6 +142,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SimpleWorkflow.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SQS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.StorageGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.WAF.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.WorkSpaces.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Core.dll" Analyze="True" AnalyzeAllChildren="False">
       <Modules AnalyzeAllChildren="False">
@@ -169,7 +185,7 @@
         <Rule Name="DeclareTypesInNamespaces" Enabled="True" />
         <Rule Name="DefaultParametersShouldNotBeUsed" Enabled="True" />
         <Rule Name="DefineAccessorsForAttributeArguments" Enabled="True" />
-        <Rule Name="DoNotCatchGeneralExceptionTypes" Enabled="True" />
+        <Rule Name="DoNotCatchGeneralExceptionTypes" Enabled="False" />
         <Rule Name="DoNotDeclareProtectedMembersInSealedTypes" Enabled="True" />
         <Rule Name="DoNotDeclareStaticMembersOnGenericTypes" Enabled="True" />
         <Rule Name="DoNotDeclareVirtualMembersInSealedTypes" Enabled="True" />

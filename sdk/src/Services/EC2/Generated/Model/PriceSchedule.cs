@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the price for a Reserved Instance.
+    /// Describes the price for a Reserved instance.
     /// </summary>
     public partial class PriceSchedule
     {
@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The currency for transacting the Reserved Instance resale. At this time, the only
+        /// The currency for transacting the Reserved instance resale. At this time, the only
         /// supported currency is <code>USD</code>.
         /// </para>
         /// </summary>

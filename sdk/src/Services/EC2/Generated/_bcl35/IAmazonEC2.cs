@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-04-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
  */
 
 
@@ -134,6 +134,44 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  AllocateAddressResult from EC2.</returns>
         AllocateAddressResponse EndAllocateAddress(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  AllocateHosts
+
+
+        /// <summary>
+        /// Allocates a Dedicated host to your account. At minimum you need to specify the instance
+        /// size type, Availability Zone, and quantity of hosts you want to allocate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AllocateHosts service method.</param>
+        /// 
+        /// <returns>The response from the AllocateHosts service method, as returned by EC2.</returns>
+        AllocateHostsResponse AllocateHosts(AllocateHostsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AllocateHosts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AllocateHosts operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAllocateHosts
+        ///         operation.</returns>
+        IAsyncResult BeginAllocateHosts(AllocateHostsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AllocateHosts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAllocateHosts.</param>
+        /// 
+        /// <returns>Returns a  AllocateHostsResult from EC2.</returns>
+        AllocateHostsResponse EndAllocateHosts(IAsyncResult asyncResult);
 
         #endregion
         
@@ -930,7 +968,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Cancels the specified Reserved Instance listing in the Reserved Instance Marketplace.
+        /// Cancels the specified Reserved instance listing in the Reserved Instance Marketplace.
         /// 
         ///  
         /// <para>
@@ -974,6 +1012,16 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Cancels the specified Spot fleet requests.
+        /// 
+        ///  
+        /// <para>
+        /// After you cancel a Spot fleet request, the Spot fleet launches no new Spot instances.
+        /// You must specify whether the Spot fleet should also terminate its Spot instances.
+        /// If you terminate the instances, the Spot fleet request enters the <code>cancelled_terminating</code>
+        /// state. Otherwise, the Spot fleet request enters the <code>cancelled_running</code>
+        /// state and the instances continue to run until they are interrupted or you terminate
+        /// them manually.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelSpotFleetRequests service method.</param>
         /// 
@@ -1200,7 +1248,7 @@ namespace Amazon.EC2
         /// is the appliance at your end of the VPN connection. (The device on the AWS side of
         /// the VPN connection is the virtual private gateway.) You must provide the Internet-routable
         /// IP address of the customer gateway's external interface. The IP address must be static
-        /// and can't be behind a device performing network address translation (NAT).
+        /// and may be behind a device performing network address translation (NAT).
         /// 
         ///  
         /// <para>
@@ -1272,10 +1320,10 @@ namespace Amazon.EC2
         /// can specify. For more information about the options, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC
         /// 2132</a>.
         /// 
-        ///  <ul> <li> <code>domain-name-servers</code> - The IP addresses of up to four domain
+        ///  <ul> <li><code>domain-name-servers</code> - The IP addresses of up to four domain
         /// name servers, or <code>AmazonProvidedDNS</code>. The default DHCP option set specifies
         /// <code>AmazonProvidedDNS</code>. If specifying more than one domain name server, specify
-        /// the IP addresses in a single parameter, separated by commas.</li> <li> <code>domain-name</code>
+        /// the IP addresses in a single parameter, separated by commas.</li> <li><code>domain-name</code>
         /// - If you're using AmazonProvidedDNS in <code>us-east-1</code>, specify <code>ec2.internal</code>.
         /// If you're using AmazonProvidedDNS in another region, specify <code>region.compute.internal</code>
         /// (for example, <code>ap-northeast-1.compute.internal</code>). Otherwise, specify a
@@ -1283,13 +1331,13 @@ namespace Amazon.EC2
         /// operating systems accept multiple domain names separated by spaces. However, Windows
         /// and other Linux operating systems treat the value as a single domain, which results
         /// in unexpected behavior. If your DHCP options set is associated with a VPC that has
-        /// instances with multiple operating systems, specify only one domain name.</li> <li>
-        /// <code>ntp-servers</code> - The IP addresses of up to four Network Time Protocol (NTP)
-        /// servers.</li> <li> <code>netbios-name-servers</code> - The IP addresses of up to four
-        /// NetBIOS name servers.</li> <li> <code>netbios-node-type</code> - The NetBIOS node
-        /// type (1, 2, 4, or 8). We recommend that you specify 2 (broadcast and multicast are
-        /// not currently supported). For more information about these node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC
-        /// 2132</a>. </li> </ul> 
+        /// instances with multiple operating systems, specify only one domain name.</li> <li><code>ntp-servers</code>
+        /// - The IP addresses of up to four Network Time Protocol (NTP) servers.</li> <li><code>netbios-name-servers</code>
+        /// - The IP addresses of up to four NetBIOS name servers.</li> <li><code>netbios-node-type</code>
+        /// - The NetBIOS node type (1, 2, 4, or 8). We recommend that you specify 2 (broadcast
+        /// and multicast are not currently supported). For more information about these node
+        /// types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>. </li> </ul>
+        /// 
         /// <para>
         /// Your VPC automatically starts out with a set of DHCP options that includes only a
         /// DNS server that we provide (AmazonProvidedDNS). If you create a set of options, and
@@ -1781,24 +1829,24 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a listing for Amazon EC2 Reserved Instances to be sold in the Reserved Instance
-        /// Marketplace. You can submit one Reserved Instance listing at a time. To get a list
-        /// of your Reserved Instances, you can use the <a>DescribeReservedInstances</a> operation.
+        /// Creates a listing for Amazon EC2 Reserved instances to be sold in the Reserved Instance
+        /// Marketplace. You can submit one Reserved instance listing at a time. To get a list
+        /// of your Reserved instances, you can use the <a>DescribeReservedInstances</a> operation.
         /// 
         ///  
         /// <para>
-        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
+        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved instance
         /// capacity that they no longer need with buyers who want to purchase additional capacity.
-        /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
-        /// like any other Reserved Instances. 
+        /// Reserved instances bought and sold through the Reserved Instance Marketplace work
+        /// like any other Reserved instances. 
         /// </para>
         ///  
         /// <para>
-        /// To sell your Reserved Instances, you must first register as a seller in the Reserved
+        /// To sell your Reserved instances, you must first register as a seller in the Reserved
         /// Instance Marketplace. After completing the registration process, you can create a
         /// Reserved Instance Marketplace listing of some or all of your Reserved Instances, and
-        /// specify the upfront price to receive for them. Your Reserved Instance listings then
-        /// become available for purchase. To view the details of your Reserved Instance listing,
+        /// specify the upfront price to receive for them. Your Reserved instance listings then
+        /// become available for purchase. To view the details of your Reserved instance listing,
         /// you can use the <a>DescribeReservedInstancesListings</a> operation.
         /// </para>
         ///  
@@ -2218,7 +2266,11 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-        /// Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more
+        /// information about creating IAM policies that control users' access to resources based
+        /// on tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-iam-actions-resources.html">Supported
+        /// Resource-Level Permissions for Amazon EC2 API Actions</a> in the <i>Amazon Elastic
+        /// Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTags service method.</param>
@@ -4168,6 +4220,108 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeHosts
+
+
+        /// <summary>
+        /// Describes one or more of your Dedicated hosts.
+        /// 
+        ///  
+        /// <para>
+        /// The results describe only the Dedicated hosts in the region you're currently using.
+        /// All listed instances consume capacity on your Dedicated host. Dedicated hosts that
+        /// have recently been released will be listed with the status "released".
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHosts service method.</param>
+        /// 
+        /// <returns>The response from the DescribeHosts service method, as returned by EC2.</returns>
+        DescribeHostsResponse DescribeHosts(DescribeHostsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHosts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHosts operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHosts
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeHosts(DescribeHostsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeHosts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHosts.</param>
+        /// 
+        /// <returns>Returns a  DescribeHostsResult from EC2.</returns>
+        DescribeHostsResponse EndDescribeHosts(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeIdFormat
+
+
+        /// <summary>
+        /// <b>Important: This command is reserved for future use, and is currently not available
+        /// for you to use.</b>
+        /// 
+        ///  
+        /// <para>
+        /// Describes the ID format settings for your resources, for example, to view which resource
+        /// types are enabled for longer IDs. This request only returns information about resource
+        /// types whose ID formats can be modified; it does not return information about other
+        /// resource types. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// These settings apply to the IAM user who makes the request; they do not apply to the
+        /// entire AWS account. By default, an IAM user defaults to the same settings as the root
+        /// user, unless they explicitly override the settings by running the <a>ModifyIdFormat</a>
+        /// command. These settings are applied on a per-region basis.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdFormat service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIdFormat service method, as returned by EC2.</returns>
+        DescribeIdFormatResponse DescribeIdFormat(DescribeIdFormatRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIdFormat operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdFormat operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIdFormat
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeIdFormat(DescribeIdFormatRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeIdFormat operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIdFormat.</param>
+        /// 
+        /// <returns>Returns a  DescribeIdFormatResult from EC2.</returns>
+        DescribeIdFormatResponse EndDescribeIdFormat(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeImageAttribute
 
 
@@ -4475,7 +4629,7 @@ namespace Amazon.EC2
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </para>
-        ///  </li> <li> 
+        /// </li> <li> 
         /// <para>
         /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
@@ -4509,7 +4663,7 @@ namespace Amazon.EC2
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </para>
-        ///  </li> <li> 
+        /// </li> <li> 
         /// <para>
         /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
@@ -4979,11 +5133,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of the Reserved Instances that you purchased.
+        /// Describes one or more of the Reserved instances that you purchased.
         /// 
         ///  
         /// <para>
-        /// For more information about Reserved Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
+        /// For more information about Reserved instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
         /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -4992,11 +5146,11 @@ namespace Amazon.EC2
         DescribeReservedInstancesResponse DescribeReservedInstances();
 
         /// <summary>
-        /// Describes one or more of the Reserved Instances that you purchased.
+        /// Describes one or more of the Reserved instances that you purchased.
         /// 
         ///  
         /// <para>
-        /// For more information about Reserved Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
+        /// For more information about Reserved instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
         /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5035,26 +5189,26 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
+        /// Describes your account's Reserved instance listings in the Reserved Instance Marketplace.
         /// 
         ///  
         /// <para>
-        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
+        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved instance
         /// capacity that they no longer need with buyers who want to purchase additional capacity.
-        /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
+        /// Reserved instances bought and sold through the Reserved Instance Marketplace work
         /// like any other Reserved Instances. 
         /// </para>
         ///  
         /// <para>
-        /// As a seller, you choose to list some or all of your Reserved Instances, and you specify
-        /// the upfront price to receive for them. Your Reserved Instances are then listed in
+        /// As a seller, you choose to list some or all of your Reserved instances, and you specify
+        /// the upfront price to receive for them. Your Reserved instances are then listed in
         /// the Reserved Instance Marketplace and are available for purchase. 
         /// </para>
         ///  
         /// <para>
-        /// As a buyer, you specify the configuration of the Reserved Instance to purchase, and
+        /// As a buyer, you specify the configuration of the Reserved instance to purchase, and
         /// the Marketplace matches what you're searching for with what's available. The Marketplace
-        /// first sells the lowest priced Reserved Instances to you, and continues to sell available
+        /// first sells the lowest priced Reserved instances to you, and continues to sell available
         /// Reserved Instance listings to you until your demand is met. You are charged based
         /// on the total price of all of the listings that you purchase.
         /// </para>
@@ -5069,26 +5223,26 @@ namespace Amazon.EC2
         DescribeReservedInstancesListingsResponse DescribeReservedInstancesListings();
 
         /// <summary>
-        /// Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
+        /// Describes your account's Reserved instance listings in the Reserved Instance Marketplace.
         /// 
         ///  
         /// <para>
-        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
+        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved instance
         /// capacity that they no longer need with buyers who want to purchase additional capacity.
-        /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
+        /// Reserved instances bought and sold through the Reserved Instance Marketplace work
         /// like any other Reserved Instances. 
         /// </para>
         ///  
         /// <para>
-        /// As a seller, you choose to list some or all of your Reserved Instances, and you specify
-        /// the upfront price to receive for them. Your Reserved Instances are then listed in
+        /// As a seller, you choose to list some or all of your Reserved instances, and you specify
+        /// the upfront price to receive for them. Your Reserved instances are then listed in
         /// the Reserved Instance Marketplace and are available for purchase. 
         /// </para>
         ///  
         /// <para>
-        /// As a buyer, you specify the configuration of the Reserved Instance to purchase, and
+        /// As a buyer, you specify the configuration of the Reserved instance to purchase, and
         /// the Marketplace matches what you're searching for with what's available. The Marketplace
-        /// first sells the lowest priced Reserved Instances to you, and continues to sell available
+        /// first sells the lowest priced Reserved instances to you, and continues to sell available
         /// Reserved Instance listings to you until your demand is met. You are charged based
         /// on the total price of all of the listings that you purchase.
         /// </para>
@@ -5133,7 +5287,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the modifications made to your Reserved Instances. If no parameter is specified,
+        /// Describes the modifications made to your Reserved instances. If no parameter is specified,
         /// information about all your Reserved Instances modification requests is returned. If
         /// a modification ID is specified, only information about the specific modification is
         /// returned.
@@ -5149,7 +5303,7 @@ namespace Amazon.EC2
         DescribeReservedInstancesModificationsResponse DescribeReservedInstancesModifications();
 
         /// <summary>
-        /// Describes the modifications made to your Reserved Instances. If no parameter is specified,
+        /// Describes the modifications made to your Reserved instances. If no parameter is specified,
         /// information about all your Reserved Instances modification requests is returned. If
         /// a modification ID is specified, only information about the specific modification is
         /// returned.
@@ -5195,8 +5349,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes Reserved Instance offerings that are available for purchase. With Reserved
-        /// Instances, you purchase the right to launch instances for a period of time. During
+        /// Describes Reserved instance offerings that are available for purchase. With Reserved
+        /// instances, you purchase the right to launch instances for a period of time. During
         /// that time period, you do not receive insufficient capacity errors, and you pay a lower
         /// usage rate than the rate charged for On-Demand instances for the actual time used.
         /// 
@@ -5211,8 +5365,8 @@ namespace Amazon.EC2
         DescribeReservedInstancesOfferingsResponse DescribeReservedInstancesOfferings();
 
         /// <summary>
-        /// Describes Reserved Instance offerings that are available for purchase. With Reserved
-        /// Instances, you purchase the right to launch instances for a period of time. During
+        /// Describes Reserved instance offerings that are available for purchase. With Reserved
+        /// instances, you purchase the right to launch instances for a period of time. During
         /// that time period, you do not receive insufficient capacity errors, and you pay a lower
         /// usage rate than the rate charged for On-Demand instances for the actual time used.
         /// 
@@ -5440,10 +5594,10 @@ namespace Amazon.EC2
         /// <para>
         /// The create volume permissions fall into the following categories:
         /// </para>
-        ///  <ul> <li> <i>public</i>: The owner of the snapshot granted create volume permissions
+        ///  <ul> <li><i>public</i>: The owner of the snapshot granted create volume permissions
         /// for the snapshot to the <code>all</code> group. All AWS accounts have create volume
-        /// permissions for these snapshots.</li> <li> <i>explicit</i>: The owner of the snapshot
-        /// granted create volume permissions to a specific AWS account.</li> <li> <i>implicit</i>:
+        /// permissions for these snapshots.</li> <li><i>explicit</i>: The owner of the snapshot
+        /// granted create volume permissions to a specific AWS account.</li> <li><i>implicit</i>:
         /// An AWS account has implicit create volume permissions for all snapshots it owns.</li>
         /// </ul> 
         /// <para>
@@ -5501,10 +5655,10 @@ namespace Amazon.EC2
         /// <para>
         /// The create volume permissions fall into the following categories:
         /// </para>
-        ///  <ul> <li> <i>public</i>: The owner of the snapshot granted create volume permissions
+        ///  <ul> <li><i>public</i>: The owner of the snapshot granted create volume permissions
         /// for the snapshot to the <code>all</code> group. All AWS accounts have create volume
-        /// permissions for these snapshots.</li> <li> <i>explicit</i>: The owner of the snapshot
-        /// granted create volume permissions to a specific AWS account.</li> <li> <i>implicit</i>:
+        /// permissions for these snapshots.</li> <li><i>explicit</i>: The owner of the snapshot
+        /// granted create volume permissions to a specific AWS account.</li> <li><i>implicit</i>:
         /// An AWS account has implicit create volume permissions for all snapshots it owns.</li>
         /// </ul> 
         /// <para>
@@ -7428,6 +7582,101 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyHosts
+
+
+        /// <summary>
+        /// Modify the auto-placement setting of a Dedicated host. When auto-placement is enabled,
+        /// AWS will place instances that you launch with a tenancy of <code>host</code>, but
+        /// without targeting a specific host ID, onto any available Dedicated host in your account
+        /// which has auto-placement enabled. When auto-placement is disabled, you need to provide
+        /// a host ID if you want the instance to launch onto a specific host. If no host ID is
+        /// provided, the instance will be launched onto a suitable host which has auto-placement
+        /// enabled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyHosts service method.</param>
+        /// 
+        /// <returns>The response from the ModifyHosts service method, as returned by EC2.</returns>
+        ModifyHostsResponse ModifyHosts(ModifyHostsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyHosts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyHosts operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyHosts
+        ///         operation.</returns>
+        IAsyncResult BeginModifyHosts(ModifyHostsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyHosts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyHosts.</param>
+        /// 
+        /// <returns>Returns a  ModifyHostsResult from EC2.</returns>
+        ModifyHostsResponse EndModifyHosts(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyIdFormat
+
+
+        /// <summary>
+        /// <b>Important: This command is reserved for future use, and is currently not available
+        /// for you to use.</b>
+        /// 
+        ///  
+        /// <para>
+        /// Modifies the ID format for the specified resource. You can specify that resources
+        /// should receive longer IDs (17-character IDs) when they are created. The following
+        /// resource types support longer IDs: <code>instance</code> | <code>reservation</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting applies to the IAM user who makes the request; it does not apply to the
+        /// entire AWS account. By default, an IAM user defaults to the same settings as the root
+        /// user, unless they explicitly override the settings by running this request. These
+        /// settings are applied on a per-region basis.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIdFormat service method.</param>
+        /// 
+        /// <returns>The response from the ModifyIdFormat service method, as returned by EC2.</returns>
+        ModifyIdFormatResponse ModifyIdFormat(ModifyIdFormatRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyIdFormat operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIdFormat operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyIdFormat
+        ///         operation.</returns>
+        IAsyncResult BeginModifyIdFormat(ModifyIdFormatRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyIdFormat operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyIdFormat.</param>
+        /// 
+        /// <returns>Returns a  ModifyIdFormatResult from EC2.</returns>
+        ModifyIdFormatResponse EndModifyIdFormat(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyImageAttribute
 
 
@@ -7515,6 +7764,68 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  ModifyInstanceAttributeResult from EC2.</returns>
         ModifyInstanceAttributeResponse EndModifyInstanceAttribute(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyInstancePlacement
+
+
+        /// <summary>
+        /// Set the instance affinity value for a specific stopped instance and modify the instance
+        /// tenancy setting.
+        /// 
+        ///  
+        /// <para>
+        /// Instance affinity is disabled by default. When instance affinity is <code>host</code>
+        /// and it is not associated with a specific Dedicated host, the next time it is launched
+        /// it will automatically be associated with the host it lands on. This relationship will
+        /// persist if the instance is stopped/started, or rebooted.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can modify the host ID associated with a stopped instance. If a stopped instance
+        /// has a new host ID association, the instance will target that host when restarted.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can modify the tenancy of a stopped instance with a tenancy of <code>host</code>
+        /// or <code>dedicated</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Affinity, hostID, and tenancy are not required parameters, but at least one of them
+        /// must be specified in the request. Affinity and tenancy can be modified in the same
+        /// request, but tenancy can only be modified on instances that are stopped.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstancePlacement service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstancePlacement service method, as returned by EC2.</returns>
+        ModifyInstancePlacementResponse ModifyInstancePlacement(ModifyInstancePlacementRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstancePlacement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstancePlacement operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyInstancePlacement
+        ///         operation.</returns>
+        IAsyncResult BeginModifyInstancePlacement(ModifyInstancePlacementRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyInstancePlacement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyInstancePlacement.</param>
+        /// 
+        /// <returns>Returns a  ModifyInstancePlacementResult from EC2.</returns>
+        ModifyInstancePlacementResponse EndModifyInstancePlacement(IAsyncResult asyncResult);
 
         #endregion
         
@@ -7650,6 +7961,70 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  ModifySnapshotAttributeResult from EC2.</returns>
         ModifySnapshotAttributeResponse EndModifySnapshotAttribute(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifySpotFleetRequest
+
+
+        /// <summary>
+        /// Modifies the specified Spot fleet request.
+        /// 
+        ///  
+        /// <para>
+        /// While the Spot fleet request is being modified, it is in the <code>modifying</code>
+        /// state.
+        /// </para>
+        ///  
+        /// <para>
+        /// To scale up your Spot fleet, increase its target capacity. The Spot fleet launches
+        /// the additional Spot instances according to the allocation strategy for the Spot fleet
+        /// request. If the allocation strategy is <code>lowestPrice</code>, the Spot fleet launches
+        /// instances using the Spot pool with the lowest price. If the allocation strategy is
+        /// <code>diversified</code>, the Spot fleet distributes the instances across the Spot
+        /// pools.
+        /// </para>
+        ///  
+        /// <para>
+        /// To scale down your Spot fleet, decrease its target capacity. First, the Spot fleet
+        /// cancels any open bids that exceed the new target capacity. You can request that the
+        /// Spot fleet terminate Spot instances until the size of the fleet no longer exceeds
+        /// the new target capacity. If the allocation strategy is <code>lowestPrice</code>, the
+        /// Spot fleet terminates the instances with the highest price per unit. If the allocation
+        /// strategy is <code>diversified</code>, the Spot fleet terminates instances across the
+        /// Spot pools. Alternatively, you can request that the Spot fleet keep the fleet at its
+        /// current size, but not replace any Spot instances that are interrupted or that you
+        /// terminate manually.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifySpotFleetRequest service method.</param>
+        /// 
+        /// <returns>The response from the ModifySpotFleetRequest service method, as returned by EC2.</returns>
+        ModifySpotFleetRequestResponse ModifySpotFleetRequest(ModifySpotFleetRequestRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifySpotFleetRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifySpotFleetRequest operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifySpotFleetRequest
+        ///         operation.</returns>
+        IAsyncResult BeginModifySpotFleetRequest(ModifySpotFleetRequestRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifySpotFleetRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifySpotFleetRequest.</param>
+        /// 
+        /// <returns>Returns a  ModifySpotFleetRequestResult from EC2.</returns>
+        ModifySpotFleetRequestResponse EndModifySpotFleetRequest(IAsyncResult asyncResult);
 
         #endregion
         
@@ -7900,16 +8275,16 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Purchases a Reserved Instance for use with your account. With Amazon EC2 Reserved
-        /// Instances, you obtain a capacity reservation for a certain instance configuration
-        /// over a specified period of time and pay a lower hourly rate compared to on-Demand
+        /// Purchases a Reserved instance for use with your account. With Amazon EC2 Reserved
+        /// instances, you obtain a capacity reservation for a certain instance configuration
+        /// over a specified period of time and pay a lower hourly rate compared to On-Demand
         /// Instance pricing.
         /// 
         ///  
         /// <para>
-        /// Use <a>DescribeReservedInstancesOfferings</a> to get a list of Reserved Instance offerings
-        /// that match your specifications. After you've purchased a Reserved Instance, you can
-        /// check for your new Reserved Instance with <a>DescribeReservedInstances</a>.
+        /// Use <a>DescribeReservedInstancesOfferings</a> to get a list of Reserved instance offerings
+        /// that match your specifications. After you've purchased a Reserved instance, you can
+        /// check for your new Reserved instance with <a>DescribeReservedInstances</a>.
         /// </para>
         ///  
         /// <para>
@@ -8178,6 +8553,57 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  ReleaseAddressResult from EC2.</returns>
         ReleaseAddressResponse EndReleaseAddress(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ReleaseHosts
+
+
+        /// <summary>
+        /// When you no longer want to use a Dedicated host it can be released. On-Demand billing
+        /// is stopped and the host goes into "released" state. The host ID of Dedicated hosts
+        /// that have been released can no longer be specified in another request, e.g., ModifyHosts.
+        /// You must stop or terminate all instances on a host before it can be released.
+        /// 
+        ///  
+        /// <para>
+        /// When Dedicated hosts are released, it make take some time for them to stop counting
+        /// toward your limit and you may receive capacity errors when trying to allocate new
+        /// Dedicated hosts. Try waiting a few minutes, and then try again. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Released hosts will still appear in a DescribeHosts response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReleaseHosts service method.</param>
+        /// 
+        /// <returns>The response from the ReleaseHosts service method, as returned by EC2.</returns>
+        ReleaseHostsResponse ReleaseHosts(ReleaseHostsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReleaseHosts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReleaseHosts operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReleaseHosts
+        ///         operation.</returns>
+        IAsyncResult BeginReleaseHosts(ReleaseHostsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ReleaseHosts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReleaseHosts.</param>
+        /// 
+        /// <returns>Returns a  ReleaseHostsResult from EC2.</returns>
+        ReleaseHostsResponse EndReleaseHosts(IAsyncResult asyncResult);
 
         #endregion
         
@@ -8975,7 +9401,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You can't start or stop Spot Instances.
+        /// You can't start or stop Spot instances.
         /// </para>
         ///  
         /// <para>

@@ -57,7 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NotificationType. 
         /// <para>
-        /// The types of events for an action to start.
+        /// One of the following event notification types:
         /// </para>
         ///  <ul> <li>
         /// <para>

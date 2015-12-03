@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAssociations operation.
-    /// Lists the associations for the specified configuration document or instance.
+    /// Lists the associations for the specified SSM document or instance.
     /// </summary>
     public partial class ListAssociationsRequest : AmazonSimpleSystemsManagementRequest
     {

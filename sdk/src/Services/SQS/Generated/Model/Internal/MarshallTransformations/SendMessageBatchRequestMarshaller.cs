@@ -86,7 +86,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                                         int valuelistValueIndex = 1;
                                         foreach(var valuelistValue in value.BinaryListValues)
                                         {
-                                            request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "BinaryListValues" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromMemoryStream(valuelistValue));
+                                            request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "BinaryListValue" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromMemoryStream(valuelistValue));
                                             valuelistValueIndex++;
                                         }
                                     }
@@ -103,7 +103,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                                         int valuelistValueIndex = 1;
                                         foreach(var valuelistValue in value.StringListValues)
                                         {
-                                            request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "StringListValues" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromString(valuelistValue));
+                                            request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "StringListValue" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromString(valuelistValue));
                                             valuelistValueIndex++;
                                         }
                                     }

@@ -36,12 +36,21 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
+    /// Using the optional <code>Qualifier</code> parameter, you can specify a specific function
+    /// version for which you want this information. If you don't specify this parameter,
+    /// the API uses unqualified function ARN which return information about the $LATEST version
+    /// of the Lambda function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+    /// Lambda Function Versioning and Aliases</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// This operation requires permission for the <code>lambda:GetFunction</code> action.
     /// </para>
     /// </summary>
     public partial class GetFunctionRequest : AmazonLambdaRequest
     {
         private string _functionName;
+        private string _qualifier;
 
         /// <summary>
         /// Gets and sets the property FunctionName. 
@@ -67,6 +76,29 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFunctionName()
         {
             return this._functionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Qualifier. 
+        /// <para>
+        /// Using this optional parameter to specify a function version or alias name. If you
+        /// specify function version, the API uses qualified function ARN for the request and
+        /// returns information about the specific Lambda function version. If you specify alias
+        /// name, the API uses alias ARN and returns information about the function version to
+        /// which the alias points. If you don't provide this parameter, the API uses unqualified
+        /// function ARN and returns information about the $LATEST version of the Lambda function.
+        /// </para>
+        /// </summary>
+        public string Qualifier
+        {
+            get { return this._qualifier; }
+            set { this._qualifier = value; }
+        }
+
+        // Check to see if Qualifier property is set
+        internal bool IsSetQualifier()
+        {
+            return this._qualifier != null;
         }
 
     }

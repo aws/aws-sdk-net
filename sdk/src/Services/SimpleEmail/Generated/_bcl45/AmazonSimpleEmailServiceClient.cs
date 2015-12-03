@@ -232,6 +232,255 @@ namespace Amazon.SimpleEmail
         #endregion
 
         
+        #region  CloneReceiptRuleSet
+
+
+        /// <summary>
+        /// Creates a receipt rule set by cloning an existing one. All receipt rules and configurations
+        /// are copied to the new receipt rule set and are completely independent of the source
+        /// rule set.
+        /// 
+        ///  
+        /// <para>
+        /// For information about setting up rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CloneReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the CloneReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.AlreadyExistsException">
+        /// Indicates that a resource could not be created due to a naming conflict.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created due to service limits. For a list of
+        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        public CloneReceiptRuleSetResponse CloneReceiptRuleSet(CloneReceiptRuleSetRequest request)
+        {
+            var marshaller = new CloneReceiptRuleSetRequestMarshaller();
+            var unmarshaller = CloneReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return Invoke<CloneReceiptRuleSetRequest,CloneReceiptRuleSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CloneReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CloneReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CloneReceiptRuleSetResponse> CloneReceiptRuleSetAsync(CloneReceiptRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CloneReceiptRuleSetRequestMarshaller();
+            var unmarshaller = CloneReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CloneReceiptRuleSetRequest,CloneReceiptRuleSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateReceiptFilter
+
+
+        /// <summary>
+        /// Creates a new IP address filter.
+        /// 
+        ///  
+        /// <para>
+        /// For information about setting up IP address filters, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptFilter service method.</param>
+        /// 
+        /// <returns>The response from the CreateReceiptFilter service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.AlreadyExistsException">
+        /// Indicates that a resource could not be created due to a naming conflict.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created due to service limits. For a list of
+        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        public CreateReceiptFilterResponse CreateReceiptFilter(CreateReceiptFilterRequest request)
+        {
+            var marshaller = new CreateReceiptFilterRequestMarshaller();
+            var unmarshaller = CreateReceiptFilterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateReceiptFilterRequest,CreateReceiptFilterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReceiptFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptFilter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateReceiptFilterResponse> CreateReceiptFilterAsync(CreateReceiptFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateReceiptFilterRequestMarshaller();
+            var unmarshaller = CreateReceiptFilterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateReceiptFilterRequest,CreateReceiptFilterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateReceiptRule
+
+
+        /// <summary>
+        /// Creates a receipt rule.
+        /// 
+        ///  
+        /// <para>
+        /// For information about setting up receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptRule service method.</param>
+        /// 
+        /// <returns>The response from the CreateReceiptRule service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.AlreadyExistsException">
+        /// Indicates that a resource could not be created due to a naming conflict.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidLambdaFunctionException">
+        /// Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could
+        /// not execute the provided function, possibly due to permissions issues. For information
+        /// about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidS3ConfigurationException">
+        /// Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid,
+        /// or that Amazon SES could not publish to the bucket, possibly due to permissions issues.
+        /// For information about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidSnsTopicException">
+        /// Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could
+        /// not publish to the topic, possibly due to permissions issues. For information about
+        /// giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created due to service limits. For a list of
+        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
+        /// Indicates that the provided receipt rule does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        public CreateReceiptRuleResponse CreateReceiptRule(CreateReceiptRuleRequest request)
+        {
+            var marshaller = new CreateReceiptRuleRequestMarshaller();
+            var unmarshaller = CreateReceiptRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateReceiptRuleRequest,CreateReceiptRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateReceiptRuleResponse> CreateReceiptRuleAsync(CreateReceiptRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateReceiptRuleRequestMarshaller();
+            var unmarshaller = CreateReceiptRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateReceiptRuleRequest,CreateReceiptRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateReceiptRuleSet
+
+
+        /// <summary>
+        /// Creates an empty receipt rule set.
+        /// 
+        ///  
+        /// <para>
+        /// For information about setting up receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the CreateReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.AlreadyExistsException">
+        /// Indicates that a resource could not be created due to a naming conflict.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created due to service limits. For a list of
+        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        public CreateReceiptRuleSetResponse CreateReceiptRuleSet(CreateReceiptRuleSetRequest request)
+        {
+            var marshaller = new CreateReceiptRuleSetRequestMarshaller();
+            var unmarshaller = CreateReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateReceiptRuleSetRequest,CreateReceiptRuleSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateReceiptRuleSetResponse> CreateReceiptRuleSetAsync(CreateReceiptRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateReceiptRuleSetRequestMarshaller();
+            var unmarshaller = CreateReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateReceiptRuleSetRequest,CreateReceiptRuleSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteIdentity
 
 
@@ -327,6 +576,153 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  DeleteReceiptFilter
+
+
+        /// <summary>
+        /// Deletes the specified IP address filter.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing IP address filters, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptFilter service method.</param>
+        /// 
+        /// <returns>The response from the DeleteReceiptFilter service method, as returned by SimpleEmailService.</returns>
+        public DeleteReceiptFilterResponse DeleteReceiptFilter(DeleteReceiptFilterRequest request)
+        {
+            var marshaller = new DeleteReceiptFilterRequestMarshaller();
+            var unmarshaller = DeleteReceiptFilterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteReceiptFilterRequest,DeleteReceiptFilterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReceiptFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptFilter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteReceiptFilterResponse> DeleteReceiptFilterAsync(DeleteReceiptFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteReceiptFilterRequestMarshaller();
+            var unmarshaller = DeleteReceiptFilterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteReceiptFilterRequest,DeleteReceiptFilterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteReceiptRule
+
+
+        /// <summary>
+        /// Deletes the specified receipt rule.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteReceiptRule service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        public DeleteReceiptRuleResponse DeleteReceiptRule(DeleteReceiptRuleRequest request)
+        {
+            var marshaller = new DeleteReceiptRuleRequestMarshaller();
+            var unmarshaller = DeleteReceiptRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteReceiptRuleRequest,DeleteReceiptRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteReceiptRuleResponse> DeleteReceiptRuleAsync(DeleteReceiptRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteReceiptRuleRequestMarshaller();
+            var unmarshaller = DeleteReceiptRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteReceiptRuleRequest,DeleteReceiptRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteReceiptRuleSet
+
+
+        /// <summary>
+        /// Deletes the specified receipt rule set and all of the receipt rules it contains.
+        /// 
+        ///  <note>The currently active rule set cannot be deleted.</note> 
+        /// <para>
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.CannotDeleteException">
+        /// Indicates that the delete operation could not be completed.
+        /// </exception>
+        public DeleteReceiptRuleSetResponse DeleteReceiptRuleSet(DeleteReceiptRuleSetRequest request)
+        {
+            var marshaller = new DeleteReceiptRuleSetRequestMarshaller();
+            var unmarshaller = DeleteReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteReceiptRuleSetRequest,DeleteReceiptRuleSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteReceiptRuleSetResponse> DeleteReceiptRuleSetAsync(DeleteReceiptRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteReceiptRuleSetRequestMarshaller();
+            var unmarshaller = DeleteReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteReceiptRuleSetRequest,DeleteReceiptRuleSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteVerifiedEmailAddress
 
 
@@ -366,6 +762,157 @@ namespace Amazon.SimpleEmail
             var unmarshaller = DeleteVerifiedEmailAddressResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteVerifiedEmailAddressRequest,DeleteVerifiedEmailAddressResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeActiveReceiptRuleSet
+
+
+        /// <summary>
+        /// Returns the metadata and receipt rules for the receipt rule set that is currently
+        /// active.
+        /// 
+        ///  
+        /// <para>
+        /// For information about setting up receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActiveReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the DescribeActiveReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        public DescribeActiveReceiptRuleSetResponse DescribeActiveReceiptRuleSet(DescribeActiveReceiptRuleSetRequest request)
+        {
+            var marshaller = new DescribeActiveReceiptRuleSetRequestMarshaller();
+            var unmarshaller = DescribeActiveReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeActiveReceiptRuleSetRequest,DescribeActiveReceiptRuleSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeActiveReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActiveReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeActiveReceiptRuleSetResponse> DescribeActiveReceiptRuleSetAsync(DescribeActiveReceiptRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeActiveReceiptRuleSetRequestMarshaller();
+            var unmarshaller = DescribeActiveReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeActiveReceiptRuleSetRequest,DescribeActiveReceiptRuleSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeReceiptRule
+
+
+        /// <summary>
+        /// Returns the details of the specified receipt rule.
+        /// 
+        ///  
+        /// <para>
+        /// For information about setting up receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReceiptRule service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReceiptRule service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
+        /// Indicates that the provided receipt rule does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        public DescribeReceiptRuleResponse DescribeReceiptRule(DescribeReceiptRuleRequest request)
+        {
+            var marshaller = new DescribeReceiptRuleRequestMarshaller();
+            var unmarshaller = DescribeReceiptRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReceiptRuleRequest,DescribeReceiptRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReceiptRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeReceiptRuleResponse> DescribeReceiptRuleAsync(DescribeReceiptRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeReceiptRuleRequestMarshaller();
+            var unmarshaller = DescribeReceiptRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeReceiptRuleRequest,DescribeReceiptRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeReceiptRuleSet
+
+
+        /// <summary>
+        /// Returns the details of the specified receipt rule set.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        public DescribeReceiptRuleSetResponse DescribeReceiptRuleSet(DescribeReceiptRuleSetRequest request)
+        {
+            var marshaller = new DescribeReceiptRuleSetRequestMarshaller();
+            var unmarshaller = DescribeReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReceiptRuleSetRequest,DescribeReceiptRuleSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeReceiptRuleSetResponse> DescribeReceiptRuleSetAsync(DescribeReceiptRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeReceiptRuleSetRequestMarshaller();
+            var unmarshaller = DescribeReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeReceiptRuleSetRequest,DescribeReceiptRuleSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -873,6 +1420,103 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  ListReceiptFilters
+
+
+        /// <summary>
+        /// Lists the IP address filters associated with your account.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing IP address filters, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceiptFilters service method.</param>
+        /// 
+        /// <returns>The response from the ListReceiptFilters service method, as returned by SimpleEmailService.</returns>
+        public ListReceiptFiltersResponse ListReceiptFilters(ListReceiptFiltersRequest request)
+        {
+            var marshaller = new ListReceiptFiltersRequestMarshaller();
+            var unmarshaller = ListReceiptFiltersResponseUnmarshaller.Instance;
+
+            return Invoke<ListReceiptFiltersRequest,ListReceiptFiltersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReceiptFilters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReceiptFilters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListReceiptFiltersResponse> ListReceiptFiltersAsync(ListReceiptFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListReceiptFiltersRequestMarshaller();
+            var unmarshaller = ListReceiptFiltersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListReceiptFiltersRequest,ListReceiptFiltersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListReceiptRuleSets
+
+
+        /// <summary>
+        /// Lists the receipt rule sets that exist under your AWS account. If there are additional
+        /// receipt rule sets to be retrieved, you will receive a <code>NextToken</code> that
+        /// you can provide to the next call to <code>ListReceiptRuleSets</code> to retrieve the
+        /// additional entries.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceiptRuleSets service method.</param>
+        /// 
+        /// <returns>The response from the ListReceiptRuleSets service method, as returned by SimpleEmailService.</returns>
+        public ListReceiptRuleSetsResponse ListReceiptRuleSets(ListReceiptRuleSetsRequest request)
+        {
+            var marshaller = new ListReceiptRuleSetsRequestMarshaller();
+            var unmarshaller = ListReceiptRuleSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListReceiptRuleSetsRequest,ListReceiptRuleSetsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReceiptRuleSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReceiptRuleSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListReceiptRuleSetsResponse> ListReceiptRuleSetsAsync(ListReceiptRuleSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListReceiptRuleSetsRequestMarshaller();
+            var unmarshaller = ListReceiptRuleSetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListReceiptRuleSetsRequest,ListReceiptRuleSetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListVerifiedEmailAddresses
 
 
@@ -1005,6 +1649,115 @@ namespace Amazon.SimpleEmail
             var unmarshaller = PutIdentityPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutIdentityPolicyRequest,PutIdentityPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ReorderReceiptRuleSet
+
+
+        /// <summary>
+        /// Reorders the receipt rules within a receipt rule set.
+        /// 
+        ///  <note>All of the rules in the rule set must be represented in this request. That
+        /// is, this API will return an error if the reorder request doesn’t explicitly position
+        /// all of the rules.</note> 
+        /// <para>
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReorderReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the ReorderReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
+        /// Indicates that the provided receipt rule does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        public ReorderReceiptRuleSetResponse ReorderReceiptRuleSet(ReorderReceiptRuleSetRequest request)
+        {
+            var marshaller = new ReorderReceiptRuleSetRequestMarshaller();
+            var unmarshaller = ReorderReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return Invoke<ReorderReceiptRuleSetRequest,ReorderReceiptRuleSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReorderReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReorderReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ReorderReceiptRuleSetResponse> ReorderReceiptRuleSetAsync(ReorderReceiptRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ReorderReceiptRuleSetRequestMarshaller();
+            var unmarshaller = ReorderReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ReorderReceiptRuleSetRequest,ReorderReceiptRuleSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SendBounce
+
+
+        /// <summary>
+        /// Generates and sends a bounce message to the sender of an email you received through
+        /// Amazon SES. You can only use this API on an email up to 24 hours after you receive
+        /// it.
+        /// 
+        ///  <note>You cannot use this API to send generic bounces for mail that was not received
+        /// by Amazon SES.</note> 
+        /// <para>
+        /// For information about receiving email through Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendBounce service method.</param>
+        /// 
+        /// <returns>The response from the SendBounce service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
+        /// Indicates that the action failed, and the message could not be sent. Check the error
+        /// stack for more information about what caused the error.
+        /// </exception>
+        public SendBounceResponse SendBounce(SendBounceRequest request)
+        {
+            var marshaller = new SendBounceRequestMarshaller();
+            var unmarshaller = SendBounceResponseUnmarshaller.Instance;
+
+            return Invoke<SendBounceRequest,SendBounceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendBounce operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendBounce operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SendBounceResponse> SendBounceAsync(SendBounceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SendBounceRequestMarshaller();
+            var unmarshaller = SendBounceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendBounceRequest,SendBounceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1147,6 +1900,57 @@ namespace Amazon.SimpleEmail
             var unmarshaller = SendRawEmailResponseUnmarshaller.Instance;
 
             return InvokeAsync<SendRawEmailRequest,SendRawEmailResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetActiveReceiptRuleSet
+
+
+        /// <summary>
+        /// Sets the specified receipt rule set as the active receipt rule set.
+        /// 
+        ///  <note>To disable your email-receiving through Amazon SES completely, you can call
+        /// this API with RuleSetName set to null.</note> 
+        /// <para>
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetActiveReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the SetActiveReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        public SetActiveReceiptRuleSetResponse SetActiveReceiptRuleSet(SetActiveReceiptRuleSetRequest request)
+        {
+            var marshaller = new SetActiveReceiptRuleSetRequestMarshaller();
+            var unmarshaller = SetActiveReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return Invoke<SetActiveReceiptRuleSetRequest,SetActiveReceiptRuleSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetActiveReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetActiveReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SetActiveReceiptRuleSetResponse> SetActiveReceiptRuleSetAsync(SetActiveReceiptRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetActiveReceiptRuleSetRequestMarshaller();
+            var unmarshaller = SetActiveReceiptRuleSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetActiveReceiptRuleSetRequest,SetActiveReceiptRuleSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1306,6 +2110,135 @@ namespace Amazon.SimpleEmail
             var unmarshaller = SetIdentityNotificationTopicResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetIdentityNotificationTopicRequest,SetIdentityNotificationTopicResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetReceiptRulePosition
+
+
+        /// <summary>
+        /// Sets the position of the specified receipt rule in the receipt rule set.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetReceiptRulePosition service method.</param>
+        /// 
+        /// <returns>The response from the SetReceiptRulePosition service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
+        /// Indicates that the provided receipt rule does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        public SetReceiptRulePositionResponse SetReceiptRulePosition(SetReceiptRulePositionRequest request)
+        {
+            var marshaller = new SetReceiptRulePositionRequestMarshaller();
+            var unmarshaller = SetReceiptRulePositionResponseUnmarshaller.Instance;
+
+            return Invoke<SetReceiptRulePositionRequest,SetReceiptRulePositionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetReceiptRulePosition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetReceiptRulePosition operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SetReceiptRulePositionResponse> SetReceiptRulePositionAsync(SetReceiptRulePositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetReceiptRulePositionRequestMarshaller();
+            var unmarshaller = SetReceiptRulePositionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetReceiptRulePositionRequest,SetReceiptRulePositionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateReceiptRule
+
+
+        /// <summary>
+        /// Updates a receipt rule.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReceiptRule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateReceiptRule service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidLambdaFunctionException">
+        /// Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could
+        /// not execute the provided function, possibly due to permissions issues. For information
+        /// about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidS3ConfigurationException">
+        /// Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid,
+        /// or that Amazon SES could not publish to the bucket, possibly due to permissions issues.
+        /// For information about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidSnsTopicException">
+        /// Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could
+        /// not publish to the topic, possibly due to permissions issues. For information about
+        /// giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created due to service limits. For a list of
+        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
+        /// Indicates that the provided receipt rule does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        public UpdateReceiptRuleResponse UpdateReceiptRule(UpdateReceiptRuleRequest request)
+        {
+            var marshaller = new UpdateReceiptRuleRequestMarshaller();
+            var unmarshaller = UpdateReceiptRuleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateReceiptRuleRequest,UpdateReceiptRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReceiptRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateReceiptRuleResponse> UpdateReceiptRuleAsync(UpdateReceiptRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateReceiptRuleRequestMarshaller();
+            var unmarshaller = UpdateReceiptRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateReceiptRuleRequest,UpdateReceiptRuleResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

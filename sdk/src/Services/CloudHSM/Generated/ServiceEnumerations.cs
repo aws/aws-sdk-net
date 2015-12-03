@@ -40,7 +40,12 @@ namespace Amazon.CloudHSM
         public static readonly ClientVersion v5_3 = new ClientVersion("5.3");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ClientVersion(string value)
             : base(value)
@@ -89,7 +94,12 @@ namespace Amazon.CloudHSM
         public static readonly CloudHsmObjectState UPDATING = new CloudHsmObjectState("UPDATING");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public CloudHsmObjectState(string value)
             : base(value)
@@ -154,7 +164,12 @@ namespace Amazon.CloudHSM
         public static readonly HsmStatus UPDATING = new HsmStatus("UPDATING");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public HsmStatus(string value)
             : base(value)
@@ -195,7 +210,12 @@ namespace Amazon.CloudHSM
         public static readonly SubscriptionType PRODUCTION = new SubscriptionType("PRODUCTION");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public SubscriptionType(string value)
             : base(value)

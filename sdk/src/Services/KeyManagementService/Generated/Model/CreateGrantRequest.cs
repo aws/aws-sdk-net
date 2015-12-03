@@ -29,12 +29,14 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGrant operation.
-    /// Adds a grant to a key to specify who can access the key and under what conditions.
-    /// Grants are alternate permission mechanisms to key policies. For more information about
-    /// grants, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
-    /// in the developer guide. If a grant is absent, access to the key is evaluated based
-    /// on IAM policies attached to the user. <ol> <li><a>ListGrants</a></li> <li><a>RetireGrant</a></li>
-    /// <li><a>RevokeGrant</a></li> </ol>
+    /// Adds a grant to a key to specify who can use the key and under what conditions. Grants
+    /// are alternate permission mechanisms to key policies.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about grants, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
+    /// in the <i>AWS Key Management Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateGrantRequest : AmazonKeyManagementServiceRequest
     {
@@ -42,14 +44,20 @@ namespace Amazon.KeyManagementService.Model
         private string _granteePrincipal;
         private List<string> _grantTokens = new List<string>();
         private string _keyId;
+        private string _name;
         private List<string> _operations = new List<string>();
         private string _retiringPrincipal;
 
         /// <summary>
         /// Gets and sets the property Constraints. 
         /// <para>
-        /// Specifies the conditions under which the actions specified by the <code>Operations</code>
-        /// parameter are allowed. 
+        /// The conditions under which the operations permitted by the grant are allowed.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this value to allow the operations permitted by the grant only when a
+        /// specified encryption context is present. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+        /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public GrantConstraints Constraints
@@ -67,8 +75,16 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property GranteePrincipal. 
         /// <para>
-        /// Principal given permission by the grant to use the key identified by the <code>keyId</code>
-        /// parameter.
+        /// The principal that is given permission to perform the operations that the grant permits.
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify the principal, use the <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts
+        /// (root), IAM users, federated users, and assumed role users. For examples of the ARN
+        /// syntax to use for specifying a principal, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+        /// Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>AWS
+        /// General Reference</i>.
         /// </para>
         /// </summary>
         public string GranteePrincipal
@@ -86,8 +102,12 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property GrantTokens. 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-        /// Tokens</a>. 
+        /// A list of grant tokens.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+        /// Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<string> GrantTokens
@@ -105,10 +125,14 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// A unique identifier for the customer master key. This value can be a globally unique
-        /// identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-        /// <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul>
-        /// 
+        /// The unique identifier for the customer master key (CMK) that the grant applies to.
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify this value, use the globally unique key ID or the Amazon Resource Name
+        /// (ARN) of the key. Examples: <ul> <li>Globally unique key ID: 12345678-1234-1234-1234-123456789012</li>
+        /// <li>Key ARN: arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+        /// </ul> 
         /// </para>
         /// </summary>
         public string KeyId
@@ -124,12 +148,46 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// A friendly name for identifying the grant. Use this value to prevent unintended creation
+        /// of duplicate grants when retrying this request.
+        /// </para>
+        ///  
+        /// <para>
+        /// When this value is absent, all <code>CreateGrant</code> requests result in a new grant
+        /// with a unique <code>GrantId</code> even if all the supplied parameters are identical.
+        /// This can result in unintended duplicates when you retry the <code>CreateGrant</code>
+        /// request.
+        /// </para>
+        ///  
+        /// <para>
+        /// When this value is present, you can retry a <code>CreateGrant</code> request with
+        /// identical parameters; if the grant already exists, the original <code>GrantId</code>
+        /// is returned without creating a new grant. Note that the returned grant token is unique
+        /// with every <code>CreateGrant</code> request, even when a duplicate <code>GrantId</code>
+        /// is returned. All grant tokens obtained in this way can be used interchangeably.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Operations. 
         /// <para>
-        /// List of operations permitted by the grant. This can be any combination of one or more
-        /// of the following values: <ol> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li>
+        /// A list of operations that the grant permits. The list can contain any combination
+        /// of one or more of the following values: <ul> <li>Decrypt</li> <li>Encrypt</li> <li>GenerateDataKey</li>
         /// <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li> <li>ReEncryptTo</li>
-        /// <li>CreateGrant</li> <li>RetireGrant</li> </ol> 
+        /// <li>CreateGrant</li> <li>RetireGrant</li> </ul> 
         /// </para>
         /// </summary>
         public List<string> Operations
@@ -147,7 +205,17 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property RetiringPrincipal. 
         /// <para>
-        /// Principal given permission to retire the grant. For more information, see <a>RetireGrant</a>.
+        /// The principal that is given permission to retire the grant by using <a>RetireGrant</a>
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify the principal, use the <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts
+        /// (root), IAM users, federated users, and assumed role users. For examples of the ARN
+        /// syntax to use for specifying a principal, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+        /// Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>AWS
+        /// General Reference</i>.
         /// </para>
         /// </summary>
         public string RetiringPrincipal

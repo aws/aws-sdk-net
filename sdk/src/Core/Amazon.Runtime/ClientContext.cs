@@ -134,7 +134,7 @@ namespace Amazon.Runtime.Internal
                     _env.Add(ENV_PLATFORM_KEY, Environment.OSVersion.Platform.ToString());
 
                 if (!string.IsNullOrEmpty(_config.PlatformVersion))
-                    _env.Add(ENV_PLATFORM_KEY, _config.PlatformVersion);
+                    _env.Add(ENV_PLATFORM_VERSION_KEY, _config.PlatformVersion);
                 else
                     _env.Add(ENV_PLATFORM_VERSION_KEY, Environment.OSVersion.Version.ToString());
 
@@ -150,10 +150,12 @@ namespace Amazon.Runtime.Internal
                     _env.Add(ENV_MODEL_KEY, _config.Model);
 #endif
                 // services
-                IDictionary mobileAnalyticsService = new Dictionary<string, string>();
-                mobileAnalyticsService.Add(SERVICE_MOBILE_ANALYTICS_APP_ID_KEY, AppID);
-                _services.Add(SERVICE_MOBILE_ANALYTICS_KEY, mobileAnalyticsService);
-
+                if (!string.IsNullOrEmpty(this.AppID))
+                {
+                    IDictionary mobileAnalyticsService = new Dictionary<string, string>();
+                    mobileAnalyticsService.Add(SERVICE_MOBILE_ANALYTICS_APP_ID_KEY, AppID);
+                    _services.Add(SERVICE_MOBILE_ANALYTICS_KEY, mobileAnalyticsService);
+                }
 
                 _clientContext = new Dictionary<string, IDictionary>();
                 _clientContext.Add(CLIENT_KEY, _client);

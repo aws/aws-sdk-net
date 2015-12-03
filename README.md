@@ -46,10 +46,14 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 
 ### NuGet Packages
 
+* [AWSSDK.APIGateway](https://www.nuget.org/packages/AWSSDK.APIGateway/)
+	* Amazon API Gateway helps developers deliver robust, secure and scalable mobile and web application backends. Amazon API Gateway allows developers to securely connect mobile and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly addressable web services that are hosted outside of AWS.
 * [AWSSDK.AutoScaling](https://www.nuget.org/packages/AWSSDK.AutoScaling/)
 	* Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.
+* [AWSSDK.AWSMarketplaceCommerceAnalytics](https://www.nuget.org/packages/AWSSDK.AWSMarketplaceCommerceAnalytics/)
+	* The AWS Marketplace Commerce Analytics service allows marketplace partners to programmatically request business intelligence data from AWS Marketplace. This service provides the same data that was previously only available through the AWS Marketplace Management Portal, but offers the data in a fully-machine-readable format and available in fine-grained data sets rather than large reports.
 * [AWSSDK.AWSSupport](https://www.nuget.org/packages/AWSSDK.AWSSupport/)
-	* The AWS Support API provides access to some of the AWS services that underlie the features of the AWS Support Center.
+	* The AWS Support API provides methods for creating and managing AWS Support cases and for retrieving the results of AWS Trusted Advisor checks.
 * [AWSSDK.CloudFormation](https://www.nuget.org/packages/AWSSDK.CloudFormation/)
 	* AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.
 * [AWSSDK.CloudFront](https://www.nuget.org/packages/AWSSDK.CloudFront/)
@@ -102,6 +106,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.
 * [AWSSDK.ElasticMapReduce](https://www.nuget.org/packages/AWSSDK.ElasticMapReduce/)
 	* Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to quickly and cost-effectively process vast amounts of data.
+* [AWSSDK.Elasticsearch](https://www.nuget.org/packages/AWSSDK.Elasticsearch/)
+	* Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.
 * [AWSSDK.ElasticTranscoder](https://www.nuget.org/packages/AWSSDK.ElasticTranscoder/)
 	* Amazon Elastic Transcoder is media transcoding in the cloud. It is designed to be a highly scalable, easy to use and a cost effective way for developers and businesses to convert (or 'transcode') media files from their source format into versions that will playback on devices like smartphones, tablets and PCs.
 * [AWSSDK.Glacier](https://www.nuget.org/packages/AWSSDK.Glacier/)
@@ -110,10 +116,18 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Identity and Access Management (IAM) enables you to securely control access to AWS services and resources for your users. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.
 * [AWSSDK.ImportExport](https://www.nuget.org/packages/AWSSDK.ImportExport/)
 	* AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.
+* [AWSSDK.Inspector](https://www.nuget.org/packages/AWSSDK.Inspector/)
+	* Amazon Inspector identifies security issues in your application deployments.
+* [AWSSDK.IoT](https://www.nuget.org/packages/AWSSDK.IoT/)
+	* AWS IoT allows you to leverage AWS to build your Internet of Things.
+* [AWSSDK.IotData](https://www.nuget.org/packages/AWSSDK.IotData/)
+	* AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud.
 * [AWSSDK.KeyManagementService](https://www.nuget.org/packages/AWSSDK.KeyManagementService/)
 	* AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys.
 * [AWSSDK.Kinesis](https://www.nuget.org/packages/AWSSDK.Kinesis/)
 	* Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.
+* [AWSSDK.KinesisFirehose](https://www.nuget.org/packages/AWSSDK.KinesisFirehose/)
+	* Amazon Kinesis Firehose is a fully managed service for ingesting data streams directly into AWS data services such as Amazon S3 and Amazon Redshift.
 * [AWSSDK.Lambda](https://www.nuget.org/packages/AWSSDK.Lambda/)
 	* AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you, making it easy to build applications that respond quickly to new information.
 * [AWSSDK.MachineLearning](https://www.nuget.org/packages/AWSSDK.MachineLearning/)
@@ -148,6 +162,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service. SQS makes it simple and cost-effective to decouple the components of a cloud application.
 * [AWSSDK.StorageGateway](https://www.nuget.org/packages/AWSSDK.StorageGateway/)
 	* The AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure.
+* [AWSSDK.WAF](https://www.nuget.org/packages/AWSSDK.WAF/)
+	* AWS WAF (Web Application Firewall) protects web applications from attack by allowing customers to block bad actors and provides filters against common web exploits like SQL injection.
 * [AWSSDK.WorkSpaces](https://www.nuget.org/packages/AWSSDK.WorkSpaces/)
 	* Amazon WorkSpaces is a managed desktop computing service in the cloud.
 

@@ -36,6 +36,8 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         [TestCategory("SimpleMethods"), TestCategory("SimpleSystemsManagement")]
         public void SimpleSystemsManagementSimpleMethodTests()
         {
+            EnsureSimpleMethodExists(typeof(Amazon.SimpleSystemsManagement.AmazonSimpleSystemsManagementClient), "CancelCommand", new Type[] { typeof(string), });
+            EnsureSimpleMethodExists(typeof(Amazon.SimpleSystemsManagement.AmazonSimpleSystemsManagementClient), "CancelCommand", new Type[] { typeof(string), typeof(List<string>), });
             EnsureSimpleMethodExists(typeof(Amazon.SimpleSystemsManagement.AmazonSimpleSystemsManagementClient), "CreateAssociation", new Type[] { typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SimpleSystemsManagement.AmazonSimpleSystemsManagementClient), "CreateDocument", new Type[] { typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SimpleSystemsManagement.AmazonSimpleSystemsManagementClient), "DeleteAssociation", new Type[] { typeof(string), typeof(string), });
@@ -43,6 +45,9 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.SimpleSystemsManagement.AmazonSimpleSystemsManagementClient), "DescribeAssociation", new Type[] { typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SimpleSystemsManagement.AmazonSimpleSystemsManagementClient), "DescribeDocument", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SimpleSystemsManagement.AmazonSimpleSystemsManagementClient), "GetDocument", new Type[] { typeof(string), });
+            EnsureSimpleMethodExists(typeof(Amazon.SimpleSystemsManagement.AmazonSimpleSystemsManagementClient), "ListCommandInvocations", new Type[] { typeof(string), });
+            EnsureSimpleMethodExists(typeof(Amazon.SimpleSystemsManagement.AmazonSimpleSystemsManagementClient), "ListCommands", new Type[] { typeof(string), });
+            EnsureSimpleMethodExists(typeof(Amazon.SimpleSystemsManagement.AmazonSimpleSystemsManagementClient), "SendCommand", new Type[] { typeof(string), typeof(List<string>), });
         }
         
         void EnsureSimpleMethodExists(Type type, string methodName, Type[] simpleParams)

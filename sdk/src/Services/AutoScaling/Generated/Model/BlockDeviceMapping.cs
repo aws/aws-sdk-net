@@ -101,7 +101,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property VirtualName. 
         /// <para>
-        /// The name of the virtual device, <code>ephemeral0</code> to <code>ephemeral3</code>.
+        /// The name of the virtual device (for example, <code>ephemeral0</code>).
         /// </para>
         /// </summary>
         public string VirtualName

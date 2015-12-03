@@ -40,7 +40,12 @@ namespace Amazon.ConfigService
         public static readonly ChronologicalOrder Reverse = new ChronologicalOrder("Reverse");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ChronologicalOrder(string value)
             : base(value)
@@ -63,6 +68,114 @@ namespace Amazon.ConfigService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ChronologicalOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ComplianceType.
+    /// </summary>
+    public class ComplianceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLIANT for ComplianceType
+        /// </summary>
+        public static readonly ComplianceType COMPLIANT = new ComplianceType("COMPLIANT");
+        /// <summary>
+        /// Constant INSUFFICIENT_DATA for ComplianceType
+        /// </summary>
+        public static readonly ComplianceType INSUFFICIENT_DATA = new ComplianceType("INSUFFICIENT_DATA");
+        /// <summary>
+        /// Constant NON_COMPLIANT for ComplianceType
+        /// </summary>
+        public static readonly ComplianceType NON_COMPLIANT = new ComplianceType("NON_COMPLIANT");
+        /// <summary>
+        /// Constant NOT_APPLICABLE for ComplianceType
+        /// </summary>
+        public static readonly ComplianceType NOT_APPLICABLE = new ComplianceType("NOT_APPLICABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComplianceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComplianceType FindValue(string value)
+        {
+            return FindValue<ComplianceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComplianceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfigRuleState.
+    /// </summary>
+    public class ConfigRuleState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ConfigRuleState
+        /// </summary>
+        public static readonly ConfigRuleState ACTIVE = new ConfigRuleState("ACTIVE");
+        /// <summary>
+        /// Constant DELETING for ConfigRuleState
+        /// </summary>
+        public static readonly ConfigRuleState DELETING = new ConfigRuleState("DELETING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigRuleState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigRuleState FindValue(string value)
+        {
+            return FindValue<ConfigRuleState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigRuleState(string value)
         {
             return FindValue(value);
         }
@@ -93,7 +206,12 @@ namespace Amazon.ConfigService
         public static readonly ConfigurationItemStatus Ok = new ConfigurationItemStatus("Ok");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ConfigurationItemStatus(string value)
             : base(value)
@@ -142,7 +260,12 @@ namespace Amazon.ConfigService
         public static readonly DeliveryStatus Success = new DeliveryStatus("Success");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public DeliveryStatus(string value)
             : base(value)
@@ -172,6 +295,214 @@ namespace Amazon.ConfigService
 
 
     /// <summary>
+    /// Constants used for properties of type EventSource.
+    /// </summary>
+    public class EventSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AwsConfig for EventSource
+        /// </summary>
+        public static readonly EventSource AwsConfig = new EventSource("aws.config");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventSource FindValue(string value)
+        {
+            return FindValue<EventSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MaximumExecutionFrequency.
+    /// </summary>
+    public class MaximumExecutionFrequency : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant One_Hour for MaximumExecutionFrequency
+        /// </summary>
+        public static readonly MaximumExecutionFrequency One_Hour = new MaximumExecutionFrequency("One_Hour");
+        /// <summary>
+        /// Constant Six_Hours for MaximumExecutionFrequency
+        /// </summary>
+        public static readonly MaximumExecutionFrequency Six_Hours = new MaximumExecutionFrequency("Six_Hours");
+        /// <summary>
+        /// Constant Three_Hours for MaximumExecutionFrequency
+        /// </summary>
+        public static readonly MaximumExecutionFrequency Three_Hours = new MaximumExecutionFrequency("Three_Hours");
+        /// <summary>
+        /// Constant Twelve_Hours for MaximumExecutionFrequency
+        /// </summary>
+        public static readonly MaximumExecutionFrequency Twelve_Hours = new MaximumExecutionFrequency("Twelve_Hours");
+        /// <summary>
+        /// Constant TwentyFour_Hours for MaximumExecutionFrequency
+        /// </summary>
+        public static readonly MaximumExecutionFrequency TwentyFour_Hours = new MaximumExecutionFrequency("TwentyFour_Hours");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MaximumExecutionFrequency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaximumExecutionFrequency FindValue(string value)
+        {
+            return FindValue<MaximumExecutionFrequency>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MaximumExecutionFrequency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MessageType.
+    /// </summary>
+    public class MessageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ConfigurationItemChangeNotification for MessageType
+        /// </summary>
+        public static readonly MessageType ConfigurationItemChangeNotification = new MessageType("ConfigurationItemChangeNotification");
+        /// <summary>
+        /// Constant ConfigurationSnapshotDeliveryCompleted for MessageType
+        /// </summary>
+        public static readonly MessageType ConfigurationSnapshotDeliveryCompleted = new MessageType("ConfigurationSnapshotDeliveryCompleted");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MessageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MessageType FindValue(string value)
+        {
+            return FindValue<MessageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MessageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Owner.
+    /// </summary>
+    public class Owner : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS for Owner
+        /// </summary>
+        public static readonly Owner AWS = new Owner("AWS");
+        /// <summary>
+        /// Constant CUSTOM_LAMBDA for Owner
+        /// </summary>
+        public static readonly Owner CUSTOM_LAMBDA = new Owner("CUSTOM_LAMBDA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Owner(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Owner FindValue(string value)
+        {
+            return FindValue<Owner>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Owner(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecorderStatus.
     /// </summary>
     public class RecorderStatus : ConstantClass
@@ -191,7 +522,12 @@ namespace Amazon.ConfigService
         public static readonly RecorderStatus Success = new RecorderStatus("Success");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public RecorderStatus(string value)
             : base(value)
@@ -239,6 +575,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSEC2EIP = new ResourceType("AWS::EC2::EIP");
         /// <summary>
+        /// Constant AWSEC2Host for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEC2Host = new ResourceType("AWS::EC2::Host");
+        /// <summary>
         /// Constant AWSEC2Instance for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2Instance = new ResourceType("AWS::EC2::Instance");
@@ -284,7 +624,12 @@ namespace Amazon.ConfigService
         public static readonly ResourceType AWSEC2VPNGateway = new ResourceType("AWS::EC2::VPNGateway");
 
         /// <summary>
-        /// Default Constructor
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
         /// </summary>
         public ResourceType(string value)
             : base(value)

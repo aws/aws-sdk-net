@@ -33,6 +33,8 @@ using Amazon.S3.Model;
 using Amazon.Util;
 using System.Threading;
 using Amazon.Runtime.Internal;
+using Amazon.S3.Model.Internal.MarshallTransformations;
+using Amazon.Runtime;
 
 namespace Amazon.S3.Util
 {
@@ -329,6 +331,34 @@ namespace Amazon.S3.Util
         {
             foreach (var name in metadata.Keys)
                 request.Headers[name] = metadata[name];
+        }
+
+        internal static DateTime? ParseExpiresHeader(string rawValue, string requestId)
+        {
+            if (!string.IsNullOrEmpty(rawValue))
+            {
+                try
+                {
+                    return S3Transforms.ToDateTime(rawValue);
+                }
+                catch (FormatException e)
+                {
+                    throw new AmazonDateTimeUnmarshallingException(
+                        requestId,
+                        string.Empty,
+                        string.Empty,
+                        rawValue,
+                        message: string.Format(
+                            CultureInfo.InvariantCulture,
+                            "The value {0} cannot be converted to a DateTime instance.",
+                            rawValue),
+                        innerException: e);
+                }
+            }
+            else
+            {
+                return default(DateTime);
+            }
         }
 
         /// <summary>
