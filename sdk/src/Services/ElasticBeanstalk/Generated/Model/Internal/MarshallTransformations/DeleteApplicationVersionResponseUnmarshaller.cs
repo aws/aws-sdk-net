@@ -103,7 +103,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             {
                 return new InsufficientPrivilegesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationInProgressException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationInProgressFailure"))
             {
                 return new OperationInProgressException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
@@ -111,7 +111,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             {
                 return new S3LocationNotInServiceRegionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("SourceBundleDeletionException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("SourceBundleDeletionFailure"))
             {
                 return new SourceBundleDeletionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }

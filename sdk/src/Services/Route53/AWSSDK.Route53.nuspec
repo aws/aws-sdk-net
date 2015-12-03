@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Route53</id>
     <title>AWSSDK - Amazon Route 53</title>
-    <version>3.1.1.2</version> 
+    <version>3.1.2.0</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.</description>
     <language>en-US</language>

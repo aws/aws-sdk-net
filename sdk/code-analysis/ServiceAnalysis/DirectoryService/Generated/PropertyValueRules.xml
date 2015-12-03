@@ -75,7 +75,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateDirectoryRequest.Password</property>
-    <pattern>(?=^.{8,64}$)((?=.*\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[^A-Za-z0-9])(?=.*[a-z])|(?=.*[^A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9]))^.*</pattern>
+    <pattern>(?=^.{8,64}$)((?=.*\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])|(?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s]))^.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateDirectoryRequest.ShortName</property>
@@ -83,6 +83,28 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateDirectoryResponse.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CreateMicrosoftADRequest.Description</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CreateMicrosoftADRequest.Name</property>
+    <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CreateMicrosoftADRequest.Password</property>
+    <pattern>(?=^.{8,64}$)((?=.*\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])|(?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s]))^.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CreateMicrosoftADRequest.ShortName</property>
+    <pattern>^[^\\/:*?\"\&lt;\&gt;|.]+[^\\/:*?\"&lt;&gt;|]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CreateMicrosoftADResponse.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -98,6 +120,23 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateSnapshotResponse.SnapshotId</property>
     <pattern>^s-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CreateTrustRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CreateTrustRequest.RemoteDomainName</property>
+    <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CreateTrustRequest.TrustPassword</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CreateTrustResponse.TrustId</property>
+    <pattern>^t-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DeleteDirectoryRequest.DirectoryId</property>
@@ -116,6 +155,14 @@
     <pattern>^s-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DeleteTrustRequest.TrustId</property>
+    <pattern>^t-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DeleteTrustResponse.TrustId</property>
+    <pattern>^t-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.DescribeDirectoriesRequest.Limit</property>
     <min>0</min>
   </property-value-rule>
@@ -125,6 +172,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DescribeSnapshotsRequest.Limit</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeTrustsRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeTrustsRequest.Limit</property>
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
@@ -174,6 +229,14 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.UpdateRadiusRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.VerifyTrustRequest.TrustId</property>
+    <pattern>^t-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.VerifyTrustResponse.TrustId</property>
+    <pattern>^t-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.Attribute.Name</property>
@@ -259,6 +322,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryLimits.CloudOnlyDirectoriesLimit</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DirectoryLimits.CloudOnlyMicrosoftADCurrentCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DirectoryLimits.CloudOnlyMicrosoftADLimit</property>
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
@@ -359,6 +430,18 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.SnapshotLimits.ManualSnapshotsLimit</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.Trust.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.Trust.RemoteDomainName</property>
+    <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.Trust.TrustId</property>
+    <pattern>^t-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.UnsupportedOperationException.RequestId</property>

@@ -1,3 +1,11 @@
+### 3.1.32.0 (2015-12-03 23:01 UTC)
+* DirectoryService (3.1.1.0)
+	* Support for managed directories
+* RDS (3.1.5.0)
+	* Added support for modifying DB port number via ModifyDbInstance.
+* Route53 (3.1.2.0)
+	* Added traffic policy support
+
 ### 3.1.31.0 (2015-12-01 23:16 UTC)
 * CognitoIdentity (3.1.0.5)
 	* Add api to clone logins dictionary
