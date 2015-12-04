@@ -29,7 +29,7 @@
             "template": "PCLProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference", "_pcl-sl", "_bcl+pcl" ],
             "nugetTargetPlatform": "portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10",
-            
+
             "extraTestProjects": [
                 "test\\CrossPlatformTests\\CommonTests\\CommonTests.csproj",
                 "test\\CrossPlatformTests\\AndroidApp\\AndroidApp.csproj",
@@ -243,14 +243,14 @@
             "synopsis": "Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms."
         },
         {
-            "active" : true,
-            
-            "model" : "codecommit",
-            "base-name" : "CodeCommit",
-            "region-lookup-name" : "codecommit",
-            "authentication-service-name" : "codecommit",
+            "active": true,
+
+            "model": "codecommit",
+            "base-name": "CodeCommit",
+            "region-lookup-name": "codecommit",
+            "authentication-service-name": "codecommit",
             "service-url": "http://codecommit.us-east-1.amazonaws.com",
-            "synopsis" : "AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories."
+            "synopsis": "AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories."
         },
         {
             "active": true,
@@ -290,7 +290,7 @@
 
             "model": "cognito-sync",
             "base-name": "CognitoSync",
-            "nuget-package-title-suffix" : "(Low Level Service Client)",
+            "nuget-package-title-suffix": "(Low Level Service Client)",
             "region-lookup-name": "cognito-sync",
             "authentication-service-name": "cognito-sync",
             "service-url": "http://cognito-sync.us-east-1.amazonaws.com",
@@ -336,7 +336,7 @@
             "authentication-service-name": "ds",
             "service-url": "https://ds.us-east-1.amazonaws.com",
             "synopsis": "AWS Directory Service is a managed service that allows you to connect your AWS resources with an existing on-premises Microsoft Active Directory or to set up a new, stand-alone directory in the AWS Cloud."
-        },        
+        },
         {
             "active": true,
 
@@ -432,7 +432,7 @@
             "authentication-service-name": "elasticmapreduce",
             "service-url": "https://elasticmapreduce.amazonaws.com",
             "synopsis": "Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to quickly and cost-effectively process vast amounts of data.",
-            "tags":  [ "EMR" ]
+            "tags": [ "EMR" ]
         },
         {
             "active": true,
@@ -482,8 +482,8 @@
             "base-name": "IotData",
             "region-lookup-name": "data.iot",
             "service-url": "https://data.iot.us-east-1.amazonaws.com/",
-			"authentication-service-name": "iotdata",
-			"generate-client-constructors": false,
+            "authentication-service-name": "iotdata",
+            "generate-client-constructors": false,
             "synopsis": "AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud."
         },
         {
@@ -498,7 +498,7 @@
             "authentication-service-name": "iam",
             "default-region": "USEast1",
             "synopsis": "AWS Identity and Access Management (IAM) enables you to securely control access to AWS services and resources for your users. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.",
-            "tags":  [ "IAM" ],
+            "tags": [ "IAM" ],
             "platforms": [ "Unity" ]
 
         },
@@ -511,13 +511,13 @@
             "service-url": "https://importexport.amazonaws.com/",
             "synopsis": "AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport."
         },
-                {
+        {
             "active": true,
 
             "model": "iot-2015-",
             "base-name": "IoT",
             "region-lookup-name": "iot",
-			"authentication-service-name": "execute-api",
+            "authentication-service-name": "execute-api",
             "service-url": "https://iot.us-east-1.amazonaws.com/",
             "synopsis": "AWS IoT allows you to leverage AWS to build your Internet of Things."
         },
@@ -564,9 +564,9 @@
             "active": true,
 
             "model": "machinelearning",
-            "base-name" : "MachineLearning",
-            "region-lookup-name" : "machinelearning",
-            "authentication-service-name" : "machinelearning",
+            "base-name": "MachineLearning",
+            "region-lookup-name": "machinelearning",
+            "authentication-service-name": "machinelearning",
             "synopsis": "Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology."
         },
         {
@@ -592,6 +592,10 @@
                 "iOS": [
                     { "name": "SQLitePCL", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.dll" },
                     { "name": "SQLitePCL.Ext", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.Ext.dll" }
+                ],
+                "Unity": [
+                    { "name": "System.Data", "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\System.Data.dll" },
+                    { "name": "Mono.Data.SQLite", "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\Mono.Data.SQLite.dll"}
                 ]
             },
             "nuget-dependencies": {
@@ -754,8 +758,8 @@
             "synopsis": "AWS WAF (Web Application Firewall) protects web applications from attack by allowing customers to block bad actors and provides filters against common web exploits like SQL injection."
         },
         {
-            "active" : true,
-            
+            "active": true,
+
             "model": "workspaces",
             "base-name": "WorkSpaces",
             "region-lookup-name": "workspaces",

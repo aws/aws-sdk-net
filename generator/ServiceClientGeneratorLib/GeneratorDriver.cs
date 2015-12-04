@@ -604,7 +604,7 @@ namespace ServiceClientGenerator
         {
             Console.WriteLine("Updating Core project files.");
             string coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "core");
-            var creator = new ProjectFileCreator();
+            var creator = new ProjectFileCreator(options);
             creator.ExecuteCore(coreFilesRoot, generationManifest.ProjectFileConfigurations);
             foreach (var newProjectKey in creator.CreatedProjectFiles.Keys)
             {
@@ -782,7 +782,7 @@ namespace ServiceClientGenerator
         /// </summary>
         void ExecuteProjectFileGenerators()
         {
-            var creator = new ProjectFileCreator();
+            var creator = new ProjectFileCreator(Options);
             creator.Execute(ServiceFilesRoot, this.Configuration, this.ProjectFileConfigurations);
             foreach (var newProjectKey in creator.CreatedProjectFiles.Keys)
             {

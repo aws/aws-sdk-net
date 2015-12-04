@@ -174,7 +174,7 @@ namespace ServiceClientGenerator
                             var platformDependency = new Dependency
                             {
                                 Name = item[ModelsSectionKeys.DependencyNameKey].ToString(),
-                                Version = item[ModelsSectionKeys.DependencyVersionKey].ToString(),
+                                Version = item.PropertyNames.Contains(ModelsSectionKeys.DependencyVersionKey)?item[ModelsSectionKeys.DependencyVersionKey].ToString():"0.0.0.0",
                                 HintPath = item[ModelsSectionKeys.DependencyHintPathKey].ToString(),
                             };
                             platformDependencies.Add(platformDependency);

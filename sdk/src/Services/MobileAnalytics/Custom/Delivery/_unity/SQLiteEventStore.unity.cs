@@ -13,29 +13,20 @@
  * permissions and limitations under the License.
  */
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-
-using UnityEngine;
-
-using Amazon.Util.Storage;
-using Amazon.MobileAnalytics.Model;
-
-using ThirdParty.Json.LitJson;
-using Amazon.MobileAnalytics.MobileAnalyticsManager;
-using Amazon.Util.Storage.Internal;
-using Amazon.Util;
-using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal;
+using Mono.Data.Sqlite;
+using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
+using System.Text.RegularExpressions;
+using ThirdParty.Json.LitJson;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 {
     public partial class SQLiteEventStore : IEventStore
     {
-        private static SQLiteDatabase db;
+        private SqliteConnection connection;
 
         /// <summary>
         /// Implements the Dispose pattern
@@ -48,25 +39,65 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             {
                 if (disposing)
                 {
-                    lock (_lock)
+                    if (connection != null)
                     {
-                        if (!this._isDisposed)
-                        {
-                            db.CloseDatabase();
-                        }
+                        connection.Close();
+                        connection.Dispose();
                     }
                 }
                 this._isDisposed = true;
             }
         }
 
+
         private void CreateOrOpenDatabase()
         {
-            if (db == null)
-                db = new SQLiteDatabase(this.DBfileFullPath);
-            else
-                db.OpenDatabase();
+            lock (_lock)
+            {
+                this.DBfileFullPath = System.IO.Path.Combine(AmazonHookedPlatformInfo.Instance.PersistentDataPath, dbFileName);
 
+                string vacuumCommand = "PRAGMA auto_vacuum = 1";
+                string sqlCommand = string.Format(CultureInfo.InvariantCulture, "CREATE TABLE IF NOT EXISTS {0} ({1} TEXT NOT NULL,{2} TEXT NOT NULL UNIQUE,{3} TEXT NOT NULL, {4}  INTEGER NOT NULL DEFAULT 0 )",
+                    TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME);
+
+                bool toCreate = !File.Exists(this.DBfileFullPath);
+
+                if (toCreate)
+                {
+                    string directory = Path.GetDirectoryName(this.DBfileFullPath);
+                    if (!Directory.Exists(directory))
+                    {
+                        Directory.CreateDirectory(directory);
+                    }
+                    SqliteConnection.CreateFile(this.DBfileFullPath);
+                }
+                try
+                {
+                    connection = new SqliteConnection("URI=file:" + this.DBfileFullPath);
+                    connection.Open();
+                    if (toCreate)
+                    {
+                        using (var command = connection.CreateCommand())
+                        {
+                            command.CommandText = vacuumCommand;
+                            command.ExecuteNonQuery();
+                        }
+                        using (var command = connection.CreateCommand())
+                        {
+                            command.CommandText = sqlCommand;
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                }
+                finally
+                {
+                    if (connection != null)
+                    {
+                        connection.Close();
+                        connection.Dispose();
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -74,35 +105,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// </summary>
         private void SetupSQLiteEventStore()
         {
-            lock (_lock)
-            {
-                this.DBfileFullPath = System.IO.Path.Combine(AmazonHookedPlatformInfo.Instance.PersistentDataPath, dbFileName);
-
-                SQLiteStatement stmt = null;
-                try
-                {
-                    CreateOrOpenDatabase();
-
-                    //turn on auto vacuuming so that when events are deleted, and we can recover the table space.
-                    string vacuumCommand = "PRAGMA auto_vacuum = 1";
-                    db.Exec(vacuumCommand);
-
-                    string query = string.Format(CultureInfo.InvariantCulture, "CREATE TABLE IF NOT EXISTS {0} ({1} TEXT NOT NULL,{2} TEXT NOT NULL UNIQUE,{3} TEXT NOT NULL, {4}  INTEGER NOT NULL DEFAULT 0 )",
-                 TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME);
-
-                    db.Exec(query);
-                }
-                finally
-                {
-                    if (stmt != null)
-                        stmt.FinalizeStm();
-
-                    if (db != null)
-                        db.CloseDatabase();
-
-                }
-            }
+            CreateOrOpenDatabase();
         }
+
 
         /// <summary>
         /// Add an event to the store.
@@ -139,25 +144,26 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             {
                 lock (_lock)
                 {
-                    SQLiteStatement stmt = null;
+                    string query = string.Format(CultureInfo.InvariantCulture, "INSERT INTO {0}  ({1},{2},{3}) values(@eventString , @eventId , @appid )", TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME);
+
                     try
                     {
-                        CreateOrOpenDatabase();
-
-                        string query = string.Format(CultureInfo.InvariantCulture, "INSERT INTO {0}  ({1},{2},{3}) values(?,?,?)", TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME);
-                        stmt = db.Prepare(query);
-                        stmt.BindText(1, eventString);
-                        stmt.BindText(2, Guid.NewGuid().ToString());
-                        stmt.BindText(3, appId);
-                        stmt.Step();
+                        connection = new SqliteConnection("URI=file:" + this.DBfileFullPath);
+                        connection.Open();
+                        using (var command = connection.CreateCommand())
+                        {
+                            command.CommandText = query;
+                            BindData(command, eventString, Guid.NewGuid().ToString(), appId);
+                            command.ExecuteNonQuery();
+                        }
                     }
                     finally
                     {
-                        if (stmt != null)
-                            stmt.FinalizeStm();
-
-                        if (db != null)
-                            db.CloseDatabase();
+                        if (connection != null)
+                        {
+                            connection.Close();
+                            connection.Dispose();
+                        }
                     }
                 }
             }
@@ -173,23 +179,25 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         {
             lock (_lock)
             {
-                SQLiteStatement stmt = null;
                 try
                 {
-                    CreateOrOpenDatabase();
-
+                    connection = new SqliteConnection("URI=file:" + this.DBfileFullPath);
+                    connection.Open();
                     string ids = string.Format(CultureInfo.InvariantCulture, "'{0}'", string.Join("', '", rowIds.ToArray()));
                     string query = string.Format(CultureInfo.InvariantCulture, "DELETE FROM {0} WHERE {1} IN ({2})", TABLE_NAME, EVENT_ID_COLUMN_NAME, ids);
-                    stmt = db.Prepare(query);
-                    stmt.Step();
+                    using (var command = connection.CreateCommand())
+                    {
+                        command.CommandText = query;
+                        command.ExecuteNonQuery();
+                    }
                 }
                 finally
                 {
-                    if (stmt != null)
-                        stmt.FinalizeStm();
-
-                    if (db != null)
-                        db.CloseDatabase();
+                    if (connection != null)
+                    {
+                        connection.Close();
+                        connection.Dispose();
+                    }
                 }
             }
         }
@@ -205,31 +213,40 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             List<JsonData> eventList = new List<JsonData>();
             lock (_lock)
             {
-                SQLiteStatement stmt = null;
                 try
                 {
-                    CreateOrOpenDatabase();
-
-                    string query = string.Format(CultureInfo.InvariantCulture, "SELECT * FROM {0} WHERE {1}  = ? ORDER BY {2},   ROWID LIMIT {3} ", TABLE_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME, maxAllowed);
-                    stmt = db.Prepare(query);
-                    stmt.BindText(1, appID);
-                    while (stmt.Read())
+                    connection = new SqliteConnection("URI=file:" + this.DBfileFullPath);
+                    connection.Open();
+                    string query = string.Format(CultureInfo.InvariantCulture, "SELECT {0},{1},{2} FROM {3} WHERE {4}  = @appId ORDER BY {5}, ROWID LIMIT {6} ",
+                        EVENT_ID_COLUMN_NAME, EVENT_COLUMN_NAME, MA_APP_ID_COLUMN_NAME, TABLE_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME, maxAllowed);
+                    using (var command = connection.CreateCommand())
                     {
-                        JsonData data = new JsonData();
-                        data["id"] = stmt.Fields[EVENT_ID_COLUMN_NAME].TEXT;
-                        data["event"] = stmt.Fields[EVENT_COLUMN_NAME.ToLower()].TEXT;
-                        data["appId"] = stmt.Fields[MA_APP_ID_COLUMN_NAME].TEXT;
-                        eventList.Add(data);
+                        command.CommandText = query;
+                        BindData(command, appID);
+                        using (var reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                while (reader.Read())
+                                {
+                                    JsonData data = new JsonData();
+                                    data["id"] = reader.GetString(0);
+                                    data["event"] = reader.GetString(1);
+                                    data["appId"] = reader.GetString(2);
+                                    eventList.Add(data);
+                                }
+                            }
+                        }
                     }
+
                 }
                 finally
                 {
-                    if (stmt != null)
-                        stmt.FinalizeStm();
-
-                    if (db != null)
-                        db.CloseDatabase();
-
+                    if (connection != null)
+                    {
+                        connection.Close();
+                        connection.Dispose();
+                    }
                 }
             }
 
@@ -245,29 +262,40 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             long count = 0;
             lock (_lock)
             {
-                SQLiteStatement stmt = null;
+
                 try
                 {
-                    CreateOrOpenDatabase();
+                    connection = new SqliteConnection("URI=file:" + this.DBfileFullPath);
+                    connection.Open();
+                    string query = string.Format(CultureInfo.InvariantCulture, "SELECT COUNT(*) C FROM {0} where {1} = @appId ", TABLE_NAME, MA_APP_ID_COLUMN_NAME);
 
-
-                    string query = string.Format(CultureInfo.InvariantCulture, "SELECT COUNT(*) C FROM {0} where {1} = ?", TABLE_NAME, MA_APP_ID_COLUMN_NAME);
-                    stmt = db.Prepare(query);
-                    stmt.BindText(1, appID);
-                    while (stmt.Read())
+                    using (var command = connection.CreateCommand())
                     {
-                        count = stmt.Fields["C"].INTEGER;
+                        command.CommandText = query;
+                        BindData(command, appID);
+                        using (var reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                UnityEngine.Debug.Log("HAS ROWS = TRUE");
+                                while (reader.Read())
+                                {
+                                    count = reader.GetInt32(0);
+                                    UnityEngine
+                                        .Debug.Log(string.Format("count = {0}", count));
+                                }
+                            }
+                        }
                     }
                 }
                 finally
                 {
-                    if (stmt != null)
-                        stmt.FinalizeStm();
-
-                    if (db != null)
-                        db.CloseDatabase();
+                    if (connection != null)
+                    {
+                        connection.Close();
+                        connection.Dispose();
+                    }
                 }
-
             }
 
             return count;
@@ -276,35 +304,36 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <summary>
         /// Increments the delivery attempt.
         /// </summary>
-        /// <returns>true</returns>
-        /// <c>false</c>
+        /// <returns>Success of operation</returns>
         /// <param name="rowIds">Row identifiers.</param>
         public bool IncrementDeliveryAttempt(List<string> rowIds)
         {
             bool success = false;
             lock (_lock)
             {
-                SQLiteStatement stmt = null;
                 try
                 {
-                    CreateOrOpenDatabase();
-
-
+                    connection = new SqliteConnection("URI=file:" + this.DBfileFullPath);
+                    connection.Open();
                     string ids = "'" + String.Join("', '", rowIds.ToArray()) + "'";
                     string query = String.Format("UPDATE " + TABLE_NAME + " SET " + EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME + "= " + EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME + "+1 WHERE " + EVENT_ID_COLUMN_NAME + " IN ({0})", ids);
-                    stmt = db.Prepare(query);
-                    stmt.Step();
-                    success = true;
+                    using (var command = connection.CreateCommand())
+                    {
+                        command.CommandText = query;
+                        command.ExecuteNonQuery();
+                    }
                 }
                 finally
                 {
-                    if (stmt != null)
-                        stmt.FinalizeStm();
-                    if (db != null)
-                        db.CloseDatabase();
+                    if (connection != null)
+                    {
+                        connection.Close();
+                        connection.Dispose();
+                    }
+
                 }
+                return success;
             }
-            return success;
         }
 
         /// <summary>
@@ -318,32 +347,70 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 string pageCountCommand = "PRAGMA page_count;";
                 string pageSizeCommand = "PRAGMA page_size;";
                 long pageCount = 0, pageSize = 0;
-                SQLiteStatement stmt = null;
                 lock (_lock)
                 {
                     try
                     {
-                        CreateOrOpenDatabase();
+                        connection = new SqliteConnection("URI=file:" + this.DBfileFullPath);
+                        connection.Open();
+                        using (var command = connection.CreateCommand())
+                        {
+                            command.CommandText = pageCountCommand;
+                            using (var reader = command.ExecuteReader())
+                            {
+                                if (reader.HasRows)
+                                {
+                                    while (reader.Read())
+                                    {
+                                        pageCount = reader.GetInt64(0);
+                                    }
+                                }
+                            }
 
-                        stmt = db.Prepare(pageCountCommand);
-                        stmt.Read();
-                        pageCount = stmt.Fields["page_count"].INTEGER;
 
-                        stmt = db.Prepare(pageSizeCommand);
-                        stmt.Read();
-                        pageSize = stmt.Fields["page_size"].INTEGER;
+                            command.CommandText = pageSizeCommand;
+                            using (var reader = command.ExecuteReader())
+                            {
+                                if (reader.HasRows)
+                                {
+                                    while (reader.Read())
+                                    {
+                                        pageSize = reader.GetInt64(0);
+                                    }
+                                }
+                            }
+                        }
                     }
                     finally
                     {
-                        if (stmt != null)
+                        if (connection != null)
                         {
-                            stmt.FinalizeStm();
+                            connection.Close();
+                            connection.Dispose();
                         }
-                        if (db != null)
-                            db.CloseDatabase();
                     }
                 }
                 return pageCount * pageSize;
+            }
+        }
+
+        private static void BindData(SqliteCommand command, params object[] parameters)
+        {
+            string query = command.CommandText;
+            int count = 0;
+            foreach (Match match in Regex.Matches(query, "(\\@\\w+) "))
+            {
+                var date = parameters[count] as DateTime?;
+                if (date.HasValue)
+                {
+                    command.Parameters.Add(new SqliteParameter(match.Groups[1].Value, date.Value.Ticks.ToString(CultureInfo.InvariantCulture.NumberFormat)));
+                }
+                else
+                {
+                    command.Parameters.Add(new SqliteParameter(match.Groups[1].Value, parameters[count]));
+                }
+
+                count++;
             }
         }
 

@@ -39,3 +39,5 @@ packages
 /sdk/test/Unity3DTests/Unity3DTests.CSharp.Editor.csproj
 /sdk/test/Unity3DTests/Unity3DTests.sln
 /sdk/test/Unity3DTests/Library
+
+*.meta

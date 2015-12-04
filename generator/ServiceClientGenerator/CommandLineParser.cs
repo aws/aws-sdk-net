@@ -131,7 +131,7 @@ namespace ServiceClientGenerator
             catch (Exception e)
             {
                 Error = string.Format("Caught exception processing response file {0} - {1}", responseFile, e.Message);
-            }    
+            }
         }
 
         delegate void ParseArgument(CommandArguments arguments, string argValue = null);
@@ -211,6 +211,14 @@ namespace ServiceClientGenerator
                 Parse = (arguments, argValue) => arguments.ParsedOptions.Clean = true, 
                 HelpText = "Deletes all content in the 'Generated' subfolder for services prior to generation.\n"
                             + "The default behavior is to keep existing generated content."
+            },
+            new ArgDeclaration
+            {
+                OptionName = "unitypath", 
+                ShortName = "u", 
+                HasValue = true,
+                Parse = (arguments, argValue) => arguments.ParsedOptions.UnityPath = argValue, 
+                HelpText = "Specifies the path to the Unity installation directory, e.g. 'C:\\Program Files\\Unity'."
             },
             new ArgDeclaration
             {

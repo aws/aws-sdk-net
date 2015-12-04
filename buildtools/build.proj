@@ -53,7 +53,7 @@
         <MSBuild Projects="..\generator\AWSSDKGenerator.sln"
             Targets="Clean;Build"
             Properties="Configuration=Release" />
-        <Exec Command="ServiceClientGenerator.exe" 
+        <Exec Command="ServiceClientGenerator.exe --unitypath &quot;$(unitypath)&quot;"
             WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
     </Target>
     

@@ -39,11 +39,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 
         #region constructor
 
-        static MobileAnalyticsManager()
-        {
-            _backgroundRunner.StartWork();
-        }
-
         /// <summary>
         /// Gets or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
         /// creates new instance and returns it.
@@ -139,6 +134,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             {
                 managerInstance.Session.Start();
             }
+
+            _backgroundRunner.StartWork();
+
             return managerInstance;
         }
 

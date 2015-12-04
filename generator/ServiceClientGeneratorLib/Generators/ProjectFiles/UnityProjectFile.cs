@@ -11,6 +11,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
 {
     using System.Linq;
     using System.Text;
+    using System.IO;
     using System.Collections.Generic;
     using System;
     
@@ -18,7 +19,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+    #line 1 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class UnityProjectFile : UnityProjectFileBase
     {
@@ -35,7 +36,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Platform Condition="" '$(Platform)' == '' "">AnyCPU</Platform>
     <ProjectGuid>");
             
-            #line 11 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 12 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["ProjectGuid"]));
             
             #line default
@@ -48,21 +49,21 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <TargetFrameworkProfile></TargetFrameworkProfile>
     <AssemblyName>");
             
-            #line 17 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 18 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write("</AssemblyName>\r\n    <RootNamespace>");
             
-            #line 18 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 19 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["RootNamespace"]));
             
             #line default
             #line hidden
             this.Write("</RootNamespace>\r\n\t<BaseIntermediateOutputPath>obj\\");
             
-            #line 19 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 20 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
@@ -79,14 +80,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\");
             
-            #line 29 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 30 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;AWS_APM_API;UNITY;");
             
-            #line 30 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 31 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -94,7 +95,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</W" +
                     "arningLevel>\r\n");
             
-            #line 33 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 34 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
 
     if(this.Session.ContainsKey("SupressWarnings"))
     {
@@ -104,14 +105,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("\t<NoWarn>");
             
-            #line 37 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 38 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["SupressWarnings"]));
             
             #line default
             #line hidden
             this.Write("</NoWarn>\r\n");
             
-            #line 38 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 39 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
 
     }
 
@@ -121,14 +122,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("\t<CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSup" +
                     "pressionsFile>\r\n\t<DocumentationFile>bin\\Debug\\");
             
-            #line 42 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 43 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 42 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 43 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -141,14 +142,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\");
             
-            #line 48 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 49 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>TRACE;AWS_APM_API;UNITY;");
             
-            #line 49 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 50 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -156,7 +157,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</W" +
                     "arningLevel>\r\n");
             
-            #line 52 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 53 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
 
     if(this.Session.ContainsKey("SupressWarnings"))
     {
@@ -166,14 +167,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("\t<NoWarn>");
             
-            #line 56 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 57 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["SupressWarnings"]));
             
             #line default
             #line hidden
             this.Write("</NoWarn>\r\n");
             
-            #line 57 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 58 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
 
     }
 
@@ -183,14 +184,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModule" +
                     "SuppressionsFile>\r\n\t<DocumentationFile>bin\\Release\\");
             
-            #line 61 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 62 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 61 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 62 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -207,7 +208,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
       <PropertyGroup>
 ");
             
-            #line 71 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 72 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
 
     if(this.Session.ContainsKey("KeyFilePath"))
     {
@@ -217,14 +218,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("\t\t<AssemblyOriginatorKeyFile>");
             
-            #line 75 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 76 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["KeyFilePath"]));
             
             #line default
             #line hidden
             this.Write("</AssemblyOriginatorKeyFile>\r\n");
             
-            #line 76 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 77 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
 
     }
 	else
@@ -236,7 +237,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("        <AssemblyOriginatorKeyFile>..\\..\\..\\awssdk.dll.snk</AssemblyOriginatorKey" +
                     "File>\r\n");
             
-            #line 82 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 83 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
 
     }
 
@@ -257,15 +258,53 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Reference Include=""System.XML"" />
     <Reference Include=""System.Core"" />
     <Reference Include=""UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL"">
-      <HintPath>C:\Program Files\Unity\Editor\Data\PlaybackEngines\windowsstandalonesupport\Managed\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include=""System.Runtime.Serialization"" />
-    <Reference Include=""System.Xml.Linq"" />
-  </ItemGroup>
-  <ItemGroup>
-");
+      <HintPath>");
             
-            #line 105 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 100 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Path.Combine((string)this.Session["UnityPath"], "Editor", "Data", "PlaybackEngines", "windowsstandalonesupport", "Managed", "UnityEngine.dll")));
+            
+            #line default
+            #line hidden
+            this.Write("</HintPath>\r\n    </Reference>\r\n    <Reference Include=\"System.Runtime.Serializati" +
+                    "on\" />\r\n    <Reference Include=\"System.Xml.Linq\" />\r\n");
+            
+            #line 104 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+
+	if(this.Session.ContainsKey("ReferenceDependencies"))
+    {
+		foreach(var dependency in (List<Dependency>)this.Session["ReferenceDependencies"])
+		{
+
+            
+            #line default
+            #line hidden
+            this.Write("    <Reference Include=\"");
+            
+            #line 110 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(dependency.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\">\r\n      <HintPath>");
+            
+            #line 111 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Path.Combine((string)this.Session["UnityPath"], dependency.HintPath)));
+            
+            #line default
+            #line hidden
+            this.Write("</HintPath>\r\n      <Private>True</Private>\r\n    </Reference>\r\n");
+            
+            #line 114 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+   
+		}
+	}
+
+            
+            #line default
+            #line hidden
+            this.Write("  </ItemGroup>\r\n  <ItemGroup>\r\n");
+            
+            #line 120 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
 
     foreach(string subDirectory in ((IList<string>)this.Session["SourceDirectories"]))
     {
@@ -275,14 +314,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 109 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 124 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(subDirectory));
             
             #line default
             #line hidden
             this.Write("\\*.cs\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
             
-            #line 112 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 127 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
 
     }
 
@@ -291,7 +330,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n  <ItemGroup>\r\n");
             
-            #line 117 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 132 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
 
     if(this.Session.ContainsKey("IndividualFileIncludes"))
     {
@@ -305,14 +344,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 125 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 140 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(file));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
             
-            #line 128 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 143 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
 
             }
             else
@@ -323,14 +362,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <EmbeddedResource Include=\"");
             
-            #line 133 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 148 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(file));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <SubType>Designer</SubType>\r\n    </EmbeddedResource>\r\n");
             
-            #line 136 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 151 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
 
             }
         }
@@ -341,7 +380,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n");
             
-            #line 142 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 157 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
 
     if(this.Session.ContainsKey("ProjectReferences"))
     {
@@ -353,28 +392,28 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n    <ProjectReference Include=\"");
             
-            #line 149 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 164 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.IncludePath));
             
             #line default
             #line hidden
             this.Write("\">\r\n        <Project>");
             
-            #line 150 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 165 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("</Project>\r\n        <Name>");
             
-            #line 151 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 166 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.Name));
             
             #line default
             #line hidden
             this.Write("</Name>\r\n    </ProjectReference>\r\n  </ItemGroup>\r\n");
             
-            #line 154 "C:\dev\dotnet\unitynew\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
+            #line 169 "C:\a\cc\uv3\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
 
         }
     }
