@@ -1,4 +1,4 @@
-//#define INCLUDE_FACEBOOK_TESTS
+#define INCLUDE_FACEBOOK_TESTS
 
 using Amazon;
 using Amazon.CognitoIdentity;
@@ -14,7 +14,9 @@ using Amazon.Runtime;
 using System.IO;
 using System.Data.SQLite;
 using System.Threading;
+#if BCL45
 using System.Threading.Tasks;
+#endif
 using Amazon.Util.Internal;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
@@ -23,7 +25,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     public class SyncManager : TestBase<AmazonCognitoIdentityClient>
     {
         //tests that require facebook app id and secret are currently disabled.
-
 
         //identity related components
         public static int MaxResults = 15;
@@ -55,6 +56,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         internal const string DB_FILE_NAME = "aws_cognito_sync.db";
 
+#if BCL45
         protected static void RunAsSync(Func<Task> asyncFunc)
         {
             try
@@ -66,6 +68,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             }
         }
+#endif
 
         [TestCleanup]
         public void Cleanup()
@@ -80,6 +83,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 FacebookUtilities.DeleteFacebookUser(facebookUser);
 #endif
             //drop all the tables from the db
+#if !BCL35
             var filePath = InternalSDKUtils.DetermineAppLocalStoragePath(DB_FILE_NAME);
             if (File.Exists(filePath))
             {
@@ -101,6 +105,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     cmd.ExecuteNonQuery();
                 }
             }
+#endif
             BaseClean();
         }
 
@@ -181,7 +186,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                         {
                             failureMessage += "sync failed\n";
                         };
+#if BCL35
+                        d.Synchronize();
+#else
                         RunAsSync(async () => await d.SynchronizeAsync());
+#endif
                     };
                     d.OnSyncFailure += delegate(object sender, SyncFailureEventArgs e)
                     {
@@ -202,7 +211,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                         failureMessage += "Did not expect DatasetDeleted\n";
                         return false;
                     };
+#if BCL35
+                    d.Synchronize();
+#else
                     RunAsSync(async () => await d.SynchronizeAsync());
+#endif
                 }
             }
             if (!string.IsNullOrEmpty(failureMessage))
@@ -223,6 +236,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             string uniqueName = ((DateTime.UtcNow - epoch).TotalSeconds).ToString();
             string uniqueName2 = uniqueName + "_";
 
+            string failureMessage = string.Empty;
             UnAuthCredentials.Clear();
 
             using (CognitoSyncManager sm1 = new CognitoSyncManager(AuthCredentials))
@@ -256,16 +270,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                                             d3.OnSyncSuccess += (object sender, SyncSuccessEventArgs e) =>
                                             {
                                                 if (!mergeTriggered)
-                                                    Assert.Fail("Expecting DatasetMerged instead of OnSyncSuccess");
+                                                {
+                                                    failureMessage += "Expecting DatasetMerged instead of OnSyncSuccess\n";
+                                                }
+                                            };
+                                            d3.OnSyncFailure += (object sender, SyncFailureEventArgs e) =>
+                                            {
+                                                failureMessage += string.Format("Not expecting OnSyncFailure Got exception {0}\n", e.Exception.Message);
                                             };
                                             d3.OnSyncConflict += (Dataset dataset, List<SyncConflict> syncConflicts) =>
                                             {
-                                                Assert.Fail();
+                                                failureMessage += "Not expecting OnSyncConflict\n";
                                                 return false;
                                             };
                                             d3.OnDatasetDeleted += (Dataset dataset) =>
                                             {
-                                                Assert.Fail();
+                                                failureMessage += "Not expecting OnDatasetDeleted\n";
                                                 return false;
                                             };
                                             d3.OnDatasetMerged += (Dataset ds, List<string> datasetNames) =>
@@ -275,62 +295,78 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                                                 {
                                                     Dataset mergedDataset = sm3.OpenOrCreateDataset(mergeds);
                                                     mergedDataset.Delete();
+#if BCL35
+                                                    mergedDataset.Synchronize();
+#else
                                                     RunAsSync(async () => await mergedDataset.SynchronizeAsync());
+#endif
                                                 });
                                                 return true;
                                             };
+#if BCL35
+                                            d3.Synchronize();
+#else
                                             RunAsSync(async () => await d3.SynchronizeAsync());
+#endif
                                         }
                                     }
                                 };
                                 d2.OnSyncFailure += (object sender, SyncFailureEventArgs e) =>
                                 {
-                                    Console.WriteLine(e.Exception.Message);
-                                    Console.WriteLine(e.Exception.StackTrace);
-                                    Assert.Fail();
+                                    failureMessage += string.Format("Not expecting OnSyncFailure Got exception {0}\n", e.Exception.Message);
                                 };
                                 d2.OnSyncConflict += (Dataset dataset, List<SyncConflict> conflicts) =>
                                 {
-                                    Assert.Fail();
+                                    failureMessage += "Not expecting OnSyncConflict\n";
                                     return false;
                                 };
                                 d2.OnDatasetDeleted += (Dataset dataset) =>
                                 {
-                                    Assert.Fail();
+                                    failureMessage += "Not expecting OnDatasetDeleted\n";
                                     return false;
                                 };
                                 d2.OnDatasetMerged += (Dataset dataset, List<string> datasetNames) =>
                                 {
-                                    Assert.Fail();
+                                    failureMessage += "Not expecting OnDatasetMerged\n";
                                     return false;
                                 };
+#if BCL35
+                                d2.Synchronize();
+#else
                                 RunAsSync(async () => await d2.SynchronizeAsync());
+#endif
                             }
                         }
                     };
                     d.OnSyncFailure += delegate(object s, SyncFailureEventArgs e)
                     {
-                        Console.WriteLine(e.Exception.Message);
-                        Console.WriteLine(e.Exception.StackTrace);
-                        Assert.Fail("Sync Failed");
+                        failureMessage += string.Format("Not expecting OnSyncFailure Got exception {0}\n", e.Exception.Message);
                     };
                     d.OnSyncConflict += (Dataset dataset, List<SyncConflict> syncConflicts) =>
                     {
-                        Assert.Fail();
+                        failureMessage += "Not expecting OnSyncConflict\n";
                         return false;
                     };
                     d.OnDatasetDeleted += (Dataset dataset) =>
                     {
-                        Assert.Fail();
+                        failureMessage += "Not expecting OnDatasetDeleted\n";
                         return false;
                     };
                     d.OnDatasetMerged += (Dataset dataset, List<string> datasetNames) =>
                     {
-                        Assert.Fail();
+                        failureMessage += "Not expecting OnDatasetMerged\n";
                         return false;
                     };
+#if BCL35
+                    d.Synchronize();
+#else
                     RunAsSync(async () => await d.SynchronizeAsync());
+#endif
                 }
+            }
+            if (!string.IsNullOrEmpty(failureMessage))
+            {
+                Assert.Fail(failureMessage);
             }
         }
 #endif
@@ -407,7 +443,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     {
                         failureMessage += e.Exception.ToString() + "\n";
                     };
+#if BCL35
+                    d.Synchronize();
+#else
                     RunAsSync(async () => await d.SynchronizeAsync());
+#endif
                     if (!string.IsNullOrEmpty(failureMessage))
                     {
                         Assert.Fail(failureMessage);
@@ -458,14 +498,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                                     failureMessage += "Expecting OnSyncConflict instead of OnSyncFailure\n";
                                 }
                             };
+#if BCL35
+                            d2.Synchronize();
+#else
                             RunAsSync(async () => await d2.SynchronizeAsync());
+#endif
                         }
                     };
                     d.OnSyncFailure += delegate(object sender, SyncFailureEventArgs e)
                     {
                         failureMessage += "Expecting OnSyncSuccess instead of OnSyncFailure\n";
                     };
+#if BCL35
+                    d.Synchronize();
+#else
                     RunAsSync(async () => await d.SynchronizeAsync());
+#endif
                 }
             }
             if (!string.IsNullOrEmpty(failureMessage))
@@ -545,14 +593,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                             {
                                 failureMessage += "Expecting SyncConflict instead of SyncFailure\n";
                             };
+#if BCL35
+                            d2.Synchronize();
+#else
                             RunAsSync(async () => await d2.SynchronizeAsync());
+#endif
                         }
                     };
-                    d.OnSyncFailure += delegate(object sender, SyncFailureEventArgs e)
-                    {
-                        failureMessage += "Expecting OnSyncSuccess instead of OnSyncFailure\n";
-                    };
+#if BCL35
+                    d.Synchronize();
+#else
                     RunAsSync(async () => await d.SynchronizeAsync());
+#endif
                 }
             }
             if (!string.IsNullOrEmpty(failureMessage))
@@ -613,9 +665,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                         failureMessage += "Value for key 'testKey' should be 'newTestValue'\n";
                     }
                 };
+#if BCL35
+                d2.Synchronize();
+#else
                 RunAsSync(async () => await d2.SynchronizeAsync());
+#endif
             };
+#if BCL35
+            d.Synchronize();
+#else
             RunAsSync(async () => await d.SynchronizeAsync());
+#endif
             if (!string.IsNullOrEmpty(failureMessage))
             {
                 Assert.Fail(failureMessage);
@@ -638,7 +698,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 }
                 facebookUser = FacebookUtilities.CreateFacebookUser(FacebookAppId, FacebookAppSecret);
 
-                _AuthCredentials = new SQLiteCognitoAWSCredentials(poolid, TEST_REGION);
+                _AuthCredentials = new SQLiteCognitoAWSCredentials(poolid, Client.Config.RegionEndpoint);
                 _AuthCredentials.AddLogin(FacebookProvider, facebookUser.AccessToken);
                 //create facebook token
                 return _AuthCredentials;
@@ -672,7 +732,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 IdentityPoolName = poolName,
                 AllowUnauthenticatedIdentities = true
 #if INCLUDE_FACEBOOK_TESTS
-                ,
+,
                 SupportedLoginProviders = new Dictionary<string, string>() { { FacebookProvider, FacebookAppId } }
 #endif
             };

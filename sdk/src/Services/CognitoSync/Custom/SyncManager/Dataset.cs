@@ -164,21 +164,6 @@ namespace Amazon.CognitoSync.SyncManager
             }
         }
 #endif
-
-#if BCL35
-        protected virtual void Dispose(bool disposing)
-        {
-            if (_disposed)
-                return;
-
-            if (disposing)
-            {
-                ClearAllDelegates();
-                _disposed = true;
-            }
-        }
-#endif
-
         #endregion
 
         #region public methods
@@ -222,7 +207,8 @@ namespace Amazon.CognitoSync.SyncManager
         }
 
         /// <summary>
-        /// Gets the value of a <see cref="Record"/> with the given key. If the
+        /// Gets the value of a <see cref=
+        /// "Record"/> with the given key. If the
         /// <see cref="Amazon.CognitoSync.SyncManager.Record"/> doesn't exist or is marked deleted, null will be returned.
         /// </summary>
         /// <param name="key">Key of the record in the dataset.</param>
@@ -386,66 +372,19 @@ namespace Amazon.CognitoSync.SyncManager
             if (queuedSync)
             {
                 queuedSync = false;
-                //TODO: BCL35
-#if UNITY
-                SynchronizeInternalAsync();
+                // TODO: Why is this not done for bcl45?? If it is a bug fix it. If running the queued sync is done elsewhere, find where.
+#if UNITY || BCL35
+                SynchronizeHelperAsync();
 #endif
             }
         }
 
-#if BCL45 || PCL
-        internal async Task SynchronizeHelperAsync(CancellationToken cancellationToken)
-        {
-            try
-            {
-                if (locked)
-                {
-                    _logger.InfoFormat("Already in a Synchronize. Queueing new request.", DatasetName);
-                    queuedSync = true;
-                    return;
-                }
-                else
-                {
-                    locked = true;
-                }
-
-                waitingForConnectivity = false;
-
-                //make a call to fetch the identity id before the synchronization starts
-                await CognitoCredentials.GetIdentityIdAsync().ConfigureAwait(false);
-
-                // there could be potential merges that could have happened due to reparenting from the previous step,
-                // check and call onDatasetMerged
-                bool resume = true;
-                List<string> mergedDatasets = LocalMergedDatasets;
-                if (mergedDatasets.Count > 0)
-                {
-                    _logger.InfoFormat("Detected merge datasets - {0}", DatasetName);
-
-                    if (this.OnDatasetMerged != null)
-                    {
-                        resume = this.OnDatasetMerged(this, mergedDatasets);
-                    }
-                }
-
-                if (!resume)
-                {
-                    FireSyncFailureEvent(new OperationCanceledException(string.Format("Sync canceled on merge for dataset - {0}", this.DatasetName)));
-                    return;
-                }
-
-                await RunSyncOperationAsync(MAX_RETRY, cancellationToken);
-            }
-            catch (Exception e)
-            {
-                FireSyncFailureEvent(e);
-                _logger.Error(e, "");
-            }
-        }
-
-
-
+#if BCL || PCL
+#if BCL35
+        private void RunSyncOperationAsync(int retry)
+#else
         private async Task RunSyncOperationAsync(int retry, CancellationToken cancellationToken)
+#endif
         {
 
             long lastSyncCount = Local.GetLastSyncCount(IdentityId, DatasetName);
@@ -455,7 +394,11 @@ namespace Amazon.CognitoSync.SyncManager
             {
                 try
                 {
+#if BCL35
+                    Remote.DeleteDataset(DatasetName);
+#else
                     await Remote.DeleteDatasetAsync(DatasetName, cancellationToken);
+#endif
                 }
                 catch (DatasetNotFoundException)
                 {
@@ -480,7 +423,11 @@ namespace Amazon.CognitoSync.SyncManager
             DatasetUpdates datasetUpdates = null;
             try
             {
+#if BCL35
+                datasetUpdates = Remote.ListUpdates(DatasetName, lastSyncCount);
+#else
                 datasetUpdates = await Remote.ListUpdatesAsync(DatasetName, lastSyncCount, cancellationToken);
+#endif
             }
             catch (Exception listUpdatesException)
             {
@@ -502,7 +449,11 @@ namespace Amazon.CognitoSync.SyncManager
                     }
                     else
                     {
+#if BCL35
+                        this.RunSyncOperationAsync(--retry);
+#else
                         await this.RunSyncOperationAsync(--retry, cancellationToken);
+#endif
                     }
                     return;
                 }
@@ -615,7 +566,11 @@ namespace Amazon.CognitoSync.SyncManager
 
                 try
                 {
+#if BCL35
+                    List<Record> result = Remote.PutRecords(DatasetName, localChanges, datasetUpdates.SyncSessionToken);
+#else
                     List<Record> result = await Remote.PutRecordsAsync(DatasetName, localChanges, datasetUpdates.SyncSessionToken, cancellationToken).ConfigureAwait(false);
+#endif
 
                     // update local meta data
                     Local.ConditionallyPutRecords(IdentityId, DatasetName, result, localChanges);
@@ -657,7 +612,14 @@ namespace Amazon.CognitoSync.SyncManager
                         {
                             Local.UpdateLastSyncCount(IdentityId, DatasetName, maxPatchSyncCount);
                         }
+#if BCL35
+                        ThreadPool.QueueUserWorkItem((state) =>
+                        {
+                            RunSyncOperationAsync(--retry);
+                        });
+#else
                         this.RunSyncOperationAsync(--retry, cancellationToken);
+#endif
                     }
                     return;
                 }
@@ -678,8 +640,7 @@ namespace Amazon.CognitoSync.SyncManager
             }
         }
 #endif
-
-        // TODO: BCL35
+        
 #if UNITY
         private void RunSyncOperationAsync(int retry)
         {
@@ -1113,7 +1074,6 @@ namespace Amazon.CognitoSync.SyncManager
         }
         #endregion
 
-        // TODO: BCL35
 #if UNITY
         /// <summary>
         /// Synchronize <see cref="Dataset"/> between local storage and remote storage.
@@ -1130,13 +1090,13 @@ namespace Amazon.CognitoSync.SyncManager
             // else queue the synchronization in a threadpool thread
             if (!UnityInitializer.IsMainThread())
             {
-                SynchronizeInternalAsync();
+                SynchronizeHelperAsync();
             }
             else
             {
                 ThreadPool.QueueUserWorkItem(new WaitCallback(delegate
                 {
-                    SynchronizeInternalAsync();
+                    SynchronizeHelperAsync();
                 }));
             }
         }
@@ -1161,14 +1121,19 @@ namespace Amazon.CognitoSync.SyncManager
                 waitingForConnectivity = true;
             }
         }
+#endif
 
-        private void SynchronizeInternalAsync()
+#if UNITY || BCL35
+        private void SynchronizeHelperAsync()
+#else
+        internal async Task SynchronizeHelperAsync(CancellationToken cancellationToken)
+#endif
         {
             try
             {
                 if (locked)
                 {
-                    _logger.InfoFormat("Already in a Synchronize. Queueing new request.", _datasetName);
+                    _logger.InfoFormat("Already in a Synchronize. Queueing new request.", DatasetName);
                     queuedSync = true;
                     return;
                 }
@@ -1179,11 +1144,18 @@ namespace Amazon.CognitoSync.SyncManager
 
                 waitingForConnectivity = false;
 
+#if BCL45
+                //make a call to fetch the identity id before the synchronization starts
+                await CognitoCredentials.GetIdentityIdAsync().ConfigureAwait(false);
+
+                // there could be potential merges that could have happened due to reparenting from the previous step,
+                // check and call onDatasetMerged
+#endif
                 bool resume = true;
                 List<string> mergedDatasets = LocalMergedDatasets;
                 if (mergedDatasets.Count > 0)
                 {
-                    _logger.InfoFormat("Detected merge datasets - {0}", _datasetName);
+                    _logger.InfoFormat("Detected merge datasets - {0}", DatasetName);
 
                     if (this.OnDatasetMerged != null)
                     {
@@ -1193,14 +1165,18 @@ namespace Amazon.CognitoSync.SyncManager
 
                 if (!resume)
                 {
+#if UNITY || BCL35
                     EndSynchronizeAndCleanup();
-                    FireSyncFailureEvent(new OperationCanceledException(string.Format("Sync canceled on merge for dataset - {0}", this._datasetName)));
+#endif
+
+                    FireSyncFailureEvent(new OperationCanceledException(string.Format("Sync canceled on merge for dataset - {0}", this.DatasetName)));
                     return;
                 }
-
-
+#if UNITY || BCL35
                 RunSyncOperationAsync(MAX_RETRY);
-
+#else
+                await RunSyncOperationAsync(MAX_RETRY, cancellationToken);
+#endif
             }
             catch (Exception e)
             {
@@ -1209,7 +1185,7 @@ namespace Amazon.CognitoSync.SyncManager
             }
         }
 
-
+#if UNITY
         private void HandleConnectivityRefresh(object sender, UnityMainThreadDispatcher.NetworkStatusRefreshed result)
         {
             if (!waitingForConnectivity)
@@ -1259,17 +1235,3 @@ namespace Amazon.CognitoSync.SyncManager
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

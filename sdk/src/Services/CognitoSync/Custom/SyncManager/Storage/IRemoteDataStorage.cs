@@ -21,6 +21,9 @@ using Amazon.Runtime;
 using System.Threading.Tasks;
 using System.Threading;
 #endif
+#if BCL35
+using System;
+#endif
 namespace Amazon.CognitoSync.SyncManager
 {
     /// <summary>
@@ -28,14 +31,63 @@ namespace Amazon.CognitoSync.SyncManager
     /// </summary>
     public interface IRemoteDataStorage
     {
-//TODO add BCL35
 #if BCL35
-        /// <summary>
-        /// Gets a list of <see cref="DatasetMetadata"/>. Temporary Placeholder.
-        /// </summary>
-        /// <exception cref="Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
-        void GetDatasetMetadataAsync();
+        #region GetDataset
+        //TODO: document
+        List<DatasetMetadata> GetAllDatasetMetadata();
+
+        //TODO: document
+        IAsyncResult BeginGetAllDatasetMetadata(AsyncCallback callback, object state);
+
+        //TODO: document
+        List<DatasetMetadata> EndGetAllDatasetMetadata(IAsyncResult asyncResult);
+        #endregion
+
+        #region ListUpdates
+        //TODO: document
+        DatasetUpdates ListUpdates(string datasetName, long lastSyncCount);
+
+        //TODO: document
+        IAsyncResult BeginListUpdates(string datasetName, long lastSyncCount, AsyncCallback callback, object state);
+
+        //TODO: document
+        DatasetUpdates EndListUpdates(IAsyncResult asyncResult);
+        #endregion
+
+        #region PutRecords
+        //TODO: document
+        List<Record> PutRecords(string datasetName, List<Record> records, string syncSessionToken);
+
+        //TODO: document
+        IAsyncResult BeginPutRecords(string datasetName, List<Record> records, string syncSessionToken, AsyncCallback callback, object state);
+
+        //TODO: document
+        List<Record> EndPutRecords(IAsyncResult asyncResult);
+        #endregion
+
+        #region DeleteDataset
+        //TODO: document
+        void DeleteDataset(string datasetName);
+
+        //TODO: document
+        IAsyncResult BeginDeleteDataset(string datasetName, AsyncCallback callback, object state);
+
+        //TODO: document
+        void EndDeleteDataset(IAsyncResult asyncResult);
+        #endregion
+
+        #region GetDatasetMetadata
+        //TODO: document
+        DatasetMetadata GetDatasetMetadata(string datasetName);
+
+        //TODO: document
+        IAsyncResult BeginGetDatasetMetadata(string datasetName, AsyncCallback callback, object state);
+
+        //TODO: document
+        DatasetMetadata EndGetDatasetMetadata(IAsyncResult asyncResult);
+        #endregion
 #endif
+
 #if UNITY
         #region GetDatasets
 

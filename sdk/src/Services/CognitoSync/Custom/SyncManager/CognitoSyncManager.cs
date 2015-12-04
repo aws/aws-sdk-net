@@ -219,7 +219,7 @@ namespace Amazon.CognitoSync.SyncManager
         #endregion
 
         #region Protected Methods
-// TODO: Determine if null check is desired for all platforms
+        // TODO: Determine if null check is desired for all platforms
 #if UNITY || BCL35
         protected void IdentityChanged(object sender, EventArgs e)
         {
@@ -268,7 +268,6 @@ namespace Amazon.CognitoSync.SyncManager
 
         #region public methods
 
-// TODO: Add BCL35
 #if UNITY
         /// <summary>
         /// Refreshes dataset metadata. Dataset metadata is pulled from remote
@@ -314,8 +313,22 @@ namespace Amazon.CognitoSync.SyncManager
             return response;
         }
         
+#elif BCL35
+        //TODO Document
+        public IAsyncResult BeginRefreshDatasetMetadata(AsyncCallback callback, object state)
+        {
+            return Remote.BeginGetAllDatasetMetadata(callback, state);
+        }
+
+        public List<DatasetMetadata> EndRefreshDatasetMetadata(IAsyncResult asyncResult)
+        {
+            List<DatasetMetadata> response = Remote.EndGetAllDatasetMetadata(asyncResult);
+            // TODO: is it okay to do this only after EndRefreshDatasetMetadata is called? I can't think of a way to do it as soon as the EndGetAllDatasetMetadata is finished without adding a new api in remote. Not sure if that is okay to do. Should I create a callback that calls the other callback...?
+            Local.UpdateDatasetMetadata(IdentityId, response);
+            return response;
+        }
 #endif
-#endregion
+        #endregion
 
         #region private methods
 #if BCL

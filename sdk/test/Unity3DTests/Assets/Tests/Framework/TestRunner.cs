@@ -137,13 +137,18 @@ namespace AWSSDK.Tests.Framework
             private HashSet<String> TestCaseNames;
             public bool InvertMatch = false;
 
-            public FixtureAndCaseFilter(HashSet<String> fixtureNames, HashSet<String> testCaseNames)
+            public FixtureAndCaseFilter(HashSet<string> fixtureNames, HashSet<string> testCaseNames)
             {
                 FixtureNames = fixtureNames;
                 TestCaseNames = testCaseNames;
             }
+            public FixtureAndCaseFilter(string fixtureName, HashSet<string> testCaseNames)
+            {
+                FixtureNames = new HashSet<string> { fixtureName };
+                TestCaseNames = testCaseNames;
+            }
 
-            public FixtureAndCaseFilter(HashSet<String> fixtureNames)
+            public FixtureAndCaseFilter(HashSet<string> fixtureNames)
             {
                 FixtureNames = fixtureNames;
                 TestCaseNames = new HashSet<string>();
