@@ -31,8 +31,8 @@ namespace Amazon.Route53.Model
     /// Container for the parameters to the GetHostedZone operation.
     /// To retrieve the delegation set for a hosted zone, send a <code>GET</code> request
     /// to the <code>2013-04-01/hostedzone/<i>hosted zone ID</i></code> resource. The delegation
-    /// set is the four Route 53 name servers that were assigned to the hosted zone when you
-    /// created it.
+    /// set is the four Amazon Route 53 name servers that were assigned to the hosted zone
+    /// when you created it.
     /// </summary>
     public partial class GetHostedZoneRequest : AmazonRoute53Request
     {

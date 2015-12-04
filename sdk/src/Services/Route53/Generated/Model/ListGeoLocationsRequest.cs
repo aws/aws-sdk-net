@@ -37,7 +37,7 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    ///  By default, the list of geo locations is displayed on a single page. You can control
+    /// By default, the list of geo locations is displayed on a single page. You can control
     /// the length of the page that is displayed by using the <code>MaxItems</code> parameter.
     /// If the list is truncated, <code>IsTruncated</code> will be set to <i>true</i> and
     /// a combination of <code>NextContinentCode, NextCountryCode, NextSubdivisionCode</code>

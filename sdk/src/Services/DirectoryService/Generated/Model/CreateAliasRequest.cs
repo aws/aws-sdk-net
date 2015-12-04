@@ -30,7 +30,7 @@ namespace Amazon.DirectoryService.Model
     /// <summary>
     /// Container for the parameters to the CreateAlias operation.
     /// Creates an alias for a directory and assigns the alias to the directory. The alias
-    /// is used to construct the access URL for the directory, such as <code>http://&#x3C;alias&#x3E;.awsapps.com</code>.
+    /// is used to construct the access URL for the directory, such as <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>.
     /// 
     ///  <important> 
     /// <para>
@@ -51,8 +51,8 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         ///  
         /// <para>
-        /// The alias must be unique amongst all aliases in AWS. This operation will throw an
-        /// <code>EntityAlreadyExistsException</code> if this alias already exists.
+        /// The alias must be unique amongst all aliases in AWS. This operation throws an <code>EntityAlreadyExistsException</code>
+        /// error if the alias already exists.
         /// </para>
         /// </summary>
         public string Alias
@@ -70,7 +70,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the directory to create the alias for.
+        /// The identifier of the directory for which to create the alias.
         /// </para>
         /// </summary>
         public string DirectoryId

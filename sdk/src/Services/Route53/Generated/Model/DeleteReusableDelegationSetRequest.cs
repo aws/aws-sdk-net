@@ -36,8 +36,8 @@ namespace Amazon.Route53.Model
     ///  <important> You can delete a reusable delegation set only if there are no associated
     /// hosted zones. If your reusable delegation set contains associated hosted zones, you
     /// must delete them before you can delete your reusable delegation set. If you try to
-    /// delete a reusable delegation set that contains associated hosted zones, Route 53 will
-    /// deny your request with a <code>DelegationSetInUse</code> error.</important>
+    /// delete a reusable delegation set that contains associated hosted zones, Amazon Route
+    /// 53 will deny your request with a <code>DelegationSetInUse</code> error.</important>
     /// </summary>
     public partial class DeleteReusableDelegationSetRequest : AmazonRoute53Request
     {
@@ -46,7 +46,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  The ID of the reusable delegation set you want to delete.
+        /// The ID of the reusable delegation set you want to delete.
         /// </para>
         /// </summary>
         public string Id

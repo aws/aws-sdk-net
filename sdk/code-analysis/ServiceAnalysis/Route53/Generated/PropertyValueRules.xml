@@ -52,6 +52,64 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.CreateTrafficPolicyRequest.Name</property>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateTrafficPolicyRequest.Document</property>
+    <max>102400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateTrafficPolicyRequest.Comment</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateTrafficPolicyResponse.Location</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateTrafficPolicyInstanceRequest.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateTrafficPolicyInstanceRequest.Name</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateTrafficPolicyInstanceRequest.TTL</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateTrafficPolicyInstanceRequest.TrafficPolicyId</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateTrafficPolicyInstanceRequest.TrafficPolicyVersion</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateTrafficPolicyInstanceResponse.Location</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateTrafficPolicyVersionRequest.Id</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateTrafficPolicyVersionRequest.Document</property>
+    <max>102400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateTrafficPolicyVersionRequest.Comment</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateTrafficPolicyVersionResponse.Location</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.DeleteHealthCheckRequest.HealthCheckId</property>
     <max>64</max>
   </property-value-rule>
@@ -64,11 +122,28 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.DeleteTrafficPolicyRequest.Id</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.DeleteTrafficPolicyRequest.Version</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.DeleteTrafficPolicyInstanceRequest.Id</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.DisassociateVPCFromHostedZoneRequest.HostedZoneId</property>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.GetChangeRequest.Id</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.GetChangeDetailsRequest.Id</property>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
@@ -105,6 +180,76 @@
   <property-value-rule>
     <property>Amazon.Route53.Model.GetReusableDelegationSetRequest.Id</property>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.GetTrafficPolicyRequest.Id</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.GetTrafficPolicyRequest.Version</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.GetTrafficPolicyInstanceRequest.Id</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListChangeBatchesByHostedZoneRequest.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListChangeBatchesByHostedZoneRequest.StartDate</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListChangeBatchesByHostedZoneRequest.EndDate</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListChangeBatchesByHostedZoneRequest.Marker</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListChangeBatchesByHostedZoneResponse.Marker</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListChangeBatchesByHostedZoneResponse.NextMarker</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListChangeBatchesByRRSetRequest.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListChangeBatchesByRRSetRequest.Name</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListChangeBatchesByRRSetRequest.SetIdentifier</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListChangeBatchesByRRSetRequest.StartDate</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListChangeBatchesByRRSetRequest.EndDate</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListChangeBatchesByRRSetRequest.Marker</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListChangeBatchesByRRSetResponse.Marker</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListChangeBatchesByRRSetResponse.NextMarker</property>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListGeoLocationsRequest.StartContinentCode</property>
@@ -227,6 +372,79 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPoliciesRequest.TrafficPolicyIdMarker</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPoliciesResponse.TrafficPolicyIdMarker</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPolicyInstancesRequest.HostedZoneIdMarker</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPolicyInstancesRequest.TrafficPolicyInstanceNameMarker</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPolicyInstancesResponse.HostedZoneIdMarker</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPolicyInstancesResponse.TrafficPolicyInstanceNameMarker</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByHostedZoneRequest.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByHostedZoneRequest.TrafficPolicyInstanceNameMarker</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByHostedZoneResponse.TrafficPolicyInstanceNameMarker</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByPolicyRequest.TrafficPolicyId</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByPolicyRequest.TrafficPolicyVersion</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByPolicyRequest.HostedZoneIdMarker</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByPolicyRequest.TrafficPolicyInstanceNameMarker</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByPolicyResponse.HostedZoneIdMarker</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByPolicyResponse.TrafficPolicyInstanceNameMarker</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPolicyVersionsRequest.Id</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPolicyVersionsRequest.TrafficPolicyVersionMarker</property>
+    <max>4</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListTrafficPolicyVersionsResponse.TrafficPolicyVersionMarker</property>
+    <max>4</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.UpdateHealthCheckRequest.HealthCheckId</property>
     <max>64</max>
   </property-value-rule>
@@ -275,6 +493,37 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.UpdateTrafficPolicyCommentRequest.Id</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.UpdateTrafficPolicyCommentRequest.Version</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.UpdateTrafficPolicyCommentRequest.Comment</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.UpdateTrafficPolicyInstanceRequest.Id</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.UpdateTrafficPolicyInstanceRequest.TTL</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.UpdateTrafficPolicyInstanceRequest.TrafficPolicyId</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.UpdateTrafficPolicyInstanceRequest.TrafficPolicyVersion</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.AliasTarget.HostedZoneId</property>
     <max>32</max>
   </property-value-rule>
@@ -284,6 +533,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ChangeBatch.Comment</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ChangeBatchRecord.Id</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ChangeBatchRecord.Comment</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -453,6 +710,10 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.ResourceRecordSet.TrafficPolicyInstanceId</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.ResourceTagSet.ResourceId</property>
     <max>64</max>
   </property-value-rule>
@@ -463,6 +724,75 @@
   <property-value-rule>
     <property>Amazon.Route53.Model.Tag.Value</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicy.Id</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicy.Version</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicy.Name</property>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicy.Document</property>
+    <max>102400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicy.Comment</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicyInstance.Id</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicyInstance.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicyInstance.Name</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicyInstance.TTL</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicyInstance.Message</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicyInstance.TrafficPolicyId</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicyInstance.TrafficPolicyVersion</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicySummary.Id</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicySummary.Name</property>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicySummary.LatestVersion</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.TrafficPolicySummary.TrafficPolicyCount</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.VPC.VPCRegion</property>

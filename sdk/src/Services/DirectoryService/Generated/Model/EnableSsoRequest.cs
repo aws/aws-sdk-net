@@ -40,7 +40,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the directory to enable single-sign on for.
+        /// The identifier of the directory for which to enable single-sign on.
         /// </para>
         /// </summary>
         public string DirectoryId
@@ -59,7 +59,7 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property Password. 
         /// <para>
         /// The password of an alternate account to use to enable single-sign on. This is only
-        /// used for AD Connector directories. See the <i>UserName</i> parameter for more information.
+        /// used for AD Connector directories. For more information, see the <i>UserName</i> parameter.
         /// </para>
         /// </summary>
         public string Password
@@ -79,11 +79,11 @@ namespace Amazon.DirectoryService.Model
         /// <para>
         /// The username of an alternate account to use to enable single-sign on. This is only
         /// used for AD Connector directories. This account must have privileges to add a service
-        /// principle name. 
+        /// principal name. 
         /// </para>
         ///  
         /// <para>
-        /// If the AD Connector service account does not have privileges to add a service principle
+        /// If the AD Connector service account does not have privileges to add a service principal
         /// name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i>
         /// parameters. These credentials are only used to enable single sign-on and are not stored
         /// by the service. The AD Connector service account is not changed.

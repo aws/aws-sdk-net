@@ -33,7 +33,7 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    ///  To associate a VPC with an hosted zone, send a <code>POST</code> request to the <code>2013-04-01/hostedzone/<i>hosted
+    /// To associate a VPC with an hosted zone, send a <code>POST</code> request to the <code>2013-04-01/hostedzone/<i>hosted
     /// zone ID</i>/associatevpc</code> resource. The request body must include an XML document
     /// with a <code>AssociateVPCWithHostedZoneRequest</code> element. The response returns
     /// the <code>AssociateVPCWithHostedZoneResponse</code> element that contains <code>ChangeInfo</code>
@@ -51,7 +51,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HostedZoneId. 
         /// <para>
-        ///  The ID of the hosted zone you want to associate your VPC with.
+        /// The ID of the hosted zone you want to associate your VPC with.
         /// </para>
         ///  
         /// <para>

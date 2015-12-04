@@ -207,10 +207,10 @@ namespace Amazon.RDS.Model
         ///  <ul> <li>Can only be specified if the source DB instance identifier specifies a DB
         /// instance in another region.</li> <li>The specified DB subnet group must be in the
         /// same region in which the operation is running.</li> <li> All Read Replicas in one
-        /// region that are created from the same source DB instance must either: <ul> <li>Specify
+        /// region that are created from the same source DB instance must either: <ul><li>Specify
         /// DB subnet groups from the same VPC. All these Read Replicas will be created in the
-        /// same VPC.</li> <li>Not specify a DB subnet group. All these Read Replicas will be
-        /// created outside of any VPC.</li> </ul> </li> </ul>
+        /// same VPC.</li><li>Not specify a DB subnet group. All these Read Replicas will be created
+        /// outside of any VPC.</li></ul></li> </ul>
         /// </summary>
         public string DBSubnetGroupName
         {

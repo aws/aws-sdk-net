@@ -28,19 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Describes the pending maintenance actions for a resource.
+    /// 
     /// </summary>
     public partial class ApplyPendingMaintenanceActionResponse : AmazonWebServiceResponse
     {
-        private ResourcePendingMaintenanceActions _response;
+        private ResourcePendingMaintenanceActions _resourcePendingMaintenanceActions;
 
         /// <summary>
-        /// Gets and sets the ResourcePendingMaintenanceActions property.
+        /// Gets and sets the property ResourcePendingMaintenanceActions.
         /// </summary>
         public ResourcePendingMaintenanceActions ResourcePendingMaintenanceActions
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._resourcePendingMaintenanceActions; }
+            set { this._resourcePendingMaintenanceActions = value; }
         }
+
+        // Check to see if ResourcePendingMaintenanceActions property is set
+        internal bool IsSetResourcePendingMaintenanceActions()
+        {
+            return this._resourcePendingMaintenanceActions != null;
+        }
+
     }
 }

@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the IP address of a Route 53 health checker and the reason
-    /// for the health check status.
+    /// A complex type that contains the IP address of a Amazon Route 53 health checker and
+    /// the reason for the health check status.
     /// </summary>
     public partial class HealthCheckObservation
     {
@@ -39,7 +39,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property IPAddress. 
         /// <para>
-        /// The IP address of the Route 53 health checker that performed the health check.
+        /// The IP address of the Amazon Route 53 health checker that performed the health check.
         /// </para>
         /// </summary>
         public string IPAddress

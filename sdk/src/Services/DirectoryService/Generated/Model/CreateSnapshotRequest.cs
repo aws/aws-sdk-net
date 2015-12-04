@@ -29,12 +29,13 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSnapshot operation.
-    /// Creates a snapshot of an existing directory.
+    /// Creates a snapshot of a Simple AD directory.
     /// 
-    ///  
+    ///  <note> 
     /// <para>
-    /// You cannot take snapshots of extended or connected directories.
+    /// You cannot take snapshots of AD Connector directories.
     /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateSnapshotRequest : AmazonDirectoryServiceRequest
     {

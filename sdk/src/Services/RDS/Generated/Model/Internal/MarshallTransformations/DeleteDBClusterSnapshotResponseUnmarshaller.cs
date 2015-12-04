@@ -81,9 +81,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("DBClusterSnapshot", targetDepth))
+                    if (context.TestExpression("DBClusterSnapshot", targetDepth))
                     {
-                        response.DBClusterSnapshot = DBClusterSnapshotUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = DBClusterSnapshotUnmarshaller.Instance;
+                        response.DBClusterSnapshot = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 

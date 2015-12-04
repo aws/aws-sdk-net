@@ -33,7 +33,7 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    ///  To disassociate a VPC to a hosted zone, send a <code>POST</code> request to the <code>2013-04-01/hostedzone/<i>hosted
+    /// To disassociate a VPC to a hosted zone, send a <code>POST</code> request to the <code>2013-04-01/hostedzone/<i>hosted
     /// zone ID</i>/disassociatevpc</code> resource. The request body must include an XML
     /// document with a <code>DisassociateVPCFromHostedZoneRequest</code> element. The response
     /// returns the <code>DisassociateVPCFromHostedZoneResponse</code> element that contains
@@ -51,7 +51,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HostedZoneId. 
         /// <para>
-        ///  The ID of the hosted zone you want to disassociate your VPC from.
+        /// The ID of the hosted zone you want to disassociate your VPC from.
         /// </para>
         ///  
         /// <para>

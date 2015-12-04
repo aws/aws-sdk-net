@@ -28,20 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the <a>DescribeReservedDBInstances</a>
-    /// and <a>PurchaseReservedDBInstancesOffering</a> actions.
+    /// 
     /// </summary>
     public partial class PurchaseReservedDBInstancesOfferingResponse : AmazonWebServiceResponse
     {
-        private ReservedDBInstance _response;
+        private ReservedDBInstance _reservedDBInstance;
 
         /// <summary>
-        /// Gets and sets the ReservedDBInstance property.
+        /// Gets and sets the property ReservedDBInstance.
         /// </summary>
         public ReservedDBInstance ReservedDBInstance
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._reservedDBInstance; }
+            set { this._reservedDBInstance = value; }
         }
+
+        // Check to see if ReservedDBInstance property is set
+        internal bool IsSetReservedDBInstance()
+        {
+            return this._reservedDBInstance != null;
+        }
+
     }
 }

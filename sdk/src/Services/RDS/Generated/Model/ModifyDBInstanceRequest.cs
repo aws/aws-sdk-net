@@ -44,6 +44,7 @@ namespace Amazon.RDS.Model
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _dbParameterGroupName;
+        private int? _dbPortNumber;
         private List<string> _dbSecurityGroups = new List<string>();
         private string _engineVersion;
         private int? _iops;
@@ -236,7 +237,7 @@ namespace Amazon.RDS.Model
         ///  If this parameter is set to <code>false</code>, changes to the DB instance are applied
         /// during the next maintenance window. Some parameter changes can cause an outage and
         /// will be applied on the next call to <a>RebootDBInstance</a>, or the next failure reboot.
-        /// Review the table of parameters in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html#Overview.DBInstance.Modifying">Modifying
+        /// Review the table of parameters in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
         /// a DB Instance and Using the Apply Immediately Parameter</a> to see the impact that
         /// setting <code>ApplyImmediately</code> to <code>true</code> or <code>false</code> has
         /// for each modified parameter and to determine when the changes will be applied. 
@@ -449,6 +450,98 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBParameterGroupName()
         {
             return this._dbParameterGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBPortNumber. 
+        /// <para>
+        ///  The port number on which the database accepts connections. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <code>3306</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid Values: <code>1150-65535</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>MariaDB</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <code>3306</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid Values: <code>1150-65535</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <code>5432</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid Values: <code>1150-65535</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Oracle</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <code>1521</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid Values: <code>1150-65535</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>SQL Server</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <code>1433</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>,
+        /// <code>47001</code>, <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Amazon Aurora</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <code>3306</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid Values: <code>1150-65535</code>
+        /// </para>
+        /// </summary>
+        public int DBPortNumber
+        {
+            get { return this._dbPortNumber.GetValueOrDefault(); }
+            set { this._dbPortNumber = value; }
+        }
+
+        // Check to see if DBPortNumber property is set
+        internal bool IsSetDBPortNumber()
+        {
+            return this._dbPortNumber.HasValue; 
         }
 
         /// <summary>

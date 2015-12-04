@@ -27,6 +27,8 @@ namespace ServiceClientGenerator
         public const string MinKey = "min";
         public const string MaxKey = "max";
         public const string PatternKey = "pattern";
+        public const string ErrorKey = "error";
+        public const string ErrorCodeKey = "code";
 
         readonly string _name;
 
@@ -505,6 +507,29 @@ namespace ServiceClientGenerator
                     throw new Exception("Type is missing for shape " + this.Name);
 
                 return typeNode.ToString();
+            }
+        }
+
+        public bool HasErrorCode
+        {
+            get
+            {
+                var errorNode = this.data[ErrorKey];
+                if (errorNode != null)
+                    return errorNode[ErrorCodeKey] != null;
+
+                return false;
+            }
+        }
+
+        public string ErrorCode
+        {
+            get
+            {
+                if (!HasErrorCode)
+                    return null;
+                var errorNode = this.data[ErrorKey];
+                return errorNode[ErrorCodeKey].ToString();
             }
         }
 

@@ -106,8 +106,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property ResourcePath. 
         /// <para>
         /// Path to ping on the instance to check the health. Required for HTTP, HTTPS, HTTP_STR_MATCH,
-        /// and HTTPS_STR_MATCH health checks, HTTP request is issued to the instance on the given
-        /// port and path.
+        /// and HTTPS_STR_MATCH health checks. The HTTP request is issued to the instance on the
+        /// given port and path.
         /// </para>
         /// </summary>
         public string ResourcePath
@@ -162,13 +162,13 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property RequestInterval. 
         /// <para>
-        /// The number of seconds between the time that Route 53 gets a response from your endpoint
-        /// and the time that it sends the next health-check request.
+        /// The number of seconds between the time that Amazon Route 53 gets a response from your
+        /// endpoint and the time that it sends the next health-check request.
         /// </para>
         ///  
         /// <para>
-        /// Each Route 53 health checker makes requests at this interval. Valid values are 10
-        /// and 30. The default value is 30.
+        /// Each Amazon Route 53 health checker makes requests at this interval. Valid values
+        /// are 10 and 30. The default value is 30.
         /// </para>
         /// </summary>
         public int RequestInterval
@@ -186,9 +186,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property FailureThreshold. 
         /// <para>
-        /// The number of consecutive health checks that an endpoint must pass or fail for Route
-        /// 53 to change the current status of the endpoint from unhealthy to healthy or vice
-        /// versa.
+        /// The number of consecutive health checks that an endpoint must pass or fail for Amazon
+        /// Route 53 to change the current status of the endpoint from unhealthy to healthy or
+        /// vice versa.
         /// </para>
         ///  
         /// <para>
@@ -212,9 +212,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MeasureLatency. 
         /// <para>
-        /// A Boolean value that indicates whether you want Route 53 to measure the latency between
-        /// health checkers in multiple AWS regions and your endpoint and to display CloudWatch
-        /// latency graphs in the Route 53 console.
+        /// A Boolean value that indicates whether you want Amazon Route 53 to measure the latency
+        /// between health checkers in multiple AWS regions and your endpoint and to display CloudWatch
+        /// latency graphs in the Amazon Route 53 console.
         /// </para>
         /// </summary>
         public bool MeasureLatency
@@ -234,7 +234,7 @@ namespace Amazon.Route53.Model
         /// <para>
         /// A boolean value that indicates whether the status of health check should be inverted.
         /// For example, if a health check is healthy but <code>Inverted</code> is <code>True</code>,
-        /// then Route 53 considers the health check to be unhealthy.
+        /// then Amazon Route 53 considers the health check to be unhealthy.
         /// </para>
         /// </summary>
         public bool Inverted
@@ -252,9 +252,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HealthThreshold. 
         /// <para>
-        /// The minimum number of child health checks that must be healthy for Route 53 to consider
-        /// the parent health check to be healthy. Valid values are integers between 0 and 256,
-        /// inclusive.
+        /// The minimum number of child health checks that must be healthy for Amazon Route 53
+        /// to consider the parent health check to be healthy. Valid values are integers between
+        /// 0 and 256, inclusive.
         /// </para>
         /// </summary>
         public int HealthThreshold

@@ -99,7 +99,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationInProgressException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationInProgressFailure"))
             {
                 return new OperationInProgressException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }

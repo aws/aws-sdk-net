@@ -36,8 +36,8 @@ namespace Amazon.Route53.Model
     /// associated with this health check. If resource record sets are associated with this
     /// health check, you must disassociate them before you can delete your health check.
     /// If you try to delete a health check that is associated with resource record sets,
-    /// Route 53 will deny your request with a <code>HealthCheckInUse</code> error. For information
-    /// about disassociating the records from your health check, see <a>ChangeResourceRecordSets</a>.</important>
+    /// Amazon Route 53 will deny your request with a <code>HealthCheckInUse</code> error.
+    /// For information about disassociating the records from your health check, see <a>ChangeResourceRecordSets</a>.</important>
     /// </summary>
     public partial class DeleteHealthCheckRequest : AmazonRoute53Request
     {
