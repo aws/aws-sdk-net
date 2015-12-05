@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-
+using System.Threading.Tasks;
 
 
 
@@ -23,10 +23,10 @@ namespace Amazon.DNXCore.IntegrationTests
         // valid email ids for sourceAddress and destinationAddress.
         //[Fact]
         [Trait(CategoryAttribute,"SimpleEmail")]
-        public void TestSendEmail()
+        public async Task TestSendEmail()
         {
             // verify email addresses, both source and destination
-            VerifyEmails(sourceAddress, destinationAddress);
+            await VerifyEmails(sourceAddress, destinationAddress);
 
             // send email
             var sendEmailRequest = new SendEmailRequest
@@ -45,15 +45,15 @@ namespace Amazon.DNXCore.IntegrationTests
                     }
                 }
             };
-            Client.SendEmailAsync(sendEmailRequest).Wait();
+            await Client.SendEmailAsync(sendEmailRequest);
         }
 
-        public void VerifyEmails(params string[] emails)
+        public async Task VerifyEmails(params string[] emails)
         {
             // start verification process for all email addresses
             foreach (var email in emails)
             {
-                Client.VerifyEmailIdentityAsync(new VerifyEmailIdentityRequest
+                await Client.VerifyEmailIdentityAsync(new VerifyEmailIdentityRequest
                 {
                     EmailAddress = email
                 });
@@ -65,10 +65,10 @@ namespace Amazon.DNXCore.IntegrationTests
             while(DateTime.Now < latest)
             {
                 // get verification status for all emails
-                var verificationAttributes = Client.GetIdentityVerificationAttributesAsync(new GetIdentityVerificationAttributesRequest
+                var verificationAttributes = (await Client.GetIdentityVerificationAttributesAsync(new GetIdentityVerificationAttributesRequest
                 {
                     Identities = new List<string>(emails)
-                }).Result.VerificationAttributes;
+                })).VerificationAttributes;
 
                 // test verification status
                 allVerified = true;

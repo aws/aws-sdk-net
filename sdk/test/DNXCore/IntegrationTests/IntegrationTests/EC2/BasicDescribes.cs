@@ -16,14 +16,14 @@ namespace Amazon.DNXCore.IntegrationTests.EC2
     public class BasicDescribes : TestBase<AmazonEC2Client>
     {
         [Fact]
-        public void TestDescribeAmazonImages()
+        public async Task TestDescribeAmazonImages()
         {
             // perform a filtered query to (a) test parameter marshalling
             // and (b) cut down the time to run -- an unfiltered request
             // yields a lot of images
             var request = new DescribeImagesRequest();
             request.Owners.Add("amazon");
-            var response = Client.DescribeImagesAsync(request).Result;
+            var response = await Client.DescribeImagesAsync(request);
 
             Assert.NotNull(response);
             Assert.NotNull(response.Images);

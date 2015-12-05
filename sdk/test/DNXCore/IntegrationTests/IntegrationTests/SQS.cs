@@ -5,6 +5,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
 
 
@@ -29,15 +30,11 @@ namespace Amazon.DNXCore.IntegrationTests
 
         public SQS()
         {
-            var result = Client.ListQueuesAsync(new ListQueuesRequest()).Result;
-            Assert.NotNull(result);
-            Assert.NotNull(result.QueueUrls);
         }
-        
-        //[TearDown]
-        void SQSCleanup()
+
+        async Task SQSCleanup()
         {
-            var result = Client.ListQueuesAsync(new ListQueuesRequest()).Result;
+            var result = await Client.ListQueuesAsync(new ListQueuesRequest());
             foreach (string queue in result.QueueUrls)
             {
                 Console.WriteLine("Queue: {0}", queue);
@@ -45,7 +42,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 {
                     try
                     {
-                        Client.DeleteQueueAsync(new DeleteQueueRequest() { QueueUrl = queue }).Wait();
+                        await Client.DeleteQueueAsync(new DeleteQueueRequest() { QueueUrl = queue });
                     }
                     catch (Exception)
                     {
@@ -55,36 +52,37 @@ namespace Amazon.DNXCore.IntegrationTests
             }
         }
 
+
         [Fact]
         [Trait(CategoryAttribute,"SQS")]
-        public void SQSDLQTest()
+        public async Task SQSDLQTest()
         {
             try
             {
                 string mainQueueName = prefix + new Random().Next() + "MQ";
-                string mainQueueURL = createQueueTest(mainQueueName);
+                string mainQueueURL = await createQueueTest(mainQueueName);
                 string deadQueueName = prefix + new Random().Next() + "DLQ";
-                string deadQueueURL = createQueueTest(deadQueueName);
+                string deadQueueURL = await createQueueTest(deadQueueName);
 
-                string deadQueueArn = getQueueArn(deadQueueURL);
+                string deadQueueArn = await getQueueArn(deadQueueURL);
 
                 string redrivePolicy = string.Format(@"{{""maxReceiveCount"" : 5, ""deadLetterTargetArn"" : ""{0}""}}", deadQueueArn);
-                Client.SetQueueAttributesAsync(new SetQueueAttributesRequest
+                await Client.SetQueueAttributesAsync(new SetQueueAttributesRequest
                 {
                     QueueUrl = mainQueueURL,
                     Attributes = new Dictionary<string, string>
-                {
-                    { QueueAttributeName.RedrivePolicy, redrivePolicy }
-                }
-                }).Wait();
+                    {
+                        { QueueAttributeName.RedrivePolicy, redrivePolicy }
+                    }
+                });
 
                 // Wait a bit to make sure the attribute has fully propagated.
                 UtilityMethods.Sleep(TimeSpan.FromSeconds(1));
 
-                var response = Client.ListDeadLetterSourceQueuesAsync(new ListDeadLetterSourceQueuesRequest
+                var response = await Client.ListDeadLetterSourceQueuesAsync(new ListDeadLetterSourceQueuesRequest
                 {
                     QueueUrl = deadQueueURL
-                }).Result;
+                });
                 Assert.NotNull(response);
                 Assert.NotNull(response.QueueUrls);
                 Assert.Equal(1, response.QueueUrls.Count);
@@ -94,31 +92,31 @@ namespace Amazon.DNXCore.IntegrationTests
             }
             finally
             {
-                SQSCleanup();
+                await SQSCleanup();
             }
         }
 
         [Fact]
         [Trait(CategoryAttribute,"SQS")]
-        public void SimpleSend()
+        public async Task SimpleSend()
         {
             try
             {
                 int maxMessageLength = 20 * 1024;
                 string queueName = prefix + new Random().Next();
                 string queueURL;
-                queueURL = createQueueTest(queueName);
+                queueURL = await createQueueTest(queueName);
                 StringBuilder sb = new StringBuilder("The quick brown fox jumped over the lazy dog");
                 string messageBody = sb.ToString();
                 if (messageBody.Length > maxMessageLength)
                     messageBody = messageBody.Substring(0, maxMessageLength);
 
-                TestSendMessage(Client, queueURL, messageBody);
-                TestSendMessageBatch(Client, queueURL, messageBody);
-                TestReceiveMessage(Client, queueURL);
+                await TestSendMessage(Client, queueURL, messageBody);
+                await TestSendMessageBatch(Client, queueURL, messageBody);
+                await TestReceiveMessage(Client, queueURL);
             }finally
             {
-                SQSCleanup();
+                await SQSCleanup();
             }
         }
 
@@ -131,9 +129,9 @@ namespace Amazon.DNXCore.IntegrationTests
             { "lowercasestringattribute", new MessageAttributeValue { DataType = "String", StringValue = "lowercasestringattribute" } },
         };
 
-        private static void TestReceiveMessage(IAmazonSQS client, string queueURL)
+        private static async Task TestReceiveMessage(IAmazonSQS client, string queueURL)
         {
-            var receiveResponse = client.ReceiveMessageAsync(new ReceiveMessageRequest { QueueUrl = queueURL }).Result;
+            var receiveResponse = await client.ReceiveMessageAsync(new ReceiveMessageRequest { QueueUrl = queueURL });
             var messages = receiveResponse.Messages;
             foreach (var message in messages)
             {
@@ -141,7 +139,7 @@ namespace Amazon.DNXCore.IntegrationTests
             }
         }
 
-        private static void TestSendMessage(IAmazonSQS client, string queueURL, string messageBody)
+        private static async Task TestSendMessage(IAmazonSQS client, string queueURL, string messageBody)
         {
             var request = new SendMessageRequest
             {
@@ -149,11 +147,11 @@ namespace Amazon.DNXCore.IntegrationTests
                 QueueUrl = queueURL,
                 MessageAttributes = messageAttributes
             };
-            var response = client.SendMessageAsync(request).Result;
+            var response = await client.SendMessageAsync(request);
 
             ValidateMD5(request.MessageBody, response.MD5OfMessageBody);
         }
-        private static void TestSendMessageBatch(IAmazonSQS client, string queueUrl, string messageBody)
+        private static async Task TestSendMessageBatch(IAmazonSQS client, string queueUrl, string messageBody)
         {
             var request = new SendMessageBatchRequest
             {
@@ -166,7 +164,7 @@ namespace Amazon.DNXCore.IntegrationTests
                     }
                 }
             };
-            var response = client.SendMessageBatchAsync(request).Result;
+            var response = await client.SendMessageBatchAsync(request);
 
             ValidateMD5(request.Entries[0].MessageBody, response.Successful[0].MD5OfMessageBody);
         }
@@ -189,45 +187,45 @@ namespace Amazon.DNXCore.IntegrationTests
 
         [Fact]
         [Trait(CategoryAttribute,"SQS")]
-        public void TestGetQueueUrl()
+        public async Task TestGetQueueUrl()
         {            
             string queueName = "TestGetQueueUrl" + DateTime.Now.Ticks;
-            CreateQueueResponse createResponse = Client.CreateQueueAsync(new CreateQueueRequest()
+            CreateQueueResponse createResponse = await Client.CreateQueueAsync(new CreateQueueRequest()
             {
                 QueueName = queueName
-            }).Result;
+            });
             try
             {
                 GetQueueUrlRequest request = new GetQueueUrlRequest() { QueueName = queueName };
-                GetQueueUrlResponse response = Client.GetQueueUrlAsync(request).Result;
+                GetQueueUrlResponse response = await Client.GetQueueUrlAsync(request);
                 Assert.Equal(createResponse.QueueUrl, response.QueueUrl);
             }
             finally
             {
-                Client.DeleteQueueAsync(new DeleteQueueRequest() { QueueUrl = createResponse.QueueUrl }).Wait();
-                SQSCleanup();
+                await Client.DeleteQueueAsync(new DeleteQueueRequest() { QueueUrl = createResponse.QueueUrl });
+                await SQSCleanup();
             }
         }
 
-        private string getQueueArn(string queueUrl)
+        private async Task<string> getQueueArn(string queueUrl)
         {
-            return Client.GetQueueAttributesAsync(new GetQueueAttributesRequest
+            return (await Client.GetQueueAttributesAsync(new GetQueueAttributesRequest
             {
                 AttributeNames = new List<string> { "All" },
                 QueueUrl = queueUrl
-            }).Result.QueueARN;
+            })).QueueARN;
         }
 
 
-        private void deleteQueueTest(string queueUrl)
+        private async Task deleteQueueTest(string queueUrl)
         {
-            var listResult = Client.ListQueuesAsync(new ListQueuesRequest() { QueueNamePrefix = prefix }).Result;
+            var listResult = await Client.ListQueuesAsync(new ListQueuesRequest() { QueueNamePrefix = prefix });
             int count = listResult.QueueUrls.Count;
 
-            Client.DeleteQueueAsync(new DeleteQueueRequest() { QueueUrl = queueUrl }).Wait();
+            await Client.DeleteQueueAsync(new DeleteQueueRequest() { QueueUrl = queueUrl });
             for (int i = 0; i < 10; i++)
             {
-                listResult = Client.ListQueuesAsync(new ListQueuesRequest() { QueueNamePrefix = prefix }).Result;
+                listResult = await Client.ListQueuesAsync(new ListQueuesRequest() { QueueNamePrefix = prefix });
                 if (count - 1 == listResult.QueueUrls.Count)
                 {
                     return;
@@ -237,9 +235,9 @@ namespace Amazon.DNXCore.IntegrationTests
             }
         }
 
-        private string createQueueTest(string name)
+        private async Task<string> createQueueTest(string name)
         {
-            var result = Client.CreateQueueAsync(
+            var result = await Client.CreateQueueAsync(
                 new CreateQueueRequest()
                 {
                     QueueName = name,
@@ -247,22 +245,22 @@ namespace Amazon.DNXCore.IntegrationTests
                     {
                      {SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT,defaultTimeout}
                     }
-                }).Result;
+                });
             Assert.NotNull(result);
             Assert.NotNull(result.QueueUrl);
 
-            var attrResults = Client.GetQueueAttributesAsync(new GetQueueAttributesRequest()
+            var attrResults = await Client.GetQueueAttributesAsync(new GetQueueAttributesRequest()
             {
                 QueueUrl = result.QueueUrl,
                 AttributeNames = new List<string>() { SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT }
-            }).Result;
+            });
 
             Assert.Equal(1, attrResults.Attributes.Count);
             Assert.Equal(int.Parse(defaultTimeout), int.Parse(attrResults.Attributes[SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT]));
 
             for (int i = 0; i < 30; i++)
             {
-                var listResult = Client.ListQueuesAsync(new ListQueuesRequest() { QueueNamePrefix = prefix }).Result;
+                var listResult = await Client.ListQueuesAsync(new ListQueuesRequest() { QueueNamePrefix = prefix });
                 if (listResult.QueueUrls.FirstOrDefault(x => x == result.QueueUrl) != null)
                     return result.QueueUrl;
 

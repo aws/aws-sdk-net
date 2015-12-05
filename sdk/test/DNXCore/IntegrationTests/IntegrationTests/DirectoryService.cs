@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using Amazon.DirectoryService;
 using Amazon.DirectoryService.Model;
 using Xunit;
@@ -11,9 +12,9 @@ namespace Amazon.DNXCore.IntegrationTests
     {
         [Fact]
         [Trait(CategoryAttribute,"DirectoryService")]
-        public void TestGetDirectoryLimits()
+        public async Task TestGetDirectoryLimits()
         {
-            var response = Client.GetDirectoryLimitsAsync().Result;
+            var response = await Client.GetDirectoryLimitsAsync();
             Assert.NotNull(response);
             Assert.True(response.DirectoryLimits.ConnectedDirectoriesLimit > 0);
         }

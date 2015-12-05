@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Amazon;
 using Amazon.CodeDeploy;
 using Amazon.CodeDeploy.Model;
@@ -19,22 +20,14 @@ namespace Amazon.DNXCore.IntegrationTests
             Client.ListApplicationsAsync().Wait();
         }
 
-        [Fact]
-        public void TestCreateApplication()
-        {
-            var appName = UtilityMethods.GenerateName();
-            Client.CreateApplicationAsync(new CreateApplicationRequest { ApplicationName = appName }).Wait();
-            Assert.True(Client.ListApplicationsAsync().Result.Applications.Contains(appName));
-            Client.DeleteApplicationAsync(new DeleteApplicationRequest { ApplicationName = appName }).Wait();
-        }
 
         [Fact]
-        public void TestDeleteApplication()
+        public async Task TestDeleteApplication()
         {
             var appName = UtilityMethods.GenerateName();
-            Client.CreateApplicationAsync(new CreateApplicationRequest { ApplicationName = appName }).Wait();
+            await Client.CreateApplicationAsync(new CreateApplicationRequest { ApplicationName = appName });
             Assert.True(Client.ListApplicationsAsync().Result.Applications.Contains(appName));
-            Client.DeleteApplicationAsync(new DeleteApplicationRequest { ApplicationName = appName }).Wait();
+            await Client.DeleteApplicationAsync(new DeleteApplicationRequest { ApplicationName = appName });
             Assert.False(Client.ListApplicationsAsync().Result.Applications.Contains(appName));
         }
     }

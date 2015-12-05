@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon;
 using Amazon.S3;
+using System.Threading.Tasks;
 using System.IO;
 using Xunit;
 using Amazon.DNXCore.IntegrationTests;
@@ -15,11 +16,11 @@ namespace Amazon.DNXCore.IntegrationTests
     {
         [Fact]
         [Trait(TestBase.CategoryAttribute,"Credentials")]
-        public void TestSessionCredentials()
+        public async Task TestSessionCredentials()
         {
             using (var sts = TestBase.CreateClient<AmazonSecurityTokenServiceClient>())
             {
-                AWSCredentials credentials = sts.GetSessionTokenAsync().Result.Credentials;
+                AWSCredentials credentials = (await sts.GetSessionTokenAsync()).Credentials;
 
                 var originalS3Signature = AWSConfigsS3.UseSignatureVersion4;
                 AWSConfigsS3.UseSignatureVersion4 = true;
@@ -28,25 +29,25 @@ namespace Amazon.DNXCore.IntegrationTests
 
                     using (var ec2 = TestBase.CreateClient < Amazon.EC2.AmazonEC2Client>(credentials))
                     {
-                        var regions = ec2.DescribeRegionsAsync().Result.Regions;
+                        var regions = (await ec2.DescribeRegionsAsync()).Regions;
                         Console.WriteLine(regions.Count);
                     }
 
                     using (var s3 = TestBase.CreateClient < Amazon.S3.AmazonS3Client>(credentials))
                     {
-                        var buckets = s3.ListBucketsAsync().Result.Buckets;
+                        var buckets = (await s3.ListBucketsAsync()).Buckets;
                         Console.WriteLine(buckets.Count);
                     }
 
                     using (var swf = TestBase.CreateClient < Amazon.SimpleWorkflow.AmazonSimpleWorkflowClient>(credentials))
                     {
-                        var domains = swf.ListDomainsAsync(new Amazon.SimpleWorkflow.Model.ListDomainsRequest { RegistrationStatus = "REGISTERED" }).Result.DomainInfos;
+                        var domains = (await swf.ListDomainsAsync(new Amazon.SimpleWorkflow.Model.ListDomainsRequest { RegistrationStatus = "REGISTERED" })).DomainInfos;
                         Console.WriteLine(domains.Infos.Count);
                     }
 
                     using (var swf = TestBase.CreateClient < Amazon.SimpleWorkflow.AmazonSimpleWorkflowClient>(credentials))
                     {
-                        var domains = swf.ListDomainsAsync(new Amazon.SimpleWorkflow.Model.ListDomainsRequest { RegistrationStatus = "REGISTERED" }).Result.DomainInfos;
+                        var domains = (await swf.ListDomainsAsync(new Amazon.SimpleWorkflow.Model.ListDomainsRequest { RegistrationStatus = "REGISTERED" })).DomainInfos;
                         Console.WriteLine(domains.Infos.Count);
                     }
                 }

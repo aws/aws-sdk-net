@@ -70,12 +70,7 @@ namespace Amazon.DNXCore.IntegrationTests
         }
 
         [Fact]
-        public void TestRestJson()
-        {
-            UtilityMethods.RunAsSync(TestRestJson_Async);
-        }
-
-        private async Task TestRestJson_Async()
+        public async Task TestRestJson()
         {
             using (var client = UtilityMethods.CreateClient<AmazonElasticTranscoderClient>())
             {
@@ -84,7 +79,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 Assert.NotEqual(0, presets.Count);
 
                 var fakeId = "1111111111111-abcde1";
-                var aete = await AssertExtensions.ExpectExceptionAsync<AmazonElasticTranscoderException>(client.DeletePipelineAsync(new DeletePipelineRequest
+                var aete = await AssertExtensions.ExpectExceptionAsync<Amazon.ElasticTranscoder.Model.ResourceNotFoundException>(client.DeletePipelineAsync(new DeletePipelineRequest
                 {
                     Id = fakeId
                 }));
@@ -97,12 +92,7 @@ namespace Amazon.DNXCore.IntegrationTests
         }
 
         [Fact]
-        public void TestRestXml()
-        {
-            UtilityMethods.RunAsSync(TestRestXml_Async);
-        }
-
-        private async Task TestRestXml_Async()
+        public async Task TestRestXml()
         {
             using (var client = UtilityMethods.CreateClient<AmazonS3Client>())
             {
@@ -130,12 +120,7 @@ namespace Amazon.DNXCore.IntegrationTests
         }
 
         [Fact]
-        public void TestQuery()
-        {
-            UtilityMethods.RunAsSync(TestQuery_Async);
-        }
-
-        private async Task TestQuery_Async()
+        public async Task TestQuery()
         {
             var digits = DateTime.Now.Ticks.ToString();
             var domainName = string.Format("net-sdk-test-{0}", digits.Substring(digits.Length - 15));

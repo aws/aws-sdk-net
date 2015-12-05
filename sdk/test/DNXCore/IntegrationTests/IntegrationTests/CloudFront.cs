@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Threading.Tasks;
 
 using Amazon.CloudFront;
 using Amazon.CloudFront.Model;
@@ -15,15 +16,15 @@ namespace Amazon.DNXCore.IntegrationTests
     {
         [Fact]
         [Trait(CategoryAttribute,"CloudFront")]
-        public void ListDistributions()
+        public async Task ListDistributions()
         {
-            var response = Client.ListDistributionsAsync().Result;
+            var response = await Client.ListDistributionsAsync();
             Assert.NotNull(response.DistributionList);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"CloudFront")]
-        public void OriginTests()
+        public async Task OriginTests()
         {
             var createRequest = new CreateCloudFrontOriginAccessIdentityRequest()
             {
@@ -33,7 +34,7 @@ namespace Amazon.DNXCore.IntegrationTests
                     Comment = UtilityMethods.SDK_TEST_PREFIX
                 }
             };
-            var createResponse = Client.CreateCloudFrontOriginAccessIdentityAsync(createRequest).Result;
+            var createResponse = await Client.CreateCloudFrontOriginAccessIdentityAsync(createRequest);
             Assert.NotNull(createResponse.ETag);
             Assert.NotNull(createResponse.CloudFrontOriginAccessIdentity.Id);
 
@@ -47,12 +48,12 @@ namespace Amazon.DNXCore.IntegrationTests
                 Id = createResponse.CloudFrontOriginAccessIdentity.Id,
                 IfMatch = createResponse.ETag
             };
-            var updateResponse = Client.UpdateCloudFrontOriginAccessIdentityAsync(updateRequest).Result;
+            var updateResponse = await Client.UpdateCloudFrontOriginAccessIdentityAsync(updateRequest);
             Assert.NotNull(updateResponse.ETag);
             Assert.NotNull(updateResponse.CloudFrontOriginAccessIdentity.CloudFrontOriginAccessIdentityConfig.Comment);
 
 
-            var listResponse = Client.ListCloudFrontOriginAccessIdentitiesAsync().Result;
+            var listResponse = await Client.ListCloudFrontOriginAccessIdentitiesAsync();
             Assert.True(listResponse.CloudFrontOriginAccessIdentityList.Items.Count > 0);
 
             var deleteRequest = new DeleteCloudFrontOriginAccessIdentityRequest()
@@ -60,7 +61,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 Id = createResponse.CloudFrontOriginAccessIdentity.Id,
                 IfMatch = updateResponse.ETag
             };
-            var deleteResponse = Client.DeleteCloudFrontOriginAccessIdentityAsync(deleteRequest).Result;
+            var deleteResponse = await Client.DeleteCloudFrontOriginAccessIdentityAsync(deleteRequest);
             Assert.NotNull(deleteResponse.ResponseMetadata.RequestId);
         }
     }

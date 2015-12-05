@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 
 using Amazon;
 using Amazon.CloudFormation;
@@ -66,9 +67,9 @@ namespace Amazon.DNXCore.IntegrationTests
         
         [Fact]
         [Trait(CategoryAttribute,"CloudFormation")]
-        public void TestValidateTemplateURL()
+        public async Task TestValidateTemplateURL()
         {
-            ValidateTemplateResponse response = Client.ValidateTemplateAsync(new ValidateTemplateRequest() { TemplateURL = TEMPLATE_URL }).Result;
+            ValidateTemplateResponse response = await Client.ValidateTemplateAsync(new ValidateTemplateRequest() { TemplateURL = TEMPLATE_URL });
             Assert.NotNull(response.ResponseMetadata.RequestId);
             Assert.True(response.Parameters.Count > 0);
 
@@ -80,12 +81,12 @@ namespace Amazon.DNXCore.IntegrationTests
 
         [Fact]
         [Trait(CategoryAttribute,"CloudFormation")]
-        public void TestGetTemplateSummary()
+        public async Task TestGetTemplateSummary()
         {
-            GetTemplateSummaryResponse response = Client.GetTemplateSummaryAsync(new GetTemplateSummaryRequest
+            GetTemplateSummaryResponse response = await Client.GetTemplateSummaryAsync(new GetTemplateSummaryRequest
             {
                 TemplateURL = TEMPLATE_URL
-            }).Result;
+            });
             VerifyTemplateSummary(response);
 
             response = Client.GetTemplateSummaryAsync(new GetTemplateSummaryRequest
@@ -120,26 +121,10 @@ namespace Amazon.DNXCore.IntegrationTests
             Assert.NotNull(response.Url);
         }
 
-        [Fact]
-        [Trait(CategoryAttribute,"CloudFormation")]
-        public void TestValidateTemplateBody()
-        {
-            ValidateTemplateResponse response = Client.ValidateTemplateAsync(new ValidateTemplateRequest() { TemplateURL = TEMPLATE_URL }).Result;
-            Assert.NotNull(response.ResponseMetadata.RequestId);
-        }
 
         [Fact]
         [Trait(CategoryAttribute,"CloudFormation")]
-        public void TestInvalidTemplate()
-        {
-            var exception = AssertExtensions.ExpectExceptionAsync<AmazonCloudFormationException>(Client.ValidateTemplateAsync(new ValidateTemplateRequest() { TemplateBody = @"{""Foo"" : ""Bar""}" })).Result;
-            Assert.Equal("ValidationError", exception.ErrorCode);
-            Assert.Equal(ErrorType.Sender, exception.ErrorType);
-        }
-
-        [Fact]
-        [Trait(CategoryAttribute,"CloudFormation")]
-        public void TestCreateStack()
+        public async Task TestCreateStack()
         {
             string stackName = "test-stack-" + DateTime.Now.Ticks;
             try
@@ -161,47 +146,47 @@ namespace Amazon.DNXCore.IntegrationTests
                     ParameterValue = "MyQueue" + DateTime.Now.Ticks
                 });
 
-                Client.CreateStackAsync(createRequest).Wait();
+                await Client.CreateStackAsync(createRequest);
 
-                WaitTillStackNotInProcess(stackName);
+                await WaitTillStackNotInProcess(stackName);
 
-                var stack = Client.DescribeStacksAsync(new DescribeStacksRequest
+                var stack = (await Client.DescribeStacksAsync(new DescribeStacksRequest
                 {
                     StackName = stackName
-                }).Result.Stacks[0];
+                })).Stacks[0];
 
                 Assert.Equal(StackStatus.CREATE_COMPLETE , stack.StackStatus);
 
-                var resources = Client.DescribeStackResourcesAsync(new DescribeStackResourcesRequest
+                var resources = (await Client.DescribeStackResourcesAsync(new DescribeStackResourcesRequest
                     {
                         StackName = stackName
-                    }).Result.StackResources;
+                    })).StackResources;
 
                 Assert.Equal(2, resources.Count);
 
-                GetTemplateSummaryResponse templateSummaryResponse = Client.GetTemplateSummaryAsync(new GetTemplateSummaryRequest
+                GetTemplateSummaryResponse templateSummaryResponse = await Client.GetTemplateSummaryAsync(new GetTemplateSummaryRequest
                 {
                     StackName = stackName
-                }).Result;
+                });
                 VerifyTemplateSummary(templateSummaryResponse);
             }
             finally
             {
-                WaitTillStackNotInProcess(stackName);
-                Client.DeleteStackAsync(new DeleteStackRequest() { StackName = stackName }).Wait();
+                await WaitTillStackNotInProcess(stackName);
+                await Client.DeleteStackAsync(new DeleteStackRequest() { StackName = stackName });
             }
         }
 
-        void WaitTillStackNotInProcess(string stackname)
+        async Task WaitTillStackNotInProcess(string stackname)
         {
             DescribeStacksResponse response = null;
             do
             {
                 UtilityMethods.Sleep(TimeSpan.FromSeconds(2));
-                response = Client.DescribeStacksAsync(new DescribeStacksRequest
+                response = await Client.DescribeStacksAsync(new DescribeStacksRequest
                 {
                     StackName = stackname
-                }).Result;
+                });
             } while (response.Stacks[0].StackStatus.Value.EndsWith("IN_PROGRESS"));
         }
     }

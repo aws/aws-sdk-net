@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Xunit;
@@ -16,32 +17,32 @@ namespace Amazon.DNXCore.IntegrationTests.EC2
     {
         private const string tagName = "DotNetNullTestTag";
         [Fact]
-        public void TestNullTags()
+        public async Task TestNullTags()
         {
-            var vpcId = Client.CreateVpcAsync(new CreateVpcRequest
+            var vpcId = (await Client.CreateVpcAsync(new CreateVpcRequest
             {
                 CidrBlock = "10.0.0.0/16",
                 InstanceTenancy = Tenancy.Default
-            }).Result.Vpc.VpcId;
+            })).Vpc.VpcId;
 
             try
             {
-                Client.CreateTagsAsync(new CreateTagsRequest
+                await Client.CreateTagsAsync(new CreateTagsRequest
                 {
                     Resources = new List<string> { vpcId },
                     Tags = new List<Tag>
                     {
                         new Tag(tagName, "")
                     }
-                }).Wait();
+                });
 
-                var tagDescriptions = Client.DescribeTagsAsync(new DescribeTagsRequest
+                var tagDescriptions = (await Client.DescribeTagsAsync(new DescribeTagsRequest
                 {
                     Filters = new List<Filter>
                     {
                         new Filter("resource-id", new List<string> { vpcId })
                     }
-                }).Result.Tags;
+                })).Tags;
                 TagDescription newTag = null;
                 foreach (var tag in tagDescriptions)
                     if (tag.Key == tagName)
@@ -53,27 +54,27 @@ namespace Amazon.DNXCore.IntegrationTests.EC2
                 var tags = tagDescriptions
                     .Select(td => new Tag(td.Key, td.Value ?? ""))
                     .ToList();
-                Client.CreateTagsAsync(new CreateTagsRequest
+                await Client.CreateTagsAsync(new CreateTagsRequest
                 {
                     Resources = new List<string> { vpcId },
                     Tags = tags
-                }).Wait();
+                });
 
                 tags = tagDescriptions
                     .Select(td => new Tag(td.Key, td.Value))
                     .ToList();
-                Client.CreateTagsAsync(new CreateTagsRequest
+                await Client.CreateTagsAsync(new CreateTagsRequest
                 {
                     Resources = new List<string> { vpcId },
                     Tags = tags
-                }).Wait();
+                });
             }
             finally
             {
-                Client.DeleteVpcAsync(new DeleteVpcRequest
+                await Client.DeleteVpcAsync(new DeleteVpcRequest
                 {
                     VpcId = vpcId
-                }).Wait();
+                });
             }
         }
     }

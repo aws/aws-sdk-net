@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 
 
 using Amazon.SimpleSystemsManagement;
@@ -16,9 +17,9 @@ namespace Amazon.DNXCore.IntegrationTests
     {
         [Fact]
         [Trait(CategoryAttribute,"SimpleSystemsManagement")]
-        public void TestListDocuments()
+        public async Task TestListDocuments()
         {
-            var response = Client.ListDocumentsAsync().Result;
+            var response = await Client.ListDocumentsAsync();
             Assert.NotNull(response);
 
             // if test a/c had some documents, iterate through

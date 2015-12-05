@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Threading.Tasks;
 
 using Amazon.CloudWatchLogs;
 using Amazon.CloudWatchLogs.Model;
@@ -14,57 +15,57 @@ namespace Amazon.DNXCore.IntegrationTests
     {        
         [Fact]
         [Trait(CategoryAttribute,"CloudWatchLogs")]
-        public void CRUDLogGroup()
+        public async Task CRUDLogGroup()
         {
             var logGroupName = "sdk-dotnet-" + DateTime.Now.Ticks;
-            Client.CreateLogGroupAsync(new CreateLogGroupRequest
+            await Client.CreateLogGroupAsync(new CreateLogGroupRequest
             {
                 LogGroupName = logGroupName
-            }).Wait();
+            });
             try
             {
                 {
-                    DescribeLogGroupsResponse response = Client.DescribeLogGroupsAsync(new DescribeLogGroupsRequest
+                    DescribeLogGroupsResponse response = await Client.DescribeLogGroupsAsync(new DescribeLogGroupsRequest
                         {
                             LogGroupNamePrefix = logGroupName
-                        }).Result;
+                        });
 
                     Assert.Equal(1, response.LogGroups.Count);
                     Assert.NotNull(response.LogGroups[0].Arn);
                     Assert.Null(response.LogGroups[0].RetentionInDays);
 
-                    Client.PutRetentionPolicyAsync(new PutRetentionPolicyRequest
+                    await Client.PutRetentionPolicyAsync(new PutRetentionPolicyRequest
                         {
                             LogGroupName = logGroupName,
                             RetentionInDays = 1
-                        }).Wait();
+                        });
 
-                    response = Client.DescribeLogGroupsAsync(new DescribeLogGroupsRequest
+                    response = await Client.DescribeLogGroupsAsync(new DescribeLogGroupsRequest
                     {
                         LogGroupNamePrefix = logGroupName
-                    }).Result;
+                    });
 
                     Assert.Equal(1, response.LogGroups.Count);
                     Assert.Equal(1, response.LogGroups[0].RetentionInDays.GetValueOrDefault());
                 }
 
                 {
-                    Client.CreateLogStreamAsync(new CreateLogStreamRequest
+                    await Client.CreateLogStreamAsync(new CreateLogStreamRequest
                         {
                             LogGroupName = logGroupName,
                             LogStreamName = "sample"
-                        }).Wait();
+                        });
 
-                    DescribeLogStreamsResponse describeResponse = Client.DescribeLogStreamsAsync(new DescribeLogStreamsRequest
+                    DescribeLogStreamsResponse describeResponse = await Client.DescribeLogStreamsAsync(new DescribeLogStreamsRequest
                         {
                             LogGroupName = logGroupName,
                             LogStreamNamePrefix = "sample"
-                        }).Result;
+                        });
 
                     Assert.Equal(1, describeResponse.LogStreams.Count);
                     Assert.NotNull(describeResponse.LogStreams[0].Arn);
 
-                    PutLogEventsResponse putResponse1 = Client.PutLogEventsAsync(new PutLogEventsRequest
+                    PutLogEventsResponse putResponse1 = await Client.PutLogEventsAsync(new PutLogEventsRequest
                         {
                             LogGroupName = logGroupName,
                             LogStreamName = "sample",
@@ -76,12 +77,12 @@ namespace Amazon.DNXCore.IntegrationTests
                                     Timestamp = DateTime.Now
                                 }
                             }
-                        }).Result;
+                        });
 
                     // Pad the time so the 2 events are not at the same time.
                     UtilityMethods.Sleep(TimeSpan.FromSeconds(.1));
 
-                    Client.PutLogEventsAsync(new PutLogEventsRequest
+                    await Client.PutLogEventsAsync(new PutLogEventsRequest
                     {
                          SequenceToken = putResponse1.NextSequenceToken,
                         LogGroupName = logGroupName,
@@ -94,7 +95,7 @@ namespace Amazon.DNXCore.IntegrationTests
                                     Timestamp = DateTime.Now
                                 }
                             }
-                    }).Wait();
+                    });
 
                     GetLogEventsResponse getResponse = null;
 
@@ -103,13 +104,13 @@ namespace Amazon.DNXCore.IntegrationTests
                     for (int i = 0; i < 20; i++)
                     {
 
-                        getResponse = Client.GetLogEventsAsync(new GetLogEventsRequest
+                        getResponse = await Client.GetLogEventsAsync(new GetLogEventsRequest
                             {
                                 LogGroupName = logGroupName,
                                 LogStreamName = "sample",
                                 StartTime = DateTime.Now.AddDays(-2),
                                 EndTime = DateTime.Now
-                            }).Result;
+                            });
 
                         if (getResponse.Events.Count == 2)
                             break;
@@ -127,19 +128,19 @@ namespace Amazon.DNXCore.IntegrationTests
                     Assert.True(getResponse.Events[0].Timestamp < getResponse.Events[1].Timestamp);
 
 
-                    Client.DeleteLogStreamAsync(new DeleteLogStreamRequest
+                    await Client.DeleteLogStreamAsync(new DeleteLogStreamRequest
                         {
                             LogGroupName = logGroupName,
                             LogStreamName = "sample"
-                        }).Wait();
+                        });
                 }
             }
             finally
             {
-                Client.DeleteLogGroupAsync(new DeleteLogGroupRequest
+                await Client.DeleteLogGroupAsync(new DeleteLogGroupRequest
                     {
                         LogGroupName = logGroupName
-                    }).Wait();
+                    });
             }
         }
     }

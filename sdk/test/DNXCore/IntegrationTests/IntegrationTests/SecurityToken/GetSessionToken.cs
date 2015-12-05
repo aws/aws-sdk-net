@@ -1,5 +1,6 @@
 using System;
 using System.Threading;
+using System.Threading.Tasks;
 using Amazon;
 using Xunit;
 using Amazon.DNXCore.IntegrationTests;
@@ -14,14 +15,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     {   
         [Fact]
         [Trait(CategoryAttribute,"SecurityTokenService")]
-        public void TestGetSessionToken()
+        public async Task TestGetSessionToken()
         {
             var gstRequest = new GetSessionTokenRequest()
             {
                 DurationSeconds = 3600
             };
 
-            var gstResult = Client.GetSessionTokenAsync(gstRequest).Result;
+            var gstResult = await Client.GetSessionTokenAsync(gstRequest);
 
             Assert.NotNull(gstResult.Credentials.AccessKeyId);
             Assert.NotNull(gstResult.Credentials.SecretAccessKey);
@@ -40,7 +41,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         [Fact]
         [Trait(CategoryAttribute,"SecurityTokenService")]
-        public void TestGetSessionTokenRegional()
+        public async Task TestGetSessionTokenRegional()
         {
             using (var uswest2Client = TestBase.CreateClient<AmazonSecurityTokenServiceClient>(endpoint: RegionEndpoint.USWest2))
             {
@@ -49,7 +50,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     DurationSeconds = 3600
                 };
 
-                var gstResult = uswest2Client.GetSessionTokenAsync(gstRequest).Result;
+                var gstResult = await uswest2Client.GetSessionTokenAsync(gstRequest);
 
                 Assert.NotNull(gstResult.Credentials.AccessKeyId);
                 Assert.NotNull(gstResult.Credentials.SecretAccessKey);
@@ -69,7 +70,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         [Fact]
         [Trait(CategoryAttribute,"SecurityTokenService")]
-        public void TestGetSessionTokenAsync()
+        public async Task TestGetSessionTokenAsync()
         {
             var gstRequest = new GetSessionTokenRequest()
             {
@@ -78,8 +79,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             GetSessionTokenResponse asyncResponse = null;
 
-            var task = Client.GetSessionTokenAsync(gstRequest);
-            asyncResponse = task.Result;
+            asyncResponse = await Client.GetSessionTokenAsync(gstRequest);
 
             UtilityMethods.Sleep(TimeSpan.FromSeconds(5));
             Assert.NotNull(asyncResponse);

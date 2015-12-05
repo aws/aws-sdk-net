@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 using Amazon.AWSSupport;
 using Amazon.AWSSupport.Model;
@@ -34,7 +35,7 @@ namespace Amazon.DNXCore.IntegrationTests
         
         //  Test are disabled because not all acounts are subscribed to AWS Support
         //[Fact]
-        public void TestCaseOperations()
+        public async Task TestCaseOperations()
         {
             string caseId = null;
 
@@ -52,10 +53,10 @@ namespace Amazon.DNXCore.IntegrationTests
 
                 Assert.NotNull(caseId);
 
-                var cases = Client.DescribeCasesAsync(new DescribeCasesRequest { Language = LANGUAGE }).Result.Cases;
+                var cases = (await Client.DescribeCasesAsync(new DescribeCasesRequest { Language = LANGUAGE })).Cases;
                 Assert.True(cases.Count > 0);
 
-                cases = Client.DescribeCasesAsync(new DescribeCasesRequest { Language = LANGUAGE, CaseIdList = new List<string> { caseId } }).Result.Cases;
+                cases = (await Client.DescribeCasesAsync(new DescribeCasesRequest { Language = LANGUAGE, CaseIdList = new List<string> { caseId } })).Cases;
                 Assert.Equal(1, cases.Count);
 
                 Assert.Equal(caseId, cases[0].CaseId);
@@ -67,7 +68,7 @@ namespace Amazon.DNXCore.IntegrationTests
 
                 var attachmentData = new MemoryStream(Encoding.UTF8.GetBytes(ATTACHMENT_CONTENTS));
                 var filename = "file1.txt";
-                var attachmentSetId = Client.AddAttachmentsToSetAsync(new AddAttachmentsToSetRequest
+                var attachmentSetId = (await Client.AddAttachmentsToSetAsync(new AddAttachmentsToSetRequest
                 {
                     Attachments = new List<Attachment>
                     {
@@ -77,19 +78,19 @@ namespace Amazon.DNXCore.IntegrationTests
                             Data = attachmentData
                         }
                     }
-                }).Result.AttachmentSetId;
+                })).AttachmentSetId;
 
-                var result = Client.AddCommunicationToCaseAsync(new AddCommunicationToCaseRequest
+                var result = await Client.AddCommunicationToCaseAsync(new AddCommunicationToCaseRequest
                 {
                     CaseId = caseId,
                     CcEmailAddresses = new List<string> { "aws-dr-tools-test@amazon.com" },
                     CommunicationBody = COMMUNICATION_BODY,
                     AttachmentSetId = attachmentSetId
-                }).Result;
+                });
 
                 Assert.NotNull(result);
 
-                var comms = Client.DescribeCommunicationsAsync(new DescribeCommunicationsRequest { CaseId = caseId }).Result.Communications;
+                var comms = (await Client.DescribeCommunicationsAsync(new DescribeCommunicationsRequest { CaseId = caseId })).Communications;
                 Assert.True(comms.Count > 0);
                 Assert.Equal(caseId, comms[0].CaseId);
                 Assert.Equal(COMMUNICATION_BODY.Trim(), comms[0].Body.Trim());
@@ -102,7 +103,7 @@ namespace Amazon.DNXCore.IntegrationTests
 
                 VerifyAttachment(attachmentData, filename, attachmentId);
 
-                cases = Client.DescribeCasesAsync(new DescribeCasesRequest { Language = LANGUAGE, CaseIdList = new List<string> { caseId }, IncludeCommunications = true }).Result.Cases;
+                cases = (await Client.DescribeCasesAsync(new DescribeCasesRequest { Language = LANGUAGE, CaseIdList = new List<string> { caseId }, IncludeCommunications = true })).Cases;
                 Assert.Equal(1, cases.Count);
                 var communications = cases[0].RecentCommunications;
                 attachmentId = GetAttachmentId(communications.Communications, attachmentId);
@@ -112,17 +113,17 @@ namespace Amazon.DNXCore.IntegrationTests
             {
                 if (caseId != null)
                 {
-                    Client.ResolveCaseAsync(new ResolveCaseRequest { CaseId = caseId }).Wait();
+                    await Client.ResolveCaseAsync(new ResolveCaseRequest { CaseId = caseId });
                 }
             }
         }
 
-        private void VerifyAttachment(MemoryStream attachmentData, string filename, string attachmentId)
+        private async Task VerifyAttachment(MemoryStream attachmentData, string filename, string attachmentId)
         {
-            var attachment = Client.DescribeAttachmentAsync(new DescribeAttachmentRequest
+            var attachment = (await Client.DescribeAttachmentAsync(new DescribeAttachmentRequest
             {
                 AttachmentId = attachmentId
-            }).Result.Attachment;
+            })).Attachment;
             Assert.NotNull(attachment);
             Assert.Equal(
                 Encoding.UTF8.GetString(attachmentData.ToArray()),
@@ -145,75 +146,6 @@ namespace Amazon.DNXCore.IntegrationTests
                 }
             }
             return attachmentId;
-        }
-
-        //  Test are disabled because not all acounts are subscribed to AWS Support
-        //[Fact]
-        public void TestDescribeServices()
-        {
-            var services = Client.DescribeServicesAsync().Result.Services;
-            Assert.True(services.Count > 0);
-            Assert.NotNull(services[0].Code);
-            Assert.NotNull(services[0].Name);
-            Assert.True(services[0].Categories.Count > 0);
-            Assert.NotNull(services[0].Categories[0].Code);
-            Assert.NotNull(services[0].Categories[0].Name);
-
-            services = Client.DescribeServicesAsync(new DescribeServicesRequest { ServiceCodeList = new List<string> { SERVICE_CODE } }).Result.Services;
-            Assert.Equal(1, services.Count);
-            Assert.NotNull(services[0].Name);
-            Assert.Equal(SERVICE_CODE, services[0].Code);
-        }
-
-        //  Test are disabled because not all acounts are subscribed to AWS Support
-        //[Fact]
-        public void TestSeverityLevels()
-        {
-            var levels = Client.DescribeSeverityLevelsAsync().Result.SeverityLevels;
-            Assert.True(levels.Count > 0);
-            Assert.NotNull(levels[0].Name);
-            Assert.NotNull(levels[0].Code);
-        }
-
-        //  Test are disabled because not all acounts are subscribed to AWS Support
-        //[Fact]
-        public void TestTrustedAdvisorChecks()
-        {
-            var checks = Client.DescribeTrustedAdvisorChecksAsync(new DescribeTrustedAdvisorChecksRequest { Language = LANGUAGE }).Result.Checks;
-            Assert.True(checks.Count > 0);
-
-            var checkId = checks[0].Id;
-            Assert.NotNull(checks[0].Name);
-            Assert.NotNull(checks[0].Category);
-            Assert.NotNull(checks[0].Description);
-            Assert.True(checks[0].Metadata.Count > 0);
-            Assert.NotNull(checks[0].Metadata[0]);
-
-            var statuses = Client.DescribeTrustedAdvisorCheckRefreshStatusesAsync(new DescribeTrustedAdvisorCheckRefreshStatusesRequest { CheckIds = new List<string> { checkId } }).Result.Statuses;
-
-            Assert.Equal(1, statuses.Count);
-            Assert.Equal(checkId, statuses[0].CheckId);
-            Assert.NotNull(statuses[0].Status);
-            Assert.NotNull(statuses[0].MillisUntilNextRefreshable);
-
-            var status = Client.RefreshTrustedAdvisorCheckAsync(new RefreshTrustedAdvisorCheckRequest { CheckId = checkId }).Result.Status;
-            Assert.NotNull(status);
-
-            var summaries = Client.DescribeTrustedAdvisorCheckSummariesAsync(new DescribeTrustedAdvisorCheckSummariesRequest { CheckIds = new List<string> { checkId } })
-                .Result.Summaries;
-
-            Assert.Equal(1, summaries.Count);
-            Assert.Equal(checkId, summaries[0].CheckId);
-            Assert.NotNull(summaries[0].Status);
-            Assert.NotNull(summaries[0].Timestamp);
-            Assert.NotNull(summaries[0].ResourcesSummary);
-            Assert.NotNull(summaries[0].CategorySpecificSummary);
-
-            var resultresult = Client.DescribeTrustedAdvisorCheckResultAsync(new DescribeTrustedAdvisorCheckResultRequest { CheckId = checkId }).Result.Result;
-
-            Assert.NotNull(resultresult.Timestamp);
-            Assert.NotNull(resultresult.Status);
-            Assert.NotNull(resultresult.ResourcesSummary);
         }
     }
 }

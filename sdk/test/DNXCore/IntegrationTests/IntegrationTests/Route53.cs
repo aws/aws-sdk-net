@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 using Amazon.Route53;
 using Amazon.Route53.Model;
@@ -43,13 +44,13 @@ namespace Amazon.DNXCore.IntegrationTests
         //    }
         //}
 
-        void DeleteHostedZone(string hostedZoneId)
+        async Task DeleteHostedZone(string hostedZoneId)
         {
             if (!string.IsNullOrEmpty(hostedZoneId))
             {
                 try
                 {
-                    Client.DeleteHostedZoneAsync(new DeleteHostedZoneRequest { Id = hostedZoneId }).Wait();
+                    await Client.DeleteHostedZoneAsync(new DeleteHostedZoneRequest { Id = hostedZoneId });
                 }
                 catch { }
             }
@@ -59,12 +60,12 @@ namespace Amazon.DNXCore.IntegrationTests
         // correct send requests and unmarshall responses.
         [Fact]
         [Trait(CategoryAttribute,"Route53")]
-        public void TestRoute53()
+        public async Task TestRoute53()
         {
             string createdZoneId = null;
             try
             {
-                var geoLocations = Client.ListGeoLocationsAsync().Result.GeoLocationDetailsList;
+                var geoLocations = (await Client.ListGeoLocationsAsync()).GeoLocationDetailsList;
                 Assert.NotNull(geoLocations);
                 Assert.NotEqual(0, geoLocations.Count);
 
@@ -76,9 +77,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 };
                 // Create Hosted Zone
 
-                var createResponse = UtilityMethods.WaitUntilSuccess<CreateHostedZoneResponse>(
-                    () => Client.CreateHostedZoneAsync(createRequest).Result
-                );
+                var createResponse = await Client.CreateHostedZoneAsync(createRequest);
 
                 createdZoneId = createResponse.HostedZone.Id;
                 var createdZoneChangeId = createResponse.ChangeInfo.Id;
@@ -90,12 +89,12 @@ namespace Amazon.DNXCore.IntegrationTests
 
                 // Get Hosted Zone
                 GetHostedZoneRequest getRequest = new GetHostedZoneRequest { Id = createdZoneId };
-                var getHostedZoneResponse = Client.GetHostedZoneAsync(getRequest).Result;
+                var getHostedZoneResponse = await Client.GetHostedZoneAsync(getRequest);
                 assertValidDelegationSet(getHostedZoneResponse.DelegationSet);
                 assertValidCreatedHostedZone(getHostedZoneResponse.HostedZone);
 
                 // List Hosted Zones
-                List<HostedZone> hostedZones = Client.ListHostedZonesAsync().Result.HostedZones;
+                List<HostedZone> hostedZones = (await Client.ListHostedZonesAsync()).HostedZones;
                 Assert.True(hostedZones.Count > 0);
                 foreach (HostedZone hostedZone in hostedZones)
                 {
@@ -106,7 +105,7 @@ namespace Amazon.DNXCore.IntegrationTests
 
                 // List Resource Record Sets
                 ListResourceRecordSetsRequest listRequest = new ListResourceRecordSetsRequest { HostedZoneId = createdZoneId, MaxItems = "10" };
-                List<ResourceRecordSet> resourceRecordSets = Client.ListResourceRecordSetsAsync(listRequest).Result.ResourceRecordSets;
+                List<ResourceRecordSet> resourceRecordSets = (await Client.ListResourceRecordSetsAsync(listRequest)).ResourceRecordSets;
 
                 Assert.True(resourceRecordSets.Count > 0);
                 ResourceRecordSet existingResourceRecordSet = resourceRecordSets[0];
@@ -120,7 +119,7 @@ namespace Amazon.DNXCore.IntegrationTests
 
 
                 // Get Change
-                ChangeInfo changeInfo = Client.GetChangeAsync(new GetChangeRequest { Id = createdZoneChangeId }).Result.ChangeInfo;
+                ChangeInfo changeInfo = (await Client.GetChangeAsync(new GetChangeRequest { Id = createdZoneChangeId })).ChangeInfo;
                 Assert.True(changeInfo.Id.EndsWith(createdZoneChangeId));
                 assertValidChangeInfo(changeInfo);
 
@@ -135,7 +134,7 @@ namespace Amazon.DNXCore.IntegrationTests
                     HealthCheckId = null
                 };
 
-                changeInfo = Client.ChangeResourceRecordSetsAsync(new ChangeResourceRecordSetsRequest
+                changeInfo = (await Client.ChangeResourceRecordSetsAsync(new ChangeResourceRecordSetsRequest
                 {
                     HostedZoneId = createdZoneId,
                     ChangeBatch = new ChangeBatch
@@ -147,17 +146,17 @@ namespace Amazon.DNXCore.IntegrationTests
                         new Change { Action = "CREATE", ResourceRecordSet = newResourceRecordSet }
                     }
                     }
-                }).Result.ChangeInfo;
+                })).ChangeInfo;
 
                 assertValidChangeInfo(changeInfo);
 
                 // Delete Hosted Zone
-                var deleteHostedZoneResult = Client.DeleteHostedZoneAsync(new DeleteHostedZoneRequest { Id = createdZoneId }).Result;
+                var deleteHostedZoneResult = await Client.DeleteHostedZoneAsync(new DeleteHostedZoneRequest { Id = createdZoneId });
                 assertValidChangeInfo(deleteHostedZoneResult.ChangeInfo);
             }
             finally
             {
-                DeleteHostedZone(createdZoneId);
+                await DeleteHostedZone(createdZoneId);
             }
         }
 

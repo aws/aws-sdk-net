@@ -9,6 +9,7 @@ using System.Reflection;
 using Amazon.Runtime.Internal.Auth;
 using System.Collections.Specialized;
 using System.Xml;
+using System.Threading.Tasks;
 using Xunit;
 using Amazon.DNXCore.IntegrationTests;
 
@@ -19,12 +20,12 @@ namespace Amazon.DNXCore.IntegrationTests
     public class General
     {
         [Fact]
-        public void TestClientDispose()
+        public async Task TestClientDispose()
         {
             IAmazonS3 client;
             using(client = TestBase.CreateClient<AmazonS3Client>())
             {
-                var response = client.ListBucketsAsync().Result;
+                var response = await client.ListBucketsAsync();
                 Assert.NotNull(response);
                 Assert.NotNull(response.ResponseMetadata);
                 Assert.NotNull(response.ResponseMetadata.RequestId);
@@ -35,29 +36,29 @@ namespace Amazon.DNXCore.IntegrationTests
             AssertExtensions.ExpectException<ObjectDisposedException>(() => client.ListBucketsAsync().Wait());
         }
         
-        public void TestExpiringCredentials()
+        public async Task TestExpiringCredentials()
         {
             // test that non-expired credentials work
-            TestExpireOffset(returnExpiredCredentials: false);
+            await TestExpireOffset(returnExpiredCredentials: false);
 
             // test that expired credentials do not work
-            TestExpireOffset(returnExpiredCredentials: true);
+            await TestExpireOffset(returnExpiredCredentials: true);
 
 
             // test that various dates work
-            TestExpire(DateTime.Now, expectFailure: true);
-            TestExpire(DateTime.UtcNow, expectFailure: true);
+            await TestExpire(DateTime.Now, expectFailure: true);
+            await TestExpire(DateTime.UtcNow, expectFailure: true);
 
             // 1 minute offset
             var epsilon = TimeSpan.FromMinutes(1);
             
-            TestExpire(DateTime.Now + epsilon, expectFailure: false);
-            TestExpire(DateTime.UtcNow + epsilon, expectFailure: false);
-            TestExpire(DateTime.Now - epsilon, expectFailure: true);
-            TestExpire(DateTime.UtcNow - epsilon, expectFailure: true);
+            await TestExpire(DateTime.Now + epsilon, expectFailure: false);
+            await TestExpire(DateTime.UtcNow + epsilon, expectFailure: false);
+            await TestExpire(DateTime.Now - epsilon, expectFailure: true);
+            await TestExpire(DateTime.UtcNow - epsilon, expectFailure: true);
         }
 
-        private static void TestExpireOffset(bool returnExpiredCredentials)
+        private static async Task TestExpireOffset(bool returnExpiredCredentials)
         {
             TimeSpan expireOffset;
             if (returnExpiredCredentials)
@@ -66,22 +67,22 @@ namespace Amazon.DNXCore.IntegrationTests
                 expireOffset = TimeSpan.FromHours(6);
 
             var creds = new ProxyRefreshingAWSCredentials(expireOffset);
-            TestCredentials(creds, returnExpiredCredentials);
+            await TestCredentials(creds, returnExpiredCredentials);
         }
-        private static void TestExpire(DateTime expire, bool expectFailure)
+        private static async Task TestExpire(DateTime expire, bool expectFailure)
         {
             var creds = new ProxyRefreshingAWSCredentials(expire);
-            TestCredentials(creds, expectFailure);
+            await TestCredentials(creds, expectFailure);
         }
 
 
-        private static void TestCredentials(ProxyRefreshingAWSCredentials creds, bool expectFailure)
+        private static async Task TestCredentials(ProxyRefreshingAWSCredentials creds, bool expectFailure)
         {
             using (var client = new AmazonS3Client(creds))
             {
                 try
                 {
-                    client.ListBucketsAsync().Wait();
+                    await client.ListBucketsAsync();
                     Assert.False(expectFailure);
                 }
                 catch (AmazonClientException ace)

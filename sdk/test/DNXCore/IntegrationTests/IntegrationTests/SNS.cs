@@ -6,6 +6,7 @@ using System.Text;
 using Amazon.Auth.AccessControlPolicy;
 
 using System.Threading;
+using System.Threading.Tasks;
 
 
 
@@ -42,10 +43,10 @@ namespace Amazon.DNXCore.IntegrationTests
         
         [Fact]
         [Trait(CategoryAttribute,"SNS")]
-        public void CRUDTopics()
+        public async Task CRUDTopics()
         {
             // list all topics
-            var allTopics = GetAllTopics();
+            var allTopics = await GetAllTopics();
             
             // create new topic
             var name = "dotnetsdk" + DateTime.Now.Ticks;
@@ -53,13 +54,13 @@ namespace Amazon.DNXCore.IntegrationTests
             {
                 Name = name
             };
-            var createTopicResult = Client.CreateTopicAsync(createTopicRequest).Result;
+            var createTopicResult = await Client.CreateTopicAsync(createTopicRequest);
             var topicArn = createTopicResult.TopicArn;
 
             try
             {
                 // verify there is a new topic
-                allTopics = GetAllTopics();
+                allTopics = await GetAllTopics();
                 Assert.True(allTopics.Exists(t => t.TopicArn.Contains(name)));
 
                 // set topic attribute
@@ -69,7 +70,7 @@ namespace Amazon.DNXCore.IntegrationTests
                     AttributeName = "DisplayName",
                     AttributeValue = "Test topic"
                 };
-                Client.SetTopicAttributesAsync(setTopicAttributesRequest).Wait();
+                await Client.SetTopicAttributesAsync(setTopicAttributesRequest);
 
                 // verify topic attributes
                 var getTopicAttributesRequest = new GetTopicAttributesRequest
@@ -77,7 +78,7 @@ namespace Amazon.DNXCore.IntegrationTests
                     TopicArn = topicArn
                 };
                 var topicAttributes =
-                    Client.GetTopicAttributesAsync(getTopicAttributesRequest).Result.Attributes;
+                    (await Client.GetTopicAttributesAsync(getTopicAttributesRequest)).Attributes;
                 Assert.Equal(setTopicAttributesRequest.AttributeValue,
                     topicAttributes[setTopicAttributesRequest.AttributeName]);
 
@@ -89,10 +90,10 @@ namespace Amazon.DNXCore.IntegrationTests
                 {
                     TopicArn = topicArn
                 };
-                Client.DeleteTopicAsync(deleteTopicRequest).Wait();
+                await Client.DeleteTopicAsync(deleteTopicRequest);
 
                 // verify the topic was deleted
-                allTopics = GetAllTopics();
+                allTopics = await GetAllTopics();
                 Assert.True(!allTopics.Exists(t => t.TopicArn.Contains(name)));
             }
         }
@@ -102,7 +103,7 @@ namespace Amazon.DNXCore.IntegrationTests
         // the subscription confirmed within two minutes by default
         //[Fact]
         [Trait(CategoryAttribute,"SNS")]
-        public void SubscribeTopic()
+        public async Task SubscribeTopic()
         {
             const string emailAddress = "replaceme@example.com";
             var subscriptionWaitDelay = TimeSpan.FromMinutes(2);
@@ -113,7 +114,7 @@ namespace Amazon.DNXCore.IntegrationTests
             {
                 Name = name
             };
-            var createTopicResult = Client.CreateTopicAsync(createTopicRequest).Result;
+            var createTopicResult = await Client.CreateTopicAsync(createTopicRequest);
             var topicArn = createTopicResult.TopicArn;
 
             try
@@ -125,7 +126,7 @@ namespace Amazon.DNXCore.IntegrationTests
                     Endpoint = emailAddress,
                     TopicArn = topicArn
                 };
-                Client.SubscribeAsync(subscribeRequest).Wait();
+                await Client.SubscribeAsync(subscribeRequest);
 
                 // wait until subscription has been confirmed, maximum wait time of two minutes
                 // by default
@@ -138,7 +139,7 @@ namespace Amazon.DNXCore.IntegrationTests
                     {
                         TopicArn = topicArn
                     };
-                    var subs = Client.ListSubscriptionsByTopicAsync(listSubscriptionsRequest).Result.Subscriptions;
+                    var subs = (await Client.ListSubscriptionsByTopicAsync(listSubscriptionsRequest)).Subscriptions;
                     Assert.Equal(1, subs.Count);
 
                     // test whether the subscription has been confirmed
@@ -157,18 +158,18 @@ namespace Amazon.DNXCore.IntegrationTests
                 Assert.NotNull(subArn);
 
                 // publish a message to the topic
-                Client.PublishAsync(new PublishRequest
+                await Client.PublishAsync(new PublishRequest
                 {
                     TopicArn = topicArn,
                     Subject = "Test subject",
                     Message = "Test message"
-                }).Wait();
+                });
 
                 // delete the subscription
-                Client.UnsubscribeAsync(new UnsubscribeRequest
+                await Client.UnsubscribeAsync(new UnsubscribeRequest
                 {
                     SubscriptionArn = subArn
-                }).Wait();
+                });
             }
             finally
             {
@@ -177,52 +178,17 @@ namespace Amazon.DNXCore.IntegrationTests
                 {
                     TopicArn = topicArn
                 };
-                Client.DeleteTopicAsync(deleteTopicRequest).Wait();
+                await Client.DeleteTopicAsync(deleteTopicRequest);
             }
         }
 
-        [Fact]
-        [Trait(CategoryAttribute,"SNS")]
-        public void TestPublishAsJson()
-        {
-            // create new topic
-            var name = "dotnetsdk" + DateTime.Now.Ticks;
-            var createTopicRequest = new CreateTopicRequest
-            {
-                Name = name
-            };
-            var createTopicResult = Client.CreateTopicAsync(createTopicRequest).Result;
-            var topicArn = createTopicResult.TopicArn;
-
-            try
-            {
-                var pubRequest = new PublishRequest()
-                {
-                    TopicArn = topicArn,
-                    MessageStructure = "json",
-                    Message = "stuff"
-                };
-
-                var e = AssertExtensions.ExpectExceptionAsync<InvalidParameterException>(Client.PublishAsync(pubRequest)).Result;
-                Assert.Equal("InvalidParameter", e.ErrorCode);
-                Assert.True(e.Message.Contains("parse"));
-
-                pubRequest.Message = "{\"default\" : \"Data\"}";
-                Client.PublishAsync(pubRequest).Wait();
-            }
-            finally
-            {
-                Client.DeleteTopicAsync(new DeleteTopicRequest { TopicArn = topicArn }).Wait();
-            }
-        }
-
-        private List<Topic> GetAllTopics()
+        private async Task<List<Topic>> GetAllTopics()
         {
             var allTopics = new List<Topic>();
             var listRequest = new ListTopicsRequest();
             do
             {
-                var listResponse = Client.ListTopicsAsync(listRequest).Result;
+                var listResponse = await Client.ListTopicsAsync(listRequest);
                 allTopics.AddRange(listResponse.Topics);
 
                 listRequest.NextToken = listResponse.NextToken;

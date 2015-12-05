@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
@@ -18,7 +19,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
     {
         [Fact]
         [Trait(CategoryAttribute,"IAM")]
-        public void TestCreateAccessKey()
+        public async Task TestCreateAccessKey()
         {
             using (var session = new IAMTestSession("TestCreateAccessKey", Client))
             {
@@ -27,14 +28,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
                 try
                 {
                     CreateAccessKeyResponse response =
-                        Client.CreateAccessKeyAsync(new CreateAccessKeyRequest() { UserName = username }).Result;
+                        await Client.CreateAccessKeyAsync(new CreateAccessKeyRequest() { UserName = username });
                     keyId = response.AccessKey.AccessKeyId;
                     Assert.True(response.AccessKey.CreateDate.Date.CompareTo(DateTime.Now.Date) == 0);
                 }
                 finally
                 {
                     if (keyId != null)
-                        Client.DeleteAccessKeyAsync(new DeleteAccessKeyRequest() { UserName = username, AccessKeyId = keyId }).Wait();                    
+                        await Client.DeleteAccessKeyAsync(new DeleteAccessKeyRequest() { UserName = username, AccessKeyId = keyId });                    
                 }
             }
         }
@@ -42,15 +43,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         [Fact]
         [Trait(CategoryAttribute,"IAM")]
         //[ExpectedException(typeof(NoSuchEntityException))]
-        public void TestCreateAccessKeyNonExistentUserException()
+        public async Task TestCreateAccessKeyNonExistentUserException()
         {
             string username = "sdk-testuser-" + DateTime.Now.Ticks;
-            AssertExtensions.ExpectExceptionAsync<NoSuchEntityException>(Client.CreateAccessKeyAsync(new CreateAccessKeyRequest() { UserName = username })).Wait();
+            await AssertExtensions.ExpectExceptionAsync<NoSuchEntityException>(Client.CreateAccessKeyAsync(new CreateAccessKeyRequest() { UserName = username }));
         }
 
         [Fact]
         [Trait(CategoryAttribute,"IAM")]
-        public void TestListAccessKeys()
+        public async Task TestListAccessKeys()
         {
             using (var session = new IAMTestSession("TestListAccessKeys", Client))
             {
@@ -60,13 +61,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
                 for (int i = 0; i < 2; i++)
                 {
                     CreateAccessKeyResponse response =
-                        Client.CreateAccessKeyAsync(new CreateAccessKeyRequest() { UserName = username }).Result;
+                        await Client.CreateAccessKeyAsync(new CreateAccessKeyRequest() { UserName = username });
 
                     keyIds[i] = response.AccessKey.AccessKeyId;
                 }
 
                 ListAccessKeysResponse listRes =
-                    Client.ListAccessKeysAsync(new ListAccessKeysRequest() { UserName = username }).Result;
+                    await Client.ListAccessKeysAsync(new ListAccessKeysRequest() { UserName = username });
 
                 int matches = 0;
                 foreach (AccessKeyMetadata akm in listRes.AccessKeyMetadata)
@@ -81,36 +82,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
-        // There is a limit of 2 access keys per user
-        [Fact]
-        [Trait(CategoryAttribute,"IAM")]
-        //[ExpectedException(typeof(LimitExceededException))]
-        public void TestLimitExceedException()
-        {
-            using (var session = new IAMTestSession("TestLimitExceedException", Client))
-            {
-                string username = session.CreateTestUser();
-
-                try
-                {
-                    for (int i = 0; i < 3; i++)
-                    {
-                        Client.CreateAccessKeyAsync(new CreateAccessKeyRequest() { UserName = username }).Wait();
-                    }
-                }
-                catch (AggregateException ae)
-                {
-                    Assert.NotNull(ae);
-                    Assert.NotNull(ae.InnerExceptions);
-                    Assert.Equal(1, ae.InnerExceptions.Count);
-                    Assert.NotNull(ae.InnerExceptions[0] as LimitExceededException);
-                }
-            }
-        }
 
         [Fact]
         [Trait(CategoryAttribute, "IAM")]
-        public void TestDeleteAccessKey()
+        public async Task TestDeleteAccessKey()
         {
             using (var session = new IAMTestSession("TestDeleteAccessKey", Client))
             {
@@ -120,19 +95,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
                 for (int i = 0; i < 2; i++)
                 {
                     CreateAccessKeyResponse response =
-                        Client.CreateAccessKeyAsync(new CreateAccessKeyRequest() { UserName = username }).Result;
+                        await Client.CreateAccessKeyAsync(new CreateAccessKeyRequest() { UserName = username });
 
                     keyIds[i] = response.AccessKey.AccessKeyId;
                 }
 
                 ListAccessKeysResponse lakRes =
-                    Client.ListAccessKeysAsync(new ListAccessKeysRequest() { UserName = username }).Result;
+                    await Client.ListAccessKeysAsync(new ListAccessKeysRequest() { UserName = username });
 
                 Assert.Equal(2, lakRes.AccessKeyMetadata.Count());
 
-                Client.DeleteAccessKeyAsync(new DeleteAccessKeyRequest() { UserName = username, AccessKeyId = keyIds[0] }).Wait();
+                await Client.DeleteAccessKeyAsync(new DeleteAccessKeyRequest() { UserName = username, AccessKeyId = keyIds[0] });
 
-                lakRes = Client.ListAccessKeysAsync(new ListAccessKeysRequest() { UserName = username }).Result;
+                lakRes = await Client.ListAccessKeysAsync(new ListAccessKeysRequest() { UserName = username });
 
                 Assert.Equal(1, lakRes.AccessKeyMetadata.Count());
                 Assert.Equal(keyIds[1], lakRes.AccessKeyMetadata[0].AccessKeyId);
@@ -141,8 +116,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
         [Fact]
         [Trait(CategoryAttribute,"IAM")]
-        //[ExpectedException(typeof(NoSuchEntityException))]
-        public void TestDeleteNonExistentAccessKeyException()
+        public async Task TestDeleteNonExistentAccessKeyException()
         {
             using (var session = new IAMTestSession("TestDeleteNonExistentAccessKeyException", Client))
             {
@@ -150,16 +124,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
                 try
                 {
                     CreateAccessKeyResponse response =
-                        Client.CreateAccessKeyAsync(new CreateAccessKeyRequest() { UserName = username }).Result;
+                        await Client.CreateAccessKeyAsync(new CreateAccessKeyRequest() { UserName = username });
 
                     string keyId = response.AccessKey.AccessKeyId;
 
-                    Client.DeleteAccessKeyAsync(new DeleteAccessKeyRequest() { UserName = username, AccessKeyId = keyId }).Wait();
-                    Client.DeleteAccessKeyAsync(new DeleteAccessKeyRequest() { UserName = username, AccessKeyId = keyId }).Wait();
+                    await Client.DeleteAccessKeyAsync(new DeleteAccessKeyRequest() { UserName = username, AccessKeyId = keyId });
+                    await Client.DeleteAccessKeyAsync(new DeleteAccessKeyRequest() { UserName = username, AccessKeyId = keyId });
                 }
-                catch (AggregateException ae)
+                catch (NoSuchEntityException ae)
                 {
-                    AssertExtensions.VerifyException<NoSuchEntityException>(ae);
+                    
                 }
             }
         }

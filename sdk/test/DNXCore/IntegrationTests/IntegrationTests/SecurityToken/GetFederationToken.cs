@@ -1,5 +1,6 @@
 using System;
 using System.Threading;
+using System.Threading.Tasks;
 using Xunit;
 using Amazon.DNXCore.IntegrationTests;
 
@@ -13,7 +14,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     {
         [Fact]
         [Trait(CategoryAttribute,"SecurityTokenService")]
-        public void TestGetFederationToken()
+        public async Task TestGetFederationToken()
         {
             var gftRequest = new GetFederationTokenRequest
             {
@@ -21,7 +22,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Name = "BillyBob",
                 DurationSeconds = 3600
             };
-            var gftResult = Client.GetFederationTokenAsync(gftRequest).Result;
+            var gftResult = await Client.GetFederationTokenAsync(gftRequest);
 
             Assert.NotNull(gftResult.Credentials.AccessKeyId);
             Assert.NotNull(gftResult.Credentials.SecretAccessKey);
@@ -46,7 +47,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         [Fact]
         [Trait(CategoryAttribute,"SecurityTokenService")]
-        public void TestGetFederationTokenAsync()
+        public async Task TestGetFederationTokenAsync()
         {
             var gftRequest = new GetFederationTokenRequest
             {
@@ -57,8 +58,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             GetFederationTokenResponse asyncResponse = null;
 
-            var task = Client.GetFederationTokenAsync(gftRequest);
-            asyncResponse = task.Result;
+            asyncResponse = await Client.GetFederationTokenAsync(gftRequest);
 
             UtilityMethods.Sleep(TimeSpan.FromSeconds(5));
             Assert.NotNull(asyncResponse);

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-
+using System.Threading.Tasks;
 using Amazon.Route53Domains;
 using Amazon.Route53Domains.Model;
 using Xunit;
@@ -14,69 +14,69 @@ namespace Amazon.DNXCore.IntegrationTests
     {        
         [Fact]
         [Trait(CategoryAttribute,"Route53Domains")]
-        public void CheckDomainAvailabilityTest()
+        public async Task CheckDomainAvailabilityTest()
         {
             var checkRequest = new CheckDomainAvailabilityRequest
             {
                 DomainName = "mydomain1111111111111.com"
             };
-            var response = Client.CheckDomainAvailabilityAsync(checkRequest).Result;
+            var response = await Client.CheckDomainAvailabilityAsync(checkRequest);
             Assert.Equal(DomainAvailability.AVAILABLE, response.Availability);
 
             checkRequest = new CheckDomainAvailabilityRequest
             {
                 DomainName = "mydomain1111111111111.fake"
             };
-            AssertExtensions.ExpectExceptionAsync<UnsupportedTLDException>(Client.CheckDomainAvailabilityAsync(checkRequest)).Wait();
+            await AssertExtensions.ExpectExceptionAsync<UnsupportedTLDException>(Client.CheckDomainAvailabilityAsync(checkRequest));
 
-            var domains = Client.ListDomainsAsync().Result.Domains;
+            var domains = (await Client.ListDomainsAsync()).Domains;
             if (domains.Count > 0)
             {
                 checkRequest.DomainName = domains[0].DomainName;
-                response = Client.CheckDomainAvailabilityAsync(checkRequest).Result;
+                response = await Client.CheckDomainAvailabilityAsync(checkRequest);
                 Assert.Equal(DomainAvailability.UNAVAILABLE, response.Availability);
             }
         }
 
         [Fact]
         [Trait(CategoryAttribute,"Route53Domains")]
-        public void TestTagging()
+        public async Task TestTagging()
         {
-            var domains = Client.ListDomainsAsync().Result.Domains;
+            var domains = (await Client.ListDomainsAsync()).Domains;
             if (domains.Count > 0)
             {
-                TestTagging(Client, domains[0].DomainName);
+                await TestTagging(Client, domains[0].DomainName);
             }
         }
 
-        private void TestTagging(AmazonRoute53DomainsClient client, string domain)
+        private async Task TestTagging(AmazonRoute53DomainsClient client, string domain)
         {
-            var existingTags = client.ListTagsForDomainAsync(domain).Result.TagList;
+            var existingTags = (await client.ListTagsForDomainAsync(domain)).TagList;
 
-            client.UpdateTagsForDomainAsync(domain,
+            await client.UpdateTagsForDomainAsync(domain,
                 new List<Tag>
                 {
                     new Tag { Key = "tag1", Value = "42" },
                     new Tag { Key = "tag2", Value = "ALL" }
-                }).Wait();
+                });
 
             var tags = client.ListTagsForDomainAsync(domain).Result.TagList;
             var count = tags.Count;
             Assert.Equal(2, count);
 
-            client.DeleteTagsForDomainAsync(domain, new List<string> { "tag1" }).Wait();
+            await client.DeleteTagsForDomainAsync(domain, new List<string> { "tag1" });
 
-            tags = client.ListTagsForDomainAsync(domain).Result.TagList;
+            tags = (await client.ListTagsForDomainAsync(domain)).TagList;
             count = tags.Count;
             Assert.Equal(1, count);
 
             // Restore previous tags
             if (existingTags.Count > 0)
-                client.UpdateTagsForDomainAsync(domain, existingTags).Wait();
+                await client.UpdateTagsForDomainAsync(domain, existingTags);
             else
-                client.DeleteTagsForDomainAsync(domain, new List<string> { "tag2" }).Wait();
+                await client.DeleteTagsForDomainAsync(domain, new List<string> { "tag2" });
 
-            tags = client.ListTagsForDomainAsync(domain).Result.TagList;
+            tags = (await client.ListTagsForDomainAsync(domain)).TagList;
             count = tags.Count;
             Assert.Equal(existingTags.Count, count);
         }

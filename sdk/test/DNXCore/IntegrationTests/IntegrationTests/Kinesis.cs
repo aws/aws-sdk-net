@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading;
-
+using System.Threading.Tasks;
 
 using Amazon.Kinesis;
 using Amazon.Kinesis.Model;
@@ -42,41 +42,41 @@ namespace Amazon.DNXCore.IntegrationTests
         
         [Fact]
         [Trait(CategoryAttribute,"Kinesis")]
-        public void KinesisCRUD()
+        public async Task KinesisCRUD()
         {
             var streamName = "dotnet-integ-test-stream-" + DateTime.Now.Ticks;
 
             // Create a stream.
-            Client.CreateStreamAsync(new CreateStreamRequest
+            await Client.CreateStreamAsync(new CreateStreamRequest
             {
                 ShardCount = 1,
                 StreamName = streamName
-            }).Wait();
+            });
 
             // Describe the stream.
-            var stream = Client.DescribeStreamAsync(new DescribeStreamRequest
+            var stream = (await Client.DescribeStreamAsync(new DescribeStreamRequest
             {
                 StreamName = streamName
-            }).Result.StreamDescription;
+            })).StreamDescription;
             Assert.Equal(stream.HasMoreShards, false);
             Assert.False(string.IsNullOrEmpty(stream.StreamARN));
             Assert.Equal(stream.StreamName, streamName);
             Assert.True(stream.StreamStatus == StreamStatus.CREATING);
 
             // List streams.
-            var streamNames = Client.ListStreamsAsync().Result.StreamNames;
+            var streamNames = (await Client.ListStreamsAsync()).StreamNames;
             Assert.True(streamNames.Count > 0);
             Assert.True(streamNames.Contains(streamName));
 
             // Delete the stream.
-            Client.DeleteStreamAsync(new DeleteStreamRequest
+            await Client.DeleteStreamAsync(new DeleteStreamRequest
             {
                 StreamName = streamName
-            }).Wait();
-            stream = Client.DescribeStreamAsync(new DescribeStreamRequest
+            });
+            stream = (await Client.DescribeStreamAsync(new DescribeStreamRequest
             {
                 StreamName = streamName
-            }).Result.StreamDescription;
+            })).StreamDescription;
             Assert.True(stream.StreamStatus == StreamStatus.DELETING);
         }
 
