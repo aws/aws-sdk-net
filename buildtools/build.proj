@@ -68,7 +68,7 @@
 			WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
 	</Target>
 	
-	<Target Name="build-sdk" DependsOnTargets="build-sdk-desktop;build-sdk-pcl;build-sdk-dnxcore">
+	<Target Name="build-sdk" DependsOnTargets="build-sdk-desktop;build-code-analysis;build-sdk-pcl;build-sdk-dnxcore">
 
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
@@ -79,9 +79,15 @@
 		<Message Text="Compile the Desktop SDK"/>
 		<MSBuild Projects="..\sdk\AWSSDK.Desktop.sln"
 			Targets="Clean;Build"
-			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />			
 	</Target>
-
+	
+	<Target Name="build-code-analysis" DependsOnTargets="restore-nuget;run-generator">
+		<MSBuild Projects="..\sdk\AWSSDK.CodeAnalysis.sln"
+					Targets="Clean;Build"
+					Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation)" />			
+	</Target>
+	
 	<Target Name="build-sdk-pcl" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisablePCLSupport)">
 		<Message Text="Compile the Portable Class Library SDK"/>
 		<MSBuild Projects="..\sdk\AWSSDK.PCL.sln"
@@ -116,7 +122,7 @@
 	</Target>
 	
     <Target Name="test-sdk" DependsOnTargets="init;build-sdk;fxcop;run-unit-tests;run-integ-tests" />
-    <Target Name="run-unit-tests" DependsOnTargets="init;build-sdk">
+    <Target Name="run-unit-tests" DependsOnTargets="">
         <MSBuild
             Projects="$(MSBuildProjectFile)"
             Targets="run-tests"
