@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Elasticsearch</id>
     <title>AWSSDK - Amazon Elasticsearch Service</title>
-    <version>3.2.0.0</version> 
+    <version>3.2.1.0-beta</version> 
     <authors>Amazon Web Services</authors>
     <description>Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.</description>
     <language>en-US</language>
