@@ -1,3 +1,7 @@
+### 3.1.32.1 (2015-12-08 00:15 UTC)
+* Core 3.1.4.1
+	* Improve exception handling in AsyncRunner https://github.com/aws/aws-sdk-net/issues/281
+
 ### 3.1.32.0 (2015-12-03 23:01 UTC)
 * DirectoryService (3.1.1.0)
 	* Support for managed directories
