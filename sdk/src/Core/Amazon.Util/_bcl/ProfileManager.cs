@@ -272,7 +272,7 @@ namespace Amazon.Util
         }
 
         /// <summary>
-        /// Returns the profile with the specified name, if it has been registered.
+        /// Returns the profile with the specified name, if it has been registered in the SDK store.
         /// </summary>
         /// <param name="profileName">The name of the registered profile</param>
         /// <returns>The loaded profile data</returns>
@@ -289,7 +289,7 @@ namespace Amazon.Util
         }
 
         /// <summary>
-        /// Returns the persisted data a profile of the specified type T.
+        /// Returns the persisted data in the SDK store as a profile of the specified type T.
         /// </summary>
         /// <param name="profileName">The name of the profile holding the settings.</param>
         /// <returns>The loaded profile. An exception is thrown if the profile could not be loaded.</returns>

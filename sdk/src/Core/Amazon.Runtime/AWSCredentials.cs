@@ -371,6 +371,88 @@ namespace Amazon.Runtime
         #endregion
 
         /// <summary>
+        /// Tests if a profile has been registered in either the SDK store or the
+        /// specified credential file. If profilesLocation is null/empty, the SDK 
+        /// store is searched for the profile data first before testing the default 
+        /// location of the ini-format credential file.
+        /// </summary>
+        /// <param name="profileName">The name of the profile to test</param>
+        /// <param name="profilesLocation">
+        /// If null/empty, the SDK store is searched for the named profile otherwise
+        /// the ini-format credential file at the specified location is inspected.
+        /// </param>
+        /// <returns>True if a profile with the specified name has been registered.</returns>
+        public static bool IsProfileKnown(string profileName, string profilesLocation)
+        {
+            if (string.IsNullOrEmpty(profilesLocation) && ProfileManager.IsProfileKnown(profileName))
+                return true;
+
+            var profileFile = string.IsNullOrEmpty(profilesLocation) 
+                ? AWSConfigs.AWSProfilesLocation 
+                : profilesLocation;
+            var credentialsFilePath = DetermineCredentialsFilePath(profileFile);
+            if (File.Exists(credentialsFilePath))
+            {
+                var parser = new CredentialsFileParser(credentialsFilePath);
+                var section = parser.FindSection(profileName);
+                return section != null;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Tests if an instance can be created from the persisted profile data.
+        /// If profilesLocation is null/empty, the SDK store is searched for the
+        /// profile data first before testing the default location of the ini-format
+        /// credential file.
+        /// </summary>
+        /// <param name="profileName">The name of the profile to test</param>
+        /// <param name="profilesLocation">
+        /// If null/empty, the SDK store is searched for the named profile otherwise
+        /// the ini-format credential file at the specified location is inspected.
+        /// </param>
+        /// <returns>True if the persisted data would yield a valid credentials instance.</returns>
+        public static bool CanCreateFrom(string profileName, string profilesLocation)
+        {
+            if (string.IsNullOrEmpty(profilesLocation) && ProfileManager.IsProfileKnown(profileName))
+                return AWSCredentialsProfile.CanCreateFrom(profileName);
+
+            var profileFile = string.IsNullOrEmpty(profilesLocation)
+                ? AWSConfigs.AWSProfilesLocation
+                : profilesLocation;
+            var credentialsFilePath = DetermineCredentialsFilePath(profileFile);
+            if (File.Exists(credentialsFilePath))
+            {
+                var parser = new CredentialsFileParser(credentialsFilePath);
+                var section = parser.FindSection(profileName);
+                if (section != null)
+                {
+                    try
+                    {
+                        section.Validate();
+                        return true;
+                    }
+                    catch (InvalidDataException)
+                    {
+                    }
+                }
+                else
+                {
+                    var logger = Logger.GetLogger(typeof(StoredProfileAWSCredentials));
+                    logger.InfoFormat("Credentials file {0} does not contain profile {1}.", credentialsFilePath, profileName);
+                }
+            }
+            else
+            {
+                var logger = Logger.GetLogger(typeof(StoredProfileAWSCredentials));
+                logger.InfoFormat("Credentials file not found {0}.", credentialsFilePath);
+            }
+
+            return false;
+        }
+
+        /// <summary>
         /// Determine the location of the shared credentials file.
         /// </summary>
         /// <param name="profilesLocation">If accountsLocation is null then the shared credentials file stored .aws directory under the home directory.</param>
