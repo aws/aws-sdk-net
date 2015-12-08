@@ -28,30 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Container for the parameters to the DetachInstances operation.
-    /// Removes one or more instances from the specified Auto Scaling group.
+    /// Container for the parameters to the SetInstanceProtection operation.
+    /// Updates the instance protection settings of the specified instances.
     /// 
     ///  
     /// <para>
-    /// After the instances are detached, you can manage them independently from the rest
-    /// of the Auto Scaling group.
-    /// </para>
-    ///  
-    /// <para>
-    /// If you do not specify the option to decrement the desired capacity, Auto Scaling launches
-    /// instances to replace the ones that are detached.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html">Detach
-    /// EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html#instance-protection">Instance
+    /// Protection</a> in the <i>Auto Scaling Developer Guide</i>.
     /// </para>
     /// </summary>
-    public partial class DetachInstancesRequest : AmazonAutoScalingRequest
+    public partial class SetInstanceProtectionRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
         private List<string> _instanceIds = new List<string>();
-        private bool? _shouldDecrementDesiredCapacity;
+        private bool? _protectedFromScaleIn;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -90,22 +80,22 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ShouldDecrementDesiredCapacity. 
+        /// Gets and sets the property ProtectedFromScaleIn. 
         /// <para>
-        /// If <code>True</code>, the Auto Scaling group decrements the desired capacity value
-        /// by the number of instances detached.
+        /// Indicates whether the instance is protected from termination by Auto Scaling when
+        /// scaling in.
         /// </para>
         /// </summary>
-        public bool ShouldDecrementDesiredCapacity
+        public bool ProtectedFromScaleIn
         {
-            get { return this._shouldDecrementDesiredCapacity.GetValueOrDefault(); }
-            set { this._shouldDecrementDesiredCapacity = value; }
+            get { return this._protectedFromScaleIn.GetValueOrDefault(); }
+            set { this._protectedFromScaleIn = value; }
         }
 
-        // Check to see if ShouldDecrementDesiredCapacity property is set
-        internal bool IsSetShouldDecrementDesiredCapacity()
+        // Check to see if ProtectedFromScaleIn property is set
+        internal bool IsSetProtectedFromScaleIn()
         {
-            return this._shouldDecrementDesiredCapacity.HasValue; 
+            return this._protectedFromScaleIn.HasValue; 
         }
 
     }

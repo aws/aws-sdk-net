@@ -90,6 +90,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.LifecycleState = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ProtectedFromScaleIn", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ProtectedFromScaleIn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

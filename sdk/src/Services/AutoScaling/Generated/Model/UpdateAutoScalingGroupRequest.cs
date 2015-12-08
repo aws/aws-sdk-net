@@ -79,6 +79,7 @@ namespace Amazon.AutoScaling.Model
         private string _launchConfigurationName;
         private int? _maxSize;
         private int? _minSize;
+        private bool? _newInstancesProtectedFromScaleIn;
         private string _placementGroup;
         private List<string> _terminationPolicies = new List<string>();
         private string _vpcZoneIdentifier;
@@ -123,7 +124,11 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property DefaultCooldown. 
         /// <para>
         /// The amount of time, in seconds, after a scaling activity completes before another
-        /// scaling activity can start. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+        /// scaling activity can start. The default is 300.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
         /// Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -163,9 +168,12 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property HealthCheckGracePeriod. 
         /// <para>
         /// The amount of time, in seconds, that Auto Scaling waits before checking the health
-        /// status of an instance. The grace period begins when the instance passes the system
-        /// status and instance status checks from Amazon EC2. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
-        /// Checks</a> in the <i>Auto Scaling Developer Guide</i>. 
+        /// status of an EC2 instance that has come into service. The default is 300.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
+        /// Checks For Auto Scaling Instances</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriod
@@ -183,9 +191,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckType. 
         /// <para>
-        /// The type of health check for the instances in the Auto Scaling group. The health check
-        /// type can either be <code>EC2</code> for Amazon EC2 or <code>ELB</code> for Elastic
-        /// Load Balancing. 
+        /// The service to use for the health checks. The valid values are <code>EC2</code> and
+        /// <code>ELB</code>.
         /// </para>
         /// </summary>
         public string HealthCheckType
@@ -255,6 +262,25 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NewInstancesProtectedFromScaleIn. 
+        /// <para>
+        /// Indicates whether newly launched instances are protected from termination by Auto
+        /// Scaling when scaling in.
+        /// </para>
+        /// </summary>
+        public bool NewInstancesProtectedFromScaleIn
+        {
+            get { return this._newInstancesProtectedFromScaleIn.GetValueOrDefault(); }
+            set { this._newInstancesProtectedFromScaleIn = value; }
+        }
+
+        // Check to see if NewInstancesProtectedFromScaleIn property is set
+        internal bool IsSetNewInstancesProtectedFromScaleIn()
+        {
+            return this._newInstancesProtectedFromScaleIn.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PlacementGroup. 
         /// <para>
         /// The name of the placement group into which you'll launch your instances, if any. For
@@ -277,9 +303,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TerminationPolicies. 
         /// <para>
-        ///  A standalone termination policy or a list of termination policies used to select
-        /// the instance to terminate. The policies are executed in the order that they are listed.
-        /// 
+        /// A standalone termination policy or a list of termination policies used to select the
+        /// instance to terminate. The policies are executed in the order that they are listed.
         /// </para>
         ///  
         /// <para>
@@ -310,13 +335,11 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// When you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
         /// ensure that the subnets' Availability Zones match the values you specify for <code>AvailabilityZones</code>.
-        /// 
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
         /// Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer Guide</i>.
-        /// 
         /// </para>
         /// </summary>
         public string VPCZoneIdentifier

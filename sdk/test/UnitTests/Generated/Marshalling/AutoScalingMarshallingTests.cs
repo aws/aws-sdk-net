@@ -1034,6 +1034,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("AutoScaling")]
+        public void SetInstanceProtectionMarshallTest()
+        {
+            var operation = service_model.FindOperation("SetInstanceProtection");
+
+            var request = InstantiateClassGenerator.Execute<SetInstanceProtectionRequest>();
+            var marshaller = new SetInstanceProtectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = SetInstanceProtectionResponseUnmarshaller.Instance.Unmarshall(context)
+                as SetInstanceProtectionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
         public void SuspendProcessesMarshallTest()
         {
             var operation = service_model.FindOperation("SuspendProcesses");

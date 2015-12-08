@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeAccountLimits operation
+    /// Response Unmarshaller for SetInstanceProtection operation
     /// </summary>  
-    public class DescribeAccountLimitsResponseUnmarshaller : XmlResponseUnmarshaller
+    public class SetInstanceProtectionResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            DescribeAccountLimitsResponse response = new DescribeAccountLimitsResponse();
+            SetInstanceProtectionResponse response = new SetInstanceProtectionResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("DescribeAccountLimitsResult", 2))
+                    if(context.TestExpression("SetInstanceProtectionResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeAccountLimitsResponse response)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
+        private static void UnmarshallResult(XmlUnmarshallerContext context, SetInstanceProtectionResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,30 +82,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("MaxNumberOfAutoScalingGroups", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        response.MaxNumberOfAutoScalingGroups = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("MaxNumberOfLaunchConfigurations", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        response.MaxNumberOfLaunchConfigurations = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("NumberOfAutoScalingGroups", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        response.NumberOfAutoScalingGroups = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("NumberOfLaunchConfigurations", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        response.NumberOfLaunchConfigurations = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                 } 
            }
 
@@ -122,15 +99,19 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceeded"))
+            {
+                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceContention"))
             {
                 return new ResourceContentionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonAutoScalingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static DescribeAccountLimitsResponseUnmarshaller _instance = new DescribeAccountLimitsResponseUnmarshaller();        
+        private static SetInstanceProtectionResponseUnmarshaller _instance = new SetInstanceProtectionResponseUnmarshaller();        
 
-        internal static DescribeAccountLimitsResponseUnmarshaller GetInstance()
+        internal static SetInstanceProtectionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -138,7 +119,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeAccountLimitsResponseUnmarshaller Instance
+        public static SetInstanceProtectionResponseUnmarshaller Instance
         {
             get
             {
