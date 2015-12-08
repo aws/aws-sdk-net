@@ -1,3 +1,9 @@
+### 3.1.33.0 (2015-12-08 20:22 UTC)
+* AutoScaling (3.1.2.0)
+	* Add support for SetInstanceProtection operation
+* RDS (3.1.6.0)
+	* Add RDS support for encrypting your databases using keys you manage through AWS Key Management Service (KMS).
+
 ### 3.1.32.1 (2015-12-08 00:15 UTC)
 * Core 3.1.4.1
 	* Improve exception handling in AsyncRunner https://github.com/aws/aws-sdk-net/issues/281
