@@ -48,12 +48,14 @@ namespace Amazon.RDS.Model
         private List<DBClusterMember> _dbClusterMembers = new List<DBClusterMember>();
         private List<DBClusterOptionGroupStatus> _dbClusterOptionGroupMemberships = new List<DBClusterOptionGroupStatus>();
         private string _dbClusterParameterGroup;
+        private string _dbClusterResourceId;
         private string _dbSubnetGroup;
         private DateTime? _earliestRestorableTime;
         private string _endpoint;
         private string _engine;
         private string _engineVersion;
         private string _hostedZoneId;
+        private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
         private string _masterUsername;
         private string _percentProgress;
@@ -61,6 +63,7 @@ namespace Amazon.RDS.Model
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
         private string _status;
+        private bool? _storageEncrypted;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
 
         /// <summary>
@@ -231,6 +234,26 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DbClusterResourceId. 
+        /// <para>
+        /// If <code>StorageEncrypted</code> is true, the region-unique, immutable identifier
+        /// for the encrypted DB cluster. This identifier is found in AWS CloudTrail log entries
+        /// whenever the KMS key for the DB cluster is accessed. 
+        /// </para>
+        /// </summary>
+        public string DbClusterResourceId
+        {
+            get { return this._dbClusterResourceId; }
+            set { this._dbClusterResourceId = value; }
+        }
+
+        // Check to see if DbClusterResourceId property is set
+        internal bool IsSetDbClusterResourceId()
+        {
+            return this._dbClusterResourceId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DBSubnetGroup. 
         /// <para>
         /// Specifies information on the subnet group associated with the DB cluster, including
@@ -338,6 +361,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetHostedZoneId()
         {
             return this._hostedZoneId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted
+        /// DB cluster.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>
@@ -467,6 +509,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageEncrypted. 
+        /// <para>
+        /// Specifies whetehr the DB cluster is encrypted.
+        /// </para>
+        /// </summary>
+        public bool StorageEncrypted
+        {
+            get { return this._storageEncrypted.GetValueOrDefault(); }
+            set { this._storageEncrypted = value; }
+        }
+
+        // Check to see if StorageEncrypted property is set
+        internal bool IsSetStorageEncrypted()
+        {
+            return this._storageEncrypted.HasValue; 
         }
 
         /// <summary>

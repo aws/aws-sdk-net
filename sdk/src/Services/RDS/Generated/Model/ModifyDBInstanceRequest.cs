@@ -459,6 +459,16 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// The value of the <code>DBPortNumber</code> parameter must not match any of the port
+        /// values specified for options in the option group for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Your database will restart when you change the <code>DBPortNumber</code> value regardless
+        /// of the value of the <code>ApplyImmediately</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>MySQL</b> 
         /// </para>
         ///  

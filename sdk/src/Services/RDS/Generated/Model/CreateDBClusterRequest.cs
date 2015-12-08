@@ -44,12 +44,14 @@ namespace Amazon.RDS.Model
         private string _dbSubnetGroupName;
         private string _engine;
         private string _engineVersion;
+        private string _kmsKeyId;
         private string _masterUsername;
         private string _masterUserPassword;
         private string _optionGroupName;
         private int? _port;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
+        private bool? _storageEncrypted;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
@@ -261,6 +263,38 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The KMS key identifier for an encrypted DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key.
+        /// If you are creating a DB cluster with the same AWS account that owns the KMS encryption
+        /// key used to encrypt the new DB cluster, then you can use the KMS key alias instead
+        /// of the ARN for the KM encryption key.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value
+        /// for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption
+        /// key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
+        /// has a different default encryption key for each AWS region.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
         ///  The name of the master user for the client DB cluster. 
@@ -423,6 +457,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageEncrypted. 
+        /// <para>
+        /// Specifies whether the DB cluster is encrypted.
+        /// </para>
+        /// </summary>
+        public bool StorageEncrypted
+        {
+            get { return this._storageEncrypted.GetValueOrDefault(); }
+            set { this._storageEncrypted = value; }
+        }
+
+        // Check to see if StorageEncrypted property is set
+        internal bool IsSetStorageEncrypted()
+        {
+            return this._storageEncrypted.HasValue; 
         }
 
         /// <summary>

@@ -46,6 +46,7 @@ namespace Amazon.RDS.Model
         private string _dbClusterSnapshotIdentifier;
         private string _engine;
         private string _engineVersion;
+        private string _kmsKeyId;
         private string _licenseModel;
         private string _masterUsername;
         private int? _percentProgress;
@@ -53,6 +54,7 @@ namespace Amazon.RDS.Model
         private DateTime? _snapshotCreateTime;
         private string _snapshotType;
         private string _status;
+        private bool? _storageEncrypted;
         private string _vpcId;
 
         /// <summary>
@@ -185,6 +187,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted
+        /// DB cluster snapshot.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
         /// Provides the license model information for this DB cluster snapshot. 
@@ -310,6 +331,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageEncrypted. 
+        /// <para>
+        /// Specifies whether the DB cluster snapshot is encrypted.
+        /// </para>
+        /// </summary>
+        public bool StorageEncrypted
+        {
+            get { return this._storageEncrypted.GetValueOrDefault(); }
+            set { this._storageEncrypted = value; }
+        }
+
+        // Check to see if StorageEncrypted property is set
+        internal bool IsSetStorageEncrypted()
+        {
+            return this._storageEncrypted.HasValue; 
         }
 
         /// <summary>
