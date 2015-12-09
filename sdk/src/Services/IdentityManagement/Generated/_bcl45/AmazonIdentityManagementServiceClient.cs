@@ -1290,13 +1290,7 @@ namespace Amazon.IdentityManagement
         /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
         /// with Roles</a>. For information about limitations on role names and the number of
         /// roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
-        /// 
-        ///  
-        /// <para>
-        /// The policy in the following example grants permission to an EC2 instance to assume
-        /// the role.
-        /// </para>
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRole service method.</param>
         /// 
@@ -2413,6 +2407,12 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Deletes the specified server certificate.
         /// 
+        ///  
+        /// <para>
+        /// For more information about working with server certificates, including a list of AWS
+        /// services that can use the server certificates that you manage with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
+        /// with Server Certificates</a> in the <i>IAM User Guide</i>.
+        /// </para>
         ///  <important> If you are using a server certificate with Elastic Load Balancing, deleting
         /// the certificate could have implications for your application. If Elastic Load Balancing
         /// doesn't detect the deletion of bound certificates, it may continue to use the certificates.
@@ -4368,6 +4368,13 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Retrieves information about the specified server certificate.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about working with server certificates, including a list of AWS
+        /// services that can use the server certificates that you manage with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
+        /// with Server Certificates</a> in the <i>IAM User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServerCertificate service method.</param>
         /// 
@@ -6001,6 +6008,12 @@ namespace Amazon.IdentityManagement
         ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters. 
         /// </para>
+        ///  
+        /// <para>
+        /// For more information about working with server certificates, including a list of AWS
+        /// services that can use the server certificates that you manage with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
+        /// with Server Certificates</a> in the <i>IAM User Guide</i>.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the ListServerCertificates service method, as returned by IdentityManagementService.</returns>
@@ -6021,6 +6034,12 @@ namespace Amazon.IdentityManagement
         /// <para>
         ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about working with server certificates, including a list of AWS
+        /// services that can use the server certificates that you manage with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
+        /// with Server Certificates</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServerCertificates service method.</param>
@@ -6046,6 +6065,12 @@ namespace Amazon.IdentityManagement
         /// <para>
         ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
         /// parameters. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about working with server certificates, including a list of AWS
+        /// services that can use the server certificates that you manage with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
+        /// with Server Certificates</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken"> ttd1
@@ -7676,15 +7701,21 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Updates the name and/or the path of the specified server certificate.
         /// 
-        ///  <important> You should understand the implications of changing a server certificate's
-        /// path or name. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html">Managing
-        /// Server Certificates</a> in the <i>IAM User Guide</i>. </important> <note>To change
+        ///  
+        /// <para>
+        /// For more information about working with server certificates, including a list of AWS
+        /// services that can use the server certificates that you manage with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
+        /// with Server Certificates</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  <important>You should understand the implications of changing a server certificate's
+        /// path or name. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs_manage.html#RenamingServerCerts">Renaming
+        /// a Server Certificate</a> in the <i>IAM User Guide</i>.</important> <note>To change
         /// a server certificate name the requester must have appropriate permissions on both
         /// the source object and the target object. For example, to change the name from ProductionCert
         /// to ProdCert, the entity making the request must have permission on ProductionCert
         /// and ProdCert, or must have permission on all (*). For more information about permissions,
-        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
-        /// target="blank">Permissions and Policies</a>. </note>
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a>
+        /// in the <i>IAM User Guide</i>. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateServerCertificate service method.</param>
         /// 
@@ -7916,16 +7947,22 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// For information about the number of server certificates you can upload, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
+        /// For more information about working with server certificates, including a list of AWS
+        /// services that can use the server certificates that you manage with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
+        /// with Server Certificates</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about the number of server certificates you can upload, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html">Limitations
+        /// on IAM Entities and Objects</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  <note>Because the body of the public key certificate, private key, and the certificate
         /// chain can be large, you should use POST rather than GET when calling <code>UploadServerCertificate</code>.
         /// For information about setting up signatures and authorization through the API, go
         /// to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
         /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
-        /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-        /// Query Requests</a> in the <i>IAM User Guide</i>. </note>
+        /// about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/programming.html">Calling
+        /// the API by Making HTTP Query Requests</a> in the <i>IAM User Guide</i>. </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UploadServerCertificate service method.</param>
         /// 
