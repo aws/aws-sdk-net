@@ -75,6 +75,9 @@
     <Compile Include="Custom\SyncManager\Storage\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\SyncManager\Storage\_bcl45+pcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\SyncManager\Storage\_pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>

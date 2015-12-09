@@ -92,7 +92,13 @@
     <Compile Include="Custom\SyncManager\Storage\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\SyncManager\Storage\_bcl35\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\SyncManager\Util\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\_bcl35\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Generated\*.cs">

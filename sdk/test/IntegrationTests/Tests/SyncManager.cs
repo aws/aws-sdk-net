@@ -1,4 +1,4 @@
-#define INCLUDE_FACEBOOK_TESTS
+//#define INCLUDE_FACEBOOK_TESTS
 
 using Amazon;
 using Amazon.CognitoIdentity;

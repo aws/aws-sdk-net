@@ -17,7 +17,7 @@
             "defineConstants": ";BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE",
             "binSubFolder": "net45",
             "template": "BclProjectFile",
-            "platformCodeFolders": [ "_bcl", "_bcl45", "_async", "_bcl+sl", "_bcl+unity", "_bcl+pcl" ],
+            "platformCodeFolders": [ "_bcl", "_bcl45", "_async", "_bcl+sl", "_bcl+unity", "_bcl+pcl", "_bcl45+pcl" ],
             "nugetTargetPlatform": "net45"
         },
         {
@@ -27,7 +27,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
             "binSubFolder": "pcl",
             "template": "PCLProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference", "_pcl-sl", "_bcl+pcl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl"  ],
             "nugetTargetPlatform": "portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10",
 
             "extraTestProjects": [
@@ -52,7 +52,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
             "binSubFolder": "monoandroid",
             "template": "AndroidProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_android", "_pcl-sl", "_bcl+pcl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_android", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl"  ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "MonoAndroid10"
         },
@@ -63,7 +63,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
             "binSubFolder": "Xamarin.iOS10",
             "template": "IOSProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_ios", "_pcl-sl", "_bcl+pcl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_ios", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl"  ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "xamarinios10"
         },
@@ -74,7 +74,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
             "binSubFolder": "windows8",
             "template": "Win8ProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8", "_pcl-sl", "_bcl+pcl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl"  ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "netcore45"
         },
@@ -85,7 +85,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
             "binSubFolder": "wpa81",
             "template": "WinPhone81ProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhone81", "_pcl-sl", "_bcl+pcl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhone81", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl" ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "wpa81"
         },
@@ -96,7 +96,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;WP_SL",
             "binSubFolder": "wp8",
             "template": "WinPhoneSilverlight8ProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhoneSilverlight8", "_bcl+sl", "_bcl+pcl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhoneSilverlight8", "_bcl+sl", "_bcl+pcl", "_bcl45+pcl" ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "wp8"
         },

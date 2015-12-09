@@ -1133,13 +1133,6 @@
             Releases the resources consumed by this object
             </summary>
         </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.Dispose(System.Boolean)">
-            <summary>
-            Implements the Dispose pattern
-            </summary>
-            <param name="disposing">Whether this object is being disposed via a call to Dispose
-            or garbage collected.</param>
-        </member>
         <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.GetValue(System.String,System.String,System.String)">
             <summary>
             Retrieves the string value of a key in dataset. The value can be null
@@ -1206,6 +1199,13 @@
             </summary>
             <param name="identityId">Identity identifier.</param>
             <param name="datasetMetadata">Dataset metadata.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.Dispose(System.Boolean)">
+            <summary>
+            Implements the Dispose pattern
+            </summary>
+            <param name="disposing">Whether this object is being disposed via a call to Dispose
+            or garbage collected.</param>
         </member>
         <member name="T:Amazon.CognitoSync.SyncManager.Internal.DatasetUtils">
             <summary>
