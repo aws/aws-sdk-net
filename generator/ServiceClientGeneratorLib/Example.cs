@@ -135,13 +135,13 @@ namespace ServiceClientGenerator
         private IDictionary<string, string> GetComments(string key)
         {
             var comments = this.data[CommentsKey];
-            if (null == comments)
-                return new Dictionary<string, string>();
-
-            var map = comments.SafeGet(key);
-            if (null == map)
-                return new Dictionary<string, string>();
-            return map.GetStringMap();
+            if (null != comments)
+            {
+                var map = comments.SafeGet(key);
+                if (null != map)
+                    return map.GetStringMap();
+            }
+            return new Dictionary<string, string>();
         }
 
         /// <summary>
@@ -150,21 +150,19 @@ namespace ServiceClientGenerator
         /// </summary>
         /// <returns>A list of strings of the form 'PropertyName = value' with comments at the
         /// end, if present.</returns>
-        public IList<string> GetRequestAssignments()
+        public IList<string> GetRequestAssignments(int currentIndent)
         {
             var result = new List<string>();
             var last = InputParameters.Last().Key;
             foreach (var param in InputParameters)
             {
-                var member = Operation.RequestStructure.Members
-                    .Where(m => m.ModeledName.Equals(param.Key, StringComparison.OrdinalIgnoreCase))
-                    .SingleOrDefault();
+                var member = Operation.RequestStructure.Members.GetMemberByName(param.Key);
 
                 if (null == member)
                     continue;
 
                 var sb = new StringBuilder();
-                var cb = new CodeBuilder(sb, 16);
+                var cb = new CodeBuilder(sb, currentIndent);
 
                 cb.Append(member.PropertyName).Append(" = ");
                 GetSampleLiteral(member, param.Value, cb);
@@ -185,9 +183,7 @@ namespace ServiceClientGenerator
 
             foreach (var param in OutputParameters)
             {
-                var member = Operation.ResponseStructure.Members
-                    .Where(m => m.ModeledName.Equals(param.Key, StringComparison.OrdinalIgnoreCase))
-                    .SingleOrDefault();
+                var member = Operation.ResponseStructure.Members.GetMemberByName(param.Key);
 
                 if (null == member)
                     continue;
@@ -284,9 +280,8 @@ namespace ServiceClientGenerator
 
                 foreach (var field in data.PropertyNames)
                 {
-                    var property = shape.Members
-                        .Where(m => m.ModeledName.Equals(field, StringComparison.OrdinalIgnoreCase))
-                        .SingleOrDefault();
+                    var property = shape.Members.GetMemberByName(field);
+ 
                     if (null == property)
                         continue;
 
@@ -320,7 +315,7 @@ namespace ServiceClientGenerator
                 return string.Format("List<{0}>", ShapeType(shape.ListShape));
             if (shape.IsStructure)
                 return shape.Name;
-            return "object";
+            throw new InvalidOperationException(string.Format("Unable to resolve type for shape {0}", shape.Name));
         }
     }
 }

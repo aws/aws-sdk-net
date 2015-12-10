@@ -213,8 +213,8 @@ namespace ServiceClientGenerator
             if (this.Configuration.ServiceModel.Customizations.HasExamples)
             {
                 var servicename = Configuration.Namespace.Split('.').Last();
-                ExecuteExampleGenerator(new ExampleCode(), servicename + "GeneratedSamples.cs", servicename);
-                ExecuteExampleGenerator(new ExampleMetadata(), servicename + "GeneratedSamples.extra.xml");
+                ExecuteExampleGenerator(new ExampleCode(), servicename + ".GeneratedSamples.cs", servicename);
+                ExecuteExampleGenerator(new ExampleMetadata(), servicename + ".GeneratedSamples.extra.xml");
             }
         }
 

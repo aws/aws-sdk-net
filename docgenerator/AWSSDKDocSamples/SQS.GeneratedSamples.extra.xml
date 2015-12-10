@@ -14,7 +14,7 @@
                 </para>
                 <code
                     title="Create an SQS queue"
-                    source=".\AWSSDKDocSamples\SQS\SQSGeneratedSamples.cs"
+                    source=".\AWSSDKDocSamples\SQS\SQS.GeneratedSamples.cs"
                     region="create-an-sqs-queue-1445915686197" />
             </example>
         </value>
@@ -33,7 +33,7 @@
                 </para>
                 <code
                     title="Retrieve queue attributes from an SQS queue"
-                    source=".\AWSSDKDocSamples\SQS\SQSGeneratedSamples.cs"
+                    source=".\AWSSDKDocSamples\SQS\SQS.GeneratedSamples.cs"
                     region="retrieve-queue-attributes-from-an-sqs-queue-1445915930574" />
             </example>
         </value>

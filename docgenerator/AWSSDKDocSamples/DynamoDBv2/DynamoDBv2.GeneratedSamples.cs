@@ -11,10 +11,10 @@ namespace AWSSDKDocSamples.Amazon.DynamoDBv2.Generated
 {
     class DynamoDBSamples : ISample
     {
+        static IAmazonDynamoDB client = new AmazonDynamoDBClient();
         public void DynamoDBBatchGetItem()
         {
             #region batch-get-item-1435614252853
-            var client = new AmazonDynamoDBClient();
 
             var response = client.BatchGetItem(new BatchGetItemRequest 
             {

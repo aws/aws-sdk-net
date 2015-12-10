@@ -85,5 +85,11 @@ namespace ServiceClientGenerator
 
             return result;
         }
+
+        public static Member GetMemberByName(this IList<Member> self, string name )
+        {
+            return self.Where(m => m.ModeledName.Equals(name, StringComparison.OrdinalIgnoreCase))
+                       .SingleOrDefault();
+        }
     }
 }

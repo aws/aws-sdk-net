@@ -77,25 +77,6 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Append a number of lines with the current indent
-        /// </summary>
-        /// <param name="lines">The lines to append</param>
-        /// <param name="lineSeparator">An optional line separator to be appended to all but the last line.</param>
-        /// <returns>This CodeBuilder instance for chaining</returns>
-        public CodeBuilder AppendLines(IEnumerable<string> lines, string lineSeparator = "")
-        {
-            foreach (var line in lines)
-            {
-                sb.Append(indentSpaces);
-                sb.Append(line);
-                if (!line.Equals(lines.Last()))
-                    sb.Append(",");
-                sb.AppendLine();
-            }
-            return this;
-        }
-
-        /// <summary>
         /// Increase the indent and open a block, adding a '{' and a newline and indent.
         /// </summary>
         /// <remarks>
@@ -119,7 +100,7 @@ namespace ServiceClientGenerator
         {
             this.currentIndent -= this.tabWidth;
             if (currentIndent < 0)
-                currentIndent = 0;
+                throw new InvalidOperationException("Can't indent below 0");
             this.indentSpaces = new string(' ', currentIndent);
             this.AppendLine();
             this.Append("}");

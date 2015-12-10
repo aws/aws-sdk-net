@@ -16,6 +16,7 @@ namespace AWSSDKDocSamples.<#=this.Config.Namespace#>.Generated
 {
 	class <#=this.Config.BaseName#>Samples : ISample
 	{
+		static IAmazon<#=this.Config.BaseName#> client = new Amazon<#=this.Config.BaseName#>Client();
 <#
 	foreach(var operation in this.Config.ServiceModel.Operations)
 	{
@@ -25,12 +26,11 @@ namespace AWSSDKDocSamples.<#=this.Config.Namespace#>.Generated
 		public void <#=this.Config.BaseName#><#=operation.Name#>()
 		{
 			#region <#=example.Id#>
-			var client = new Amazon<#=this.Config.BaseName#>Client();
 
 			var response = client.<#=operation.Name#>(new <#=operation.Name#>Request 
 			{
 <#
-			var lines = example.GetRequestAssignments();
+			var lines = example.GetRequestAssignments(currentIndent: 16);
 			foreach(var line in lines)
 			{
 #>

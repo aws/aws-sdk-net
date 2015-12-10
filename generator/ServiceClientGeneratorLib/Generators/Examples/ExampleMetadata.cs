@@ -167,7 +167,7 @@ namespace ServiceClientGenerator.Generators.Examples
             
             #line default
             #line hidden
-            this.Write("GeneratedSamples.cs\"\r\n\t\t\t\t\tregion=\"");
+            this.Write(".GeneratedSamples.cs\"\r\n\t\t\t\t\tregion=\"");
             
             #line 30 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleMetadata.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(example.Id));

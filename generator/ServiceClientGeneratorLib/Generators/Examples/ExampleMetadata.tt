@@ -26,7 +26,7 @@
 				</para>
 				<code
 					title="<#=example.Title#>"
-					source=".\AWSSDKDocSamples\\<#=servicename#>\\<#=servicename#>GeneratedSamples.cs"
+					source=".\AWSSDKDocSamples\\<#=servicename#>\\<#=servicename#>.GeneratedSamples.cs"
 					region="<#=example.Id#>" />
 			</example>
 		</value>

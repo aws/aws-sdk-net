@@ -57,9 +57,23 @@ namespace ServiceClientGenerator.Generators.Examples
             
             #line default
             #line hidden
-            this.Write("Samples : ISample\r\n\t{\r\n");
+            this.Write("Samples : ISample\r\n\t{\r\n\t\tstatic IAmazon");
             
             #line 19 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            
+            #line default
+            #line hidden
+            this.Write(" client = new Amazon");
+            
+            #line 19 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            
+            #line default
+            #line hidden
+            this.Write("Client();\r\n");
+            
+            #line 20 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
 
 	foreach(var operation in this.Config.ServiceModel.Operations)
 	{
@@ -71,32 +85,25 @@ namespace ServiceClientGenerator.Generators.Examples
             #line hidden
             this.Write("\t\tpublic void ");
             
-            #line 25 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 26 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             
-            #line 25 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 26 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("()\r\n\t\t{\r\n\t\t\t#region ");
             
-            #line 27 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
+            #line 28 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(example.Id));
             
             #line default
             #line hidden
-            this.Write("\r\n\t\t\tvar client = new Amazon");
-            
-            #line 28 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
-            
-            #line default
-            #line hidden
-            this.Write("Client();\r\n\r\n\t\t\tvar response = client.");
+            this.Write("\r\n\r\n\t\t\tvar response = client.");
             
             #line 30 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
@@ -114,7 +121,7 @@ namespace ServiceClientGenerator.Generators.Examples
             
             #line 32 "C:\code\cc\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Examples\ExampleCode.tt"
 
-			var lines = example.GetRequestAssignments();
+			var lines = example.GetRequestAssignments(currentIndent: 16);
 			foreach(var line in lines)
 			{
 

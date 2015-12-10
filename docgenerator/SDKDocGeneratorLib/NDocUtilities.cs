@@ -421,7 +421,7 @@ namespace SDKDocGenerator
             if (!string.IsNullOrEmpty(samplesDir))
             {
                 var extraDocNodes = new List<XmlNode>(); 
-                foreach (var pattern in new [] {".extra.xml", "GeneratedSamples.extra.xml"})
+                foreach (var pattern in new [] {".extra.xml", ".GeneratedSamples.extra.xml"})
                 {
                     var extraFile = Path.Combine(samplesDir, DOC_SAMPLES_SUBFOLDER, serviceName + pattern);
                     if (File.Exists(extraFile))
@@ -442,7 +442,8 @@ namespace SDKDocGenerator
                     var sdkDoc = new XmlDocument();
                     sdkDoc.Load(filePath);
 
-                    ProcessExtraDoc(sdkDoc, BuildExamplesMap(extraDocNodes));
+                    var examplesMap = BuildExamplesMap(extraDocNodes);
+                    ProcessExtraDoc(sdkDoc, examplesMap);
 
                     return XDocument.Load(new XmlNodeReader(sdkDoc), LoadOptions.PreserveWhitespace);
                 }
@@ -454,7 +455,7 @@ namespace SDKDocGenerator
         private static IDictionary<string, string> BuildExamplesMap(List<XmlNode> docNodes)
         {
             Trace.WriteLine(String.Format("Found {0} extra doc nodes", docNodes.Count), "verbose");
-            var map = new Dictionary<string, string>();
+            var map = new Dictionary<string, string>(StringComparer.Ordinal);
 
             foreach (var docNode in docNodes)
             {

@@ -14,7 +14,7 @@
                 </para>
                 <code
                     title="batch-get-item"
-                    source=".\AWSSDKDocSamples\DynamoDBv2\DynamoDBv2GeneratedSamples.cs"
+                    source=".\AWSSDKDocSamples\DynamoDBv2\DynamoDBv2.GeneratedSamples.cs"
                     region="batch-get-item-1435614252853" />
             </example>
         </value>
