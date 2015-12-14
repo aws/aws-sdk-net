@@ -49,12 +49,12 @@ namespace Amazon.CloudWatchLogs
     /// <para>
     /// Use the following links to get started using the <i>Amazon CloudWatch Logs API Reference</i>:
     /// </para>
-    ///  <ul> <li> <a href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Operations.html">Actions</a>:
-    /// An alphabetical list of all Amazon CloudWatch Logs actions.</li> <li> <a href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Types.html">Data
-    /// Types</a>: An alphabetical list of all Amazon CloudWatch Logs data types.</li> <li>
-    /// <a href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html">Common
-    /// Parameters</a>: Parameters that all Query actions can use.</li> <li> <a href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonErrors.html">Common
-    /// Errors</a>: Client and server errors that all actions can return.</li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">Regions
+    ///  <ul> <li><a href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Operations.html">Actions</a>:
+    /// An alphabetical list of all Amazon CloudWatch Logs actions.</li> <li><a href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Types.html">Data
+    /// Types</a>: An alphabetical list of all Amazon CloudWatch Logs data types.</li> <li><a
+    /// href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html">Common
+    /// Parameters</a>: Parameters that all Query actions can use.</li> <li><a href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonErrors.html">Common
+    /// Errors</a>: Client and server errors that all actions can return.</li> <li><a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">Regions
     /// and Endpoints</a>: Itemized regions and endpoints for all AWS products.</li> </ul>
     /// 
     /// <para>
