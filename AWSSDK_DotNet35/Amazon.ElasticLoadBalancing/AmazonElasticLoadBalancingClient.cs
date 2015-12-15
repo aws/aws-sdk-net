@@ -35,19 +35,24 @@ namespace Amazon.ElasticLoadBalancing
     ///
     /// Elastic Load Balancing 
     /// <para>
-    /// Elastic Load Balancing automatically distributes incoming web traffic across multiple
-    /// Amazon EC2 instances.
+    /// Elastic Load Balancing distributes incoming traffic across your EC2 instances.
     /// </para>
     ///  
     /// <para>
-    /// All Elastic Load Balancing actions and commands are <i>idempotent</i>, which means
-    /// that they complete no more than one time. If you repeat a request or a command, the
-    /// action succeeds with a 200 OK response code.
+    /// For information about the features of Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elastic-load-balancing.html">What
+    /// Is Elastic Load Balancing?</a> in the <i>Elastic Load Balancing Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// For detailed information about the features of Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html">Managing
-    /// Load Balancers</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+    /// For information about the AWS regions supported by Elastic Load Balancing, see <a
+    /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Regions
+    /// and Endpoints - Elastic Load Balancing</a> in the <i>Amazon Web Services General Reference</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// All Elastic Load Balancing operations are <i>idempotent</i>, which means that they
+    /// complete at most one time. If you repeat an operation, it succeeds with a 200 OK response
+    /// code.
     /// </para>
     /// </summary>
     public partial class AmazonElasticLoadBalancingClient : AmazonServiceClient, IAmazonElasticLoadBalancing
@@ -248,8 +253,8 @@ namespace Amazon.ElasticLoadBalancing
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a>
-        /// in the <i>Elastic Load Balancing Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/add-remove-tags.html">Tag
+        /// Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
@@ -316,8 +321,9 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html">Manage
-        /// Security Groups for Amazon VPC</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-security-groups.html#elb-vpc-security-groups">Security
+        /// Groups for Load Balancers in a VPC</a> in the <i>Elastic Load Balancing Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ApplySecurityGroupsToLoadBalancer service method.</param>
@@ -382,8 +388,9 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// The load balancer evenly distributes requests across all registered subnets. For more
-        /// information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html">Elastic
-        /// Load Balancing in Amazon VPC</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+        /// information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-manage-subnets.html">Add
+        /// or Remove Subnets for Your Load Balancer in a VPC</a> in the <i>Elastic Load Balancing
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancerToSubnets service method.</param>
@@ -451,8 +458,8 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck">Health
-        /// Checks</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-healthchecks.html">Configure
+        /// Health Checks</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfigureHealthCheck service method.</param>
@@ -524,7 +531,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies">Application-Controlled
+        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled
         /// Session Stickiness</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -609,7 +616,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsLBCookies">Duration-Based
+        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
         /// Session Stickiness</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -678,16 +685,9 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// If the call completes successfully, a new load balancer is created with a unique Domain
-        /// Name Service (DNS) name. The DNS name includes the name of the AWS region in which
-        /// the load balancer was created. For example, the DNS name might end with either of
-        /// the following:
-        /// </para>
-        ///  <ul> <li> <code>us-east-1.elb.amazonaws.com</code> </li> <li> <code>us-west-2.elb.amazonaws.com</code>
-        /// </li> </ul> 
-        /// <para>
-        /// For information about the AWS regions supported by Elastic Load Balancing, see <a
-        /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Regions
-        /// and Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
+        /// Name Service (DNS) name. The load balancer receives incoming traffic and routes it
+        /// to the registered instances. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/how-elb-works.html">How
+        /// Elastic Load Balancing Works</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -695,13 +695,6 @@ namespace Amazon.ElasticLoadBalancing
         /// increase for the number of load balancers for your account. For more information,
         /// see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-limits.html">Elastic
         /// Load Balancing Limits</a> in the <i>Elastic Load Balancing Developer Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Elastic Load Balancing supports load balancing your EC2 instances launched in either
-        /// the EC2-Classic or EC2-VPC platform. For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html">Elastic
-        /// Load Balancing in EC2-Classic</a> or <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html">Elastic
-        /// Load Balancing in a VPC</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancer service method.</param>
@@ -1170,9 +1163,11 @@ namespace Amazon.ElasticLoadBalancing
         #region  DescribeInstanceHealth
 
         /// <summary>
-        /// Describes the state of the specified instances registered with the specified load
+        /// Describes the state of the specified instances with respect to the specified load
         /// balancer. If no instances are specified, the call describes the state of all instances
-        /// registered with the load balancer, not including any terminated instances.
+        /// that are currently registered with the load balancer. If instances are specified,
+        /// their state is returned even if they are no longer registered with the load balancer.
+        /// The state of terminated instances is not returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceHealth service method.</param>
         /// 
@@ -1864,8 +1859,8 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// Note that <code>RegisterInstanceWithLoadBalancer</code> completes when the request
-        /// has been registered. Instance registration happens shortly afterwards. To check the
-        /// state of the registered instances, use <a>DescribeLoadBalancers</a> or <a>DescribeInstanceHealth</a>.
+        /// has been registered. Instance registration takes a little time to complete. To check
+        /// the state of the registered instances, use <a>DescribeLoadBalancers</a> or <a>DescribeInstanceHealth</a>.
         /// </para>
         ///  
         /// <para>

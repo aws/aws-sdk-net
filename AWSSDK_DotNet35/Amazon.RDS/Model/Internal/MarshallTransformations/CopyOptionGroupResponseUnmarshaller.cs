@@ -76,9 +76,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("OptionGroup", targetDepth))
+                    if (context.TestExpression("OptionGroup", targetDepth))
                     {
-                        response.OptionGroup = OptionGroupUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = OptionGroupUnmarshaller.Instance;
+                        response.OptionGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 

@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAssociationStatus operation.
-    /// Updates the status of the configuration document associated with the specified instance.
+    /// Updates the status of the SSM document associated with the specified instance.
     /// </summary>
     public partial class UpdateAssociationStatusRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -47,7 +47,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </summary>
         /// <param name="associationStatus">The association status.</param>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         public UpdateAssociationStatusRequest(AssociationStatus associationStatus, string instanceId, string name)
         {
             _associationStatus = associationStatus;
@@ -94,7 +94,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the configuration document.
+        /// The name of the SSM document.
         /// </para>
         /// </summary>
         public string Name

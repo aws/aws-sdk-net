@@ -106,6 +106,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DBClusterParameterGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DbClusterResourceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DbClusterResourceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DBSubnetGroup", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -134,6 +140,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("HostedZoneId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HostedZoneId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("KmsKeyId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("LatestRestorableTime", targetDepth))
@@ -176,6 +194,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StorageEncrypted", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.StorageEncrypted = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("VpcSecurityGroups/VpcSecurityGroupMembership", targetDepth))

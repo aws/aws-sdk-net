@@ -46,6 +46,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CodeSha256", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CodeSha256 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CodeSize", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     response.Timeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Version", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

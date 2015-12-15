@@ -63,9 +63,9 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Cancels an update on the specified stack. If the call completes successfully, the
-        /// stack will roll back the update and revert to the previous stack configuration.
+        /// stack rolls back the update and reverts to the previous stack configuration.
         /// 
-        ///  <note>Only stacks that are in the UPDATE_IN_PROGRESS state can be canceled.</note>
+        ///  <note>You can cancel only stacks that are in the UPDATE_IN_PROGRESS state.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelUpdateStack service method.</param>
         /// 
@@ -181,6 +181,43 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  DeleteStackResult from CloudFormation.</returns>
         DeleteStackResponse EndDeleteStack(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeAccountLimits
+
+        /// <summary>
+        /// Retrieves your account's AWS CloudFormation limits, such as the maximum number of
+        /// stacks that you can create in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountLimits service method, as returned by CloudFormation.</returns>
+        DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccountLimits operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAccountLimits
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeAccountLimits(DescribeAccountLimitsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAccountLimits operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAccountLimits.</param>
+        /// 
+        /// <returns>Returns a  DescribeAccountLimitsResult from CloudFormation.</returns>
+        DescribeAccountLimitsResponse EndDescribeAccountLimits(IAsyncResult asyncResult);
 
         #endregion
         

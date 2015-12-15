@@ -29,8 +29,13 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAlias operation.
-    /// Updates an alias to associate it with a different key.
+    /// Updates an alias to map it to a different key.
     /// 
+    ///  
+    /// <para>
+    /// An alias is not a property of a key. Therefore, an alias can be mapped to and unmapped
+    /// from an existing key without changing the properties of the key. 
+    /// </para>
     ///  
     /// <para>
     /// An alias name can contain only alphanumeric characters, forward slashes (/), underscores
@@ -40,12 +45,8 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// An alias is not a property of a key. Therefore, an alias can be associated with and
-    /// disassociated from an existing key without changing the properties of the key. 
-    /// </para>
-    ///  
-    /// <para>
-    /// Note that you cannot create or update an alias that represents a key in another account.
+    /// The alias and the key it is mapped to must be in the same AWS account and the same
+    /// region.
     /// </para>
     /// </summary>
     public partial class UpdateAliasRequest : AmazonKeyManagementServiceRequest
@@ -54,9 +55,12 @@ namespace Amazon.KeyManagementService.Model
         private string _targetKeyId;
 
         /// <summary>
-        /// Gets and sets the property AliasName. String that contains the name of the alias to
-        /// be modifed. The name must start with the word "alias" followed by a forward slash
-        /// (alias/). Aliases that begin with "alias/AWS" are reserved.
+        /// Gets and sets the property AliasName. 
+        /// <para>
+        /// String that contains the name of the alias to be modified. The name must start with
+        /// the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/aws"
+        /// are reserved.
+        /// </para>
         /// </summary>
         public string AliasName
         {
@@ -73,11 +77,16 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property TargetKeyId. 
         /// <para>
-        /// Unique identifier of the customer master key to be associated with the alias. This
-        /// value can be a globally unique identifier or the fully specified ARN of a key. <ul>
-        /// <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+        /// Unique identifier of the customer master key to be mapped to the alias. This value
+        /// can be a globally unique identifier or the fully specified ARN of a key. <ul> <li>Key
+        /// ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
         /// <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul>
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can call <a>ListAliases</a> to verify that the alias is mapped to the correct
+        /// <code>TargetKeyId</code>.
         /// </para>
         /// </summary>
         public string TargetKeyId

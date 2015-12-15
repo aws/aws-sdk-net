@@ -33,13 +33,17 @@ namespace Amazon.WorkSpaces.Model
     public partial class Workspace
     {
         private string _bundleId;
+        private string _computerName;
         private string _directoryId;
         private string _errorCode;
         private string _errorMessage;
         private string _ipAddress;
+        private bool? _rootVolumeEncryptionEnabled;
         private WorkspaceState _state;
         private string _subnetId;
         private string _userName;
+        private bool? _userVolumeEncryptionEnabled;
+        private string _volumeEncryptionKey;
         private string _workspaceId;
 
         /// <summary>
@@ -58,6 +62,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetBundleId()
         {
             return this._bundleId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputerName. 
+        /// <para>
+        /// The name of the WorkSpace as seen by the operating system.
+        /// </para>
+        /// </summary>
+        public string ComputerName
+        {
+            get { return this._computerName; }
+            set { this._computerName = value; }
+        }
+
+        // Check to see if ComputerName property is set
+        internal bool IsSetComputerName()
+        {
+            return this._computerName != null;
         }
 
         /// <summary>
@@ -134,6 +156,24 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RootVolumeEncryptionEnabled. 
+        /// <para>
+        /// Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+        /// </para>
+        /// </summary>
+        public bool RootVolumeEncryptionEnabled
+        {
+            get { return this._rootVolumeEncryptionEnabled.GetValueOrDefault(); }
+            set { this._rootVolumeEncryptionEnabled = value; }
+        }
+
+        // Check to see if RootVolumeEncryptionEnabled property is set
+        internal bool IsSetRootVolumeEncryptionEnabled()
+        {
+            return this._rootVolumeEncryptionEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property State. 
         /// <para>
         /// The operational state of the WorkSpace.
@@ -185,6 +225,42 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetUserName()
         {
             return this._userName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserVolumeEncryptionEnabled. 
+        /// <para>
+        /// Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+        /// </para>
+        /// </summary>
+        public bool UserVolumeEncryptionEnabled
+        {
+            get { return this._userVolumeEncryptionEnabled.GetValueOrDefault(); }
+            set { this._userVolumeEncryptionEnabled = value; }
+        }
+
+        // Check to see if UserVolumeEncryptionEnabled property is set
+        internal bool IsSetUserVolumeEncryptionEnabled()
+        {
+            return this._userVolumeEncryptionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeEncryptionKey. 
+        /// <para>
+        /// The KMS key used to encrypt data stored on your WorkSpace.
+        /// </para>
+        /// </summary>
+        public string VolumeEncryptionKey
+        {
+            get { return this._volumeEncryptionKey; }
+            set { this._volumeEncryptionKey = value; }
+        }
+
+        // Check to see if VolumeEncryptionKey property is set
+        internal bool IsSetVolumeEncryptionKey()
+        {
+            return this._volumeEncryptionKey != null;
         }
 
         /// <summary>

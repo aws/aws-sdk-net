@@ -35,7 +35,10 @@ namespace Amazon.ECS.Model
         private TaskDefinition _taskDefinition;
 
         /// <summary>
-        /// Gets and sets the property TaskDefinition.
+        /// Gets and sets the property TaskDefinition. 
+        /// <para>
+        /// The full description of the registered task definition.
+        /// </para>
         /// </summary>
         public TaskDefinition TaskDefinition
         {

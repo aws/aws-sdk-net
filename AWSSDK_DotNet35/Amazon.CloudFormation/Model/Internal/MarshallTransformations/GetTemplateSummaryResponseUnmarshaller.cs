@@ -108,6 +108,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         response.Parameters.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ResourceTypes/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.ResourceTypes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("Version", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

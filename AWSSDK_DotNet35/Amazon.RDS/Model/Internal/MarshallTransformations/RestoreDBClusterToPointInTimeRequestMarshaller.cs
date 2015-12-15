@@ -56,6 +56,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(publicRequest.DBSubnetGroupName));
                 }
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
+                }
                 if(publicRequest.IsSetOptionGroupName())
                 {
                     request.Parameters.Add("OptionGroupName", StringUtils.FromString(publicRequest.OptionGroupName));

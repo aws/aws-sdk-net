@@ -28,24 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>CreateDBParameterGroup</a>
-    /// action. 
     /// 
-    ///  
-    /// <para>
-    /// This data type is used as a request parameter in the <a>DeleteDBParameterGroup</a>
-    /// action, and as a response element in the <a>DescribeDBParameterGroups</a> action.
-    /// 
-    /// </para>
     /// </summary>
     public partial class CreateDBParameterGroupResult : AmazonWebServiceResponse
     {
-        private DBParameterGroup _response;
+        private DBParameterGroup _dbParameterGroup;
 
+        /// <summary>
+        /// Gets and sets the property DBParameterGroup.
+        /// </summary>
         public DBParameterGroup DBParameterGroup
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._dbParameterGroup; }
+            set { this._dbParameterGroup = value; }
         }
+
+        // Check to see if DBParameterGroup property is set
+        internal bool IsSetDBParameterGroup()
+        {
+            return this._dbParameterGroup != null;
+        }
+
     }
 }

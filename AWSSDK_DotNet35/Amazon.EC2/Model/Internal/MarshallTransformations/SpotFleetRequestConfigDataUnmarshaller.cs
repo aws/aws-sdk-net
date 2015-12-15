@@ -49,6 +49,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("allocationStrategy", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AllocationStrategy = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("clientToken", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

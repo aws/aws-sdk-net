@@ -40,6 +40,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _description;
         private string _endpointURL;
         private string _environmentId;
+        private List<EnvironmentLink> _environmentLinks = new List<EnvironmentLink>();
         private string _environmentName;
         private EnvironmentHealth _health;
         private EnvironmentHealthStatus _healthStatus;
@@ -205,6 +206,24 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnvironmentLinks. 
+        /// <para>
+        /// A list of links to other environments in the same group.
+        /// </para>
+        /// </summary>
+        public List<EnvironmentLink> EnvironmentLinks
+        {
+            get { return this._environmentLinks; }
+            set { this._environmentLinks = value; }
+        }
+
+        // Check to see if EnvironmentLinks property is set
+        internal bool IsSetEnvironmentLinks()
+        {
+            return this._environmentLinks != null && this._environmentLinks.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
         /// The name of this environment.
@@ -228,27 +247,14 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  Describes the health status of the environment. AWS Elastic Beanstalk indicates the
         /// failure levels for a running environment: 
         /// </para>
-        ///  <enumValues> <value name="Red"> 
-        /// <para>
-        ///  <code>Red</code> : Indicates the environment is not working. 
-        /// </para>
-        ///  </value> <value name="Yellow"> 
-        /// <para>
-        ///  <code>Yellow</code>: Indicates that something is wrong, the application might not
-        /// be available, but the instances appear running. 
-        /// </para>
-        ///  </value> <value name="Green"> 
-        /// <para>
-        ///  <code>Green</code>: Indicates the environment is healthy and fully functional. 
-        /// </para>
-        ///  </value> </enumValues> <ul> <li> <code>Red</code>: Indicates the environment is not
-        /// responsive. Occurs when three or more consecutive failures occur for an environment.
-        /// </li> <li> <code>Yellow</code>: Indicates that something is wrong. Occurs when two
-        /// consecutive failures occur for an environment. </li> <li> <code>Green</code>: Indicates
-        /// the environment is healthy and fully functional. </li> <li> <code>Grey</code>: Default
-        /// health for a new environment. The environment is not fully launched and health checks
-        /// have not started or health checks are suspended during an <code>UpdateEnvironment</code>
-        /// or <code>RestartEnvironement</code> request. </li> </ul> 
+        ///  <ul> <li> <code>Red</code>: Indicates the environment is not responsive. Occurs when
+        /// three or more consecutive failures occur for an environment. </li> <li> <code>Yellow</code>:
+        /// Indicates that something is wrong. Occurs when two consecutive failures occur for
+        /// an environment. </li> <li> <code>Green</code>: Indicates the environment is healthy
+        /// and fully functional. </li> <li> <code>Grey</code>: Default health for a new environment.
+        /// The environment is not fully launched and health checks have not started or health
+        /// checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
+        /// request. </li> </ul> 
         /// <para>
         ///  Default: <code>Grey</code> 
         /// </para>

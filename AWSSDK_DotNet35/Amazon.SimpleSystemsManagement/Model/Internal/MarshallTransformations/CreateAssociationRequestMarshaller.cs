@@ -69,6 +69,25 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetParameters())
+                {
+                    context.Writer.WritePropertyName("Parameters");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                    {
+                        context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                        var publicRequestParametersValue = publicRequestParametersKvp.Value;
+
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestParametersValueListValue in publicRequestParametersValue)
+                        {
+                                context.Writer.Write(publicRequestParametersValueListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

@@ -180,7 +180,7 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///   
         /// <para>
-        ///  Sample - <code> "{\"randomSeed\":\"some-random-seed\", \"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+        ///  Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
         /// 
         /// </para>
         ///  </li> </ul>

@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Contains information for the <a>CreateDirectory</a> operation when a Simple AD directory
-    /// is being created.
+    /// Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a>
+    /// operation.
     /// </summary>
     public partial class DirectoryVpcSettings
     {
@@ -59,7 +59,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The identifier of the VPC to create the Simple AD directory in.
+        /// The identifier of the VPC in which to create the directory.
         /// </para>
         /// </summary>
         public string VpcId

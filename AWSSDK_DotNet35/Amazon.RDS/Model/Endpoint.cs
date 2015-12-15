@@ -36,6 +36,7 @@ namespace Amazon.RDS.Model
     public partial class Endpoint
     {
         private string _address;
+        private string _hostedZoneId;
         private int? _port;
 
         /// <summary>
@@ -59,6 +60,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetAddress()
         {
             return this._address != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostedZoneId. 
+        /// <para>
+        /// Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.
+        /// </para>
+        /// </summary>
+        public string HostedZoneId
+        {
+            get { return this._hostedZoneId; }
+            set { this._hostedZoneId = value; }
+        }
+
+        // Check to see if HostedZoneId property is set
+        internal bool IsSetHostedZoneId()
+        {
+            return this._hostedZoneId != null;
         }
 
         /// <summary>

@@ -137,6 +137,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.MinSize = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("NewInstancesProtectedFromScaleIn", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.NewInstancesProtectedFromScaleIn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PlacementGroup", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

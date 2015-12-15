@@ -42,7 +42,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// Use this API to attach a managed policy to a role. To embed an inline policy in a
     /// role, use <a>PutRolePolicy</a>. For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AttachRolePolicyRequest : AmazonIdentityManagementServiceRequest

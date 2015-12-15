@@ -271,6 +271,7 @@
             .Replace("</fullname>", "")
             .Replace("<function>", "")
             .Replace("</function>","")
+			.Replace("<p/>", "")
             .Trim();
 
         

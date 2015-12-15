@@ -40,6 +40,10 @@ namespace Amazon.Route53.Model
         private string _searchString;
         private int? _requestInterval;
         private int? _failureThreshold;
+        private bool? _measureLatency;
+        private bool? _inverted;
+        private int? _healthThreshold;
+        private List<string> _childHealthChecks = new List<string>();
 
         /// <summary>
         /// Gets and sets the property IPAddress. 
@@ -102,8 +106,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property ResourcePath. 
         /// <para>
         /// Path to ping on the instance to check the health. Required for HTTP, HTTPS, HTTP_STR_MATCH,
-        /// and HTTPS_STR_MATCH health checks, HTTP request is issued to the instance on the given
-        /// port and path.
+        /// and HTTPS_STR_MATCH health checks. The HTTP request is issued to the instance on the
+        /// given port and path.
         /// </para>
         /// </summary>
         public string ResourcePath
@@ -158,13 +162,13 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property RequestInterval. 
         /// <para>
-        /// The number of seconds between the time that Route 53 gets a response from your endpoint
-        /// and the time that it sends the next health-check request.
+        /// The number of seconds between the time that Amazon Route 53 gets a response from your
+        /// endpoint and the time that it sends the next health-check request.
         /// </para>
         ///  
         /// <para>
-        /// Each Route 53 health checker makes requests at this interval. Valid values are 10
-        /// and 30. The default value is 30.
+        /// Each Amazon Route 53 health checker makes requests at this interval. Valid values
+        /// are 10 and 30. The default value is 30.
         /// </para>
         /// </summary>
         public int RequestInterval
@@ -182,9 +186,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property FailureThreshold. 
         /// <para>
-        /// The number of consecutive health checks that an endpoint must pass or fail for Route
-        /// 53 to change the current status of the endpoint from unhealthy to healthy or vice
-        /// versa.
+        /// The number of consecutive health checks that an endpoint must pass or fail for Amazon
+        /// Route 53 to change the current status of the endpoint from unhealthy to healthy or
+        /// vice versa.
         /// </para>
         ///  
         /// <para>
@@ -203,6 +207,85 @@ namespace Amazon.Route53.Model
         internal bool IsSetFailureThreshold()
         {
             return this._failureThreshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MeasureLatency. 
+        /// <para>
+        /// A Boolean value that indicates whether you want Amazon Route 53 to measure the latency
+        /// between health checkers in multiple AWS regions and your endpoint and to display CloudWatch
+        /// latency graphs in the Amazon Route 53 console.
+        /// </para>
+        /// </summary>
+        public bool MeasureLatency
+        {
+            get { return this._measureLatency.GetValueOrDefault(); }
+            set { this._measureLatency = value; }
+        }
+
+        // Check to see if MeasureLatency property is set
+        internal bool IsSetMeasureLatency()
+        {
+            return this._measureLatency.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Inverted. 
+        /// <para>
+        /// A boolean value that indicates whether the status of health check should be inverted.
+        /// For example, if a health check is healthy but <code>Inverted</code> is <code>True</code>,
+        /// then Amazon Route 53 considers the health check to be unhealthy.
+        /// </para>
+        /// </summary>
+        public bool Inverted
+        {
+            get { return this._inverted.GetValueOrDefault(); }
+            set { this._inverted = value; }
+        }
+
+        // Check to see if Inverted property is set
+        internal bool IsSetInverted()
+        {
+            return this._inverted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthThreshold. 
+        /// <para>
+        /// The minimum number of child health checks that must be healthy for Amazon Route 53
+        /// to consider the parent health check to be healthy. Valid values are integers between
+        /// 0 and 256, inclusive.
+        /// </para>
+        /// </summary>
+        public int HealthThreshold
+        {
+            get { return this._healthThreshold.GetValueOrDefault(); }
+            set { this._healthThreshold = value; }
+        }
+
+        // Check to see if HealthThreshold property is set
+        internal bool IsSetHealthThreshold()
+        {
+            return this._healthThreshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChildHealthChecks. 
+        /// <para>
+        /// For a specified parent health check, a list of <code>HealthCheckId</code> values for
+        /// the associated child health checks.
+        /// </para>
+        /// </summary>
+        public List<string> ChildHealthChecks
+        {
+            get { return this._childHealthChecks; }
+            set { this._childHealthChecks = value; }
+        }
+
+        // Check to see if ChildHealthChecks property is set
+        internal bool IsSetChildHealthChecks()
+        {
+            return this._childHealthChecks != null && this._childHealthChecks.Count > 0; 
         }
 
     }

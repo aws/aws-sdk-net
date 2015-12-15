@@ -69,6 +69,21 @@ namespace Amazon.Kinesis
 
         #endregion
                 
+        #region  DecreaseStreamRetentionPeriod
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DecreaseStreamRetentionPeriod operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DecreaseStreamRetentionPeriod operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DecreaseStreamRetentionPeriodResponse> DecreaseStreamRetentionPeriodAsync(DecreaseStreamRetentionPeriodRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteStream
 
         /// <summary>
@@ -126,6 +141,21 @@ namespace Amazon.Kinesis
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetShardIteratorResponse> GetShardIteratorAsync(GetShardIteratorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  IncreaseStreamRetentionPeriod
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the IncreaseStreamRetentionPeriod operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the IncreaseStreamRetentionPeriod operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<IncreaseStreamRetentionPeriodResponse> IncreaseStreamRetentionPeriodAsync(IncreaseStreamRetentionPeriodRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

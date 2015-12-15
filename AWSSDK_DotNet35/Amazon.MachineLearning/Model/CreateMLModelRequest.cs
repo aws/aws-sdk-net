@@ -115,7 +115,7 @@ namespace Amazon.MachineLearning.Model
         /// result has two possible values.</li> <li>Choose <code>MULTICLASS</code> if the <code>MLModel</code>
         /// result has a limited number of values. </li> </ul> 
         /// <para>
-        ///  For more information, see the <a href="http://docs.aws.amazon.com/machinelearning/latest/dg">Amazon
+        ///  For more information, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
         /// Machine Learning Developer Guide</a>.
         /// </para>
         /// </summary>

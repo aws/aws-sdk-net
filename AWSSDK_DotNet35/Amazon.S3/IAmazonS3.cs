@@ -39,7 +39,7 @@ namespace Amazon.S3
         /// <summary>
         /// Aborts a multipart upload.
         /// 
-        ///  
+        /// 
         /// <para>
         /// To verify that all parts have been removed, so you don't get charged for the part
         /// storage, you should call the List Parts operation and ensure the parts list is empty.
@@ -55,7 +55,7 @@ namespace Amazon.S3
         /// <summary>
         /// Aborts a multipart upload.
         /// 
-        ///  
+        /// 
         /// <para>
         /// To verify that all parts have been removed, so you don't get charged for the part
         /// storage, you should call the List Parts operation and ensure the parts list is empty.
@@ -785,15 +785,15 @@ namespace Amazon.S3
         #region  GetBucketNotification
 
         /// <summary>
-        /// Return the notification configuration of a bucket.
+        /// Returns the notification configuration of a bucket.
         /// </summary>
-        /// <param name="bucketName">A property of GetBucketNotificationRequest used to execute the GetBucketNotification service method.</param>
+        /// <param name="bucketName">Name of the bucket to get the notification configuration for.</param>
         /// 
         /// <returns>The response from the GetBucketNotification service method, as returned by S3.</returns>
         GetBucketNotificationResponse GetBucketNotification(string bucketName);
 
         /// <summary>
-        /// Return the notification configuration of a bucket.
+        /// Returns the notification configuration of a bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketNotification service method.</param>
         /// 
@@ -1328,7 +1328,7 @@ namespace Amazon.S3
         /// <summary>
         /// Initiates a multipart upload and returns an upload ID.
         /// 
-        ///  
+        /// 
         /// <para>
         /// <b>Note:</b> After you initiate multipart upload and upload one or more parts, you
         /// must either complete or abort multipart upload in order to stop getting charged for
@@ -1345,7 +1345,7 @@ namespace Amazon.S3
         /// <summary>
         /// Initiates a multipart upload and returns an upload ID.
         /// 
-        ///  
+        /// 
         /// <para>
         /// <b>Note:</b> After you initiate multipart upload and upload one or more parts, you
         /// must either complete or abort multipart upload in order to stop getting charged for
@@ -1850,7 +1850,7 @@ namespace Amazon.S3
         #region  PutBucketReplication
 
         /// <summary>
-        /// Sets a replication configuration for the Amazon S3 bucket.
+        /// Creates a new replication configuration (or replaces an existing one, if present).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketReplication service method.</param>
         /// 
@@ -2270,7 +2270,7 @@ namespace Amazon.S3
         /// <summary>
         /// Uploads a part in a multipart upload.
         /// 
-        ///  
+        /// 
         /// <para>
         /// <b>Note:</b> After you initiate multipart upload and upload one or more parts, you
         /// must either complete or abort multipart upload in order to stop getting charged for

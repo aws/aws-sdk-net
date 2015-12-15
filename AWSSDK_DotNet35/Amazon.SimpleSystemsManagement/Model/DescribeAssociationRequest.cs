@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAssociation operation.
-    /// Describes the associations for the specified configuration document or instance.
+    /// Describes the associations for the specified SSM document or instance.
     /// </summary>
     public partial class DescribeAssociationRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Instantiates DescribeAssociationRequest with the parameterized properties
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="name">The name of the configuration document.</param>
+        /// <param name="name">The name of the SSM document.</param>
         public DescribeAssociationRequest(string instanceId, string name)
         {
             _instanceId = instanceId;
@@ -73,7 +73,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the configuration document.
+        /// The name of the SSM document.
         /// </para>
         /// </summary>
         public string Name

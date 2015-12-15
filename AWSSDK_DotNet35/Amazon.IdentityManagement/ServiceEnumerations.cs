@@ -69,6 +69,86 @@ namespace Amazon.IdentityManagement
 
 
     /// <summary>
+    /// Constants used for properties of type ContextKeyTypeEnum.
+    /// </summary>
+    public class ContextKeyTypeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Binary for ContextKeyTypeEnum
+        /// </summary>
+        public static readonly ContextKeyTypeEnum Binary = new ContextKeyTypeEnum("binary");
+        /// <summary>
+        /// Constant BinaryList for ContextKeyTypeEnum
+        /// </summary>
+        public static readonly ContextKeyTypeEnum BinaryList = new ContextKeyTypeEnum("binaryList");
+        /// <summary>
+        /// Constant Boolean for ContextKeyTypeEnum
+        /// </summary>
+        public static readonly ContextKeyTypeEnum Boolean = new ContextKeyTypeEnum("boolean");
+        /// <summary>
+        /// Constant BooleanList for ContextKeyTypeEnum
+        /// </summary>
+        public static readonly ContextKeyTypeEnum BooleanList = new ContextKeyTypeEnum("booleanList");
+        /// <summary>
+        /// Constant Date for ContextKeyTypeEnum
+        /// </summary>
+        public static readonly ContextKeyTypeEnum Date = new ContextKeyTypeEnum("date");
+        /// <summary>
+        /// Constant DateList for ContextKeyTypeEnum
+        /// </summary>
+        public static readonly ContextKeyTypeEnum DateList = new ContextKeyTypeEnum("dateList");
+        /// <summary>
+        /// Constant Ip for ContextKeyTypeEnum
+        /// </summary>
+        public static readonly ContextKeyTypeEnum Ip = new ContextKeyTypeEnum("ip");
+        /// <summary>
+        /// Constant IpList for ContextKeyTypeEnum
+        /// </summary>
+        public static readonly ContextKeyTypeEnum IpList = new ContextKeyTypeEnum("ipList");
+        /// <summary>
+        /// Constant Numeric for ContextKeyTypeEnum
+        /// </summary>
+        public static readonly ContextKeyTypeEnum Numeric = new ContextKeyTypeEnum("numeric");
+        /// <summary>
+        /// Constant NumericList for ContextKeyTypeEnum
+        /// </summary>
+        public static readonly ContextKeyTypeEnum NumericList = new ContextKeyTypeEnum("numericList");
+        /// <summary>
+        /// Constant String for ContextKeyTypeEnum
+        /// </summary>
+        public static readonly ContextKeyTypeEnum String = new ContextKeyTypeEnum("string");
+        /// <summary>
+        /// Constant StringList for ContextKeyTypeEnum
+        /// </summary>
+        public static readonly ContextKeyTypeEnum StringList = new ContextKeyTypeEnum("stringList");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public ContextKeyTypeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContextKeyTypeEnum FindValue(string value)
+        {
+            return FindValue<ContextKeyTypeEnum>(value);
+        }
+
+        public static implicit operator ContextKeyTypeEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EncodingType.
     /// </summary>
     public class EncodingType : ConstantClass
@@ -161,6 +241,50 @@ namespace Amazon.IdentityManagement
 
 
     /// <summary>
+    /// Constants used for properties of type PolicyEvaluationDecisionType.
+    /// </summary>
+    public class PolicyEvaluationDecisionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Allowed for PolicyEvaluationDecisionType
+        /// </summary>
+        public static readonly PolicyEvaluationDecisionType Allowed = new PolicyEvaluationDecisionType("allowed");
+        /// <summary>
+        /// Constant ExplicitDeny for PolicyEvaluationDecisionType
+        /// </summary>
+        public static readonly PolicyEvaluationDecisionType ExplicitDeny = new PolicyEvaluationDecisionType("explicitDeny");
+        /// <summary>
+        /// Constant ImplicitDeny for PolicyEvaluationDecisionType
+        /// </summary>
+        public static readonly PolicyEvaluationDecisionType ImplicitDeny = new PolicyEvaluationDecisionType("implicitDeny");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public PolicyEvaluationDecisionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyEvaluationDecisionType FindValue(string value)
+        {
+            return FindValue<PolicyEvaluationDecisionType>(value);
+        }
+
+        public static implicit operator PolicyEvaluationDecisionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PolicyScopeType.
     /// </summary>
     public class PolicyScopeType : ConstantClass
@@ -198,6 +322,66 @@ namespace Amazon.IdentityManagement
         }
 
         public static implicit operator PolicyScopeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PolicySourceType.
+    /// </summary>
+    public class PolicySourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AwsManaged for PolicySourceType
+        /// </summary>
+        public static readonly PolicySourceType AwsManaged = new PolicySourceType("aws-managed");
+        /// <summary>
+        /// Constant Group for PolicySourceType
+        /// </summary>
+        public static readonly PolicySourceType Group = new PolicySourceType("group");
+        /// <summary>
+        /// Constant None for PolicySourceType
+        /// </summary>
+        public static readonly PolicySourceType None = new PolicySourceType("none");
+        /// <summary>
+        /// Constant Resource for PolicySourceType
+        /// </summary>
+        public static readonly PolicySourceType Resource = new PolicySourceType("resource");
+        /// <summary>
+        /// Constant Role for PolicySourceType
+        /// </summary>
+        public static readonly PolicySourceType Role = new PolicySourceType("role");
+        /// <summary>
+        /// Constant User for PolicySourceType
+        /// </summary>
+        public static readonly PolicySourceType User = new PolicySourceType("user");
+        /// <summary>
+        /// Constant UserManaged for PolicySourceType
+        /// </summary>
+        public static readonly PolicySourceType UserManaged = new PolicySourceType("user-managed");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public PolicySourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicySourceType FindValue(string value)
+        {
+            return FindValue<PolicySourceType>(value);
+        }
+
+        public static implicit operator PolicySourceType(string value)
         {
             return FindValue(value);
         }

@@ -54,7 +54,9 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property AccessUrl. 
         /// <para>
-        /// The access URL for the directory, such as <code>http://&#x3C;alias&#x3E;.awsapps.com</code>.
+        /// The access URL for the directory, such as <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>.
+        /// If no alias has been created for the directory, <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code>
+        /// is the directory identifier, such as <code>d-XXXXXXXXXX</code>.
         /// </para>
         /// </summary>
         public string AccessUrl
@@ -72,7 +74,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Alias. 
         /// <para>
-        /// The alias for the directory.
+        /// The alias for the directory. If no alias has been created for the directory, the alias
+        /// is the directory identifier, such as <code>d-XXXXXXXXXX</code>.
         /// </para>
         /// </summary>
         public string Alias
@@ -146,10 +149,10 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DnsIpAddrs. 
         /// <para>
-        /// The IP addresses of the DNS servers for the directory. For a Simple AD directory,
-        /// these are the IP addresses of the Simple AD directory servers. For an AD Connector
-        /// directory, these are the IP addresses of the DNS servers or domain controllers in
-        /// the on-premises directory that the AD Connector is connected to.
+        /// The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft
+        /// AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory
+        /// servers. For an AD Connector directory, these are the IP addresses of the DNS servers
+        /// or domain controllers in the on-premises directory to which the AD Connector is connected.
         /// </para>
         /// </summary>
         public List<string> DnsIpAddrs
@@ -368,8 +371,8 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property VpcSettings. 
         /// <para>
         /// A <a>DirectoryVpcSettingsDescription</a> object that contains additional information
-        /// about a Simple AD directory. This member is only present if the directory is a Simple
-        /// AD directory.
+        /// about a directory. This member is only present if the directory is a Simple AD or
+        /// Managed AD directory.
         /// </para>
         /// </summary>
         public DirectoryVpcSettingsDescription VpcSettings

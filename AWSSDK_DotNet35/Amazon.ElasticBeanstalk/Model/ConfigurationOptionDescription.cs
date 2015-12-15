@@ -55,26 +55,10 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  An indication of which action is required if the value for this configuration option
         /// changes: 
         /// </para>
-        ///  <enumValues> <value name="NoInterruption"> 
-        /// <para>
-        ///  NoInterruption - There is no interruption to the environment or application availability.
-        /// 
-        /// </para>
-        ///  </value> <value name="RestartEnvironment"> 
-        /// <para>
-        ///  RestartEnvironment - The environment is restarted, all AWS resources are deleted
-        /// and recreated, and the environment is unavailable during the process. 
-        /// </para>
-        ///  </value> <value name="RestartApplicationServer"> 
-        /// <para>
-        ///  RestartApplicationServer - The environment is available the entire time. However,
-        /// a short application outage occurs when the application servers on the running Amazon
-        /// EC2 instances are restarted. 
-        /// </para>
-        ///  </value> </enumValues> <ul> <li> <code>NoInterruption</code> : There is no interruption
-        /// to the environment or application availability. </li> <li> <code>RestartEnvironment</code>
-        /// : The environment is entirely restarted, all AWS resources are deleted and recreated,
-        /// and the environment is unavailable during the process. </li> <li> <code>RestartApplicationServer</code>
+        ///  <ul> <li> <code>NoInterruption</code> : There is no interruption to the environment
+        /// or application availability. </li> <li> <code>RestartEnvironment</code> : The environment
+        /// is entirely restarted, all AWS resources are deleted and recreated, and the environment
+        /// is unavailable during the process. </li> <li> <code>RestartApplicationServer</code>
         /// : The environment is available the entire time. However, a short application outage
         /// occurs when the application servers on the running Amazon EC2 instances are restarted.
         /// </li> </ul>
@@ -226,17 +210,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         ///  An indication of whether the user defined this configuration option: 
         /// </para>
-        ///  <enumValues> <value name="true"> 
-        /// <para>
-        ///  <code>true</code> : This configuration option was defined by the user. It is a valid
-        /// choice for specifying this as an Option to Remove when updating configuration settings.
-        /// 
-        /// </para>
-        ///  </value> <value name="false"> 
-        /// <para>
-        ///  <code>false</code> : This configuration was not defined by the user. 
-        /// </para>
-        ///  </value> </enumValues> <ul> <li> 
+        ///  <ul> <li> 
         /// <para>
         ///  <code>true</code> : This configuration option was defined by the user. It is a valid
         /// choice for specifying if this as an <code>Option to Remove</code> when updating configuration
@@ -289,36 +263,13 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  An indication of which type of values this option has and whether it is allowable
         /// to select one or more than one of the possible values: 
         /// </para>
-        ///  <enumValues> <value name="Scalar"> 
-        /// <para>
-        ///  <code>Scalar</code> : Values for this option are a single selection from the possible
-        /// values, or a unformatted string or numeric value governed by the MIN/MAX/Regex constraints:
-        /// 
-        /// </para>
-        ///  </value> <value name="List"> 
-        /// <para>
-        ///  <code>List</code> : Values for this option are multiple selections of the possible
-        /// values. 
-        /// </para>
-        ///  </value> <value name="Boolean"> 
-        /// <para>
-        ///  <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code>
-        /// . 
-        /// </para>
-        ///  </value> <value name="Json"> 
-        /// <para>
-        ///  <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
-        /// </para>
-        ///  </value> </enumValues> 
-        /// <para>
         ///  <ul> <li> <code>Scalar</code> : Values for this option are a single selection from
         /// the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code>
         /// constraints. </li> <li> <code>List</code> : Values for this option are multiple selections
         /// from the possible values. </li> <li> <code>Boolean</code> : Values for this option
         /// are either <code>true</code> or <code>false</code> . </li> <li> <code>Json</code>
         /// : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
-        /// </li> </ul> 
-        /// </para>
+        /// </li> </ul>
         /// </summary>
         public ConfigurationOptionValueType ValueType
         {

@@ -60,6 +60,21 @@ namespace Amazon.Lambda
 
         #endregion
                 
+        #region  CreateAlias
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateEventSourceMapping
 
         /// <summary>
@@ -90,6 +105,21 @@ namespace Amazon.Lambda
 
         #endregion
                 
+        #region  DeleteAlias
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteEventSourceMapping
 
         /// <summary>
@@ -117,6 +147,21 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAlias
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetAliasResponse> GetAliasAsync(GetAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -210,6 +255,21 @@ namespace Amazon.Lambda
 
         #endregion
                 
+        #region  ListAliases
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAliases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAliases operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListEventSourceMappings
 
         /// <summary>
@@ -240,6 +300,36 @@ namespace Amazon.Lambda
 
         #endregion
                 
+        #region  ListVersionsByFunction
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVersionsByFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVersionsByFunction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListVersionsByFunctionResponse> ListVersionsByFunctionAsync(ListVersionsByFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PublishVersion
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PublishVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PublishVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PublishVersionResponse> PublishVersionAsync(PublishVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RemovePermission
 
         /// <summary>
@@ -252,6 +342,21 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateAlias
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -71,7 +71,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerInstance. 
         /// <para>
-        /// The container instance UUID or full Amazon Resource Name (ARN) entries for the container
+        /// The container instance ID or full Amazon Resource Name (ARN) entries for the container
         /// instance on which you would like to update the Amazon ECS container agent.
         /// </para>
         /// </summary>

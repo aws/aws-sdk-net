@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+    #line 1 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class BaseGenerator : BaseGeneratorBase
     {
@@ -33,7 +33,7 @@ namespace ServiceClientGenerator.Generators
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 9 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 9 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 	
     // An object that contains all the information about a service
 	public GeneratorConfig Config { get; set; }
@@ -46,7 +46,7 @@ namespace ServiceClientGenerator.Generators
         #line default
         #line hidden
         
-        #line 16 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 16 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(@"/*
  * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -69,21 +69,21 @@ this.Write(@"/*
         #line default
         #line hidden
         
-        #line 33 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 33 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(Path.GetFileName(this.Config.ModelPath)));
 
         
         #line default
         #line hidden
         
-        #line 33 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 33 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" service model.\r\n */\r\n");
 
         
         #line default
         #line hidden
         
-        #line 35 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 35 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -95,21 +95,21 @@ this.Write(" service model.\r\n */\r\n");
         #line default
         #line hidden
         
-        #line 41 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 41 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Initiates the asynchronous execution of the ");
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 43 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 43 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        /// <param name=\"reque" +
         "st\">Container for the necessary parameters to execute the ");
 
@@ -117,14 +117,14 @@ this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        ///
         #line default
         #line hidden
         
-        #line 46 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 46 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 46 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 46 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(@" operation.</param>
         /// <param name=""cancellationToken"">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -136,7 +136,7 @@ this.Write(@" operation.</param>
         #line default
         #line hidden
         
-        #line 51 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 51 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -148,21 +148,21 @@ this.Write(@" operation.</param>
         #line default
         #line hidden
         
-        #line 57 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 57 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Initiates the asynchronous execution of the ");
 
         
         #line default
         #line hidden
         
-        #line 59 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 59 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 59 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 59 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        /// <param name=\"reque" +
         "st\">Container for the necessary parameters to execute the ");
 
@@ -170,28 +170,28 @@ this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        ///
         #line default
         #line hidden
         
-        #line 62 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 62 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 62 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" operation on Amazon");
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 62 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 62 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(@"Client.</param>
         /// <param name=""callback"">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name=""state"">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -203,21 +203,21 @@ this.Write(@"Client.</param>
         #line default
         #line hidden
         
-        #line 67 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 67 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 67 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 67 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\r\n        ///         operation.</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 69 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 69 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -229,21 +229,21 @@ this.Write("\r\n        ///         operation.</returns>\r\n");
         #line default
         #line hidden
         
-        #line 75 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 75 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Finishes the asynchronous execution of the  ");
 
         
         #line default
         #line hidden
         
-        #line 77 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 77 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 77 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 77 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        /// <param name=\"async" +
         "Result\">The IAsyncResult returned by the call to Begin");
 
@@ -251,49 +251,49 @@ this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        ///
         #line default
         #line hidden
         
-        #line 80 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 80 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 80 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 80 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(".</param>\r\n        /// \r\n        /// <returns>Returns a  ");
 
         
         #line default
         #line hidden
         
-        #line 82 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 82 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 82 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 82 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("Result from ");
 
         
         #line default
         #line hidden
         
-        #line 82 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 82 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 82 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 82 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(".</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 83 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 83 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -306,28 +306,28 @@ this.Write(".</returns>\r\n");
         #line default
         #line hidden
         
-        #line 90 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 90 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("    /// <summary>\r\n    /// Implementation for accessing ");
 
         
         #line default
         #line hidden
         
-        #line 92 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 92 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 92 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 92 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\r\n    ///\r\n");
 
         
         #line default
         #line hidden
         
-        #line 94 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 94 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("    ", documentation);
 
@@ -335,14 +335,14 @@ this.Write("\r\n    ///\r\n");
         #line default
         #line hidden
         
-        #line 96 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 96 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("    /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 98 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -355,28 +355,28 @@ this.Write("    /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 105 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 105 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("    /// <summary>\r\n    /// Interface for accessing ");
 
         
         #line default
         #line hidden
         
-        #line 107 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 107 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 107 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 107 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\r\n    ///\r\n");
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 109 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("    ", documentation);
 
@@ -384,14 +384,14 @@ this.Write("\r\n    ///\r\n");
         #line default
         #line hidden
         
-        #line 111 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 111 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("    /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 113 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 113 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -407,14 +407,14 @@ this.Write("    /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 123 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 123 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("    /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 125 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("    ", documentation);
 
@@ -422,14 +422,14 @@ this.Write("    /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 127 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 127 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("    /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 129 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 129 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -443,14 +443,14 @@ this.Write("    /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 137 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 137 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 139 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -458,14 +458,14 @@ this.Write("        /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 141 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 141 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 143 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 143 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -485,14 +485,14 @@ this.Write("        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 157 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 157 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 159 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -500,14 +500,14 @@ this.Write("        /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 161 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 161 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 163 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 163 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
   if(includeRequest)
     {
 
@@ -515,7 +515,7 @@ this.Write("        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 165 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 165 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"request\">Container for the necessary parameters to execu" +
         "te the ");
 
@@ -523,21 +523,21 @@ this.Write("        /// <param name=\"request\">Container for the necessary para
         #line default
         #line hidden
         
-        #line 166 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 166 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 166 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 166 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" service method.</param>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 167 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 167 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -545,42 +545,42 @@ this.Write(" service method.</param>\r\n");
         #line default
         #line hidden
         
-        #line 169 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 169 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// \r\n        /// <returns>The response from the ");
 
         
         #line default
         #line hidden
         
-        #line 171 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 171 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 171 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 171 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" service method, as returned by ");
 
         
         #line default
         #line hidden
         
-        #line 171 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 171 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 171 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 171 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(".</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 172 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 172 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         // Skip adding exceptions in the ndoc because we are not generating exceptions from the service model.
         if(this.Config.Namespace != "Amazon.S3")
@@ -602,14 +602,14 @@ this.Write(".</returns>\r\n");
         #line default
         #line hidden
         
-        #line 188 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 188 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 190 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 190 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -617,14 +617,14 @@ this.Write("        /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 192 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 192 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 194 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
   foreach(var item in members)
     {
 
@@ -632,42 +632,42 @@ this.Write("        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 196 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 196 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"");
 
         
         #line default
         #line hidden
         
-        #line 197 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 197 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.CamelCaseParam(item.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 197 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 197 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\">");
 
         
         #line default
         #line hidden
         
-        #line 197 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 197 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(item.GetParamDocumentationForOperation(operation.Name)));
 
         
         #line default
         #line hidden
         
-        #line 197 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 197 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("</param>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 198 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 198 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -675,42 +675,42 @@ this.Write("</param>\r\n");
         #line default
         #line hidden
         
-        #line 200 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 200 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// \r\n        /// <returns>The response from the ");
 
         
         #line default
         #line hidden
         
-        #line 202 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 202 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 202 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 202 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" service method, as returned by ");
 
         
         #line default
         #line hidden
         
-        #line 202 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 202 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
 
         
         #line default
         #line hidden
         
-        #line 202 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 202 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(".</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 203 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 203 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
 		if (!this.Config.ServiceModel.Customizations.SuppressSimpleMethodExceptionDocs)
 		{
@@ -729,28 +729,28 @@ this.Write(".</returns>\r\n");
         #line default
         #line hidden
         
-        #line 216 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 216 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\t/// <summary>\r\n\t/// Container for the parameters to the ");
 
         
         #line default
         #line hidden
         
-        #line 218 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 218 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 218 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 218 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n");
 
         
         #line default
         #line hidden
         
-        #line 219 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 219 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     WriteCommentBlock("	", documentation);
 
@@ -758,14 +758,14 @@ this.Write(" operation.\r\n");
         #line default
         #line hidden
         
-        #line 221 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 221 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\t/// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 223 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 223 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
 	}
 
@@ -779,42 +779,42 @@ this.Write("\t/// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 231 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 231 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <exception cref=\"");
 
         
         #line default
         #line hidden
         
-        #line 232 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 232 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
 
         
         #line default
         #line hidden
         
-        #line 232 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 232 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(".Model.");
 
         
         #line default
         #line hidden
         
-        #line 232 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 232 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
 
         
         #line default
         #line hidden
         
-        #line 232 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 232 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\">\r\n");
 
         
         #line default
         #line hidden
         
-        #line 233 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 233 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -822,14 +822,14 @@ this.Write("\">\r\n");
         #line default
         #line hidden
         
-        #line 235 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 235 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// </exception>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 237 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 237 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     }
 
@@ -841,42 +841,42 @@ this.Write("        /// </exception>\r\n");
         #line default
         #line hidden
         
-        #line 243 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 243 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\t/// <summary>\r\n\t///\tReturns information about the ");
 
         
         #line default
         #line hidden
         
-        #line 245 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 245 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 245 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 245 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" response metadata.\r\n\t///\tThe ");
 
         
         #line default
         #line hidden
         
-        #line 246 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 246 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 246 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 246 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" operation has a void result type.\r\n\t/// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 248 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 248 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
 	}
 
@@ -903,6 +903,7 @@ this.Write(" operation has a void result type.\r\n\t/// </summary>\r\n");
             .Replace("</fullname>", "")
             .Replace("<function>", "")
             .Replace("</function>","")
+			.Replace("<p/>", "")
             .Trim();
 
         
@@ -979,28 +980,28 @@ this.Write(" operation has a void result type.\r\n\t/// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 345 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 346 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Instantiates ");
 
         
         #line default
         #line hidden
         
-        #line 347 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 348 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(className));
 
         
         #line default
         #line hidden
         
-        #line 347 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 348 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" with the parameterized properties\r\n        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 349 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 350 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         foreach (var member in members)
         {
@@ -1009,42 +1010,42 @@ this.Write(" with the parameterized properties\r\n        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 352 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 353 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"");
 
         
         #line default
         #line hidden
         
-        #line 353 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 354 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.CamelCaseParam(member.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 353 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 354 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("\">");
 
         
         #line default
         #line hidden
         
-        #line 353 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 354 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.GetParamDocumentationForConstructor(className)));
 
         
         #line default
         #line hidden
         
-        #line 353 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 354 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("</param>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 354 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 355 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         }
     }
@@ -1053,7 +1054,7 @@ this.Write("</param>\r\n");
         #line default
         #line hidden
         
-        #line 359 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 360 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     // Generates methods for the client that have request members as parameters for easy calls to the operation
     // Only generates them if they are specified in the customizations of the service
@@ -1075,70 +1076,70 @@ this.Write("</param>\r\n");
         #line default
         #line hidden
         
-        #line 375 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 376 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        public ");
 
         
         #line default
         #line hidden
         
-        #line 376 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 377 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 376 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 377 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("Response ");
 
         
         #line default
         #line hidden
         
-        #line 376 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 377 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 376 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 377 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 376 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 377 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 376 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 377 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(")\r\n        {\r\n            var request = new ");
 
         
         #line default
         #line hidden
         
-        #line 378 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 379 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 378 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 379 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("Request();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 379 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 380 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
 foreach (var member in docMembers)
 {
@@ -1147,42 +1148,42 @@ foreach (var member in docMembers)
         #line default
         #line hidden
         
-        #line 382 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 383 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("            request.");
 
         
         #line default
         #line hidden
         
-        #line 383 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 384 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 383 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 384 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" = ");
 
         
         #line default
         #line hidden
         
-        #line 383 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 384 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.CamelCaseParam(member.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 383 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 384 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 384 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 385 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         
 }
@@ -1191,28 +1192,28 @@ this.Write(";\r\n");
         #line default
         #line hidden
         
-        #line 387 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 388 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("            return ");
 
         
         #line default
         #line hidden
         
-        #line 388 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 389 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 388 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 389 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("(request);\r\n        }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 391 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 392 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
           }
         }
@@ -1222,7 +1223,7 @@ this.Write("(request);\r\n        }\r\n\r\n");
         #line default
         #line hidden
         
-        #line 397 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 398 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     // Generates methods for the interface that have request members as parameters for easy calls to the operation
     // Only generates them if they are specified in the customizations of the service
@@ -1244,56 +1245,56 @@ this.Write("(request);\r\n        }\r\n\r\n");
         #line default
         #line hidden
         
-        #line 413 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 414 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        ");
 
         
         #line default
         #line hidden
         
-        #line 414 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 415 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 414 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 415 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("Response ");
 
         
         #line default
         #line hidden
         
-        #line 414 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 415 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 414 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 415 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 414 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 415 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 414 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 415 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(");\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 416 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 417 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
           }
         }
@@ -1303,7 +1304,7 @@ this.Write(");\r\n\r\n");
         #line default
         #line hidden
         
-        #line 423 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 424 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
     // Generates constructors for operation requests that have request members in the parameters for easy creation of requests
     // Only generates them if they are specified in the customizations of the service
@@ -1318,7 +1319,7 @@ this.Write(");\r\n\r\n");
         #line default
         #line hidden
         
-        #line 432 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 433 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Empty constructor used to set  properties inde" +
         "pendently even when a simple constructor is available\r\n        /// </summary>\r\n " +
         "       public ");
@@ -1327,21 +1328,21 @@ this.Write("        /// <summary>\r\n        /// Empty constructor used to set  
         #line default
         #line hidden
         
-        #line 435 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 436 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(className));
 
         
         #line default
         #line hidden
         
-        #line 435 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 436 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("() { }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 437 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 438 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
             foreach (var form in forms)
             {
@@ -1352,48 +1353,48 @@ this.Write("() { }\r\n\r\n");
         #line default
         #line hidden
         
-        #line 443 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 444 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
  FormatSimpleConstructorDocumentation(className, docMembers); 
         
         #line default
         #line hidden
         
-        #line 443 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 444 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        public ");
 
         
         #line default
         #line hidden
         
-        #line 444 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 445 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(className));
 
         
         #line default
         #line hidden
         
-        #line 444 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 445 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 444 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 445 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 444 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 445 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(")\r\n        {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 446 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 447 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
 foreach (var member in docMembers)
 {
@@ -1402,42 +1403,42 @@ foreach (var member in docMembers)
         #line default
         #line hidden
         
-        #line 449 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 450 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("            ");
 
         
         #line default
         #line hidden
         
-        #line 450 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 451 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
 
         
         #line default
         #line hidden
         
-        #line 450 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 451 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(" = ");
 
         
         #line default
         #line hidden
         
-        #line 450 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 451 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.CamelCaseParam(member.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 450 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 451 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 451 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 452 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
         
 }
@@ -1446,14 +1447,14 @@ this.Write(";\r\n");
         #line default
         #line hidden
         
-        #line 454 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 455 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 this.Write("        }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 457 "C:\code\dotnet\code-ranger-bug\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
+        #line 458 "C:\Codebase\v2\AWSDotNetSDKAndTools\sdk\src\ServiceClientGenerator\Generators\BaseGenerator.tt"
 
             }
         }

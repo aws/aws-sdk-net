@@ -76,9 +76,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property HourOfDay. 
         /// <para>
-        /// The hour component of the maintenance start time represented as <emphasis>hh</emphasis>,
-        /// where <i>hh</i> is the hour (00 to 23). The hour of the day is in the time zone of
-        /// the gateway.
+        /// The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i>
+        /// is the hour (00 to 23). The hour of the day is in the time zone of the gateway.
         /// </para>
         /// </summary>
         public int HourOfDay

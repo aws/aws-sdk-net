@@ -46,6 +46,7 @@ namespace Amazon.AutoScaling.Model
         private List<string> _loadBalancerNames = new List<string>();
         private int? _maxSize;
         private int? _minSize;
+        private bool? _newInstancesProtectedFromScaleIn;
         private string _placementGroup;
         private string _status;
         private List<SuspendedProcess> _suspendedProcesses = new List<SuspendedProcess>();
@@ -128,8 +129,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DefaultCooldown. 
         /// <para>
-        /// The number of seconds after a scaling activity completes before any further scaling
-        /// activities can start.
+        /// The amount of time, in seconds, after a scaling activity completes before another
+        /// scaling activity can start.
         /// </para>
         /// </summary>
         public int DefaultCooldown
@@ -183,8 +184,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckGracePeriod. 
         /// <para>
-        /// The amount of time that Auto Scaling waits before checking an instance's health status.
-        /// The grace period begins when an instance comes into service.
+        /// The amount of time, in seconds, that Auto Scaling waits before checking the health
+        /// status of an EC2 instance that has come into service.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriod
@@ -202,8 +203,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckType. 
         /// <para>
-        /// The service of interest for the health status check, which can be either <code>EC2</code>
-        /// for Amazon EC2 or <code>ELB</code> for Elastic Load Balancing.
+        /// The service to use for the health checks. The valid values are <code>EC2</code> and
+        /// <code>ELB</code>.
         /// </para>
         /// </summary>
         public string HealthCheckType
@@ -309,11 +310,30 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NewInstancesProtectedFromScaleIn. 
+        /// <para>
+        /// Indicates whether newly launched instances are protected from termination by Auto
+        /// Scaling when scaling in.
+        /// </para>
+        /// </summary>
+        public bool NewInstancesProtectedFromScaleIn
+        {
+            get { return this._newInstancesProtectedFromScaleIn.GetValueOrDefault(); }
+            set { this._newInstancesProtectedFromScaleIn = value; }
+        }
+
+        // Check to see if NewInstancesProtectedFromScaleIn property is set
+        internal bool IsSetNewInstancesProtectedFromScaleIn()
+        {
+            return this._newInstancesProtectedFromScaleIn.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PlacementGroup. 
         /// <para>
         /// The name of the placement group into which you'll launch your instances, if any. For
         /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// Groups</a>.
+        /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public string PlacementGroup

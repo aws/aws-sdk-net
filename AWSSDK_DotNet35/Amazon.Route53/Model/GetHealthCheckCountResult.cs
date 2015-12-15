@@ -38,7 +38,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HealthCheckCount. 
         /// <para>
-        ///  The number of health checks associated with the current AWS account.
+        /// The number of health checks associated with the current AWS account.
         /// </para>
         /// </summary>
         public long HealthCheckCount

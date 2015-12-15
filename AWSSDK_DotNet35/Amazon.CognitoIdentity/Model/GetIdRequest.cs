@@ -34,10 +34,6 @@ namespace Amazon.CognitoIdentity.Model
     /// 
     ///  
     /// <para>
-    /// token+";"+tokenSecret.
-    /// </para>
-    ///  
-    /// <para>
     /// This is a public API. You do not need any credentials to call this API.
     /// </para>
     /// </summary>
@@ -86,7 +82,7 @@ namespace Amazon.CognitoIdentity.Model
         /// <para>
         /// The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook:
         /// <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code>
-        /// </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>www.twitter.com</code>
+        /// </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>api.twitter.com</code>
         /// </li> <li>Digits: <code>www.digits.com</code> </li> </ul> 
         /// </para>
         /// </summary>

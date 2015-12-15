@@ -35,8 +35,9 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html">Manage
-    /// Security Groups for Amazon VPC</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-security-groups.html#elb-vpc-security-groups">Security
+    /// Groups for Load Balancers in a VPC</a> in the <i>Elastic Load Balancing Developer
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class ApplySecurityGroupsToLoadBalancerRequest : AmazonElasticLoadBalancingRequest

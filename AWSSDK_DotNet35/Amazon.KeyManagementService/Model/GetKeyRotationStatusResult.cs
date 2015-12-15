@@ -35,8 +35,10 @@ namespace Amazon.KeyManagementService.Model
         private bool? _keyRotationEnabled;
 
         /// <summary>
-        /// Gets and sets the property KeyRotationEnabled. A Boolean value that specifies whether
-        /// key rotation is enabled.
+        /// Gets and sets the property KeyRotationEnabled. 
+        /// <para>
+        /// A Boolean value that specifies whether key rotation is enabled.
+        /// </para>
         /// </summary>
         public bool KeyRotationEnabled
         {

@@ -93,9 +93,7 @@ namespace Amazon.IdentityManagement
     /// Security Credentials</a>. This topic provides general information about the types
     /// of credentials used for accessing AWS. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
     /// Best Practices</a>. This topic presents a list of suggestions for using the IAM service
-    /// to help secure your AWS resources. </li> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/">AWS
-    /// Security Token Service</a>. This guide describes how to create and use temporary security
-    /// credentials. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+    /// to help secure your AWS resources. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
     /// AWS API Requests</a>. This set of topics walk you through the process of signing a
     /// request using an access key ID and secret access key. </li> </ul>
     /// </summary>
@@ -1685,6 +1683,66 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  GetContextKeysForCustomPolicy
+
+        internal GetContextKeysForCustomPolicyResponse GetContextKeysForCustomPolicy(GetContextKeysForCustomPolicyRequest request)
+        {
+            var marshaller = new GetContextKeysForCustomPolicyRequestMarshaller();
+            var unmarshaller = GetContextKeysForCustomPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetContextKeysForCustomPolicyRequest,GetContextKeysForCustomPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContextKeysForCustomPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContextKeysForCustomPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetContextKeysForCustomPolicyResponse> GetContextKeysForCustomPolicyAsync(GetContextKeysForCustomPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetContextKeysForCustomPolicyRequestMarshaller();
+            var unmarshaller = GetContextKeysForCustomPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetContextKeysForCustomPolicyRequest,GetContextKeysForCustomPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetContextKeysForPrincipalPolicy
+
+        internal GetContextKeysForPrincipalPolicyResponse GetContextKeysForPrincipalPolicy(GetContextKeysForPrincipalPolicyRequest request)
+        {
+            var marshaller = new GetContextKeysForPrincipalPolicyRequestMarshaller();
+            var unmarshaller = GetContextKeysForPrincipalPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetContextKeysForPrincipalPolicyRequest,GetContextKeysForPrincipalPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContextKeysForPrincipalPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContextKeysForPrincipalPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetContextKeysForPrincipalPolicyResponse> GetContextKeysForPrincipalPolicyAsync(GetContextKeysForPrincipalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetContextKeysForPrincipalPolicyRequestMarshaller();
+            var unmarshaller = GetContextKeysForPrincipalPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetContextKeysForPrincipalPolicyRequest,GetContextKeysForPrincipalPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetCredentialReport
 
         internal GetCredentialReportResponse GetCredentialReport()
@@ -3146,6 +3204,66 @@ namespace Amazon.IdentityManagement
             var unmarshaller = SetDefaultPolicyVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetDefaultPolicyVersionRequest,SetDefaultPolicyVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SimulateCustomPolicy
+
+        internal SimulateCustomPolicyResponse SimulateCustomPolicy(SimulateCustomPolicyRequest request)
+        {
+            var marshaller = new SimulateCustomPolicyRequestMarshaller();
+            var unmarshaller = SimulateCustomPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<SimulateCustomPolicyRequest,SimulateCustomPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SimulateCustomPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SimulateCustomPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SimulateCustomPolicyResponse> SimulateCustomPolicyAsync(SimulateCustomPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SimulateCustomPolicyRequestMarshaller();
+            var unmarshaller = SimulateCustomPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SimulateCustomPolicyRequest,SimulateCustomPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SimulatePrincipalPolicy
+
+        internal SimulatePrincipalPolicyResponse SimulatePrincipalPolicy(SimulatePrincipalPolicyRequest request)
+        {
+            var marshaller = new SimulatePrincipalPolicyRequestMarshaller();
+            var unmarshaller = SimulatePrincipalPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<SimulatePrincipalPolicyRequest,SimulatePrincipalPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SimulatePrincipalPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SimulatePrincipalPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SimulatePrincipalPolicyResponse> SimulatePrincipalPolicyAsync(SimulatePrincipalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SimulatePrincipalPolicyRequestMarshaller();
+            var unmarshaller = SimulatePrincipalPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SimulatePrincipalPolicyRequest,SimulatePrincipalPolicyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

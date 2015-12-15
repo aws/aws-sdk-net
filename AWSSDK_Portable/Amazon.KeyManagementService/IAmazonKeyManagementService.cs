@@ -32,20 +32,24 @@ namespace Amazon.KeyManagementService
     ///
     /// AWS Key Management Service 
     /// <para>
-    ///  AWS Key Management Service (KMS) is an encryption and key management web service.
-    /// This guide describes the KMS actions that you can call programmatically. For general
-    /// information about KMS, see the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/overview.html">
-    /// AWS Key Management Service Developer Guide </a> 
+    /// AWS Key Management Service (AWS KMS) is an encryption and key management web service.
+    /// This guide describes the AWS KMS operations that you can call programmatically. For
+    /// general information about AWS KMS, see the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/">AWS
+    /// Key Management Service Developer Guide</a>.
     /// </para>
-    ///  <note> AWS provides SDKs that consist of libraries and sample code for various programming
-    /// languages and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a
-    /// convenient way to create programmatic access to KMS and AWS. For example, the SDKs
-    /// take care of tasks such as signing requests (see below), managing errors, and retrying
-    /// requests automatically. For more information about the AWS SDKs, including how to
-    /// download and install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon
-    /// Web Services</a>. </note> 
+    ///  <note> 
     /// <para>
-    ///  We recommend that you use the AWS SDKs to make programmatic API calls to KMS. 
+    /// AWS provides SDKs that consist of libraries and sample code for various programming
+    /// languages and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a
+    /// convenient way to create programmatic access to AWS KMS and other AWS services. For
+    /// example, the SDKs take care of tasks such as signing requests (see below), managing
+    /// errors, and retrying requests automatically. For more information about the AWS SDKs,
+    /// including how to download and install them, see <a href="http://aws.amazon.com/tools/">Tools
+    /// for Amazon Web Services</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// We recommend that you use the AWS SDKs to make programmatic API calls to AWS KMS.
     /// </para>
     ///  
     /// <para>
@@ -60,29 +64,30 @@ namespace Amazon.KeyManagementService
     /// </para>
     ///  
     /// <para>
-    ///  Requests must be signed by using an access key ID and a secret access key. We strongly
-    /// recommend that you do not use your AWS account access key ID and secret key for everyday
-    /// work with KMS. Instead, use the access key ID and secret access key for an IAM user,
-    /// or you can use the AWS Security Token Service to generate temporary security credentials
-    /// that you can use to sign requests. 
+    /// Requests must be signed by using an access key ID and a secret access key. We strongly
+    /// recommend that you <i>do not</i> use your AWS account access key ID and secret key
+    /// for everyday work with AWS KMS. Instead, use the access key ID and secret access key
+    /// for an IAM user, or you can use the AWS Security Token Service to generate temporary
+    /// security credentials that you can use to sign requests.
     /// </para>
     ///  
     /// <para>
-    ///  All KMS operations require <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-    /// Version 4</a>. 
+    /// All AWS KMS operations require <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version 4</a>.
     /// </para>
     ///  
     /// <para>
-    /// <b>Recording API Requests</b>
+    /// <b>Logging API Requests</b>
     /// </para>
     ///  
     /// <para>
-    ///  KMS supports AWS CloudTrail, a service that records AWS API calls and related events
+    /// AWS KMS supports AWS CloudTrail, a service that logs AWS API calls and related events
     /// for your AWS account and delivers them to an Amazon S3 bucket that you specify. By
     /// using the information collected by CloudTrail, you can determine what requests were
-    /// made to KMS, who made the request, when it was made, and so on. To learn more about
-    /// CloudTrail, including how to turn it on and find your log files, see the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/whatiscloudtrail.html">AWS
-    /// CloudTrail User Guide</a> 
+    /// made to AWS KMS, who made the request, when it was made, and so on. To learn more
+    /// about CloudTrail, including how to turn it on and find your log files, see the <a
+    /// href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/">AWS CloudTrail User
+    /// Guide</a>.
     /// </para>
     ///  
     /// <para>
@@ -93,11 +98,11 @@ namespace Amazon.KeyManagementService
     /// For more information about credentials and request signing, see the following:
     /// </para>
     ///  <ul> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS
-    /// Security Credentials</a>. This topic provides general information about the types
+    /// Security Credentials</a> - This topic provides general information about the types
     /// of credentials used for accessing AWS. </li> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/">AWS
-    /// Security Token Service</a>. This guide describes how to create and use temporary security
-    /// credentials. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
-    /// AWS API Requests</a>. This set of topics walks you through the process of signing
+    /// Security Token Service</a> - This guide describes how to create and use temporary
+    /// security credentials. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+    /// AWS API Requests</a> - This set of topics walks you through the process of signing
     /// a request using an access key ID and a secret access key. </li> </ul> 
     /// <para>
     /// <b>Commonly Used APIs</b>
@@ -106,13 +111,28 @@ namespace Amazon.KeyManagementService
     /// <para>
     ///  Of the APIs discussed in this guide, the following will prove the most useful for
     /// most applications. You will likely perform actions other than these, such as creating
-    /// keys and assigning policies, by using the console. <ul> <li><a>Encrypt</a></li> <li><a>Decrypt</a></li>
-    /// <li><a>GenerateDataKey</a></li> <li><a>GenerateDataKeyWithoutPlaintext</a></li> </ul>
-    /// 
+    /// keys and assigning policies, by using the console.
     /// </para>
+    ///  <ul> <li><a>Encrypt</a></li> <li><a>Decrypt</a></li> <li><a>GenerateDataKey</a></li>
+    /// <li><a>GenerateDataKeyWithoutPlaintext</a></li> </ul>
     /// </summary>
     public partial interface IAmazonKeyManagementService : IDisposable
     {
+                
+        #region  CancelKeyDeletion
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelKeyDeletion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelKeyDeletion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CancelKeyDeletionResponse> CancelKeyDeletionAsync(CancelKeyDeletionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
                 
         #region  CreateAlias
 
@@ -414,6 +434,21 @@ namespace Amazon.KeyManagementService
 
         #endregion
                 
+        #region  ListRetirableGrants
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRetirableGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRetirableGrants operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListRetirableGrantsResponse> ListRetirableGrantsAsync(ListRetirableGrantsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  PutKeyPolicy
 
         /// <summary>
@@ -471,6 +506,21 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<RevokeGrantResponse> RevokeGrantAsync(RevokeGrantRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ScheduleKeyDeletion
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ScheduleKeyDeletion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ScheduleKeyDeletion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ScheduleKeyDeletionResponse> ScheduleKeyDeletionAsync(ScheduleKeyDeletionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

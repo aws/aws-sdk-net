@@ -228,6 +228,36 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  DecreaseStreamRetentionPeriod
+
+        internal DecreaseStreamRetentionPeriodResponse DecreaseStreamRetentionPeriod(DecreaseStreamRetentionPeriodRequest request)
+        {
+            var marshaller = new DecreaseStreamRetentionPeriodRequestMarshaller();
+            var unmarshaller = DecreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
+
+            return Invoke<DecreaseStreamRetentionPeriodRequest,DecreaseStreamRetentionPeriodResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DecreaseStreamRetentionPeriod operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DecreaseStreamRetentionPeriod operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DecreaseStreamRetentionPeriodResponse> DecreaseStreamRetentionPeriodAsync(DecreaseStreamRetentionPeriodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DecreaseStreamRetentionPeriodRequestMarshaller();
+            var unmarshaller = DecreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DecreaseStreamRetentionPeriodRequest,DecreaseStreamRetentionPeriodResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteStream
 
         internal DeleteStreamResponse DeleteStream(DeleteStreamRequest request)
@@ -343,6 +373,36 @@ namespace Amazon.Kinesis
             var unmarshaller = GetShardIteratorResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetShardIteratorRequest,GetShardIteratorResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  IncreaseStreamRetentionPeriod
+
+        internal IncreaseStreamRetentionPeriodResponse IncreaseStreamRetentionPeriod(IncreaseStreamRetentionPeriodRequest request)
+        {
+            var marshaller = new IncreaseStreamRetentionPeriodRequestMarshaller();
+            var unmarshaller = IncreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
+
+            return Invoke<IncreaseStreamRetentionPeriodRequest,IncreaseStreamRetentionPeriodResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the IncreaseStreamRetentionPeriod operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the IncreaseStreamRetentionPeriod operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<IncreaseStreamRetentionPeriodResponse> IncreaseStreamRetentionPeriodAsync(IncreaseStreamRetentionPeriodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new IncreaseStreamRetentionPeriodRequestMarshaller();
+            var unmarshaller = IncreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
+
+            return InvokeAsync<IncreaseStreamRetentionPeriodRequest,IncreaseStreamRetentionPeriodResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

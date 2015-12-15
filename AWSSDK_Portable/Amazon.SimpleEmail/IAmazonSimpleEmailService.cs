@@ -42,6 +42,66 @@ namespace Amazon.SimpleEmail
     public partial interface IAmazonSimpleEmailService : IDisposable
     {
                 
+        #region  CloneReceiptRuleSet
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CloneReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CloneReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CloneReceiptRuleSetResponse> CloneReceiptRuleSetAsync(CloneReceiptRuleSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateReceiptFilter
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReceiptFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptFilter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateReceiptFilterResponse> CreateReceiptFilterAsync(CreateReceiptFilterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateReceiptRule
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateReceiptRuleResponse> CreateReceiptRuleAsync(CreateReceiptRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateReceiptRuleSet
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateReceiptRuleSetResponse> CreateReceiptRuleSetAsync(CreateReceiptRuleSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteIdentity
 
         /// <summary>
@@ -72,6 +132,51 @@ namespace Amazon.SimpleEmail
 
         #endregion
                 
+        #region  DeleteReceiptFilter
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReceiptFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptFilter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteReceiptFilterResponse> DeleteReceiptFilterAsync(DeleteReceiptFilterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteReceiptRule
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteReceiptRuleResponse> DeleteReceiptRuleAsync(DeleteReceiptRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteReceiptRuleSet
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteReceiptRuleSetResponse> DeleteReceiptRuleSetAsync(DeleteReceiptRuleSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteVerifiedEmailAddress
 
         /// <summary>
@@ -84,6 +189,51 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteVerifiedEmailAddressResponse> DeleteVerifiedEmailAddressAsync(DeleteVerifiedEmailAddressRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeActiveReceiptRuleSet
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeActiveReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActiveReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeActiveReceiptRuleSetResponse> DescribeActiveReceiptRuleSetAsync(DescribeActiveReceiptRuleSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeReceiptRule
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReceiptRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeReceiptRuleResponse> DescribeReceiptRuleAsync(DescribeReceiptRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeReceiptRuleSet
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeReceiptRuleSetResponse> DescribeReceiptRuleSetAsync(DescribeReceiptRuleSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -207,6 +357,36 @@ namespace Amazon.SimpleEmail
 
         #endregion
                 
+        #region  ListReceiptFilters
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReceiptFilters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReceiptFilters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListReceiptFiltersResponse> ListReceiptFiltersAsync(ListReceiptFiltersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListReceiptRuleSets
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReceiptRuleSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReceiptRuleSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListReceiptRuleSetsResponse> ListReceiptRuleSetsAsync(ListReceiptRuleSetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListVerifiedEmailAddresses
 
         /// <summary>
@@ -237,6 +417,36 @@ namespace Amazon.SimpleEmail
 
         #endregion
                 
+        #region  ReorderReceiptRuleSet
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReorderReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReorderReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ReorderReceiptRuleSetResponse> ReorderReceiptRuleSetAsync(ReorderReceiptRuleSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SendBounce
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendBounce operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendBounce operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<SendBounceResponse> SendBounceAsync(SendBounceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  SendEmail
 
         /// <summary>
@@ -264,6 +474,21 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<SendRawEmailResponse> SendRawEmailAsync(SendRawEmailRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SetActiveReceiptRuleSet
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetActiveReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetActiveReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<SetActiveReceiptRuleSetResponse> SetActiveReceiptRuleSetAsync(SetActiveReceiptRuleSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -309,6 +534,36 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<SetIdentityNotificationTopicResponse> SetIdentityNotificationTopicAsync(SetIdentityNotificationTopicRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SetReceiptRulePosition
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetReceiptRulePosition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetReceiptRulePosition operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<SetReceiptRulePositionResponse> SetReceiptRulePositionAsync(SetReceiptRulePositionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateReceiptRule
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReceiptRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateReceiptRuleResponse> UpdateReceiptRuleAsync(UpdateReceiptRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

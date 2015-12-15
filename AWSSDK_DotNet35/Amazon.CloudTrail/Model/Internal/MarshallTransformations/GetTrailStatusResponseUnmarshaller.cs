@@ -64,6 +64,18 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     response.LatestCloudWatchLogsDeliveryTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LatestDeliveryAttemptSucceeded", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LatestDeliveryAttemptSucceeded = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestDeliveryAttemptTime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LatestDeliveryAttemptTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LatestDeliveryError", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,6 +86,30 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.LatestDeliveryTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestDigestDeliveryError", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LatestDigestDeliveryError = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestDigestDeliveryTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LatestDigestDeliveryTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestNotificationAttemptSucceeded", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LatestNotificationAttemptSucceeded = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestNotificationAttemptTime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LatestNotificationAttemptTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LatestNotificationError", targetDepth))
@@ -98,6 +134,18 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.StopLoggingTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TimeLoggingStarted", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TimeLoggingStarted = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TimeLoggingStopped", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TimeLoggingStopped = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

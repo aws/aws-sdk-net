@@ -48,7 +48,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// For information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>Using IAM</i> guide. 
+    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class DeletePolicyRequest : AmazonIdentityManagementServiceRequest

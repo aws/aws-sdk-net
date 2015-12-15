@@ -33,7 +33,7 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    ///  To update a health check, send a <code>POST</code> request to the <code>2013-04-01/healthcheck/<i>health
+    /// To update a health check, send a <code>POST</code> request to the <code>2013-04-01/healthcheck/<i>health
     /// check ID</i></code> resource. The request body must include an XML document with an
     /// <code>UpdateHealthCheckRequest</code> element. The response returns an <code>UpdateHealthCheckResponse</code>
     /// element, which contains metadata about the health check.
@@ -49,6 +49,9 @@ namespace Amazon.Route53.Model
         private string _fullyQualifiedDomainName;
         private string _searchString;
         private int? _failureThreshold;
+        private bool? _inverted;
+        private int? _healthThreshold;
+        private List<string> _childHealthChecks = new List<string>();
 
         /// <summary>
         /// Gets and sets the property HealthCheckId. 
@@ -71,8 +74,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HealthCheckVersion. 
         /// <para>
-        /// Optional. When you specify a health check version, Route 53 compares this value with
-        /// the current value in the health check, which prevents you from updating the health
+        /// Optional. When you specify a health check version, Amazon Route 53 compares this value
+        /// with the current value in the health check, which prevents you from updating the health
         /// check when the versions don't match. Using <code>HealthCheckVersion</code> lets you
         /// prevent overwriting another change to the health check.
         /// </para>
@@ -114,7 +117,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port on which you want Route 53 to open a connection to perform health checks.
+        /// The port on which you want Amazon Route 53 to open a connection to perform health
+        /// checks.
         /// </para>
         ///  
         /// <para>
@@ -184,9 +188,9 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property SearchString. 
         /// <para>
         /// If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTP_STR_MATCH</code>,
-        /// the string that you want Route 53 to search for in the response body from the specified
-        /// resource. If the string appears in the response body, Route 53 considers the resource
-        /// healthy. 
+        /// the string that you want Amazon Route 53 to search for in the response body from the
+        /// specified resource. If the string appears in the response body, Amazon Route 53 considers
+        /// the resource healthy. 
         /// </para>
         ///  
         /// <para>
@@ -208,9 +212,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property FailureThreshold. 
         /// <para>
-        /// The number of consecutive health checks that an endpoint must pass or fail for Route
-        /// 53 to change the current status of the endpoint from unhealthy to healthy or vice
-        /// versa.
+        /// The number of consecutive health checks that an endpoint must pass or fail for Amazon
+        /// Route 53 to change the current status of the endpoint from unhealthy to healthy or
+        /// vice versa.
         /// </para>
         ///  
         /// <para>
@@ -233,6 +237,77 @@ namespace Amazon.Route53.Model
         internal bool IsSetFailureThreshold()
         {
             return this._failureThreshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Inverted. 
+        /// <para>
+        /// A boolean value that indicates whether the status of health check should be inverted.
+        /// For example, if a health check is healthy but <code>Inverted</code> is <code>True</code>,
+        /// then Amazon Route 53 considers the health check to be unhealthy.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify this value only if you want to change it.
+        /// </para>
+        /// </summary>
+        public bool Inverted
+        {
+            get { return this._inverted.GetValueOrDefault(); }
+            set { this._inverted = value; }
+        }
+
+        // Check to see if Inverted property is set
+        internal bool IsSetInverted()
+        {
+            return this._inverted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthThreshold. 
+        /// <para>
+        /// The minimum number of child health checks that must be healthy for Amazon Route 53
+        /// to consider the parent health check to be healthy. Valid values are integers between
+        /// 0 and 256, inclusive.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify this value only if you want to change it.
+        /// </para>
+        /// </summary>
+        public int HealthThreshold
+        {
+            get { return this._healthThreshold.GetValueOrDefault(); }
+            set { this._healthThreshold = value; }
+        }
+
+        // Check to see if HealthThreshold property is set
+        internal bool IsSetHealthThreshold()
+        {
+            return this._healthThreshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChildHealthChecks. 
+        /// <para>
+        /// For a specified parent health check, a list of <code>HealthCheckId</code> values for
+        /// the associated child health checks.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify this value only if you want to change it.
+        /// </para>
+        /// </summary>
+        public List<string> ChildHealthChecks
+        {
+            get { return this._childHealthChecks; }
+            set { this._childHealthChecks = value; }
+        }
+
+        // Check to see if ChildHealthChecks property is set
+        internal bool IsSetChildHealthChecks()
+        {
+            return this._childHealthChecks != null && this._childHealthChecks.Count > 0; 
         }
 
     }

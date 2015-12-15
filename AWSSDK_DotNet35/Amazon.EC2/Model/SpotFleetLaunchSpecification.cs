@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the launch specification for one or more Spot Instances.
+    /// Describes the launch specification for one or more Spot instances.
     /// </summary>
     public partial class SpotFleetLaunchSpecification
     {

@@ -72,6 +72,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CACertificateIdentifier", StringUtils.FromString(publicRequest.CACertificateIdentifier));
                 }
+                if(publicRequest.IsSetCopyTagsToSnapshot())
+                {
+                    request.Parameters.Add("CopyTagsToSnapshot", StringUtils.FromBool(publicRequest.CopyTagsToSnapshot));
+                }
                 if(publicRequest.IsSetDBInstanceClass())
                 {
                     request.Parameters.Add("DBInstanceClass", StringUtils.FromString(publicRequest.DBInstanceClass));
@@ -83,6 +87,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDBParameterGroupName())
                 {
                     request.Parameters.Add("DBParameterGroupName", StringUtils.FromString(publicRequest.DBParameterGroupName));
+                }
+                if(publicRequest.IsSetDBPortNumber())
+                {
+                    request.Parameters.Add("DBPortNumber", StringUtils.FromInt(publicRequest.DBPortNumber));
                 }
                 if(publicRequest.IsSetDBSecurityGroups())
                 {
@@ -124,6 +132,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPreferredMaintenanceWindow())
                 {
                     request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(publicRequest.PreferredMaintenanceWindow));
+                }
+                if(publicRequest.IsSetPubliclyAccessible())
+                {
+                    request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(publicRequest.PubliclyAccessible));
                 }
                 if(publicRequest.IsSetStorageType())
                 {

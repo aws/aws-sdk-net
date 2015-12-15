@@ -49,14 +49,25 @@ namespace Amazon.Lambda
         #region  AddPermission
 
         /// <summary>
-        /// Adds a permission to the access policy associated with the specified AWS Lambda function.
-        /// In a "push event" model, the access policy attached to the Lambda function grants
-        /// Amazon S3 or a user application permission for the Lambda <code>lambda:Invoke</code>
-        /// action. For information about the push model, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-        /// Lambda: How it Works</a>. Each Lambda function has one access policy associated with
-        /// it. You can use the <code>AddPermission</code> API to add a permission to the policy.
-        /// You have one access policy but it can have multiple permission statements.
+        /// Adds a permission to the resource policy associated with the specified AWS Lambda
+        /// function. You use resource policies to grant permissions to event sources that use
+        /// "push" model. In "push" model, event sources (such as Amazon S3 and custom applications)
+        /// invoke your Lambda function. Each permission you add to the resource policy allows
+        /// an event source, permission to invoke the Lambda function. 
         /// 
+        ///  
+        /// <para>
+        /// For information about the push model, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
+        /// Lambda: How it Works</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using versioning feature (see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+        /// Lambda Function Versioning and Aliases</a>), a Lambda function can have multiple ARNs
+        /// that can be used to invoke the function. Note that, each permission you add to resource
+        /// policy using this API is specific to an ARN, specified using the <code>Qualifier</code>
+        /// parameter
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permission for the <code>lambda:AddPermission</code> action.
@@ -98,6 +109,54 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAlias
+
+        /// <summary>
+        /// Creates an alias to the specified Lambda function version. For more information, see
+        /// <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html">Introduction
+        /// to AWS Lambda Aliases</a>
+        /// 
+        ///  
+        /// <para>
+        /// This requires permission for the lambda:CreateAlias action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAlias service method.</param>
+        /// 
+        /// <returns>The response from the CreateAlias service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        CreateAliasResponse CreateAlias(CreateAliasRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -182,7 +241,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the CreateFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
-        /// 
+        /// You have exceeded your maximum total code size per account. <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
@@ -214,6 +273,46 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<CreateFunctionResponse> CreateFunctionAsync(CreateFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAlias
+
+        /// <summary>
+        /// Deletes specified Lambda function alias. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html">Introduction
+        /// to AWS Lambda Aliases</a>
+        /// 
+        ///  
+        /// <para>
+        /// This requires permission for the lambda:DeleteAlias action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlias service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAlias service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        DeleteAliasResponse DeleteAlias(DeleteAliasRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -269,8 +368,18 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
-        /// When you delete a function the associated access policy is also deleted. You will
+        /// If you don't specify a function version, AWS Lambda will delete the function, including
+        /// all its versions, and any aliases pointing to the function versions.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete a function the associated resource policy is also deleted. You will
         /// need to delete the event source mappings explicitly.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about function versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+        /// Lambda Function Versioning and Aliases</a>.
         /// </para>
         ///  
         /// <para>
@@ -280,6 +389,14 @@ namespace Amazon.Lambda
         /// <param name="functionName">The Lambda function to delete.  You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
         /// 
         /// <returns>The response from the DeleteFunction service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
         /// in the request does not exist.
@@ -297,8 +414,18 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
-        /// When you delete a function the associated access policy is also deleted. You will
+        /// If you don't specify a function version, AWS Lambda will delete the function, including
+        /// all its versions, and any aliases pointing to the function versions.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete a function the associated resource policy is also deleted. You will
         /// need to delete the event source mappings explicitly.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about function versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+        /// Lambda Function Versioning and Aliases</a>.
         /// </para>
         ///  
         /// <para>
@@ -308,6 +435,14 @@ namespace Amazon.Lambda
         /// <param name="request">Container for the necessary parameters to execute the DeleteFunction service method.</param>
         /// 
         /// <returns>The response from the DeleteFunction service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
         /// in the request does not exist.
@@ -330,6 +465,51 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAlias
+
+        /// <summary>
+        /// Returns the specified alias information such as the alias ARN, description, and function
+        /// version it is pointing to. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html">Introduction
+        /// to AWS Lambda Aliases</a>
+        /// 
+        ///  
+        /// <para>
+        /// This requires permission for the lambda:GetAlias action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAlias service method.</param>
+        /// 
+        /// <returns>The response from the GetAlias service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        GetAliasResponse GetAlias(GetAliasRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetAliasResponse> GetAliasAsync(GetAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -387,12 +567,25 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
+        /// Using the optional <code>Qualifier</code> parameter, you can specify a specific function
+        /// version for which you want this information. If you don't specify this parameter,
+        /// the API uses unqualified function ARN which return information about the $LATEST version
+        /// of the Lambda function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+        /// Lambda Function Versioning and Aliases</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// This operation requires permission for the <code>lambda:GetFunction</code> action.
         /// </para>
         /// </summary>
         /// <param name="functionName">The Lambda function name.   You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
         /// 
         /// <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
         /// in the request does not exist.
@@ -413,12 +606,25 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
+        /// Using the optional <code>Qualifier</code> parameter, you can specify a specific function
+        /// version for which you want this information. If you don't specify this parameter,
+        /// the API uses unqualified function ARN which return information about the $LATEST version
+        /// of the Lambda function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+        /// Lambda Function Versioning and Aliases</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// This operation requires permission for the <code>lambda:GetFunction</code> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFunction service method.</param>
         /// 
         /// <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
         /// in the request does not exist.
@@ -452,6 +658,14 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
+        /// You can use the optional <code>Qualifier</code> parameter to retrieve configuration
+        /// information for a specific Lambda function version. If you don't provide it, the API
+        /// returns information about the $LATEST version of the function. For more information
+        /// about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+        /// Lambda Function Versioning and Aliases</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// This operation requires permission for the <code>lambda:GetFunctionConfiguration</code>
         /// operation.
         /// </para>
@@ -459,6 +673,11 @@ namespace Amazon.Lambda
         /// <param name="functionName">The name of the Lambda function for which you want to retrieve the configuration information.  You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
         /// 
         /// <returns>The response from the GetFunctionConfiguration service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
         /// in the request does not exist.
@@ -477,6 +696,14 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
+        /// You can use the optional <code>Qualifier</code> parameter to retrieve configuration
+        /// information for a specific Lambda function version. If you don't provide it, the API
+        /// returns information about the $LATEST version of the function. For more information
+        /// about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+        /// Lambda Function Versioning and Aliases</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// This operation requires permission for the <code>lambda:GetFunctionConfiguration</code>
         /// operation.
         /// </para>
@@ -484,6 +711,11 @@ namespace Amazon.Lambda
         /// <param name="request">Container for the necessary parameters to execute the GetFunctionConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetFunctionConfiguration service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
         /// in the request does not exist.
@@ -512,9 +744,13 @@ namespace Amazon.Lambda
         #region  GetPolicy
 
         /// <summary>
-        /// Returns the access policy, containing a list of permissions granted via the <code>AddPermission</code>
-        /// API, associated with the specified bucket.
+        /// Returns the resource policy, containing a list of permissions that apply to a specific
+        /// to an ARN that you specify via the <code>Qualifier</code> paramter. 
         /// 
+        ///  
+        /// <para>
+        /// For informration about adding permissions, see <a>AddPermission</a>.
+        /// </para>
         ///  
         /// <para>
         /// You need permission for the <code>lambda:GetPolicy action.</code>
@@ -523,6 +759,11 @@ namespace Amazon.Lambda
         /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
         /// 
         /// <returns>The response from the GetPolicy service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
         /// in the request does not exist.
@@ -551,8 +792,22 @@ namespace Amazon.Lambda
         #region  Invoke
 
         /// <summary>
-        /// Invokes a specified Lambda function. 
+        /// Invokes a specific Lambda function version. 
         /// 
+        ///  
+        /// <para>
+        /// If you don't provide the <code>Qualifier</code> parameter, it uses the unqualified
+        /// function ARN which results in invocation of the $LATEST version of the Lambda function
+        /// (when you create a Lambda function, the $LATEST is the version). The AWS Lambda versioning
+        /// and aliases feature allows you to publish multiple versions of a Lambda function and
+        /// also create aliases for each function version. So each your Lambda function version
+        /// can be invoked using multiple ARNs. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+        /// Lambda Function Versioning and Aliases</a>. Using the <code>Qualifier</code> parameter,
+        /// you can specify a function version or alias name to invoke specific function version.
+        /// If you specify function version, the API uses the qualified function ARN to invoke
+        /// a specific function version. If you specify alias name, the API uses the alias ARN
+        /// to invoke the function version to which the alias points.
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permission for the <code>lambda:InvokeFunction</code> action.
@@ -561,11 +816,17 @@ namespace Amazon.Lambda
         /// <param name="request">Container for the necessary parameters to execute the Invoke service method.</param>
         /// 
         /// <returns>The response from the Invoke service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidRequestContentException">
         /// The request body could not be parsed as JSON.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
-        /// 
+        /// The request payload exceeded the <code>Invoke</code> request body JSON input limit.
+        /// For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -578,7 +839,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.UnsupportedMediaTypeException">
-        /// 
+        /// The content type of the <code>Invoke</code> request body is not JSON.
         /// </exception>
         InvokeResponse Invoke(InvokeRequest request);
 
@@ -635,6 +896,52 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAliases
+
+        /// <summary>
+        /// Returns list of aliases created for a Lambda function. For each alias, the response
+        /// includes information such as the alias ARN, description, alias name, and the function
+        /// version to which it points. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html">Introduction
+        /// to AWS Lambda Aliases</a>
+        /// 
+        ///  
+        /// <para>
+        /// This requires permission for the lambda:ListAliases action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAliases service method.</param>
+        /// 
+        /// <returns>The response from the ListAliases service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        ListAliasesResponse ListAliases(ListAliasesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAliases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAliases operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -745,11 +1052,96 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  ListVersionsByFunction
+
+        /// <summary>
+        /// List all versions of a function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVersionsByFunction service method.</param>
+        /// 
+        /// <returns>The response from the ListVersionsByFunction service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        ListVersionsByFunctionResponse ListVersionsByFunction(ListVersionsByFunctionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVersionsByFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVersionsByFunction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListVersionsByFunctionResponse> ListVersionsByFunctionAsync(ListVersionsByFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PublishVersion
+
+        /// <summary>
+        /// Publishes a version of your function from the current snapshot of HEAD. That is, AWS
+        /// Lambda takes a snapshot of the function code and configuration information from HEAD
+        /// and publishes a new version. The code and <code>handler</code> of this specific Lambda
+        /// function version cannot be modified after publication, but you can modify the configuration
+        /// information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishVersion service method.</param>
+        /// 
+        /// <returns>The response from the PublishVersion service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
+        /// You have exceeded your maximum total code size per account. <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        PublishVersionResponse PublishVersion(PublishVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PublishVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PublishVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PublishVersionResponse> PublishVersionAsync(PublishVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RemovePermission
 
         /// <summary>
-        /// You can remove individual permissions from an access policy associated with a Lambda
-        /// function by providing a Statement ID. 
+        /// You can remove individual permissions from an resource policy associated with a Lambda
+        /// function by providing a statement ID that you provided when you addded the permission.
+        /// The API removes corresponding permission that is associated with the specific ARN
+        /// identified by the <code>Qualifier</code> parameter.
         /// 
         ///  
         /// <para>
@@ -764,6 +1156,11 @@ namespace Amazon.Lambda
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission service method.</param>
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
         /// in the request does not exist.
@@ -789,6 +1186,51 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  UpdateAlias
+
+        /// <summary>
+        /// Using this API you can update function version to which the alias points to and alias
+        /// description. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html">Introduction
+        /// to AWS Lambda Aliases</a>
+        /// 
+        ///  
+        /// <para>
+        /// This requires permission for the lambda:UpdateAlias action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAlias service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAlias service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        UpdateAliasResponse UpdateAlias(UpdateAliasRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateEventSourceMapping
 
         /// <summary>
@@ -810,6 +1252,9 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -853,7 +1298,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the UpdateFunctionCode service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
-        /// 
+        /// You have exceeded your maximum total code size per account. <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM

@@ -60,6 +60,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.BundleId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ComputerName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ComputerName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DirectoryId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -84,6 +90,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RootVolumeEncryptionEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RootVolumeEncryptionEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -100,6 +112,18 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UserName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UserVolumeEncryptionEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UserVolumeEncryptionEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeEncryptionKey", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VolumeEncryptionKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WorkspaceId", targetDepth))

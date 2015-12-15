@@ -55,8 +55,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Instantiates Listener with the parameterized properties
         /// </summary>
         /// <param name="protocol">The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</param>
-        /// <param name="loadBalancerPort">The port on which the load balancer is listening: 25, 80, 443, 465, 587, or 1024-65535.</param>
-        /// <param name="instancePort">The port on which the instance server is listening - 25, 80, 443, 465, 587, or 1024-65535.</param>
+        /// <param name="loadBalancerPort">The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</param>
+        /// <param name="instancePort">The port on which the instance is listening.</param>
         public Listener(string protocol, int loadBalancerPort, int instancePort)
         {
             _protocol = protocol;
@@ -67,7 +67,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property InstancePort. 
         /// <para>
-        /// The port on which the instance server is listening - 25, 80, 443, 465, 587, or 1024-65535.
+        /// The port on which the instance is listening.
         /// </para>
         /// </summary>
         public int InstancePort
@@ -120,7 +120,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerPort. 
         /// <para>
-        /// The port on which the load balancer is listening: 25, 80, 443, 465, 587, or 1024-65535.
+        /// The port on which the load balancer is listening. On EC2-VPC, you can specify any
+        /// port from the range 1-65535. On EC2-Classic, you can specify any port from the following
+        /// list: 25, 80, 443, 465, 587, 1024-65535.
         /// </para>
         /// </summary>
         public int LoadBalancerPort

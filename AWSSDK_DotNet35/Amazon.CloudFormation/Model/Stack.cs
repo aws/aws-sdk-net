@@ -68,7 +68,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Time at which the stack was created.
+        /// The time at which the stack was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -86,7 +86,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// User defined description associated with the stack.
+        /// A user-defined description associated with the stack.
         /// </para>
         /// </summary>
         public string Description

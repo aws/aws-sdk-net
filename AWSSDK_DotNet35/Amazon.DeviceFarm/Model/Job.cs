@@ -36,6 +36,7 @@ namespace Amazon.DeviceFarm.Model
         private Counters _counters;
         private DateTime? _created;
         private Device _device;
+        private DeviceMinutes _deviceMinutes;
         private string _message;
         private string _name;
         private ExecutionResult _result;
@@ -111,6 +112,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetDevice()
         {
             return this._device != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceMinutes. 
+        /// <para>
+        /// Represents the total (metered or unmetered) minutes used by the job.
+        /// </para>
+        /// </summary>
+        public DeviceMinutes DeviceMinutes
+        {
+            get { return this._deviceMinutes; }
+            set { this._deviceMinutes = value; }
+        }
+
+        // Check to see if DeviceMinutes property is set
+        internal bool IsSetDeviceMinutes()
+        {
+            return this._deviceMinutes != null;
         }
 
         /// <summary>

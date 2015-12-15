@@ -48,6 +48,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetCopyTags())
+                {
+                    request.Parameters.Add("CopyTags", StringUtils.FromBool(publicRequest.CopyTags));
+                }
                 if(publicRequest.IsSetSourceDBSnapshotIdentifier())
                 {
                     request.Parameters.Add("SourceDBSnapshotIdentifier", StringUtils.FromString(publicRequest.SourceDBSnapshotIdentifier));

@@ -48,7 +48,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/2015-03-31/functions/{FunctionName}/versions/HEAD/configuration";
+            string uriResourcePath = "/2015-03-31/functions/{FunctionName}/configuration";
             uriResourcePath = uriResourcePath.Replace("{FunctionName}", publicRequest.IsSetFunctionName() ? StringUtils.FromString(publicRequest.FunctionName) : string.Empty);
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))

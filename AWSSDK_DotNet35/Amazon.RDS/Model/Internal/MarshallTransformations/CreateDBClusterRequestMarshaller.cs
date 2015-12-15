@@ -89,6 +89,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
                 }
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
+                }
                 if(publicRequest.IsSetMasterUsername())
                 {
                     request.Parameters.Add("MasterUsername", StringUtils.FromString(publicRequest.MasterUsername));
@@ -112,6 +116,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPreferredMaintenanceWindow())
                 {
                     request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(publicRequest.PreferredMaintenanceWindow));
+                }
+                if(publicRequest.IsSetStorageEncrypted())
+                {
+                    request.Parameters.Add("StorageEncrypted", StringUtils.FromBool(publicRequest.StorageEncrypted));
                 }
                 if(publicRequest.IsSetTags())
                 {

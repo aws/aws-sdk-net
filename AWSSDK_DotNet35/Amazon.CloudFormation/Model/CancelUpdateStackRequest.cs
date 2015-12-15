@@ -30,9 +30,9 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the CancelUpdateStack operation.
     /// Cancels an update on the specified stack. If the call completes successfully, the
-    /// stack will roll back the update and revert to the previous stack configuration.
+    /// stack rolls back the update and reverts to the previous stack configuration.
     /// 
-    ///  <note>Only stacks that are in the UPDATE_IN_PROGRESS state can be canceled.</note>
+    ///  <note>You can cancel only stacks that are in the UPDATE_IN_PROGRESS state.</note>
     /// </summary>
     public partial class CancelUpdateStackRequest : AmazonCloudFormationRequest
     {

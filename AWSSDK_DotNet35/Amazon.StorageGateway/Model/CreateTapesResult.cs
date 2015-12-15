@@ -37,7 +37,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property TapeARNs. 
         /// <para>
-        /// A list of unique Amazon Resource Named (ARN) the represents the virtual tapes that
+        /// A list of unique Amazon Resource Named (ARN) that represents the virtual tapes that
         /// were created.
         /// </para>
         /// </summary>

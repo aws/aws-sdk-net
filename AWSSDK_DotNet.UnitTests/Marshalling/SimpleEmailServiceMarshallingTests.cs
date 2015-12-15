@@ -44,6 +44,102 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SimpleEmailService")]
+        public void CloneReceiptRuleSetMarshallTest()
+        {
+            var operation = service_model.FindOperation("CloneReceiptRuleSet");
+
+            var request = InstantiateClassGenerator.Execute<CloneReceiptRuleSetRequest>();
+            var marshaller = new CloneReceiptRuleSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CloneReceiptRuleSetResponseUnmarshaller.Instance.Unmarshall(context)
+                as CloneReceiptRuleSetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void CreateReceiptFilterMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateReceiptFilter");
+
+            var request = InstantiateClassGenerator.Execute<CreateReceiptFilterRequest>();
+            var marshaller = new CreateReceiptFilterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateReceiptFilterResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateReceiptFilterResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void CreateReceiptRuleMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateReceiptRule");
+
+            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleRequest>();
+            var marshaller = new CreateReceiptRuleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateReceiptRuleResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateReceiptRuleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void CreateReceiptRuleSetMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateReceiptRuleSet");
+
+            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleSetRequest>();
+            var marshaller = new CreateReceiptRuleSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateReceiptRuleSetResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateReceiptRuleSetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
         public void DeleteIdentityMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteIdentity");
@@ -92,6 +188,78 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SimpleEmailService")]
+        public void DeleteReceiptFilterMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteReceiptFilter");
+
+            var request = InstantiateClassGenerator.Execute<DeleteReceiptFilterRequest>();
+            var marshaller = new DeleteReceiptFilterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteReceiptFilterResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteReceiptFilterResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void DeleteReceiptRuleMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteReceiptRule");
+
+            var request = InstantiateClassGenerator.Execute<DeleteReceiptRuleRequest>();
+            var marshaller = new DeleteReceiptRuleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteReceiptRuleResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteReceiptRuleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void DeleteReceiptRuleSetMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteReceiptRuleSet");
+
+            var request = InstantiateClassGenerator.Execute<DeleteReceiptRuleSetRequest>();
+            var marshaller = new DeleteReceiptRuleSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteReceiptRuleSetResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteReceiptRuleSetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
         public void DeleteVerifiedEmailAddressMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteVerifiedEmailAddress");
@@ -103,6 +271,78 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void DescribeActiveReceiptRuleSetMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeActiveReceiptRuleSet");
+
+            var request = InstantiateClassGenerator.Execute<DescribeActiveReceiptRuleSetRequest>();
+            var marshaller = new DescribeActiveReceiptRuleSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeActiveReceiptRuleSetResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeActiveReceiptRuleSetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void DescribeReceiptRuleMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeReceiptRule");
+
+            var request = InstantiateClassGenerator.Execute<DescribeReceiptRuleRequest>();
+            var marshaller = new DescribeReceiptRuleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeReceiptRuleResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeReceiptRuleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void DescribeReceiptRuleSetMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeReceiptRuleSet");
+
+            var request = InstantiateClassGenerator.Execute<DescribeReceiptRuleSetRequest>();
+            var marshaller = new DescribeReceiptRuleSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeReceiptRuleSetResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeReceiptRuleSetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -303,6 +543,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SimpleEmailService")]
+        public void ListReceiptFiltersMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListReceiptFilters");
+
+            var request = InstantiateClassGenerator.Execute<ListReceiptFiltersRequest>();
+            var marshaller = new ListReceiptFiltersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListReceiptFiltersResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListReceiptFiltersResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void ListReceiptRuleSetsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListReceiptRuleSets");
+
+            var request = InstantiateClassGenerator.Execute<ListReceiptRuleSetsRequest>();
+            var marshaller = new ListReceiptRuleSetsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListReceiptRuleSetsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListReceiptRuleSetsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
         public void ListVerifiedEmailAddressesMarshallTest()
         {
             var operation = service_model.FindOperation("ListVerifiedEmailAddresses");
@@ -351,6 +639,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SimpleEmailService")]
+        public void ReorderReceiptRuleSetMarshallTest()
+        {
+            var operation = service_model.FindOperation("ReorderReceiptRuleSet");
+
+            var request = InstantiateClassGenerator.Execute<ReorderReceiptRuleSetRequest>();
+            var marshaller = new ReorderReceiptRuleSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ReorderReceiptRuleSetResponseUnmarshaller.Instance.Unmarshall(context)
+                as ReorderReceiptRuleSetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void SendBounceMarshallTest()
+        {
+            var operation = service_model.FindOperation("SendBounce");
+
+            var request = InstantiateClassGenerator.Execute<SendBounceRequest>();
+            var marshaller = new SendBounceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = SendBounceResponseUnmarshaller.Instance.Unmarshall(context)
+                as SendBounceResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
         public void SendEmailMarshallTest()
         {
             var operation = service_model.FindOperation("SendEmail");
@@ -390,6 +726,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = SendRawEmailResponseUnmarshaller.Instance.Unmarshall(context)
                 as SendRawEmailResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void SetActiveReceiptRuleSetMarshallTest()
+        {
+            var operation = service_model.FindOperation("SetActiveReceiptRuleSet");
+
+            var request = InstantiateClassGenerator.Execute<SetActiveReceiptRuleSetRequest>();
+            var marshaller = new SetActiveReceiptRuleSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = SetActiveReceiptRuleSetResponseUnmarshaller.Instance.Unmarshall(context)
+                as SetActiveReceiptRuleSetResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -462,6 +822,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = SetIdentityNotificationTopicResponseUnmarshaller.Instance.Unmarshall(context)
                 as SetIdentityNotificationTopicResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void SetReceiptRulePositionMarshallTest()
+        {
+            var operation = service_model.FindOperation("SetReceiptRulePosition");
+
+            var request = InstantiateClassGenerator.Execute<SetReceiptRulePositionRequest>();
+            var marshaller = new SetReceiptRulePositionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = SetReceiptRulePositionResponseUnmarshaller.Instance.Unmarshall(context)
+                as SetReceiptRulePositionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void UpdateReceiptRuleMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateReceiptRule");
+
+            var request = InstantiateClassGenerator.Execute<UpdateReceiptRuleRequest>();
+            var marshaller = new UpdateReceiptRuleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = UpdateReceiptRuleResponseUnmarshaller.Instance.Unmarshall(context)
+                as UpdateReceiptRuleResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

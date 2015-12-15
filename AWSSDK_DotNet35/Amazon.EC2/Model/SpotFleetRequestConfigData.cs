@@ -32,6 +32,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class SpotFleetRequestConfigData
     {
+        private AllocationStrategy _allocationStrategy;
         private string _clientToken;
         private string _iamFleetRole;
         private List<SpotFleetLaunchSpecification> _launchSpecifications = new List<SpotFleetLaunchSpecification>();
@@ -40,6 +41,25 @@ namespace Amazon.EC2.Model
         private bool? _terminateInstancesWithExpiration;
         private DateTime? _validFrom;
         private DateTime? _validUntil;
+
+        /// <summary>
+        /// Gets and sets the property AllocationStrategy. 
+        /// <para>
+        /// Determines how to allocate the target capacity across the Spot pools specified by
+        /// the Spot fleet request. The default is <code>lowestPrice</code>.
+        /// </para>
+        /// </summary>
+        public AllocationStrategy AllocationStrategy
+        {
+            get { return this._allocationStrategy; }
+            set { this._allocationStrategy = value; }
+        }
+
+        // Check to see if AllocationStrategy property is set
+        internal bool IsSetAllocationStrategy()
+        {
+            return this._allocationStrategy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -64,8 +84,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IamFleetRole. 
         /// <para>
-        /// Grants the Spot fleet service permission to terminate instances on your behalf when
-        /// you cancel a Spot fleet request using <a>CancelSpotFleetRequests</a> or when the Spot
+        /// Grants the Spot fleet permission to terminate Spot instances on your behalf when you
+        /// cancel its Spot fleet request using <a>CancelSpotFleetRequests</a> or when the Spot
         /// fleet request expires, if you set <code>terminateInstancesWithExpiration</code>.
         /// </para>
         /// </summary>
@@ -84,7 +104,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchSpecifications. 
         /// <para>
-        /// Information about the launch specifications for the instances.
+        /// Information about the launch specifications for the Spot fleet request.
         /// </para>
         /// </summary>
         public List<SpotFleetLaunchSpecification> LaunchSpecifications
@@ -140,8 +160,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TerminateInstancesWithExpiration. 
         /// <para>
-        /// Indicates whether running instances should be terminated when the Spot fleet request
-        /// expires.
+        /// Indicates whether running Spot instances should be terminated when the Spot fleet
+        /// request expires.
         /// </para>
         /// </summary>
         public bool TerminateInstancesWithExpiration
@@ -179,7 +199,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ValidUntil. 
         /// <para>
         /// The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// At this point, no new Spot Instance requests are placed or enabled to fulfill the
+        /// At this point, no new Spot instance requests are placed or enabled to fulfill the
         /// request.
         /// </para>
         /// </summary>

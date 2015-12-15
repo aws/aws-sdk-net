@@ -66,10 +66,28 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.DirectoryId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RootVolumeEncryptionEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RootVolumeEncryptionEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UserName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UserName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UserVolumeEncryptionEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UserVolumeEncryptionEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VolumeEncryptionKey", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VolumeEncryptionKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

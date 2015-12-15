@@ -28,24 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>CreateDBClusterParameterGroup</a>
-    /// action. 
     /// 
-    ///  
-    /// <para>
-    /// This data type is used as a request parameter in the <a>DeleteDBClusterParameterGroup</a>
-    /// action, and as a response element in the <a>DescribeDBClusterParameterGroups</a> action.
-    /// 
-    /// </para>
     /// </summary>
     public partial class CreateDBClusterParameterGroupResult : AmazonWebServiceResponse
     {
-        private DBClusterParameterGroup _response;
+        private DBClusterParameterGroup _dbClusterParameterGroup;
 
+        /// <summary>
+        /// Gets and sets the property DBClusterParameterGroup.
+        /// </summary>
         public DBClusterParameterGroup DBClusterParameterGroup
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._dbClusterParameterGroup; }
+            set { this._dbClusterParameterGroup = value; }
         }
+
+        // Check to see if DBClusterParameterGroup property is set
+        internal bool IsSetDBClusterParameterGroup()
+        {
+            return this._dbClusterParameterGroup != null;
+        }
+
     }
 }

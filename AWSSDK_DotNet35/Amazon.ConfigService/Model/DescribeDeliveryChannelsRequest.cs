@@ -37,7 +37,7 @@ namespace Amazon.ConfigService.Model
     /// <para>
     /// Currently, you can specify only one delivery channel per account.
     /// </para>
-    /// </note>
+    ///  </note>
     /// </summary>
     public partial class DescribeDeliveryChannelsRequest : AmazonConfigServiceRequest
     {

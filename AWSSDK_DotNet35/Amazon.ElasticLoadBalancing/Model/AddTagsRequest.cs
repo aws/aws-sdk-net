@@ -39,8 +39,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a>
-    /// in the <i>Elastic Load Balancing Developer Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/add-remove-tags.html">Tag
+    /// Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class AddTagsRequest : AmazonElasticLoadBalancingRequest

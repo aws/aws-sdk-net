@@ -28,23 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the following actions: 
     /// 
-    ///  <ul> <li> <a>CreateDBCluster</a> </li> <li> <a>DeleteDBCluster</a> </li> <li> <a>FailoverDBCluster</a>
-    /// </li> <li> <a>ModifyDBCluster</a> </li> <li> <a>RestoreDBClusterFromSnapshot</a> </li>
-    /// </ul> 
-    /// <para>
-    /// This data type is used as a response element in the <a>DescribeDBClusters</a> action.
-    /// </para>
     /// </summary>
     public partial class DeleteDBClusterResult : AmazonWebServiceResponse
     {
-        private DBCluster _response;
+        private DBCluster _dbCluster;
 
+        /// <summary>
+        /// Gets and sets the property DBCluster.
+        /// </summary>
         public DBCluster DBCluster
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._dbCluster; }
+            set { this._dbCluster = value; }
         }
+
+        // Check to see if DBCluster property is set
+        internal bool IsSetDBCluster()
+        {
+            return this._dbCluster != null;
+        }
+
     }
 }

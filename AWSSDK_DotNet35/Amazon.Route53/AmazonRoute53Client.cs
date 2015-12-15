@@ -200,7 +200,7 @@ namespace Amazon.Route53
 
         protected override AbstractAWSSigner CreateSigner()
         {
-            return new AWS3Signer();
+            return new AWS4Signer();
         }
 
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
@@ -228,7 +228,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        ///  To associate a VPC with an hosted zone, send a <code>POST</code> request to the <code>2013-04-01/hostedzone/<i>hosted
+        /// To associate a VPC with an hosted zone, send a <code>POST</code> request to the <code>2013-04-01/hostedzone/<i>hosted
         /// zone ID</i>/associatevpc</code> resource. The request body must include an XML document
         /// with a <code>AssociateVPCWithHostedZoneRequest</code> element. The response returns
         /// the <code>AssociateVPCWithHostedZoneResponse</code> element that contains <code>ChangeInfo</code>
@@ -247,16 +247,19 @@ namespace Amazon.Route53
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidVPCIdException">
-        /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Route
-        /// 53 returns this error when the VPC specified by <code>VPCId</code> does not belong
-        /// to you.
+        /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Amazon
+        /// Route 53 returns this error when the VPC specified by <code>VPCId</code> does not
+        /// belong to you.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
+        /// The limits specified for a resource have been exceeded.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PublicZoneVPCAssociationException">
         /// The hosted zone you are trying to associate VPC with doesn't have any VPC association.
-        /// Route 53 currently doesn't support associate a VPC with a public hosted zone.
+        /// Amazon Route 53 currently doesn't support associate a VPC with a public hosted zone.
         /// </exception>
         public AssociateVPCWithHostedZoneResponse AssociateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest request)
         {
@@ -311,38 +314,28 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// Changes are a list of change items and are considered transactional. For more information
-        /// on transactional changes, also known as change batches, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API">Creating,
-        /// Changing, and Deleting Resource Record Sets Using the Route 53 API</a> in the <i>Amazon
-        /// Route 53 Developer Guide</i>.
+        /// on transactional changes, also known as change batches, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/">POST
+        /// ChangeResourceRecordSets</a> in the <i>Amazon Route 53 API Reference</i>.
         /// </para>
         ///  <important>Due to the nature of transactional changes, you cannot delete the same
         /// resource record set more than once in a single change batch. If you attempt to delete
-        /// the same change batch more than once, Route 53 returns an <code>InvalidChangeBatch</code>
+        /// the same change batch more than once, Amazon Route 53 returns an <code>InvalidChangeBatch</code>
         /// error.</important> 
         /// <para>
         /// In response to a <code>ChangeResourceRecordSets</code> request, your DNS data is changed
-        /// on all Route 53 DNS servers. Initially, the status of a change is <code>PENDING</code>.
-        /// This means the change has not yet propagated to all the authoritative Route 53 DNS
-        /// servers. When the change is propagated to all hosts, the change returns a status of
-        /// <code>INSYNC</code>.
+        /// on all Amazon Route 53 DNS servers. Initially, the status of a change is <code>PENDING</code>.
+        /// This means the change has not yet propagated to all the authoritative Amazon Route
+        /// 53 DNS servers. When the change is propagated to all hosts, the change returns a status
+        /// of <code>INSYNC</code>.
         /// </para>
         ///  
         /// <para>
         /// Note the following limitations on a <code>ChangeResourceRecordSets</code> request:
         /// </para>
-        ///  
-        /// <para>
-        /// - A request cannot contain more than 100 Change elements.
-        /// </para>
-        ///  
-        /// <para>
-        /// - A request cannot contain more than 1000 ResourceRecord elements.
-        /// </para>
-        ///  
-        /// <para>
-        /// The sum of the number of characters (including spaces) in all <code>Value</code> elements
-        /// in a request cannot exceed 32,000 characters.
-        /// </para>
+        ///  <ul> <li>A request cannot contain more than 100 Change elements.</li> <li> A request
+        /// cannot contain more than 1000 ResourceRecord elements.</li> <li>The sum of the number
+        /// of characters (including spaces) in all <code>Value</code> elements in a request cannot
+        /// exceed 32,000 characters.</li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ChangeResourceRecordSets service method.</param>
         /// 
@@ -362,7 +355,7 @@ namespace Amazon.Route53
         /// 
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
-        /// The request was rejected because Route 53 was still processing a prior request.
+        /// The request was rejected because Amazon Route 53 was still processing a prior request.
         /// </exception>
         public ChangeResourceRecordSetsResponse ChangeResourceRecordSets(ChangeResourceRecordSetsRequest request)
         {
@@ -424,7 +417,7 @@ namespace Amazon.Route53
         /// 
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
-        /// The request was rejected because Route 53 was still processing a prior request.
+        /// The request was rejected because Amazon Route 53 was still processing a prior request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.ThrottlingException">
         /// 
@@ -478,7 +471,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        ///  To create a new health check, send a <code>POST</code> request to the <code>2013-04-01/healthcheck</code>
+        /// To create a new health check, send a <code>POST</code> request to the <code>2013-04-01/healthcheck</code>
         /// resource. The request body must include an XML document with a <code>CreateHealthCheckRequest</code>
         /// element. The response returns the <code>CreateHealthCheckResponse</code> element that
         /// contains metadata about the health check.
@@ -488,8 +481,8 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the CreateHealthCheck service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.HealthCheckAlreadyExistsException">
-        /// The health check you are trying to create already exists. Route 53 returns this error
-        /// when a health check has already been created with the specified <code>CallerReference</code>.
+        /// The health check you are trying to create already exists. Amazon Route 53 returns
+        /// this error when a health check has already been created with the specified <code>CallerReference</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
@@ -553,17 +546,18 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        /// Route 53 automatically creates a default SOA record and four NS records for the zone.
-        /// The NS records in the hosted zone are the name servers you give your registrar to
-        /// delegate your domain to. For more information about SOA and NS records, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
-        /// and SOA Records that Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route
-        /// 53 Developer Guide</i>.
+        /// Amazon Route 53 automatically creates a default SOA record and four NS records for
+        /// the zone. The NS records in the hosted zone are the name servers you give your registrar
+        /// to delegate your domain to. For more information about SOA and NS records, see <a
+        /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
+        /// and SOA Records that Amazon Route 53 Creates for a Hosted Zone</a> in the <i>Amazon
+        /// Route 53 Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// When you create a zone, its initial status is <code>PENDING</code>. This means that
         /// it is not yet available on all DNS servers. The status of the zone changes to <code>INSYNC</code>
-        /// when the NS and SOA records are available on all Route 53 DNS servers. 
+        /// when the NS and SOA records are available on all Amazon Route 53 DNS servers. 
         /// </para>
         ///  
         /// <para>
@@ -579,18 +573,18 @@ namespace Amazon.Route53
         /// 
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.DelegationSetNotAvailableException">
-        /// Route 53 allows some duplicate domain names, but there is a maximum number of duplicate
-        /// names. This error indicates that you have reached that maximum. If you want to create
-        /// another hosted zone with the same name and Route 53 generates this error, you can
-        /// request an increase to the limit on the <a href="http://aws.amazon.com/route53-request/">Contact
+        /// Amazon Route 53 allows some duplicate domain names, but there is a maximum number
+        /// of duplicate names. This error indicates that you have reached that maximum. If you
+        /// want to create another hosted zone with the same name and Amazon Route 53 generates
+        /// this error, you can request an increase to the limit on the <a href="http://aws.amazon.com/route53-request/">Contact
         /// Us</a> page.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.DelegationSetNotReusableException">
         /// The specified delegation set has not been marked as reusable.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.HostedZoneAlreadyExistsException">
-        /// The hosted zone you are trying to create already exists. Route 53 returns this error
-        /// when a hosted zone has already been created with the specified <code>CallerReference</code>.
+        /// The hosted zone you are trying to create already exists. Amazon Route 53 returns this
+        /// error when a hosted zone has already been created with the specified <code>CallerReference</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidDomainNameException">
         /// This error indicates that the specified domain name is not valid.
@@ -599,9 +593,9 @@ namespace Amazon.Route53
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidVPCIdException">
-        /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Route
-        /// 53 returns this error when the VPC specified by <code>VPCId</code> does not belong
-        /// to you.
+        /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Amazon
+        /// Route 53 returns this error when the VPC specified by <code>VPCId</code> does not
+        /// belong to you.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
         /// The specified delegation set does not exist.
@@ -660,14 +654,14 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        ///  To create a new reusable delegationSet, send a <code>POST</code> request to the <code>2013-04-01/delegationset</code>
+        /// To create a new reusable delegationSet, send a <code>POST</code> request to the <code>2013-04-01/delegationset</code>
         /// resource. The request body must include an XML document with a <code>CreateReusableDelegationSetRequest</code>
         /// element. The response returns the <code>CreateReusableDelegationSetResponse</code>
         /// element that contains metadata about the delegationSet. 
         /// </para>
         ///  
         /// <para>
-        ///  If the optional parameter HostedZoneId is specified, it marks the delegationSet associated
+        /// If the optional parameter HostedZoneId is specified, it marks the delegationSet associated
         /// with that particular hosted zone as reusable. 
         /// </para>
         /// </summary>
@@ -682,10 +676,10 @@ namespace Amazon.Route53
         /// The specified delegation set has already been marked as reusable.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.DelegationSetNotAvailableException">
-        /// Route 53 allows some duplicate domain names, but there is a maximum number of duplicate
-        /// names. This error indicates that you have reached that maximum. If you want to create
-        /// another hosted zone with the same name and Route 53 generates this error, you can
-        /// request an increase to the limit on the <a href="http://aws.amazon.com/route53-request/">Contact
+        /// Amazon Route 53 allows some duplicate domain names, but there is a maximum number
+        /// of duplicate names. This error indicates that you have reached that maximum. If you
+        /// want to create another hosted zone with the same name and Amazon Route 53 generates
+        /// this error, you can request an increase to the limit on the <a href="http://aws.amazon.com/route53-request/">Contact
         /// Us</a> page.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.HostedZoneNotFoundException">
@@ -742,6 +736,239 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  CreateTrafficPolicy
+
+        /// <summary>
+        /// Creates a traffic policy, which you use to create multiple DNS resource record sets
+        /// for one domain name (such as example.com) or one subdomain name (such as www.example.com).
+        /// 
+        ///  
+        /// <para>
+        /// To create a traffic policy, send a <code>POST</code> request to the <code>2013-04-01/trafficpolicy</code>
+        /// resource. The request body must include an XML document with a <code>CreateTrafficPolicyRequest</code>
+        /// element. The response includes the <code>CreateTrafficPolicyResponse</code> element,
+        /// which contains information about the new traffic policy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficPolicy service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrafficPolicy service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidTrafficPolicyDocumentException">
+        /// The format of the traffic policy document that you specified in the <code>Document</code>
+        /// element is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.TooManyTrafficPoliciesException">
+        /// You've created the maximum number of traffic policies that can be created for the
+        /// current AWS account. You can request an increase to the limit on the <a href="http://aws.amazon.com/route53-request/">Contact
+        /// Us</a> page.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.TrafficPolicyAlreadyExistsException">
+        /// A traffic policy that has the same value for <code>Name</code> already exists.
+        /// </exception>
+        public CreateTrafficPolicyResponse CreateTrafficPolicy(CreateTrafficPolicyRequest request)
+        {
+            var marshaller = new CreateTrafficPolicyRequestMarshaller();
+            var unmarshaller = CreateTrafficPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrafficPolicyRequest,CreateTrafficPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrafficPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficPolicy operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrafficPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateTrafficPolicy(CreateTrafficPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateTrafficPolicyRequestMarshaller();
+            var unmarshaller = CreateTrafficPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateTrafficPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTrafficPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrafficPolicy.</param>
+        /// 
+        /// <returns>Returns a  CreateTrafficPolicyResult from Route53.</returns>
+        public  CreateTrafficPolicyResponse EndCreateTrafficPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTrafficPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTrafficPolicyInstance
+
+        /// <summary>
+        /// Creates resource record sets in a specified hosted zone based on the settings in a
+        /// specified traffic policy version. In addition, <code>CreateTrafficPolicyInstance</code>
+        /// associates the resource record sets with a specified domain name (such as example.com)
+        /// or subdomain name (such as www.example.com). Amazon Route 53 responds to DNS queries
+        /// for the domain or subdomain name by using the resource record sets that <code>CreateTrafficPolicyInstance</code>
+        /// created.
+        /// 
+        ///  
+        /// <para>
+        /// To create a traffic policy instance, send a <code>POST</code> request to the <code>2013-04-01/trafficpolicyinstance</code>
+        /// resource. The request body must include an XML document with a <code>CreateTrafficPolicyRequest</code>
+        /// element. The response returns the <code>CreateTrafficPolicyInstanceResponse</code>
+        /// element, which contains information about the traffic policy instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficPolicyInstance service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrafficPolicyInstance service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
+        /// No traffic policy exists with the specified ID.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.TooManyTrafficPolicyInstancesException">
+        /// You've created the maximum number of traffic policy instances that can be created
+        /// for the current AWS account. You can request an increase to the limit on the <a href="http://aws.amazon.com/route53-request/">Contact
+        /// Us</a> page.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.TrafficPolicyInstanceAlreadyExistsException">
+        /// Traffic policy instance with given Id already exists.
+        /// </exception>
+        public CreateTrafficPolicyInstanceResponse CreateTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest request)
+        {
+            var marshaller = new CreateTrafficPolicyInstanceRequestMarshaller();
+            var unmarshaller = CreateTrafficPolicyInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrafficPolicyInstanceRequest,CreateTrafficPolicyInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrafficPolicyInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficPolicyInstance operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrafficPolicyInstance
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateTrafficPolicyInstanceRequestMarshaller();
+            var unmarshaller = CreateTrafficPolicyInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateTrafficPolicyInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTrafficPolicyInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrafficPolicyInstance.</param>
+        /// 
+        /// <returns>Returns a  CreateTrafficPolicyInstanceResult from Route53.</returns>
+        public  CreateTrafficPolicyInstanceResponse EndCreateTrafficPolicyInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTrafficPolicyInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTrafficPolicyVersion
+
+        /// <summary>
+        /// Creates a new version of an existing traffic policy. When you create a new version
+        /// of a traffic policy, you specify the ID of the traffic policy that you want to update
+        /// and a JSON-formatted document that describes the new version.
+        /// 
+        ///  
+        /// <para>
+        /// You use traffic policies to create multiple DNS resource record sets for one domain
+        /// name (such as example.com) or one subdomain name (such as www.example.com).
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a new version, send a <code>POST</code> request to the <code>2013-04-01/trafficpolicy/</code>
+        /// resource. The request body includes an XML document with a <code>CreateTrafficPolicyVersionRequest</code>
+        /// element. The response returns the <code>CreateTrafficPolicyVersionResponse</code>
+        /// element, which contains information about the new version of the traffic policy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficPolicyVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrafficPolicyVersion service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to update the object at the same time that you did.
+        /// Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidTrafficPolicyDocumentException">
+        /// The format of the traffic policy document that you specified in the <code>Document</code>
+        /// element is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
+        /// No traffic policy exists with the specified ID.
+        /// </exception>
+        public CreateTrafficPolicyVersionResponse CreateTrafficPolicyVersion(CreateTrafficPolicyVersionRequest request)
+        {
+            var marshaller = new CreateTrafficPolicyVersionRequestMarshaller();
+            var unmarshaller = CreateTrafficPolicyVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrafficPolicyVersionRequest,CreateTrafficPolicyVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrafficPolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficPolicyVersion operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrafficPolicyVersion
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateTrafficPolicyVersion(CreateTrafficPolicyVersionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateTrafficPolicyVersionRequestMarshaller();
+            var unmarshaller = CreateTrafficPolicyVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateTrafficPolicyVersionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTrafficPolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrafficPolicyVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateTrafficPolicyVersionResult from Route53.</returns>
+        public  CreateTrafficPolicyVersionResponse EndCreateTrafficPolicyVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTrafficPolicyVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteHealthCheck
 
         /// <summary>
@@ -752,8 +979,8 @@ namespace Amazon.Route53
         /// associated with this health check. If resource record sets are associated with this
         /// health check, you must disassociate them before you can delete your health check.
         /// If you try to delete a health check that is associated with resource record sets,
-        /// Route 53 will deny your request with a <code>HealthCheckInUse</code> error. For information
-        /// about disassociating the records from your health check, see <a>ChangeResourceRecordSets</a>.</important>
+        /// Amazon Route 53 will deny your request with a <code>HealthCheckInUse</code> error.
+        /// For information about disassociating the records from your health check, see <a>ChangeResourceRecordSets</a>.</important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHealthCheck service method.</param>
         /// 
@@ -825,8 +1052,8 @@ namespace Amazon.Route53
         /// other than the default SOA record and NS resource record sets. If your hosted zone
         /// contains other resource record sets, you must delete them before you can delete your
         /// hosted zone. If you try to delete a hosted zone that contains other resource record
-        /// sets, Route 53 will deny your request with a <code>HostedZoneNotEmpty</code> error.
-        /// For information about deleting records from your hosted zone, see <a>ChangeResourceRecordSets</a>.</important>
+        /// sets, Amazon Route 53 will deny your request with a <code>HostedZoneNotEmpty</code>
+        /// error. For information about deleting records from your hosted zone, see <a>ChangeResourceRecordSets</a>.</important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHostedZone service method.</param>
         /// 
@@ -843,7 +1070,7 @@ namespace Amazon.Route53
         /// 
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
-        /// The request was rejected because Route 53 was still processing a prior request.
+        /// The request was rejected because Amazon Route 53 was still processing a prior request.
         /// </exception>
         public DeleteHostedZoneResponse DeleteHostedZone(DeleteHostedZoneRequest request)
         {
@@ -897,8 +1124,8 @@ namespace Amazon.Route53
         ///  <important> You can delete a reusable delegation set only if there are no associated
         /// hosted zones. If your reusable delegation set contains associated hosted zones, you
         /// must delete them before you can delete your reusable delegation set. If you try to
-        /// delete a reusable delegation set that contains associated hosted zones, Route 53 will
-        /// deny your request with a <code>DelegationSetInUse</code> error.</important>
+        /// delete a reusable delegation set that contains associated hosted zones, Amazon Route
+        /// 53 will deny your request with a <code>DelegationSetInUse</code> error.</important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReusableDelegationSet service method.</param>
         /// 
@@ -958,6 +1185,139 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  DeleteTrafficPolicy
+
+        /// <summary>
+        /// Deletes a traffic policy. To delete a traffic policy, send a <code>DELETE</code> request
+        /// to the <code>2013-04-01/trafficpolicy</code> resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrafficPolicy service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to update the object at the same time that you did.
+        /// Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
+        /// No traffic policy exists with the specified ID.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.TrafficPolicyInUseException">
+        /// One or more traffic policy instances were created by using the specified traffic policy.
+        /// </exception>
+        public DeleteTrafficPolicyResponse DeleteTrafficPolicy(DeleteTrafficPolicyRequest request)
+        {
+            var marshaller = new DeleteTrafficPolicyRequestMarshaller();
+            var unmarshaller = DeleteTrafficPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrafficPolicyRequest,DeleteTrafficPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrafficPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficPolicy operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrafficPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteTrafficPolicy(DeleteTrafficPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteTrafficPolicyRequestMarshaller();
+            var unmarshaller = DeleteTrafficPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteTrafficPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTrafficPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTrafficPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteTrafficPolicyResult from Route53.</returns>
+        public  DeleteTrafficPolicyResponse EndDeleteTrafficPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTrafficPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTrafficPolicyInstance
+
+        /// <summary>
+        /// Deletes a traffic policy instance and all of the resource record sets that Amazon
+        /// Route 53 created when you created the instance.
+        /// 
+        ///  
+        /// <para>
+        /// To delete a traffic policy instance, send a <code>DELETE</code> request to the <code>2013-04-01/trafficpolicy/<i>traffic
+        /// policy instance ID</i></code> resource.
+        /// </para>
+        ///  <important>When you delete a traffic policy instance, Amazon Route 53 also deletes
+        /// all of the resource record sets that were created when you created the traffic policy
+        /// instance.</important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficPolicyInstance service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrafficPolicyInstance service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyInstanceException">
+        /// No traffic policy instance exists with the specified ID.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
+        /// The request was rejected because Amazon Route 53 was still processing a prior request.
+        /// </exception>
+        public DeleteTrafficPolicyInstanceResponse DeleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest request)
+        {
+            var marshaller = new DeleteTrafficPolicyInstanceRequestMarshaller();
+            var unmarshaller = DeleteTrafficPolicyInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrafficPolicyInstanceRequest,DeleteTrafficPolicyInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrafficPolicyInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficPolicyInstance operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrafficPolicyInstance
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteTrafficPolicyInstanceRequestMarshaller();
+            var unmarshaller = DeleteTrafficPolicyInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteTrafficPolicyInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTrafficPolicyInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTrafficPolicyInstance.</param>
+        /// 
+        /// <returns>Returns a  DeleteTrafficPolicyInstanceResult from Route53.</returns>
+        public  DeleteTrafficPolicyInstanceResponse EndDeleteTrafficPolicyInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTrafficPolicyInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateVPCFromHostedZone
 
         /// <summary>
@@ -965,7 +1325,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        ///  To disassociate a VPC to a hosted zone, send a <code>POST</code> request to the <code>2013-04-01/hostedzone/<i>hosted
+        /// To disassociate a VPC to a hosted zone, send a <code>POST</code> request to the <code>2013-04-01/hostedzone/<i>hosted
         /// zone ID</i>/disassociatevpc</code> resource. The request body must include an XML
         /// document with a <code>DisassociateVPCFromHostedZoneRequest</code> element. The response
         /// returns the <code>DisassociateVPCFromHostedZoneResponse</code> element that contains
@@ -981,13 +1341,13 @@ namespace Amazon.Route53
         /// Some value specified in the request is invalid or the XML document is malformed.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidVPCIdException">
-        /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Route
-        /// 53 returns this error when the VPC specified by <code>VPCId</code> does not belong
-        /// to you.
+        /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Amazon
+        /// Route 53 returns this error when the VPC specified by <code>VPCId</code> does not
+        /// belong to you.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.LastVPCAssociationException">
         /// The VPC you are trying to disassociate from the hosted zone is the last the VPC that
-        /// is associated with the hosted zone. Route 53 currently doesn't support disassociate
+        /// is associated with the hosted zone. Amazon Route 53 currently doesn't support disassociate
         /// the last VPC from the hosted zone.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
@@ -1047,7 +1407,8 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// - <code>PENDING</code> indicates that the changes in this request have not replicated
-        /// to all Route 53 DNS servers. This is the initial status of all change batch requests.
+        /// to all Amazon Route 53 DNS servers. This is the initial status of all change batch
+        /// requests.
         /// </para>
         ///  
         /// <para>
@@ -1102,6 +1463,62 @@ namespace Amazon.Route53
         public  GetChangeResponse EndGetChange(IAsyncResult asyncResult)
         {
             return EndInvoke<GetChangeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetChangeDetails
+
+        /// <summary>
+        /// This action returns the status and changes of a change batch request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChangeDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetChangeDetails service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchChangeException">
+        /// 
+        /// </exception>
+        public GetChangeDetailsResponse GetChangeDetails(GetChangeDetailsRequest request)
+        {
+            var marshaller = new GetChangeDetailsRequestMarshaller();
+            var unmarshaller = GetChangeDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetChangeDetailsRequest,GetChangeDetailsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetChangeDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetChangeDetails operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetChangeDetails
+        ///         operation.</returns>
+        public IAsyncResult BeginGetChangeDetails(GetChangeDetailsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetChangeDetailsRequestMarshaller();
+            var unmarshaller = GetChangeDetailsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetChangeDetailsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetChangeDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetChangeDetails.</param>
+        /// 
+        /// <returns>Returns a  GetChangeDetailsResult from Route53.</returns>
+        public  GetChangeDetailsResponse EndGetChangeDetails(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetChangeDetailsResponse>(asyncResult);
         }
 
         #endregion
@@ -1227,8 +1644,8 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the GetHealthCheck service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.IncompatibleVersionException">
-        /// The resource you are trying to access is unsupported on this Route 53 endpoint. Please
-        /// consider using a newer endpoint or a tool that does so.
+        /// The resource you are trying to access is unsupported on this Amazon Route 53 endpoint.
+        /// Please consider using a newer endpoint or a tool that does so.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
@@ -1340,6 +1757,9 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckLastFailureReason service method.</param>
         /// 
         /// <returns>The response from the GetHealthCheckLastFailureReason service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// The health check you are trying to get or delete does not exist.
         /// </exception>
@@ -1395,6 +1815,9 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckStatus service method.</param>
         /// 
         /// <returns>The response from the GetHealthCheckStatus service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// The health check you are trying to get or delete does not exist.
         /// </exception>
@@ -1445,8 +1868,8 @@ namespace Amazon.Route53
         /// <summary>
         /// To retrieve the delegation set for a hosted zone, send a <code>GET</code> request
         /// to the <code>2013-04-01/hostedzone/<i>hosted zone ID</i></code> resource. The delegation
-        /// set is the four Route 53 name servers that were assigned to the hosted zone when you
-        /// created it.
+        /// set is the four Amazon Route 53 name servers that were assigned to the hosted zone
+        /// when you created it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHostedZone service method.</param>
         /// 
@@ -1502,8 +1925,8 @@ namespace Amazon.Route53
         #region  GetHostedZoneCount
 
         /// <summary>
-        /// To retrieve a count of all your hosted zones, send a <code>GET</code> request to
-        /// the <code>2013-04-01/hostedzonecount</code> resource.
+        /// To retrieve a count of all your hosted zones, send a <code>GET</code> request to the
+        /// <code>2013-04-01/hostedzonecount</code> resource.
         /// </summary>
         /// 
         /// <returns>The response from the GetHostedZoneCount service method, as returned by Route53.</returns>
@@ -1516,8 +1939,8 @@ namespace Amazon.Route53
         }
 
         /// <summary>
-        /// To retrieve a count of all your hosted zones, send a <code>GET</code> request to
-        /// the <code>2013-04-01/hostedzonecount</code> resource.
+        /// To retrieve a count of all your hosted zones, send a <code>GET</code> request to the
+        /// <code>2013-04-01/hostedzonecount</code> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHostedZoneCount service method.</param>
         /// 
@@ -1627,6 +2050,300 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  GetTrafficPolicy
+
+        /// <summary>
+        /// Gets information about a specific traffic policy version. To get the information,
+        /// send a <code>GET</code> request to the <code>2013-04-01/trafficpolicy</code> resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetTrafficPolicy service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
+        /// No traffic policy exists with the specified ID.
+        /// </exception>
+        public GetTrafficPolicyResponse GetTrafficPolicy(GetTrafficPolicyRequest request)
+        {
+            var marshaller = new GetTrafficPolicyRequestMarshaller();
+            var unmarshaller = GetTrafficPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetTrafficPolicyRequest,GetTrafficPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTrafficPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicy operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTrafficPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginGetTrafficPolicy(GetTrafficPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetTrafficPolicyRequestMarshaller();
+            var unmarshaller = GetTrafficPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetTrafficPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTrafficPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTrafficPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetTrafficPolicyResult from Route53.</returns>
+        public  GetTrafficPolicyResponse EndGetTrafficPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTrafficPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetTrafficPolicyInstance
+
+        /// <summary>
+        /// Gets information about a specified traffic policy instance.
+        /// 
+        ///  
+        /// <para>
+        /// To get information about the traffic policy instance, send a <code>GET</code> request
+        /// to the <code>2013-04-01/trafficpolicyinstance</code> resource.
+        /// </para>
+        ///  <note>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
+        /// request, there's a brief delay while Amazon Route 53 creates the resource record sets
+        /// that are specified in the traffic policy definition. For more information, see the
+        /// <a>State</a> response element. </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicyInstance service method.</param>
+        /// 
+        /// <returns>The response from the GetTrafficPolicyInstance service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyInstanceException">
+        /// No traffic policy instance exists with the specified ID.
+        /// </exception>
+        public GetTrafficPolicyInstanceResponse GetTrafficPolicyInstance(GetTrafficPolicyInstanceRequest request)
+        {
+            var marshaller = new GetTrafficPolicyInstanceRequestMarshaller();
+            var unmarshaller = GetTrafficPolicyInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<GetTrafficPolicyInstanceRequest,GetTrafficPolicyInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTrafficPolicyInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicyInstance operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTrafficPolicyInstance
+        ///         operation.</returns>
+        public IAsyncResult BeginGetTrafficPolicyInstance(GetTrafficPolicyInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetTrafficPolicyInstanceRequestMarshaller();
+            var unmarshaller = GetTrafficPolicyInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetTrafficPolicyInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTrafficPolicyInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTrafficPolicyInstance.</param>
+        /// 
+        /// <returns>Returns a  GetTrafficPolicyInstanceResult from Route53.</returns>
+        public  GetTrafficPolicyInstanceResponse EndGetTrafficPolicyInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTrafficPolicyInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetTrafficPolicyInstanceCount
+
+        /// <summary>
+        /// Gets the number of traffic policy instances that are associated with the current AWS
+        /// account.
+        /// 
+        ///  
+        /// <para>
+        /// To get the number of traffic policy instances, send a <code>GET</code> request to
+        /// the <code>2013-04-01/trafficpolicyinstancecount</code> resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicyInstanceCount service method.</param>
+        /// 
+        /// <returns>The response from the GetTrafficPolicyInstanceCount service method, as returned by Route53.</returns>
+        public GetTrafficPolicyInstanceCountResponse GetTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest request)
+        {
+            var marshaller = new GetTrafficPolicyInstanceCountRequestMarshaller();
+            var unmarshaller = GetTrafficPolicyInstanceCountResponseUnmarshaller.Instance;
+
+            return Invoke<GetTrafficPolicyInstanceCountRequest,GetTrafficPolicyInstanceCountResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTrafficPolicyInstanceCount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicyInstanceCount operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTrafficPolicyInstanceCount
+        ///         operation.</returns>
+        public IAsyncResult BeginGetTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetTrafficPolicyInstanceCountRequestMarshaller();
+            var unmarshaller = GetTrafficPolicyInstanceCountResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetTrafficPolicyInstanceCountRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTrafficPolicyInstanceCount operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTrafficPolicyInstanceCount.</param>
+        /// 
+        /// <returns>Returns a  GetTrafficPolicyInstanceCountResult from Route53.</returns>
+        public  GetTrafficPolicyInstanceCountResponse EndGetTrafficPolicyInstanceCount(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTrafficPolicyInstanceCountResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListChangeBatchesByHostedZone
+
+        /// <summary>
+        /// This action gets the list of ChangeBatches in a given time period for a given hosted
+        /// zone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChangeBatchesByHostedZone service method.</param>
+        /// 
+        /// <returns>The response from the ListChangeBatchesByHostedZone service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// 
+        /// </exception>
+        public ListChangeBatchesByHostedZoneResponse ListChangeBatchesByHostedZone(ListChangeBatchesByHostedZoneRequest request)
+        {
+            var marshaller = new ListChangeBatchesByHostedZoneRequestMarshaller();
+            var unmarshaller = ListChangeBatchesByHostedZoneResponseUnmarshaller.Instance;
+
+            return Invoke<ListChangeBatchesByHostedZoneRequest,ListChangeBatchesByHostedZoneResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChangeBatchesByHostedZone operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChangeBatchesByHostedZone operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChangeBatchesByHostedZone
+        ///         operation.</returns>
+        public IAsyncResult BeginListChangeBatchesByHostedZone(ListChangeBatchesByHostedZoneRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListChangeBatchesByHostedZoneRequestMarshaller();
+            var unmarshaller = ListChangeBatchesByHostedZoneResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListChangeBatchesByHostedZoneRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListChangeBatchesByHostedZone operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChangeBatchesByHostedZone.</param>
+        /// 
+        /// <returns>Returns a  ListChangeBatchesByHostedZoneResult from Route53.</returns>
+        public  ListChangeBatchesByHostedZoneResponse EndListChangeBatchesByHostedZone(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListChangeBatchesByHostedZoneResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListChangeBatchesByRRSet
+
+        /// <summary>
+        /// This action gets the list of ChangeBatches in a given time period for a given hosted
+        /// zone and RRSet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChangeBatchesByRRSet service method.</param>
+        /// 
+        /// <returns>The response from the ListChangeBatchesByRRSet service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// 
+        /// </exception>
+        public ListChangeBatchesByRRSetResponse ListChangeBatchesByRRSet(ListChangeBatchesByRRSetRequest request)
+        {
+            var marshaller = new ListChangeBatchesByRRSetRequestMarshaller();
+            var unmarshaller = ListChangeBatchesByRRSetResponseUnmarshaller.Instance;
+
+            return Invoke<ListChangeBatchesByRRSetRequest,ListChangeBatchesByRRSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChangeBatchesByRRSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChangeBatchesByRRSet operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChangeBatchesByRRSet
+        ///         operation.</returns>
+        public IAsyncResult BeginListChangeBatchesByRRSet(ListChangeBatchesByRRSetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListChangeBatchesByRRSetRequestMarshaller();
+            var unmarshaller = ListChangeBatchesByRRSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListChangeBatchesByRRSetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListChangeBatchesByRRSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChangeBatchesByRRSet.</param>
+        /// 
+        /// <returns>Returns a  ListChangeBatchesByRRSetResult from Route53.</returns>
+        public  ListChangeBatchesByRRSetResponse EndListChangeBatchesByRRSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListChangeBatchesByRRSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListGeoLocations
 
         /// <summary>
@@ -1638,7 +2355,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        ///  By default, the list of geo locations is displayed on a single page. You can control
+        /// By default, the list of geo locations is displayed on a single page. You can control
         /// the length of the page that is displayed by using the <code>MaxItems</code> parameter.
         /// If the list is truncated, <code>IsTruncated</code> will be set to <i>true</i> and
         /// a combination of <code>NextContinentCode, NextCountryCode, NextSubdivisionCode</code>
@@ -1666,7 +2383,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        ///  By default, the list of geo locations is displayed on a single page. You can control
+        /// By default, the list of geo locations is displayed on a single page. You can control
         /// the length of the page that is displayed by using the <code>MaxItems</code> parameter.
         /// If the list is truncated, <code>IsTruncated</code> will be set to <i>true</i> and
         /// a combination of <code>NextContinentCode, NextCountryCode, NextSubdivisionCode</code>
@@ -1726,13 +2443,13 @@ namespace Amazon.Route53
         #region  ListHealthChecks
 
         /// <summary>
-        /// To retrieve a list of your health checks, send a <code>GET</code> request to the
-        /// <code>2013-04-01/healthcheck</code> resource. The response to this request includes
-        /// a <code>HealthChecks</code> element with zero, one, or multiple <code>HealthCheck</code>
-        /// child elements. By default, the list of health checks is displayed on a single page.
-        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
-        /// parameter. You can use the <code>Marker</code> parameter to control the health check
-        /// that the list begins with. 
+        /// To retrieve a list of your health checks, send a <code>GET</code> request to the <code>2013-04-01/healthcheck</code>
+        /// resource. The response to this request includes a <code>HealthChecks</code> element
+        /// with zero, one, or multiple <code>HealthCheck</code> child elements. By default, the
+        /// list of health checks is displayed on a single page. You can control the length of
+        /// the page that is displayed by using the <code>MaxItems</code> parameter. You can use
+        /// the <code>Marker</code> parameter to control the health check that the list begins
+        /// with. 
         /// 
         ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
         /// greater than 100, Amazon Route 53 returns only the first 100.</note>
@@ -1740,8 +2457,8 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListHealthChecks service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.IncompatibleVersionException">
-        /// The resource you are trying to access is unsupported on this Route 53 endpoint. Please
-        /// consider using a newer endpoint or a tool that does so.
+        /// The resource you are trying to access is unsupported on this Amazon Route 53 endpoint.
+        /// Please consider using a newer endpoint or a tool that does so.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
@@ -1752,13 +2469,13 @@ namespace Amazon.Route53
         }
 
         /// <summary>
-        /// To retrieve a list of your health checks, send a <code>GET</code> request to the
-        /// <code>2013-04-01/healthcheck</code> resource. The response to this request includes
-        /// a <code>HealthChecks</code> element with zero, one, or multiple <code>HealthCheck</code>
-        /// child elements. By default, the list of health checks is displayed on a single page.
-        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
-        /// parameter. You can use the <code>Marker</code> parameter to control the health check
-        /// that the list begins with. 
+        /// To retrieve a list of your health checks, send a <code>GET</code> request to the <code>2013-04-01/healthcheck</code>
+        /// resource. The response to this request includes a <code>HealthChecks</code> element
+        /// with zero, one, or multiple <code>HealthCheck</code> child elements. By default, the
+        /// list of health checks is displayed on a single page. You can control the length of
+        /// the page that is displayed by using the <code>MaxItems</code> parameter. You can use
+        /// the <code>Marker</code> parameter to control the health check that the list begins
+        /// with. 
         /// 
         ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
         /// greater than 100, Amazon Route 53 returns only the first 100.</note>
@@ -1767,8 +2484,8 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListHealthChecks service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.IncompatibleVersionException">
-        /// The resource you are trying to access is unsupported on this Route 53 endpoint. Please
-        /// consider using a newer endpoint or a tool that does so.
+        /// The resource you are trying to access is unsupported on this Amazon Route 53 endpoint.
+        /// Please consider using a newer endpoint or a tool that does so.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
@@ -2180,7 +2897,7 @@ namespace Amazon.Route53
         /// 
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
-        /// The request was rejected because Route 53 was still processing a prior request.
+        /// The request was rejected because Amazon Route 53 was still processing a prior request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.ThrottlingException">
         /// 
@@ -2245,7 +2962,7 @@ namespace Amazon.Route53
         /// 
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
-        /// The request was rejected because Route 53 was still processing a prior request.
+        /// The request was rejected because Amazon Route 53 was still processing a prior request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.ThrottlingException">
         /// 
@@ -2292,6 +3009,528 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  ListTrafficPolicies
+
+        /// <summary>
+        /// Gets information about the latest version for every traffic policy that is associated
+        /// with the current AWS account. To get the information, send a <code>GET</code> request
+        /// to the <code>2013-04-01/trafficpolicy</code> resource.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot
+        /// of traffic policies, you can use the <code>maxitems</code> parameter to list them
+        /// in groups of up to 100.
+        /// </para>
+        ///  
+        /// <para>
+        /// The response includes three values that help you navigate from one group of <code>maxitems</code>
+        /// traffic policies to the next:
+        /// </para>
+        ///  <ul> <li><b>IsTruncated</b></li> 
+        /// <para>
+        /// If the value of <code>IsTruncated</code> in the response is <code>true</code>, there
+        /// are more traffic policies associated with the current AWS account.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>IsTruncated</code> is <code>false</code>, this response includes the last
+        /// traffic policy that is associated with the current account.
+        /// </para>
+        ///  <li><b>TrafficPolicyIdMarker</b></li> 
+        /// <para>
+        /// If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code>
+        /// is the ID of the first traffic policy in the next group of <code>MaxItems</code> traffic
+        /// policies. If you want to list more traffic policies, make another call to <code>ListTrafficPolicies</code>,
+        /// and specify the value of the <code>TrafficPolicyIdMarker</code> element from the response
+        /// in the <code>TrafficPolicyIdMarker</code> request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>IsTruncated</code> is <code>false</code>, the <code>TrafficPolicyIdMarker</code>
+        /// element is omitted from the response.
+        /// </para>
+        ///  <li><b>MaxItems</b></li> 
+        /// <para>
+        /// The value that you specified for the <code>MaxItems</code> parameter in the request
+        /// that produced the current response.
+        /// </para>
+        ///  </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListTrafficPolicies service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        public ListTrafficPoliciesResponse ListTrafficPolicies(ListTrafficPoliciesRequest request)
+        {
+            var marshaller = new ListTrafficPoliciesRequestMarshaller();
+            var unmarshaller = ListTrafficPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrafficPoliciesRequest,ListTrafficPoliciesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrafficPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicies operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrafficPolicies
+        ///         operation.</returns>
+        public IAsyncResult BeginListTrafficPolicies(ListTrafficPoliciesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListTrafficPoliciesRequestMarshaller();
+            var unmarshaller = ListTrafficPoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListTrafficPoliciesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTrafficPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrafficPolicies.</param>
+        /// 
+        /// <returns>Returns a  ListTrafficPoliciesResult from Route53.</returns>
+        public  ListTrafficPoliciesResponse EndListTrafficPolicies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTrafficPoliciesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTrafficPolicyInstances
+
+        /// <summary>
+        /// Gets information about the traffic policy instances that you created by using the
+        /// current AWS account.
+        /// 
+        ///  <note>After you submit an <code>UpdateTrafficPolicyInstance</code> request, there's
+        /// a brief delay while Amazon Route 53 creates the resource record sets that are specified
+        /// in the traffic policy definition. For more information, see the <a>State</a> response
+        /// element.</note> 
+        /// <para>
+        /// To get information about the traffic policy instances that are associated with the
+        /// current AWS account, send a <code>GET</code> request to the <code>2013-04-01/trafficpolicyinstance</code>
+        /// resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot
+        /// of traffic policy instances, you can use the <code>MaxItems</code> parameter to list
+        /// them in groups of up to 100.
+        /// </para>
+        ///  
+        /// <para>
+        /// The response includes five values that help you navigate from one group of <code>MaxItems</code>
+        /// traffic policy instances to the next:
+        /// </para>
+        ///  <ul> <li><b>IsTruncated</b></li> 
+        /// <para>
+        /// If the value of <code>IsTruncated</code> in the response is <code>true</code>, there
+        /// are more traffic policy instances associated with the current AWS account.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>IsTruncated</code> is <code>false</code>, this response includes the last
+        /// traffic policy instance that is associated with the current account.
+        /// </para>
+        ///  <li><b>MaxItems</b></li> 
+        /// <para>
+        /// The value that you specified for the <code>MaxItems</code> parameter in the request
+        /// that produced the current response.
+        /// </para>
+        ///  <li><b>HostedZoneIdMarker</b>, <b>TrafficPolicyInstanceNameMarker</b>, and <b>TrafficPolicyInstanceTypeMarker</b></li>
+        /// 
+        /// <para>
+        /// If <code>IsTruncated</code> is <code>true</code>, these three values in the response
+        /// represent the first traffic policy instance in the next group of <code>MaxItems</code>
+        /// traffic policy instances. To list more traffic policy instances, make another call
+        /// to <code>ListTrafficPolicyInstances</code>, and specify these values in the corresponding
+        /// request parameters.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>IsTruncated</code> is <code>false</code>, all three elements are omitted
+        /// from the response.
+        /// </para>
+        ///  </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyInstances service method.</param>
+        /// 
+        /// <returns>The response from the ListTrafficPolicyInstances service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyInstanceException">
+        /// No traffic policy instance exists with the specified ID.
+        /// </exception>
+        public ListTrafficPolicyInstancesResponse ListTrafficPolicyInstances(ListTrafficPolicyInstancesRequest request)
+        {
+            var marshaller = new ListTrafficPolicyInstancesRequestMarshaller();
+            var unmarshaller = ListTrafficPolicyInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrafficPolicyInstancesRequest,ListTrafficPolicyInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrafficPolicyInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyInstances operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrafficPolicyInstances
+        ///         operation.</returns>
+        public IAsyncResult BeginListTrafficPolicyInstances(ListTrafficPolicyInstancesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListTrafficPolicyInstancesRequestMarshaller();
+            var unmarshaller = ListTrafficPolicyInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListTrafficPolicyInstancesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTrafficPolicyInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrafficPolicyInstances.</param>
+        /// 
+        /// <returns>Returns a  ListTrafficPolicyInstancesResult from Route53.</returns>
+        public  ListTrafficPolicyInstancesResponse EndListTrafficPolicyInstances(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTrafficPolicyInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTrafficPolicyInstancesByHostedZone
+
+        /// <summary>
+        /// Gets information about the traffic policy instances that you created in a specified
+        /// hosted zone.
+        /// 
+        ///  <note>After you submit an <code>UpdateTrafficPolicyInstance</code> request, there's
+        /// a brief delay while Amazon Route 53 creates the resource record sets that are specified
+        /// in the traffic policy definition. For more information, see the <a>State</a> response
+        /// element.</note> 
+        /// <para>
+        /// To get information about the traffic policy instances that you created in a specified
+        /// hosted zone, send a <code>GET</code> request to the <code>2013-04-01/trafficpolicyinstance</code>
+        /// resource and include the ID of the hosted zone.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot
+        /// of traffic policy instances, you can use the <code>MaxItems</code> parameter to list
+        /// them in groups of up to 100.
+        /// </para>
+        ///  
+        /// <para>
+        /// The response includes four values that help you navigate from one group of <code>MaxItems</code>
+        /// traffic policy instances to the next:
+        /// </para>
+        ///  <ul> <li><b>IsTruncated</b></li> 
+        /// <para>
+        /// If the value of <code/>IsTruncated in the response is <code>true</code>, there are
+        /// more traffic policy instances associated with the current AWS account.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>IsTruncated</code> is <code>false</code>, this response includes the last
+        /// traffic policy instance that is associated with the current account.
+        /// </para>
+        ///  <li><b>MaxItems</b></li> 
+        /// <para>
+        /// The value that you specified for the <code>MaxItems</code> parameter in the request
+        /// that produced the current response.
+        /// </para>
+        ///  <li><b>TrafficPolicyInstanceNameMarker</b> and <b>TrafficPolicyInstanceTypeMarker</b></li>
+        /// 
+        /// <para>
+        /// If <code>IsTruncated</code> is <code>true</code>, these two values in the response
+        /// represent the first traffic policy instance in the next group of <code>MaxItems</code>
+        /// traffic policy instances. To list more traffic policy instances, make another call
+        /// to <code>ListTrafficPolicyInstancesByHostedZone</code>, and specify these values in
+        /// the corresponding request parameters.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>IsTruncated</code> is <code>false</code>, all three elements are omitted
+        /// from the response.
+        /// </para>
+        ///  </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyInstancesByHostedZone service method.</param>
+        /// 
+        /// <returns>The response from the ListTrafficPolicyInstancesByHostedZone service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyInstanceException">
+        /// No traffic policy instance exists with the specified ID.
+        /// </exception>
+        public ListTrafficPolicyInstancesByHostedZoneResponse ListTrafficPolicyInstancesByHostedZone(ListTrafficPolicyInstancesByHostedZoneRequest request)
+        {
+            var marshaller = new ListTrafficPolicyInstancesByHostedZoneRequestMarshaller();
+            var unmarshaller = ListTrafficPolicyInstancesByHostedZoneResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrafficPolicyInstancesByHostedZoneRequest,ListTrafficPolicyInstancesByHostedZoneResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrafficPolicyInstancesByHostedZone operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyInstancesByHostedZone operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrafficPolicyInstancesByHostedZone
+        ///         operation.</returns>
+        public IAsyncResult BeginListTrafficPolicyInstancesByHostedZone(ListTrafficPolicyInstancesByHostedZoneRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListTrafficPolicyInstancesByHostedZoneRequestMarshaller();
+            var unmarshaller = ListTrafficPolicyInstancesByHostedZoneResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListTrafficPolicyInstancesByHostedZoneRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTrafficPolicyInstancesByHostedZone operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrafficPolicyInstancesByHostedZone.</param>
+        /// 
+        /// <returns>Returns a  ListTrafficPolicyInstancesByHostedZoneResult from Route53.</returns>
+        public  ListTrafficPolicyInstancesByHostedZoneResponse EndListTrafficPolicyInstancesByHostedZone(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTrafficPolicyInstancesByHostedZoneResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTrafficPolicyInstancesByPolicy
+
+        /// <summary>
+        /// Gets information about the traffic policy instances that you created by using a specify
+        /// traffic policy version.
+        /// 
+        ///  <note>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
+        /// request, there's a brief delay while Amazon Route 53 creates the resource record sets
+        /// that are specified in the traffic policy definition. For more information, see the
+        /// <a>State</a> response element.</note> 
+        /// <para>
+        /// To get information about the traffic policy instances that you created by using a
+        /// specify traffic policy version, send a <code>GET</code> request to the <code>2013-04-01/trafficpolicyinstance</code>
+        /// resource and include the ID and version of the traffic policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot
+        /// of traffic policy instances, you can use the <code>MaxItems</code> parameter to list
+        /// them in groups of up to 100.
+        /// </para>
+        ///  
+        /// <para>
+        /// The response includes five values that help you navigate from one group of <code>MaxItems</code>
+        /// traffic policy instances to the next:
+        /// </para>
+        ///  <ul> <li><b>IsTruncated</b> 
+        /// <para>
+        /// If the value of <code>IsTruncated</code> in the response is <code>true</code>, there
+        /// are more traffic policy instances associated with the specified traffic policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>IsTruncated</code> is <code>false</code>, this response includes the last
+        /// traffic policy instance that is associated with the specified traffic policy.
+        /// </para>
+        ///  </li> <li><b>MaxItems</b> 
+        /// <para>
+        /// The value that you specified for the <code>MaxItems</code> parameter in the request
+        /// that produced the current response.
+        /// </para>
+        ///  </li> <li><b>HostedZoneIdMarker</b>, <b>TrafficPolicyInstanceNameMarker</b>, and
+        /// <b>TrafficPolicyInstanceTypeMarker</b> 
+        /// <para>
+        /// If <code>IsTruncated</code> is <code>true</code>, these values in the response represent
+        /// the first traffic policy instance in the next group of <code>MaxItems</code> traffic
+        /// policy instances. To list more traffic policy instances, make another call to <code>ListTrafficPolicyInstancesByPolicy</code>,
+        /// and specify these values in the corresponding request parameters.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>IsTruncated</code> is <code>false</code>, all three elements are omitted
+        /// from the response.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyInstancesByPolicy service method.</param>
+        /// 
+        /// <returns>The response from the ListTrafficPolicyInstancesByPolicy service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
+        /// No traffic policy exists with the specified ID.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyInstanceException">
+        /// No traffic policy instance exists with the specified ID.
+        /// </exception>
+        public ListTrafficPolicyInstancesByPolicyResponse ListTrafficPolicyInstancesByPolicy(ListTrafficPolicyInstancesByPolicyRequest request)
+        {
+            var marshaller = new ListTrafficPolicyInstancesByPolicyRequestMarshaller();
+            var unmarshaller = ListTrafficPolicyInstancesByPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrafficPolicyInstancesByPolicyRequest,ListTrafficPolicyInstancesByPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrafficPolicyInstancesByPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyInstancesByPolicy operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrafficPolicyInstancesByPolicy
+        ///         operation.</returns>
+        public IAsyncResult BeginListTrafficPolicyInstancesByPolicy(ListTrafficPolicyInstancesByPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListTrafficPolicyInstancesByPolicyRequestMarshaller();
+            var unmarshaller = ListTrafficPolicyInstancesByPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListTrafficPolicyInstancesByPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTrafficPolicyInstancesByPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrafficPolicyInstancesByPolicy.</param>
+        /// 
+        /// <returns>Returns a  ListTrafficPolicyInstancesByPolicyResult from Route53.</returns>
+        public  ListTrafficPolicyInstancesByPolicyResponse EndListTrafficPolicyInstancesByPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTrafficPolicyInstancesByPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTrafficPolicyVersions
+
+        /// <summary>
+        /// Gets information about all of the versions for a specified traffic policy. <code>ListTrafficPolicyVersions</code>
+        /// lists only versions that have not been deleted.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot
+        /// of traffic policies, you can use the <code>maxitems</code> parameter to list them
+        /// in groups of up to 100.
+        /// </para>
+        ///  
+        /// <para>
+        /// The response includes three values that help you navigate from one group of <code>maxitems</code>maxitems
+        /// traffic policies to the next:
+        /// </para>
+        ///  <ul> <li><b>IsTruncated</b></li> 
+        /// <para>
+        /// If the value of <code>IsTruncated</code> in the response is <code>true</code>, there
+        /// are more traffic policy versions associated with the specified traffic policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>IsTruncated</code> is <code>false</code>, this response includes the last
+        /// traffic policy version that is associated with the specified traffic policy.
+        /// </para>
+        ///  <li><b>TrafficPolicyVersionMarker</b></li> 
+        /// <para>
+        /// The ID of the next traffic policy version that is associated with the current AWS
+        /// account. If you want to list more traffic policies, make another call to <code>ListTrafficPolicyVersions</code>,
+        /// and specify the value of the <code>TrafficPolicyVersionMarker</code> element in the
+        /// <code>TrafficPolicyVersionMarker</code> request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>IsTruncated</code> is <code>false</code>, Amazon Route 53 omits the <code>TrafficPolicyVersionMarker</code>
+        /// element from the response.
+        /// </para>
+        ///  <li><b>MaxItems</b></li> 
+        /// <para>
+        /// The value that you specified for the <code>MaxItems</code> parameter in the request
+        /// that produced the current response.
+        /// </para>
+        ///  </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListTrafficPolicyVersions service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
+        /// No traffic policy exists with the specified ID.
+        /// </exception>
+        public ListTrafficPolicyVersionsResponse ListTrafficPolicyVersions(ListTrafficPolicyVersionsRequest request)
+        {
+            var marshaller = new ListTrafficPolicyVersionsRequestMarshaller();
+            var unmarshaller = ListTrafficPolicyVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrafficPolicyVersionsRequest,ListTrafficPolicyVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrafficPolicyVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyVersions operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrafficPolicyVersions
+        ///         operation.</returns>
+        public IAsyncResult BeginListTrafficPolicyVersions(ListTrafficPolicyVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListTrafficPolicyVersionsRequestMarshaller();
+            var unmarshaller = ListTrafficPolicyVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListTrafficPolicyVersionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTrafficPolicyVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrafficPolicyVersions.</param>
+        /// 
+        /// <returns>Returns a  ListTrafficPolicyVersionsResult from Route53.</returns>
+        public  ListTrafficPolicyVersionsResponse EndListTrafficPolicyVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTrafficPolicyVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateHealthCheck
 
         /// <summary>
@@ -2299,7 +3538,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        ///  To update a health check, send a <code>POST</code> request to the <code>2013-04-01/healthcheck/<i>health
+        /// To update a health check, send a <code>POST</code> request to the <code>2013-04-01/healthcheck/<i>health
         /// check ID</i></code> resource. The request body must include an XML document with an
         /// <code>UpdateHealthCheckRequest</code> element. The response returns an <code>UpdateHealthCheckResponse</code>
         /// element, which contains metadata about the health check.
@@ -2416,6 +3655,168 @@ namespace Amazon.Route53
         public  UpdateHostedZoneCommentResponse EndUpdateHostedZoneComment(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateHostedZoneCommentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateTrafficPolicyComment
+
+        /// <summary>
+        /// Updates the comment for a specified traffic policy version.
+        /// 
+        ///  
+        /// <para>
+        /// To update the comment, send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicy/</code>
+        /// resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// The request body must include an XML document with an <code>UpdateTrafficPolicyCommentRequest</code>
+        /// element.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficPolicyComment service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTrafficPolicyComment service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to update the object at the same time that you did.
+        /// Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
+        /// No traffic policy exists with the specified ID.
+        /// </exception>
+        public UpdateTrafficPolicyCommentResponse UpdateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest request)
+        {
+            var marshaller = new UpdateTrafficPolicyCommentRequestMarshaller();
+            var unmarshaller = UpdateTrafficPolicyCommentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTrafficPolicyCommentRequest,UpdateTrafficPolicyCommentResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTrafficPolicyComment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficPolicyComment operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTrafficPolicyComment
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateTrafficPolicyCommentRequestMarshaller();
+            var unmarshaller = UpdateTrafficPolicyCommentResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateTrafficPolicyCommentRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTrafficPolicyComment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTrafficPolicyComment.</param>
+        /// 
+        /// <returns>Returns a  UpdateTrafficPolicyCommentResult from Route53.</returns>
+        public  UpdateTrafficPolicyCommentResponse EndUpdateTrafficPolicyComment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateTrafficPolicyCommentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateTrafficPolicyInstance
+
+        /// <summary>
+        /// Updates the resource record sets in a specified hosted zone that were created based
+        /// on the settings in a specified traffic policy version.
+        /// 
+        ///  <important>The DNS type of the resource record sets that you're updating must match
+        /// the DNS type in the JSON document that is associated with the traffic policy version
+        /// that you're using to update the traffic policy instance.</important> 
+        /// <para>
+        /// When you update a traffic policy instance, Amazon Route 53 continues to respond to
+        /// DNS queries for the root resource record set name (such as example.com) while it replaces
+        /// one group of resource record sets with another. Amazon Route 53 performs the following
+        /// operations:
+        /// </para>
+        ///  <ol> <li>Amazon Route 53 creates a new group of resource record sets based on the
+        /// specified traffic policy. This is true regardless of how substantial the differences
+        /// are between the existing resource record sets and the new resource record sets. </li>
+        /// <li>When all of the new resource record sets have been created, Amazon Route 53 starts
+        /// to respond to DNS queries for the root resource record set name (such as example.com)
+        /// by using the new resource record sets.</li> <li>Amazon Route 53 deletes the old group
+        /// of resource record sets that are associated with the root resource record set name.</li>
+        /// </ol> 
+        /// <para>
+        /// To update a traffic policy instance, send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicyinstance/<i>traffic
+        /// policy ID</i></code> resource. The request body must include an XML document with
+        /// an <code>UpdateTrafficPolicyInstanceRequest</code> element.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficPolicyInstance service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTrafficPolicyInstance service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.ConflictingTypesException">
+        /// You tried to update a traffic policy instance by using a traffic policy version that
+        /// has a different DNS type than the current type for the instance. You specified the
+        /// type in the JSON document in the <code>CreateTrafficPolicy</code> or <code>CreateTrafficPolicyVersion</code>request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
+        /// No traffic policy exists with the specified ID.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyInstanceException">
+        /// No traffic policy instance exists with the specified ID.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
+        /// The request was rejected because Amazon Route 53 was still processing a prior request.
+        /// </exception>
+        public UpdateTrafficPolicyInstanceResponse UpdateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest request)
+        {
+            var marshaller = new UpdateTrafficPolicyInstanceRequestMarshaller();
+            var unmarshaller = UpdateTrafficPolicyInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTrafficPolicyInstanceRequest,UpdateTrafficPolicyInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTrafficPolicyInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficPolicyInstance operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTrafficPolicyInstance
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateTrafficPolicyInstanceRequestMarshaller();
+            var unmarshaller = UpdateTrafficPolicyInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateTrafficPolicyInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTrafficPolicyInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTrafficPolicyInstance.</param>
+        /// 
+        /// <returns>Returns a  UpdateTrafficPolicyInstanceResult from Route53.</returns>
+        public  UpdateTrafficPolicyInstanceResponse EndUpdateTrafficPolicyInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateTrafficPolicyInstanceResponse>(asyncResult);
         }
 
         #endregion

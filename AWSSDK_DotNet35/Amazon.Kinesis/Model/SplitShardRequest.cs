@@ -84,7 +84,7 @@ namespace Amazon.Kinesis.Model
     /// <para>
     /// For the default shard limit for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
     /// Kinesis Limits</a>. If you need to increase this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
-    /// AWS Support</a>
+    /// AWS Support</a>.
     /// </para>
     ///  
     /// <para>

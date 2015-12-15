@@ -231,6 +231,13 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
+        /// When you attach instances, Auto Scaling increases the desired capacity of the group
+        /// by the number of instances being attached. If the number of instances being attached
+        /// plus the desired capacity of the group exceeds the maximum size of the group, the
+        /// operation fails.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach
         /// EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
@@ -337,7 +344,7 @@ namespace Amazon.AutoScaling
         /// to publish lifecycle notifications to the designated SQS queue or SNS topic.</li>
         /// <li>Create the lifecycle hook. You can create a hook that acts when instances launch
         /// or when instances terminate.</li> <li>If necessary, record the lifecycle action heartbeat
-        /// to keep the instance in a pending state.</li> <li> <b>Complete the lifecycle action</b>.</li>
+        /// to keep the instance in a pending state.</li> <li><b>Complete the lifecycle action</b>.</li>
         /// </ol> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto
@@ -571,12 +578,24 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// The group must have no instances and no scaling activities in progress.
+        /// If the group has instances or scaling activities in progress, you must specify the
+        /// option to force the deletion in order for it to succeed.
         /// </para>
         ///  
         /// <para>
-        /// To remove all instances before calling <code>DeleteAutoScalingGroup</code>, call <a>UpdateAutoScalingGroup</a>
-        /// to set the minimum and maximum size of the Auto Scaling group to zero.
+        /// If the group has policies, deleting the group deletes the policies, the underlying
+        /// alarm actions, and any alarm that no longer has an associated action.
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove instances from the Auto Scaling group before deleting it, call <a>DetachInstances</a>
+        /// with the list of instances and the option to decrement the desired capacity so that
+        /// Auto Scaling does not launch replacement instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// To terminate all instances before deleting the Auto Scaling group, call <a>UpdateAutoScalingGroup</a>
+        /// and set the minimum size and desired capacity of the Auto Scaling group to zero.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAutoScalingGroup service method.</param>
@@ -759,6 +778,12 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Deletes the specified Auto Scaling policy.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting a policy deletes the underlying alarm action, but does not delete the alarm,
+        /// even if it no longer has an associated action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
         /// 
@@ -1866,10 +1891,18 @@ namespace Amazon.AutoScaling
         #region  DetachInstances
 
         /// <summary>
-        /// Removes one or more instances from the specified Auto Scaling group. After the instances
-        /// are detached, you can manage them independently from the rest of the Auto Scaling
-        /// group.
+        /// Removes one or more instances from the specified Auto Scaling group.
         /// 
+        ///  
+        /// <para>
+        /// After the instances are detached, you can manage them independently from the rest
+        /// of the Auto Scaling group.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify the option to decrement the desired capacity, Auto Scaling launches
+        /// instances to replace the ones that are detached.
+        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html">Detach
@@ -2622,6 +2655,56 @@ namespace Amazon.AutoScaling
 
         #endregion
         
+        #region  SetInstanceProtection
+
+        /// <summary>
+        /// Updates the instance protection settings of the specified instances.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html#instance-protection">Instance
+        /// Protection</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetInstanceProtection service method.</param>
+        /// 
+        /// <returns>The response from the SetInstanceProtection service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
+        /// You have already reached a limit for your Auto Scaling resources (for example, groups,
+        /// launch configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        public SetInstanceProtectionResponse SetInstanceProtection(SetInstanceProtectionRequest request)
+        {
+            var marshaller = new SetInstanceProtectionRequestMarshaller();
+            var unmarshaller = SetInstanceProtectionResponseUnmarshaller.Instance;
+
+            return Invoke<SetInstanceProtectionRequest,SetInstanceProtectionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetInstanceProtection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetInstanceProtection operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SetInstanceProtectionResponse> SetInstanceProtectionAsync(SetInstanceProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetInstanceProtectionRequestMarshaller();
+            var unmarshaller = SetInstanceProtectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetInstanceProtectionRequest,SetInstanceProtectionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SuspendProcesses
 
         /// <summary>
@@ -2689,7 +2772,7 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// This call simply makes a termination request. The instances is not terminated immediately.
+        /// This call simply makes a termination request. The instance is not terminated immediately.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateInstanceInAutoScalingGroup service method.</param>

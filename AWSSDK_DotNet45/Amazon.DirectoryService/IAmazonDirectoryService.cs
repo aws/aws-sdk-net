@@ -43,22 +43,23 @@ namespace Amazon.DirectoryService
         #region  ConnectDirectory
 
         /// <summary>
-        /// Creates an AD Connector to connect an on-premises directory.
+        /// Creates an AD Connector to connect to an on-premises directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConnectDirectory service method.</param>
         /// 
         /// <returns>The response from the ConnectDirectory service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryLimitExceededException">
-        /// 
+        /// The maximum number of directories in the region has been reached. You can use the
+        /// <a>GetDirectoryLimits</a> operation to determine your directory limits in the region.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         ConnectDirectoryResponse ConnectDirectory(ConnectDirectoryRequest request);
 
@@ -79,7 +80,7 @@ namespace Amazon.DirectoryService
 
         /// <summary>
         /// Creates an alias for a directory and assigns the alias to the directory. The alias
-        /// is used to construct the access URL for the directory, such as <code>http://&#x3C;alias&#x3E;.awsapps.com</code>.
+        /// is used to construct the access URL for the directory, such as <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>.
         /// 
         ///  <important> 
         /// <para>
@@ -92,19 +93,19 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the CreateAlias service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
-        /// 
+        /// The specified entity already exists.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         CreateAliasResponse CreateAlias(CreateAliasRequest request);
 
@@ -131,28 +132,28 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the CreateComputer service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AuthenticationFailedException">
-        /// 
+        /// An authentication error occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// 
+        /// The specified directory is unavailable or could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
-        /// 
+        /// The specified entity already exists.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
-        /// 
+        /// The operation is not supported.
         /// </exception>
         CreateComputerResponse CreateComputer(CreateComputerRequest request);
 
@@ -178,16 +179,17 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the CreateDirectory service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryLimitExceededException">
-        /// 
+        /// The maximum number of directories in the region has been reached. You can use the
+        /// <a>GetDirectoryLimits</a> operation to determine your directory limits in the region.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request);
 
@@ -204,33 +206,75 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  CreateMicrosoftAD
+
+        /// <summary>
+        /// Creates a Microsoft AD in the AWS cloud.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMicrosoftAD service method.</param>
+        /// 
+        /// <returns>The response from the CreateMicrosoftAD service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryLimitExceededException">
+        /// The maximum number of directories in the region has been reached. You can use the
+        /// <a>GetDirectoryLimits</a> operation to determine your directory limits in the region.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        CreateMicrosoftADResponse CreateMicrosoftAD(CreateMicrosoftADRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMicrosoftAD operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMicrosoftAD operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateMicrosoftADResponse> CreateMicrosoftADAsync(CreateMicrosoftADRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateSnapshot
 
         /// <summary>
-        /// Creates a snapshot of an existing directory.
+        /// Creates a snapshot of a Simple AD directory.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// You cannot take snapshots of extended or connected directories.
+        /// You cannot take snapshots of AD Connector directories.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
         /// 
         /// <returns>The response from the CreateSnapshot service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.SnapshotLimitExceededException">
-        /// 
+        /// The maximum number of manual snapshots for the directory has been reached. You can
+        /// use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a
+        /// directory.
         /// </exception>
         CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request);
 
@@ -247,6 +291,57 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  CreateTrust
+
+        /// <summary>
+        /// AWS Directory Service for Microsoft Active Directory allows you to configure trust
+        /// relationships. For example, you can establish a trust between your Microsoft AD in
+        /// the AWS cloud, and your existing on-premises Microsoft Active Directory. This would
+        /// allow you to provide users and groups access to resources in either domain, with a
+        /// single set of credentials.
+        /// 
+        /// 
+        /// <para>
+        /// This action initiates the creation of the AWS side of a trust relationship between
+        /// a Microsoft AD in the AWS cloud and an external domain.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrust service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrust service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
+        /// The specified entity already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        CreateTrustResponse CreateTrust(CreateTrustRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrust operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrust operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateTrustResponse> CreateTrustAsync(CreateTrustRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteDirectory
 
         /// <summary>
@@ -256,13 +351,13 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DeleteDirectory service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request);
 
@@ -288,16 +383,16 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DeleteSnapshot service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request);
 
@@ -311,6 +406,45 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteTrust
+
+        /// <summary>
+        /// Deletes an existing trust relationship between your Microsoft AD in the AWS cloud
+        /// and an external domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrust service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrust service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        DeleteTrustResponse DeleteTrust(DeleteTrustRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrust operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrust operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteTrustResponse> DeleteTrustAsync(DeleteTrustRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -340,19 +474,19 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DescribeDirectories service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// 
+        /// The <i>NextToken</i> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         DescribeDirectoriesResponse DescribeDirectories();
 
@@ -381,19 +515,19 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DescribeDirectories service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// 
+        /// The <i>NextToken</i> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         DescribeDirectoriesResponse DescribeDirectories(DescribeDirectoriesRequest request);
 
@@ -431,19 +565,19 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// 
+        /// The <i>NextToken</i> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request);
 
@@ -460,23 +594,70 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  DescribeTrusts
+
+        /// <summary>
+        /// Obtains information about the trust relationships for this account.
+        /// 
+        ///  
+        /// <para>
+        /// If no input parameters are provided, such as DirectoryId or TrustIds, this request
+        /// describes all the trust relationships belonging to the account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrusts service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTrusts service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <i>NextToken</i> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        DescribeTrustsResponse DescribeTrusts(DescribeTrustsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTrusts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrusts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeTrustsResponse> DescribeTrustsAsync(DescribeTrustsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisableRadius
 
         /// <summary>
-        /// Disables multi-factor authentication (MFA) with Remote Authentication Dial In User
-        /// Service (RADIUS) for an AD Connector directory.
+        /// Disables multi-factor authentication (MFA) with the Remote Authentication Dial In
+        /// User Service (RADIUS) server for an AD Connector directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableRadius service method.</param>
         /// 
         /// <returns>The response from the DisableRadius service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         DisableRadiusResponse DisableRadius(DisableRadiusRequest request);
 
@@ -502,19 +683,19 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DisableSso service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AuthenticationFailedException">
-        /// 
+        /// An authentication error occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InsufficientPermissionsException">
-        /// 
+        /// The account does not have sufficient permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         DisableSsoResponse DisableSso(DisableSsoRequest request);
 
@@ -534,26 +715,26 @@ namespace Amazon.DirectoryService
         #region  EnableRadius
 
         /// <summary>
-        /// Enables multi-factor authentication (MFA) with Remote Authentication Dial In User
-        /// Service (RADIUS) for an AD Connector directory.
+        /// Enables multi-factor authentication (MFA) with the Remote Authentication Dial In User
+        /// Service (RADIUS) server for an AD Connector directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableRadius service method.</param>
         /// 
         /// <returns>The response from the EnableRadius service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
-        /// 
+        /// The specified entity already exists.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         EnableRadiusResponse EnableRadius(EnableRadiusRequest request);
 
@@ -579,19 +760,19 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the EnableSso service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AuthenticationFailedException">
-        /// 
+        /// An authentication error occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InsufficientPermissionsException">
-        /// 
+        /// The account does not have sufficient permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         EnableSsoResponse EnableSso(EnableSsoRequest request);
 
@@ -616,13 +797,13 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the GetDirectoryLimits service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         GetDirectoryLimitsResponse GetDirectoryLimits();
 
@@ -633,13 +814,13 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the GetDirectoryLimits service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         GetDirectoryLimitsResponse GetDirectoryLimits(GetDirectoryLimitsRequest request);
 
@@ -665,13 +846,13 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the GetSnapshotLimits service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         GetSnapshotLimitsResponse GetSnapshotLimits(GetSnapshotLimitsRequest request);
 
@@ -710,16 +891,16 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the RestoreFromSnapshot service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         RestoreFromSnapshotResponse RestoreFromSnapshot(RestoreFromSnapshotRequest request);
 
@@ -746,16 +927,16 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the UpdateRadius service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         UpdateRadiusResponse UpdateRadius(UpdateRadiusRequest request);
 
@@ -769,6 +950,51 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<UpdateRadiusResponse> UpdateRadiusAsync(UpdateRadiusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  VerifyTrust
+
+        /// <summary>
+        /// AWS Directory Service for Microsoft Active Directory allows you to configure and verify
+        /// trust relationships. 
+        /// 
+        /// 
+        /// <para>
+        /// This action verifies a trust relationship between your Microsoft AD in the AWS cloud
+        /// and an external domain.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyTrust service method.</param>
+        /// 
+        /// <returns>The response from the VerifyTrust service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        VerifyTrustResponse VerifyTrust(VerifyTrustRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the VerifyTrust operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the VerifyTrust operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<VerifyTrustResponse> VerifyTrustAsync(VerifyTrustRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

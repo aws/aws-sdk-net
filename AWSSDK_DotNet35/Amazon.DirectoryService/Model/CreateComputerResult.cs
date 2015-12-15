@@ -37,7 +37,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Computer. 
         /// <para>
-        /// A Computer object the represents the computer account.
+        /// A <a>Computer</a> object that represents the computer account.
         /// </para>
         /// </summary>
         public Computer Computer

@@ -255,6 +255,126 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  DeleteDevicePool
+
+        internal DeleteDevicePoolResponse DeleteDevicePool(DeleteDevicePoolRequest request)
+        {
+            var marshaller = new DeleteDevicePoolRequestMarshaller();
+            var unmarshaller = DeleteDevicePoolResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDevicePoolRequest,DeleteDevicePoolResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDevicePool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDevicePool operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteDevicePoolResponse> DeleteDevicePoolAsync(DeleteDevicePoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteDevicePoolRequestMarshaller();
+            var unmarshaller = DeleteDevicePoolResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDevicePoolRequest,DeleteDevicePoolResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteProject
+
+        internal DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
+        {
+            var marshaller = new DeleteProjectRequestMarshaller();
+            var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProjectRequest,DeleteProjectResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProject operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteProjectRequestMarshaller();
+            var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteProjectRequest,DeleteProjectResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRun
+
+        internal DeleteRunResponse DeleteRun(DeleteRunRequest request)
+        {
+            var marshaller = new DeleteRunRequestMarshaller();
+            var unmarshaller = DeleteRunResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRunRequest,DeleteRunResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRun operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteRunResponse> DeleteRunAsync(DeleteRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteRunRequestMarshaller();
+            var unmarshaller = DeleteRunResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRunRequest,DeleteRunResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteUpload
+
+        internal DeleteUploadResponse DeleteUpload(DeleteUploadRequest request)
+        {
+            var marshaller = new DeleteUploadRequestMarshaller();
+            var unmarshaller = DeleteUploadResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUploadRequest,DeleteUploadResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUpload operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteUploadResponse> DeleteUploadAsync(DeleteUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteUploadRequestMarshaller();
+            var unmarshaller = DeleteUploadResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteUploadRequest,DeleteUploadResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAccountSettings
 
         internal GetAccountSettingsResponse GetAccountSettings()
@@ -914,6 +1034,66 @@ namespace Amazon.DeviceFarm
             var unmarshaller = ScheduleRunResponseUnmarshaller.Instance;
 
             return InvokeAsync<ScheduleRunRequest,ScheduleRunResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDevicePool
+
+        internal UpdateDevicePoolResponse UpdateDevicePool(UpdateDevicePoolRequest request)
+        {
+            var marshaller = new UpdateDevicePoolRequestMarshaller();
+            var unmarshaller = UpdateDevicePoolResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDevicePoolRequest,UpdateDevicePoolResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDevicePool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDevicePool operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateDevicePoolResponse> UpdateDevicePoolAsync(UpdateDevicePoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateDevicePoolRequestMarshaller();
+            var unmarshaller = UpdateDevicePoolResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDevicePoolRequest,UpdateDevicePoolResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateProject
+
+        internal UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
+        {
+            var marshaller = new UpdateProjectRequestMarshaller();
+            var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProjectRequest,UpdateProjectResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProject operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateProjectRequestMarshaller();
+            var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateProjectRequest,UpdateProjectResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

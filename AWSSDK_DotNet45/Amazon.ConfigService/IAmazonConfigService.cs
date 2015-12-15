@@ -68,6 +68,44 @@ namespace Amazon.ConfigService
     {
 
         
+        #region  DeleteConfigRule
+
+        /// <summary>
+        /// Deletes the specified AWS Config rule and all of its evaluation results.
+        /// 
+        ///  
+        /// <para>
+        /// AWS Config sets the state of a rule to <code>DELETING</code> until the deletion is
+        /// complete. You cannot update a rule while it is in this state. If you make a <code>PutConfigRule</code>
+        /// request for the rule, you will receive a <code>ResourceInUseException</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can check the state of a rule by using the <code>DescribeConfigRules</code> request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConfigRule service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
+        /// are correct and try again.
+        /// </exception>
+        DeleteConfigRuleResponse DeleteConfigRule(DeleteConfigRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteConfigRuleResponse> DeleteConfigRuleAsync(DeleteConfigRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteDeliveryChannel
 
         /// <summary>
@@ -190,6 +228,168 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DescribeComplianceByConfigRule
+
+        /// <summary>
+        /// Indicates whether the specified AWS Config rules are compliant. If a rule is noncompliant,
+        /// this action returns the number of AWS resources that do not comply with the rule.
+        /// 
+        ///  
+        /// <para>
+        /// A rule is compliant if all of the evaluated resources comply with it, and it is noncompliant
+        /// if any of these resources do not comply. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If AWS Config has no current evaluation results for the rule, it returns <code>InsufficientData</code>.
+        /// This result might indicate one of the following conditions: <ul> <li>AWS Config has
+        /// never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code>
+        /// action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li>
+        /// <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config.
+        /// Verify that the role that you assigned to your configuration recorder includes the
+        /// <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule,
+        /// verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
+        /// permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code>
+        /// for all evaluation results. This can occur if the resources were deleted or removed
+        /// from the rule's scope.</li></ul>
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByConfigRule service method.</param>
+        /// 
+        /// <returns>The response from the DescribeComplianceByConfigRule service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
+        /// are correct and try again.
+        /// </exception>
+        DescribeComplianceByConfigRuleResponse DescribeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeComplianceByConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByConfigRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeComplianceByConfigRuleResponse> DescribeComplianceByConfigRuleAsync(DescribeComplianceByConfigRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeComplianceByResource
+
+        /// <summary>
+        /// Indicates whether the specified AWS resources are compliant. If a resource is noncompliant,
+        /// this action returns the number of AWS Config rules that the resource does not comply
+        /// with. 
+        /// 
+        ///  
+        /// <para>
+        /// A resource is compliant if it complies with all the AWS Config rules that evaluate
+        /// it. It is noncompliant if it does not comply with one or more of these rules.
+        /// </para>
+        ///  
+        /// <para>
+        /// If AWS Config has no current evaluation results for the resource, it returns <code>InsufficientData</code>.
+        /// This result might indicate one of the following conditions about the rules that evaluate
+        /// the resource: <ul> <li>AWS Config has never invoked an evaluation for the rule. To
+        /// check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action
+        /// to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li>
+        /// <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config.
+        /// Verify that the role that you assigned to your configuration recorder includes the
+        /// <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule,
+        /// verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
+        /// permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code>
+        /// for all evaluation results. This can occur if the resources were deleted or removed
+        /// from the rule's scope.</li></ul>
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByResource service method.</param>
+        /// 
+        /// <returns>The response from the DescribeComplianceByResource service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        DescribeComplianceByResourceResponse DescribeComplianceByResource(DescribeComplianceByResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeComplianceByResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeComplianceByResourceResponse> DescribeComplianceByResourceAsync(DescribeComplianceByResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeConfigRuleEvaluationStatus
+
+        /// <summary>
+        /// Returns status information for each of your AWS managed Config rules. The status includes
+        /// information such as the last time AWS Config invoked the rule, the last time AWS Config
+        /// failed to invoke the rule, and the related error for the last failure.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigRuleEvaluationStatus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConfigRuleEvaluationStatus service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
+        /// are correct and try again.
+        /// </exception>
+        DescribeConfigRuleEvaluationStatusResponse DescribeConfigRuleEvaluationStatus(DescribeConfigRuleEvaluationStatusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConfigRuleEvaluationStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigRuleEvaluationStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeConfigRuleEvaluationStatusResponse> DescribeConfigRuleEvaluationStatusAsync(DescribeConfigRuleEvaluationStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeConfigRules
+
+        /// <summary>
+        /// Returns details about your AWS Config rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigRules service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConfigRules service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
+        /// are correct and try again.
+        /// </exception>
+        DescribeConfigRulesResponse DescribeConfigRules(DescribeConfigRulesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConfigRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigRules operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeConfigRulesResponse> DescribeConfigRulesAsync(DescribeConfigRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeConfigurationRecorders
 
         /// <summary>
@@ -297,7 +497,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// Currently, you can specify only one delivery channel per account.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeDeliveryChannels service method, as returned by ConfigService.</returns>
@@ -315,7 +515,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// Currently, you can specify only one delivery channel per account.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDeliveryChannels service method.</param>
         /// 
@@ -379,6 +579,125 @@ namespace Amazon.ConfigService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeDeliveryChannelStatusResponse> DescribeDeliveryChannelStatusAsync(DescribeDeliveryChannelStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetComplianceDetailsByConfigRule
+
+        /// <summary>
+        /// Returns the evaluation results for the specified AWS Config rule. The results indicate
+        /// which AWS resources were evaluated by the rule, when each resource was last evaluated,
+        /// and whether each resource complies with the rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetailsByConfigRule service method.</param>
+        /// 
+        /// <returns>The response from the GetComplianceDetailsByConfigRule service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
+        /// are correct and try again.
+        /// </exception>
+        GetComplianceDetailsByConfigRuleResponse GetComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetComplianceDetailsByConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetailsByConfigRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetComplianceDetailsByConfigRuleResponse> GetComplianceDetailsByConfigRuleAsync(GetComplianceDetailsByConfigRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetComplianceDetailsByResource
+
+        /// <summary>
+        /// Returns the evaluation results for the specified AWS resource. The results indicate
+        /// which AWS Config rules were used to evaluate the resource, when each rule was last
+        /// used, and whether the resource complies with each rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetailsByResource service method.</param>
+        /// 
+        /// <returns>The response from the GetComplianceDetailsByResource service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        GetComplianceDetailsByResourceResponse GetComplianceDetailsByResource(GetComplianceDetailsByResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetComplianceDetailsByResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetailsByResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetComplianceDetailsByResourceResponse> GetComplianceDetailsByResourceAsync(GetComplianceDetailsByResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetComplianceSummaryByConfigRule
+
+        /// <summary>
+        /// Returns the number of AWS Config rules that are compliant and noncompliant, up to
+        /// a maximum of 25 for each.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceSummaryByConfigRule service method.</param>
+        /// 
+        /// <returns>The response from the GetComplianceSummaryByConfigRule service method, as returned by ConfigService.</returns>
+        GetComplianceSummaryByConfigRuleResponse GetComplianceSummaryByConfigRule(GetComplianceSummaryByConfigRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetComplianceSummaryByConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceSummaryByConfigRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetComplianceSummaryByConfigRuleResponse> GetComplianceSummaryByConfigRuleAsync(GetComplianceSummaryByConfigRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetComplianceSummaryByResourceType
+
+        /// <summary>
+        /// Returns the number of resources that are compliant and the number that are noncompliant.
+        /// You can specify one or more resource types to get these numbers for each resource
+        /// type. The maximum number returned is 100.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceSummaryByResourceType service method.</param>
+        /// 
+        /// <returns>The response from the GetComplianceSummaryByResourceType service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        GetComplianceSummaryByResourceTypeResponse GetComplianceSummaryByResourceType(GetComplianceSummaryByResourceTypeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetComplianceSummaryByResourceType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceSummaryByResourceType operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetComplianceSummaryByResourceTypeResponse> GetComplianceSummaryByResourceTypeAsync(GetComplianceSummaryByResourceTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -494,11 +813,90 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  PutConfigRule
+
+        /// <summary>
+        /// Adds or updates an AWS Config rule for evaluating whether your AWS resources comply
+        /// with your desired configurations. 
+        /// 
+        ///  
+        /// <para>
+        /// You can use this action for customer managed Config rules and AWS managed Config rules.
+        /// A customer managed Config rule is a custom rule that you develop and maintain. An
+        /// AWS managed Config rule is a customizable, predefined rule that is provided by AWS
+        /// Config.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are adding a new customer managed Config rule, you must first create the AWS
+        /// Lambda function that the rule invokes to evaluate your resources. When you use the
+        /// <code>PutConfigRule</code> action to add the rule to AWS Config, you must specify
+        /// the Amazon Resource Name (ARN) that AWS Lambda assigns to the function. Specify the
+        /// ARN for the <code>SourceIdentifier</code> key. This key is part of the <code>Source</code>
+        /// object, which is part of the <code>ConfigRule</code> object. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are adding a new AWS managed Config rule, specify the rule's identifier for
+        /// the <code>SourceIdentifier</code> key. To reference AWS managed Config rule identifiers,
+        /// see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
+        /// AWS Managed Config Rules</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For any new rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code>
+        /// object. Do not specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>.
+        /// These values are generated by AWS Config for new rules.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are updating a rule that you have added previously, specify the rule's <code>ConfigRuleName</code>,
+        /// <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code> in the <code>ConfigRule</code>
+        /// data type that you use in this request.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of rules that AWS Config supports is 25.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about developing and using AWS Config rules, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
+        /// AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigRule service method.</param>
+        /// 
+        /// <returns>The response from the PutConfigRule service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConfigRulesExceededException">
+        /// Failed to add the AWS Config rule because the account already contains the maximum
+        /// number of 25 rules. Consider deleting any deactivated rules before adding new rules.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
+        /// The rule is currently being deleted. Wait for a while and try again.
+        /// </exception>
+        PutConfigRuleResponse PutConfigRule(PutConfigRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutConfigRuleResponse> PutConfigRuleAsync(PutConfigRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutConfigurationRecorder
 
         /// <summary>
         /// Creates a new configuration recorder to record the selected resource configurations.
-        /// 
         /// 
         ///  
         /// <para>
@@ -605,6 +1003,41 @@ namespace Amazon.ConfigService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PutDeliveryChannelResponse> PutDeliveryChannelAsync(PutDeliveryChannelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutEvaluations
+
+        /// <summary>
+        /// Used by an AWS Lambda function to deliver evaluation results to AWS Config. This action
+        /// is required in every AWS Lambda function that is invoked by an AWS Config rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEvaluations service method.</param>
+        /// 
+        /// <returns>The response from the PutEvaluations service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidResultTokenException">
+        /// The result token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
+        /// are correct and try again.
+        /// </exception>
+        PutEvaluationsResponse PutEvaluations(PutEvaluationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEvaluations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEvaluations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutEvaluationsResponse> PutEvaluationsAsync(PutEvaluationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -65,6 +65,94 @@ namespace Amazon.ConfigService
 
 
     /// <summary>
+    /// Constants used for properties of type ComplianceType.
+    /// </summary>
+    public class ComplianceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLIANT for ComplianceType
+        /// </summary>
+        public static readonly ComplianceType COMPLIANT = new ComplianceType("COMPLIANT");
+        /// <summary>
+        /// Constant INSUFFICIENT_DATA for ComplianceType
+        /// </summary>
+        public static readonly ComplianceType INSUFFICIENT_DATA = new ComplianceType("INSUFFICIENT_DATA");
+        /// <summary>
+        /// Constant NON_COMPLIANT for ComplianceType
+        /// </summary>
+        public static readonly ComplianceType NON_COMPLIANT = new ComplianceType("NON_COMPLIANT");
+        /// <summary>
+        /// Constant NOT_APPLICABLE for ComplianceType
+        /// </summary>
+        public static readonly ComplianceType NOT_APPLICABLE = new ComplianceType("NOT_APPLICABLE");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public ComplianceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComplianceType FindValue(string value)
+        {
+            return FindValue<ComplianceType>(value);
+        }
+
+        public static implicit operator ComplianceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfigRuleState.
+    /// </summary>
+    public class ConfigRuleState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ConfigRuleState
+        /// </summary>
+        public static readonly ConfigRuleState ACTIVE = new ConfigRuleState("ACTIVE");
+        /// <summary>
+        /// Constant DELETING for ConfigRuleState
+        /// </summary>
+        public static readonly ConfigRuleState DELETING = new ConfigRuleState("DELETING");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public ConfigRuleState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigRuleState FindValue(string value)
+        {
+            return FindValue<ConfigRuleState>(value);
+        }
+
+        public static implicit operator ConfigRuleState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConfigurationItemStatus.
     /// </summary>
     public class ConfigurationItemStatus : ConstantClass
@@ -157,6 +245,174 @@ namespace Amazon.ConfigService
 
 
     /// <summary>
+    /// Constants used for properties of type EventSource.
+    /// </summary>
+    public class EventSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AwsConfig for EventSource
+        /// </summary>
+        public static readonly EventSource AwsConfig = new EventSource("aws.config");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public EventSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventSource FindValue(string value)
+        {
+            return FindValue<EventSource>(value);
+        }
+
+        public static implicit operator EventSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MaximumExecutionFrequency.
+    /// </summary>
+    public class MaximumExecutionFrequency : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant One_Hour for MaximumExecutionFrequency
+        /// </summary>
+        public static readonly MaximumExecutionFrequency One_Hour = new MaximumExecutionFrequency("One_Hour");
+        /// <summary>
+        /// Constant Six_Hours for MaximumExecutionFrequency
+        /// </summary>
+        public static readonly MaximumExecutionFrequency Six_Hours = new MaximumExecutionFrequency("Six_Hours");
+        /// <summary>
+        /// Constant Three_Hours for MaximumExecutionFrequency
+        /// </summary>
+        public static readonly MaximumExecutionFrequency Three_Hours = new MaximumExecutionFrequency("Three_Hours");
+        /// <summary>
+        /// Constant Twelve_Hours for MaximumExecutionFrequency
+        /// </summary>
+        public static readonly MaximumExecutionFrequency Twelve_Hours = new MaximumExecutionFrequency("Twelve_Hours");
+        /// <summary>
+        /// Constant TwentyFour_Hours for MaximumExecutionFrequency
+        /// </summary>
+        public static readonly MaximumExecutionFrequency TwentyFour_Hours = new MaximumExecutionFrequency("TwentyFour_Hours");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public MaximumExecutionFrequency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaximumExecutionFrequency FindValue(string value)
+        {
+            return FindValue<MaximumExecutionFrequency>(value);
+        }
+
+        public static implicit operator MaximumExecutionFrequency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MessageType.
+    /// </summary>
+    public class MessageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ConfigurationItemChangeNotification for MessageType
+        /// </summary>
+        public static readonly MessageType ConfigurationItemChangeNotification = new MessageType("ConfigurationItemChangeNotification");
+        /// <summary>
+        /// Constant ConfigurationSnapshotDeliveryCompleted for MessageType
+        /// </summary>
+        public static readonly MessageType ConfigurationSnapshotDeliveryCompleted = new MessageType("ConfigurationSnapshotDeliveryCompleted");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public MessageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MessageType FindValue(string value)
+        {
+            return FindValue<MessageType>(value);
+        }
+
+        public static implicit operator MessageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Owner.
+    /// </summary>
+    public class Owner : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS for Owner
+        /// </summary>
+        public static readonly Owner AWS = new Owner("AWS");
+        /// <summary>
+        /// Constant CUSTOM_LAMBDA for Owner
+        /// </summary>
+        public static readonly Owner CUSTOM_LAMBDA = new Owner("CUSTOM_LAMBDA");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public Owner(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Owner FindValue(string value)
+        {
+            return FindValue<Owner>(value);
+        }
+
+        public static implicit operator Owner(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecorderStatus.
     /// </summary>
     public class RecorderStatus : ConstantClass
@@ -218,6 +474,10 @@ namespace Amazon.ConfigService
         /// Constant AWSEC2EIP for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2EIP = new ResourceType("AWS::EC2::EIP");
+        /// <summary>
+        /// Constant AWSEC2Host for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEC2Host = new ResourceType("AWS::EC2::Host");
         /// <summary>
         /// Constant AWSEC2Instance for ResourceType
         /// </summary>

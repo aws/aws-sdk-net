@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The Docker and Amazon ECS container agent version information on a container instance.
+    /// The Docker and Amazon ECS container agent version information about a container instance.
     /// </summary>
     public partial class VersionInfo
     {

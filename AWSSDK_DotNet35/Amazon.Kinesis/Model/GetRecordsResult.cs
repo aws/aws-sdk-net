@@ -77,7 +77,10 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Records. <P>The data records retrieved from the shard.</P>
+        /// Gets and sets the property Records. 
+        /// <para>
+        /// The data records retrieved from the shard.
+        /// </para>
         /// </summary>
         public List<Record> Records
         {

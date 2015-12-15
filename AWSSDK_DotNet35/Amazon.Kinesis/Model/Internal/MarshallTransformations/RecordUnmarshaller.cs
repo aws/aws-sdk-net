@@ -54,6 +54,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ApproximateArrivalTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ApproximateArrivalTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Data", targetDepth))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;

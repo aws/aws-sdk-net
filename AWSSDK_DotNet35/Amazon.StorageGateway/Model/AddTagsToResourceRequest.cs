@@ -1,0 +1,105 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.StorageGateway.Model
+{
+    /// <summary>
+    /// Container for the parameters to the AddTagsToResource operation.
+    /// This operation adds one or more tags to the specified resource. You use tags to add
+    /// metadata to resources, which you can use to categorize these resources. For example,
+    /// you can categorize resources by purpose, owner, environment, or team. Each tag consists
+    /// of a key and a value, which you define. You can add tags to the following AWS Storage
+    /// Gateway resources:
+    /// 
+    ///  <ul> <li>
+    /// <para>
+    /// Storage gateways of all types
+    /// </para>
+    /// </li> </ul> <ul> <li>
+    /// <para>
+    /// Storage Volumes
+    /// </para>
+    /// </li> </ul> <ul> <li>
+    /// <para>
+    /// Virtual Tapes
+    /// </para>
+    /// </li> </ul> 
+    /// <para>
+    /// You can create a maximum of 10 tags for each resource. Virtual tapes and storage volumes
+    /// that are recovered to a new gateway maintain their tags.
+    /// </para>
+    /// </summary>
+    public partial class AddTagsToResourceRequest : AmazonStorageGatewayRequest
+    {
+        private string _resourceARN;
+        private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property ResourceARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource you want to add tags to.
+        /// </para>
+        /// </summary>
+        public string ResourceARN
+        {
+            get { return this._resourceARN; }
+            set { this._resourceARN = value; }
+        }
+
+        // Check to see if ResourceARN property is set
+        internal bool IsSetResourceARN()
+        {
+            return this._resourceARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The key-value pair that represents the tag you want to add to the resource. The value
+        /// can be an empty string.
+        /// </para>
+        ///  <note>
+        /// <para>
+        /// Valid characters for key and value are letters, spaces, and numbers representable
+        /// in UTF-8 format, and the following special characters: + - = . _ : / @.
+        /// </para>
+        /// </note>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+    }
+}

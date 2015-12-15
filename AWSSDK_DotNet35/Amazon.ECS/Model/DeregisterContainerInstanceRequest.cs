@@ -30,7 +30,7 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Container for the parameters to the DeregisterContainerInstance operation.
     /// Deregisters an Amazon ECS container instance from the specified cluster. This instance
-    /// will no longer be available to run tasks.
+    /// is no longer available to run tasks.
     /// 
     ///  
     /// <para>
@@ -61,8 +61,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cluster. 
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container
-        /// instance you want to deregister. If you do not specify a cluster, the default cluster
-        /// is assumed.
+        /// instance to deregister. If you do not specify a cluster, the default cluster is assumed.
         /// </para>
         /// </summary>
         public string Cluster
@@ -80,11 +79,11 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerInstance. 
         /// <para>
-        /// The container instance UUID or full Amazon Resource Name (ARN) of the container instance
-        /// you want to deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed
-        /// by the region of the container instance, the AWS account ID of the container instance
+        /// The container instance ID or full Amazon Resource Name (ARN) of the container instance
+        /// to deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
+        /// the region of the container instance, the AWS account ID of the container instance
         /// owner, the <code>container-instance</code> namespace, and then the container instance
-        /// UUID. For example, arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.
+        /// ID. For example, arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
         /// </para>
         /// </summary>
         public string ContainerInstance
@@ -102,14 +101,14 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Force. 
         /// <para>
-        /// Force the deregistration of the container instance. If you have tasks running on the
-        /// container instance when you deregister it with the <code>force</code> option, these
-        /// tasks remain running and they will continue to pass Elastic Load Balancing load balancer
+        /// Forces the deregistration of the container instance. If you have tasks running on
+        /// the container instance when you deregister it with the <code>force</code> option,
+        /// these tasks remain running and they continue to pass Elastic Load Balancing load balancer
         /// health checks until you terminate the instance or the tasks stop through some other
         /// means, but they are orphaned (no longer monitored or accounted for by Amazon ECS).
         /// If an orphaned task on your container instance is part of an Amazon ECS service, then
-        /// the service scheduler will start another copy of that task on a different container
-        /// instance if possible.
+        /// the service scheduler starts another copy of that task, on a different container instance
+        /// if possible.
         /// </para>
         /// </summary>
         public bool Force

@@ -60,10 +60,28 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Parameters", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DocumentParameter, DocumentParameterUnmarshaller>(DocumentParameterUnmarshaller.Instance);
+                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PlatformTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PlatformTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Sha1", targetDepth))

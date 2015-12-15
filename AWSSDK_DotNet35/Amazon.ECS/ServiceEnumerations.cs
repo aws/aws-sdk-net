@@ -125,6 +125,58 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type LogDriver.
+    /// </summary>
+    public class LogDriver : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Fluentd for LogDriver
+        /// </summary>
+        public static readonly LogDriver Fluentd = new LogDriver("fluentd");
+        /// <summary>
+        /// Constant Gelf for LogDriver
+        /// </summary>
+        public static readonly LogDriver Gelf = new LogDriver("gelf");
+        /// <summary>
+        /// Constant Journald for LogDriver
+        /// </summary>
+        public static readonly LogDriver Journald = new LogDriver("journald");
+        /// <summary>
+        /// Constant JsonFile for LogDriver
+        /// </summary>
+        public static readonly LogDriver JsonFile = new LogDriver("json-file");
+        /// <summary>
+        /// Constant Syslog for LogDriver
+        /// </summary>
+        public static readonly LogDriver Syslog = new LogDriver("syslog");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public LogDriver(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogDriver FindValue(string value)
+        {
+            return FindValue<LogDriver>(value);
+        }
+
+        public static implicit operator LogDriver(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SortOrder.
     /// </summary>
     public class SortOrder : ConstantClass
@@ -238,6 +290,98 @@ namespace Amazon.ECS
         }
 
         public static implicit operator TransportProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UlimitName.
+    /// </summary>
+    public class UlimitName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Core for UlimitName
+        /// </summary>
+        public static readonly UlimitName Core = new UlimitName("core");
+        /// <summary>
+        /// Constant Cpu for UlimitName
+        /// </summary>
+        public static readonly UlimitName Cpu = new UlimitName("cpu");
+        /// <summary>
+        /// Constant Data for UlimitName
+        /// </summary>
+        public static readonly UlimitName Data = new UlimitName("data");
+        /// <summary>
+        /// Constant Fsize for UlimitName
+        /// </summary>
+        public static readonly UlimitName Fsize = new UlimitName("fsize");
+        /// <summary>
+        /// Constant Locks for UlimitName
+        /// </summary>
+        public static readonly UlimitName Locks = new UlimitName("locks");
+        /// <summary>
+        /// Constant Memlock for UlimitName
+        /// </summary>
+        public static readonly UlimitName Memlock = new UlimitName("memlock");
+        /// <summary>
+        /// Constant Msgqueue for UlimitName
+        /// </summary>
+        public static readonly UlimitName Msgqueue = new UlimitName("msgqueue");
+        /// <summary>
+        /// Constant Nice for UlimitName
+        /// </summary>
+        public static readonly UlimitName Nice = new UlimitName("nice");
+        /// <summary>
+        /// Constant Nofile for UlimitName
+        /// </summary>
+        public static readonly UlimitName Nofile = new UlimitName("nofile");
+        /// <summary>
+        /// Constant Nproc for UlimitName
+        /// </summary>
+        public static readonly UlimitName Nproc = new UlimitName("nproc");
+        /// <summary>
+        /// Constant Rss for UlimitName
+        /// </summary>
+        public static readonly UlimitName Rss = new UlimitName("rss");
+        /// <summary>
+        /// Constant Rtprio for UlimitName
+        /// </summary>
+        public static readonly UlimitName Rtprio = new UlimitName("rtprio");
+        /// <summary>
+        /// Constant Rttime for UlimitName
+        /// </summary>
+        public static readonly UlimitName Rttime = new UlimitName("rttime");
+        /// <summary>
+        /// Constant Sigpending for UlimitName
+        /// </summary>
+        public static readonly UlimitName Sigpending = new UlimitName("sigpending");
+        /// <summary>
+        /// Constant Stack for UlimitName
+        /// </summary>
+        public static readonly UlimitName Stack = new UlimitName("stack");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public UlimitName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UlimitName FindValue(string value)
+        {
+            return FindValue<UlimitName>(value);
+        }
+
+        public static implicit operator UlimitName(string value)
         {
             return FindValue(value);
         }

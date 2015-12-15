@@ -76,9 +76,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("ReservedDBInstance", targetDepth))
+                    if (context.TestExpression("ReservedDBInstance", targetDepth))
                     {
-                        response.ReservedDBInstance = ReservedDBInstanceUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = ReservedDBInstanceUnmarshaller.Instance;
+                        response.ReservedDBInstance = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 

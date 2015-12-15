@@ -63,7 +63,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DesiredCount. 
         /// <para>
         /// The most recent desired count of tasks that was specified for the service to deploy
-        /// and/or maintain.
+        /// or maintain.
         /// </para>
         /// </summary>
         public int DesiredCount

@@ -51,8 +51,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property TaskDefinition. 
         /// <para>
         /// The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full Amazon Resource Name (ARN) of the task definition that you want to deregister.
-        /// You must specify a <code>revision</code>.
+        /// full Amazon Resource Name (ARN) of the task definition to deregister. You must specify
+        /// a <code>revision</code>.
         /// </para>
         /// </summary>
         public string TaskDefinition

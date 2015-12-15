@@ -265,7 +265,11 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Creates a new identity pool. The identity pool is a store of user identity information
         /// that is specific to your AWS account. The limit on identity pools is 60 per account.
-        /// You must use AWS Developer credentials to call this API.
+        /// The keys for <code>SupportedLoginProviders</code> are as follows: <ul> <li>Facebook:
+        /// <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code>
+        /// </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>api.twitter.com</code>
+        /// </li> <li>Digits: <code>www.digits.com</code> </li> </ul> You must use AWS Developer
+        /// credentials to call this API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIdentityPool service method.</param>
         /// 
@@ -643,8 +647,8 @@ namespace Amazon.CognitoIdentity
         #region  GetCredentialsForIdentity
 
         /// <summary>
-        /// Returns credentials for the the provided identity ID. Any provided logins will be
-        /// validated against supported login providers. If the token is for cognito-identity.amazonaws.com,
+        /// Returns credentials for the provided identity ID. Any provided logins will be validated
+        /// against supported login providers. If the token is for cognito-identity.amazonaws.com,
         /// it will be passed through to AWS Security Token Service with the appropriate role
         /// for the token.
         /// 
@@ -689,8 +693,8 @@ namespace Amazon.CognitoIdentity
         }
 
         /// <summary>
-        /// Returns credentials for the the provided identity ID. Any provided logins will be
-        /// validated against supported login providers. If the token is for cognito-identity.amazonaws.com,
+        /// Returns credentials for the provided identity ID. Any provided logins will be validated
+        /// against supported login providers. If the token is for cognito-identity.amazonaws.com,
         /// it will be passed through to AWS Security Token Service with the appropriate role
         /// for the token.
         /// 
@@ -737,8 +741,8 @@ namespace Amazon.CognitoIdentity
         }
 
         /// <summary>
-        /// Returns credentials for the the provided identity ID. Any provided logins will be
-        /// validated against supported login providers. If the token is for cognito-identity.amazonaws.com,
+        /// Returns credentials for the provided identity ID. Any provided logins will be validated
+        /// against supported login providers. If the token is for cognito-identity.amazonaws.com,
         /// it will be passed through to AWS Security Token Service with the appropriate role
         /// for the token.
         /// 
@@ -809,10 +813,6 @@ namespace Amazon.CognitoIdentity
         /// Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit
         /// linked account.
         /// 
-        ///  
-        /// <para>
-        /// token+";"+tokenSecret.
-        /// </para>
         ///  
         /// <para>
         /// This is a public API. You do not need any credentials to call this API.
@@ -1220,7 +1220,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// This is a public API. You do not need any credentials to call this API.
+        /// You must use AWS Developer credentials to call this API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityPools service method.</param>
@@ -1513,7 +1513,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// This is a public API. You do not need any credentials to call this API.
+        /// You must use AWS Developer credentials to call this API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnlinkDeveloperIdentity service method.</param>

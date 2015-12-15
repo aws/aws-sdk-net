@@ -1183,15 +1183,15 @@ namespace Amazon.EC2
         #region  CancelSpotInstanceRequests
 
         /// <summary>
-        /// Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon
+        /// Cancels one or more Spot instance requests. Spot instances are instances that Amazon
         /// EC2 starts on your behalf when the bid price that you specify exceeds the current
-        /// Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance
-        /// capacity and current Spot Instance requests. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
+        /// Spot price. Amazon EC2 periodically sets the Spot price based on available Spot instance
+        /// capacity and current Spot instance requests. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
         /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  <important> 
         /// <para>
-        /// Canceling a Spot Instance request does not terminate running Spot Instances associated
+        /// Canceling a Spot instance request does not terminate running Spot instances associated
         /// with the request.
         /// </para>
         ///  </important>
@@ -2257,7 +2257,7 @@ namespace Amazon.EC2
         #region  CreateSpotDatafeedSubscription
 
         /// <summary>
-        /// Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs.
+        /// Creates a data feed for Spot instances, enabling you to view Spot instance usage logs.
         /// You can create one data feed per AWS account. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
         /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
@@ -3268,8 +3268,7 @@ namespace Amazon.EC2
         #region  DeleteSpotDatafeedSubscription
 
         /// <summary>
-        /// Deletes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Deletes the data feed for Spot instances.
         /// </summary>
         /// 
         /// <returns>The response from the DeleteSpotDatafeedSubscription service method, as returned by EC2.</returns>
@@ -3279,8 +3278,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Deletes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Deletes the data feed for Spot instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSpotDatafeedSubscription service method.</param>
         /// 
@@ -5748,7 +5746,7 @@ namespace Amazon.EC2
         #region  DescribeSpotDatafeedSubscription
 
         /// <summary>
-        /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+        /// Describes the data feed for Spot instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
         /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// 
@@ -5759,7 +5757,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+        /// Describes the data feed for Spot instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
         /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotDatafeedSubscription service method.</param>
@@ -5910,17 +5908,17 @@ namespace Amazon.EC2
         #region  DescribeSpotInstanceRequests
 
         /// <summary>
-        /// Describes the Spot Instance requests that belong to your account. Spot Instances are
+        /// Describes the Spot instance requests that belong to your account. Spot instances are
         /// instances that Amazon EC2 launches when the bid price that you specify exceeds the
-        /// current Spot Price. Amazon EC2 periodically sets the Spot Price based on available
-        /// Spot Instance capacity and current Spot Instance requests. For more information, see
+        /// current Spot price. Amazon EC2 periodically sets the Spot price based on available
+        /// Spot instance capacity and current Spot instance requests. For more information, see
         /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
         /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
-        /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
+        /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot instance
+        /// by examining the response. If the status of the Spot instance is <code>fulfilled</code>,
         /// the instance ID appears in the response and contains the identifier of the instance.
         /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
         /// where the instance lifecycle is <code>spot</code>.
@@ -5934,17 +5932,17 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describes the Spot Instance requests that belong to your account. Spot Instances are
+        /// Describes the Spot instance requests that belong to your account. Spot instances are
         /// instances that Amazon EC2 launches when the bid price that you specify exceeds the
-        /// current Spot Price. Amazon EC2 periodically sets the Spot Price based on available
-        /// Spot Instance capacity and current Spot Instance requests. For more information, see
+        /// current Spot price. Amazon EC2 periodically sets the Spot price based on available
+        /// Spot instance capacity and current Spot instance requests. For more information, see
         /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
         /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
-        /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
+        /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot instance
+        /// by examining the response. If the status of the Spot instance is <code>fulfilled</code>,
         /// the instance ID appears in the response and contains the identifier of the instance.
         /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
         /// where the instance lifecycle is <code>spot</code>.
@@ -5984,7 +5982,7 @@ namespace Amazon.EC2
         #region  DescribeSpotPriceHistory
 
         /// <summary>
-        /// Describes the Spot Price history. The prices returned are listed in chronological
+        /// Describes the Spot price history. The prices returned are listed in chronological
         /// order, from the oldest to the most recent, for up to the past 90 days. For more information,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
         /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -6005,7 +6003,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describes the Spot Price history. The prices returned are listed in chronological
+        /// Describes the Spot price history. The prices returned are listed in chronological
         /// order, from the oldest to the most recent, for up to the past 90 days. For more information,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
         /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -8545,12 +8543,26 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You can submit a single request that specifies multiple instance types, each with
-        /// its own instance weighting that reflects its value to your application workload. Amazon
-        /// EC2 computes the bid price for each launch specification and requests Spot Instances
-        /// in the Spot pool where the price per unit is the lowest. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html">Spot
-        /// Fleets</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// You can submit a single request that includes multiple launch specifications that
+        /// vary by instance type, AMI, Availability Zone, or subnet.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, the Spot fleet requests Spot instances in the Spot pool where the price
+        /// per unit is the lowest. Each launch specification can include its own instance weighting
+        /// that reflects the value of the instance type to your application workload.
+        /// </para>
+        ///  
+        /// <para>
+        /// Alternatively, you can specify that the Spot fleet distribute the target capacity
+        /// across the Spot pools included in its launch specifications. By ensuring that the
+        /// Spot instances in your Spot fleet are in different Spot pools, you can improve the
+        /// availability of your fleet.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
+        /// Fleet Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotFleet service method.</param>
@@ -8587,9 +8599,9 @@ namespace Amazon.EC2
         #region  RequestSpotInstances
 
         /// <summary>
-        /// Creates a Spot Instance request. Spot Instances are instances that Amazon EC2 launches
-        /// when the bid price that you specify exceeds the current Spot Price. Amazon EC2 periodically
-        /// sets the Spot Price based on available Spot Instance capacity and current Spot Instance
+        /// Creates a Spot instance request. Spot instances are instances that Amazon EC2 launches
+        /// when the bid price that you specify exceeds the current Spot price. Amazon EC2 periodically
+        /// sets the Spot price based on available Spot Instance capacity and current Spot instance
         /// requests. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
         /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>

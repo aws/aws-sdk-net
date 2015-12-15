@@ -373,6 +373,86 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  AddTagsToResource
+
+        /// <summary>
+        /// This operation adds one or more tags to the specified resource. You use tags to add
+        /// metadata to resources, which you can use to categorize these resources. For example,
+        /// you can categorize resources by purpose, owner, environment, or team. Each tag consists
+        /// of a key and a value, which you define. You can add tags to the following AWS Storage
+        /// Gateway resources:
+        /// 
+        ///  <ul> <li>
+        /// <para>
+        /// Storage gateways of all types
+        /// </para>
+        /// </li> </ul> <ul> <li>
+        /// <para>
+        /// Storage Volumes
+        /// </para>
+        /// </li> </ul> <ul> <li>
+        /// <para>
+        /// Virtual Tapes
+        /// </para>
+        /// </li> </ul> 
+        /// <para>
+        /// You can create a maximum of 10 tags for each resource. Virtual tapes and storage volumes
+        /// that are recovered to a new gateway maintain their tags.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
+        /// 
+        /// <returns>The response from the AddTagsToResource service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. See the error and message
+        /// fields for more information.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// See the error and message fields for more information.
+        /// </exception>
+        public AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
+        {
+            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
+
+            return Invoke<AddTagsToResourceRequest,AddTagsToResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTagsToResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToResource
+        ///         operation.</returns>
+        public IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddTagsToResourceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddTagsToResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTagsToResource.</param>
+        /// 
+        /// <returns>Returns a  AddTagsToResourceResult from StorageGateway.</returns>
+        public  AddTagsToResourceResponse EndAddTagsToResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AddTagsToResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AddUploadBuffer
 
         /// <summary>
@@ -1388,10 +1468,10 @@ namespace Amazon.StorageGateway
         #region  DeleteVolume
 
         /// <summary>
-        /// This operation delete the specified gateway volume that you previously created using
-        /// the <a>CreateStorediSCSIVolume</a> API. For gateway-stored volumes, the local disk
-        /// that was configured as the storage volume is not deleted. You can reuse the local
-        /// disk to create another storage volume. 
+        /// This operation deletes the specified gateway volume that you previously created using
+        /// the <a>CreateCachediSCSIVolume</a> or <a>CreateStorediSCSIVolume</a> API. For gateway-stored
+        /// volumes, the local disk that was configured as the storage volume is not deleted.
+        /// You can reuse the local disk to create another storage volume. 
         /// 
         ///  
         /// <para>
@@ -2616,6 +2696,64 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// This operation lists the tags that have been added to the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. See the error and message
+        /// fields for more information.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// See the error and message fields for more information.
+        /// </exception>
+        public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        public IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListTagsForResourceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from StorageGateway.</returns>
+        public  ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListVolumeInitiators
 
         /// <summary>
@@ -2807,6 +2945,64 @@ namespace Amazon.StorageGateway
         public  ListVolumesResponse EndListVolumes(IAsyncResult asyncResult)
         {
             return EndInvoke<ListVolumesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RemoveTagsFromResource
+
+        /// <summary>
+        /// This operation removes one or more tags from the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
+        /// 
+        /// <returns>The response from the RemoveTagsFromResource service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. See the error and message
+        /// fields for more information.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// See the error and message fields for more information.
+        /// </exception>
+        public RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
+        {
+            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTagsFromResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromResource
+        ///         operation.</returns>
+        public IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RemoveTagsFromResourceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveTagsFromResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTagsFromResource.</param>
+        /// 
+        /// <returns>Returns a  RemoveTagsFromResourceResult from StorageGateway.</returns>
+        public  RemoveTagsFromResourceResponse EndRemoveTagsFromResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RemoveTagsFromResourceResponse>(asyncResult);
         }
 
         #endregion

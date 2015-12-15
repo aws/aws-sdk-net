@@ -30,8 +30,8 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Container for the parameters to the DescribeTaskDefinition operation.
     /// Describes a task definition. You can specify a <code>family</code> and <code>revision</code>
-    /// to find information on a specific task definition, or you can simply specify the family
-    /// to find the latest <code>ACTIVE</code> revision in that family.
+    /// to find information about a specific task definition, or you can simply specify the
+    /// family to find the latest <code>ACTIVE</code> revision in that family.
     /// 
     ///  <note> 
     /// <para>
@@ -49,8 +49,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The <code>family</code> for the latest <code>ACTIVE</code> revision, <code>family</code>
         /// and <code>revision</code> (<code>family:revision</code>) for a specific revision in
-        /// the family, or full Amazon Resource Name (ARN) of the task definition that you want
-        /// to describe.
+        /// the family, or full Amazon Resource Name (ARN) of the task definition to describe.
         /// </para>
         /// </summary>
         public string TaskDefinition

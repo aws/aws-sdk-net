@@ -39,7 +39,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the recorder. By default, AWS Config automatically assigns the name "default"
+        /// The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot;
         /// when creating the configuration recorder. You cannot change the assigned name.
         /// </para>
         /// </summary>

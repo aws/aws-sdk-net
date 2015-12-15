@@ -62,7 +62,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property IsTruncated. 
         /// <para>
-        ///  A flag that indicates whether there are more resource record sets to be listed. If
+        /// A flag that indicates whether there are more resource record sets to be listed. If
         /// your results were truncated, you can make a follow-up request for the next page of
         /// results by using the <a>ListResourceRecordSetsResponse$NextRecordName</a> element.
         /// </para>

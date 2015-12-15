@@ -43,6 +43,199 @@ namespace Amazon.SimpleEmail
     {
 
         
+        #region  CloneReceiptRuleSet
+
+        /// <summary>
+        /// Creates a receipt rule set by cloning an existing one. All receipt rules and configurations
+        /// are copied to the new receipt rule set and are completely independent of the source
+        /// rule set.
+        /// 
+        ///  
+        /// <para>
+        /// For information about setting up rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CloneReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the CloneReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.AlreadyExistsException">
+        /// Indicates that a resource could not be created due to a naming conflict.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created due to service limits. For a list of
+        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        CloneReceiptRuleSetResponse CloneReceiptRuleSet(CloneReceiptRuleSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CloneReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CloneReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CloneReceiptRuleSetResponse> CloneReceiptRuleSetAsync(CloneReceiptRuleSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateReceiptFilter
+
+        /// <summary>
+        /// Creates a new IP address filter.
+        /// 
+        ///  
+        /// <para>
+        /// For information about setting up IP address filters, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptFilter service method.</param>
+        /// 
+        /// <returns>The response from the CreateReceiptFilter service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.AlreadyExistsException">
+        /// Indicates that a resource could not be created due to a naming conflict.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created due to service limits. For a list of
+        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        CreateReceiptFilterResponse CreateReceiptFilter(CreateReceiptFilterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReceiptFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptFilter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateReceiptFilterResponse> CreateReceiptFilterAsync(CreateReceiptFilterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateReceiptRule
+
+        /// <summary>
+        /// Creates a receipt rule.
+        /// 
+        ///  
+        /// <para>
+        /// For information about setting up receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptRule service method.</param>
+        /// 
+        /// <returns>The response from the CreateReceiptRule service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.AlreadyExistsException">
+        /// Indicates that a resource could not be created due to a naming conflict.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidLambdaFunctionException">
+        /// Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could
+        /// not execute the provided function, possibly due to permissions issues. For information
+        /// about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidS3ConfigurationException">
+        /// Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid,
+        /// or that Amazon SES could not publish to the bucket, possibly due to permissions issues.
+        /// For information about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidSnsTopicException">
+        /// Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could
+        /// not publish to the topic, possibly due to permissions issues. For information about
+        /// giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created due to service limits. For a list of
+        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
+        /// Indicates that the provided receipt rule does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        CreateReceiptRuleResponse CreateReceiptRule(CreateReceiptRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateReceiptRuleResponse> CreateReceiptRuleAsync(CreateReceiptRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateReceiptRuleSet
+
+        /// <summary>
+        /// Creates an empty receipt rule set.
+        /// 
+        ///  
+        /// <para>
+        /// For information about setting up receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the CreateReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.AlreadyExistsException">
+        /// Indicates that a resource could not be created due to a naming conflict.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created due to service limits. For a list of
+        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        CreateReceiptRuleSetResponse CreateReceiptRuleSet(CreateReceiptRuleSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateReceiptRuleSetResponse> CreateReceiptRuleSetAsync(CreateReceiptRuleSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteIdentity
 
         /// <summary>
@@ -110,6 +303,111 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  DeleteReceiptFilter
+
+        /// <summary>
+        /// Deletes the specified IP address filter.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing IP address filters, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptFilter service method.</param>
+        /// 
+        /// <returns>The response from the DeleteReceiptFilter service method, as returned by SimpleEmailService.</returns>
+        DeleteReceiptFilterResponse DeleteReceiptFilter(DeleteReceiptFilterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReceiptFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptFilter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteReceiptFilterResponse> DeleteReceiptFilterAsync(DeleteReceiptFilterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteReceiptRule
+
+        /// <summary>
+        /// Deletes the specified receipt rule.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteReceiptRule service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        DeleteReceiptRuleResponse DeleteReceiptRule(DeleteReceiptRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteReceiptRuleResponse> DeleteReceiptRuleAsync(DeleteReceiptRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteReceiptRuleSet
+
+        /// <summary>
+        /// Deletes the specified receipt rule set and all of the receipt rules it contains.
+        /// 
+        ///  <note>The currently active rule set cannot be deleted.</note> 
+        /// <para>
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.CannotDeleteException">
+        /// Indicates that the delete operation could not be completed.
+        /// </exception>
+        DeleteReceiptRuleSetResponse DeleteReceiptRuleSet(DeleteReceiptRuleSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteReceiptRuleSetResponse> DeleteReceiptRuleSetAsync(DeleteReceiptRuleSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteVerifiedEmailAddress
 
         /// <summary>
@@ -137,6 +435,115 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteVerifiedEmailAddressResponse> DeleteVerifiedEmailAddressAsync(DeleteVerifiedEmailAddressRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeActiveReceiptRuleSet
+
+        /// <summary>
+        /// Returns the metadata and receipt rules for the receipt rule set that is currently
+        /// active.
+        /// 
+        ///  
+        /// <para>
+        /// For information about setting up receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActiveReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the DescribeActiveReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        DescribeActiveReceiptRuleSetResponse DescribeActiveReceiptRuleSet(DescribeActiveReceiptRuleSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeActiveReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActiveReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeActiveReceiptRuleSetResponse> DescribeActiveReceiptRuleSetAsync(DescribeActiveReceiptRuleSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeReceiptRule
+
+        /// <summary>
+        /// Returns the details of the specified receipt rule.
+        /// 
+        ///  
+        /// <para>
+        /// For information about setting up receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReceiptRule service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReceiptRule service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
+        /// Indicates that the provided receipt rule does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        DescribeReceiptRuleResponse DescribeReceiptRule(DescribeReceiptRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReceiptRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeReceiptRuleResponse> DescribeReceiptRuleAsync(DescribeReceiptRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeReceiptRuleSet
+
+        /// <summary>
+        /// Returns the details of the specified receipt rule set.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        DescribeReceiptRuleSetResponse DescribeReceiptRuleSet(DescribeReceiptRuleSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeReceiptRuleSetResponse> DescribeReceiptRuleSetAsync(DescribeReceiptRuleSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -458,6 +865,75 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  ListReceiptFilters
+
+        /// <summary>
+        /// Lists the IP address filters associated with your account.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing IP address filters, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceiptFilters service method.</param>
+        /// 
+        /// <returns>The response from the ListReceiptFilters service method, as returned by SimpleEmailService.</returns>
+        ListReceiptFiltersResponse ListReceiptFilters(ListReceiptFiltersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReceiptFilters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReceiptFilters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListReceiptFiltersResponse> ListReceiptFiltersAsync(ListReceiptFiltersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListReceiptRuleSets
+
+        /// <summary>
+        /// Lists the receipt rule sets that exist under your AWS account. If there are additional
+        /// receipt rule sets to be retrieved, you will receive a <code>NextToken</code> that
+        /// you can provide to the next call to <code>ListReceiptRuleSets</code> to retrieve the
+        /// additional entries.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceiptRuleSets service method.</param>
+        /// 
+        /// <returns>The response from the ListReceiptRuleSets service method, as returned by SimpleEmailService.</returns>
+        ListReceiptRuleSetsResponse ListReceiptRuleSets(ListReceiptRuleSetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReceiptRuleSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReceiptRuleSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListReceiptRuleSetsResponse> ListReceiptRuleSetsAsync(ListReceiptRuleSetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListVerifiedEmailAddresses
 
         /// <summary>
@@ -540,6 +1016,87 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PutIdentityPolicyResponse> PutIdentityPolicyAsync(PutIdentityPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ReorderReceiptRuleSet
+
+        /// <summary>
+        /// Reorders the receipt rules within a receipt rule set.
+        /// 
+        ///  <note>All of the rules in the rule set must be represented in this request. That
+        /// is, this API will return an error if the reorder request doesn’t explicitly position
+        /// all of the rules.</note> 
+        /// <para>
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReorderReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the ReorderReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
+        /// Indicates that the provided receipt rule does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        ReorderReceiptRuleSetResponse ReorderReceiptRuleSet(ReorderReceiptRuleSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReorderReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReorderReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ReorderReceiptRuleSetResponse> ReorderReceiptRuleSetAsync(ReorderReceiptRuleSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SendBounce
+
+        /// <summary>
+        /// Generates and sends a bounce message to the sender of an email you received through
+        /// Amazon SES. You can only use this API on an email up to 24 hours after you receive
+        /// it.
+        /// 
+        ///  <note>You cannot use this API to send generic bounces for mail that was not received
+        /// by Amazon SES.</note> 
+        /// <para>
+        /// For information about receiving email through Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendBounce service method.</param>
+        /// 
+        /// <returns>The response from the SendBounce service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
+        /// Indicates that the action failed, and the message could not be sent. Check the error
+        /// stack for more information about what caused the error.
+        /// </exception>
+        SendBounceResponse SendBounce(SendBounceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendBounce operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendBounce operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<SendBounceResponse> SendBounceAsync(SendBounceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -657,6 +1214,43 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  SetActiveReceiptRuleSet
+
+        /// <summary>
+        /// Sets the specified receipt rule set as the active receipt rule set.
+        /// 
+        ///  <note>To disable your email-receiving through Amazon SES completely, you can call
+        /// this API with RuleSetName set to null.</note> 
+        /// <para>
+        /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetActiveReceiptRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the SetActiveReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        SetActiveReceiptRuleSetResponse SetActiveReceiptRuleSet(SetActiveReceiptRuleSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetActiveReceiptRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetActiveReceiptRuleSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<SetActiveReceiptRuleSetResponse> SetActiveReceiptRuleSetAsync(SetActiveReceiptRuleSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  SetIdentityDkimEnabled
 
         /// <summary>
@@ -771,6 +1365,107 @@ namespace Amazon.SimpleEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<SetIdentityNotificationTopicResponse> SetIdentityNotificationTopicAsync(SetIdentityNotificationTopicRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SetReceiptRulePosition
+
+        /// <summary>
+        /// Sets the position of the specified receipt rule in the receipt rule set.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetReceiptRulePosition service method.</param>
+        /// 
+        /// <returns>The response from the SetReceiptRulePosition service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
+        /// Indicates that the provided receipt rule does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        SetReceiptRulePositionResponse SetReceiptRulePosition(SetReceiptRulePositionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetReceiptRulePosition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetReceiptRulePosition operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<SetReceiptRulePositionResponse> SetReceiptRulePositionAsync(SetReceiptRulePositionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateReceiptRule
+
+        /// <summary>
+        /// Updates a receipt rule.
+        /// 
+        ///  
+        /// <para>
+        /// For information about managing receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReceiptRule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateReceiptRule service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidLambdaFunctionException">
+        /// Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could
+        /// not execute the provided function, possibly due to permissions issues. For information
+        /// about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidS3ConfigurationException">
+        /// Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid,
+        /// or that Amazon SES could not publish to the bucket, possibly due to permissions issues.
+        /// For information about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidSnsTopicException">
+        /// Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could
+        /// not publish to the topic, possibly due to permissions issues. For information about
+        /// giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created due to service limits. For a list of
+        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
+        /// Indicates that the provided receipt rule does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
+        /// Indicates that the provided receipt rule set does not exist.
+        /// </exception>
+        UpdateReceiptRuleResponse UpdateReceiptRule(UpdateReceiptRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateReceiptRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReceiptRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateReceiptRuleResponse> UpdateReceiptRuleAsync(UpdateReceiptRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

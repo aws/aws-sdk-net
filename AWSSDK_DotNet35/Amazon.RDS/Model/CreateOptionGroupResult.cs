@@ -32,12 +32,22 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class CreateOptionGroupResult : AmazonWebServiceResponse
     {
-        private OptionGroup _response;
+        private OptionGroup _optionGroup;
 
+        /// <summary>
+        /// Gets and sets the property OptionGroup.
+        /// </summary>
         public OptionGroup OptionGroup
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._optionGroup; }
+            set { this._optionGroup = value; }
         }
+
+        // Check to see if OptionGroup property is set
+        internal bool IsSetOptionGroup()
+        {
+            return this._optionGroup != null;
+        }
+
     }
 }

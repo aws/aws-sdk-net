@@ -252,9 +252,9 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Cancels an update on the specified stack. If the call completes successfully, the
-        /// stack will roll back the update and revert to the previous stack configuration.
+        /// stack rolls back the update and reverts to the previous stack configuration.
         /// 
-        ///  <note>Only stacks that are in the UPDATE_IN_PROGRESS state can be canceled.</note>
+        ///  <note>You can cancel only stacks that are in the UPDATE_IN_PROGRESS state.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelUpdateStack service method.</param>
         /// 
@@ -368,6 +368,43 @@ namespace Amazon.CloudFormation
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteStackRequest,DeleteStackResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAccountLimits
+
+        /// <summary>
+        /// Retrieves your account's AWS CloudFormation limits, such as the maximum number of
+        /// stacks that you can create in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountLimits service method, as returned by CloudFormation.</returns>
+        public DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request)
+        {
+            var marshaller = new DescribeAccountLimitsRequestMarshaller();
+            var unmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAccountLimitsRequest,DescribeAccountLimitsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccountLimits operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeAccountLimitsResponse> DescribeAccountLimitsAsync(DescribeAccountLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeAccountLimitsRequestMarshaller();
+            var unmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAccountLimitsRequest,DescribeAccountLimitsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

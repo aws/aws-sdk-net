@@ -22,12 +22,33 @@
         "GetCredentialReport"
     ],
     "shapeSubstitutions": {
-        "Policy": { 
+        "Policy": {
             "renameShape": "ManagedPolicy"
         },
-		"AttachedPolicy": {
-			"renameShape": "AttachedPolicyType"
-		}
+        "AttachedPolicy": {
+            "renameShape": "AttachedPolicyType"
+        }
+    },
+    "simpleMethods": {
+        "operations": {
+            "GetContextKeysForCustomPolicy": {
+                "methodForms": [
+                    [
+                        "PolicyInputList"
+                    ]
+                ]
+            },
+            "GetContextKeysForPrincipalPolicy": {
+                "methodForms": [
+                    [
+                        "PolicySourceArn",
+                    ],
+                    [
+                        "PolicySourceArn",
+                        "PolicyInputList"
+                    ]
+                ]
+            }
+        }
     }
-
 }

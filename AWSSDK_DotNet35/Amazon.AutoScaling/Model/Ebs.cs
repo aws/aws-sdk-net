@@ -33,6 +33,7 @@ namespace Amazon.AutoScaling.Model
     public partial class Ebs
     {
         private bool? _deleteOnTermination;
+        private bool? _encrypted;
         private int? _iops;
         private string _snapshotId;
         private int? _volumeSize;
@@ -61,14 +62,33 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// Indicates whether the volume should be encrypted. Encrypted EBS volumes must be attached
+        /// to instances that support Amazon EBS encryption. Volumes that are created from encrypted
+        /// snapshots are automatically encrypted. There is no way to create an encrypted volume
+        /// from an unencrypted snapshot or an unencrypted volume from an encrypted snapshot.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
         /// For Provisioned IOPS (SSD) volumes only. The number of I/O operations per second (IOPS)
         /// to provision for the volume.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: Range is 100 to 4000.
         /// </para>
         ///  
         /// <para>

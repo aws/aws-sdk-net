@@ -58,7 +58,7 @@ namespace Amazon.ElasticBeanstalk
     /// </para>
     ///  
     /// <para>
-    /// <b>Endpoints</b>
+    ///  <b>Endpoints</b> 
     /// </para>
     ///  
     /// <para>
@@ -248,6 +248,36 @@ namespace Amazon.ElasticBeanstalk
             var unmarshaller = CheckDNSAvailabilityResponseUnmarshaller.Instance;
 
             return InvokeAsync<CheckDNSAvailabilityRequest,CheckDNSAvailabilityResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ComposeEnvironments
+
+        internal ComposeEnvironmentsResponse ComposeEnvironments(ComposeEnvironmentsRequest request)
+        {
+            var marshaller = new ComposeEnvironmentsRequestMarshaller();
+            var unmarshaller = ComposeEnvironmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ComposeEnvironmentsRequest,ComposeEnvironmentsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ComposeEnvironments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ComposeEnvironments operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ComposeEnvironmentsResponse> ComposeEnvironmentsAsync(ComposeEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ComposeEnvironmentsRequestMarshaller();
+            var unmarshaller = ComposeEnvironmentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ComposeEnvironmentsRequest,ComposeEnvironmentsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

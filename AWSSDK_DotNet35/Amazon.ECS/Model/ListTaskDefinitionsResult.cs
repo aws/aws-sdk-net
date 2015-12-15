@@ -59,7 +59,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskDefinitionArns. 
         /// <para>
-        /// The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefintions</code>
+        /// The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefinitions</code>
         /// request.
         /// </para>
         /// </summary>

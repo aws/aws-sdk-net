@@ -2,6 +2,13 @@
 {
     "simpleMethods" : {
         "operations" : {
+            "CancelKeyDeletion" : {
+                "methodForms" : [
+                    [
+                        "KeyId"
+                    ]
+                ]
+            },
             "CreateAlias" : {
                 "methodForms" : [
                     [
@@ -82,6 +89,15 @@
                     ]
                 ]
             },
+            "ListRetirableGrants" : {
+                "methodForms" : [
+                    [
+                        "RetiringPrincipal"
+                    ],
+                    [
+                    ]
+                ]
+            },
             "PutKeyPolicy" : {
                 "methodForms" : [
                     [
@@ -103,6 +119,17 @@
                     [
                         "GrantId",
                         "KeyId"
+                    ]
+                ]
+            },
+            "ScheduleKeyDeletion" : {
+                "methodForms" : [
+                    [
+                        "KeyId"
+                    ],
+                    [
+                        "KeyId",
+                        "PendingWindowInDays"
                     ]
                 ]
             },

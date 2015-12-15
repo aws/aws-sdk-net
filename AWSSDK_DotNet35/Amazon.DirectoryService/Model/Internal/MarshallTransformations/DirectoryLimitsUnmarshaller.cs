@@ -72,6 +72,24 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     unmarshalledObject.CloudOnlyDirectoriesLimitReached = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CloudOnlyMicrosoftADCurrentCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.CloudOnlyMicrosoftADCurrentCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CloudOnlyMicrosoftADLimit", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.CloudOnlyMicrosoftADLimit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CloudOnlyMicrosoftADLimitReached", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.CloudOnlyMicrosoftADLimitReached = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ConnectedDirectoriesCurrentCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -84,6 +84,27 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     if(publicRequest.HealthCheckConfig.IsSetFailureThreshold())
                         xmlWriter.WriteElementString("FailureThreshold", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.HealthCheckConfig.FailureThreshold));                 
     
+                    if(publicRequest.HealthCheckConfig.IsSetMeasureLatency())
+                        xmlWriter.WriteElementString("MeasureLatency", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.HealthCheckConfig.MeasureLatency));                 
+    
+                    if(publicRequest.HealthCheckConfig.IsSetInverted())
+                        xmlWriter.WriteElementString("Inverted", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.HealthCheckConfig.Inverted));                 
+    
+                    if(publicRequest.HealthCheckConfig.IsSetHealthThreshold())
+                        xmlWriter.WriteElementString("HealthThreshold", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.HealthCheckConfig.HealthThreshold));                 
+    
+                    var publicRequestHealthCheckConfigChildHealthChecks = publicRequest.HealthCheckConfig.ChildHealthChecks;
+                    if (publicRequestHealthCheckConfigChildHealthChecks != null && publicRequestHealthCheckConfigChildHealthChecks.Count > 0) 
+                    {                        
+                        xmlWriter.WriteStartElement("ChildHealthChecks", "https://route53.amazonaws.com/doc/2013-04-01/");
+                        foreach (var publicRequestHealthCheckConfigChildHealthChecksValue in publicRequestHealthCheckConfigChildHealthChecks) 
+                        {
+                            xmlWriter.WriteStartElement("ChildHealthCheck", "https://route53.amazonaws.com/doc/2013-04-01/");
+                            xmlWriter.WriteValue(publicRequestHealthCheckConfigChildHealthChecksValue);
+                            xmlWriter.WriteEndElement();
+                        }            
+                        xmlWriter.WriteEndElement();            
+                    }
                     xmlWriter.WriteEndElement();
                 }
 

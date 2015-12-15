@@ -29,7 +29,7 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the ConnectDirectory operation.
-    /// Creates an AD Connector to connect an on-premises directory.
+    /// Creates an AD Connector to connect to an on-premises directory.
     /// </summary>
     public partial class ConnectDirectoryRequest : AmazonDirectoryServiceRequest
     {

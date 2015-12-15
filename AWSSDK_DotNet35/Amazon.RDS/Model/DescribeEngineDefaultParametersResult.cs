@@ -28,17 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a>
-    /// action.
+    /// 
     /// </summary>
     public partial class DescribeEngineDefaultParametersResult : AmazonWebServiceResponse
     {
-        private EngineDefaults _response;
+        private EngineDefaults _engineDefaults;
 
+        /// <summary>
+        /// Gets and sets the property EngineDefaults.
+        /// </summary>
         public EngineDefaults EngineDefaults
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._engineDefaults; }
+            set { this._engineDefaults = value; }
         }
+
+        // Check to see if EngineDefaults property is set
+        internal bool IsSetEngineDefaults()
+        {
+            return this._engineDefaults != null;
+        }
+
     }
 }

@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
     {
         private string _dbClusterIdentifier;
         private string _dbSubnetGroupName;
+        private string _kmsKeyId;
         private string _optionGroupName;
         private int? _port;
         private DateTime? _restoreToTime;
@@ -94,6 +95,31 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSubnetGroupName()
         {
             return this._dbSubnetGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The KMS key identifier to use when restoring an encrypted DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key.
+        /// If you are restoring a DB cluster with the same AWS account that owns the KMS encryption
+        /// key used to encrypt the new DB cluster, then you can use the KMS key alias instead
+        /// of the ARN for the KMS encryption key.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

@@ -41,7 +41,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cluster. 
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of the cluster that hosts the services
-        /// you want to list. If you do not specify a cluster, the default cluster is assumed..
+        /// to list. If you do not specify a cluster, the default cluster is assumed..
         /// </para>
         /// </summary>
         public string Cluster
@@ -64,8 +64,8 @@ namespace Amazon.ECS.Model
         /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
         /// response element. The remaining results of the initial request can be seen by sending
         /// another <code>ListServices</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then <code>ListServices</code>
-        /// returns up to 100 results and a <code>nextToken</code> value if applicable.
+        /// value. This value can be between 1 and 10. If this parameter is not used, then <code>ListServices</code>
+        /// returns up to 10 results and a <code>nextToken</code> value if applicable.
         /// </para>
         /// </summary>
         public int MaxResults

@@ -38,7 +38,7 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property Credentials. 
         /// <para>
-        /// Credentials for the the provided identity ID.
+        /// Credentials for the provided identity ID.
         /// </para>
         /// </summary>
         public Credentials Credentials

@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotPriceHistory. 
         /// <para>
-        /// The historical Spot Prices.
+        /// The historical Spot prices.
         /// </para>
         /// </summary>
         public List<SpotPrice> SpotPriceHistory

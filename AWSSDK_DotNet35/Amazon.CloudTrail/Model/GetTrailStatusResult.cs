@@ -35,12 +35,20 @@ namespace Amazon.CloudTrail.Model
         private bool? _isLogging;
         private string _latestCloudWatchLogsDeliveryError;
         private DateTime? _latestCloudWatchLogsDeliveryTime;
+        private string _latestDeliveryAttemptSucceeded;
+        private string _latestDeliveryAttemptTime;
         private string _latestDeliveryError;
         private DateTime? _latestDeliveryTime;
+        private string _latestDigestDeliveryError;
+        private DateTime? _latestDigestDeliveryTime;
+        private string _latestNotificationAttemptSucceeded;
+        private string _latestNotificationAttemptTime;
         private string _latestNotificationError;
         private DateTime? _latestNotificationTime;
         private DateTime? _startLoggingTime;
         private DateTime? _stopLoggingTime;
+        private string _timeLoggingStarted;
+        private string _timeLoggingStopped;
 
         /// <summary>
         /// Gets and sets the property IsLogging. 
@@ -99,12 +107,52 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LatestDeliveryAttemptSucceeded. 
+        /// <para>
+        /// This field is deprecated.
+        /// </para>
+        /// </summary>
+        public string LatestDeliveryAttemptSucceeded
+        {
+            get { return this._latestDeliveryAttemptSucceeded; }
+            set { this._latestDeliveryAttemptSucceeded = value; }
+        }
+
+        // Check to see if LatestDeliveryAttemptSucceeded property is set
+        internal bool IsSetLatestDeliveryAttemptSucceeded()
+        {
+            return this._latestDeliveryAttemptSucceeded != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestDeliveryAttemptTime. 
+        /// <para>
+        /// This field is deprecated.
+        /// </para>
+        /// </summary>
+        public string LatestDeliveryAttemptTime
+        {
+            get { return this._latestDeliveryAttemptTime; }
+            set { this._latestDeliveryAttemptTime = value; }
+        }
+
+        // Check to see if LatestDeliveryAttemptTime property is set
+        internal bool IsSetLatestDeliveryAttemptTime()
+        {
+            return this._latestDeliveryAttemptTime != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LatestDeliveryError. 
         /// <para>
         /// Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver
         /// log files to the designated bucket. For more information see the topic <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
         /// Responses</a> in the Amazon S3 API Reference. 
         /// </para>
+        ///  <note>This error occurs only when there is a problem with the destination S3 bucket
+        /// and will not occur for timeouts. To resolve the issue, create a new bucket and call
+        /// <code>UpdateTrail</code> to specify the new bucket, or fix the existing objects so
+        /// that CloudTrail can again write to the bucket. </note>
         /// </summary>
         public string LatestDeliveryError
         {
@@ -135,6 +183,85 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetLatestDeliveryTime()
         {
             return this._latestDeliveryTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestDigestDeliveryError. 
+        /// <para>
+        /// Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver
+        /// a digest file to the designated bucket. For more information see the topic <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+        /// Responses</a> in the Amazon S3 API Reference. 
+        /// </para>
+        ///  <note>This error occurs only when there is a problem with the destination S3 bucket
+        /// and will not occur for timeouts. To resolve the issue, create a new bucket and call
+        /// <code>UpdateTrail</code> to specify the new bucket, or fix the existing objects so
+        /// that CloudTrail can again write to the bucket. </note>
+        /// </summary>
+        public string LatestDigestDeliveryError
+        {
+            get { return this._latestDigestDeliveryError; }
+            set { this._latestDigestDeliveryError = value; }
+        }
+
+        // Check to see if LatestDigestDeliveryError property is set
+        internal bool IsSetLatestDigestDeliveryError()
+        {
+            return this._latestDigestDeliveryError != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestDigestDeliveryTime. 
+        /// <para>
+        /// Specifies the date and time that CloudTrail last delivered a digest file to an account's
+        /// Amazon S3 bucket.
+        /// </para>
+        /// </summary>
+        public DateTime LatestDigestDeliveryTime
+        {
+            get { return this._latestDigestDeliveryTime.GetValueOrDefault(); }
+            set { this._latestDigestDeliveryTime = value; }
+        }
+
+        // Check to see if LatestDigestDeliveryTime property is set
+        internal bool IsSetLatestDigestDeliveryTime()
+        {
+            return this._latestDigestDeliveryTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestNotificationAttemptSucceeded. 
+        /// <para>
+        /// This field is deprecated.
+        /// </para>
+        /// </summary>
+        public string LatestNotificationAttemptSucceeded
+        {
+            get { return this._latestNotificationAttemptSucceeded; }
+            set { this._latestNotificationAttemptSucceeded = value; }
+        }
+
+        // Check to see if LatestNotificationAttemptSucceeded property is set
+        internal bool IsSetLatestNotificationAttemptSucceeded()
+        {
+            return this._latestNotificationAttemptSucceeded != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestNotificationAttemptTime. 
+        /// <para>
+        /// This field is deprecated.
+        /// </para>
+        /// </summary>
+        public string LatestNotificationAttemptTime
+        {
+            get { return this._latestNotificationAttemptTime; }
+            set { this._latestNotificationAttemptTime = value; }
+        }
+
+        // Check to see if LatestNotificationAttemptTime property is set
+        internal bool IsSetLatestNotificationAttemptTime()
+        {
+            return this._latestNotificationAttemptTime != null;
         }
 
         /// <summary>
@@ -212,6 +339,42 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetStopLoggingTime()
         {
             return this._stopLoggingTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeLoggingStarted. 
+        /// <para>
+        /// This field is deprecated.
+        /// </para>
+        /// </summary>
+        public string TimeLoggingStarted
+        {
+            get { return this._timeLoggingStarted; }
+            set { this._timeLoggingStarted = value; }
+        }
+
+        // Check to see if TimeLoggingStarted property is set
+        internal bool IsSetTimeLoggingStarted()
+        {
+            return this._timeLoggingStarted != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeLoggingStopped. 
+        /// <para>
+        /// This field is deprecated.
+        /// </para>
+        /// </summary>
+        public string TimeLoggingStopped
+        {
+            get { return this._timeLoggingStopped; }
+            set { this._timeLoggingStopped = value; }
+        }
+
+        // Check to see if TimeLoggingStopped property is set
+        internal bool IsSetTimeLoggingStopped()
+        {
+            return this._timeLoggingStopped != null;
         }
 
     }

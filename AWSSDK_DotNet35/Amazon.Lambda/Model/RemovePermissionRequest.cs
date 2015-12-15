@@ -29,8 +29,10 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the RemovePermission operation.
-    /// You can remove individual permissions from an access policy associated with a Lambda
-    /// function by providing a Statement ID. 
+    /// You can remove individual permissions from an resource policy associated with a Lambda
+    /// function by providing a statement ID that you provided when you addded the permission.
+    /// The API removes corresponding permission that is associated with the specific ARN
+    /// identified by the <code>Qualifier</code> parameter.
     /// 
     ///  
     /// <para>
@@ -45,12 +47,13 @@ namespace Amazon.Lambda.Model
     public partial class RemovePermissionRequest : AmazonLambdaRequest
     {
         private string _functionName;
+        private string _qualifier;
         private string _statementId;
 
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// Lambda function whose access policy you want to remove a permission from.
+        /// Lambda function whose resource policy you want to remove a permission from.
         /// </para>
         ///  
         /// <para>
@@ -71,6 +74,27 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFunctionName()
         {
             return this._functionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Qualifier. 
+        /// <para>
+        /// You can specify this optional parameter to remove permission associated with a specific
+        /// function version or function alias. The value of this paramter is the function version
+        /// or alias name. If you don't specify this parameter, the API removes permission associated
+        /// with the unqualified function ARN.
+        /// </para>
+        /// </summary>
+        public string Qualifier
+        {
+            get { return this._qualifier; }
+            set { this._qualifier = value; }
+        }
+
+        // Check to see if Qualifier property is set
+        internal bool IsSetQualifier()
+        {
+            return this._qualifier != null;
         }
 
         /// <summary>

@@ -56,6 +56,59 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Cpu);
             }
 
+            if(requestObject.IsSetDisableNetworking())
+            {
+                context.Writer.WritePropertyName("disableNetworking");
+                context.Writer.Write(requestObject.DisableNetworking);
+            }
+
+            if(requestObject.IsSetDnsSearchDomains())
+            {
+                context.Writer.WritePropertyName("dnsSearchDomains");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDnsSearchDomainsListValue in requestObject.DnsSearchDomains)
+                {
+                        context.Writer.Write(requestObjectDnsSearchDomainsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetDnsServers())
+            {
+                context.Writer.WritePropertyName("dnsServers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDnsServersListValue in requestObject.DnsServers)
+                {
+                        context.Writer.Write(requestObjectDnsServersListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetDockerLabels())
+            {
+                context.Writer.WritePropertyName("dockerLabels");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectDockerLabelsKvp in requestObject.DockerLabels)
+                {
+                    context.Writer.WritePropertyName(requestObjectDockerLabelsKvp.Key);
+                    var requestObjectDockerLabelsValue = requestObjectDockerLabelsKvp.Value;
+
+                        context.Writer.Write(requestObjectDockerLabelsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDockerSecurityOptions())
+            {
+                context.Writer.WritePropertyName("dockerSecurityOptions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDockerSecurityOptionsListValue in requestObject.DockerSecurityOptions)
+                {
+                        context.Writer.Write(requestObjectDockerSecurityOptionsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetEntryPoint())
             {
                 context.Writer.WritePropertyName("entryPoint");
@@ -89,6 +142,28 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Essential);
             }
 
+            if(requestObject.IsSetExtraHosts())
+            {
+                context.Writer.WritePropertyName("extraHosts");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectExtraHostsListValue in requestObject.ExtraHosts)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = HostEntryMarshaller.Instance;
+                    marshaller.Marshall(requestObjectExtraHostsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetHostname())
+            {
+                context.Writer.WritePropertyName("hostname");
+                context.Writer.Write(requestObject.Hostname);
+            }
+
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("image");
@@ -104,6 +179,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectLinksListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetLogConfiguration())
+            {
+                context.Writer.WritePropertyName("logConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LogConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LogConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetMemory())
@@ -150,6 +236,40 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetPrivileged())
+            {
+                context.Writer.WritePropertyName("privileged");
+                context.Writer.Write(requestObject.Privileged);
+            }
+
+            if(requestObject.IsSetReadonlyRootFilesystem())
+            {
+                context.Writer.WritePropertyName("readonlyRootFilesystem");
+                context.Writer.Write(requestObject.ReadonlyRootFilesystem);
+            }
+
+            if(requestObject.IsSetUlimits())
+            {
+                context.Writer.WritePropertyName("ulimits");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectUlimitsListValue in requestObject.Ulimits)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UlimitMarshaller.Instance;
+                    marshaller.Marshall(requestObjectUlimitsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetUser())
+            {
+                context.Writer.WritePropertyName("user");
+                context.Writer.Write(requestObject.User);
+            }
+
             if(requestObject.IsSetVolumesFrom())
             {
                 context.Writer.WritePropertyName("volumesFrom");
@@ -164,6 +284,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetWorkingDirectory())
+            {
+                context.Writer.WritePropertyName("workingDirectory");
+                context.Writer.Write(requestObject.WorkingDirectory);
             }
 
         }

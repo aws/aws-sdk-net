@@ -28,22 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the following actions: 
     /// 
-    ///  <ul> <li> <a>CreateDBInstance</a> </li> <li> <a>DeleteDBInstance</a> </li> <li> <a>ModifyDBInstance</a>
-    /// </li> </ul> 
-    /// <para>
-    /// This data type is used as a response element in the <a>DescribeDBInstances</a> action.
-    /// </para>
     /// </summary>
     public partial class PromoteReadReplicaResult : AmazonWebServiceResponse
     {
-        private DBInstance _response;
+        private DBInstance _dbInstance;
 
+        /// <summary>
+        /// Gets and sets the property DBInstance.
+        /// </summary>
         public DBInstance DBInstance
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._dbInstance; }
+            set { this._dbInstance = value; }
         }
+
+        // Check to see if DBInstance property is set
+        internal bool IsSetDBInstance()
+        {
+            return this._dbInstance != null;
+        }
+
     }
 }

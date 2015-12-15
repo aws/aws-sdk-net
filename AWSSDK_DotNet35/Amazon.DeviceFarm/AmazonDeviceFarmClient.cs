@@ -428,6 +428,265 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  DeleteDevicePool
+
+        /// <summary>
+        /// Deletes a device pool given the pool ARN. Does not allow deletion of curated pools
+        /// owned by the system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDevicePool service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDevicePool service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public DeleteDevicePoolResponse DeleteDevicePool(DeleteDevicePoolRequest request)
+        {
+            var marshaller = new DeleteDevicePoolRequestMarshaller();
+            var unmarshaller = DeleteDevicePoolResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDevicePoolRequest,DeleteDevicePoolResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDevicePool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDevicePool operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDevicePool
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteDevicePool(DeleteDevicePoolRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteDevicePoolRequestMarshaller();
+            var unmarshaller = DeleteDevicePoolResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteDevicePoolRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDevicePool operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDevicePool.</param>
+        /// 
+        /// <returns>Returns a  DeleteDevicePoolResult from DeviceFarm.</returns>
+        public  DeleteDevicePoolResponse EndDeleteDevicePool(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDevicePoolResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteProject
+
+        /// <summary>
+        /// Deletes an AWS Device Farm project, given the project ARN.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Note</b> Deleting this resource does not stop an in-progress run.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProject service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
+        {
+            var marshaller = new DeleteProjectRequestMarshaller();
+            var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProjectRequest,DeleteProjectResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProject operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProject
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteProject(DeleteProjectRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteProjectRequestMarshaller();
+            var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteProjectRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteProject operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProject.</param>
+        /// 
+        /// <returns>Returns a  DeleteProjectResult from DeviceFarm.</returns>
+        public  DeleteProjectResponse EndDeleteProject(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteProjectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteRun
+
+        /// <summary>
+        /// Deletes the run, given the run ARN.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Note</b> Deleting this resource does not stop an in-progress run.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRun service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRun service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public DeleteRunResponse DeleteRun(DeleteRunRequest request)
+        {
+            var marshaller = new DeleteRunRequestMarshaller();
+            var unmarshaller = DeleteRunResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRunRequest,DeleteRunResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRun operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRun
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteRun(DeleteRunRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteRunRequestMarshaller();
+            var unmarshaller = DeleteRunResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteRunRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRun.</param>
+        /// 
+        /// <returns>Returns a  DeleteRunResult from DeviceFarm.</returns>
+        public  DeleteRunResponse EndDeleteRun(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRunResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteUpload
+
+        /// <summary>
+        /// Deletes an upload given the upload ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUpload service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUpload service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public DeleteUploadResponse DeleteUpload(DeleteUploadRequest request)
+        {
+            var marshaller = new DeleteUploadRequestMarshaller();
+            var unmarshaller = DeleteUploadResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUploadRequest,DeleteUploadResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUpload operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUpload
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteUpload(DeleteUploadRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteUploadRequestMarshaller();
+            var unmarshaller = DeleteUploadResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteUploadRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUpload.</param>
+        /// 
+        /// <returns>Returns a  DeleteUploadResult from DeviceFarm.</returns>
+        public  DeleteUploadResponse EndDeleteUpload(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteUploadResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetAccountSettings
 
         /// <summary>
@@ -2015,6 +2274,132 @@ namespace Amazon.DeviceFarm
         public  ScheduleRunResponse EndScheduleRun(IAsyncResult asyncResult)
         {
             return EndInvoke<ScheduleRunResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateDevicePool
+
+        /// <summary>
+        /// Modifies the name, description, and rules in a device pool given the attributes and
+        /// the pool ARN. Rule updates are all-or-nothing, meaning they can only be updated as
+        /// a whole (or not at all).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDevicePool service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDevicePool service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public UpdateDevicePoolResponse UpdateDevicePool(UpdateDevicePoolRequest request)
+        {
+            var marshaller = new UpdateDevicePoolRequestMarshaller();
+            var unmarshaller = UpdateDevicePoolResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDevicePoolRequest,UpdateDevicePoolResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDevicePool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDevicePool operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDevicePool
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateDevicePool(UpdateDevicePoolRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateDevicePoolRequestMarshaller();
+            var unmarshaller = UpdateDevicePoolResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateDevicePoolRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDevicePool operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDevicePool.</param>
+        /// 
+        /// <returns>Returns a  UpdateDevicePoolResult from DeviceFarm.</returns>
+        public  UpdateDevicePoolResponse EndUpdateDevicePool(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDevicePoolResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateProject
+
+        /// <summary>
+        /// Modifies the specified project name, given the project ARN and a new name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProject service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
+        {
+            var marshaller = new UpdateProjectRequestMarshaller();
+            var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProjectRequest,UpdateProjectResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProject operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProject
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateProject(UpdateProjectRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateProjectRequestMarshaller();
+            var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateProjectRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateProject operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateProject.</param>
+        /// 
+        /// <returns>Returns a  UpdateProjectResult from DeviceFarm.</returns>
+        public  UpdateProjectResponse EndUpdateProject(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateProjectResponse>(asyncResult);
         }
 
         #endregion

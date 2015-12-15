@@ -55,8 +55,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AssociatePublicIpAddress. 
         /// <para>
-        /// Specifies whether the instances are associated with a public IP address (<code>true</code>)
-        /// or not (<code>false</code>).
+        /// [EC2-VPC] Indicates whether to assign a public IP address to each instance.
         /// </para>
         /// </summary>
         public bool AssociatePublicIpAddress

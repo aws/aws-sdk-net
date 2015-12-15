@@ -90,6 +90,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MemorySize);
                 }
 
+                if(publicRequest.IsSetPublish())
+                {
+                    context.Writer.WritePropertyName("Publish");
+                    context.Writer.Write(publicRequest.Publish);
+                }
+
                 if(publicRequest.IsSetRole())
                 {
                     context.Writer.WritePropertyName("Role");

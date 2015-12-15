@@ -24,6 +24,8 @@ namespace ServiceClientGenerator
         public const string TypeKey = "type";
         public const string FlattenedKey = "flattened";
         public const string RequiredKey = "required";
+        public const string ErrorKey = "error";
+        public const string ErrorCodeKey = "code";
 
         readonly string _name;
 
@@ -453,6 +455,29 @@ namespace ServiceClientGenerator
                     throw new Exception("Type is missing for shape " + this.Name);
 
                 return typeNode.ToString();
+            }
+        }
+
+        public bool HasErrorCode
+        {
+            get
+            {
+                var errorNode = this.data[ErrorKey];
+                if (errorNode != null)
+                    return errorNode[ErrorCodeKey] != null;
+
+                return false;
+            }
+        }
+
+        public string ErrorCode
+        {
+            get
+            {
+                if (!HasErrorCode)
+                    return null;
+                var errorNode = this.data[ErrorKey];
+                return errorNode[ErrorCodeKey].ToString();
             }
         }
 

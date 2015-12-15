@@ -97,6 +97,13 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         unmarshalledObject.EnvironmentId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("EnvironmentLinks/member", targetDepth))
+                    {
+                        var unmarshaller = EnvironmentLinkUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.EnvironmentLinks.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("EnvironmentName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

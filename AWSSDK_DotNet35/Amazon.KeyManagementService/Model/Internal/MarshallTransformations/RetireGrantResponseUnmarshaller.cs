@@ -53,6 +53,10 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             {
                 return new DependencyTimeoutException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGrantId"))
+            {
+                return new InvalidGrantIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGrantToken"))
             {
                 return new InvalidGrantTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -60,6 +64,10 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("KMSInternal"))
             {
                 return new KMSInternalException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("KMSInvalidStateException"))
+            {
+                return new KMSInvalidStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("NotFound"))
             {

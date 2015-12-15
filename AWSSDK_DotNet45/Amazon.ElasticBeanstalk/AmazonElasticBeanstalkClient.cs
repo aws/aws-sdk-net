@@ -58,7 +58,7 @@ namespace Amazon.ElasticBeanstalk
     /// </para>
     ///  
     /// <para>
-    /// <b>Endpoints</b>
+    ///  <b>Endpoints</b> 
     /// </para>
     ///  
     /// <para>
@@ -257,8 +257,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the AbortEnvironmentUpdate service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// Unable to perform the specified operation because the user does not have enough privileges
-        /// for one of more downstream aws services
+        /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         public AbortEnvironmentUpdateResponse AbortEnvironmentUpdate(AbortEnvironmentUpdateRequest request)
         {
@@ -324,6 +323,53 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
         
+        #region  ComposeEnvironments
+
+        /// <summary>
+        /// Create or update a group of environments that each run a separate component of a single
+        /// application. Takes a list of version labels that specify application source bundles
+        /// for each of the environments to create or update. The name of each environment and
+        /// other required information must be included in the source bundles in an environment
+        /// manifest named <code>env.yaml</code>. See <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
+        /// Environments</a> for details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ComposeEnvironments service method.</param>
+        /// 
+        /// <returns>The response from the ComposeEnvironments service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one of more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyEnvironmentsException">
+        /// The specified account has reached its limit of environments.
+        /// </exception>
+        public ComposeEnvironmentsResponse ComposeEnvironments(ComposeEnvironmentsRequest request)
+        {
+            var marshaller = new ComposeEnvironmentsRequestMarshaller();
+            var unmarshaller = ComposeEnvironmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ComposeEnvironmentsRequest,ComposeEnvironmentsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ComposeEnvironments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ComposeEnvironments operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ComposeEnvironmentsResponse> ComposeEnvironmentsAsync(ComposeEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ComposeEnvironmentsRequestMarshaller();
+            var unmarshaller = ComposeEnvironmentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ComposeEnvironmentsRequest,ComposeEnvironmentsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateApplication
 
         /// <summary>
@@ -334,8 +380,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateApplication service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyApplicationsException">
-        /// The caller has exceeded the limit on the number of applications associated with their
-        /// account.
+        /// The specified account has reached its limit of applications.
         /// </exception>
         public CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
@@ -379,19 +424,16 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// Unable to perform the specified operation because the user does not have enough privileges
-        /// for one of more downstream aws services
+        /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.S3LocationNotInServiceRegionException">
         /// The specified S3 bucket does not belong to the S3 region in which the service is running.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyApplicationsException">
-        /// The caller has exceeded the limit on the number of applications associated with their
-        /// account.
+        /// The specified account has reached its limit of applications.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyApplicationVersionsException">
-        /// The caller has exceeded the limit on the number of application versions associated
-        /// with their account.
+        /// The specified account has reached its limit of application versions.
         /// </exception>
         public CreateApplicationVersionResponse CreateApplicationVersion(CreateApplicationVersionRequest request)
         {
@@ -439,12 +481,10 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// Unable to perform the specified operation because the user does not have enough privileges
-        /// for one of more downstream aws services
+        /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyConfigurationTemplatesException">
-        /// The caller has exceeded the limit on the number of configuration templates associated
-        /// with their account.
+        /// The specified account has reached its limit of configuration templates.
         /// </exception>
         public CreateConfigurationTemplateResponse CreateConfigurationTemplate(CreateConfigurationTemplateRequest request)
         {
@@ -483,11 +523,10 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateEnvironment service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// Unable to perform the specified operation because the user does not have enough privileges
-        /// for one of more downstream aws services
+        /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyEnvironmentsException">
-        /// The caller has exceeded the limit of allowed environments associated with the account.
+        /// The specified account has reached its limit of environments.
         /// </exception>
         public CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request)
         {
@@ -530,15 +569,13 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateStorageLocation service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// Unable to perform the specified operation because the user does not have enough privileges
-        /// for one of more downstream aws services
+        /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.S3SubscriptionRequiredException">
-        /// The caller does not have a subscription to Amazon S3.
+        /// The specified account does not have a subscription to Amazon S3.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
-        /// The web service attempted to create a bucket in an Amazon S3 account that already
-        /// has 100 buckets.
+        /// The specified account has reached its limit of Amazon S3 buckets.
         /// </exception>
         public CreateStorageLocationResponse CreateStorageLocation()
         {
@@ -557,15 +594,13 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateStorageLocation service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// Unable to perform the specified operation because the user does not have enough privileges
-        /// for one of more downstream aws services
+        /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.S3SubscriptionRequiredException">
-        /// The caller does not have a subscription to Amazon S3.
+        /// The specified account does not have a subscription to Amazon S3.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
-        /// The web service attempted to create a bucket in an Amazon S3 account that already
-        /// has 100 buckets.
+        /// The specified account has reached its limit of Amazon S3 buckets.
         /// </exception>
         public CreateStorageLocationResponse CreateStorageLocation(CreateStorageLocationRequest request)
         {
@@ -607,8 +642,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DeleteApplication service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
-        /// Unable to perform the specified operation because another operation is already in
-        /// progress affecting an element in this activity.
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
         /// </exception>
         public DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
@@ -650,19 +685,18 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DeleteApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// Unable to perform the specified operation because the user does not have enough privileges
-        /// for one of more downstream aws services
+        /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
-        /// Unable to perform the specified operation because another operation is already in
-        /// progress affecting an element in this activity.
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.S3LocationNotInServiceRegionException">
         /// The specified S3 bucket does not belong to the S3 region in which the service is running.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.SourceBundleDeletionException">
-        /// Unable to delete the Amazon S3 source bundle associated with the application version,
-        /// although the application version deleted successfully.
+        /// Unable to delete the Amazon S3 source bundle associated with the application version.
+        /// The application version was deleted successfully.
         /// </exception>
         public DeleteApplicationVersionResponse DeleteApplicationVersion(DeleteApplicationVersionRequest request)
         {
@@ -705,8 +739,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DeleteConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
-        /// Unable to perform the specified operation because another operation is already in
-        /// progress affecting an element in this activity.
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
         /// </exception>
         public DeleteConfigurationTemplateResponse DeleteConfigurationTemplate(DeleteConfigurationTemplateRequest request)
         {
@@ -831,7 +865,8 @@ namespace Amazon.ElasticBeanstalk
         #region  DescribeApplicationVersions
 
         /// <summary>
-        /// Returns descriptions for existing application versions.
+        /// Retrieve a list of application versions stored in your AWS Elastic Beanstalk storage
+        /// bucket.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeApplicationVersions service method, as returned by ElasticBeanstalk.</returns>
@@ -841,7 +876,8 @@ namespace Amazon.ElasticBeanstalk
         }
 
         /// <summary>
-        /// Returns descriptions for existing application versions.
+        /// Retrieve a list of application versions stored in your AWS Elastic Beanstalk storage
+        /// bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationVersions service method.</param>
         /// 
@@ -987,10 +1023,11 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeEnvironmentHealth service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
-        /// 
+        /// A generic service exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InvalidRequestException">
-        /// The request is invalid, please check parameters and their values
+        /// One or more input parameters is not valid. Please correct the input parameters and
+        /// try the operation again.
         /// </exception>
         public DescribeEnvironmentHealthResponse DescribeEnvironmentHealth(DescribeEnvironmentHealthRequest request)
         {
@@ -1029,8 +1066,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeEnvironmentResources service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// Unable to perform the specified operation because the user does not have enough privileges
-        /// for one of more downstream aws services
+        /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         public DescribeEnvironmentResourcesResponse DescribeEnvironmentResources(DescribeEnvironmentResourcesRequest request)
         {
@@ -1169,10 +1205,11 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeInstancesHealth service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
-        /// 
+        /// A generic service exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InvalidRequestException">
-        /// The request is invalid, please check parameters and their values
+        /// One or more input parameters is not valid. Please correct the input parameters and
+        /// try the operation again.
         /// </exception>
         public DescribeInstancesHealthResponse DescribeInstancesHealth(DescribeInstancesHealthRequest request)
         {
@@ -1258,8 +1295,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the RebuildEnvironment service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// Unable to perform the specified operation because the user does not have enough privileges
-        /// for one of more downstream aws services
+        /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         public RebuildEnvironmentResponse RebuildEnvironment(RebuildEnvironmentRequest request)
         {
@@ -1473,8 +1509,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the TerminateEnvironment service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// Unable to perform the specified operation because the user does not have enough privileges
-        /// for one of more downstream aws services
+        /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         public TerminateEnvironmentResponse TerminateEnvironment(TerminateEnvironmentRequest request)
         {
@@ -1600,8 +1635,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the UpdateConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// Unable to perform the specified operation because the user does not have enough privileges
-        /// for one of more downstream aws services
+        /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         public UpdateConfigurationTemplateResponse UpdateConfigurationTemplate(UpdateConfigurationTemplateRequest request)
         {
@@ -1655,8 +1689,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the UpdateEnvironment service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// Unable to perform the specified operation because the user does not have enough privileges
-        /// for one of more downstream aws services
+        /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         public UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request)
         {
@@ -1702,8 +1735,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the ValidateConfigurationSettings service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// Unable to perform the specified operation because the user does not have enough privileges
-        /// for one of more downstream aws services
+        /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         public ValidateConfigurationSettingsResponse ValidateConfigurationSettings(ValidateConfigurationSettingsRequest request)
         {

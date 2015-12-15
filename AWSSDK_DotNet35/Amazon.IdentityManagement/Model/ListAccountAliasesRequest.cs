@@ -29,15 +29,9 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccountAliases operation.
-    /// Lists the account aliases associated with the account. For information about using
-    /// an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-    /// an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide. 
-    /// 
-    ///  
-    /// <para>
-    ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-    /// parameters. 
-    /// </para>
+    /// Lists the account alias associated with the account (Note: you can have only one).
+    /// For information about using an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+    /// an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.
     /// </summary>
     public partial class ListAccountAliasesRequest : AmazonIdentityManagementServiceRequest
     {
@@ -52,9 +46,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// Use this parameter only when paginating results and only after you have received a
-        /// response where the results are truncated. Set it to the value of the <code>Marker</code>
-        /// element in the response you just received.
+        /// Use this parameter only when paginating results and only after you receive a response
+        /// indicating that the results are truncated. Set it to the value of the <code>Marker</code>
+        /// element in the response that you received to indicate where the next call should start.
         /// </para>
         /// </summary>
         public string Marker
@@ -73,12 +67,16 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property MaxItems. 
         /// <para>
         /// Use this only when paginating results to indicate the maximum number of items you
-        /// want in the response. If there are additional items beyond the maximum you specify,
-        /// the <code>IsTruncated</code> response element is <code>true</code>.
+        /// want in the response. If additional items exist beyond the maximum you specify, the
+        /// <code>IsTruncated</code> response element is <code>true</code>.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is optional. If you do not include it, it defaults to 100.
+        /// This parameter is optional. If you do not include it, it defaults to 100. Note that
+        /// IAM might return fewer results, even when there are more results available. In that
+        /// case, the <code>IsTruncated</code> response element returns <code>true</code> and
+        /// <code>Marker</code> contains a value to include in the subsequent call that tells
+        /// the service where to continue from. 
         /// </para>
         /// </summary>
         public int MaxItems

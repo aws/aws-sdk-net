@@ -40,17 +40,18 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    /// Route 53 automatically creates a default SOA record and four NS records for the zone.
-    /// The NS records in the hosted zone are the name servers you give your registrar to
-    /// delegate your domain to. For more information about SOA and NS records, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
-    /// and SOA Records that Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route
-    /// 53 Developer Guide</i>.
+    /// Amazon Route 53 automatically creates a default SOA record and four NS records for
+    /// the zone. The NS records in the hosted zone are the name servers you give your registrar
+    /// to delegate your domain to. For more information about SOA and NS records, see <a
+    /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
+    /// and SOA Records that Amazon Route 53 Creates for a Hosted Zone</a> in the <i>Amazon
+    /// Route 53 Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// When you create a zone, its initial status is <code>PENDING</code>. This means that
     /// it is not yet available on all DNS servers. The status of the zone changes to <code>INSYNC</code>
-    /// when the NS and SOA records are available on all Route 53 DNS servers. 
+    /// when the NS and SOA records are available on all Amazon Route 53 DNS servers. 
     /// </para>
     ///  
     /// <para>
@@ -75,7 +76,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Instantiates CreateHostedZoneRequest with the parameterized properties
         /// </summary>
-        /// <param name="name">The name of the domain. This must be a fully-specified domain, for example, www.example.com. The trailing dot is optional; Route 53 assumes that the domain name is fully qualified. This means that Route 53 treats www.example.com (without a trailing dot) and www.example.com. (with a trailing dot) as identical. This is the name you have registered with your DNS registrar. You should ask your registrar to change the authoritative name servers for your domain to the set of <code>NameServers</code> elements returned in <code>DelegationSet</code>.</param>
+        /// <param name="name">The name of the domain. This must be a fully-specified domain, for example, www.example.com. The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Amazon Route 53 treats www.example.com (without a trailing dot) and www.example.com. (with a trailing dot) as identical. This is the name you have registered with your DNS registrar. You should ask your registrar to change the authoritative name servers for your domain to the set of <code>NameServers</code> elements returned in <code>DelegationSet</code>.</param>
         /// <param name="callerReference">A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you create a hosted zone. <code>CallerReference</code> can be any unique string; you might choose to use a string that identifies your project, such as <code>DNSMigration_01</code>. Valid characters are any Unicode code points that are legal in an XML 1.0 document. The UTF-8 encoding of the value must be less than 128 bytes.</param>
         public CreateHostedZoneRequest(string name, string callerReference)
         {
@@ -87,9 +88,9 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the domain. This must be a fully-specified domain, for example, www.example.com.
-        /// The trailing dot is optional; Route 53 assumes that the domain name is fully qualified.
-        /// This means that Route 53 treats www.example.com (without a trailing dot) and www.example.com.
-        /// (with a trailing dot) as identical.
+        /// The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully
+        /// qualified. This means that Amazon Route 53 treats www.example.com (without a trailing
+        /// dot) and www.example.com. (with a trailing dot) as identical.
         /// </para>
         ///  
         /// <para>

@@ -43,6 +43,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CloudWatchLogs")]
+        public void CancelExportTaskMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<CancelExportTaskRequest>();
+            var marshaller = new CancelExportTaskRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<CancelExportTaskRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CloudWatchLogs")]
+        public void CreateExportTaskMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<CreateExportTaskRequest>();
+            var marshaller = new CreateExportTaskRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<CreateExportTaskRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateExportTask").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = CreateExportTaskResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateExportTaskResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CloudWatchLogs")]
         public void CreateLogGroupMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<CreateLogGroupRequest>();
@@ -192,6 +237,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeDestinationsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeDestinationsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CloudWatchLogs")]
+        public void DescribeExportTasksMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeExportTasksRequest>();
+            var marshaller = new DescribeExportTasksRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeExportTasksRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeExportTasks").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeExportTasksResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeExportTasksResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// <code>spotInstanceCountLimitExceeded</code> - You've reached the limit on the number
-        /// of Spot Instances that you can launch.
+        /// of Spot instances that you can launch.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -85,22 +85,22 @@ namespace Amazon.EC2.Model
         ///  <ul> <li> 
         /// <para>
         /// <code>active</code> - The Spot fleet has been validated and Amazon EC2 is attempting
-        /// to maintain the target number of running Spot Instances.
+        /// to maintain the target number of running Spot instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>cancelled</code> - The Spot fleet is canceled and has no running Spot Instances.
+        /// <code>cancelled</code> - The Spot fleet is canceled and has no running Spot instances.
         /// The Spot fleet will be deleted two days after its instances were terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// <code>cancelled_running</code> - The Spot fleet is canceled and will not launch additional
-        /// Spot Instances, but its existing Spot Instances will continue to run until they are
-        /// interrupted or terminated.
+        /// Spot instances, but its existing Spot instances continue to run until they are interrupted
+        /// or terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>cancelled_terminating</code> - The Spot fleet is canceled and its Spot Instances
+        /// <code>cancelled_terminating</code> - The Spot fleet is canceled and its Spot instances
         /// are terminating.
         /// </para>
         ///  </li> <li> 
@@ -117,7 +117,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// <code>submitted</code> - The Spot fleet request is being evaluated and Amazon EC2
-        /// is preparing to launch the target number of Spot Instances.
+        /// is preparing to launch the target number of Spot instances.
         /// </para>
         ///  </li> </ul> 
         /// <para>

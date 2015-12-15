@@ -28,22 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the following actions: 
     /// 
-    ///  <ul> <li> <a>CreateDBSnapshot</a> </li> <li> <a>DeleteDBSnapshot</a> </li> </ul>
-    /// 
-    /// <para>
-    /// This data type is used as a response element in the <a>DescribeDBSnapshots</a> action.
-    /// </para>
     /// </summary>
     public partial class DeleteDBSnapshotResult : AmazonWebServiceResponse
     {
-        private DBSnapshot _response;
+        private DBSnapshot _dbSnapshot;
 
+        /// <summary>
+        /// Gets and sets the property DBSnapshot.
+        /// </summary>
         public DBSnapshot DBSnapshot
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._dbSnapshot; }
+            set { this._dbSnapshot = value; }
         }
+
+        // Check to see if DBSnapshot property is set
+        internal bool IsSetDBSnapshot()
+        {
+            return this._dbSnapshot != null;
+        }
+
     }
 }

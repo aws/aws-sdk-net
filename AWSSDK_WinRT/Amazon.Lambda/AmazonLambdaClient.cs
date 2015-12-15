@@ -204,6 +204,36 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  CreateAlias
+
+        internal CreateAliasResponse CreateAlias(CreateAliasRequest request)
+        {
+            var marshaller = new CreateAliasRequestMarshaller();
+            var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAliasRequest,CreateAliasResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateAliasRequestMarshaller();
+            var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAliasRequest,CreateAliasResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateEventSourceMapping
 
         internal CreateEventSourceMappingResponse CreateEventSourceMapping(CreateEventSourceMappingRequest request)
@@ -264,6 +294,36 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  DeleteAlias
+
+        internal DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
+        {
+            var marshaller = new DeleteAliasRequestMarshaller();
+            var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAliasRequest,DeleteAliasResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteAliasRequestMarshaller();
+            var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAliasRequest,DeleteAliasResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteEventSourceMapping
 
         internal DeleteEventSourceMappingResponse DeleteEventSourceMapping(DeleteEventSourceMappingRequest request)
@@ -319,6 +379,36 @@ namespace Amazon.Lambda
             var unmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteFunctionRequest,DeleteFunctionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAlias
+
+        internal GetAliasResponse GetAlias(GetAliasRequest request)
+        {
+            var marshaller = new GetAliasRequestMarshaller();
+            var unmarshaller = GetAliasResponseUnmarshaller.Instance;
+
+            return Invoke<GetAliasRequest,GetAliasResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetAliasResponse> GetAliasAsync(GetAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetAliasRequestMarshaller();
+            var unmarshaller = GetAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAliasRequest,GetAliasResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -504,6 +594,36 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  ListAliases
+
+        internal ListAliasesResponse ListAliases(ListAliasesRequest request)
+        {
+            var marshaller = new ListAliasesRequestMarshaller();
+            var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAliasesRequest,ListAliasesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAliases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAliases operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListAliasesRequestMarshaller();
+            var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAliasesRequest,ListAliasesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListEventSourceMappings
 
         internal ListEventSourceMappingsResponse ListEventSourceMappings(ListEventSourceMappingsRequest request)
@@ -564,6 +684,66 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  ListVersionsByFunction
+
+        internal ListVersionsByFunctionResponse ListVersionsByFunction(ListVersionsByFunctionRequest request)
+        {
+            var marshaller = new ListVersionsByFunctionRequestMarshaller();
+            var unmarshaller = ListVersionsByFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<ListVersionsByFunctionRequest,ListVersionsByFunctionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVersionsByFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVersionsByFunction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListVersionsByFunctionResponse> ListVersionsByFunctionAsync(ListVersionsByFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListVersionsByFunctionRequestMarshaller();
+            var unmarshaller = ListVersionsByFunctionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListVersionsByFunctionRequest,ListVersionsByFunctionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PublishVersion
+
+        internal PublishVersionResponse PublishVersion(PublishVersionRequest request)
+        {
+            var marshaller = new PublishVersionRequestMarshaller();
+            var unmarshaller = PublishVersionResponseUnmarshaller.Instance;
+
+            return Invoke<PublishVersionRequest,PublishVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PublishVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PublishVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PublishVersionResponse> PublishVersionAsync(PublishVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PublishVersionRequestMarshaller();
+            var unmarshaller = PublishVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PublishVersionRequest,PublishVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RemovePermission
 
         internal RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
@@ -589,6 +769,36 @@ namespace Amazon.Lambda
             var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemovePermissionRequest,RemovePermissionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAlias
+
+        internal UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
+        {
+            var marshaller = new UpdateAliasRequestMarshaller();
+            var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAliasRequest,UpdateAliasResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAlias operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateAliasRequestMarshaller();
+            var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAliasRequest,UpdateAliasResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

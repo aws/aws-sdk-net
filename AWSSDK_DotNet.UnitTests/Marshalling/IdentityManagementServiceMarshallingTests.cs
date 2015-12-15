@@ -1036,6 +1036,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void GetContextKeysForCustomPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetContextKeysForCustomPolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetContextKeysForCustomPolicyRequest>();
+            var marshaller = new GetContextKeysForCustomPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetContextKeysForCustomPolicyResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetContextKeysForCustomPolicyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void GetContextKeysForPrincipalPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetContextKeysForPrincipalPolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetContextKeysForPrincipalPolicyRequest>();
+            var marshaller = new GetContextKeysForPrincipalPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetContextKeysForPrincipalPolicyResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetContextKeysForPrincipalPolicyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void GetCredentialReportMarshallTest()
         {
             var operation = service_model.FindOperation("GetCredentialReport");
@@ -2116,6 +2164,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void SimulateCustomPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("SimulateCustomPolicy");
+
+            var request = InstantiateClassGenerator.Execute<SimulateCustomPolicyRequest>();
+            var marshaller = new SimulateCustomPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = SimulateCustomPolicyResponseUnmarshaller.Instance.Unmarshall(context)
+                as SimulateCustomPolicyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void SimulatePrincipalPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("SimulatePrincipalPolicy");
+
+            var request = InstantiateClassGenerator.Execute<SimulatePrincipalPolicyRequest>();
+            var marshaller = new SimulatePrincipalPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = SimulatePrincipalPolicyResponseUnmarshaller.Instance.Unmarshall(context)
+                as SimulatePrincipalPolicyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         

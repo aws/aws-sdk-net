@@ -76,9 +76,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("DBCluster", targetDepth))
+                    if (context.TestExpression("DBCluster", targetDepth))
                     {
-                        response.DBCluster = DBClusterUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = DBClusterUnmarshaller.Instance;
+                        response.DBCluster = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -138,6 +139,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidVPCNetworkStateFault"))
             {
                 return new InvalidVPCNetworkStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("KMSKeyNotAccessibleFault"))
+            {
+                return new KMSKeyNotAccessibleException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("OptionGroupNotFoundFault"))
             {

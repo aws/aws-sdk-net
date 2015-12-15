@@ -37,6 +37,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private DateTime? _dateUpdated;
         private string _description;
         private S3Location _sourceBundle;
+        private ApplicationVersionStatus _status;
         private string _versionLabel;
 
         /// <summary>
@@ -132,6 +133,24 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetSourceBundle()
         {
             return this._sourceBundle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The processing status of the application version.
+        /// </para>
+        /// </summary>
+        public ApplicationVersionStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>

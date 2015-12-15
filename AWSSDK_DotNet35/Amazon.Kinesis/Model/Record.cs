@@ -33,17 +33,36 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class Record
     {
+        private DateTime? _approximateArrivalTimestamp;
         private MemoryStream _data;
         private string _partitionKey;
         private string _sequenceNumber;
+
+        /// <summary>
+        /// Gets and sets the property ApproximateArrivalTimestamp. 
+        /// <para>
+        /// The approximate time that the record was inserted into the stream.
+        /// </para>
+        /// </summary>
+        public DateTime ApproximateArrivalTimestamp
+        {
+            get { return this._approximateArrivalTimestamp.GetValueOrDefault(); }
+            set { this._approximateArrivalTimestamp = value; }
+        }
+
+        // Check to see if ApproximateArrivalTimestamp property is set
+        internal bool IsSetApproximateArrivalTimestamp()
+        {
+            return this._approximateArrivalTimestamp.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
         /// The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis
         /// service, which does not inspect, interpret, or change the data in the blob in any
-        /// way. The maximum size of the data blob (the payload before base64-encoding) is 50
-        /// kilobytes (KB) 
+        /// way. When the data blob (the payload before base64-encoding) is added to the partition
+        /// key size, the total size must not exceed the maximum record size (1 MB).
         /// </para>
         /// </summary>
         public MemoryStream Data
@@ -79,7 +98,7 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property SequenceNumber. 
         /// <para>
-        /// The unique identifier for the record in the Amazon Kinesis stream.
+        /// The unique identifier of the record in the stream.
         /// </para>
         /// </summary>
         public string SequenceNumber

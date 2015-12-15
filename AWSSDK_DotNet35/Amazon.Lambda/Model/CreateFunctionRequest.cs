@@ -46,6 +46,7 @@ namespace Amazon.Lambda.Model
         private string _functionName;
         private string _handler;
         private int? _memorySize;
+        private bool? _publish;
         private string _role;
         private Runtime _runtime;
         private int? _timeout;
@@ -155,6 +156,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetMemorySize()
         {
             return this._memorySize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Publish. 
+        /// <para>
+        /// This boolean parameter can be used to request AWS Lambda to create the Lambda function
+        /// and publish a version as an atomic operation. 
+        /// </para>
+        /// </summary>
+        public bool Publish
+        {
+            get { return this._publish.GetValueOrDefault(); }
+            set { this._publish = value; }
+        }
+
+        // Check to see if Publish property is set
+        internal bool IsSetPublish()
+        {
+            return this._publish.HasValue; 
         }
 
         /// <summary>

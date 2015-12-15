@@ -39,10 +39,14 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Specify this parameter when paginating results to indicate the maximum number of aliases
-        /// you want in each response. If there are additional aliases beyond the maximum you
-        /// specify, the <code>Truncated</code> response element will be set to <code>true.</code>
+        /// When paginating results, specify the maximum number of items to return in the response.
+        /// If additional items exist beyond the number you specify, the <code>Truncated</code>
+        /// element in the response is set to true.
+        /// </para>
         /// 
+        /// <para>
+        /// This value is optional. If you include a value, it must be between 1 and 100, inclusive.
+        /// If you do not include a value, it defaults to 50.
         /// </para>
         /// </summary>
         public int Limit
@@ -60,9 +64,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// Use this parameter when paginating results, and only in a subsequent request after
-        /// you've received a response where the results are truncated. Set it to the value of
-        /// the <code>NextMarker</code> element in the response you just received. 
+        /// Use this parameter only when paginating results and only in a subsequent request after
+        /// you've received a response with truncated results. Set it to the value of <code>NextMarker</code>
+        /// from the response you just received.
         /// </para>
         /// </summary>
         public string Marker

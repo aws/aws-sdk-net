@@ -34,6 +34,8 @@ namespace Amazon.AutoScaling.Model
     {
         private int? _maxNumberOfAutoScalingGroups;
         private int? _maxNumberOfLaunchConfigurations;
+        private int? _numberOfAutoScalingGroups;
+        private int? _numberOfLaunchConfigurations;
 
         /// <summary>
         /// Gets and sets the property MaxNumberOfAutoScalingGroups. 
@@ -71,6 +73,42 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetMaxNumberOfLaunchConfigurations()
         {
             return this._maxNumberOfLaunchConfigurations.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfAutoScalingGroups. 
+        /// <para>
+        /// The current number of groups for your AWS account.
+        /// </para>
+        /// </summary>
+        public int NumberOfAutoScalingGroups
+        {
+            get { return this._numberOfAutoScalingGroups.GetValueOrDefault(); }
+            set { this._numberOfAutoScalingGroups = value; }
+        }
+
+        // Check to see if NumberOfAutoScalingGroups property is set
+        internal bool IsSetNumberOfAutoScalingGroups()
+        {
+            return this._numberOfAutoScalingGroups.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfLaunchConfigurations. 
+        /// <para>
+        /// The current number of launch configurations for your AWS account.
+        /// </para>
+        /// </summary>
+        public int NumberOfLaunchConfigurations
+        {
+            get { return this._numberOfLaunchConfigurations.GetValueOrDefault(); }
+            set { this._numberOfLaunchConfigurations = value; }
+        }
+
+        // Check to see if NumberOfLaunchConfigurations property is set
+        internal bool IsSetNumberOfLaunchConfigurations()
+        {
+            return this._numberOfLaunchConfigurations.HasValue; 
         }
 
     }

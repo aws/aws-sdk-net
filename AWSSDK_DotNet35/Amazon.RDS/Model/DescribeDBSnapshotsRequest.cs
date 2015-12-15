@@ -36,6 +36,8 @@ namespace Amazon.RDS.Model
         private string _dbInstanceIdentifier;
         private string _dbSnapshotIdentifier;
         private List<Filter> _filters = new List<Filter>();
+        private bool? _includePublic;
+        private bool? _includeShared;
         private string _marker;
         private int? _maxRecords;
         private string _snapshotType;
@@ -119,6 +121,54 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IncludePublic. 
+        /// <para>
+        /// True to include manual DB snapshots that are public and can be copied or restored
+        /// by any AWS account; otherwise false. The default is false.
+        /// </para>
+        ///  
+        /// <para>
+        /// An manual DB snapshot is shared as public by the <a>ModifyDBSnapshotAttribute</a>
+        /// API.
+        /// </para>
+        /// </summary>
+        public bool IncludePublic
+        {
+            get { return this._includePublic.GetValueOrDefault(); }
+            set { this._includePublic = value; }
+        }
+
+        // Check to see if IncludePublic property is set
+        internal bool IsSetIncludePublic()
+        {
+            return this._includePublic.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeShared. 
+        /// <para>
+        /// True to include shared manual DB snapshots from other AWS accounts that this AWS account
+        /// has been given permission to copy or restore; otherwise false. The default is false.
+        /// </para>
+        ///  
+        /// <para>
+        /// An AWS account is given permission to restore a manual DB snapshot from another AWS
+        /// account by the <a>ModifyDBSnapshotAttribute</a> API.
+        /// </para>
+        /// </summary>
+        public bool IncludeShared
+        {
+            get { return this._includeShared.GetValueOrDefault(); }
+            set { this._includeShared = value; }
+        }
+
+        // Check to see if IncludeShared property is set
+        internal bool IsSetIncludeShared()
+        {
+            return this._includeShared.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
         ///  An optional pagination token provided by a previous <code>DescribeDBSnapshots</code>
@@ -169,8 +219,28 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SnapshotType. 
         /// <para>
-        ///  The type of snapshots that will be returned. Values can be "automated" or "manual."
-        /// If not specified, the returned results will include all snapshots types. 
+        /// The type of snapshots that will be returned. You can specify one of the following
+        /// values:
+        /// </para>
+        ///  <ul> <li><code>automated</code> - Return all DB snapshots that have been automatically
+        /// taken by Amazon RDS for my AWS account.</li> <li><code>manual</code> - Return all
+        /// DB snapshots that have been taken by my AWS account.</li> <li><code>shared</code>
+        /// - Return all manual DB snapshots that have been shared to my AWS account.</li> <li><code>public</code>
+        /// - Return all DB snapshots that have been marked as public.</li> </ul> 
+        /// <para>
+        /// If you do not specify a <code>SnapshotType</code>, then both automated and manual
+        /// snapshots are returned. You can include shared snapshots with these results by setting
+        /// the <code>IncludeShared</code> parameter to <code>true</code>. You can include public
+        /// snapshots with these results by setting the <code>IncludePublic</code> parameter to
+        /// <code>true</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>IncludeShared</code> and <code>IncludePublic</code> parameters do not apply
+        /// for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>.
+        /// The <code>IncludePublic</code> parameter does not apply when <code>SnapshotType</code>
+        /// is set to <code>shared</code>. the <code>IncludeShared</code> parameter does not apply
+        /// when <code>SnapshotType</code> is set to <code>public</code>.
         /// </para>
         /// </summary>
         public string SnapshotType

@@ -35,7 +35,10 @@ namespace Amazon.ECS.Model
         private Service _service;
 
         /// <summary>
-        /// Gets and sets the property Service.
+        /// Gets and sets the property Service. 
+        /// <para>
+        /// The full description of the deleted service.
+        /// </para>
         /// </summary>
         public Service Service
         {

@@ -94,8 +94,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property GlobalTimeout. 
         /// <para>
-        /// The maximum length of time an instance can remain in a <code>Pending:Wait</code> or
-        /// <code>Terminating:Wait</code> state. Currently, the maximum is set to 48 hours.
+        /// The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code>
+        /// or <code>Terminating:Wait</code> state. The default is 172800 seconds (48 hours).
         /// </para>
         /// </summary>
         public int GlobalTimeout
@@ -113,9 +113,10 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HeartbeatTimeout. 
         /// <para>
-        /// The amount of time that can elapse before the lifecycle hook times out. When the lifecycle
-        /// hook times out, Auto Scaling performs the action defined in the <code>DefaultResult</code>
-        /// parameter. You can prevent the lifecycle hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+        /// The maximum time, in seconds, that can elapse before the lifecycle hook times out.
+        /// The default is 3600 seconds (1 hour). When the lifecycle hook times out, Auto Scaling
+        /// performs the action defined in the <code>DefaultResult</code> parameter. You can prevent
+        /// the lifecycle hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
         /// </para>
         /// </summary>
         public int HeartbeatTimeout

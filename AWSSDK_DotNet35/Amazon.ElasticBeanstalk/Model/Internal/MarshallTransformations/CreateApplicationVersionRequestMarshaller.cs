@@ -60,6 +60,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetProcess())
+                {
+                    request.Parameters.Add("Process", StringUtils.FromBool(publicRequest.Process));
+                }
                 if(publicRequest.IsSetSourceBundle())
                 {
                     if(publicRequest.SourceBundle.IsSetS3Bucket())

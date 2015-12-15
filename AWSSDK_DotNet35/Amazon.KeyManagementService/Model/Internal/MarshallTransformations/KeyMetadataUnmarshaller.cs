@@ -72,6 +72,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeletionDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.DeletionDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -88,6 +94,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeyState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeyState = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("KeyUsage", targetDepth))

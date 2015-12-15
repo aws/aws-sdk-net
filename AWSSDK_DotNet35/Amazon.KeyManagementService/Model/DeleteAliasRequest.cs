@@ -29,7 +29,7 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAlias operation.
-    /// Deletes the specified alias. To associate an alias with a different key, call <a>UpdateAlias</a>.
+    /// Deletes the specified alias. To map an alias to a different key, call <a>UpdateAlias</a>.
     /// </summary>
     public partial class DeleteAliasRequest : AmazonKeyManagementServiceRequest
     {

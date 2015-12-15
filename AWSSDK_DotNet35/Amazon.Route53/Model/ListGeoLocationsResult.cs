@@ -62,11 +62,10 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property IsTruncated. 
         /// <para>
-        ///  A flag that indicates whether there are more geo locations to be listed. If your
-        /// results were truncated, you can make a follow-up request for the next page of results
-        /// by using the values included in the <a>ListGeoLocationsResponse$NextContinentCode</a>,
-        /// <a>ListGeoLocationsResponse$NextCountryCode</a> and <a>ListGeoLocationsResponse$NextSubdivisionCode</a>
-        /// elements.
+        /// A flag that indicates whether there are more geo locations to be listed. If your results
+        /// were truncated, you can make a follow-up request for the next page of results by using
+        /// the values included in the <a>ListGeoLocationsResponse$NextContinentCode</a>, <a>ListGeoLocationsResponse$NextCountryCode</a>
+        /// and <a>ListGeoLocationsResponse$NextSubdivisionCode</a> elements.
         /// </para>
         ///  
         /// <para>

@@ -29,7 +29,24 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteService operation.
-    /// Deletes a specified service within a cluster.
+    /// Deletes a specified service within a cluster. You can delete a service if you have
+    /// no running tasks in it and the desired task count is zero. If the service is actively
+    /// maintaining tasks, you cannot delete it, and you must update the service to a desired
+    /// task count of zero. For more information, see <a>UpdateService</a>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// When you delete a service, if there are still running tasks that require cleanup,
+    /// the service status moves from <code>ACTIVE</code> to <code>DRAINING</code>, and the
+    /// service is no longer visible in the console or in <a>ListServices</a> API operations.
+    /// After the tasks have stopped, then the service status moves from <code>DRAINING</code>
+    /// to <code>INACTIVE</code>. Services in the <code>DRAINING</code> or <code>INACTIVE</code>
+    /// status can still be viewed with <a>DescribeServices</a> API operations; however, in
+    /// the future, <code>INACTIVE</code> services may be cleaned up and purged from Amazon
+    /// ECS record keeping, and <a>DescribeServices</a> API operations on those services will
+    /// return a <code>ServiceNotFoundException</code> error.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteServiceRequest : AmazonECSRequest
     {
@@ -39,7 +56,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// The name of the cluster that hosts the service you want to delete.
+        /// The name of the cluster that hosts the service to delete. If you do not specify a
+        /// cluster, the default cluster is assumed.
         /// </para>
         /// </summary>
         public string Cluster
@@ -57,7 +75,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The name of the service you want to delete.
+        /// The name of the service to delete.
         /// </para>
         /// </summary>
         public string Service

@@ -79,6 +79,10 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly GrantOperation Decrypt = new GrantOperation("Decrypt");
         /// <summary>
+        /// Constant DescribeKey for GrantOperation
+        /// </summary>
+        public static readonly GrantOperation DescribeKey = new GrantOperation("DescribeKey");
+        /// <summary>
         /// Constant Encrypt for GrantOperation
         /// </summary>
         public static readonly GrantOperation Encrypt = new GrantOperation("Encrypt");
@@ -122,6 +126,50 @@ namespace Amazon.KeyManagementService
         }
 
         public static implicit operator GrantOperation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KeyState.
+    /// </summary>
+    public class KeyState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for KeyState
+        /// </summary>
+        public static readonly KeyState Disabled = new KeyState("Disabled");
+        /// <summary>
+        /// Constant Enabled for KeyState
+        /// </summary>
+        public static readonly KeyState Enabled = new KeyState("Enabled");
+        /// <summary>
+        /// Constant PendingDeletion for KeyState
+        /// </summary>
+        public static readonly KeyState PendingDeletion = new KeyState("PendingDeletion");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public KeyState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KeyState FindValue(string value)
+        {
+            return FindValue<KeyState>(value);
+        }
+
+        public static implicit operator KeyState(string value)
         {
             return FindValue(value);
         }

@@ -49,6 +49,39 @@ namespace Amazon.ECS.Model
     /// instantiation of the task used in your service, you can reduce the desired count of
     /// your service by one before modifying the task definition.
     /// </para>
+    ///  
+    /// <para>
+    /// When <a>UpdateService</a> replaces a task during an update, the equivalent of <code>docker
+    /// stop</code> is issued to the containers running in the task. This results in a <code>SIGTERM</code>
+    /// and a 30-second timeout, after which <code>SIGKILL</code> is sent and the containers
+    /// are forcibly stopped. If the container handles the <code>SIGTERM</code> gracefully
+    /// and exits within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
+    /// </para>
+    ///  
+    /// <para>
+    /// When the service scheduler launches new tasks, it attempts to balance them across
+    /// the Availability Zones in your cluster with the following logic:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Determine which of the container instances in your cluster can support your service's
+    /// task definition (for example, they have the required CPU, memory, ports, and container
+    /// instance attributes).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Sort the valid container instances by the fewest number of running tasks for this
+    /// service in the same Availability Zone as the instance. For example, if zone A has
+    /// one running service task and zones B and C each have zero, valid container instances
+    /// in either zone B or C are considered optimal for placement.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Place the new service task on a valid container instance in an optimal Availability
+    /// Zone (based on the previous steps), favoring container instances with the fewest number
+    /// of running tasks for this service.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class UpdateServiceRequest : AmazonECSRequest
     {
@@ -79,8 +112,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DesiredCount. 
         /// <para>
-        /// The number of instantiations of the task that you would like to place and keep running
-        /// in your service.
+        /// The number of instantiations of the task to place and keep running in your service.
         /// </para>
         /// </summary>
         public int DesiredCount
@@ -98,7 +130,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The name of the service that you want to update.
+        /// The name of the service to update.
         /// </para>
         /// </summary>
         public string Service
@@ -117,11 +149,11 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property TaskDefinition. 
         /// <para>
         /// The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full Amazon Resource Name (ARN) of the task definition that you want to run in your
-        /// service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
-        /// revision is used. If you modify the task definition with <code>UpdateService</code>,
-        /// Amazon ECS spawns a task with the new version of the task definition and then stops
-        /// an old task after the new version is running.
+        /// full Amazon Resource Name (ARN) of the task definition to run in your service. If
+        /// a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+        /// is used. If you modify the task definition with <code>UpdateService</code>, Amazon
+        /// ECS spawns a task with the new version of the task definition and then stops an old
+        /// task after the new version is running.
         /// </para>
         /// </summary>
         public string TaskDefinition

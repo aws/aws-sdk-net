@@ -25,6 +25,62 @@ namespace Amazon.CloudWatchLogs
 {
 
     /// <summary>
+    /// Constants used for properties of type ExportTaskStatusCode.
+    /// </summary>
+    public class ExportTaskStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for ExportTaskStatusCode
+        /// </summary>
+        public static readonly ExportTaskStatusCode CANCELLED = new ExportTaskStatusCode("CANCELLED");
+        /// <summary>
+        /// Constant COMPLETED for ExportTaskStatusCode
+        /// </summary>
+        public static readonly ExportTaskStatusCode COMPLETED = new ExportTaskStatusCode("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ExportTaskStatusCode
+        /// </summary>
+        public static readonly ExportTaskStatusCode FAILED = new ExportTaskStatusCode("FAILED");
+        /// <summary>
+        /// Constant PENDING for ExportTaskStatusCode
+        /// </summary>
+        public static readonly ExportTaskStatusCode PENDING = new ExportTaskStatusCode("PENDING");
+        /// <summary>
+        /// Constant PENDING_CANCEL for ExportTaskStatusCode
+        /// </summary>
+        public static readonly ExportTaskStatusCode PENDING_CANCEL = new ExportTaskStatusCode("PENDING_CANCEL");
+        /// <summary>
+        /// Constant RUNNING for ExportTaskStatusCode
+        /// </summary>
+        public static readonly ExportTaskStatusCode RUNNING = new ExportTaskStatusCode("RUNNING");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public ExportTaskStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportTaskStatusCode FindValue(string value)
+        {
+            return FindValue<ExportTaskStatusCode>(value);
+        }
+
+        public static implicit operator ExportTaskStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OrderBy.
     /// </summary>
     public class OrderBy : ConstantClass

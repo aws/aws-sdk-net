@@ -71,6 +71,14 @@ namespace Amazon.RDS
     {
 
         /// <summary>
+        /// Constant DbCluster for SourceType
+        /// </summary>
+        public static readonly SourceType DbCluster = new SourceType("db-cluster");
+        /// <summary>
+        /// Constant DbClusterSnapshot for SourceType
+        /// </summary>
+        public static readonly SourceType DbClusterSnapshot = new SourceType("db-cluster-snapshot");
+        /// <summary>
         /// Constant DbInstance for SourceType
         /// </summary>
         public static readonly SourceType DbInstance = new SourceType("db-instance");

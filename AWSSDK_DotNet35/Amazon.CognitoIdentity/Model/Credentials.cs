@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
-    /// Credentials for the the provided identity ID.
+    /// Credentials for the provided identity ID.
     /// </summary>
     public partial class Credentials
     {

@@ -72,6 +72,18 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     unmarshalledObject.IncludeGlobalServiceEvents = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LogFileValidationEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.LogFileValidationEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -94,6 +106,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SnsTopicName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TrailARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TrailARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

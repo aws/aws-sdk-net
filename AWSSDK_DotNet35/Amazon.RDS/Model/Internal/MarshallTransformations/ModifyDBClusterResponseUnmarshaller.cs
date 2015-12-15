@@ -76,9 +76,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("DBCluster", targetDepth))
+                    if (context.TestExpression("DBCluster", targetDepth))
                     {
-                        response.DBCluster = DBClusterUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = DBClusterUnmarshaller.Instance;
+                        response.DBCluster = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -91,6 +92,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterAlreadyExistsFault"))
+            {
+                return new DBClusterAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterNotFoundFault"))
             {
                 return new DBClusterNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

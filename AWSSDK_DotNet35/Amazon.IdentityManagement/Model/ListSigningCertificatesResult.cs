@@ -59,7 +59,10 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// A flag that indicates whether there are more items to return. If your results were
         /// truncated, you can make a subsequent pagination request using the <code>Marker</code>
-        /// request parameter to retrieve more items.
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available.
+        /// We recommend that you check <code>IsTruncated</code> after every call to ensure that
+        /// you receive all of your results.
         /// </para>
         /// </summary>
         public bool IsTruncated

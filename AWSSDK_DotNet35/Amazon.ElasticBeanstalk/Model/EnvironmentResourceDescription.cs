@@ -138,7 +138,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Queues. 
         /// <para>
-        ///  The queues used by this environment. 
+        /// The queues used by this environment. 
         /// </para>
         /// </summary>
         public List<Queue> Queues
@@ -156,7 +156,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Triggers. 
         /// <para>
-        ///  The <code>AutoScaling</code> triggers in use by this environment. 
+        /// The <code>AutoScaling</code> triggers in use by this environment. 
         /// </para>
         /// </summary>
         public List<Trigger> Triggers

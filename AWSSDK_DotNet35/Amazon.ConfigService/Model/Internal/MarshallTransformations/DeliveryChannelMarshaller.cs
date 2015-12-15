@@ -39,6 +39,17 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
     {
         public void Marshall(DeliveryChannel requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetConfigSnapshotDeliveryProperties())
+            {
+                context.Writer.WritePropertyName("configSnapshotDeliveryProperties");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConfigSnapshotDeliveryPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConfigSnapshotDeliveryProperties, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

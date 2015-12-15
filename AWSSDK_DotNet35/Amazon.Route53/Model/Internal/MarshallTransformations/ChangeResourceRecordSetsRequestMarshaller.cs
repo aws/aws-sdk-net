@@ -150,6 +150,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetHealthCheckId())
                                     xmlWriter.WriteElementString("HealthCheckId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.HealthCheckId));                 
                 
+                                if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetTrafficPolicyInstanceId())
+                                    xmlWriter.WriteElementString("TrafficPolicyInstanceId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.TrafficPolicyInstanceId));                 
+                
                                 xmlWriter.WriteEndElement();
                             }
                             xmlWriter.WriteEndElement();

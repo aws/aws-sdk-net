@@ -86,6 +86,15 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetResourceTypes())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ResourceTypes)
+                    {
+                        request.Parameters.Add("ResourceTypes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetStackName())
                 {
                     request.Parameters.Add("StackName", StringUtils.FromString(publicRequest.StackName));

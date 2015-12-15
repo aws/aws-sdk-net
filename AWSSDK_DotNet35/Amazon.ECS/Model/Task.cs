@@ -35,10 +35,14 @@ namespace Amazon.ECS.Model
         private string _clusterArn;
         private string _containerInstanceArn;
         private List<Container> _containers = new List<Container>();
+        private DateTime? _createdAt;
         private string _desiredStatus;
         private string _lastStatus;
         private TaskOverride _overrides;
+        private DateTime? _startedAt;
         private string _startedBy;
+        private DateTime? _stoppedAt;
+        private string _stoppedReason;
         private string _taskArn;
         private string _taskDefinitionArn;
 
@@ -97,6 +101,25 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The Unix time in seconds and milliseconds when the task was created (the task entered
+        /// the <code>PENDING</code> state).
+        /// </para>
+        /// </summary>
+        public DateTime CreatedAt
+        {
+            get { return this._createdAt.GetValueOrDefault(); }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DesiredStatus. 
         /// <para>
         /// The desired status of the task.
@@ -151,6 +174,25 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StartedAt. 
+        /// <para>
+        /// The Unix time in seconds and milliseconds when the task was started (the task transitioned
+        /// from the <code>PENDING</code> state to the <code>RUNNING</code> state).
+        /// </para>
+        /// </summary>
+        public DateTime StartedAt
+        {
+            get { return this._startedAt.GetValueOrDefault(); }
+            set { this._startedAt = value; }
+        }
+
+        // Check to see if StartedAt property is set
+        internal bool IsSetStartedAt()
+        {
+            return this._startedAt.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StartedBy. 
         /// <para>
         /// The tag specified when a task is started. If the task is started by an Amazon ECS
@@ -168,6 +210,43 @@ namespace Amazon.ECS.Model
         internal bool IsSetStartedBy()
         {
             return this._startedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StoppedAt. 
+        /// <para>
+        /// The Unix time in seconds and milliseconds when the task was stopped (the task transitioned
+        /// from the <code>RUNNING</code> state to the <code>STOPPED</code> state).
+        /// </para>
+        /// </summary>
+        public DateTime StoppedAt
+        {
+            get { return this._stoppedAt.GetValueOrDefault(); }
+            set { this._stoppedAt = value; }
+        }
+
+        // Check to see if StoppedAt property is set
+        internal bool IsSetStoppedAt()
+        {
+            return this._stoppedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StoppedReason. 
+        /// <para>
+        /// The reason the task was stopped.
+        /// </para>
+        /// </summary>
+        public string StoppedReason
+        {
+            get { return this._stoppedReason; }
+            set { this._stoppedReason = value; }
+        }
+
+        // Check to see if StoppedReason property is set
+        internal bool IsSetStoppedReason()
+        {
+            return this._stoppedReason != null;
         }
 
         /// <summary>

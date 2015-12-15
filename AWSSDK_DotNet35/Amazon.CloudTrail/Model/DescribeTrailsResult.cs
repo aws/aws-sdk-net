@@ -37,7 +37,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property TrailList. 
         /// <para>
-        /// The list of trails.
+        /// The list of trail objects.
         /// </para>
         /// </summary>
         public List<Trail> TrailList

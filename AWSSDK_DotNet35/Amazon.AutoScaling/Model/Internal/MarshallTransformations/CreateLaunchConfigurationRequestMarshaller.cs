@@ -67,6 +67,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestlistValue.Ebs.DeleteOnTermination));
                             }
+                            if(publicRequestlistValue.Ebs.IsSetEncrypted())
+                            {
+                                request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Encrypted", StringUtils.FromBool(publicRequestlistValue.Ebs.Encrypted));
+                            }
                             if(publicRequestlistValue.Ebs.IsSetIops())
                             {
                                 request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Iops", StringUtils.FromInt(publicRequestlistValue.Ebs.Iops));

@@ -36,7 +36,10 @@ namespace Amazon.ECS.Model
         private List<Task> _tasks = new List<Task>();
 
         /// <summary>
-        /// Gets and sets the property Failures.
+        /// Gets and sets the property Failures. 
+        /// <para>
+        /// Any failures associated with the call.
+        /// </para>
         /// </summary>
         public List<Failure> Failures
         {

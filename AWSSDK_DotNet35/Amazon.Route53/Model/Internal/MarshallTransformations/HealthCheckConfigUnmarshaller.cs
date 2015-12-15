@@ -98,6 +98,30 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.FailureThreshold = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MeasureLatency", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.MeasureLatency = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Inverted", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Inverted = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("HealthThreshold", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.HealthThreshold = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ChildHealthChecks/ChildHealthCheck", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ChildHealthChecks.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

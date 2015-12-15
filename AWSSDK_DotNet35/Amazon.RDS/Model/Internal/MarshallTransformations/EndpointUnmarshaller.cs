@@ -55,6 +55,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.Address = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("HostedZoneId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HostedZoneId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Port", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

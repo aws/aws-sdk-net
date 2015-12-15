@@ -76,9 +76,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("DBSubnetGroup", targetDepth))
+                    if (context.TestExpression("DBSubnetGroup", targetDepth))
                     {
-                        response.DBSubnetGroup = DBSubnetGroupUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = DBSubnetGroupUnmarshaller.Instance;
+                        response.DBSubnetGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 

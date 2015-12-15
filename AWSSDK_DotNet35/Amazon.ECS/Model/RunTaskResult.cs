@@ -38,7 +38,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Failures. 
         /// <para>
-        /// Any failed tasks from your <code>RunTask</code> action are listed here.
+        /// Any failures associated with the call.
         /// </para>
         /// </summary>
         public List<Failure> Failures
@@ -57,7 +57,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Tasks. 
         /// <para>
         /// A full description of the tasks that were run. Each task that was successfully placed
-        /// on your cluster will be described here.
+        /// on your cluster are described here.
         /// </para>
         /// </summary>
         public List<Task> Tasks

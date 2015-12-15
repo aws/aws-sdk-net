@@ -33,13 +33,7 @@ namespace Amazon.IdentityManagement.Model
     /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
     /// with Roles</a>. For information about limitations on role names and the number of
     /// roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-    /// on IAM Entities</a> in the <i>Using IAM</i> guide. 
-    /// 
-    ///  
-    /// <para>
-    /// The policy in the following example grants permission to an EC2 instance to assume
-    /// the role.
-    /// </para>
+    /// on IAM Entities</a> in the <i>IAM User Guide</i>.
     /// </summary>
     public partial class CreateRoleRequest : AmazonIdentityManagementServiceRequest
     {
@@ -50,7 +44,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property AssumeRolePolicyDocument. 
         /// <para>
-        /// The policy that grants an entity permission to assume the role.
+        /// The trust relationship policy document that grants an entity permission to assume
+        /// the role.
         /// </para>
         /// </summary>
         public string AssumeRolePolicyDocument

@@ -76,9 +76,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("DBCluster", targetDepth))
+                    if (context.TestExpression("DBCluster", targetDepth))
                     {
-                        response.DBCluster = DBClusterUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = DBClusterUnmarshaller.Instance;
+                        response.DBCluster = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 

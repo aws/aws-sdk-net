@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes Spot Instance placement.
+    /// Describes Spot instance placement.
     /// </summary>
     public partial class SpotPlacement
     {

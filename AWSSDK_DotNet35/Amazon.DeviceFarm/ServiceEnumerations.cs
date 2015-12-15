@@ -87,6 +87,10 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly ArtifactType APPIUM_SERVER_OUTPUT = new ArtifactType("APPIUM_SERVER_OUTPUT");
         /// <summary>
+        /// Constant APPLICATION_CRASH_REPORT for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType APPLICATION_CRASH_REPORT = new ArtifactType("APPLICATION_CRASH_REPORT");
+        /// <summary>
         /// Constant AUTOMATION_OUTPUT for ArtifactType
         /// </summary>
         public static readonly ArtifactType AUTOMATION_OUTPUT = new ArtifactType("AUTOMATION_OUTPUT");
@@ -115,6 +119,14 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly ArtifactType EXERCISER_MONKEY_OUTPUT = new ArtifactType("EXERCISER_MONKEY_OUTPUT");
         /// <summary>
+        /// Constant EXPLORER_EVENT_LOG for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType EXPLORER_EVENT_LOG = new ArtifactType("EXPLORER_EVENT_LOG");
+        /// <summary>
+        /// Constant EXPLORER_SUMMARY_LOG for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType EXPLORER_SUMMARY_LOG = new ArtifactType("EXPLORER_SUMMARY_LOG");
+        /// <summary>
         /// Constant INSTRUMENTATION_OUTPUT for ArtifactType
         /// </summary>
         public static readonly ArtifactType INSTRUMENTATION_OUTPUT = new ArtifactType("INSTRUMENTATION_OUTPUT");
@@ -138,6 +150,10 @@ namespace Amazon.DeviceFarm
         /// Constant UNKNOWN for ArtifactType
         /// </summary>
         public static readonly ArtifactType UNKNOWN = new ArtifactType("UNKNOWN");
+        /// <summary>
+        /// Constant WEBKIT_LOG for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType WEBKIT_LOG = new ArtifactType("WEBKIT_LOG");
 
         /// <summary>
         /// Default Constructor
@@ -651,6 +667,14 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly TestType APPIUM_JAVA_TESTNG = new TestType("APPIUM_JAVA_TESTNG");
         /// <summary>
+        /// Constant APPIUM_WEB_JAVA_JUNIT for TestType
+        /// </summary>
+        public static readonly TestType APPIUM_WEB_JAVA_JUNIT = new TestType("APPIUM_WEB_JAVA_JUNIT");
+        /// <summary>
+        /// Constant APPIUM_WEB_JAVA_TESTNG for TestType
+        /// </summary>
+        public static readonly TestType APPIUM_WEB_JAVA_TESTNG = new TestType("APPIUM_WEB_JAVA_TESTNG");
+        /// <summary>
         /// Constant BUILTIN_EXPLORER for TestType
         /// </summary>
         public static readonly TestType BUILTIN_EXPLORER = new TestType("BUILTIN_EXPLORER");
@@ -771,6 +795,14 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly UploadType APPIUM_JAVA_TESTNG_TEST_PACKAGE = new UploadType("APPIUM_JAVA_TESTNG_TEST_PACKAGE");
         /// <summary>
+        /// Constant APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE for UploadType
+        /// </summary>
+        public static readonly UploadType APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE = new UploadType("APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE");
+        /// <summary>
+        /// Constant APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE for UploadType
+        /// </summary>
+        public static readonly UploadType APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE = new UploadType("APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE");
+        /// <summary>
         /// Constant CALABASH_TEST_PACKAGE for UploadType
         /// </summary>
         public static readonly UploadType CALABASH_TEST_PACKAGE = new UploadType("CALABASH_TEST_PACKAGE");
@@ -794,6 +826,10 @@ namespace Amazon.DeviceFarm
         /// Constant UIAUTOMATOR_TEST_PACKAGE for UploadType
         /// </summary>
         public static readonly UploadType UIAUTOMATOR_TEST_PACKAGE = new UploadType("UIAUTOMATOR_TEST_PACKAGE");
+        /// <summary>
+        /// Constant WEB_APP for UploadType
+        /// </summary>
+        public static readonly UploadType WEB_APP = new UploadType("WEB_APP");
         /// <summary>
         /// Constant XCTEST_TEST_PACKAGE for UploadType
         /// </summary>

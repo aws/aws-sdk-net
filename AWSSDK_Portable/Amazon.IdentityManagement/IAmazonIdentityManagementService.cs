@@ -87,9 +87,7 @@ namespace Amazon.IdentityManagement
     /// Security Credentials</a>. This topic provides general information about the types
     /// of credentials used for accessing AWS. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
     /// Best Practices</a>. This topic presents a list of suggestions for using the IAM service
-    /// to help secure your AWS resources. </li> <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/">AWS
-    /// Security Token Service</a>. This guide describes how to create and use temporary security
-    /// credentials. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+    /// to help secure your AWS resources. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
     /// AWS API Requests</a>. This set of topics walk you through the process of signing a
     /// request using an access key ID and secret access key. </li> </ul>
     /// </summary>
@@ -816,6 +814,36 @@ namespace Amazon.IdentityManagement
 
         #endregion
                 
+        #region  GetContextKeysForCustomPolicy
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContextKeysForCustomPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContextKeysForCustomPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetContextKeysForCustomPolicyResponse> GetContextKeysForCustomPolicyAsync(GetContextKeysForCustomPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetContextKeysForPrincipalPolicy
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContextKeysForPrincipalPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContextKeysForPrincipalPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetContextKeysForPrincipalPolicyResponse> GetContextKeysForPrincipalPolicyAsync(GetContextKeysForPrincipalPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetCredentialReport
 
         /// <summary>
@@ -1518,6 +1546,36 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<SetDefaultPolicyVersionResponse> SetDefaultPolicyVersionAsync(SetDefaultPolicyVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SimulateCustomPolicy
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SimulateCustomPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SimulateCustomPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<SimulateCustomPolicyResponse> SimulateCustomPolicyAsync(SimulateCustomPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SimulatePrincipalPolicy
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SimulatePrincipalPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SimulatePrincipalPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<SimulatePrincipalPolicyResponse> SimulatePrincipalPolicyAsync(SimulatePrincipalPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

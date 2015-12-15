@@ -67,7 +67,7 @@ namespace Amazon.MachineLearning.Model
     /// A recipe describes how each input variable will be used in training. Will the variable
     /// be included or excluded from training? Will the variable be manipulated, for example,
     /// combined with another variable, or split apart into word combinations? The recipe
-    /// provides answers to these questions. For more information, see the <a href="http://docs.aws.amazon.com/machinelearning/latest/dg">Amazon
+    /// provides answers to these questions. For more information, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
     /// Machine Learning Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -162,7 +162,7 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///   
         /// <para>
-        ///  Sample - <code> "{\"randomSeed\":\"some-random-seed\", \"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
+        ///  Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
         /// 
         /// </para>
         ///  </li> </ul>
