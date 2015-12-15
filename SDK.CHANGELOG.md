@@ -1,3 +1,7 @@
+### 3.1.34.0 (2015-12-15 19:02 UTC)
+* EC2 (3.1.6.0)
+	* Added new parameters to CopyImage API that allows a customer to create an AMI copy where all the associated EBS snapshots are encrypted.
+
 ### 3.1.33.0 (2015-12-08 20:22 UTC)
 * AutoScaling (3.1.2.0)
 	* Add support for SetInstanceProtection operation
