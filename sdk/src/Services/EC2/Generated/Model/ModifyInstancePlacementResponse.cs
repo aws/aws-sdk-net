@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Return. 
         /// <para>
-        /// Is <c>true</c> if the request succeeds, and an error otherwise.
+        /// Is <code>true</code> if the request succeeds, and an error otherwise.
         /// </para>
         /// </summary>
         public bool Return

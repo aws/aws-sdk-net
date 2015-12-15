@@ -36,6 +36,12 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
+    /// If you have listed your own Reserved instances for sale in the Reserved Instance Marketplace,
+    /// they will be excluded from these results. This is to ensure that you do not purchase
+    /// your own Reserved instances.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
     /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
@@ -96,14 +102,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance-type</code> - The instance type on which the Reserved instance can
-        /// be used.
+        /// <code>instance-type</code> - The instance type that is covered by the reservation.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance
         /// Marketplace offerings. When this filter is not used, which is the default behavior,
-        /// all offerings from AWS and Reserved Instance Marketplace are listed.
+        /// all offerings from both AWS and the Reserved Instance Marketplace are listed.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -121,7 +126,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>reserved-instances-offering-id</code> - The Reserved instances offering ID.
+        /// <code>reserved-instances-offering-id</code> - The Reserved instances' offering ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -163,9 +168,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceTenancy. 
         /// <para>
-        /// The tenancy of the Reserved instance offering. A Reserved instance with <code>dedicated</code>
-        /// tenancy is applied to instances that run on single-tenant hardware and can only be
-        /// launched within a VPC.
+        /// The tenancy of the instances covered by the reservation. A Reserved instance with
+        /// a tenancy of <code>dedicated</code> is applied to instances that run in a VPC on single-tenant
+        /// hardware (i.e., Dedicated instances).
         /// </para>
         ///  
         /// <para>
@@ -187,8 +192,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type on which the Reserved instance can be used. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+        /// The instance type that the reservation will cover (for example, <code>m1.small</code>).
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
         /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>

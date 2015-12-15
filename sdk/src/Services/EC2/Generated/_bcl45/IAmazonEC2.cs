@@ -504,22 +504,18 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Adds one or more egress rules to a security group for use with a VPC. Specifically,
-        /// this action permits instances to send traffic to one or more destination CIDR IP address
-        /// ranges, or to one or more destination security groups for the same VPC.
+        /// [EC2-VPC only] Adds one or more egress rules to a security group for use with a VPC.
+        /// Specifically, this action permits instances to send traffic to one or more destination
+        /// CIDR IP address ranges, or to one or more destination security groups for the same
+        /// VPC. This action doesn't apply to security groups for use in EC2-Classic. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
+        /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
         ///  <important> 
         /// <para>
         /// You can have up to 50 rules per security group (covering both ingress and egress rules).
         /// </para>
         ///  </important> 
-        /// <para>
-        /// A security group is for use with instances either in the EC2-Classic platform or in
-        /// a specific VPC. This action doesn't apply to security groups for use in EC2-Classic.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-        /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
-        /// </para>
-        ///  
         /// <para>
         /// Each rule consists of the protocol (for example, TCP), plus either a CIDR range or
         /// a source group. For the TCP and UDP protocols, you must also specify the destination
@@ -1446,13 +1442,13 @@ namespace Amazon.EC2
         /// The Reserved Instance Marketplace matches sellers who want to resell Reserved instance
         /// capacity that they no longer need with buyers who want to purchase additional capacity.
         /// Reserved instances bought and sold through the Reserved Instance Marketplace work
-        /// like any other Reserved instances. 
+        /// like any other Reserved instances.
         /// </para>
         ///  
         /// <para>
         /// To sell your Reserved instances, you must first register as a seller in the Reserved
         /// Instance Marketplace. After completing the registration process, you can create a
-        /// Reserved Instance Marketplace listing of some or all of your Reserved Instances, and
+        /// Reserved Instance Marketplace listing of some or all of your Reserved instances, and
         /// specify the upfront price to receive for them. Your Reserved instance listings then
         /// become available for purchase. To view the details of your Reserved instance listing,
         /// you can use the <a>DescribeReservedInstancesListings</a> operation.
@@ -3430,7 +3426,7 @@ namespace Amazon.EC2
         /// <para>
         /// The results describe only the Dedicated hosts in the region you're currently using.
         /// All listed instances consume capacity on your Dedicated host. Dedicated hosts that
-        /// have recently been released will be listed with the status "released".
+        /// have recently been released will be listed with the state <code>released</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHosts service method.</param>
@@ -4483,7 +4479,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the modifications made to your Reserved instances. If no parameter is specified,
-        /// information about all your Reserved Instances modification requests is returned. If
+        /// information about all your Reserved instances modification requests is returned. If
         /// a modification ID is specified, only information about the specific modification is
         /// returned.
         /// 
@@ -4500,7 +4496,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the modifications made to your Reserved instances. If no parameter is specified,
-        /// information about all your Reserved Instances modification requests is returned. If
+        /// information about all your Reserved instances modification requests is returned. If
         /// a modification ID is specified, only information about the specific modification is
         /// returned.
         /// 
@@ -4518,7 +4514,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the modifications made to your Reserved instances. If no parameter is specified,
-        /// information about all your Reserved Instances modification requests is returned. If
+        /// information about all your Reserved instances modification requests is returned. If
         /// a modification ID is specified, only information about the specific modification is
         /// returned.
         /// 
@@ -4560,6 +4556,12 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
+        /// If you have listed your own Reserved instances for sale in the Reserved Instance Marketplace,
+        /// they will be excluded from these results. This is to ensure that you do not purchase
+        /// your own Reserved instances.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
@@ -4575,6 +4577,12 @@ namespace Amazon.EC2
         /// that time period, you do not receive insufficient capacity errors, and you pay a lower
         /// usage rate than the rate charged for On-Demand instances for the actual time used.
         /// 
+        ///  
+        /// <para>
+        /// If you have listed your own Reserved instances for sale in the Reserved Instance Marketplace,
+        /// they will be excluded from these results. This is to ensure that you do not purchase
+        /// your own Reserved instances.
+        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
@@ -4593,6 +4601,12 @@ namespace Amazon.EC2
         /// that time period, you do not receive insufficient capacity errors, and you pay a lower
         /// usage rate than the rate charged for On-Demand instances for the actual time used.
         /// 
+        ///  
+        /// <para>
+        /// If you have listed your own Reserved instances for sale in the Reserved Instance Marketplace,
+        /// they will be excluded from these results. This is to ensure that you do not purchase
+        /// your own Reserved instances.
+        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
@@ -6864,7 +6878,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the Availability Zone, instance count, instance type, or network platform
-        /// (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved Instances to be
+        /// (EC2-Classic or EC2-VPC) of your Reserved instances. The Reserved instances to be
         /// modified must be identical, except for Availability Zone, network platform, and instance
         /// type.
         /// 
@@ -7385,9 +7399,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// When you no longer want to use a Dedicated host it can be released. On-Demand billing
-        /// is stopped and the host goes into "released" state. The host ID of Dedicated hosts
-        /// that have been released can no longer be specified in another request, e.g., ModifyHosts.
-        /// You must stop or terminate all instances on a host before it can be released.
+        /// is stopped and the host goes into <code>released</code> state. The host ID of Dedicated
+        /// hosts that have been released can no longer be specified in another request, e.g.,
+        /// ModifyHosts. You must stop or terminate all instances on a host before it can be released.
         /// 
         ///  
         /// <para>
@@ -7809,7 +7823,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Removes one or more egress rules from a security group for EC2-VPC. The values that
+        /// [EC2-VPC only] Removes one or more egress rules from a security group for EC2-VPC.
+        /// This action doesn't apply to security groups for use in EC2-Classic. The values that
         /// you specify in the revoke request (for example, ports) must match the existing rule's
         /// values for the rule to be revoked.
         /// 

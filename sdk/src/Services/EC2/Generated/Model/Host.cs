@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Describes the properties of the Dedicated host.
     /// </summary>
     public partial class Host
     {
@@ -155,8 +155,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HostReservationId. 
         /// <para>
-        /// The reservation ID of the Dedicated host. This returns a "null" response if the Dedicated
-        /// host doesn't have an associated reservation.
+        /// The reservation ID of the Dedicated host. This returns a <code>null</code> response
+        /// if the Dedicated host doesn't have an associated reservation.
         /// </para>
         /// </summary>
         public string HostReservationId
@@ -192,7 +192,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The Dedicated host's state. Can be "available", "under assessment, or "released".
+        /// The Dedicated host's state.
         /// </para>
         /// </summary>
         public AllocationState State

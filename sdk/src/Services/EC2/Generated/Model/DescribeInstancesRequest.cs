@@ -59,6 +59,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// <code>affinity</code> - The affinity setting for an instance running on a Dedicated
+        /// host (<code>default</code> | <code>host</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code>).
         /// </para>
         ///  </li> <li> 
@@ -107,6 +112,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// <code>group-name</code> - The name of the security group for the instance. EC2-Classic
         /// only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>host-Id</code> - The ID of the Dedicated host on which the instance is running,
+        /// if applicable.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -290,7 +300,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tenancy</code> - The tenancy of an instance (<code>dedicated</code> | <code>default</code>).
+        /// <code>tenancy</code> - The tenancy of an instance (<code>dedicated</code> | <code>default</code>
+        /// | <code>host</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

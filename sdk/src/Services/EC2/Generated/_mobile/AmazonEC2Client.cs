@@ -4042,7 +4042,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the modifications made to your Reserved instances. If no parameter is specified,
-        /// information about all your Reserved Instances modification requests is returned. If
+        /// information about all your Reserved instances modification requests is returned. If
         /// a modification ID is specified, only information about the specific modification is
         /// returned.
         /// 
@@ -4104,6 +4104,12 @@ namespace Amazon.EC2
         /// that time period, you do not receive insufficient capacity errors, and you pay a lower
         /// usage rate than the rate charged for On-Demand instances for the actual time used.
         /// 
+        ///  
+        /// <para>
+        /// If you have listed your own Reserved instances for sale in the Reserved Instance Marketplace,
+        /// they will be excluded from these results. This is to ensure that you do not purchase
+        /// your own Reserved instances.
+        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved

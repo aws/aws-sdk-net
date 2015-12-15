@@ -316,7 +316,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The ID of the subnet in which to launch the instances.
+        /// The ID of the subnet in which to launch the instances. To specify multiple subnets,
+        /// separate them using commas; for example, "subnet-a61dafcf, subnet-65ea5f08".
         /// </para>
         /// </summary>
         public string SubnetId

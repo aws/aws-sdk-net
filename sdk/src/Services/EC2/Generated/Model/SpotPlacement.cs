@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates SpotPlacement with the parameterized properties
         /// </summary>
-        /// <param name="availabilityZone">The Availability Zone.</param>
+        /// <param name="availabilityZone">The Availability Zones. To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</param>
         public SpotPlacement(string availabilityZone)
         {
             _availabilityZone = availabilityZone;
@@ -52,7 +52,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone.
+        /// The Availability Zones. To specify multiple Availability Zones, separate them using
+        /// commas; for example, "us-west-2a, us-west-2b".
         /// </para>
         /// </summary>
         public string AvailabilityZone

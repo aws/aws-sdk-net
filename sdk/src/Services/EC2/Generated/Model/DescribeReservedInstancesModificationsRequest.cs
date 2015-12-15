@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeReservedInstancesModifications operation.
     /// Describes the modifications made to your Reserved instances. If no parameter is specified,
-    /// information about all your Reserved Instances modification requests is returned. If
+    /// information about all your Reserved instances modification requests is returned. If
     /// a modification ID is specified, only information about the specific modification is
     /// returned.
     /// 
