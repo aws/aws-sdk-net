@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ServiceClientGenerator.Generators;
+using ServiceClientGenerator.Generators.Examples;
 using ServiceClientGenerator.Generators.Marshallers;
 using ServiceClientGenerator.Generators.NuGet;
 using ServiceClientGenerator.Generators.SourceFiles;
@@ -220,6 +221,12 @@ namespace ServiceClientGenerator
             // Test that simple customizations were generated correctly
             GenerateCustomizationTests();
             ExecuteProjectFileGenerators();
+            if (this.Configuration.ServiceModel.Customizations.HasExamples)
+            {
+                var servicename = Configuration.Namespace.Split('.').Last();
+                ExecuteExampleGenerator(new ExampleCode(), servicename + ".GeneratedSamples.cs", servicename);
+                ExecuteExampleGenerator(new ExampleMetadata(), servicename + ".GeneratedSamples.extra.xml");
+            }
         }
 
         /// <summary>
@@ -1074,6 +1081,16 @@ namespace ServiceClientGenerator
             var generator = new AssemblyInfo { Config = this.Configuration };
             var text = generator.TransformText();
             WriteFile(ServiceFilesRoot, "Properties", "AssemblyInfo.cs", text);
+        }
+
+        void ExecuteExampleGenerator(BaseGenerator generator, string fileName, string subNamespace = null)
+        {
+            generator.Config = this.Configuration;
+            var text = generator.TransformText();
+            var outputSubFolder = @"docgenerator\AWSSDKDocSamples";
+            if (subNamespace != null)
+                outputSubFolder = Path.Combine(outputSubFolder, subNamespace);
+            WriteFile(Path.GetFullPath(TestFilesRoot + @"\..\..\"), outputSubFolder, fileName, text);
         }
 
         /// <summary>

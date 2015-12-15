@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.SQS.IAmazonSQS.CreateQueue(Amazon.SQS.Model.CreateQueueRequest)" />
+            <member name="M:Amazon.SQS.AmazonSQSClient.CreateQueue(Amazon.SQS.Model.CreateQueueRequest)" />
+            <member name="T:Amazon.SQS.Model.CreateQueueRequest" />
+            <member name="T:Amazon.SQS.Model.CreateQueueResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation creates an SQS queue named MyQueue.
+                </para>
+                <code
+                    title="Create an SQS queue"
+                    source=".\AWSSDKDocSamples\SQS\SQS.GeneratedSamples.cs"
+                    region="create-an-sqs-queue-1445915686197" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SQS.IAmazonSQS.GetQueueUrl(Amazon.SQS.Model.GetQueueUrlRequest)" />
+            <member name="M:Amazon.SQS.AmazonSQSClient.GetQueueUrl(Amazon.SQS.Model.GetQueueUrlRequest)" />
+            <member name="T:Amazon.SQS.Model.GetQueueUrlRequest" />
+            <member name="T:Amazon.SQS.Model.GetQueueUrlResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the queue ARN.
+                </para>
+                <code
+                    title="Retrieve queue attributes from an SQS queue"
+                    source=".\AWSSDKDocSamples\SQS\SQS.GeneratedSamples.cs"
+                    region="retrieve-queue-attributes-from-an-sqs-queue-1445915930574" />
+            </example>
+        </value>
+    </doc>
+</docs>

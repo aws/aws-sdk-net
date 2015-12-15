@@ -1,0 +1,69 @@
+﻿<#@ template language="C#"  inherits="Generators.BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using <#=this.Config.Namespace#>;
+using <#=this.Config.Namespace#>.Model;
+
+namespace AWSSDKDocSamples.<#=this.Config.Namespace#>.Generated
+{
+	class <#=this.Config.BaseName#>Samples : ISample
+	{
+		static IAmazon<#=this.Config.BaseName#> client = new Amazon<#=this.Config.BaseName#>Client();
+<#
+	foreach(var operation in this.Config.ServiceModel.Operations)
+	{
+		foreach(var example in operation.Examples)
+		{
+#>
+		public void <#=this.Config.BaseName#><#=operation.Name#>()
+		{
+			#region <#=example.Id#>
+
+			var response = client.<#=operation.Name#>(new <#=operation.Name#>Request 
+			{
+<#
+			var lines = example.GetRequestAssignments(currentIndent: 16);
+			foreach(var line in lines)
+			{
+#>
+				<#=line#>
+<#		
+			}
+#>
+			});
+
+<#
+			var responses = example.GetResponseAssignments();
+			foreach(var resp in responses)
+			{
+#>
+			<#=resp#>
+<#		
+			}
+#>
+
+			#endregion
+		}
+
+<#
+		}
+	}
+#>
+		
+		# region ISample Members
+		public virtual void Run()
+		{
+
+		}
+		# endregion
+
+	}
+}
