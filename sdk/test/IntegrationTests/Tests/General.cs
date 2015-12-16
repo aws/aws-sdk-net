@@ -13,6 +13,8 @@ using System.Configuration;
 using System.Collections.Specialized;
 using System.Xml;
 using Amazon.Util;
+using Amazon.Runtime.Internal;
+using Amazon.DynamoDBv2.Internal;
 
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
@@ -20,6 +22,30 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     [TestClass]
     public class General
     {
+        [TestMethod]
+        public void TestLargeRetryCount()
+        {
+            var maxRetries = 1000;
+            var maxMilliseconds = 1;
+
+            var coreRetryPolicy = new DefaultRetryPolicy(100)
+            {
+                MaxBackoffInMilliseconds = maxMilliseconds
+            };
+            var ddbRetryPolicy = new DynamoDBRetryPolicy(100)
+            {
+                MaxBackoffInMilliseconds = maxMilliseconds
+            };
+
+            var context = new ExecutionContext(new RequestContext(false), null);
+            for (int i = 0; i < maxRetries; i++)
+            {
+                context.RequestContext.Retries = i;
+                coreRetryPolicy.WaitBeforeRetry(context);
+                ddbRetryPolicy.WaitBeforeRetry(context);
+            }
+        }
+
         [TestMethod]
         public void TestBidiCharsInUri()
         {
