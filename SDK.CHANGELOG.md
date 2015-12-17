@@ -1,3 +1,25 @@
+### 3.1.35.0 (2015-12-17 22:20 UTC)
+* CloudFront (3.1.2.0)
+	* For web distributions, you can now configure CloudFront to automatically compress files of certain types for both Amazon S3 and custom origins, so downloads are faster and your web pages render faster. Compression also reduces your CloudFront data transfer cost because you pay for the total amount of data served.
+* CloudTrail (3.1.2.0)
+	* This release supports trails that apply across all regions, and support for multiple trails per region.
+* ConfigService (3.1.3.0)
+	* Update to add support for AWS Config rules. These rules enable users to evaluate whether their AWS resources comply with desired configuration settings.
+
+Added support for Identity and Access Management (IAM) resource types.
+* DynamoDBv2 (3.1.1.3)
+	* Fix issue where a high retry count causes integer overflow - https://github.com/aws/aws-sdk-net/issues/286
+* EC2 (3.1.7.0)
+	* Added support for managed NAT, a highly available and scalable Network Address Translation (NAT) solution that enables Internet connectivity for instances in private subnets of a customer’s VPC
+* RDS (3.1.7.0)
+	* Add support for enhanced monitoring in RDS instances.
+* Core 3.1.4.2
+	* Fix issue where a high retry count causes integer overflow - https://github.com/aws/aws-sdk-net/issues/286.
+
+Fix issue causing "Path cannot be the empty string or all whitespace" error when running under a user account that has no profile or home directory - https://github.com/aws/aws-sdk-net/issues/287.
+
+ 
+
 ### 3.1.34.0 (2015-12-15 19:02 UTC)
 * EC2 (3.1.6.0)
 	* Added new parameters to CopyImage API that allows a customer to create an AMI copy where all the associated EBS snapshots are encrypted.
