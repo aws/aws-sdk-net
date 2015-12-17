@@ -75,6 +75,34 @@ namespace AWSSDK.IntegrationTests.S3
             Assert.IsNull(responseException);
         }
 
+        public static GetACLResponse GetACLHelper(AmazonS3Client client, string bucketName, string key)
+        {
+            GetACLResponse r = null;
+            Exception responseException = null;
+            AutoResetEvent ars = new AutoResetEvent(false);
+
+            client.GetACLAsync(new GetACLRequest()
+            {
+                BucketName = bucketName,
+                Key = key
+            }, (response) =>
+            {
+                responseException = response.Exception;
+                if (responseException == null)
+                {
+                    r = response.Response;
+                }
+                ars.Set();
+            }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
+            ars.WaitOne();
+
+            if (responseException != null)
+            {
+                throw responseException;
+            }
+            return r;
+        }
+
         public static GetObjectResponse GetObjectHelper(AmazonS3Client client, string bucketName, string key)
         {
             GetObjectResponse r = null;
