@@ -46,6 +46,7 @@ namespace Amazon.RDS.Model
         private bool? _multiAZCapable;
         private bool? _readReplicaCapable;
         private string _storageType;
+        private bool? _supportsEnhancedMonitoring;
         private bool? _supportsIops;
         private bool? _supportsStorageEncryption;
         private bool? _vpc;
@@ -192,6 +193,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageType()
         {
             return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsEnhancedMonitoring. 
+        /// <para>
+        /// Indicates whether the DB instance supports enhanced monitoring at intervals from 1
+        /// to 60 seconds.
+        /// </para>
+        /// </summary>
+        public bool SupportsEnhancedMonitoring
+        {
+            get { return this._supportsEnhancedMonitoring.GetValueOrDefault(); }
+            set { this._supportsEnhancedMonitoring = value; }
+        }
+
+        // Check to see if SupportsEnhancedMonitoring property is set
+        internal bool IsSetSupportsEnhancedMonitoring()
+        {
+            return this._supportsEnhancedMonitoring.HasValue; 
         }
 
         /// <summary>
