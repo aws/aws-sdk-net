@@ -331,7 +331,7 @@ namespace Amazon.Runtime
             if (this._wrappedCredentials == null)
             {
                 var credentialsFilePath = DetermineCredentialsFilePath(profilesLocation);
-                if (File.Exists(credentialsFilePath))
+                if (!string.IsNullOrEmpty(credentialsFilePath) && File.Exists(credentialsFilePath))
                 {
                     var parser = new CredentialsFileParser(credentialsFilePath);
                     var section = parser.FindSection(lookupName);
@@ -391,7 +391,7 @@ namespace Amazon.Runtime
                 ? AWSConfigs.AWSProfilesLocation 
                 : profilesLocation;
             var credentialsFilePath = DetermineCredentialsFilePath(profileFile);
-            if (File.Exists(credentialsFilePath))
+            if (!string.IsNullOrEmpty(credentialsFilePath) && File.Exists(credentialsFilePath))
             {
                 var parser = new CredentialsFileParser(credentialsFilePath);
                 var section = parser.FindSection(profileName);
@@ -422,7 +422,7 @@ namespace Amazon.Runtime
                 ? AWSConfigs.AWSProfilesLocation
                 : profilesLocation;
             var credentialsFilePath = DetermineCredentialsFilePath(profileFile);
-            if (File.Exists(credentialsFilePath))
+            if (!string.IsNullOrEmpty(credentialsFilePath) && File.Exists(credentialsFilePath))
             {
                 var parser = new CredentialsFileParser(credentialsFilePath);
                 var section = parser.FindSection(profileName);
@@ -459,6 +459,9 @@ namespace Amazon.Runtime
         /// <returns>The file path to the credentials file to be used.</returns>
         private static string DetermineCredentialsFilePath(string profilesLocation)
         {
+            const string credentialFile = ".aws/credentials";
+            const string homeEnvVar = "HOME";
+
             if (!string.IsNullOrEmpty(profilesLocation))
             {
                 if (Directory.Exists(profilesLocation))
@@ -468,22 +471,28 @@ namespace Amazon.Runtime
             }
             else
             {
-                if (!string.IsNullOrEmpty(System.Environment.GetEnvironmentVariable("HOME")))
+                if (!string.IsNullOrEmpty(System.Environment.GetEnvironmentVariable(homeEnvVar)))
                 {
-                    var envPath = Path.Combine(
-                        System.Environment.GetEnvironmentVariable("HOME"),
-                        ".aws/credentials");
+                    var envPath = Path.Combine(System.Environment.GetEnvironmentVariable(homeEnvVar), credentialFile);
                     if (File.Exists(envPath))
                         return envPath;
                 }
+
+                string path = null;
+
 #if !BCL35
-                var path = Path.Combine(
-                    System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile),
-                    ".aws/credentials");
+                var profileFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile);
+                if (!string.IsNullOrEmpty(profileFolder))
+                    path = Path.Combine(profileFolder, credentialFile);
 #else
-                var path = Path.Combine(
-                    Directory.GetParent(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal)).FullName,
-                    ".aws/credentials");
+
+                var profileFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+                if (!string.IsNullOrEmpty(profileFolder))
+                {
+                    var parent = Directory.GetParent(profileFolder);
+                    if (parent != null)
+                        path = Path.Combine(parent.FullName, credentialFile);
+                }
 #endif
 
                 return path;
