@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateRoute Request Marshaller
+    /// CreateNatGateway Request Marshaller
     /// </summary>       
-    public class CreateRouteRequestMarshaller : IMarshaller<IRequest, CreateRouteRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateNatGatewayRequestMarshaller : IMarshaller<IRequest, CreateNatGatewayRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateRouteRequest)input);
+            return this.Marshall((CreateNatGatewayRequest)input);
         }
     
         /// <summary>
@@ -50,41 +50,25 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateRouteRequest publicRequest)
+        public IRequest Marshall(CreateNatGatewayRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
-            request.Parameters.Add("Action", "CreateRoute");
+            request.Parameters.Add("Action", "CreateNatGateway");
             request.Parameters.Add("Version", "2015-10-01");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetDestinationCidrBlock())
+                if(publicRequest.IsSetAllocationId())
                 {
-                    request.Parameters.Add("DestinationCidrBlock", StringUtils.FromString(publicRequest.DestinationCidrBlock));
+                    request.Parameters.Add("AllocationId", StringUtils.FromString(publicRequest.AllocationId));
                 }
-                if(publicRequest.IsSetGatewayId())
+                if(publicRequest.IsSetClientToken())
                 {
-                    request.Parameters.Add("GatewayId", StringUtils.FromString(publicRequest.GatewayId));
+                    request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
-                if(publicRequest.IsSetInstanceId())
+                if(publicRequest.IsSetSubnetId())
                 {
-                    request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
-                }
-                if(publicRequest.IsSetNatGatewayId())
-                {
-                    request.Parameters.Add("NatGatewayId", StringUtils.FromString(publicRequest.NatGatewayId));
-                }
-                if(publicRequest.IsSetNetworkInterfaceId())
-                {
-                    request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(publicRequest.NetworkInterfaceId));
-                }
-                if(publicRequest.IsSetRouteTableId())
-                {
-                    request.Parameters.Add("RouteTableId", StringUtils.FromString(publicRequest.RouteTableId));
-                }
-                if(publicRequest.IsSetVpcPeeringConnectionId())
-                {
-                    request.Parameters.Add("VpcPeeringConnectionId", StringUtils.FromString(publicRequest.VpcPeeringConnectionId));
+                    request.Parameters.Add("SubnetId", StringUtils.FromString(publicRequest.SubnetId));
                 }
             }
             return request;

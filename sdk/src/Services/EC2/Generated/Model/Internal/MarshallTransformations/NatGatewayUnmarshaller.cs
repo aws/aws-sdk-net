@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Route Object
+    /// Response Unmarshaller for NatGateway Object
     /// </summary>  
-    public class RouteUnmarshaller : IUnmarshaller<Route, XmlUnmarshallerContext>, IUnmarshaller<Route, JsonUnmarshallerContext>
+    public class NatGatewayUnmarshaller : IUnmarshaller<NatGateway, XmlUnmarshallerContext>, IUnmarshaller<NatGateway, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Route Unmarshall(XmlUnmarshallerContext context)
+        public NatGateway Unmarshall(XmlUnmarshallerContext context)
         {
-            Route unmarshalledObject = new Route();
+            NatGateway unmarshalledObject = new NatGateway();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,34 +54,35 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("destinationCidrBlock", targetDepth))
+                    if (context.TestExpression("createTime", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DestinationCidrBlock = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("destinationPrefixListId", targetDepth))
+                    if (context.TestExpression("deleteTime", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DestinationPrefixListId = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.DeleteTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("gatewayId", targetDepth))
+                    if (context.TestExpression("failureCode", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.GatewayId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.FailureCode = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("instanceId", targetDepth))
+                    if (context.TestExpression("failureMessage", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.FailureMessage = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("instanceOwnerId", targetDepth))
+                    if (context.TestExpression("natGatewayAddressSet/item", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceOwnerId = unmarshaller.Unmarshall(context);
+                        var unmarshaller = NatGatewayAddressUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.NatGatewayAddresses.Add(item);
                         continue;
                     }
                     if (context.TestExpression("natGatewayId", targetDepth))
@@ -90,28 +91,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.NatGatewayId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("networkInterfaceId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.NetworkInterfaceId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("origin", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Origin = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("state", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.State = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("vpcPeeringConnectionId", targetDepth))
+                    if (context.TestExpression("subnetId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.VpcPeeringConnectionId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("vpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -129,18 +124,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Route Unmarshall(JsonUnmarshallerContext context)
+        public NatGateway Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static RouteUnmarshaller _instance = new RouteUnmarshaller();        
+        private static NatGatewayUnmarshaller _instance = new NatGatewayUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RouteUnmarshaller Instance
+        public static NatGatewayUnmarshaller Instance
         {
             get
             {

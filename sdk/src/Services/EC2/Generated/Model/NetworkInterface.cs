@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZone;
         private string _description;
         private List<GroupIdentifier> _groups = new List<GroupIdentifier>();
+        private NetworkInterfaceType _interfaceType;
         private string _macAddress;
         private string _networkInterfaceId;
         private string _ownerId;
@@ -139,6 +140,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetGroups()
         {
             return this._groups != null && this._groups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InterfaceType. 
+        /// <para>
+        /// The type of interface. 
+        /// </para>
+        /// </summary>
+        public NetworkInterfaceType InterfaceType
+        {
+            get { return this._interfaceType; }
+            set { this._interfaceType = value; }
+        }
+
+        // Check to see if InterfaceType property is set
+        internal bool IsSetInterfaceType()
+        {
+            return this._interfaceType != null;
         }
 
         /// <summary>

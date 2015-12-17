@@ -888,7 +888,6 @@ namespace Amazon.EC2
         /// <summary>
         /// Initiates the copy of an AMI from the specified source region to the current region.
         /// You specify the destination region by using its endpoint when making the request.
-        /// AMIs that use encrypted EBS snapshots cannot be copied with this method.
         /// 
         ///  
         /// <para>
@@ -1286,6 +1285,35 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateNatGateway
+
+
+        /// <summary>
+        /// Creates a NAT gateway in the specified subnet. A NAT gateway can be used to enable
+        /// instances in a private subnet to connect to the Internet. This action creates a network
+        /// interface in the specified subnet with a private IP address from the IP address range
+        /// of the subnet. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT
+        /// Gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNatGateway service method.</param>
+        /// 
+        /// <returns>The response from the CreateNatGateway service method, as returned by EC2.</returns>
+        CreateNatGatewayResponse CreateNatGateway(CreateNatGatewayRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNatGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNatGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateNatGatewayResponse> CreateNatGatewayAsync(CreateNatGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateNetworkAcl
 
 
@@ -1487,7 +1515,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You must specify one of the following targets: Internet gateway or virtual private
-        /// gateway, NAT instance, VPC peering connection, or network interface.
+        /// gateway, NAT instance, NAT gateway, VPC peering connection, or network interface.
         /// </para>
         ///  
         /// <para>
@@ -2216,6 +2244,33 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteKeyPairResponse> DeleteKeyPairAsync(DeleteKeyPairRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteNatGateway
+
+
+        /// <summary>
+        /// Deletes the specified NAT gateway. Deleting a NAT gateway disassociates its Elastic
+        /// IP address, but does not release the address from your account. Deleting a NAT gateway
+        /// does not delete any NAT gateway routes in your route tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNatGateway service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNatGateway service method, as returned by EC2.</returns>
+        DeleteNatGatewayResponse DeleteNatGateway(DeleteNatGatewayRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNatGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNatGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteNatGatewayResponse> DeleteNatGatewayAsync(DeleteNatGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4013,6 +4068,31 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeMovingAddressesResponse> DescribeMovingAddressesAsync(DescribeMovingAddressesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeNatGateways
+
+
+        /// <summary>
+        /// Describes one or more of the your NAT gateways.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNatGateways service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNatGateways service method, as returned by EC2.</returns>
+        DescribeNatGatewaysResponse DescribeNatGateways(DescribeNatGatewaysRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNatGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNatGateways operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeNatGatewaysResponse> DescribeNatGatewaysAsync(DescribeNatGatewaysRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -7493,8 +7573,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Replaces an existing route within a route table in a VPC. You must provide only one
-        /// of the following: Internet gateway or virtual private gateway, NAT instance, VPC peering
-        /// connection, or network interface.
+        /// of the following: Internet gateway or virtual private gateway, NAT instance, NAT gateway,
+        /// VPC peering connection, or network interface.
         /// 
         ///  
         /// <para>

@@ -778,6 +778,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void CreateNatGatewayMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateNatGateway");
+
+            var request = InstantiateClassGenerator.Execute<CreateNatGatewayRequest>();
+            var marshaller = new CreateNatGatewayRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateNatGatewayResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateNatGatewayResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void CreateNetworkAclMarshallTest()
         {
             var operation = service_model.FindOperation("CreateNetworkAcl");
@@ -1306,6 +1330,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DeleteNatGatewayMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteNatGateway");
+
+            var request = InstantiateClassGenerator.Execute<DeleteNatGatewayRequest>();
+            var marshaller = new DeleteNatGatewayRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteNatGatewayResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteNatGatewayResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -2204,6 +2252,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DescribeMovingAddressesResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeMovingAddressesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeNatGatewaysMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeNatGateways");
+
+            var request = InstantiateClassGenerator.Execute<DescribeNatGatewaysRequest>();
+            var marshaller = new DescribeNatGatewaysRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeNatGatewaysResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeNatGatewaysResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

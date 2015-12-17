@@ -2423,6 +2423,68 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type NatGatewayState.
+    /// </summary>
+    public class NatGatewayState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for NatGatewayState
+        /// </summary>
+        public static readonly NatGatewayState Available = new NatGatewayState("available");
+        /// <summary>
+        /// Constant Deleted for NatGatewayState
+        /// </summary>
+        public static readonly NatGatewayState Deleted = new NatGatewayState("deleted");
+        /// <summary>
+        /// Constant Deleting for NatGatewayState
+        /// </summary>
+        public static readonly NatGatewayState Deleting = new NatGatewayState("deleting");
+        /// <summary>
+        /// Constant Failed for NatGatewayState
+        /// </summary>
+        public static readonly NatGatewayState Failed = new NatGatewayState("failed");
+        /// <summary>
+        /// Constant Pending for NatGatewayState
+        /// </summary>
+        public static readonly NatGatewayState Pending = new NatGatewayState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NatGatewayState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NatGatewayState FindValue(string value)
+        {
+            return FindValue<NatGatewayState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NatGatewayState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NetworkInterfaceAttribute.
     /// </summary>
     public class NetworkInterfaceAttribute : ConstantClass
@@ -2532,6 +2594,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NetworkInterfaceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NetworkInterfaceType.
+    /// </summary>
+    public class NetworkInterfaceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Interface for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType Interface = new NetworkInterfaceType("interface");
+        /// <summary>
+        /// Constant NatGateway for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType NatGateway = new NetworkInterfaceType("natGateway");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NetworkInterfaceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetworkInterfaceType FindValue(string value)
+        {
+            return FindValue<NetworkInterfaceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetworkInterfaceType(string value)
         {
             return FindValue(value);
         }

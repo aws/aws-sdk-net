@@ -1143,7 +1143,6 @@ namespace Amazon.EC2
         /// <summary>
         /// Initiates the copy of an AMI from the specified source region to the current region.
         /// You specify the destination region by using its endpoint when making the request.
-        /// AMIs that use encrypted EBS snapshots cannot be copied with this method.
         /// 
         ///  
         /// <para>
@@ -1630,6 +1629,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateNatGateway
+
+
+        /// <summary>
+        /// Creates a NAT gateway in the specified subnet. A NAT gateway can be used to enable
+        /// instances in a private subnet to connect to the Internet. This action creates a network
+        /// interface in the specified subnet with a private IP address from the IP address range
+        /// of the subnet. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT
+        /// Gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNatGateway service method.</param>
+        /// 
+        /// <returns>The response from the CreateNatGateway service method, as returned by EC2.</returns>
+        CreateNatGatewayResponse CreateNatGateway(CreateNatGatewayRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNatGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNatGateway operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNatGateway
+        ///         operation.</returns>
+        IAsyncResult BeginCreateNatGateway(CreateNatGatewayRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateNatGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNatGateway.</param>
+        /// 
+        /// <returns>Returns a  CreateNatGatewayResult from EC2.</returns>
+        CreateNatGatewayResponse EndCreateNatGateway(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateNetworkAcl
 
 
@@ -1891,7 +1931,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You must specify one of the following targets: Internet gateway or virtual private
-        /// gateway, NAT instance, VPC peering connection, or network interface.
+        /// gateway, NAT instance, NAT gateway, VPC peering connection, or network interface.
         /// </para>
         ///  
         /// <para>
@@ -2848,6 +2888,45 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  DeleteKeyPairResult from EC2.</returns>
         DeleteKeyPairResponse EndDeleteKeyPair(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteNatGateway
+
+
+        /// <summary>
+        /// Deletes the specified NAT gateway. Deleting a NAT gateway disassociates its Elastic
+        /// IP address, but does not release the address from your account. Deleting a NAT gateway
+        /// does not delete any NAT gateway routes in your route tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNatGateway service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNatGateway service method, as returned by EC2.</returns>
+        DeleteNatGatewayResponse DeleteNatGateway(DeleteNatGatewayRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNatGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNatGateway operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNatGateway
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteNatGateway(DeleteNatGatewayRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteNatGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNatGateway.</param>
+        /// 
+        /// <returns>Returns a  DeleteNatGatewayResult from EC2.</returns>
+        DeleteNatGatewayResponse EndDeleteNatGateway(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4841,6 +4920,43 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  DescribeMovingAddressesResult from EC2.</returns>
         DescribeMovingAddressesResponse EndDescribeMovingAddresses(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeNatGateways
+
+
+        /// <summary>
+        /// Describes one or more of the your NAT gateways.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNatGateways service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNatGateways service method, as returned by EC2.</returns>
+        DescribeNatGatewaysResponse DescribeNatGateways(DescribeNatGatewaysRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNatGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNatGateways operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNatGateways
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeNatGateways(DescribeNatGatewaysRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeNatGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNatGateways.</param>
+        /// 
+        /// <returns>Returns a  DescribeNatGatewaysResult from EC2.</returns>
+        DescribeNatGatewaysResponse EndDescribeNatGateways(IAsyncResult asyncResult);
 
         #endregion
         
@@ -8699,8 +8815,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Replaces an existing route within a route table in a VPC. You must provide only one
-        /// of the following: Internet gateway or virtual private gateway, NAT instance, VPC peering
-        /// connection, or network interface.
+        /// of the following: Internet gateway or virtual private gateway, NAT instance, NAT gateway,
+        /// VPC peering connection, or network interface.
         /// 
         ///  
         /// <para>

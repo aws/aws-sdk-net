@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Route Object
+    /// Response Unmarshaller for NatGatewayAddress Object
     /// </summary>  
-    public class RouteUnmarshaller : IUnmarshaller<Route, XmlUnmarshallerContext>, IUnmarshaller<Route, JsonUnmarshallerContext>
+    public class NatGatewayAddressUnmarshaller : IUnmarshaller<NatGatewayAddress, XmlUnmarshallerContext>, IUnmarshaller<NatGatewayAddress, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Route Unmarshall(XmlUnmarshallerContext context)
+        public NatGatewayAddress Unmarshall(XmlUnmarshallerContext context)
         {
-            Route unmarshalledObject = new Route();
+            NatGatewayAddress unmarshalledObject = new NatGatewayAddress();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,40 +54,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("destinationCidrBlock", targetDepth))
+                    if (context.TestExpression("allocationId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DestinationCidrBlock = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("destinationPrefixListId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DestinationPrefixListId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("gatewayId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.GatewayId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("instanceId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("instanceOwnerId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceOwnerId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("natGatewayId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.NatGatewayId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AllocationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("networkInterfaceId", targetDepth))
@@ -96,22 +66,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.NetworkInterfaceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("origin", targetDepth))
+                    if (context.TestExpression("privateIp", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Origin = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PrivateIp = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("state", targetDepth))
+                    if (context.TestExpression("publicIp", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("vpcPeeringConnectionId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.VpcPeeringConnectionId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PublicIp = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -129,18 +93,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Route Unmarshall(JsonUnmarshallerContext context)
+        public NatGatewayAddress Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static RouteUnmarshaller _instance = new RouteUnmarshaller();        
+        private static NatGatewayAddressUnmarshaller _instance = new NatGatewayAddressUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RouteUnmarshaller Instance
+        public static NatGatewayAddressUnmarshaller Instance
         {
             get
             {
