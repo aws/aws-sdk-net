@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2015-07-27.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2015-09-17.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,6 +35,7 @@ namespace Amazon.CloudFront.Model
     public partial class DefaultCacheBehavior
     {
         private AllowedMethods _allowedMethods;
+        private bool? _compress;
         private long? _defaultTTL;
         private ForwardedValues _forwardedValues;
         private long? _maxTTL;
@@ -57,6 +58,34 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetAllowedMethods()
         {
             return this._allowedMethods != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Compress. Whether you want CloudFront to automatically
+        /// compress content for web requests that include Accept-Encoding: gzip in the request
+        /// header. If so, specify true; if not, specify false. CloudFront compresses files larger
+        /// than 1000 bytes and less than 1 megabyte for both Amazon S3 and custom origins. When
+        /// a CloudFront edge location is unusually busy, some files might not be compressed.
+        /// The value of the Content-Type header must be on the list of file types that CloudFront
+        /// will compress. For the current list, see <a href="http://docs.aws.amazon.com/console/cloudfront/compressed-content">Serving
+        /// Compressed Content</a> in the Amazon CloudFront Developer Guide. If you configure
+        /// CloudFront to compress content, CloudFront removes the ETag response header from the
+        /// objects that it compresses. The ETag header indicates that the version in a CloudFront
+        /// edge cache is identical to the version on the origin server, but after compression
+        /// the two versions are no longer identical. As a result, for compressed objects, CloudFront
+        /// can't use the ETag header to determine whether an expired object in the CloudFront
+        /// edge cache is still the latest version.
+        /// </summary>
+        public bool Compress
+        {
+            get { return this._compress.GetValueOrDefault(); }
+            set { this._compress = value; }
+        }
+
+        // Check to see if Compress property is set
+        internal bool IsSetCompress()
+        {
+            return this._compress.HasValue; 
         }
 
         /// <summary>
