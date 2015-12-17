@@ -78,19 +78,19 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidLookupAttributes"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidLookupAttributesException"))
             {
                 return new InvalidLookupAttributesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidMaxResults"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidMaxResultsException"))
             {
                 return new InvalidMaxResultsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextToken"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextTokenException"))
             {
                 return new InvalidNextTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTimeRange"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTimeRangeException"))
             {
                 return new InvalidTimeRangeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }

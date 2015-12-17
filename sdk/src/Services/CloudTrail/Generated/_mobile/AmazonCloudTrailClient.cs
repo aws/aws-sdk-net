@@ -312,9 +312,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
-        /// This exception is thrown when the requested operation is not supported. For example,
-        /// this exception will occur if an attempt is made to tag a trail and tagging is not
-        /// supported in the current region.
+        /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         public Task<DescribeTrailsResponse> DescribeTrailsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
