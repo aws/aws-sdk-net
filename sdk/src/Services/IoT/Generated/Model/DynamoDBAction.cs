@@ -109,7 +109,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property PayloadField. 
         /// <para>
-        /// The action payload.
+        /// The action payload, this name can be customized.
         /// </para>
         /// </summary>
         public string PayloadField

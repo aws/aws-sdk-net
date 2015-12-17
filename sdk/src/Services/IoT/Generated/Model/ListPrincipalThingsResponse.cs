@@ -32,25 +32,25 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListPrincipalThingsResponse : AmazonWebServiceResponse
     {
-        private string _nextToken;
+        private string _nextMarker;
         private List<string> _things = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property NextMarker. 
         /// <para>
         /// A token used to retrieve the next value.
         /// </para>
         /// </summary>
-        public string NextToken
+        public string NextMarker
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._nextMarker; }
+            set { this._nextMarker = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if NextMarker property is set
+        internal bool IsSetNextMarker()
         {
-            return this._nextToken != null;
+            return this._nextMarker != null;
         }
 
         /// <summary>

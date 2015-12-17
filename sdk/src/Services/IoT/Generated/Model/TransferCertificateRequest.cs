@@ -48,7 +48,7 @@ namespace Amazon.IoT.Model
     ///  
     /// <para>
     /// The certificate must not have any policies attached to it. These can be detached using
-    /// the <a>DetachPrincipalPolicy</a> API.
+    /// the DetachPrincipalPolicy API.
     /// </para>
     /// </summary>
     public partial class TransferCertificateRequest : AmazonIoTRequest

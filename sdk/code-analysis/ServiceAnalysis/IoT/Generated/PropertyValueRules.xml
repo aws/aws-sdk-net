@@ -29,18 +29,14 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.IoT.Model.CreateCertificateFromCsrResponse.CertificateArn</property>
-    <pattern>arn:aws:iot:[a-z]{2}-[a-z]{4}-\d{1}:\d{12}:cert/?(0x)?[a-fA-F0-9]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.IoT.Model.CreateCertificateFromCsrResponse.CertificateId</property>
     <min>64</min>
     <max>64</max>
     <pattern>(0x)?[a-fA-F0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.IoT.Model.CreateKeysAndCertificateResponse.CertificateArn</property>
-    <pattern>arn:aws:iot:[a-z]{2}-[a-z]{4}-\d{1}:\d{12}:cert/?(0x)?[a-fA-F0-9]+</pattern>
+    <property>Amazon.IoT.Model.CreateCertificateFromCsrResponse.CertificatePem</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateKeysAndCertificateResponse.CertificateId</property>
@@ -49,14 +45,14 @@
     <pattern>(0x)?[a-fA-F0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.CreateKeysAndCertificateResponse.CertificatePem</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.CreatePolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
     <pattern>[\w+=,.@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoT.Model.CreatePolicyResponse.PolicyArn</property>
-    <pattern>arn:aws:iot:[a-z]{2}-[a-z]{4}-\d{1}:\d{12}:policy/?[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreatePolicyResponse.PolicyName</property>
@@ -75,10 +71,6 @@
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.IoT.Model.CreatePolicyVersionResponse.PolicyArn</property>
-    <pattern>arn:aws:iot:[a-z]{2}-[a-z]{4}-\d{1}:\d{12}:policy/?[a-zA-Z0-9]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.IoT.Model.CreatePolicyVersionResponse.PolicyVersionId</property>
     <pattern>[0-9]+</pattern>
   </property-value-rule>
@@ -87,10 +79,6 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoT.Model.CreateThingResponse.ThingArn</property>
-    <pattern>arn:aws:iot:[a-z]{2}-[a-z]{4}-\d{1}:\d{12}:thing/?[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateThingResponse.ThingName</property>
@@ -179,10 +167,6 @@
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.IoT.Model.GetPolicyResponse.PolicyArn</property>
-    <pattern>arn:aws:iot:[a-z]{2}-[a-z]{4}-\d{1}:\d{12}:policy/?[a-zA-Z0-9]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.IoT.Model.GetPolicyResponse.PolicyName</property>
     <min>1</min>
     <max>128</max>
@@ -197,10 +181,6 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.GetPolicyVersionRequest.PolicyVersionId</property>
     <pattern>[0-9]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoT.Model.GetPolicyVersionResponse.PolicyArn</property>
-    <pattern>arn:aws:iot:[a-z]{2}-[a-z]{4}-\d{1}:\d{12}:policy/?[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.GetPolicyVersionResponse.PolicyName</property>
@@ -238,6 +218,11 @@
     <property>Amazon.IoT.Model.ListPrincipalPoliciesRequest.PageSize</property>
     <min>1</min>
     <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListPrincipalThingsRequest.MaxResults</property>
+    <min>1</min>
+    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListThingPrincipalsRequest.ThingName</property>
@@ -298,10 +283,6 @@
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.IoT.Model.TransferCertificateResponse.TransferredCertificateArn</property>
-    <pattern>arn:aws:iot:[a-z]{2}-[a-z]{4}-\d{1}:\d{12}:cert/?(0x)?[a-fA-F0-9]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.IoT.Model.UpdateCertificateRequest.CertificateId</property>
     <min>64</min>
     <max>64</max>
@@ -314,24 +295,20 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.IoT.Model.Certificate.CertificateArn</property>
-    <pattern>arn:aws:iot:[a-z]{2}-[a-z]{4}-\d{1}:\d{12}:cert/?(0x)?[a-fA-F0-9]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.IoT.Model.Certificate.CertificateId</property>
     <min>64</min>
     <max>64</max>
     <pattern>(0x)?[a-fA-F0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.IoT.Model.CertificateDescription.CertificateArn</property>
-    <pattern>arn:aws:iot:[a-z]{2}-[a-z]{4}-\d{1}:\d{12}:cert/?(0x)?[a-fA-F0-9]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.IoT.Model.CertificateDescription.CertificateId</property>
     <min>64</min>
     <max>64</max>
     <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CertificateDescription.CertificatePem</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CertificateDescription.OwnedBy</property>
@@ -344,10 +321,6 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.KeyPair.PublicKey</property>
     <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoT.Model.Policy.PolicyArn</property>
-    <pattern>arn:aws:iot:[a-z]{2}-[a-z]{4}-\d{1}:\d{12}:policy/?[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.Policy.PolicyName</property>

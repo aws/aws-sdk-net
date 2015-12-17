@@ -33,7 +33,42 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListPrincipalThingsRequest : AmazonIoTRequest
     {
+        private string _marker;
+        private int? _maxResults;
         private string _principal;
+
+        /// <summary>
+        /// Gets and sets the property Marker.
+        /// </summary>
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of principals to return.
+        /// </para>
+        /// </summary>
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Principal. 

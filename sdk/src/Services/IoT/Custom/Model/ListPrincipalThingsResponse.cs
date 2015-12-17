@@ -28,29 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// The output from the DescribeEndpoint operation.
+    /// The output from the ListPrincipalThings operation.
     /// </summary>
-    public partial class DescribeEndpointResponse : AmazonWebServiceResponse
+    public partial class ListPrincipalThingsResponse : AmazonWebServiceResponse
     {
-        private string _endpointAddress;
-
         /// <summary>
-        /// Gets and sets the property EndpointAddress. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
+        /// A token used to retrieve the next value.
         /// </para>
         /// </summary>
-        public string EndpointAddress
+        [Obsolete("This property has been deprecated, use ListPrincipalThingsResponse.NextMarker instead.")]
+        public string NextToken
         {
-            get { return this._endpointAddress; }
-            set { this._endpointAddress = value; }
+            get { return this._nextMarker; }
+            set { this._nextMarker = value; }
         }
-
-        // Check to see if EndpointAddress property is set
-        internal bool IsSetEndpointAddress()
-        {
-            return this._endpointAddress != null;
-        }
-
     }
 }
