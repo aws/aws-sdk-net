@@ -75,6 +75,15 @@ namespace AWSSDK.IntegrationTests.S3
             Assert.IsNull(responseException);
         }
 
+        public static void CleanBucket(AmazonS3Client client, string bucketName)
+        {
+            var s3ObjectList = ListObjectsHelper(client, bucketName);
+            foreach (var s3Object in s3ObjectList)
+            {
+                DeleteObjectHelper(client, bucketName, s3Object.Key);
+            }
+        }
+
         public static GetACLResponse GetACLHelper(AmazonS3Client client, string bucketName, string key)
         {
             GetACLResponse r = null;

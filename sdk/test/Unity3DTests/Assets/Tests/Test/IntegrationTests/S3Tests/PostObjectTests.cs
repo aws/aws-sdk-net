@@ -20,9 +20,9 @@ namespace AWSSDK.IntegrationTests.S3
         private static readonly string FileNameFormat = FileNamePrefix + "{0}.txt";
         private static string BucketName = null;
 
-        private static readonly string AuthenticatedUsersURI = "http://acs.amazonaws.com/groups/global/AuthenticatedUsers";
-        private static readonly string AllUsersURI = "http://acs.amazonaws.com/groups/global/AuthenticatedUsers";
-        private static readonly string LogDeliveryURI = "http://acs.amazonaws.com/groups/global/AuthenticatedUsers";
+        private static readonly string AuthenticatedUsersUriSubstring = "acs.amazonaws.com/groups/global/AuthenticatedUsers";
+        private static readonly string AllUsersUriSubstring = "acs.amazonaws.com/groups/global/AuthenticatedUsers";
+        private static readonly string LogDeliveryUriSubstring = "acs.amazonaws.com/groups/global/AuthenticatedUsers";
 
         [OneTimeSetUp]
         public void SetUp()
@@ -34,6 +34,7 @@ namespace AWSSDK.IntegrationTests.S3
         [OneTimeTearDown]
         public void TearDown()
         {
+            S3TestUtils.CleanBucket(Client, BucketName);
             MissingAPILambdaFunctions.DeleteBucket(BucketName, TestRunner.RegionEndpoint);
         }
 
@@ -99,30 +100,32 @@ namespace AWSSDK.IntegrationTests.S3
             // Authenticated Read
             S3TestUtils.PostObjectHelper(Client, BucketName, key, delegate(PostObjectRequest request) { request.CannedACL = S3CannedACL.AuthenticatedRead; });
             var grants = S3TestUtils.GetACLHelper(Client, BucketName, key).AccessControlList.Grants;
-            Utils.AssertTrue(GrantsContain(grants, AuthenticatedUsersURI, S3Permission.READ));
-            Utils.AssertTrue(GrantsDoNotContain(grants, AllUsersURI));
-            Utils.AssertTrue(GrantsDoNotContain(grants, LogDeliveryURI));
+            Utils.AssertTrue(GrantsContain(grants, AuthenticatedUsersUriSubstring, S3Permission.READ));
+            Utils.AssertTrue(GrantsDoNotContain(grants, AllUsersUriSubstring));
+            Utils.AssertTrue(GrantsDoNotContain(grants, LogDeliveryUriSubstring));
 
             // No canned ACL equivalent to Provate
             S3TestUtils.PostObjectHelper(Client, BucketName, key);
             grants = S3TestUtils.GetACLHelper(Client, BucketName, key).AccessControlList.Grants;
-            Utils.AssertTrue(GrantsDoNotContain(grants, AuthenticatedUsersURI));
-            Utils.AssertTrue(GrantsDoNotContain(grants, AllUsersURI));
-            Utils.AssertTrue(GrantsDoNotContain(grants, LogDeliveryURI));
+            Utils.AssertTrue(GrantsDoNotContain(grants, AuthenticatedUsersUriSubstring));
+            Utils.AssertTrue(GrantsDoNotContain(grants, AllUsersUriSubstring));
+            Utils.AssertTrue(GrantsDoNotContain(grants, LogDeliveryUriSubstring));
 
             // Private
             S3TestUtils.PostObjectHelper(Client, BucketName, key, delegate(PostObjectRequest request) { request.CannedACL = S3CannedACL.Private; });
             grants = S3TestUtils.GetACLHelper(Client, BucketName, key).AccessControlList.Grants;
-            Utils.AssertTrue(GrantsDoNotContain(grants, AuthenticatedUsersURI));
-            Utils.AssertTrue(GrantsDoNotContain(grants, AllUsersURI));
-            Utils.AssertTrue(GrantsDoNotContain(grants, LogDeliveryURI));
+            Utils.AssertTrue(GrantsDoNotContain(grants, AuthenticatedUsersUriSubstring));
+            Utils.AssertTrue(GrantsDoNotContain(grants, AllUsersUriSubstring));
+            Utils.AssertTrue(GrantsDoNotContain(grants, LogDeliveryUriSubstring));
+
+            S3TestUtils.DeleteObjectHelper(Client, BucketName, key);
         }
 
-        private bool GrantsContain(List<S3Grant> grants, string uri, S3Permission s3Permission)
+        private bool GrantsContain(List<S3Grant> grants, string uriSubstring, S3Permission s3Permission)
         {
             foreach (var grant in grants)
             {
-                if (grant.Permission == s3Permission && grant.Grantee.URI == uri)
+                if (grant.Permission == s3Permission && grant.Grantee.URI != null && grant.Grantee.URI.Contains(uriSubstring))
                 {
                     return true;
                 }
@@ -134,7 +137,7 @@ namespace AWSSDK.IntegrationTests.S3
         {
             foreach (var grant in grants)
             {
-                if (grant.Grantee.URI == uri)
+                if (grant.Grantee.URI == uri && grant.Grantee.URI != null && grant.Grantee.URI.Contains(uri))
                 {
                     return false;
                 }
