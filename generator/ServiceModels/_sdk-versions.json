@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.1.35.0",
+    "ProductVersion" : "3.1.35.1",
     "CoreVersion"    : "3.1.4.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -408,14 +408,14 @@
             "InPreview"    : false
         },
         "IoT"                             : {
-            "Version" : "3.1.0.3",
+            "Version" : "3.1.0.4",
             "Dependencies" : {
                 "Core" : "3.1.4.0"
             },
             "InPreview"    : false
         },
         "IotData"                         : {
-            "Version" : "3.1.0.1",
+            "Version" : "3.1.0.2",
             "Dependencies" : {
                 "Core" : "3.1.4.0"
             },

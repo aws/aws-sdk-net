@@ -1,3 +1,9 @@
+### 3.1.35.1 (2015-12-18 22:31 UTC)
+* IoT (3.1.0.4)
+	* Documentation update
+* IotData (3.1.0.2)
+	* Documentation update
+
 ### 3.1.35.0 (2015-12-17 22:20 UTC)
 * CloudFront (3.1.2.0)
 	* For web distributions, you can now configure CloudFront to automatically compress files of certain types for both Amazon S3 and custom origins, so downloads are faster and your web pages render faster. Compression also reduces your CloudFront data transfer cost because you pay for the total amount of data served.
