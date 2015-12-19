@@ -145,24 +145,24 @@ namespace AWSSDK.IntegrationTests.S3
             return true;
         }
 
-        //[Test]
+        [Test]
         // TODO: Get Post object with path working
         public void SimplePathPostObjectTest()
         {
             AutoResetEvent ars = new AutoResetEvent(false);
             Exception responseException = new Exception();
-            string fileName = string.Format(FileNameFormat, "");
-            S3TestUtils.GetFileHelper(fileName);
+            string fileName = string.Format(FileNameFormat, DateTime.Now.Ticks);
+            string filePath = S3TestUtils.GetFileHelper(fileName);
             Client.PostObjectAsync(new PostObjectRequest()
             {
                 Bucket = BucketName,
-                Path = fileName,
+                Path = filePath,
                 CannedACL = S3CannedACL.Private
             }, (response) =>
             {
                 responseException = response.Exception;
                 ars.Set();
-            }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
+            }, new AsyncOptions { ExecuteCallbackOnMainThread = true });
 
             ars.WaitOne();
             Assert.IsNull(responseException);

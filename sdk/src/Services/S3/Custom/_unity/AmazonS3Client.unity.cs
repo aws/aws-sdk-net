@@ -46,7 +46,6 @@ namespace Amazon.S3
         {
             options = options == null ? new AsyncOptions() : options;
 
-
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper
                 = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) =>
                 {
@@ -134,7 +133,6 @@ namespace Amazon.S3
                 byte[] boundaryBytes = Encoding.UTF8.GetBytes(string.Format(CultureInfo.InvariantCulture, "--{0}\r\nContent-Disposition: form-data; name=\"file\"\r\n\r\n", boundary));
 
                 reqStream.Write(boundaryBytes, 0, boundaryBytes.Length);
-
                 using (var inputStream = null == request.Path ? request.InputStream : File.OpenRead(request.Path))
                 {
                     byte[] buf = new byte[1024];
@@ -144,11 +142,8 @@ namespace Amazon.S3
                         reqStream.Write(buf, 0, bytesRead);
                     }
                 }
-
                 byte[] endBoundaryBytes = Encoding.UTF8.GetBytes(string.Format(CultureInfo.InvariantCulture, "\r\n--{0}--", boundary));
-
                 reqStream.Write(endBoundaryBytes, 0, endBoundaryBytes.Length);
-
                 webRequest.WriteToRequestBody(null, reqStream.ToArray(), headers);
             }
 

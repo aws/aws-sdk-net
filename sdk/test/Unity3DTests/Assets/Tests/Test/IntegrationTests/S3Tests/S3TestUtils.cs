@@ -166,19 +166,24 @@ namespace AWSSDK.IntegrationTests.S3
             return s3Objects;
         }
 
-        //Used for SimplePathPostObjectTest
+        // Used for SimplePathPostObjectTest
         public static string GetFileHelper(string fileName)
         {
+            string filePath = null;
+            AutoResetEvent ars = new AutoResetEvent(false);
             Amazon.Runtime.Internal.UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
             {
-                if (!File.Exists(Application.persistentDataPath + Path.DirectorySeparatorChar + fileName))
+                filePath = Application.persistentDataPath + Path.DirectorySeparatorChar + fileName;
+                if (!File.Exists(filePath))
                 {
                     var streamReader = File.CreateText(Application.persistentDataPath + Path.DirectorySeparatorChar + fileName);
                     streamReader.WriteLine("This is a file uploaded from unity s3 tests");
                     streamReader.Close();
                 }
+                ars.Set();
             });
-            return fileName;
+            ars.WaitOne();
+            return filePath;
         }
     }
 }

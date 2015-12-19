@@ -41,7 +41,7 @@ namespace Amazon.S3.Util
     /// </para>
     /// For more information, <see href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingHTTPPOST.html"/>
     /// </remarks>
-    [XmlRootAttribute(IsNullable=false)]
+    [XmlRootAttribute(IsNullable = false)]
     public class S3PostUploadSignedPolicy
     {
         /// <summary>
@@ -53,15 +53,11 @@ namespace Amazon.S3.Util
         public static S3PostUploadSignedPolicy GetSignedPolicy(string policy, AWSCredentials credentials)
         {
             ImmutableCredentials iCreds = credentials.GetCredentials();
-
             var policyBytes = iCreds.UseToken
                 ? addTokenToPolicy(policy, iCreds.Token)
-                : Encoding.UTF8.GetBytes(policy.Trim()); 
-
+                : Encoding.UTF8.GetBytes(policy.Trim());
             var base64Policy = Convert.ToBase64String(policyBytes);
-            
             string signature = CryptoUtilFactory.CryptoInstance.HMACSign(Encoding.UTF8.GetBytes(base64Policy), iCreds.SecretKey, SigningAlgorithm.HmacSHA1);
-
             return new S3PostUploadSignedPolicy
             {
                 Policy = base64Policy,
@@ -78,7 +74,7 @@ namespace Amazon.S3.Util
             var conditions = json["conditions"];
             if (conditions != null && conditions.IsArray)
             {
-                for (int i =0;i<conditions.Count;i++)
+                for (int i = 0; i < conditions.Count; i++)
                 {
                     JsonData cond = conditions[i];
                     if (cond.IsObject && cond[S3Constants.PostFormDataSecurityToken] != null)
@@ -173,9 +169,9 @@ namespace Amazon.S3.Util
         {
             JsonData json;
             try { json = JsonMapper.ToObject(policyJson); }
-            catch (Exception e)  
+            catch (Exception e)
             {
-                throw new ArgumentException("Invalid JSON document", e); 
+                throw new ArgumentException("Invalid JSON document", e);
             }
 
             if (null == json[KEY_POLICY] || !json[KEY_POLICY].IsString)
@@ -219,7 +215,7 @@ namespace Amazon.S3.Util
                 throw new ArgumentException("XML Document requries 'Policy' field");
             if (String.IsNullOrEmpty(policy.Signature))
                 throw new ArgumentException("XML Document requries 'Signature' field");
-            
+
             return policy;
         }
     }
