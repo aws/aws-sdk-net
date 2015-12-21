@@ -399,6 +399,11 @@ namespace Amazon.ECS.Model
         /// Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/reference/commandline/run/">docker
         /// run</a>.
         /// </para>
+        ///  <ul> <li>Images in official repositories on Docker Hub use a single name (for example,
+        /// <code>ubuntu</code> or <code>mongo</code>).</li> <li>Images in other repositories
+        /// on Docker Hub are qualified with an organization name (for example, <code>amazon/amazon-ecs-agent</code>).</li>
+        /// <li>Images in other online repositories are qualified further by a domain name (for
+        /// example, <code>quay.io/assemblyline/ubuntu</code>).</li> </ul>
         /// </summary>
         public string Image
         {
@@ -539,7 +544,7 @@ namespace Amazon.ECS.Model
         /// in the <a href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
         /// Remote API</a> and the <code>--name</code> option to <a href="https://docs.docker.com/reference/commandline/run/">docker
-        /// run</a>.
+        /// run</a>. 
         /// </para>
         /// </summary>
         public string Name
@@ -564,6 +569,14 @@ namespace Amazon.ECS.Model
         /// Remote API</a> and the <code>--publish</code> option to <a href="https://docs.docker.com/reference/commandline/run/">docker
         /// run</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// After a task reaches the <code>RUNNING</code> status, manual and automatic host and
+        /// container port assignments are visible in the <b>Network Bindings</b> section of a
+        /// container description of a selected task in the Amazon ECS console, or the <code>networkBindings</code>
+        /// section <a>DescribeTasks</a> responses.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<PortMapping> PortMappings
         {
