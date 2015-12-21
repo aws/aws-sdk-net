@@ -365,6 +365,16 @@
         {
             "active": true,
 
+            "model": "ecr",
+            "base-name": "ECR",
+            "region-lookup-name": "ecr",
+            "authentication-service-name": "ecr",
+            "service-url": "https://ecr.us-east-1.amazonaws.com",
+            "synopsis": "Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images."
+        },
+        {
+            "active": true,
+
             "model": "ecs",
             "base-name": "ECS",
             "region-lookup-name": "ecs",
