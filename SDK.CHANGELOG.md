@@ -1,3 +1,13 @@
+### 3.1.36.0 (2015-12-21 22:04 UTC)
+* ECR (3.1.0.0)
+	* Add SDK support for the Amazon EC2 Container Registry, a secure, fully-managed Docker image registry that makes it easy for developers to store and retrieve Docker container images.
+* ECS (3.1.3.0)
+	* Add support for deployment configuration.
+* ElasticMapReduce (3.1.2.0)
+	* Update RunJobFlow to accept the ServiceSecurityGroup parameter.
+* SecurityToken (3.1.1.1)
+	* Fix a bug in SAML assertion parsing where there are duplicate role names.
+
 ### 3.1.35.1 (2015-12-18 22:31 UTC)
 * IoT (3.1.0.4)
 	* Documentation update
