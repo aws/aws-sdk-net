@@ -81,7 +81,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 }
             }
 
-            if (context.Stream.CanRead && contentLength != 0 && contentTypeHeader.EndsWith("/xml"))
+            if (context.Stream.CanRead && contentLength != 0 && contentTypeHeader.EndsWith("/xml", StringComparison.OrdinalIgnoreCase))
             {
                 try
                 {
