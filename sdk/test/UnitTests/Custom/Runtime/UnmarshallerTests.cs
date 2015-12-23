@@ -110,5 +110,50 @@ namespace AWSSDK.UnitTests
         }
 
 #endif
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestHandlingHTMLErrorResponse()
+        {
+            string errorRepsonse = "<html><body>Error: <br> The Error Message</body></html>";
+            var stream = new MemoryStream(UTF8Encoding.UTF8.GetBytes(errorRepsonse));
+            var responseData = new FakeResponseData {StatusCode = HttpStatusCode.BadGateway };
+
+            XmlUnmarshallerContext context = new XmlUnmarshallerContext(stream, false, responseData);
+
+            var unmarshaller = new S3ErrorResponseUnmarshaller();
+            S3ErrorResponse response = unmarshaller.Unmarshall(context);
+            Assert.IsNotNull(response);
+        }
+
+        public class FakeResponseData : IWebResponseData
+        {
+            public long ContentLength { get; set; }
+
+            public string ContentType { get; set; }
+
+            public bool IsSuccessStatusCode { get; set; }
+
+            public IHttpResponseBody ResponseBody { get; set; }
+
+            public HttpStatusCode StatusCode { get; set; }
+
+            public string[] GetHeaderNames()
+            {
+                return new string[0];
+            }
+
+            public string GetHeaderValue(string headerName)
+            {
+                return null;
+            }
+
+            public bool IsHeaderPresent(string headerName)
+            {
+                return false;
+            }
+        }
     }
 }

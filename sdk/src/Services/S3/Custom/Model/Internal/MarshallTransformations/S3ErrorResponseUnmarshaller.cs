@@ -30,6 +30,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class S3ErrorResponseUnmarshaller : IUnmarshaller<S3ErrorResponse, XmlUnmarshallerContext>
     {
+        const string XML_CONTENT_TYPE = "text/xml";
+
         /// <summary>
         /// Build an S3ErrorResponse from XML 
         /// </summary>
@@ -58,6 +60,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent(HeaderKeys.ContentLengthHeader))
                 contentLengthHeader = context.ResponseData.GetHeaderValue(HeaderKeys.ContentLengthHeader);
 
+            string contentTypeHeader = XML_CONTENT_TYPE;
+            if (context.ResponseData.IsHeaderPresent(HeaderKeys.ContentTypeHeader))
+                contentTypeHeader = context.ResponseData.GetHeaderValue(HeaderKeys.ContentTypeHeader);
+
             long contentLength;
             if (string.IsNullOrEmpty(contentLengthHeader) || !long.TryParse(contentLengthHeader, out contentLength))
             {
@@ -75,7 +81,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 }
             }
 
-            if (context.Stream.CanRead && contentLength != 0)
+            if (context.Stream.CanRead && contentLength != 0 && contentTypeHeader.EndsWith("/xml"))
             {
                 try
                 {
