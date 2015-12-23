@@ -97,15 +97,15 @@
             </summary>
         </member>
         <member name="M:Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManager.GetOrCreateInstance(System.String,Amazon.Runtime.AWSCredentials,Amazon.RegionEndpoint,Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManagerConfig)">
-            <summary>
-            Gets or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
-            creates new instance and returns it.
-            </summary>
-            <param name="appID">Amazon Mobile Analytics Application ID.</param>
-            <param name="credentials">AWS Credentials.</param>
-            <param name="regionEndpoint">Region endpoint.</param>
-            <param name="maConfig">Amazon Mobile Analytics Manager configuration.</param>
-            <returns>Mobile Analytics Manager instance. </returns>
+             <summary>
+             Gets or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
+             creates new instance and returns it.
+             </summary>
+             <param name="appID">Amazon Mobile Analytics Application ID.</param>
+            z <param name="credentials">AWS Credentials.</param>
+             <param name="regionEndpoint">Region endpoint.</param>
+             <param name="maConfig">Amazon Mobile Analytics Manager configuration.</param>
+             <returns>Mobile Analytics Manager instance. </returns>
         </member>
         <member name="M:Amazon.MobileAnalytics.MobileAnalyticsManager.MobileAnalyticsManager.GetOrCreateInstance(System.String,Amazon.Runtime.AWSCredentials,Amazon.RegionEndpoint)">
             <summary>

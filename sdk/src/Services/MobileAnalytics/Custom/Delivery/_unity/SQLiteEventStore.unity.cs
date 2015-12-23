@@ -59,10 +59,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 string vacuumCommand = "PRAGMA auto_vacuum = 1";
                 string sqlCommand = string.Format(CultureInfo.InvariantCulture, "CREATE TABLE IF NOT EXISTS {0} ({1} TEXT NOT NULL,{2} TEXT NOT NULL UNIQUE,{3} TEXT NOT NULL, {4}  INTEGER NOT NULL DEFAULT 0 )",
                     TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME);
-
-                bool toCreate = !File.Exists(this.DBfileFullPath);
-
-                if (toCreate)
+                
+                if (!File.Exists(this.DBfileFullPath))
                 {
                     string directory = Path.GetDirectoryName(this.DBfileFullPath);
                     if (!Directory.Exists(directory))
@@ -75,18 +73,15 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 {
                     connection = new SqliteConnection("URI=file:" + this.DBfileFullPath);
                     connection.Open();
-                    if (toCreate)
+                    using (var command = connection.CreateCommand())
                     {
-                        using (var command = connection.CreateCommand())
-                        {
-                            command.CommandText = vacuumCommand;
-                            command.ExecuteNonQuery();
-                        }
-                        using (var command = connection.CreateCommand())
-                        {
-                            command.CommandText = sqlCommand;
-                            command.ExecuteNonQuery();
-                        }
+                        command.CommandText = vacuumCommand;
+                        command.ExecuteNonQuery();
+                    }
+                    using (var command = connection.CreateCommand())
+                    {
+                        command.CommandText = sqlCommand;
+                        command.ExecuteNonQuery();
                     }
                 }
                 finally
