@@ -1,17 +1,130 @@
+### 3.1.36.0 (2015-12-21 22:04 UTC)
+* ECR (3.1.0.0)
+	* Add SDK support for the Amazon EC2 Container Registry, a secure, fully-managed Docker image registry that makes it easy for developers to store and retrieve Docker container images.
+* ECS (3.1.3.0)
+	* Add support for deployment configuration.
+* ElasticMapReduce (3.1.2.0)
+	* Update RunJobFlow to accept the ServiceSecurityGroup parameter.
+* SecurityToken (3.1.1.1)
+	* Fix a bug in SAML assertion parsing where there are duplicate role names.
+
+### 3.1.35.1 (2015-12-18 22:31 UTC)
+* IoT (3.1.0.4)
+	* Documentation update
+* IotData (3.1.0.2)
+	* Documentation update
+
+### 3.1.35.0 (2015-12-17 22:20 UTC)
+* CloudFront (3.1.2.0)
+	* For web distributions, you can now configure CloudFront to automatically compress files of certain types for both Amazon S3 and custom origins, so downloads are faster and your web pages render faster. Compression also reduces your CloudFront data transfer cost because you pay for the total amount of data served.
+* CloudTrail (3.1.2.0)
+	* This release supports trails that apply across all regions, and support for multiple trails per region.
+* ConfigService (3.1.3.0)
+	* Update to add support for AWS Config rules. These rules enable users to evaluate whether their AWS resources comply with desired configuration settings.
+
+Added support for Identity and Access Management (IAM) resource types.
+* DynamoDBv2 (3.1.1.3)
+	* Fix issue where a high retry count causes integer overflow - https://github.com/aws/aws-sdk-net/issues/286
+* EC2 (3.1.7.0)
+	* Added support for managed NAT, a highly available and scalable Network Address Translation (NAT) solution that enables Internet connectivity for instances in private subnets of a customer’s VPC
+* RDS (3.1.7.0)
+	* Add support for enhanced monitoring in RDS instances.
+* Core 3.1.4.2
+	* Fix issue where a high retry count causes integer overflow - https://github.com/aws/aws-sdk-net/issues/286.
+
+Fix issue causing "Path cannot be the empty string or all whitespace" error when running under a user account that has no profile or home directory - https://github.com/aws/aws-sdk-net/issues/287.
+
+ 
+
+### 3.1.34.0 (2015-12-15 19:02 UTC)
+* EC2 (3.1.6.0)
+	* Added new parameters to CopyImage API that allows a customer to create an AMI copy where all the associated EBS snapshots are encrypted.
+
+### 3.1.33.0 (2015-12-08 20:22 UTC)
+* AutoScaling (3.1.2.0)
+	* Add support for SetInstanceProtection operation
+* RDS (3.1.6.0)
+	* Add RDS support for encrypting your databases using keys you manage through AWS Key Management Service (KMS).
+
+### 3.1.32.1 (2015-12-08 00:15 UTC)
+* Core 3.1.4.1
+	* Improve exception handling in AsyncRunner https://github.com/aws/aws-sdk-net/issues/281
+
+### 3.1.32.0 (2015-12-03 23:01 UTC)
+* DirectoryService (3.1.1.0)
+	* Support for managed directories
+* RDS (3.1.5.0)
+	* Added support for modifying DB port number via ModifyDbInstance.
+* Route53 (3.1.2.0)
+	* Added traffic policy support
+
+### 3.1.31.0 (2015-12-01 23:16 UTC)
+* CognitoIdentity (3.1.0.5)
+	* Add api to clone logins dictionary
+* ConfigService (3.1.2.1)
+	* Support for new resource type - dedicated host.
+* DynamoDBv2 (3.1.1.2)
+	* Add PaginationToken support to DocumentModel Query and Scan operations.
+	* Fix issue where ignored properties in DataModel were not being properly ignored.
+* SecurityToken (3.1.1.0)
+	* Implement support for SAML-based identity federation to vend temporary AWS credentials.
+* Core 3.1.4.0
+	* * Added new role credential and endpoint profile types to support SAML identity federation.
+* Added Roslyn code analyzers to all NuGet service packages.
+	* all services packages updated to require new core
+* Throwing exceptions if constructing a request with bidirectional control characters
+	* Fix for https://github.com/aws/aws-sdk-net/issues/212
+
+### 3.1.30.0 (2015-11-23 23:14 UTC)
+* EC2 (3.1.5.0)
+	* This release includes support for EC2 Dedicated Hosts. This feature enables the use of your own per-socket and per-core OS licenses in EC2. This release also supports two new APIs, ModifyIdFormat and DescribeIdFormat, that will be used to manage the transition to longer EC2 and EBS resource IDs. These APIs are reserved for future use.
+* ECS (3.1.2.0)
+	* Add support for Amazon ECS task stopped reasons and task start and stop times. You can now see if a task was stopped by a user or stopped due to other reasons such as a failing Elastic Load Balancing health check, as well as the time the task was started and stopped. Service scheduler error messages have additional information that describe why tasks cannot be placed in the cluster.
+* ElasticBeanstalk (3.1.2.0)
+	* Add support for AWS Elastic Beanstalk for composable web applications. Customers whose applications consists of several linked modules (micro services architecture) can now deploy, manage, and scale their applications using EB.
+* S3 (3.1.3.8)
+	* Added missing canned ACL.
+
+### 3.1.29.1 (2015-11-20 21:46 UTC)
+* CloudSearchDomain (3.1.0.4)
+	* Updated to use new Core, version 3.1.3.8
+	* Fix for https://github.com/aws/aws-sdk-net/issues/274
+* EC2 (3.1.4.3)
+	* Updated to use new Core, version 3.1.3.8
+	* Fix for https://github.com/aws/aws-sdk-net/issues/274
+* S3 (3.1.3.7)
+	* Updated to use new Core, version 3.1.3.8
+	* Fix for https://github.com/aws/aws-sdk-net/issues/274
+* SQS (3.1.0.3)
+	* Updated to use new Core, version 3.1.3.8
+	* Fix for https://github.com/aws/aws-sdk-net/issues/274
+* Core 3.1.3.8
+	* Fix for https://github.com/aws/aws-sdk-net/issues/274 , response handler logic being called instead of skipped for .NET 3.5 async, when an exception is thrown in the pipeline.
+
+
+### 3.1.29.0 (2015-11-19 18:42 UTC)
+* DeviceFarm (3.1.3.0)
+	* Added support for new test and upload types.
+
+### 3.1.28.1 (2015-11-18 00:02 UTC)
+* Inspector (3.1.0.1)
+	* Documentation update.
+* S3 (3.1.3.6)
+	* Updated to use new Core, version 3.1.3.7
+	* Increment version to pick up latest core patch for dealing with key edge cases.
+* Core 3.1.3.7
+	* Fix issue with AWS4Signer.
+
 ### 3.1.28.0 (2015-11-12 21:05 UTC)
 * CognitoIdentity (3.1.0.4)
-	* Updated to use new Core, version 3.1.3.6
 	* Updated to use new Core, version 3.1.3.6, to pick up the latest ClientContext.
 * CognitoSync (3.1.0.3)
-	* Updated to use new Core, version 3.1.3.6
 	* Updated to use new Core, version 3.1.3.6, to pick up the latest ClientContext.
 * EC2 (3.1.4.2)
 	* Documentation update
 * Lambda (3.1.2.3)
-	* Updated to use new Core, version 3.1.3.6
 	* Updated to use new Core, version 3.1.3.6, to pick up the latest ClientContext.
 * MobileAnalytics (3.1.1.3)
-	* Updated to use new Core, version 3.1.3.6
 	* Updated to use new Core, version 3.1.3.6, to pick up the latest ClientContext.
 * RDS (3.1.4.0)
 	* Added support for modifying DB instance visibility.

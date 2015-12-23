@@ -90,6 +90,9 @@ namespace Amazon.ConfigService
         /// One or more AWS Config rules in the request are invalid. Verify that the rule names
         /// are correct and try again.
         /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
+        /// The rule is currently being deleted. Wait for a while and try again.
+        /// </exception>
         DeleteConfigRuleResponse DeleteConfigRule(DeleteConfigRuleRequest request);
 
         /// <summary>
@@ -292,7 +295,7 @@ namespace Amazon.ConfigService
         /// verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
         /// permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code>
         /// for all evaluation results. This can occur if the resources were deleted or removed
-        /// from the rule's scope.</li> </ul>
+        /// from the rule's scope.</li></ul>
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByConfigRule service method.</param>
@@ -360,7 +363,7 @@ namespace Amazon.ConfigService
         /// verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
         /// permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code>
         /// for all evaluation results. This can occur if the resources were deleted or removed
-        /// from the rule's scope.</li> </ul>
+        /// from the rule's scope.</li></ul>
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByResource service method.</param>
@@ -1100,14 +1103,17 @@ namespace Amazon.ConfigService
         /// For more information about developing and using AWS Config rules, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
         /// AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.
         /// </para>
-        ///  
-        /// <para>
-        /// 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutConfigRule service method.</param>
         /// 
         /// <returns>The response from the PutConfigRule service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InsufficientPermissionsException">
+        /// Indicates one of the following errors:
+        /// 
+        ///  <ul> <li>The rule cannot be created because the IAM role assigned to AWS Config lacks
+        /// permissions to perform the config:Put* action.</li> <li>The AWS Lambda function cannot
+        /// be invoked. Check the function ARN, and check the function's permissions.</li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
         /// One or more of the specified parameters are invalid. Verify that your parameters are
         /// valid and try again.

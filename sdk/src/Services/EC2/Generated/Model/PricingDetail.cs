@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a Reserved Instance offering.
+    /// Describes a Reserved instance offering.
     /// </summary>
     public partial class PricingDetail
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The number of instances available for the price.
+        /// The number of reservations available for the price.
         /// </para>
         /// </summary>
         public int Count

@@ -42,7 +42,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the <code>AutoScalingGroup</code> . 
+        /// The name of the <code>AutoScalingGroup</code> . 
         /// </para>
         /// </summary>
         public string Name

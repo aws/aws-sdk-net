@@ -39,7 +39,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the recorder. By default, AWS Config automatically assigns the name "default"
+        /// The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot;
         /// when creating the configuration recorder. You cannot change the assigned name.
         /// </para>
         /// </summary>
@@ -58,9 +58,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property RecordingGroup. 
         /// <para>
-        /// The recording group specifies either to record configurations for all supported resources
-        /// or to provide a list of resource types to record. The list of resource types must
-        /// be a subset of supported resource types.
+        /// Specifies the types of AWS resource for which AWS Config records configuration changes.
         /// </para>
         /// </summary>
         public RecordingGroup RecordingGroup

@@ -167,10 +167,6 @@ namespace Amazon.DynamoDBv2.DataModel
                 this.Converter = converter;
             }
 
-            if (IsKey || IsGSIKey)
-                if (Converter == null && !Utils.IsPrimitive(MemberType))
-                    throw new InvalidOperationException("Key " + PropertyName + " must be of primitive type");
-
             foreach (var index in Indexes)
                 IndexNames.AddRange(index.IndexNames);
         }
@@ -272,7 +268,10 @@ namespace Amazon.DynamoDBv2.DataModel
         }
         private bool FindSingleProperty(Func<PropertyStorage, bool> match, string errorMessage, out PropertyStorage propertyStorage)
         {
-            var properties = Properties.Where(match).ToList();
+            var properties = Properties
+                .Where(ps => !ps.IsIgnored)
+                .Where(match)
+                .ToList();
 
             if (properties.Count == 0)
             {

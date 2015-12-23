@@ -40,7 +40,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the directory to update the RADIUS server information for.
+        /// The identifier of the directory for which to update the RADIUS server information.
         /// </para>
         /// </summary>
         public string DirectoryId

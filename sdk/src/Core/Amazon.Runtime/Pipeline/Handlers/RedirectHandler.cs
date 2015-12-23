@@ -71,11 +71,16 @@ namespace Amazon.Runtime.Internal
         /// request and response context.</param>
         protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
         {
-            // Call InvokeAsync to redirect to new location.
-            if (HandleRedirect(ExecutionContext.CreateFromAsyncContext(executionContext)))
+            // Check for redirect if an exception hasn't occured
+            if (executionContext.ResponseContext.AsyncResult.Exception == null)
             {
-                base.InvokeAsync(executionContext);
-                return;
+                // Check if a redirect is required
+                if (HandleRedirect(ExecutionContext.CreateFromAsyncContext(executionContext)))
+                {
+                    // Call InvokeAsync to redirect to new location.
+                    base.InvokeAsync(executionContext);
+                    return;
+                }
             }
 
             // Not a redirect, call outer callbacks to continue processing response.

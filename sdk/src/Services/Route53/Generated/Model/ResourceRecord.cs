@@ -43,7 +43,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Instantiates ResourceRecord with the parameterized properties
         /// </summary>
-        /// <param name="value">The value of the <code>Value</code> element for the current resource record set.</param>
+        /// <param name="value">The current or new DNS record value, not to exceed 4,000 characters. In the case of a <code>DELETE</code> action, if the current value does not match the actual value, an error is returned. For descriptions about how to format <code>Value</code> for different record types, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>. You can specify more than one value for all record types except <code>CNAME</code> and <code>SOA</code>. </param>
         public ResourceRecord(string value)
         {
             _value = value;
@@ -52,7 +52,16 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the <code>Value</code> element for the current resource record set.
+        /// The current or new DNS record value, not to exceed 4,000 characters. In the case of
+        /// a <code>DELETE</code> action, if the current value does not match the actual value,
+        /// an error is returned. For descriptions about how to format <code>Value</code> for
+        /// different record types, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
+        /// DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify more than one value for all record types except <code>CNAME</code>
+        /// and <code>SOA</code>. 
         /// </para>
         /// </summary>
         public string Value

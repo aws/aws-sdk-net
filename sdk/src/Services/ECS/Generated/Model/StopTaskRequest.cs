@@ -43,6 +43,7 @@ namespace Amazon.ECS.Model
     public partial class StopTaskRequest : AmazonECSRequest
     {
         private string _cluster;
+        private string _reason;
         private string _task;
 
         /// <summary>
@@ -62,6 +63,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetCluster()
         {
             return this._cluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// An optional message specified when a task is stopped. For example, if you are using
+        /// a custom scheduler, you can use this parameter to specify the reason for stopping
+        /// the task here, and the message will appear in subsequent <a>DescribeTasks</a> API
+        /// operations on this task. Up to 255 characters are allowed in this message.
+        /// </para>
+        /// </summary>
+        public string Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
         }
 
         /// <summary>

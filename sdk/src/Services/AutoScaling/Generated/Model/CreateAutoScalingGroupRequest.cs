@@ -56,6 +56,7 @@ namespace Amazon.AutoScaling.Model
         private List<string> _loadBalancerNames = new List<string>();
         private int? _maxSize;
         private int? _minSize;
+        private bool? _newInstancesProtectedFromScaleIn;
         private string _placementGroup;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _terminationPolicies = new List<string>();
@@ -102,11 +103,11 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property DefaultCooldown. 
         /// <para>
         /// The amount of time, in seconds, after a scaling activity completes before another
-        /// scaling activity can start.
+        /// scaling activity can start. The default is 300.
         /// </para>
         ///  
         /// <para>
-        /// The default is 300. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
         /// Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -145,22 +146,18 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckGracePeriod. 
         /// <para>
-        /// The amount of time, in seconds, after an EC2 instance comes into service that Auto
-        /// Scaling starts checking its health. During this time, any health check failures for
-        /// the instance are ignored.
+        /// The amount of time, in seconds, that Auto Scaling waits before checking the health
+        /// status of an EC2 instance that has come into service. During this time, any health
+        /// check failures for the instance are ignored. The default is 300.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is required if you are adding an <code>ELB</code> health check. Frequently,
-        /// new instances need to warm up, briefly, before they can pass a health check. To provide
-        /// ample warm-up time, set the health check grace period of the group to match the expected
-        /// startup period of your application.
+        /// This parameter is required if you are adding an <code>ELB</code> health check.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-add-elb-healthcheck.html">Add
-        /// an Elastic Load Balancing Health Check to Your Auto Scaling Group</a> in the <i>Auto
-        /// Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
+        /// Checks for Auto Scaling Instances</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriod
@@ -307,6 +304,25 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetMinSize()
         {
             return this._minSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NewInstancesProtectedFromScaleIn. 
+        /// <para>
+        /// Indicates whether newly launched instances are protected from termination by Auto
+        /// Scaling when scaling in.
+        /// </para>
+        /// </summary>
+        public bool NewInstancesProtectedFromScaleIn
+        {
+            get { return this._newInstancesProtectedFromScaleIn.GetValueOrDefault(); }
+            set { this._newInstancesProtectedFromScaleIn = value; }
+        }
+
+        // Check to see if NewInstancesProtectedFromScaleIn property is set
+        internal bool IsSetNewInstancesProtectedFromScaleIn()
+        {
+            return this._newInstancesProtectedFromScaleIn.HasValue; 
         }
 
         /// <summary>

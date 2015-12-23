@@ -53,6 +53,8 @@ namespace Amazon.RDS.Model
         private string _licenseModel;
         private string _masterUsername;
         private string _masterUserPassword;
+        private int? _monitoringInterval;
+        private string _monitoringRoleArn;
         private bool? _multiAZ;
         private string _optionGroupName;
         private int? _port;
@@ -77,7 +79,7 @@ namespace Amazon.RDS.Model
         /// <param name="dbInstanceIdentifier"> The DB instance identifier. This parameter is stored as a lowercase string.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server).</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul> Example: <code>mydbinstance</code></param>
         /// <param name="allocatedStorage"> The amount of storage (in gigabytes) to be initially allocated for the database instance.   Type: Integer  <b>MySQL</b>   Constraints: Must be an integer from 5 to 6144.  <b>MariaDB</b>   Constraints: Must be an integer from 5 to 6144.  <b>PostgreSQL</b>   Constraints: Must be an integer from 5 to 6144.  <b>Oracle</b>   Constraints: Must be an integer from 10 to 6144.  <b>SQL Server</b>   Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to 4096 (Express Edition and Web Edition)</param>
         /// <param name="dbInstanceClass"> The compute and memory capacity of the DB instance.   Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code></param>
-        /// <param name="engine"> The name of the database engine to be used for this instance.   Valid Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>  Not every database engine is available for every AWS region. </param>
+        /// <param name="engine"> The name of the database engine to be used for this instance.   Valid Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code>  Not every database engine is available for every AWS region. </param>
         /// <param name="masterUsername"> The name of master user for the client DB instance.   <b>MySQL</b>  Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul>  <b>MariaDB</b>  Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul> Type: String  <b>Oracle</b>  Constraints: <ul> <li>Must be 1 to 30 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul>  <b>SQL Server</b>  Constraints: <ul> <li>Must be 1 to 128 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul>  <b>PostgreSQL</b>  Constraints: <ul> <li>Must be 1 to 63 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul></param>
         /// <param name="masterUserPassword"> The password for the master database user. Can be any printable ASCII character except "/", """, or "@".  Type: String  <b>MySQL</b>   Constraints: Must contain from 8 to 41 characters.   <b>MariaDB</b>   Constraints: Must contain from 8 to 41 characters.   <b>Oracle</b>   Constraints: Must contain from 8 to 30 characters.   <b>SQL Server</b>   Constraints: Must contain from 8 to 128 characters.   <b>PostgreSQL</b>   Constraints: Must contain from 8 to 128 characters.   <b>Amazon Aurora</b>   Constraints: Must contain from 8 to 41 characters. </param>
         public CreateDBInstanceRequest(string dbInstanceIdentifier, int allocatedStorage, string dbInstanceClass, string engine, string masterUsername, string masterUserPassword)
@@ -544,7 +546,8 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  Valid Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code>
         /// | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code>
-        /// | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>
+        /// | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
+        /// <code>aurora</code>
         /// </para>
         ///  
         /// <para>
@@ -577,91 +580,90 @@ namespace Amazon.RDS.Model
         /// <para>
         /// <b>MySQL</b>
         /// </para>
-        ///  <ul> <li> <b>Version 5.1 (Only available in the following regions: ap-northeast-1,
+        ///  <ul> <li><b>Version 5.1 (Only available in the following regions: ap-northeast-1,
         /// ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code>
-        /// 5.1.73a | 5.1.73b</code> </li> <li> <b>Version 5.5 (Only available in the following
+        /// 5.1.73a | 5.1.73b</code></li> <li><b>Version 5.5 (Only available in the following
         /// regions: ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-west-1,
-        /// us-west-2):</b> <code> 5.5.40 | 5.5.40a</code> </li> <li> <b>Version 5.5 (Available
-        /// in all regions):</b> <code> 5.5.40b | 5.5.41 | 5.5.42</code> </li> <li> <b>Version
-        /// 5.6 (Available in all regions):</b> <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b |
-        /// 5.6.22 | 5.6.23</code> </li> </ul> 
+        /// us-west-2):</b> <code> 5.5.40 | 5.5.40a</code></li> <li><b>Version 5.5 (Available
+        /// in all regions):</b> <code> 5.5.40b | 5.5.41 | 5.5.42</code></li> <li><b>Version 5.6
+        /// (Available in all regions):</b> <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22
+        /// | 5.6.23</code></li> </ul> 
         /// <para>
         /// <b>MariaDB</b>
         /// </para>
-        ///  <ul> <li> <b>Version 10.0 (Available in all regions except AWS GovCloud (US) Region
-        /// (us-gov-west-1)):</b> <code> 10.0.17 </code> </li> </ul> 
+        ///  <ul> <li><b>Version 10.0 (Available in all regions except AWS GovCloud (US) Region
+        /// (us-gov-west-1)):</b> <code> 10.0.17 </code></li> </ul> 
         /// <para>
         /// <b>Oracle Database Enterprise Edition (oracle-ee)</b>
         /// </para>
-        ///  <ul> <li> <b>Version 11.2 (Only available in the following regions: ap-northeast-1,
+        ///  <ul> <li><b>Version 11.2 (Only available in the following regions: ap-northeast-1,
         /// ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code>
-        /// 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code> </li> <li>
-        /// <b>Version 11.2 (Available in all regions):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2 |
-        /// 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </li> <li> <b>Version
-        /// 12.1 (Available in all regions):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2 | 12.1.0.2.v1
-        /// </code> </li> </ul> 
+        /// 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code></li> <li><b>Version
+        /// 11.2 (Available in all regions):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3
+        /// | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code></li> <li><b>Version 12.1 (Available
+        /// in all regions):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2 | 12.1.0.2.v1 </code></li> </ul>
+        /// 
         /// <para>
         /// <b>Oracle Database Standard Edition (oracle-se)</b>
         /// </para>
-        ///  <ul> <li> <b>Version 11.2 (Only available in the following regions: us-west-1):</b>
-        /// <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-        /// </li> <li> <b>Version 11.2 (Only available in the following regions: eu-central-1,
-        /// us-west-1):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3
-        /// | 11.2.0.4.v4</code> </li> <li> <b>Version 12.1 (Only available in the following regions:
-        /// eu-central-1, us-west-1):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2</code> </li> </ul> 
+        ///  <ul> <li><b>Version 11.2 (Only available in the following regions: us-west-1):</b>
+        /// <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code></li>
+        /// <li><b>Version 11.2 (Only available in the following regions: eu-central-1, us-west-1):</b>
+        /// <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code></li>
+        /// <li><b>Version 12.1 (Only available in the following regions: eu-central-1, us-west-1):</b>
+        /// <code>12.1.0.1.v1 | 12.1.0.1.v2</code></li> </ul> 
         /// <para>
         /// <b>Oracle Database Standard Edition One (oracle-se1)</b>
         /// </para>
-        ///  <ul> <li> <b>Version 11.2 (Only available in the following regions: us-west-1):</b>
-        /// <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-        /// </li> <li> <b>Version 11.2 (Only available in the following regions: eu-central-1,
-        /// us-west-1):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3
-        /// | 11.2.0.4.v4</code> </li> <li> <b>Version 12.1 (Only available in the following regions:
-        /// eu-central-1, us-west-1):</b> <code> 12.1.0.1.v1 | 12.1.0.1.v2</code> </li> </ul>
-        /// 
+        ///  <ul> <li><b>Version 11.2 (Only available in the following regions: us-west-1):</b>
+        /// <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code></li>
+        /// <li><b>Version 11.2 (Only available in the following regions: eu-central-1, us-west-1):</b>
+        /// <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code></li>
+        /// <li><b>Version 12.1 (Only available in the following regions: eu-central-1, us-west-1):</b>
+        /// <code> 12.1.0.1.v1 | 12.1.0.1.v2</code></li> </ul> 
         /// <para>
         /// <b>PostgreSQL</b>
         /// </para>
-        ///  <ul> <li> <b>Version 9.3 (Only available in the following regions: ap-northeast-1,
+        ///  <ul> <li><b>Version 9.3 (Only available in the following regions: ap-northeast-1,
         /// ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code>
-        /// 9.3.1 | 9.3.2</code> </li> <li> <b>Version 9.3 (Available in all regions):</b> <code>
-        /// 9.3.3 | 9.3.5 | 9.3.6</code> </li> <li> <b>Version 9.4 (Available in all regions):</b>
-        /// <code> 9.4.1</code> </li> </ul> 
+        /// 9.3.1 | 9.3.2</code></li> <li><b>Version 9.3 (Available in all regions):</b> <code>
+        /// 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9 | 9.3.10</code></li> <li><b>Version 9.4 (Available in
+        /// all regions):</b> <code> 9.4.1 | 9.4.4 | 9.4.5</code></li> </ul> 
         /// <para>
         /// <b>Microsoft SQL Server Enterprise Edition (sqlserver-ee)</b>
         /// </para>
-        ///  <ul> <li> <b>Version 10.50 (Available in all regions):</b> <code> 10.50.2789.0.v1</code>
-        /// </li> <li> <b>Version 10.50 (Available in all regions):</b> <code> 10.50.6000.34.v1</code>
-        /// </li> <li> <b>Version 11.00 (Available in all regions):</b> <code> 11.00.2100.60.v1</code>
-        /// </li> <li> <b>Version 11.00 (Available in all regions):</b> <code> 11.00.5058.0.v1</code>
-        /// </li> </ul> 
+        ///  <ul> <li><b>Version 10.50 (Available in all regions):</b> <code> 10.50.2789.0.v1</code></li>
+        /// <li><b>Version 10.50 (Available in all regions):</b> <code> 10.50.6000.34.v1</code></li>
+        /// <li><b>Version 11.00 (Available in all regions):</b> <code> 11.00.2100.60.v1</code></li>
+        /// <li><b>Version 11.00 (Available in all regions):</b> <code> 11.00.5058.0.v1</code></li>
+        /// </ul> 
         /// <para>
         /// <b>Microsoft SQL Server Express Edition (sqlserver-ex)</b>
         /// </para>
-        ///  <ul> <li> <b>Version 10.50 (Available in all regions):</b> <code> 10.50.2789.0.v1</code>
-        /// </li> <li> <b>Version 10.50 (Available in all regions):</b> <code> 10.50.6000.34.v1</code>
-        /// </li> <li> <b>Version 11.00 (Available in all regions):</b> <code> 11.00.2100.60.v1</code>
-        /// </li> <li> <b>Version 11.00 (Available in all regions):</b> <code> 11.00.5058.0.v1</code>
-        /// </li> <li> <b>Version 12.00 (Available in all regions):</b> <code> 12.00.4422.0.v1</code>
-        /// </li> </ul> 
+        ///  <ul> <li><b>Version 10.50 (Available in all regions):</b> <code> 10.50.2789.0.v1</code></li>
+        /// <li><b>Version 10.50 (Available in all regions):</b> <code> 10.50.6000.34.v1</code></li>
+        /// <li><b>Version 11.00 (Available in all regions):</b> <code> 11.00.2100.60.v1</code></li>
+        /// <li><b>Version 11.00 (Available in all regions):</b> <code> 11.00.5058.0.v1</code></li>
+        /// <li><b>Version 12.00 (Available in all regions):</b> <code> 12.00.4422.0.v1</code></li>
+        /// </ul> 
         /// <para>
         /// <b>Microsoft SQL Server Standard Edition (sqlserver-se)</b>
         /// </para>
-        ///  <ul> <li> <b>Version 10.50 (Available in all regions):</b> <code> 10.50.2789.0.v1</code>
-        /// </li> <li> <b>Version 10.50 (Available in all regions):</b> <code> 10.50.6000.34.v1</code>
-        /// </li> <li> <b>Version 11.00 (Available in all regions):</b> <code> 11.00.2100.60.v1</code>
-        /// </li> <li> <b>Version 11.00 (Available in all regions):</b> <code> 11.00.5058.0.v1</code>
-        /// </li> <li> <b>Version 12.00 (Available in all regions):</b> <code> 12.00.4422.0.v1</code>
-        /// </li> </ul> 
+        ///  <ul> <li><b>Version 10.50 (Available in all regions):</b> <code> 10.50.2789.0.v1</code></li>
+        /// <li><b>Version 10.50 (Available in all regions):</b> <code> 10.50.6000.34.v1</code></li>
+        /// <li><b>Version 11.00 (Available in all regions):</b> <code> 11.00.2100.60.v1</code></li>
+        /// <li><b>Version 11.00 (Available in all regions):</b> <code> 11.00.5058.0.v1</code></li>
+        /// <li><b>Version 12.00 (Available in all regions):</b> <code> 12.00.4422.0.v1</code></li>
+        /// </ul> 
         /// <para>
         /// <b>Microsoft SQL Server Web Edition (sqlserver-web)</b>
         /// </para>
-        ///  <ul> <li> <b>Version 10.50 (Available in all regions):</b> <code> 10.50.2789.0.v1</code>
-        /// </li> <li> <b>Version 10.50 (Available in all regions):</b> <code> 10.50.6000.34.v1</code>
-        /// </li> <li> <b>Version 11.00 (Available in all regions):</b> <code> 11.00.2100.60.v1</code>
-        /// </li> <li> <b>Version 11.00 (Available in all regions):</b> <code> 11.00.5058.0.v1</code>
-        /// </li> <li> <b>Version 12.00 (Available in all regions):</b> <code> 12.00.4422.0.v1</code>
-        /// </li> </ul>
+        ///  <ul> <li><b>Version 10.50 (Available in all regions):</b> <code> 10.50.2789.0.v1</code></li>
+        /// <li><b>Version 10.50 (Available in all regions):</b> <code> 10.50.6000.34.v1</code></li>
+        /// <li><b>Version 11.00 (Available in all regions):</b> <code> 11.00.2100.60.v1</code></li>
+        /// <li><b>Version 11.00 (Available in all regions):</b> <code> 11.00.5058.0.v1</code></li>
+        /// <li><b>Version 12.00 (Available in all regions):</b> <code> 12.00.4422.0.v1</code></li>
+        /// </ul>
         /// </summary>
         public string EngineVersion
         {
@@ -894,6 +896,61 @@ namespace Amazon.RDS.Model
         internal bool IsSetMasterUserPassword()
         {
             return this._masterUserPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringInterval. 
+        /// <para>
+        /// The interval, in seconds, between points when Enhanced Monitoring metrics are collected
+        /// for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0.
+        /// The default is 60.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code>
+        /// to a value other than 0.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+        /// </para>
+        /// </summary>
+        public int MonitoringInterval
+        {
+            get { return this._monitoringInterval.GetValueOrDefault(); }
+            set { this._monitoringInterval = value; }
+        }
+
+        // Check to see if MonitoringInterval property is set
+        internal bool IsSetMonitoringInterval()
+        {
+            return this._monitoringInterval.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringRoleArn. 
+        /// <para>
+        /// The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch
+        /// Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information
+        /// on creating a monitoring role, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+        /// create an IAM role for Amazon RDS Enhanced Monitoring</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply
+        /// a <code>MonitoringRoleArn</code> value.
+        /// </para>
+        /// </summary>
+        public string MonitoringRoleArn
+        {
+            get { return this._monitoringRoleArn; }
+            set { this._monitoringRoleArn = value; }
+        }
+
+        // Check to see if MonitoringRoleArn property is set
+        internal bool IsSetMonitoringRoleArn()
+        {
+            return this._monitoringRoleArn != null;
         }
 
         /// <summary>

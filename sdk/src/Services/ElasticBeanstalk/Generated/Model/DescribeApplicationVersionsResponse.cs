@@ -37,7 +37,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationVersions. 
         /// <para>
-        ///  A list of <a>ApplicationVersionDescription</a> . 
+        /// List of <code>ApplicationVersionDescription</code> objects sorted by order of creation.
         /// </para>
         /// </summary>
         public List<ApplicationVersionDescription> ApplicationVersions

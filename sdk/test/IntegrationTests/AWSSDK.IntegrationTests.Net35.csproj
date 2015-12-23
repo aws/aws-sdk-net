@@ -67,7 +67,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include=".\Tests\*.cs" />    
+    <Compile Include=".\Tests\*.cs" />
     <Compile Include=".\Tests\*\*.cs" Exclude=".\Tests\45\*.cs" />
     <Compile Include=".\Utils\*.cs" />
   </ItemGroup>
@@ -159,6 +159,10 @@
     <ProjectReference Include="..\..\src\Services\EC2\AWSSDK.EC2.Net35.csproj">
       <Project>{82F8399B-84DC-4632-B081-2B7697531CA1}</Project>
       <Name>AWSSDK.EC2.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ECR\AWSSDK.ECR.Net35.csproj">
+      <Project>{e6221d2c-82c9-4701-9b47-262c1be13069}</Project>
+      <Name>AWSSDK.ECR.Net35</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ECS\AWSSDK.ECS.Net35.csproj">
       <Project>{F12F3D23-2856-4CBA-8905-EA9CB52C9534}</Project>

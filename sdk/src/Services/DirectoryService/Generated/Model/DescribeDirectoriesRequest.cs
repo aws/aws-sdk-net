@@ -58,8 +58,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryIds. 
         /// <para>
-        /// A list of identifiers of the directories to obtain the information for. If this member
-        /// is null, all directories that belong to the current account are returned.
+        /// A list of identifiers of the directories for which to obtain the information. If this
+        /// member is null, all directories that belong to the current account are returned.
         /// </para>
         ///  
         /// <para>

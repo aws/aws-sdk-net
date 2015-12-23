@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2015-07-27.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2015-09-17.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -59,6 +59,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = AllowedMethodsUnmarshaller.Instance;
                         unmarshalledObject.AllowedMethods = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Compress", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Compress = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DefaultTTL", targetDepth))

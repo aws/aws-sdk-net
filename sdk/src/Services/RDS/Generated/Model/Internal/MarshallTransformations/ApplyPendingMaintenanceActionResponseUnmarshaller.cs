@@ -81,9 +81,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("ResourcePendingMaintenanceActions", targetDepth))
+                    if (context.TestExpression("ResourcePendingMaintenanceActions", targetDepth))
                     {
-                        response.ResourcePendingMaintenanceActions = ResourcePendingMaintenanceActionsUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = ResourcePendingMaintenanceActionsUnmarshaller.Instance;
+                        response.ResourcePendingMaintenanceActions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 

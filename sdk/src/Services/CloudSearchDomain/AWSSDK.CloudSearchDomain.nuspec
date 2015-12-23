@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.CloudSearchDomain</id>
     <title>AWSSDK - Amazon CloudSearch Domain</title>
-    <version>3.1.0.3</version> 
+    <version>3.1.0.5</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application.</description>
     <language>en-US</language>
@@ -13,17 +13,17 @@
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.2.1, 3.2)" />
+      <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.2.1, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 
   <files>
 
-    <file src="..\..\..\nuget-content\install.ps1" target="tools\net35" />
-    <file src="..\..\..\nuget-content\install.ps1" target="tools\net45" />
+    <file src="..\..\..\code-analysis\ServiceAnalysis\CloudSearchDomain\bin\Release\*.dll" target="analyzers\dotnet\cs" exclude="**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*;**\System.Composition.*" />
+    <file src="..\..\..\code-analysis\NuGetInstallScripts\*.ps1" target="tools\" />
 
     <file src=".\bin\Release\net35\AWSSDK.CloudSearchDomain.dll" target="lib\net35" />
     <file src=".\bin\Release\net35\AWSSDK.CloudSearchDomain.xml" target="lib\net35" />

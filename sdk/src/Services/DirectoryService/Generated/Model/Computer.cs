@@ -39,8 +39,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property ComputerAttributes. 
         /// <para>
-        /// An array of <a>Attribute</a> objects that contain the LDAP attributes that belong
-        /// to the computer account.
+        /// An array of <a>Attribute</a> objects containing the LDAP attributes that belong to
+        /// the computer account.
         /// </para>
         /// </summary>
         public List<Attribute> ComputerAttributes

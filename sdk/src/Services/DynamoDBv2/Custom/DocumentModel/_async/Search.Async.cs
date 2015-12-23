@@ -34,6 +34,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetNextSet operation.
+        /// 
+        /// If there are more items in the Scan/Query, PaginationToken will be
+        /// set and can be consumed in a new Scan/Query operation to resume
+        /// retrieving items from this point.
         /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Search.GetNextSet"/>
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>

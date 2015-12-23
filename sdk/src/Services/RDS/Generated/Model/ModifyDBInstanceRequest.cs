@@ -44,10 +44,13 @@ namespace Amazon.RDS.Model
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _dbParameterGroupName;
+        private int? _dbPortNumber;
         private List<string> _dbSecurityGroups = new List<string>();
         private string _engineVersion;
         private int? _iops;
         private string _masterUserPassword;
+        private int? _monitoringInterval;
+        private string _monitoringRoleArn;
         private bool? _multiAZ;
         private string _newDBInstanceIdentifier;
         private string _optionGroupName;
@@ -236,7 +239,7 @@ namespace Amazon.RDS.Model
         ///  If this parameter is set to <code>false</code>, changes to the DB instance are applied
         /// during the next maintenance window. Some parameter changes can cause an outage and
         /// will be applied on the next call to <a>RebootDBInstance</a>, or the next failure reboot.
-        /// Review the table of parameters in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html#Overview.DBInstance.Modifying">Modifying
+        /// Review the table of parameters in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
         /// a DB Instance and Using the Apply Immediately Parameter</a> to see the impact that
         /// setting <code>ApplyImmediately</code> to <code>true</code> or <code>false</code> has
         /// for each modified parameter and to determine when the changes will be applied. 
@@ -452,6 +455,108 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DBPortNumber. 
+        /// <para>
+        ///  The port number on which the database accepts connections. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The value of the <code>DBPortNumber</code> parameter must not match any of the port
+        /// values specified for options in the option group for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Your database will restart when you change the <code>DBPortNumber</code> value regardless
+        /// of the value of the <code>ApplyImmediately</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <code>3306</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid Values: <code>1150-65535</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>MariaDB</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <code>3306</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid Values: <code>1150-65535</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <code>5432</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid Values: <code>1150-65535</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Oracle</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <code>1521</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid Values: <code>1150-65535</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>SQL Server</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <code>1433</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>,
+        /// <code>47001</code>, <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Amazon Aurora</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <code>3306</code>
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid Values: <code>1150-65535</code>
+        /// </para>
+        /// </summary>
+        public int DBPortNumber
+        {
+            get { return this._dbPortNumber.GetValueOrDefault(); }
+            set { this._dbPortNumber = value; }
+        }
+
+        // Check to see if DBPortNumber property is set
+        internal bool IsSetDBPortNumber()
+        {
+            return this._dbPortNumber.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DBSecurityGroups. 
         /// <para>
         ///  A list of DB security groups to authorize on this DB instance. Changing this setting
@@ -606,6 +711,61 @@ namespace Amazon.RDS.Model
         internal bool IsSetMasterUserPassword()
         {
             return this._masterUserPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringInterval. 
+        /// <para>
+        /// The interval, in seconds, between points when Enhanced Monitoring metrics are collected
+        /// for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0.
+        /// The default is 60.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code>
+        /// to a value other than 0.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+        /// </para>
+        /// </summary>
+        public int MonitoringInterval
+        {
+            get { return this._monitoringInterval.GetValueOrDefault(); }
+            set { this._monitoringInterval = value; }
+        }
+
+        // Check to see if MonitoringInterval property is set
+        internal bool IsSetMonitoringInterval()
+        {
+            return this._monitoringInterval.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringRoleArn. 
+        /// <para>
+        /// The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch
+        /// Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information
+        /// on creating a monitoring role, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+        /// create an IAM role for Amazon RDS Enhanced Monitoring</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply
+        /// a <code>MonitoringRoleArn</code> value.
+        /// </para>
+        /// </summary>
+        public string MonitoringRoleArn
+        {
+            get { return this._monitoringRoleArn; }
+            set { this._monitoringRoleArn = value; }
+        }
+
+        // Check to see if MonitoringRoleArn property is set
+        internal bool IsSetMonitoringRoleArn()
+        {
+            return this._monitoringRoleArn != null;
         }
 
         /// <summary>

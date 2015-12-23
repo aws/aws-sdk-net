@@ -29,8 +29,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDBSnapshotAttribute operation.
-    /// Adds an attribute and values to, or removes an attibute and values from a manual DB
-    /// snapshot.
+    /// Adds an attribute and values to, or removes an attribute and values from a manual
+    /// DB snapshot.
     /// 
     ///  
     /// <para>

@@ -43,8 +43,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 
         /// <summary>
         /// Gets and sets the property Name. The name of the plugin. Must be one of the following:
-        /// AWS-JoinDirectoryServiceDomain, AWS-InstallApplication, AWS-RunPowerShellScript, AWS-InstallPowerShellModule,
-        /// AWS-ConfigureCloudWatch.
+        /// aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
+        /// aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
         /// </summary>
         public string Name
         {

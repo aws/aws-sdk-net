@@ -12,6 +12,9 @@ using Amazon.Runtime.Internal.Auth;
 using System.Configuration;
 using System.Collections.Specialized;
 using System.Xml;
+using Amazon.Util;
+using Amazon.Runtime.Internal;
+using Amazon.DynamoDBv2.Internal;
 
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
@@ -19,6 +22,59 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     [TestClass]
     public class General
     {
+        [TestMethod]
+        public void TestLargeRetryCount()
+        {
+            var maxRetries = 1000;
+            var maxMilliseconds = 1;
+
+            var coreRetryPolicy = new DefaultRetryPolicy(100)
+            {
+                MaxBackoffInMilliseconds = maxMilliseconds
+            };
+            var ddbRetryPolicy = new DynamoDBRetryPolicy(100)
+            {
+                MaxBackoffInMilliseconds = maxMilliseconds
+            };
+
+            var context = new ExecutionContext(new RequestContext(false), null);
+            for (int i = 0; i < maxRetries; i++)
+            {
+                context.RequestContext.Retries = i;
+                coreRetryPolicy.WaitBeforeRetry(context);
+                ddbRetryPolicy.WaitBeforeRetry(context);
+            }
+        }
+
+        [TestMethod]
+        public void TestBidiCharsInUri()
+        {
+            var bidiChar = '\u200E';
+            using(var client = TestBase<AmazonS3Client>.CreateClient())
+            {
+                var part1 = "test";
+                var part2 = "key";
+                var bidiKey = part1 + bidiChar + part2;
+                
+                // verify character is in the string
+                Assert.IsTrue(bidiKey.IndexOf(bidiChar) > 0);
+                Assert.IsTrue(AWSSDKUtils.HasBidiControlCharacters(bidiKey));
+
+                // verify character is dropped by the Uri class
+                Uri uri = new Uri(new Uri("http://www.amazon.com/"), bidiKey);
+                Assert.IsTrue(uri.AbsoluteUri.IndexOf(bidiChar) < 0);
+                Assert.IsFalse(AWSSDKUtils.HasBidiControlCharacters(uri.AbsoluteUri));
+                Assert.IsTrue(uri.AbsoluteUri.IndexOf(part1 + part2) > 0);
+
+                // verify that trying to use key throws the appropriate exception
+                var e = AssertExtensions.ExpectException<AmazonClientException>(() => client.GetObject("fake-bucket", bidiKey));
+                Assert.IsNotNull(e);
+                Assert.IsTrue(e.Message.Contains("[" + bidiKey + "]"));
+                Assert.IsTrue(e.Message.Contains("cannot be handled by the .NET SDK"));
+                Assert.IsTrue(AWSSDKUtils.HasBidiControlCharacters(e.Message));
+            }
+        }
+
         [TestMethod]
         public void TestClientDispose()
         {

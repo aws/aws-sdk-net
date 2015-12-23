@@ -29,7 +29,12 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTags operation.
+    /// Lists the tags for the specified trail or trails in the current region.
+    /// 
+    ///  
+    /// <para>
     /// Lists the tags for the trail in the current region.
+    /// </para>
     /// </summary>
     public partial class ListTagsRequest : AmazonCloudTrailRequest
     {

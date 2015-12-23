@@ -80,7 +80,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property IsTruncated. 
         /// <para>
-        ///  A flag indicating whether there are more hosted zones to be listed. If your results
+        /// A flag indicating whether there are more hosted zones to be listed. If your results
         /// were truncated, you can make a follow-up request for the next page of results by using
         /// the <code>Marker</code> element.
         /// </para>
@@ -104,7 +104,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        ///  Indicates where to continue listing hosted zones. If <a>ListHostedZonesResponse$IsTruncated</a>
+        /// Indicates where to continue listing hosted zones. If <a>ListHostedZonesResponse$IsTruncated</a>
         /// is <code>true</code>, make another request to <code>ListHostedZones</code> and include
         /// the value of the <code>NextMarker</code> element in the <code>Marker</code> element
         /// to get the next page of results.

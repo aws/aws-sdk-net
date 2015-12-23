@@ -25,7 +25,8 @@ namespace CommonTests.IntegrationTests.S3
         private Random random = new Random();
         private static string bucketName;
         private const string testContent = "This is the content body!";
-        private string filePath = string.Empty;
+        private string fullPath = string.Empty;
+        private string relativePath = string.Empty;
 
         [OneTimeSetUp]
         public void Initialize()
@@ -37,7 +38,8 @@ namespace CommonTests.IntegrationTests.S3
                     ("PutObjectFile.txt", CreationCollisionOption.ReplaceExisting);
                 await file.WriteAllTextAsync("This is some sample text.!!");
                 bucketName = await UtilityMethods.CreateBucketAsync(Client);
-                filePath = file.Path;
+                fullPath = file.Path;
+                relativePath = UtilityMethods.GetRelativePath(fullPath);
             });
             Console.WriteLine("Done initializing PutObjectTest");
         }
@@ -62,7 +64,8 @@ namespace CommonTests.IntegrationTests.S3
         }        
 
         // This test may fail on Silverlight, due to HTTP caching
-        [Test]
+        //[Test]
+        [Category("S3")]
         public void SimpleTest()
         {
             RunAsSync(async () =>
@@ -71,7 +74,8 @@ namespace CommonTests.IntegrationTests.S3
                 var status = versioning.VersioningConfig.Status;
                 Assert.AreEqual(VersionStatus.Off, status);
 
-                var objects = (await Client.ListObjectsAsync(bucketName)).S3Objects;
+                var response = await Client.ListObjectsAsync(bucketName);
+                var objects = response.S3Objects;
                 Assert.IsNotNull(objects);
                 var count = objects.Count;
 
@@ -86,7 +90,8 @@ namespace CommonTests.IntegrationTests.S3
                 var etag = putResult.ETag;
                 Assert.IsNotNull(etag);
 
-                objects = (await Client.ListObjectsAsync(bucketName)).S3Objects;
+                response = await Client.ListObjectsAsync(bucketName);
+                objects = response.S3Objects;
                 Assert.IsNotNull(objects);
                 Assert.AreEqual(count + 1, objects.Count);
 
@@ -102,6 +107,7 @@ namespace CommonTests.IntegrationTests.S3
         }
 
         [Test]
+        [Category("S3")]
         public void TestHttpErrorResponseUnmarshalling()
         {
             RunAsSync(async () =>
@@ -129,6 +135,7 @@ namespace CommonTests.IntegrationTests.S3
         }
 
         [Test]
+        [Category("S3")]
         public void SimplePutObjectTest()
         {
             RunAsSync(async () =>
@@ -148,6 +155,7 @@ namespace CommonTests.IntegrationTests.S3
         }
 
         [Test]
+        [Category("S3")]
         public void SimplePathPutObjectTest()
         {
             RunAsSync(async () =>
@@ -155,7 +163,7 @@ namespace CommonTests.IntegrationTests.S3
                 PutObjectRequest request = new PutObjectRequest()
                 {
                     BucketName = bucketName,
-                    FilePath = filePath,
+                    FilePath = relativePath,
                     CannedACL = S3CannedACL.AuthenticatedRead
                 };
                 PutObjectResponse response = await Client.PutObjectAsync(request);

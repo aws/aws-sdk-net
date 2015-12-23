@@ -494,9 +494,10 @@ namespace ServiceClientGenerator
                         var extendsNode = error[ServiceModel.ShapeKey];
                         if (extendsNode == null)
                             continue;
-                        var documentationNode = error[ServiceModel.DocumentationKey];
-                        var documentation = documentationNode == null ? "" : documentationNode.ToString();
                         var structure = this.model.FindShape(extendsNode.ToString());
+                        var documentationNode = structure.data[ServiceModel.DocumentationKey];
+                        var documentation = documentationNode == null ? "" : documentationNode.ToString();
+
                         list.Add(new ExceptionModel(error, extendsNode.ToString(), documentation, structure));
                     }
                 }
@@ -554,6 +555,28 @@ namespace ServiceClientGenerator
                     return false;
 
                 return bool.Parse(wrappedNode.ToString());
+            }
+        }
+
+        public IList<Example> Examples
+        {
+            get
+            {
+                var list = new List<Example>();
+                var data = this.model.Customizations.GetExamples(this.name);
+                foreach(JsonData example in data)
+                {
+                    list.Add(new Example(this.model, this.name, example));
+                }
+                return list;
+            }
+        }
+
+        public bool HasExamples
+        {
+            get
+            {
+                return this.model.Customizations.GetExamples(this.Name).Count > 0;
             }
         }
 

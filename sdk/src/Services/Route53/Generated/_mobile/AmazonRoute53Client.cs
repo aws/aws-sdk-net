@@ -151,7 +151,7 @@ namespace Amazon.Route53
         /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
-            return new AWS3Signer();
+            return new AWS4Signer();
         } 
 
         /// <summary>
@@ -365,6 +365,99 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  CreateTrafficPolicy
+
+        internal CreateTrafficPolicyResponse CreateTrafficPolicy(CreateTrafficPolicyRequest request)
+        {
+            var marshaller = new CreateTrafficPolicyRequestMarshaller();
+            var unmarshaller = CreateTrafficPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrafficPolicyRequest,CreateTrafficPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrafficPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateTrafficPolicyResponse> CreateTrafficPolicyAsync(CreateTrafficPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateTrafficPolicyRequestMarshaller();
+            var unmarshaller = CreateTrafficPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTrafficPolicyRequest,CreateTrafficPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTrafficPolicyInstance
+
+        internal CreateTrafficPolicyInstanceResponse CreateTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest request)
+        {
+            var marshaller = new CreateTrafficPolicyInstanceRequestMarshaller();
+            var unmarshaller = CreateTrafficPolicyInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrafficPolicyInstanceRequest,CreateTrafficPolicyInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrafficPolicyInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficPolicyInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateTrafficPolicyInstanceResponse> CreateTrafficPolicyInstanceAsync(CreateTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateTrafficPolicyInstanceRequestMarshaller();
+            var unmarshaller = CreateTrafficPolicyInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTrafficPolicyInstanceRequest,CreateTrafficPolicyInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTrafficPolicyVersion
+
+        internal CreateTrafficPolicyVersionResponse CreateTrafficPolicyVersion(CreateTrafficPolicyVersionRequest request)
+        {
+            var marshaller = new CreateTrafficPolicyVersionRequestMarshaller();
+            var unmarshaller = CreateTrafficPolicyVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrafficPolicyVersionRequest,CreateTrafficPolicyVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrafficPolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficPolicyVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateTrafficPolicyVersionResponse> CreateTrafficPolicyVersionAsync(CreateTrafficPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateTrafficPolicyVersionRequestMarshaller();
+            var unmarshaller = CreateTrafficPolicyVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTrafficPolicyVersionRequest,CreateTrafficPolicyVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteHealthCheck
 
         internal DeleteHealthCheckResponse DeleteHealthCheck(DeleteHealthCheckRequest request)
@@ -458,6 +551,68 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  DeleteTrafficPolicy
+
+        internal DeleteTrafficPolicyResponse DeleteTrafficPolicy(DeleteTrafficPolicyRequest request)
+        {
+            var marshaller = new DeleteTrafficPolicyRequestMarshaller();
+            var unmarshaller = DeleteTrafficPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrafficPolicyRequest,DeleteTrafficPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrafficPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteTrafficPolicyResponse> DeleteTrafficPolicyAsync(DeleteTrafficPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteTrafficPolicyRequestMarshaller();
+            var unmarshaller = DeleteTrafficPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTrafficPolicyRequest,DeleteTrafficPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTrafficPolicyInstance
+
+        internal DeleteTrafficPolicyInstanceResponse DeleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest request)
+        {
+            var marshaller = new DeleteTrafficPolicyInstanceRequestMarshaller();
+            var unmarshaller = DeleteTrafficPolicyInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrafficPolicyInstanceRequest,DeleteTrafficPolicyInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrafficPolicyInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficPolicyInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteTrafficPolicyInstanceResponse> DeleteTrafficPolicyInstanceAsync(DeleteTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteTrafficPolicyInstanceRequestMarshaller();
+            var unmarshaller = DeleteTrafficPolicyInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTrafficPolicyInstanceRequest,DeleteTrafficPolicyInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateVPCFromHostedZone
 
         internal DisassociateVPCFromHostedZoneResponse DisassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest request)
@@ -515,6 +670,37 @@ namespace Amazon.Route53
             var unmarshaller = GetChangeResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetChangeRequest,GetChangeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetChangeDetails
+
+        internal GetChangeDetailsResponse GetChangeDetails(GetChangeDetailsRequest request)
+        {
+            var marshaller = new GetChangeDetailsRequestMarshaller();
+            var unmarshaller = GetChangeDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetChangeDetailsRequest,GetChangeDetailsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetChangeDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetChangeDetails operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetChangeDetailsResponse> GetChangeDetailsAsync(GetChangeDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetChangeDetailsRequestMarshaller();
+            var unmarshaller = GetChangeDetailsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetChangeDetailsRequest,GetChangeDetailsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -753,8 +939,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// To retrieve a count of all your hosted zones, send a <code>GET</code> request to
-        /// the <code>2013-04-01/hostedzonecount</code> resource.
+        /// To retrieve a count of all your hosted zones, send a <code>GET</code> request to the
+        /// <code>2013-04-01/hostedzonecount</code> resource.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -821,6 +1007,161 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  GetTrafficPolicy
+
+        internal GetTrafficPolicyResponse GetTrafficPolicy(GetTrafficPolicyRequest request)
+        {
+            var marshaller = new GetTrafficPolicyRequestMarshaller();
+            var unmarshaller = GetTrafficPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetTrafficPolicyRequest,GetTrafficPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTrafficPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetTrafficPolicyResponse> GetTrafficPolicyAsync(GetTrafficPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetTrafficPolicyRequestMarshaller();
+            var unmarshaller = GetTrafficPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTrafficPolicyRequest,GetTrafficPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTrafficPolicyInstance
+
+        internal GetTrafficPolicyInstanceResponse GetTrafficPolicyInstance(GetTrafficPolicyInstanceRequest request)
+        {
+            var marshaller = new GetTrafficPolicyInstanceRequestMarshaller();
+            var unmarshaller = GetTrafficPolicyInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<GetTrafficPolicyInstanceRequest,GetTrafficPolicyInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTrafficPolicyInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicyInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetTrafficPolicyInstanceResponse> GetTrafficPolicyInstanceAsync(GetTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetTrafficPolicyInstanceRequestMarshaller();
+            var unmarshaller = GetTrafficPolicyInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTrafficPolicyInstanceRequest,GetTrafficPolicyInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTrafficPolicyInstanceCount
+
+        internal GetTrafficPolicyInstanceCountResponse GetTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest request)
+        {
+            var marshaller = new GetTrafficPolicyInstanceCountRequestMarshaller();
+            var unmarshaller = GetTrafficPolicyInstanceCountResponseUnmarshaller.Instance;
+
+            return Invoke<GetTrafficPolicyInstanceCountRequest,GetTrafficPolicyInstanceCountResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTrafficPolicyInstanceCount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicyInstanceCount operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetTrafficPolicyInstanceCountResponse> GetTrafficPolicyInstanceCountAsync(GetTrafficPolicyInstanceCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetTrafficPolicyInstanceCountRequestMarshaller();
+            var unmarshaller = GetTrafficPolicyInstanceCountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTrafficPolicyInstanceCountRequest,GetTrafficPolicyInstanceCountResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListChangeBatchesByHostedZone
+
+        internal ListChangeBatchesByHostedZoneResponse ListChangeBatchesByHostedZone(ListChangeBatchesByHostedZoneRequest request)
+        {
+            var marshaller = new ListChangeBatchesByHostedZoneRequestMarshaller();
+            var unmarshaller = ListChangeBatchesByHostedZoneResponseUnmarshaller.Instance;
+
+            return Invoke<ListChangeBatchesByHostedZoneRequest,ListChangeBatchesByHostedZoneResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChangeBatchesByHostedZone operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChangeBatchesByHostedZone operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListChangeBatchesByHostedZoneResponse> ListChangeBatchesByHostedZoneAsync(ListChangeBatchesByHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListChangeBatchesByHostedZoneRequestMarshaller();
+            var unmarshaller = ListChangeBatchesByHostedZoneResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListChangeBatchesByHostedZoneRequest,ListChangeBatchesByHostedZoneResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListChangeBatchesByRRSet
+
+        internal ListChangeBatchesByRRSetResponse ListChangeBatchesByRRSet(ListChangeBatchesByRRSetRequest request)
+        {
+            var marshaller = new ListChangeBatchesByRRSetRequestMarshaller();
+            var unmarshaller = ListChangeBatchesByRRSetResponseUnmarshaller.Instance;
+
+            return Invoke<ListChangeBatchesByRRSetRequest,ListChangeBatchesByRRSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChangeBatchesByRRSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChangeBatchesByRRSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListChangeBatchesByRRSetResponse> ListChangeBatchesByRRSetAsync(ListChangeBatchesByRRSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListChangeBatchesByRRSetRequestMarshaller();
+            var unmarshaller = ListChangeBatchesByRRSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListChangeBatchesByRRSetRequest,ListChangeBatchesByRRSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListGeoLocations
 
         internal ListGeoLocationsResponse ListGeoLocations()
@@ -845,7 +1186,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        ///  By default, the list of geo locations is displayed on a single page. You can control
+        /// By default, the list of geo locations is displayed on a single page. You can control
         /// the length of the page that is displayed by using the <code>MaxItems</code> parameter.
         /// If the list is truncated, <code>IsTruncated</code> will be set to <i>true</i> and
         /// a combination of <code>NextContinentCode, NextCountryCode, NextSubdivisionCode</code>
@@ -904,13 +1245,13 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// To retrieve a list of your health checks, send a <code>GET</code> request to the
-        /// <code>2013-04-01/healthcheck</code> resource. The response to this request includes
-        /// a <code>HealthChecks</code> element with zero, one, or multiple <code>HealthCheck</code>
-        /// child elements. By default, the list of health checks is displayed on a single page.
-        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
-        /// parameter. You can use the <code>Marker</code> parameter to control the health check
-        /// that the list begins with. 
+        /// To retrieve a list of your health checks, send a <code>GET</code> request to the <code>2013-04-01/healthcheck</code>
+        /// resource. The response to this request includes a <code>HealthChecks</code> element
+        /// with zero, one, or multiple <code>HealthCheck</code> child elements. By default, the
+        /// list of health checks is displayed on a single page. You can control the length of
+        /// the page that is displayed by using the <code>MaxItems</code> parameter. You can use
+        /// the <code>Marker</code> parameter to control the health check that the list begins
+        /// with. 
         /// 
         ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
         /// greater than 100, Amazon Route 53 returns only the first 100.</note>
@@ -921,8 +1262,8 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListHealthChecks service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.IncompatibleVersionException">
-        /// The resource you are trying to access is unsupported on this Route 53 endpoint. Please
-        /// consider using a newer endpoint or a tool that does so.
+        /// The resource you are trying to access is unsupported on this Amazon Route 53 endpoint.
+        /// Please consider using a newer endpoint or a tool that does so.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
@@ -1205,6 +1546,161 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  ListTrafficPolicies
+
+        internal ListTrafficPoliciesResponse ListTrafficPolicies(ListTrafficPoliciesRequest request)
+        {
+            var marshaller = new ListTrafficPoliciesRequestMarshaller();
+            var unmarshaller = ListTrafficPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrafficPoliciesRequest,ListTrafficPoliciesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrafficPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListTrafficPoliciesResponse> ListTrafficPoliciesAsync(ListTrafficPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTrafficPoliciesRequestMarshaller();
+            var unmarshaller = ListTrafficPoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTrafficPoliciesRequest,ListTrafficPoliciesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTrafficPolicyInstances
+
+        internal ListTrafficPolicyInstancesResponse ListTrafficPolicyInstances(ListTrafficPolicyInstancesRequest request)
+        {
+            var marshaller = new ListTrafficPolicyInstancesRequestMarshaller();
+            var unmarshaller = ListTrafficPolicyInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrafficPolicyInstancesRequest,ListTrafficPolicyInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrafficPolicyInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListTrafficPolicyInstancesResponse> ListTrafficPolicyInstancesAsync(ListTrafficPolicyInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTrafficPolicyInstancesRequestMarshaller();
+            var unmarshaller = ListTrafficPolicyInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTrafficPolicyInstancesRequest,ListTrafficPolicyInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTrafficPolicyInstancesByHostedZone
+
+        internal ListTrafficPolicyInstancesByHostedZoneResponse ListTrafficPolicyInstancesByHostedZone(ListTrafficPolicyInstancesByHostedZoneRequest request)
+        {
+            var marshaller = new ListTrafficPolicyInstancesByHostedZoneRequestMarshaller();
+            var unmarshaller = ListTrafficPolicyInstancesByHostedZoneResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrafficPolicyInstancesByHostedZoneRequest,ListTrafficPolicyInstancesByHostedZoneResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrafficPolicyInstancesByHostedZone operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyInstancesByHostedZone operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListTrafficPolicyInstancesByHostedZoneResponse> ListTrafficPolicyInstancesByHostedZoneAsync(ListTrafficPolicyInstancesByHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTrafficPolicyInstancesByHostedZoneRequestMarshaller();
+            var unmarshaller = ListTrafficPolicyInstancesByHostedZoneResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTrafficPolicyInstancesByHostedZoneRequest,ListTrafficPolicyInstancesByHostedZoneResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTrafficPolicyInstancesByPolicy
+
+        internal ListTrafficPolicyInstancesByPolicyResponse ListTrafficPolicyInstancesByPolicy(ListTrafficPolicyInstancesByPolicyRequest request)
+        {
+            var marshaller = new ListTrafficPolicyInstancesByPolicyRequestMarshaller();
+            var unmarshaller = ListTrafficPolicyInstancesByPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrafficPolicyInstancesByPolicyRequest,ListTrafficPolicyInstancesByPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrafficPolicyInstancesByPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyInstancesByPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListTrafficPolicyInstancesByPolicyResponse> ListTrafficPolicyInstancesByPolicyAsync(ListTrafficPolicyInstancesByPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTrafficPolicyInstancesByPolicyRequestMarshaller();
+            var unmarshaller = ListTrafficPolicyInstancesByPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTrafficPolicyInstancesByPolicyRequest,ListTrafficPolicyInstancesByPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTrafficPolicyVersions
+
+        internal ListTrafficPolicyVersionsResponse ListTrafficPolicyVersions(ListTrafficPolicyVersionsRequest request)
+        {
+            var marshaller = new ListTrafficPolicyVersionsRequestMarshaller();
+            var unmarshaller = ListTrafficPolicyVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrafficPolicyVersionsRequest,ListTrafficPolicyVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrafficPolicyVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListTrafficPolicyVersionsResponse> ListTrafficPolicyVersionsAsync(ListTrafficPolicyVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTrafficPolicyVersionsRequestMarshaller();
+            var unmarshaller = ListTrafficPolicyVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTrafficPolicyVersionsRequest,ListTrafficPolicyVersionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateHealthCheck
 
         internal UpdateHealthCheckResponse UpdateHealthCheck(UpdateHealthCheckRequest request)
@@ -1262,6 +1758,68 @@ namespace Amazon.Route53
             var unmarshaller = UpdateHostedZoneCommentResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateHostedZoneCommentRequest,UpdateHostedZoneCommentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTrafficPolicyComment
+
+        internal UpdateTrafficPolicyCommentResponse UpdateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest request)
+        {
+            var marshaller = new UpdateTrafficPolicyCommentRequestMarshaller();
+            var unmarshaller = UpdateTrafficPolicyCommentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTrafficPolicyCommentRequest,UpdateTrafficPolicyCommentResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTrafficPolicyComment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficPolicyComment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateTrafficPolicyCommentResponse> UpdateTrafficPolicyCommentAsync(UpdateTrafficPolicyCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateTrafficPolicyCommentRequestMarshaller();
+            var unmarshaller = UpdateTrafficPolicyCommentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateTrafficPolicyCommentRequest,UpdateTrafficPolicyCommentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTrafficPolicyInstance
+
+        internal UpdateTrafficPolicyInstanceResponse UpdateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest request)
+        {
+            var marshaller = new UpdateTrafficPolicyInstanceRequestMarshaller();
+            var unmarshaller = UpdateTrafficPolicyInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTrafficPolicyInstanceRequest,UpdateTrafficPolicyInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTrafficPolicyInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficPolicyInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateTrafficPolicyInstanceResponse> UpdateTrafficPolicyInstanceAsync(UpdateTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateTrafficPolicyInstanceRequestMarshaller();
+            var unmarshaller = UpdateTrafficPolicyInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateTrafficPolicyInstanceRequest,UpdateTrafficPolicyInstanceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -28,27 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the results of a successful call to the <a>DescribeDBSnapshotAttributes</a>
-    /// API.
     /// 
-    ///  
-    /// <para>
-    /// Manual DB snapshot attributes are used to authorize other AWS accounts to copy or
-    /// restore a manual DB snapshot. For more information, see the <a>ModifyDBSnapshotAttribute</a>
-    /// API.
-    /// </para>
     /// </summary>
     public partial class DescribeDBSnapshotAttributesResponse : AmazonWebServiceResponse
     {
-        private DBSnapshotAttributesResult _response;
+        private DBSnapshotAttributesResult _dbSnapshotAttributesResult;
 
         /// <summary>
-        /// Gets and sets the DBSnapshotAttributesResult property.
+        /// Gets and sets the property DBSnapshotAttributesResult.
         /// </summary>
         public DBSnapshotAttributesResult DBSnapshotAttributesResult
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._dbSnapshotAttributesResult; }
+            set { this._dbSnapshotAttributesResult = value; }
         }
+
+        // Check to see if DBSnapshotAttributesResult property is set
+        internal bool IsSetDBSnapshotAttributesResult()
+        {
+            return this._dbSnapshotAttributesResult != null;
+        }
+
     }
 }

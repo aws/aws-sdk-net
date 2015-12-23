@@ -87,6 +87,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElasticBeanstalk")]
+        public void ComposeEnvironmentsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ComposeEnvironments");
+
+            var request = InstantiateClassGenerator.Execute<ComposeEnvironmentsRequest>();
+            var marshaller = new ComposeEnvironmentsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ComposeEnvironmentsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ComposeEnvironmentsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
         public void CreateApplicationMarshallTest()
         {
             var operation = service_model.FindOperation("CreateApplication");

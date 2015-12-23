@@ -90,6 +90,22 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  AllocateHosts
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AllocateHosts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AllocateHosts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AllocateHostsResponse> AllocateHostsAsync(AllocateHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  AssignPrivateIpAddresses
 
 
@@ -572,6 +588,22 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CreateNatGateway
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNatGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNatGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateNatGatewayResponse> CreateNatGatewayAsync(CreateNatGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateNetworkAcl
 
 
@@ -953,6 +985,22 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteKeyPairResponse> DeleteKeyPairAsync(DeleteKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteNatGateway
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNatGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNatGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteNatGatewayResponse> DeleteNatGatewayAsync(DeleteNatGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1591,6 +1639,38 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DescribeHosts
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHosts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHosts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeHostsResponse> DescribeHostsAsync(DescribeHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeIdFormat
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIdFormat operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdFormat operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeIdFormatResponse> DescribeIdFormatAsync(DescribeIdFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeImageAttribute
 
 
@@ -1750,7 +1830,7 @@ namespace Amazon.EC2
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </para>
-        ///  </li> <li> 
+        /// </li> <li> 
         /// <para>
         /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
@@ -1859,6 +1939,22 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeMovingAddressesResponse> DescribeMovingAddressesAsync(DescribeMovingAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeNatGateways
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNatGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNatGateways operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeNatGatewaysResponse> DescribeNatGatewaysAsync(DescribeNatGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2020,11 +2116,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of the Reserved Instances that you purchased.
+        /// Describes one or more of the Reserved instances that you purchased.
         /// 
         ///  
         /// <para>
-        /// For more information about Reserved Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
+        /// For more information about Reserved instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
         /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -2053,26 +2149,26 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
+        /// Describes your account's Reserved instance listings in the Reserved Instance Marketplace.
         /// 
         ///  
         /// <para>
-        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
+        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved instance
         /// capacity that they no longer need with buyers who want to purchase additional capacity.
-        /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
+        /// Reserved instances bought and sold through the Reserved Instance Marketplace work
         /// like any other Reserved Instances. 
         /// </para>
         ///  
         /// <para>
-        /// As a seller, you choose to list some or all of your Reserved Instances, and you specify
-        /// the upfront price to receive for them. Your Reserved Instances are then listed in
+        /// As a seller, you choose to list some or all of your Reserved instances, and you specify
+        /// the upfront price to receive for them. Your Reserved instances are then listed in
         /// the Reserved Instance Marketplace and are available for purchase. 
         /// </para>
         ///  
         /// <para>
-        /// As a buyer, you specify the configuration of the Reserved Instance to purchase, and
+        /// As a buyer, you specify the configuration of the Reserved instance to purchase, and
         /// the Marketplace matches what you're searching for with what's available. The Marketplace
-        /// first sells the lowest priced Reserved Instances to you, and continues to sell available
+        /// first sells the lowest priced Reserved instances to you, and continues to sell available
         /// Reserved Instance listings to you until your demand is met. You are charged based
         /// on the total price of all of the listings that you purchase.
         /// </para>
@@ -2107,8 +2203,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the modifications made to your Reserved Instances. If no parameter is specified,
-        /// information about all your Reserved Instances modification requests is returned. If
+        /// Describes the modifications made to your Reserved instances. If no parameter is specified,
+        /// information about all your Reserved instances modification requests is returned. If
         /// a modification ID is specified, only information about the specific modification is
         /// returned.
         /// 
@@ -2143,11 +2239,17 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes Reserved Instance offerings that are available for purchase. With Reserved
-        /// Instances, you purchase the right to launch instances for a period of time. During
+        /// Describes Reserved instance offerings that are available for purchase. With Reserved
+        /// instances, you purchase the right to launch instances for a period of time. During
         /// that time period, you do not receive insufficient capacity errors, and you pay a lower
         /// usage rate than the rate charged for On-Demand instances for the actual time used.
         /// 
+        ///  
+        /// <para>
+        /// If you have listed your own Reserved instances for sale in the Reserved Instance Marketplace,
+        /// they will be excluded from these results. This is to ensure that you do not purchase
+        /// your own Reserved instances.
+        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
@@ -2279,10 +2381,10 @@ namespace Amazon.EC2
         /// <para>
         /// The create volume permissions fall into the following categories:
         /// </para>
-        ///  <ul> <li> <i>public</i>: The owner of the snapshot granted create volume permissions
+        ///  <ul> <li><i>public</i>: The owner of the snapshot granted create volume permissions
         /// for the snapshot to the <code>all</code> group. All AWS accounts have create volume
-        /// permissions for these snapshots.</li> <li> <i>explicit</i>: The owner of the snapshot
-        /// granted create volume permissions to a specific AWS account.</li> <li> <i>implicit</i>:
+        /// permissions for these snapshots.</li> <li><i>explicit</i>: The owner of the snapshot
+        /// granted create volume permissions to a specific AWS account.</li> <li><i>implicit</i>:
         /// An AWS account has implicit create volume permissions for all snapshots it owns.</li>
         /// </ul> 
         /// <para>
@@ -3188,6 +3290,38 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  ModifyHosts
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyHosts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyHosts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ModifyHostsResponse> ModifyHostsAsync(ModifyHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyIdFormat
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyIdFormat operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIdFormat operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ModifyIdFormatResponse> ModifyIdFormatAsync(ModifyIdFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ModifyImageAttribute
 
 
@@ -3217,6 +3351,22 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ModifyInstanceAttributeResponse> ModifyInstanceAttributeAsync(ModifyInstanceAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyInstancePlacement
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstancePlacement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstancePlacement operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ModifyInstancePlacementResponse> ModifyInstancePlacementAsync(ModifyInstancePlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3457,6 +3607,22 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ReleaseAddressResponse> ReleaseAddressAsync(ReleaseAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ReleaseHosts
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReleaseHosts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReleaseHosts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ReleaseHostsResponse> ReleaseHostsAsync(ReleaseHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

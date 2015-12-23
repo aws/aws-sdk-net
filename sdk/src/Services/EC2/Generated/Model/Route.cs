@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private string _gatewayId;
         private string _instanceId;
         private string _instanceOwnerId;
+        private string _natGatewayId;
         private string _networkInterfaceId;
         private RouteOrigin _origin;
         private RouteState _state;
@@ -133,6 +134,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NatGatewayId. 
+        /// <para>
+        /// The ID of a NAT gateway.
+        /// </para>
+        /// </summary>
+        public string NatGatewayId
+        {
+            get { return this._natGatewayId; }
+            set { this._natGatewayId = value; }
+        }
+
+        // Check to see if NatGatewayId property is set
+        internal bool IsSetNatGatewayId()
+        {
+            return this._natGatewayId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkInterfaceId. 
         /// <para>
         /// The ID of the network interface.
@@ -155,9 +174,9 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Describes how the route was created.
         /// </para>
-        ///  <ul> <li> <code>CreateRouteTable</code> indicates that route was automatically created
-        /// when the route table was created.</li> <li> <code>CreateRoute</code> indicates that
-        /// the route was manually added to the route table.</li> <li> <code>EnableVgwRoutePropagation</code>
+        ///  <ul> <li><code>CreateRouteTable</code> indicates that route was automatically created
+        /// when the route table was created.</li> <li><code>CreateRoute</code> indicates that
+        /// the route was manually added to the route table.</li> <li><code>EnableVgwRoutePropagation</code>
         /// indicates that the route was propagated by route propagation.</li> </ul>
         /// </summary>
         public RouteOrigin Origin

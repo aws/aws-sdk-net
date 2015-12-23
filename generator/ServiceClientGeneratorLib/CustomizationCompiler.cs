@@ -63,6 +63,19 @@ namespace ServiceClientGenerator
                     }
                 }
 
+                // Load examples into the customizations as well
+
+                var examples = Directory.GetFiles(modelsPath, baseName + ".examples.json").FirstOrDefault();
+                if (null != examples)
+                {
+                    var exampleData = JsonMapper.ToObject(new StreamReader(examples));
+                    if (exampleData.IsObject && exampleData.PropertyNames.Contains("examples"))
+                    {
+                        jsonWriter.WritePropertyName("examples");
+                        jsonWriter.Write(exampleData["examples"].ToJson());
+                    }
+                }
+
                 jsonWriter.WriteObjectEnd();
                 
                 // Fixes json being placed into the json mapper

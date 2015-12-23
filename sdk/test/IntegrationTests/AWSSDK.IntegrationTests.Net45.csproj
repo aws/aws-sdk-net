@@ -26,7 +26,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\net45</OutputPath>
-    <DefineConstants>DEBUG;TRACE;;BCL;BCL45;ASYNC_AWAIT;AWS_APM_API;LOCAL_FILE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;BCL;BCL45;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -36,7 +36,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\net45</OutputPath>
-    <DefineConstants>TRACE;;BCL;BCL45;ASYNC_AWAIT;AWS_APM_API;LOCAL_FILE</DefineConstants>
+    <DefineConstants>TRACE;;BCL;BCL45;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -174,6 +174,10 @@
     <ProjectReference Include="..\..\src\Services\EC2\AWSSDK.EC2.Net45.csproj">
       <Project>{22819F48-B00A-411A-A558-4E77B890A99F}</Project>
       <Name>AWSSDK.EC2.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ECR\AWSSDK.ECR.Net45.csproj">
+      <Project>{e181d5d6-c28d-4ffe-b951-2c9d96a5c25f}</Project>
+      <Name>AWSSDK.ECR.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ECS\AWSSDK.ECS.Net45.csproj">
       <Project>{8A3D5F46-C927-417F-AAF0-8D057B4CAA60}</Project>

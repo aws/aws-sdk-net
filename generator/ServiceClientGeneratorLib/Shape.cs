@@ -24,6 +24,11 @@ namespace ServiceClientGenerator
         public const string TypeKey = "type";
         public const string FlattenedKey = "flattened";
         public const string RequiredKey = "required";
+        public const string MinKey = "min";
+        public const string MaxKey = "max";
+        public const string PatternKey = "pattern";
+        public const string ErrorKey = "error";
+        public const string ErrorCodeKey = "code";
 
         readonly string _name;
 
@@ -441,6 +446,55 @@ namespace ServiceClientGenerator
             }
         }
 
+        public int? Min
+        {
+            get
+            {
+                var value = data[MinKey];
+                
+                if(value != null)
+                {
+                    int min;
+                    if(!int.TryParse(value.ToString(), out min))
+                    {
+                        throw new Exception(string.Format("Failed to parse min value {0} for shape {1}", value, this.Name));
+                    }
+                    return min;
+                }
+
+                return null;
+            }
+        }
+
+        public int? Max
+        {
+            get
+            {
+                var value = data[MaxKey];
+                if (value != null)
+                {
+                    int max;
+                    if (!int.TryParse(value.ToString(), out max))
+                    {
+                        throw new Exception(string.Format("Failed to parse max value {0} for shape {1}", value, this.Name));
+                    }
+                    return max;
+                }
+
+                return null;
+            }
+        }
+
+        public string Pattern
+        {
+            get
+            {
+                var value = data[PatternKey];
+                if (value == null) return null;
+                return value.ToString();
+            }
+        }
+
         /// <summary>
         /// Determines the type of the shape from the type attribute
         /// </summary>
@@ -453,6 +507,29 @@ namespace ServiceClientGenerator
                     throw new Exception("Type is missing for shape " + this.Name);
 
                 return typeNode.ToString();
+            }
+        }
+
+        public bool HasErrorCode
+        {
+            get
+            {
+                var errorNode = this.data[ErrorKey];
+                if (errorNode != null)
+                    return errorNode[ErrorCodeKey] != null;
+
+                return false;
+            }
+        }
+
+        public string ErrorCode
+        {
+            get
+            {
+                if (!HasErrorCode)
+                    return null;
+                var errorNode = this.data[ErrorKey];
+                return errorNode[ErrorCodeKey].ToString();
             }
         }
 

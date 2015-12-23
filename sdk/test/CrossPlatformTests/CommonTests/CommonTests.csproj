@@ -92,7 +92,6 @@
     <Compile Include="IntegrationTests\Kinesis.cs" />
     <Compile Include="IntegrationTests\LambdaTests.cs" />
     <Compile Include="IntegrationTests\MachineLearning.cs" />
-    <Compile Include="IntegrationTests\MobileAnalyticsTests.cs" />
     <Compile Include="IntegrationTests\OpsWorks.cs" />
     <Compile Include="IntegrationTests\ProtocolTests.cs" />
     <Compile Include="IntegrationTests\RDS\BasicDescribes.cs" />
@@ -101,6 +100,7 @@
     <Compile Include="IntegrationTests\Redshift.cs" />
     <Compile Include="IntegrationTests\Route53.cs" />
     <Compile Include="IntegrationTests\Route53Domains.cs" />
+    <Compile Include="IntegrationTests\S3\KeyNameTests.cs" />
     <Compile Include="IntegrationTests\S3\PutObjectTests.cs" />
     <Compile Include="IntegrationTests\S3\TransferUtilityTests.cs" />
     <Compile Include="IntegrationTests\SecurityToken\AssumeRole.cs" />

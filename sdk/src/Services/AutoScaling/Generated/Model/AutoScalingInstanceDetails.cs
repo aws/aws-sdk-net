@@ -38,6 +38,7 @@ namespace Amazon.AutoScaling.Model
         private string _instanceId;
         private string _launchConfigurationName;
         private string _lifecycleState;
+        private bool? _protectedFromScaleIn;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -148,6 +149,25 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetLifecycleState()
         {
             return this._lifecycleState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProtectedFromScaleIn. 
+        /// <para>
+        /// Indicates whether the instance is protected from termination by Auto Scaling when
+        /// scaling in.
+        /// </para>
+        /// </summary>
+        public bool ProtectedFromScaleIn
+        {
+            get { return this._protectedFromScaleIn.GetValueOrDefault(); }
+            set { this._protectedFromScaleIn = value; }
+        }
+
+        // Check to see if ProtectedFromScaleIn property is set
+        internal bool IsSetProtectedFromScaleIn()
+        {
+            return this._protectedFromScaleIn.HasValue; 
         }
 
     }

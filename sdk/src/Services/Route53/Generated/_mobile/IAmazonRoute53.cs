@@ -131,6 +131,54 @@ namespace Amazon.Route53
 
         #endregion
                 
+        #region  CreateTrafficPolicy
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrafficPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateTrafficPolicyResponse> CreateTrafficPolicyAsync(CreateTrafficPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateTrafficPolicyInstance
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrafficPolicyInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficPolicyInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateTrafficPolicyInstanceResponse> CreateTrafficPolicyInstanceAsync(CreateTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateTrafficPolicyVersion
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrafficPolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficPolicyVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateTrafficPolicyVersionResponse> CreateTrafficPolicyVersionAsync(CreateTrafficPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteHealthCheck
 
 
@@ -179,6 +227,38 @@ namespace Amazon.Route53
 
         #endregion
                 
+        #region  DeleteTrafficPolicy
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrafficPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteTrafficPolicyResponse> DeleteTrafficPolicyAsync(DeleteTrafficPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteTrafficPolicyInstance
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrafficPolicyInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficPolicyInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteTrafficPolicyInstanceResponse> DeleteTrafficPolicyInstanceAsync(DeleteTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisassociateVPCFromHostedZone
 
 
@@ -208,6 +288,22 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetChangeResponse> GetChangeAsync(GetChangeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetChangeDetails
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetChangeDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetChangeDetails operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetChangeDetailsResponse> GetChangeDetailsAsync(GetChangeDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -327,8 +423,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// To retrieve a count of all your hosted zones, send a <code>GET</code> request to
-        /// the <code>2013-04-01/hostedzonecount</code> resource.
+        /// To retrieve a count of all your hosted zones, send a <code>GET</code> request to the
+        /// <code>2013-04-01/hostedzonecount</code> resource.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -370,6 +466,86 @@ namespace Amazon.Route53
 
         #endregion
                 
+        #region  GetTrafficPolicy
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTrafficPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetTrafficPolicyResponse> GetTrafficPolicyAsync(GetTrafficPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetTrafficPolicyInstance
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTrafficPolicyInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicyInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetTrafficPolicyInstanceResponse> GetTrafficPolicyInstanceAsync(GetTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetTrafficPolicyInstanceCount
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTrafficPolicyInstanceCount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicyInstanceCount operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetTrafficPolicyInstanceCountResponse> GetTrafficPolicyInstanceCountAsync(GetTrafficPolicyInstanceCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListChangeBatchesByHostedZone
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChangeBatchesByHostedZone operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChangeBatchesByHostedZone operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListChangeBatchesByHostedZoneResponse> ListChangeBatchesByHostedZoneAsync(ListChangeBatchesByHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListChangeBatchesByRRSet
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChangeBatchesByRRSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChangeBatchesByRRSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListChangeBatchesByRRSetResponse> ListChangeBatchesByRRSetAsync(ListChangeBatchesByRRSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListGeoLocations
 
 
@@ -382,7 +558,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        ///  By default, the list of geo locations is displayed on a single page. You can control
+        /// By default, the list of geo locations is displayed on a single page. You can control
         /// the length of the page that is displayed by using the <code>MaxItems</code> parameter.
         /// If the list is truncated, <code>IsTruncated</code> will be set to <i>true</i> and
         /// a combination of <code>NextContinentCode, NextCountryCode, NextSubdivisionCode</code>
@@ -419,13 +595,13 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// To retrieve a list of your health checks, send a <code>GET</code> request to the
-        /// <code>2013-04-01/healthcheck</code> resource. The response to this request includes
-        /// a <code>HealthChecks</code> element with zero, one, or multiple <code>HealthCheck</code>
-        /// child elements. By default, the list of health checks is displayed on a single page.
-        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
-        /// parameter. You can use the <code>Marker</code> parameter to control the health check
-        /// that the list begins with. 
+        /// To retrieve a list of your health checks, send a <code>GET</code> request to the <code>2013-04-01/healthcheck</code>
+        /// resource. The response to this request includes a <code>HealthChecks</code> element
+        /// with zero, one, or multiple <code>HealthCheck</code> child elements. By default, the
+        /// list of health checks is displayed on a single page. You can control the length of
+        /// the page that is displayed by using the <code>MaxItems</code> parameter. You can use
+        /// the <code>Marker</code> parameter to control the health check that the list begins
+        /// with. 
         /// 
         ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
         /// greater than 100, Amazon Route 53 returns only the first 100.</note>
@@ -436,8 +612,8 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListHealthChecks service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.IncompatibleVersionException">
-        /// The resource you are trying to access is unsupported on this Route 53 endpoint. Please
-        /// consider using a newer endpoint or a tool that does so.
+        /// The resource you are trying to access is unsupported on this Amazon Route 53 endpoint.
+        /// Please consider using a newer endpoint or a tool that does so.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
@@ -606,6 +782,86 @@ namespace Amazon.Route53
 
         #endregion
                 
+        #region  ListTrafficPolicies
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrafficPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListTrafficPoliciesResponse> ListTrafficPoliciesAsync(ListTrafficPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTrafficPolicyInstances
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrafficPolicyInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListTrafficPolicyInstancesResponse> ListTrafficPolicyInstancesAsync(ListTrafficPolicyInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTrafficPolicyInstancesByHostedZone
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrafficPolicyInstancesByHostedZone operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyInstancesByHostedZone operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListTrafficPolicyInstancesByHostedZoneResponse> ListTrafficPolicyInstancesByHostedZoneAsync(ListTrafficPolicyInstancesByHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTrafficPolicyInstancesByPolicy
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrafficPolicyInstancesByPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyInstancesByPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListTrafficPolicyInstancesByPolicyResponse> ListTrafficPolicyInstancesByPolicyAsync(ListTrafficPolicyInstancesByPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTrafficPolicyVersions
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrafficPolicyVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListTrafficPolicyVersionsResponse> ListTrafficPolicyVersionsAsync(ListTrafficPolicyVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateHealthCheck
 
 
@@ -635,6 +891,38 @@ namespace Amazon.Route53
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<UpdateHostedZoneCommentResponse> UpdateHostedZoneCommentAsync(UpdateHostedZoneCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateTrafficPolicyComment
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTrafficPolicyComment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficPolicyComment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateTrafficPolicyCommentResponse> UpdateTrafficPolicyCommentAsync(UpdateTrafficPolicyCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateTrafficPolicyInstance
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTrafficPolicyInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficPolicyInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateTrafficPolicyInstanceResponse> UpdateTrafficPolicyInstanceAsync(UpdateTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

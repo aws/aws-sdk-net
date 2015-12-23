@@ -58,7 +58,7 @@ namespace Amazon.ElasticBeanstalk
     /// </para>
     ///  
     /// <para>
-    /// <b>Endpoints</b>
+    ///  <b>Endpoints</b> 
     /// </para>
     ///  
     /// <para>
@@ -261,6 +261,37 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
         
+        #region  ComposeEnvironments
+
+        internal ComposeEnvironmentsResponse ComposeEnvironments(ComposeEnvironmentsRequest request)
+        {
+            var marshaller = new ComposeEnvironmentsRequestMarshaller();
+            var unmarshaller = ComposeEnvironmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ComposeEnvironmentsRequest,ComposeEnvironmentsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ComposeEnvironments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ComposeEnvironments operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ComposeEnvironmentsResponse> ComposeEnvironmentsAsync(ComposeEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ComposeEnvironmentsRequestMarshaller();
+            var unmarshaller = ComposeEnvironmentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ComposeEnvironmentsRequest,ComposeEnvironmentsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateApplication
 
         internal CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
@@ -414,15 +445,13 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateStorageLocation service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// Unable to perform the specified operation because the user does not have enough privileges
-        /// for one of more downstream aws services
+        /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.S3SubscriptionRequiredException">
-        /// The caller does not have a subscription to Amazon S3.
+        /// The specified account does not have a subscription to Amazon S3.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
-        /// The web service attempted to create a bucket in an Amazon S3 account that already
-        /// has 100 buckets.
+        /// The specified account has reached its limit of Amazon S3 buckets.
         /// </exception>
         public Task<CreateStorageLocationResponse> CreateStorageLocationAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -639,7 +668,8 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Returns descriptions for existing application versions.
+        /// Retrieve a list of application versions stored in your AWS Elastic Beanstalk storage
+        /// bucket.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

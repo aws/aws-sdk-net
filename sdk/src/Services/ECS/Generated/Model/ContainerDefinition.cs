@@ -119,11 +119,11 @@ namespace Amazon.ECS.Model
         /// you can use CPU values below 2 in your container definitions. For CPU values below
         /// 2 (including null), the behavior varies based on your Amazon ECS container agent version:
         /// </para>
-        ///  <ul> <li> <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values
+        ///  <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values
         /// are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values
         /// of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li>
-        /// <li> <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values
-        /// of 1 are passed to Docker as 2.</li> </ul>
+        /// <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values
+        /// of 1 are passed to Docker as 2.</li></ul>
         /// </summary>
         public int Cpu
         {
@@ -296,6 +296,12 @@ namespace Amazon.ECS.Model
         /// Remote API</a> and the <code>--env</code> option to <a href="https://docs.docker.com/reference/commandline/run/">docker
         /// run</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// We do not recommend using plain text environment variables for sensitive information,
+        /// such as credential data.
+        /// </para>
+        ///  </important>
         /// </summary>
         public List<KeyValuePair> Environment
         {
@@ -393,6 +399,11 @@ namespace Amazon.ECS.Model
         /// Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/reference/commandline/run/">docker
         /// run</a>.
         /// </para>
+        ///  <ul> <li>Images in official repositories on Docker Hub use a single name (for example,
+        /// <code>ubuntu</code> or <code>mongo</code>).</li> <li>Images in other repositories
+        /// on Docker Hub are qualified with an organization name (for example, <code>amazon/amazon-ecs-agent</code>).</li>
+        /// <li>Images in other online repositories are qualified further by a domain name (for
+        /// example, <code>quay.io/assemblyline/ubuntu</code>).</li> </ul>
         /// </summary>
         public string Image
         {
@@ -479,9 +490,11 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// The number of MiB of memory reserved for the container. If your container attempts
-        /// to exceed the memory allocated here, the container is killed. This parameter maps
-        /// to <code>Memory</code> in the <a href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container">Create
+        /// The number of MiB of memory to reserve for the container. You must specify a non-zero
+        /// integer for this parameter; the Docker daemon reserves a minimum of 4 MiB of memory
+        /// for a container, so you should not specify fewer than 4 MiB of memory for your containers.
+        /// If your container attempts to exceed the memory allocated here, the container is killed.
+        /// This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
         /// Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/reference/commandline/run/">docker
         /// run</a>.
@@ -531,7 +544,7 @@ namespace Amazon.ECS.Model
         /// in the <a href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
         /// Remote API</a> and the <code>--name</code> option to <a href="https://docs.docker.com/reference/commandline/run/">docker
-        /// run</a>.
+        /// run</a>. 
         /// </para>
         /// </summary>
         public string Name
@@ -556,6 +569,14 @@ namespace Amazon.ECS.Model
         /// Remote API</a> and the <code>--publish</code> option to <a href="https://docs.docker.com/reference/commandline/run/">docker
         /// run</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// After a task reaches the <code>RUNNING</code> status, manual and automatic host and
+        /// container port assignments are visible in the <b>Network Bindings</b> section of a
+        /// container description of a selected task in the Amazon ECS console, or the <code>networkBindings</code>
+        /// section <a>DescribeTasks</a> responses.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<PortMapping> PortMappings
         {

@@ -30,6 +30,12 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the DeletePolicy operation.
     /// Deletes the specified Auto Scaling policy.
+    /// 
+    ///  
+    /// <para>
+    /// Deleting a policy deletes the underlying alarm action, but does not delete the alarm,
+    /// even if it no longer has an associated action.
+    /// </para>
     /// </summary>
     public partial class DeletePolicyRequest : AmazonAutoScalingRequest
     {

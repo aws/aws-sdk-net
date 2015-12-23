@@ -272,6 +272,37 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AllocateHosts
+
+        internal AllocateHostsResponse AllocateHosts(AllocateHostsRequest request)
+        {
+            var marshaller = new AllocateHostsRequestMarshaller();
+            var unmarshaller = AllocateHostsResponseUnmarshaller.Instance;
+
+            return Invoke<AllocateHostsRequest,AllocateHostsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AllocateHosts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AllocateHosts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AllocateHostsResponse> AllocateHostsAsync(AllocateHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AllocateHostsRequestMarshaller();
+            var unmarshaller = AllocateHostsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AllocateHostsRequest,AllocateHostsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssignPrivateIpAddresses
 
         internal AssignPrivateIpAddressesResponse AssignPrivateIpAddresses(AssignPrivateIpAddressesRequest request)
@@ -1196,6 +1227,37 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateNatGateway
+
+        internal CreateNatGatewayResponse CreateNatGateway(CreateNatGatewayRequest request)
+        {
+            var marshaller = new CreateNatGatewayRequestMarshaller();
+            var unmarshaller = CreateNatGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNatGatewayRequest,CreateNatGatewayResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNatGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNatGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateNatGatewayResponse> CreateNatGatewayAsync(CreateNatGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateNatGatewayRequestMarshaller();
+            var unmarshaller = CreateNatGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateNatGatewayRequest,CreateNatGatewayResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateNetworkAcl
 
         internal CreateNetworkAclResponse CreateNetworkAcl(CreateNetworkAclRequest request)
@@ -1935,6 +1997,37 @@ namespace Amazon.EC2
             var unmarshaller = DeleteKeyPairResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteKeyPairRequest,DeleteKeyPairResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteNatGateway
+
+        internal DeleteNatGatewayResponse DeleteNatGateway(DeleteNatGatewayRequest request)
+        {
+            var marshaller = new DeleteNatGatewayRequestMarshaller();
+            var unmarshaller = DeleteNatGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNatGatewayRequest,DeleteNatGatewayResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNatGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNatGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteNatGatewayResponse> DeleteNatGatewayAsync(DeleteNatGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteNatGatewayRequestMarshaller();
+            var unmarshaller = DeleteNatGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteNatGatewayRequest,DeleteNatGatewayResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3073,6 +3166,68 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeHosts
+
+        internal DescribeHostsResponse DescribeHosts(DescribeHostsRequest request)
+        {
+            var marshaller = new DescribeHostsRequestMarshaller();
+            var unmarshaller = DescribeHostsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeHostsRequest,DescribeHostsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHosts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHosts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeHostsResponse> DescribeHostsAsync(DescribeHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeHostsRequestMarshaller();
+            var unmarshaller = DescribeHostsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeHostsRequest,DescribeHostsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeIdFormat
+
+        internal DescribeIdFormatResponse DescribeIdFormat(DescribeIdFormatRequest request)
+        {
+            var marshaller = new DescribeIdFormatRequestMarshaller();
+            var unmarshaller = DescribeIdFormatResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIdFormatRequest,DescribeIdFormatResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIdFormat operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdFormat operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeIdFormatResponse> DescribeIdFormatAsync(DescribeIdFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeIdFormatRequestMarshaller();
+            var unmarshaller = DescribeIdFormatResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeIdFormatRequest,DescribeIdFormatResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeImageAttribute
 
         internal DescribeImageAttributeResponse DescribeImageAttribute(DescribeImageAttributeRequest request)
@@ -3348,7 +3503,7 @@ namespace Amazon.EC2
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </para>
-        ///  </li> <li> 
+        /// </li> <li> 
         /// <para>
         /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
@@ -3524,6 +3679,37 @@ namespace Amazon.EC2
             var unmarshaller = DescribeMovingAddressesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeMovingAddressesRequest,DescribeMovingAddressesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeNatGateways
+
+        internal DescribeNatGatewaysResponse DescribeNatGateways(DescribeNatGatewaysRequest request)
+        {
+            var marshaller = new DescribeNatGatewaysRequestMarshaller();
+            var unmarshaller = DescribeNatGatewaysResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNatGatewaysRequest,DescribeNatGatewaysResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNatGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNatGateways operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeNatGatewaysResponse> DescribeNatGatewaysAsync(DescribeNatGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeNatGatewaysRequestMarshaller();
+            var unmarshaller = DescribeNatGatewaysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeNatGatewaysRequest,DescribeNatGatewaysResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3817,11 +4003,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of the Reserved Instances that you purchased.
+        /// Describes one or more of the Reserved instances that you purchased.
         /// 
         ///  
         /// <para>
-        /// For more information about Reserved Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
+        /// For more information about Reserved instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
         /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -3872,26 +4058,26 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
+        /// Describes your account's Reserved instance listings in the Reserved Instance Marketplace.
         /// 
         ///  
         /// <para>
-        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
+        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved instance
         /// capacity that they no longer need with buyers who want to purchase additional capacity.
-        /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
+        /// Reserved instances bought and sold through the Reserved Instance Marketplace work
         /// like any other Reserved Instances. 
         /// </para>
         ///  
         /// <para>
-        /// As a seller, you choose to list some or all of your Reserved Instances, and you specify
-        /// the upfront price to receive for them. Your Reserved Instances are then listed in
+        /// As a seller, you choose to list some or all of your Reserved instances, and you specify
+        /// the upfront price to receive for them. Your Reserved instances are then listed in
         /// the Reserved Instance Marketplace and are available for purchase. 
         /// </para>
         ///  
         /// <para>
-        /// As a buyer, you specify the configuration of the Reserved Instance to purchase, and
+        /// As a buyer, you specify the configuration of the Reserved instance to purchase, and
         /// the Marketplace matches what you're searching for with what's available. The Marketplace
-        /// first sells the lowest priced Reserved Instances to you, and continues to sell available
+        /// first sells the lowest priced Reserved instances to you, and continues to sell available
         /// Reserved Instance listings to you until your demand is met. You are charged based
         /// on the total price of all of the listings that you purchase.
         /// </para>
@@ -3948,8 +4134,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the modifications made to your Reserved Instances. If no parameter is specified,
-        /// information about all your Reserved Instances modification requests is returned. If
+        /// Describes the modifications made to your Reserved instances. If no parameter is specified,
+        /// information about all your Reserved instances modification requests is returned. If
         /// a modification ID is specified, only information about the specific modification is
         /// returned.
         /// 
@@ -4006,11 +4192,17 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes Reserved Instance offerings that are available for purchase. With Reserved
-        /// Instances, you purchase the right to launch instances for a period of time. During
+        /// Describes Reserved instance offerings that are available for purchase. With Reserved
+        /// instances, you purchase the right to launch instances for a period of time. During
         /// that time period, you do not receive insufficient capacity errors, and you pay a lower
         /// usage rate than the rate charged for On-Demand instances for the actual time used.
         /// 
+        ///  
+        /// <para>
+        /// If you have listed your own Reserved instances for sale in the Reserved Instance Marketplace,
+        /// they will be excluded from these results. This is to ensure that you do not purchase
+        /// your own Reserved instances.
+        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
@@ -4223,10 +4415,10 @@ namespace Amazon.EC2
         /// <para>
         /// The create volume permissions fall into the following categories:
         /// </para>
-        ///  <ul> <li> <i>public</i>: The owner of the snapshot granted create volume permissions
+        ///  <ul> <li><i>public</i>: The owner of the snapshot granted create volume permissions
         /// for the snapshot to the <code>all</code> group. All AWS accounts have create volume
-        /// permissions for these snapshots.</li> <li> <i>explicit</i>: The owner of the snapshot
-        /// granted create volume permissions to a specific AWS account.</li> <li> <i>implicit</i>:
+        /// permissions for these snapshots.</li> <li><i>explicit</i>: The owner of the snapshot
+        /// granted create volume permissions to a specific AWS account.</li> <li><i>implicit</i>:
         /// An AWS account has implicit create volume permissions for all snapshots it owns.</li>
         /// </ul> 
         /// <para>
@@ -5789,6 +5981,68 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyHosts
+
+        internal ModifyHostsResponse ModifyHosts(ModifyHostsRequest request)
+        {
+            var marshaller = new ModifyHostsRequestMarshaller();
+            var unmarshaller = ModifyHostsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyHostsRequest,ModifyHostsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyHosts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyHosts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ModifyHostsResponse> ModifyHostsAsync(ModifyHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyHostsRequestMarshaller();
+            var unmarshaller = ModifyHostsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyHostsRequest,ModifyHostsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyIdFormat
+
+        internal ModifyIdFormatResponse ModifyIdFormat(ModifyIdFormatRequest request)
+        {
+            var marshaller = new ModifyIdFormatRequestMarshaller();
+            var unmarshaller = ModifyIdFormatResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyIdFormatRequest,ModifyIdFormatResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyIdFormat operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIdFormat operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ModifyIdFormatResponse> ModifyIdFormatAsync(ModifyIdFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyIdFormatRequestMarshaller();
+            var unmarshaller = ModifyIdFormatResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyIdFormatRequest,ModifyIdFormatResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyImageAttribute
 
         internal ModifyImageAttributeResponse ModifyImageAttribute(ModifyImageAttributeRequest request)
@@ -5846,6 +6100,37 @@ namespace Amazon.EC2
             var unmarshaller = ModifyInstanceAttributeResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyInstanceAttributeRequest,ModifyInstanceAttributeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyInstancePlacement
+
+        internal ModifyInstancePlacementResponse ModifyInstancePlacement(ModifyInstancePlacementRequest request)
+        {
+            var marshaller = new ModifyInstancePlacementRequestMarshaller();
+            var unmarshaller = ModifyInstancePlacementResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyInstancePlacementRequest,ModifyInstancePlacementResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstancePlacement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstancePlacement operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ModifyInstancePlacementResponse> ModifyInstancePlacementAsync(ModifyInstancePlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyInstancePlacementRequestMarshaller();
+            var unmarshaller = ModifyInstancePlacementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyInstancePlacementRequest,ModifyInstancePlacementResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -6311,6 +6596,37 @@ namespace Amazon.EC2
             var unmarshaller = ReleaseAddressResponseUnmarshaller.Instance;
 
             return InvokeAsync<ReleaseAddressRequest,ReleaseAddressResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ReleaseHosts
+
+        internal ReleaseHostsResponse ReleaseHosts(ReleaseHostsRequest request)
+        {
+            var marshaller = new ReleaseHostsRequestMarshaller();
+            var unmarshaller = ReleaseHostsResponseUnmarshaller.Instance;
+
+            return Invoke<ReleaseHostsRequest,ReleaseHostsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReleaseHosts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReleaseHosts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ReleaseHostsResponse> ReleaseHostsAsync(ReleaseHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ReleaseHostsRequestMarshaller();
+            var unmarshaller = ReleaseHostsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ReleaseHostsRequest,ReleaseHostsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

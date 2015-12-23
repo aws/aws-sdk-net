@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.AWSMarketplaceCommerceAnalytics.Model.GenerateDataSetRequest.DataSetType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSMarketplaceCommerceAnalytics.Model.GenerateDataSetRequest.DestinationS3BucketName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSMarketplaceCommerceAnalytics.Model.GenerateDataSetRequest.RoleNameArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSMarketplaceCommerceAnalytics.Model.GenerateDataSetRequest.SnsTopicArn</property>
+    <min>1</min>
+  </property-value-rule>
+</property-value-rules>

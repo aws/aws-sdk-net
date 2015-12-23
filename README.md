@@ -98,6 +98,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.
 * [AWSSDK.EC2](https://www.nuget.org/packages/AWSSDK.EC2/)
 	* Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers.
+* [AWSSDK.ECR](https://www.nuget.org/packages/AWSSDK.ECR/)
+	* Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.
 * [AWSSDK.ECS](https://www.nuget.org/packages/AWSSDK.ECS/)
 	* Amazon EC2 Container Service is a highly scalable, high performance container management service that supports Docker containers and allows you to easily run distributed applications on a managed cluster of Amazon EC2 instances.
 * [AWSSDK.ElastiCache](https://www.nuget.org/packages/AWSSDK.ElastiCache/)

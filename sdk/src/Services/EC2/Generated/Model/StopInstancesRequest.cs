@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// You can't start or stop Spot Instances.
+    /// You can't start or stop Spot instances.
     /// </para>
     ///  
     /// <para>

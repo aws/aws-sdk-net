@@ -35,6 +35,9 @@ namespace Amazon.DirectoryService.Model
         private int? _cloudOnlyDirectoriesCurrentCount;
         private int? _cloudOnlyDirectoriesLimit;
         private bool? _cloudOnlyDirectoriesLimitReached;
+        private int? _cloudOnlyMicrosoftADCurrentCount;
+        private int? _cloudOnlyMicrosoftADLimit;
+        private bool? _cloudOnlyMicrosoftADLimitReached;
         private int? _connectedDirectoriesCurrentCount;
         private int? _connectedDirectoriesLimit;
         private bool? _connectedDirectoriesLimitReached;
@@ -91,6 +94,54 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetCloudOnlyDirectoriesLimitReached()
         {
             return this._cloudOnlyDirectoriesLimitReached.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudOnlyMicrosoftADCurrentCount. The current number of
+        /// Microsoft AD directories in the region.
+        /// </summary>
+        public int CloudOnlyMicrosoftADCurrentCount
+        {
+            get { return this._cloudOnlyMicrosoftADCurrentCount.GetValueOrDefault(); }
+            set { this._cloudOnlyMicrosoftADCurrentCount = value; }
+        }
+
+        // Check to see if CloudOnlyMicrosoftADCurrentCount property is set
+        internal bool IsSetCloudOnlyMicrosoftADCurrentCount()
+        {
+            return this._cloudOnlyMicrosoftADCurrentCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudOnlyMicrosoftADLimit. The maximum number of Microsoft
+        /// AD directories allowed in the region.
+        /// </summary>
+        public int CloudOnlyMicrosoftADLimit
+        {
+            get { return this._cloudOnlyMicrosoftADLimit.GetValueOrDefault(); }
+            set { this._cloudOnlyMicrosoftADLimit = value; }
+        }
+
+        // Check to see if CloudOnlyMicrosoftADLimit property is set
+        internal bool IsSetCloudOnlyMicrosoftADLimit()
+        {
+            return this._cloudOnlyMicrosoftADLimit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudOnlyMicrosoftADLimitReached. Indicates if the Microsoft
+        /// AD directory limit has been reached.
+        /// </summary>
+        public bool CloudOnlyMicrosoftADLimitReached
+        {
+            get { return this._cloudOnlyMicrosoftADLimitReached.GetValueOrDefault(); }
+            set { this._cloudOnlyMicrosoftADLimitReached = value; }
+        }
+
+        // Check to see if CloudOnlyMicrosoftADLimitReached property is set
+        internal bool IsSetCloudOnlyMicrosoftADLimitReached()
+        {
+            return this._cloudOnlyMicrosoftADLimitReached.HasValue; 
         }
 
         /// <summary>

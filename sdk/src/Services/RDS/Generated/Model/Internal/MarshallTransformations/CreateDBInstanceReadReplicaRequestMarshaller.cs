@@ -86,6 +86,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Iops", StringUtils.FromInt(publicRequest.Iops));
                 }
+                if(publicRequest.IsSetMonitoringInterval())
+                {
+                    request.Parameters.Add("MonitoringInterval", StringUtils.FromInt(publicRequest.MonitoringInterval));
+                }
+                if(publicRequest.IsSetMonitoringRoleArn())
+                {
+                    request.Parameters.Add("MonitoringRoleArn", StringUtils.FromString(publicRequest.MonitoringRoleArn));
+                }
                 if(publicRequest.IsSetOptionGroupName())
                 {
                     request.Parameters.Add("OptionGroupName", StringUtils.FromString(publicRequest.OptionGroupName));

@@ -31,12 +31,69 @@ namespace Amazon.ECS.Model
     /// Container for the parameters to the CreateService operation.
     /// Runs and maintains a desired number of tasks from a specified task definition. If
     /// the number of tasks running in a service drops below <code>desiredCount</code>, Amazon
-    /// ECS spawns another instantiation of the task in the specified cluster.
+    /// ECS spawns another instantiation of the task in the specified cluster. To update an
+    /// existing service, see <a>UpdateService</a>.
+    /// 
+    ///  
+    /// <para>
+    /// You can optionally specify a deployment configuration for your service. During a deployment
+    /// (which is triggered by changing the task definition of a service with an <a>UpdateService</a>
+    /// operation), the service scheduler uses the <code>minimumHealthyPercent</code> and
+    /// <code>maximumPercent</code> parameters to determine the deployment strategy.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore
+    /// the <code>desiredCount</code> temporarily during a deployment. For example, if your
+    /// service has a <code>desiredCount</code> of four tasks, a <code>minimumHealthyPercent</code>
+    /// of 50% allows the scheduler to stop two existing tasks before starting two new tasks.
+    /// Tasks for services that <i>do not</i> use a load balancer are considered healthy if
+    /// they are in the <code>RUNNING</code> state; tasks for services that <i>do</i> use
+    /// a load balancer are considered healthy if they are in the <code>RUNNING</code> state
+    /// and the container instance it is hosted on is reported as healthy by the load balancer.
+    /// The default value for <code>minimumHealthyPercent</code> is 50% in the console and
+    /// 100% for the AWS CLI, the AWS SDKs, and the APIs.
+    /// </para>
+    ///  
+    /// <para>
+    /// The <code>maximumPercent</code> parameter represents an upper limit on the number
+    /// of running tasks during a deployment, which enables you to define the deployment batch
+    /// size. For example, if your service has a <code>desiredCount</code> of four tasks,
+    /// a <code>maximumPercent</code> value of 200% starts four new tasks before stopping
+    /// the four older tasks (provided that the cluster resources required to do this are
+    /// available). The default value for <code>maximumPercent</code> is 200%.
+    /// </para>
+    ///  
+    /// <para>
+    /// When the service scheduler launches new tasks, it attempts to balance them across
+    /// the Availability Zones in your cluster with the following logic:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Determine which of the container instances in your cluster can support your service's
+    /// task definition (for example, they have the required CPU, memory, ports, and container
+    /// instance attributes).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Sort the valid container instances by the fewest number of running tasks for this
+    /// service in the same Availability Zone as the instance. For example, if zone A has
+    /// one running service task and zones B and C each have zero, valid container instances
+    /// in either zone B or C are considered optimal for placement.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Place the new service task on a valid container instance in an optimal Availability
+    /// Zone (based on the previous steps), favoring container instances with the fewest number
+    /// of running tasks for this service.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateServiceRequest : AmazonECSRequest
     {
         private string _clientToken;
         private string _cluster;
+        private DeploymentConfiguration _deploymentConfiguration;
         private int? _desiredCount;
         private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
         private string _role;
@@ -79,6 +136,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetCluster()
         {
             return this._cluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentConfiguration. 
+        /// <para>
+        /// Optional deployment parameters that control how many tasks run during the deployment
+        /// and the ordering of stopping and starting tasks. 
+        /// </para>
+        /// </summary>
+        public DeploymentConfiguration DeploymentConfiguration
+        {
+            get { return this._deploymentConfiguration; }
+            set { this._deploymentConfiguration = value; }
+        }
+
+        // Check to see if DeploymentConfiguration property is set
+        internal bool IsSetDeploymentConfiguration()
+        {
+            return this._deploymentConfiguration != null;
         }
 
         /// <summary>

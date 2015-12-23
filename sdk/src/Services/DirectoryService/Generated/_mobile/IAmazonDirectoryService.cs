@@ -103,6 +103,22 @@ namespace Amazon.DirectoryService
 
         #endregion
                 
+        #region  CreateMicrosoftAD
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMicrosoftAD operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMicrosoftAD operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateMicrosoftADResponse> CreateMicrosoftADAsync(CreateMicrosoftADRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateSnapshot
 
 
@@ -116,6 +132,22 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateTrust
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrust operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrust operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateTrustResponse> CreateTrustAsync(CreateTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -151,6 +183,22 @@ namespace Amazon.DirectoryService
 
         #endregion
                 
+        #region  DeleteTrust
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrust operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrust operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteTrustResponse> DeleteTrustAsync(DeleteTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeDirectories
 
 
@@ -181,19 +229,19 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DescribeDirectories service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// 
+        /// The <i>NextToken</i> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         Task<DescribeDirectoriesResponse> DescribeDirectoriesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -224,6 +272,22 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(DescribeSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeTrusts
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTrusts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrusts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeTrustsResponse> DescribeTrustsAsync(DescribeTrustsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -303,13 +367,13 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the GetDirectoryLimits service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         Task<GetDirectoryLimitsResponse> GetDirectoryLimitsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -372,6 +436,22 @@ namespace Amazon.DirectoryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<UpdateRadiusResponse> UpdateRadiusAsync(UpdateRadiusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  VerifyTrust
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the VerifyTrust operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the VerifyTrust operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<VerifyTrustResponse> VerifyTrustAsync(VerifyTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

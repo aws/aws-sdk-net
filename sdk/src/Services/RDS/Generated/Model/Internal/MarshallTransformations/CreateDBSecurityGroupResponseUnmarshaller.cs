@@ -81,9 +81,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("DBSecurityGroup", targetDepth))
+                    if (context.TestExpression("DBSecurityGroup", targetDepth))
                     {
-                        response.DBSecurityGroup = DBSecurityGroupUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = DBSecurityGroupUnmarshaller.Instance;
+                        response.DBSecurityGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 

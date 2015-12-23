@@ -98,6 +98,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBParameterGroupName", StringUtils.FromString(publicRequest.DBParameterGroupName));
                 }
+                if(publicRequest.IsSetDBPortNumber())
+                {
+                    request.Parameters.Add("DBPortNumber", StringUtils.FromInt(publicRequest.DBPortNumber));
+                }
                 if(publicRequest.IsSetDBSecurityGroups())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -118,6 +122,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMasterUserPassword())
                 {
                     request.Parameters.Add("MasterUserPassword", StringUtils.FromString(publicRequest.MasterUserPassword));
+                }
+                if(publicRequest.IsSetMonitoringInterval())
+                {
+                    request.Parameters.Add("MonitoringInterval", StringUtils.FromInt(publicRequest.MonitoringInterval));
+                }
+                if(publicRequest.IsSetMonitoringRoleArn())
+                {
+                    request.Parameters.Add("MonitoringRoleArn", StringUtils.FromString(publicRequest.MonitoringRoleArn));
                 }
                 if(publicRequest.IsSetMultiAZ())
                 {

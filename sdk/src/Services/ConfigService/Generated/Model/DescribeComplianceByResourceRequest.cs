@@ -51,7 +51,7 @@ namespace Amazon.ConfigService.Model
     /// verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
     /// permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code>
     /// for all evaluation results. This can occur if the resources were deleted or removed
-    /// from the rule's scope.</li> </ul>
+    /// from the rule's scope.</li></ul>
     /// </para>
     /// </summary>
     public partial class DescribeComplianceByResourceRequest : AmazonConfigServiceRequest

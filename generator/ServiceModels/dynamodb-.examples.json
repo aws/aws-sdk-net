@@ -1,0 +1,74 @@
+{
+	"version" : "1.0",
+	"examples" : {
+		"BatchGetItem" : [{
+                "id": "batch-get-item-1435614252853",
+                "title": "batch-get-item",
+                "input": {
+                    "RequestItems": {
+                        "tablename1": {
+                            "Keys": [
+                                {
+                                    "key1": {
+                                        "N": "NumberAttributeValue"
+                                    }
+                                }
+                            ],
+                            "AttributesToGet": [
+                                "attr1",
+                                "attr2"
+                            ],
+                            "ConsistentRead": true,
+                            "ProjectionExpression": "str1",
+                            "ExpressionAttributeNames": {
+                                "name1": "attr3",
+                                "name2": "attr4"
+                            }
+                        },
+                        "tablename2": {
+                            "Keys": [
+                                {
+                                    "key2": {
+                                        "BOOL": true
+                                    }
+                                }
+                            ],
+                            "AttributesToGet": [
+                                "attr1",
+                                "attr2"
+                            ],
+                            "ConsistentRead": false,
+                            "ProjectionExpression": "str2",
+                            "ExpressionAttributeNames": {
+                                "name1": "attr3",
+                                "name2": "attr4"
+                            }
+                        }
+                    },
+                    "ReturnConsumedCapacity": "NONE"
+                },
+                "output": {
+                    "Responses": {
+                        "tablename1": [
+                            {
+                                "attr1": {
+                                    "NULL": false
+                                }
+                            },
+                            {
+                                "attr2": {
+                                    "B": "blob"
+                                }
+                            }
+                        ]
+                    },
+                    "ConsumedCapacity": [
+                        {
+                            "CapacityUnits": 1.234
+                        }
+                    ]
+                }
+            }
+		]
+	}
+}

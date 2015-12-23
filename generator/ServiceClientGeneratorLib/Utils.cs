@@ -1,7 +1,9 @@
 ﻿using Json.LitJson;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Xml;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,6 +45,71 @@ namespace ServiceClientGenerator
             }
 
             return data;
+        }
+
+        public static string NewProjectGuid
+        {
+            get
+            {
+                return Guid.NewGuid().ToString("B").ToUpper();
+            }
+        }
+
+        public static string GetProjectGuid(string projectFile)
+        {
+            var content = File.ReadAllText(projectFile);
+
+            var pos = content.IndexOf("<ProjectGuid>", StringComparison.OrdinalIgnoreCase) + "<ProjectGuid>".Length;
+            var lastPos = content.IndexOf("</ProjectGuid>", pos, StringComparison.OrdinalIgnoreCase);
+            var guid = content.Substring(pos, lastPos - pos);
+            return guid;
+        }
+
+        public static string SafeGetString(this JsonData self, string propertyName)
+        {
+            var val = self.SafeGet(propertyName);
+            if (null == val || !val.IsString)
+                return String.Empty;
+
+            return val.ToString();
+        }
+
+        public static IDictionary<string, JsonData> GetMap(this JsonData self)
+        {
+            var result = new Dictionary<string, JsonData>();
+
+            if (self != null || self.IsObject)
+            {
+                foreach (var key in self.PropertyNames)
+                {
+                    result[key] = self.SafeGet(key);
+                }
+            }
+
+            return result;
+        }
+
+        public static IDictionary<string, string> GetStringMap(this JsonData self)
+        {
+            var result = new Dictionary<string, string>();
+
+            if (self != null || self.IsObject)
+            {
+                foreach (var key in self.PropertyNames)
+                {
+                    var tmp = self.SafeGet(key);
+                    if (tmp.IsString)
+                        result[key] = tmp.ToString();
+                }
+            }
+
+            return result;
+        }
+
+        public static Member GetMemberByName(this IList<Member> self, string name )
+        {
+            return self.Where(m => m.ModeledName.Equals(name, StringComparison.OrdinalIgnoreCase))
+                       .SingleOrDefault();
         }
     }
 }

@@ -302,7 +302,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                                     index = i; break;
                                 }
                             }
-                            Assert.AreEqual(property.GetValue(this.Request), uriSegments[index]);
+                            Assert.AreEqual(property.GetValue(this.Request), Convert.ChangeType(uriSegments[index], property.PropertyType));
                         }
                     }
                 }

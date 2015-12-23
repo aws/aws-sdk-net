@@ -8,6 +8,7 @@ using Amazon.CognitoIdentity.Model;
 using Amazon.Runtime;
 using Amazon.SecurityToken;
 using Amazon.SecurityToken.Model;
+using Amazon.Util;
 
 namespace Amazon.CognitoIdentity
 {
@@ -72,6 +73,25 @@ namespace Amazon.CognitoIdentity
         #region protected methods and enum
 
         /// <summary>
+        /// Returns clone of the Logins dictionary
+        /// </summary>
+        /// <returns>The Clone of Logins dictionary.</returns>
+        protected Dictionary<string, string> CloneLogins
+        {
+            get
+            {
+                Dictionary<string, string> ret = new Dictionary<string, string>(Logins.Count,
+                                                                    Logins.Comparer);
+                foreach (KeyValuePair<string, string> entry in Logins)
+                {
+                    ret.Add(entry.Key, entry.Value);
+                }
+
+                return ret;
+            }
+        }
+
+        /// <summary>
         /// Gives a namespaced key for supporting multiple identity pool id's
         /// </summary>
         /// <param name="key"></param>
@@ -87,12 +107,12 @@ namespace Amazon.CognitoIdentity
             /// <summary>
             /// Dont refresh identity. 
             /// </summary>
-            None =0,
+            None = 0,
 
             /// <summary>
             /// Refresh if Id not set or If Identity Provider is BYOI
             /// </summary>
-            Refresh=1
+            Refresh = 1
         }
 
 

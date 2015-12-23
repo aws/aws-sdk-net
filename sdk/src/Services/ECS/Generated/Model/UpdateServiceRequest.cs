@@ -29,7 +29,8 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateService operation.
-    /// Modify the desired count or task definition used in a service.
+    /// Modifies the desired count, deployment configuration, or task definition used in a
+    /// service.
     /// 
     ///  
     /// <para>
@@ -39,28 +40,74 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use <code>UpdateService</code> to modify your task definition and deploy a
-    /// new version of your service, one task at a time. If you modify the task definition
-    /// with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of
-    /// the task definition and then stops an old task after the new version is running. Because
-    /// <code>UpdateService</code> starts a new version of the task before stopping an old
-    /// version, your cluster must have capacity to support one more instantiation of the
-    /// task when <code>UpdateService</code> is run. If your cluster cannot support another
-    /// instantiation of the task used in your service, you can reduce the desired count of
-    /// your service by one before modifying the task definition.
+    /// You can use <a>UpdateService</a> to modify your task definition and deploy a new version
+    /// of your service.
     /// </para>
     ///  
     /// <para>
-    /// When <a>UpdateService</a> replaces a task during an update, the equivalent of <code>docker
+    /// You can also update the deployment configuration of a service. When a deployment is
+    /// triggered by updating the task definition of a service, the service scheduler uses
+    /// the deployment configuration parameters, <code>minimumHealthyPercent</code> and <code>maximumPercent</code>,
+    /// to determine the deployment strategy.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore
+    /// the <code>desiredCount</code> temporarily during a deployment. For example, if your
+    /// service has a <code>desiredCount</code> of four tasks, a <code>minimumHealthyPercent</code>
+    /// of 50% allows the scheduler to stop two existing tasks before starting two new tasks.
+    /// Tasks for services that <i>do not</i> use a load balancer are considered healthy if
+    /// they are in the <code>RUNNING</code> state; tasks for services that <i>do</i> use
+    /// a load balancer are considered healthy if they are in the <code>RUNNING</code> state
+    /// and the container instance it is hosted on is reported as healthy by the load balancer.
+    /// </para>
+    ///  
+    /// <para>
+    /// The <code>maximumPercent</code> parameter represents an upper limit on the number
+    /// of running tasks during a deployment, which enables you to define the deployment batch
+    /// size. For example, if your service has a <code>desiredCount</code> of four tasks,
+    /// a <code>maximumPercent</code> value of 200% starts four new tasks before stopping
+    /// the four older tasks (provided that the cluster resources required to do this are
+    /// available).
+    /// </para>
+    ///  
+    /// <para>
+    /// When <a>UpdateService</a> stops a task during a deployment, the equivalent of <code>docker
     /// stop</code> is issued to the containers running in the task. This results in a <code>SIGTERM</code>
     /// and a 30-second timeout, after which <code>SIGKILL</code> is sent and the containers
     /// are forcibly stopped. If the container handles the <code>SIGTERM</code> gracefully
     /// and exits within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
     /// </para>
+    ///  
+    /// <para>
+    /// When the service scheduler launches new tasks, it attempts to balance them across
+    /// the Availability Zones in your cluster with the following logic:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Determine which of the container instances in your cluster can support your service's
+    /// task definition (for example, they have the required CPU, memory, ports, and container
+    /// instance attributes).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Sort the valid container instances by the fewest number of running tasks for this
+    /// service in the same Availability Zone as the instance. For example, if zone A has
+    /// one running service task and zones B and C each have zero, valid container instances
+    /// in either zone B or C are considered optimal for placement.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Place the new service task on a valid container instance in an optimal Availability
+    /// Zone (based on the previous steps), favoring container instances with the fewest number
+    /// of running tasks for this service.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class UpdateServiceRequest : AmazonECSRequest
     {
         private string _cluster;
+        private DeploymentConfiguration _deploymentConfiguration;
         private int? _desiredCount;
         private string _service;
         private string _taskDefinition;
@@ -82,6 +129,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetCluster()
         {
             return this._cluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentConfiguration. 
+        /// <para>
+        /// Optional deployment parameters that control how many tasks run during the deployment
+        /// and the ordering of stopping and starting tasks. 
+        /// </para>
+        /// </summary>
+        public DeploymentConfiguration DeploymentConfiguration
+        {
+            get { return this._deploymentConfiguration; }
+            set { this._deploymentConfiguration = value; }
+        }
+
+        // Check to see if DeploymentConfiguration property is set
+        internal bool IsSetDeploymentConfiguration()
+        {
+            return this._deploymentConfiguration != null;
         }
 
         /// <summary>

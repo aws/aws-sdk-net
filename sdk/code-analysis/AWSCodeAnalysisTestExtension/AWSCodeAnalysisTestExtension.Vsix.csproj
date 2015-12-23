@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{11EAD86F-28B2-4DD6-AA76-72BB3B4AE80C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AWSCodeAnalysisTestExtension</RootNamespace>
+    <AssemblyName>AWSCodeAnalysisTestExtension</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <GeneratePkgDefFile>false</GeneratePkgDefFile>
+    <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
+    <IncludeDebugSymbolsInVSIXContainer>false</IncludeDebugSymbolsInVSIXContainer>
+    <IncludeDebugSymbolsInLocalVSIXDeployment>false</IncludeDebugSymbolsInLocalVSIXDeployment>
+    <CopyBuildOutputToOutputDirectory>false</CopyBuildOutputToOutputDirectory>
+    <CopyOutputSymbolsToOutputDirectory>false</CopyOutputSymbolsToOutputDirectory>
+    <VSSDKTargetPlatformRegRootSuffix>Roslyn</VSSDKTargetPlatformRegRootSuffix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>				
+    <StartAction>Program</StartAction>
+    <StartProgram>$(DevEnvDir)devenv.exe</StartProgram>
+    <StartArguments>/rootsuffix Roslyn</StartArguments>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="source.extension.vsixmanifest">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../ServiceAnalysis/APIGateway/AWSSDK.APIGateway.CodeAnalysis.csproj">
+      <Project>{EB2C1C17-AE9B-423E-B67C-23085200E6F5}</Project>
+      <Name>AWSSDK.APIGateway.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AutoScaling/AWSSDK.AutoScaling.CodeAnalysis.csproj">
+      <Project>{DE877AEA-BBDF-43E5-90C5-765D0B02BFC3}</Project>
+      <Name>AWSSDK.AutoScaling.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AWSMarketplaceCommerceAnalytics/AWSSDK.AWSMarketplaceCommerceAnalytics.CodeAnalysis.csproj">
+      <Project>{CE92E696-6109-4623-9C98-F353D3B85527}</Project>
+      <Name>AWSSDK.AWSMarketplaceCommerceAnalytics.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AWSSupport/AWSSDK.AWSSupport.CodeAnalysis.csproj">
+      <Project>{CF64C0A4-25F7-42E9-9B3D-632CB520B666}</Project>
+      <Name>AWSSDK.AWSSupport.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CloudFormation/AWSSDK.CloudFormation.CodeAnalysis.csproj">
+      <Project>{37B67435-4269-4917-A6D1-12D9478EA743}</Project>
+      <Name>AWSSDK.CloudFormation.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CloudFront/AWSSDK.CloudFront.CodeAnalysis.csproj">
+      <Project>{16E1084D-2ECB-4A65-A33C-5A3566809960}</Project>
+      <Name>AWSSDK.CloudFront.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CloudHSM/AWSSDK.CloudHSM.CodeAnalysis.csproj">
+      <Project>{46BE7F7C-01A6-4254-A59E-BD557C575FDD}</Project>
+      <Name>AWSSDK.CloudHSM.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CloudSearch/AWSSDK.CloudSearch.CodeAnalysis.csproj">
+      <Project>{CC04BF54-7AD0-40AE-B674-56576A497B0C}</Project>
+      <Name>AWSSDK.CloudSearch.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CloudSearchDomain/AWSSDK.CloudSearchDomain.CodeAnalysis.csproj">
+      <Project>{96E4E126-9F1E-49F1-8CF6-AF71C283957C}</Project>
+      <Name>AWSSDK.CloudSearchDomain.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CloudTrail/AWSSDK.CloudTrail.CodeAnalysis.csproj">
+      <Project>{06A44D48-2065-4180-AA49-B1D27071D930}</Project>
+      <Name>AWSSDK.CloudTrail.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CloudWatch/AWSSDK.CloudWatch.CodeAnalysis.csproj">
+      <Project>{477E2CEA-CD04-44FA-8B95-52B3BE6B17D6}</Project>
+      <Name>AWSSDK.CloudWatch.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CloudWatchLogs/AWSSDK.CloudWatchLogs.CodeAnalysis.csproj">
+      <Project>{CF63ED2A-7FFE-4851-B21F-FCCF802D101B}</Project>
+      <Name>AWSSDK.CloudWatchLogs.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CodeCommit/AWSSDK.CodeCommit.CodeAnalysis.csproj">
+      <Project>{7A278EA3-D9A6-409F-8B87-DB450B9B9F13}</Project>
+      <Name>AWSSDK.CodeCommit.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CodeDeploy/AWSSDK.CodeDeploy.CodeAnalysis.csproj">
+      <Project>{B853D48D-7004-4126-ACBF-3C9E9FAAE3C2}</Project>
+      <Name>AWSSDK.CodeDeploy.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CodePipeline/AWSSDK.CodePipeline.CodeAnalysis.csproj">
+      <Project>{248F1FBE-1690-4C43-A76E-A135D674AEAC}</Project>
+      <Name>AWSSDK.CodePipeline.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CognitoIdentity/AWSSDK.CognitoIdentity.CodeAnalysis.csproj">
+      <Project>{B0147093-B0FF-4BD3-A648-247307EA1230}</Project>
+      <Name>AWSSDK.CognitoIdentity.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CognitoSync/AWSSDK.CognitoSync.CodeAnalysis.csproj">
+      <Project>{EBE2D008-5A2B-4314-B243-BA043BAFF60A}</Project>
+      <Name>AWSSDK.CognitoSync.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ConfigService/AWSSDK.ConfigService.CodeAnalysis.csproj">
+      <Project>{2F79A9E2-BE9C-43DB-876A-A7F16A5B64AC}</Project>
+      <Name>AWSSDK.ConfigService.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/DataPipeline/AWSSDK.DataPipeline.CodeAnalysis.csproj">
+      <Project>{CA4F8900-EA2E-44CD-AFCC-B4BE1F7AF3EA}</Project>
+      <Name>AWSSDK.DataPipeline.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/DeviceFarm/AWSSDK.DeviceFarm.CodeAnalysis.csproj">
+      <Project>{5243BCF3-1EF1-4878-BFC0-6ED9CAF57881}</Project>
+      <Name>AWSSDK.DeviceFarm.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/DirectConnect/AWSSDK.DirectConnect.CodeAnalysis.csproj">
+      <Project>{B5EB8F72-CE54-4E1C-8C79-B97394BA2FEE}</Project>
+      <Name>AWSSDK.DirectConnect.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/DirectoryService/AWSSDK.DirectoryService.CodeAnalysis.csproj">
+      <Project>{7108CBE8-E6A9-416C-8D5D-8264A15C2AA5}</Project>
+      <Name>AWSSDK.DirectoryService.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/DynamoDBv2/AWSSDK.DynamoDBv2.CodeAnalysis.csproj">
+      <Project>{B0E4C8D2-B504-4B0E-8789-47F2B9CBDA02}</Project>
+      <Name>AWSSDK.DynamoDBv2.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/EC2/AWSSDK.EC2.CodeAnalysis.csproj">
+      <Project>{5EDD3F86-D8FD-4BA0-9086-290BFF27CD44}</Project>
+      <Name>AWSSDK.EC2.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ECR/AWSSDK.ECR.CodeAnalysis.csproj">
+      <Project>{881A7C3A-497D-46FF-845C-2CB7D11436C8}</Project>
+      <Name>AWSSDK.ECR.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ECS/AWSSDK.ECS.CodeAnalysis.csproj">
+      <Project>{D79A164A-FE16-4633-BF19-CC4CC1A738C3}</Project>
+      <Name>AWSSDK.ECS.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ElastiCache/AWSSDK.ElastiCache.CodeAnalysis.csproj">
+      <Project>{F441B4FE-3B31-4E7C-82AA-C9B90D6662A5}</Project>
+      <Name>AWSSDK.ElastiCache.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ElasticBeanstalk/AWSSDK.ElasticBeanstalk.CodeAnalysis.csproj">
+      <Project>{ED00B869-BAF8-42C0-8ACF-D03E84ABD456}</Project>
+      <Name>AWSSDK.ElasticBeanstalk.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ElasticFileSystem/AWSSDK.ElasticFileSystem.CodeAnalysis.csproj">
+      <Project>{5844A5DD-B347-4371-AC64-58E489C10284}</Project>
+      <Name>AWSSDK.ElasticFileSystem.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ElasticLoadBalancing/AWSSDK.ElasticLoadBalancing.CodeAnalysis.csproj">
+      <Project>{72BA2A85-2F3C-4248-8FFD-C216DF769B6D}</Project>
+      <Name>AWSSDK.ElasticLoadBalancing.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ElasticMapReduce/AWSSDK.ElasticMapReduce.CodeAnalysis.csproj">
+      <Project>{9F2D250A-19D3-47AA-BA60-2F733921D445}</Project>
+      <Name>AWSSDK.ElasticMapReduce.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Elasticsearch/AWSSDK.Elasticsearch.CodeAnalysis.csproj">
+      <Project>{467340EE-CA76-4FD0-BA04-D4314A65040D}</Project>
+      <Name>AWSSDK.Elasticsearch.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ElasticTranscoder/AWSSDK.ElasticTranscoder.CodeAnalysis.csproj">
+      <Project>{F5D912DD-225A-4E52-A6C6-5F631A90E51C}</Project>
+      <Name>AWSSDK.ElasticTranscoder.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Glacier/AWSSDK.Glacier.CodeAnalysis.csproj">
+      <Project>{2A6E7B0B-C71D-44B6-B7E4-8A8408635C79}</Project>
+      <Name>AWSSDK.Glacier.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/IdentityManagement/AWSSDK.IdentityManagement.CodeAnalysis.csproj">
+      <Project>{B20D0577-6579-4191-8C47-16AD07B1D34C}</Project>
+      <Name>AWSSDK.IdentityManagement.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ImportExport/AWSSDK.ImportExport.CodeAnalysis.csproj">
+      <Project>{E5BEFF71-9E4A-4050-8953-6191C3086787}</Project>
+      <Name>AWSSDK.ImportExport.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Inspector/AWSSDK.Inspector.CodeAnalysis.csproj">
+      <Project>{3ABDF441-6A52-40B1-9C58-A91C4FD80771}</Project>
+      <Name>AWSSDK.Inspector.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/IoT/AWSSDK.IoT.CodeAnalysis.csproj">
+      <Project>{CA553EB2-EBF5-44C2-8270-07966F608229}</Project>
+      <Name>AWSSDK.IoT.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/IotData/AWSSDK.IotData.CodeAnalysis.csproj">
+      <Project>{41AE7ED7-1165-4C6C-9F69-FB872C628230}</Project>
+      <Name>AWSSDK.IotData.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/KeyManagementService/AWSSDK.KeyManagementService.CodeAnalysis.csproj">
+      <Project>{F7AE8373-8387-4003-8F53-795D127CF79F}</Project>
+      <Name>AWSSDK.KeyManagementService.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Kinesis/AWSSDK.Kinesis.CodeAnalysis.csproj">
+      <Project>{6ECCDB4C-7136-4430-A8D7-5C8726C23996}</Project>
+      <Name>AWSSDK.Kinesis.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/KinesisFirehose/AWSSDK.KinesisFirehose.CodeAnalysis.csproj">
+      <Project>{7C69A0B1-C32D-4F12-9CA1-33242BDB4A4A}</Project>
+      <Name>AWSSDK.KinesisFirehose.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Lambda/AWSSDK.Lambda.CodeAnalysis.csproj">
+      <Project>{942679C5-C064-4B55-B264-97A00B6F9CD6}</Project>
+      <Name>AWSSDK.Lambda.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MachineLearning/AWSSDK.MachineLearning.CodeAnalysis.csproj">
+      <Project>{A3EEC74B-542C-44A8-9585-F514B8396D56}</Project>
+      <Name>AWSSDK.MachineLearning.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MobileAnalytics/AWSSDK.MobileAnalytics.CodeAnalysis.csproj">
+      <Project>{C2F1BD96-3D53-4927-B608-17B154666D00}</Project>
+      <Name>AWSSDK.MobileAnalytics.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/OpsWorks/AWSSDK.OpsWorks.CodeAnalysis.csproj">
+      <Project>{7F36180A-2EE4-41E8-B237-964EEF734D42}</Project>
+      <Name>AWSSDK.OpsWorks.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/RDS/AWSSDK.RDS.CodeAnalysis.csproj">
+      <Project>{B3C3F105-ECCC-43C7-BD16-11E15487264C}</Project>
+      <Name>AWSSDK.RDS.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Redshift/AWSSDK.Redshift.CodeAnalysis.csproj">
+      <Project>{5D839AEF-54F6-431D-BC37-681F7DF77C01}</Project>
+      <Name>AWSSDK.Redshift.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Route53/AWSSDK.Route53.CodeAnalysis.csproj">
+      <Project>{3CE0119E-8964-4015-AA92-9A0017A5B423}</Project>
+      <Name>AWSSDK.Route53.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Route53Domains/AWSSDK.Route53Domains.CodeAnalysis.csproj">
+      <Project>{B4543C79-2B90-4F7E-80E5-1AA21DFE4D76}</Project>
+      <Name>AWSSDK.Route53Domains.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/S3/AWSSDK.S3.CodeAnalysis.csproj">
+      <Project>{0C220F39-8A25-4CB2-A379-BCDF01AB0D81}</Project>
+      <Name>AWSSDK.S3.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SecurityToken/AWSSDK.SecurityToken.CodeAnalysis.csproj">
+      <Project>{89D04592-47DB-4292-8BEA-78BA2F33954F}</Project>
+      <Name>AWSSDK.SecurityToken.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SimpleDB/AWSSDK.SimpleDB.CodeAnalysis.csproj">
+      <Project>{63F6BADD-A734-409F-836A-46817493F7C6}</Project>
+      <Name>AWSSDK.SimpleDB.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SimpleEmail/AWSSDK.SimpleEmail.CodeAnalysis.csproj">
+      <Project>{99C31570-B271-443A-BF7F-6E29C281AACB}</Project>
+      <Name>AWSSDK.SimpleEmail.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SimpleNotificationService/AWSSDK.SimpleNotificationService.CodeAnalysis.csproj">
+      <Project>{4FEB7172-B2D5-4EFA-9B71-A45BFC90F93D}</Project>
+      <Name>AWSSDK.SimpleNotificationService.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SimpleSystemsManagement/AWSSDK.SimpleSystemsManagement.CodeAnalysis.csproj">
+      <Project>{7B4FAC58-B751-4119-B29C-3CE4A7B42AD3}</Project>
+      <Name>AWSSDK.SimpleSystemsManagement.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SimpleWorkflow/AWSSDK.SimpleWorkflow.CodeAnalysis.csproj">
+      <Project>{A4F15C44-98AE-4FB1-B3EE-EC2104671752}</Project>
+      <Name>AWSSDK.SimpleWorkflow.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SQS/AWSSDK.SQS.CodeAnalysis.csproj">
+      <Project>{2C8CA822-7F6A-4797-ADF3-3B35EC09734C}</Project>
+      <Name>AWSSDK.SQS.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/StorageGateway/AWSSDK.StorageGateway.CodeAnalysis.csproj">
+      <Project>{ECF2D7A1-D543-4290-B0CE-1EAF4E5E64A7}</Project>
+      <Name>AWSSDK.StorageGateway.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/WAF/AWSSDK.WAF.CodeAnalysis.csproj">
+      <Project>{89B0280A-9EDF-46EC-9592-500B710D305D}</Project>
+      <Name>AWSSDK.WAF.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/WorkSpaces/AWSSDK.WorkSpaces.CodeAnalysis.csproj">
+      <Project>{D7B54129-A9F3-47F0-BA76-8FE371315827}</Project>
+      <Name>AWSSDK.WorkSpaces.CodeAnalysis</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

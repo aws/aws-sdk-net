@@ -748,7 +748,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Select = currentConfig.Select,
                 CollectResults = currentConfig.CollectResults,
                 IndexName = currentConfig.IndexName,
-                IsConsistentRead = currentConfig.ConsistentRead
+                IsConsistentRead = currentConfig.ConsistentRead,
+                PaginationToken = currentConfig.PaginationToken
             };
 
             if (currentConfig.TotalSegments != 0)
@@ -849,7 +850,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 IsBackwardSearch = config.BackwardSearch,
                 IndexName = config.IndexName,
                 Select = config.Select,
-                CollectResults = config.CollectResults
+                CollectResults = config.CollectResults,
+                PaginationToken = config.PaginationToken
             };
 
             return ret;

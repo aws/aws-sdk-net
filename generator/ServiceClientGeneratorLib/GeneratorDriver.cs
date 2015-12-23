@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ServiceClientGenerator.Generators;
+using ServiceClientGenerator.Generators.Examples;
 using ServiceClientGenerator.Generators.Marshallers;
 using ServiceClientGenerator.Generators.NuGet;
 using ServiceClientGenerator.Generators.SourceFiles;
+using ServiceClientGenerator.Generators.CodeAnalysis;
 using ServiceClientGenerator.Generators.TestFiles;
 using StructureGenerator = ServiceClientGenerator.Generators.SourceFiles.StructureGenerator;
 using ServiceClientGenerator.Generators.Component;
@@ -42,6 +44,11 @@ namespace ServiceClientGenerator
         /// will exist.
         /// </summary>
         public string ServiceFilesRoot { get; private set; }
+
+        /// <summary>
+        /// The folder under which the code analysis project for the service will exist.
+        /// </summary>
+        public string CodeAnalysisRoot { get; private set; }
 
         /// <summary>
         /// The folder under which all of the test files exist.
@@ -81,6 +88,7 @@ namespace ServiceClientGenerator
 
         public const string SourceSubFoldername = "src";
         public const string TestsSubFoldername = "test";
+        public const string CodeAnalysisFoldername = "code-analysis";
         public const string ServicesSubFoldername = "Services";
         public const string CoreSubFoldername = "Core";
         public const string GeneratedCodeFoldername = "Generated";
@@ -114,6 +122,8 @@ namespace ServiceClientGenerator
 
             ServiceFilesRoot = Path.Combine(Options.SdkRootFolder, SourceSubFoldername, ServicesSubFoldername, serviceNameRoot);
             GeneratedFilesRoot = Path.Combine(ServiceFilesRoot, GeneratedCodeFoldername);
+
+            CodeAnalysisRoot = Path.Combine(Options.SdkRootFolder, CodeAnalysisFoldername,"ServiceAnalysis", serviceNameRoot);
 
             TestFilesRoot = Path.Combine(Options.SdkRootFolder, TestsSubFoldername);
 
@@ -159,6 +169,8 @@ namespace ServiceClientGenerator
 
                 if (this.Configuration.EnableXamarinComponent)
                     GenerateXamarinComponents();
+
+                GenerateCodeAnalysisProject();
             }
 
             // Client config object
@@ -225,6 +237,12 @@ namespace ServiceClientGenerator
             // Test that simple customizations were generated correctly
             GenerateCustomizationTests();
             ExecuteProjectFileGenerators();
+            if (this.Configuration.ServiceModel.Customizations.HasExamples)
+            {
+                var servicename = Configuration.Namespace.Split('.').Last();
+                ExecuteExampleGenerator(new ExampleCode(), servicename + ".GeneratedSamples.cs", servicename);
+                ExecuteExampleGenerator(new ExampleMetadata(), servicename + ".GeneratedSamples.extra.xml");
+            }
         }
 
         /// <summary>
@@ -623,6 +641,16 @@ namespace ServiceClientGenerator
             solutionFileCreator.Execute(NewlyCreatedProjectFiles);
         }
 
+        public static void UpdateCodeAnalysisSoltion(GenerationManifest manifest, GeneratorOptions options)
+        {
+            Console.WriteLine("Updating code analysis solution file.");
+            var creator = new CodeAnalysisSolutionCreator
+            {
+                Options = options
+            };
+            creator.Execute();
+        }
+
         public static void UpdateAssemblyVersionInfo(GenerationManifest manifest, GeneratorOptions options)
         {
             var updater = new CoreAssemblyInfoUpdater(options, manifest);
@@ -968,6 +996,7 @@ namespace ServiceClientGenerator
                 { "AssemblyVersion", assemblyVersion },
                 { "AWSDependencies", awsDependencies },
                 { "BaseName", this.Configuration.BaseName },
+                { "CodeAnalysisServiceFolder", this.Configuration.Namespace.Replace("Amazon.", "") },
                 { "ProjectFileConfigurations", this.ProjectFileConfigurations},
                 { "ExtraTags", Configuration.Tags == null || Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) }
             };
@@ -1111,6 +1140,16 @@ namespace ServiceClientGenerator
             WriteFile(ServiceFilesRoot, "Properties", "AssemblyInfo.cs", text);
         }
 
+        void ExecuteExampleGenerator(BaseGenerator generator, string fileName, string subNamespace = null)
+        {
+            generator.Config = this.Configuration;
+            var text = generator.TransformText();
+            var outputSubFolder = @"docgenerator\AWSSDKDocSamples";
+            if (subNamespace != null)
+                outputSubFolder = Path.Combine(outputSubFolder, subNamespace);
+            WriteFile(Path.GetFullPath(TestFilesRoot + @"\..\..\"), outputSubFolder, fileName, text);
+        }
+
         /// <summary>
         /// Runs the generator and saves the content in the test directory.
         /// </summary>
@@ -1249,6 +1288,12 @@ namespace ServiceClientGenerator
                 default:
                     throw new Exception("No structure unmarshaller for service type: " + this.Configuration.ServiceModel.Type);
             }
+        }
+
+        void GenerateCodeAnalysisProject()
+        {
+            var command = new CodeAnalysisProjectCreator();
+            command.Execute(CodeAnalysisRoot, this.Configuration);
         }
     }
 }

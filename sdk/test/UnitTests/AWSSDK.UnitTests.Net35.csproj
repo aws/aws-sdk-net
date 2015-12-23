@@ -304,6 +304,10 @@
       <Project>{756D5D73-16BD-4F8F-AF58-A24CE4000606}</Project>
       <Name>AWSSDK.WAF.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ECR\AWSSDK.ECR.Net35.csproj">
+      <Project>{E6221D2C-82C9-4701-9B47-262C1BE13069}</Project>
+      <Name>AWSSDK.ECR.Net35</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">

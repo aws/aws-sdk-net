@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.DynamoDBv2.IAmazonDynamoDB.BatchGetItem(Amazon.DynamoDBv2.Model.BatchGetItemRequest)" />
+            <member name="M:Amazon.DynamoDBv2.AmazonDynamoDBClient.BatchGetItem(Amazon.DynamoDBv2.Model.BatchGetItemRequest)" />
+            <member name="T:Amazon.DynamoDBv2.Model.BatchGetItemRequest" />
+            <member name="T:Amazon.DynamoDBv2.Model.BatchGetItemResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="batch-get-item"
+                    source=".\AWSSDKDocSamples\DynamoDBv2\DynamoDBv2.GeneratedSamples.cs"
+                    region="batch-get-item-1435614252853" />
+            </example>
+        </value>
+    </doc>
+</docs>

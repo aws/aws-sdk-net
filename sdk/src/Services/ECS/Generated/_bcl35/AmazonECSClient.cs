@@ -304,7 +304,63 @@ namespace Amazon.ECS
         /// <summary>
         /// Runs and maintains a desired number of tasks from a specified task definition. If
         /// the number of tasks running in a service drops below <code>desiredCount</code>, Amazon
-        /// ECS spawns another instantiation of the task in the specified cluster.
+        /// ECS spawns another instantiation of the task in the specified cluster. To update an
+        /// existing service, see <a>UpdateService</a>.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify a deployment configuration for your service. During a deployment
+        /// (which is triggered by changing the task definition of a service with an <a>UpdateService</a>
+        /// operation), the service scheduler uses the <code>minimumHealthyPercent</code> and
+        /// <code>maximumPercent</code> parameters to determine the deployment strategy.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore
+        /// the <code>desiredCount</code> temporarily during a deployment. For example, if your
+        /// service has a <code>desiredCount</code> of four tasks, a <code>minimumHealthyPercent</code>
+        /// of 50% allows the scheduler to stop two existing tasks before starting two new tasks.
+        /// Tasks for services that <i>do not</i> use a load balancer are considered healthy if
+        /// they are in the <code>RUNNING</code> state; tasks for services that <i>do</i> use
+        /// a load balancer are considered healthy if they are in the <code>RUNNING</code> state
+        /// and the container instance it is hosted on is reported as healthy by the load balancer.
+        /// The default value for <code>minimumHealthyPercent</code> is 50% in the console and
+        /// 100% for the AWS CLI, the AWS SDKs, and the APIs.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>maximumPercent</code> parameter represents an upper limit on the number
+        /// of running tasks during a deployment, which enables you to define the deployment batch
+        /// size. For example, if your service has a <code>desiredCount</code> of four tasks,
+        /// a <code>maximumPercent</code> value of 200% starts four new tasks before stopping
+        /// the four older tasks (provided that the cluster resources required to do this are
+        /// available). The default value for <code>maximumPercent</code> is 200%.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the service scheduler launches new tasks, it attempts to balance them across
+        /// the Availability Zones in your cluster with the following logic:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Determine which of the container instances in your cluster can support your service's
+        /// task definition (for example, they have the required CPU, memory, ports, and container
+        /// instance attributes).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Sort the valid container instances by the fewest number of running tasks for this
+        /// service in the same Availability Zone as the instance. For example, if zone A has
+        /// one running service task and zones B and C each have zero, valid container instances
+        /// in either zone B or C are considered optimal for placement.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Place the new service task on a valid container instance in an optimal Availability
+        /// Zone (based on the previous steps), favoring container instances with the fewest number
+        /// of running tasks for this service.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateService service method.</param>
         /// 
@@ -446,7 +502,24 @@ namespace Amazon.ECS
         #region  DeleteService
 
         /// <summary>
-        /// Deletes a specified service within a cluster.
+        /// Deletes a specified service within a cluster. You can delete a service if you have
+        /// no running tasks in it and the desired task count is zero. If the service is actively
+        /// maintaining tasks, you cannot delete it, and you must update the service to a desired
+        /// task count of zero. For more information, see <a>UpdateService</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When you delete a service, if there are still running tasks that require cleanup,
+        /// the service status moves from <code>ACTIVE</code> to <code>DRAINING</code>, and the
+        /// service is no longer visible in the console or in <a>ListServices</a> API operations.
+        /// After the tasks have stopped, then the service status moves from <code>DRAINING</code>
+        /// to <code>INACTIVE</code>. Services in the <code>DRAINING</code> or <code>INACTIVE</code>
+        /// status can still be viewed with <a>DescribeServices</a> API operations; however, in
+        /// the future, <code>INACTIVE</code> services may be cleaned up and purged from Amazon
+        /// ECS record keeping, and <a>DescribeServices</a> API operations on those services will
+        /// return a <code>ServiceNotFoundException</code> error.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteService service method.</param>
         /// 
@@ -1770,7 +1843,8 @@ namespace Amazon.ECS
         #region  UpdateService
 
         /// <summary>
-        /// Modify the desired count or task definition used in a service.
+        /// Modifies the desired count, deployment configuration, or task definition used in a
+        /// service.
         /// 
         ///  
         /// <para>
@@ -1780,24 +1854,69 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// You can use <code>UpdateService</code> to modify your task definition and deploy a
-        /// new version of your service, one task at a time. If you modify the task definition
-        /// with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of
-        /// the task definition and then stops an old task after the new version is running. Because
-        /// <code>UpdateService</code> starts a new version of the task before stopping an old
-        /// version, your cluster must have capacity to support one more instantiation of the
-        /// task when <code>UpdateService</code> is run. If your cluster cannot support another
-        /// instantiation of the task used in your service, you can reduce the desired count of
-        /// your service by one before modifying the task definition.
+        /// You can use <a>UpdateService</a> to modify your task definition and deploy a new version
+        /// of your service.
         /// </para>
         ///  
         /// <para>
-        /// When <a>UpdateService</a> replaces a task during an update, the equivalent of <code>docker
+        /// You can also update the deployment configuration of a service. When a deployment is
+        /// triggered by updating the task definition of a service, the service scheduler uses
+        /// the deployment configuration parameters, <code>minimumHealthyPercent</code> and <code>maximumPercent</code>,
+        /// to determine the deployment strategy.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore
+        /// the <code>desiredCount</code> temporarily during a deployment. For example, if your
+        /// service has a <code>desiredCount</code> of four tasks, a <code>minimumHealthyPercent</code>
+        /// of 50% allows the scheduler to stop two existing tasks before starting two new tasks.
+        /// Tasks for services that <i>do not</i> use a load balancer are considered healthy if
+        /// they are in the <code>RUNNING</code> state; tasks for services that <i>do</i> use
+        /// a load balancer are considered healthy if they are in the <code>RUNNING</code> state
+        /// and the container instance it is hosted on is reported as healthy by the load balancer.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>maximumPercent</code> parameter represents an upper limit on the number
+        /// of running tasks during a deployment, which enables you to define the deployment batch
+        /// size. For example, if your service has a <code>desiredCount</code> of four tasks,
+        /// a <code>maximumPercent</code> value of 200% starts four new tasks before stopping
+        /// the four older tasks (provided that the cluster resources required to do this are
+        /// available).
+        /// </para>
+        ///  
+        /// <para>
+        /// When <a>UpdateService</a> stops a task during a deployment, the equivalent of <code>docker
         /// stop</code> is issued to the containers running in the task. This results in a <code>SIGTERM</code>
         /// and a 30-second timeout, after which <code>SIGKILL</code> is sent and the containers
         /// are forcibly stopped. If the container handles the <code>SIGTERM</code> gracefully
         /// and exits within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
         /// </para>
+        ///  
+        /// <para>
+        /// When the service scheduler launches new tasks, it attempts to balance them across
+        /// the Availability Zones in your cluster with the following logic:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Determine which of the container instances in your cluster can support your service's
+        /// task definition (for example, they have the required CPU, memory, ports, and container
+        /// instance attributes).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Sort the valid container instances by the fewest number of running tasks for this
+        /// service in the same Availability Zone as the instance. For example, if zone A has
+        /// one running service task and zones B and C each have zero, valid container instances
+        /// in either zone B or C are considered optimal for placement.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Place the new service task on a valid container instance in an optimal Availability
+        /// Zone (based on the previous steps), favoring container instances with the fewest number
+        /// of running tasks for this service.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateService service method.</param>
         /// 

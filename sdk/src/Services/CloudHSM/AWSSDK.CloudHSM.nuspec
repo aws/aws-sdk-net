@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.CloudHSM</id>
     <title>AWSSDK - Amazon CloudHSM</title>
-    <version>3.1.0.2</version> 
+    <version>3.1.0.3</version> 
     <authors>Amazon Web Services</authors>
     <description>The AWS CloudHSM service helps you meet corporate, contractual and regulatory compliance requirements for data security by using dedicated Hardware Security Module (HSM) appliances within the AWS cloud. With CloudHSM, you control the encryption keys and cryptographic operations performed by the HSM.</description>
     <language>en-US</language>
@@ -13,17 +13,17 @@
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.2.1, 3.2)" />
+      <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.2.1, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 
   <files>
 
-    <file src="..\..\..\nuget-content\install.ps1" target="tools\net35" />
-    <file src="..\..\..\nuget-content\install.ps1" target="tools\net45" />
+    <file src="..\..\..\code-analysis\ServiceAnalysis\CloudHSM\bin\Release\*.dll" target="analyzers\dotnet\cs" exclude="**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*;**\System.Composition.*" />
+    <file src="..\..\..\code-analysis\NuGetInstallScripts\*.ps1" target="tools\" />
 
     <file src=".\bin\Release\net35\AWSSDK.CloudHSM.dll" target="lib\net35" />
     <file src=".\bin\Release\net35\AWSSDK.CloudHSM.xml" target="lib\net35" />

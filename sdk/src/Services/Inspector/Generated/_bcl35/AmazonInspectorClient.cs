@@ -36,7 +36,7 @@ namespace Amazon.Inspector
     /// Amazon Inspector 
     /// <para>
     /// Amazon Inspector enables you to analyze the behavior of the applications you run in
-    /// AWS and to identify potential security issues. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide//inspector_introduction.html">
+    /// AWS and to identify potential security issues. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html">
     /// Amazon Inspector User Guide</a>.
     /// </para>
     /// </summary>

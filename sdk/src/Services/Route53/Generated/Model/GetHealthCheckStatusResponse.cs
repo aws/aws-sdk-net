@@ -38,8 +38,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HealthCheckObservations. 
         /// <para>
-        /// A list that contains one <code>HealthCheckObservation</code> element for each Route
-        /// 53 health checker.
+        /// A list that contains one <code>HealthCheckObservation</code> element for each Amazon
+        /// Route 53 health checker.
         /// </para>
         /// </summary>
         public List<HealthCheckObservation> HealthCheckObservations

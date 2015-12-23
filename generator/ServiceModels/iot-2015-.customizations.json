@@ -1,6 +1,13 @@
 {
 	"shapeModifiers": {
-        "ListPrincipleThingsResponse": {
+        "ListPrincipalThingsRequest": {
+            "modify": [
+                {
+                    "nextToken": { "emitPropertyName": "marker" }
+                }
+            ]
+		},
+        "ListPrincipalThingsResponse": {
             "modify": [
                 {
                     "nextToken": { "emitPropertyName": "nextMarker" }

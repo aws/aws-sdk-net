@@ -8,6 +8,13 @@ Please refer to the individual issues to discuss or plus-one them.
 
 [tag]: https://github.com/aws/aws-sdk-net/labels/Feature%20Request
 
+#### Enable use of KMS keys for S3 Client encryption
+
+Currently the ```AmazonS3EncryptionClient``` does not support the use of 
+KMS-managed customer-master keys for use with client-side encryption.
+
+See [GitHub Issue #272](https://github.com/aws/aws-sdk-net/issues/272)
+
 #### Expose ConsumedCapacity and pagination within DynamoDB OPM
 
 Add support to DynamoDB Object Persistence Model to retrieve ConsumedCapacity

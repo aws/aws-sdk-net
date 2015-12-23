@@ -70,6 +70,31 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("us-west-2", AWSSDKUtils.DetermineRegion("https://streams.dynamodb.us-west-2.amazonaws.com/"));
         }
 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestCanonicalizeResourcePath()
+        {
+            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePath(null, null));
+            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePath(null, string.Empty));
+            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://ec2.us-west-1.amazonaws.com"), null));
+            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://ec2.us-west-1.amazonaws.com"), string.Empty));
+            Assert.AreEqual("/custompath", AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://customhost/custompath"), null));
+            Assert.AreEqual("/custompath", AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://customhost/custompath"), string.Empty));
+
+            Assert.AreEqual(
+                "/vx_folder/1.0%5Cdatafiles%5Cfile.json",
+                AWSSDKUtils.CanonicalizeResourcePath(null, @"/vx_folder/1.0\datafiles\file.json"));
+
+            Assert.AreEqual(
+                "/vx_folder/1.0%5Cdatafiles%5Cfile.json",
+                AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://s3-eu-west-1.amazonaws.com/"), @"/vx_folder/1.0\datafiles\file.json"));
+
+            Assert.AreEqual(
+                "/custompath/vx_folder/1.0%5Cdatafiles%5Cfile.json",
+                AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://customhost/custompath"), @"/vx_folder/1.0\datafiles\file.json"));
+        }
+
 #if BCL45
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]

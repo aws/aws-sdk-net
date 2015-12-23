@@ -42,12 +42,12 @@ namespace ServiceClientGenerator
                 {
                     Console.WriteLine("...updating existing project file {0}", projectFilename);
                     var projectPath = Path.Combine(coreFilesRoot, projectFilename);
-                    projectGuid = GetProjectGuid(projectPath);
+                    projectGuid = Utils.GetProjectGuid(projectPath);
                 }
                 else
                 {
                     newProject = true;
-                    projectGuid = NewProjectGuid;
+                    projectGuid = Utils.NewProjectGuid;
                     Console.WriteLine("...creating project file {0}", projectFilename);
                 }
 
@@ -121,12 +121,12 @@ namespace ServiceClientGenerator
                 {
                     Console.WriteLine("...updating existing project file {0}", projectFilename);
                     var projectPath = Path.Combine(serviceFilesRoot, projectFilename);
-                    projectGuid = GetProjectGuid(projectPath);
+                    projectGuid = Utils.GetProjectGuid(projectPath);
                 }
                 else
                 {
                     newProject = true;
-                    projectGuid = NewProjectGuid;
+                    projectGuid = Utils.NewProjectGuid;
                     Console.WriteLine("...creating project file {0}", projectFilename);
                 }
 
@@ -171,7 +171,7 @@ namespace ServiceClientGenerator
                         projectReferences.Add(new ProjectReference
                         {
                             IncludePath = dependencyProject,
-                            ProjectGuid = GetProjectGuid(Path.Combine(serviceFilesRoot, dependencyProject)),
+                            ProjectGuid = Utils.GetProjectGuid(Path.Combine(serviceFilesRoot, dependencyProject)),
                             Name = dependencyProjectName
                         });
                     }
@@ -385,42 +385,6 @@ namespace ServiceClientGenerator
             // sort so we get a predictable layout
             foldersThatExist.Sort(StringComparer.OrdinalIgnoreCase);
             return foldersThatExist;
-        }
-
-        //private static string ProjectGuidFromFile(string projectFile)
-        //{
-        //    var content = File.ReadAllText(projectFile);
-        //    var pos = content.IndexOf("<ProjectGuid>", StringComparison.OrdinalIgnoreCase) + "<ProjectGuid>".Length;
-        //    var lastPos = content.IndexOf("</ProjectGuid>", pos, StringComparison.OrdinalIgnoreCase);
-
-        //    return content.Substring(pos, lastPos - pos);
-        //}
-
-        /// <summary>
-        /// Recovers the guid of a project from an existing project file.
-        /// </summary>
-        /// <param name="projectFile"></param>
-        /// <returns></returns>
-        private static string GetProjectGuid(string projectPath)
-        {
-            var xdoc = new XmlDocument();
-            xdoc.Load(projectPath);
-            var propertyGroups = xdoc.GetElementsByTagName("PropertyGroup");
-            var element = ((XmlElement)propertyGroups[0]).GetElementsByTagName("ProjectGuid")[0];
-            if (element == null)
-                throw new ApplicationException("Failed to find project guid for existing project: " + projectPath);
-
-            var projectGuid = element.InnerText;
-            return projectGuid;
-        }
-
-
-        public static string NewProjectGuid
-        {
-            get
-            {
-                return Guid.NewGuid().ToString("B").ToUpper();
-            }
         }
 
         public class ProjectReference

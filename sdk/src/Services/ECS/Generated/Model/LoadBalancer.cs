@@ -39,7 +39,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerName. 
         /// <para>
-        /// The name of the container to associate with the load balancer.
+        /// The name of the container (as it appears in a container definition) to associate with
+        /// the load balancer.
         /// </para>
         /// </summary>
         public string ContainerName

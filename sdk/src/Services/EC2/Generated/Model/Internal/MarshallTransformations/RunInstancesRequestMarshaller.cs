@@ -231,6 +231,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetPlacement())
                 {
+                    if(publicRequest.Placement.IsSetAffinity())
+                    {
+                        request.Parameters.Add("Placement" + "." + "Affinity", StringUtils.FromString(publicRequest.Placement.Affinity));
+                    }
                     if(publicRequest.Placement.IsSetAvailabilityZone())
                     {
                         request.Parameters.Add("Placement" + "." + "AvailabilityZone", StringUtils.FromString(publicRequest.Placement.AvailabilityZone));
@@ -238,6 +242,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.Placement.IsSetGroupName())
                     {
                         request.Parameters.Add("Placement" + "." + "GroupName", StringUtils.FromString(publicRequest.Placement.GroupName));
+                    }
+                    if(publicRequest.Placement.IsSetHostId())
+                    {
+                        request.Parameters.Add("Placement" + "." + "HostId", StringUtils.FromString(publicRequest.Placement.HostId));
                     }
                     if(publicRequest.Placement.IsSetTenancy())
                     {

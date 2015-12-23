@@ -50,6 +50,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Finishes the asynchronous execution of the BeginGetNextSet operation.
+        /// 
+        /// If there are more items in the Scan/Query, PaginationToken will be
+        /// set and can be consumed in a new Scan/Query operation to resume
+        /// retrieving items from this point.
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetNextSet.</param>
         public List<T> EndGetNextSet(IAsyncResult asyncResult)

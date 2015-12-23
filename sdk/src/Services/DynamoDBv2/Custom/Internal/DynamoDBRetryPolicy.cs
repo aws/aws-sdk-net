@@ -54,7 +54,8 @@ namespace Amazon.DynamoDBv2.Internal
         private void pauseExponentially(int retries)
         {
             int delay = (retries == 0) ? 0 : 50 * (int)Math.Pow(2, retries - 1);
-            delay = Math.Min(delay, MaxBackoffInMilliseconds);
+            if (retries > 0 && (delay > MaxBackoffInMilliseconds || delay <= 0))
+                delay = MaxBackoffInMilliseconds;
             Amazon.Util.AWSSDKUtils.Sleep(delay);
         }
     }

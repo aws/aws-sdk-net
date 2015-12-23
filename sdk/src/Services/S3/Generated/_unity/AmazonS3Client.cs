@@ -345,9 +345,9 @@ namespace Amazon.S3
         #region  GetBucketNotification
 
         /// <summary>
-        /// Return the notification configuration of a bucket.
+        /// Returns the notification configuration of a bucket.
         /// </summary>
-        /// <param name="bucketName">A property of GetBucketNotificationRequest used to execute the GetBucketNotification service method.</param>
+        /// <param name="bucketName">Name of the bucket to get the notification configuration for.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback

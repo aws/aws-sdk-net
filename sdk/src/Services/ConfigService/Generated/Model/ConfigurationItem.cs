@@ -168,7 +168,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigurationItemMD5Hash. 
         /// <para>
-        /// Unique MD5 hash that represents the configuration item's state.
+        /// Unique MD5 hash that represents the configuration item&apos;s state.
         /// </para>
         ///  
         /// <para>

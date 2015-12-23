@@ -32,8 +32,10 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class Placement
     {
+        private string _affinity;
         private string _availabilityZone;
         private string _groupName;
+        private string _hostId;
         private Tenancy _tenancy;
 
         /// <summary>
@@ -48,6 +50,25 @@ namespace Amazon.EC2.Model
         public Placement(string availabilityZone)
         {
             _availabilityZone = availabilityZone;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Affinity. 
+        /// <para>
+        /// The affinity setting for the instance on the Dedicated host. This parameter is not
+        /// supported for the <a>ImportInstance</a> command.
+        /// </para>
+        /// </summary>
+        public string Affinity
+        {
+            get { return this._affinity; }
+            set { this._affinity = value; }
+        }
+
+        // Check to see if Affinity property is set
+        internal bool IsSetAffinity()
+        {
+            return this._affinity != null;
         }
 
         /// <summary>
@@ -87,10 +108,30 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HostId. 
+        /// <para>
+        /// The ID of the Dedicted host on which the instance resides. This parameter is not support
+        /// for the <a>ImportInstance</a> command.
+        /// </para>
+        /// </summary>
+        public string HostId
+        {
+            get { return this._hostId; }
+            set { this._hostId = value; }
+        }
+
+        // Check to see if HostId property is set
+        internal bool IsSetHostId()
+        {
+            return this._hostId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tenancy. 
         /// <para>
         /// The tenancy of the instance (if the instance is running in a VPC). An instance with
-        /// a tenancy of <code>dedicated</code> runs on single-tenant hardware.
+        /// a tenancy of <code>dedicated</code> runs on single-tenant hardware. The <code>host</code>
+        /// tenancy is not supported for the <a>ImportInstance</a> command.
         /// </para>
         /// </summary>
         public Tenancy Tenancy

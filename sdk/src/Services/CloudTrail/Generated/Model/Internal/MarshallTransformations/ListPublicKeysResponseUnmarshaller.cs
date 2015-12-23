@@ -78,19 +78,19 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTimeRange"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTimeRangeException"))
             {
                 return new InvalidTimeRangeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidToken"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTokenException"))
             {
                 return new InvalidTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermitted"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
             {
                 return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperation"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperationException"))
             {
                 return new UnsupportedOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }

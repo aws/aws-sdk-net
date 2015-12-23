@@ -53,7 +53,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the directory to retrieve snapshot information for.
+        /// The identifier of the directory for which to retrieve snapshot information.
         /// </para>
         /// </summary>
         public string DirectoryId

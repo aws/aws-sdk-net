@@ -61,8 +61,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// A unix timestamp indicating the end time of the range for the request. If provided,
-        /// events with a timestamp later than this time will not be returned.
+        /// A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+        /// UTC. If provided, events with a timestamp later than this time are not returned.
         /// </para>
         /// </summary>
         public long EndTime
@@ -176,7 +176,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A pagination token obtained from a <code class="code">FilterLogEvents</code> response
-        /// to continue paginating the FilterLogEvents results.
+        /// to continue paginating the FilterLogEvents results. This token is omitted from the
+        /// response when there are no other events to display.
         /// </para>
         /// </summary>
         public string NextToken
@@ -194,8 +195,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// A unix timestamp indicating the start time of the range for the request. If provided,
-        /// events with a timestamp prior to this time will not be returned.
+        /// A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+        /// UTC. If provided, events with a timestamp prior to this time are not returned.
         /// </para>
         /// </summary>
         public long StartTime

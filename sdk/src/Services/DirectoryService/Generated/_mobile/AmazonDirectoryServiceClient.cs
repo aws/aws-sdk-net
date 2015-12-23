@@ -298,6 +298,37 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  CreateMicrosoftAD
+
+        internal CreateMicrosoftADResponse CreateMicrosoftAD(CreateMicrosoftADRequest request)
+        {
+            var marshaller = new CreateMicrosoftADRequestMarshaller();
+            var unmarshaller = CreateMicrosoftADResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMicrosoftADRequest,CreateMicrosoftADResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMicrosoftAD operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMicrosoftAD operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateMicrosoftADResponse> CreateMicrosoftADAsync(CreateMicrosoftADRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateMicrosoftADRequestMarshaller();
+            var unmarshaller = CreateMicrosoftADResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateMicrosoftADRequest,CreateMicrosoftADResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSnapshot
 
         internal CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
@@ -324,6 +355,37 @@ namespace Amazon.DirectoryService
             var unmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateSnapshotRequest,CreateSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTrust
+
+        internal CreateTrustResponse CreateTrust(CreateTrustRequest request)
+        {
+            var marshaller = new CreateTrustRequestMarshaller();
+            var unmarshaller = CreateTrustResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrustRequest,CreateTrustResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrust operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrust operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateTrustResponse> CreateTrustAsync(CreateTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateTrustRequestMarshaller();
+            var unmarshaller = CreateTrustResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTrustRequest,CreateTrustResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -391,6 +453,37 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  DeleteTrust
+
+        internal DeleteTrustResponse DeleteTrust(DeleteTrustRequest request)
+        {
+            var marshaller = new DeleteTrustRequestMarshaller();
+            var unmarshaller = DeleteTrustResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrustRequest,DeleteTrustResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrust operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrust operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteTrustResponse> DeleteTrustAsync(DeleteTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteTrustRequestMarshaller();
+            var unmarshaller = DeleteTrustResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTrustRequest,DeleteTrustResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDirectories
 
         internal DescribeDirectoriesResponse DescribeDirectories()
@@ -433,19 +526,19 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DescribeDirectories service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// 
+        /// The <i>NextToken</i> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
-        /// 
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public Task<DescribeDirectoriesResponse> DescribeDirectoriesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -499,6 +592,37 @@ namespace Amazon.DirectoryService
             var unmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeSnapshotsRequest,DescribeSnapshotsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeTrusts
+
+        internal DescribeTrustsResponse DescribeTrusts(DescribeTrustsRequest request)
+        {
+            var marshaller = new DescribeTrustsRequestMarshaller();
+            var unmarshaller = DescribeTrustsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrustsRequest,DescribeTrustsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTrusts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrusts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeTrustsResponse> DescribeTrustsAsync(DescribeTrustsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeTrustsRequestMarshaller();
+            var unmarshaller = DescribeTrustsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTrustsRequest,DescribeTrustsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -652,13 +776,13 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the GetDirectoryLimits service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
-        /// 
+        /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
-        /// 
+        /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
-        /// 
+        /// An exception has occurred in AWS Directory Service.
         /// </exception>
         public Task<GetDirectoryLimitsResponse> GetDirectoryLimitsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -774,6 +898,37 @@ namespace Amazon.DirectoryService
             var unmarshaller = UpdateRadiusResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateRadiusRequest,UpdateRadiusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  VerifyTrust
+
+        internal VerifyTrustResponse VerifyTrust(VerifyTrustRequest request)
+        {
+            var marshaller = new VerifyTrustRequestMarshaller();
+            var unmarshaller = VerifyTrustResponseUnmarshaller.Instance;
+
+            return Invoke<VerifyTrustRequest,VerifyTrustResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the VerifyTrust operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the VerifyTrust operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<VerifyTrustResponse> VerifyTrustAsync(VerifyTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new VerifyTrustRequestMarshaller();
+            var unmarshaller = VerifyTrustResponseUnmarshaller.Instance;
+
+            return InvokeAsync<VerifyTrustRequest,VerifyTrustResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

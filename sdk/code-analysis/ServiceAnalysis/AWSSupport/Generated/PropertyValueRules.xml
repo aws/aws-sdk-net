@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.CreateCaseRequest.ServiceCode</property>
+    <pattern>[0-9a-z\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.DescribeCasesRequest.MaxResults</property>
+    <min>10</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.DescribeCommunicationsRequest.MaxResults</property>
+    <min>10</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.CaseDetails.ServiceCode</property>
+    <pattern>[0-9a-z\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.Service.Code</property>
+    <pattern>[0-9a-z\-_]+</pattern>
+  </property-value-rule>
+</property-value-rules>
