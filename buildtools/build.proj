@@ -124,8 +124,8 @@
     </Target>
 	
 	<!-- DependsOnTargets="copy-assemblies" -->
-	
-	<Target Name="pdb-mdb"  DependsOnTargets="copy-assemblies"  Condition="Exists('$(pdb2mdbexe)')">
+	<!-- Exists('$(pdb2mdbexe)') -->
+	<Target Name="pdb-mdb"  DependsOnTargets="copy-assemblies"  Condition="False">
 		<ItemGroup>
 			<DllFiles Include="$(Deployment)\assemblies\unity\*.dll"/>
 		</ItemGroup>

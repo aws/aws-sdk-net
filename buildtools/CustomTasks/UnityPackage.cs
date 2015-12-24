@@ -169,13 +169,13 @@ namespace CustomTasks
             {
                 var searchString = string.Format(@"*.{0}.*", d);
                 foreach (string newPath in Directory.EnumerateFiles(unityFilesDirectory, searchString, SearchOption.TopDirectoryOnly)
-                    .Where(s => s.EndsWith(".dll") || s.EndsWith(".mdb")))
+                    .Where(s => s.EndsWith(".dll") || s.EndsWith(".pdb")))
                     File.Copy(newPath, newPath.Replace(unityFilesDirectory, destination), true);
             }
 
             var serviceSearchString = string.Format(@"AWSSDK.{0}.*", serviceName);
             foreach (string newPath in Directory.EnumerateFiles(unityFilesDirectory, serviceSearchString, SearchOption.TopDirectoryOnly)
-                    .Where(s => s.EndsWith(".dll") || s.EndsWith(".mdb")))
+                    .Where(s => s.EndsWith(".dll") || s.EndsWith(".pdb")))
                 File.Copy(newPath, newPath.Replace(unityFilesDirectory, destination), true);
 
         }
