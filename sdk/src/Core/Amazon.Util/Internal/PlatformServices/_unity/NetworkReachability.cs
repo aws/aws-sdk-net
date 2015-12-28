@@ -9,6 +9,11 @@ namespace Amazon.Util.Internal.PlatformServices
 {
     public class NetworkReachability : INetworkReachability
     {
+
+        public NetworkReachability()
+        { 
+        }
+
         public NetworkStatus NetworkStatus
         {
             get
