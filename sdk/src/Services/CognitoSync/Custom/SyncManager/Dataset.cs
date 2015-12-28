@@ -143,7 +143,7 @@ namespace Amazon.CognitoSync.SyncManager
         /// <summary>
         /// Releases the resources consumed by this object
         /// </summary>
-        protected override void Dispose()
+        public void Dispose()
         {
             // TODO: what to do for 35?
             Dispose(true);
@@ -151,7 +151,7 @@ namespace Amazon.CognitoSync.SyncManager
         }
 
 #if UNITY
-        protected virtual void Dispose(bool disposing)
+        public virtual void Dispose(bool disposing)
         {
             if (_disposed)
                 return;
